@@ -20,14 +20,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public GetUserResponse getUser(String unionId, GetUserRequest request) throws Exception {
+    public GetUserResponse getUser(String unionId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUserHeaders headers = new GetUserHeaders();
-        return this.getUserWithOptions(unionId, request, headers, runtime);
+        return this.getUserWithOptions(unionId, headers, runtime);
     }
 
-    public GetUserResponse getUserWithOptions(String unionId, GetUserRequest request, GetUserHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
+    public GetUserResponse getUserWithOptions(String unionId, GetUserHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
