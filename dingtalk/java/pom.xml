@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliyun</groupId>
   <artifactId>dingtalk</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.6</version>
   <packaging>jar</packaging>
   <name>dingtalk</name>
   <description>Alibaba Cloud dingtalk SDK for Java
@@ -11,7 +11,7 @@
   <url>https://github.com/aliyun/alibabacloud-sdk</url>
   <licenses>
     <license>
-      <name/>
+      <name>The Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
@@ -33,9 +33,9 @@
     </repository>
   </distributionManagement>
   <scm>
-    <connection/>
-    <developerConnection/>
-    <url/>
+    <connection>scm:git:git://github.com/aliyun/dingtalk-sdk.git</connection>
+    <developerConnection>scm:git:git@github.com:aliyun/dingtalk-sdk.git</developerConnection>
+    <url>https://github.com/aliyun/dingtalk-sdk</url>
   </scm>
   <dependencies>
     <dependency>
