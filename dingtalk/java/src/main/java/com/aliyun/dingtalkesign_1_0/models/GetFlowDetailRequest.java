@@ -3,16 +3,16 @@ package com.aliyun.dingtalkesign_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ListFlowDocsRequest extends TeaModel {
+public class GetFlowDetailRequest extends TeaModel {
     @NameInMap("taskId")
     public String taskId;
 
-    public static ListFlowDocsRequest build(java.util.Map<String, ?> map) throws Exception {
-        ListFlowDocsRequest self = new ListFlowDocsRequest();
+    public static GetFlowDetailRequest build(java.util.Map<String, ?> map) throws Exception {
+        GetFlowDetailRequest self = new GetFlowDetailRequest();
         return TeaModel.build(map, self);
     }
 
-    public ListFlowDocsRequest setTaskId(String taskId) {
+    public GetFlowDetailRequest setTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }

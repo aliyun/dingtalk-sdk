@@ -21,19 +21,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public CorpInfoResponse corpInfo(CorpInfoRequest request) throws Exception {
+    public CorpInfoResponse corpInfo() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CorpInfoHeaders headers = new CorpInfoHeaders();
-        return this.corpInfoWithOptions(request, headers, runtime);
+        return this.corpInfoWithOptions(headers, runtime);
     }
 
-    public CorpInfoResponse corpInfoWithOptions(CorpInfoRequest request, CorpInfoHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
+    public CorpInfoResponse corpInfoWithOptions(CorpInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -44,10 +38,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("CorpInfo", "esign_1.0", "HTTPS", "GET", "AK", "/v1.0/esign/corps/info", "json", req, runtime), new CorpInfoResponse());
+        return TeaModel.toModel(this.doROARequest("CorpInfo", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/info", "json", req, runtime), new CorpInfoResponse());
     }
 
     public CreateDeveloperResponse createDeveloper(CreateDeveloperRequest request) throws Exception {
@@ -58,11 +51,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CreateDeveloperResponse createDeveloperWithOptions(CreateDeveloperRequest request, CreateDeveloperHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -91,7 +79,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("CreateDeveloper", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/developers/create", "json", req, runtime), new CreateDeveloperResponse());
@@ -105,11 +92,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetUserRealnameUrlResponse getUserRealnameUrlWithOptions(GetUserRealnameUrlRequest request, GetUserRealnameUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -142,7 +124,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("GetUserRealnameUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/users/realname", "json", req, runtime), new GetUserRealnameUrlResponse());
@@ -156,11 +137,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetCorpRealnameUrlResponse getCorpRealnameUrlWithOptions(GetCorpRealnameUrlRequest request, GetCorpRealnameUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -189,25 +165,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("GetCorpRealnameUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/corps/realname", "json", req, runtime), new GetCorpRealnameUrlResponse());
     }
 
-    public GetFileResponse getFile(String fileId, GetFileRequest request) throws Exception {
+    public GetFileResponse getFile(String fileId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetFileHeaders headers = new GetFileHeaders();
-        return this.getFileWithOptions(fileId, request, headers, runtime);
+        return this.getFileWithOptions(fileId, headers, runtime);
     }
 
-    public GetFileResponse getFileWithOptions(String fileId, GetFileRequest request, GetFileHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
+    public GetFileResponse getFileWithOptions(String fileId, GetFileHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -218,8 +187,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("GetFile", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/files/" + fileId + "", "json", req, runtime), new GetFileResponse());
     }
@@ -232,11 +200,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AuthUrlResponse authUrlWithOptions(AuthUrlRequest request, AuthUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.redirectUrl)) {
             body.put("redirectUrl", request.redirectUrl);
@@ -265,25 +228,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AuthUrl", "esign_1.0", "HTTPS", "POST", "AK", "/v1.0/esign/auths/url", "json", req, runtime), new AuthUrlResponse());
+        return TeaModel.toModel(this.doROARequest("AuthUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/auths/url", "json", req, runtime), new AuthUrlResponse());
     }
 
-    public CancelCorpAuthResponse cancelCorpAuth(CancelCorpAuthRequest request) throws Exception {
+    public CancelCorpAuthResponse cancelCorpAuth() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
-        return this.cancelCorpAuthWithOptions(request, headers, runtime);
+        return this.cancelCorpAuthWithOptions(headers, runtime);
     }
 
-    public CancelCorpAuthResponse cancelCorpAuthWithOptions(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
+    public CancelCorpAuthResponse cancelCorpAuthWithOptions(CancelCorpAuthHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -294,10 +250,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("CancelCorpAuth", "esign_1.0", "HTTPS", "GET", "AK", "/v1.0/esign/corps/auth/cancel", "json", req, runtime), new CancelCorpAuthResponse());
+        return TeaModel.toModel(this.doROARequest("CancelCorpAuth", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/auth/cancel", "json", req, runtime), new CancelCorpAuthResponse());
     }
 
     public GetSignNoticeUrlResponse getSignNoticeUrl(GetSignNoticeUrlRequest request) throws Exception {
@@ -308,11 +263,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetSignNoticeUrlResponse getSignNoticeUrlWithOptions(GetSignNoticeUrlRequest request, GetSignNoticeUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -341,7 +291,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("GetSignNoticeUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/signs/notice/url", "json", req, runtime), new GetSignNoticeUrlResponse());
@@ -355,11 +304,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetUploadUrlResponse getUploadUrlWithOptions(GetUploadUrlRequest request, GetUploadUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -404,7 +348,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("GetUploadUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/files/getUploadUrl", "json", req, runtime), new GetUploadUrlResponse());
@@ -419,10 +362,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public ListSealApprovalResponse listSealApprovalWithOptions(ListSealApprovalRequest request, ListSealApprovalHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
             query.put("taskId", request.taskId);
         }
@@ -443,17 +382,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListSealApproval", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/seals/approval/list", "json", req, runtime), new ListSealApprovalResponse());
     }
 
-    public ContractMarginResponse contractMargin(ContractMarginRequest request) throws Exception {
+    public ContractMarginResponse contractMargin() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ContractMarginHeaders headers = new ContractMarginHeaders();
-        return this.contractMarginWithOptions(request, headers, runtime);
+        return this.contractMarginWithOptions(headers, runtime);
     }
 
-    public ContractMarginResponse contractMarginWithOptions(ContractMarginRequest request, ContractMarginHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ContractMarginResponse contractMarginWithOptions(ContractMarginHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ContractMargin", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/contracts/margin", "json", req, runtime), new ContractMarginResponse());
+    }
+
+    public GetFlowDetailResponse getFlowDetail(GetFlowDetailRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetFlowDetailHeaders headers = new GetFlowDetailHeaders();
+        return this.getFlowDetailWithOptions(request, headers, runtime);
+    }
+
+    public GetFlowDetailResponse getFlowDetailWithOptions(GetFlowDetailRequest request, GetFlowDetailHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            query.put("taskId", request.taskId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -469,7 +430,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ContractMargin", "esign_1.0", "HTTPS", "GET", "AK", "/v1.0/esign/contracts/margin", "json", req, runtime), new ContractMarginResponse());
+        return TeaModel.toModel(this.doROARequest("GetFlowDetail", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/flows/detail", "json", req, runtime), new GetFlowDetailResponse());
     }
 
     public GetProcessStartUrlResponse getProcessStartUrl(GetProcessStartUrlRequest request) throws Exception {
@@ -480,11 +441,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetProcessStartUrlResponse getProcessStartUrlWithOptions(GetProcessStartUrlRequest request, GetProcessStartUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.autoStart)) {
             body.put("autoStart", request.autoStart);
@@ -541,25 +497,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("GetProcessStartUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/process/start", "json", req, runtime), new GetProcessStartUrlResponse());
     }
 
-    public CorpConsoleResponse corpConsole(CorpConsoleRequest request) throws Exception {
+    public CorpConsoleResponse corpConsole() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CorpConsoleHeaders headers = new CorpConsoleHeaders();
-        return this.corpConsoleWithOptions(request, headers, runtime);
+        return this.corpConsoleWithOptions(headers, runtime);
     }
 
-    public CorpConsoleResponse corpConsoleWithOptions(CorpConsoleRequest request, CorpConsoleHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
+    public CorpConsoleResponse corpConsoleWithOptions(CorpConsoleHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -570,10 +519,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("CorpConsole", "esign_1.0", "HTTPS", "GET", "AK", "/v1.0/esign/corps/console", "json", req, runtime), new CorpConsoleResponse());
+        return TeaModel.toModel(this.doROARequest("CorpConsole", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/console", "json", req, runtime), new CorpConsoleResponse());
     }
 
     public ListFlowDocsResponse listFlowDocs(ListFlowDocsRequest request) throws Exception {
@@ -585,10 +533,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public ListFlowDocsResponse listFlowDocsWithOptions(ListFlowDocsRequest request, ListFlowDocsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
             query.put("taskId", request.taskId);
         }
@@ -609,19 +553,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListFlowDocs", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/flows/docs", "json", req, runtime), new ListFlowDocsResponse());
     }
 
-    public GetCropStatusResponse getCropStatus(GetCropStatusRequest request) throws Exception {
+    public GetUserInfoResponse getUserInfo(String userId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
-        GetCropStatusHeaders headers = new GetCropStatusHeaders();
-        return this.getCropStatusWithOptions(request, headers, runtime);
+        GetUserInfoHeaders headers = new GetUserInfoHeaders();
+        return this.getUserInfoWithOptions(userId, headers, runtime);
     }
 
-    public GetCropStatusResponse getCropStatusWithOptions(GetCropStatusRequest request, GetCropStatusHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
+    public GetUserInfoResponse getUserInfoWithOptions(String userId, GetUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -632,10 +570,31 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetCropStatus", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/statuss", "json", req, runtime), new GetCropStatusResponse());
+        return TeaModel.toModel(this.doROARequest("GetUserInfo", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/users/" + userId + "", "json", req, runtime), new GetUserInfoResponse());
+    }
+
+    public GetCropStatusResponse getCropStatus() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetCropStatusHeaders headers = new GetCropStatusHeaders();
+        return this.getCropStatusWithOptions(headers, runtime);
+    }
+
+    public GetCropStatusResponse getCropStatusWithOptions(GetCropStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetCropStatus", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/statuses", "json", req, runtime), new GetCropStatusResponse());
     }
 
     public ChannelOrderResponse channelOrder(ChannelOrderRequest request) throws Exception {
@@ -646,11 +605,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ChannelOrderResponse channelOrderWithOptions(ChannelOrderRequest request, ChannelOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -699,10 +653,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ChannelOrder", "esign_1.0", "HTTPS", "POST", "AK", "/v1.0/esign/orders/channel", "json", req, runtime), new ChannelOrderResponse());
+        return TeaModel.toModel(this.doROARequest("ChannelOrder", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/orders/channel", "json", req, runtime), new ChannelOrderResponse());
     }
 
     public OrderResaleResponse orderResale(OrderResaleRequest request) throws Exception {
@@ -713,11 +666,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public OrderResaleResponse orderResaleWithOptions(OrderResaleRequest request, OrderResaleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
             body.put("dingCorpId", request.dingCorpId);
@@ -762,10 +710,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("OrderResale", "esign_1.0", "HTTPS", "POST", "AK", "/v1.0/esign/orders/resale", "json", req, runtime), new OrderResaleResponse());
+        return TeaModel.toModel(this.doROARequest("OrderResale", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/orders/resale", "json", req, runtime), new OrderResaleResponse());
     }
 
     public GetFlowSignDetailResponse getFlowSignDetail(GetFlowSignDetailRequest request) throws Exception {
@@ -777,10 +724,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetFlowSignDetailResponse getFlowSignDetailWithOptions(GetFlowSignDetailRequest request, GetFlowSignDetailHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
-            query.put("appId", request.appId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
             query.put("taskId", request.taskId);
         }

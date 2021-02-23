@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateDeveloperRequest extends TeaModel {
-    @NameInMap("appId")
-    public Long appId;
-
     @NameInMap("dingCorpId")
     public String dingCorpId;
 
@@ -22,14 +19,6 @@ public class CreateDeveloperRequest extends TeaModel {
     public static CreateDeveloperRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateDeveloperRequest self = new CreateDeveloperRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateDeveloperRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
     }
 
     public CreateDeveloperRequest setDingCorpId(String dingCorpId) {

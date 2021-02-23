@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProcessStartUrlRequest extends TeaModel {
-    @NameInMap("appId")
-    public Long appId;
-
     @NameInMap("autoStart")
     public Boolean autoStart;
 
@@ -43,14 +40,6 @@ public class GetProcessStartUrlRequest extends TeaModel {
     public static GetProcessStartUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         GetProcessStartUrlRequest self = new GetProcessStartUrlRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetProcessStartUrlRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
     }
 
     public GetProcessStartUrlRequest setAutoStart(Boolean autoStart) {

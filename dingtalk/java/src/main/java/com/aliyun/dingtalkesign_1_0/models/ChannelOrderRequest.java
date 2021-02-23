@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChannelOrderRequest extends TeaModel {
-    @NameInMap("appId")
-    public Long appId;
-
     @NameInMap("dingCorpId")
     public String dingCorpId;
 
@@ -37,14 +34,6 @@ public class ChannelOrderRequest extends TeaModel {
     public static ChannelOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         ChannelOrderRequest self = new ChannelOrderRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ChannelOrderRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
     }
 
     public ChannelOrderRequest setDingCorpId(String dingCorpId) {

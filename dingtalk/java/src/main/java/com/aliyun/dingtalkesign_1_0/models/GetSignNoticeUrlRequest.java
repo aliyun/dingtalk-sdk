@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignNoticeUrlRequest extends TeaModel {
-    @NameInMap("appId")
-    public Long appId;
-
     @NameInMap("dingCorpId")
     public String dingCorpId;
 
@@ -22,14 +19,6 @@ public class GetSignNoticeUrlRequest extends TeaModel {
     public static GetSignNoticeUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         GetSignNoticeUrlRequest self = new GetSignNoticeUrlRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetSignNoticeUrlRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
     }
 
     public GetSignNoticeUrlRequest setDingCorpId(String dingCorpId) {

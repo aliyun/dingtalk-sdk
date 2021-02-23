@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class AuthUrlRequest extends TeaModel {
-    @NameInMap("appId")
-    public Long appId;
-
     @NameInMap("redirectUrl")
     public String redirectUrl;
 
@@ -22,14 +19,6 @@ public class AuthUrlRequest extends TeaModel {
     public static AuthUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         AuthUrlRequest self = new AuthUrlRequest();
         return TeaModel.build(map, self);
-    }
-
-    public AuthUrlRequest setAppId(Long appId) {
-        this.appId = appId;
-        return this;
-    }
-    public Long getAppId() {
-        return this.appId;
     }
 
     public AuthUrlRequest setRedirectUrl(String redirectUrl) {
