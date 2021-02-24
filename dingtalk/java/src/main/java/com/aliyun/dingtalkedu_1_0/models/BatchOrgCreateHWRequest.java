@@ -323,8 +323,8 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemList extends TeaModel {
-        @NameInMap("corpid")
-        public String corpid;
+        @NameInMap("corpId")
+        public String corpId;
 
         @NameInMap("selectedClassesDesc")
         public String selectedClassesDesc;
@@ -337,12 +337,12 @@ public class BatchOrgCreateHWRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public BatchOrgCreateHWRequestOpenSelectItemList setCorpid(String corpid) {
-            this.corpid = corpid;
+        public BatchOrgCreateHWRequestOpenSelectItemList setCorpId(String corpId) {
+            this.corpId = corpId;
             return this;
         }
-        public String getCorpid() {
-            return this.corpid;
+        public String getCorpId() {
+            return this.corpId;
         }
 
         public BatchOrgCreateHWRequestOpenSelectItemList setSelectedClassesDesc(String selectedClassesDesc) {
