@@ -1,0 +1,1 @@
+module.exports = require('./dist').im_1_0;

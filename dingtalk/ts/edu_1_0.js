@@ -1,0 +1,1 @@
+module.exports = require('./dist').edu_1_0;
