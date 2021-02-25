@@ -25,7 +25,7 @@ public class BatchOrgCreateHWResponseBody extends TeaModel {
         public String corpid;
 
         @NameInMap("hwid")
-        public Float hwid;
+        public Long hwid;
 
         public static BatchOrgCreateHWResponseBodyResultPublishList build(java.util.Map<String, ?> map) throws Exception {
             BatchOrgCreateHWResponseBodyResultPublishList self = new BatchOrgCreateHWResponseBodyResultPublishList();
@@ -40,11 +40,11 @@ public class BatchOrgCreateHWResponseBody extends TeaModel {
             return this.corpid;
         }
 
-        public BatchOrgCreateHWResponseBodyResultPublishList setHwid(Float hwid) {
+        public BatchOrgCreateHWResponseBodyResultPublishList setHwid(Long hwid) {
             this.hwid = hwid;
             return this;
         }
-        public Float getHwid() {
+        public Long getHwid() {
             return this.hwid;
         }
 

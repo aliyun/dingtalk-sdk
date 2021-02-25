@@ -319,7 +319,7 @@ public class BatchCreateRequest extends TeaModel {
 
         // 计量开启
         @NameInMap("needMetering")
-        public Boolean needMetering;
+        public String needMetering;
 
         @NameInMap("orgClassStudentGroupList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupList> orgClassStudentGroupList;
@@ -425,11 +425,11 @@ public class BatchCreateRequest extends TeaModel {
             return this.medias;
         }
 
-        public BatchCreateRequestData setNeedMetering(Boolean needMetering) {
+        public BatchCreateRequestData setNeedMetering(String needMetering) {
             this.needMetering = needMetering;
             return this;
         }
-        public Boolean getNeedMetering() {
+        public String getNeedMetering() {
             return this.needMetering;
         }
 
