@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateInteractiveCardRequest extends Model
 {
     /**
+     * @description 唯一标识一张卡片的外部ID
+     *
      * @var string
      */
     public $outTrackId;
@@ -48,6 +50,13 @@ class UpdateInteractiveCardRequest extends Model
      * @var int
      */
     public $dingOauthAppId;
+
+    /**
+     * @description 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+     *
+     * @var int
+     */
+    public $userIdType;
     protected $_name = [
         'outTrackId'         => 'outTrackId',
         'cardData'           => 'cardData',
@@ -57,6 +66,7 @@ class UpdateInteractiveCardRequest extends Model
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingOauthAppId'     => 'dingOauthAppId',
+        'userIdType'         => 'userIdType',
     ];
 
     public function validate()
@@ -95,6 +105,9 @@ class UpdateInteractiveCardRequest extends Model
         if (null !== $this->dingOauthAppId) {
             $res['dingOauthAppId'] = $this->dingOauthAppId;
         }
+        if (null !== $this->userIdType) {
+            $res['userIdType'] = $this->userIdType;
+        }
 
         return $res;
     }
@@ -130,6 +143,9 @@ class UpdateInteractiveCardRequest extends Model
         }
         if (isset($map['dingOauthAppId'])) {
             $model->dingOauthAppId = $map['dingOauthAppId'];
+        }
+        if (isset($map['userIdType'])) {
+            $model->userIdType = $map['userIdType'];
         }
 
         return $model;

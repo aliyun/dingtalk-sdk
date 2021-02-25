@@ -41,7 +41,7 @@ class SendInteractiveCardRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 唯一标示卡片的外部编码
+     * @description 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
      *
      * @var string
      */
@@ -53,7 +53,7 @@ class SendInteractiveCardRequest extends Model
     public $dingSuiteKey;
 
     /**
-     * @description 用于发送卡片的机器人编码，与场景群模板中的机器人编码保持一致
+     * @description 【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）
      *
      * @var string
      */
@@ -89,6 +89,25 @@ class SendInteractiveCardRequest extends Model
      * @var PrivateDataValue[]
      */
     public $privateData;
+
+    /**
+     * @var int
+     */
+    public $dingOauthAppId;
+
+    /**
+     * @description 【robotCode & chatBotId二选一必填】机器人ID（企业机器人）
+     *
+     * @var string
+     */
+    public $chatBotId;
+
+    /**
+     * @description 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+     *
+     * @var int
+     */
+    public $userIdType;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'cardTemplateId'     => 'cardTemplateId',
@@ -103,6 +122,9 @@ class SendInteractiveCardRequest extends Model
         'callbackRouteKey'   => 'callbackRouteKey',
         'cardData'           => 'cardData',
         'privateData'        => 'privateData',
+        'dingOauthAppId'     => 'dingOauthAppId',
+        'chatBotId'          => 'chatBotId',
+        'userIdType'         => 'userIdType',
     ];
 
     public function validate()
@@ -156,6 +178,15 @@ class SendInteractiveCardRequest extends Model
                 }
             }
         }
+        if (null !== $this->dingOauthAppId) {
+            $res['dingOauthAppId'] = $this->dingOauthAppId;
+        }
+        if (null !== $this->chatBotId) {
+            $res['chatBotId'] = $this->chatBotId;
+        }
+        if (null !== $this->userIdType) {
+            $res['userIdType'] = $this->userIdType;
+        }
 
         return $res;
     }
@@ -208,6 +239,15 @@ class SendInteractiveCardRequest extends Model
         }
         if (isset($map['privateData'])) {
             $model->privateData = $map['privateData'];
+        }
+        if (isset($map['dingOauthAppId'])) {
+            $model->dingOauthAppId = $map['dingOauthAppId'];
+        }
+        if (isset($map['chatBotId'])) {
+            $model->chatBotId = $map['chatBotId'];
+        }
+        if (isset($map['userIdType'])) {
+            $model->userIdType = $map['userIdType'];
         }
 
         return $model;

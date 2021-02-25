@@ -90,6 +90,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->privateData)) {
             @$body['privateData'] = $request->privateData;
         }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->chatBotId)) {
+            @$body['chatBotId'] = $request->chatBotId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -152,6 +161,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->dingOauthAppId)) {
             @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
