@@ -1,1 +1,0 @@
-module.exports = require('./dist').calendar_1_0;

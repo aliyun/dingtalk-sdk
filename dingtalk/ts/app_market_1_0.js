@@ -1,1 +1,0 @@
-module.exports = require('./dist').app_market_1_0;
