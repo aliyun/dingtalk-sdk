@@ -1,0 +1,1 @@
+module.exports = require('./dist').contact_1_0;

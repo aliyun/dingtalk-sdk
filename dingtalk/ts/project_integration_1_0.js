@@ -1,0 +1,1 @@
+module.exports = require('./dist').project_integration_1_0;

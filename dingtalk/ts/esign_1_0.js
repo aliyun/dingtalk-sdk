@@ -1,0 +1,1 @@
+module.exports = require('./dist').esign_1_0;

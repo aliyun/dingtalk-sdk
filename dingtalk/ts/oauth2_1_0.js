@@ -1,0 +1,1 @@
+module.exports = require('./dist').oauth2_1_0;
