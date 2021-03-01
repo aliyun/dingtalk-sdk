@@ -1,0 +1,1 @@
+module.exports = require('./dist').hrbrain_1_0;
