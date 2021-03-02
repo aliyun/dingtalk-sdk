@@ -75,6 +75,6 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SyncDataResponse::fromMap($this->doROARequest('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrbrain/datas', 'none', $req, $runtime));
+        return SyncDataResponse::fromMap($this->doROARequest('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrbrain/datas', 'json', $req, $runtime));
     }
 }
