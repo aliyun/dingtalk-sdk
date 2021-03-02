@@ -60,17 +60,39 @@ export class SyncDataRequest extends $tea.Model {
   }
 }
 
+export class SyncDataResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SyncDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncDataResponseBody,
     };
   }
 
@@ -134,7 +156,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncDataResponse>(await this.doROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", `/v1.0/hrbrain/datas`, "none", req, runtime), new SyncDataResponse({}));
+    return $tea.cast<SyncDataResponse>(await this.doROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", `/v1.0/hrbrain/datas`, "json", req, runtime), new SyncDataResponse({}));
   }
 
 }
