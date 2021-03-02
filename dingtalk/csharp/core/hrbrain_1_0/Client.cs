@@ -78,7 +78,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncDataResponse>(DoROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "none", req, runtime));
+            return TeaModel.ToObject<SyncDataResponse>(DoROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "json", req, runtime));
         }
 
         public async Task<SyncDataResponse> SyncDataWithOptionsAsync(SyncDataRequest request, SyncDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -119,7 +119,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncDataResponse>(await DoROARequestAsync("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "none", req, runtime));
+            return TeaModel.ToObject<SyncDataResponse>(await DoROARequestAsync("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "json", req, runtime));
         }
 
     }
