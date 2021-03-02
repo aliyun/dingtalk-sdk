@@ -65,7 +65,7 @@ class Client(OpenApiClient):
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return dingtalkhrbrain__1__0_models.SyncDataResponse().from_map(
-            self.do_roarequest('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrbrain/datas', 'none', req, runtime)
+            self.do_roarequest('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrbrain/datas', 'json', req, runtime)
         )
 
     async def sync_data_with_options_async(
@@ -96,5 +96,5 @@ class Client(OpenApiClient):
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return dingtalkhrbrain__1__0_models.SyncDataResponse().from_map(
-            await self.do_roarequest_async('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrbrain/datas', 'none', req, runtime)
+            await self.do_roarequest_async('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrbrain/datas', 'json', req, runtime)
         )
