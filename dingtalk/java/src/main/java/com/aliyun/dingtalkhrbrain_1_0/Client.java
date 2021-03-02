@@ -63,6 +63,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "none", req, runtime), new SyncDataResponse());
+        return TeaModel.toModel(this.doROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "json", req, runtime), new SyncDataResponse());
     }
 }
