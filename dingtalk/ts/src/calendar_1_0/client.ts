@@ -138,6 +138,50 @@ export class ListEventsResponse extends $tea.Model {
   }
 }
 
+export class GetScheduleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: {[key: string]: any};
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveAttendeeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -437,6 +481,28 @@ export default class Client extends OpenApi {
     return $tea.cast<ListEventsResponse>(await this.doROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`, "json", req, runtime), new ListEventsResponse({}));
   }
 
+  async getSchedule(userId: string): Promise<GetScheduleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetScheduleHeaders({ });
+    return await this.getScheduleWithOptions(userId, headers, runtime);
+  }
+
+  async getScheduleWithOptions(userId: string, headers: GetScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetScheduleResponse>(await this.doROARequest("GetSchedule", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/getSchedule`, "json", req, runtime), new GetScheduleResponse({}));
+  }
+
   async removeAttendee(userId: string, calendarId: string, eventId: string): Promise<RemoveAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveAttendeeHeaders({ });
@@ -456,7 +522,7 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<RemoveAttendeeResponse>(await this.doROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees`, "json", req, runtime), new RemoveAttendeeResponse({}));
+    return $tea.cast<RemoveAttendeeResponse>(await this.doROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees/batchRemove`, "json", req, runtime), new RemoveAttendeeResponse({}));
   }
 
   async addAttendee(userId: string, calendarId: string, eventId: string): Promise<AddAttendeeResponse> {

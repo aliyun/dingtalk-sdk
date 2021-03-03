@@ -1,0 +1,1 @@
+module.exports = require('./dist').attendance_1_0;

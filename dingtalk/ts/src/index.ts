@@ -1,4 +1,5 @@
 import * as app_market_1_0 from './app_market_1_0/client';
+import * as attendance_1_0 from './attendance_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
@@ -10,6 +11,7 @@ import * as project_integration_1_0 from './project_integration_1_0/client';
 
 export = {
   app_market_1_0,
+  attendance_1_0,
   calendar_1_0,
   contact_1_0,
   edu_1_0,
