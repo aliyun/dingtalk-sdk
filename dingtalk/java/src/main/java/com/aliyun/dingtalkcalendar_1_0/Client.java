@@ -86,6 +86,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime), new ListEventsResponse());
     }
 
+    public GetScheduleResponse getSchedule(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetScheduleHeaders headers = new GetScheduleHeaders();
+        return this.getScheduleWithOptions(userId, headers, runtime);
+    }
+
+    public GetScheduleResponse getScheduleWithOptions(String userId, GetScheduleHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetSchedule", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/getSchedule", "json", req, runtime), new GetScheduleResponse());
+    }
+
     public RemoveAttendeeResponse removeAttendee(String userId, String calendarId, String eventId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();
@@ -105,7 +127,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees", "json", req, runtime), new RemoveAttendeeResponse());
+        return TeaModel.toModel(this.doROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees/batchRemove", "json", req, runtime), new RemoveAttendeeResponse());
     }
 
     public AddAttendeeResponse addAttendee(String userId, String calendarId, String eventId) throws Exception {
