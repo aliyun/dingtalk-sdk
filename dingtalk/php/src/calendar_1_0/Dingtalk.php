@@ -12,6 +12,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventHeaders;
@@ -156,6 +158,42 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string $userId
+     *
+     * @return GetScheduleResponse
+     */
+    public function getSchedule($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetScheduleHeaders([]);
+
+        return $this->getScheduleWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $userId
+     * @param GetScheduleHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetScheduleResponse
+     */
+    public function getScheduleWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetScheduleResponse::fromMap($this->doROARequest('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/getSchedule', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
      * @param string $calendarId
      * @param string $eventId
      *
@@ -191,7 +229,7 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
 
-        return RemoveAttendeeResponse::fromMap($this->doROARequest('RemoveAttendee', 'calendar_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees', 'json', $req, $runtime));
+        return RemoveAttendeeResponse::fromMap($this->doROARequest('RemoveAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees/batchRemove', 'json', $req, $runtime));
     }
 
     /**

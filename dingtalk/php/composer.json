@@ -19,6 +19,7 @@
   "autoload": {
     "psr-4": {
       "AlibabaCloud\\SDK\\Dingtalk\\Vapp_market_1_0\\": "src/app_market_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vattendance_1_0\\": "src/attendance_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcalendar_1_0\\": "src/calendar_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcontact_1_0\\": "src/contact_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vedu_1_0\\": "src/edu_1_0/",
