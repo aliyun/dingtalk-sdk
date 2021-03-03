@@ -196,6 +196,58 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListEvents', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events', 'json', req, runtime)
         )
 
+    def get_schedule(
+        self,
+        user_id: str,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetScheduleHeaders()
+        return self.get_schedule_with_options(user_id, headers, runtime)
+
+    async def get_schedule_async(
+        self,
+        user_id: str,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetScheduleHeaders()
+        return await self.get_schedule_with_options_async(user_id, headers, runtime)
+
+    def get_schedule_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkcalendar__1__0_models.GetScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return dingtalkcalendar__1__0_models.GetScheduleResponse().from_map(
+            self.do_roarequest('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/getSchedule', 'json', req, runtime)
+        )
+
+    async def get_schedule_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkcalendar__1__0_models.GetScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return dingtalkcalendar__1__0_models.GetScheduleResponse().from_map(
+            await self.do_roarequest_async('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/getSchedule', 'json', req, runtime)
+        )
+
     def remove_attendee(
         self,
         user_id: str,
@@ -233,7 +285,7 @@ class Client(OpenApiClient):
             headers=real_headers
         )
         return dingtalkcalendar__1__0_models.RemoveAttendeeResponse().from_map(
-            self.do_roarequest('RemoveAttendee', 'calendar_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/attendees', 'json', req, runtime)
+            self.do_roarequest('RemoveAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/attendees/batchRemove', 'json', req, runtime)
         )
 
     async def remove_attendee_with_options_async(
@@ -253,7 +305,7 @@ class Client(OpenApiClient):
             headers=real_headers
         )
         return dingtalkcalendar__1__0_models.RemoveAttendeeResponse().from_map(
-            await self.do_roarequest_async('RemoveAttendee', 'calendar_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/attendees', 'json', req, runtime)
+            await self.do_roarequest_async('RemoveAttendee', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/attendees/batchRemove', 'json', req, runtime)
         )
 
     def add_attendee(
