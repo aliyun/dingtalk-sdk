@@ -638,9 +638,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->autoStart)) {
-            @$body['autoStart'] = $request->autoStart;
-        }
         if (!Utils::isUnset($request->files)) {
             @$body['files'] = $request->files;
         }

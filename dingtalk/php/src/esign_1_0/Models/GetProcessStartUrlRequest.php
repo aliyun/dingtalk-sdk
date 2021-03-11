@@ -13,11 +13,6 @@ use AlibabaCloud\Tea\Model;
 class GetProcessStartUrlRequest extends Model
 {
     /**
-     * @var bool
-     */
-    public $autoStart;
-
-    /**
      * @var files[]
      */
     public $files;
@@ -67,7 +62,6 @@ class GetProcessStartUrlRequest extends Model
      */
     public $dingSuiteKey;
     protected $_name = [
-        'autoStart'          => 'autoStart',
         'files'              => 'files',
         'dingCorpId'         => 'dingCorpId',
         'initiatorUserId'    => 'initiatorUserId',
@@ -87,9 +81,6 @@ class GetProcessStartUrlRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->autoStart) {
-            $res['autoStart'] = $this->autoStart;
-        }
         if (null !== $this->files) {
             $res['files'] = [];
             if (null !== $this->files && \is_array($this->files)) {
@@ -150,9 +141,6 @@ class GetProcessStartUrlRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['autoStart'])) {
-            $model->autoStart = $map['autoStart'];
-        }
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
                 $model->files = [];

@@ -34,44 +34,6 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string $userId
-     * @param string $groupId
-     *
-     * @return AddAttendeeToEventGroupResponse
-     */
-    public function addAttendeeToEventGroup($userId, $groupId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AddAttendeeToEventGroupHeaders([]);
-
-        return $this->addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                         $userId
-     * @param string                         $groupId
-     * @param AddAttendeeToEventGroupHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return AddAttendeeToEventGroupResponse
-     */
-    public function addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return AddAttendeeToEventGroupResponse::fromMap($this->doROARequest('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/members', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $userId
      *
      * @return SendInteractiveCardResponse
      */
@@ -214,6 +176,44 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendMessageToEventGroupResponse::fromMap($this->doROARequest('SendMessageToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/messages', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $groupId
+     *
+     * @return AddAttendeeToEventGroupResponse
+     */
+    public function addAttendeeToEventGroup($userId, $groupId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddAttendeeToEventGroupHeaders([]);
+
+        return $this->addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $userId
+     * @param string                         $groupId
+     * @param AddAttendeeToEventGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AddAttendeeToEventGroupResponse
+     */
+    public function addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return AddAttendeeToEventGroupResponse::fromMap($this->doROARequest('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/members', 'json', $req, $runtime));
     }
 
     /**

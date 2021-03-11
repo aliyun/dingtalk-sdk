@@ -37,6 +37,11 @@ class participants extends Model
      * @var string
      */
     public $accountName;
+
+    /**
+     * @var string
+     */
+    public $orgName;
     protected $_name = [
         'accountType'      => 'accountType',
         'dingCorpId'       => 'dingCorpId',
@@ -44,6 +49,7 @@ class participants extends Model
         'userId'           => 'userId',
         'account'          => 'account',
         'accountName'      => 'accountName',
+        'orgName'          => 'orgName',
     ];
 
     public function validate()
@@ -70,6 +76,9 @@ class participants extends Model
         }
         if (null !== $this->accountName) {
             $res['accountName'] = $this->accountName;
+        }
+        if (null !== $this->orgName) {
+            $res['orgName'] = $this->orgName;
         }
 
         return $res;
@@ -100,6 +109,9 @@ class participants extends Model
         }
         if (isset($map['accountName'])) {
             $model->accountName = $map['accountName'];
+        }
+        if (isset($map['orgName'])) {
+            $model->orgName = $map['orgName'];
         }
 
         return $model;
