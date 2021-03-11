@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProcessStartUrlRequest extends TeaModel {
-    @NameInMap("autoStart")
-    public Boolean autoStart;
-
     @NameInMap("files")
     public java.util.List<GetProcessStartUrlRequestFiles> files;
 
@@ -40,14 +37,6 @@ public class GetProcessStartUrlRequest extends TeaModel {
     public static GetProcessStartUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         GetProcessStartUrlRequest self = new GetProcessStartUrlRequest();
         return TeaModel.build(map, self);
-    }
-
-    public GetProcessStartUrlRequest setAutoStart(Boolean autoStart) {
-        this.autoStart = autoStart;
-        return this;
-    }
-    public Boolean getAutoStart() {
-        return this.autoStart;
     }
 
     public GetProcessStartUrlRequest setFiles(java.util.List<GetProcessStartUrlRequestFiles> files) {
@@ -179,6 +168,9 @@ public class GetProcessStartUrlRequest extends TeaModel {
         @NameInMap("accountName")
         public String accountName;
 
+        @NameInMap("orgName")
+        public String orgName;
+
         public static GetProcessStartUrlRequestParticipants build(java.util.Map<String, ?> map) throws Exception {
             GetProcessStartUrlRequestParticipants self = new GetProcessStartUrlRequestParticipants();
             return TeaModel.build(map, self);
@@ -230,6 +222,14 @@ public class GetProcessStartUrlRequest extends TeaModel {
         }
         public String getAccountName() {
             return this.accountName;
+        }
+
+        public GetProcessStartUrlRequestParticipants setOrgName(String orgName) {
+            this.orgName = orgName;
+            return this;
+        }
+        public String getOrgName() {
+            return this.orgName;
         }
 
     }

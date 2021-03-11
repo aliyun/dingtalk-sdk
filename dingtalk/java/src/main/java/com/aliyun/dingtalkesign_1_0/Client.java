@@ -442,10 +442,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetProcessStartUrlResponse getProcessStartUrlWithOptions(GetProcessStartUrlRequest request, GetProcessStartUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.autoStart)) {
-            body.put("autoStart", request.autoStart);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.files)) {
             body.put("files", request.files);
         }

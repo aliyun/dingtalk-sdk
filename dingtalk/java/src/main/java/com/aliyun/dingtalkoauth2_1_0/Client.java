@@ -56,4 +56,88 @@ public class Client extends com.aliyun.teaopenapi.Client {
         ));
         return TeaModel.toModel(this.doROARequest("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/userAccessToken", "json", req, runtime), new GetUserTokenResponse());
     }
+
+    public GetAccessTokenResponse getAccessToken(GetAccessTokenRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.getAccessTokenWithOptions(request, headers, runtime);
+    }
+
+    public GetAccessTokenResponse getAccessTokenWithOptions(GetAccessTokenRequest request, java.util.Map<String, String> headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appKey)) {
+            body.put("appKey", request.appKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appSecret)) {
+            body.put("appSecret", request.appSecret);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/accessToken", "json", req, runtime), new GetAccessTokenResponse());
+    }
+
+    public GetSuiteAccessTokenResponse getSuiteAccessToken(GetSuiteAccessTokenRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.getSuiteAccessTokenWithOptions(request, headers, runtime);
+    }
+
+    public GetSuiteAccessTokenResponse getSuiteAccessTokenWithOptions(GetSuiteAccessTokenRequest request, java.util.Map<String, String> headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteKey)) {
+            body.put("suiteKey", request.suiteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteSecret)) {
+            body.put("suiteSecret", request.suiteSecret);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteTicket)) {
+            body.put("suiteTicket", request.suiteTicket);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetSuiteAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/suiteAccessToken", "json", req, runtime), new GetSuiteAccessTokenResponse());
+    }
+
+    public GetCorpAccessTokenResponse getCorpAccessToken(GetCorpAccessTokenRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.getCorpAccessTokenWithOptions(request, headers, runtime);
+    }
+
+    public GetCorpAccessTokenResponse getCorpAccessTokenWithOptions(GetCorpAccessTokenRequest request, java.util.Map<String, String> headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteKey)) {
+            body.put("suiteKey", request.suiteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteSecret)) {
+            body.put("suiteSecret", request.suiteSecret);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.authCorpId)) {
+            body.put("authCorpId", request.authCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteTicket)) {
+            body.put("suiteTicket", request.suiteTicket);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/corpAccessToken", "json", req, runtime), new GetCorpAccessTokenResponse());
+    }
 }
