@@ -20,62 +20,6 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
-    def add_attendee_to_event_group(
-        self,
-        user_id: str,
-        group_id: str,
-    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders()
-        return self.add_attendee_to_event_group_with_options(user_id, group_id, headers, runtime)
-
-    async def add_attendee_to_event_group_async(
-        self,
-        user_id: str,
-        group_id: str,
-    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders()
-        return await self.add_attendee_to_event_group_with_options_async(user_id, group_id, headers, runtime)
-
-    def add_attendee_to_event_group_with_options(
-        self,
-        user_id: str,
-        group_id: str,
-        headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse().from_map(
-            self.do_roarequest('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/members', 'json', req, runtime)
-        )
-
-    async def add_attendee_to_event_group_with_options_async(
-        self,
-        user_id: str,
-        group_id: str,
-        headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse().from_map(
-            await self.do_roarequest_async('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/members', 'json', req, runtime)
-        )
-
     def send_interactive_card(
         self,
         user_id: str,
@@ -286,6 +230,62 @@ class Client(OpenApiClient):
         )
         return dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse().from_map(
             await self.do_roarequest_async('SendMessageToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/messages', 'json', req, runtime)
+        )
+
+    def add_attendee_to_event_group(
+        self,
+        user_id: str,
+        group_id: str,
+    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders()
+        return self.add_attendee_to_event_group_with_options(user_id, group_id, headers, runtime)
+
+    async def add_attendee_to_event_group_async(
+        self,
+        user_id: str,
+        group_id: str,
+    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders()
+        return await self.add_attendee_to_event_group_with_options_async(user_id, group_id, headers, runtime)
+
+    def add_attendee_to_event_group_with_options(
+        self,
+        user_id: str,
+        group_id: str,
+        headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse().from_map(
+            self.do_roarequest('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/members', 'json', req, runtime)
+        )
+
+    async def add_attendee_to_event_group_with_options_async(
+        self,
+        user_id: str,
+        group_id: str,
+        headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse().from_map(
+            await self.do_roarequest_async('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/members', 'json', req, runtime)
         )
 
     def create_event_group(

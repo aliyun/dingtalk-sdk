@@ -90,3 +90,183 @@ class Client(OpenApiClient):
         return dingtalkoauth_2__1__0_models.GetUserTokenResponse().from_map(
             await self.do_roarequest_async('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
         )
+
+    def get_access_token(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_access_token_with_options(request, headers, runtime)
+
+    async def get_access_token_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_access_token_with_options_async(request, headers, runtime)
+
+    def get_access_token_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.app_secret):
+            body['appSecret'] = request.app_secret
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return dingtalkoauth_2__1__0_models.GetAccessTokenResponse().from_map(
+            self.do_roarequest('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/accessToken', 'json', req, runtime)
+        )
+
+    async def get_access_token_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.app_secret):
+            body['appSecret'] = request.app_secret
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return dingtalkoauth_2__1__0_models.GetAccessTokenResponse().from_map(
+            await self.do_roarequest_async('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/accessToken', 'json', req, runtime)
+        )
+
+    def get_suite_access_token(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_suite_access_token_with_options(request, headers, runtime)
+
+    async def get_suite_access_token_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_suite_access_token_with_options_async(request, headers, runtime)
+
+    def get_suite_access_token_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.suite_secret):
+            body['suiteSecret'] = request.suite_secret
+        if not UtilClient.is_unset(request.suite_ticket):
+            body['suiteTicket'] = request.suite_ticket
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse().from_map(
+            self.do_roarequest('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/suiteAccessToken', 'json', req, runtime)
+        )
+
+    async def get_suite_access_token_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.suite_secret):
+            body['suiteSecret'] = request.suite_secret
+        if not UtilClient.is_unset(request.suite_ticket):
+            body['suiteTicket'] = request.suite_ticket
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse().from_map(
+            await self.do_roarequest_async('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/suiteAccessToken', 'json', req, runtime)
+        )
+
+    def get_corp_access_token(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_corp_access_token_with_options(request, headers, runtime)
+
+    async def get_corp_access_token_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_corp_access_token_with_options_async(request, headers, runtime)
+
+    def get_corp_access_token_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.suite_secret):
+            body['suiteSecret'] = request.suite_secret
+        if not UtilClient.is_unset(request.auth_corp_id):
+            body['authCorpId'] = request.auth_corp_id
+        if not UtilClient.is_unset(request.suite_ticket):
+            body['suiteTicket'] = request.suite_ticket
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse().from_map(
+            self.do_roarequest('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
+        )
+
+    async def get_corp_access_token_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_key):
+            body['suiteKey'] = request.suite_key
+        if not UtilClient.is_unset(request.suite_secret):
+            body['suiteSecret'] = request.suite_secret
+        if not UtilClient.is_unset(request.auth_corp_id):
+            body['authCorpId'] = request.auth_corp_id
+        if not UtilClient.is_unset(request.suite_ticket):
+            body['suiteTicket'] = request.suite_ticket
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse().from_map(
+            await self.do_roarequest_async('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
+        )

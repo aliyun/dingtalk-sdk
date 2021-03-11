@@ -817,8 +817,6 @@ class Client(OpenApiClient):
     ) -> dingtalkesign__1__0_models.GetProcessStartUrlResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.auto_start):
-            body['autoStart'] = request.auto_start
         if not UtilClient.is_unset(request.files):
             body['files'] = request.files
         if not UtilClient.is_unset(request.ding_corp_id):
@@ -860,8 +858,6 @@ class Client(OpenApiClient):
     ) -> dingtalkesign__1__0_models.GetProcessStartUrlResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.auto_start):
-            body['autoStart'] = request.auto_start
         if not UtilClient.is_unset(request.files):
             body['files'] = request.files
         if not UtilClient.is_unset(request.ding_corp_id):

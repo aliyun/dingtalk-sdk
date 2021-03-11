@@ -2091,6 +2091,7 @@ class GetProcessStartUrlRequestParticipants(TeaModel):
         user_id: str = None,
         account: str = None,
         account_name: str = None,
+        org_name: str = None,
     ):
         self.account_type = account_type
         self.ding_corp_id = ding_corp_id
@@ -2098,6 +2099,7 @@ class GetProcessStartUrlRequestParticipants(TeaModel):
         self.user_id = user_id
         self.account = account
         self.account_name = account_name
+        self.org_name = org_name
 
     def validate(self):
         pass
@@ -2116,6 +2118,8 @@ class GetProcessStartUrlRequestParticipants(TeaModel):
             result['account'] = self.account
         if self.account_name is not None:
             result['accountName'] = self.account_name
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
         return result
 
     def from_map(self, m: dict = None):
@@ -2132,6 +2136,8 @@ class GetProcessStartUrlRequestParticipants(TeaModel):
             self.account = m.get('account')
         if m.get('accountName') is not None:
             self.account_name = m.get('accountName')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
         return self
 
 
@@ -2226,7 +2232,6 @@ class GetProcessStartUrlRequestCcs(TeaModel):
 class GetProcessStartUrlRequest(TeaModel):
     def __init__(
         self,
-        auto_start: bool = None,
         files: List[GetProcessStartUrlRequestFiles] = None,
         ding_corp_id: str = None,
         initiator_user_id: str = None,
@@ -2238,7 +2243,6 @@ class GetProcessStartUrlRequest(TeaModel):
         ding_isv_access_token: str = None,
         ding_suite_key: str = None,
     ):
-        self.auto_start = auto_start
         self.files = files
         self.ding_corp_id = ding_corp_id
         self.initiator_user_id = initiator_user_id
@@ -2268,8 +2272,6 @@ class GetProcessStartUrlRequest(TeaModel):
 
     def to_map(self):
         result = dict()
-        if self.auto_start is not None:
-            result['autoStart'] = self.auto_start
         result['files'] = []
         if self.files is not None:
             for k in self.files:
@@ -2300,8 +2302,6 @@ class GetProcessStartUrlRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('autoStart') is not None:
-            self.auto_start = m.get('autoStart')
         self.files = []
         if m.get('files') is not None:
             for k in m.get('files'):

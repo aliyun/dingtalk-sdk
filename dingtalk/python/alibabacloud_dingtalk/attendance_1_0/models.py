@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict
+from typing import Dict, List
 
 
 class CreateApproveHeaders(TeaModel):
@@ -192,6 +192,272 @@ class CreateApproveResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateApproveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserHolidaysHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserHolidaysRequestTopHolidayQueryParam(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+        work_date_from: int = None,
+        work_date_to: int = None,
+    ):
+        # 员工列表，staffId
+        self.user_ids = user_ids
+        # 开始日期
+        self.work_date_from = work_date_from
+        # 结束日期
+        self.work_date_to = work_date_to
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        if self.work_date_from is not None:
+            result['workDateFrom'] = self.work_date_from
+        if self.work_date_to is not None:
+            result['workDateTo'] = self.work_date_to
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        if m.get('workDateFrom') is not None:
+            self.work_date_from = m.get('workDateFrom')
+        if m.get('workDateTo') is not None:
+            self.work_date_to = m.get('workDateTo')
+        return self
+
+
+class GetUserHolidaysRequest(TeaModel):
+    def __init__(
+        self,
+        top_holiday_query_param: GetUserHolidaysRequestTopHolidayQueryParam = None,
+    ):
+        # 查询对象
+        self.top_holiday_query_param = top_holiday_query_param
+
+    def validate(self):
+        if self.top_holiday_query_param:
+            self.top_holiday_query_param.validate()
+
+    def to_map(self):
+        result = dict()
+        if self.top_holiday_query_param is not None:
+            result['topHolidayQueryParam'] = self.top_holiday_query_param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('topHolidayQueryParam') is not None:
+            temp_model = GetUserHolidaysRequestTopHolidayQueryParam()
+            self.top_holiday_query_param = temp_model.from_map(m['topHolidayQueryParam'])
+        return self
+
+
+class GetUserHolidaysShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        top_holiday_query_param_shrink: str = None,
+    ):
+        # 查询对象
+        self.top_holiday_query_param_shrink = top_holiday_query_param_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = dict()
+        if self.top_holiday_query_param_shrink is not None:
+            result['topHolidayQueryParam'] = self.top_holiday_query_param_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('topHolidayQueryParam') is not None:
+            self.top_holiday_query_param_shrink = m.get('topHolidayQueryParam')
+        return self
+
+
+class GetUserHolidaysResponseBodyResultHolidays(TeaModel):
+    def __init__(
+        self,
+        work_date: int = None,
+        holiday_name: str = None,
+        holiday_type: str = None,
+        real_work_date: int = None,
+    ):
+        # 日期
+        self.work_date = work_date
+        # 假期名称
+        self.holiday_name = holiday_name
+        # 假期类型，festival：法定节假日；rest：调休日；overtime：加班日；
+        self.holiday_type = holiday_type
+        # 补休日，只有假期类型为加班日时才有值
+        self.real_work_date = real_work_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = dict()
+        if self.work_date is not None:
+            result['workDate'] = self.work_date
+        if self.holiday_name is not None:
+            result['holidayName'] = self.holiday_name
+        if self.holiday_type is not None:
+            result['holidayType'] = self.holiday_type
+        if self.real_work_date is not None:
+            result['realWorkDate'] = self.real_work_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('workDate') is not None:
+            self.work_date = m.get('workDate')
+        if m.get('holidayName') is not None:
+            self.holiday_name = m.get('holidayName')
+        if m.get('holidayType') is not None:
+            self.holiday_type = m.get('holidayType')
+        if m.get('realWorkDate') is not None:
+            self.real_work_date = m.get('realWorkDate')
+        return self
+
+
+class GetUserHolidaysResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        holidays: List[GetUserHolidaysResponseBodyResultHolidays] = None,
+    ):
+        # 员工id
+        self.user_id = user_id
+        # 假期列表
+        self.holidays = holidays
+
+    def validate(self):
+        if self.holidays:
+            for k in self.holidays:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        result['holidays'] = []
+        if self.holidays is not None:
+            for k in self.holidays:
+                result['holidays'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        self.holidays = []
+        if m.get('holidays') is not None:
+            for k in m.get('holidays'):
+                temp_model = GetUserHolidaysResponseBodyResultHolidays()
+                self.holidays.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserHolidaysResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetUserHolidaysResponseBodyResult] = None,
+    ):
+        # 员工假期列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetUserHolidaysResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserHolidaysResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserHolidaysResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserHolidaysResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
