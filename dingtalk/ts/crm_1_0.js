@@ -1,0 +1,1 @@
+module.exports = require('./dist').crm_1_0;

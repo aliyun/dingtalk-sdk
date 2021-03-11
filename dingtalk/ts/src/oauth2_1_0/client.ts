@@ -85,6 +85,213 @@ export class GetUserTokenResponse extends $tea.Model {
   }
 }
 
+export class GetAccessTokenRequest extends $tea.Model {
+  appKey?: string;
+  appSecret?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appKey: 'appKey',
+      appSecret: 'appSecret',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appKey: 'string',
+      appSecret: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAccessTokenResponseBody extends $tea.Model {
+  accessToken?: string;
+  expireIn?: number;
+  static names(): { [key: string]: string } {
+    return {
+      accessToken: 'accessToken',
+      expireIn: 'expireIn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessToken: 'string',
+      expireIn: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAccessTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAccessTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAccessTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSuiteAccessTokenRequest extends $tea.Model {
+  suiteKey?: string;
+  suiteSecret?: string;
+  suiteTicket?: string;
+  static names(): { [key: string]: string } {
+    return {
+      suiteKey: 'suiteKey',
+      suiteSecret: 'suiteSecret',
+      suiteTicket: 'suiteTicket',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      suiteKey: 'string',
+      suiteSecret: 'string',
+      suiteTicket: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSuiteAccessTokenResponseBody extends $tea.Model {
+  accessToken?: string;
+  expireIn?: number;
+  static names(): { [key: string]: string } {
+    return {
+      accessToken: 'accessToken',
+      expireIn: 'expireIn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessToken: 'string',
+      expireIn: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSuiteAccessTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSuiteAccessTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSuiteAccessTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCorpAccessTokenRequest extends $tea.Model {
+  suiteKey?: string;
+  suiteSecret?: string;
+  authCorpId?: string;
+  suiteTicket?: string;
+  static names(): { [key: string]: string } {
+    return {
+      suiteKey: 'suiteKey',
+      suiteSecret: 'suiteSecret',
+      authCorpId: 'authCorpId',
+      suiteTicket: 'suiteTicket',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      suiteKey: 'string',
+      suiteSecret: 'string',
+      authCorpId: 'string',
+      suiteTicket: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCorpAccessTokenResponseBody extends $tea.Model {
+  accessToken?: string;
+  expireIn?: number;
+  static names(): { [key: string]: string } {
+    return {
+      accessToken: 'accessToken',
+      expireIn: 'expireIn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessToken: 'string',
+      expireIn: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCorpAccessTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCorpAccessTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCorpAccessTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -132,6 +339,90 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserTokenResponse>(await this.doROARequest("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/userAccessToken`, "json", req, runtime), new GetUserTokenResponse({}));
+  }
+
+  async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.getAccessTokenWithOptions(request, headers, runtime);
+  }
+
+  async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.appSecret)) {
+      body["appSecret"] = request.appSecret;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetAccessTokenResponse>(await this.doROARequest("GetAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/accessToken`, "json", req, runtime), new GetAccessTokenResponse({}));
+  }
+
+  async getSuiteAccessToken(request: GetSuiteAccessTokenRequest): Promise<GetSuiteAccessTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.getSuiteAccessTokenWithOptions(request, headers, runtime);
+  }
+
+  async getSuiteAccessTokenWithOptions(request: GetSuiteAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSuiteAccessTokenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.suiteKey)) {
+      body["suiteKey"] = request.suiteKey;
+    }
+
+    if (!Util.isUnset(request.suiteSecret)) {
+      body["suiteSecret"] = request.suiteSecret;
+    }
+
+    if (!Util.isUnset(request.suiteTicket)) {
+      body["suiteTicket"] = request.suiteTicket;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetSuiteAccessTokenResponse>(await this.doROARequest("GetSuiteAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/suiteAccessToken`, "json", req, runtime), new GetSuiteAccessTokenResponse({}));
+  }
+
+  async getCorpAccessToken(request: GetCorpAccessTokenRequest): Promise<GetCorpAccessTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.getCorpAccessTokenWithOptions(request, headers, runtime);
+  }
+
+  async getCorpAccessTokenWithOptions(request: GetCorpAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetCorpAccessTokenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.suiteKey)) {
+      body["suiteKey"] = request.suiteKey;
+    }
+
+    if (!Util.isUnset(request.suiteSecret)) {
+      body["suiteSecret"] = request.suiteSecret;
+    }
+
+    if (!Util.isUnset(request.authCorpId)) {
+      body["authCorpId"] = request.authCorpId;
+    }
+
+    if (!Util.isUnset(request.suiteTicket)) {
+      body["suiteTicket"] = request.suiteTicket;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetCorpAccessTokenResponse>(await this.doROARequest("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/corpAccessToken`, "json", req, runtime), new GetCorpAccessTokenResponse({}));
   }
 
 }

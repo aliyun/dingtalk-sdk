@@ -1079,7 +1079,6 @@ export class GetProcessStartUrlHeaders extends $tea.Model {
 }
 
 export class GetProcessStartUrlRequest extends $tea.Model {
-  autoStart?: boolean;
   files?: GetProcessStartUrlRequestFiles[];
   dingCorpId?: string;
   initiatorUserId?: string;
@@ -1092,7 +1091,6 @@ export class GetProcessStartUrlRequest extends $tea.Model {
   dingSuiteKey?: string;
   static names(): { [key: string]: string } {
     return {
-      autoStart: 'autoStart',
       files: 'files',
       dingCorpId: 'dingCorpId',
       initiatorUserId: 'initiatorUserId',
@@ -1108,7 +1106,6 @@ export class GetProcessStartUrlRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      autoStart: 'boolean',
       files: { 'type': 'array', 'itemType': GetProcessStartUrlRequestFiles },
       dingCorpId: 'string',
       initiatorUserId: 'string',
@@ -2147,6 +2144,7 @@ export class GetProcessStartUrlRequestParticipants extends $tea.Model {
   userId?: string;
   account?: string;
   accountName?: string;
+  orgName?: string;
   static names(): { [key: string]: string } {
     return {
       accountType: 'accountType',
@@ -2155,6 +2153,7 @@ export class GetProcessStartUrlRequestParticipants extends $tea.Model {
       userId: 'userId',
       account: 'account',
       accountName: 'accountName',
+      orgName: 'orgName',
     };
   }
 
@@ -2166,6 +2165,7 @@ export class GetProcessStartUrlRequestParticipants extends $tea.Model {
       userId: 'string',
       account: 'string',
       accountName: 'string',
+      orgName: 'string',
     };
   }
 
@@ -2865,10 +2865,6 @@ export default class Client extends OpenApi {
   async getProcessStartUrlWithOptions(request: GetProcessStartUrlRequest, headers: GetProcessStartUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessStartUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.autoStart)) {
-      body["autoStart"] = request.autoStart;
-    }
-
     if (!Util.isUnset(request.files)) {
       body["files"] = request.files;
     }

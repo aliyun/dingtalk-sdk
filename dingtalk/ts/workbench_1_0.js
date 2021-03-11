@@ -1,0 +1,1 @@
+module.exports = require('./dist').workbench_1_0;
