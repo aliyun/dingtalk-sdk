@@ -940,10 +940,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoStart))
-            {
-                body["autoStart"] = request.AutoStart;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
             {
                 body["files"] = request.Files;
@@ -1005,10 +1001,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoStart))
-            {
-                body["autoStart"] = request.AutoStart;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Files))
             {
                 body["files"] = request.Files;

@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class GetProcessStartUrlRequest : TeaModel {
-        [NameInMap("autoStart")]
-        [Validation(Required=false)]
-        public bool? AutoStart { get; set; }
-
         [NameInMap("files")]
         [Validation(Required=false)]
         public List<GetProcessStartUrlRequestFiles> Files { get; set; }
@@ -62,6 +58,10 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [NameInMap("accountName")]
             [Validation(Required=false)]
             public string AccountName { get; set; }
+
+            [NameInMap("orgName")]
+            [Validation(Required=false)]
+            public string OrgName { get; set; }
 
         }
 
