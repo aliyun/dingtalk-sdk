@@ -127,35 +127,22 @@ export class GetUserHolidaysHeaders extends $tea.Model {
 }
 
 export class GetUserHolidaysRequest extends $tea.Model {
-  topHolidayQueryParam?: GetUserHolidaysRequestTopHolidayQueryParam;
+  userIds?: string[];
+  workDateFrom?: number;
+  workDateTo?: number;
   static names(): { [key: string]: string } {
     return {
-      topHolidayQueryParam: 'topHolidayQueryParam',
+      userIds: 'userIds',
+      workDateFrom: 'workDateFrom',
+      workDateTo: 'workDateTo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      topHolidayQueryParam: GetUserHolidaysRequestTopHolidayQueryParam,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserHolidaysShrinkRequest extends $tea.Model {
-  topHolidayQueryParamShrink?: string;
-  static names(): { [key: string]: string } {
-    return {
-      topHolidayQueryParamShrink: 'topHolidayQueryParam',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      topHolidayQueryParamShrink: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      workDateFrom: 'number',
+      workDateTo: 'number',
     };
   }
 
@@ -225,31 +212,6 @@ export class CreateApproveRequestPunchParam extends $tea.Model {
       positionId: 'string',
       positionType: 'string',
       positionName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserHolidaysRequestTopHolidayQueryParam extends $tea.Model {
-  userIds?: string[];
-  workDateFrom?: number;
-  workDateTo?: number;
-  static names(): { [key: string]: string } {
-    return {
-      userIds: 'userIds',
-      workDateFrom: 'workDateFrom',
-      workDateTo: 'workDateTo',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userIds: { 'type': 'array', 'itemType': 'string' },
-      workDateFrom: 'number',
-      workDateTo: 'number',
     };
   }
 
@@ -376,17 +338,19 @@ export default class Client extends OpenApi {
     return await this.getUserHolidaysWithOptions(request, headers, runtime);
   }
 
-  async getUserHolidaysWithOptions(tmpReq: GetUserHolidaysRequest, headers: GetUserHolidaysHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserHolidaysResponse> {
-    Util.validateModel(tmpReq);
-    let request = new GetUserHolidaysShrinkRequest({ });
-    OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset($tea.toMap(tmpReq.topHolidayQueryParam))) {
-      request.topHolidayQueryParamShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.topHolidayQueryParam), "topHolidayQueryParam", "json");
+  async getUserHolidaysWithOptions(request: GetUserHolidaysRequest, headers: GetUserHolidaysHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserHolidaysResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
     }
 
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.topHolidayQueryParamShrink)) {
-      query["topHolidayQueryParam"] = request.topHolidayQueryParamShrink;
+    if (!Util.isUnset(request.workDateFrom)) {
+      body["workDateFrom"] = request.workDateFrom;
+    }
+
+    if (!Util.isUnset(request.workDateTo)) {
+      body["workDateTo"] = request.workDateTo;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -400,9 +364,9 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+    return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
   }
 
 }
