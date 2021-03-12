@@ -76,17 +76,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getUserHolidaysWithOptions(request, headers, runtime);
     }
 
-    public GetUserHolidaysResponse getUserHolidaysWithOptions(GetUserHolidaysRequest tmpReq, GetUserHolidaysHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        GetUserHolidaysShrinkRequest request = new GetUserHolidaysShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(tmpReq.topHolidayQueryParam))) {
-            request.topHolidayQueryParamShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(TeaModel.buildMap(tmpReq.topHolidayQueryParam), "topHolidayQueryParam", "json");
+    public GetUserHolidaysResponse getUserHolidaysWithOptions(GetUserHolidaysRequest request, GetUserHolidaysHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
         }
 
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.topHolidayQueryParamShrink)) {
-            query.put("topHolidayQueryParam", request.topHolidayQueryParamShrink);
+        if (!com.aliyun.teautil.Common.isUnset(request.workDateFrom)) {
+            body.put("workDateFrom", request.workDateFrom);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workDateTo)) {
+            body.put("workDateTo", request.workDateTo);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -100,8 +102,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "GET", "AK", "/v1.0/attendance/holidays", "json", req, runtime), new GetUserHolidaysResponse());
+        return TeaModel.toModel(this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/holidays", "json", req, runtime), new GetUserHolidaysResponse());
     }
 }
