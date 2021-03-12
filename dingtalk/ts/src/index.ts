@@ -6,6 +6,7 @@ import * as crm_1_0 from './crm_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
+import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
 import * as live_1_0 from './live_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
@@ -21,6 +22,7 @@ export = {
   edu_1_0,
   esign_1_0,
   hrbrain_1_0,
+  hrm_1_0,
   im_1_0,
   live_1_0,
   oauth2_1_0,
