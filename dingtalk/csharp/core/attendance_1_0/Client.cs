@@ -144,19 +144,21 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return await GetUserHolidaysWithOptionsAsync(request, headers, runtime);
         }
 
-        public GetUserHolidaysResponse GetUserHolidaysWithOptions(GetUserHolidaysRequest tmpReq, GetUserHolidaysHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetUserHolidaysResponse GetUserHolidaysWithOptions(GetUserHolidaysRequest request, GetUserHolidaysHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            GetUserHolidaysShrinkRequest request = new GetUserHolidaysShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.TopHolidayQueryParam.ToMap()))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
-                request.TopHolidayQueryParamShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.TopHolidayQueryParam.ToMap(), "topHolidayQueryParam", "json");
+                body["userIds"] = request.UserIds;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopHolidayQueryParamShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkDateFrom))
             {
-                query["topHolidayQueryParam"] = request.TopHolidayQueryParamShrink;
+                body["workDateFrom"] = request.WorkDateFrom;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkDateTo))
+            {
+                body["workDateTo"] = request.WorkDateTo;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -170,24 +172,26 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetUserHolidaysResponse>(DoROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "GET", "AK", "/v1.0/attendance/holidays", "json", req, runtime));
+            return TeaModel.ToObject<GetUserHolidaysResponse>(DoROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/holidays", "json", req, runtime));
         }
 
-        public async Task<GetUserHolidaysResponse> GetUserHolidaysWithOptionsAsync(GetUserHolidaysRequest tmpReq, GetUserHolidaysHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetUserHolidaysResponse> GetUserHolidaysWithOptionsAsync(GetUserHolidaysRequest request, GetUserHolidaysHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            GetUserHolidaysShrinkRequest request = new GetUserHolidaysShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.TopHolidayQueryParam.ToMap()))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
-                request.TopHolidayQueryParamShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.TopHolidayQueryParam.ToMap(), "topHolidayQueryParam", "json");
+                body["userIds"] = request.UserIds;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopHolidayQueryParamShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkDateFrom))
             {
-                query["topHolidayQueryParam"] = request.TopHolidayQueryParamShrink;
+                body["workDateFrom"] = request.WorkDateFrom;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkDateTo))
+            {
+                body["workDateTo"] = request.WorkDateTo;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -201,9 +205,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetUserHolidaysResponse>(await DoROARequestAsync("GetUserHolidays", "attendance_1.0", "HTTP", "GET", "AK", "/v1.0/attendance/holidays", "json", req, runtime));
+            return TeaModel.ToObject<GetUserHolidaysResponse>(await DoROARequestAsync("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/holidays", "json", req, runtime));
         }
 
     }
