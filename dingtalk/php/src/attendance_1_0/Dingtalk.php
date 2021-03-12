@@ -11,8 +11,6 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
-use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysShrinkRequest;
-use AlibabaCloud\Tea\Tea;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -100,23 +98,24 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserHolidaysRequest $tmpReq
+     * @param GetUserHolidaysRequest $request
      * @param GetUserHolidaysHeaders $headers
      * @param RuntimeOptions         $runtime
      *
      * @return GetUserHolidaysResponse
      */
-    public function getUserHolidaysWithOptions($tmpReq, $headers, $runtime)
+    public function getUserHolidaysWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new GetUserHolidaysShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->topHolidayQueryParam)) {
-            $request->topHolidayQueryParamShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->topHolidayQueryParam), 'topHolidayQueryParam', 'json');
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
         }
-        $query = [];
-        if (!Utils::isUnset($request->topHolidayQueryParamShrink)) {
-            @$query['topHolidayQueryParam'] = $request->topHolidayQueryParamShrink;
+        if (!Utils::isUnset($request->workDateFrom)) {
+            @$body['workDateFrom'] = $request->workDateFrom;
+        }
+        if (!Utils::isUnset($request->workDateTo)) {
+            @$body['workDateTo'] = $request->workDateTo;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -127,9 +126,9 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+        return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
     }
 }

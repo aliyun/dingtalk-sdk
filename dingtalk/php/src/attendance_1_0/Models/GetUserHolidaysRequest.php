@@ -4,19 +4,34 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest\topHolidayQueryParam;
 use AlibabaCloud\Tea\Model;
 
 class GetUserHolidaysRequest extends Model
 {
     /**
-     * @description 查询对象
+     * @description 员工列表
      *
-     * @var topHolidayQueryParam
+     * @var string[]
      */
-    public $topHolidayQueryParam;
+    public $userIds;
+
+    /**
+     * @description 开始日期
+     *
+     * @var int
+     */
+    public $workDateFrom;
+
+    /**
+     * @description 结束日期
+     *
+     * @var int
+     */
+    public $workDateTo;
     protected $_name = [
-        'topHolidayQueryParam' => 'topHolidayQueryParam',
+        'userIds'      => 'userIds',
+        'workDateFrom' => 'workDateFrom',
+        'workDateTo'   => 'workDateTo',
     ];
 
     public function validate()
@@ -26,8 +41,14 @@ class GetUserHolidaysRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->topHolidayQueryParam) {
-            $res['topHolidayQueryParam'] = null !== $this->topHolidayQueryParam ? $this->topHolidayQueryParam->toMap() : null;
+        if (null !== $this->userIds) {
+            $res['userIds'] = $this->userIds;
+        }
+        if (null !== $this->workDateFrom) {
+            $res['workDateFrom'] = $this->workDateFrom;
+        }
+        if (null !== $this->workDateTo) {
+            $res['workDateTo'] = $this->workDateTo;
         }
 
         return $res;
@@ -41,8 +62,16 @@ class GetUserHolidaysRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['topHolidayQueryParam'])) {
-            $model->topHolidayQueryParam = topHolidayQueryParam::fromMap($map['topHolidayQueryParam']);
+        if (isset($map['userIds'])) {
+            if (!empty($map['userIds'])) {
+                $model->userIds = $map['userIds'];
+            }
+        }
+        if (isset($map['workDateFrom'])) {
+            $model->workDateFrom = $map['workDateFrom'];
+        }
+        if (isset($map['workDateTo'])) {
+            $model->workDateTo = $map['workDateTo'];
         }
 
         return $model;
