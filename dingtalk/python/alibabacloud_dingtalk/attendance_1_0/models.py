@@ -225,14 +225,14 @@ class GetUserHolidaysHeaders(TeaModel):
         return self
 
 
-class GetUserHolidaysRequestTopHolidayQueryParam(TeaModel):
+class GetUserHolidaysRequest(TeaModel):
     def __init__(
         self,
         user_ids: List[str] = None,
         work_date_from: int = None,
         work_date_to: int = None,
     ):
-        # 员工列表，staffId
+        # 员工列表
         self.user_ids = user_ids
         # 开始日期
         self.work_date_from = work_date_from
@@ -260,56 +260,6 @@ class GetUserHolidaysRequestTopHolidayQueryParam(TeaModel):
             self.work_date_from = m.get('workDateFrom')
         if m.get('workDateTo') is not None:
             self.work_date_to = m.get('workDateTo')
-        return self
-
-
-class GetUserHolidaysRequest(TeaModel):
-    def __init__(
-        self,
-        top_holiday_query_param: GetUserHolidaysRequestTopHolidayQueryParam = None,
-    ):
-        # 查询对象
-        self.top_holiday_query_param = top_holiday_query_param
-
-    def validate(self):
-        if self.top_holiday_query_param:
-            self.top_holiday_query_param.validate()
-
-    def to_map(self):
-        result = dict()
-        if self.top_holiday_query_param is not None:
-            result['topHolidayQueryParam'] = self.top_holiday_query_param.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('topHolidayQueryParam') is not None:
-            temp_model = GetUserHolidaysRequestTopHolidayQueryParam()
-            self.top_holiday_query_param = temp_model.from_map(m['topHolidayQueryParam'])
-        return self
-
-
-class GetUserHolidaysShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        top_holiday_query_param_shrink: str = None,
-    ):
-        # 查询对象
-        self.top_holiday_query_param_shrink = top_holiday_query_param_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        result = dict()
-        if self.top_holiday_query_param_shrink is not None:
-            result['topHolidayQueryParam'] = self.top_holiday_query_param_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('topHolidayQueryParam') is not None:
-            self.top_holiday_query_param_shrink = m.get('topHolidayQueryParam')
         return self
 
 

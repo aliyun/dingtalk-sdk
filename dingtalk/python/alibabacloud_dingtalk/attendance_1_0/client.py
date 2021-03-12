@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
-from Tea.core import TeaCore
-
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -123,18 +121,18 @@ class Client(OpenApiClient):
 
     def get_user_holidays_with_options(
         self,
-        tmp_req: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
+        request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
         headers: dingtalkattendance__1__0_models.GetUserHolidaysHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.GetUserHolidaysResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkattendance__1__0_models.GetUserHolidaysShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.top_holiday_query_param):
-            request.top_holiday_query_param_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.top_holiday_query_param), 'topHolidayQueryParam', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.top_holiday_query_param_shrink):
-            query['topHolidayQueryParam'] = request.top_holiday_query_param_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.work_date_from):
+            body['workDateFrom'] = request.work_date_from
+        if not UtilClient.is_unset(request.work_date_to):
+            body['workDateTo'] = request.work_date_to
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -142,26 +140,26 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return dingtalkattendance__1__0_models.GetUserHolidaysResponse().from_map(
-            self.do_roarequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
+            self.do_roarequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
 
     async def get_user_holidays_with_options_async(
         self,
-        tmp_req: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
+        request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
         headers: dingtalkattendance__1__0_models.GetUserHolidaysHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.GetUserHolidaysResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkattendance__1__0_models.GetUserHolidaysShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.top_holiday_query_param):
-            request.top_holiday_query_param_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.top_holiday_query_param), 'topHolidayQueryParam', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.top_holiday_query_param_shrink):
-            query['topHolidayQueryParam'] = request.top_holiday_query_param_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.work_date_from):
+            body['workDateFrom'] = request.work_date_from
+        if not UtilClient.is_unset(request.work_date_to):
+            body['workDateTo'] = request.work_date_to
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -169,8 +167,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return dingtalkattendance__1__0_models.GetUserHolidaysResponse().from_map(
-            await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
+            await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
