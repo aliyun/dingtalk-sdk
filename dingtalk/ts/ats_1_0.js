@@ -1,0 +1,1 @@
+module.exports = require('./dist').ats_1_0;
