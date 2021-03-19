@@ -6,10 +6,10 @@
 
 ## 安装
 
-### Composer
+### Nuget
 
 ```bash
-composer require AlibabaCloud.SDK.Dingtalk
+dotnet add package AlibabaCloud.SDK.Dingtalk
 ```
 
 ## 问题
