@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 
         [NameInMap("deptVisibleScopes")]
         [Validation(Required=false)]
-        public List<string> DeptVisibleScopes { get; set; }
+        public List<float?> DeptVisibleScopes { get; set; }
 
     }
 

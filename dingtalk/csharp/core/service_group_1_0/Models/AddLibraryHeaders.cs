@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
-    public class AddHrmPreentryHeaders : TeaModel {
+    public class AddLibraryHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
