@@ -21,6 +21,68 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def e_cert_query(
+        self,
+        request: dingtalkhrm__1__0_models.ECertQueryRequest,
+    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
+        return self.e_cert_query_with_options(request, headers, runtime)
+
+    async def e_cert_query_async(
+        self,
+        request: dingtalkhrm__1__0_models.ECertQueryRequest,
+    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
+        return await self.e_cert_query_with_options_async(request, headers, runtime)
+
+    def e_cert_query_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.ECertQueryRequest,
+        headers: dingtalkhrm__1__0_models.ECertQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return dingtalkhrm__1__0_models.ECertQueryResponse().from_map(
+            self.do_roarequest('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
+        )
+
+    async def e_cert_query_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.ECertQueryRequest,
+        headers: dingtalkhrm__1__0_models.ECertQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return dingtalkhrm__1__0_models.ECertQueryResponse().from_map(
+            await self.do_roarequest_async('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
+        )
+
     def add_hrm_preentry(
         self,
         request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
