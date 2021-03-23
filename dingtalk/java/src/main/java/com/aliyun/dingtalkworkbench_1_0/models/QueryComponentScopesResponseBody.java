@@ -9,7 +9,7 @@ public class QueryComponentScopesResponseBody extends TeaModel {
     public java.util.List<String> userVisibleScopes;
 
     @NameInMap("deptVisibleScopes")
-    public java.util.List<Float> deptVisibleScopes;
+    public java.util.List<Long> deptVisibleScopes;
 
     public static QueryComponentScopesResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryComponentScopesResponseBody self = new QueryComponentScopesResponseBody();
@@ -24,11 +24,11 @@ public class QueryComponentScopesResponseBody extends TeaModel {
         return this.userVisibleScopes;
     }
 
-    public QueryComponentScopesResponseBody setDeptVisibleScopes(java.util.List<Float> deptVisibleScopes) {
+    public QueryComponentScopesResponseBody setDeptVisibleScopes(java.util.List<Long> deptVisibleScopes) {
         this.deptVisibleScopes = deptVisibleScopes;
         return this;
     }
-    public java.util.List<Float> getDeptVisibleScopes() {
+    public java.util.List<Long> getDeptVisibleScopes() {
         return this.deptVisibleScopes;
     }
 
