@@ -37,7 +37,7 @@ class QueryShortcutScopesResponseBody(TeaModel):
     def __init__(
         self,
         user_visible_scopes: List[str] = None,
-        dept_visible_scopes: List[float] = None,
+        dept_visible_scopes: List[int] = None,
     ):
         # errorMsg
         self.user_visible_scopes = user_visible_scopes
@@ -129,7 +129,7 @@ class QueryComponentScopesResponseBody(TeaModel):
     def __init__(
         self,
         user_visible_scopes: List[str] = None,
-        dept_visible_scopes: List[float] = None,
+        dept_visible_scopes: List[int] = None,
     ):
         # scopes
         self.user_visible_scopes = user_visible_scopes
