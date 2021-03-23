@@ -16,7 +16,7 @@ class QueryComponentScopesResponseBody extends Model
     public $userVisibleScopes;
 
     /**
-     * @var string[]
+     * @var float[]
      */
     public $deptVisibleScopes;
     protected $_name = [

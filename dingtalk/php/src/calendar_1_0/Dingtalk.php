@@ -10,6 +10,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
@@ -154,6 +156,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListEventsResponse::fromMap($this->doROARequest('ListEvents', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return GenerateCaldavAccountResponse
+     */
+    public function generateCaldavAccount($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GenerateCaldavAccountHeaders([]);
+
+        return $this->generateCaldavAccountWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $userId
+     * @param GenerateCaldavAccountHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GenerateCaldavAccountResponse
+     */
+    public function generateCaldavAccountWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GenerateCaldavAccountResponse::fromMap($this->doROARequest('GenerateCaldavAccount', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/caldavAccounts', 'json', $req, $runtime));
     }
 
     /**

@@ -32,6 +32,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vlive_1_0\\": "src/live_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Voauth2_1_0\\": "src/oauth2_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_integration_1_0\\": "src/project_integration_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vservice_group_1_0\\": "src/service_group_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkbench_1_0\\": "src/workbench_1_0/"
     }
   },
