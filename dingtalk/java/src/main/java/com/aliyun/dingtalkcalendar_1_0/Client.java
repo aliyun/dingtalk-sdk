@@ -86,6 +86,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime), new ListEventsResponse());
     }
 
+    public GenerateCaldavAccountResponse generateCaldavAccount(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GenerateCaldavAccountHeaders headers = new GenerateCaldavAccountHeaders();
+        return this.generateCaldavAccountWithOptions(userId, headers, runtime);
+    }
+
+    public GenerateCaldavAccountResponse generateCaldavAccountWithOptions(String userId, GenerateCaldavAccountHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GenerateCaldavAccount", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/caldavAccounts", "json", req, runtime), new GenerateCaldavAccountResponse());
+    }
+
     public GetScheduleResponse getSchedule(String userId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetScheduleHeaders headers = new GetScheduleHeaders();
