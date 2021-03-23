@@ -7,6 +7,127 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ECertQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ECertQueryRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ECertQueryResponseBody extends $tea.Model {
+  realName?: string;
+  certNO?: string;
+  mainDeptId?: number;
+  mainDeptName?: string;
+  employJobId?: string;
+  employJobIdLabel?: string;
+  employPositionId?: string;
+  employPositionIdLabel?: string;
+  employPositionRankId?: string;
+  employPositionRankIdLabel?: string;
+  hiredDate?: string;
+  lastWorkDay?: string;
+  terminationReasonVoluntary?: string[];
+  terminationReasonPassive?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      realName: 'realName',
+      certNO: 'certNO',
+      mainDeptId: 'mainDeptId',
+      mainDeptName: 'mainDeptName',
+      employJobId: 'employJobId',
+      employJobIdLabel: 'employJobIdLabel',
+      employPositionId: 'employPositionId',
+      employPositionIdLabel: 'employPositionIdLabel',
+      employPositionRankId: 'employPositionRankId',
+      employPositionRankIdLabel: 'employPositionRankIdLabel',
+      hiredDate: 'hiredDate',
+      lastWorkDay: 'lastWorkDay',
+      terminationReasonVoluntary: 'terminationReasonVoluntary',
+      terminationReasonPassive: 'terminationReasonPassive',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      realName: 'string',
+      certNO: 'string',
+      mainDeptId: 'number',
+      mainDeptName: 'string',
+      employJobId: 'string',
+      employJobIdLabel: 'string',
+      employPositionId: 'string',
+      employPositionIdLabel: 'string',
+      employPositionRankId: 'string',
+      employPositionRankIdLabel: 'string',
+      hiredDate: 'string',
+      lastWorkDay: 'string',
+      terminationReasonVoluntary: { 'type': 'array', 'itemType': 'string' },
+      terminationReasonPassive: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ECertQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ECertQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ECertQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmPreentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -179,6 +300,35 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async eCertQuery(request: ECertQueryRequest): Promise<ECertQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ECertQueryHeaders({ });
+    return await this.eCertQueryWithOptions(request, headers, runtime);
+  }
+
+  async eCertQueryWithOptions(request: ECertQueryRequest, headers: ECertQueryHeaders, runtime: $Util.RuntimeOptions): Promise<ECertQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
+  }
 
   async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });

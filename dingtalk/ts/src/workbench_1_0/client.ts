@@ -30,7 +30,7 @@ export class QueryShortcutScopesHeaders extends $tea.Model {
 
 export class QueryShortcutScopesResponseBody extends $tea.Model {
   userVisibleScopes?: string[];
-  deptVisibleScopes?: string[];
+  deptVisibleScopes?: number[];
   static names(): { [key: string]: string } {
     return {
       userVisibleScopes: 'userVisibleScopes',
@@ -41,7 +41,7 @@ export class QueryShortcutScopesResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       userVisibleScopes: { 'type': 'array', 'itemType': 'string' },
-      deptVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      deptVisibleScopes: { 'type': 'array', 'itemType': 'number' },
     };
   }
 
@@ -96,7 +96,7 @@ export class QueryComponentScopesHeaders extends $tea.Model {
 
 export class QueryComponentScopesResponseBody extends $tea.Model {
   userVisibleScopes?: string[];
-  deptVisibleScopes?: string[];
+  deptVisibleScopes?: number[];
   static names(): { [key: string]: string } {
     return {
       userVisibleScopes: 'userVisibleScopes',
@@ -107,7 +107,7 @@ export class QueryComponentScopesResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       userVisibleScopes: { 'type': 'array', 'itemType': 'string' },
-      deptVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      deptVisibleScopes: { 'type': 'array', 'itemType': 'number' },
     };
   }
 

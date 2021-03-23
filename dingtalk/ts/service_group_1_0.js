@@ -1,0 +1,1 @@
+module.exports = require('./dist').service_group_1_0;

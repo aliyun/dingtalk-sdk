@@ -12,6 +12,7 @@ import * as im_1_0 from './im_1_0/client';
 import * as live_1_0 from './live_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
+import * as service_group_1_0 from './service_group_1_0/client';
 import * as workbench_1_0 from './workbench_1_0/client';
 
 export = {
@@ -29,5 +30,6 @@ export = {
   live_1_0,
   oauth2_1_0,
   project_integration_1_0,
+  service_group_1_0,
   workbench_1_0,
 }
