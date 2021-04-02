@@ -138,50 +138,6 @@ export class SendSingleInteractiveCardResponse extends $tea.Model {
   }
 }
 
-export class SendMessageToEventGroupHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SendMessageToEventGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: {[key: string]: any};
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class AddAttendeeToEventGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -347,28 +303,6 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<SendSingleInteractiveCardResponse>(await this.doROARequest("SendSingleInteractiveCard", "projectIntegration_1.0", "HTTP", "POST", "AK", `/v1.0/projectIntegration/users/${userId}/singleChatCardMessages`, "json", req, runtime), new SendSingleInteractiveCardResponse({}));
-  }
-
-  async sendMessageToEventGroup(userId: string, groupId: string): Promise<SendMessageToEventGroupResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendMessageToEventGroupHeaders({ });
-    return await this.sendMessageToEventGroupWithOptions(userId, groupId, headers, runtime);
-  }
-
-  async sendMessageToEventGroupWithOptions(userId: string, groupId: string, headers: SendMessageToEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageToEventGroupResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<SendMessageToEventGroupResponse>(await this.doROARequest("SendMessageToEventGroup", "projectIntegration_1.0", "HTTP", "POST", "AK", `/v1.0/projectIntegration/users/${userId}/eventGroups/${groupId}/messages`, "json", req, runtime), new SendMessageToEventGroupResponse({}));
   }
 
   async addAttendeeToEventGroup(userId: string, groupId: string): Promise<AddAttendeeToEventGroupResponse> {

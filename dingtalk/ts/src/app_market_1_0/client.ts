@@ -82,6 +82,107 @@ export class UserTaskReportResponse extends $tea.Model {
   }
 }
 
+export class GetPersonalExperienceInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalExperienceInfoRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalExperienceInfoResponseBody extends $tea.Model {
+  result?: GetPersonalExperienceInfoResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetPersonalExperienceInfoResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalExperienceInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPersonalExperienceInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPersonalExperienceInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalExperienceInfoResponseBodyResult extends $tea.Model {
+  mainCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mainCorpId: 'mainCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mainCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -138,6 +239,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UserTaskReportResponse>(await this.doROARequest("UserTaskReport", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/tasks`, "boolean", req, runtime), new UserTaskReportResponse({}));
+  }
+
+  async getPersonalExperienceInfo(request: GetPersonalExperienceInfoRequest): Promise<GetPersonalExperienceInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPersonalExperienceInfoHeaders({ });
+    return await this.getPersonalExperienceInfoWithOptions(request, headers, runtime);
+  }
+
+  async getPersonalExperienceInfoWithOptions(request: GetPersonalExperienceInfoRequest, headers: GetPersonalExperienceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalExperienceInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetPersonalExperienceInfoResponse>(await this.doROARequest("GetPersonalExperienceInfo", "appMarket_1.0", "HTTP", "GET", "AK", `/v1.0/appMarket/personalExperiences`, "json", req, runtime), new GetPersonalExperienceInfoResponse({}));
   }
 
 }

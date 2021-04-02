@@ -1,0 +1,1 @@
+module.exports = require('./dist').alitrip_1_0;
