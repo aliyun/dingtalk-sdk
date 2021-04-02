@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/dingtalk",
-  "version": "1.0.57",
+  "version": "1.0.58",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
