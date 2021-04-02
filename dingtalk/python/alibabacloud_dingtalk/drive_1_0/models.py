@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict
 
 
-class GetJobAuthHeaders(TeaModel):
+class GetDownloadInfoHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -37,12 +37,16 @@ class GetJobAuthHeaders(TeaModel):
         return self
 
 
-class GetJobAuthRequest(TeaModel):
+class GetDownloadInfoResponseBodyPresignedUrlDownloadInfo(TeaModel):
     def __init__(
         self,
-        op_user_id: str = None,
+        resource_url: str = None,
+        expiration: int = None,
     ):
-        self.op_user_id = op_user_id
+        # 加签url
+        self.resource_url = resource_url
+        # 加签url过期时间(分钟)
+        self.expiration = expiration
 
     def validate(self):
         pass
@@ -53,30 +57,32 @@ class GetJobAuthRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.op_user_id is not None:
-            result['opUserId'] = self.op_user_id
+        if self.resource_url is not None:
+            result['resourceUrl'] = self.resource_url
+        if self.expiration is not None:
+            result['expiration'] = self.expiration
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('opUserId') is not None:
-            self.op_user_id = m.get('opUserId')
+        if m.get('resourceUrl') is not None:
+            self.resource_url = m.get('resourceUrl')
+        if m.get('expiration') is not None:
+            self.expiration = m.get('expiration')
         return self
 
 
-class GetJobAuthResponseBodyJobOwners(TeaModel):
+class GetDownloadInfoResponseBody(TeaModel):
     def __init__(
         self,
-        user_id: str = None,
-        name: str = None,
+        presigned_url_download_info: GetDownloadInfoResponseBodyPresignedUrlDownloadInfo = None,
     ):
-        # 员工标识
-        self.user_id = user_id
-        # 员工姓名
-        self.name = name
+        # 下载加签url信息
+        self.presigned_url_download_info = presigned_url_download_info
 
     def validate(self):
-        pass
+        if self.presigned_url_download_info:
+            self.presigned_url_download_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -84,69 +90,23 @@ class GetJobAuthResponseBodyJobOwners(TeaModel):
             return _map
 
         result = dict()
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.presigned_url_download_info is not None:
+            result['presignedUrlDownloadInfo'] = self.presigned_url_download_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('presignedUrlDownloadInfo') is not None:
+            temp_model = GetDownloadInfoResponseBodyPresignedUrlDownloadInfo()
+            self.presigned_url_download_info = temp_model.from_map(m['presignedUrlDownloadInfo'])
         return self
 
 
-class GetJobAuthResponseBody(TeaModel):
-    def __init__(
-        self,
-        job_id: str = None,
-        job_owners: List[GetJobAuthResponseBodyJobOwners] = None,
-    ):
-        # 职位ID
-        self.job_id = job_id
-        # 职位负责人
-        self.job_owners = job_owners
-
-    def validate(self):
-        if self.job_owners:
-            for k in self.job_owners:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.job_id is not None:
-            result['jobId'] = self.job_id
-        result['jobOwners'] = []
-        if self.job_owners is not None:
-            for k in self.job_owners:
-                result['jobOwners'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('jobId') is not None:
-            self.job_id = m.get('jobId')
-        self.job_owners = []
-        if m.get('jobOwners') is not None:
-            for k in m.get('jobOwners'):
-                temp_model = GetJobAuthResponseBodyJobOwners()
-                self.job_owners.append(temp_model.from_map(k))
-        return self
-
-
-class GetJobAuthResponse(TeaModel):
+class GetDownloadInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: GetJobAuthResponseBody = None,
+        body: GetDownloadInfoResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -174,7 +134,7 @@ class GetJobAuthResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = GetJobAuthResponseBody()
+            temp_model = GetDownloadInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

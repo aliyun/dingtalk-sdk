@@ -74,7 +74,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkcrm__1__0_models.QueryAllCustomerResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryAllCustomerResponse(),
             self.do_roarequest('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerInstances', 'json', req, runtime)
         )
 
@@ -113,7 +114,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkcrm__1__0_models.QueryAllCustomerResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryAllCustomerResponse(),
             await self.do_roarequest_async('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerInstances', 'json', req, runtime)
         )
 
@@ -135,18 +137,12 @@ class Client(OpenApiClient):
 
     def get_official_account_contacts_with_options(
         self,
-        tmp_req: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
+        request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkcrm__1__0_models.GetOfficialAccountContactsShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.context):
-            request.context_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.context), 'context', 'json')
+        UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.context_shrink):
-            query['context'] = request.context_shrink
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
@@ -160,24 +156,19 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse(),
             self.do_roarequest('GetOfficialAccountContacts', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts', 'json', req, runtime)
         )
 
     async def get_official_account_contacts_with_options_async(
         self,
-        tmp_req: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
+        request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkcrm__1__0_models.GetOfficialAccountContactsShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.context):
-            request.context_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.context), 'context', 'json')
+        UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.context_shrink):
-            query['context'] = request.context_shrink
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
@@ -191,43 +182,126 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse(),
             await self.do_roarequest_async('GetOfficialAccountContacts', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts', 'json', req, runtime)
         )
 
-    def get_official_account_contact_info(
+    def service_window_message_batch_push(
         self,
-        user_id: str,
-        request: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoRequest,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
+    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
-        return self.get_official_account_contact_info_with_options(user_id, request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
+        return self.service_window_message_batch_push_with_options(request, headers, runtime)
 
-    async def get_official_account_contact_info_async(
+    async def service_window_message_batch_push_async(
         self,
-        user_id: str,
-        request: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoRequest,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
+    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
-        return await self.get_official_account_contact_info_with_options_async(user_id, request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
+        return await self.service_window_message_batch_push_with_options_async(request, headers, runtime)
 
-    def get_official_account_contact_info_with_options(
+    def service_window_message_batch_push_with_options(
         self,
-        user_id: str,
-        tmp_req: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoRequest,
-        headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
+        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
+        headers: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.context):
-            request.context_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.context), 'context', 'json')
+    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse(),
+            self.do_roarequest('ServiceWindowMessageBatchPush', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/messages/batchSend', 'json', req, runtime)
+        )
+
+    async def service_window_message_batch_push_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
+        headers: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse(),
+            await self.do_roarequest_async('ServiceWindowMessageBatchPush', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/messages/batchSend', 'json', req, runtime)
+        )
+
+    def delete_crm_form_instance(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders()
+        return self.delete_crm_form_instance_with_options(instance_id, request, headers, runtime)
+
+    async def delete_crm_form_instance_async(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders()
+        return await self.delete_crm_form_instance_with_options_async(instance_id, request, headers, runtime)
+
+    def delete_crm_form_instance_with_options(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.context_shrink):
-            query['context'] = request.context_shrink
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -237,34 +311,88 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse(),
+            self.do_roarequest('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/formInstances/{instance_id}', 'json', req, runtime)
+        )
+
+    async def delete_crm_form_instance_with_options_async(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse(),
+            await self.do_roarequest_async('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/formInstances/{instance_id}', 'json', req, runtime)
+        )
+
+    def get_official_account_contact_info(
+        self,
+        user_id: str,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
+        return self.get_official_account_contact_info_with_options(user_id, headers, runtime)
+
+    async def get_official_account_contact_info_async(
+        self,
+        user_id: str,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
+        return await self.get_official_account_contact_info_with_options_async(user_id, headers, runtime)
+
+    def get_official_account_contact_info_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse(),
             self.do_roarequest('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts/{user_id}', 'json', req, runtime)
         )
 
     async def get_official_account_contact_info_with_options_async(
         self,
         user_id: str,
-        tmp_req: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoRequest,
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.context):
-            request.context_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.context), 'context', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.context_shrink):
-            query['context'] = request.context_shrink
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
-        return dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse(),
             await self.do_roarequest_async('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts/{user_id}', 'json', req, runtime)
         )

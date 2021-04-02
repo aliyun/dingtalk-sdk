@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -59,7 +61,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.StartCloudFeedResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.StartCloudFeedResponse(),
             self.do_roarequest('StartCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/start', 'json', req, runtime)
         )
 
@@ -83,7 +86,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.StartCloudFeedResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.StartCloudFeedResponse(),
             await self.do_roarequest_async('StartCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/start', 'json', req, runtime)
         )
 
@@ -125,7 +129,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.StopCloudFeedResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.StopCloudFeedResponse(),
             self.do_roarequest('StopCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/stop', 'json', req, runtime)
         )
 
@@ -149,7 +154,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.StopCloudFeedResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.StopCloudFeedResponse(),
             await self.do_roarequest_async('StopCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/stop', 'json', req, runtime)
         )
 
@@ -198,7 +204,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.CreateCloudFeedResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.CreateCloudFeedResponse(),
             self.do_roarequest('CreateCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds', 'json', req, runtime)
         )
 
@@ -231,7 +238,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.CreateCloudFeedResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.CreateCloudFeedResponse(),
             await self.do_roarequest_async('CreateCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds', 'json', req, runtime)
         )
 
@@ -277,7 +285,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.AddShareCidListResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.AddShareCidListResponse(),
             self.do_roarequest('AddShareCidList', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/share', 'json', req, runtime)
         )
 
@@ -305,6 +314,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalklive__1__0_models.AddShareCidListResponse().from_map(
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.AddShareCidListResponse(),
             await self.do_roarequest_async('AddShareCidList', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/cloudFeeds/{feed_id}/share', 'json', req, runtime)
         )

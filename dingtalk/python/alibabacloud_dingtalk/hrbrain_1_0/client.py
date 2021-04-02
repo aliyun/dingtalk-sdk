@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -64,7 +66,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkhrbrain__1__0_models.SyncDataResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.SyncDataResponse(),
             self.do_roarequest('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrbrain/datas', 'json', req, runtime)
         )
 
@@ -95,6 +98,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkhrbrain__1__0_models.SyncDataResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.SyncDataResponse(),
             await self.do_roarequest_async('SyncData', 'hrbrain_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrbrain/datas', 'json', req, runtime)
         )

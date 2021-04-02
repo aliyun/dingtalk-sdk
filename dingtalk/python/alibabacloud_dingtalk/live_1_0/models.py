@@ -17,6 +17,10 @@ class StartCloudFeedHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -45,6 +49,10 @@ class StartCloudFeedRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
@@ -69,6 +77,10 @@ class StartCloudFeedResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result
@@ -97,6 +109,10 @@ class StartCloudFeedResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -127,6 +143,10 @@ class StopCloudFeedHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -155,6 +175,10 @@ class StopCloudFeedRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
@@ -179,6 +203,10 @@ class StopCloudFeedResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result
@@ -207,6 +235,10 @@ class StopCloudFeedResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -237,6 +269,10 @@ class CreateCloudFeedHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -280,6 +316,10 @@ class CreateCloudFeedRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.title is not None:
             result['title'] = self.title
@@ -324,6 +364,10 @@ class CreateCloudFeedResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result
@@ -352,6 +396,10 @@ class CreateCloudFeedResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -382,6 +430,10 @@ class AddShareCidListHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -416,6 +468,10 @@ class AddShareCidListRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
@@ -451,6 +507,10 @@ class AddShareCidListResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.has_share_success is not None:
             result['hasShareSuccess'] = self.has_share_success
@@ -483,6 +543,10 @@ class AddShareCidListResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

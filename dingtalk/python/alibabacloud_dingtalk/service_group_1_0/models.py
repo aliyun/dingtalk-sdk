@@ -17,6 +17,10 @@ class DeleteKnowledgeHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -62,6 +66,10 @@ class DeleteKnowledgeRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
@@ -114,6 +122,10 @@ class DeleteKnowledgeResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.success is not None:
             result['success'] = self.success
@@ -142,6 +154,10 @@ class DeleteKnowledgeResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -172,6 +188,10 @@ class AddKnowledgeHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -229,6 +249,10 @@ class AddKnowledgeRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
@@ -297,6 +321,10 @@ class AddKnowledgeResponseBodyResult(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.open_knowledge_id is not None:
             result['openKnowledgeId'] = self.open_knowledge_id
@@ -321,6 +349,10 @@ class AddKnowledgeResponseBody(TeaModel):
             self.result.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result.to_map()
@@ -350,6 +382,10 @@ class AddKnowledgeResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -380,6 +416,10 @@ class AddLibraryHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -434,6 +474,10 @@ class AddLibraryRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_token_grant_type is not None:
             result['dingTokenGrantType'] = self.ding_token_grant_type
@@ -498,6 +542,10 @@ class AddLibraryResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.success is not None:
             result['success'] = self.success
@@ -526,6 +574,10 @@ class AddLibraryResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -556,6 +608,10 @@ class ListUserTeamsHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -587,6 +643,10 @@ class ListUserTeamsResponseBodyTeams(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.open_team_id is not None:
             result['openTeamId'] = self.open_team_id
@@ -618,6 +678,10 @@ class ListUserTeamsResponseBody(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         result['teams'] = []
         if self.teams is not None:
@@ -651,6 +715,10 @@ class ListUserTeamsResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

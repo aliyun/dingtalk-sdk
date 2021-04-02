@@ -17,6 +17,10 @@ class CorpInfoHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -46,6 +50,10 @@ class CorpInfoResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.real_name is not None:
             result['realName'] = self.real_name
@@ -78,6 +86,10 @@ class CorpInfoResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -115,6 +127,10 @@ class CorpInfoResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -145,6 +161,10 @@ class CreateDeveloperHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -178,6 +198,10 @@ class CreateDeveloperRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -217,6 +241,10 @@ class CreateDeveloperResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.code is not None:
             result['code'] = self.code
@@ -253,6 +281,10 @@ class CreateDeveloperResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -283,6 +315,10 @@ class GetUserRealnameUrlHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -318,6 +354,10 @@ class GetUserRealnameUrlRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -361,6 +401,10 @@ class GetUserRealnameUrlResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -397,6 +441,10 @@ class GetUserRealnameUrlResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.code is not None:
             result['code'] = self.code
@@ -434,6 +482,10 @@ class GetUserRealnameUrlResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -464,6 +516,10 @@ class GetCorpRealnameUrlHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -497,6 +553,10 @@ class GetCorpRealnameUrlRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -536,6 +596,10 @@ class GetCorpRealnameUrlResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -572,6 +636,10 @@ class GetCorpRealnameUrlResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.code is not None:
             result['code'] = self.code
@@ -609,6 +677,10 @@ class GetCorpRealnameUrlResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -639,6 +711,10 @@ class GetFileHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -676,6 +752,10 @@ class GetFileResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.file_id is not None:
             result['fileId'] = self.file_id
@@ -724,6 +804,10 @@ class GetFileResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -761,6 +845,10 @@ class GetFileResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -791,6 +879,10 @@ class AuthUrlHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -824,6 +916,10 @@ class AuthUrlRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.redirect_url is not None:
             result['redirectUrl'] = self.redirect_url
@@ -863,6 +959,10 @@ class AuthUrlResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -899,6 +999,10 @@ class AuthUrlResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -936,6 +1040,10 @@ class AuthUrlResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -966,6 +1074,10 @@ class CancelCorpAuthHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -993,6 +1105,10 @@ class CancelCorpAuthResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result
@@ -1021,6 +1137,10 @@ class CancelCorpAuthResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -1058,6 +1178,10 @@ class CancelCorpAuthResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -1088,6 +1212,10 @@ class GetSignNoticeUrlHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -1121,6 +1249,10 @@ class GetSignNoticeUrlRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -1160,6 +1292,10 @@ class GetSignNoticeUrlResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.pc_url is not None:
             result['pcUrl'] = self.pc_url
@@ -1195,6 +1331,10 @@ class GetSignNoticeUrlResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -1232,6 +1372,10 @@ class GetSignNoticeUrlResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -1262,6 +1406,10 @@ class GetUploadUrlHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -1303,6 +1451,10 @@ class GetUploadUrlRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -1356,6 +1508,10 @@ class GetUploadUrlResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.file_id is not None:
             result['fileId'] = self.file_id
@@ -1388,6 +1544,10 @@ class GetUploadUrlResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.code is not None:
             result['code'] = self.code
@@ -1425,6 +1585,10 @@ class GetUploadUrlResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -1455,6 +1619,10 @@ class ListSealApprovalHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -1482,6 +1650,10 @@ class ListSealApprovalRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -1511,6 +1683,10 @@ class ListSealApprovalResponseBodyDataApprovalNodes(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.approver_name is not None:
             result['approverName'] = self.approver_name
@@ -1563,6 +1739,10 @@ class ListSealApprovalResponseBodyData(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.approval_name is not None:
             result['approvalName'] = self.approval_name
@@ -1626,6 +1806,10 @@ class ListSealApprovalResponseBody(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         result['data'] = []
         if self.data is not None:
@@ -1667,6 +1851,10 @@ class ListSealApprovalResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -1697,6 +1885,10 @@ class ContractMarginHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -1724,6 +1916,10 @@ class ContractMarginResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.margin is not None:
             result['margin'] = self.margin
@@ -1752,6 +1948,10 @@ class ContractMarginResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -1789,6 +1989,10 @@ class ContractMarginResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -1819,6 +2023,10 @@ class GetFlowDetailHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -1846,6 +2054,10 @@ class GetFlowDetailRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -1875,6 +2087,10 @@ class GetFlowDetailResponseBodyDataLogs(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.operator_account_name is not None:
             result['operatorAccountName'] = self.operator_account_name
@@ -1921,6 +2137,10 @@ class GetFlowDetailResponseBodyData(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.business_sense is not None:
             result['businessSense'] = self.business_sense
@@ -1970,6 +2190,10 @@ class GetFlowDetailResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -2007,6 +2231,10 @@ class GetFlowDetailResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -2037,6 +2265,10 @@ class GetProcessStartUrlHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -2066,6 +2298,10 @@ class GetProcessStartUrlRequestFiles(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.file_id is not None:
             result['fileId'] = self.file_id
@@ -2105,6 +2341,10 @@ class GetProcessStartUrlRequestParticipants(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.account_type is not None:
             result['accountType'] = self.account_type
@@ -2156,6 +2396,10 @@ class GetProcessStartUrlRequestSourceInfo(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.mobile_url is not None:
             result['mobileUrl'] = self.mobile_url
@@ -2197,6 +2441,10 @@ class GetProcessStartUrlRequestCcs(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.account_type is not None:
             result['accountType'] = self.account_type
@@ -2271,6 +2519,10 @@ class GetProcessStartUrlRequest(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         result['files'] = []
         if self.files is not None:
@@ -2350,6 +2602,10 @@ class GetProcessStartUrlResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -2386,6 +2642,10 @@ class GetProcessStartUrlResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.message is not None:
             result['message'] = self.message
@@ -2423,6 +2683,10 @@ class GetProcessStartUrlResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -2453,6 +2717,10 @@ class CorpConsoleHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -2480,6 +2748,10 @@ class CorpConsoleResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.org_console_url is not None:
             result['orgConsoleUrl'] = self.org_console_url
@@ -2508,6 +2780,10 @@ class CorpConsoleResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -2545,6 +2821,10 @@ class CorpConsoleResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -2575,6 +2855,10 @@ class ListFlowDocsHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -2602,6 +2886,10 @@ class ListFlowDocsRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -2629,6 +2917,10 @@ class ListFlowDocsResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.file_id is not None:
             result['fileId'] = self.file_id
@@ -2667,6 +2959,10 @@ class ListFlowDocsResponseBody(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         result['data'] = []
         if self.data is not None:
@@ -2708,6 +3004,10 @@ class ListFlowDocsResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -2738,6 +3038,10 @@ class GetUserInfoHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -2767,6 +3071,10 @@ class GetUserInfoResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.real_name is not None:
             result['realName'] = self.real_name
@@ -2799,6 +3107,10 @@ class GetUserInfoResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -2836,6 +3148,10 @@ class GetUserInfoResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -2866,6 +3182,10 @@ class GetCropStatusHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -2895,6 +3215,10 @@ class GetCropStatusResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.auth_status is not None:
             result['authStatus'] = self.auth_status
@@ -2927,6 +3251,10 @@ class GetCropStatusResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -2964,6 +3292,10 @@ class GetCropStatusResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -2994,6 +3326,10 @@ class ChannelOrderHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -3037,6 +3373,10 @@ class ChannelOrderRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -3092,6 +3432,10 @@ class ChannelOrderResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.esign_order_id is not None:
             result['esignOrderId'] = self.esign_order_id
@@ -3120,6 +3464,10 @@ class ChannelOrderResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.code is not None:
             result['code'] = self.code
@@ -3157,6 +3505,10 @@ class ChannelOrderResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -3187,6 +3539,10 @@ class OrderResaleHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -3228,6 +3584,10 @@ class OrderResaleRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
@@ -3279,6 +3639,10 @@ class OrderResaleResponseBodyData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.esign_order_id is not None:
             result['esignOrderId'] = self.esign_order_id
@@ -3307,6 +3671,10 @@ class OrderResaleResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.code is not None:
             result['code'] = self.code
@@ -3344,6 +3712,10 @@ class OrderResaleResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -3374,6 +3746,10 @@ class GetFlowSignDetailHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -3401,6 +3777,10 @@ class GetFlowSignDetailRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.task_id is not None:
             result['taskId'] = self.task_id
@@ -3426,6 +3806,10 @@ class GetFlowSignDetailResponseBodyDataSigners(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.signer_name is not None:
             result['signerName'] = self.signer_name
@@ -3460,6 +3844,10 @@ class GetFlowSignDetailResponseBodyData(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.business_sense is not None:
             result['businessSense'] = self.business_sense
@@ -3501,6 +3889,10 @@ class GetFlowSignDetailResponseBody(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.data is not None:
             result['data'] = self.data.to_map()
@@ -3538,6 +3930,10 @@ class GetFlowSignDetailResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

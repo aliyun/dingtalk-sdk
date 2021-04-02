@@ -17,6 +17,10 @@ class BatchCreateHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -60,6 +64,10 @@ class BatchCreateRequestDataCardRuleItemParamList(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.card_task_code is not None:
             result['cardTaskCode'] = self.card_task_code
@@ -107,6 +115,10 @@ class BatchCreateRequestDataOrgClassStudentGroupListClassListStudents(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.name is not None:
             result['name'] = self.name
@@ -144,6 +156,10 @@ class BatchCreateRequestDataOrgClassStudentGroupListClassList(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.class_id is not None:
             result['classId'] = self.class_id
@@ -187,6 +203,10 @@ class BatchCreateRequestDataOrgClassStudentGroupList(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
@@ -273,6 +293,10 @@ class BatchCreateRequestData(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.can_reissue_card is not None:
             result['canReissueCard'] = self.can_reissue_card
@@ -390,6 +414,10 @@ class BatchCreateRequest(TeaModel):
             self.data.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.card_biz_code is not None:
             result['cardBizCode'] = self.card_biz_code
@@ -438,6 +466,10 @@ class BatchCreateResponseBodyResult(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.corp_id_card_id_map is not None:
             result['corpIdCardIdMap'] = self.corp_id_card_id_map
@@ -463,6 +495,10 @@ class BatchCreateResponseBody(TeaModel):
             self.result.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result.to_map()
@@ -492,6 +528,10 @@ class BatchCreateResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -522,6 +562,10 @@ class BatchOrgCreateHWHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -556,6 +600,10 @@ class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.name is not None:
             result['name'] = self.name
@@ -600,6 +648,10 @@ class BatchOrgCreateHWRequestOpenSelectItemListClassList(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.class_id is not None:
             result['classId'] = self.class_id
@@ -650,6 +702,10 @@ class BatchOrgCreateHWRequestOpenSelectItemList(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
@@ -747,6 +803,10 @@ class BatchOrgCreateHWRequest(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.hw_media is not None:
             result['hwMedia'] = self.hw_media
@@ -853,6 +913,10 @@ class BatchOrgCreateHWResponseBodyResultPublishList(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.corpid is not None:
             result['corpid'] = self.corpid
@@ -883,6 +947,10 @@ class BatchOrgCreateHWResponseBodyResult(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         result['publishList'] = []
         if self.publish_list is not None:
@@ -912,6 +980,10 @@ class BatchOrgCreateHWResponseBody(TeaModel):
             self.result.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.result is not None:
             result['result'] = self.result.to_map()
@@ -941,6 +1013,10 @@ class BatchOrgCreateHWResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

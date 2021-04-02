@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from typing import Dict
+from Tea.core import TeaCore
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -61,7 +62,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetUserTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetUserTokenResponse(),
             self.do_roarequest('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
         )
 
@@ -87,7 +89,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetUserTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetUserTokenResponse(),
             await self.do_roarequest_async('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
         )
 
@@ -123,7 +126,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetAccessTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetAccessTokenResponse(),
             self.do_roarequest('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/accessToken', 'json', req, runtime)
         )
 
@@ -143,7 +147,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetAccessTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetAccessTokenResponse(),
             await self.do_roarequest_async('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/accessToken', 'json', req, runtime)
         )
 
@@ -181,7 +186,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse(),
             self.do_roarequest('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/suiteAccessToken', 'json', req, runtime)
         )
 
@@ -203,7 +209,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse(),
             await self.do_roarequest_async('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/suiteAccessToken', 'json', req, runtime)
         )
 
@@ -243,7 +250,8 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
             self.do_roarequest('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
         )
 
@@ -267,6 +275,7 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
             await self.do_roarequest_async('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
         )

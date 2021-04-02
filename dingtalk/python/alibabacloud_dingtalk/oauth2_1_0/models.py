@@ -28,6 +28,10 @@ class GetUserTokenRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.client_id is not None:
             result['clientId'] = self.client_id
@@ -74,6 +78,10 @@ class GetUserTokenResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.access_token is not None:
             result['accessToken'] = self.access_token
@@ -110,6 +118,10 @@ class GetUserTokenResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -142,6 +154,10 @@ class GetAccessTokenRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.app_key is not None:
             result['appKey'] = self.app_key
@@ -173,6 +189,10 @@ class GetAccessTokenResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.access_token is not None:
             result['accessToken'] = self.access_token
@@ -205,6 +225,10 @@ class GetAccessTokenResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -240,6 +264,10 @@ class GetSuiteAccessTokenRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.suite_key is not None:
             result['suiteKey'] = self.suite_key
@@ -275,6 +303,10 @@ class GetSuiteAccessTokenResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.access_token is not None:
             result['accessToken'] = self.access_token
@@ -307,6 +339,10 @@ class GetSuiteAccessTokenResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -345,6 +381,10 @@ class GetCorpAccessTokenRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.suite_key is not None:
             result['suiteKey'] = self.suite_key
@@ -384,6 +424,10 @@ class GetCorpAccessTokenResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.access_token is not None:
             result['accessToken'] = self.access_token
@@ -416,6 +460,10 @@ class GetCorpAccessTokenResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

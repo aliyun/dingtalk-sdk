@@ -5,7 +5,7 @@ from Tea.core import TeaCore
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
-from alibabacloud_dingtalkcontact_1_0 import models as dingtalkcontact__1__0_models
+from alibabacloud_dingtalkdrive_1_0 import models as dingtalkdrive__1__0_models
 from alibabacloud_tea_util import models as util_models
 
 
@@ -22,28 +22,34 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
-    def get_user(
+    def get_download_info(
         self,
-        union_id: str,
-    ) -> dingtalkcontact__1__0_models.GetUserResponse:
+        user_id: str,
+        space_id: str,
+        file_id: str,
+    ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcontact__1__0_models.GetUserHeaders()
-        return self.get_user_with_options(union_id, headers, runtime)
+        headers = dingtalkdrive__1__0_models.GetDownloadInfoHeaders()
+        return self.get_download_info_with_options(user_id, space_id, file_id, headers, runtime)
 
-    async def get_user_async(
+    async def get_download_info_async(
         self,
-        union_id: str,
-    ) -> dingtalkcontact__1__0_models.GetUserResponse:
+        user_id: str,
+        space_id: str,
+        file_id: str,
+    ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcontact__1__0_models.GetUserHeaders()
-        return await self.get_user_with_options_async(union_id, headers, runtime)
+        headers = dingtalkdrive__1__0_models.GetDownloadInfoHeaders()
+        return await self.get_download_info_with_options_async(user_id, space_id, file_id, headers, runtime)
 
-    def get_user_with_options(
+    def get_download_info_with_options(
         self,
-        union_id: str,
-        headers: dingtalkcontact__1__0_models.GetUserHeaders,
+        user_id: str,
+        space_id: str,
+        file_id: str,
+        headers: dingtalkdrive__1__0_models.GetDownloadInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcontact__1__0_models.GetUserResponse:
+    ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -53,16 +59,18 @@ class Client(OpenApiClient):
             headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkcontact__1__0_models.GetUserResponse(),
-            self.do_roarequest('GetUser', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/users/{union_id}', 'json', req, runtime)
+            dingtalkdrive__1__0_models.GetDownloadInfoResponse(),
+            self.do_roarequest('GetDownloadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/users/{user_id}/spaces/{space_id}/files/{file_id}/downloadInfo', 'json', req, runtime)
         )
 
-    async def get_user_with_options_async(
+    async def get_download_info_with_options_async(
         self,
-        union_id: str,
-        headers: dingtalkcontact__1__0_models.GetUserHeaders,
+        user_id: str,
+        space_id: str,
+        file_id: str,
+        headers: dingtalkdrive__1__0_models.GetDownloadInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcontact__1__0_models.GetUserResponse:
+    ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -72,6 +80,6 @@ class Client(OpenApiClient):
             headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkcontact__1__0_models.GetUserResponse(),
-            await self.do_roarequest_async('GetUser', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/users/{union_id}', 'json', req, runtime)
+            dingtalkdrive__1__0_models.GetDownloadInfoResponse(),
+            await self.do_roarequest_async('GetDownloadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/users/{user_id}/spaces/{space_id}/files/{file_id}/downloadInfo', 'json', req, runtime)
         )

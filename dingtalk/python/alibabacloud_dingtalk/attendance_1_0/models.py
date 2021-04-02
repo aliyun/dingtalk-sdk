@@ -17,6 +17,10 @@ class CreateApproveHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -54,6 +58,10 @@ class CreateApproveRequestPunchParam(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.punch_time is not None:
             result['punchTime'] = self.punch_time
@@ -106,6 +114,10 @@ class CreateApproveRequest(TeaModel):
             self.punch_param.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.userid is not None:
             result['userid'] = self.userid
@@ -151,6 +163,10 @@ class CreateApproveResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.dingtalk_approve_id is not None:
             result['dingtalkApproveId'] = self.dingtalk_approve_id
@@ -179,6 +195,10 @@ class CreateApproveResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -209,6 +229,10 @@ class GetUserHolidaysHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -243,6 +267,10 @@ class GetUserHolidaysRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
@@ -284,6 +312,10 @@ class GetUserHolidaysResponseBodyResultHolidays(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.work_date is not None:
             result['workDate'] = self.work_date
@@ -326,6 +358,10 @@ class GetUserHolidaysResponseBodyResult(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
@@ -362,6 +398,10 @@ class GetUserHolidaysResponseBody(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         result['result'] = []
         if self.result is not None:
@@ -395,6 +435,10 @@ class GetUserHolidaysResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

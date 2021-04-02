@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -70,7 +72,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkservice_group__1__0_models.DeleteKnowledgeResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.DeleteKnowledgeResponse(),
             self.do_roarequest('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges/batchDelete', 'json', req, runtime)
         )
 
@@ -107,7 +110,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkservice_group__1__0_models.DeleteKnowledgeResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.DeleteKnowledgeResponse(),
             await self.do_roarequest_async('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges/batchDelete', 'json', req, runtime)
         )
 
@@ -168,7 +172,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkservice_group__1__0_models.AddKnowledgeResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddKnowledgeResponse(),
             self.do_roarequest('AddKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges', 'json', req, runtime)
         )
 
@@ -213,7 +218,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkservice_group__1__0_models.AddKnowledgeResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddKnowledgeResponse(),
             await self.do_roarequest_async('AddKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges', 'json', req, runtime)
         )
 
@@ -272,7 +278,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkservice_group__1__0_models.AddLibraryResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddLibraryResponse(),
             self.do_roarequest('AddLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/librarys', 'json', req, runtime)
         )
 
@@ -315,7 +322,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkservice_group__1__0_models.AddLibraryResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddLibraryResponse(),
             await self.do_roarequest_async('AddLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/librarys', 'json', req, runtime)
         )
 
@@ -349,7 +357,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkservice_group__1__0_models.ListUserTeamsResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ListUserTeamsResponse(),
             self.do_roarequest('ListUserTeams', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/users/{user_id}/teams', 'json', req, runtime)
         )
 
@@ -367,6 +376,7 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkservice_group__1__0_models.ListUserTeamsResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ListUserTeamsResponse(),
             await self.do_roarequest_async('ListUserTeams', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/users/{user_id}/teams', 'json', req, runtime)
         )

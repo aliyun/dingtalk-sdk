@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -50,7 +52,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.SendInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.SendInteractiveCardResponse(),
             self.do_roarequest('SendInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/groupChatCardMessages', 'json', req, runtime)
         )
 
@@ -68,7 +71,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.SendInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.SendInteractiveCardResponse(),
             await self.do_roarequest_async('SendInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/groupChatCardMessages', 'json', req, runtime)
         )
 
@@ -102,7 +106,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse(),
             self.do_roarequest('UpdateInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/projectIntegration/users/{user_id}/cardMessages', 'json', req, runtime)
         )
 
@@ -120,7 +125,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse(),
             await self.do_roarequest_async('UpdateInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/projectIntegration/users/{user_id}/cardMessages', 'json', req, runtime)
         )
 
@@ -154,7 +160,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse(),
             self.do_roarequest('SendSingleInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/singleChatCardMessages', 'json', req, runtime)
         )
 
@@ -172,64 +179,9 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse(),
             await self.do_roarequest_async('SendSingleInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/singleChatCardMessages', 'json', req, runtime)
-        )
-
-    def send_message_to_event_group(
-        self,
-        user_id: str,
-        group_id: str,
-    ) -> dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkproject_integration__1__0_models.SendMessageToEventGroupHeaders()
-        return self.send_message_to_event_group_with_options(user_id, group_id, headers, runtime)
-
-    async def send_message_to_event_group_async(
-        self,
-        user_id: str,
-        group_id: str,
-    ) -> dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkproject_integration__1__0_models.SendMessageToEventGroupHeaders()
-        return await self.send_message_to_event_group_with_options_async(user_id, group_id, headers, runtime)
-
-    def send_message_to_event_group_with_options(
-        self,
-        user_id: str,
-        group_id: str,
-        headers: dingtalkproject_integration__1__0_models.SendMessageToEventGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse().from_map(
-            self.do_roarequest('SendMessageToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/messages', 'json', req, runtime)
-        )
-
-    async def send_message_to_event_group_with_options_async(
-        self,
-        user_id: str,
-        group_id: str,
-        headers: dingtalkproject_integration__1__0_models.SendMessageToEventGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return dingtalkproject_integration__1__0_models.SendMessageToEventGroupResponse().from_map(
-            await self.do_roarequest_async('SendMessageToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/messages', 'json', req, runtime)
         )
 
     def add_attendee_to_event_group(
@@ -265,7 +217,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse(),
             self.do_roarequest('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/members', 'json', req, runtime)
         )
 
@@ -284,7 +237,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse(),
             await self.do_roarequest_async('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups/{group_id}/members', 'json', req, runtime)
         )
 
@@ -318,7 +272,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.CreateEventGroupResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.CreateEventGroupResponse(),
             self.do_roarequest('CreateEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups', 'json', req, runtime)
         )
 
@@ -336,6 +291,7 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkproject_integration__1__0_models.CreateEventGroupResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkproject_integration__1__0_models.CreateEventGroupResponse(),
             await self.do_roarequest_async('CreateEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/projectIntegration/users/{user_id}/eventGroups', 'json', req, runtime)
         )

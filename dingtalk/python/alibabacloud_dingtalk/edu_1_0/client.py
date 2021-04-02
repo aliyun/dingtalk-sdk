@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -68,7 +70,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkedu__1__0_models.BatchCreateResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateResponse(),
             self.do_roarequest('BatchCreate', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/cards', 'json', req, runtime)
         )
 
@@ -103,7 +106,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkedu__1__0_models.BatchCreateResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateResponse(),
             await self.do_roarequest_async('BatchCreate', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/cards', 'json', req, runtime)
         )
 
@@ -180,7 +184,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkedu__1__0_models.BatchOrgCreateHWResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchOrgCreateHWResponse(),
             self.do_roarequest('BatchOrgCreateHW', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/homeworks', 'json', req, runtime)
         )
 
@@ -241,6 +246,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkedu__1__0_models.BatchOrgCreateHWResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchOrgCreateHWResponse(),
             await self.do_roarequest_async('BatchOrgCreateHW', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/homeworks', 'json', req, runtime)
         )

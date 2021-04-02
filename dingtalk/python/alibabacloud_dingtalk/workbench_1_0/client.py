@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -50,7 +52,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkworkbench__1__0_models.QueryShortcutScopesResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.QueryShortcutScopesResponse(),
             self.do_roarequest('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/shortcuts/{shortcut_key}/scopes', 'json', req, runtime)
         )
 
@@ -68,7 +71,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkworkbench__1__0_models.QueryShortcutScopesResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.QueryShortcutScopesResponse(),
             await self.do_roarequest_async('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/shortcuts/{shortcut_key}/scopes', 'json', req, runtime)
         )
 
@@ -102,7 +106,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkworkbench__1__0_models.QueryComponentScopesResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.QueryComponentScopesResponse(),
             self.do_roarequest('QueryComponentScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/components/{component_id}/scopes', 'json', req, runtime)
         )
 
@@ -120,6 +125,7 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkworkbench__1__0_models.QueryComponentScopesResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.QueryComponentScopesResponse(),
             await self.do_roarequest_async('QueryComponentScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/components/{component_id}/scopes', 'json', req, runtime)
         )

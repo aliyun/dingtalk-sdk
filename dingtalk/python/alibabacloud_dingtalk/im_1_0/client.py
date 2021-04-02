@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -86,7 +88,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkim__1__0_models.SendInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendInteractiveCardResponse(),
             self.do_roarequest('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/send', 'json', req, runtime)
         )
 
@@ -139,7 +142,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkim__1__0_models.SendInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendInteractiveCardResponse(),
             await self.do_roarequest_async('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/send', 'json', req, runtime)
         )
 
@@ -194,7 +198,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkim__1__0_models.UpdateInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateInteractiveCardResponse(),
             self.do_roarequest('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interactiveCards', 'json', req, runtime)
         )
 
@@ -233,6 +238,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkim__1__0_models.UpdateInteractiveCardResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateInteractiveCardResponse(),
             await self.do_roarequest_async('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interactiveCards', 'json', req, runtime)
         )

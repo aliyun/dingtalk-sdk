@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -59,7 +61,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkats__1__0_models.GetJobAuthResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetJobAuthResponse(),
             self.do_roarequest('GetJobAuth', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/auths/jobs/{job_id}', 'json', req, runtime)
         )
 
@@ -83,6 +86,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkats__1__0_models.GetJobAuthResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetJobAuthResponse(),
             await self.do_roarequest_async('GetJobAuth', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/auths/jobs/{job_id}', 'json', req, runtime)
         )

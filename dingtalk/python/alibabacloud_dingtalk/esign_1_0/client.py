@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -44,7 +46,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.CorpInfoResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CorpInfoResponse(),
             self.do_roarequest('CorpInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/info', 'json', req, runtime)
         )
 
@@ -61,7 +64,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.CorpInfoResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CorpInfoResponse(),
             await self.do_roarequest_async('CorpInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/info', 'json', req, runtime)
         )
 
@@ -106,7 +110,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.CreateDeveloperResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CreateDeveloperResponse(),
             self.do_roarequest('CreateDeveloper', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/developers/create', 'json', req, runtime)
         )
 
@@ -135,7 +140,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.CreateDeveloperResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CreateDeveloperResponse(),
             await self.do_roarequest_async('CreateDeveloper', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/developers/create', 'json', req, runtime)
         )
 
@@ -182,7 +188,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetUserRealnameUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUserRealnameUrlResponse(),
             self.do_roarequest('GetUserRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/users/realname', 'json', req, runtime)
         )
 
@@ -213,7 +220,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetUserRealnameUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUserRealnameUrlResponse(),
             await self.do_roarequest_async('GetUserRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/users/realname', 'json', req, runtime)
         )
 
@@ -258,7 +266,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetCorpRealnameUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetCorpRealnameUrlResponse(),
             self.do_roarequest('GetCorpRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/corps/realname', 'json', req, runtime)
         )
 
@@ -287,7 +296,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetCorpRealnameUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetCorpRealnameUrlResponse(),
             await self.do_roarequest_async('GetCorpRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/corps/realname', 'json', req, runtime)
         )
 
@@ -321,7 +331,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.GetFileResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFileResponse(),
             self.do_roarequest('GetFile', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/files/{file_id}', 'json', req, runtime)
         )
 
@@ -339,7 +350,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.GetFileResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFileResponse(),
             await self.do_roarequest_async('GetFile', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/files/{file_id}', 'json', req, runtime)
         )
 
@@ -384,7 +396,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.AuthUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.AuthUrlResponse(),
             self.do_roarequest('AuthUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/auths/url', 'json', req, runtime)
         )
 
@@ -413,7 +426,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.AuthUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.AuthUrlResponse(),
             await self.do_roarequest_async('AuthUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/auths/url', 'json', req, runtime)
         )
 
@@ -440,7 +454,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.CancelCorpAuthResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CancelCorpAuthResponse(),
             self.do_roarequest('CancelCorpAuth', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/auth/cancel', 'json', req, runtime)
         )
 
@@ -457,7 +472,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.CancelCorpAuthResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CancelCorpAuthResponse(),
             await self.do_roarequest_async('CancelCorpAuth', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/auth/cancel', 'json', req, runtime)
         )
 
@@ -502,7 +518,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetSignNoticeUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetSignNoticeUrlResponse(),
             self.do_roarequest('GetSignNoticeUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/signs/notice/url', 'json', req, runtime)
         )
 
@@ -531,7 +548,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetSignNoticeUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetSignNoticeUrlResponse(),
             await self.do_roarequest_async('GetSignNoticeUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/signs/notice/url', 'json', req, runtime)
         )
 
@@ -584,7 +602,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetUploadUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUploadUrlResponse(),
             self.do_roarequest('GetUploadUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/files/getUploadUrl', 'json', req, runtime)
         )
 
@@ -621,7 +640,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetUploadUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUploadUrlResponse(),
             await self.do_roarequest_async('GetUploadUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/files/getUploadUrl', 'json', req, runtime)
         )
 
@@ -660,7 +680,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.ListSealApprovalResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ListSealApprovalResponse(),
             self.do_roarequest('ListSealApproval', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/seals/approval/list', 'json', req, runtime)
         )
 
@@ -683,7 +704,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.ListSealApprovalResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ListSealApprovalResponse(),
             await self.do_roarequest_async('ListSealApproval', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/seals/approval/list', 'json', req, runtime)
         )
 
@@ -710,7 +732,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.ContractMarginResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ContractMarginResponse(),
             self.do_roarequest('ContractMargin', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/contracts/margin', 'json', req, runtime)
         )
 
@@ -727,7 +750,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.ContractMarginResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ContractMarginResponse(),
             await self.do_roarequest_async('ContractMargin', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/contracts/margin', 'json', req, runtime)
         )
 
@@ -766,7 +790,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.GetFlowDetailResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFlowDetailResponse(),
             self.do_roarequest('GetFlowDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/detail', 'json', req, runtime)
         )
 
@@ -789,7 +814,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.GetFlowDetailResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFlowDetailResponse(),
             await self.do_roarequest_async('GetFlowDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/detail', 'json', req, runtime)
         )
 
@@ -846,7 +872,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetProcessStartUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetProcessStartUrlResponse(),
             self.do_roarequest('GetProcessStartUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/process/start', 'json', req, runtime)
         )
 
@@ -887,7 +914,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.GetProcessStartUrlResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetProcessStartUrlResponse(),
             await self.do_roarequest_async('GetProcessStartUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/process/start', 'json', req, runtime)
         )
 
@@ -914,7 +942,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.CorpConsoleResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CorpConsoleResponse(),
             self.do_roarequest('CorpConsole', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/console', 'json', req, runtime)
         )
 
@@ -931,7 +960,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.CorpConsoleResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.CorpConsoleResponse(),
             await self.do_roarequest_async('CorpConsole', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/console', 'json', req, runtime)
         )
 
@@ -970,7 +1000,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.ListFlowDocsResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ListFlowDocsResponse(),
             self.do_roarequest('ListFlowDocs', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/docs', 'json', req, runtime)
         )
 
@@ -993,7 +1024,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.ListFlowDocsResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ListFlowDocsResponse(),
             await self.do_roarequest_async('ListFlowDocs', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/docs', 'json', req, runtime)
         )
 
@@ -1027,7 +1059,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.GetUserInfoResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUserInfoResponse(),
             self.do_roarequest('GetUserInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/users/{user_id}', 'json', req, runtime)
         )
 
@@ -1045,7 +1078,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.GetUserInfoResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUserInfoResponse(),
             await self.do_roarequest_async('GetUserInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/users/{user_id}', 'json', req, runtime)
         )
 
@@ -1072,7 +1106,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.GetCropStatusResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetCropStatusResponse(),
             self.do_roarequest('GetCropStatus', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/statuses', 'json', req, runtime)
         )
 
@@ -1089,7 +1124,8 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
-        return dingtalkesign__1__0_models.GetCropStatusResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetCropStatusResponse(),
             await self.do_roarequest_async('GetCropStatus', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/statuses', 'json', req, runtime)
         )
 
@@ -1144,7 +1180,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.ChannelOrderResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ChannelOrderResponse(),
             self.do_roarequest('ChannelOrder', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/channel', 'json', req, runtime)
         )
 
@@ -1183,7 +1220,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.ChannelOrderResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.ChannelOrderResponse(),
             await self.do_roarequest_async('ChannelOrder', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/channel', 'json', req, runtime)
         )
 
@@ -1236,7 +1274,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.OrderResaleResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.OrderResaleResponse(),
             self.do_roarequest('OrderResale', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/resale', 'json', req, runtime)
         )
 
@@ -1273,7 +1312,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkesign__1__0_models.OrderResaleResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.OrderResaleResponse(),
             await self.do_roarequest_async('OrderResale', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/resale', 'json', req, runtime)
         )
 
@@ -1312,7 +1352,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.GetFlowSignDetailResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFlowSignDetailResponse(),
             self.do_roarequest('GetFlowSignDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/sign/detail', 'json', req, runtime)
         )
 
@@ -1335,6 +1376,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
-        return dingtalkesign__1__0_models.GetFlowSignDetailResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFlowSignDetailResponse(),
             await self.do_roarequest_async('GetFlowSignDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/sign/detail', 'json', req, runtime)
         )

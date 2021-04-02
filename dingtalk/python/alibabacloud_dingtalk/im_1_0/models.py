@@ -17,6 +17,10 @@ class SendInteractiveCardHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -48,6 +52,10 @@ class SendInteractiveCardRequestCardData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.card_param_map is not None:
             result['cardParamMap'] = self.card_param_map
@@ -79,6 +87,10 @@ class PrivateDataValue(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.card_param_map is not None:
             result['cardParamMap'] = self.card_param_map
@@ -151,6 +163,10 @@ class SendInteractiveCardRequest(TeaModel):
                     v.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
@@ -241,6 +257,10 @@ class SendInteractiveCardResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.success is not None:
             result['success'] = self.success
@@ -269,6 +289,10 @@ class SendInteractiveCardResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -299,6 +323,10 @@ class UpdateInteractiveCardHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -328,6 +356,10 @@ class UpdateInteractiveCardRequestCardData(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.card_param_map is not None:
             result['cardParamMap'] = self.card_param_map
@@ -378,6 +410,10 @@ class UpdateInteractiveCardRequest(TeaModel):
                     v.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.out_track_id is not None:
             result['outTrackId'] = self.out_track_id
@@ -440,6 +476,10 @@ class UpdateInteractiveCardResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.success is not None:
             result['success'] = self.success
@@ -468,6 +508,10 @@ class UpdateInteractiveCardResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

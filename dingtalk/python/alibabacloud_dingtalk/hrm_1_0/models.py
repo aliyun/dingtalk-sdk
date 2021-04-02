@@ -17,6 +17,10 @@ class ECertQueryHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -45,6 +49,10 @@ class ECertQueryRequest(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
@@ -108,6 +116,10 @@ class ECertQueryResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.real_name is not None:
             result['realName'] = self.real_name
@@ -188,6 +200,10 @@ class ECertQueryResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
@@ -218,6 +234,10 @@ class AddHrmPreentryHeaders(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
@@ -247,6 +267,10 @@ class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.value is not None:
             result['value'] = self.value
@@ -279,6 +303,10 @@ class AddHrmPreentryRequestGroupsSections(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.old_index is not None:
             result['oldIndex'] = self.old_index
@@ -316,6 +344,10 @@ class AddHrmPreentryRequestGroups(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.group_id is not None:
             result['groupId'] = self.group_id
@@ -359,6 +391,10 @@ class AddHrmPreentryRequest(TeaModel):
                     k.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.pre_entry_time is not None:
             result['preEntryTime'] = self.pre_entry_time
@@ -404,6 +440,10 @@ class AddHrmPreentryResponseBody(TeaModel):
         pass
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.tmp_user_id is not None:
             result['tmpUserId'] = self.tmp_user_id
@@ -432,6 +472,10 @@ class AddHrmPreentryResponse(TeaModel):
             self.body.validate()
 
     def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers

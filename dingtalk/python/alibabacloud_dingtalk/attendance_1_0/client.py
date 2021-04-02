@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
@@ -66,7 +68,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkattendance__1__0_models.CreateApproveResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CreateApproveResponse(),
             self.do_roarequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approves', 'json', req, runtime)
         )
 
@@ -99,7 +102,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkattendance__1__0_models.CreateApproveResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CreateApproveResponse(),
             await self.do_roarequest_async('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approves', 'json', req, runtime)
         )
 
@@ -142,7 +146,8 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkattendance__1__0_models.GetUserHolidaysResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetUserHolidaysResponse(),
             self.do_roarequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
 
@@ -169,6 +174,7 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
-        return dingtalkattendance__1__0_models.GetUserHolidaysResponse().from_map(
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetUserHolidaysResponse(),
             await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
