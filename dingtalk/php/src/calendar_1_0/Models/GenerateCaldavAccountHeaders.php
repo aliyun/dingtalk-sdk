@@ -11,10 +11,18 @@ class GenerateCaldavAccountHeaders extends Model
     public $commonHeaders;
 
     /**
+     * @description 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
+     *
+     * @var string
+     */
+    public $dingUid;
+
+    /**
      * @var string
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
+        'dingUid'                 => 'dingUid',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
@@ -27,6 +35,9 @@ class GenerateCaldavAccountHeaders extends Model
         $res = [];
         if (null !== $this->commonHeaders) {
             $res['commonHeaders'] = $this->commonHeaders;
+        }
+        if (null !== $this->dingUid) {
+            $res['dingUid'] = $this->dingUid;
         }
         if (null !== $this->xAcsDingtalkAccessToken) {
             $res['x-acs-dingtalk-access-token'] = $this->xAcsDingtalkAccessToken;
@@ -45,6 +56,9 @@ class GenerateCaldavAccountHeaders extends Model
         $model = new self();
         if (isset($map['commonHeaders'])) {
             $model->commonHeaders = $map['commonHeaders'];
+        }
+        if (isset($map['dingUid'])) {
+            $model->dingUid = $map['dingUid'];
         }
         if (isset($map['x-acs-dingtalk-access-token'])) {
             $model->xAcsDingtalkAccessToken = $map['x-acs-dingtalk-access-token'];

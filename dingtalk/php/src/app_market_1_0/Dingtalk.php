@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportResponse;
@@ -76,5 +79,47 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UserTaskReportResponse::fromMap($this->doROARequest('UserTaskReport', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/tasks', 'boolean', $req, $runtime));
+    }
+
+    /**
+     * @param GetPersonalExperienceInfoRequest $request
+     *
+     * @return GetPersonalExperienceInfoResponse
+     */
+    public function getPersonalExperienceInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPersonalExperienceInfoHeaders([]);
+
+        return $this->getPersonalExperienceInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPersonalExperienceInfoRequest $request
+     * @param GetPersonalExperienceInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetPersonalExperienceInfoResponse
+     */
+    public function getPersonalExperienceInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPersonalExperienceInfoResponse::fromMap($this->doROARequest('GetPersonalExperienceInfo', 'appMarket_1.0', 'HTTP', 'GET', 'AK', '/v1.0/appMarket/personalExperiences', 'json', $req, $runtime));
     }
 }

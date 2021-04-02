@@ -4,16 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsRequest\context;
 use AlibabaCloud\Tea\Model;
 
 class GetOfficialAccountContactsRequest extends Model
 {
-    /**
-     * @var context
-     */
-    public $context;
-
     /**
      * @description 取数游标，第一次传0
      *
@@ -28,7 +22,6 @@ class GetOfficialAccountContactsRequest extends Model
      */
     public $maxResults;
     protected $_name = [
-        'context'    => 'context',
         'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
     ];
@@ -40,9 +33,6 @@ class GetOfficialAccountContactsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->context) {
-            $res['context'] = null !== $this->context ? $this->context->toMap() : null;
-        }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
@@ -61,9 +51,6 @@ class GetOfficialAccountContactsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['context'])) {
-            $model->context = context::fromMap($map['context']);
-        }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }

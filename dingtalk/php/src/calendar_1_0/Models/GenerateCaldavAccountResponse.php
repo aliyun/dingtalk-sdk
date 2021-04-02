@@ -14,7 +14,7 @@ class GenerateCaldavAccountResponse extends Model
     public $headers;
 
     /**
-     * @var mixed[]
+     * @var GenerateCaldavAccountResponseBody
      */
     public $body;
     protected $_name = [
@@ -35,7 +35,7 @@ class GenerateCaldavAccountResponse extends Model
             $res['headers'] = $this->headers;
         }
         if (null !== $this->body) {
-            $res['body'] = $this->body;
+            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
         }
 
         return $res;
@@ -53,7 +53,7 @@ class GenerateCaldavAccountResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = $map['body'];
+            $model->body = GenerateCaldavAccountResponseBody::fromMap($map['body']);
         }
 
         return $model;

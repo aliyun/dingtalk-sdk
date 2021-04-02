@@ -5,18 +5,20 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoResponse;
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsResponse;
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
-use AlibabaCloud\Tea\Tea;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -113,24 +115,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOfficialAccountContactsRequest $tmpReq
+     * @param GetOfficialAccountContactsRequest $request
      * @param GetOfficialAccountContactsHeaders $headers
      * @param RuntimeOptions                    $runtime
      *
      * @return GetOfficialAccountContactsResponse
      */
-    public function getOfficialAccountContactsWithOptions($tmpReq, $headers, $runtime)
+    public function getOfficialAccountContactsWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new GetOfficialAccountContactsShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->context)) {
-            $request->contextShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->context), 'context', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->contextShrink)) {
-            @$query['context'] = $request->contextShrink;
-        }
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -153,38 +147,93 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                               $userId
-     * @param GetOfficialAccountContactInfoRequest $request
+     * @param ServiceWindowMessageBatchPushRequest $request
      *
-     * @return GetOfficialAccountContactInfoResponse
+     * @return ServiceWindowMessageBatchPushResponse
      */
-    public function getOfficialAccountContactInfo($userId, $request)
+    public function serviceWindowMessageBatchPush($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetOfficialAccountContactInfoHeaders([]);
+        $headers = new ServiceWindowMessageBatchPushHeaders([]);
 
-        return $this->getOfficialAccountContactInfoWithOptions($userId, $request, $headers, $runtime);
+        return $this->serviceWindowMessageBatchPushWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                               $userId
-     * @param GetOfficialAccountContactInfoRequest $tmpReq
-     * @param GetOfficialAccountContactInfoHeaders $headers
+     * @param ServiceWindowMessageBatchPushRequest $request
+     * @param ServiceWindowMessageBatchPushHeaders $headers
      * @param RuntimeOptions                       $runtime
      *
-     * @return GetOfficialAccountContactInfoResponse
+     * @return ServiceWindowMessageBatchPushResponse
      */
-    public function getOfficialAccountContactInfoWithOptions($userId, $tmpReq, $headers, $runtime)
+    public function serviceWindowMessageBatchPushWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new GetOfficialAccountContactInfoShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->context)) {
-            $request->contextShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->context), 'context', 'json');
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detail)) {
+            @$body['detail'] = $request->detail;
         }
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ServiceWindowMessageBatchPushResponse::fromMap($this->doROARequest('ServiceWindowMessageBatchPush', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/messages/batchSend', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $instanceId
+     * @param DeleteCrmFormInstanceRequest $request
+     *
+     * @return DeleteCrmFormInstanceResponse
+     */
+    public function deleteCrmFormInstance($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCrmFormInstanceHeaders([]);
+
+        return $this->deleteCrmFormInstanceWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $instanceId
+     * @param DeleteCrmFormInstanceRequest $request
+     * @param DeleteCrmFormInstanceHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return DeleteCrmFormInstanceResponse
+     */
+    public function deleteCrmFormInstanceWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->contextShrink)) {
-            @$query['context'] = $request->contextShrink;
+        if (!Utils::isUnset($request->currentOperatorUserId)) {
+            @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$query['name'] = $request->name;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -196,6 +245,42 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteCrmFormInstanceResponse::fromMap($this->doROARequest('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/formInstances/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return GetOfficialAccountContactInfoResponse
+     */
+    public function getOfficialAccountContactInfo($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOfficialAccountContactInfoHeaders([]);
+
+        return $this->getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                               $userId
+     * @param GetOfficialAccountContactInfoHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return GetOfficialAccountContactInfoResponse
+     */
+    public function getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
         ]);
 
         return GetOfficialAccountContactInfoResponse::fromMap($this->doROARequest('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/contacts/' . $userId . '', 'json', $req, $runtime));

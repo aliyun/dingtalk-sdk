@@ -10,8 +10,6 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\CreateEventGroupHe
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\CreateEventGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\SendInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\SendInteractiveCardResponse;
-use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\SendMessageToEventGroupHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\SendMessageToEventGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\SendSingleInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\SendSingleInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\UpdateInteractiveCardHeaders;
@@ -138,44 +136,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendSingleInteractiveCardResponse::fromMap($this->doROARequest('SendSingleInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/singleChatCardMessages', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $userId
-     * @param string $groupId
-     *
-     * @return SendMessageToEventGroupResponse
-     */
-    public function sendMessageToEventGroup($userId, $groupId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new SendMessageToEventGroupHeaders([]);
-
-        return $this->sendMessageToEventGroupWithOptions($userId, $groupId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                         $userId
-     * @param string                         $groupId
-     * @param SendMessageToEventGroupHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return SendMessageToEventGroupResponse
-     */
-    public function sendMessageToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return SendMessageToEventGroupResponse::fromMap($this->doROARequest('SendMessageToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/messages', 'json', $req, $runtime));
     }
 
     /**

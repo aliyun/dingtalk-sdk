@@ -16,13 +16,6 @@ class GetOfficialAccountContactInfoResponseBody extends Model
     public $corpName;
 
     /**
-     * @description 联系人主企业id
-     *
-     * @var string
-     */
-    public $mainCorpId;
-
-    /**
      * @description 手机号
      *
      * @var string
@@ -36,10 +29,9 @@ class GetOfficialAccountContactInfoResponseBody extends Model
      */
     public $stateCode;
     protected $_name = [
-        'corpName'   => 'corpName',
-        'mainCorpId' => 'mainCorpId',
-        'mobile'     => 'mobile',
-        'stateCode'  => 'stateCode',
+        'corpName'  => 'corpName',
+        'mobile'    => 'mobile',
+        'stateCode' => 'stateCode',
     ];
 
     public function validate()
@@ -51,9 +43,6 @@ class GetOfficialAccountContactInfoResponseBody extends Model
         $res = [];
         if (null !== $this->corpName) {
             $res['corpName'] = $this->corpName;
-        }
-        if (null !== $this->mainCorpId) {
-            $res['mainCorpId'] = $this->mainCorpId;
         }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
@@ -75,9 +64,6 @@ class GetOfficialAccountContactInfoResponseBody extends Model
         $model = new self();
         if (isset($map['corpName'])) {
             $model->corpName = $map['corpName'];
-        }
-        if (isset($map['mainCorpId'])) {
-            $model->mainCorpId = $map['mainCorpId'];
         }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];
