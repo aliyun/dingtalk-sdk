@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
-    public class SendMessageToEventGroupResponse : TeaModel {
+    public class GetTbProjectGrayResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public Dictionary<string, object> Body { get; set; }
+        public GetTbProjectGrayResponseBody Body { get; set; }
 
     }
 

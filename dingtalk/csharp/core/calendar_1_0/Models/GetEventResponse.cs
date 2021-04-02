@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public Dictionary<string, object> Body { get; set; }
+        public GetEventResponseBody Body { get; set; }
 
     }
 

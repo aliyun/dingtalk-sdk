@@ -1,0 +1,214 @@
+// This file is auto-generated, don't edit it. Thanks.
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+using Tea;
+
+namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
+{
+    public class CreateTodoTaskResponseBody : TeaModel {
+        /// <summary>
+        /// id
+        /// </summary>
+        [NameInMap("id")]
+        [Validation(Required=false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 标题
+        /// </summary>
+        [NameInMap("subject")]
+        [Validation(Required=false)]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 描述
+        /// </summary>
+        [NameInMap("description")]
+        [Validation(Required=false)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 开始时间
+        /// </summary>
+        [NameInMap("startTime")]
+        [Validation(Required=false)]
+        public long? StartTime { get; set; }
+
+        /// <summary>
+        /// 截止时间
+        /// </summary>
+        [NameInMap("dueTime")]
+        [Validation(Required=false)]
+        public long? DueTime { get; set; }
+
+        /// <summary>
+        /// 完成时间
+        /// </summary>
+        [NameInMap("finishTime")]
+        [Validation(Required=false)]
+        public long? FinishTime { get; set; }
+
+        /// <summary>
+        /// 完成状态
+        /// </summary>
+        [NameInMap("done")]
+        [Validation(Required=false)]
+        public bool? Done { get; set; }
+
+        /// <summary>
+        /// 执行者列表
+        /// </summary>
+        [NameInMap("executorIds")]
+        [Validation(Required=false)]
+        public List<string> ExecutorIds { get; set; }
+
+        /// <summary>
+        /// 参与者列表
+        /// </summary>
+        [NameInMap("participantIds")]
+        [Validation(Required=false)]
+        public List<string> ParticipantIds { get; set; }
+
+        /// <summary>
+        /// 提醒规则
+        /// </summary>
+        [NameInMap("reminder")]
+        [Validation(Required=false)]
+        public CreateTodoTaskResponseBodyReminder Reminder { get; set; }
+        public class CreateTodoTaskResponseBodyReminder : TeaModel {
+            [NameInMap("channel")]
+            [Validation(Required=false)]
+            public int? Channel { get; set; }
+            [NameInMap("rules")]
+            [Validation(Required=false)]
+            public CreateTodoTaskResponseBodyReminderRules Rules { get; set; }
+            public class CreateTodoTaskResponseBodyReminderRules : TeaModel {
+                /// <summary>
+                /// 目前支持三种类型：tartDate: 相对开始时间；dueDate: 相对截止时间；customDate: 绝对时间
+                /// </summary>
+                [NameInMap("baseTime")]
+                [Validation(Required=false)]
+                public string BaseTime { get; set; }
+
+                /// <summary>
+                /// 偏移值：baseTime 为 startDate 或者 dueDate 时，offset 为相对分钟的偏移值；baseTime 为 customDate 时，offset 为毫秒时间戳
+                /// </summary>
+                [NameInMap("offset")]
+                [Validation(Required=false)]
+                public long? Offset { get; set; }
+
+            }
+        };
+
+        /// <summary>
+        /// 待办通知配置（包含单聊卡片、ding通知、群聊卡片、同步日历、同步系统消息等通知能力）
+        /// </summary>
+        [NameInMap("notifyConfigs")]
+        [Validation(Required=false)]
+        public CreateTodoTaskResponseBodyNotifyConfigs NotifyConfigs { get; set; }
+        public class CreateTodoTaskResponseBodyNotifyConfigs : TeaModel {
+            [NameInMap("singleChat")]
+            [Validation(Required=false)]
+            public string SingleChat { get; set; }
+            [NameInMap("groupChat")]
+            [Validation(Required=false)]
+            public string GroupChat { get; set; }
+            [NameInMap("dingNotify")]
+            [Validation(Required=false)]
+            public string DingNotify { get; set; }
+            [NameInMap("canlender")]
+            [Validation(Required=false)]
+            public string Canlender { get; set; }
+        };
+
+        /// <summary>
+        /// 自定义详情页跳转配置
+        /// </summary>
+        [NameInMap("detailUrl")]
+        [Validation(Required=false)]
+        public CreateTodoTaskResponseBodyDetailUrl DetailUrl { get; set; }
+        public class CreateTodoTaskResponseBodyDetailUrl : TeaModel {
+            [NameInMap("pcUrl")]
+            [Validation(Required=false)]
+            public string PcUrl { get; set; }
+            [NameInMap("appUrl")]
+            [Validation(Required=false)]
+            public string AppUrl { get; set; }
+        };
+
+        /// <summary>
+        /// 重复规则
+        /// </summary>
+        [NameInMap("recurrence")]
+        [Validation(Required=false)]
+        public string Recurrence { get; set; }
+
+        /// <summary>
+        /// 业务来源
+        /// </summary>
+        [NameInMap("source")]
+        [Validation(Required=false)]
+        public string Source { get; set; }
+
+        /// <summary>
+        /// 业务来源id
+        /// </summary>
+        [NameInMap("sourceId")]
+        [Validation(Required=false)]
+        public string SourceId { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [NameInMap("createdTime")]
+        [Validation(Required=false)]
+        public long? CreatedTime { get; set; }
+
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        [NameInMap("modifiedTime")]
+        [Validation(Required=false)]
+        public long? ModifiedTime { get; set; }
+
+        /// <summary>
+        /// 创建者
+        /// </summary>
+        [NameInMap("creatorId")]
+        [Validation(Required=false)]
+        public string CreatorId { get; set; }
+
+        /// <summary>
+        /// 更新者
+        /// </summary>
+        [NameInMap("modifierId")]
+        [Validation(Required=false)]
+        public string ModifierId { get; set; }
+
+        /// <summary>
+        /// 租户id
+        /// </summary>
+        [NameInMap("tenantId")]
+        [Validation(Required=false)]
+        public string TenantId { get; set; }
+
+        /// <summary>
+        /// 接入应用标识
+        /// </summary>
+        [NameInMap("bizTag")]
+        [Validation(Required=false)]
+        public string BizTag { get; set; }
+
+        /// <summary>
+        /// requestId
+        /// </summary>
+        [NameInMap("requestId")]
+        [Validation(Required=false)]
+        public string RequestId { get; set; }
+
+    }
+
+}

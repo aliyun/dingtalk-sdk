@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string CorpName { get; set; }
 
         /// <summary>
-        /// 联系人主企业id
-        /// </summary>
-        [NameInMap("mainCorpId")]
-        [Validation(Required=false)]
-        public string MainCorpId { get; set; }
-
-        /// <summary>
         /// 手机号
         /// </summary>
         [NameInMap("mobile")]

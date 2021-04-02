@@ -176,56 +176,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<SendSingleInteractiveCardResponse>(await DoROARequestAsync("SendSingleInteractiveCard", "projectIntegration_1.0", "HTTP", "POST", "AK", "/v1.0/projectIntegration/users/" + userId + "/singleChatCardMessages", "json", req, runtime));
         }
 
-        public SendMessageToEventGroupResponse SendMessageToEventGroup(string userId, string groupId)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SendMessageToEventGroupHeaders headers = new SendMessageToEventGroupHeaders();
-            return SendMessageToEventGroupWithOptions(userId, groupId, headers, runtime);
-        }
-
-        public async Task<SendMessageToEventGroupResponse> SendMessageToEventGroupAsync(string userId, string groupId)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SendMessageToEventGroupHeaders headers = new SendMessageToEventGroupHeaders();
-            return await SendMessageToEventGroupWithOptionsAsync(userId, groupId, headers, runtime);
-        }
-
-        public SendMessageToEventGroupResponse SendMessageToEventGroupWithOptions(string userId, string groupId, SendMessageToEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<SendMessageToEventGroupResponse>(DoROARequest("SendMessageToEventGroup", "projectIntegration_1.0", "HTTP", "POST", "AK", "/v1.0/projectIntegration/users/" + userId + "/eventGroups/" + groupId + "/messages", "json", req, runtime));
-        }
-
-        public async Task<SendMessageToEventGroupResponse> SendMessageToEventGroupWithOptionsAsync(string userId, string groupId, SendMessageToEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<SendMessageToEventGroupResponse>(await DoROARequestAsync("SendMessageToEventGroup", "projectIntegration_1.0", "HTTP", "POST", "AK", "/v1.0/projectIntegration/users/" + userId + "/eventGroups/" + groupId + "/messages", "json", req, runtime));
-        }
-
         public AddAttendeeToEventGroupResponse AddAttendeeToEventGroup(string userId, string groupId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

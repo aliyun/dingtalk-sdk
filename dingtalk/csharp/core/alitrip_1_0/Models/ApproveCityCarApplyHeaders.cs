@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
 {
-    public class SendMessageToEventGroupHeaders : TeaModel {
+    public class ApproveCityCarApplyHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

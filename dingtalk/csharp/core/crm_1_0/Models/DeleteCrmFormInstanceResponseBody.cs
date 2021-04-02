@@ -8,10 +8,13 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class GetOfficialAccountContactInfoShrinkRequest : TeaModel {
-        [NameInMap("context")]
+    public class DeleteCrmFormInstanceResponseBody : TeaModel {
+        /// <summary>
+        /// 被删除的实例id
+        /// </summary>
+        [NameInMap("instanceId")]
         [Validation(Required=false)]
-        public string ContextShrink { get; set; }
+        public string InstanceId { get; set; }
 
     }
 
