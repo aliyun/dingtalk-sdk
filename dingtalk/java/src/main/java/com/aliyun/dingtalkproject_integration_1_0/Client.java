@@ -86,28 +86,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SendSingleInteractiveCard", "projectIntegration_1.0", "HTTP", "POST", "AK", "/v1.0/projectIntegration/users/" + userId + "/singleChatCardMessages", "json", req, runtime), new SendSingleInteractiveCardResponse());
     }
 
-    public SendMessageToEventGroupResponse sendMessageToEventGroup(String userId, String groupId) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        SendMessageToEventGroupHeaders headers = new SendMessageToEventGroupHeaders();
-        return this.sendMessageToEventGroupWithOptions(userId, groupId, headers, runtime);
-    }
-
-    public SendMessageToEventGroupResponse sendMessageToEventGroupWithOptions(String userId, String groupId, SendMessageToEventGroupHeaders headers, RuntimeOptions runtime) throws Exception {
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
-        ));
-        return TeaModel.toModel(this.doROARequest("SendMessageToEventGroup", "projectIntegration_1.0", "HTTP", "POST", "AK", "/v1.0/projectIntegration/users/" + userId + "/eventGroups/" + groupId + "/messages", "json", req, runtime), new SendMessageToEventGroupResponse());
-    }
-
     public AddAttendeeToEventGroupResponse addAttendeeToEventGroup(String userId, String groupId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         AddAttendeeToEventGroupHeaders headers = new AddAttendeeToEventGroupHeaders();

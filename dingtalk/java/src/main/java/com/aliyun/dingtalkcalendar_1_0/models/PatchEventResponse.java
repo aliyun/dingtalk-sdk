@@ -10,7 +10,7 @@ public class PatchEventResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public java.util.Map<String, ?> body;
+    public PatchEventResponseBody body;
 
     public static PatchEventResponse build(java.util.Map<String, ?> map) throws Exception {
         PatchEventResponse self = new PatchEventResponse();
@@ -25,11 +25,11 @@ public class PatchEventResponse extends TeaModel {
         return this.headers;
     }
 
-    public PatchEventResponse setBody(java.util.Map<String, ?> body) {
+    public PatchEventResponse setBody(PatchEventResponseBody body) {
         this.body = body;
         return this;
     }
-    public java.util.Map<String, ?> getBody() {
+    public PatchEventResponseBody getBody() {
         return this.body;
     }
 

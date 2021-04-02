@@ -10,7 +10,7 @@ public class GenerateCaldavAccountResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public java.util.Map<String, ?> body;
+    public GenerateCaldavAccountResponseBody body;
 
     public static GenerateCaldavAccountResponse build(java.util.Map<String, ?> map) throws Exception {
         GenerateCaldavAccountResponse self = new GenerateCaldavAccountResponse();
@@ -25,11 +25,11 @@ public class GenerateCaldavAccountResponse extends TeaModel {
         return this.headers;
     }
 
-    public GenerateCaldavAccountResponse setBody(java.util.Map<String, ?> body) {
+    public GenerateCaldavAccountResponse setBody(GenerateCaldavAccountResponseBody body) {
         this.body = body;
         return this;
     }
-    public java.util.Map<String, ?> getBody() {
+    public GenerateCaldavAccountResponseBody getBody() {
         return this.body;
     }
 

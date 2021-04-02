@@ -10,7 +10,7 @@ public class ListEventsResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public java.util.Map<String, ?> body;
+    public ListEventsResponseBody body;
 
     public static ListEventsResponse build(java.util.Map<String, ?> map) throws Exception {
         ListEventsResponse self = new ListEventsResponse();
@@ -25,11 +25,11 @@ public class ListEventsResponse extends TeaModel {
         return this.headers;
     }
 
-    public ListEventsResponse setBody(java.util.Map<String, ?> body) {
+    public ListEventsResponse setBody(ListEventsResponseBody body) {
         this.body = body;
         return this;
     }
-    public java.util.Map<String, ?> getBody() {
+    public ListEventsResponseBody getBody() {
         return this.body;
     }
 

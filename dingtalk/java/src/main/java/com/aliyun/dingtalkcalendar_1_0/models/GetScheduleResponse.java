@@ -10,7 +10,7 @@ public class GetScheduleResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public java.util.Map<String, ?> body;
+    public GetScheduleResponseBody body;
 
     public static GetScheduleResponse build(java.util.Map<String, ?> map) throws Exception {
         GetScheduleResponse self = new GetScheduleResponse();
@@ -25,11 +25,11 @@ public class GetScheduleResponse extends TeaModel {
         return this.headers;
     }
 
-    public GetScheduleResponse setBody(java.util.Map<String, ?> body) {
+    public GetScheduleResponse setBody(GetScheduleResponseBody body) {
         this.body = body;
         return this;
     }
-    public java.util.Map<String, ?> getBody() {
+    public GetScheduleResponseBody getBody() {
         return this.body;
     }
 

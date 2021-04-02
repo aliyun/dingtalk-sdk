@@ -10,7 +10,7 @@ public class GetEventResponse extends TeaModel {
 
     @NameInMap("body")
     @Validation(required = true)
-    public java.util.Map<String, ?> body;
+    public GetEventResponseBody body;
 
     public static GetEventResponse build(java.util.Map<String, ?> map) throws Exception {
         GetEventResponse self = new GetEventResponse();
@@ -25,11 +25,11 @@ public class GetEventResponse extends TeaModel {
         return this.headers;
     }
 
-    public GetEventResponse setBody(java.util.Map<String, ?> body) {
+    public GetEventResponse setBody(GetEventResponseBody body) {
         this.body = body;
         return this;
     }
-    public java.util.Map<String, ?> getBody() {
+    public GetEventResponseBody getBody() {
         return this.body;
     }
 

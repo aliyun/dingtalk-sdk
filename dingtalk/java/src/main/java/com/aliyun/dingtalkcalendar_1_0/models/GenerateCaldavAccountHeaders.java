@@ -7,6 +7,10 @@ public class GenerateCaldavAccountHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
+    // 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
+    @NameInMap("dingUid")
+    public String dingUid;
+
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
@@ -21,6 +25,14 @@ public class GenerateCaldavAccountHeaders extends TeaModel {
     }
     public java.util.Map<String, String> getCommonHeaders() {
         return this.commonHeaders;
+    }
+
+    public GenerateCaldavAccountHeaders setDingUid(String dingUid) {
+        this.dingUid = dingUid;
+        return this;
+    }
+    public String getDingUid() {
+        return this.dingUid;
     }
 
     public GenerateCaldavAccountHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

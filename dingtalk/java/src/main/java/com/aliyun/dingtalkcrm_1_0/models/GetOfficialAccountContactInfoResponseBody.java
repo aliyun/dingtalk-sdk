@@ -8,10 +8,6 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     @NameInMap("corpName")
     public String corpName;
 
-    // 联系人主企业id
-    @NameInMap("mainCorpId")
-    public String mainCorpId;
-
     // 手机号
     @NameInMap("mobile")
     public String mobile;
@@ -31,14 +27,6 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     }
     public String getCorpName() {
         return this.corpName;
-    }
-
-    public GetOfficialAccountContactInfoResponseBody setMainCorpId(String mainCorpId) {
-        this.mainCorpId = mainCorpId;
-        return this;
-    }
-    public String getMainCorpId() {
-        return this.mainCorpId;
     }
 
     public GetOfficialAccountContactInfoResponseBody setMobile(String mobile) {
