@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class StartCloudFeedHeaders : TeaModel {
+    public class DeleteTeacherHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

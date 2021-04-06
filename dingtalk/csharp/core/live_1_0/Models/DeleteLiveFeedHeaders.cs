@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
-    public class StartCloudFeedHeaders : TeaModel {
+    public class DeleteLiveFeedHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
