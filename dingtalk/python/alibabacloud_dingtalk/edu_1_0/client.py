@@ -250,3 +250,487 @@ class Client(OpenApiClient):
             dingtalkedu__1__0_models.BatchOrgCreateHWResponse(),
             await self.do_roarequest_async('BatchOrgCreateHW', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/homeworks', 'json', req, runtime)
         )
+
+    def create_custom_dept(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomDeptRequest,
+    ) -> dingtalkedu__1__0_models.CreateCustomDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCustomDeptHeaders()
+        return self.create_custom_dept_with_options(request, headers, runtime)
+
+    async def create_custom_dept_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomDeptRequest,
+    ) -> dingtalkedu__1__0_models.CreateCustomDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCustomDeptHeaders()
+        return await self.create_custom_dept_with_options_async(request, headers, runtime)
+
+    def create_custom_dept_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomDeptRequest,
+        headers: dingtalkedu__1__0_models.CreateCustomDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCustomDeptResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.custom_dept):
+            body['customDept'] = request.custom_dept
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCustomDeptResponse(),
+            self.do_roarequest('CreateCustomDept', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/customDepts', 'json', req, runtime)
+        )
+
+    async def create_custom_dept_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomDeptRequest,
+        headers: dingtalkedu__1__0_models.CreateCustomDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCustomDeptResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.custom_dept):
+            body['customDept'] = request.custom_dept
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCustomDeptResponse(),
+            await self.do_roarequest_async('CreateCustomDept', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/customDepts', 'json', req, runtime)
+        )
+
+    def delete_dept(
+        self,
+        dept_id: str,
+        request: dingtalkedu__1__0_models.DeleteDeptRequest,
+    ) -> dingtalkedu__1__0_models.DeleteDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteDeptHeaders()
+        return self.delete_dept_with_options(dept_id, request, headers, runtime)
+
+    async def delete_dept_async(
+        self,
+        dept_id: str,
+        request: dingtalkedu__1__0_models.DeleteDeptRequest,
+    ) -> dingtalkedu__1__0_models.DeleteDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteDeptHeaders()
+        return await self.delete_dept_with_options_async(dept_id, request, headers, runtime)
+
+    def delete_dept_with_options(
+        self,
+        dept_id: str,
+        request: dingtalkedu__1__0_models.DeleteDeptRequest,
+        headers: dingtalkedu__1__0_models.DeleteDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteDeptResponse(),
+            self.do_roarequest('DeleteDept', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/depts/{dept_id}', 'json', req, runtime)
+        )
+
+    async def delete_dept_with_options_async(
+        self,
+        dept_id: str,
+        request: dingtalkedu__1__0_models.DeleteDeptRequest,
+        headers: dingtalkedu__1__0_models.DeleteDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteDeptResponse(),
+            await self.do_roarequest_async('DeleteDept', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/depts/{dept_id}', 'json', req, runtime)
+        )
+
+    def delete_student(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteStudentRequest,
+    ) -> dingtalkedu__1__0_models.DeleteStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteStudentHeaders()
+        return self.delete_student_with_options(class_id, user_id, request, headers, runtime)
+
+    async def delete_student_async(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteStudentRequest,
+    ) -> dingtalkedu__1__0_models.DeleteStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteStudentHeaders()
+        return await self.delete_student_with_options_async(class_id, user_id, request, headers, runtime)
+
+    def delete_student_with_options(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteStudentRequest,
+        headers: dingtalkedu__1__0_models.DeleteStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteStudentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteStudentResponse(),
+            self.do_roarequest('DeleteStudent', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/students/{user_id}', 'json', req, runtime)
+        )
+
+    async def delete_student_with_options_async(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteStudentRequest,
+        headers: dingtalkedu__1__0_models.DeleteStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteStudentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteStudentResponse(),
+            await self.do_roarequest_async('DeleteStudent', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/students/{user_id}', 'json', req, runtime)
+        )
+
+    def delete_guardian(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteGuardianRequest,
+    ) -> dingtalkedu__1__0_models.DeleteGuardianResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteGuardianHeaders()
+        return self.delete_guardian_with_options(class_id, user_id, request, headers, runtime)
+
+    async def delete_guardian_async(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteGuardianRequest,
+    ) -> dingtalkedu__1__0_models.DeleteGuardianResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteGuardianHeaders()
+        return await self.delete_guardian_with_options_async(class_id, user_id, request, headers, runtime)
+
+    def delete_guardian_with_options(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteGuardianRequest,
+        headers: dingtalkedu__1__0_models.DeleteGuardianHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteGuardianResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.stu_id):
+            query['stuId'] = request.stu_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteGuardianResponse(),
+            self.do_roarequest('DeleteGuardian', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/guardians/{user_id}', 'json', req, runtime)
+        )
+
+    async def delete_guardian_with_options_async(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteGuardianRequest,
+        headers: dingtalkedu__1__0_models.DeleteGuardianHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteGuardianResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.stu_id):
+            query['stuId'] = request.stu_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteGuardianResponse(),
+            await self.do_roarequest_async('DeleteGuardian', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/guardians/{user_id}', 'json', req, runtime)
+        )
+
+    def create_custom_class(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomClassRequest,
+    ) -> dingtalkedu__1__0_models.CreateCustomClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCustomClassHeaders()
+        return self.create_custom_class_with_options(request, headers, runtime)
+
+    async def create_custom_class_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomClassRequest,
+    ) -> dingtalkedu__1__0_models.CreateCustomClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCustomClassHeaders()
+        return await self.create_custom_class_with_options_async(request, headers, runtime)
+
+    def create_custom_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomClassRequest,
+        headers: dingtalkedu__1__0_models.CreateCustomClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCustomClassResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.custom_class):
+            body['customClass'] = request.custom_class
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCustomClassResponse(),
+            self.do_roarequest('CreateCustomClass', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/customClasses', 'json', req, runtime)
+        )
+
+    async def create_custom_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCustomClassRequest,
+        headers: dingtalkedu__1__0_models.CreateCustomClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCustomClassResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.custom_class):
+            body['customClass'] = request.custom_class
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCustomClassResponse(),
+            await self.do_roarequest_async('CreateCustomClass', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/customClasses', 'json', req, runtime)
+        )
+
+    def delete_teacher(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteTeacherRequest,
+    ) -> dingtalkedu__1__0_models.DeleteTeacherResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteTeacherHeaders()
+        return self.delete_teacher_with_options(class_id, user_id, request, headers, runtime)
+
+    async def delete_teacher_async(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteTeacherRequest,
+    ) -> dingtalkedu__1__0_models.DeleteTeacherResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteTeacherHeaders()
+        return await self.delete_teacher_with_options_async(class_id, user_id, request, headers, runtime)
+
+    def delete_teacher_with_options(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteTeacherRequest,
+        headers: dingtalkedu__1__0_models.DeleteTeacherHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteTeacherResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.adviser):
+            query['adviser'] = request.adviser
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteTeacherResponse(),
+            self.do_roarequest('DeleteTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/teachers/{user_id}', 'json', req, runtime)
+        )
+
+    async def delete_teacher_with_options_async(
+        self,
+        class_id: str,
+        user_id: str,
+        request: dingtalkedu__1__0_models.DeleteTeacherRequest,
+        headers: dingtalkedu__1__0_models.DeleteTeacherHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteTeacherResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.adviser):
+            query['adviser'] = request.adviser
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteTeacherResponse(),
+            await self.do_roarequest_async('DeleteTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/teachers/{user_id}', 'json', req, runtime)
+        )
