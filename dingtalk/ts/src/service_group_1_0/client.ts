@@ -110,6 +110,118 @@ export class DeleteKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class CreateGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupRequest extends $tea.Model {
+  groupBizId?: string;
+  openTeamId?: string;
+  openGroupSetId?: string;
+  groupName?: string;
+  ownerStaffId?: string;
+  memberStaffIds?: string[];
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      groupBizId: 'groupBizId',
+      openTeamId: 'openTeamId',
+      openGroupSetId: 'openGroupSetId',
+      groupName: 'groupName',
+      ownerStaffId: 'ownerStaffId',
+      memberStaffIds: 'memberStaffIds',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupBizId: 'string',
+      openTeamId: 'string',
+      openGroupSetId: 'string',
+      groupName: 'string',
+      ownerStaffId: 'string',
+      memberStaffIds: { 'type': 'array', 'itemType': 'string' },
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponseBody extends $tea.Model {
+  openConversationId?: string;
+  groupUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      groupUrl: 'groupUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      groupUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddKnowledgeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -509,6 +621,71 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DeleteKnowledgeResponse>(await this.doROARequest("DeleteKnowledge", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/knowledges/batchDelete`, "json", req, runtime), new DeleteKnowledgeResponse({}));
+  }
+
+  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupHeaders({ });
+    return await this.createGroupWithOptions(request, headers, runtime);
+  }
+
+  async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupBizId)) {
+      body["groupBizId"] = request.groupBizId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.ownerStaffId)) {
+      body["ownerStaffId"] = request.ownerStaffId;
+    }
+
+    if (!Util.isUnset(request.memberStaffIds)) {
+      body["memberStaffIds"] = request.memberStaffIds;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups`, "json", req, runtime), new CreateGroupResponse({}));
   }
 
   async addKnowledge(request: AddKnowledgeRequest): Promise<AddKnowledgeResponse> {
