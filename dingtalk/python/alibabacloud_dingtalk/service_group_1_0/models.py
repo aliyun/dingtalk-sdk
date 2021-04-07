@@ -175,6 +175,198 @@ class DeleteKnowledgeResponse(TeaModel):
         return self
 
 
+class CreateGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateGroupRequest(TeaModel):
+    def __init__(
+        self,
+        group_biz_id: str = None,
+        open_team_id: str = None,
+        open_group_set_id: str = None,
+        group_name: str = None,
+        owner_staff_id: str = None,
+        member_staff_ids: List[str] = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+    ):
+        # 业务关联id
+        self.group_biz_id = group_biz_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 开放群组ID
+        self.open_group_set_id = open_group_set_id
+        # 群名称
+        self.group_name = group_name
+        # 群主员工ID
+        self.owner_staff_id = owner_staff_id
+        # 群成员员工ID列表
+        self.member_staff_ids = member_staff_ids
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_biz_id is not None:
+            result['groupBizId'] = self.group_biz_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.owner_staff_id is not None:
+            result['ownerStaffId'] = self.owner_staff_id
+        if self.member_staff_ids is not None:
+            result['memberStaffIds'] = self.member_staff_ids
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupBizId') is not None:
+            self.group_biz_id = m.get('groupBizId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('ownerStaffId') is not None:
+            self.owner_staff_id = m.get('ownerStaffId')
+        if m.get('memberStaffIds') is not None:
+            self.member_staff_ids = m.get('memberStaffIds')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        return self
+
+
+class CreateGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        group_url: str = None,
+    ):
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 入群url
+        self.group_url = group_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.group_url is not None:
+            result['groupUrl'] = self.group_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('groupUrl') is not None:
+            self.group_url = m.get('groupUrl')
+        return self
+
+
+class CreateGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddKnowledgeHeaders(TeaModel):
     def __init__(
         self,
