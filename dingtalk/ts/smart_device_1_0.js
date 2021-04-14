@@ -1,0 +1,1 @@
+module.exports = require('./dist').smart_device_1_0;

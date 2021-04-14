@@ -1,0 +1,1 @@
+module.exports = require('./dist').conference_1_0;

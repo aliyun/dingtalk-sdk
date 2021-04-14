@@ -39,8 +39,6 @@ export class GetTodoTaskResponseBody extends $tea.Model {
   done?: boolean;
   executorIds?: string[];
   participantIds?: string[];
-  reminder?: GetTodoTaskResponseBodyReminder;
-  recurrence?: string;
   detailUrl?: GetTodoTaskResponseBodyDetailUrl;
   sourceId?: string;
   source?: string;
@@ -62,8 +60,6 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       done: 'done',
       executorIds: 'executorIds',
       participantIds: 'participantIds',
-      reminder: 'reminder',
-      recurrence: 'recurrence',
       detailUrl: 'detailUrl',
       sourceId: 'sourceId',
       source: 'source',
@@ -88,8 +84,6 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       done: 'boolean',
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
-      reminder: GetTodoTaskResponseBodyReminder,
-      recurrence: 'string',
       detailUrl: GetTodoTaskResponseBodyDetailUrl,
       sourceId: 'string',
       source: 'string',
@@ -244,9 +238,6 @@ export class UpdateTodoTaskRequest extends $tea.Model {
   done?: boolean;
   executorIds?: string[];
   participantIds?: string[];
-  detailUrl?: UpdateTodoTaskRequestDetailUrl;
-  recurrence?: string;
-  reminder?: UpdateTodoTaskRequestReminder;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -256,9 +247,6 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       done: 'done',
       executorIds: 'executorIds',
       participantIds: 'participantIds',
-      detailUrl: 'detailUrl',
-      recurrence: 'recurrence',
-      reminder: 'reminder',
       operatorId: 'operatorId',
     };
   }
@@ -271,9 +259,6 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       done: 'boolean',
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
-      detailUrl: UpdateTodoTaskRequestDetailUrl,
-      recurrence: 'string',
-      reminder: UpdateTodoTaskRequestReminder,
       operatorId: 'string',
     };
   }
@@ -355,9 +340,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
   executorIds?: string[];
   participantIds?: string[];
   detailUrl?: CreateTodoTaskRequestDetailUrl;
-  recurrence?: string;
-  reminder?: CreateTodoTaskRequestReminder;
-  notifyConfigs?: CreateTodoTaskRequestNotifyConfigs;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -369,9 +351,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: 'executorIds',
       participantIds: 'participantIds',
       detailUrl: 'detailUrl',
-      recurrence: 'recurrence',
-      reminder: 'reminder',
-      notifyConfigs: 'notifyConfigs',
       operatorId: 'operatorId',
     };
   }
@@ -386,9 +365,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
       detailUrl: CreateTodoTaskRequestDetailUrl,
-      recurrence: 'string',
-      reminder: CreateTodoTaskRequestReminder,
-      notifyConfigs: CreateTodoTaskRequestNotifyConfigs,
       operatorId: 'string',
     };
   }
@@ -408,10 +384,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   done?: boolean;
   executorIds?: string[];
   participantIds?: string[];
-  reminder?: CreateTodoTaskResponseBodyReminder;
-  notifyConfigs?: CreateTodoTaskResponseBodyNotifyConfigs;
   detailUrl?: CreateTodoTaskResponseBodyDetailUrl;
-  recurrence?: string;
   source?: string;
   sourceId?: string;
   createdTime?: number;
@@ -432,10 +405,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       done: 'done',
       executorIds: 'executorIds',
       participantIds: 'participantIds',
-      reminder: 'reminder',
-      notifyConfigs: 'notifyConfigs',
       detailUrl: 'detailUrl',
-      recurrence: 'recurrence',
       source: 'source',
       sourceId: 'sourceId',
       createdTime: 'createdTime',
@@ -459,10 +429,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       done: 'boolean',
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
-      reminder: CreateTodoTaskResponseBodyReminder,
-      notifyConfigs: CreateTodoTaskResponseBodyNotifyConfigs,
       detailUrl: CreateTodoTaskResponseBodyDetailUrl,
-      recurrence: 'string',
       source: 'string',
       sourceId: 'string',
       createdTime: 'number',
@@ -502,50 +469,6 @@ export class CreateTodoTaskResponse extends $tea.Model {
   }
 }
 
-export class GetTodoTaskResponseBodyReminderRules extends $tea.Model {
-  baseTime?: string;
-  offset?: number;
-  static names(): { [key: string]: string } {
-    return {
-      baseTime: 'baseTime',
-      offset: 'offset',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      baseTime: 'string',
-      offset: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetTodoTaskResponseBodyReminder extends $tea.Model {
-  channel?: number;
-  rules?: GetTodoTaskResponseBodyReminderRules[];
-  static names(): { [key: string]: string } {
-    return {
-      channel: 'channel',
-      rules: 'rules',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      channel: 'number',
-      rules: { 'type': 'array', 'itemType': GetTodoTaskResponseBodyReminderRules },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetTodoTaskResponseBodyDetailUrl extends $tea.Model {
   pcUrl?: string;
   appUrl?: string;
@@ -568,72 +491,6 @@ export class GetTodoTaskResponseBodyDetailUrl extends $tea.Model {
   }
 }
 
-export class UpdateTodoTaskRequestDetailUrl extends $tea.Model {
-  appUrl?: string;
-  pcUrl?: string;
-  static names(): { [key: string]: string } {
-    return {
-      appUrl: 'appUrl',
-      pcUrl: 'pcUrl',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      appUrl: 'string',
-      pcUrl: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateTodoTaskRequestReminderRules extends $tea.Model {
-  baseTime?: string;
-  offset?: number;
-  static names(): { [key: string]: string } {
-    return {
-      baseTime: 'baseTime',
-      offset: 'offset',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      baseTime: 'string',
-      offset: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateTodoTaskRequestReminder extends $tea.Model {
-  channel?: number;
-  rules?: UpdateTodoTaskRequestReminderRules[];
-  static names(): { [key: string]: string } {
-    return {
-      channel: 'channel',
-      rules: 'rules',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      channel: 'number',
-      rules: { 'type': 'array', 'itemType': UpdateTodoTaskRequestReminderRules },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   appUrl?: string;
   pcUrl?: string;
@@ -648,150 +505,6 @@ export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
     return {
       appUrl: 'string',
       pcUrl: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskRequestReminderRules extends $tea.Model {
-  baseTime?: string;
-  offset?: number;
-  static names(): { [key: string]: string } {
-    return {
-      baseTime: 'baseTime',
-      offset: 'offset',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      baseTime: 'string',
-      offset: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskRequestReminder extends $tea.Model {
-  channel?: number;
-  rules?: CreateTodoTaskRequestReminderRules[];
-  static names(): { [key: string]: string } {
-    return {
-      channel: 'channel',
-      rules: 'rules',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      channel: 'number',
-      rules: { 'type': 'array', 'itemType': CreateTodoTaskRequestReminderRules },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskRequestNotifyConfigs extends $tea.Model {
-  singleChat?: string;
-  groupChat?: string;
-  dingNotify?: string;
-  canlender?: string;
-  static names(): { [key: string]: string } {
-    return {
-      singleChat: 'singleChat',
-      groupChat: 'groupChat',
-      dingNotify: 'dingNotify',
-      canlender: 'canlender',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      singleChat: 'string',
-      groupChat: 'string',
-      dingNotify: 'string',
-      canlender: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskResponseBodyReminderRules extends $tea.Model {
-  baseTime?: string;
-  offset?: number;
-  static names(): { [key: string]: string } {
-    return {
-      baseTime: 'baseTime',
-      offset: 'offset',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      baseTime: 'string',
-      offset: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskResponseBodyReminder extends $tea.Model {
-  channel?: number;
-  rules?: CreateTodoTaskResponseBodyReminderRules;
-  static names(): { [key: string]: string } {
-    return {
-      channel: 'channel',
-      rules: 'rules',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      channel: 'number',
-      rules: CreateTodoTaskResponseBodyReminderRules,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskResponseBodyNotifyConfigs extends $tea.Model {
-  singleChat?: string;
-  groupChat?: string;
-  dingNotify?: string;
-  canlender?: string;
-  static names(): { [key: string]: string } {
-    return {
-      singleChat: 'singleChat',
-      groupChat: 'groupChat',
-      dingNotify: 'dingNotify',
-      canlender: 'canlender',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      singleChat: 'string',
-      groupChat: 'string',
-      dingNotify: 'string',
-      canlender: 'string',
     };
   }
 
@@ -924,18 +637,6 @@ export default class Client extends OpenApi {
       body["participantIds"] = request.participantIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.detailUrl))) {
-      body["detailUrl"] = request.detailUrl;
-    }
-
-    if (!Util.isUnset(request.recurrence)) {
-      body["recurrence"] = request.recurrence;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.reminder))) {
-      body["reminder"] = request.reminder;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -997,18 +698,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.detailUrl))) {
       body["detailUrl"] = request.detailUrl;
-    }
-
-    if (!Util.isUnset(request.recurrence)) {
-      body["recurrence"] = request.recurrence;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.reminder))) {
-      body["reminder"] = request.reminder;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.notifyConfigs))) {
-      body["notifyConfigs"] = request.notifyConfigs;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -865,7 +865,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditFeedReplayResponse>(await this.doROARequest("EditFeedReplay", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/openFeeds/${feedId}/replay`, "json", req, runtime), new EditFeedReplayResponse({}));
+    return $tea.cast<EditFeedReplayResponse>(await this.doROARequest("EditFeedReplay", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/openFeeds/${feedId}/cutReplay`, "json", req, runtime), new EditFeedReplayResponse({}));
   }
 
   async queryFeedWhiteList(feedId: string, request: QueryFeedWhiteListRequest): Promise<QueryFeedWhiteListResponse> {

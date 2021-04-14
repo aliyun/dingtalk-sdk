@@ -48,6 +48,7 @@ export class AddCityCarApplyRequest extends $tea.Model {
   dingSuiteKey?: string;
   dingCorpId?: string;
   dingTokenGrantType?: number;
+  finishedDate?: string;
   static names(): { [key: string]: string } {
     return {
       cause: 'cause',
@@ -68,6 +69,7 @@ export class AddCityCarApplyRequest extends $tea.Model {
       dingSuiteKey: 'dingSuiteKey',
       dingCorpId: 'dingCorpId',
       dingTokenGrantType: 'dingTokenGrantType',
+      finishedDate: 'finishedDate',
     };
   }
 
@@ -91,6 +93,7 @@ export class AddCityCarApplyRequest extends $tea.Model {
       dingSuiteKey: 'string',
       dingCorpId: 'string',
       dingTokenGrantType: 'number',
+      finishedDate: 'string',
     };
   }
 
@@ -591,6 +594,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.dingTokenGrantType)) {
       body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.finishedDate)) {
+      body["finishedDate"] = request.finishedDate;
     }
 
     let realHeaders : {[key: string ]: string} = { };

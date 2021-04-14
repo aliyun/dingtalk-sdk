@@ -1,0 +1,1 @@
+module.exports = require('./dist').dingmi_1_0;
