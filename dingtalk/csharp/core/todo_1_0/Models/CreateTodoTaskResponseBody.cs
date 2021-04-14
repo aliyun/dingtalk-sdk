@@ -73,58 +73,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public List<string> ParticipantIds { get; set; }
 
         /// <summary>
-        /// 提醒规则
-        /// </summary>
-        [NameInMap("reminder")]
-        [Validation(Required=false)]
-        public CreateTodoTaskResponseBodyReminder Reminder { get; set; }
-        public class CreateTodoTaskResponseBodyReminder : TeaModel {
-            [NameInMap("channel")]
-            [Validation(Required=false)]
-            public int? Channel { get; set; }
-            [NameInMap("rules")]
-            [Validation(Required=false)]
-            public CreateTodoTaskResponseBodyReminderRules Rules { get; set; }
-            public class CreateTodoTaskResponseBodyReminderRules : TeaModel {
-                /// <summary>
-                /// 目前支持三种类型：tartDate: 相对开始时间；dueDate: 相对截止时间；customDate: 绝对时间
-                /// </summary>
-                [NameInMap("baseTime")]
-                [Validation(Required=false)]
-                public string BaseTime { get; set; }
-
-                /// <summary>
-                /// 偏移值：baseTime 为 startDate 或者 dueDate 时，offset 为相对分钟的偏移值；baseTime 为 customDate 时，offset 为毫秒时间戳
-                /// </summary>
-                [NameInMap("offset")]
-                [Validation(Required=false)]
-                public long? Offset { get; set; }
-
-            }
-        };
-
-        /// <summary>
-        /// 待办通知配置（包含单聊卡片、ding通知、群聊卡片、同步日历、同步系统消息等通知能力）
-        /// </summary>
-        [NameInMap("notifyConfigs")]
-        [Validation(Required=false)]
-        public CreateTodoTaskResponseBodyNotifyConfigs NotifyConfigs { get; set; }
-        public class CreateTodoTaskResponseBodyNotifyConfigs : TeaModel {
-            [NameInMap("singleChat")]
-            [Validation(Required=false)]
-            public string SingleChat { get; set; }
-            [NameInMap("groupChat")]
-            [Validation(Required=false)]
-            public string GroupChat { get; set; }
-            [NameInMap("dingNotify")]
-            [Validation(Required=false)]
-            public string DingNotify { get; set; }
-            [NameInMap("canlender")]
-            [Validation(Required=false)]
-            public string Canlender { get; set; }
-        };
-
-        /// <summary>
         /// 自定义详情页跳转配置
         /// </summary>
         [NameInMap("detailUrl")]
@@ -138,13 +86,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public string AppUrl { get; set; }
         };
-
-        /// <summary>
-        /// 重复规则
-        /// </summary>
-        [NameInMap("recurrence")]
-        [Validation(Required=false)]
-        public string Recurrence { get; set; }
 
         /// <summary>
         /// 业务来源

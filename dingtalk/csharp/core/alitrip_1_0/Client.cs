@@ -116,6 +116,10 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             {
                 body["dingTokenGrantType"] = request.DingTokenGrantType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FinishedDate))
+            {
+                body["finishedDate"] = request.FinishedDate;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -208,6 +212,10 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
             {
                 body["dingTokenGrantType"] = request.DingTokenGrantType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FinishedDate))
+            {
+                body["finishedDate"] = request.FinishedDate;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

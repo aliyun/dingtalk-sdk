@@ -73,32 +73,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public List<string> ParticipantIds { get; set; }
 
         /// <summary>
-        /// 提醒规则
-        /// </summary>
-        [NameInMap("reminder")]
-        [Validation(Required=false)]
-        public GetTodoTaskResponseBodyReminder Reminder { get; set; }
-        public class GetTodoTaskResponseBodyReminder : TeaModel {
-            [NameInMap("channel")]
-            [Validation(Required=false)]
-            public int? Channel { get; set; }
-            [NameInMap("rules")]
-            [Validation(Required=false)]
-            public List<GetTodoTaskResponseBodyReminderRules> Rules { get; set; }
-            public class GetTodoTaskResponseBodyReminderRules : TeaModel {
-                public string BaseTime { get; set; }
-                public int? Offset { get; set; }
-            }
-        };
-
-        /// <summary>
-        /// 重复规则
-        /// </summary>
-        [NameInMap("recurrence")]
-        [Validation(Required=false)]
-        public string Recurrence { get; set; }
-
-        /// <summary>
         /// 自定义详情页跳转配置
         /// </summary>
         [NameInMap("detailUrl")]

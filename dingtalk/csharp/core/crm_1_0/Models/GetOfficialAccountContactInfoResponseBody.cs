@@ -30,6 +30,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string StateCode { get; set; }
 
+        /// <summary>
+        /// 联系人的unionId
+        /// </summary>
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
+
+        /// <summary>
+        /// 已授权的字段
+        /// </summary>
+        [NameInMap("authItems")]
+        [Validation(Required=false)]
+        public List<string> AuthItems { get; set; }
+
     }
 
 }

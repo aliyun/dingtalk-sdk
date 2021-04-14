@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// 用车日期
+        /// 用车时间，按天管控，比如传值2021-03-18 20:26:56表示2021-03-18当天可用车，跨天情况配合finishedDate参数使用
         /// </summary>
         [NameInMap("date")]
         [Validation(Required=false)]
@@ -87,7 +87,7 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         public long? TimesTotal { get; set; }
 
         /// <summary>
-        /// 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数
+        /// 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数；如果企业没有限制审批单使用次数的需求，这个参数传1(次数不限制)，同时times_total和times_used都传0即可
         /// </summary>
         [NameInMap("timesType")]
         [Validation(Required=false)]
@@ -134,6 +134,13 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
+
+        /// <summary>
+        /// 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+        /// </summary>
+        [NameInMap("finishedDate")]
+        [Validation(Required=false)]
+        public string FinishedDate { get; set; }
 
     }
 

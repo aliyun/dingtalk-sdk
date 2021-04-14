@@ -74,53 +74,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         };
 
         /// <summary>
-        /// 待办重复规则配置
-        /// </summary>
-        [NameInMap("recurrence")]
-        [Validation(Required=false)]
-        public string Recurrence { get; set; }
-
-        /// <summary>
-        /// 待办提醒规则配置
-        /// </summary>
-        [NameInMap("reminder")]
-        [Validation(Required=false)]
-        public CreateTodoTaskRequestReminder Reminder { get; set; }
-        public class CreateTodoTaskRequestReminder : TeaModel {
-            [NameInMap("channel")]
-            [Validation(Required=false)]
-            public int? Channel { get; set; }
-            [NameInMap("rules")]
-            [Validation(Required=false)]
-            public List<CreateTodoTaskRequestReminderRules> Rules { get; set; }
-            public class CreateTodoTaskRequestReminderRules : TeaModel {
-                public string BaseTime { get; set; }
-                public long? Offset { get; set; }
-            }
-        };
-
-        /// <summary>
-        /// 待办通知配置（包含单聊卡片、ding通知、群聊卡片、同步日历、同步系统消息等通知能力）
-        /// </summary>
-        [NameInMap("notifyConfigs")]
-        [Validation(Required=false)]
-        public CreateTodoTaskRequestNotifyConfigs NotifyConfigs { get; set; }
-        public class CreateTodoTaskRequestNotifyConfigs : TeaModel {
-            [NameInMap("singleChat")]
-            [Validation(Required=false)]
-            public string SingleChat { get; set; }
-            [NameInMap("groupChat")]
-            [Validation(Required=false)]
-            public string GroupChat { get; set; }
-            [NameInMap("dingNotify")]
-            [Validation(Required=false)]
-            public string DingNotify { get; set; }
-            [NameInMap("canlender")]
-            [Validation(Required=false)]
-            public string Canlender { get; set; }
-        };
-
-        /// <summary>
         /// 当前操作者id
         /// </summary>
         [NameInMap("operatorId")]

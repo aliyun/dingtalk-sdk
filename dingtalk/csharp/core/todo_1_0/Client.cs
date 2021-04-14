@@ -187,18 +187,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["participantIds"] = request.ParticipantIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl.ToMap()))
-            {
-                body["detailUrl"] = request.DetailUrl;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminder.ToMap()))
-            {
-                body["reminder"] = request.Reminder;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -249,18 +237,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
             {
                 body["participantIds"] = request.ParticipantIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl.ToMap()))
-            {
-                body["detailUrl"] = request.DetailUrl;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminder.ToMap()))
-            {
-                body["reminder"] = request.Reminder;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -335,18 +311,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["detailUrl"] = request.DetailUrl;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminder.ToMap()))
-            {
-                body["reminder"] = request.Reminder;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NotifyConfigs.ToMap()))
-            {
-                body["notifyConfigs"] = request.NotifyConfigs;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -405,18 +369,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl.ToMap()))
             {
                 body["detailUrl"] = request.DetailUrl;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminder.ToMap()))
-            {
-                body["reminder"] = request.Reminder;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NotifyConfigs.ToMap()))
-            {
-                body["notifyConfigs"] = request.NotifyConfigs;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
