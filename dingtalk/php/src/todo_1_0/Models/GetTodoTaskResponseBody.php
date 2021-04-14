@@ -5,7 +5,6 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskResponseBody\detailUrl;
-use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskResponseBody\reminder;
 use AlibabaCloud\Tea\Model;
 
 class GetTodoTaskResponseBody extends Model
@@ -72,20 +71,6 @@ class GetTodoTaskResponseBody extends Model
      * @var string[]
      */
     public $participantIds;
-
-    /**
-     * @description 提醒规则
-     *
-     * @var reminder
-     */
-    public $reminder;
-
-    /**
-     * @description 重复规则
-     *
-     * @var string
-     */
-    public $recurrence;
 
     /**
      * @description 自定义详情页跳转配置
@@ -166,8 +151,6 @@ class GetTodoTaskResponseBody extends Model
         'done'           => 'done',
         'executorIds'    => 'executorIds',
         'participantIds' => 'participantIds',
-        'reminder'       => 'reminder',
-        'recurrence'     => 'recurrence',
         'detailUrl'      => 'detailUrl',
         'sourceId'       => 'sourceId',
         'source'         => 'source',
@@ -213,12 +196,6 @@ class GetTodoTaskResponseBody extends Model
         }
         if (null !== $this->participantIds) {
             $res['participantIds'] = $this->participantIds;
-        }
-        if (null !== $this->reminder) {
-            $res['reminder'] = null !== $this->reminder ? $this->reminder->toMap() : null;
-        }
-        if (null !== $this->recurrence) {
-            $res['recurrence'] = $this->recurrence;
         }
         if (null !== $this->detailUrl) {
             $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
@@ -292,12 +269,6 @@ class GetTodoTaskResponseBody extends Model
             if (!empty($map['participantIds'])) {
                 $model->participantIds = $map['participantIds'];
             }
-        }
-        if (isset($map['reminder'])) {
-            $model->reminder = reminder::fromMap($map['reminder']);
-        }
-        if (isset($map['recurrence'])) {
-            $model->recurrence = $map['recurrence'];
         }
         if (isset($map['detailUrl'])) {
             $model->detailUrl = detailUrl::fromMap($map['detailUrl']);

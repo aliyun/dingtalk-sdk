@@ -28,10 +28,26 @@ class GetOfficialAccountContactInfoResponseBody extends Model
      * @var string
      */
     public $stateCode;
+
+    /**
+     * @description 联系人的unionId
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
+     * @description 已授权的字段
+     *
+     * @var string[]
+     */
+    public $authItems;
     protected $_name = [
         'corpName'  => 'corpName',
         'mobile'    => 'mobile',
         'stateCode' => 'stateCode',
+        'unionId'   => 'unionId',
+        'authItems' => 'authItems',
     ];
 
     public function validate()
@@ -49,6 +65,12 @@ class GetOfficialAccountContactInfoResponseBody extends Model
         }
         if (null !== $this->stateCode) {
             $res['stateCode'] = $this->stateCode;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->authItems) {
+            $res['authItems'] = $this->authItems;
         }
 
         return $res;
@@ -70,6 +92,14 @@ class GetOfficialAccountContactInfoResponseBody extends Model
         }
         if (isset($map['stateCode'])) {
             $model->stateCode = $map['stateCode'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
+        }
+        if (isset($map['authItems'])) {
+            if (!empty($map['authItems'])) {
+                $model->authItems = $map['authItems'];
+            }
         }
 
         return $model;

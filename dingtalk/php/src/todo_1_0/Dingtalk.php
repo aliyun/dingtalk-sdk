@@ -166,15 +166,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->participantIds)) {
             @$body['participantIds'] = $request->participantIds;
         }
-        if (!Utils::isUnset($request->detailUrl)) {
-            @$body['detailUrl'] = $request->detailUrl;
-        }
-        if (!Utils::isUnset($request->recurrence)) {
-            @$body['recurrence'] = $request->recurrence;
-        }
-        if (!Utils::isUnset($request->reminder)) {
-            @$body['reminder'] = $request->reminder;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -244,15 +235,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->detailUrl)) {
             @$body['detailUrl'] = $request->detailUrl;
-        }
-        if (!Utils::isUnset($request->recurrence)) {
-            @$body['recurrence'] = $request->recurrence;
-        }
-        if (!Utils::isUnset($request->reminder)) {
-            @$body['reminder'] = $request->reminder;
-        }
-        if (!Utils::isUnset($request->notifyConfigs)) {
-            @$body['notifyConfigs'] = $request->notifyConfigs;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

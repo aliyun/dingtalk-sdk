@@ -30,7 +30,7 @@ class AddCityCarApplyRequest extends Model
     public $corpId;
 
     /**
-     * @description 用车日期
+     * @description 用车时间，按天管控，比如传值2021-03-18 20:26:56表示2021-03-18当天可用车，跨天情况配合finishedDate参数使用
      *
      * @var string
      */
@@ -86,7 +86,7 @@ class AddCityCarApplyRequest extends Model
     public $timesTotal;
 
     /**
-     * @description 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数
+     * @description 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数；如果企业没有限制审批单使用次数的需求，这个参数传1(次数不限制)，同时times_total和times_used都传0即可
      *
      * @var int
      */
@@ -133,6 +133,13 @@ class AddCityCarApplyRequest extends Model
      * @var int
      */
     public $dingTokenGrantType;
+
+    /**
+     * @description 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+     *
+     * @var string
+     */
+    public $finishedDate;
     protected $_name = [
         'cause'                 => 'cause',
         'city'                  => 'city',
@@ -152,6 +159,7 @@ class AddCityCarApplyRequest extends Model
         'dingSuiteKey'          => 'dingSuiteKey',
         'dingCorpId'            => 'dingCorpId',
         'dingTokenGrantType'    => 'dingTokenGrantType',
+        'finishedDate'          => 'finishedDate',
     ];
 
     public function validate()
@@ -214,6 +222,9 @@ class AddCityCarApplyRequest extends Model
         }
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        }
+        if (null !== $this->finishedDate) {
+            $res['finishedDate'] = $this->finishedDate;
         }
 
         return $res;
@@ -280,6 +291,9 @@ class AddCityCarApplyRequest extends Model
         }
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        }
+        if (isset($map['finishedDate'])) {
+            $model->finishedDate = $map['finishedDate'];
         }
 
         return $model;

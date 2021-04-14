@@ -96,7 +96,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return EditFeedReplayResponse::fromMap($this->doROARequest('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/openFeeds/' . $feedId . '/replay', 'json', $req, $runtime));
+        return EditFeedReplayResponse::fromMap($this->doROARequest('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/openFeeds/' . $feedId . '/cutReplay', 'json', $req, $runtime));
     }
 
     /**

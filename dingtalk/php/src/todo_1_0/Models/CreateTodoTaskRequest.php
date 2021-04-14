@@ -5,8 +5,6 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\detailUrl;
-use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\notifyConfigs;
-use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\reminder;
 use AlibabaCloud\Tea\Model;
 
 class CreateTodoTaskRequest extends Model
@@ -68,27 +66,6 @@ class CreateTodoTaskRequest extends Model
     public $detailUrl;
 
     /**
-     * @description 待办重复规则配置
-     *
-     * @var string
-     */
-    public $recurrence;
-
-    /**
-     * @description 待办提醒规则配置
-     *
-     * @var reminder
-     */
-    public $reminder;
-
-    /**
-     * @description 待办通知配置（包含单聊卡片、ding通知、群聊卡片、同步日历、同步系统消息等通知能力）
-     *
-     * @var notifyConfigs
-     */
-    public $notifyConfigs;
-
-    /**
      * @description 当前操作者id
      *
      * @var string
@@ -103,9 +80,6 @@ class CreateTodoTaskRequest extends Model
         'executorIds'    => 'executorIds',
         'participantIds' => 'participantIds',
         'detailUrl'      => 'detailUrl',
-        'recurrence'     => 'recurrence',
-        'reminder'       => 'reminder',
-        'notifyConfigs'  => 'notifyConfigs',
         'operatorId'     => 'operatorId',
     ];
 
@@ -139,15 +113,6 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->detailUrl) {
             $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
-        }
-        if (null !== $this->recurrence) {
-            $res['recurrence'] = $this->recurrence;
-        }
-        if (null !== $this->reminder) {
-            $res['reminder'] = null !== $this->reminder ? $this->reminder->toMap() : null;
-        }
-        if (null !== $this->notifyConfigs) {
-            $res['notifyConfigs'] = null !== $this->notifyConfigs ? $this->notifyConfigs->toMap() : null;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -191,15 +156,6 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['detailUrl'])) {
             $model->detailUrl = detailUrl::fromMap($map['detailUrl']);
-        }
-        if (isset($map['recurrence'])) {
-            $model->recurrence = $map['recurrence'];
-        }
-        if (isset($map['reminder'])) {
-            $model->reminder = reminder::fromMap($map['reminder']);
-        }
-        if (isset($map['notifyConfigs'])) {
-            $model->notifyConfigs = notifyConfigs::fromMap($map['notifyConfigs']);
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

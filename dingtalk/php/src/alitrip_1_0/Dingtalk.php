@@ -108,6 +108,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingTokenGrantType)) {
             @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
         }
+        if (!Utils::isUnset($request->finishedDate)) {
+            @$body['finishedDate'] = $request->finishedDate;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
