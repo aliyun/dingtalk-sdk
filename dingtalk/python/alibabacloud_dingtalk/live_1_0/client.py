@@ -67,7 +67,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalklive__1__0_models.EditFeedReplayResponse(),
-            self.do_roarequest('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/openFeeds/{feed_id}/replay', 'json', req, runtime)
+            self.do_roarequest('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/openFeeds/{feed_id}/cutReplay', 'json', req, runtime)
         )
 
     async def edit_feed_replay_with_options_async(
@@ -96,7 +96,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalklive__1__0_models.EditFeedReplayResponse(),
-            await self.do_roarequest_async('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/openFeeds/{feed_id}/replay', 'json', req, runtime)
+            await self.do_roarequest_async('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/live/openFeeds/{feed_id}/cutReplay', 'json', req, runtime)
         )
 
     def query_feed_white_list(

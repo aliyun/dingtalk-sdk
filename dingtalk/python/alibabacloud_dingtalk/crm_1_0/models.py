@@ -1369,6 +1369,8 @@ class GetOfficialAccountContactInfoResponseBody(TeaModel):
         corp_name: str = None,
         mobile: str = None,
         state_code: str = None,
+        union_id: str = None,
+        auth_items: List[str] = None,
     ):
         # 联系人主企业名称
         self.corp_name = corp_name
@@ -1376,6 +1378,10 @@ class GetOfficialAccountContactInfoResponseBody(TeaModel):
         self.mobile = mobile
         # 手机号国家码
         self.state_code = state_code
+        # 联系人的unionId
+        self.union_id = union_id
+        # 已授权的字段
+        self.auth_items = auth_items
 
     def validate(self):
         pass
@@ -1392,6 +1398,10 @@ class GetOfficialAccountContactInfoResponseBody(TeaModel):
             result['mobile'] = self.mobile
         if self.state_code is not None:
             result['stateCode'] = self.state_code
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.auth_items is not None:
+            result['authItems'] = self.auth_items
         return result
 
     def from_map(self, m: dict = None):
@@ -1402,6 +1412,10 @@ class GetOfficialAccountContactInfoResponseBody(TeaModel):
             self.mobile = m.get('mobile')
         if m.get('stateCode') is not None:
             self.state_code = m.get('stateCode')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('authItems') is not None:
+            self.auth_items = m.get('authItems')
         return self
 
 

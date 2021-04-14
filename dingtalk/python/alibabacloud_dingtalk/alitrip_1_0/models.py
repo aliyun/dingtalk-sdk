@@ -58,6 +58,7 @@ class AddCityCarApplyRequest(TeaModel):
         ding_suite_key: str = None,
         ding_corp_id: str = None,
         ding_token_grant_type: int = None,
+        finished_date: str = None,
     ):
         # 出差事由
         self.cause = cause
@@ -65,7 +66,7 @@ class AddCityCarApplyRequest(TeaModel):
         self.city = city
         # 第三方企业ID
         self.corp_id = corp_id
-        # 用车日期
+        # 用车时间，按天管控，比如传值2021-03-18 20:26:56表示2021-03-18当天可用车，跨天情况配合finishedDate参数使用
         self.date = date
         # 审批单关联的项目code
         self.project_code = project_code
@@ -81,7 +82,7 @@ class AddCityCarApplyRequest(TeaModel):
         self.third_part_invoice_id = third_part_invoice_id
         # 审批单可用总次数
         self.times_total = times_total
-        # 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数
+        # 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数；如果企业没有限制审批单使用次数的需求，这个参数传1(次数不限制)，同时times_total和times_used都传0即可
         self.times_type = times_type
         # 审批单已用次数
         self.times_used = times_used
@@ -95,6 +96,8 @@ class AddCityCarApplyRequest(TeaModel):
         self.ding_corp_id = ding_corp_id
         # tokenGrantType
         self.ding_token_grant_type = ding_token_grant_type
+        # 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+        self.finished_date = finished_date
 
     def validate(self):
         pass
@@ -141,6 +144,8 @@ class AddCityCarApplyRequest(TeaModel):
             result['dingCorpId'] = self.ding_corp_id
         if self.ding_token_grant_type is not None:
             result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.finished_date is not None:
+            result['finishedDate'] = self.finished_date
         return result
 
     def from_map(self, m: dict = None):
@@ -181,6 +186,8 @@ class AddCityCarApplyRequest(TeaModel):
             self.ding_corp_id = m.get('dingCorpId')
         if m.get('dingTokenGrantType') is not None:
             self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('finishedDate') is not None:
+            self.finished_date = m.get('finishedDate')
         return self
 
 

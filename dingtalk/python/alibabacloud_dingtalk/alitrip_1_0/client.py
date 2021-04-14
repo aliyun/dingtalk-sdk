@@ -83,6 +83,8 @@ class Client(OpenApiClient):
             body['dingCorpId'] = request.ding_corp_id
         if not UtilClient.is_unset(request.ding_token_grant_type):
             body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.finished_date):
+            body['finishedDate'] = request.finished_date
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -141,6 +143,8 @@ class Client(OpenApiClient):
             body['dingCorpId'] = request.ding_corp_id
         if not UtilClient.is_unset(request.ding_token_grant_type):
             body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.finished_date):
+            body['finishedDate'] = request.finished_date
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

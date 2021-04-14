@@ -7,6 +7,7 @@ from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalkcontact_1_0 import models as dingtalkcontact__1__0_models
 from alibabacloud_tea_util import models as util_models
+from alibabacloud_openapi_util.client import Client as OpenApiUtilClient
 
 
 class Client(OpenApiClient):
@@ -74,4 +75,72 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.GetUserResponse(),
             await self.do_roarequest_async('GetUser', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/users/{union_id}', 'json', req, runtime)
+        )
+
+    def get_apply_invite_info(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders()
+        return self.get_apply_invite_info_with_options(request, headers, runtime)
+
+    async def get_apply_invite_info_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders()
+        return await self.get_apply_invite_info_with_options_async(request, headers, runtime)
+
+    def get_apply_invite_info_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+        headers: dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.inviter_user_id):
+            query['inviterUserId'] = request.inviter_user_id
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetApplyInviteInfoResponse(),
+            self.do_roarequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/invites/infos', 'json', req, runtime)
+        )
+
+    async def get_apply_invite_info_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+        headers: dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.inviter_user_id):
+            query['inviterUserId'] = request.inviter_user_id
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetApplyInviteInfoResponse(),
+            await self.do_roarequest_async('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/invites/infos', 'json', req, runtime)
         )
