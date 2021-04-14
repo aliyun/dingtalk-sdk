@@ -102,6 +102,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dingTokenGrantType", request.dingTokenGrantType);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.finishedDate)) {
+            body.put("finishedDate", request.finishedDate);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

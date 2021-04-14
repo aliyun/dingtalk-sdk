@@ -40,21 +40,9 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    // 提醒规则
-    @NameInMap("reminder")
-    public CreateTodoTaskResponseBodyReminder reminder;
-
-    // 待办通知配置（包含单聊卡片、ding通知、群聊卡片、同步日历、同步系统消息等通知能力）
-    @NameInMap("notifyConfigs")
-    public CreateTodoTaskResponseBodyNotifyConfigs notifyConfigs;
-
     // 自定义详情页跳转配置
     @NameInMap("detailUrl")
     public CreateTodoTaskResponseBodyDetailUrl detailUrl;
-
-    // 重复规则
-    @NameInMap("recurrence")
-    public String recurrence;
 
     // 业务来源
     @NameInMap("source")
@@ -169,36 +157,12 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         return this.participantIds;
     }
 
-    public CreateTodoTaskResponseBody setReminder(CreateTodoTaskResponseBodyReminder reminder) {
-        this.reminder = reminder;
-        return this;
-    }
-    public CreateTodoTaskResponseBodyReminder getReminder() {
-        return this.reminder;
-    }
-
-    public CreateTodoTaskResponseBody setNotifyConfigs(CreateTodoTaskResponseBodyNotifyConfigs notifyConfigs) {
-        this.notifyConfigs = notifyConfigs;
-        return this;
-    }
-    public CreateTodoTaskResponseBodyNotifyConfigs getNotifyConfigs() {
-        return this.notifyConfigs;
-    }
-
     public CreateTodoTaskResponseBody setDetailUrl(CreateTodoTaskResponseBodyDetailUrl detailUrl) {
         this.detailUrl = detailUrl;
         return this;
     }
     public CreateTodoTaskResponseBodyDetailUrl getDetailUrl() {
         return this.detailUrl;
-    }
-
-    public CreateTodoTaskResponseBody setRecurrence(String recurrence) {
-        this.recurrence = recurrence;
-        return this;
-    }
-    public String getRecurrence() {
-        return this.recurrence;
     }
 
     public CreateTodoTaskResponseBody setSource(String source) {
@@ -271,126 +235,6 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
-    }
-
-    public static class CreateTodoTaskResponseBodyReminderRules extends TeaModel {
-        // 目前支持三种类型：tartDate: 相对开始时间；dueDate: 相对截止时间；customDate: 绝对时间
-        @NameInMap("baseTime")
-        public String baseTime;
-
-        // 偏移值：baseTime 为 startDate 或者 dueDate 时，offset 为相对分钟的偏移值；baseTime 为 customDate 时，offset 为毫秒时间戳
-        @NameInMap("offset")
-        public Long offset;
-
-        public static CreateTodoTaskResponseBodyReminderRules build(java.util.Map<String, ?> map) throws Exception {
-            CreateTodoTaskResponseBodyReminderRules self = new CreateTodoTaskResponseBodyReminderRules();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateTodoTaskResponseBodyReminderRules setBaseTime(String baseTime) {
-            this.baseTime = baseTime;
-            return this;
-        }
-        public String getBaseTime() {
-            return this.baseTime;
-        }
-
-        public CreateTodoTaskResponseBodyReminderRules setOffset(Long offset) {
-            this.offset = offset;
-            return this;
-        }
-        public Long getOffset() {
-            return this.offset;
-        }
-
-    }
-
-    public static class CreateTodoTaskResponseBodyReminder extends TeaModel {
-        // 提醒通道
-        @NameInMap("channel")
-        public Integer channel;
-
-        // 提醒规则配置
-        @NameInMap("rules")
-        public CreateTodoTaskResponseBodyReminderRules rules;
-
-        public static CreateTodoTaskResponseBodyReminder build(java.util.Map<String, ?> map) throws Exception {
-            CreateTodoTaskResponseBodyReminder self = new CreateTodoTaskResponseBodyReminder();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateTodoTaskResponseBodyReminder setChannel(Integer channel) {
-            this.channel = channel;
-            return this;
-        }
-        public Integer getChannel() {
-            return this.channel;
-        }
-
-        public CreateTodoTaskResponseBodyReminder setRules(CreateTodoTaskResponseBodyReminderRules rules) {
-            this.rules = rules;
-            return this;
-        }
-        public CreateTodoTaskResponseBodyReminderRules getRules() {
-            return this.rules;
-        }
-
-    }
-
-    public static class CreateTodoTaskResponseBodyNotifyConfigs extends TeaModel {
-        // 是否发送单聊卡片：value:"true/false" （发送则传true）
-        @NameInMap("singleChat")
-        public String singleChat;
-
-        // 是否发送群聊卡片：value:"groupId"（发送则传对应群聊id）
-        @NameInMap("groupChat")
-        public String groupChat;
-
-        // ding通知配置：value:"channel"（1钉弹框通知，2钉短信通知，3钉电话通知）
-        @NameInMap("dingNotify")
-        public String dingNotify;
-
-        // 是否同步到日历：value:"true/false"（同步则传true）
-        @NameInMap("canlender")
-        public String canlender;
-
-        public static CreateTodoTaskResponseBodyNotifyConfigs build(java.util.Map<String, ?> map) throws Exception {
-            CreateTodoTaskResponseBodyNotifyConfigs self = new CreateTodoTaskResponseBodyNotifyConfigs();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateTodoTaskResponseBodyNotifyConfigs setSingleChat(String singleChat) {
-            this.singleChat = singleChat;
-            return this;
-        }
-        public String getSingleChat() {
-            return this.singleChat;
-        }
-
-        public CreateTodoTaskResponseBodyNotifyConfigs setGroupChat(String groupChat) {
-            this.groupChat = groupChat;
-            return this;
-        }
-        public String getGroupChat() {
-            return this.groupChat;
-        }
-
-        public CreateTodoTaskResponseBodyNotifyConfigs setDingNotify(String dingNotify) {
-            this.dingNotify = dingNotify;
-            return this;
-        }
-        public String getDingNotify() {
-            return this.dingNotify;
-        }
-
-        public CreateTodoTaskResponseBodyNotifyConfigs setCanlender(String canlender) {
-            this.canlender = canlender;
-            return this;
-        }
-        public String getCanlender() {
-            return this.canlender;
-        }
-
     }
 
     public static class CreateTodoTaskResponseBodyDetailUrl extends TeaModel {

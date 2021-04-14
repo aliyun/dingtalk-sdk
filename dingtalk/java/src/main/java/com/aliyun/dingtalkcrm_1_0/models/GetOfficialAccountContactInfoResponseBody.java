@@ -16,6 +16,14 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     @NameInMap("stateCode")
     public String stateCode;
 
+    // 联系人的unionId
+    @NameInMap("unionId")
+    public String unionId;
+
+    // 已授权的字段
+    @NameInMap("authItems")
+    public java.util.List<String> authItems;
+
     public static GetOfficialAccountContactInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetOfficialAccountContactInfoResponseBody self = new GetOfficialAccountContactInfoResponseBody();
         return TeaModel.build(map, self);
@@ -43,6 +51,22 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     }
     public String getStateCode() {
         return this.stateCode;
+    }
+
+    public GetOfficialAccountContactInfoResponseBody setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
+    }
+
+    public GetOfficialAccountContactInfoResponseBody setAuthItems(java.util.List<String> authItems) {
+        this.authItems = authItems;
+        return this;
+    }
+    public java.util.List<String> getAuthItems() {
+        return this.authItems;
     }
 
 }

@@ -40,14 +40,6 @@ public class GetTodoTaskResponseBody extends TeaModel {
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    // 提醒规则
-    @NameInMap("reminder")
-    public GetTodoTaskResponseBodyReminder reminder;
-
-    // 重复规则
-    @NameInMap("recurrence")
-    public String recurrence;
-
     // 自定义详情页跳转配置
     @NameInMap("detailUrl")
     public GetTodoTaskResponseBodyDetailUrl detailUrl;
@@ -165,22 +157,6 @@ public class GetTodoTaskResponseBody extends TeaModel {
         return this.participantIds;
     }
 
-    public GetTodoTaskResponseBody setReminder(GetTodoTaskResponseBodyReminder reminder) {
-        this.reminder = reminder;
-        return this;
-    }
-    public GetTodoTaskResponseBodyReminder getReminder() {
-        return this.reminder;
-    }
-
-    public GetTodoTaskResponseBody setRecurrence(String recurrence) {
-        this.recurrence = recurrence;
-        return this;
-    }
-    public String getRecurrence() {
-        return this.recurrence;
-    }
-
     public GetTodoTaskResponseBody setDetailUrl(GetTodoTaskResponseBodyDetailUrl detailUrl) {
         this.detailUrl = detailUrl;
         return this;
@@ -259,70 +235,6 @@ public class GetTodoTaskResponseBody extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
-    }
-
-    public static class GetTodoTaskResponseBodyReminderRules extends TeaModel {
-        // startTime:相对开始时间 // dueTime:相对截止时间 // customTime: 绝对时间
-        @NameInMap("baseTime")
-        public String baseTime;
-
-        // baseTime 为 startTime 或者 dueTime 时表分钟；比如截止前15分钟为 -15，截止前3小时为 -180;basetime 为 customTime 时为时间戳
-        @NameInMap("offset")
-        public Integer offset;
-
-        public static GetTodoTaskResponseBodyReminderRules build(java.util.Map<String, ?> map) throws Exception {
-            GetTodoTaskResponseBodyReminderRules self = new GetTodoTaskResponseBodyReminderRules();
-            return TeaModel.build(map, self);
-        }
-
-        public GetTodoTaskResponseBodyReminderRules setBaseTime(String baseTime) {
-            this.baseTime = baseTime;
-            return this;
-        }
-        public String getBaseTime() {
-            return this.baseTime;
-        }
-
-        public GetTodoTaskResponseBodyReminderRules setOffset(Integer offset) {
-            this.offset = offset;
-            return this;
-        }
-        public Integer getOffset() {
-            return this.offset;
-        }
-
-    }
-
-    public static class GetTodoTaskResponseBodyReminder extends TeaModel {
-        // 提醒通道
-        @NameInMap("channel")
-        public Integer channel;
-
-        // 提醒规则配置
-        @NameInMap("rules")
-        public java.util.List<GetTodoTaskResponseBodyReminderRules> rules;
-
-        public static GetTodoTaskResponseBodyReminder build(java.util.Map<String, ?> map) throws Exception {
-            GetTodoTaskResponseBodyReminder self = new GetTodoTaskResponseBodyReminder();
-            return TeaModel.build(map, self);
-        }
-
-        public GetTodoTaskResponseBodyReminder setChannel(Integer channel) {
-            this.channel = channel;
-            return this;
-        }
-        public Integer getChannel() {
-            return this.channel;
-        }
-
-        public GetTodoTaskResponseBodyReminder setRules(java.util.List<GetTodoTaskResponseBodyReminderRules> rules) {
-            this.rules = rules;
-            return this;
-        }
-        public java.util.List<GetTodoTaskResponseBodyReminderRules> getRules() {
-            return this.rules;
-        }
-
     }
 
     public static class GetTodoTaskResponseBodyDetailUrl extends TeaModel {

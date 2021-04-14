@@ -55,7 +55,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditFeedReplay", "live_1.0", "HTTP", "POST", "AK", "/v1.0/live/openFeeds/" + feedId + "/replay", "json", req, runtime), new EditFeedReplayResponse());
+        return TeaModel.toModel(this.doROARequest("EditFeedReplay", "live_1.0", "HTTP", "POST", "AK", "/v1.0/live/openFeeds/" + feedId + "/cutReplay", "json", req, runtime), new EditFeedReplayResponse());
     }
 
     public QueryFeedWhiteListResponse queryFeedWhiteList(String feedId, QueryFeedWhiteListRequest request) throws Exception {

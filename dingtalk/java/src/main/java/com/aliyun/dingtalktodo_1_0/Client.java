@@ -110,18 +110,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("participantIds", request.participantIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detailUrl))) {
-            body.put("detailUrl", request.detailUrl);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.recurrence)) {
-            body.put("recurrence", request.recurrence);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.reminder))) {
-            body.put("reminder", request.reminder);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -183,18 +171,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detailUrl))) {
             body.put("detailUrl", request.detailUrl);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.recurrence)) {
-            body.put("recurrence", request.recurrence);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.reminder))) {
-            body.put("reminder", request.reminder);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notifyConfigs))) {
-            body.put("notifyConfigs", request.notifyConfigs);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

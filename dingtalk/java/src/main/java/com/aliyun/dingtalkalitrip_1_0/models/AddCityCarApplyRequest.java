@@ -16,7 +16,7 @@ public class AddCityCarApplyRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
-    // 用车日期
+    // 用车时间，按天管控，比如传值2021-03-18 20:26:56表示2021-03-18当天可用车，跨天情况配合finishedDate参数使用
     @NameInMap("date")
     public String date;
 
@@ -48,7 +48,7 @@ public class AddCityCarApplyRequest extends TeaModel {
     @NameInMap("timesTotal")
     public Long timesTotal;
 
-    // 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数
+    // 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数；如果企业没有限制审批单使用次数的需求，这个参数传1(次数不限制)，同时times_total和times_used都传0即可
     @NameInMap("timesType")
     public Long timesType;
 
@@ -75,6 +75,10 @@ public class AddCityCarApplyRequest extends TeaModel {
     // tokenGrantType
     @NameInMap("dingTokenGrantType")
     public Long dingTokenGrantType;
+
+    // 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+    @NameInMap("finishedDate")
+    public String finishedDate;
 
     public static AddCityCarApplyRequest build(java.util.Map<String, ?> map) throws Exception {
         AddCityCarApplyRequest self = new AddCityCarApplyRequest();
@@ -223,6 +227,14 @@ public class AddCityCarApplyRequest extends TeaModel {
     }
     public Long getDingTokenGrantType() {
         return this.dingTokenGrantType;
+    }
+
+    public AddCityCarApplyRequest setFinishedDate(String finishedDate) {
+        this.finishedDate = finishedDate;
+        return this;
+    }
+    public String getFinishedDate() {
+        return this.finishedDate;
     }
 
 }
