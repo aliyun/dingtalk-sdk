@@ -8,18 +8,9 @@ class DeleteEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -33,12 +24,6 @@ class DeleteEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -47,12 +32,6 @@ class DeleteEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -89,18 +68,9 @@ class RespondEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -114,12 +84,6 @@ class RespondEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -128,12 +92,6 @@ class RespondEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -197,18 +155,9 @@ class ListEventsHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -222,12 +171,6 @@ class ListEventsHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -236,12 +179,6 @@ class ListEventsHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -397,19 +334,15 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
         type: str = None,
         day_of_month: int = None,
         days_of_week: str = None,
-        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
-        month: int = None,
     ):
         # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
-        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
-        self.month = month
 
     def validate(self):
         pass
@@ -426,14 +359,10 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
-        if self.first_day_of_week is not None:
-            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
             result['interval'] = self.interval
-        if self.month is not None:
-            result['month'] = self.month
         return result
 
     def from_map(self, m: dict = None):
@@ -444,14 +373,10 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
-        if m.get('firstDayOfWeek') is not None:
-            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
             self.interval = m.get('interval')
-        if m.get('month') is not None:
-            self.month = m.get('month')
         return self
 
 
@@ -539,15 +464,12 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         # 用户id
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -566,8 +488,6 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -580,8 +500,6 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -595,15 +513,12 @@ class ListEventsResponseBodyEventsOrganizer(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         # 用户id
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -622,8 +537,6 @@ class ListEventsResponseBodyEventsOrganizer(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -636,8 +549,6 @@ class ListEventsResponseBodyEventsOrganizer(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -681,7 +592,6 @@ class ListEventsResponseBodyEvents(TeaModel):
         id: str = None,
         summary: str = None,
         description: str = None,
-        cancelled: str = None,
         start: ListEventsResponseBodyEventsStart = None,
         end: ListEventsResponseBodyEventsEnd = None,
         is_all_day: bool = None,
@@ -689,7 +599,6 @@ class ListEventsResponseBodyEvents(TeaModel):
         attendees: List[ListEventsResponseBodyEventsAttendees] = None,
         organizer: ListEventsResponseBodyEventsOrganizer = None,
         location: ListEventsResponseBodyEventsLocation = None,
-        i_cal_uid: str = None,
         series_master_id: str = None,
         create_time: str = None,
         update_time: str = None,
@@ -701,8 +610,6 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.summary = summary
         # 日程描述
         self.description = description
-        # 日程状态
-        self.cancelled = cancelled
         # 日程开始时间
         self.start = start
         # 日程结束时间
@@ -717,8 +624,6 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.organizer = organizer
         # 日程地点
         self.location = location
-        # 符合RFC5545标准的日程uniqueId
-        self.i_cal_uid = i_cal_uid
         # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
         # 创建时间
@@ -756,8 +661,6 @@ class ListEventsResponseBodyEvents(TeaModel):
             result['summary'] = self.summary
         if self.description is not None:
             result['description'] = self.description
-        if self.cancelled is not None:
-            result['cancelled'] = self.cancelled
         if self.start is not None:
             result['start'] = self.start.to_map()
         if self.end is not None:
@@ -774,8 +677,6 @@ class ListEventsResponseBodyEvents(TeaModel):
             result['organizer'] = self.organizer.to_map()
         if self.location is not None:
             result['location'] = self.location.to_map()
-        if self.i_cal_uid is not None:
-            result['iCalUID'] = self.i_cal_uid
         if self.series_master_id is not None:
             result['seriesMasterId'] = self.series_master_id
         if self.create_time is not None:
@@ -794,8 +695,6 @@ class ListEventsResponseBodyEvents(TeaModel):
             self.summary = m.get('summary')
         if m.get('description') is not None:
             self.description = m.get('description')
-        if m.get('cancelled') is not None:
-            self.cancelled = m.get('cancelled')
         if m.get('start') is not None:
             temp_model = ListEventsResponseBodyEventsStart()
             self.start = temp_model.from_map(m['start'])
@@ -818,8 +717,6 @@ class ListEventsResponseBodyEvents(TeaModel):
         if m.get('location') is not None:
             temp_model = ListEventsResponseBodyEventsLocation()
             self.location = temp_model.from_map(m['location'])
-        if m.get('iCalUID') is not None:
-            self.i_cal_uid = m.get('iCalUID')
         if m.get('seriesMasterId') is not None:
             self.series_master_id = m.get('seriesMasterId')
         if m.get('createTime') is not None:
@@ -1400,18 +1297,9 @@ class RemoveAttendeeHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -1425,12 +1313,6 @@ class RemoveAttendeeHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -1439,12 +1321,6 @@ class RemoveAttendeeHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -1454,12 +1330,8 @@ class RemoveAttendeeRequestAttendeesToRemove(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
-        display_name: str = None,
     ):
         self.id = id
-        self.email = email
-        self.display_name = display_name
 
     def validate(self):
         pass
@@ -1472,20 +1344,12 @@ class RemoveAttendeeRequestAttendeesToRemove(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
-        if self.display_name is not None:
-            result['displayName'] = self.display_name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
-        if m.get('displayName') is not None:
-            self.display_name = m.get('displayName')
         return self
 
 
@@ -1555,18 +1419,9 @@ class AddAttendeeHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -1580,12 +1435,6 @@ class AddAttendeeHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -1594,12 +1443,6 @@ class AddAttendeeHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -1609,12 +1452,8 @@ class AddAttendeeRequestAttendeesToAdd(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
-        display_name: str = None,
     ):
         self.id = id
-        self.email = email
-        self.display_name = display_name
 
     def validate(self):
         pass
@@ -1627,20 +1466,12 @@ class AddAttendeeRequestAttendeesToAdd(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
-        if self.display_name is not None:
-            result['displayName'] = self.display_name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
-        if m.get('displayName') is not None:
-            self.display_name = m.get('displayName')
         return self
 
 
@@ -1710,18 +1541,9 @@ class GetEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -1735,12 +1557,6 @@ class GetEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -1749,12 +1565,6 @@ class GetEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -1847,19 +1657,15 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
         type: str = None,
         day_of_month: int = None,
         days_of_week: str = None,
-        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
-        month: int = None,
     ):
         # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
-        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
-        self.month = month
 
     def validate(self):
         pass
@@ -1876,14 +1682,10 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
-        if self.first_day_of_week is not None:
-            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
             result['interval'] = self.interval
-        if self.month is not None:
-            result['month'] = self.month
         return result
 
     def from_map(self, m: dict = None):
@@ -1894,14 +1696,10 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
-        if m.get('firstDayOfWeek') is not None:
-            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
             self.interval = m.get('interval')
-        if m.get('month') is not None:
-            self.month = m.get('month')
         return self
 
 
@@ -1989,14 +1787,11 @@ class GetEventResponseBodyAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -2015,8 +1810,6 @@ class GetEventResponseBodyAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -2029,8 +1822,6 @@ class GetEventResponseBodyAttendees(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -2044,14 +1835,11 @@ class GetEventResponseBodyOrganizer(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -2070,8 +1858,6 @@ class GetEventResponseBodyOrganizer(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -2084,8 +1870,6 @@ class GetEventResponseBodyOrganizer(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -2122,39 +1906,6 @@ class GetEventResponseBodyLocation(TeaModel):
         return self
 
 
-class GetEventResponseBodyReminders(TeaModel):
-    def __init__(
-        self,
-        method: str = None,
-        minutes: str = None,
-    ):
-        self.method = method
-        self.minutes = minutes
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.method is not None:
-            result['method'] = self.method
-        if self.minutes is not None:
-            result['minutes'] = self.minutes
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('method') is not None:
-            self.method = m.get('method')
-        if m.get('minutes') is not None:
-            self.minutes = m.get('minutes')
-        return self
-
-
 class GetEventResponseBody(TeaModel):
     def __init__(
         self,
@@ -2169,11 +1920,9 @@ class GetEventResponseBody(TeaModel):
         attendees: List[GetEventResponseBodyAttendees] = None,
         organizer: GetEventResponseBodyOrganizer = None,
         location: GetEventResponseBodyLocation = None,
-        i_cal_uid: str = None,
         series_master_id: str = None,
         create_time: str = None,
         update_time: str = None,
-        reminders: List[GetEventResponseBodyReminders] = None,
     ):
         self.id = id
         # 日程标题
@@ -2192,15 +1941,12 @@ class GetEventResponseBody(TeaModel):
         self.attendees = attendees
         self.organizer = organizer
         self.location = location
-        # 符合RFC5545标准的日程uniqueId
-        self.i_cal_uid = i_cal_uid
         # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
         # 创建时间
         self.create_time = create_time
         # 更新时间
         self.update_time = update_time
-        self.reminders = reminders
 
     def validate(self):
         if self.start:
@@ -2217,10 +1963,6 @@ class GetEventResponseBody(TeaModel):
             self.organizer.validate()
         if self.location:
             self.location.validate()
-        if self.reminders:
-            for k in self.reminders:
-                if k:
-                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2252,18 +1994,12 @@ class GetEventResponseBody(TeaModel):
             result['organizer'] = self.organizer.to_map()
         if self.location is not None:
             result['location'] = self.location.to_map()
-        if self.i_cal_uid is not None:
-            result['iCalUID'] = self.i_cal_uid
         if self.series_master_id is not None:
             result['seriesMasterId'] = self.series_master_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.update_time is not None:
             result['updateTime'] = self.update_time
-        result['reminders'] = []
-        if self.reminders is not None:
-            for k in self.reminders:
-                result['reminders'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -2298,19 +2034,12 @@ class GetEventResponseBody(TeaModel):
         if m.get('location') is not None:
             temp_model = GetEventResponseBodyLocation()
             self.location = temp_model.from_map(m['location'])
-        if m.get('iCalUID') is not None:
-            self.i_cal_uid = m.get('iCalUID')
         if m.get('seriesMasterId') is not None:
             self.series_master_id = m.get('seriesMasterId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('updateTime') is not None:
             self.update_time = m.get('updateTime')
-        self.reminders = []
-        if m.get('reminders') is not None:
-            for k in m.get('reminders'):
-                temp_model = GetEventResponseBodyReminders()
-                self.reminders.append(temp_model.from_map(k))
         return self
 
 
@@ -2355,18 +2084,9 @@ class PatchEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -2380,12 +2100,6 @@ class PatchEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -2394,12 +2108,6 @@ class PatchEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -2489,18 +2197,14 @@ class PatchEventRequestRecurrencePattern(TeaModel):
         type: str = None,
         day_of_month: int = None,
         days_of_week: str = None,
-        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
-        month: int = None,
     ):
         self.type = type
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
-        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
-        self.month = month
 
     def validate(self):
         pass
@@ -2517,14 +2221,10 @@ class PatchEventRequestRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
-        if self.first_day_of_week is not None:
-            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
             result['interval'] = self.interval
-        if self.month is not None:
-            result['month'] = self.month
         return result
 
     def from_map(self, m: dict = None):
@@ -2535,14 +2235,10 @@ class PatchEventRequestRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
-        if m.get('firstDayOfWeek') is not None:
-            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
             self.interval = m.get('interval')
-        if m.get('month') is not None:
-            self.month = m.get('month')
         return self
 
 
@@ -2859,18 +2555,14 @@ class PatchEventResponseBodyRecurrencePattern(TeaModel):
         type: str = None,
         day_of_month: int = None,
         days_of_week: str = None,
-        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
-        month: int = None,
     ):
         self.type = type
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
-        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
-        self.month = month
 
     def validate(self):
         pass
@@ -2887,14 +2579,10 @@ class PatchEventResponseBodyRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
-        if self.first_day_of_week is not None:
-            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
             result['interval'] = self.interval
-        if self.month is not None:
-            result['month'] = self.month
         return result
 
     def from_map(self, m: dict = None):
@@ -2905,14 +2593,10 @@ class PatchEventResponseBodyRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
-        if m.get('firstDayOfWeek') is not None:
-            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
             self.interval = m.get('interval')
-        if m.get('month') is not None:
-            self.month = m.get('month')
         return self
 
 
@@ -2997,14 +2681,11 @@ class PatchEventResponseBodyAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -3023,8 +2704,6 @@ class PatchEventResponseBodyAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -3037,8 +2716,6 @@ class PatchEventResponseBodyAttendees(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -3052,14 +2729,11 @@ class PatchEventResponseBodyOrganizer(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -3078,8 +2752,6 @@ class PatchEventResponseBodyOrganizer(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -3092,8 +2764,6 @@ class PatchEventResponseBodyOrganizer(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -3130,39 +2800,6 @@ class PatchEventResponseBodyLocation(TeaModel):
         return self
 
 
-class PatchEventResponseBodyReminders(TeaModel):
-    def __init__(
-        self,
-        method: str = None,
-        minutes: str = None,
-    ):
-        self.method = method
-        self.minutes = minutes
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.method is not None:
-            result['method'] = self.method
-        if self.minutes is not None:
-            result['minutes'] = self.minutes
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('method') is not None:
-            self.method = m.get('method')
-        if m.get('minutes') is not None:
-            self.minutes = m.get('minutes')
-        return self
-
-
 class PatchEventResponseBody(TeaModel):
     def __init__(
         self,
@@ -3176,7 +2813,6 @@ class PatchEventResponseBody(TeaModel):
         attendees: List[PatchEventResponseBodyAttendees] = None,
         organizer: PatchEventResponseBodyOrganizer = None,
         location: PatchEventResponseBodyLocation = None,
-        reminders: List[PatchEventResponseBodyReminders] = None,
         create_time: str = None,
         update_time: str = None,
     ):
@@ -3191,7 +2827,6 @@ class PatchEventResponseBody(TeaModel):
         self.attendees = attendees
         self.organizer = organizer
         self.location = location
-        self.reminders = reminders
         # 创建时间
         self.create_time = create_time
         # 更新时间
@@ -3212,10 +2847,6 @@ class PatchEventResponseBody(TeaModel):
             self.organizer.validate()
         if self.location:
             self.location.validate()
-        if self.reminders:
-            for k in self.reminders:
-                if k:
-                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3245,10 +2876,6 @@ class PatchEventResponseBody(TeaModel):
             result['organizer'] = self.organizer.to_map()
         if self.location is not None:
             result['location'] = self.location.to_map()
-        result['reminders'] = []
-        if self.reminders is not None:
-            for k in self.reminders:
-                result['reminders'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.update_time is not None:
@@ -3285,11 +2912,6 @@ class PatchEventResponseBody(TeaModel):
         if m.get('location') is not None:
             temp_model = PatchEventResponseBodyLocation()
             self.location = temp_model.from_map(m['location'])
-        self.reminders = []
-        if m.get('reminders') is not None:
-            for k in m.get('reminders'):
-                temp_model = PatchEventResponseBodyReminders()
-                self.reminders.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('updateTime') is not None:
@@ -3338,18 +2960,9 @@ class CreateEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        ding_org_id: str = None,
-        ding_uid: str = None,
-        ding_access_token_type: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的企业id，该字段有值时认为本次调用已被授权访问该企业下的所有数据
-        self.ding_org_id = ding_org_id
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
-        self.ding_uid = ding_uid
-        # 授权类型
-        self.ding_access_token_type = ding_access_token_type
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -3363,12 +2976,6 @@ class CreateEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
-        if self.ding_access_token_type is not None:
-            result['dingAccessTokenType'] = self.ding_access_token_type
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -3377,12 +2984,6 @@ class CreateEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
-        if m.get('dingAccessTokenType') is not None:
-            self.ding_access_token_type = m.get('dingAccessTokenType')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -3395,8 +2996,11 @@ class CreateEventRequestStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
+        # 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
         self.date = date
+        # 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
         self.date_time = date_time
+        # 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         self.time_zone = time_zone
 
     def validate(self):
@@ -3434,8 +3038,11 @@ class CreateEventRequestEnd(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
+        # 日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
         self.date = date
+        # 日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
         self.date_time = date_time
+        # 日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         self.time_zone = time_zone
 
     def validate(self):
@@ -3472,18 +3079,16 @@ class CreateEventRequestRecurrencePattern(TeaModel):
         type: str = None,
         day_of_month: int = None,
         days_of_week: str = None,
-        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
-        month: int = None,
     ):
+        # 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
+        # 
         self.type = type
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
-        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
-        self.month = month
 
     def validate(self):
         pass
@@ -3500,14 +3105,10 @@ class CreateEventRequestRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
-        if self.first_day_of_week is not None:
-            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
             result['interval'] = self.interval
-        if self.month is not None:
-            result['month'] = self.month
         return result
 
     def from_map(self, m: dict = None):
@@ -3518,14 +3119,10 @@ class CreateEventRequestRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
-        if m.get('firstDayOfWeek') is not None:
-            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
             self.interval = m.get('interval')
-        if m.get('month') is not None:
-            self.month = m.get('month')
         return self
 
 
@@ -3574,6 +3171,7 @@ class CreateEventRequestRecurrence(TeaModel):
         pattern: CreateEventRequestRecurrencePattern = None,
         range: CreateEventRequestRecurrenceRange = None,
     ):
+        # 循环规则
         self.pattern = pattern
         self.range = range
 
@@ -3610,12 +3208,8 @@ class CreateEventRequestAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
-        display_name: str = None,
     ):
         self.id = id
-        self.email = email
-        self.display_name = display_name
 
     def validate(self):
         pass
@@ -3628,20 +3222,12 @@ class CreateEventRequestAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
-        if self.display_name is not None:
-            result['displayName'] = self.display_name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
-        if m.get('displayName') is not None:
-            self.display_name = m.get('displayName')
         return self
 
 
@@ -3672,66 +3258,6 @@ class CreateEventRequestLocation(TeaModel):
         return self
 
 
-class CreateEventRequestReminders(TeaModel):
-    def __init__(
-        self,
-        method: str = None,
-        minutes: int = None,
-    ):
-        self.method = method
-        self.minutes = minutes
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.method is not None:
-            result['method'] = self.method
-        if self.minutes is not None:
-            result['minutes'] = self.minutes
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('method') is not None:
-            self.method = m.get('method')
-        if m.get('minutes') is not None:
-            self.minutes = m.get('minutes')
-        return self
-
-
-class CreateEventRequestOnlineMeetingInfo(TeaModel):
-    def __init__(
-        self,
-        type: str = None,
-    ):
-        self.type = type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.type is not None:
-            result['type'] = self.type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        return self
-
-
 class CreateEventRequest(TeaModel):
     def __init__(
         self,
@@ -3743,21 +3269,21 @@ class CreateEventRequest(TeaModel):
         recurrence: CreateEventRequestRecurrence = None,
         attendees: List[CreateEventRequestAttendees] = None,
         location: CreateEventRequestLocation = None,
-        reminders: List[CreateEventRequestReminders] = None,
-        online_meeting_info: CreateEventRequestOnlineMeetingInfo = None,
     ):
         # 日程标题
         self.summary = summary
+        # 日程描述
         self.description = description
         # 日程开始时间
         self.start = start
+        # 日程结束时间
         self.end = end
+        # 是否为全天日程
         self.is_all_day = is_all_day
+        # 日程循环规则
         self.recurrence = recurrence
         self.attendees = attendees
         self.location = location
-        self.reminders = reminders
-        self.online_meeting_info = online_meeting_info
 
     def validate(self):
         if self.start:
@@ -3772,12 +3298,6 @@ class CreateEventRequest(TeaModel):
                     k.validate()
         if self.location:
             self.location.validate()
-        if self.reminders:
-            for k in self.reminders:
-                if k:
-                    k.validate()
-        if self.online_meeting_info:
-            self.online_meeting_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3803,12 +3323,6 @@ class CreateEventRequest(TeaModel):
                 result['attendees'].append(k.to_map() if k else None)
         if self.location is not None:
             result['location'] = self.location.to_map()
-        result['reminders'] = []
-        if self.reminders is not None:
-            for k in self.reminders:
-                result['reminders'].append(k.to_map() if k else None)
-        if self.online_meeting_info is not None:
-            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -3836,14 +3350,6 @@ class CreateEventRequest(TeaModel):
         if m.get('location') is not None:
             temp_model = CreateEventRequestLocation()
             self.location = temp_model.from_map(m['location'])
-        self.reminders = []
-        if m.get('reminders') is not None:
-            for k in m.get('reminders'):
-                temp_model = CreateEventRequestReminders()
-                self.reminders.append(temp_model.from_map(k))
-        if m.get('onlineMeetingInfo') is not None:
-            temp_model = CreateEventRequestOnlineMeetingInfo()
-            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
         return self
 
 
@@ -3931,18 +3437,14 @@ class CreateEventResponseBodyRecurrencePattern(TeaModel):
         type: str = None,
         day_of_month: int = None,
         days_of_week: str = None,
-        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
-        month: int = None,
     ):
         self.type = type
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
-        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
-        self.month = month
 
     def validate(self):
         pass
@@ -3959,14 +3461,10 @@ class CreateEventResponseBodyRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
-        if self.first_day_of_week is not None:
-            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
             result['interval'] = self.interval
-        if self.month is not None:
-            result['month'] = self.month
         return result
 
     def from_map(self, m: dict = None):
@@ -3977,14 +3475,10 @@ class CreateEventResponseBodyRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
-        if m.get('firstDayOfWeek') is not None:
-            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
             self.interval = m.get('interval')
-        if m.get('month') is not None:
-            self.month = m.get('month')
         return self
 
 
@@ -4069,13 +3563,11 @@ class CreateEventResponseBodyAttendees(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.id = id
-        self.email = email
         self.display_name = display_name
         # 回复状态
         self.response_status = response_status
@@ -4092,8 +3584,6 @@ class CreateEventResponseBodyAttendees(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -4106,8 +3596,6 @@ class CreateEventResponseBodyAttendees(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:
@@ -4121,14 +3609,11 @@ class CreateEventResponseBodyOrganizer(TeaModel):
     def __init__(
         self,
         id: str = None,
-        email: str = None,
         display_name: str = None,
         response_status: str = None,
         self_: bool = None,
     ):
         self.id = id
-        # 用户邮件地址
-        self.email = email
         # 用户名
         self.display_name = display_name
         # 回复状态
@@ -4146,8 +3631,6 @@ class CreateEventResponseBodyOrganizer(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.email is not None:
-            result['email'] = self.email
         if self.display_name is not None:
             result['displayName'] = self.display_name
         if self.response_status is not None:
@@ -4160,8 +3643,6 @@ class CreateEventResponseBodyOrganizer(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
         if m.get('responseStatus') is not None:

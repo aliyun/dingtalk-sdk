@@ -54,12 +54,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -81,12 +75,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -135,12 +123,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -168,12 +150,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -230,12 +206,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -272,12 +242,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -487,12 +451,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -520,12 +478,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -575,12 +527,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -608,12 +554,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -656,12 +596,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -683,12 +617,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -753,12 +681,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -802,12 +724,6 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -865,19 +781,9 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
-        if not UtilClient.is_unset(request.reminders):
-            body['reminders'] = request.reminders
-        if not UtilClient.is_unset(request.online_meeting_info):
-            body['onlineMeetingInfo'] = request.online_meeting_info
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
@@ -915,19 +821,9 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
-        if not UtilClient.is_unset(request.reminders):
-            body['reminders'] = request.reminders
-        if not UtilClient.is_unset(request.online_meeting_info):
-            body['onlineMeetingInfo'] = request.online_meeting_info
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.ding_org_id):
-            real_headers['dingOrgId'] = headers.ding_org_id
-        if not UtilClient.is_unset(headers.ding_uid):
-            real_headers['dingUid'] = headers.ding_uid
-        if not UtilClient.is_unset(headers.ding_access_token_type):
-            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(

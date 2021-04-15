@@ -126,6 +126,7 @@ class SendInteractiveCardRequest(TeaModel):
         ding_oauth_app_id: int = None,
         chat_bot_id: str = None,
         user_id_type: int = None,
+        at_open_ids: Dict[str, str] = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         # 卡片模板ID
@@ -153,6 +154,8 @@ class SendInteractiveCardRequest(TeaModel):
         self.chat_bot_id = chat_bot_id
         # 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
         self.user_id_type = user_id_type
+        # 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
+        self.at_open_ids = at_open_ids
 
     def validate(self):
         if self.card_data:
@@ -202,6 +205,8 @@ class SendInteractiveCardRequest(TeaModel):
             result['chatBotId'] = self.chat_bot_id
         if self.user_id_type is not None:
             result['userIdType'] = self.user_id_type
+        if self.at_open_ids is not None:
+            result['atOpenIds'] = self.at_open_ids
         return result
 
     def from_map(self, m: dict = None):
@@ -242,6 +247,8 @@ class SendInteractiveCardRequest(TeaModel):
             self.chat_bot_id = m.get('chatBotId')
         if m.get('userIdType') is not None:
             self.user_id_type = m.get('userIdType')
+        if m.get('atOpenIds') is not None:
+            self.at_open_ids = m.get('atOpenIds')
         return self
 
 

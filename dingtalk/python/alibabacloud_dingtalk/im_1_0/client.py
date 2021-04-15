@@ -79,6 +79,8 @@ class Client(OpenApiClient):
             body['chatBotId'] = request.chat_bot_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
+        if not UtilClient.is_unset(request.at_open_ids):
+            body['atOpenIds'] = request.at_open_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -133,6 +135,8 @@ class Client(OpenApiClient):
             body['chatBotId'] = request.chat_bot_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
+        if not UtilClient.is_unset(request.at_open_ids):
+            body['atOpenIds'] = request.at_open_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

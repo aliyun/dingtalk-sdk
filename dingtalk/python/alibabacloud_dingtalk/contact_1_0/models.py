@@ -4,6 +4,132 @@ from Tea.model import TeaModel
 from typing import Dict
 
 
+class GetLatestDingIndexHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetLatestDingIndexResponseBody(TeaModel):
+    def __init__(
+        self,
+        stat_date: str = None,
+        idx_total: float = None,
+        idx_efficiency: float = None,
+        idx_carbon: float = None,
+        idx_monthly_avg: float = None,
+    ):
+        # 日期
+        self.stat_date = stat_date
+        # 钉钉指数
+        self.idx_total = idx_total
+        # 效率指数
+        self.idx_efficiency = idx_efficiency
+        # 绿色指数
+        self.idx_carbon = idx_carbon
+        # 钉钉指数月均分
+        self.idx_monthly_avg = idx_monthly_avg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stat_date is not None:
+            result['statDate'] = self.stat_date
+        if self.idx_total is not None:
+            result['idxTotal'] = self.idx_total
+        if self.idx_efficiency is not None:
+            result['idxEfficiency'] = self.idx_efficiency
+        if self.idx_carbon is not None:
+            result['idxCarbon'] = self.idx_carbon
+        if self.idx_monthly_avg is not None:
+            result['idxMonthlyAvg'] = self.idx_monthly_avg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('statDate') is not None:
+            self.stat_date = m.get('statDate')
+        if m.get('idxTotal') is not None:
+            self.idx_total = m.get('idxTotal')
+        if m.get('idxEfficiency') is not None:
+            self.idx_efficiency = m.get('idxEfficiency')
+        if m.get('idxCarbon') is not None:
+            self.idx_carbon = m.get('idxCarbon')
+        if m.get('idxMonthlyAvg') is not None:
+            self.idx_monthly_avg = m.get('idxMonthlyAvg')
+        return self
+
+
+class GetLatestDingIndexResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetLatestDingIndexResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetLatestDingIndexResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUserHeaders(TeaModel):
     def __init__(
         self,
