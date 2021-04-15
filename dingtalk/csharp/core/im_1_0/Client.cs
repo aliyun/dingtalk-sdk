@@ -108,6 +108,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["userIdType"] = request.UserIdType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtOpenIds))
+            {
+                body["atOpenIds"] = request.AtOpenIds;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -192,6 +196,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
                 body["userIdType"] = request.UserIdType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtOpenIds))
+            {
+                body["atOpenIds"] = request.AtOpenIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

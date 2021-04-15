@@ -100,10 +100,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string DaysOfWeek { get; set; }
 
-                [NameInMap("firstDayOfWeek")]
-                [Validation(Required=false)]
-                public string FirstDayOfWeek { get; set; }
-
                 [NameInMap("index")]
                 [Validation(Required=false)]
                 public string Index { get; set; }
@@ -111,10 +107,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [NameInMap("interval")]
                 [Validation(Required=false)]
                 public int? Interval { get; set; }
-
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
 
             }
             [NameInMap("range")]
@@ -148,13 +140,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public string Id { get; set; }
 
             /// <summary>
-            /// 用户邮件地址
-            /// </summary>
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
-
-            /// <summary>
             /// 用户名
             /// </summary>
             [NameInMap("displayName")]
@@ -184,9 +169,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
@@ -208,13 +190,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         };
 
         /// <summary>
-        /// 符合RFC5545标准的日程uniqueId
-        /// </summary>
-        [NameInMap("iCalUID")]
-        [Validation(Required=false)]
-        public string ICalUID { get; set; }
-
-        /// <summary>
         /// 重复日程的主日程id，非重复日程为空
         /// </summary>
         [NameInMap("seriesMasterId")]
@@ -234,20 +209,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [NameInMap("updateTime")]
         [Validation(Required=false)]
         public string UpdateTime { get; set; }
-
-        [NameInMap("reminders")]
-        [Validation(Required=false)]
-        public List<GetEventResponseBodyReminders> Reminders { get; set; }
-        public class GetEventResponseBodyReminders : TeaModel {
-            [NameInMap("method")]
-            [Validation(Required=false)]
-            public string Method { get; set; }
-
-            [NameInMap("minutes")]
-            [Validation(Required=false)]
-            public string Minutes { get; set; }
-
-        }
 
     }
 

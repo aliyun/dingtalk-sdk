@@ -78,10 +78,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string DaysOfWeek { get; set; }
 
-                [NameInMap("firstDayOfWeek")]
-                [Validation(Required=false)]
-                public string FirstDayOfWeek { get; set; }
-
                 [NameInMap("index")]
                 [Validation(Required=false)]
                 public string Index { get; set; }
@@ -89,10 +85,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [NameInMap("interval")]
                 [Validation(Required=false)]
                 public int? Interval { get; set; }
-
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
 
             }
             [NameInMap("range")]
@@ -121,13 +113,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
-
-            /// <summary>
-            /// 用户邮件地址
-            /// </summary>
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
 
             /// <summary>
             /// 用户名
@@ -159,9 +144,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
@@ -181,20 +163,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string DisplayName { get; set; }
         };
-
-        [NameInMap("reminders")]
-        [Validation(Required=false)]
-        public List<PatchEventResponseBodyReminders> Reminders { get; set; }
-        public class PatchEventResponseBodyReminders : TeaModel {
-            [NameInMap("method")]
-            [Validation(Required=false)]
-            public string Method { get; set; }
-
-            [NameInMap("minutes")]
-            [Validation(Required=false)]
-            public string Minutes { get; set; }
-
-        }
 
         /// <summary>
         /// 创建时间

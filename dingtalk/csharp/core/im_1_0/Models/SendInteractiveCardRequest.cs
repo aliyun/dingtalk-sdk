@@ -111,6 +111,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public int? UserIdType { get; set; }
 
+        /// <summary>
+        /// 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
+        /// </summary>
+        [NameInMap("atOpenIds")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> AtOpenIds { get; set; }
+
     }
 
 }

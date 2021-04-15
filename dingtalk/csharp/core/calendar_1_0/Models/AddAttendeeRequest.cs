@@ -17,14 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string Id { get; set; }
 
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
-
-            [NameInMap("displayName")]
-            [Validation(Required=false)]
-            public string DisplayName { get; set; }
-
         }
 
     }

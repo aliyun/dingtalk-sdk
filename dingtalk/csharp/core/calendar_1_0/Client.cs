@@ -47,18 +47,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -76,18 +64,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -127,18 +103,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -163,18 +127,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -235,18 +187,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -291,18 +231,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -519,18 +447,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -555,18 +471,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -607,18 +511,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -643,18 +535,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -689,18 +569,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -718,18 +586,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -801,18 +657,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
                 realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
@@ -869,18 +713,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -944,30 +776,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["location"] = request.Location;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
-            {
-                body["reminders"] = request.Reminders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
-            {
-                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -1017,30 +829,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["location"] = request.Location;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
-            {
-                body["reminders"] = request.Reminders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
-            {
-                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
                 realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {

@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string Summary { get; set; }
 
+        /// <summary>
+        /// 日程描述
+        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
@@ -38,6 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public string TimeZone { get; set; }
         };
 
+        /// <summary>
+        /// 日程结束时间
+        /// </summary>
         [NameInMap("end")]
         [Validation(Required=false)]
         public CreateEventRequestEnd End { get; set; }
@@ -53,10 +59,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public string TimeZone { get; set; }
         };
 
+        /// <summary>
+        /// 是否为全天日程
+        /// </summary>
         [NameInMap("isAllDay")]
         [Validation(Required=false)]
         public bool? IsAllDay { get; set; }
 
+        /// <summary>
+        /// 日程循环规则
+        /// </summary>
         [NameInMap("recurrence")]
         [Validation(Required=false)]
         public CreateEventRequestRecurrence Recurrence { get; set; }
@@ -65,6 +77,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public CreateEventRequestRecurrencePattern Pattern { get; set; }
             public class CreateEventRequestRecurrencePattern : TeaModel {
+                /// <summary>
+                /// 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
+                /// 
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
@@ -77,10 +93,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string DaysOfWeek { get; set; }
 
-                [NameInMap("firstDayOfWeek")]
-                [Validation(Required=false)]
-                public string FirstDayOfWeek { get; set; }
-
                 [NameInMap("index")]
                 [Validation(Required=false)]
                 public string Index { get; set; }
@@ -88,10 +100,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [NameInMap("interval")]
                 [Validation(Required=false)]
                 public int? Interval { get; set; }
-
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
 
             }
             [NameInMap("range")]
@@ -121,14 +129,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string Id { get; set; }
 
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
-
-            [NameInMap("displayName")]
-            [Validation(Required=false)]
-            public string DisplayName { get; set; }
-
         }
 
         [NameInMap("location")]
@@ -138,29 +138,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
-        };
-
-        [NameInMap("reminders")]
-        [Validation(Required=false)]
-        public List<CreateEventRequestReminders> Reminders { get; set; }
-        public class CreateEventRequestReminders : TeaModel {
-            [NameInMap("method")]
-            [Validation(Required=false)]
-            public string Method { get; set; }
-
-            [NameInMap("minutes")]
-            [Validation(Required=false)]
-            public int? Minutes { get; set; }
-
-        }
-
-        [NameInMap("onlineMeetingInfo")]
-        [Validation(Required=false)]
-        public CreateEventRequestOnlineMeetingInfo OnlineMeetingInfo { get; set; }
-        public class CreateEventRequestOnlineMeetingInfo : TeaModel {
-            [NameInMap("type")]
-            [Validation(Required=false)]
-            public string Type { get; set; }
         };
 
     }

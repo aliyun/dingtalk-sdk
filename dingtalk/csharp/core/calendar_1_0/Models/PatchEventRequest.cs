@@ -84,10 +84,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string DaysOfWeek { get; set; }
 
-                [NameInMap("firstDayOfWeek")]
-                [Validation(Required=false)]
-                public string FirstDayOfWeek { get; set; }
-
                 [NameInMap("index")]
                 [Validation(Required=false)]
                 public string Index { get; set; }
@@ -95,10 +91,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [NameInMap("interval")]
                 [Validation(Required=false)]
                 public int? Interval { get; set; }
-
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
 
             }
             [NameInMap("range")]
