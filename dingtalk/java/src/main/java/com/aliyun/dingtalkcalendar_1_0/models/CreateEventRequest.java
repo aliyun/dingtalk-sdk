@@ -8,6 +8,7 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    // 日程描述
     @NameInMap("description")
     public String description;
 
@@ -15,12 +16,15 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("start")
     public CreateEventRequestStart start;
 
+    // 日程结束时间
     @NameInMap("end")
     public CreateEventRequestEnd end;
 
+    // 是否为全天日程
     @NameInMap("isAllDay")
     public Boolean isAllDay;
 
+    // 日程循环规则
     @NameInMap("recurrence")
     public CreateEventRequestRecurrence recurrence;
 
@@ -29,12 +33,6 @@ public class CreateEventRequest extends TeaModel {
 
     @NameInMap("location")
     public CreateEventRequestLocation location;
-
-    @NameInMap("reminders")
-    public java.util.List<CreateEventRequestReminders> reminders;
-
-    @NameInMap("onlineMeetingInfo")
-    public CreateEventRequestOnlineMeetingInfo onlineMeetingInfo;
 
     public static CreateEventRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateEventRequest self = new CreateEventRequest();
@@ -105,29 +103,16 @@ public class CreateEventRequest extends TeaModel {
         return this.location;
     }
 
-    public CreateEventRequest setReminders(java.util.List<CreateEventRequestReminders> reminders) {
-        this.reminders = reminders;
-        return this;
-    }
-    public java.util.List<CreateEventRequestReminders> getReminders() {
-        return this.reminders;
-    }
-
-    public CreateEventRequest setOnlineMeetingInfo(CreateEventRequestOnlineMeetingInfo onlineMeetingInfo) {
-        this.onlineMeetingInfo = onlineMeetingInfo;
-        return this;
-    }
-    public CreateEventRequestOnlineMeetingInfo getOnlineMeetingInfo() {
-        return this.onlineMeetingInfo;
-    }
-
     public static class CreateEventRequestStart extends TeaModel {
+        // 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
         @NameInMap("date")
         public String date;
 
+        // 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
         @NameInMap("dateTime")
         public String dateTime;
 
+        // 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -163,12 +148,15 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestEnd extends TeaModel {
+        // 日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
         @NameInMap("date")
         public String date;
 
+        // 日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
         @NameInMap("dateTime")
         public String dateTime;
 
+        // 日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -204,6 +192,8 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestRecurrencePattern extends TeaModel {
+        // 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
+        // 
         @NameInMap("type")
         public String type;
 
@@ -213,17 +203,11 @@ public class CreateEventRequest extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        @NameInMap("firstDayOfWeek")
-        public String firstDayOfWeek;
-
         @NameInMap("index")
         public String index;
 
         @NameInMap("interval")
         public Integer interval;
-
-        @NameInMap("month")
-        public Integer month;
 
         public static CreateEventRequestRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             CreateEventRequestRecurrencePattern self = new CreateEventRequestRecurrencePattern();
@@ -254,14 +238,6 @@ public class CreateEventRequest extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public CreateEventRequestRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
-            this.firstDayOfWeek = firstDayOfWeek;
-            return this;
-        }
-        public String getFirstDayOfWeek() {
-            return this.firstDayOfWeek;
-        }
-
         public CreateEventRequestRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
@@ -276,14 +252,6 @@ public class CreateEventRequest extends TeaModel {
         }
         public Integer getInterval() {
             return this.interval;
-        }
-
-        public CreateEventRequestRecurrencePattern setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
         }
 
     }
@@ -330,6 +298,7 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestRecurrence extends TeaModel {
+        // 循环规则
         @NameInMap("pattern")
         public CreateEventRequestRecurrencePattern pattern;
 
@@ -363,12 +332,6 @@ public class CreateEventRequest extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        @NameInMap("email")
-        public String email;
-
-        @NameInMap("displayName")
-        public String displayName;
-
         public static CreateEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
             CreateEventRequestAttendees self = new CreateEventRequestAttendees();
             return TeaModel.build(map, self);
@@ -380,22 +343,6 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public CreateEventRequestAttendees setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
-        }
-
-        public CreateEventRequestAttendees setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
         }
 
     }
@@ -415,55 +362,6 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
-        }
-
-    }
-
-    public static class CreateEventRequestReminders extends TeaModel {
-        @NameInMap("method")
-        public String method;
-
-        @NameInMap("minutes")
-        public Integer minutes;
-
-        public static CreateEventRequestReminders build(java.util.Map<String, ?> map) throws Exception {
-            CreateEventRequestReminders self = new CreateEventRequestReminders();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateEventRequestReminders setMethod(String method) {
-            this.method = method;
-            return this;
-        }
-        public String getMethod() {
-            return this.method;
-        }
-
-        public CreateEventRequestReminders setMinutes(Integer minutes) {
-            this.minutes = minutes;
-            return this;
-        }
-        public Integer getMinutes() {
-            return this.minutes;
-        }
-
-    }
-
-    public static class CreateEventRequestOnlineMeetingInfo extends TeaModel {
-        @NameInMap("type")
-        public String type;
-
-        public static CreateEventRequestOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
-            CreateEventRequestOnlineMeetingInfo self = new CreateEventRequestOnlineMeetingInfo();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateEventRequestOnlineMeetingInfo setType(String type) {
-            this.type = type;
-            return this;
-        }
-        public String getType() {
-            return this.type;
         }
 
     }

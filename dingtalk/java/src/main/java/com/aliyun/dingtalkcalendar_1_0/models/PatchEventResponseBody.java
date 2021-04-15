@@ -35,9 +35,6 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("location")
     public PatchEventResponseBodyLocation location;
 
-    @NameInMap("reminders")
-    public java.util.List<PatchEventResponseBodyReminders> reminders;
-
     // 创建时间
     @NameInMap("createTime")
     public String createTime;
@@ -129,14 +126,6 @@ public class PatchEventResponseBody extends TeaModel {
     }
     public PatchEventResponseBodyLocation getLocation() {
         return this.location;
-    }
-
-    public PatchEventResponseBody setReminders(java.util.List<PatchEventResponseBodyReminders> reminders) {
-        this.reminders = reminders;
-        return this;
-    }
-    public java.util.List<PatchEventResponseBodyReminders> getReminders() {
-        return this.reminders;
     }
 
     public PatchEventResponseBody setCreateTime(String createTime) {
@@ -247,17 +236,11 @@ public class PatchEventResponseBody extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        @NameInMap("firstDayOfWeek")
-        public String firstDayOfWeek;
-
         @NameInMap("index")
         public String index;
 
         @NameInMap("interval")
         public Integer interval;
-
-        @NameInMap("month")
-        public Integer month;
 
         public static PatchEventResponseBodyRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             PatchEventResponseBodyRecurrencePattern self = new PatchEventResponseBodyRecurrencePattern();
@@ -288,14 +271,6 @@ public class PatchEventResponseBody extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public PatchEventResponseBodyRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
-            this.firstDayOfWeek = firstDayOfWeek;
-            return this;
-        }
-        public String getFirstDayOfWeek() {
-            return this.firstDayOfWeek;
-        }
-
         public PatchEventResponseBodyRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
@@ -310,14 +285,6 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public Integer getInterval() {
             return this.interval;
-        }
-
-        public PatchEventResponseBodyRecurrencePattern setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
         }
 
     }
@@ -397,10 +364,6 @@ public class PatchEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -424,14 +387,6 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public PatchEventResponseBodyAttendees setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public PatchEventResponseBodyAttendees setDisplayName(String displayName) {
@@ -464,10 +419,6 @@ public class PatchEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -491,14 +442,6 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public PatchEventResponseBodyOrganizer setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public PatchEventResponseBodyOrganizer setDisplayName(String displayName) {
@@ -542,36 +485,6 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
-        }
-
-    }
-
-    public static class PatchEventResponseBodyReminders extends TeaModel {
-        @NameInMap("method")
-        public String method;
-
-        @NameInMap("minutes")
-        public String minutes;
-
-        public static PatchEventResponseBodyReminders build(java.util.Map<String, ?> map) throws Exception {
-            PatchEventResponseBodyReminders self = new PatchEventResponseBodyReminders();
-            return TeaModel.build(map, self);
-        }
-
-        public PatchEventResponseBodyReminders setMethod(String method) {
-            this.method = method;
-            return this;
-        }
-        public String getMethod() {
-            return this.method;
-        }
-
-        public PatchEventResponseBodyReminders setMinutes(String minutes) {
-            this.minutes = minutes;
-            return this;
-        }
-        public String getMinutes() {
-            return this.minutes;
         }
 
     }

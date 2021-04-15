@@ -24,12 +24,6 @@ public class RemoveAttendeeRequest extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        @NameInMap("email")
-        public String email;
-
-        @NameInMap("displayName")
-        public String displayName;
-
         public static RemoveAttendeeRequestAttendeesToRemove build(java.util.Map<String, ?> map) throws Exception {
             RemoveAttendeeRequestAttendeesToRemove self = new RemoveAttendeeRequestAttendeesToRemove();
             return TeaModel.build(map, self);
@@ -41,22 +35,6 @@ public class RemoveAttendeeRequest extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public RemoveAttendeeRequestAttendeesToRemove setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
-        }
-
-        public RemoveAttendeeRequestAttendeesToRemove setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-        public String getDisplayName() {
-            return this.displayName;
         }
 
     }

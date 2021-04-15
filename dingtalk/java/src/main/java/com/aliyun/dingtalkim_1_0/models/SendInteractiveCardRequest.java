@@ -62,6 +62,10 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("userIdType")
     public Integer userIdType;
 
+    // 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
+    @NameInMap("atOpenIds")
+    public java.util.Map<String, String> atOpenIds;
+
     public static SendInteractiveCardRequest build(java.util.Map<String, ?> map) throws Exception {
         SendInteractiveCardRequest self = new SendInteractiveCardRequest();
         return TeaModel.build(map, self);
@@ -193,6 +197,14 @@ public class SendInteractiveCardRequest extends TeaModel {
     }
     public Integer getUserIdType() {
         return this.userIdType;
+    }
+
+    public SendInteractiveCardRequest setAtOpenIds(java.util.Map<String, String> atOpenIds) {
+        this.atOpenIds = atOpenIds;
+        return this;
+    }
+    public java.util.Map<String, String> getAtOpenIds() {
+        return this.atOpenIds;
     }
 
     public static class SendInteractiveCardRequestCardData extends TeaModel {

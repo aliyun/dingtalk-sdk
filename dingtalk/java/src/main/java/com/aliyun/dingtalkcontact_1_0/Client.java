@@ -21,6 +21,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public GetLatestDingIndexResponse getLatestDingIndex() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetLatestDingIndexHeaders headers = new GetLatestDingIndexHeaders();
+        return this.getLatestDingIndexWithOptions(headers, runtime);
+    }
+
+    public GetLatestDingIndexResponse getLatestDingIndexWithOptions(GetLatestDingIndexHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetLatestDingIndex", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/dingIndexs", "json", req, runtime), new GetLatestDingIndexResponse());
+    }
+
     public GetUserResponse getUser(String unionId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUserHeaders headers = new GetUserHeaders();

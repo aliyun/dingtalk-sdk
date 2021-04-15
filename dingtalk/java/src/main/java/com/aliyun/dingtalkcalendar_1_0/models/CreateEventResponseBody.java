@@ -258,17 +258,11 @@ public class CreateEventResponseBody extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        @NameInMap("firstDayOfWeek")
-        public String firstDayOfWeek;
-
         @NameInMap("index")
         public String index;
 
         @NameInMap("interval")
         public Integer interval;
-
-        @NameInMap("month")
-        public Integer month;
 
         public static CreateEventResponseBodyRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             CreateEventResponseBodyRecurrencePattern self = new CreateEventResponseBodyRecurrencePattern();
@@ -299,14 +293,6 @@ public class CreateEventResponseBody extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public CreateEventResponseBodyRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
-            this.firstDayOfWeek = firstDayOfWeek;
-            return this;
-        }
-        public String getFirstDayOfWeek() {
-            return this.firstDayOfWeek;
-        }
-
         public CreateEventResponseBodyRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
@@ -321,14 +307,6 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public Integer getInterval() {
             return this.interval;
-        }
-
-        public CreateEventResponseBodyRecurrencePattern setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
         }
 
     }
@@ -408,9 +386,6 @@ public class CreateEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        @NameInMap("email")
-        public String email;
-
         @NameInMap("displayName")
         public String displayName;
 
@@ -432,14 +407,6 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public CreateEventResponseBodyAttendees setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public CreateEventResponseBodyAttendees setDisplayName(String displayName) {
@@ -472,10 +439,6 @@ public class CreateEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -498,14 +461,6 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public CreateEventResponseBodyOrganizer setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public CreateEventResponseBodyOrganizer setDisplayName(String displayName) {

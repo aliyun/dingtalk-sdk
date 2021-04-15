@@ -203,17 +203,11 @@ public class PatchEventRequest extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        @NameInMap("firstDayOfWeek")
-        public String firstDayOfWeek;
-
         @NameInMap("index")
         public String index;
 
         @NameInMap("interval")
         public Integer interval;
-
-        @NameInMap("month")
-        public Integer month;
 
         public static PatchEventRequestRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             PatchEventRequestRecurrencePattern self = new PatchEventRequestRecurrencePattern();
@@ -244,14 +238,6 @@ public class PatchEventRequest extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public PatchEventRequestRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
-            this.firstDayOfWeek = firstDayOfWeek;
-            return this;
-        }
-        public String getFirstDayOfWeek() {
-            return this.firstDayOfWeek;
-        }
-
         public PatchEventRequestRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
@@ -266,14 +252,6 @@ public class PatchEventRequest extends TeaModel {
         }
         public Integer getInterval() {
             return this.interval;
-        }
-
-        public PatchEventRequestRecurrencePattern setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
         }
 
     }

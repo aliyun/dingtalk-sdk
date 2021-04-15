@@ -141,17 +141,11 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        @NameInMap("firstDayOfWeek")
-        public String firstDayOfWeek;
-
         @NameInMap("index")
         public String index;
 
         @NameInMap("interval")
         public Integer interval;
-
-        @NameInMap("month")
-        public Integer month;
 
         public static ListEventsResponseBodyEventsRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             ListEventsResponseBodyEventsRecurrencePattern self = new ListEventsResponseBodyEventsRecurrencePattern();
@@ -182,14 +176,6 @@ public class ListEventsResponseBody extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public ListEventsResponseBodyEventsRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
-            this.firstDayOfWeek = firstDayOfWeek;
-            return this;
-        }
-        public String getFirstDayOfWeek() {
-            return this.firstDayOfWeek;
-        }
-
         public ListEventsResponseBodyEventsRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
@@ -204,14 +190,6 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public Integer getInterval() {
             return this.interval;
-        }
-
-        public ListEventsResponseBodyEventsRecurrencePattern setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
         }
 
     }
@@ -295,10 +273,6 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -322,14 +296,6 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public ListEventsResponseBodyEventsAttendees setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public ListEventsResponseBodyEventsAttendees setDisplayName(String displayName) {
@@ -363,10 +329,6 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -390,14 +352,6 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public ListEventsResponseBodyEventsOrganizer setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public ListEventsResponseBodyEventsOrganizer setDisplayName(String displayName) {
@@ -459,10 +413,6 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("description")
         public String description;
 
-        // 日程状态
-        @NameInMap("cancelled")
-        public String cancelled;
-
         // 日程开始时间
         @NameInMap("start")
         public ListEventsResponseBodyEventsStart start;
@@ -490,10 +440,6 @@ public class ListEventsResponseBody extends TeaModel {
         // 日程地点
         @NameInMap("location")
         public ListEventsResponseBodyEventsLocation location;
-
-        // 符合RFC5545标准的日程uniqueId
-        @NameInMap("iCalUID")
-        public String iCalUID;
 
         // 重复日程的主日程id，非重复日程为空
         @NameInMap("seriesMasterId")
@@ -538,14 +484,6 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public String getDescription() {
             return this.description;
-        }
-
-        public ListEventsResponseBodyEvents setCancelled(String cancelled) {
-            this.cancelled = cancelled;
-            return this;
-        }
-        public String getCancelled() {
-            return this.cancelled;
         }
 
         public ListEventsResponseBodyEvents setStart(ListEventsResponseBodyEventsStart start) {
@@ -602,14 +540,6 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public ListEventsResponseBodyEventsLocation getLocation() {
             return this.location;
-        }
-
-        public ListEventsResponseBodyEvents setICalUID(String iCalUID) {
-            this.iCalUID = iCalUID;
-            return this;
-        }
-        public String getICalUID() {
-            return this.iCalUID;
         }
 
         public ListEventsResponseBodyEvents setSeriesMasterId(String seriesMasterId) {

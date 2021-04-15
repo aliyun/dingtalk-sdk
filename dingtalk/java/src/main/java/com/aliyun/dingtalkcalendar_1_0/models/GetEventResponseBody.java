@@ -43,10 +43,6 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("location")
     public GetEventResponseBodyLocation location;
 
-    // 符合RFC5545标准的日程uniqueId
-    @NameInMap("iCalUID")
-    public String iCalUID;
-
     // 重复日程的主日程id，非重复日程为空
     @NameInMap("seriesMasterId")
     public String seriesMasterId;
@@ -58,9 +54,6 @@ public class GetEventResponseBody extends TeaModel {
     // 更新时间
     @NameInMap("updateTime")
     public String updateTime;
-
-    @NameInMap("reminders")
-    public java.util.List<GetEventResponseBodyReminders> reminders;
 
     public static GetEventResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetEventResponseBody self = new GetEventResponseBody();
@@ -155,14 +148,6 @@ public class GetEventResponseBody extends TeaModel {
         return this.location;
     }
 
-    public GetEventResponseBody setICalUID(String iCalUID) {
-        this.iCalUID = iCalUID;
-        return this;
-    }
-    public String getICalUID() {
-        return this.iCalUID;
-    }
-
     public GetEventResponseBody setSeriesMasterId(String seriesMasterId) {
         this.seriesMasterId = seriesMasterId;
         return this;
@@ -185,14 +170,6 @@ public class GetEventResponseBody extends TeaModel {
     }
     public String getUpdateTime() {
         return this.updateTime;
-    }
-
-    public GetEventResponseBody setReminders(java.util.List<GetEventResponseBodyReminders> reminders) {
-        this.reminders = reminders;
-        return this;
-    }
-    public java.util.List<GetEventResponseBodyReminders> getReminders() {
-        return this.reminders;
     }
 
     public static class GetEventResponseBodyStart extends TeaModel {
@@ -291,17 +268,11 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        @NameInMap("firstDayOfWeek")
-        public String firstDayOfWeek;
-
         @NameInMap("index")
         public String index;
 
         @NameInMap("interval")
         public Integer interval;
-
-        @NameInMap("month")
-        public Integer month;
 
         public static GetEventResponseBodyRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
             GetEventResponseBodyRecurrencePattern self = new GetEventResponseBodyRecurrencePattern();
@@ -332,14 +303,6 @@ public class GetEventResponseBody extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public GetEventResponseBodyRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
-            this.firstDayOfWeek = firstDayOfWeek;
-            return this;
-        }
-        public String getFirstDayOfWeek() {
-            return this.firstDayOfWeek;
-        }
-
         public GetEventResponseBodyRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
@@ -354,14 +317,6 @@ public class GetEventResponseBody extends TeaModel {
         }
         public Integer getInterval() {
             return this.interval;
-        }
-
-        public GetEventResponseBodyRecurrencePattern setMonth(Integer month) {
-            this.month = month;
-            return this;
-        }
-        public Integer getMonth() {
-            return this.month;
         }
 
     }
@@ -444,10 +399,6 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -471,14 +422,6 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public GetEventResponseBodyAttendees setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public GetEventResponseBodyAttendees setDisplayName(String displayName) {
@@ -511,10 +454,6 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        // 用户邮件地址
-        @NameInMap("email")
-        public String email;
-
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -538,14 +477,6 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
-        }
-
-        public GetEventResponseBodyOrganizer setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public GetEventResponseBodyOrganizer setDisplayName(String displayName) {
@@ -589,36 +520,6 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
-        }
-
-    }
-
-    public static class GetEventResponseBodyReminders extends TeaModel {
-        @NameInMap("method")
-        public String method;
-
-        @NameInMap("minutes")
-        public String minutes;
-
-        public static GetEventResponseBodyReminders build(java.util.Map<String, ?> map) throws Exception {
-            GetEventResponseBodyReminders self = new GetEventResponseBodyReminders();
-            return TeaModel.build(map, self);
-        }
-
-        public GetEventResponseBodyReminders setMethod(String method) {
-            this.method = method;
-            return this;
-        }
-        public String getMethod() {
-            return this.method;
-        }
-
-        public GetEventResponseBodyReminders setMinutes(String minutes) {
-            this.minutes = minutes;
-            return this;
-        }
-        public String getMinutes() {
-            return this.minutes;
         }
 
     }
