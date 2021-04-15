@@ -46,6 +46,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
   dingOauthAppId?: number;
   chatBotId?: string;
   userIdType?: number;
+  atOpenIds?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
       dingIsvOrgId: 'dingIsvOrgId',
@@ -64,6 +65,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       dingOauthAppId: 'dingOauthAppId',
       chatBotId: 'chatBotId',
       userIdType: 'userIdType',
+      atOpenIds: 'atOpenIds',
     };
   }
 
@@ -85,6 +87,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       dingOauthAppId: 'number',
       chatBotId: 'string',
       userIdType: 'number',
+      atOpenIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -390,6 +393,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userIdType)) {
       body["userIdType"] = request.userIdType;
+    }
+
+    if (!Util.isUnset(request.atOpenIds)) {
+      body["atOpenIds"] = request.atOpenIds;
     }
 
     let realHeaders : {[key: string ]: string} = { };

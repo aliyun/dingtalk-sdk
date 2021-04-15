@@ -9,16 +9,10 @@ import * as $tea from '@alicloud/tea-typescript';
 
 export class DeleteEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -26,9 +20,6 @@ export class DeleteEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -59,16 +50,10 @@ export class DeleteEventResponse extends $tea.Model {
 
 export class RespondEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -76,9 +61,6 @@ export class RespondEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -128,16 +110,10 @@ export class RespondEventResponse extends $tea.Model {
 
 export class ListEventsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -145,9 +121,6 @@ export class ListEventsHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -428,16 +401,10 @@ export class GetScheduleResponse extends $tea.Model {
 
 export class RemoveAttendeeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -445,9 +412,6 @@ export class RemoveAttendeeHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -497,16 +461,10 @@ export class RemoveAttendeeResponse extends $tea.Model {
 
 export class AddAttendeeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -514,9 +472,6 @@ export class AddAttendeeHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -566,16 +521,10 @@ export class AddAttendeeResponse extends $tea.Model {
 
 export class GetEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -583,9 +532,6 @@ export class GetEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -607,11 +553,9 @@ export class GetEventResponseBody extends $tea.Model {
   attendees?: GetEventResponseBodyAttendees[];
   organizer?: GetEventResponseBodyOrganizer;
   location?: GetEventResponseBodyLocation;
-  iCalUID?: string;
   seriesMasterId?: string;
   createTime?: string;
   updateTime?: string;
-  reminders?: GetEventResponseBodyReminders[];
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -625,11 +569,9 @@ export class GetEventResponseBody extends $tea.Model {
       attendees: 'attendees',
       organizer: 'organizer',
       location: 'location',
-      iCalUID: 'iCalUID',
       seriesMasterId: 'seriesMasterId',
       createTime: 'createTime',
       updateTime: 'updateTime',
-      reminders: 'reminders',
     };
   }
 
@@ -646,11 +588,9 @@ export class GetEventResponseBody extends $tea.Model {
       attendees: { 'type': 'array', 'itemType': GetEventResponseBodyAttendees },
       organizer: GetEventResponseBodyOrganizer,
       location: GetEventResponseBodyLocation,
-      iCalUID: 'string',
       seriesMasterId: 'string',
       createTime: 'string',
       updateTime: 'string',
-      reminders: { 'type': 'array', 'itemType': GetEventResponseBodyReminders },
     };
   }
 
@@ -683,16 +623,10 @@ export class GetEventResponse extends $tea.Model {
 
 export class PatchEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -700,9 +634,6 @@ export class PatchEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -766,7 +697,6 @@ export class PatchEventResponseBody extends $tea.Model {
   attendees?: PatchEventResponseBodyAttendees[];
   organizer?: PatchEventResponseBodyOrganizer;
   location?: PatchEventResponseBodyLocation;
-  reminders?: PatchEventResponseBodyReminders[];
   createTime?: string;
   updateTime?: string;
   static names(): { [key: string]: string } {
@@ -781,7 +711,6 @@ export class PatchEventResponseBody extends $tea.Model {
       attendees: 'attendees',
       organizer: 'organizer',
       location: 'location',
-      reminders: 'reminders',
       createTime: 'createTime',
       updateTime: 'updateTime',
     };
@@ -799,7 +728,6 @@ export class PatchEventResponseBody extends $tea.Model {
       attendees: { 'type': 'array', 'itemType': PatchEventResponseBodyAttendees },
       organizer: PatchEventResponseBodyOrganizer,
       location: PatchEventResponseBodyLocation,
-      reminders: { 'type': 'array', 'itemType': PatchEventResponseBodyReminders },
       createTime: 'string',
       updateTime: 'string',
     };
@@ -834,16 +762,10 @@ export class PatchEventResponse extends $tea.Model {
 
 export class CreateEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  dingOrgId?: string;
-  dingUid?: string;
-  dingAccessTokenType?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      dingOrgId: 'dingOrgId',
-      dingUid: 'dingUid',
-      dingAccessTokenType: 'dingAccessTokenType',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -851,9 +773,6 @@ export class CreateEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      dingOrgId: 'string',
-      dingUid: 'string',
-      dingAccessTokenType: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -872,8 +791,6 @@ export class CreateEventRequest extends $tea.Model {
   recurrence?: CreateEventRequestRecurrence;
   attendees?: CreateEventRequestAttendees[];
   location?: CreateEventRequestLocation;
-  reminders?: CreateEventRequestReminders[];
-  onlineMeetingInfo?: CreateEventRequestOnlineMeetingInfo;
   static names(): { [key: string]: string } {
     return {
       summary: 'summary',
@@ -884,8 +801,6 @@ export class CreateEventRequest extends $tea.Model {
       recurrence: 'recurrence',
       attendees: 'attendees',
       location: 'location',
-      reminders: 'reminders',
-      onlineMeetingInfo: 'onlineMeetingInfo',
     };
   }
 
@@ -899,8 +814,6 @@ export class CreateEventRequest extends $tea.Model {
       recurrence: CreateEventRequestRecurrence,
       attendees: { 'type': 'array', 'itemType': CreateEventRequestAttendees },
       location: CreateEventRequestLocation,
-      reminders: { 'type': 'array', 'itemType': CreateEventRequestReminders },
-      onlineMeetingInfo: CreateEventRequestOnlineMeetingInfo,
     };
   }
 
@@ -1043,19 +956,15 @@ export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
   type?: string;
   dayOfMonth?: number;
   daysOfWeek?: string;
-  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
-  month?: number;
   static names(): { [key: string]: string } {
     return {
       type: 'type',
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
-      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
-      month: 'month',
     };
   }
 
@@ -1064,10 +973,8 @@ export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
       type: 'string',
       dayOfMonth: 'number',
       daysOfWeek: 'string',
-      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
-      month: 'number',
     };
   }
 
@@ -1125,14 +1032,12 @@ export class ListEventsResponseBodyEventsRecurrence extends $tea.Model {
 
 export class ListEventsResponseBodyEventsAttendees extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -1142,7 +1047,6 @@ export class ListEventsResponseBodyEventsAttendees extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -1156,14 +1060,12 @@ export class ListEventsResponseBodyEventsAttendees extends $tea.Model {
 
 export class ListEventsResponseBodyEventsOrganizer extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -1173,7 +1075,6 @@ export class ListEventsResponseBodyEventsOrganizer extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -1208,7 +1109,6 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   id?: string;
   summary?: string;
   description?: string;
-  cancelled?: string;
   start?: ListEventsResponseBodyEventsStart;
   end?: ListEventsResponseBodyEventsEnd;
   isAllDay?: boolean;
@@ -1216,7 +1116,6 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsResponseBodyEventsAttendees[];
   organizer?: ListEventsResponseBodyEventsOrganizer;
   location?: ListEventsResponseBodyEventsLocation;
-  iCalUID?: string;
   seriesMasterId?: string;
   createTime?: string;
   updateTime?: string;
@@ -1226,7 +1125,6 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       id: 'id',
       summary: 'summary',
       description: 'description',
-      cancelled: 'cancelled',
       start: 'start',
       end: 'end',
       isAllDay: 'isAllDay',
@@ -1234,7 +1132,6 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       attendees: 'attendees',
       organizer: 'organizer',
       location: 'location',
-      iCalUID: 'iCalUID',
       seriesMasterId: 'seriesMasterId',
       createTime: 'createTime',
       updateTime: 'updateTime',
@@ -1247,7 +1144,6 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       id: 'string',
       summary: 'string',
       description: 'string',
-      cancelled: 'string',
       start: ListEventsResponseBodyEventsStart,
       end: ListEventsResponseBodyEventsEnd,
       isAllDay: 'boolean',
@@ -1255,7 +1151,6 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       attendees: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsAttendees },
       organizer: ListEventsResponseBodyEventsOrganizer,
       location: ListEventsResponseBodyEventsLocation,
-      iCalUID: 'string',
       seriesMasterId: 'string',
       createTime: 'string',
       updateTime: 'string',
@@ -1370,21 +1265,15 @@ export class GetScheduleResponseBodyScheduleInformation extends $tea.Model {
 
 export class RemoveAttendeeRequestAttendeesToRemove extends $tea.Model {
   id?: string;
-  email?: string;
-  displayName?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
-      displayName: 'displayName',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
-      displayName: 'string',
     };
   }
 
@@ -1395,21 +1284,15 @@ export class RemoveAttendeeRequestAttendeesToRemove extends $tea.Model {
 
 export class AddAttendeeRequestAttendeesToAdd extends $tea.Model {
   id?: string;
-  email?: string;
-  displayName?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
-      displayName: 'displayName',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
-      displayName: 'string',
     };
   }
 
@@ -1472,19 +1355,15 @@ export class GetEventResponseBodyRecurrencePattern extends $tea.Model {
   type?: string;
   dayOfMonth?: number;
   daysOfWeek?: string;
-  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
-  month?: number;
   static names(): { [key: string]: string } {
     return {
       type: 'type',
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
-      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
-      month: 'month',
     };
   }
 
@@ -1493,10 +1372,8 @@ export class GetEventResponseBodyRecurrencePattern extends $tea.Model {
       type: 'string',
       dayOfMonth: 'number',
       daysOfWeek: 'string',
-      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
-      month: 'number',
     };
   }
 
@@ -1554,14 +1431,12 @@ export class GetEventResponseBodyRecurrence extends $tea.Model {
 
 export class GetEventResponseBodyAttendees extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -1571,7 +1446,6 @@ export class GetEventResponseBodyAttendees extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -1585,14 +1459,12 @@ export class GetEventResponseBodyAttendees extends $tea.Model {
 
 export class GetEventResponseBodyOrganizer extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -1602,7 +1474,6 @@ export class GetEventResponseBodyOrganizer extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -1625,28 +1496,6 @@ export class GetEventResponseBodyLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetEventResponseBodyReminders extends $tea.Model {
-  method?: string;
-  minutes?: string;
-  static names(): { [key: string]: string } {
-    return {
-      method: 'method',
-      minutes: 'minutes',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      method: 'string',
-      minutes: 'string',
     };
   }
 
@@ -1709,19 +1558,15 @@ export class PatchEventRequestRecurrencePattern extends $tea.Model {
   type?: string;
   dayOfMonth?: number;
   daysOfWeek?: string;
-  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
-  month?: number;
   static names(): { [key: string]: string } {
     return {
       type: 'type',
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
-      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
-      month: 'month',
     };
   }
 
@@ -1730,10 +1575,8 @@ export class PatchEventRequestRecurrencePattern extends $tea.Model {
       type: 'string',
       dayOfMonth: 'number',
       daysOfWeek: 'string',
-      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
-      month: 'number',
     };
   }
 
@@ -1881,19 +1724,15 @@ export class PatchEventResponseBodyRecurrencePattern extends $tea.Model {
   type?: string;
   dayOfMonth?: number;
   daysOfWeek?: string;
-  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
-  month?: number;
   static names(): { [key: string]: string } {
     return {
       type: 'type',
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
-      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
-      month: 'month',
     };
   }
 
@@ -1902,10 +1741,8 @@ export class PatchEventResponseBodyRecurrencePattern extends $tea.Model {
       type: 'string',
       dayOfMonth: 'number',
       daysOfWeek: 'string',
-      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
-      month: 'number',
     };
   }
 
@@ -1963,14 +1800,12 @@ export class PatchEventResponseBodyRecurrence extends $tea.Model {
 
 export class PatchEventResponseBodyAttendees extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -1980,7 +1815,6 @@ export class PatchEventResponseBodyAttendees extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -1994,14 +1828,12 @@ export class PatchEventResponseBodyAttendees extends $tea.Model {
 
 export class PatchEventResponseBodyOrganizer extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -2011,7 +1843,6 @@ export class PatchEventResponseBodyOrganizer extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -2034,28 +1865,6 @@ export class PatchEventResponseBodyLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PatchEventResponseBodyReminders extends $tea.Model {
-  method?: string;
-  minutes?: string;
-  static names(): { [key: string]: string } {
-    return {
-      method: 'method',
-      minutes: 'minutes',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      method: 'string',
-      minutes: 'string',
     };
   }
 
@@ -2118,19 +1927,15 @@ export class CreateEventRequestRecurrencePattern extends $tea.Model {
   type?: string;
   dayOfMonth?: number;
   daysOfWeek?: string;
-  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
-  month?: number;
   static names(): { [key: string]: string } {
     return {
       type: 'type',
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
-      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
-      month: 'month',
     };
   }
 
@@ -2139,10 +1944,8 @@ export class CreateEventRequestRecurrencePattern extends $tea.Model {
       type: 'string',
       dayOfMonth: 'number',
       daysOfWeek: 'string',
-      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
-      month: 'number',
     };
   }
 
@@ -2200,21 +2003,15 @@ export class CreateEventRequestRecurrence extends $tea.Model {
 
 export class CreateEventRequestAttendees extends $tea.Model {
   id?: string;
-  email?: string;
-  displayName?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
-      displayName: 'displayName',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
-      displayName: 'string',
     };
   }
 
@@ -2234,47 +2031,6 @@ export class CreateEventRequestLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateEventRequestReminders extends $tea.Model {
-  method?: string;
-  minutes?: number;
-  static names(): { [key: string]: string } {
-    return {
-      method: 'method',
-      minutes: 'minutes',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      method: 'string',
-      minutes: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateEventRequestOnlineMeetingInfo extends $tea.Model {
-  type?: string;
-  static names(): { [key: string]: string } {
-    return {
-      type: 'type',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      type: 'string',
     };
   }
 
@@ -2337,19 +2093,15 @@ export class CreateEventResponseBodyRecurrencePattern extends $tea.Model {
   type?: string;
   dayOfMonth?: number;
   daysOfWeek?: string;
-  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
-  month?: number;
   static names(): { [key: string]: string } {
     return {
       type: 'type',
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
-      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
-      month: 'month',
     };
   }
 
@@ -2358,10 +2110,8 @@ export class CreateEventResponseBodyRecurrencePattern extends $tea.Model {
       type: 'string',
       dayOfMonth: 'number',
       daysOfWeek: 'string',
-      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
-      month: 'number',
     };
   }
 
@@ -2419,14 +2169,12 @@ export class CreateEventResponseBodyRecurrence extends $tea.Model {
 
 export class CreateEventResponseBodyAttendees extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -2436,7 +2184,6 @@ export class CreateEventResponseBodyAttendees extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -2450,14 +2197,12 @@ export class CreateEventResponseBodyAttendees extends $tea.Model {
 
 export class CreateEventResponseBodyOrganizer extends $tea.Model {
   id?: string;
-  email?: string;
   displayName?: string;
   responseStatus?: string;
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      email: 'email',
       displayName: 'displayName',
       responseStatus: 'responseStatus',
       self: 'self',
@@ -2467,7 +2212,6 @@ export class CreateEventResponseBodyOrganizer extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
-      email: 'string',
       displayName: 'string',
       responseStatus: 'string',
       self: 'boolean',
@@ -2573,18 +2317,6 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
-    }
-
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
     }
@@ -2611,18 +2343,6 @@ export default class Client extends OpenApi {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -2672,18 +2392,6 @@ export default class Client extends OpenApi {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -2797,18 +2505,6 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
-    }
-
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
     }
@@ -2838,18 +2534,6 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
-    }
-
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
     }
@@ -2871,18 +2555,6 @@ export default class Client extends OpenApi {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -2945,18 +2617,6 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
-    }
-
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
     }
@@ -3009,29 +2669,9 @@ export default class Client extends OpenApi {
       body["location"] = request.location;
     }
 
-    if (!Util.isUnset(request.reminders)) {
-      body["reminders"] = request.reminders;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.onlineMeetingInfo))) {
-      body["onlineMeetingInfo"] = request.onlineMeetingInfo;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.dingOrgId)) {
-      realHeaders["dingOrgId"] = headers.dingOrgId;
-    }
-
-    if (!Util.isUnset(headers.dingUid)) {
-      realHeaders["dingUid"] = headers.dingUid;
-    }
-
-    if (!Util.isUnset(headers.dingAccessTokenType)) {
-      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {

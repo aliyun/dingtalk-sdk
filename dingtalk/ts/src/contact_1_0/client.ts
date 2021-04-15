@@ -7,6 +7,81 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class GetLatestDingIndexHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLatestDingIndexResponseBody extends $tea.Model {
+  statDate?: string;
+  idxTotal?: number;
+  idxEfficiency?: number;
+  idxCarbon?: number;
+  idxMonthlyAvg?: number;
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+      idxTotal: 'idxTotal',
+      idxEfficiency: 'idxEfficiency',
+      idxCarbon: 'idxCarbon',
+      idxMonthlyAvg: 'idxMonthlyAvg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+      idxTotal: 'number',
+      idxEfficiency: 'number',
+      idxCarbon: 'number',
+      idxMonthlyAvg: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLatestDingIndexResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetLatestDingIndexResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetLatestDingIndexResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -200,6 +275,28 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async getLatestDingIndex(): Promise<GetLatestDingIndexResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetLatestDingIndexHeaders({ });
+    return await this.getLatestDingIndexWithOptions(headers, runtime);
+  }
+
+  async getLatestDingIndexWithOptions(headers: GetLatestDingIndexHeaders, runtime: $Util.RuntimeOptions): Promise<GetLatestDingIndexResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetLatestDingIndexResponse>(await this.doROARequest("GetLatestDingIndex", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/dingIndexs`, "json", req, runtime), new GetLatestDingIndexResponse({}));
+  }
 
   async getUser(unionId: string): Promise<GetUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
