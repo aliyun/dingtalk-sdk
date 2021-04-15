@@ -79,15 +79,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
         }
@@ -134,15 +125,6 @@ class Dingtalk extends OpenApiClient
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -204,15 +186,6 @@ class Dingtalk extends OpenApiClient
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -368,15 +341,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
         }
@@ -425,15 +389,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
         }
@@ -474,15 +429,6 @@ class Dingtalk extends OpenApiClient
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -555,15 +501,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
         }
@@ -627,24 +564,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->location)) {
             @$body['location'] = $request->location;
         }
-        if (!Utils::isUnset($request->reminders)) {
-            @$body['reminders'] = $request->reminders;
-        }
-        if (!Utils::isUnset($request->onlineMeetingInfo)) {
-            @$body['onlineMeetingInfo'] = $request->onlineMeetingInfo;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;

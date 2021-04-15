@@ -14,13 +14,6 @@ class organizer extends Model
     public $id;
 
     /**
-     * @description 用户邮件地址
-     *
-     * @var string
-     */
-    public $email;
-
-    /**
      * @description 用户名
      *
      * @var string
@@ -40,7 +33,6 @@ class organizer extends Model
     public $self;
     protected $_name = [
         'id'             => 'id',
-        'email'          => 'email',
         'displayName'    => 'displayName',
         'responseStatus' => 'responseStatus',
         'self'           => 'self',
@@ -55,9 +47,6 @@ class organizer extends Model
         $res = [];
         if (null !== $this->id) {
             $res['id'] = $this->id;
-        }
-        if (null !== $this->email) {
-            $res['email'] = $this->email;
         }
         if (null !== $this->displayName) {
             $res['displayName'] = $this->displayName;
@@ -82,9 +71,6 @@ class organizer extends Model
         $model = new self();
         if (isset($map['id'])) {
             $model->id = $map['id'];
-        }
-        if (isset($map['email'])) {
-            $model->email = $map['email'];
         }
         if (isset($map['displayName'])) {
             $model->displayName = $map['displayName'];

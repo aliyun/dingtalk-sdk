@@ -7,9 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\location;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\recurrence;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\start;
 use AlibabaCloud\Tea\Model;
 
@@ -23,6 +21,8 @@ class CreateEventRequest extends Model
     public $summary;
 
     /**
+     * @description 日程描述
+     *
      * @var string
      */
     public $description;
@@ -35,16 +35,22 @@ class CreateEventRequest extends Model
     public $start;
 
     /**
+     * @description 日程结束时间
+     *
      * @var end
      */
     public $end;
 
     /**
+     * @description 是否为全天日程
+     *
      * @var bool
      */
     public $isAllDay;
 
     /**
+     * @description 日程循环规则
+     *
      * @var recurrence
      */
     public $recurrence;
@@ -58,27 +64,15 @@ class CreateEventRequest extends Model
      * @var location
      */
     public $location;
-
-    /**
-     * @var reminders[]
-     */
-    public $reminders;
-
-    /**
-     * @var onlineMeetingInfo
-     */
-    public $onlineMeetingInfo;
     protected $_name = [
-        'summary'           => 'summary',
-        'description'       => 'description',
-        'start'             => 'start',
-        'end'               => 'end',
-        'isAllDay'          => 'isAllDay',
-        'recurrence'        => 'recurrence',
-        'attendees'         => 'attendees',
-        'location'          => 'location',
-        'reminders'         => 'reminders',
-        'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'summary'     => 'summary',
+        'description' => 'description',
+        'start'       => 'start',
+        'end'         => 'end',
+        'isAllDay'    => 'isAllDay',
+        'recurrence'  => 'recurrence',
+        'attendees'   => 'attendees',
+        'location'    => 'location',
     ];
 
     public function validate()
@@ -117,18 +111,6 @@ class CreateEventRequest extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
-        }
-        if (null !== $this->reminders) {
-            $res['reminders'] = [];
-            if (null !== $this->reminders && \is_array($this->reminders)) {
-                $n = 0;
-                foreach ($this->reminders as $item) {
-                    $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->onlineMeetingInfo) {
-            $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
         }
 
         return $res;
@@ -171,18 +153,6 @@ class CreateEventRequest extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
-        }
-        if (isset($map['reminders'])) {
-            if (!empty($map['reminders'])) {
-                $model->reminders = [];
-                $n                = 0;
-                foreach ($map['reminders'] as $item) {
-                    $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['onlineMeetingInfo'])) {
-            $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
         }
 
         return $model;

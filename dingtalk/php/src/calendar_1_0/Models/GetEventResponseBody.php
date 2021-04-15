@@ -9,7 +9,6 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\recurrence;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\start;
 use AlibabaCloud\Tea\Model;
 
@@ -83,13 +82,6 @@ class GetEventResponseBody extends Model
     public $location;
 
     /**
-     * @description 符合RFC5545标准的日程uniqueId
-     *
-     * @var string
-     */
-    public $iCalUID;
-
-    /**
      * @description 重复日程的主日程id，非重复日程为空
      *
      * @var string
@@ -109,11 +101,6 @@ class GetEventResponseBody extends Model
      * @var string
      */
     public $updateTime;
-
-    /**
-     * @var reminders[]
-     */
-    public $reminders;
     protected $_name = [
         'id'             => 'id',
         'summary'        => 'summary',
@@ -126,11 +113,9 @@ class GetEventResponseBody extends Model
         'attendees'      => 'attendees',
         'organizer'      => 'organizer',
         'location'       => 'location',
-        'iCalUID'        => 'iCalUID',
         'seriesMasterId' => 'seriesMasterId',
         'createTime'     => 'createTime',
         'updateTime'     => 'updateTime',
-        'reminders'      => 'reminders',
     ];
 
     public function validate()
@@ -179,9 +164,6 @@ class GetEventResponseBody extends Model
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
         }
-        if (null !== $this->iCalUID) {
-            $res['iCalUID'] = $this->iCalUID;
-        }
         if (null !== $this->seriesMasterId) {
             $res['seriesMasterId'] = $this->seriesMasterId;
         }
@@ -190,15 +172,6 @@ class GetEventResponseBody extends Model
         }
         if (null !== $this->updateTime) {
             $res['updateTime'] = $this->updateTime;
-        }
-        if (null !== $this->reminders) {
-            $res['reminders'] = [];
-            if (null !== $this->reminders && \is_array($this->reminders)) {
-                $n = 0;
-                foreach ($this->reminders as $item) {
-                    $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
         }
 
         return $res;
@@ -251,9 +224,6 @@ class GetEventResponseBody extends Model
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
         }
-        if (isset($map['iCalUID'])) {
-            $model->iCalUID = $map['iCalUID'];
-        }
         if (isset($map['seriesMasterId'])) {
             $model->seriesMasterId = $map['seriesMasterId'];
         }
@@ -262,15 +232,6 @@ class GetEventResponseBody extends Model
         }
         if (isset($map['updateTime'])) {
             $model->updateTime = $map['updateTime'];
-        }
-        if (isset($map['reminders'])) {
-            if (!empty($map['reminders'])) {
-                $model->reminders = [];
-                $n                = 0;
-                foreach ($map['reminders'] as $item) {
-                    $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
-                }
-            }
         }
 
         return $model;

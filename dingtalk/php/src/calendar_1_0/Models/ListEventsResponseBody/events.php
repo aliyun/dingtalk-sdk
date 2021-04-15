@@ -36,13 +36,6 @@ class events extends Model
     public $description;
 
     /**
-     * @description 日程状态
-     *
-     * @var string
-     */
-    public $cancelled;
-
-    /**
      * @description 日程开始时间
      *
      * @var start
@@ -92,13 +85,6 @@ class events extends Model
     public $location;
 
     /**
-     * @description 符合RFC5545标准的日程uniqueId
-     *
-     * @var string
-     */
-    public $iCalUID;
-
-    /**
      * @description 重复日程的主日程id，非重复日程为空
      *
      * @var string
@@ -129,7 +115,6 @@ class events extends Model
         'id'             => 'id',
         'summary'        => 'summary',
         'description'    => 'description',
-        'cancelled'      => 'cancelled',
         'start'          => 'start',
         'end'            => 'end',
         'isAllDay'       => 'isAllDay',
@@ -137,7 +122,6 @@ class events extends Model
         'attendees'      => 'attendees',
         'organizer'      => 'organizer',
         'location'       => 'location',
-        'iCalUID'        => 'iCalUID',
         'seriesMasterId' => 'seriesMasterId',
         'createTime'     => 'createTime',
         'updateTime'     => 'updateTime',
@@ -159,9 +143,6 @@ class events extends Model
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
-        }
-        if (null !== $this->cancelled) {
-            $res['cancelled'] = $this->cancelled;
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
@@ -189,9 +170,6 @@ class events extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
-        }
-        if (null !== $this->iCalUID) {
-            $res['iCalUID'] = $this->iCalUID;
         }
         if (null !== $this->seriesMasterId) {
             $res['seriesMasterId'] = $this->seriesMasterId;
@@ -226,9 +204,6 @@ class events extends Model
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
-        if (isset($map['cancelled'])) {
-            $model->cancelled = $map['cancelled'];
-        }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);
         }
@@ -255,9 +230,6 @@ class events extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
-        }
-        if (isset($map['iCalUID'])) {
-            $model->iCalUID = $map['iCalUID'];
         }
         if (isset($map['seriesMasterId'])) {
             $model->seriesMasterId = $map['seriesMasterId'];

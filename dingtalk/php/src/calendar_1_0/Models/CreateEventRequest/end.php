@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class end extends Model
 {
     /**
+     * @description 日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
+     *
      * @var string
      */
     public $date;
 
     /**
+     * @description 日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
+     *
      * @var string
      */
     public $dateTime;
 
     /**
+     * @description 日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     *
      * @var string
      */
     public $timeZone;

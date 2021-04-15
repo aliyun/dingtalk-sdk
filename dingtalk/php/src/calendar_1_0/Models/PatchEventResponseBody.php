@@ -9,7 +9,6 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\recurrence;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\start;
 use AlibabaCloud\Tea\Model;
 
@@ -68,11 +67,6 @@ class PatchEventResponseBody extends Model
     public $location;
 
     /**
-     * @var reminders[]
-     */
-    public $reminders;
-
-    /**
      * @description 创建时间
      *
      * @var string
@@ -96,7 +90,6 @@ class PatchEventResponseBody extends Model
         'attendees'   => 'attendees',
         'organizer'   => 'organizer',
         'location'    => 'location',
-        'reminders'   => 'reminders',
         'createTime'  => 'createTime',
         'updateTime'  => 'updateTime',
     ];
@@ -143,15 +136,6 @@ class PatchEventResponseBody extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
-        }
-        if (null !== $this->reminders) {
-            $res['reminders'] = [];
-            if (null !== $this->reminders && \is_array($this->reminders)) {
-                $n = 0;
-                foreach ($this->reminders as $item) {
-                    $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -206,15 +190,6 @@ class PatchEventResponseBody extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
-        }
-        if (isset($map['reminders'])) {
-            if (!empty($map['reminders'])) {
-                $model->reminders = [];
-                $n                = 0;
-                foreach ($map['reminders'] as $item) {
-                    $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
-                }
-            }
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

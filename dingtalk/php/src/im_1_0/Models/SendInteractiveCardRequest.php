@@ -108,6 +108,13 @@ class SendInteractiveCardRequest extends Model
      * @var int
      */
     public $userIdType;
+
+    /**
+     * @description 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
+     *
+     * @var string[]
+     */
+    public $atOpenIds;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'cardTemplateId'     => 'cardTemplateId',
@@ -125,6 +132,7 @@ class SendInteractiveCardRequest extends Model
         'dingOauthAppId'     => 'dingOauthAppId',
         'chatBotId'          => 'chatBotId',
         'userIdType'         => 'userIdType',
+        'atOpenIds'          => 'atOpenIds',
     ];
 
     public function validate()
@@ -187,6 +195,9 @@ class SendInteractiveCardRequest extends Model
         if (null !== $this->userIdType) {
             $res['userIdType'] = $this->userIdType;
         }
+        if (null !== $this->atOpenIds) {
+            $res['atOpenIds'] = $this->atOpenIds;
+        }
 
         return $res;
     }
@@ -248,6 +259,9 @@ class SendInteractiveCardRequest extends Model
         }
         if (isset($map['userIdType'])) {
             $model->userIdType = $map['userIdType'];
+        }
+        if (isset($map['atOpenIds'])) {
+            $model->atOpenIds = $map['atOpenIds'];
         }
 
         return $model;

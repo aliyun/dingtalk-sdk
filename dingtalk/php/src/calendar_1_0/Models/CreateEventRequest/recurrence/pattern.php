@@ -9,6 +9,9 @@ use AlibabaCloud\Tea\Model;
 class pattern extends Model
 {
     /**
+     * @description 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
+     *
+     *
      * @var string
      */
     public $type;
@@ -26,30 +29,18 @@ class pattern extends Model
     /**
      * @var string
      */
-    public $firstDayOfWeek;
-
-    /**
-     * @var string
-     */
     public $index;
 
     /**
      * @var int
      */
     public $interval;
-
-    /**
-     * @var int
-     */
-    public $month;
     protected $_name = [
-        'type'           => 'type',
-        'dayOfMonth'     => 'dayOfMonth',
-        'daysOfWeek'     => 'daysOfWeek',
-        'firstDayOfWeek' => 'firstDayOfWeek',
-        'index'          => 'index',
-        'interval'       => 'interval',
-        'month'          => 'month',
+        'type'       => 'type',
+        'dayOfMonth' => 'dayOfMonth',
+        'daysOfWeek' => 'daysOfWeek',
+        'index'      => 'index',
+        'interval'   => 'interval',
     ];
 
     public function validate()
@@ -68,17 +59,11 @@ class pattern extends Model
         if (null !== $this->daysOfWeek) {
             $res['daysOfWeek'] = $this->daysOfWeek;
         }
-        if (null !== $this->firstDayOfWeek) {
-            $res['firstDayOfWeek'] = $this->firstDayOfWeek;
-        }
         if (null !== $this->index) {
             $res['index'] = $this->index;
         }
         if (null !== $this->interval) {
             $res['interval'] = $this->interval;
-        }
-        if (null !== $this->month) {
-            $res['month'] = $this->month;
         }
 
         return $res;
@@ -101,17 +86,11 @@ class pattern extends Model
         if (isset($map['daysOfWeek'])) {
             $model->daysOfWeek = $map['daysOfWeek'];
         }
-        if (isset($map['firstDayOfWeek'])) {
-            $model->firstDayOfWeek = $map['firstDayOfWeek'];
-        }
         if (isset($map['index'])) {
             $model->index = $map['index'];
         }
         if (isset($map['interval'])) {
             $model->interval = $map['interval'];
-        }
-        if (isset($map['month'])) {
-            $model->month = $map['month'];
         }
 
         return $model;

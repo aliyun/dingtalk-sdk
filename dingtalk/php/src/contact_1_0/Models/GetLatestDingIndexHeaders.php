@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ListEventsHeaders extends Model
+class GetLatestDingIndexHeaders extends Model
 {
     public $commonHeaders;
 
@@ -38,7 +38,7 @@ class ListEventsHeaders extends Model
     /**
      * @param array $map
      *
-     * @return ListEventsHeaders
+     * @return GetLatestDingIndexHeaders
      */
     public static function fromMap($map = [])
     {

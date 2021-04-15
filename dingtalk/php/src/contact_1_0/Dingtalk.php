@@ -8,6 +8,8 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -24,6 +26,39 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @return GetLatestDingIndexResponse
+     */
+    public function getLatestDingIndex()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetLatestDingIndexHeaders([]);
+
+        return $this->getLatestDingIndexWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetLatestDingIndexHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetLatestDingIndexResponse
+     */
+    public function getLatestDingIndexWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetLatestDingIndexResponse::fromMap($this->doROARequest('GetLatestDingIndex', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/dingIndexs', 'json', $req, $runtime));
     }
 
     /**
