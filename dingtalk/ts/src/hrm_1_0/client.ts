@@ -63,6 +63,7 @@ export class ECertQueryResponseBody extends $tea.Model {
   lastWorkDay?: string;
   terminationReasonVoluntary?: string[];
   terminationReasonPassive?: string[];
+  name?: string;
   static names(): { [key: string]: string } {
     return {
       realName: 'realName',
@@ -79,6 +80,7 @@ export class ECertQueryResponseBody extends $tea.Model {
       lastWorkDay: 'lastWorkDay',
       terminationReasonVoluntary: 'terminationReasonVoluntary',
       terminationReasonPassive: 'terminationReasonPassive',
+      name: 'name',
     };
   }
 
@@ -98,6 +100,7 @@ export class ECertQueryResponseBody extends $tea.Model {
       lastWorkDay: 'string',
       terminationReasonVoluntary: { 'type': 'array', 'itemType': 'string' },
       terminationReasonPassive: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
     };
   }
 
