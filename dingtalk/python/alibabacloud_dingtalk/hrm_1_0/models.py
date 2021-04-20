@@ -82,6 +82,7 @@ class ECertQueryResponseBody(TeaModel):
         last_work_day: str = None,
         termination_reason_voluntary: List[str] = None,
         termination_reason_passive: List[str] = None,
+        name: str = None,
     ):
         # 身份证姓名
         self.real_name = real_name
@@ -111,6 +112,8 @@ class ECertQueryResponseBody(TeaModel):
         self.termination_reason_voluntary = termination_reason_voluntary
         # 被动离职原因
         self.termination_reason_passive = termination_reason_passive
+        # 姓名
+        self.name = name
 
     def validate(self):
         pass
@@ -149,6 +152,8 @@ class ECertQueryResponseBody(TeaModel):
             result['terminationReasonVoluntary'] = self.termination_reason_voluntary
         if self.termination_reason_passive is not None:
             result['terminationReasonPassive'] = self.termination_reason_passive
+        if self.name is not None:
+            result['name'] = self.name
         return result
 
     def from_map(self, m: dict = None):
@@ -181,6 +186,8 @@ class ECertQueryResponseBody(TeaModel):
             self.termination_reason_voluntary = m.get('terminationReasonVoluntary')
         if m.get('terminationReasonPassive') is not None:
             self.termination_reason_passive = m.get('terminationReasonPassive')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         return self
 
 
