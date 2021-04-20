@@ -60,6 +60,10 @@ public class ECertQueryResponseBody extends TeaModel {
     @NameInMap("terminationReasonPassive")
     public java.util.List<String> terminationReasonPassive;
 
+    // 姓名
+    @NameInMap("name")
+    public String name;
+
     public static ECertQueryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ECertQueryResponseBody self = new ECertQueryResponseBody();
         return TeaModel.build(map, self);
@@ -175,6 +179,14 @@ public class ECertQueryResponseBody extends TeaModel {
     }
     public java.util.List<String> getTerminationReasonPassive() {
         return this.terminationReasonPassive;
+    }
+
+    public ECertQueryResponseBody setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
     }
 
 }
