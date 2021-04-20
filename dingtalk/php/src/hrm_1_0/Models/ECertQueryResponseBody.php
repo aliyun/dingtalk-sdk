@@ -105,6 +105,13 @@ class ECertQueryResponseBody extends Model
      * @var string[]
      */
     public $terminationReasonPassive;
+
+    /**
+     * @description 姓名
+     *
+     * @var string
+     */
+    public $name;
     protected $_name = [
         'realName'                   => 'realName',
         'certNO'                     => 'certNO',
@@ -120,6 +127,7 @@ class ECertQueryResponseBody extends Model
         'lastWorkDay'                => 'lastWorkDay',
         'terminationReasonVoluntary' => 'terminationReasonVoluntary',
         'terminationReasonPassive'   => 'terminationReasonPassive',
+        'name'                       => 'name',
     ];
 
     public function validate()
@@ -170,6 +178,9 @@ class ECertQueryResponseBody extends Model
         }
         if (null !== $this->terminationReasonPassive) {
             $res['terminationReasonPassive'] = $this->terminationReasonPassive;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -228,6 +239,9 @@ class ECertQueryResponseBody extends Model
             if (!empty($map['terminationReasonPassive'])) {
                 $model->terminationReasonPassive = $map['terminationReasonPassive'];
             }
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
 
         return $model;
