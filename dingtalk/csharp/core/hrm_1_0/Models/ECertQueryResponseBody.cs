@@ -107,6 +107,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public List<string> TerminationReasonPassive { get; set; }
 
+        /// <summary>
+        /// 姓名
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
     }
 
 }
