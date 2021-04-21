@@ -37,21 +37,21 @@ class UpdateTodoTaskRequest extends Model
     public $done;
 
     /**
-     * @description 执行者列表
+     * @description 执行者列表，需传用户的unionId
      *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 参与者列表
+     * @description 参与者列表，需传用户的unionId
      *
      * @var string[]
      */
     public $participantIds;
 
     /**
-     * @description 当前操作者id
+     * @description 当前操作者id，需传用户的unionId
      *
      * @var string
      */

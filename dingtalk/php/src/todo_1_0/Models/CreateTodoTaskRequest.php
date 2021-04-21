@@ -24,7 +24,7 @@ class CreateTodoTaskRequest extends Model
     public $subject;
 
     /**
-     * @description 创建者id
+     * @description 创建者id，需传用户的unionId
      *
      * @var string
      */
@@ -45,14 +45,14 @@ class CreateTodoTaskRequest extends Model
     public $dueTime;
 
     /**
-     * @description 执行者列表
+     * @description 执行者列表，需传用户的unionId
      *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 参与者列表
+     * @description 参与者列表，需传用户的unionId
      *
      * @var string[]
      */
@@ -66,7 +66,7 @@ class CreateTodoTaskRequest extends Model
     public $detailUrl;
 
     /**
-     * @description 当前操作者id
+     * @description 当前操作者id，需传用户的unionId
      *
      * @var string
      */

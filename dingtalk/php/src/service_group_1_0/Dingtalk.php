@@ -19,6 +19,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteKnowledgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListUserTeamsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListUserTeamsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -168,6 +171,93 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SendServiceGroupMessageRequest $request
+     *
+     * @return SendServiceGroupMessageResponse
+     */
+    public function sendServiceGroupMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendServiceGroupMessageHeaders([]);
+
+        return $this->sendServiceGroupMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendServiceGroupMessageRequest $request
+     * @param SendServiceGroupMessageHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return SendServiceGroupMessageResponse
+     */
+    public function sendServiceGroupMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->targetOpenConversationId)) {
+            @$body['targetOpenConversationId'] = $request->targetOpenConversationId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->atMobiles)) {
+            @$body['atMobiles'] = $request->atMobiles;
+        }
+        if (!Utils::isUnset($request->atDingtalkIds)) {
+            @$body['atDingtalkIds'] = $request->atDingtalkIds;
+        }
+        if (!Utils::isUnset($request->atUnionIds)) {
+            @$body['atUnionIds'] = $request->atUnionIds;
+        }
+        if (!Utils::isUnset($request->receiverMobiles)) {
+            @$body['receiverMobiles'] = $request->receiverMobiles;
+        }
+        if (!Utils::isUnset($request->receiverDingtalkIds)) {
+            @$body['receiverDingtalkIds'] = $request->receiverDingtalkIds;
+        }
+        if (!Utils::isUnset($request->receiverUnionIds)) {
+            @$body['receiverUnionIds'] = $request->receiverUnionIds;
+        }
+        if (!Utils::isUnset($request->messageType)) {
+            @$body['messageType'] = $request->messageType;
+        }
+        if (!Utils::isUnset($request->btnOrientation)) {
+            @$body['btnOrientation'] = $request->btnOrientation;
+        }
+        if (!Utils::isUnset($request->btns)) {
+            @$body['btns'] = $request->btns;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendServiceGroupMessageResponse::fromMap($this->doROARequest('SendServiceGroupMessage', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/messages/send', 'json', $req, $runtime));
+    }
+
+    /**
      * @param AddKnowledgeRequest $request
      *
      * @return AddKnowledgeResponse
@@ -226,6 +316,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->linkUrl)) {
             @$body['linkUrl'] = $request->linkUrl;
+        }
+        if (!Utils::isUnset($request->version)) {
+            @$body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

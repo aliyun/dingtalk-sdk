@@ -4,17 +4,18 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class AddKnowledgeResponseBody extends Model
 {
     /**
-     * @var result
+     * @description 开放知识点ID
+     *
+     * @var string
      */
-    public $result;
+    public $openKnowledgeId;
     protected $_name = [
-        'result' => 'result',
+        'openKnowledgeId' => 'openKnowledgeId',
     ];
 
     public function validate()
@@ -24,8 +25,8 @@ class AddKnowledgeResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        if (null !== $this->openKnowledgeId) {
+            $res['openKnowledgeId'] = $this->openKnowledgeId;
         }
 
         return $res;
@@ -39,8 +40,8 @@ class AddKnowledgeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
+        if (isset($map['openKnowledgeId'])) {
+            $model->openKnowledgeId = $map['openKnowledgeId'];
         }
 
         return $model;

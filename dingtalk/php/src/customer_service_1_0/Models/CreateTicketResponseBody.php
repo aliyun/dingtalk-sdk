@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class CreateTicketResponseBody extends Model
 {
     /**
-     * @description 开放知识点ID
+     * @description 新创建工单ID
      *
      * @var string
      */
-    public $openKnowledgeId;
+    public $ticketId;
     protected $_name = [
-        'openKnowledgeId' => 'openKnowledgeId',
+        'ticketId' => 'ticketId',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->openKnowledgeId) {
-            $res['openKnowledgeId'] = $this->openKnowledgeId;
+        if (null !== $this->ticketId) {
+            $res['ticketId'] = $this->ticketId;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return CreateTicketResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['openKnowledgeId'])) {
-            $model->openKnowledgeId = $map['openKnowledgeId'];
+        if (isset($map['ticketId'])) {
+            $model->ticketId = $map['ticketId'];
         }
 
         return $model;

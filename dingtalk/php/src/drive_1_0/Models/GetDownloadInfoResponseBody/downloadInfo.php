@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetDownloadInfoResponseBod
 
 use AlibabaCloud\Tea\Model;
 
-class presignedUrlDownloadInfo extends Model
+class downloadInfo extends Model
 {
     /**
      * @description 加签url
@@ -16,14 +16,22 @@ class presignedUrlDownloadInfo extends Model
     public $resourceUrl;
 
     /**
-     * @description 加签url过期时间(分钟)
+     * @description 加签url过期时间
      *
      * @var int
      */
-    public $expiration;
+    public $expirationSeconds;
+
+    /**
+     * @description headers
+     *
+     * @var mixed[]
+     */
+    public $headers;
     protected $_name = [
-        'resourceUrl' => 'resourceUrl',
-        'expiration'  => 'expiration',
+        'resourceUrl'       => 'resourceUrl',
+        'expirationSeconds' => 'expirationSeconds',
+        'headers'           => 'headers',
     ];
 
     public function validate()
@@ -36,8 +44,11 @@ class presignedUrlDownloadInfo extends Model
         if (null !== $this->resourceUrl) {
             $res['resourceUrl'] = $this->resourceUrl;
         }
-        if (null !== $this->expiration) {
-            $res['expiration'] = $this->expiration;
+        if (null !== $this->expirationSeconds) {
+            $res['expirationSeconds'] = $this->expirationSeconds;
+        }
+        if (null !== $this->headers) {
+            $res['headers'] = $this->headers;
         }
 
         return $res;
@@ -46,7 +57,7 @@ class presignedUrlDownloadInfo extends Model
     /**
      * @param array $map
      *
-     * @return presignedUrlDownloadInfo
+     * @return downloadInfo
      */
     public static function fromMap($map = [])
     {
@@ -54,8 +65,11 @@ class presignedUrlDownloadInfo extends Model
         if (isset($map['resourceUrl'])) {
             $model->resourceUrl = $map['resourceUrl'];
         }
-        if (isset($map['expiration'])) {
-            $model->expiration = $map['expiration'];
+        if (isset($map['expirationSeconds'])) {
+            $model->expirationSeconds = $map['expirationSeconds'];
+        }
+        if (isset($map['headers'])) {
+            $model->headers = $map['headers'];
         }
 
         return $model;

@@ -83,6 +83,13 @@ class AddKnowledgeRequest extends Model
      * @var string
      */
     public $linkUrl;
+
+    /**
+     * @description 知识点版本号
+     *
+     * @var string
+     */
+    public $version;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
@@ -96,6 +103,7 @@ class AddKnowledgeRequest extends Model
         'title'              => 'title',
         'content'            => 'content',
         'linkUrl'            => 'linkUrl',
+        'version'            => 'version',
     ];
 
     public function validate()
@@ -140,6 +148,9 @@ class AddKnowledgeRequest extends Model
         }
         if (null !== $this->linkUrl) {
             $res['linkUrl'] = $this->linkUrl;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
         }
 
         return $res;
@@ -188,6 +199,9 @@ class AddKnowledgeRequest extends Model
         }
         if (isset($map['linkUrl'])) {
             $model->linkUrl = $map['linkUrl'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
         }
 
         return $model;

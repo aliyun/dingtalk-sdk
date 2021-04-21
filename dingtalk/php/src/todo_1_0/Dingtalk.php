@@ -33,28 +33,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $userId
+     * @param string $unionId
      * @param string $taskId
      *
      * @return GetTodoTaskResponse
      */
-    public function getTodoTask($userId, $taskId)
+    public function getTodoTask($unionId, $taskId)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetTodoTaskHeaders([]);
 
-        return $this->getTodoTaskWithOptions($userId, $taskId, $headers, $runtime);
+        return $this->getTodoTaskWithOptions($unionId, $taskId, $headers, $runtime);
     }
 
     /**
-     * @param string             $userId
+     * @param string             $unionId
      * @param string             $taskId
      * @param GetTodoTaskHeaders $headers
      * @param RuntimeOptions     $runtime
      *
      * @return GetTodoTaskResponse
      */
-    public function getTodoTaskWithOptions($userId, $taskId, $headers, $runtime)
+    public function getTodoTaskWithOptions($unionId, $taskId, $headers, $runtime)
     {
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -67,26 +67,26 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
 
-        return GetTodoTaskResponse::fromMap($this->doROARequest('GetTodoTask', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $userId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetTodoTaskResponse::fromMap($this->doROARequest('GetTodoTask', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
     }
 
     /**
-     * @param string                $userId
+     * @param string                $unionId
      * @param string                $taskId
      * @param DeleteTodoTaskRequest $request
      *
      * @return DeleteTodoTaskResponse
      */
-    public function deleteTodoTask($userId, $taskId, $request)
+    public function deleteTodoTask($unionId, $taskId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new DeleteTodoTaskHeaders([]);
 
-        return $this->deleteTodoTaskWithOptions($userId, $taskId, $request, $headers, $runtime);
+        return $this->deleteTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                $userId
+     * @param string                $unionId
      * @param string                $taskId
      * @param DeleteTodoTaskRequest $request
      * @param DeleteTodoTaskHeaders $headers
@@ -94,7 +94,7 @@ class Dingtalk extends OpenApiClient
      *
      * @return DeleteTodoTaskResponse
      */
-    public function deleteTodoTaskWithOptions($userId, $taskId, $request, $headers, $runtime)
+    public function deleteTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -113,26 +113,26 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return DeleteTodoTaskResponse::fromMap($this->doROARequest('DeleteTodoTask', 'todo_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/todo/users/' . $userId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return DeleteTodoTaskResponse::fromMap($this->doROARequest('DeleteTodoTask', 'todo_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
     }
 
     /**
-     * @param string                $userId
+     * @param string                $unionId
      * @param string                $taskId
      * @param UpdateTodoTaskRequest $request
      *
      * @return UpdateTodoTaskResponse
      */
-    public function updateTodoTask($userId, $taskId, $request)
+    public function updateTodoTask($unionId, $taskId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateTodoTaskHeaders([]);
 
-        return $this->updateTodoTaskWithOptions($userId, $taskId, $request, $headers, $runtime);
+        return $this->updateTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                $userId
+     * @param string                $unionId
      * @param string                $taskId
      * @param UpdateTodoTaskRequest $request
      * @param UpdateTodoTaskHeaders $headers
@@ -140,7 +140,7 @@ class Dingtalk extends OpenApiClient
      *
      * @return UpdateTodoTaskResponse
      */
-    public function updateTodoTaskWithOptions($userId, $taskId, $request, $headers, $runtime)
+    public function updateTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -179,32 +179,32 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateTodoTaskResponse::fromMap($this->doROARequest('UpdateTodoTask', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $userId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return UpdateTodoTaskResponse::fromMap($this->doROARequest('UpdateTodoTask', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
     }
 
     /**
-     * @param string                $userId
+     * @param string                $unionId
      * @param CreateTodoTaskRequest $request
      *
      * @return CreateTodoTaskResponse
      */
-    public function createTodoTask($userId, $request)
+    public function createTodoTask($unionId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new CreateTodoTaskHeaders([]);
 
-        return $this->createTodoTaskWithOptions($userId, $request, $headers, $runtime);
+        return $this->createTodoTaskWithOptions($unionId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                $userId
+     * @param string                $unionId
      * @param CreateTodoTaskRequest $request
      * @param CreateTodoTaskHeaders $headers
      * @param RuntimeOptions        $runtime
      *
      * @return CreateTodoTaskResponse
      */
-    public function createTodoTaskWithOptions($userId, $request, $headers, $runtime)
+    public function createTodoTaskWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -249,6 +249,6 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreateTodoTaskResponse::fromMap($this->doROARequest('CreateTodoTask', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $userId . '/tasks', 'json', $req, $runtime));
+        return CreateTodoTaskResponse::fromMap($this->doROARequest('CreateTodoTask', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks', 'json', $req, $runtime));
     }
 }

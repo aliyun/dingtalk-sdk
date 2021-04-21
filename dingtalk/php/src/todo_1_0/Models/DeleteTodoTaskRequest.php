@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteTodoTaskRequest extends Model
 {
     /**
-     * @description 操作者id
+     * @description 操作者id，需传用户的unionId
      *
      * @var string
      */

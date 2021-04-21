@@ -59,14 +59,14 @@ class CreateTodoTaskResponseBody extends Model
     public $done;
 
     /**
-     * @description 执行者列表
+     * @description 执行者列表（用户的unionId）
      *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 参与者列表
+     * @description 参与者列表（用户的unionId）
      *
      * @var string[]
      */
@@ -108,25 +108,32 @@ class CreateTodoTaskResponseBody extends Model
     public $modifiedTime;
 
     /**
-     * @description 创建者
+     * @description 创建者（用户的unionId）
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 更新者
+     * @description 更新者（用户的unionId）
      *
      * @var string
      */
     public $modifierId;
 
     /**
-     * @description 租户id
+     * @description 租户id(unionId/orgId/groupId)
      *
      * @var string
      */
     public $tenantId;
+
+    /**
+     * @description 租户类型（user/org/group）
+     *
+     * @var string
+     */
+    public $tenantType;
 
     /**
      * @description 接入应用标识
@@ -159,6 +166,7 @@ class CreateTodoTaskResponseBody extends Model
         'creatorId'      => 'creatorId',
         'modifierId'     => 'modifierId',
         'tenantId'       => 'tenantId',
+        'tenantType'     => 'tenantType',
         'bizTag'         => 'bizTag',
         'requestId'      => 'requestId',
     ];
@@ -220,6 +228,9 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (null !== $this->tenantId) {
             $res['tenantId'] = $this->tenantId;
+        }
+        if (null !== $this->tenantType) {
+            $res['tenantType'] = $this->tenantType;
         }
         if (null !== $this->bizTag) {
             $res['bizTag'] = $this->bizTag;
@@ -293,6 +304,9 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (isset($map['tenantId'])) {
             $model->tenantId = $map['tenantId'];
+        }
+        if (isset($map['tenantType'])) {
+            $model->tenantType = $map['tenantType'];
         }
         if (isset($map['bizTag'])) {
             $model->bizTag = $map['bizTag'];
