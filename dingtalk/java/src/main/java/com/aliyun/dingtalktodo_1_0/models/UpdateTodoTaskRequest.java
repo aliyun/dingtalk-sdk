@@ -20,15 +20,15 @@ public class UpdateTodoTaskRequest extends TeaModel {
     @NameInMap("done")
     public Boolean done;
 
-    // 执行者列表
+    // 执行者列表，需传用户的unionId
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 参与者列表
+    // 参与者列表，需传用户的unionId
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    // 当前操作者id
+    // 当前操作者id，需传用户的unionId
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,7 +4,7 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTodoTaskRequest extends TeaModel {
-    // 操作者id
+    // 操作者id，需传用户的unionId
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -48,6 +48,10 @@ public class AddKnowledgeRequest extends TeaModel {
     @NameInMap("linkUrl")
     public String linkUrl;
 
+    // 知识点版本号
+    @NameInMap("version")
+    public String version;
+
     public static AddKnowledgeRequest build(java.util.Map<String, ?> map) throws Exception {
         AddKnowledgeRequest self = new AddKnowledgeRequest();
         return TeaModel.build(map, self);
@@ -147,6 +151,14 @@ public class AddKnowledgeRequest extends TeaModel {
     }
     public String getLinkUrl() {
         return this.linkUrl;
+    }
+
+    public AddKnowledgeRequest setVersion(String version) {
+        this.version = version;
+        return this;
+    }
+    public String getVersion() {
+        return this.version;
     }
 
 }

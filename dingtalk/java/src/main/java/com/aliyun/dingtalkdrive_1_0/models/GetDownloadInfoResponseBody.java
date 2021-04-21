@@ -5,37 +5,41 @@ import com.aliyun.tea.*;
 
 public class GetDownloadInfoResponseBody extends TeaModel {
     // 下载加签url信息
-    @NameInMap("presignedUrlDownloadInfo")
-    public GetDownloadInfoResponseBodyPresignedUrlDownloadInfo presignedUrlDownloadInfo;
+    @NameInMap("downloadInfo")
+    public GetDownloadInfoResponseBodyDownloadInfo downloadInfo;
 
     public static GetDownloadInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDownloadInfoResponseBody self = new GetDownloadInfoResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetDownloadInfoResponseBody setPresignedUrlDownloadInfo(GetDownloadInfoResponseBodyPresignedUrlDownloadInfo presignedUrlDownloadInfo) {
-        this.presignedUrlDownloadInfo = presignedUrlDownloadInfo;
+    public GetDownloadInfoResponseBody setDownloadInfo(GetDownloadInfoResponseBodyDownloadInfo downloadInfo) {
+        this.downloadInfo = downloadInfo;
         return this;
     }
-    public GetDownloadInfoResponseBodyPresignedUrlDownloadInfo getPresignedUrlDownloadInfo() {
-        return this.presignedUrlDownloadInfo;
+    public GetDownloadInfoResponseBodyDownloadInfo getDownloadInfo() {
+        return this.downloadInfo;
     }
 
-    public static class GetDownloadInfoResponseBodyPresignedUrlDownloadInfo extends TeaModel {
+    public static class GetDownloadInfoResponseBodyDownloadInfo extends TeaModel {
         // 加签url
         @NameInMap("resourceUrl")
         public String resourceUrl;
 
-        // 加签url过期时间(分钟)
-        @NameInMap("expiration")
-        public Integer expiration;
+        // 加签url过期时间
+        @NameInMap("expirationSeconds")
+        public Integer expirationSeconds;
 
-        public static GetDownloadInfoResponseBodyPresignedUrlDownloadInfo build(java.util.Map<String, ?> map) throws Exception {
-            GetDownloadInfoResponseBodyPresignedUrlDownloadInfo self = new GetDownloadInfoResponseBodyPresignedUrlDownloadInfo();
+        // headers
+        @NameInMap("headers")
+        public java.util.Map<String, ?> headers;
+
+        public static GetDownloadInfoResponseBodyDownloadInfo build(java.util.Map<String, ?> map) throws Exception {
+            GetDownloadInfoResponseBodyDownloadInfo self = new GetDownloadInfoResponseBodyDownloadInfo();
             return TeaModel.build(map, self);
         }
 
-        public GetDownloadInfoResponseBodyPresignedUrlDownloadInfo setResourceUrl(String resourceUrl) {
+        public GetDownloadInfoResponseBodyDownloadInfo setResourceUrl(String resourceUrl) {
             this.resourceUrl = resourceUrl;
             return this;
         }
@@ -43,12 +47,20 @@ public class GetDownloadInfoResponseBody extends TeaModel {
             return this.resourceUrl;
         }
 
-        public GetDownloadInfoResponseBodyPresignedUrlDownloadInfo setExpiration(Integer expiration) {
-            this.expiration = expiration;
+        public GetDownloadInfoResponseBodyDownloadInfo setExpirationSeconds(Integer expirationSeconds) {
+            this.expirationSeconds = expirationSeconds;
             return this;
         }
-        public Integer getExpiration() {
-            return this.expiration;
+        public Integer getExpirationSeconds() {
+            return this.expirationSeconds;
+        }
+
+        public GetDownloadInfoResponseBodyDownloadInfo setHeaders(java.util.Map<String, ?> headers) {
+            this.headers = headers;
+            return this;
+        }
+        public java.util.Map<String, ?> getHeaders() {
+            return this.headers;
         }
 
     }

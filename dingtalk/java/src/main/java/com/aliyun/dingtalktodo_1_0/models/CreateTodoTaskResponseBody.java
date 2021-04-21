@@ -32,11 +32,11 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("done")
     public Boolean done;
 
-    // 执行者列表
+    // 执行者列表（用户的unionId）
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 参与者列表
+    // 参与者列表（用户的unionId）
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
@@ -60,17 +60,21 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("modifiedTime")
     public Long modifiedTime;
 
-    // 创建者
+    // 创建者（用户的unionId）
     @NameInMap("creatorId")
     public String creatorId;
 
-    // 更新者
+    // 更新者（用户的unionId）
     @NameInMap("modifierId")
     public String modifierId;
 
-    // 租户id
+    // 租户id(unionId/orgId/groupId)
     @NameInMap("tenantId")
     public String tenantId;
+
+    // 租户类型（user/org/group）
+    @NameInMap("tenantType")
+    public String tenantType;
 
     // 接入应用标识
     @NameInMap("bizTag")
@@ -219,6 +223,14 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     }
     public String getTenantId() {
         return this.tenantId;
+    }
+
+    public CreateTodoTaskResponseBody setTenantType(String tenantType) {
+        this.tenantType = tenantType;
+        return this;
+    }
+    public String getTenantType() {
+        return this.tenantType;
     }
 
     public CreateTodoTaskResponseBody setBizTag(String bizTag) {

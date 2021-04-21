@@ -1,0 +1,123 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalktrajectory_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class QueryCollectingTraceTaskResponseBody extends TeaModel {
+    // result
+    @NameInMap("list")
+    public java.util.List<QueryCollectingTraceTaskResponseBodyList> list;
+
+    // 是否还有
+    @NameInMap("hasMore")
+    public Boolean hasMore;
+
+    // 总数
+    @NameInMap("totalCount")
+    public Float totalCount;
+
+    public static QueryCollectingTraceTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        QueryCollectingTraceTaskResponseBody self = new QueryCollectingTraceTaskResponseBody();
+        return TeaModel.build(map, self);
+    }
+
+    public QueryCollectingTraceTaskResponseBody setList(java.util.List<QueryCollectingTraceTaskResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<QueryCollectingTraceTaskResponseBodyList> getList() {
+        return this.list;
+    }
+
+    public QueryCollectingTraceTaskResponseBody setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+        return this;
+    }
+    public Boolean getHasMore() {
+        return this.hasMore;
+    }
+
+    public QueryCollectingTraceTaskResponseBody setTotalCount(Float totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+    public Float getTotalCount() {
+        return this.totalCount;
+    }
+
+    public static class QueryCollectingTraceTaskResponseBodyList extends TeaModel {
+        // 应用轨迹ID
+        @NameInMap("appTraceId")
+        public String appTraceId;
+
+        @NameInMap("geoReportStatus")
+        public Long geoReportStatus;
+
+        @NameInMap("geoReportPeriod")
+        public Long geoReportPeriod;
+
+        @NameInMap("geoCollectPeriod")
+        public Long geoCollectPeriod;
+
+        @NameInMap("reportStartTime")
+        public Long reportStartTime;
+
+        @NameInMap("reportEndTime")
+        public Long reportEndTime;
+
+        public static QueryCollectingTraceTaskResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
+            QueryCollectingTraceTaskResponseBodyList self = new QueryCollectingTraceTaskResponseBodyList();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setAppTraceId(String appTraceId) {
+            this.appTraceId = appTraceId;
+            return this;
+        }
+        public String getAppTraceId() {
+            return this.appTraceId;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setGeoReportStatus(Long geoReportStatus) {
+            this.geoReportStatus = geoReportStatus;
+            return this;
+        }
+        public Long getGeoReportStatus() {
+            return this.geoReportStatus;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setGeoReportPeriod(Long geoReportPeriod) {
+            this.geoReportPeriod = geoReportPeriod;
+            return this;
+        }
+        public Long getGeoReportPeriod() {
+            return this.geoReportPeriod;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setGeoCollectPeriod(Long geoCollectPeriod) {
+            this.geoCollectPeriod = geoCollectPeriod;
+            return this;
+        }
+        public Long getGeoCollectPeriod() {
+            return this.geoCollectPeriod;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setReportStartTime(Long reportStartTime) {
+            this.reportStartTime = reportStartTime;
+            return this;
+        }
+        public Long getReportStartTime() {
+            return this.reportStartTime;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setReportEndTime(Long reportEndTime) {
+            this.reportEndTime = reportEndTime;
+            return this;
+        }
+        public Long getReportEndTime() {
+            return this.reportEndTime;
+        }
+
+    }
+
+}

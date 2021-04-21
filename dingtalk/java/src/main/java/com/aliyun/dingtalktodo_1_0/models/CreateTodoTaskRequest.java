@@ -12,7 +12,7 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("subject")
     public String subject;
 
-    // 创建者id
+    // 创建者id，需传用户的unionId
     @NameInMap("creatorId")
     public String creatorId;
 
@@ -24,11 +24,11 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("dueTime")
     public Long dueTime;
 
-    // 执行者列表
+    // 执行者列表，需传用户的unionId
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 参与者列表
+    // 参与者列表，需传用户的unionId
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
@@ -36,7 +36,7 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("detailUrl")
     public CreateTodoTaskRequestDetailUrl detailUrl;
 
-    // 当前操作者id
+    // 当前操作者id，需传用户的unionId
     @NameInMap("operatorId")
     public String operatorId;
 

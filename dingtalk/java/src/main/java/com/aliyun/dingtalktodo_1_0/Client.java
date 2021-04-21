@@ -21,13 +21,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public GetTodoTaskResponse getTodoTask(String userId, String taskId) throws Exception {
+    public GetTodoTaskResponse getTodoTask(String unionId, String taskId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetTodoTaskHeaders headers = new GetTodoTaskHeaders();
-        return this.getTodoTaskWithOptions(userId, taskId, headers, runtime);
+        return this.getTodoTaskWithOptions(unionId, taskId, headers, runtime);
     }
 
-    public GetTodoTaskResponse getTodoTaskWithOptions(String userId, String taskId, GetTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetTodoTaskResponse getTodoTaskWithOptions(String unionId, String taskId, GetTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -40,16 +40,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId + "", "json", req, runtime), new GetTodoTaskResponse());
+        return TeaModel.toModel(this.doROARequest("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "", "json", req, runtime), new GetTodoTaskResponse());
     }
 
-    public DeleteTodoTaskResponse deleteTodoTask(String userId, String taskId, DeleteTodoTaskRequest request) throws Exception {
+    public DeleteTodoTaskResponse deleteTodoTask(String unionId, String taskId, DeleteTodoTaskRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeleteTodoTaskHeaders headers = new DeleteTodoTaskHeaders();
-        return this.deleteTodoTaskWithOptions(userId, taskId, request, headers, runtime);
+        return this.deleteTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
     }
 
-    public DeleteTodoTaskResponse deleteTodoTaskWithOptions(String userId, String taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+    public DeleteTodoTaskResponse deleteTodoTaskWithOptions(String unionId, String taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
@@ -69,16 +69,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId + "", "json", req, runtime), new DeleteTodoTaskResponse());
+        return TeaModel.toModel(this.doROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "", "json", req, runtime), new DeleteTodoTaskResponse());
     }
 
-    public UpdateTodoTaskResponse updateTodoTask(String userId, String taskId, UpdateTodoTaskRequest request) throws Exception {
+    public UpdateTodoTaskResponse updateTodoTask(String unionId, String taskId, UpdateTodoTaskRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateTodoTaskHeaders headers = new UpdateTodoTaskHeaders();
-        return this.updateTodoTaskWithOptions(userId, taskId, request, headers, runtime);
+        return this.updateTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
     }
 
-    public UpdateTodoTaskResponse updateTodoTaskWithOptions(String userId, String taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+    public UpdateTodoTaskResponse updateTodoTaskWithOptions(String unionId, String taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
@@ -124,16 +124,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId + "", "json", req, runtime), new UpdateTodoTaskResponse());
+        return TeaModel.toModel(this.doROARequest("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "", "json", req, runtime), new UpdateTodoTaskResponse());
     }
 
-    public CreateTodoTaskResponse createTodoTask(String userId, CreateTodoTaskRequest request) throws Exception {
+    public CreateTodoTaskResponse createTodoTask(String unionId, CreateTodoTaskRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateTodoTaskHeaders headers = new CreateTodoTaskHeaders();
-        return this.createTodoTaskWithOptions(userId, request, headers, runtime);
+        return this.createTodoTaskWithOptions(unionId, request, headers, runtime);
     }
 
-    public CreateTodoTaskResponse createTodoTaskWithOptions(String userId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+    public CreateTodoTaskResponse createTodoTaskWithOptions(String unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
@@ -187,6 +187,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + userId + "/tasks", "json", req, runtime), new CreateTodoTaskResponse());
+        return TeaModel.toModel(this.doROARequest("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/tasks", "json", req, runtime), new CreateTodoTaskResponse());
     }
 }

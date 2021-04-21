@@ -143,6 +143,95 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/groups", "json", req, runtime), new CreateGroupResponse());
     }
 
+    public SendServiceGroupMessageResponse sendServiceGroupMessage(SendServiceGroupMessageRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SendServiceGroupMessageHeaders headers = new SendServiceGroupMessageHeaders();
+        return this.sendServiceGroupMessageWithOptions(request, headers, runtime);
+    }
+
+    public SendServiceGroupMessageResponse sendServiceGroupMessageWithOptions(SendServiceGroupMessageRequest request, SendServiceGroupMessageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
+            body.put("dingIsvOrgId", request.dingIsvOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
+            body.put("dingOrgId", request.dingOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
+            body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingSuiteKey)) {
+            body.put("dingSuiteKey", request.dingSuiteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetOpenConversationId)) {
+            body.put("targetOpenConversationId", request.targetOpenConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atMobiles)) {
+            body.put("atMobiles", request.atMobiles);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atDingtalkIds)) {
+            body.put("atDingtalkIds", request.atDingtalkIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atUnionIds)) {
+            body.put("atUnionIds", request.atUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverMobiles)) {
+            body.put("receiverMobiles", request.receiverMobiles);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverDingtalkIds)) {
+            body.put("receiverDingtalkIds", request.receiverDingtalkIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverUnionIds)) {
+            body.put("receiverUnionIds", request.receiverUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.messageType)) {
+            body.put("messageType", request.messageType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.btnOrientation)) {
+            body.put("btnOrientation", request.btnOrientation);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.btns)) {
+            body.put("btns", request.btns);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendServiceGroupMessage", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/messages/send", "json", req, runtime), new SendServiceGroupMessageResponse());
+    }
+
     public AddKnowledgeResponse addKnowledge(AddKnowledgeRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         AddKnowledgeHeaders headers = new AddKnowledgeHeaders();
@@ -198,6 +287,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.linkUrl)) {
             body.put("linkUrl", request.linkUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.version)) {
+            body.put("version", request.version);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
