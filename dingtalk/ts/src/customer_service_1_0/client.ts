@@ -1,0 +1,205 @@
+// This file is auto-generated, don't edit it
+/**
+ *
+ */
+import Util, * as $Util from '@alicloud/tea-util';
+import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
+import OpenApiUtil from '@alicloud/openapi-util';
+import * as $tea from '@alicloud/tea-typescript';
+
+export class CreateTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketRequest extends $tea.Model {
+  sourceId?: string;
+  foreignId?: string;
+  foreignName?: string;
+  openInstanceId?: string;
+  productionType?: number;
+  templateId?: string;
+  title?: string;
+  properties?: CreateTicketRequestProperties[];
+  static names(): { [key: string]: string } {
+    return {
+      sourceId: 'sourceId',
+      foreignId: 'foreignId',
+      foreignName: 'foreignName',
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      templateId: 'templateId',
+      title: 'title',
+      properties: 'properties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sourceId: 'string',
+      foreignId: 'string',
+      foreignName: 'string',
+      openInstanceId: 'string',
+      productionType: 'number',
+      templateId: 'string',
+      title: 'string',
+      properties: { 'type': 'array', 'itemType': CreateTicketRequestProperties },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketResponseBody extends $tea.Model {
+  ticketId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ticketId: 'ticketId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ticketId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTicketResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketRequestProperties extends $tea.Model {
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+
+export default class Client extends OpenApi {
+
+  constructor(config: $OpenApi.Config) {
+    super(config);
+    this._endpointRule = "";
+    if (Util.empty(this._endpoint)) {
+      this._endpoint = "api.dingtalk.com";
+    }
+
+  }
+
+
+  async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTicketHeaders({ });
+    return await this.createTicketWithOptions(request, headers, runtime);
+  }
+
+  async createTicketWithOptions(request: CreateTicketRequest, headers: CreateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sourceId)) {
+      body["sourceId"] = request.sourceId;
+    }
+
+    if (!Util.isUnset(request.foreignId)) {
+      body["foreignId"] = request.foreignId;
+    }
+
+    if (!Util.isUnset(request.foreignName)) {
+      body["foreignName"] = request.foreignName;
+    }
+
+    if (!Util.isUnset(request.openInstanceId)) {
+      body["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      body["productionType"] = request.productionType;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.properties)) {
+      body["properties"] = request.properties;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new CreateTicketResponse({}));
+  }
+
+}

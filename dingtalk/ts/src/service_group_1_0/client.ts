@@ -222,6 +222,133 @@ export class CreateGroupResponse extends $tea.Model {
   }
 }
 
+export class SendServiceGroupMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  targetOpenConversationId?: string;
+  title?: string;
+  content?: string;
+  atMobiles?: string[];
+  atDingtalkIds?: string[];
+  atUnionIds?: string[];
+  receiverMobiles?: string[];
+  receiverDingtalkIds?: string[];
+  receiverUnionIds?: string[];
+  messageType?: string;
+  btnOrientation?: string;
+  btns?: SendServiceGroupMessageRequestBtns[];
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+      targetOpenConversationId: 'targetOpenConversationId',
+      title: 'title',
+      content: 'content',
+      atMobiles: 'atMobiles',
+      atDingtalkIds: 'atDingtalkIds',
+      atUnionIds: 'atUnionIds',
+      receiverMobiles: 'receiverMobiles',
+      receiverDingtalkIds: 'receiverDingtalkIds',
+      receiverUnionIds: 'receiverUnionIds',
+      messageType: 'messageType',
+      btnOrientation: 'btnOrientation',
+      btns: 'btns',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+      targetOpenConversationId: 'string',
+      title: 'string',
+      content: 'string',
+      atMobiles: { 'type': 'array', 'itemType': 'string' },
+      atDingtalkIds: { 'type': 'array', 'itemType': 'string' },
+      atUnionIds: { 'type': 'array', 'itemType': 'string' },
+      receiverMobiles: { 'type': 'array', 'itemType': 'string' },
+      receiverDingtalkIds: { 'type': 'array', 'itemType': 'string' },
+      receiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      messageType: 'string',
+      btnOrientation: 'string',
+      btns: { 'type': 'array', 'itemType': SendServiceGroupMessageRequestBtns },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageResponseBody extends $tea.Model {
+  openMsgTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openMsgTaskId: 'openMsgTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openMsgTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendServiceGroupMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendServiceGroupMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddKnowledgeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -257,6 +384,7 @@ export class AddKnowledgeRequest extends $tea.Model {
   title?: string;
   content?: string;
   linkUrl?: string;
+  version?: string;
   static names(): { [key: string]: string } {
     return {
       dingIsvOrgId: 'dingIsvOrgId',
@@ -271,6 +399,7 @@ export class AddKnowledgeRequest extends $tea.Model {
       title: 'title',
       content: 'content',
       linkUrl: 'linkUrl',
+      version: 'version',
     };
   }
 
@@ -288,6 +417,7 @@ export class AddKnowledgeRequest extends $tea.Model {
       title: 'string',
       content: 'string',
       linkUrl: 'string',
+      version: 'string',
     };
   }
 
@@ -297,16 +427,16 @@ export class AddKnowledgeRequest extends $tea.Model {
 }
 
 export class AddKnowledgeResponseBody extends $tea.Model {
-  result?: AddKnowledgeResponseBodyResult;
+  openKnowledgeId?: string;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      openKnowledgeId: 'openKnowledgeId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: AddKnowledgeResponseBodyResult,
+      openKnowledgeId: 'string',
     };
   }
 
@@ -512,17 +642,20 @@ export class ListUserTeamsResponse extends $tea.Model {
   }
 }
 
-export class AddKnowledgeResponseBodyResult extends $tea.Model {
-  openKnowledgeId?: string;
+export class SendServiceGroupMessageRequestBtns extends $tea.Model {
+  actionURL?: string;
+  title?: string;
   static names(): { [key: string]: string } {
     return {
-      openKnowledgeId: 'openKnowledgeId',
+      actionURL: 'actionURL',
+      title: 'title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      openKnowledgeId: 'string',
+      actionURL: 'string',
+      title: 'string',
     };
   }
 
@@ -688,6 +821,95 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups`, "json", req, runtime), new CreateGroupResponse({}));
   }
 
+  async sendServiceGroupMessage(request: SendServiceGroupMessageRequest): Promise<SendServiceGroupMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendServiceGroupMessageHeaders({ });
+    return await this.sendServiceGroupMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendServiceGroupMessageWithOptions(request: SendServiceGroupMessageRequest, headers: SendServiceGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendServiceGroupMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.targetOpenConversationId)) {
+      body["targetOpenConversationId"] = request.targetOpenConversationId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.atMobiles)) {
+      body["atMobiles"] = request.atMobiles;
+    }
+
+    if (!Util.isUnset(request.atDingtalkIds)) {
+      body["atDingtalkIds"] = request.atDingtalkIds;
+    }
+
+    if (!Util.isUnset(request.atUnionIds)) {
+      body["atUnionIds"] = request.atUnionIds;
+    }
+
+    if (!Util.isUnset(request.receiverMobiles)) {
+      body["receiverMobiles"] = request.receiverMobiles;
+    }
+
+    if (!Util.isUnset(request.receiverDingtalkIds)) {
+      body["receiverDingtalkIds"] = request.receiverDingtalkIds;
+    }
+
+    if (!Util.isUnset(request.receiverUnionIds)) {
+      body["receiverUnionIds"] = request.receiverUnionIds;
+    }
+
+    if (!Util.isUnset(request.messageType)) {
+      body["messageType"] = request.messageType;
+    }
+
+    if (!Util.isUnset(request.btnOrientation)) {
+      body["btnOrientation"] = request.btnOrientation;
+    }
+
+    if (!Util.isUnset(request.btns)) {
+      body["btns"] = request.btns;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendServiceGroupMessageResponse>(await this.doROARequest("SendServiceGroupMessage", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/messages/send`, "json", req, runtime), new SendServiceGroupMessageResponse({}));
+  }
+
   async addKnowledge(request: AddKnowledgeRequest): Promise<AddKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddKnowledgeHeaders({ });
@@ -743,6 +965,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.linkUrl)) {
       body["linkUrl"] = request.linkUrl;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      body["version"] = request.version;
     }
 
     let realHeaders : {[key: string ]: string} = { };

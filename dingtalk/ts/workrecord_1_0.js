@@ -1,0 +1,1 @@
+module.exports = require('./dist').workrecord_1_0;

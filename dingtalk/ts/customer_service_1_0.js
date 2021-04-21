@@ -1,0 +1,1 @@
+module.exports = require('./dist').customer_service_1_0;

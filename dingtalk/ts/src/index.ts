@@ -6,6 +6,7 @@ import * as calendar_1_0 from './calendar_1_0/client';
 import * as conference_1_0 from './conference_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
+import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
@@ -21,7 +22,9 @@ import * as project_integration_1_0 from './project_integration_1_0/client';
 import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
+import * as trajectory_1_0 from './trajectory_1_0/client';
 import * as workbench_1_0 from './workbench_1_0/client';
+import * as workrecord_1_0 from './workrecord_1_0/client';
 
 export = {
   alitrip_1_0,
@@ -32,6 +35,7 @@ export = {
   conference_1_0,
   contact_1_0,
   crm_1_0,
+  customer_service_1_0,
   dingmi_1_0,
   drive_1_0,
   edu_1_0,
@@ -47,5 +51,7 @@ export = {
   service_group_1_0,
   smart_device_1_0,
   todo_1_0,
+  trajectory_1_0,
   workbench_1_0,
+  workrecord_1_0,
 }

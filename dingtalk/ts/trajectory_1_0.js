@@ -1,0 +1,1 @@
+module.exports = require('./dist').trajectory_1_0;
