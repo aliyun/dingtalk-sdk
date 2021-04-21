@@ -215,6 +215,130 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups', 'json', req, runtime)
         )
 
+    def send_service_group_message(
+        self,
+        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
+    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders()
+        return self.send_service_group_message_with_options(request, headers, runtime)
+
+    async def send_service_group_message_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
+    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders()
+        return await self.send_service_group_message_with_options_async(request, headers, runtime)
+
+    def send_service_group_message_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
+        headers: dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.target_open_conversation_id):
+            body['targetOpenConversationId'] = request.target_open_conversation_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.at_mobiles):
+            body['atMobiles'] = request.at_mobiles
+        if not UtilClient.is_unset(request.at_dingtalk_ids):
+            body['atDingtalkIds'] = request.at_dingtalk_ids
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.receiver_mobiles):
+            body['receiverMobiles'] = request.receiver_mobiles
+        if not UtilClient.is_unset(request.receiver_dingtalk_ids):
+            body['receiverDingtalkIds'] = request.receiver_dingtalk_ids
+        if not UtilClient.is_unset(request.receiver_union_ids):
+            body['receiverUnionIds'] = request.receiver_union_ids
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.btn_orientation):
+            body['btnOrientation'] = request.btn_orientation
+        if not UtilClient.is_unset(request.btns):
+            body['btns'] = request.btns
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse(),
+            self.do_roarequest('SendServiceGroupMessage', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/send', 'json', req, runtime)
+        )
+
+    async def send_service_group_message_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
+        headers: dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.target_open_conversation_id):
+            body['targetOpenConversationId'] = request.target_open_conversation_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.at_mobiles):
+            body['atMobiles'] = request.at_mobiles
+        if not UtilClient.is_unset(request.at_dingtalk_ids):
+            body['atDingtalkIds'] = request.at_dingtalk_ids
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.receiver_mobiles):
+            body['receiverMobiles'] = request.receiver_mobiles
+        if not UtilClient.is_unset(request.receiver_dingtalk_ids):
+            body['receiverDingtalkIds'] = request.receiver_dingtalk_ids
+        if not UtilClient.is_unset(request.receiver_union_ids):
+            body['receiverUnionIds'] = request.receiver_union_ids
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.btn_orientation):
+            body['btnOrientation'] = request.btn_orientation
+        if not UtilClient.is_unset(request.btns):
+            body['btns'] = request.btns
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse(),
+            await self.do_roarequest_async('SendServiceGroupMessage', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/send', 'json', req, runtime)
+        )
+
     def add_knowledge(
         self,
         request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
@@ -263,6 +387,8 @@ class Client(OpenApiClient):
             body['content'] = request.content
         if not UtilClient.is_unset(request.link_url):
             body['linkUrl'] = request.link_url
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -309,6 +435,8 @@ class Client(OpenApiClient):
             body['content'] = request.content
         if not UtilClient.is_unset(request.link_url):
             body['linkUrl'] = request.link_url
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

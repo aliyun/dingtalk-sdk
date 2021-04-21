@@ -367,6 +367,276 @@ class CreateGroupResponse(TeaModel):
         return self
 
 
+class SendServiceGroupMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendServiceGroupMessageRequestBtns(TeaModel):
+    def __init__(
+        self,
+        action_url: str = None,
+        title: str = None,
+    ):
+        # 跳转地址
+        self.action_url = action_url
+        # 按钮名称
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_url is not None:
+            result['actionURL'] = self.action_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionURL') is not None:
+            self.action_url = m.get('actionURL')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendServiceGroupMessageRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_suite_key: str = None,
+        target_open_conversation_id: str = None,
+        title: str = None,
+        content: str = None,
+        at_mobiles: List[str] = None,
+        at_dingtalk_ids: List[str] = None,
+        at_union_ids: List[str] = None,
+        receiver_mobiles: List[str] = None,
+        receiver_dingtalk_ids: List[str] = None,
+        receiver_union_ids: List[str] = None,
+        message_type: str = None,
+        btn_orientation: str = None,
+        btns: List[SendServiceGroupMessageRequestBtns] = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_suite_key = ding_suite_key
+        # 开放群ID
+        self.target_open_conversation_id = target_open_conversation_id
+        # 标题
+        self.title = title
+        # 内容
+        self.content = content
+        # at 手机号
+        self.at_mobiles = at_mobiles
+        # at dingtalkId
+        self.at_dingtalk_ids = at_dingtalk_ids
+        # at unionIds
+        self.at_union_ids = at_union_ids
+        # 手机号接收者
+        self.receiver_mobiles = receiver_mobiles
+        # dingtalkId接收者
+        self.receiver_dingtalk_ids = receiver_dingtalk_ids
+        # unionId接收者
+        self.receiver_union_ids = receiver_union_ids
+        # 消息类型：MARKDOWN，ACTIONCARD
+        self.message_type = message_type
+        # 排列方式：0-按钮竖直排列，1-按钮横向排列
+        self.btn_orientation = btn_orientation
+        # actionCard按钮
+        self.btns = btns
+
+    def validate(self):
+        if self.btns:
+            for k in self.btns:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.target_open_conversation_id is not None:
+            result['targetOpenConversationId'] = self.target_open_conversation_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.content is not None:
+            result['content'] = self.content
+        if self.at_mobiles is not None:
+            result['atMobiles'] = self.at_mobiles
+        if self.at_dingtalk_ids is not None:
+            result['atDingtalkIds'] = self.at_dingtalk_ids
+        if self.at_union_ids is not None:
+            result['atUnionIds'] = self.at_union_ids
+        if self.receiver_mobiles is not None:
+            result['receiverMobiles'] = self.receiver_mobiles
+        if self.receiver_dingtalk_ids is not None:
+            result['receiverDingtalkIds'] = self.receiver_dingtalk_ids
+        if self.receiver_union_ids is not None:
+            result['receiverUnionIds'] = self.receiver_union_ids
+        if self.message_type is not None:
+            result['messageType'] = self.message_type
+        if self.btn_orientation is not None:
+            result['btnOrientation'] = self.btn_orientation
+        result['btns'] = []
+        if self.btns is not None:
+            for k in self.btns:
+                result['btns'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('targetOpenConversationId') is not None:
+            self.target_open_conversation_id = m.get('targetOpenConversationId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('atMobiles') is not None:
+            self.at_mobiles = m.get('atMobiles')
+        if m.get('atDingtalkIds') is not None:
+            self.at_dingtalk_ids = m.get('atDingtalkIds')
+        if m.get('atUnionIds') is not None:
+            self.at_union_ids = m.get('atUnionIds')
+        if m.get('receiverMobiles') is not None:
+            self.receiver_mobiles = m.get('receiverMobiles')
+        if m.get('receiverDingtalkIds') is not None:
+            self.receiver_dingtalk_ids = m.get('receiverDingtalkIds')
+        if m.get('receiverUnionIds') is not None:
+            self.receiver_union_ids = m.get('receiverUnionIds')
+        if m.get('messageType') is not None:
+            self.message_type = m.get('messageType')
+        if m.get('btnOrientation') is not None:
+            self.btn_orientation = m.get('btnOrientation')
+        self.btns = []
+        if m.get('btns') is not None:
+            for k in m.get('btns'):
+                temp_model = SendServiceGroupMessageRequestBtns()
+                self.btns.append(temp_model.from_map(k))
+        return self
+
+
+class SendServiceGroupMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_msg_task_id: str = None,
+    ):
+        # 开放消息任务ID
+        self.open_msg_task_id = open_msg_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_msg_task_id is not None:
+            result['openMsgTaskId'] = self.open_msg_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openMsgTaskId') is not None:
+            self.open_msg_task_id = m.get('openMsgTaskId')
+        return self
+
+
+class SendServiceGroupMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendServiceGroupMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendServiceGroupMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddKnowledgeHeaders(TeaModel):
     def __init__(
         self,
@@ -415,6 +685,7 @@ class AddKnowledgeRequest(TeaModel):
         title: str = None,
         content: str = None,
         link_url: str = None,
+        version: str = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_org_id = ding_org_id
@@ -436,6 +707,8 @@ class AddKnowledgeRequest(TeaModel):
         self.content = content
         # CCM的知识点外链
         self.link_url = link_url
+        # 知识点版本号
+        self.version = version
 
     def validate(self):
         pass
@@ -470,6 +743,8 @@ class AddKnowledgeRequest(TeaModel):
             result['content'] = self.content
         if self.link_url is not None:
             result['linkUrl'] = self.link_url
+        if self.version is not None:
+            result['version'] = self.version
         return result
 
     def from_map(self, m: dict = None):
@@ -498,10 +773,12 @@ class AddKnowledgeRequest(TeaModel):
             self.content = m.get('content')
         if m.get('linkUrl') is not None:
             self.link_url = m.get('linkUrl')
+        if m.get('version') is not None:
+            self.version = m.get('version')
         return self
 
 
-class AddKnowledgeResponseBodyResult(TeaModel):
+class AddKnowledgeResponseBody(TeaModel):
     def __init__(
         self,
         open_knowledge_id: str = None,
@@ -526,35 +803,6 @@ class AddKnowledgeResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('openKnowledgeId') is not None:
             self.open_knowledge_id = m.get('openKnowledgeId')
-        return self
-
-
-class AddKnowledgeResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: AddKnowledgeResponseBodyResult = None,
-    ):
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('result') is not None:
-            temp_model = AddKnowledgeResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
         return self
 
 

@@ -92,6 +92,7 @@ class GetTodoTaskResponseBody(TeaModel):
         creator_id: str = None,
         modifier_id: str = None,
         tenant_id: str = None,
+        tenant_type: str = None,
         biz_tag: str = None,
         request_id: str = None,
     ):
@@ -109,9 +110,9 @@ class GetTodoTaskResponseBody(TeaModel):
         self.finish_time = finish_time
         # 完成状态
         self.done = done
-        # 执行者列表
+        # 执行者列表（用户的unionId）
         self.executor_ids = executor_ids
-        # 参与者列表
+        # 参与者列表（用户的unionId）
         self.participant_ids = participant_ids
         # 自定义详情页跳转配置
         self.detail_url = detail_url
@@ -123,12 +124,14 @@ class GetTodoTaskResponseBody(TeaModel):
         self.created_time = created_time
         # 更新时间
         self.modified_time = modified_time
-        # 创建者id
+        # 创建者id（用户的unionId）
         self.creator_id = creator_id
-        # 更新者id
+        # 更新者id（用户的unionId）
         self.modifier_id = modifier_id
-        # 租户id
+        # 租户id(unionId/orgId/groupId)
         self.tenant_id = tenant_id
+        # 租户类型（user/org/group）
+        self.tenant_type = tenant_type
         # 接入业务应用标识
         self.biz_tag = biz_tag
         # requestId
@@ -178,6 +181,8 @@ class GetTodoTaskResponseBody(TeaModel):
             result['modifierId'] = self.modifier_id
         if self.tenant_id is not None:
             result['tenantId'] = self.tenant_id
+        if self.tenant_type is not None:
+            result['tenantType'] = self.tenant_type
         if self.biz_tag is not None:
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
@@ -221,6 +226,8 @@ class GetTodoTaskResponseBody(TeaModel):
             self.modifier_id = m.get('modifierId')
         if m.get('tenantId') is not None:
             self.tenant_id = m.get('tenantId')
+        if m.get('tenantType') is not None:
+            self.tenant_type = m.get('tenantType')
         if m.get('bizTag') is not None:
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
@@ -303,7 +310,7 @@ class DeleteTodoTaskRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作者id
+        # 操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -450,11 +457,11 @@ class UpdateTodoTaskRequest(TeaModel):
         self.due_time = due_time
         # 完成状态
         self.done = done
-        # 执行者列表
+        # 执行者列表，需传用户的unionId
         self.executor_ids = executor_ids
-        # 参与者列表
+        # 参与者列表，需传用户的unionId
         self.participant_ids = participant_ids
-        # 当前操作者id
+        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -651,19 +658,19 @@ class CreateTodoTaskRequest(TeaModel):
         self.source_id = source_id
         # 待办标题
         self.subject = subject
-        # 创建者id
+        # 创建者id，需传用户的unionId
         self.creator_id = creator_id
         # 待办备注描述
         self.description = description
         # 截止时间
         self.due_time = due_time
-        # 执行者列表
+        # 执行者列表，需传用户的unionId
         self.executor_ids = executor_ids
-        # 参与者列表
+        # 参与者列表，需传用户的unionId
         self.participant_ids = participant_ids
         # 详情页url跳转地址
         self.detail_url = detail_url
-        # 当前操作者id
+        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -775,6 +782,7 @@ class CreateTodoTaskResponseBody(TeaModel):
         creator_id: str = None,
         modifier_id: str = None,
         tenant_id: str = None,
+        tenant_type: str = None,
         biz_tag: str = None,
         request_id: str = None,
     ):
@@ -792,9 +800,9 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.finish_time = finish_time
         # 完成状态
         self.done = done
-        # 执行者列表
+        # 执行者列表（用户的unionId）
         self.executor_ids = executor_ids
-        # 参与者列表
+        # 参与者列表（用户的unionId）
         self.participant_ids = participant_ids
         # 自定义详情页跳转配置
         self.detail_url = detail_url
@@ -806,12 +814,14 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.created_time = created_time
         # 更新时间
         self.modified_time = modified_time
-        # 创建者
+        # 创建者（用户的unionId）
         self.creator_id = creator_id
-        # 更新者
+        # 更新者（用户的unionId）
         self.modifier_id = modifier_id
-        # 租户id
+        # 租户id(unionId/orgId/groupId)
         self.tenant_id = tenant_id
+        # 租户类型（user/org/group）
+        self.tenant_type = tenant_type
         # 接入应用标识
         self.biz_tag = biz_tag
         # requestId
@@ -861,6 +871,8 @@ class CreateTodoTaskResponseBody(TeaModel):
             result['modifierId'] = self.modifier_id
         if self.tenant_id is not None:
             result['tenantId'] = self.tenant_id
+        if self.tenant_type is not None:
+            result['tenantType'] = self.tenant_type
         if self.biz_tag is not None:
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
@@ -904,6 +916,8 @@ class CreateTodoTaskResponseBody(TeaModel):
             self.modifier_id = m.get('modifierId')
         if m.get('tenantId') is not None:
             self.tenant_id = m.get('tenantId')
+        if m.get('tenantType') is not None:
+            self.tenant_type = m.get('tenantType')
         if m.get('bizTag') is not None:
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
