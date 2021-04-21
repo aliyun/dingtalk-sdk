@@ -59,14 +59,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public bool? Done { get; set; }
 
         /// <summary>
-        /// 执行者列表
+        /// 执行者列表（用户的unionId）
         /// </summary>
         [NameInMap("executorIds")]
         [Validation(Required=false)]
         public List<string> ExecutorIds { get; set; }
 
         /// <summary>
-        /// 参与者列表
+        /// 参与者列表（用户的unionId）
         /// </summary>
         [NameInMap("participantIds")]
         [Validation(Required=false)]
@@ -116,25 +116,32 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public long? ModifiedTime { get; set; }
 
         /// <summary>
-        /// 创建者id
+        /// 创建者id（用户的unionId）
         /// </summary>
         [NameInMap("creatorId")]
         [Validation(Required=false)]
         public string CreatorId { get; set; }
 
         /// <summary>
-        /// 更新者id
+        /// 更新者id（用户的unionId）
         /// </summary>
         [NameInMap("modifierId")]
         [Validation(Required=false)]
         public string ModifierId { get; set; }
 
         /// <summary>
-        /// 租户id
+        /// 租户id(unionId/orgId/groupId)
         /// </summary>
         [NameInMap("tenantId")]
         [Validation(Required=false)]
         public string TenantId { get; set; }
+
+        /// <summary>
+        /// 租户类型（user/org/group）
+        /// </summary>
+        [NameInMap("tenantType")]
+        [Validation(Required=false)]
+        public string TenantType { get; set; }
 
         /// <summary>
         /// 接入业务应用标识

@@ -81,6 +81,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string LinkUrl { get; set; }
 
+        /// <summary>
+        /// 知识点版本号
+        /// </summary>
+        [NameInMap("version")]
+        [Validation(Required=false)]
+        public string Version { get; set; }
+
     }
 
 }

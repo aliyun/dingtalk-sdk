@@ -26,21 +26,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         }
 
 
-        public GetTodoTaskResponse GetTodoTask(string userId, string taskId)
+        public GetTodoTaskResponse GetTodoTask(string unionId, string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTaskHeaders headers = new GetTodoTaskHeaders();
-            return GetTodoTaskWithOptions(userId, taskId, headers, runtime);
+            return GetTodoTaskWithOptions(unionId, taskId, headers, runtime);
         }
 
-        public async Task<GetTodoTaskResponse> GetTodoTaskAsync(string userId, string taskId)
+        public async Task<GetTodoTaskResponse> GetTodoTaskAsync(string unionId, string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTaskHeaders headers = new GetTodoTaskHeaders();
-            return await GetTodoTaskWithOptionsAsync(userId, taskId, headers, runtime);
+            return await GetTodoTaskWithOptionsAsync(unionId, taskId, headers, runtime);
         }
 
-        public GetTodoTaskResponse GetTodoTaskWithOptions(string userId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetTodoTaskResponse GetTodoTaskWithOptions(string unionId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -55,10 +55,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetTodoTaskResponse>(DoROARequest("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId, "json", req, runtime));
+            return TeaModel.ToObject<GetTodoTaskResponse>(DoROARequest("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public async Task<GetTodoTaskResponse> GetTodoTaskWithOptionsAsync(string userId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetTodoTaskResponse> GetTodoTaskWithOptionsAsync(string unionId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -73,24 +73,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetTodoTaskResponse>(await DoROARequestAsync("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId, "json", req, runtime));
+            return TeaModel.ToObject<GetTodoTaskResponse>(await DoROARequestAsync("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public DeleteTodoTaskResponse DeleteTodoTask(string userId, string taskId, DeleteTodoTaskRequest request)
+        public DeleteTodoTaskResponse DeleteTodoTask(string unionId, string taskId, DeleteTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteTodoTaskHeaders headers = new DeleteTodoTaskHeaders();
-            return DeleteTodoTaskWithOptions(userId, taskId, request, headers, runtime);
+            return DeleteTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
         }
 
-        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskAsync(string userId, string taskId, DeleteTodoTaskRequest request)
+        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskAsync(string unionId, string taskId, DeleteTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteTodoTaskHeaders headers = new DeleteTodoTaskHeaders();
-            return await DeleteTodoTaskWithOptionsAsync(userId, taskId, request, headers, runtime);
+            return await DeleteTodoTaskWithOptionsAsync(unionId, taskId, request, headers, runtime);
         }
 
-        public DeleteTodoTaskResponse DeleteTodoTaskWithOptions(string userId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteTodoTaskResponse DeleteTodoTaskWithOptions(string unionId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -112,10 +112,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteTodoTaskResponse>(DoROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId, "json", req, runtime));
+            return TeaModel.ToObject<DeleteTodoTaskResponse>(DoROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskWithOptionsAsync(string userId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteTodoTaskResponse> DeleteTodoTaskWithOptionsAsync(string unionId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -137,24 +137,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteTodoTaskResponse>(await DoROARequestAsync("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId, "json", req, runtime));
+            return TeaModel.ToObject<DeleteTodoTaskResponse>(await DoROARequestAsync("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public UpdateTodoTaskResponse UpdateTodoTask(string userId, string taskId, UpdateTodoTaskRequest request)
+        public UpdateTodoTaskResponse UpdateTodoTask(string unionId, string taskId, UpdateTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTaskHeaders headers = new UpdateTodoTaskHeaders();
-            return UpdateTodoTaskWithOptions(userId, taskId, request, headers, runtime);
+            return UpdateTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
         }
 
-        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskAsync(string userId, string taskId, UpdateTodoTaskRequest request)
+        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskAsync(string unionId, string taskId, UpdateTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTaskHeaders headers = new UpdateTodoTaskHeaders();
-            return await UpdateTodoTaskWithOptionsAsync(userId, taskId, request, headers, runtime);
+            return await UpdateTodoTaskWithOptionsAsync(unionId, taskId, request, headers, runtime);
         }
 
-        public UpdateTodoTaskResponse UpdateTodoTaskWithOptions(string userId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateTodoTaskResponse UpdateTodoTaskWithOptions(string unionId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -202,10 +202,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateTodoTaskResponse>(DoROARequest("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId, "json", req, runtime));
+            return TeaModel.ToObject<UpdateTodoTaskResponse>(DoROARequest("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskWithOptionsAsync(string userId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateTodoTaskResponse> UpdateTodoTaskWithOptionsAsync(string unionId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -253,24 +253,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateTodoTaskResponse>(await DoROARequestAsync("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + userId + "/tasks/" + taskId, "json", req, runtime));
+            return TeaModel.ToObject<UpdateTodoTaskResponse>(await DoROARequestAsync("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId, "json", req, runtime));
         }
 
-        public CreateTodoTaskResponse CreateTodoTask(string userId, CreateTodoTaskRequest request)
+        public CreateTodoTaskResponse CreateTodoTask(string unionId, CreateTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateTodoTaskHeaders headers = new CreateTodoTaskHeaders();
-            return CreateTodoTaskWithOptions(userId, request, headers, runtime);
+            return CreateTodoTaskWithOptions(unionId, request, headers, runtime);
         }
 
-        public async Task<CreateTodoTaskResponse> CreateTodoTaskAsync(string userId, CreateTodoTaskRequest request)
+        public async Task<CreateTodoTaskResponse> CreateTodoTaskAsync(string unionId, CreateTodoTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateTodoTaskHeaders headers = new CreateTodoTaskHeaders();
-            return await CreateTodoTaskWithOptionsAsync(userId, request, headers, runtime);
+            return await CreateTodoTaskWithOptionsAsync(unionId, request, headers, runtime);
         }
 
-        public CreateTodoTaskResponse CreateTodoTaskWithOptions(string userId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CreateTodoTaskResponse CreateTodoTaskWithOptions(string unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -326,10 +326,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateTodoTaskResponse>(DoROARequest("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + userId + "/tasks", "json", req, runtime));
+            return TeaModel.ToObject<CreateTodoTaskResponse>(DoROARequest("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/tasks", "json", req, runtime));
         }
 
-        public async Task<CreateTodoTaskResponse> CreateTodoTaskWithOptionsAsync(string userId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CreateTodoTaskResponse> CreateTodoTaskWithOptionsAsync(string unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -385,7 +385,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateTodoTaskResponse>(await DoROARequestAsync("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + userId + "/tasks", "json", req, runtime));
+            return TeaModel.ToObject<CreateTodoTaskResponse>(await DoROARequestAsync("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/tasks", "json", req, runtime));
         }
 
     }

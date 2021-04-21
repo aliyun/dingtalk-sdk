@@ -38,21 +38,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public bool? Done { get; set; }
 
         /// <summary>
-        /// 执行者列表
+        /// 执行者列表，需传用户的unionId
         /// </summary>
         [NameInMap("executorIds")]
         [Validation(Required=false)]
         public List<string> ExecutorIds { get; set; }
 
         /// <summary>
-        /// 参与者列表
+        /// 参与者列表，需传用户的unionId
         /// </summary>
         [NameInMap("participantIds")]
         [Validation(Required=false)]
         public List<string> ParticipantIds { get; set; }
 
         /// <summary>
-        /// 当前操作者id
+        /// 当前操作者id，需传用户的unionId
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

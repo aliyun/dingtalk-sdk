@@ -12,16 +12,19 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         /// <summary>
         /// 下载加签url信息
         /// </summary>
-        [NameInMap("presignedUrlDownloadInfo")]
+        [NameInMap("downloadInfo")]
         [Validation(Required=false)]
-        public GetDownloadInfoResponseBodyPresignedUrlDownloadInfo PresignedUrlDownloadInfo { get; set; }
-        public class GetDownloadInfoResponseBodyPresignedUrlDownloadInfo : TeaModel {
+        public GetDownloadInfoResponseBodyDownloadInfo DownloadInfo { get; set; }
+        public class GetDownloadInfoResponseBodyDownloadInfo : TeaModel {
             [NameInMap("resourceUrl")]
             [Validation(Required=false)]
             public string ResourceUrl { get; set; }
-            [NameInMap("expiration")]
+            [NameInMap("expirationSeconds")]
             [Validation(Required=false)]
-            public int? Expiration { get; set; }
+            public int? ExpirationSeconds { get; set; }
+            [NameInMap("headers")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Headers { get; set; }
         };
 
     }
