@@ -131,6 +131,100 @@ export class ECertQueryResponse extends $tea.Model {
   }
 }
 
+export class QueryCustomEntryProcessesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomEntryProcessesRequest extends $tea.Model {
+  operateUserId?: string;
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      operateUserId: 'operateUserId',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operateUserId: 'string',
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomEntryProcessesResponseBody extends $tea.Model {
+  nextToken?: number;
+  hasMore?: boolean;
+  list?: QueryCustomEntryProcessesResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryCustomEntryProcessesResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomEntryProcessesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCustomEntryProcessesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCustomEntryProcessesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmPreentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -217,6 +311,34 @@ export class AddHrmPreentryResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: AddHrmPreentryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomEntryProcessesResponseBodyList extends $tea.Model {
+  formId?: string;
+  formName?: string;
+  formDesc?: string;
+  shortUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formId: 'formId',
+      formName: 'formName',
+      formDesc: 'formDesc',
+      shortUrl: 'shortUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formId: 'string',
+      formName: 'string',
+      formDesc: 'string',
+      shortUrl: 'string',
     };
   }
 
@@ -331,6 +453,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
+  }
+
+  async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCustomEntryProcessesHeaders({ });
+    return await this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
+  }
+
+  async queryCustomEntryProcessesWithOptions(request: QueryCustomEntryProcessesRequest, headers: QueryCustomEntryProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomEntryProcessesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operateUserId)) {
+      query["operateUserId"] = request.operateUserId;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryCustomEntryProcessesResponse>(await this.doROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/customEntryProcesses`, "json", req, runtime), new QueryCustomEntryProcessesResponse({}));
   }
 
   async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
