@@ -228,6 +228,213 @@ class ECertQueryResponse(TeaModel):
         return self
 
 
+class QueryCustomEntryProcessesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCustomEntryProcessesRequest(TeaModel):
+    def __init__(
+        self,
+        operate_user_id: str = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 操作人id
+        self.operate_user_id = operate_user_id
+        # 偏移量
+        self.next_token = next_token
+        # 最大值
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryCustomEntryProcessesResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        form_id: str = None,
+        form_name: str = None,
+        form_desc: str = None,
+        short_url: str = None,
+    ):
+        self.form_id = form_id
+        self.form_name = form_name
+        self.form_desc = form_desc
+        self.short_url = short_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_id is not None:
+            result['formId'] = self.form_id
+        if self.form_name is not None:
+            result['formName'] = self.form_name
+        if self.form_desc is not None:
+            result['formDesc'] = self.form_desc
+        if self.short_url is not None:
+            result['shortUrl'] = self.short_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formId') is not None:
+            self.form_id = m.get('formId')
+        if m.get('formName') is not None:
+            self.form_name = m.get('formName')
+        if m.get('formDesc') is not None:
+            self.form_desc = m.get('formDesc')
+        if m.get('shortUrl') is not None:
+            self.short_url = m.get('shortUrl')
+        return self
+
+
+class QueryCustomEntryProcessesResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        has_more: bool = None,
+        list: List[QueryCustomEntryProcessesResponseBodyList] = None,
+    ):
+        # 下次获取数据的起始游标
+        self.next_token = next_token
+        # 是否有更多
+        self.has_more = has_more
+        # 表单信息列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryCustomEntryProcessesResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCustomEntryProcessesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCustomEntryProcessesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCustomEntryProcessesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddHrmPreentryHeaders(TeaModel):
     def __init__(
         self,
