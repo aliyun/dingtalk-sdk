@@ -23,6 +23,13 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
             [Validation(Required=false)]
             public string AppTraceId { get; set; }
 
+            /// <summary>
+            /// 组织下员工Id
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
             [NameInMap("geoReportStatus")]
             [Validation(Required=false)]
             public long? GeoReportStatus { get; set; }
@@ -44,20 +51,6 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
             public long? ReportEndTime { get; set; }
 
         }
-
-        /// <summary>
-        /// 是否还有
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
-
-        /// <summary>
-        /// 总数
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public float? TotalCount { get; set; }
 
     }
 

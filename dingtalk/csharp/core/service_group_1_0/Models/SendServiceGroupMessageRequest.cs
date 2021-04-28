@@ -47,6 +47,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string Content { get; set; }
 
         /// <summary>
+        /// 是否 at所有人
+        /// </summary>
+        [NameInMap("isAtAll")]
+        [Validation(Required=false)]
+        public bool? IsAtAll { get; set; }
+
+        /// <summary>
         /// at 手机号
         /// </summary>
         [NameInMap("atMobiles")]
