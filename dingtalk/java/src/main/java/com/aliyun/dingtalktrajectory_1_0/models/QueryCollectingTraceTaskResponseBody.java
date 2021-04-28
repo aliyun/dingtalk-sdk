@@ -8,14 +8,6 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<QueryCollectingTraceTaskResponseBodyList> list;
 
-    // 是否还有
-    @NameInMap("hasMore")
-    public Boolean hasMore;
-
-    // 总数
-    @NameInMap("totalCount")
-    public Float totalCount;
-
     public static QueryCollectingTraceTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCollectingTraceTaskResponseBody self = new QueryCollectingTraceTaskResponseBody();
         return TeaModel.build(map, self);
@@ -29,26 +21,14 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
         return this.list;
     }
 
-    public QueryCollectingTraceTaskResponseBody setHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
-        return this;
-    }
-    public Boolean getHasMore() {
-        return this.hasMore;
-    }
-
-    public QueryCollectingTraceTaskResponseBody setTotalCount(Float totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Float getTotalCount() {
-        return this.totalCount;
-    }
-
     public static class QueryCollectingTraceTaskResponseBodyList extends TeaModel {
         // 应用轨迹ID
         @NameInMap("appTraceId")
         public String appTraceId;
+
+        // 组织下员工Id
+        @NameInMap("userId")
+        public String userId;
 
         @NameInMap("geoReportStatus")
         public Long geoReportStatus;
@@ -76,6 +56,14 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
         }
         public String getAppTraceId() {
             return this.appTraceId;
+        }
+
+        public QueryCollectingTraceTaskResponseBodyList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
         public QueryCollectingTraceTaskResponseBodyList setGeoReportStatus(Long geoReportStatus) {

@@ -28,6 +28,10 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    // 是否 at所有人
+    @NameInMap("isAtAll")
+    public Boolean isAtAll;
+
     // at 手机号
     @NameInMap("atMobiles")
     public java.util.List<String> atMobiles;
@@ -123,6 +127,14 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     }
     public String getContent() {
         return this.content;
+    }
+
+    public SendServiceGroupMessageRequest setIsAtAll(Boolean isAtAll) {
+        this.isAtAll = isAtAll;
+        return this;
+    }
+    public Boolean getIsAtAll() {
+        return this.isAtAll;
     }
 
     public SendServiceGroupMessageRequest setAtMobiles(java.util.List<String> atMobiles) {

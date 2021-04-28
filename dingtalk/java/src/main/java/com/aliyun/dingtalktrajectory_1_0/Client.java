@@ -21,23 +21,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public QueryCollectingTraceTaskResponse queryCollectingTraceTask(QueryCollectingTraceTaskRequest request) throws Exception {
+    public QueryAppActiveUsersResponse queryAppActiveUsers(QueryAppActiveUsersRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
-        QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
-        return this.queryCollectingTraceTaskWithOptions(request, headers, runtime);
+        QueryAppActiveUsersHeaders headers = new QueryAppActiveUsersHeaders();
+        return this.queryAppActiveUsersWithOptions(request, headers, runtime);
     }
 
-    public QueryCollectingTraceTaskResponse queryCollectingTraceTaskWithOptions(QueryCollectingTraceTaskRequest tmpReq, QueryCollectingTraceTaskHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        QueryCollectingTraceTaskShrinkRequest request = new QueryCollectingTraceTaskShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.staffIds)) {
-            request.staffIdsShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.staffIds, "staffIds", "json");
+    public QueryAppActiveUsersResponse queryAppActiveUsersWithOptions(QueryAppActiveUsersRequest request, QueryAppActiveUsersHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.needPositionInfo)) {
+            query.put("needPositionInfo", request.needPositionInfo);
         }
 
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.staffIdsShrink)) {
-            query.put("staffIds", request.staffIdsShrink);
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -53,7 +55,56 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryCollectingTraceTask", "trajectory_1.0", "HTTP", "GET", "AK", "/v1.0/trajectory/currentTasks", "json", req, runtime), new QueryCollectingTraceTaskResponse());
+        return TeaModel.toModel(this.doROARequest("QueryAppActiveUsers", "trajectory_1.0", "HTTP", "GET", "AK", "/v1.0/trajectory/activeUsers", "json", req, runtime), new QueryAppActiveUsersResponse());
+    }
+
+    public QueryCollectingTraceTaskResponse queryCollectingTraceTask(QueryCollectingTraceTaskRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
+        return this.queryCollectingTraceTaskWithOptions(request, headers, runtime);
+    }
+
+    public QueryCollectingTraceTaskResponse queryCollectingTraceTaskWithOptions(QueryCollectingTraceTaskRequest request, QueryCollectingTraceTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
+            body.put("dingIsvOrgId", request.dingIsvOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
+            body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
+            body.put("dingClientId", request.dingClientId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
+            body.put("dingOrgId", request.dingOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOauthAppId)) {
+            body.put("dingOauthAppId", request.dingOauthAppId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryCollectingTraceTask", "trajectory_1.0", "HTTP", "POST", "AK", "/v1.0/trajectory/currentTasks/queryByUserIds", "json", req, runtime), new QueryCollectingTraceTaskResponse());
     }
 
     public QueryPageTraceDataResponse queryPageTraceData(QueryPageTraceDataRequest request) throws Exception {
