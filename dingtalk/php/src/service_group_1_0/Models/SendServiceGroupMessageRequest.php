@@ -51,6 +51,13 @@ class SendServiceGroupMessageRequest extends Model
     public $content;
 
     /**
+     * @description 是否 at所有人
+     *
+     * @var bool
+     */
+    public $isAtAll;
+
+    /**
      * @description at 手机号
      *
      * @var string[]
@@ -120,6 +127,7 @@ class SendServiceGroupMessageRequest extends Model
         'targetOpenConversationId' => 'targetOpenConversationId',
         'title'                    => 'title',
         'content'                  => 'content',
+        'isAtAll'                  => 'isAtAll',
         'atMobiles'                => 'atMobiles',
         'atDingtalkIds'            => 'atDingtalkIds',
         'atUnionIds'               => 'atUnionIds',
@@ -158,6 +166,9 @@ class SendServiceGroupMessageRequest extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->isAtAll) {
+            $res['isAtAll'] = $this->isAtAll;
         }
         if (null !== $this->atMobiles) {
             $res['atMobiles'] = $this->atMobiles;
@@ -224,6 +235,9 @@ class SendServiceGroupMessageRequest extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['isAtAll'])) {
+            $model->isAtAll = $map['isAtAll'];
         }
         if (isset($map['atMobiles'])) {
             if (!empty($map['atMobiles'])) {

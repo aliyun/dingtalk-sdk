@@ -15,24 +15,8 @@ class QueryCollectingTraceTaskResponseBody extends Model
      * @var list_[]
      */
     public $list;
-
-    /**
-     * @description 是否还有
-     *
-     * @var bool
-     */
-    public $hasMore;
-
-    /**
-     * @description 总数
-     *
-     * @var float
-     */
-    public $totalCount;
     protected $_name = [
-        'list'       => 'list',
-        'hasMore'    => 'hasMore',
-        'totalCount' => 'totalCount',
+        'list' => 'list',
     ];
 
     public function validate()
@@ -50,12 +34,6 @@ class QueryCollectingTraceTaskResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->hasMore) {
-            $res['hasMore'] = $this->hasMore;
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -77,12 +55,6 @@ class QueryCollectingTraceTaskResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['hasMore'])) {
-            $model->hasMore = $map['hasMore'];
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

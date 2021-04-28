@@ -16,6 +16,13 @@ class list_ extends Model
     public $appTraceId;
 
     /**
+     * @description 组织下员工Id
+     *
+     * @var string
+     */
+    public $userId;
+
+    /**
      * @var int
      */
     public $geoReportStatus;
@@ -41,6 +48,7 @@ class list_ extends Model
     public $reportEndTime;
     protected $_name = [
         'appTraceId'       => 'appTraceId',
+        'userId'           => 'userId',
         'geoReportStatus'  => 'geoReportStatus',
         'geoReportPeriod'  => 'geoReportPeriod',
         'geoCollectPeriod' => 'geoCollectPeriod',
@@ -57,6 +65,9 @@ class list_ extends Model
         $res = [];
         if (null !== $this->appTraceId) {
             $res['appTraceId'] = $this->appTraceId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->geoReportStatus) {
             $res['geoReportStatus'] = $this->geoReportStatus;
@@ -87,6 +98,9 @@ class list_ extends Model
         $model = new self();
         if (isset($map['appTraceId'])) {
             $model->appTraceId = $map['appTraceId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['geoReportStatus'])) {
             $model->geoReportStatus = $map['geoReportStatus'];

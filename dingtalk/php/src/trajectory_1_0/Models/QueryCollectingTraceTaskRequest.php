@@ -9,13 +9,53 @@ use AlibabaCloud\Tea\Model;
 class QueryCollectingTraceTaskRequest extends Model
 {
     /**
-     * @description 员工用户ID
+     * @description 员工用户ID列表
      *
      * @var string[]
      */
-    public $staffIds;
+    public $userIds;
+
+    /**
+     * @description isvOrgId
+     *
+     * @var int
+     */
+    public $dingIsvOrgId;
+
+    /**
+     * @description tokenGrantType
+     *
+     * @var int
+     */
+    public $dingTokenGrantType;
+
+    /**
+     * @description appKey
+     *
+     * @var string
+     */
+    public $dingClientId;
+
+    /**
+     * @description orgId
+     *
+     * @var int
+     */
+    public $dingOrgId;
+
+    /**
+     * @description oauthAppId
+     *
+     * @var int
+     */
+    public $dingOauthAppId;
     protected $_name = [
-        'staffIds' => 'staffIds',
+        'userIds'            => 'userIds',
+        'dingIsvOrgId'       => 'dingIsvOrgId',
+        'dingTokenGrantType' => 'dingTokenGrantType',
+        'dingClientId'       => 'dingClientId',
+        'dingOrgId'          => 'dingOrgId',
+        'dingOauthAppId'     => 'dingOauthAppId',
     ];
 
     public function validate()
@@ -25,8 +65,23 @@ class QueryCollectingTraceTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->staffIds) {
-            $res['staffIds'] = $this->staffIds;
+        if (null !== $this->userIds) {
+            $res['userIds'] = $this->userIds;
+        }
+        if (null !== $this->dingIsvOrgId) {
+            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
+        }
+        if (null !== $this->dingTokenGrantType) {
+            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        }
+        if (null !== $this->dingClientId) {
+            $res['dingClientId'] = $this->dingClientId;
+        }
+        if (null !== $this->dingOrgId) {
+            $res['dingOrgId'] = $this->dingOrgId;
+        }
+        if (null !== $this->dingOauthAppId) {
+            $res['dingOauthAppId'] = $this->dingOauthAppId;
         }
 
         return $res;
@@ -40,10 +95,25 @@ class QueryCollectingTraceTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['staffIds'])) {
-            if (!empty($map['staffIds'])) {
-                $model->staffIds = $map['staffIds'];
+        if (isset($map['userIds'])) {
+            if (!empty($map['userIds'])) {
+                $model->userIds = $map['userIds'];
             }
+        }
+        if (isset($map['dingIsvOrgId'])) {
+            $model->dingIsvOrgId = $map['dingIsvOrgId'];
+        }
+        if (isset($map['dingTokenGrantType'])) {
+            $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        }
+        if (isset($map['dingClientId'])) {
+            $model->dingClientId = $map['dingClientId'];
+        }
+        if (isset($map['dingOrgId'])) {
+            $model->dingOrgId = $map['dingOrgId'];
+        }
+        if (isset($map['dingOauthAppId'])) {
+            $model->dingOauthAppId = $map['dingOauthAppId'];
         }
 
         return $model;
