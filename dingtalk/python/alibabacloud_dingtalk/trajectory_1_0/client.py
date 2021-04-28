@@ -23,6 +23,78 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def query_app_active_users(
+        self,
+        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
+        return self.query_app_active_users_with_options(request, headers, runtime)
+
+    async def query_app_active_users_async(
+        self,
+        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
+        return await self.query_app_active_users_with_options_async(request, headers, runtime)
+
+    def query_app_active_users_with_options(
+        self,
+        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
+        headers: dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.need_position_info):
+            query['needPositionInfo'] = request.need_position_info
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse(),
+            self.do_roarequest('QueryAppActiveUsers', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/activeUsers', 'json', req, runtime)
+        )
+
+    async def query_app_active_users_with_options_async(
+        self,
+        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
+        headers: dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.need_position_info):
+            query['needPositionInfo'] = request.need_position_info
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse(),
+            await self.do_roarequest_async('QueryAppActiveUsers', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/activeUsers', 'json', req, runtime)
+        )
+
     def query_collecting_trace_task(
         self,
         request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
@@ -41,18 +113,24 @@ class Client(OpenApiClient):
 
     def query_collecting_trace_task_with_options(
         self,
-        tmp_req: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
+        request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
         headers: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.staff_ids):
-            request.staff_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.staff_ids, 'staffIds', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.staff_ids_shrink):
-            query['staffIds'] = request.staff_ids_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -60,27 +138,33 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse(),
-            self.do_roarequest('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/currentTasks', 'json', req, runtime)
+            self.do_roarequest('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trajectory/currentTasks/queryByUserIds', 'json', req, runtime)
         )
 
     async def query_collecting_trace_task_with_options_async(
         self,
-        tmp_req: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
+        request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
         headers: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.staff_ids):
-            request.staff_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.staff_ids, 'staffIds', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.staff_ids_shrink):
-            query['staffIds'] = request.staff_ids_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -88,11 +172,11 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse(),
-            await self.do_roarequest_async('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/currentTasks', 'json', req, runtime)
+            await self.do_roarequest_async('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trajectory/currentTasks/queryByUserIds', 'json', req, runtime)
         )
 
     def query_page_trace_data(

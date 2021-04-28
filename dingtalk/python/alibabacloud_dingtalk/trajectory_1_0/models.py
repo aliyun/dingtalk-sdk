@@ -4,6 +4,238 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class QueryAppActiveUsersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAppActiveUsersRequest(TeaModel):
+    def __init__(
+        self,
+        need_position_info: bool = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 是否需要返回位置信息
+        self.need_position_info = need_position_info
+        # 标记当前开始读取的位置，置空表示从头开始
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.need_position_info is not None:
+            result['needPositionInfo'] = self.need_position_info
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('needPositionInfo') is not None:
+            self.need_position_info = m.get('needPositionInfo')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryAppActiveUsersResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        start_time: int = None,
+        app_trace_id: str = None,
+        longitude: float = None,
+        latitude: float = None,
+        report_time: int = None,
+        user_id: str = None,
+    ):
+        # 轨迹采集开启时间
+        self.start_time = start_time
+        # 应用轨迹ID
+        self.app_trace_id = app_trace_id
+        # 经度
+        self.longitude = longitude
+        # 纬度
+        self.latitude = latitude
+        # 该位置采集时间
+        self.report_time = report_time
+        # 员工Id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.app_trace_id is not None:
+            result['appTraceId'] = self.app_trace_id
+        if self.longitude is not None:
+            result['longitude'] = self.longitude
+        if self.latitude is not None:
+            result['latitude'] = self.latitude
+        if self.report_time is not None:
+            result['reportTime'] = self.report_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('appTraceId') is not None:
+            self.app_trace_id = m.get('appTraceId')
+        if m.get('longitude') is not None:
+            self.longitude = m.get('longitude')
+        if m.get('latitude') is not None:
+            self.latitude = m.get('latitude')
+        if m.get('reportTime') is not None:
+            self.report_time = m.get('reportTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryAppActiveUsersResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        total_count: int = None,
+        list: List[QueryAppActiveUsersResponseBodyList] = None,
+        next_token: int = None,
+    ):
+        # 是否存在更多数据需要获取
+        self.has_more = has_more
+        # 总数
+        self.total_count = total_count
+        # 数据集合
+        self.list = list
+        # 下一次获取开始位置
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryAppActiveUsersResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryAppActiveUsersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryAppActiveUsersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryAppActiveUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCollectingTraceTaskHeaders(TeaModel):
     def __init__(
         self,
@@ -40,10 +272,25 @@ class QueryCollectingTraceTaskHeaders(TeaModel):
 class QueryCollectingTraceTaskRequest(TeaModel):
     def __init__(
         self,
-        staff_ids: List[str] = None,
+        user_ids: List[str] = None,
+        ding_isv_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_client_id: str = None,
+        ding_org_id: int = None,
+        ding_oauth_app_id: int = None,
     ):
-        # 员工用户ID
-        self.staff_ids = staff_ids
+        # 员工用户ID列表
+        self.user_ids = user_ids
+        # isvOrgId
+        self.ding_isv_org_id = ding_isv_org_id
+        # tokenGrantType
+        self.ding_token_grant_type = ding_token_grant_type
+        # appKey
+        self.ding_client_id = ding_client_id
+        # orgId
+        self.ding_org_id = ding_org_id
+        # oauthAppId
+        self.ding_oauth_app_id = ding_oauth_app_id
 
     def validate(self):
         pass
@@ -54,42 +301,34 @@ class QueryCollectingTraceTaskRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.staff_ids is not None:
-            result['staffIds'] = self.staff_ids
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('staffIds') is not None:
-            self.staff_ids = m.get('staffIds')
-        return self
-
-
-class QueryCollectingTraceTaskShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        staff_ids_shrink: str = None,
-    ):
-        # 员工用户ID
-        self.staff_ids_shrink = staff_ids_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.staff_ids_shrink is not None:
-            result['staffIds'] = self.staff_ids_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('staffIds') is not None:
-            self.staff_ids_shrink = m.get('staffIds')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
         return self
 
 
@@ -97,6 +336,7 @@ class QueryCollectingTraceTaskResponseBodyList(TeaModel):
     def __init__(
         self,
         app_trace_id: str = None,
+        user_id: str = None,
         geo_report_status: int = None,
         geo_report_period: int = None,
         geo_collect_period: int = None,
@@ -105,6 +345,8 @@ class QueryCollectingTraceTaskResponseBodyList(TeaModel):
     ):
         # 应用轨迹ID
         self.app_trace_id = app_trace_id
+        # 组织下员工Id
+        self.user_id = user_id
         self.geo_report_status = geo_report_status
         self.geo_report_period = geo_report_period
         self.geo_collect_period = geo_collect_period
@@ -122,6 +364,8 @@ class QueryCollectingTraceTaskResponseBodyList(TeaModel):
         result = dict()
         if self.app_trace_id is not None:
             result['appTraceId'] = self.app_trace_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.geo_report_status is not None:
             result['geoReportStatus'] = self.geo_report_status
         if self.geo_report_period is not None:
@@ -138,6 +382,8 @@ class QueryCollectingTraceTaskResponseBodyList(TeaModel):
         m = m or dict()
         if m.get('appTraceId') is not None:
             self.app_trace_id = m.get('appTraceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('geoReportStatus') is not None:
             self.geo_report_status = m.get('geoReportStatus')
         if m.get('geoReportPeriod') is not None:
@@ -155,15 +401,9 @@ class QueryCollectingTraceTaskResponseBody(TeaModel):
     def __init__(
         self,
         list: List[QueryCollectingTraceTaskResponseBodyList] = None,
-        has_more: bool = None,
-        total_count: float = None,
     ):
         # result
         self.list = list
-        # 是否还有
-        self.has_more = has_more
-        # 总数
-        self.total_count = total_count
 
     def validate(self):
         if self.list:
@@ -181,10 +421,6 @@ class QueryCollectingTraceTaskResponseBody(TeaModel):
         if self.list is not None:
             for k in self.list:
                 result['list'].append(k.to_map() if k else None)
-        if self.has_more is not None:
-            result['hasMore'] = self.has_more
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -194,10 +430,6 @@ class QueryCollectingTraceTaskResponseBody(TeaModel):
             for k in m.get('list'):
                 temp_model = QueryCollectingTraceTaskResponseBodyList()
                 self.list.append(temp_model.from_map(k))
-        if m.get('hasMore') is not None:
-            self.has_more = m.get('hasMore')
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 

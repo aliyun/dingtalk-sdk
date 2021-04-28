@@ -175,6 +175,269 @@ class DeleteKnowledgeResponse(TeaModel):
         return self
 
 
+class SearchGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchGroupRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        open_conversation_id: str = None,
+        group_name: str = None,
+        open_team_id: str = None,
+        open_group_set_id: str = None,
+        next_token: str = None,
+        max_results: int = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 群名称
+        self.group_name = group_name
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 开群组ID
+        self.open_group_set_id = open_group_set_id
+        # 用来标记当前开始读取的位置，置空表示从头开始。
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class SearchGroupResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        group_name: str = None,
+        open_team_id: str = None,
+        open_group_set_id: str = None,
+    ):
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 群名称
+        self.group_name = group_name
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 开放群组ID
+        self.open_group_set_id = open_group_set_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        return self
+
+
+class SearchGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        total_count: int = None,
+        next_token: str = None,
+        max_results: int = None,
+        records: List[SearchGroupResponseBodyRecords] = None,
+    ):
+        # 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+        self.total_count = total_count
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 本次请求所返回的最大记录条数。
+        self.max_results = max_results
+        # 已读未读信息列表
+        self.records = records
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = SearchGroupResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        return self
+
+
+class SearchGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateGroupHeaders(TeaModel):
     def __init__(
         self,
@@ -445,6 +708,7 @@ class SendServiceGroupMessageRequest(TeaModel):
         target_open_conversation_id: str = None,
         title: str = None,
         content: str = None,
+        is_at_all: bool = None,
         at_mobiles: List[str] = None,
         at_dingtalk_ids: List[str] = None,
         at_union_ids: List[str] = None,
@@ -465,6 +729,8 @@ class SendServiceGroupMessageRequest(TeaModel):
         self.title = title
         # 内容
         self.content = content
+        # 是否 at所有人
+        self.is_at_all = is_at_all
         # at 手机号
         self.at_mobiles = at_mobiles
         # at dingtalkId
@@ -510,6 +776,8 @@ class SendServiceGroupMessageRequest(TeaModel):
             result['title'] = self.title
         if self.content is not None:
             result['content'] = self.content
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
         if self.at_mobiles is not None:
             result['atMobiles'] = self.at_mobiles
         if self.at_dingtalk_ids is not None:
@@ -548,6 +816,8 @@ class SendServiceGroupMessageRequest(TeaModel):
             self.title = m.get('title')
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
         if m.get('atMobiles') is not None:
             self.at_mobiles = m.get('atMobiles')
         if m.get('atDingtalkIds') is not None:
@@ -839,6 +1109,255 @@ class AddKnowledgeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AddKnowledgeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryServiceGroupMessageReadStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryServiceGroupMessageReadStatusRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_suite_key: str = None,
+        open_team_id: str = None,
+        open_conversation_id: str = None,
+        open_msg_task_id: str = None,
+        next_token: str = None,
+        max_results: int = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_suite_key = ding_suite_key
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 开放消息ID
+        self.open_msg_task_id = open_msg_task_id
+        # 用来标记当前开始读取的位置，置空表示从头开始。
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_msg_task_id is not None:
+            result['openMsgTaskId'] = self.open_msg_task_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openMsgTaskId') is not None:
+            self.open_msg_task_id = m.get('openMsgTaskId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryServiceGroupMessageReadStatusResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        receiver_user_id: str = None,
+        receiver_union_id: str = None,
+        read_status: int = None,
+    ):
+        # 已读人员为企业员工则有值
+        self.receiver_user_id = receiver_user_id
+        # 已读人员为非企业员工则有值
+        self.receiver_union_id = receiver_union_id
+        # 状态：已读1/未读0
+        self.read_status = read_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.receiver_user_id is not None:
+            result['receiverUserId'] = self.receiver_user_id
+        if self.receiver_union_id is not None:
+            result['receiverUnionId'] = self.receiver_union_id
+        if self.read_status is not None:
+            result['readStatus'] = self.read_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('receiverUserId') is not None:
+            self.receiver_user_id = m.get('receiverUserId')
+        if m.get('receiverUnionId') is not None:
+            self.receiver_union_id = m.get('receiverUnionId')
+        if m.get('readStatus') is not None:
+            self.read_status = m.get('readStatus')
+        return self
+
+
+class QueryServiceGroupMessageReadStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        total_count: int = None,
+        next_token: str = None,
+        max_results: int = None,
+        records: List[QueryServiceGroupMessageReadStatusResponseBodyRecords] = None,
+    ):
+        # 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+        self.total_count = total_count
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 本次请求所返回的最大记录条数。
+        self.max_results = max_results
+        # 已读未读信息列表
+        self.records = records
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = QueryServiceGroupMessageReadStatusResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        return self
+
+
+class QueryServiceGroupMessageReadStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryServiceGroupMessageReadStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryServiceGroupMessageReadStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1172,6 +1691,198 @@ class ListUserTeamsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListUserTeamsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryGroupRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        open_conversation_id: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class QueryGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        group_name: str = None,
+        open_team_id: str = None,
+        open_group_set_id: str = None,
+        group_url: str = None,
+        robot_code: str = None,
+        robot_name: str = None,
+    ):
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 群名称
+        self.group_name = group_name
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 开放群组ID
+        self.open_group_set_id = open_group_set_id
+        # 入群URL
+        self.group_url = group_url
+        # 服务群机器人code
+        self.robot_code = robot_code
+        # 服务群机器人名称
+        self.robot_name = robot_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.group_url is not None:
+            result['groupUrl'] = self.group_url
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.robot_name is not None:
+            result['robotName'] = self.robot_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('groupUrl') is not None:
+            self.group_url = m.get('groupUrl')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('robotName') is not None:
+            self.robot_name = m.get('robotName')
+        return self
+
+
+class QueryGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
