@@ -162,6 +162,10 @@ class SearchOrgInnerGroupInfoResponseBodyItems(TeaModel):
         group_last_active_time_show: str = None,
         sync_to_dingpan: int = None,
         used_quota: int = None,
+        group_owner_user_id: str = None,
+        status: int = None,
+        template_id: str = None,
+        template_name: str = None,
     ):
         self.open_conversation_id = open_conversation_id
         self.group_owner = group_owner
@@ -173,6 +177,10 @@ class SearchOrgInnerGroupInfoResponseBodyItems(TeaModel):
         self.group_last_active_time_show = group_last_active_time_show
         self.sync_to_dingpan = sync_to_dingpan
         self.used_quota = used_quota
+        self.group_owner_user_id = group_owner_user_id
+        self.status = status
+        self.template_id = template_id
+        self.template_name = template_name
 
     def validate(self):
         pass
@@ -203,6 +211,14 @@ class SearchOrgInnerGroupInfoResponseBodyItems(TeaModel):
             result['syncToDingpan'] = self.sync_to_dingpan
         if self.used_quota is not None:
             result['usedQuota'] = self.used_quota
+        if self.group_owner_user_id is not None:
+            result['groupOwnerUserId'] = self.group_owner_user_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
         return result
 
     def from_map(self, m: dict = None):
@@ -227,6 +243,14 @@ class SearchOrgInnerGroupInfoResponseBodyItems(TeaModel):
             self.sync_to_dingpan = m.get('syncToDingpan')
         if m.get('usedQuota') is not None:
             self.used_quota = m.get('usedQuota')
+        if m.get('groupOwnerUserId') is not None:
+            self.group_owner_user_id = m.get('groupOwnerUserId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
         return self
 
 
