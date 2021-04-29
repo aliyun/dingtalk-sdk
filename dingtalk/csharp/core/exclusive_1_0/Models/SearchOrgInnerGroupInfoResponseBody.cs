@@ -61,6 +61,22 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public long? UsedQuota { get; set; }
 
+            [NameInMap("groupOwnerUserId")]
+            [Validation(Required=false)]
+            public string GroupOwnerUserId { get; set; }
+
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
+
+            [NameInMap("templateId")]
+            [Validation(Required=false)]
+            public string TemplateId { get; set; }
+
+            [NameInMap("templateName")]
+            [Validation(Required=false)]
+            public string TemplateName { get; set; }
+
         }
 
     }
