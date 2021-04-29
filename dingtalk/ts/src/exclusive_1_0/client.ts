@@ -142,6 +142,10 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   groupLastActiveTimeShow?: string;
   syncToDingpan?: number;
   usedQuota?: number;
+  groupOwnerUserId?: string;
+  status?: number;
+  templateId?: string;
+  templateName?: string;
   static names(): { [key: string]: string } {
     return {
       openConversationId: 'openConversationId',
@@ -154,6 +158,10 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
       groupLastActiveTimeShow: 'groupLastActiveTimeShow',
       syncToDingpan: 'syncToDingpan',
       usedQuota: 'usedQuota',
+      groupOwnerUserId: 'groupOwnerUserId',
+      status: 'status',
+      templateId: 'templateId',
+      templateName: 'templateName',
     };
   }
 
@@ -169,6 +177,10 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
       groupLastActiveTimeShow: 'string',
       syncToDingpan: 'number',
       usedQuota: 'number',
+      groupOwnerUserId: 'string',
+      status: 'number',
+      templateId: 'string',
+      templateName: 'string',
     };
   }
 
