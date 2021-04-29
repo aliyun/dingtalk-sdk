@@ -73,6 +73,18 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         @NameInMap("usedQuota")
         public Long usedQuota;
 
+        @NameInMap("groupOwnerUserId")
+        public String groupOwnerUserId;
+
+        @NameInMap("status")
+        public Integer status;
+
+        @NameInMap("templateId")
+        public String templateId;
+
+        @NameInMap("templateName")
+        public String templateName;
+
         public static SearchOrgInnerGroupInfoResponseBodyItems build(java.util.Map<String, ?> map) throws Exception {
             SearchOrgInnerGroupInfoResponseBodyItems self = new SearchOrgInnerGroupInfoResponseBodyItems();
             return TeaModel.build(map, self);
@@ -156,6 +168,38 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         }
         public Long getUsedQuota() {
             return this.usedQuota;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setGroupOwnerUserId(String groupOwnerUserId) {
+            this.groupOwnerUserId = groupOwnerUserId;
+            return this;
+        }
+        public String getGroupOwnerUserId() {
+            return this.groupOwnerUserId;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setTemplateId(String templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+        public String getTemplateId() {
+            return this.templateId;
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setTemplateName(String templateName) {
+            this.templateName = templateName;
+            return this;
+        }
+        public String getTemplateName() {
+            return this.templateName;
         }
 
     }
