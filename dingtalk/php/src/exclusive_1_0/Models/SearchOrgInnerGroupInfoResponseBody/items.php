@@ -57,6 +57,26 @@ class items extends Model
      * @var int
      */
     public $usedQuota;
+
+    /**
+     * @var string
+     */
+    public $groupOwnerUserId;
+
+    /**
+     * @var int
+     */
+    public $status;
+
+    /**
+     * @var string
+     */
+    public $templateId;
+
+    /**
+     * @var string
+     */
+    public $templateName;
     protected $_name = [
         'openConversationId'      => 'openConversationId',
         'groupOwner'              => 'groupOwner',
@@ -68,6 +88,10 @@ class items extends Model
         'groupLastActiveTimeShow' => 'groupLastActiveTimeShow',
         'syncToDingpan'           => 'syncToDingpan',
         'usedQuota'               => 'usedQuota',
+        'groupOwnerUserId'        => 'groupOwnerUserId',
+        'status'                  => 'status',
+        'templateId'              => 'templateId',
+        'templateName'            => 'templateName',
     ];
 
     public function validate()
@@ -106,6 +130,18 @@ class items extends Model
         }
         if (null !== $this->usedQuota) {
             $res['usedQuota'] = $this->usedQuota;
+        }
+        if (null !== $this->groupOwnerUserId) {
+            $res['groupOwnerUserId'] = $this->groupOwnerUserId;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->templateId) {
+            $res['templateId'] = $this->templateId;
+        }
+        if (null !== $this->templateName) {
+            $res['templateName'] = $this->templateName;
         }
 
         return $res;
@@ -148,6 +184,18 @@ class items extends Model
         }
         if (isset($map['usedQuota'])) {
             $model->usedQuota = $map['usedQuota'];
+        }
+        if (isset($map['groupOwnerUserId'])) {
+            $model->groupOwnerUserId = $map['groupOwnerUserId'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
+        if (isset($map['templateId'])) {
+            $model->templateId = $map['templateId'];
+        }
+        if (isset($map['templateName'])) {
+            $model->templateName = $map['templateName'];
         }
 
         return $model;

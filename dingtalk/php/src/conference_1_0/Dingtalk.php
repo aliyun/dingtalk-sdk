@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CloseVideoConferenceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CloseVideoConferenceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CloseVideoConferenceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateVideoConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateVideoConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateVideoConferenceResponse;
@@ -70,5 +73,49 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateVideoConferenceResponse::fromMap($this->doROARequest('CreateVideoConference', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $conferenceId
+     * @param CloseVideoConferenceRequest $request
+     *
+     * @return CloseVideoConferenceResponse
+     */
+    public function closeVideoConference($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CloseVideoConferenceHeaders([]);
+
+        return $this->closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $conferenceId
+     * @param CloseVideoConferenceRequest $request
+     * @param CloseVideoConferenceHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CloseVideoConferenceResponse
+     */
+    public function closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CloseVideoConferenceResponse::fromMap($this->doROARequest('CloseVideoConference', 'conference_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '', 'json', $req, $runtime));
     }
 }
