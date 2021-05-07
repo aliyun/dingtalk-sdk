@@ -4,73 +4,8 @@
  */
 import Util, * as $Util from '@alicloud/tea-util';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
+import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
-
-export class QueryShortcutScopesHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryShortcutScopesResponseBody extends $tea.Model {
-  userVisibleScopes?: string[];
-  deptVisibleScopes?: number[];
-  static names(): { [key: string]: string } {
-    return {
-      userVisibleScopes: 'userVisibleScopes',
-      deptVisibleScopes: 'deptVisibleScopes',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userVisibleScopes: { 'type': 'array', 'itemType': 'string' },
-      deptVisibleScopes: { 'type': 'array', 'itemType': 'number' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryShortcutScopesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryShortcutScopesResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryShortcutScopesResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
 
 export class QueryComponentScopesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -138,6 +73,244 @@ export class QueryComponentScopesResponse extends $tea.Model {
   }
 }
 
+export class UpdateDingPortalPageScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDingPortalPageScopeRequest extends $tea.Model {
+  userids?: string[];
+  deptIds?: number[];
+  roleIds?: number[];
+  allVisible?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      userids: 'userids',
+      deptIds: 'deptIds',
+      roleIds: 'roleIds',
+      allVisible: 'allVisible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userids: { 'type': 'array', 'itemType': 'string' },
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      roleIds: { 'type': 'array', 'itemType': 'number' },
+      allVisible: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDingPortalPageScopeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryShortcutScopesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryShortcutScopesResponseBody extends $tea.Model {
+  userVisibleScopes?: string[];
+  deptVisibleScopes?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      userVisibleScopes: 'userVisibleScopes',
+      deptVisibleScopes: 'deptVisibleScopes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      deptVisibleScopes: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryShortcutScopesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryShortcutScopesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryShortcutScopesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingPortalDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingPortalDetailResponseBody extends $tea.Model {
+  appUuid?: string;
+  dingPortalName?: string;
+  pages?: GetDingPortalDetailResponseBodyPages[];
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      dingPortalName: 'dingPortalName',
+      pages: 'pages',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      dingPortalName: 'string',
+      pages: { 'type': 'array', 'itemType': GetDingPortalDetailResponseBodyPages },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingPortalDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDingPortalDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDingPortalDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingPortalDetailResponseBodyPages extends $tea.Model {
+  pageUuid?: string;
+  pageName?: string;
+  userids?: string[];
+  deptIds?: number[];
+  roleIds?: number[];
+  allVisible?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      pageUuid: 'pageUuid',
+      pageName: 'pageName',
+      userids: 'userids',
+      deptIds: 'deptIds',
+      roleIds: 'roleIds',
+      allVisible: 'allVisible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageUuid: 'string',
+      pageName: 'string',
+      userids: { 'type': 'array', 'itemType': 'string' },
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      roleIds: { 'type': 'array', 'itemType': 'number' },
+      allVisible: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -150,6 +323,69 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async queryComponentScopes(componentId: string): Promise<QueryComponentScopesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryComponentScopesHeaders({ });
+    return await this.queryComponentScopesWithOptions(componentId, headers, runtime);
+  }
+
+  async queryComponentScopesWithOptions(componentId: string, headers: QueryComponentScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryComponentScopesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryComponentScopesResponse>(await this.doROARequest("QueryComponentScopes", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/components/${componentId}/scopes`, "json", req, runtime), new QueryComponentScopesResponse({}));
+  }
+
+  async updateDingPortalPageScope(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest): Promise<UpdateDingPortalPageScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateDingPortalPageScopeHeaders({ });
+    return await this.updateDingPortalPageScopeWithOptions(pageUuid, appUuid, request, headers, runtime);
+  }
+
+  async updateDingPortalPageScopeWithOptions(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest, headers: UpdateDingPortalPageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDingPortalPageScopeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userids)) {
+      body["userids"] = request.userids;
+    }
+
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    if (!Util.isUnset(request.roleIds)) {
+      body["roleIds"] = request.roleIds;
+    }
+
+    if (!Util.isUnset(request.allVisible)) {
+      body["allVisible"] = request.allVisible;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateDingPortalPageScopeResponse>(await this.doROARequest("UpdateDingPortalPageScope", "workbench_1.0", "HTTP", "PUT", "AK", `/v1.0/workbench/dingPortals/${appUuid}/pageScopes/${pageUuid}`, "none", req, runtime), new UpdateDingPortalPageScopeResponse({}));
+  }
 
   async queryShortcutScopes(shortcutKey: string): Promise<QueryShortcutScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -173,13 +409,13 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryShortcutScopesResponse>(await this.doROARequest("QueryShortcutScopes", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/shortcuts/${shortcutKey}/scopes`, "json", req, runtime), new QueryShortcutScopesResponse({}));
   }
 
-  async queryComponentScopes(componentId: string): Promise<QueryComponentScopesResponse> {
+  async getDingPortalDetail(appUuid: string): Promise<GetDingPortalDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryComponentScopesHeaders({ });
-    return await this.queryComponentScopesWithOptions(componentId, headers, runtime);
+    let headers = new GetDingPortalDetailHeaders({ });
+    return await this.getDingPortalDetailWithOptions(appUuid, headers, runtime);
   }
 
-  async queryComponentScopesWithOptions(componentId: string, headers: QueryComponentScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryComponentScopesResponse> {
+  async getDingPortalDetailWithOptions(appUuid: string, headers: GetDingPortalDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingPortalDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -192,7 +428,7 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryComponentScopesResponse>(await this.doROARequest("QueryComponentScopes", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/components/${componentId}/scopes`, "json", req, runtime), new QueryComponentScopesResponse({}));
+    return $tea.cast<GetDingPortalDetailResponse>(await this.doROARequest("GetDingPortalDetail", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/dingPortals/${appUuid}`, "json", req, runtime), new GetDingPortalDetailResponse({}));
   }
 
 }
