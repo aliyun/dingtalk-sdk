@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -11,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 {
-    public class QueryComponentScopesHeaders : TeaModel {
+    public class GetDingPortalDetailHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
