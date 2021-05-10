@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
@@ -26,6 +29,101 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param GetApplyInviteInfoRequest $request
+     *
+     * @return GetApplyInviteInfoResponse
+     */
+    public function getApplyInviteInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetApplyInviteInfoHeaders([]);
+
+        return $this->getApplyInviteInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetApplyInviteInfoRequest $request
+     * @param GetApplyInviteInfoHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetApplyInviteInfoResponse
+     */
+    public function getApplyInviteInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->inviterUserId)) {
+            @$query['inviterUserId'] = $request->inviterUserId;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetApplyInviteInfoResponse::fromMap($this->doROARequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/invites/infos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetBranchAuthDataRequest $request
+     *
+     * @return GetBranchAuthDataResponse
+     */
+    public function getBranchAuthData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetBranchAuthDataHeaders([]);
+
+        return $this->getBranchAuthDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetBranchAuthDataRequest $request
+     * @param GetBranchAuthDataHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetBranchAuthDataResponse
+     */
+    public function getBranchAuthDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->branchCorpId)) {
+            @$query['branchCorpId'] = $request->branchCorpId;
+        }
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->body)) {
+            @$body['body'] = $request->body;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetBranchAuthDataResponse::fromMap($this->doROARequest('GetBranchAuthData', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/branchAuthDatas/search', 'json', $req, $runtime));
     }
 
     /**
@@ -95,50 +193,5 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserResponse::fromMap($this->doROARequest('GetUser', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/users/' . $unionId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetApplyInviteInfoRequest $request
-     *
-     * @return GetApplyInviteInfoResponse
-     */
-    public function getApplyInviteInfo($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetApplyInviteInfoHeaders([]);
-
-        return $this->getApplyInviteInfoWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetApplyInviteInfoRequest $request
-     * @param GetApplyInviteInfoHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return GetApplyInviteInfoResponse
-     */
-    public function getApplyInviteInfoWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->inviterUserId)) {
-            @$query['inviterUserId'] = $request->inviterUserId;
-        }
-        if (!Utils::isUnset($request->deptId)) {
-            @$query['deptId'] = $request->deptId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetApplyInviteInfoResponse::fromMap($this->doROARequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/invites/infos', 'json', $req, $runtime));
     }
 }

@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\AddDeviceVideoConferenceM
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersResponse;
@@ -204,5 +207,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return KickDeviceVideoConferenceMembersResponse::fromMap($this->doROARequest('KickDeviceVideoConferenceMembers', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences/' . $conferenceId . '/members/batchDelete', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param ExtractFacialFeatureRequest $request
+     *
+     * @return ExtractFacialFeatureResponse
+     */
+    public function extractFacialFeature($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExtractFacialFeatureHeaders([]);
+
+        return $this->extractFacialFeatureWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExtractFacialFeatureRequest $request
+     * @param ExtractFacialFeatureHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ExtractFacialFeatureResponse
+     */
+    public function extractFacialFeatureWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userid)) {
+            @$body['userid'] = $request->userid;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ExtractFacialFeatureResponse::fromMap($this->doROARequest('ExtractFacialFeature', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', '/v1.0/smartDevice/faceRecognitions/features/extract', 'json', $req, $runtime));
     }
 }
