@@ -23,6 +23,150 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_apply_invite_info(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders()
+        return self.get_apply_invite_info_with_options(request, headers, runtime)
+
+    async def get_apply_invite_info_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders()
+        return await self.get_apply_invite_info_with_options_async(request, headers, runtime)
+
+    def get_apply_invite_info_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+        headers: dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.inviter_user_id):
+            query['inviterUserId'] = request.inviter_user_id
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetApplyInviteInfoResponse(),
+            self.do_roarequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/invites/infos', 'json', req, runtime)
+        )
+
+    async def get_apply_invite_info_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
+        headers: dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.inviter_user_id):
+            query['inviterUserId'] = request.inviter_user_id
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetApplyInviteInfoResponse(),
+            await self.do_roarequest_async('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/invites/infos', 'json', req, runtime)
+        )
+
+    def get_branch_auth_data(
+        self,
+        request: dingtalkcontact__1__0_models.GetBranchAuthDataRequest,
+    ) -> dingtalkcontact__1__0_models.GetBranchAuthDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetBranchAuthDataHeaders()
+        return self.get_branch_auth_data_with_options(request, headers, runtime)
+
+    async def get_branch_auth_data_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetBranchAuthDataRequest,
+    ) -> dingtalkcontact__1__0_models.GetBranchAuthDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetBranchAuthDataHeaders()
+        return await self.get_branch_auth_data_with_options_async(request, headers, runtime)
+
+    def get_branch_auth_data_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.GetBranchAuthDataRequest,
+        headers: dingtalkcontact__1__0_models.GetBranchAuthDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetBranchAuthDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.branch_corp_id):
+            query['branchCorpId'] = request.branch_corp_id
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        body = {}
+        if not UtilClient.is_unset(request.body):
+            body['body'] = request.body
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetBranchAuthDataResponse(),
+            self.do_roarequest('GetBranchAuthData', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/branchAuthDatas/search', 'json', req, runtime)
+        )
+
+    async def get_branch_auth_data_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetBranchAuthDataRequest,
+        headers: dingtalkcontact__1__0_models.GetBranchAuthDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetBranchAuthDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.branch_corp_id):
+            query['branchCorpId'] = request.branch_corp_id
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        body = {}
+        if not UtilClient.is_unset(request.body):
+            body['body'] = request.body
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetBranchAuthDataResponse(),
+            await self.do_roarequest_async('GetBranchAuthData', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/branchAuthDatas/search', 'json', req, runtime)
+        )
+
     def get_latest_ding_index(self) -> dingtalkcontact__1__0_models.GetLatestDingIndexResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.GetLatestDingIndexHeaders()
@@ -121,72 +265,4 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.GetUserResponse(),
             await self.do_roarequest_async('GetUser', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/users/{union_id}', 'json', req, runtime)
-        )
-
-    def get_apply_invite_info(
-        self,
-        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
-    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders()
-        return self.get_apply_invite_info_with_options(request, headers, runtime)
-
-    async def get_apply_invite_info_async(
-        self,
-        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
-    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders()
-        return await self.get_apply_invite_info_with_options_async(request, headers, runtime)
-
-    def get_apply_invite_info_with_options(
-        self,
-        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
-        headers: dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.inviter_user_id):
-            query['inviterUserId'] = request.inviter_user_id
-        if not UtilClient.is_unset(request.dept_id):
-            query['deptId'] = request.dept_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkcontact__1__0_models.GetApplyInviteInfoResponse(),
-            self.do_roarequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/invites/infos', 'json', req, runtime)
-        )
-
-    async def get_apply_invite_info_with_options_async(
-        self,
-        request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
-        headers: dingtalkcontact__1__0_models.GetApplyInviteInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcontact__1__0_models.GetApplyInviteInfoResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.inviter_user_id):
-            query['inviterUserId'] = request.inviter_user_id
-        if not UtilClient.is_unset(request.dept_id):
-            query['deptId'] = request.dept_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkcontact__1__0_models.GetApplyInviteInfoResponse(),
-            await self.do_roarequest_async('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/invites/infos', 'json', req, runtime)
         )

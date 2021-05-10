@@ -292,3 +292,71 @@ class Client(OpenApiClient):
             dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse(),
             await self.do_roarequest_async('KickDeviceVideoConferenceMembers', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/smartDevice/devices/{device_id}/videoConferences/{conference_id}/members/batchDelete', 'none', req, runtime)
         )
+
+    def extract_facial_feature(
+        self,
+        request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
+    ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders()
+        return self.extract_facial_feature_with_options(request, headers, runtime)
+
+    async def extract_facial_feature_async(
+        self,
+        request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
+    ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders()
+        return await self.extract_facial_feature_with_options_async(request, headers, runtime)
+
+    def extract_facial_feature_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
+        headers: dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse(),
+            self.do_roarequest('ExtractFacialFeature', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/smartDevice/faceRecognitions/features/extract', 'json', req, runtime)
+        )
+
+    async def extract_facial_feature_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
+        headers: dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse(),
+            await self.do_roarequest_async('ExtractFacialFeature', 'smartDevice_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/smartDevice/faceRecognitions/features/extract', 'json', req, runtime)
+        )
