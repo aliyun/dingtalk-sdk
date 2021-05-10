@@ -7,8 +7,10 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>AlibabaCloud.SDK.Dingtalk</AssemblyName>
-    <Version>1.1.15</Version>
+    <Version>1.1.21</Version>
     <LangVersion>5</LangVersion>
+    <Authors>Alibaba Cloud, Inc</Authors>
+    <Description>Alibaba Cloud Dingtalk SDK Library for .NET</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>NETSTANDARD2_0</DefineConstants>

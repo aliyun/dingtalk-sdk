@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -9,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
 {
-    public class GetApplyInviteInfoHeaders : TeaModel {
+    public class ExtractFacialFeatureHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
