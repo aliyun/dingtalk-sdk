@@ -32,6 +32,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
+        /// <summary>
+        /// 业务关联ID，和开放群ID二选一传
+        /// </summary>
+        [NameInMap("bizId")]
+        [Validation(Required=false)]
+        public string BizId { get; set; }
+
     }
 
 }

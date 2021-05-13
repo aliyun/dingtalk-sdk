@@ -131,6 +131,13 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public string DisplayName { get; set; }
         };
 
+        /// <summary>
+        /// 扩展信息
+        /// </summary>
+        [NameInMap("extra")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> Extra { get; set; }
+
     }
 
 }

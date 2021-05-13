@@ -652,6 +652,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["location"] = request.Location;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -708,6 +712,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -776,6 +784,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["location"] = request.Location;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -828,6 +840,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
