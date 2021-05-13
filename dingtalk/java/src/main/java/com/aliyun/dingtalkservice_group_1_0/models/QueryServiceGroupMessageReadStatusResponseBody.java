@@ -70,6 +70,14 @@ public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
         @NameInMap("readStatus")
         public Integer readStatus;
 
+        // 接收者昵称
+        @NameInMap("receiverName")
+        public String receiverName;
+
+        // 接收者dingtalkId
+        @NameInMap("receiverDingTalkId")
+        public String receiverDingTalkId;
+
         public static QueryServiceGroupMessageReadStatusResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             QueryServiceGroupMessageReadStatusResponseBodyRecords self = new QueryServiceGroupMessageReadStatusResponseBodyRecords();
             return TeaModel.build(map, self);
@@ -97,6 +105,22 @@ public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
         }
         public Integer getReadStatus() {
             return this.readStatus;
+        }
+
+        public QueryServiceGroupMessageReadStatusResponseBodyRecords setReceiverName(String receiverName) {
+            this.receiverName = receiverName;
+            return this;
+        }
+        public String getReceiverName() {
+            return this.receiverName;
+        }
+
+        public QueryServiceGroupMessageReadStatusResponseBodyRecords setReceiverDingTalkId(String receiverDingTalkId) {
+            this.receiverDingTalkId = receiverDingTalkId;
+            return this;
+        }
+        public String getReceiverDingTalkId() {
+            return this.receiverDingTalkId;
         }
 
     }

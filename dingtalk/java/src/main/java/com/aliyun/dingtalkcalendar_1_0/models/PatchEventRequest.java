@@ -34,6 +34,10 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("location")
     public PatchEventRequestLocation location;
 
+    // 扩展信息
+    @NameInMap("extra")
+    public java.util.Map<String, String> extra;
+
     public static PatchEventRequest build(java.util.Map<String, ?> map) throws Exception {
         PatchEventRequest self = new PatchEventRequest();
         return TeaModel.build(map, self);
@@ -109,6 +113,14 @@ public class PatchEventRequest extends TeaModel {
     }
     public PatchEventRequestLocation getLocation() {
         return this.location;
+    }
+
+    public PatchEventRequest setExtra(java.util.Map<String, String> extra) {
+        this.extra = extra;
+        return this;
+    }
+    public java.util.Map<String, String> getExtra() {
+        return this.extra;
     }
 
     public static class PatchEventRequestStart extends TeaModel {

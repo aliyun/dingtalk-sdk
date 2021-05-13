@@ -20,6 +20,10 @@ public class QueryGroupRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    // 业务关联ID，和开放群ID二选一传
+    @NameInMap("bizId")
+    public String bizId;
+
     public static QueryGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryGroupRequest self = new QueryGroupRequest();
         return TeaModel.build(map, self);
@@ -63,6 +67,14 @@ public class QueryGroupRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public QueryGroupRequest setBizId(String bizId) {
+        this.bizId = bizId;
+        return this;
+    }
+    public String getBizId() {
+        return this.bizId;
     }
 
 }

@@ -21,6 +21,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public QueryOrgTypeResponse queryOrgType() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryOrgTypeHeaders headers = new QueryOrgTypeHeaders();
+        return this.queryOrgTypeWithOptions(headers, runtime);
+    }
+
+    public QueryOrgTypeResponse queryOrgTypeWithOptions(QueryOrgTypeHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryOrgType", "edu_1.0", "HTTP", "GET", "AK", "/v1.0/edu/orgTypes", "json", req, runtime), new QueryOrgTypeResponse());
+    }
+
     public BatchCreateResponse batchCreate(BatchCreateRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchCreateHeaders headers = new BatchCreateHeaders();

@@ -34,6 +34,10 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("location")
     public CreateEventRequestLocation location;
 
+    // 扩展信息
+    @NameInMap("extra")
+    public java.util.Map<String, String> extra;
+
     public static CreateEventRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateEventRequest self = new CreateEventRequest();
         return TeaModel.build(map, self);
@@ -101,6 +105,14 @@ public class CreateEventRequest extends TeaModel {
     }
     public CreateEventRequestLocation getLocation() {
         return this.location;
+    }
+
+    public CreateEventRequest setExtra(java.util.Map<String, String> extra) {
+        this.extra = extra;
+        return this;
+    }
+    public java.util.Map<String, String> getExtra() {
+        return this.extra;
     }
 
     public static class CreateEventRequestStart extends TeaModel {
