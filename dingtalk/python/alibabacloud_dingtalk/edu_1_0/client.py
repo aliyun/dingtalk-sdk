@@ -23,6 +23,52 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def query_org_type(self) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryOrgTypeHeaders()
+        return self.query_org_type_with_options(headers, runtime)
+
+    async def query_org_type_async(self) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryOrgTypeHeaders()
+        return await self.query_org_type_with_options_async(headers, runtime)
+
+    def query_org_type_with_options(
+        self,
+        headers: dingtalkedu__1__0_models.QueryOrgTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryOrgTypeResponse(),
+            self.do_roarequest('QueryOrgType', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/orgTypes', 'json', req, runtime)
+        )
+
+    async def query_org_type_with_options_async(
+        self,
+        headers: dingtalkedu__1__0_models.QueryOrgTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryOrgTypeResponse(),
+            await self.do_roarequest_async('QueryOrgType', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/orgTypes', 'json', req, runtime)
+        )
+
     def batch_create(
         self,
         request: dingtalkedu__1__0_models.BatchCreateRequest,

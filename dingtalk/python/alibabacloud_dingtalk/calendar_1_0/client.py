@@ -678,6 +678,8 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
+        if not UtilClient.is_unset(request.extra):
+            body['extra'] = request.extra
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -721,6 +723,8 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
+        if not UtilClient.is_unset(request.extra):
+            body['extra'] = request.extra
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -781,6 +785,8 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
+        if not UtilClient.is_unset(request.extra):
+            body['extra'] = request.extra
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -821,6 +827,8 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
+        if not UtilClient.is_unset(request.extra):
+            body['extra'] = request.extra
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

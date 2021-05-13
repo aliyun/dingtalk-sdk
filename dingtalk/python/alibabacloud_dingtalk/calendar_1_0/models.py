@@ -2385,6 +2385,7 @@ class PatchEventRequest(TeaModel):
         recurrence: PatchEventRequestRecurrence = None,
         attendees: List[PatchEventRequestAttendees] = None,
         location: PatchEventRequestLocation = None,
+        extra: Dict[str, str] = None,
     ):
         # 日程标题
         self.summary = summary
@@ -2398,6 +2399,8 @@ class PatchEventRequest(TeaModel):
         self.recurrence = recurrence
         self.attendees = attendees
         self.location = location
+        # 扩展信息
+        self.extra = extra
 
     def validate(self):
         if self.start:
@@ -2439,6 +2442,8 @@ class PatchEventRequest(TeaModel):
                 result['attendees'].append(k.to_map() if k else None)
         if self.location is not None:
             result['location'] = self.location.to_map()
+        if self.extra is not None:
+            result['extra'] = self.extra
         return result
 
     def from_map(self, m: dict = None):
@@ -2468,6 +2473,8 @@ class PatchEventRequest(TeaModel):
         if m.get('location') is not None:
             temp_model = PatchEventRequestLocation()
             self.location = temp_model.from_map(m['location'])
+        if m.get('extra') is not None:
+            self.extra = m.get('extra')
         return self
 
 
@@ -3269,6 +3276,7 @@ class CreateEventRequest(TeaModel):
         recurrence: CreateEventRequestRecurrence = None,
         attendees: List[CreateEventRequestAttendees] = None,
         location: CreateEventRequestLocation = None,
+        extra: Dict[str, str] = None,
     ):
         # 日程标题
         self.summary = summary
@@ -3284,6 +3292,8 @@ class CreateEventRequest(TeaModel):
         self.recurrence = recurrence
         self.attendees = attendees
         self.location = location
+        # 扩展信息
+        self.extra = extra
 
     def validate(self):
         if self.start:
@@ -3323,6 +3333,8 @@ class CreateEventRequest(TeaModel):
                 result['attendees'].append(k.to_map() if k else None)
         if self.location is not None:
             result['location'] = self.location.to_map()
+        if self.extra is not None:
+            result['extra'] = self.extra
         return result
 
     def from_map(self, m: dict = None):
@@ -3350,6 +3362,8 @@ class CreateEventRequest(TeaModel):
         if m.get('location') is not None:
             temp_model = CreateEventRequestLocation()
             self.location = temp_model.from_map(m['location'])
+        if m.get('extra') is not None:
+            self.extra = m.get('extra')
         return self
 
 

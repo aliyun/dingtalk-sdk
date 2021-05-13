@@ -1232,6 +1232,8 @@ class QueryServiceGroupMessageReadStatusResponseBodyRecords(TeaModel):
         receiver_user_id: str = None,
         receiver_union_id: str = None,
         read_status: int = None,
+        receiver_name: str = None,
+        receiver_ding_talk_id: str = None,
     ):
         # 已读人员为企业员工则有值
         self.receiver_user_id = receiver_user_id
@@ -1239,6 +1241,10 @@ class QueryServiceGroupMessageReadStatusResponseBodyRecords(TeaModel):
         self.receiver_union_id = receiver_union_id
         # 状态：已读1/未读0
         self.read_status = read_status
+        # 接收者昵称
+        self.receiver_name = receiver_name
+        # 接收者dingtalkId
+        self.receiver_ding_talk_id = receiver_ding_talk_id
 
     def validate(self):
         pass
@@ -1255,6 +1261,10 @@ class QueryServiceGroupMessageReadStatusResponseBodyRecords(TeaModel):
             result['receiverUnionId'] = self.receiver_union_id
         if self.read_status is not None:
             result['readStatus'] = self.read_status
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_ding_talk_id is not None:
+            result['receiverDingTalkId'] = self.receiver_ding_talk_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1265,6 +1275,10 @@ class QueryServiceGroupMessageReadStatusResponseBodyRecords(TeaModel):
             self.receiver_union_id = m.get('receiverUnionId')
         if m.get('readStatus') is not None:
             self.read_status = m.get('readStatus')
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverDingTalkId') is not None:
+            self.receiver_ding_talk_id = m.get('receiverDingTalkId')
         return self
 
 
@@ -1736,6 +1750,7 @@ class QueryGroupRequest(TeaModel):
         ding_suite_key: str = None,
         ding_token_grant_type: int = None,
         open_conversation_id: str = None,
+        biz_id: str = None,
     ):
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_org_id = ding_org_id
@@ -1743,6 +1758,8 @@ class QueryGroupRequest(TeaModel):
         self.ding_token_grant_type = ding_token_grant_type
         # 开放群ID
         self.open_conversation_id = open_conversation_id
+        # 业务关联ID，和开放群ID二选一传
+        self.biz_id = biz_id
 
     def validate(self):
         pass
@@ -1763,6 +1780,8 @@ class QueryGroupRequest(TeaModel):
             result['dingTokenGrantType'] = self.ding_token_grant_type
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1777,6 +1796,8 @@ class QueryGroupRequest(TeaModel):
             self.ding_token_grant_type = m.get('dingTokenGrantType')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
         return self
 
 

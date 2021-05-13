@@ -843,6 +843,8 @@ class Client(OpenApiClient):
             body['dingTokenGrantType'] = request.ding_token_grant_type
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -875,6 +877,8 @@ class Client(OpenApiClient):
             body['dingTokenGrantType'] = request.ding_token_grant_type
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
