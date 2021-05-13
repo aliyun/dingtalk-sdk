@@ -906,6 +906,7 @@ export class QueryGroupRequest extends $tea.Model {
   dingSuiteKey?: string;
   dingTokenGrantType?: number;
   openConversationId?: string;
+  bizId?: string;
   static names(): { [key: string]: string } {
     return {
       dingIsvOrgId: 'dingIsvOrgId',
@@ -913,6 +914,7 @@ export class QueryGroupRequest extends $tea.Model {
       dingSuiteKey: 'dingSuiteKey',
       dingTokenGrantType: 'dingTokenGrantType',
       openConversationId: 'openConversationId',
+      bizId: 'bizId',
     };
   }
 
@@ -923,6 +925,7 @@ export class QueryGroupRequest extends $tea.Model {
       dingSuiteKey: 'string',
       dingTokenGrantType: 'number',
       openConversationId: 'string',
+      bizId: 'string',
     };
   }
 
@@ -1044,11 +1047,15 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
   receiverUserId?: string;
   receiverUnionId?: string;
   readStatus?: number;
+  receiverName?: string;
+  receiverDingTalkId?: string;
   static names(): { [key: string]: string } {
     return {
       receiverUserId: 'receiverUserId',
       receiverUnionId: 'receiverUnionId',
       readStatus: 'readStatus',
+      receiverName: 'receiverName',
+      receiverDingTalkId: 'receiverDingTalkId',
     };
   }
 
@@ -1057,6 +1064,8 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
       receiverUserId: 'string',
       receiverUnionId: 'string',
       readStatus: 'number',
+      receiverName: 'string',
+      receiverDingTalkId: 'string',
     };
   }
 
@@ -1636,6 +1645,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

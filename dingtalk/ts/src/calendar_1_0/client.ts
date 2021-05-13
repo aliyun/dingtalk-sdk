@@ -653,6 +653,7 @@ export class PatchEventRequest extends $tea.Model {
   recurrence?: PatchEventRequestRecurrence;
   attendees?: PatchEventRequestAttendees[];
   location?: PatchEventRequestLocation;
+  extra?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
       summary: 'summary',
@@ -664,6 +665,7 @@ export class PatchEventRequest extends $tea.Model {
       recurrence: 'recurrence',
       attendees: 'attendees',
       location: 'location',
+      extra: 'extra',
     };
   }
 
@@ -678,6 +680,7 @@ export class PatchEventRequest extends $tea.Model {
       recurrence: PatchEventRequestRecurrence,
       attendees: { 'type': 'array', 'itemType': PatchEventRequestAttendees },
       location: PatchEventRequestLocation,
+      extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -791,6 +794,7 @@ export class CreateEventRequest extends $tea.Model {
   recurrence?: CreateEventRequestRecurrence;
   attendees?: CreateEventRequestAttendees[];
   location?: CreateEventRequestLocation;
+  extra?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
       summary: 'summary',
@@ -801,6 +805,7 @@ export class CreateEventRequest extends $tea.Model {
       recurrence: 'recurrence',
       attendees: 'attendees',
       location: 'location',
+      extra: 'extra',
     };
   }
 
@@ -814,6 +819,7 @@ export class CreateEventRequest extends $tea.Model {
       recurrence: CreateEventRequestRecurrence,
       attendees: { 'type': 'array', 'itemType': CreateEventRequestAttendees },
       location: CreateEventRequestLocation,
+      extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -2612,6 +2618,10 @@ export default class Client extends OpenApi {
       body["location"] = request.location;
     }
 
+    if (!Util.isUnset(request.extra)) {
+      body["extra"] = request.extra;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2667,6 +2677,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.location))) {
       body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.extra)) {
+      body["extra"] = request.extra;
     }
 
     let realHeaders : {[key: string ]: string} = { };
