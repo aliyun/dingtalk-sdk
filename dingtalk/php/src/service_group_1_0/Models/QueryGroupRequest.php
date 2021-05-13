@@ -34,12 +34,20 @@ class QueryGroupRequest extends Model
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @description 业务关联ID，和开放群ID二选一传
+     *
+     * @var string
+     */
+    public $bizId;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
         'openConversationId' => 'openConversationId',
+        'bizId'              => 'bizId',
     ];
 
     public function validate()
@@ -63,6 +71,9 @@ class QueryGroupRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->bizId) {
+            $res['bizId'] = $this->bizId;
         }
 
         return $res;
@@ -90,6 +101,9 @@ class QueryGroupRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['bizId'])) {
+            $model->bizId = $map['bizId'];
         }
 
         return $model;

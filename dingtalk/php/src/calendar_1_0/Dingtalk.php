@@ -497,6 +497,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->location)) {
             @$body['location'] = $request->location;
         }
+        if (!Utils::isUnset($request->extra)) {
+            @$body['extra'] = $request->extra;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -563,6 +566,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->location)) {
             @$body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->extra)) {
+            @$body['extra'] = $request->extra;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

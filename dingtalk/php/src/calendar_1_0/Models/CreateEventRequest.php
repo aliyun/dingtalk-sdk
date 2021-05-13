@@ -64,6 +64,13 @@ class CreateEventRequest extends Model
      * @var location
      */
     public $location;
+
+    /**
+     * @description 扩展信息
+     *
+     * @var string[]
+     */
+    public $extra;
     protected $_name = [
         'summary'     => 'summary',
         'description' => 'description',
@@ -73,6 +80,7 @@ class CreateEventRequest extends Model
         'recurrence'  => 'recurrence',
         'attendees'   => 'attendees',
         'location'    => 'location',
+        'extra'       => 'extra',
     ];
 
     public function validate()
@@ -111,6 +119,9 @@ class CreateEventRequest extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
+        }
+        if (null !== $this->extra) {
+            $res['extra'] = $this->extra;
         }
 
         return $res;
@@ -153,6 +164,9 @@ class CreateEventRequest extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
+        }
+        if (isset($map['extra'])) {
+            $model->extra = $map['extra'];
         }
 
         return $model;

@@ -28,10 +28,26 @@ class records extends Model
      * @var int
      */
     public $readStatus;
+
+    /**
+     * @description 接收者昵称
+     *
+     * @var string
+     */
+    public $receiverName;
+
+    /**
+     * @description 接收者dingtalkId
+     *
+     * @var string
+     */
+    public $receiverDingTalkId;
     protected $_name = [
-        'receiverUserId'  => 'receiverUserId',
-        'receiverUnionId' => 'receiverUnionId',
-        'readStatus'      => 'readStatus',
+        'receiverUserId'     => 'receiverUserId',
+        'receiverUnionId'    => 'receiverUnionId',
+        'readStatus'         => 'readStatus',
+        'receiverName'       => 'receiverName',
+        'receiverDingTalkId' => 'receiverDingTalkId',
     ];
 
     public function validate()
@@ -49,6 +65,12 @@ class records extends Model
         }
         if (null !== $this->readStatus) {
             $res['readStatus'] = $this->readStatus;
+        }
+        if (null !== $this->receiverName) {
+            $res['receiverName'] = $this->receiverName;
+        }
+        if (null !== $this->receiverDingTalkId) {
+            $res['receiverDingTalkId'] = $this->receiverDingTalkId;
         }
 
         return $res;
@@ -70,6 +92,12 @@ class records extends Model
         }
         if (isset($map['readStatus'])) {
             $model->readStatus = $map['readStatus'];
+        }
+        if (isset($map['receiverName'])) {
+            $model->receiverName = $map['receiverName'];
+        }
+        if (isset($map['receiverDingTalkId'])) {
+            $model->receiverDingTalkId = $map['receiverDingTalkId'];
         }
 
         return $model;
