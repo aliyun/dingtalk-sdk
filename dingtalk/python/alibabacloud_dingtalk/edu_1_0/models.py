@@ -102,6 +102,192 @@ class QueryOrgTypeResponse(TeaModel):
         return self
 
 
+class GetDefaultChildHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDefaultChildResponseBodyBindStudents(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        staff_id: str = None,
+        class_id: int = None,
+        period: str = None,
+    ):
+        self.corp_id = corp_id
+        self.staff_id = staff_id
+        self.class_id = class_id
+        self.period = period
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.period is not None:
+            result['period'] = self.period
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('period') is not None:
+            self.period = m.get('period')
+        return self
+
+
+class GetDefaultChildResponseBody(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        nick: str = None,
+        avatar: str = None,
+        union_id: str = None,
+        period: str = None,
+        grade: int = None,
+        bind_students: List[GetDefaultChildResponseBodyBindStudents] = None,
+    ):
+        self.name = name
+        self.nick = nick
+        self.avatar = avatar
+        self.union_id = union_id
+        self.period = period
+        self.grade = grade
+        self.bind_students = bind_students
+
+    def validate(self):
+        if self.bind_students:
+            for k in self.bind_students:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.period is not None:
+            result['period'] = self.period
+        if self.grade is not None:
+            result['grade'] = self.grade
+        result['bindStudents'] = []
+        if self.bind_students is not None:
+            for k in self.bind_students:
+                result['bindStudents'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('period') is not None:
+            self.period = m.get('period')
+        if m.get('grade') is not None:
+            self.grade = m.get('grade')
+        self.bind_students = []
+        if m.get('bindStudents') is not None:
+            for k in m.get('bindStudents'):
+                temp_model = GetDefaultChildResponseBodyBindStudents()
+                self.bind_students.append(temp_model.from_map(k))
+        return self
+
+
+class GetDefaultChildResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDefaultChildResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDefaultChildResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchCreateHeaders(TeaModel):
     def __init__(
         self,

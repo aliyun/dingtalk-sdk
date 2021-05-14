@@ -186,8 +186,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
-        if not UtilClient.is_unset(request.sucject):
-            body['sucject'] = request.sucject
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.due_time):
@@ -226,8 +226,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
-        if not UtilClient.is_unset(request.sucject):
-            body['sucject'] = request.sucject
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.due_time):

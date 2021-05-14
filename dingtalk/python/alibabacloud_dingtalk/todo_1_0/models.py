@@ -441,7 +441,7 @@ class UpdateTodoTaskHeaders(TeaModel):
 class UpdateTodoTaskRequest(TeaModel):
     def __init__(
         self,
-        sucject: str = None,
+        subject: str = None,
         description: str = None,
         due_time: int = None,
         done: bool = None,
@@ -450,7 +450,7 @@ class UpdateTodoTaskRequest(TeaModel):
         operator_id: str = None,
     ):
         # 待办标题
-        self.sucject = sucject
+        self.subject = subject
         # 待办描述备注
         self.description = description
         # 截止时间
@@ -473,8 +473,8 @@ class UpdateTodoTaskRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.sucject is not None:
-            result['sucject'] = self.sucject
+        if self.subject is not None:
+            result['subject'] = self.subject
         if self.description is not None:
             result['description'] = self.description
         if self.due_time is not None:
@@ -491,8 +491,8 @@ class UpdateTodoTaskRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('sucject') is not None:
-            self.sucject = m.get('sucject')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('dueTime') is not None:
