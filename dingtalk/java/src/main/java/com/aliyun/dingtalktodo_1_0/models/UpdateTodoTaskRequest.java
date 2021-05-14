@@ -5,8 +5,8 @@ import com.aliyun.tea.*;
 
 public class UpdateTodoTaskRequest extends TeaModel {
     // 待办标题
-    @NameInMap("sucject")
-    public String sucject;
+    @NameInMap("subject")
+    public String subject;
 
     // 待办描述备注
     @NameInMap("description")
@@ -37,12 +37,12 @@ public class UpdateTodoTaskRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateTodoTaskRequest setSucject(String sucject) {
-        this.sucject = sucject;
+    public UpdateTodoTaskRequest setSubject(String subject) {
+        this.subject = subject;
         return this;
     }
-    public String getSucject() {
-        return this.sucject;
+    public String getSubject() {
+        return this.subject;
     }
 
     public UpdateTodoTaskRequest setDescription(String description) {

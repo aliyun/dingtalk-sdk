@@ -86,8 +86,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.sucject)) {
-            body.put("sucject", request.sucject);
+        if (!com.aliyun.teautil.Common.isUnset(request.subject)) {
+            body.put("subject", request.subject);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
