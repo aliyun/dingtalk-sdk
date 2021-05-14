@@ -13,7 +13,7 @@ class UpdateTodoTaskRequest extends Model
      *
      * @var string
      */
-    public $sucject;
+    public $subject;
 
     /**
      * @description 待办描述备注
@@ -57,7 +57,7 @@ class UpdateTodoTaskRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'sucject'        => 'sucject',
+        'subject'        => 'subject',
         'description'    => 'description',
         'dueTime'        => 'dueTime',
         'done'           => 'done',
@@ -73,8 +73,8 @@ class UpdateTodoTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sucject) {
-            $res['sucject'] = $this->sucject;
+        if (null !== $this->subject) {
+            $res['subject'] = $this->subject;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
@@ -106,8 +106,8 @@ class UpdateTodoTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sucject'])) {
-            $model->sucject = $map['sucject'];
+        if (isset($map['subject'])) {
+            $model->subject = $map['subject'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];

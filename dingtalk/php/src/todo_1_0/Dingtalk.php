@@ -148,8 +148,8 @@ class Dingtalk extends OpenApiClient
             @$query['operatorId'] = $request->operatorId;
         }
         $body = [];
-        if (!Utils::isUnset($request->sucject)) {
-            @$body['sucject'] = $request->sucject;
+        if (!Utils::isUnset($request->subject)) {
+            @$body['subject'] = $request->subject;
         }
         if (!Utils::isUnset($request->description)) {
             @$body['description'] = $request->description;
