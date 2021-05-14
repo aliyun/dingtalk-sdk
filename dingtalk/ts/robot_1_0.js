@@ -1,0 +1,1 @@
+module.exports = require('./dist').robot_1_0;

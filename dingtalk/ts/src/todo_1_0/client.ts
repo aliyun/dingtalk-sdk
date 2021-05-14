@@ -235,7 +235,7 @@ export class UpdateTodoTaskHeaders extends $tea.Model {
 }
 
 export class UpdateTodoTaskRequest extends $tea.Model {
-  sucject?: string;
+  subject?: string;
   description?: string;
   dueTime?: number;
   done?: boolean;
@@ -244,7 +244,7 @@ export class UpdateTodoTaskRequest extends $tea.Model {
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
-      sucject: 'sucject',
+      subject: 'subject',
       description: 'description',
       dueTime: 'dueTime',
       done: 'done',
@@ -256,7 +256,7 @@ export class UpdateTodoTaskRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      sucject: 'string',
+      subject: 'string',
       description: 'string',
       dueTime: 'number',
       done: 'boolean',
@@ -619,8 +619,8 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.sucject)) {
-      body["sucject"] = request.sucject;
+    if (!Util.isUnset(request.subject)) {
+      body["subject"] = request.subject;
     }
 
     if (!Util.isUnset(request.description)) {

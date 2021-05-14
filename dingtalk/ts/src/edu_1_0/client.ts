@@ -70,6 +70,87 @@ export class QueryOrgTypeResponse extends $tea.Model {
   }
 }
 
+export class GetDefaultChildHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDefaultChildResponseBody extends $tea.Model {
+  name?: string;
+  nick?: string;
+  avatar?: string;
+  unionId?: string;
+  period?: string;
+  grade?: number;
+  bindStudents?: GetDefaultChildResponseBodyBindStudents[];
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      nick: 'nick',
+      avatar: 'avatar',
+      unionId: 'unionId',
+      period: 'period',
+      grade: 'grade',
+      bindStudents: 'bindStudents',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      nick: 'string',
+      avatar: 'string',
+      unionId: 'string',
+      period: 'string',
+      grade: 'number',
+      bindStudents: { 'type': 'array', 'itemType': GetDefaultChildResponseBodyBindStudents },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDefaultChildResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDefaultChildResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDefaultChildResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -861,6 +942,34 @@ export class DeleteTeacherResponse extends $tea.Model {
   }
 }
 
+export class GetDefaultChildResponseBodyBindStudents extends $tea.Model {
+  corpId?: string;
+  staffId?: string;
+  classId?: number;
+  period?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      staffId: 'staffId',
+      classId: 'classId',
+      period: 'period',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      staffId: 'string',
+      classId: 'number',
+      period: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateRequestDataCardRuleItemParamList extends $tea.Model {
   cardTaskCode?: string;
   relationId?: string;
@@ -1281,6 +1390,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryOrgTypeResponse>(await this.doROARequest("QueryOrgType", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/orgTypes`, "json", req, runtime), new QueryOrgTypeResponse({}));
+  }
+
+  async getDefaultChild(): Promise<GetDefaultChildResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDefaultChildHeaders({ });
+    return await this.getDefaultChildWithOptions(headers, runtime);
+  }
+
+  async getDefaultChildWithOptions(headers: GetDefaultChildHeaders, runtime: $Util.RuntimeOptions): Promise<GetDefaultChildResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetDefaultChildResponse>(await this.doROARequest("GetDefaultChild", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/defaultChildren`, "json", req, runtime), new GetDefaultChildResponse({}));
   }
 
   async batchCreate(request: BatchCreateRequest): Promise<BatchCreateResponse> {

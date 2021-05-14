@@ -16,9 +16,11 @@ import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
 import * as live_1_0 from './live_1_0/client';
+import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
 import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
+import * as robot_1_0 from './robot_1_0/client';
 import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
@@ -45,9 +47,11 @@ export = {
   hrm_1_0,
   im_1_0,
   live_1_0,
+  micro_app_1_0,
   oauth2_1_0,
   project_1_0,
   project_integration_1_0,
+  robot_1_0,
   service_group_1_0,
   smart_device_1_0,
   todo_1_0,
