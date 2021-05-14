@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
-    public class GetDingMeBaseDataHeaders : TeaModel {
+    public class UpdateOfficialAccountRobotInfoHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

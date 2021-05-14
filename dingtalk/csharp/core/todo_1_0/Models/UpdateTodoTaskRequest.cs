@@ -12,9 +12,9 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         /// <summary>
         /// 待办标题
         /// </summary>
-        [NameInMap("sucject")]
+        [NameInMap("subject")]
         [Validation(Required=false)]
-        public string Sucject { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// 待办描述备注
