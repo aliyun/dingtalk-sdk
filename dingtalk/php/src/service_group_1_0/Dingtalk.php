@@ -221,6 +221,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->memberStaffIds)) {
             @$body['memberStaffIds'] = $request->memberStaffIds;
         }
+        if (!Utils::isUnset($request->groupTagNames)) {
+            @$body['groupTagNames'] = $request->groupTagNames;
+        }
         if (!Utils::isUnset($request->dingIsvOrgId)) {
             @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
         }
@@ -625,6 +628,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->dingTokenGrantType)) {
             @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
         }
         if (!Utils::isUnset($request->openConversationId)) {
             @$body['openConversationId'] = $request->openConversationId;

@@ -51,6 +51,13 @@ class CreateGroupRequest extends Model
     public $memberStaffIds;
 
     /**
+     * @description 群标签
+     *
+     * @var string[]
+     */
+    public $groupTagNames;
+
+    /**
      * @var int
      */
     public $dingIsvOrgId;
@@ -76,6 +83,7 @@ class CreateGroupRequest extends Model
         'groupName'          => 'groupName',
         'ownerStaffId'       => 'ownerStaffId',
         'memberStaffIds'     => 'memberStaffIds',
+        'groupTagNames'      => 'groupTagNames',
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
         'dingSuiteKey'       => 'dingSuiteKey',
@@ -106,6 +114,9 @@ class CreateGroupRequest extends Model
         }
         if (null !== $this->memberStaffIds) {
             $res['memberStaffIds'] = $this->memberStaffIds;
+        }
+        if (null !== $this->groupTagNames) {
+            $res['groupTagNames'] = $this->groupTagNames;
         }
         if (null !== $this->dingIsvOrgId) {
             $res['dingIsvOrgId'] = $this->dingIsvOrgId;
@@ -149,6 +160,11 @@ class CreateGroupRequest extends Model
         if (isset($map['memberStaffIds'])) {
             if (!empty($map['memberStaffIds'])) {
                 $model->memberStaffIds = $map['memberStaffIds'];
+            }
+        }
+        if (isset($map['groupTagNames'])) {
+            if (!empty($map['groupTagNames'])) {
+                $model->groupTagNames = $map['groupTagNames'];
             }
         }
         if (isset($map['dingIsvOrgId'])) {

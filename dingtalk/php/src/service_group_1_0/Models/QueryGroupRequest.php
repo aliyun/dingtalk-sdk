@@ -29,6 +29,13 @@ class QueryGroupRequest extends Model
     public $dingTokenGrantType;
 
     /**
+     * @description 开放团队ID
+     *
+     * @var string
+     */
+    public $openTeamId;
+
+    /**
      * @description 开放群ID
      *
      * @var string
@@ -46,6 +53,7 @@ class QueryGroupRequest extends Model
         'dingOrgId'          => 'dingOrgId',
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
+        'openTeamId'         => 'openTeamId',
         'openConversationId' => 'openConversationId',
         'bizId'              => 'bizId',
     ];
@@ -68,6 +76,9 @@ class QueryGroupRequest extends Model
         }
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
+        }
+        if (null !== $this->openTeamId) {
+            $res['openTeamId'] = $this->openTeamId;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -98,6 +109,9 @@ class QueryGroupRequest extends Model
         }
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
+        }
+        if (isset($map['openTeamId'])) {
+            $model->openTeamId = $map['openTeamId'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
