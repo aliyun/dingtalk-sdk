@@ -480,6 +480,7 @@ class CreateGroupRequest(TeaModel):
         group_name: str = None,
         owner_staff_id: str = None,
         member_staff_ids: List[str] = None,
+        group_tag_names: List[str] = None,
         ding_isv_org_id: int = None,
         ding_org_id: int = None,
         ding_suite_key: str = None,
@@ -497,6 +498,8 @@ class CreateGroupRequest(TeaModel):
         self.owner_staff_id = owner_staff_id
         # 群成员员工ID列表
         self.member_staff_ids = member_staff_ids
+        # 群标签
+        self.group_tag_names = group_tag_names
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_org_id = ding_org_id
         self.ding_suite_key = ding_suite_key
@@ -523,6 +526,8 @@ class CreateGroupRequest(TeaModel):
             result['ownerStaffId'] = self.owner_staff_id
         if self.member_staff_ids is not None:
             result['memberStaffIds'] = self.member_staff_ids
+        if self.group_tag_names is not None:
+            result['groupTagNames'] = self.group_tag_names
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
         if self.ding_org_id is not None:
@@ -547,6 +552,8 @@ class CreateGroupRequest(TeaModel):
             self.owner_staff_id = m.get('ownerStaffId')
         if m.get('memberStaffIds') is not None:
             self.member_staff_ids = m.get('memberStaffIds')
+        if m.get('groupTagNames') is not None:
+            self.group_tag_names = m.get('groupTagNames')
         if m.get('dingIsvOrgId') is not None:
             self.ding_isv_org_id = m.get('dingIsvOrgId')
         if m.get('dingOrgId') is not None:
@@ -1749,6 +1756,7 @@ class QueryGroupRequest(TeaModel):
         ding_org_id: int = None,
         ding_suite_key: str = None,
         ding_token_grant_type: int = None,
+        open_team_id: str = None,
         open_conversation_id: str = None,
         biz_id: str = None,
     ):
@@ -1756,6 +1764,8 @@ class QueryGroupRequest(TeaModel):
         self.ding_org_id = ding_org_id
         self.ding_suite_key = ding_suite_key
         self.ding_token_grant_type = ding_token_grant_type
+        # 开放团队ID
+        self.open_team_id = open_team_id
         # 开放群ID
         self.open_conversation_id = open_conversation_id
         # 业务关联ID，和开放群ID二选一传
@@ -1778,6 +1788,8 @@ class QueryGroupRequest(TeaModel):
             result['dingSuiteKey'] = self.ding_suite_key
         if self.ding_token_grant_type is not None:
             result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.biz_id is not None:
@@ -1794,6 +1806,8 @@ class QueryGroupRequest(TeaModel):
             self.ding_suite_key = m.get('dingSuiteKey')
         if m.get('dingTokenGrantType') is not None:
             self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('bizId') is not None:

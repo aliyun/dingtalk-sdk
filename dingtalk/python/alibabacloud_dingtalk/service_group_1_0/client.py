@@ -251,6 +251,8 @@ class Client(OpenApiClient):
             body['ownerStaffId'] = request.owner_staff_id
         if not UtilClient.is_unset(request.member_staff_ids):
             body['memberStaffIds'] = request.member_staff_ids
+        if not UtilClient.is_unset(request.group_tag_names):
+            body['groupTagNames'] = request.group_tag_names
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         if not UtilClient.is_unset(request.ding_org_id):
@@ -293,6 +295,8 @@ class Client(OpenApiClient):
             body['ownerStaffId'] = request.owner_staff_id
         if not UtilClient.is_unset(request.member_staff_ids):
             body['memberStaffIds'] = request.member_staff_ids
+        if not UtilClient.is_unset(request.group_tag_names):
+            body['groupTagNames'] = request.group_tag_names
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         if not UtilClient.is_unset(request.ding_org_id):
@@ -841,6 +845,8 @@ class Client(OpenApiClient):
             body['dingSuiteKey'] = request.ding_suite_key
         if not UtilClient.is_unset(request.ding_token_grant_type):
             body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.biz_id):
@@ -875,6 +881,8 @@ class Client(OpenApiClient):
             body['dingSuiteKey'] = request.ding_suite_key
         if not UtilClient.is_unset(request.ding_token_grant_type):
             body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.biz_id):
