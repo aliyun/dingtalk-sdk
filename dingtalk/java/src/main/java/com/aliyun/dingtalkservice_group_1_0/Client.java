@@ -176,6 +176,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("memberStaffIds", request.memberStaffIds);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.groupTagNames)) {
+            body.put("groupTagNames", request.groupTagNames);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
             body.put("dingIsvOrgId", request.dingIsvOrgId);
         }
@@ -553,6 +557,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
             body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openTeamId)) {
+            body.put("openTeamId", request.openTeamId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {

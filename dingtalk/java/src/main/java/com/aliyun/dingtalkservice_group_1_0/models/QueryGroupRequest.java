@@ -16,6 +16,10 @@ public class QueryGroupRequest extends TeaModel {
     @NameInMap("dingTokenGrantType")
     public Long dingTokenGrantType;
 
+    // 开放团队ID
+    @NameInMap("openTeamId")
+    public String openTeamId;
+
     // 开放群ID
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -59,6 +63,14 @@ public class QueryGroupRequest extends TeaModel {
     }
     public Long getDingTokenGrantType() {
         return this.dingTokenGrantType;
+    }
+
+    public QueryGroupRequest setOpenTeamId(String openTeamId) {
+        this.openTeamId = openTeamId;
+        return this;
+    }
+    public String getOpenTeamId() {
+        return this.openTeamId;
     }
 
     public QueryGroupRequest setOpenConversationId(String openConversationId) {

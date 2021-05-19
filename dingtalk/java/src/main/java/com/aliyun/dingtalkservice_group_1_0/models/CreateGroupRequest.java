@@ -28,6 +28,10 @@ public class CreateGroupRequest extends TeaModel {
     @NameInMap("memberStaffIds")
     public java.util.List<String> memberStaffIds;
 
+    // 群标签
+    @NameInMap("groupTagNames")
+    public java.util.List<String> groupTagNames;
+
     @NameInMap("dingIsvOrgId")
     public Long dingIsvOrgId;
 
@@ -91,6 +95,14 @@ public class CreateGroupRequest extends TeaModel {
     }
     public java.util.List<String> getMemberStaffIds() {
         return this.memberStaffIds;
+    }
+
+    public CreateGroupRequest setGroupTagNames(java.util.List<String> groupTagNames) {
+        this.groupTagNames = groupTagNames;
+        return this;
+    }
+    public java.util.List<String> getGroupTagNames() {
+        return this.groupTagNames;
     }
 
     public CreateGroupRequest setDingIsvOrgId(Long dingIsvOrgId) {
