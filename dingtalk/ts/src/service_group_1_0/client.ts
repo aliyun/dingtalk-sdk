@@ -257,6 +257,7 @@ export class CreateGroupRequest extends $tea.Model {
   groupName?: string;
   ownerStaffId?: string;
   memberStaffIds?: string[];
+  groupTagNames?: string[];
   dingIsvOrgId?: number;
   dingOrgId?: number;
   dingSuiteKey?: string;
@@ -269,6 +270,7 @@ export class CreateGroupRequest extends $tea.Model {
       groupName: 'groupName',
       ownerStaffId: 'ownerStaffId',
       memberStaffIds: 'memberStaffIds',
+      groupTagNames: 'groupTagNames',
       dingIsvOrgId: 'dingIsvOrgId',
       dingOrgId: 'dingOrgId',
       dingSuiteKey: 'dingSuiteKey',
@@ -284,6 +286,7 @@ export class CreateGroupRequest extends $tea.Model {
       groupName: 'string',
       ownerStaffId: 'string',
       memberStaffIds: { 'type': 'array', 'itemType': 'string' },
+      groupTagNames: { 'type': 'array', 'itemType': 'string' },
       dingIsvOrgId: 'number',
       dingOrgId: 'number',
       dingSuiteKey: 'string',
@@ -905,6 +908,7 @@ export class QueryGroupRequest extends $tea.Model {
   dingOrgId?: number;
   dingSuiteKey?: string;
   dingTokenGrantType?: number;
+  openTeamId?: string;
   openConversationId?: string;
   bizId?: string;
   static names(): { [key: string]: string } {
@@ -913,6 +917,7 @@ export class QueryGroupRequest extends $tea.Model {
       dingOrgId: 'dingOrgId',
       dingSuiteKey: 'dingSuiteKey',
       dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
       openConversationId: 'openConversationId',
       bizId: 'bizId',
     };
@@ -924,6 +929,7 @@ export class QueryGroupRequest extends $tea.Model {
       dingOrgId: 'number',
       dingSuiteKey: 'string',
       dingTokenGrantType: 'number',
+      openTeamId: 'string',
       openConversationId: 'string',
       bizId: 'string',
     };
@@ -1262,6 +1268,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.memberStaffIds)) {
       body["memberStaffIds"] = request.memberStaffIds;
+    }
+
+    if (!Util.isUnset(request.groupTagNames)) {
+      body["groupTagNames"] = request.groupTagNames;
     }
 
     if (!Util.isUnset(request.dingIsvOrgId)) {
@@ -1641,6 +1651,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.dingTokenGrantType)) {
       body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
     }
 
     if (!Util.isUnset(request.openConversationId)) {
