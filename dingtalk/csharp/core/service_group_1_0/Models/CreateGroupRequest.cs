@@ -51,6 +51,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public List<string> MemberStaffIds { get; set; }
 
+        /// <summary>
+        /// 群标签
+        /// </summary>
+        [NameInMap("groupTagNames")]
+        [Validation(Required=false)]
+        public List<string> GroupTagNames { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }

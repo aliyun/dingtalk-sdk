@@ -324,6 +324,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             {
                 body["memberStaffIds"] = request.MemberStaffIds;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTagNames))
+            {
+                body["groupTagNames"] = request.GroupTagNames;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
@@ -384,6 +388,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberStaffIds))
             {
                 body["memberStaffIds"] = request.MemberStaffIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTagNames))
+            {
+                body["groupTagNames"] = request.GroupTagNames;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
@@ -1126,6 +1134,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             {
                 body["dingTokenGrantType"] = request.DingTokenGrantType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
@@ -1170,6 +1182,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
             {
                 body["dingTokenGrantType"] = request.DingTokenGrantType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
