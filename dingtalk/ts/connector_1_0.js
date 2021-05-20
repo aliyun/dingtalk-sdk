@@ -1,0 +1,1 @@
+module.exports = require('./dist').connector_1_0;
