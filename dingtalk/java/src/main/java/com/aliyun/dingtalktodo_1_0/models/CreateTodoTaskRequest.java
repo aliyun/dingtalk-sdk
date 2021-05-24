@@ -36,6 +36,14 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("detailUrl")
     public CreateTodoTaskRequestDetailUrl detailUrl;
 
+    // 待办卡片类型id
+    @NameInMap("cardTypeId")
+    public String cardTypeId;
+
+    // 待办卡片内容区表单自定义字段列表
+    @NameInMap("contentFieldList")
+    public java.util.List<CreateTodoTaskRequestContentFieldList> contentFieldList;
+
     // 当前操作者id，需传用户的unionId
     @NameInMap("operatorId")
     public String operatorId;
@@ -109,6 +117,22 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.detailUrl;
     }
 
+    public CreateTodoTaskRequest setCardTypeId(String cardTypeId) {
+        this.cardTypeId = cardTypeId;
+        return this;
+    }
+    public String getCardTypeId() {
+        return this.cardTypeId;
+    }
+
+    public CreateTodoTaskRequest setContentFieldList(java.util.List<CreateTodoTaskRequestContentFieldList> contentFieldList) {
+        this.contentFieldList = contentFieldList;
+        return this;
+    }
+    public java.util.List<CreateTodoTaskRequestContentFieldList> getContentFieldList() {
+        return this.contentFieldList;
+    }
+
     public CreateTodoTaskRequest setOperatorId(String operatorId) {
         this.operatorId = operatorId;
         return this;
@@ -145,6 +169,50 @@ public class CreateTodoTaskRequest extends TeaModel {
         }
         public String getPcUrl() {
             return this.pcUrl;
+        }
+
+    }
+
+    public static class CreateTodoTaskRequestContentFieldList extends TeaModel {
+        // 字段唯一标识
+        @NameInMap("fieldKey")
+        public String fieldKey;
+
+        // 字段值
+        @NameInMap("fieldValue")
+        public String fieldValue;
+
+        // 字段内容链接
+        @NameInMap("fieldLink")
+        public String fieldLink;
+
+        public static CreateTodoTaskRequestContentFieldList build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskRequestContentFieldList self = new CreateTodoTaskRequestContentFieldList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskRequestContentFieldList setFieldKey(String fieldKey) {
+            this.fieldKey = fieldKey;
+            return this;
+        }
+        public String getFieldKey() {
+            return this.fieldKey;
+        }
+
+        public CreateTodoTaskRequestContentFieldList setFieldValue(String fieldValue) {
+            this.fieldValue = fieldValue;
+            return this;
+        }
+        public String getFieldValue() {
+            return this.fieldValue;
+        }
+
+        public CreateTodoTaskRequestContentFieldList setFieldLink(String fieldLink) {
+            this.fieldLink = fieldLink;
+            return this;
+        }
+        public String getFieldLink() {
+            return this.fieldLink;
         }
 
     }

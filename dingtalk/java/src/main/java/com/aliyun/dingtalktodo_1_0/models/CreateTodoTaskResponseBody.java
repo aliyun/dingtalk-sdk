@@ -84,6 +84,14 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    // 待办卡片类型id
+    @NameInMap("cardTypeId")
+    public String cardTypeId;
+
+    // 内容区表单字段配置
+    @NameInMap("contentFieldList")
+    public java.util.List<CreateTodoTaskResponseBodyContentFieldList> contentFieldList;
+
     public static CreateTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateTodoTaskResponseBody self = new CreateTodoTaskResponseBody();
         return TeaModel.build(map, self);
@@ -249,6 +257,22 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         return this.requestId;
     }
 
+    public CreateTodoTaskResponseBody setCardTypeId(String cardTypeId) {
+        this.cardTypeId = cardTypeId;
+        return this;
+    }
+    public String getCardTypeId() {
+        return this.cardTypeId;
+    }
+
+    public CreateTodoTaskResponseBody setContentFieldList(java.util.List<CreateTodoTaskResponseBodyContentFieldList> contentFieldList) {
+        this.contentFieldList = contentFieldList;
+        return this;
+    }
+    public java.util.List<CreateTodoTaskResponseBodyContentFieldList> getContentFieldList() {
+        return this.contentFieldList;
+    }
+
     public static class CreateTodoTaskResponseBodyDetailUrl extends TeaModel {
         // pc端详情页地址
         @NameInMap("pcUrl")
@@ -277,6 +301,50 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         }
         public String getAppUrl() {
             return this.appUrl;
+        }
+
+    }
+
+    public static class CreateTodoTaskResponseBodyContentFieldList extends TeaModel {
+        // 字段唯一标识
+        @NameInMap("fieldKey")
+        public String fieldKey;
+
+        // 字段值
+        @NameInMap("fieldValue")
+        public String fieldValue;
+
+        // 字段内容链接
+        @NameInMap("fieldLink")
+        public String fieldLink;
+
+        public static CreateTodoTaskResponseBodyContentFieldList build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskResponseBodyContentFieldList self = new CreateTodoTaskResponseBodyContentFieldList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskResponseBodyContentFieldList setFieldKey(String fieldKey) {
+            this.fieldKey = fieldKey;
+            return this;
+        }
+        public String getFieldKey() {
+            return this.fieldKey;
+        }
+
+        public CreateTodoTaskResponseBodyContentFieldList setFieldValue(String fieldValue) {
+            this.fieldValue = fieldValue;
+            return this;
+        }
+        public String getFieldValue() {
+            return this.fieldValue;
+        }
+
+        public CreateTodoTaskResponseBodyContentFieldList setFieldLink(String fieldLink) {
+            this.fieldLink = fieldLink;
+            return this;
+        }
+        public String getFieldLink() {
+            return this.fieldLink;
         }
 
     }
