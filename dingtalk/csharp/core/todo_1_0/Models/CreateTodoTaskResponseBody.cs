@@ -157,6 +157,43 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
+        /// <summary>
+        /// 待办卡片类型id
+        /// </summary>
+        [NameInMap("cardTypeId")]
+        [Validation(Required=false)]
+        public string CardTypeId { get; set; }
+
+        /// <summary>
+        /// 内容区表单字段配置
+        /// </summary>
+        [NameInMap("contentFieldList")]
+        [Validation(Required=false)]
+        public List<CreateTodoTaskResponseBodyContentFieldList> ContentFieldList { get; set; }
+        public class CreateTodoTaskResponseBodyContentFieldList : TeaModel {
+            /// <summary>
+            /// 字段唯一标识
+            /// </summary>
+            [NameInMap("fieldKey")]
+            [Validation(Required=false)]
+            public string FieldKey { get; set; }
+
+            /// <summary>
+            /// 字段值
+            /// </summary>
+            [NameInMap("fieldValue")]
+            [Validation(Required=false)]
+            public string FieldValue { get; set; }
+
+            /// <summary>
+            /// 字段内容链接
+            /// </summary>
+            [NameInMap("fieldLink")]
+            [Validation(Required=false)]
+            public string FieldLink { get; set; }
+
+        }
+
     }
 
 }
