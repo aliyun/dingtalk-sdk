@@ -23,6 +23,52 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_share_roles(self) -> dingtalkedu__1__0_models.GetShareRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetShareRolesHeaders()
+        return self.get_share_roles_with_options(headers, runtime)
+
+    async def get_share_roles_async(self) -> dingtalkedu__1__0_models.GetShareRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetShareRolesHeaders()
+        return await self.get_share_roles_with_options_async(headers, runtime)
+
+    def get_share_roles_with_options(
+        self,
+        headers: dingtalkedu__1__0_models.GetShareRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetShareRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetShareRolesResponse(),
+            self.do_roarequest('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles', 'json', req, runtime)
+        )
+
+    async def get_share_roles_with_options_async(
+        self,
+        headers: dingtalkedu__1__0_models.GetShareRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetShareRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetShareRolesResponse(),
+            await self.do_roarequest_async('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles', 'json', req, runtime)
+        )
+
     def query_org_type(self) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryOrgTypeHeaders()
@@ -825,4 +871,58 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.DeleteTeacherResponse(),
             await self.do_roarequest_async('DeleteTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/teachers/{user_id}', 'json', req, runtime)
+        )
+
+    def get_share_role_members(
+        self,
+        share_role_code: str,
+    ) -> dingtalkedu__1__0_models.GetShareRoleMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetShareRoleMembersHeaders()
+        return self.get_share_role_members_with_options(share_role_code, headers, runtime)
+
+    async def get_share_role_members_async(
+        self,
+        share_role_code: str,
+    ) -> dingtalkedu__1__0_models.GetShareRoleMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetShareRoleMembersHeaders()
+        return await self.get_share_role_members_with_options_async(share_role_code, headers, runtime)
+
+    def get_share_role_members_with_options(
+        self,
+        share_role_code: str,
+        headers: dingtalkedu__1__0_models.GetShareRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetShareRoleMembersResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetShareRoleMembersResponse(),
+            self.do_roarequest('GetShareRoleMembers', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles/{share_role_code}/members', 'json', req, runtime)
+        )
+
+    async def get_share_role_members_with_options_async(
+        self,
+        share_role_code: str,
+        headers: dingtalkedu__1__0_models.GetShareRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetShareRoleMembersResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetShareRoleMembersResponse(),
+            await self.do_roarequest_async('GetShareRoleMembers', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles/{share_role_code}/members', 'json', req, runtime)
         )
