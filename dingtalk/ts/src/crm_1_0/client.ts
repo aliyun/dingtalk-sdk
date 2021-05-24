@@ -389,6 +389,206 @@ export class DeleteCrmFormInstanceResponse extends $tea.Model {
   }
 }
 
+export class SendOfficialAccountOTOMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequest extends $tea.Model {
+  detail?: SendOfficialAccountOTOMessageRequestDetail;
+  bizId?: string;
+  dingTokenGrantType?: number;
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      detail: 'detail',
+      bizId: 'bizId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detail: SendOfficialAccountOTOMessageRequestDetail,
+      bizId: 'string',
+      dingTokenGrantType: 'number',
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: SendOfficialAccountOTOMessageResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: SendOfficialAccountOTOMessageResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendOfficialAccountOTOMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendOfficialAccountOTOMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequest extends $tea.Model {
+  detail?: BatchSendOfficialAccountOTOMessageRequestDetail;
+  bizId?: string;
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      detail: 'detail',
+      bizId: 'bizId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detail: BatchSendOfficialAccountOTOMessageRequestDetail,
+      bizId: 'string',
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageResponseBody extends $tea.Model {
+  result?: BatchSendOfficialAccountOTOMessageResponseBodyResult;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: BatchSendOfficialAccountOTOMessageResponseBodyResult,
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchSendOfficialAccountOTOMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchSendOfficialAccountOTOMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOfficialAccountContactInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -853,6 +1053,412 @@ export class ServiceWindowMessageBatchPushResponseBodyResult extends $tea.Model 
   }
 }
 
+export class SendOfficialAccountOTOMessageRequestDetailMessageBodyText extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown extends $tea.Model {
+  title?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends $tea.Model {
+  picUrl?: string;
+  messageUrl?: string;
+  title?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      picUrl: 'picUrl',
+      messageUrl: 'messageUrl',
+      title: 'title',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      picUrl: 'string',
+      messageUrl: 'string',
+      title: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList extends $tea.Model {
+  title?: string;
+  actionUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      actionUrl: 'actionUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      actionUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard extends $tea.Model {
+  buttonOrientation?: string;
+  singleUrl?: string;
+  singleTitle?: string;
+  markdown?: string;
+  title?: string;
+  buttonList?: SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList[];
+  static names(): { [key: string]: string } {
+    return {
+      buttonOrientation: 'buttonOrientation',
+      singleUrl: 'singleUrl',
+      singleTitle: 'singleTitle',
+      markdown: 'markdown',
+      title: 'title',
+      buttonList: 'buttonList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      buttonOrientation: 'string',
+      singleUrl: 'string',
+      singleTitle: 'string',
+      markdown: 'string',
+      title: 'string',
+      buttonList: { 'type': 'array', 'itemType': SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequestDetailMessageBody extends $tea.Model {
+  text?: SendOfficialAccountOTOMessageRequestDetailMessageBodyText;
+  markdown?: SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown;
+  link?: SendOfficialAccountOTOMessageRequestDetailMessageBodyLink;
+  actionCard?: SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+      markdown: 'markdown',
+      link: 'link',
+      actionCard: 'actionCard',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: SendOfficialAccountOTOMessageRequestDetailMessageBodyText,
+      markdown: SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown,
+      link: SendOfficialAccountOTOMessageRequestDetailMessageBodyLink,
+      actionCard: SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageRequestDetail extends $tea.Model {
+  msgType?: string;
+  uuid?: string;
+  userId?: string;
+  messageBody?: SendOfficialAccountOTOMessageRequestDetailMessageBody;
+  static names(): { [key: string]: string } {
+    return {
+      msgType: 'msgType',
+      uuid: 'uuid',
+      userId: 'userId',
+      messageBody: 'messageBody',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgType: 'string',
+      uuid: 'string',
+      userId: 'string',
+      messageBody: SendOfficialAccountOTOMessageRequestDetailMessageBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountOTOMessageResponseBodyResult extends $tea.Model {
+  openPushId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openPushId: 'openPushId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openPushId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown extends $tea.Model {
+  title?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends $tea.Model {
+  picUrl?: string;
+  messageUrl?: string;
+  title?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      picUrl: 'picUrl',
+      messageUrl: 'messageUrl',
+      title: 'title',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      picUrl: 'string',
+      messageUrl: 'string',
+      title: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList extends $tea.Model {
+  title?: string;
+  actionUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      actionUrl: 'actionUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      actionUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard extends $tea.Model {
+  buttonOrientation?: string;
+  singleUrl?: string;
+  singleTitle?: string;
+  markdown?: string;
+  title?: string;
+  buttonList?: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList[];
+  static names(): { [key: string]: string } {
+    return {
+      buttonOrientation: 'buttonOrientation',
+      singleUrl: 'singleUrl',
+      singleTitle: 'singleTitle',
+      markdown: 'markdown',
+      title: 'title',
+      buttonList: 'buttonList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      buttonOrientation: 'string',
+      singleUrl: 'string',
+      singleTitle: 'string',
+      markdown: 'string',
+      title: 'string',
+      buttonList: { 'type': 'array', 'itemType': BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBody extends $tea.Model {
+  text?: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText;
+  markdown?: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown;
+  link?: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink;
+  actionCard?: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+      markdown: 'markdown',
+      link: 'link',
+      actionCard: 'actionCard',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText,
+      markdown: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown,
+      link: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink,
+      actionCard: BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageRequestDetail extends $tea.Model {
+  msgType?: string;
+  uuid?: string;
+  bizRequestId?: string;
+  userIdList?: string[];
+  messageBody?: BatchSendOfficialAccountOTOMessageRequestDetailMessageBody;
+  sendToAll?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      msgType: 'msgType',
+      uuid: 'uuid',
+      bizRequestId: 'bizRequestId',
+      userIdList: 'userIdList',
+      messageBody: 'messageBody',
+      sendToAll: 'sendToAll',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgType: 'string',
+      uuid: 'string',
+      bizRequestId: 'string',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+      messageBody: BatchSendOfficialAccountOTOMessageRequestDetailMessageBody,
+      sendToAll: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSendOfficialAccountOTOMessageResponseBodyResult extends $tea.Model {
+  openPushId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openPushId: 'openPushId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openPushId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1040,6 +1646,104 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteCrmFormInstanceResponse>(await this.doROARequest("DeleteCrmFormInstance", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/formInstances/${instanceId}`, "json", req, runtime), new DeleteCrmFormInstanceResponse({}));
+  }
+
+  async sendOfficialAccountOTOMessage(request: SendOfficialAccountOTOMessageRequest): Promise<SendOfficialAccountOTOMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendOfficialAccountOTOMessageHeaders({ });
+    return await this.sendOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendOfficialAccountOTOMessageWithOptions(request: SendOfficialAccountOTOMessageRequest, headers: SendOfficialAccountOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendOfficialAccountOTOMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.detail))) {
+      body["detail"] = request.detail;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendOfficialAccountOTOMessageResponse>(await this.doROARequest("SendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/send`, "json", req, runtime), new SendOfficialAccountOTOMessageResponse({}));
+  }
+
+  async batchSendOfficialAccountOTOMessage(request: BatchSendOfficialAccountOTOMessageRequest): Promise<BatchSendOfficialAccountOTOMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchSendOfficialAccountOTOMessageHeaders({ });
+    return await this.batchSendOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+  }
+
+  async batchSendOfficialAccountOTOMessageWithOptions(request: BatchSendOfficialAccountOTOMessageRequest, headers: BatchSendOfficialAccountOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendOfficialAccountOTOMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.detail))) {
+      body["detail"] = request.detail;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchSendOfficialAccountOTOMessageResponse>(await this.doROARequest("BatchSendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/batchSend`, "json", req, runtime), new BatchSendOfficialAccountOTOMessageResponse({}));
   }
 
   async getOfficialAccountContactInfo(userId: string): Promise<GetOfficialAccountContactInfoResponse> {
