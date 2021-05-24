@@ -31,6 +31,10 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteTeacherRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -47,6 +51,39 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @return GetShareRolesResponse
+     */
+    public function getShareRoles()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetShareRolesHeaders([]);
+
+        return $this->getShareRolesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetShareRolesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetShareRolesResponse
+     */
+    public function getShareRolesWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetShareRolesResponse::fromMap($this->doROARequest('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles', 'json', $req, $runtime));
     }
 
     /**
@@ -592,5 +629,41 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteTeacherResponse::fromMap($this->doROARequest('DeleteTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/classes/' . $classId . '/teachers/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $shareRoleCode
+     *
+     * @return GetShareRoleMembersResponse
+     */
+    public function getShareRoleMembers($shareRoleCode)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetShareRoleMembersHeaders([]);
+
+        return $this->getShareRoleMembersWithOptions($shareRoleCode, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $shareRoleCode
+     * @param GetShareRoleMembersHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetShareRoleMembersResponse
+     */
+    public function getShareRoleMembersWithOptions($shareRoleCode, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetShareRoleMembersResponse::fromMap($this->doROARequest('GetShareRoleMembers', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles/' . $shareRoleCode . '/members', 'json', $req, $runtime));
     }
 }

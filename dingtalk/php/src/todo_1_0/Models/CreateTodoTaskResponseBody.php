@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\contentFieldList;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\detailUrl;
 use AlibabaCloud\Tea\Model;
 
@@ -148,27 +149,43 @@ class CreateTodoTaskResponseBody extends Model
      * @var string
      */
     public $requestId;
+
+    /**
+     * @description 待办卡片类型id
+     *
+     * @var string
+     */
+    public $cardTypeId;
+
+    /**
+     * @description 内容区表单字段配置
+     *
+     * @var contentFieldList[]
+     */
+    public $contentFieldList;
     protected $_name = [
-        'id'             => 'id',
-        'subject'        => 'subject',
-        'description'    => 'description',
-        'startTime'      => 'startTime',
-        'dueTime'        => 'dueTime',
-        'finishTime'     => 'finishTime',
-        'done'           => 'done',
-        'executorIds'    => 'executorIds',
-        'participantIds' => 'participantIds',
-        'detailUrl'      => 'detailUrl',
-        'source'         => 'source',
-        'sourceId'       => 'sourceId',
-        'createdTime'    => 'createdTime',
-        'modifiedTime'   => 'modifiedTime',
-        'creatorId'      => 'creatorId',
-        'modifierId'     => 'modifierId',
-        'tenantId'       => 'tenantId',
-        'tenantType'     => 'tenantType',
-        'bizTag'         => 'bizTag',
-        'requestId'      => 'requestId',
+        'id'               => 'id',
+        'subject'          => 'subject',
+        'description'      => 'description',
+        'startTime'        => 'startTime',
+        'dueTime'          => 'dueTime',
+        'finishTime'       => 'finishTime',
+        'done'             => 'done',
+        'executorIds'      => 'executorIds',
+        'participantIds'   => 'participantIds',
+        'detailUrl'        => 'detailUrl',
+        'source'           => 'source',
+        'sourceId'         => 'sourceId',
+        'createdTime'      => 'createdTime',
+        'modifiedTime'     => 'modifiedTime',
+        'creatorId'        => 'creatorId',
+        'modifierId'       => 'modifierId',
+        'tenantId'         => 'tenantId',
+        'tenantType'       => 'tenantType',
+        'bizTag'           => 'bizTag',
+        'requestId'        => 'requestId',
+        'cardTypeId'       => 'cardTypeId',
+        'contentFieldList' => 'contentFieldList',
     ];
 
     public function validate()
@@ -237,6 +254,18 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (null !== $this->requestId) {
             $res['requestId'] = $this->requestId;
+        }
+        if (null !== $this->cardTypeId) {
+            $res['cardTypeId'] = $this->cardTypeId;
+        }
+        if (null !== $this->contentFieldList) {
+            $res['contentFieldList'] = [];
+            if (null !== $this->contentFieldList && \is_array($this->contentFieldList)) {
+                $n = 0;
+                foreach ($this->contentFieldList as $item) {
+                    $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -313,6 +342,18 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (isset($map['requestId'])) {
             $model->requestId = $map['requestId'];
+        }
+        if (isset($map['cardTypeId'])) {
+            $model->cardTypeId = $map['cardTypeId'];
+        }
+        if (isset($map['contentFieldList'])) {
+            if (!empty($map['contentFieldList'])) {
+                $model->contentFieldList = [];
+                $n                       = 0;
+                foreach ($map['contentFieldList'] as $item) {
+                    $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

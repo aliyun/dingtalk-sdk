@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\contentFieldList;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\detailUrl;
 use AlibabaCloud\Tea\Model;
 
@@ -66,21 +67,37 @@ class CreateTodoTaskRequest extends Model
     public $detailUrl;
 
     /**
+     * @description 待办卡片类型id
+     *
+     * @var string
+     */
+    public $cardTypeId;
+
+    /**
+     * @description 待办卡片内容区表单自定义字段列表
+     *
+     * @var contentFieldList[]
+     */
+    public $contentFieldList;
+
+    /**
      * @description 当前操作者id，需传用户的unionId
      *
      * @var string
      */
     public $operatorId;
     protected $_name = [
-        'sourceId'       => 'sourceId',
-        'subject'        => 'subject',
-        'creatorId'      => 'creatorId',
-        'description'    => 'description',
-        'dueTime'        => 'dueTime',
-        'executorIds'    => 'executorIds',
-        'participantIds' => 'participantIds',
-        'detailUrl'      => 'detailUrl',
-        'operatorId'     => 'operatorId',
+        'sourceId'         => 'sourceId',
+        'subject'          => 'subject',
+        'creatorId'        => 'creatorId',
+        'description'      => 'description',
+        'dueTime'          => 'dueTime',
+        'executorIds'      => 'executorIds',
+        'participantIds'   => 'participantIds',
+        'detailUrl'        => 'detailUrl',
+        'cardTypeId'       => 'cardTypeId',
+        'contentFieldList' => 'contentFieldList',
+        'operatorId'       => 'operatorId',
     ];
 
     public function validate()
@@ -113,6 +130,18 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->detailUrl) {
             $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
+        }
+        if (null !== $this->cardTypeId) {
+            $res['cardTypeId'] = $this->cardTypeId;
+        }
+        if (null !== $this->contentFieldList) {
+            $res['contentFieldList'] = [];
+            if (null !== $this->contentFieldList && \is_array($this->contentFieldList)) {
+                $n = 0;
+                foreach ($this->contentFieldList as $item) {
+                    $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -156,6 +185,18 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['detailUrl'])) {
             $model->detailUrl = detailUrl::fromMap($map['detailUrl']);
+        }
+        if (isset($map['cardTypeId'])) {
+            $model->cardTypeId = $map['cardTypeId'];
+        }
+        if (isset($map['contentFieldList'])) {
+            if (!empty($map['contentFieldList'])) {
+                $model->contentFieldList = [];
+                $n                       = 0;
+                foreach ($map['contentFieldList'] as $item) {
+                    $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
