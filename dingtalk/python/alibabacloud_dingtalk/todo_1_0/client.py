@@ -26,25 +26,25 @@ class Client(OpenApiClient):
     def get_todo_type_config(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTypeConfigHeaders()
-        return self.get_todo_type_config_with_options(union_id, type_id, headers, runtime)
+        return self.get_todo_type_config_with_options(union_id, card_type_id, headers, runtime)
 
     async def get_todo_type_config_async(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTypeConfigHeaders()
-        return await self.get_todo_type_config_with_options_async(union_id, type_id, headers, runtime)
+        return await self.get_todo_type_config_with_options_async(union_id, card_type_id, headers, runtime)
 
     def get_todo_type_config_with_options(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
         headers: dingtalktodo__1__0_models.GetTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
@@ -58,13 +58,13 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalktodo__1__0_models.GetTodoTypeConfigResponse(),
-            self.do_roarequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{type_id}', 'json', req, runtime)
+            self.do_roarequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{card_type_id}', 'json', req, runtime)
         )
 
     async def get_todo_type_config_with_options_async(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
         headers: dingtalktodo__1__0_models.GetTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
@@ -78,33 +78,33 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalktodo__1__0_models.GetTodoTypeConfigResponse(),
-            await self.do_roarequest_async('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{type_id}', 'json', req, runtime)
+            await self.do_roarequest_async('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{card_type_id}', 'json', req, runtime)
         )
 
     def update_todo_type_config(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTypeConfigRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders()
-        return self.update_todo_type_config_with_options(union_id, type_id, request, headers, runtime)
+        return self.update_todo_type_config_with_options(union_id, card_type_id, request, headers, runtime)
 
     async def update_todo_type_config_async(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTypeConfigRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders()
-        return await self.update_todo_type_config_with_options_async(union_id, type_id, request, headers, runtime)
+        return await self.update_todo_type_config_with_options_async(union_id, card_type_id, request, headers, runtime)
 
     def update_todo_type_config_with_options(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTypeConfigRequest,
         headers: dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
@@ -138,13 +138,13 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse(),
-            self.do_roarequest('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{type_id}', 'json', req, runtime)
+            self.do_roarequest('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{card_type_id}', 'json', req, runtime)
         )
 
     async def update_todo_type_config_with_options_async(
         self,
         union_id: str,
-        type_id: str,
+        card_type_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTypeConfigRequest,
         headers: dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
@@ -178,7 +178,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse(),
-            await self.do_roarequest_async('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{type_id}', 'json', req, runtime)
+            await self.do_roarequest_async('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{card_type_id}', 'json', req, runtime)
         )
 
     def get_todo_task(
