@@ -26,21 +26,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         }
 
 
-        public GetTodoTypeConfigResponse GetTodoTypeConfig(string unionId, string typeId)
+        public GetTodoTypeConfigResponse GetTodoTypeConfig(string unionId, string cardTypeId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTypeConfigHeaders headers = new GetTodoTypeConfigHeaders();
-            return GetTodoTypeConfigWithOptions(unionId, typeId, headers, runtime);
+            return GetTodoTypeConfigWithOptions(unionId, cardTypeId, headers, runtime);
         }
 
-        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigAsync(string unionId, string typeId)
+        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigAsync(string unionId, string cardTypeId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTypeConfigHeaders headers = new GetTodoTypeConfigHeaders();
-            return await GetTodoTypeConfigWithOptionsAsync(unionId, typeId, headers, runtime);
+            return await GetTodoTypeConfigWithOptionsAsync(unionId, cardTypeId, headers, runtime);
         }
 
-        public GetTodoTypeConfigResponse GetTodoTypeConfigWithOptions(string unionId, string typeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetTodoTypeConfigResponse GetTodoTypeConfigWithOptions(string unionId, string cardTypeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -55,10 +55,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetTodoTypeConfigResponse>(DoROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + typeId, "json", req, runtime));
+            return TeaModel.ToObject<GetTodoTypeConfigResponse>(DoROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
-        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigWithOptionsAsync(string unionId, string typeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigWithOptionsAsync(string unionId, string cardTypeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -73,24 +73,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetTodoTypeConfigResponse>(await DoROARequestAsync("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + typeId, "json", req, runtime));
+            return TeaModel.ToObject<GetTodoTypeConfigResponse>(await DoROARequestAsync("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
-        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfig(string unionId, string typeId, UpdateTodoTypeConfigRequest request)
+        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfig(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTypeConfigHeaders headers = new UpdateTodoTypeConfigHeaders();
-            return UpdateTodoTypeConfigWithOptions(unionId, typeId, request, headers, runtime);
+            return UpdateTodoTypeConfigWithOptions(unionId, cardTypeId, request, headers, runtime);
         }
 
-        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigAsync(string unionId, string typeId, UpdateTodoTypeConfigRequest request)
+        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigAsync(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTodoTypeConfigHeaders headers = new UpdateTodoTypeConfigHeaders();
-            return await UpdateTodoTypeConfigWithOptionsAsync(unionId, typeId, request, headers, runtime);
+            return await UpdateTodoTypeConfigWithOptionsAsync(unionId, cardTypeId, request, headers, runtime);
         }
 
-        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfigWithOptions(string unionId, string typeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateTodoTypeConfigResponse UpdateTodoTypeConfigWithOptions(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -138,10 +138,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateTodoTypeConfigResponse>(DoROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + typeId, "json", req, runtime));
+            return TeaModel.ToObject<UpdateTodoTypeConfigResponse>(DoROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
-        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigWithOptionsAsync(string unionId, string typeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigWithOptionsAsync(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -189,7 +189,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateTodoTypeConfigResponse>(await DoROARequestAsync("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + typeId, "json", req, runtime));
+            return TeaModel.ToObject<UpdateTodoTypeConfigResponse>(await DoROARequestAsync("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId, "json", req, runtime));
         }
 
         public GetTodoTaskResponse GetTodoTask(string unionId, string taskId)
