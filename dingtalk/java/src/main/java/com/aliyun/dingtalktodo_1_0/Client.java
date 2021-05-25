@@ -21,13 +21,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public GetTodoTypeConfigResponse getTodoTypeConfig(String unionId, String typeId) throws Exception {
+    public GetTodoTypeConfigResponse getTodoTypeConfig(String unionId, String cardTypeId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetTodoTypeConfigHeaders headers = new GetTodoTypeConfigHeaders();
-        return this.getTodoTypeConfigWithOptions(unionId, typeId, headers, runtime);
+        return this.getTodoTypeConfigWithOptions(unionId, cardTypeId, headers, runtime);
     }
 
-    public GetTodoTypeConfigResponse getTodoTypeConfigWithOptions(String unionId, String typeId, GetTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetTodoTypeConfigResponse getTodoTypeConfigWithOptions(String unionId, String cardTypeId, GetTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -40,16 +40,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + typeId + "", "json", req, runtime), new GetTodoTypeConfigResponse());
+        return TeaModel.toModel(this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId + "", "json", req, runtime), new GetTodoTypeConfigResponse());
     }
 
-    public UpdateTodoTypeConfigResponse updateTodoTypeConfig(String unionId, String typeId, UpdateTodoTypeConfigRequest request) throws Exception {
+    public UpdateTodoTypeConfigResponse updateTodoTypeConfig(String unionId, String cardTypeId, UpdateTodoTypeConfigRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateTodoTypeConfigHeaders headers = new UpdateTodoTypeConfigHeaders();
-        return this.updateTodoTypeConfigWithOptions(unionId, typeId, request, headers, runtime);
+        return this.updateTodoTypeConfigWithOptions(unionId, cardTypeId, request, headers, runtime);
     }
 
-    public UpdateTodoTypeConfigResponse updateTodoTypeConfigWithOptions(String unionId, String typeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
+    public UpdateTodoTypeConfigResponse updateTodoTypeConfigWithOptions(String unionId, String cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
@@ -95,7 +95,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + typeId + "", "json", req, runtime), new UpdateTodoTypeConfigResponse());
+        return TeaModel.toModel(this.doROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId + "", "json", req, runtime), new UpdateTodoTypeConfigResponse());
     }
 
     public GetTodoTaskResponse getTodoTask(String unionId, String taskId) throws Exception {

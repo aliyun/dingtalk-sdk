@@ -21,6 +21,146 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public QueryResourceManagementMembersResponse queryResourceManagementMembers(String resourceId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryResourceManagementMembersHeaders headers = new QueryResourceManagementMembersHeaders();
+        return this.queryResourceManagementMembersWithOptions(resourceId, headers, runtime);
+    }
+
+    public QueryResourceManagementMembersResponse queryResourceManagementMembersWithOptions(String resourceId, QueryResourceManagementMembersHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryResourceManagementMembers", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/resources/" + resourceId + "/managementMembers", "json", req, runtime), new QueryResourceManagementMembersResponse());
+    }
+
+    public QueryUserManagementResourcesResponse queryUserManagementResources(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryUserManagementResourcesHeaders headers = new QueryUserManagementResourcesHeaders();
+        return this.queryUserManagementResourcesWithOptions(userId, headers, runtime);
+    }
+
+    public QueryUserManagementResourcesResponse queryUserManagementResourcesWithOptions(String userId, QueryUserManagementResourcesHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/users/" + userId + "/managemementResources", "json", req, runtime), new QueryUserManagementResourcesResponse());
+    }
+
+    public ListManagementGroupsResponse listManagementGroups(ListManagementGroupsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListManagementGroupsHeaders headers = new ListManagementGroupsHeaders();
+        return this.listManagementGroupsWithOptions(request, headers, runtime);
+    }
+
+    public ListManagementGroupsResponse listManagementGroupsWithOptions(ListManagementGroupsRequest request, ListManagementGroupsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/managementGroups", "json", req, runtime), new ListManagementGroupsResponse());
+    }
+
+    public CreateManagementGroupResponse createManagementGroup(CreateManagementGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateManagementGroupHeaders headers = new CreateManagementGroupHeaders();
+        return this.createManagementGroupWithOptions(request, headers, runtime);
+    }
+
+    public CreateManagementGroupResponse createManagementGroupWithOptions(CreateManagementGroupRequest request, CreateManagementGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.groupName)) {
+            body.put("groupName", request.groupName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.scope))) {
+            body.put("scope", request.scope);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resourceIds)) {
+            body.put("resourceIds", request.resourceIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateManagementGroup", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/managementGroups", "json", req, runtime), new CreateManagementGroupResponse());
+    }
+
+    public DeleteManagementGroupResponse deleteManagementGroup(String groupId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeleteManagementGroupHeaders headers = new DeleteManagementGroupHeaders();
+        return this.deleteManagementGroupWithOptions(groupId, headers, runtime);
+    }
+
+    public DeleteManagementGroupResponse deleteManagementGroupWithOptions(String groupId, DeleteManagementGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteManagementGroup", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/managementGroups/" + groupId + "", "none", req, runtime), new DeleteManagementGroupResponse());
+    }
+
     public GetApplyInviteInfoResponse getApplyInviteInfo(GetApplyInviteInfoRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetApplyInviteInfoHeaders headers = new GetApplyInviteInfoHeaders();
@@ -71,9 +211,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("code", request.code);
         }
 
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        java.util.Map<String, String> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.body)) {
-            body.put("body", request.body);
+            body = request.body;
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
