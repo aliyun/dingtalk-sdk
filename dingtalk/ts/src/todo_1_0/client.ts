@@ -1175,13 +1175,13 @@ export default class Client extends OpenApi {
   }
 
 
-  async getTodoTypeConfig(unionId: string, typeId: string): Promise<GetTodoTypeConfigResponse> {
+  async getTodoTypeConfig(unionId: string, cardTypeId: string): Promise<GetTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTodoTypeConfigHeaders({ });
-    return await this.getTodoTypeConfigWithOptions(unionId, typeId, headers, runtime);
+    return await this.getTodoTypeConfigWithOptions(unionId, cardTypeId, headers, runtime);
   }
 
-  async getTodoTypeConfigWithOptions(unionId: string, typeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
+  async getTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1194,16 +1194,16 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetTodoTypeConfigResponse>(await this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/configs/types/${typeId}`, "json", req, runtime), new GetTodoTypeConfigResponse({}));
+    return $tea.cast<GetTodoTypeConfigResponse>(await this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`, "json", req, runtime), new GetTodoTypeConfigResponse({}));
   }
 
-  async updateTodoTypeConfig(unionId: string, typeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
+  async updateTodoTypeConfig(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTodoTypeConfigHeaders({ });
-    return await this.updateTodoTypeConfigWithOptions(unionId, typeId, request, headers, runtime);
+    return await this.updateTodoTypeConfigWithOptions(unionId, cardTypeId, request, headers, runtime);
   }
 
-  async updateTodoTypeConfigWithOptions(unionId: string, typeId: string, request: UpdateTodoTypeConfigRequest, headers: UpdateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTypeConfigResponse> {
+  async updateTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest, headers: UpdateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTypeConfigResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
@@ -1249,7 +1249,7 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTodoTypeConfigResponse>(await this.doROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", `/v1.0/todo/users/${unionId}/configs/types/${typeId}`, "json", req, runtime), new UpdateTodoTypeConfigResponse({}));
+    return $tea.cast<UpdateTodoTypeConfigResponse>(await this.doROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`, "json", req, runtime), new UpdateTodoTypeConfigResponse({}));
   }
 
   async getTodoTask(unionId: string, taskId: string): Promise<GetTodoTaskResponse> {
