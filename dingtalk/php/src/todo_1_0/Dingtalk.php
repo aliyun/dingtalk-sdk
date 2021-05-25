@@ -42,27 +42,27 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string $unionId
-     * @param string $typeId
+     * @param string $cardTypeId
      *
      * @return GetTodoTypeConfigResponse
      */
-    public function getTodoTypeConfig($unionId, $typeId)
+    public function getTodoTypeConfig($unionId, $cardTypeId)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetTodoTypeConfigHeaders([]);
 
-        return $this->getTodoTypeConfigWithOptions($unionId, $typeId, $headers, $runtime);
+        return $this->getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime);
     }
 
     /**
      * @param string                   $unionId
-     * @param string                   $typeId
+     * @param string                   $cardTypeId
      * @param GetTodoTypeConfigHeaders $headers
      * @param RuntimeOptions           $runtime
      *
      * @return GetTodoTypeConfigResponse
      */
-    public function getTodoTypeConfigWithOptions($unionId, $typeId, $headers, $runtime)
+    public function getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime)
     {
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -75,34 +75,34 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
 
-        return GetTodoTypeConfigResponse::fromMap($this->doROARequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $typeId . '', 'json', $req, $runtime));
+        return GetTodoTypeConfigResponse::fromMap($this->doROARequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '', 'json', $req, $runtime));
     }
 
     /**
      * @param string                      $unionId
-     * @param string                      $typeId
+     * @param string                      $cardTypeId
      * @param UpdateTodoTypeConfigRequest $request
      *
      * @return UpdateTodoTypeConfigResponse
      */
-    public function updateTodoTypeConfig($unionId, $typeId, $request)
+    public function updateTodoTypeConfig($unionId, $cardTypeId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new UpdateTodoTypeConfigHeaders([]);
 
-        return $this->updateTodoTypeConfigWithOptions($unionId, $typeId, $request, $headers, $runtime);
+        return $this->updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime);
     }
 
     /**
      * @param string                      $unionId
-     * @param string                      $typeId
+     * @param string                      $cardTypeId
      * @param UpdateTodoTypeConfigRequest $request
      * @param UpdateTodoTypeConfigHeaders $headers
      * @param RuntimeOptions              $runtime
      *
      * @return UpdateTodoTypeConfigResponse
      */
-    public function updateTodoTypeConfigWithOptions($unionId, $typeId, $request, $headers, $runtime)
+    public function updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -141,7 +141,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateTodoTypeConfigResponse::fromMap($this->doROARequest('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $typeId . '', 'json', $req, $runtime));
+        return UpdateTodoTypeConfigResponse::fromMap($this->doROARequest('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '', 'json', $req, $runtime));
     }
 
     /**
