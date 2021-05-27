@@ -51,6 +51,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public string Email { get; set; }
 
+        /// <summary>
+        /// 手机号对应的国家号
+        /// </summary>
+        [NameInMap("stateCode")]
+        [Validation(Required=false)]
+        public string StateCode { get; set; }
+
     }
 
 }

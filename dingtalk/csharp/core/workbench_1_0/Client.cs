@@ -26,6 +26,86 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
         }
 
 
+        public ListWorkBenchGroupResponse ListWorkBenchGroup(ListWorkBenchGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
+            return ListWorkBenchGroupWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupAsync(ListWorkBenchGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
+            return await ListWorkBenchGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListWorkBenchGroupResponse ListWorkBenchGroupWithOptions(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
+            {
+                query["opUnionId"] = request.OpUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EcologicalCorpId))
+            {
+                query["ecologicalCorpId"] = request.EcologicalCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupType))
+            {
+                query["groupType"] = request.GroupType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListWorkBenchGroupResponse>(DoROARequest("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/groups", "json", req, runtime));
+        }
+
+        public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupWithOptionsAsync(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
+            {
+                query["opUnionId"] = request.OpUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EcologicalCorpId))
+            {
+                query["ecologicalCorpId"] = request.EcologicalCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupType))
+            {
+                query["groupType"] = request.GroupType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListWorkBenchGroupResponse>(await DoROARequestAsync("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/groups", "json", req, runtime));
+        }
+
         public QueryComponentScopesResponse QueryComponentScopes(string componentId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

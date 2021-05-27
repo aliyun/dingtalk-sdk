@@ -12,9 +12,9 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         /// <summary>
         /// 创建人unionId
         /// </summary>
-        [NameInMap("creatorUnionId")]
+        [NameInMap("opUnionId")]
         [Validation(Required=false)]
-        public string CreatorUnionId { get; set; }
+        public string OpUnionId { get; set; }
 
         /// <summary>
         /// 关联组织corpId
