@@ -3,7 +3,7 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class CreateInnerAppRequest extends TeaModel {
+public class UpdateInnerAppRequest extends TeaModel {
     // 创建人unionId
     @NameInMap("opUnionId")
     public String opUnionId;
@@ -40,16 +40,12 @@ public class CreateInnerAppRequest extends TeaModel {
     @NameInMap("ipWhiteList")
     public java.util.List<String> ipWhiteList;
 
-    // 权限类型
-    @NameInMap("scopeType")
-    public String scopeType;
-
-    public static CreateInnerAppRequest build(java.util.Map<String, ?> map) throws Exception {
-        CreateInnerAppRequest self = new CreateInnerAppRequest();
+    public static UpdateInnerAppRequest build(java.util.Map<String, ?> map) throws Exception {
+        UpdateInnerAppRequest self = new UpdateInnerAppRequest();
         return TeaModel.build(map, self);
     }
 
-    public CreateInnerAppRequest setOpUnionId(String opUnionId) {
+    public UpdateInnerAppRequest setOpUnionId(String opUnionId) {
         this.opUnionId = opUnionId;
         return this;
     }
@@ -57,7 +53,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.opUnionId;
     }
 
-    public CreateInnerAppRequest setEcologicalCorpId(String ecologicalCorpId) {
+    public UpdateInnerAppRequest setEcologicalCorpId(String ecologicalCorpId) {
         this.ecologicalCorpId = ecologicalCorpId;
         return this;
     }
@@ -65,7 +61,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.ecologicalCorpId;
     }
 
-    public CreateInnerAppRequest setName(String name) {
+    public UpdateInnerAppRequest setName(String name) {
         this.name = name;
         return this;
     }
@@ -73,7 +69,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.name;
     }
 
-    public CreateInnerAppRequest setDesc(String desc) {
+    public UpdateInnerAppRequest setDesc(String desc) {
         this.desc = desc;
         return this;
     }
@@ -81,7 +77,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.desc;
     }
 
-    public CreateInnerAppRequest setIcon(String icon) {
+    public UpdateInnerAppRequest setIcon(String icon) {
         this.icon = icon;
         return this;
     }
@@ -89,7 +85,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.icon;
     }
 
-    public CreateInnerAppRequest setHomepageLink(String homepageLink) {
+    public UpdateInnerAppRequest setHomepageLink(String homepageLink) {
         this.homepageLink = homepageLink;
         return this;
     }
@@ -97,7 +93,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.homepageLink;
     }
 
-    public CreateInnerAppRequest setPcHomepageLink(String pcHomepageLink) {
+    public UpdateInnerAppRequest setPcHomepageLink(String pcHomepageLink) {
         this.pcHomepageLink = pcHomepageLink;
         return this;
     }
@@ -105,7 +101,7 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.pcHomepageLink;
     }
 
-    public CreateInnerAppRequest setOmpLink(String ompLink) {
+    public UpdateInnerAppRequest setOmpLink(String ompLink) {
         this.ompLink = ompLink;
         return this;
     }
@@ -113,20 +109,12 @@ public class CreateInnerAppRequest extends TeaModel {
         return this.ompLink;
     }
 
-    public CreateInnerAppRequest setIpWhiteList(java.util.List<String> ipWhiteList) {
+    public UpdateInnerAppRequest setIpWhiteList(java.util.List<String> ipWhiteList) {
         this.ipWhiteList = ipWhiteList;
         return this;
     }
     public java.util.List<String> getIpWhiteList() {
         return this.ipWhiteList;
-    }
-
-    public CreateInnerAppRequest setScopeType(String scopeType) {
-        this.scopeType = scopeType;
-        return this;
-    }
-    public String getScopeType() {
-        return this.scopeType;
     }
 
 }

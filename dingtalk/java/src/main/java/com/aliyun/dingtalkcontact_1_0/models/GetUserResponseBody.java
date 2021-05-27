@@ -28,6 +28,10 @@ public class GetUserResponseBody extends TeaModel {
     @NameInMap("email")
     public String email;
 
+    // 手机号对应的国家号
+    @NameInMap("stateCode")
+    public String stateCode;
+
     public static GetUserResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUserResponseBody self = new GetUserResponseBody();
         return TeaModel.build(map, self);
@@ -79,6 +83,14 @@ public class GetUserResponseBody extends TeaModel {
     }
     public String getEmail() {
         return this.email;
+    }
+
+    public GetUserResponseBody setStateCode(String stateCode) {
+        this.stateCode = stateCode;
+        return this;
+    }
+    public String getStateCode() {
+        return this.stateCode;
     }
 
 }

@@ -21,6 +21,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public ListWorkBenchGroupResponse listWorkBenchGroup(ListWorkBenchGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
+        return this.listWorkBenchGroupWithOptions(request, headers, runtime);
+    }
+
+    public ListWorkBenchGroupResponse listWorkBenchGroupWithOptions(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
+            query.put("opUnionId", request.opUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ecologicalCorpId)) {
+            query.put("ecologicalCorpId", request.ecologicalCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupType)) {
+            query.put("groupType", request.groupType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/groups", "json", req, runtime), new ListWorkBenchGroupResponse());
+    }
+
     public QueryComponentScopesResponse queryComponentScopes(String componentId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryComponentScopesHeaders headers = new QueryComponentScopesHeaders();
