@@ -7,6 +7,9 @@ namespace AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0;
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetDingPortalDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetDingPortalDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryComponentScopesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryComponentScopesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryShortcutScopesHeaders;
@@ -28,6 +31,54 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param ListWorkBenchGroupRequest $request
+     *
+     * @return ListWorkBenchGroupResponse
+     */
+    public function listWorkBenchGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListWorkBenchGroupHeaders([]);
+
+        return $this->listWorkBenchGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListWorkBenchGroupRequest $request
+     * @param ListWorkBenchGroupHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ListWorkBenchGroupResponse
+     */
+    public function listWorkBenchGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUnionId)) {
+            @$query['opUnionId'] = $request->opUnionId;
+        }
+        if (!Utils::isUnset($request->ecologicalCorpId)) {
+            @$query['ecologicalCorpId'] = $request->ecologicalCorpId;
+        }
+        if (!Utils::isUnset($request->groupType)) {
+            @$query['groupType'] = $request->groupType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListWorkBenchGroupResponse::fromMap($this->doROARequest('ListWorkBenchGroup', 'workbench_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workbench/groups', 'json', $req, $runtime));
     }
 
     /**

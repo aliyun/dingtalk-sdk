@@ -49,6 +49,13 @@ class GetUserResponseBody extends Model
      * @var string
      */
     public $email;
+
+    /**
+     * @description 手机号对应的国家号
+     *
+     * @var string
+     */
+    public $stateCode;
     protected $_name = [
         'nick'      => 'nick',
         'avatarUrl' => 'avatarUrl',
@@ -56,6 +63,7 @@ class GetUserResponseBody extends Model
         'openId'    => 'openId',
         'unionId'   => 'unionId',
         'email'     => 'email',
+        'stateCode' => 'stateCode',
     ];
 
     public function validate()
@@ -82,6 +90,9 @@ class GetUserResponseBody extends Model
         }
         if (null !== $this->email) {
             $res['email'] = $this->email;
+        }
+        if (null !== $this->stateCode) {
+            $res['stateCode'] = $this->stateCode;
         }
 
         return $res;
@@ -112,6 +123,9 @@ class GetUserResponseBody extends Model
         }
         if (isset($map['email'])) {
             $model->email = $map['email'];
+        }
+        if (isset($map['stateCode'])) {
+            $model->stateCode = $map['stateCode'];
         }
 
         return $model;

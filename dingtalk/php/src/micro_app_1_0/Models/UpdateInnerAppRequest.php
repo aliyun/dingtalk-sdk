@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CreateInnerAppRequest extends Model
+class UpdateInnerAppRequest extends Model
 {
     /**
      * @description 创建人unionId
@@ -70,13 +70,6 @@ class CreateInnerAppRequest extends Model
      * @var string[]
      */
     public $ipWhiteList;
-
-    /**
-     * @description 权限类型
-     *
-     * @var string
-     */
-    public $scopeType;
     protected $_name = [
         'opUnionId'        => 'opUnionId',
         'ecologicalCorpId' => 'ecologicalCorpId',
@@ -87,7 +80,6 @@ class CreateInnerAppRequest extends Model
         'pcHomepageLink'   => 'pcHomepageLink',
         'ompLink'          => 'ompLink',
         'ipWhiteList'      => 'ipWhiteList',
-        'scopeType'        => 'scopeType',
     ];
 
     public function validate()
@@ -124,9 +116,6 @@ class CreateInnerAppRequest extends Model
         if (null !== $this->ipWhiteList) {
             $res['ipWhiteList'] = $this->ipWhiteList;
         }
-        if (null !== $this->scopeType) {
-            $res['scopeType'] = $this->scopeType;
-        }
 
         return $res;
     }
@@ -134,7 +123,7 @@ class CreateInnerAppRequest extends Model
     /**
      * @param array $map
      *
-     * @return CreateInnerAppRequest
+     * @return UpdateInnerAppRequest
      */
     public static function fromMap($map = [])
     {
@@ -167,9 +156,6 @@ class CreateInnerAppRequest extends Model
             if (!empty($map['ipWhiteList'])) {
                 $model->ipWhiteList = $map['ipWhiteList'];
             }
-        }
-        if (isset($map['scopeType'])) {
-            $model->scopeType = $map['scopeType'];
         }
 
         return $model;

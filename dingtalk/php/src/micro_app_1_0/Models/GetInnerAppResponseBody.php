@@ -6,21 +6,14 @@ namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CreateInnerAppRequest extends Model
+class GetInnerAppResponseBody extends Model
 {
     /**
-     * @description 创建人unionId
+     * @description 应用id
      *
-     * @var string
+     * @var int
      */
-    public $opUnionId;
-
-    /**
-     * @description 关联组织corpId
-     *
-     * @var string
-     */
-    public $ecologicalCorpId;
+    public $agentId;
 
     /**
      * @description 应用名称
@@ -44,14 +37,14 @@ class CreateInnerAppRequest extends Model
     public $icon;
 
     /**
-     * @description 应用首页地址
+     * @description 应用移动端首页地址
      *
      * @var string
      */
     public $homepageLink;
 
     /**
-     * @description 应用PC端地址
+     * @description 应用PC端首页地址
      *
      * @var string
      */
@@ -65,29 +58,36 @@ class CreateInnerAppRequest extends Model
     public $ompLink;
 
     /**
-     * @description 服务器出口ip白名单
+     * @description 应用的appkey
+     *
+     * @var string
+     */
+    public $appKey;
+
+    /**
+     * @description 应用的secret
+     *
+     * @var string
+     */
+    public $appSecret;
+
+    /**
+     * @description 服务器出口ip
      *
      * @var string[]
      */
     public $ipWhiteList;
-
-    /**
-     * @description 权限类型
-     *
-     * @var string
-     */
-    public $scopeType;
     protected $_name = [
-        'opUnionId'        => 'opUnionId',
-        'ecologicalCorpId' => 'ecologicalCorpId',
-        'name'             => 'name',
-        'desc'             => 'desc',
-        'icon'             => 'icon',
-        'homepageLink'     => 'homepageLink',
-        'pcHomepageLink'   => 'pcHomepageLink',
-        'ompLink'          => 'ompLink',
-        'ipWhiteList'      => 'ipWhiteList',
-        'scopeType'        => 'scopeType',
+        'agentId'        => 'agentId',
+        'name'           => 'name',
+        'desc'           => 'desc',
+        'icon'           => 'icon',
+        'homepageLink'   => 'homepageLink',
+        'pcHomepageLink' => 'pcHomepageLink',
+        'ompLink'        => 'ompLink',
+        'appKey'         => 'appKey',
+        'appSecret'      => 'appSecret',
+        'ipWhiteList'    => 'ipWhiteList',
     ];
 
     public function validate()
@@ -97,11 +97,8 @@ class CreateInnerAppRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUnionId) {
-            $res['opUnionId'] = $this->opUnionId;
-        }
-        if (null !== $this->ecologicalCorpId) {
-            $res['ecologicalCorpId'] = $this->ecologicalCorpId;
+        if (null !== $this->agentId) {
+            $res['agentId'] = $this->agentId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -121,11 +118,14 @@ class CreateInnerAppRequest extends Model
         if (null !== $this->ompLink) {
             $res['ompLink'] = $this->ompLink;
         }
+        if (null !== $this->appKey) {
+            $res['appKey'] = $this->appKey;
+        }
+        if (null !== $this->appSecret) {
+            $res['appSecret'] = $this->appSecret;
+        }
         if (null !== $this->ipWhiteList) {
             $res['ipWhiteList'] = $this->ipWhiteList;
-        }
-        if (null !== $this->scopeType) {
-            $res['scopeType'] = $this->scopeType;
         }
 
         return $res;
@@ -134,16 +134,13 @@ class CreateInnerAppRequest extends Model
     /**
      * @param array $map
      *
-     * @return CreateInnerAppRequest
+     * @return GetInnerAppResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUnionId'])) {
-            $model->opUnionId = $map['opUnionId'];
-        }
-        if (isset($map['ecologicalCorpId'])) {
-            $model->ecologicalCorpId = $map['ecologicalCorpId'];
+        if (isset($map['agentId'])) {
+            $model->agentId = $map['agentId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
@@ -163,13 +160,16 @@ class CreateInnerAppRequest extends Model
         if (isset($map['ompLink'])) {
             $model->ompLink = $map['ompLink'];
         }
+        if (isset($map['appKey'])) {
+            $model->appKey = $map['appKey'];
+        }
+        if (isset($map['appSecret'])) {
+            $model->appSecret = $map['appSecret'];
+        }
         if (isset($map['ipWhiteList'])) {
             if (!empty($map['ipWhiteList'])) {
                 $model->ipWhiteList = $map['ipWhiteList'];
             }
-        }
-        if (isset($map['scopeType'])) {
-            $model->scopeType = $map['scopeType'];
         }
 
         return $model;
