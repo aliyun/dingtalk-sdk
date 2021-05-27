@@ -12,6 +12,7 @@ import * as dingmi_1_0 from './dingmi_1_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
+import * as esign_2_0 from './esign_2_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
@@ -44,6 +45,7 @@ export = {
   drive_1_0,
   edu_1_0,
   esign_1_0,
+  esign_2_0,
   exclusive_1_0,
   hrbrain_1_0,
   hrm_1_0,

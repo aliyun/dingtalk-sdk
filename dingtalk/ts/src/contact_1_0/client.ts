@@ -651,6 +651,7 @@ export class GetUserResponseBody extends $tea.Model {
   openId?: string;
   unionId?: string;
   email?: string;
+  stateCode?: string;
   static names(): { [key: string]: string } {
     return {
       nick: 'nick',
@@ -659,6 +660,7 @@ export class GetUserResponseBody extends $tea.Model {
       openId: 'openId',
       unionId: 'unionId',
       email: 'email',
+      stateCode: 'stateCode',
     };
   }
 
@@ -670,6 +672,7 @@ export class GetUserResponseBody extends $tea.Model {
       openId: 'string',
       unionId: 'string',
       email: 'string',
+      stateCode: 'string',
     };
   }
 

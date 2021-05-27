@@ -7,6 +7,94 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ListWorkBenchGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListWorkBenchGroupRequest extends $tea.Model {
+  opUnionId?: string;
+  ecologicalCorpId?: string;
+  groupType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUnionId: 'opUnionId',
+      ecologicalCorpId: 'ecologicalCorpId',
+      groupType: 'groupType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUnionId: 'string',
+      ecologicalCorpId: 'string',
+      groupType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListWorkBenchGroupResponseBody extends $tea.Model {
+  groupList?: ListWorkBenchGroupResponseBodyGroupList[];
+  static names(): { [key: string]: string } {
+    return {
+      groupList: 'groupList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupList: { 'type': 'array', 'itemType': ListWorkBenchGroupResponseBodyGroupList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListWorkBenchGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListWorkBenchGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListWorkBenchGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryComponentScopesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -277,6 +365,28 @@ export class GetDingPortalDetailResponse extends $tea.Model {
   }
 }
 
+export class ListWorkBenchGroupResponseBodyGroupList extends $tea.Model {
+  name?: string;
+  componentId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      componentId: 'componentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      componentId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDingPortalDetailResponseBodyPages extends $tea.Model {
   pageUuid?: string;
   pageName?: string;
@@ -323,6 +433,43 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async listWorkBenchGroup(request: ListWorkBenchGroupRequest): Promise<ListWorkBenchGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListWorkBenchGroupHeaders({ });
+    return await this.listWorkBenchGroupWithOptions(request, headers, runtime);
+  }
+
+  async listWorkBenchGroupWithOptions(request: ListWorkBenchGroupRequest, headers: ListWorkBenchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<ListWorkBenchGroupResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUnionId)) {
+      query["opUnionId"] = request.opUnionId;
+    }
+
+    if (!Util.isUnset(request.ecologicalCorpId)) {
+      query["ecologicalCorpId"] = request.ecologicalCorpId;
+    }
+
+    if (!Util.isUnset(request.groupType)) {
+      query["groupType"] = request.groupType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListWorkBenchGroupResponse>(await this.doROARequest("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/groups`, "json", req, runtime), new ListWorkBenchGroupResponse({}));
+  }
 
   async queryComponentScopes(componentId: string): Promise<QueryComponentScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
