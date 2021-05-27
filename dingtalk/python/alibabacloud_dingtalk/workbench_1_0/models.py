@@ -4,6 +4,186 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class ListWorkBenchGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListWorkBenchGroupRequest(TeaModel):
+    def __init__(
+        self,
+        op_union_id: str = None,
+        ecological_corp_id: str = None,
+        group_type: str = None,
+    ):
+        self.op_union_id = op_union_id
+        self.ecological_corp_id = ecological_corp_id
+        self.group_type = group_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_union_id is not None:
+            result['opUnionId'] = self.op_union_id
+        if self.ecological_corp_id is not None:
+            result['ecologicalCorpId'] = self.ecological_corp_id
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUnionId') is not None:
+            self.op_union_id = m.get('opUnionId')
+        if m.get('ecologicalCorpId') is not None:
+            self.ecological_corp_id = m.get('ecologicalCorpId')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        return self
+
+
+class ListWorkBenchGroupResponseBodyGroupList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        component_id: str = None,
+    ):
+        # 分组名称
+        self.name = name
+        # 分组id
+        self.component_id = component_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        return self
+
+
+class ListWorkBenchGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_list: List[ListWorkBenchGroupResponseBodyGroupList] = None,
+    ):
+        # 应用列表
+        self.group_list = group_list
+
+    def validate(self):
+        if self.group_list:
+            for k in self.group_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupList'] = []
+        if self.group_list is not None:
+            for k in self.group_list:
+                result['groupList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_list = []
+        if m.get('groupList') is not None:
+            for k in m.get('groupList'):
+                temp_model = ListWorkBenchGroupResponseBodyGroupList()
+                self.group_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListWorkBenchGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListWorkBenchGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListWorkBenchGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryComponentScopesHeaders(TeaModel):
     def __init__(
         self,

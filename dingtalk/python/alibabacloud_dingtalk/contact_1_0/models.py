@@ -1355,6 +1355,7 @@ class GetUserResponseBody(TeaModel):
         open_id: str = None,
         union_id: str = None,
         email: str = None,
+        state_code: str = None,
     ):
         # 昵称
         self.nick = nick
@@ -1368,6 +1369,8 @@ class GetUserResponseBody(TeaModel):
         self.union_id = union_id
         # 个人邮箱
         self.email = email
+        # 手机号对应的国家号
+        self.state_code = state_code
 
     def validate(self):
         pass
@@ -1390,6 +1393,8 @@ class GetUserResponseBody(TeaModel):
             result['unionId'] = self.union_id
         if self.email is not None:
             result['email'] = self.email
+        if self.state_code is not None:
+            result['stateCode'] = self.state_code
         return result
 
     def from_map(self, m: dict = None):
@@ -1406,6 +1411,8 @@ class GetUserResponseBody(TeaModel):
             self.union_id = m.get('unionId')
         if m.get('email') is not None:
             self.email = m.get('email')
+        if m.get('stateCode') is not None:
+            self.state_code = m.get('stateCode')
         return self
 
 

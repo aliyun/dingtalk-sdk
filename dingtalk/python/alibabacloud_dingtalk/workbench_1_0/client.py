@@ -23,6 +23,78 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def list_work_bench_group(
+        self,
+        request: dingtalkworkbench__1__0_models.ListWorkBenchGroupRequest,
+    ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders()
+        return self.list_work_bench_group_with_options(request, headers, runtime)
+
+    async def list_work_bench_group_async(
+        self,
+        request: dingtalkworkbench__1__0_models.ListWorkBenchGroupRequest,
+    ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders()
+        return await self.list_work_bench_group_with_options_async(request, headers, runtime)
+
+    def list_work_bench_group_with_options(
+        self,
+        request: dingtalkworkbench__1__0_models.ListWorkBenchGroupRequest,
+        headers: dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            query['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.ecological_corp_id):
+            query['ecologicalCorpId'] = request.ecological_corp_id
+        if not UtilClient.is_unset(request.group_type):
+            query['groupType'] = request.group_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse(),
+            self.do_roarequest('ListWorkBenchGroup', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/groups', 'json', req, runtime)
+        )
+
+    async def list_work_bench_group_with_options_async(
+        self,
+        request: dingtalkworkbench__1__0_models.ListWorkBenchGroupRequest,
+        headers: dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            query['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.ecological_corp_id):
+            query['ecologicalCorpId'] = request.ecological_corp_id
+        if not UtilClient.is_unset(request.group_type):
+            query['groupType'] = request.group_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse(),
+            await self.do_roarequest_async('ListWorkBenchGroup', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/groups', 'json', req, runtime)
+        )
+
     def query_component_scopes(
         self,
         component_id: str,
