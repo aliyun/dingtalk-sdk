@@ -46,6 +46,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vservice_group_1_0\\": "src/service_group_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vsmart_device_1_0\\": "src/smart_device_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtodo_1_0\\": "src/todo_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vtrade_1_0\\": "src/trade_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrajectory_1_0\\": "src/trajectory_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkbench_1_0\\": "src/workbench_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkrecord_1_0\\": "src/workrecord_1_0/"
