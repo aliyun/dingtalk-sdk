@@ -1,0 +1,1 @@
+module.exports = require('./dist').trade_1_0;
