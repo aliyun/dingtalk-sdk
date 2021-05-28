@@ -1,3 +1,6 @@
+/**
+ *
+ */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -6,9 +9,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
-    public class AddAppToWorkBenchGroupHeaders : TeaModel {
+    public class QueryTradeOrderHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

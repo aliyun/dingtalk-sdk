@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
-    public class AddAppToWorkBenchGroupHeaders : TeaModel {
+    public class DeleteAppRoleHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
