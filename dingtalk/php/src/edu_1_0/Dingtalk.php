@@ -31,6 +31,11 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteTeacherRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesHeaders;
@@ -120,6 +125,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDefaultChildResponse::fromMap($this->doROARequest('GetDefaultChild', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/defaultChildren', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOpenCoursesRequest $request
+     *
+     * @return GetOpenCoursesResponse
+     */
+    public function getOpenCourses($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOpenCoursesHeaders([]);
+
+        return $this->getOpenCoursesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOpenCoursesRequest $request
+     * @param GetOpenCoursesHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetOpenCoursesResponse
+     */
+    public function getOpenCoursesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOpenCoursesResponse::fromMap($this->doROARequest('GetOpenCourses', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/openCourses', 'json', $req, $runtime));
     }
 
     /**
@@ -628,6 +678,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateCustomDeptResponse::fromMap($this->doROARequest('CreateCustomDept', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/customDepts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $courseId
+     *
+     * @return GetOpenCourseDetailResponse
+     */
+    public function getOpenCourseDetail($courseId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOpenCourseDetailHeaders([]);
+
+        return $this->getOpenCourseDetailWithOptions($courseId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $courseId
+     * @param GetOpenCourseDetailHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetOpenCourseDetailResponse
+     */
+    public function getOpenCourseDetailWithOptions($courseId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetOpenCourseDetailResponse::fromMap($this->doROARequest('GetOpenCourseDetail', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/openCourse/' . $courseId . '', 'json', $req, $runtime));
     }
 
     /**

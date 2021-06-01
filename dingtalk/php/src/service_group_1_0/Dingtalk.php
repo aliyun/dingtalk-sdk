@@ -11,6 +11,12 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupResponse;
@@ -420,6 +426,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param BatchGetGroupSetConfigRequest $request
+     *
+     * @return BatchGetGroupSetConfigResponse
+     */
+    public function batchGetGroupSetConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchGetGroupSetConfigHeaders([]);
+
+        return $this->batchGetGroupSetConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchGetGroupSetConfigRequest $request
+     * @param BatchGetGroupSetConfigHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return BatchGetGroupSetConfigResponse
+     */
+    public function batchGetGroupSetConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->configKeys)) {
+            @$body['configKeys'] = $request->configKeys;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchGetGroupSetConfigResponse::fromMap($this->doROARequest('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryServiceGroupMessageReadStatusRequest $request
      *
      * @return QueryServiceGroupMessageReadStatusResponse
@@ -651,5 +717,65 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryGroupResponse::fromMap($this->doROARequest('QueryGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CloseHumanSessionRequest $request
+     *
+     * @return CloseHumanSessionResponse
+     */
+    public function closeHumanSession($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CloseHumanSessionHeaders([]);
+
+        return $this->closeHumanSessionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CloseHumanSessionRequest $request
+     * @param CloseHumanSessionHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CloseHumanSessionResponse
+     */
+    public function closeHumanSessionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->visitorUnionId)) {
+            @$body['visitorUnionId'] = $request->visitorUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CloseHumanSessionResponse::fromMap($this->doROARequest('CloseHumanSession', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/humanSessions/close', 'json', $req, $runtime));
     }
 }

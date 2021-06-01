@@ -8,6 +8,15 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\CreateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\CreateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\CreateTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\ExecuteActivityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\ExecuteActivityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\ExecuteActivityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListActionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListActionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListActionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListTicketHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListTicketRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListTicketResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -85,5 +94,192 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTicketResponse::fromMap($this->doROARequest('CreateTicket', 'customerService_1.0', 'HTTP', 'POST', 'AK', '/v1.0/customerService/tickets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $ticketId
+     * @param PageListActionRequest $request
+     *
+     * @return PageListActionResponse
+     */
+    public function pageListAction($ticketId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageListActionHeaders([]);
+
+        return $this->pageListActionWithOptions($ticketId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $ticketId
+     * @param PageListActionRequest $request
+     * @param PageListActionHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return PageListActionResponse
+     */
+    public function pageListActionWithOptions($ticketId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openInstanceId)) {
+            @$query['openInstanceId'] = $request->openInstanceId;
+        }
+        if (!Utils::isUnset($request->productionType)) {
+            @$query['productionType'] = $request->productionType;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return PageListActionResponse::fromMap($this->doROARequest('PageListAction', 'customerService_1.0', 'HTTP', 'GET', 'AK', '/v1.0/customerService/tickets/' . $ticketId . '/actions', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                 $ticketId
+     * @param ExecuteActivityRequest $request
+     *
+     * @return ExecuteActivityResponse
+     */
+    public function executeActivity($ticketId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExecuteActivityHeaders([]);
+
+        return $this->executeActivityWithOptions($ticketId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $ticketId
+     * @param ExecuteActivityRequest $request
+     * @param ExecuteActivityHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ExecuteActivityResponse
+     */
+    public function executeActivityWithOptions($ticketId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sourceId)) {
+            @$body['sourceId'] = $request->sourceId;
+        }
+        if (!Utils::isUnset($request->foreignId)) {
+            @$body['foreignId'] = $request->foreignId;
+        }
+        if (!Utils::isUnset($request->foreignName)) {
+            @$body['foreignName'] = $request->foreignName;
+        }
+        if (!Utils::isUnset($request->activityCode)) {
+            @$body['activityCode'] = $request->activityCode;
+        }
+        if (!Utils::isUnset($request->openInstanceId)) {
+            @$body['openInstanceId'] = $request->openInstanceId;
+        }
+        if (!Utils::isUnset($request->productionType)) {
+            @$body['productionType'] = $request->productionType;
+        }
+        if (!Utils::isUnset($request->properties)) {
+            @$body['properties'] = $request->properties;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ExecuteActivityResponse::fromMap($this->doROARequest('ExecuteActivity', 'customerService_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/customerService/tickets/' . $ticketId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PageListTicketRequest $request
+     *
+     * @return PageListTicketResponse
+     */
+    public function pageListTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageListTicketHeaders([]);
+
+        return $this->pageListTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PageListTicketRequest $request
+     * @param PageListTicketHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return PageListTicketResponse
+     */
+    public function pageListTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openInstanceId)) {
+            @$query['openInstanceId'] = $request->openInstanceId;
+        }
+        if (!Utils::isUnset($request->productionType)) {
+            @$query['productionType'] = $request->productionType;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$query['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->ticketId)) {
+            @$query['ticketId'] = $request->ticketId;
+        }
+        if (!Utils::isUnset($request->sourceId)) {
+            @$query['sourceId'] = $request->sourceId;
+        }
+        if (!Utils::isUnset($request->foreignId)) {
+            @$query['foreignId'] = $request->foreignId;
+        }
+        if (!Utils::isUnset($request->ticketStatus)) {
+            @$query['ticketStatus'] = $request->ticketStatus;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return PageListTicketResponse::fromMap($this->doROARequest('PageListTicket', 'customerService_1.0', 'HTTP', 'GET', 'AK', '/v1.0/customerService/tickets', 'json', $req, $runtime));
     }
 }

@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveResponse;
@@ -130,5 +133,61 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CheckWritePermissionRequest $request
+     *
+     * @return CheckWritePermissionResponse
+     */
+    public function checkWritePermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckWritePermissionHeaders([]);
+
+        return $this->checkWritePermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CheckWritePermissionRequest $request
+     * @param CheckWritePermissionHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return CheckWritePermissionResponse
+     */
+    public function checkWritePermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->resourceKey)) {
+            @$body['resourceKey'] = $request->resourceKey;
+        }
+        if (!Utils::isUnset($request->entityIds)) {
+            @$body['entityIds'] = $request->entityIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CheckWritePermissionResponse::fromMap($this->doROARequest('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/writePermissions/query', 'json', $req, $runtime));
     }
 }
