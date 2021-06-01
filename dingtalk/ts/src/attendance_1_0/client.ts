@@ -192,6 +192,100 @@ export class GetUserHolidaysResponse extends $tea.Model {
   }
 }
 
+export class CheckWritePermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionRequest extends $tea.Model {
+  corpId?: string;
+  opUserId?: string;
+  category?: string;
+  resourceKey?: string;
+  entityIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      opUserId: 'opUserId',
+      category: 'category',
+      resourceKey: 'resourceKey',
+      entityIds: 'entityIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      opUserId: 'string',
+      category: 'string',
+      resourceKey: 'string',
+      entityIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionResponseBody extends $tea.Model {
+  entityPermissionMap?: { [key: string]: boolean };
+  static names(): { [key: string]: string } {
+    return {
+      entityPermissionMap: 'entityPermissionMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      entityPermissionMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckWritePermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckWritePermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckWritePermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateApproveRequestPunchParam extends $tea.Model {
   punchTime?: number;
   positionId?: string;
@@ -367,6 +461,53 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+  }
+
+  async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckWritePermissionHeaders({ });
+    return await this.checkWritePermissionWithOptions(request, headers, runtime);
+  }
+
+  async checkWritePermissionWithOptions(request: CheckWritePermissionRequest, headers: CheckWritePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckWritePermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.resourceKey)) {
+      body["resourceKey"] = request.resourceKey;
+    }
+
+    if (!Util.isUnset(request.entityIds)) {
+      body["entityIds"] = request.entityIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CheckWritePermissionResponse>(await this.doROARequest("CheckWritePermission", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/writePermissions/query`, "json", req, runtime), new CheckWritePermissionResponse({}));
   }
 
 }

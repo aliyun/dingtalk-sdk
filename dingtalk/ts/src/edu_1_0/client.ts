@@ -151,6 +151,94 @@ export class GetDefaultChildResponse extends $tea.Model {
   }
 }
 
+export class GetOpenCoursesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCoursesRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCoursesResponseBody extends $tea.Model {
+  totalCount?: number;
+  courseList?: GetOpenCoursesResponseBodyCourseList[];
+  static names(): { [key: string]: string } {
+    return {
+      totalCount: 'totalCount',
+      courseList: 'courseList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      totalCount: 'number',
+      courseList: { 'type': 'array', 'itemType': GetOpenCoursesResponseBodyCourseList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCoursesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOpenCoursesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOpenCoursesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1005,6 +1093,93 @@ export class CreateCustomDeptResponse extends $tea.Model {
   }
 }
 
+export class GetOpenCourseDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCourseDetailResponseBody extends $tea.Model {
+  courseId?: string;
+  title?: string;
+  courseType?: number;
+  teacherName?: string;
+  coverUrl?: string;
+  startTime?: number;
+  teacherId?: string;
+  introduction?: string;
+  pushModel?: GetOpenCourseDetailResponseBodyPushModel;
+  static names(): { [key: string]: string } {
+    return {
+      courseId: 'courseId',
+      title: 'title',
+      courseType: 'courseType',
+      teacherName: 'teacherName',
+      coverUrl: 'coverUrl',
+      startTime: 'startTime',
+      teacherId: 'teacherId',
+      introduction: 'introduction',
+      pushModel: 'pushModel',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      courseId: 'string',
+      title: 'string',
+      courseType: 'number',
+      teacherName: 'string',
+      coverUrl: 'string',
+      startTime: 'number',
+      teacherId: 'string',
+      introduction: 'string',
+      pushModel: GetOpenCourseDetailResponseBodyPushModel,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCourseDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOpenCourseDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOpenCourseDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteStudentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1192,6 +1367,46 @@ export class GetDefaultChildResponseBodyBindStudents extends $tea.Model {
       staffId: 'string',
       classId: 'number',
       period: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCoursesResponseBodyCourseList extends $tea.Model {
+  courseId?: string;
+  title?: string;
+  feedType?: number;
+  teacherName?: string;
+  coverUrl?: string;
+  startTime?: number;
+  jumpUrl?: string;
+  teacherId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      courseId: 'courseId',
+      title: 'title',
+      feedType: 'feedType',
+      teacherName: 'teacherName',
+      coverUrl: 'coverUrl',
+      startTime: 'startTime',
+      jumpUrl: 'jumpUrl',
+      teacherId: 'teacherId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      courseId: 'string',
+      title: 'string',
+      feedType: 'number',
+      teacherName: 'string',
+      coverUrl: 'string',
+      startTime: 'number',
+      jumpUrl: 'string',
+      teacherId: 'string',
     };
   }
 
@@ -1615,6 +1830,28 @@ export class CreateCustomDeptResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetOpenCourseDetailResponseBodyPushModel extends $tea.Model {
+  pushOrgNameList?: string[];
+  pushRoleNameList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      pushOrgNameList: 'pushOrgNameList',
+      pushRoleNameList: 'pushRoleNameList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pushOrgNameList: { 'type': 'array', 'itemType': 'string' },
+      pushRoleNameList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetShareRoleMembersResponseBodyResult extends $tea.Model {
   corpId?: string;
   memberUserIdListInTrunkOrg?: string[];
@@ -1692,6 +1929,39 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetDefaultChildResponse>(await this.doROARequest("GetDefaultChild", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/defaultChildren`, "json", req, runtime), new GetDefaultChildResponse({}));
+  }
+
+  async getOpenCourses(request: GetOpenCoursesRequest): Promise<GetOpenCoursesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOpenCoursesHeaders({ });
+    return await this.getOpenCoursesWithOptions(request, headers, runtime);
+  }
+
+  async getOpenCoursesWithOptions(request: GetOpenCoursesRequest, headers: GetOpenCoursesHeaders, runtime: $Util.RuntimeOptions): Promise<GetOpenCoursesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOpenCoursesResponse>(await this.doROARequest("GetOpenCourses", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/openCourses`, "json", req, runtime), new GetOpenCoursesResponse({}));
   }
 
   async batchCreate(request: BatchCreateRequest): Promise<BatchCreateResponse> {
@@ -2118,6 +2388,28 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateCustomDeptResponse>(await this.doROARequest("CreateCustomDept", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/customDepts`, "json", req, runtime), new CreateCustomDeptResponse({}));
+  }
+
+  async getOpenCourseDetail(courseId: string): Promise<GetOpenCourseDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOpenCourseDetailHeaders({ });
+    return await this.getOpenCourseDetailWithOptions(courseId, headers, runtime);
+  }
+
+  async getOpenCourseDetailWithOptions(courseId: string, headers: GetOpenCourseDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetOpenCourseDetailResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetOpenCourseDetailResponse>(await this.doROARequest("GetOpenCourseDetail", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/openCourse/${courseId}`, "json", req, runtime), new GetOpenCourseDetailResponse({}));
   }
 
   async deleteStudent(classId: string, userId: string, request: DeleteStudentRequest): Promise<DeleteStudentResponse> {

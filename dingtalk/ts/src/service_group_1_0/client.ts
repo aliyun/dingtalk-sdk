@@ -591,6 +591,106 @@ export class AddKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class BatchGetGroupSetConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetGroupSetConfigRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  openGroupSetId?: string;
+  configKeys?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      openGroupSetId: 'openGroupSetId',
+      configKeys: 'configKeys',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      openGroupSetId: 'string',
+      configKeys: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetGroupSetConfigResponseBody extends $tea.Model {
+  groupSetConfigs?: BatchGetGroupSetConfigResponseBodyGroupSetConfigs[];
+  static names(): { [key: string]: string } {
+    return {
+      groupSetConfigs: 'groupSetConfigs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupSetConfigs: { 'type': 'array', 'itemType': BatchGetGroupSetConfigResponseBodyGroupSetConfigs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetGroupSetConfigResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchGetGroupSetConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchGetGroupSetConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryServiceGroupMessageReadStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -999,6 +1099,106 @@ export class QueryGroupResponse extends $tea.Model {
   }
 }
 
+export class CloseHumanSessionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseHumanSessionRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  openConversationId?: string;
+  visitorUnionId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      openConversationId: 'openConversationId',
+      visitorUnionId: 'visitorUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      openConversationId: 'string',
+      visitorUnionId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseHumanSessionResponseBody extends $tea.Model {
+  sessionId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      sessionId: 'sessionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sessionId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseHumanSessionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CloseHumanSessionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CloseHumanSessionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchGroupResponseBodyRecords extends $tea.Model {
   openConversationId?: string;
   groupName?: string;
@@ -1041,6 +1241,28 @@ export class SendServiceGroupMessageRequestBtns extends $tea.Model {
     return {
       actionURL: 'string',
       title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends $tea.Model {
+  configKey?: string;
+  configValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      configKey: 'configKey',
+      configValue: 'configValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      configKey: 'string',
+      configValue: 'string',
     };
   }
 
@@ -1476,6 +1698,59 @@ export default class Client extends OpenApi {
     return $tea.cast<AddKnowledgeResponse>(await this.doROARequest("AddKnowledge", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/knowledges`, "json", req, runtime), new AddKnowledgeResponse({}));
   }
 
+  async batchGetGroupSetConfig(request: BatchGetGroupSetConfigRequest): Promise<BatchGetGroupSetConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchGetGroupSetConfigHeaders({ });
+    return await this.batchGetGroupSetConfigWithOptions(request, headers, runtime);
+  }
+
+  async batchGetGroupSetConfigWithOptions(request: BatchGetGroupSetConfigRequest, headers: BatchGetGroupSetConfigHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetGroupSetConfigResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.configKeys)) {
+      body["configKeys"] = request.configKeys;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchGetGroupSetConfigResponse>(await this.doROARequest("BatchGetGroupSetConfig", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groupSetConfigs/batchQuery`, "json", req, runtime), new BatchGetGroupSetConfigResponse({}));
+  }
+
   async queryServiceGroupMessageReadStatus(request: QueryServiceGroupMessageReadStatusRequest): Promise<QueryServiceGroupMessageReadStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryServiceGroupMessageReadStatusHeaders({ });
@@ -1679,6 +1954,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryGroupResponse>(await this.doROARequest("QueryGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups/query`, "json", req, runtime), new QueryGroupResponse({}));
+  }
+
+  async closeHumanSession(request: CloseHumanSessionRequest): Promise<CloseHumanSessionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CloseHumanSessionHeaders({ });
+    return await this.closeHumanSessionWithOptions(request, headers, runtime);
+  }
+
+  async closeHumanSessionWithOptions(request: CloseHumanSessionRequest, headers: CloseHumanSessionHeaders, runtime: $Util.RuntimeOptions): Promise<CloseHumanSessionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.visitorUnionId)) {
+      body["visitorUnionId"] = request.visitorUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CloseHumanSessionResponse>(await this.doROARequest("CloseHumanSession", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/humanSessions/close`, "json", req, runtime), new CloseHumanSessionResponse({}));
   }
 
 }

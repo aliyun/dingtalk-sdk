@@ -110,6 +110,321 @@ export class CreateTicketResponse extends $tea.Model {
   }
 }
 
+export class PageListActionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListActionRequest extends $tea.Model {
+  openInstanceId?: string;
+  productionType?: number;
+  nextToken?: string;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openInstanceId: 'string',
+      productionType: 'number',
+      nextToken: 'string',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListActionResponseBody extends $tea.Model {
+  nextCursor?: number;
+  total?: number;
+  list?: PageListActionResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextCursor: 'nextCursor',
+      total: 'total',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextCursor: 'number',
+      total: 'number',
+      list: { 'type': 'array', 'itemType': PageListActionResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListActionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageListActionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageListActionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteActivityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteActivityRequest extends $tea.Model {
+  sourceId?: string;
+  foreignId?: string;
+  foreignName?: string;
+  activityCode?: string;
+  openInstanceId?: string;
+  productionType?: number;
+  properties?: ExecuteActivityRequestProperties[];
+  static names(): { [key: string]: string } {
+    return {
+      sourceId: 'sourceId',
+      foreignId: 'foreignId',
+      foreignName: 'foreignName',
+      activityCode: 'activityCode',
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      properties: 'properties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sourceId: 'string',
+      foreignId: 'string',
+      foreignName: 'string',
+      activityCode: 'string',
+      openInstanceId: 'string',
+      productionType: 'number',
+      properties: { 'type': 'array', 'itemType': ExecuteActivityRequestProperties },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteActivityResponseBody extends $tea.Model {
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteActivityResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ExecuteActivityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ExecuteActivityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListTicketRequest extends $tea.Model {
+  openInstanceId?: string;
+  productionType?: number;
+  templateId?: string;
+  ticketId?: string;
+  sourceId?: string;
+  foreignId?: string;
+  ticketStatus?: string;
+  startTime?: number;
+  endTime?: number;
+  nextToken?: string;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      templateId: 'templateId',
+      ticketId: 'ticketId',
+      sourceId: 'sourceId',
+      foreignId: 'foreignId',
+      ticketStatus: 'ticketStatus',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openInstanceId: 'string',
+      productionType: 'number',
+      templateId: 'string',
+      ticketId: 'string',
+      sourceId: 'string',
+      foreignId: 'string',
+      ticketStatus: 'string',
+      startTime: 'number',
+      endTime: 'number',
+      nextToken: 'string',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListTicketResponseBody extends $tea.Model {
+  nextCursor?: number;
+  total?: number;
+  list?: PageListTicketResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextCursor: 'nextCursor',
+      total: 'total',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextCursor: 'number',
+      total: 'number',
+      list: { 'type': 'array', 'itemType': PageListTicketResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageListTicketResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageListTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTicketRequestProperties extends $tea.Model {
   name?: string;
   value?: string;
@@ -124,6 +439,142 @@ export class CreateTicketRequestProperties extends $tea.Model {
     return {
       name: 'string',
       value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListActionResponseBodyListActionContent extends $tea.Model {
+  displayValue?: string;
+  displayName?: string;
+  name?: string;
+  value?: string;
+  valueType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayValue: 'displayValue',
+      displayName: 'displayName',
+      name: 'name',
+      value: 'value',
+      valueType: 'valueType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayValue: 'string',
+      displayName: 'string',
+      name: 'string',
+      value: 'string',
+      valueType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListActionResponseBodyList extends $tea.Model {
+  operatorId?: string;
+  operator?: string;
+  operatorRole?: string;
+  actionCode?: string;
+  actionContent?: PageListActionResponseBodyListActionContent[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      operator: 'operator',
+      operatorRole: 'operatorRole',
+      actionCode: 'actionCode',
+      actionContent: 'actionContent',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      operator: 'string',
+      operatorRole: 'string',
+      actionCode: 'string',
+      actionContent: { 'type': 'array', 'itemType': PageListActionResponseBodyListActionContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExecuteActivityRequestProperties extends $tea.Model {
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListTicketResponseBodyList extends $tea.Model {
+  foreignId?: string;
+  sourceId?: string;
+  foreignName?: string;
+  templateId?: string;
+  title?: string;
+  ticketId?: string;
+  ticketStatus?: string;
+  openInstanceId?: string;
+  productionType?: number;
+  gmtCreate?: string;
+  gmtModified?: string;
+  bizDataMap?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      foreignId: 'foreignId',
+      sourceId: 'sourceId',
+      foreignName: 'foreignName',
+      templateId: 'templateId',
+      title: 'title',
+      ticketId: 'ticketId',
+      ticketStatus: 'ticketStatus',
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      bizDataMap: 'bizDataMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      foreignId: 'string',
+      sourceId: 'string',
+      foreignName: 'string',
+      templateId: 'string',
+      title: 'string',
+      ticketId: 'string',
+      ticketStatus: 'string',
+      openInstanceId: 'string',
+      productionType: 'number',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      bizDataMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
@@ -200,6 +651,169 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new CreateTicketResponse({}));
+  }
+
+  async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageListActionHeaders({ });
+    return await this.pageListActionWithOptions(ticketId, request, headers, runtime);
+  }
+
+  async pageListActionWithOptions(ticketId: string, request: PageListActionRequest, headers: PageListActionHeaders, runtime: $Util.RuntimeOptions): Promise<PageListActionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openInstanceId)) {
+      query["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      query["productionType"] = request.productionType;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PageListActionResponse>(await this.doROARequest("PageListAction", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/tickets/${ticketId}/actions`, "json", req, runtime), new PageListActionResponse({}));
+  }
+
+  async executeActivity(ticketId: string, request: ExecuteActivityRequest): Promise<ExecuteActivityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExecuteActivityHeaders({ });
+    return await this.executeActivityWithOptions(ticketId, request, headers, runtime);
+  }
+
+  async executeActivityWithOptions(ticketId: string, request: ExecuteActivityRequest, headers: ExecuteActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteActivityResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sourceId)) {
+      body["sourceId"] = request.sourceId;
+    }
+
+    if (!Util.isUnset(request.foreignId)) {
+      body["foreignId"] = request.foreignId;
+    }
+
+    if (!Util.isUnset(request.foreignName)) {
+      body["foreignName"] = request.foreignName;
+    }
+
+    if (!Util.isUnset(request.activityCode)) {
+      body["activityCode"] = request.activityCode;
+    }
+
+    if (!Util.isUnset(request.openInstanceId)) {
+      body["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      body["productionType"] = request.productionType;
+    }
+
+    if (!Util.isUnset(request.properties)) {
+      body["properties"] = request.properties;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ExecuteActivityResponse>(await this.doROARequest("ExecuteActivity", "customerService_1.0", "HTTP", "PUT", "AK", `/v1.0/customerService/tickets/${ticketId}`, "json", req, runtime), new ExecuteActivityResponse({}));
+  }
+
+  async pageListTicket(request: PageListTicketRequest): Promise<PageListTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageListTicketHeaders({ });
+    return await this.pageListTicketWithOptions(request, headers, runtime);
+  }
+
+  async pageListTicketWithOptions(request: PageListTicketRequest, headers: PageListTicketHeaders, runtime: $Util.RuntimeOptions): Promise<PageListTicketResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openInstanceId)) {
+      query["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      query["productionType"] = request.productionType;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      query["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.ticketId)) {
+      query["ticketId"] = request.ticketId;
+    }
+
+    if (!Util.isUnset(request.sourceId)) {
+      query["sourceId"] = request.sourceId;
+    }
+
+    if (!Util.isUnset(request.foreignId)) {
+      query["foreignId"] = request.foreignId;
+    }
+
+    if (!Util.isUnset(request.ticketStatus)) {
+      query["ticketStatus"] = request.ticketStatus;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PageListTicketResponse>(await this.doROARequest("PageListTicket", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new PageListTicketResponse({}));
   }
 
 }
