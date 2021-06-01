@@ -456,3 +456,157 @@ class GetUserHolidaysResponse(TeaModel):
         return self
 
 
+class CheckWritePermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CheckWritePermissionRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        op_user_id: str = None,
+        category: str = None,
+        resource_key: str = None,
+        entity_ids: List[int] = None,
+    ):
+        # corpId
+        self.corp_id = corp_id
+        # opUserId
+        self.op_user_id = op_user_id
+        # category
+        self.category = category
+        # resourceKey
+        self.resource_key = resource_key
+        # entityIds
+        self.entity_ids = entity_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.category is not None:
+            result['category'] = self.category
+        if self.resource_key is not None:
+            result['resourceKey'] = self.resource_key
+        if self.entity_ids is not None:
+            result['entityIds'] = self.entity_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('resourceKey') is not None:
+            self.resource_key = m.get('resourceKey')
+        if m.get('entityIds') is not None:
+            self.entity_ids = m.get('entityIds')
+        return self
+
+
+class CheckWritePermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        entity_permission_map: Dict[str, bool] = None,
+    ):
+        # entityPermissionMap
+        self.entity_permission_map = entity_permission_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_permission_map is not None:
+            result['entityPermissionMap'] = self.entity_permission_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityPermissionMap') is not None:
+            self.entity_permission_map = m.get('entityPermissionMap')
+        return self
+
+
+class CheckWritePermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CheckWritePermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CheckWritePermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

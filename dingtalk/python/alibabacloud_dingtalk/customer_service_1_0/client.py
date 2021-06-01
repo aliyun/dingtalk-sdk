@@ -114,3 +114,279 @@ class Client(OpenApiClient):
             dingtalkcustomer_service__1__0_models.CreateTicketResponse(),
             await self.do_roarequest_async('CreateTicket', 'customerService_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/customerService/tickets', 'json', req, runtime)
         )
+
+    def page_list_action(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.PageListActionRequest,
+    ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.PageListActionHeaders()
+        return self.page_list_action_with_options(ticket_id, request, headers, runtime)
+
+    async def page_list_action_async(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.PageListActionRequest,
+    ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.PageListActionHeaders()
+        return await self.page_list_action_with_options_async(ticket_id, request, headers, runtime)
+
+    def page_list_action_with_options(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.PageListActionRequest,
+        headers: dingtalkcustomer_service__1__0_models.PageListActionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_instance_id):
+            query['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            query['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.PageListActionResponse(),
+            self.do_roarequest('PageListAction', 'customerService_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/customerService/tickets/{ticket_id}/actions', 'json', req, runtime)
+        )
+
+    async def page_list_action_with_options_async(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.PageListActionRequest,
+        headers: dingtalkcustomer_service__1__0_models.PageListActionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_instance_id):
+            query['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            query['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.PageListActionResponse(),
+            await self.do_roarequest_async('PageListAction', 'customerService_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/customerService/tickets/{ticket_id}/actions', 'json', req, runtime)
+        )
+
+    def execute_activity(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.ExecuteActivityRequest,
+    ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders()
+        return self.execute_activity_with_options(ticket_id, request, headers, runtime)
+
+    async def execute_activity_async(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.ExecuteActivityRequest,
+    ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders()
+        return await self.execute_activity_with_options_async(ticket_id, request, headers, runtime)
+
+    def execute_activity_with_options(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.ExecuteActivityRequest,
+        headers: dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.source_id):
+            body['sourceId'] = request.source_id
+        if not UtilClient.is_unset(request.foreign_id):
+            body['foreignId'] = request.foreign_id
+        if not UtilClient.is_unset(request.foreign_name):
+            body['foreignName'] = request.foreign_name
+        if not UtilClient.is_unset(request.activity_code):
+            body['activityCode'] = request.activity_code
+        if not UtilClient.is_unset(request.open_instance_id):
+            body['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            body['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.properties):
+            body['properties'] = request.properties
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.ExecuteActivityResponse(),
+            self.do_roarequest('ExecuteActivity', 'customerService_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/customerService/tickets/{ticket_id}', 'json', req, runtime)
+        )
+
+    async def execute_activity_with_options_async(
+        self,
+        ticket_id: str,
+        request: dingtalkcustomer_service__1__0_models.ExecuteActivityRequest,
+        headers: dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.source_id):
+            body['sourceId'] = request.source_id
+        if not UtilClient.is_unset(request.foreign_id):
+            body['foreignId'] = request.foreign_id
+        if not UtilClient.is_unset(request.foreign_name):
+            body['foreignName'] = request.foreign_name
+        if not UtilClient.is_unset(request.activity_code):
+            body['activityCode'] = request.activity_code
+        if not UtilClient.is_unset(request.open_instance_id):
+            body['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            body['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.properties):
+            body['properties'] = request.properties
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.ExecuteActivityResponse(),
+            await self.do_roarequest_async('ExecuteActivity', 'customerService_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/customerService/tickets/{ticket_id}', 'json', req, runtime)
+        )
+
+    def page_list_ticket(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListTicketRequest,
+    ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.PageListTicketHeaders()
+        return self.page_list_ticket_with_options(request, headers, runtime)
+
+    async def page_list_ticket_async(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListTicketRequest,
+    ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.PageListTicketHeaders()
+        return await self.page_list_ticket_with_options_async(request, headers, runtime)
+
+    def page_list_ticket_with_options(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListTicketRequest,
+        headers: dingtalkcustomer_service__1__0_models.PageListTicketHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_instance_id):
+            query['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            query['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.ticket_id):
+            query['ticketId'] = request.ticket_id
+        if not UtilClient.is_unset(request.source_id):
+            query['sourceId'] = request.source_id
+        if not UtilClient.is_unset(request.foreign_id):
+            query['foreignId'] = request.foreign_id
+        if not UtilClient.is_unset(request.ticket_status):
+            query['ticketStatus'] = request.ticket_status
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.PageListTicketResponse(),
+            self.do_roarequest('PageListTicket', 'customerService_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/customerService/tickets', 'json', req, runtime)
+        )
+
+    async def page_list_ticket_with_options_async(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListTicketRequest,
+        headers: dingtalkcustomer_service__1__0_models.PageListTicketHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_instance_id):
+            query['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            query['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.ticket_id):
+            query['ticketId'] = request.ticket_id
+        if not UtilClient.is_unset(request.source_id):
+            query['sourceId'] = request.source_id
+        if not UtilClient.is_unset(request.foreign_id):
+            query['foreignId'] = request.foreign_id
+        if not UtilClient.is_unset(request.ticket_status):
+            query['ticketStatus'] = request.ticket_status
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.PageListTicketResponse(),
+            await self.do_roarequest_async('PageListTicket', 'customerService_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/customerService/tickets', 'json', req, runtime)
+        )

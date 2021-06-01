@@ -178,3 +178,87 @@ class Client(OpenApiClient):
             dingtalkattendance__1__0_models.GetUserHolidaysResponse(),
             await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
+
+    def check_write_permission(
+        self,
+        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
+    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.CheckWritePermissionHeaders()
+        return self.check_write_permission_with_options(request, headers, runtime)
+
+    async def check_write_permission_async(
+        self,
+        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
+    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.CheckWritePermissionHeaders()
+        return await self.check_write_permission_with_options_async(request, headers, runtime)
+
+    def check_write_permission_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
+        headers: dingtalkattendance__1__0_models.CheckWritePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.resource_key):
+            body['resourceKey'] = request.resource_key
+        if not UtilClient.is_unset(request.entity_ids):
+            body['entityIds'] = request.entity_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CheckWritePermissionResponse(),
+            self.do_roarequest('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/writePermissions/query', 'json', req, runtime)
+        )
+
+    async def check_write_permission_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
+        headers: dingtalkattendance__1__0_models.CheckWritePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.resource_key):
+            body['resourceKey'] = request.resource_key
+        if not UtilClient.is_unset(request.entity_ids):
+            body['entityIds'] = request.entity_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CheckWritePermissionResponse(),
+            await self.do_roarequest_async('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/writePermissions/query', 'json', req, runtime)
+        )

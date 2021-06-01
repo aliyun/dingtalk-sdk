@@ -44,8 +44,11 @@ class ListWorkBenchGroupRequest(TeaModel):
         ecological_corp_id: str = None,
         group_type: str = None,
     ):
+        # 操作人unionId
         self.op_union_id = op_union_id
+        # 合作空间corpId
         self.ecological_corp_id = ecological_corp_id
+        # WORK_ALL
         self.group_type = group_type
 
     def validate(self):

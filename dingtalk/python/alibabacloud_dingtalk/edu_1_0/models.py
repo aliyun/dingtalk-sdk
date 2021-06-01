@@ -330,6 +330,230 @@ class GetDefaultChildResponse(TeaModel):
         return self
 
 
+class GetOpenCoursesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOpenCoursesRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 分页起始, 起始值为0
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class GetOpenCoursesResponseBodyCourseList(TeaModel):
+    def __init__(
+        self,
+        course_id: str = None,
+        title: str = None,
+        feed_type: int = None,
+        teacher_name: str = None,
+        cover_url: str = None,
+        start_time: int = None,
+        jump_url: str = None,
+        teacher_id: str = None,
+    ):
+        # 课程id
+        self.course_id = course_id
+        # 课程标题
+        self.title = title
+        # 课程类型: 0-直播 2-视频内容
+        self.feed_type = feed_type
+        # 老师名称
+        self.teacher_name = teacher_name
+        # 封面图片地址
+        self.cover_url = cover_url
+        # 课程开始时间
+        self.start_time = start_time
+        # 课程观看地址
+        self.jump_url = jump_url
+        # 老师的userId
+        self.teacher_id = teacher_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.course_id is not None:
+            result['courseId'] = self.course_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.feed_type is not None:
+            result['feedType'] = self.feed_type
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.jump_url is not None:
+            result['jumpUrl'] = self.jump_url
+        if self.teacher_id is not None:
+            result['teacherId'] = self.teacher_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('courseId') is not None:
+            self.course_id = m.get('courseId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('feedType') is not None:
+            self.feed_type = m.get('feedType')
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('jumpUrl') is not None:
+            self.jump_url = m.get('jumpUrl')
+        if m.get('teacherId') is not None:
+            self.teacher_id = m.get('teacherId')
+        return self
+
+
+class GetOpenCoursesResponseBody(TeaModel):
+    def __init__(
+        self,
+        total_count: int = None,
+        course_list: List[GetOpenCoursesResponseBodyCourseList] = None,
+    ):
+        # 总记录数
+        self.total_count = total_count
+        self.course_list = course_list
+
+    def validate(self):
+        if self.course_list:
+            for k in self.course_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        result['courseList'] = []
+        if self.course_list is not None:
+            for k in self.course_list:
+                result['courseList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        self.course_list = []
+        if m.get('courseList') is not None:
+            for k in m.get('courseList'):
+                temp_model = GetOpenCoursesResponseBodyCourseList()
+                self.course_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetOpenCoursesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOpenCoursesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOpenCoursesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchCreateHeaders(TeaModel):
     def __init__(
         self,
@@ -2519,6 +2743,197 @@ class CreateCustomDeptResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateCustomDeptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetOpenCourseDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOpenCourseDetailResponseBodyPushModel(TeaModel):
+    def __init__(
+        self,
+        push_org_name_list: List[str] = None,
+        push_role_name_list: List[str] = None,
+    ):
+        # 参与学校的名称列表
+        self.push_org_name_list = push_org_name_list
+        # 参与角色的名称列表
+        self.push_role_name_list = push_role_name_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.push_org_name_list is not None:
+            result['pushOrgNameList'] = self.push_org_name_list
+        if self.push_role_name_list is not None:
+            result['pushRoleNameList'] = self.push_role_name_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pushOrgNameList') is not None:
+            self.push_org_name_list = m.get('pushOrgNameList')
+        if m.get('pushRoleNameList') is not None:
+            self.push_role_name_list = m.get('pushRoleNameList')
+        return self
+
+
+class GetOpenCourseDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        course_id: str = None,
+        title: str = None,
+        course_type: int = None,
+        teacher_name: str = None,
+        cover_url: str = None,
+        start_time: int = None,
+        teacher_id: str = None,
+        introduction: str = None,
+        push_model: GetOpenCourseDetailResponseBodyPushModel = None,
+    ):
+        # 课程id
+        self.course_id = course_id
+        # 课程标题
+        self.title = title
+        # 课程类型: 0-直播 2-视频内容
+        self.course_type = course_type
+        # 老师名称
+        self.teacher_name = teacher_name
+        # 封面图片地址
+        self.cover_url = cover_url
+        # 课程开始时间
+        self.start_time = start_time
+        # 老师的userId
+        self.teacher_id = teacher_id
+        # 课程介绍
+        self.introduction = introduction
+        # 发布详情model
+        self.push_model = push_model
+
+    def validate(self):
+        if self.push_model:
+            self.push_model.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.course_id is not None:
+            result['courseId'] = self.course_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.course_type is not None:
+            result['courseType'] = self.course_type
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.teacher_id is not None:
+            result['teacherId'] = self.teacher_id
+        if self.introduction is not None:
+            result['introduction'] = self.introduction
+        if self.push_model is not None:
+            result['pushModel'] = self.push_model.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('courseId') is not None:
+            self.course_id = m.get('courseId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('courseType') is not None:
+            self.course_type = m.get('courseType')
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('teacherId') is not None:
+            self.teacher_id = m.get('teacherId')
+        if m.get('introduction') is not None:
+            self.introduction = m.get('introduction')
+        if m.get('pushModel') is not None:
+            temp_model = GetOpenCourseDetailResponseBodyPushModel()
+            self.push_model = temp_model.from_map(m['pushModel'])
+        return self
+
+
+class GetOpenCourseDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOpenCourseDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOpenCourseDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
