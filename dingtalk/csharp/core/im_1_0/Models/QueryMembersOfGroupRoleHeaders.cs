@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class SendInteractiveCardHeaders : TeaModel {
+    public class QueryMembersOfGroupRoleHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
