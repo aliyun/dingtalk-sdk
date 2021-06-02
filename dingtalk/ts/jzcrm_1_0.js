@@ -1,0 +1,1 @@
+module.exports = require('./dist').jzcrm_1_0;

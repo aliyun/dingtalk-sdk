@@ -17,6 +17,7 @@ import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
+import * as jzcrm_1_0 from './jzcrm_1_0/client';
 import * as live_1_0 from './live_1_0/client';
 import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
@@ -51,6 +52,7 @@ export = {
   hrbrain_1_0,
   hrm_1_0,
   im_1_0,
+  jzcrm_1_0,
   live_1_0,
   micro_app_1_0,
   oauth2_1_0,

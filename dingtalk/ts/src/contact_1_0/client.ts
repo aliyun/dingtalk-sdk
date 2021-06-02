@@ -315,6 +315,75 @@ export class CreateManagementGroupResponse extends $tea.Model {
   }
 }
 
+export class UpdateManagementGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateManagementGroupRequest extends $tea.Model {
+  groupName?: string;
+  members?: UpdateManagementGroupRequestMembers[];
+  scope?: UpdateManagementGroupRequestScope;
+  resourceIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      groupName: 'groupName',
+      members: 'members',
+      scope: 'scope',
+      resourceIds: 'resourceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupName: 'string',
+      members: { 'type': 'array', 'itemType': UpdateManagementGroupRequestMembers },
+      scope: UpdateManagementGroupRequestScope,
+      resourceIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateManagementGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteManagementGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -844,6 +913,50 @@ export class CreateManagementGroupRequestScope extends $tea.Model {
   }
 }
 
+export class UpdateManagementGroupRequestMembers extends $tea.Model {
+  memberType?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberType: 'memberType',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberType: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateManagementGroupRequestScope extends $tea.Model {
+  scopeType?: number;
+  deptIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      scopeType: 'scopeType',
+      deptIds: 'deptIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeType: 'number',
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetBranchAuthDataResponseBodyResult extends $tea.Model {
   fieldCode?: string;
   fieldName?: string;
@@ -998,6 +1111,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateManagementGroupResponse>(await this.doROARequest("CreateManagementGroup", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new CreateManagementGroupResponse({}));
+  }
+
+  async updateManagementGroup(groupId: string, request: UpdateManagementGroupRequest): Promise<UpdateManagementGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateManagementGroupHeaders({ });
+    return await this.updateManagementGroupWithOptions(groupId, request, headers, runtime);
+  }
+
+  async updateManagementGroupWithOptions(groupId: string, request: UpdateManagementGroupRequest, headers: UpdateManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateManagementGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.scope))) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.resourceIds)) {
+      body["resourceIds"] = request.resourceIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateManagementGroupResponse>(await this.doROARequest("UpdateManagementGroup", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/managementGroups/${groupId}`, "none", req, runtime), new UpdateManagementGroupResponse({}));
   }
 
   async deleteManagementGroup(groupId: string): Promise<DeleteManagementGroupResponse> {
