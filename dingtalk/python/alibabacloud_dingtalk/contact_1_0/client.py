@@ -275,6 +275,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/managementGroups', 'json', req, runtime)
         )
 
+    def update_management_group(
+        self,
+        group_id: str,
+        request: dingtalkcontact__1__0_models.UpdateManagementGroupRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateManagementGroupHeaders()
+        return self.update_management_group_with_options(group_id, request, headers, runtime)
+
+    async def update_management_group_async(
+        self,
+        group_id: str,
+        request: dingtalkcontact__1__0_models.UpdateManagementGroupRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateManagementGroupHeaders()
+        return await self.update_management_group_with_options_async(group_id, request, headers, runtime)
+
+    def update_management_group_with_options(
+        self,
+        group_id: str,
+        request: dingtalkcontact__1__0_models.UpdateManagementGroupRequest,
+        headers: dingtalkcontact__1__0_models.UpdateManagementGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.resource_ids):
+            body['resourceIds'] = request.resource_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateManagementGroupResponse(),
+            self.do_roarequest('UpdateManagementGroup', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/managementGroups/{group_id}', 'none', req, runtime)
+        )
+
+    async def update_management_group_with_options_async(
+        self,
+        group_id: str,
+        request: dingtalkcontact__1__0_models.UpdateManagementGroupRequest,
+        headers: dingtalkcontact__1__0_models.UpdateManagementGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.resource_ids):
+            body['resourceIds'] = request.resource_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateManagementGroupResponse(),
+            await self.do_roarequest_async('UpdateManagementGroup', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/managementGroups/{group_id}', 'none', req, runtime)
+        )
+
     def delete_management_group(
         self,
         group_id: str,

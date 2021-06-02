@@ -762,6 +762,195 @@ class CreateManagementGroupResponse(TeaModel):
         return self
 
 
+class UpdateManagementGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateManagementGroupRequestMembers(TeaModel):
+    def __init__(
+        self,
+        member_type: str = None,
+        member_id: str = None,
+    ):
+        # 成员类型
+        self.member_type = member_type
+        # 成员id
+        self.member_id = member_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        return self
+
+
+class UpdateManagementGroupRequestScope(TeaModel):
+    def __init__(
+        self,
+        scope_type: int = None,
+        dept_ids: List[int] = None,
+    ):
+        # 范围类型
+        self.scope_type = scope_type
+        # 部门列表，只在scopeType=3 生效
+        self.dept_ids = dept_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scope_type is not None:
+            result['scopeType'] = self.scope_type
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scopeType') is not None:
+            self.scope_type = m.get('scopeType')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        return self
+
+
+class UpdateManagementGroupRequest(TeaModel):
+    def __init__(
+        self,
+        group_name: str = None,
+        members: List[UpdateManagementGroupRequestMembers] = None,
+        scope: UpdateManagementGroupRequestScope = None,
+        resource_ids: List[str] = None,
+    ):
+        # 管理组名称
+        self.group_name = group_name
+        # 管理组成员
+        self.members = members
+        self.scope = scope
+        # 资源列表
+        self.resource_ids = resource_ids
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+        if self.scope:
+            self.scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.scope is not None:
+            result['scope'] = self.scope.to_map()
+        if self.resource_ids is not None:
+            result['resourceIds'] = self.resource_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = UpdateManagementGroupRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('scope') is not None:
+            temp_model = UpdateManagementGroupRequestScope()
+            self.scope = temp_model.from_map(m['scope'])
+        if m.get('resourceIds') is not None:
+            self.resource_ids = m.get('resourceIds')
+        return self
+
+
+class UpdateManagementGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class DeleteManagementGroupHeaders(TeaModel):
     def __init__(
         self,
