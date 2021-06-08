@@ -14,8 +14,16 @@ class RegisterCustomAppRoleResponseBody extends Model
      * @var int
      */
     public $roleId;
+
+    /**
+     * @description 角色版本号
+     *
+     * @var int
+     */
+    public $scopeVersion;
     protected $_name = [
-        'roleId' => 'roleId',
+        'roleId'       => 'roleId',
+        'scopeVersion' => 'scopeVersion',
     ];
 
     public function validate()
@@ -27,6 +35,9 @@ class RegisterCustomAppRoleResponseBody extends Model
         $res = [];
         if (null !== $this->roleId) {
             $res['roleId'] = $this->roleId;
+        }
+        if (null !== $this->scopeVersion) {
+            $res['scopeVersion'] = $this->scopeVersion;
         }
 
         return $res;
@@ -42,6 +53,9 @@ class RegisterCustomAppRoleResponseBody extends Model
         $model = new self();
         if (isset($map['roleId'])) {
             $model->roleId = $map['roleId'];
+        }
+        if (isset($map['scopeVersion'])) {
+            $model->scopeVersion = $map['scopeVersion'];
         }
 
         return $model;

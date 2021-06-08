@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckWritePermissionResponse;
@@ -85,6 +88,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateApproveResponse::fromMap($this->doROARequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/approves', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CheckClosingAccountRequest $request
+     *
+     * @return CheckClosingAccountResponse
+     */
+    public function checkClosingAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckClosingAccountHeaders([]);
+
+        return $this->checkClosingAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CheckClosingAccountRequest $request
+     * @param CheckClosingAccountHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CheckClosingAccountResponse
+     */
+    public function checkClosingAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->userTimeRange)) {
+            @$body['userTimeRange'] = $request->userTimeRange;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CheckClosingAccountResponse::fromMap($this->doROARequest('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/closingAccounts/status/query', 'json', $req, $runtime));
     }
 
     /**

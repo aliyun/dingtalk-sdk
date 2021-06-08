@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\ExecuteActivityRespon
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListActionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListActionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListActionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListRobotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models\PageListTicketResponse;
@@ -94,6 +97,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTicketResponse::fromMap($this->doROARequest('CreateTicket', 'customerService_1.0', 'HTTP', 'POST', 'AK', '/v1.0/customerService/tickets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PageListRobotRequest $request
+     *
+     * @return PageListRobotResponse
+     */
+    public function pageListRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageListRobotHeaders([]);
+
+        return $this->pageListRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PageListRobotRequest $request
+     * @param PageListRobotHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return PageListRobotResponse
+     */
+    public function pageListRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->openInstanceId)) {
+            @$query['openInstanceId'] = $request->openInstanceId;
+        }
+        if (!Utils::isUnset($request->productionType)) {
+            @$query['productionType'] = $request->productionType;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return PageListRobotResponse::fromMap($this->doROARequest('PageListRobot', 'customerService_1.0', 'HTTP', 'GET', 'AK', '/v1.0/customerService/robots', 'json', $req, $runtime));
     }
 
     /**
