@@ -4,6 +4,264 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class GetGroupActiveInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGroupActiveInfoRequest(TeaModel):
+    def __init__(
+        self,
+        stat_date: str = None,
+        ding_group_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 统计日期
+        self.stat_date = stat_date
+        # 钉钉群组id
+        self.ding_group_id = ding_group_id
+        # 分页起始页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stat_date is not None:
+            result['statDate'] = self.stat_date
+        if self.ding_group_id is not None:
+            result['dingGroupId'] = self.ding_group_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('statDate') is not None:
+            self.stat_date = m.get('statDate')
+        if m.get('dingGroupId') is not None:
+            self.ding_group_id = m.get('dingGroupId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class GetGroupActiveInfoResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        stat_date: str = None,
+        ding_group_id: str = None,
+        group_create_time: str = None,
+        group_create_user_id: str = None,
+        group_create_user_name: str = None,
+        group_name: str = None,
+        group_type: int = None,
+        group_user_cnt_1d: int = None,
+        send_message_user_cnt_1d: int = None,
+        send_message_cnt_1d: int = None,
+        open_conv_uv_1d: int = None,
+    ):
+        # 统计时间
+        self.stat_date = stat_date
+        # 群组id
+        self.ding_group_id = ding_group_id
+        # 群组创建时间
+        self.group_create_time = group_create_time
+        # 群组创建用户id
+        self.group_create_user_id = group_create_user_id
+        # 群组创建用户姓名
+        self.group_create_user_name = group_create_user_name
+        # 群名称
+        self.group_name = group_name
+        # 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+        self.group_type = group_type
+        # 最近1天群人数
+        self.group_user_cnt_1d = group_user_cnt_1d
+        # 最近1天发消息人数
+        self.send_message_user_cnt_1d = send_message_user_cnt_1d
+        # 最近1天发消息次数
+        self.send_message_cnt_1d = send_message_cnt_1d
+        # 最近1天打开群人数
+        self.open_conv_uv_1d = open_conv_uv_1d
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stat_date is not None:
+            result['statDate'] = self.stat_date
+        if self.ding_group_id is not None:
+            result['dingGroupId'] = self.ding_group_id
+        if self.group_create_time is not None:
+            result['groupCreateTime'] = self.group_create_time
+        if self.group_create_user_id is not None:
+            result['groupCreateUserId'] = self.group_create_user_id
+        if self.group_create_user_name is not None:
+            result['groupCreateUserName'] = self.group_create_user_name
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        if self.group_user_cnt_1d is not None:
+            result['groupUserCnt1d'] = self.group_user_cnt_1d
+        if self.send_message_user_cnt_1d is not None:
+            result['sendMessageUserCnt1d'] = self.send_message_user_cnt_1d
+        if self.send_message_cnt_1d is not None:
+            result['sendMessageCnt1d'] = self.send_message_cnt_1d
+        if self.open_conv_uv_1d is not None:
+            result['openConvUv1d'] = self.open_conv_uv_1d
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('statDate') is not None:
+            self.stat_date = m.get('statDate')
+        if m.get('dingGroupId') is not None:
+            self.ding_group_id = m.get('dingGroupId')
+        if m.get('groupCreateTime') is not None:
+            self.group_create_time = m.get('groupCreateTime')
+        if m.get('groupCreateUserId') is not None:
+            self.group_create_user_id = m.get('groupCreateUserId')
+        if m.get('groupCreateUserName') is not None:
+            self.group_create_user_name = m.get('groupCreateUserName')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        if m.get('groupUserCnt1d') is not None:
+            self.group_user_cnt_1d = m.get('groupUserCnt1d')
+        if m.get('sendMessageUserCnt1d') is not None:
+            self.send_message_user_cnt_1d = m.get('sendMessageUserCnt1d')
+        if m.get('sendMessageCnt1d') is not None:
+            self.send_message_cnt_1d = m.get('sendMessageCnt1d')
+        if m.get('openConvUv1d') is not None:
+            self.open_conv_uv_1d = m.get('openConvUv1d')
+        return self
+
+
+class GetGroupActiveInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetGroupActiveInfoResponseBodyData] = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetGroupActiveInfoResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetGroupActiveInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetGroupActiveInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetGroupActiveInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchOrgInnerGroupInfoHeaders(TeaModel):
     def __init__(
         self,

@@ -115,6 +115,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateTicket', 'customerService_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/customerService/tickets', 'json', req, runtime)
         )
 
+    def page_list_robot(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListRobotRequest,
+    ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.PageListRobotHeaders()
+        return self.page_list_robot_with_options(request, headers, runtime)
+
+    async def page_list_robot_async(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListRobotRequest,
+    ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcustomer_service__1__0_models.PageListRobotHeaders()
+        return await self.page_list_robot_with_options_async(request, headers, runtime)
+
+    def page_list_robot_with_options(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListRobotRequest,
+        headers: dingtalkcustomer_service__1__0_models.PageListRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.open_instance_id):
+            query['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            query['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.PageListRobotResponse(),
+            self.do_roarequest('PageListRobot', 'customerService_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/customerService/robots', 'json', req, runtime)
+        )
+
+    async def page_list_robot_with_options_async(
+        self,
+        request: dingtalkcustomer_service__1__0_models.PageListRobotRequest,
+        headers: dingtalkcustomer_service__1__0_models.PageListRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.open_instance_id):
+            query['openInstanceId'] = request.open_instance_id
+        if not UtilClient.is_unset(request.production_type):
+            query['productionType'] = request.production_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcustomer_service__1__0_models.PageListRobotResponse(),
+            await self.do_roarequest_async('PageListRobot', 'customerService_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/customerService/robots', 'json', req, runtime)
+        )
+
     def page_list_action(
         self,
         ticket_id: str,

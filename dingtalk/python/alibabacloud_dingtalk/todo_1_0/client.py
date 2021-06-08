@@ -452,6 +452,10 @@ class Client(OpenApiClient):
             body['executorIds'] = request.executor_ids
         if not UtilClient.is_unset(request.participant_ids):
             body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.card_type_id):
+            body['cardTypeId'] = request.card_type_id
+        if not UtilClient.is_unset(request.content_field_list):
+            body['contentFieldList'] = request.content_field_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -492,6 +496,10 @@ class Client(OpenApiClient):
             body['executorIds'] = request.executor_ids
         if not UtilClient.is_unset(request.participant_ids):
             body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.card_type_id):
+            body['cardTypeId'] = request.card_type_id
+        if not UtilClient.is_unset(request.content_field_list):
+            body['contentFieldList'] = request.content_field_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

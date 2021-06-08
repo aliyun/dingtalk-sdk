@@ -107,6 +107,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approves', 'json', req, runtime)
         )
 
+    def check_closing_account(
+        self,
+        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
+    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.CheckClosingAccountHeaders()
+        return self.check_closing_account_with_options(request, headers, runtime)
+
+    async def check_closing_account_async(
+        self,
+        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
+    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.CheckClosingAccountHeaders()
+        return await self.check_closing_account_with_options_async(request, headers, runtime)
+
+    def check_closing_account_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
+        headers: dingtalkattendance__1__0_models.CheckClosingAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.user_time_range):
+            body['userTimeRange'] = request.user_time_range
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CheckClosingAccountResponse(),
+            self.do_roarequest('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/status/query', 'json', req, runtime)
+        )
+
+    async def check_closing_account_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
+        headers: dingtalkattendance__1__0_models.CheckClosingAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.user_time_range):
+            body['userTimeRange'] = request.user_time_range
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CheckClosingAccountResponse(),
+            await self.do_roarequest_async('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/status/query', 'json', req, runtime)
+        )
+
     def get_user_holidays(
         self,
         request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,

@@ -216,6 +216,198 @@ class CreateApproveResponse(TeaModel):
         return self
 
 
+class CheckClosingAccountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CheckClosingAccountRequestUserTimeRange(TeaModel):
+    def __init__(
+        self,
+        start_time: int = None,
+        end_time: int = None,
+    ):
+        self.start_time = start_time
+        self.end_time = end_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        return self
+
+
+class CheckClosingAccountRequest(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+        user_time_range: List[CheckClosingAccountRequestUserTimeRange] = None,
+        biz_code: str = None,
+    ):
+        # 员工列表
+        self.user_ids = user_ids
+        # 时间段
+        self.user_time_range = user_time_range
+        # 情景
+        self.biz_code = biz_code
+
+    def validate(self):
+        if self.user_time_range:
+            for k in self.user_time_range:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        result['userTimeRange'] = []
+        if self.user_time_range is not None:
+            for k in self.user_time_range:
+                result['userTimeRange'].append(k.to_map() if k else None)
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        self.user_time_range = []
+        if m.get('userTimeRange') is not None:
+            for k in m.get('userTimeRange'):
+                temp_model = CheckClosingAccountRequestUserTimeRange()
+                self.user_time_range.append(temp_model.from_map(k))
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        return self
+
+
+class CheckClosingAccountResponseBody(TeaModel):
+    def __init__(
+        self,
+        mesage: str = None,
+        code: int = None,
+        success: bool = None,
+    ):
+        self.mesage = mesage
+        self.code = code
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mesage is not None:
+            result['mesage'] = self.mesage
+        if self.code is not None:
+            result['code'] = self.code
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mesage') is not None:
+            self.mesage = m.get('mesage')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CheckClosingAccountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CheckClosingAccountResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CheckClosingAccountResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUserHolidaysHeaders(TeaModel):
     def __init__(
         self,

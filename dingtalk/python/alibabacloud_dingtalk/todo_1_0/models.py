@@ -652,6 +652,41 @@ class GetTodoTaskResponseBodyDetailUrl(TeaModel):
         return self
 
 
+class GetTodoTaskResponseBodyContentFieldList(TeaModel):
+    def __init__(
+        self,
+        field_key: str = None,
+        field_value: str = None,
+    ):
+        # 字段唯一标识
+        self.field_key = field_key
+        # 字段值
+        self.field_value = field_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_key is not None:
+            result['fieldKey'] = self.field_key
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldKey') is not None:
+            self.field_key = m.get('fieldKey')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        return self
+
+
 class GetTodoTaskResponseBody(TeaModel):
     def __init__(
         self,
@@ -675,6 +710,8 @@ class GetTodoTaskResponseBody(TeaModel):
         tenant_type: str = None,
         biz_tag: str = None,
         request_id: str = None,
+        card_type_id: str = None,
+        content_field_list: List[GetTodoTaskResponseBodyContentFieldList] = None,
     ):
         # id
         self.id = id
@@ -716,10 +753,18 @@ class GetTodoTaskResponseBody(TeaModel):
         self.biz_tag = biz_tag
         # requestId
         self.request_id = request_id
+        # 待办卡片类型id
+        self.card_type_id = card_type_id
+        # 内容区表单字段配置
+        self.content_field_list = content_field_list
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
+        if self.content_field_list:
+            for k in self.content_field_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -767,6 +812,12 @@ class GetTodoTaskResponseBody(TeaModel):
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        if self.card_type_id is not None:
+            result['cardTypeId'] = self.card_type_id
+        result['contentFieldList'] = []
+        if self.content_field_list is not None:
+            for k in self.content_field_list:
+                result['contentFieldList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -812,6 +863,13 @@ class GetTodoTaskResponseBody(TeaModel):
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        if m.get('cardTypeId') is not None:
+            self.card_type_id = m.get('cardTypeId')
+        self.content_field_list = []
+        if m.get('contentFieldList') is not None:
+            for k in m.get('contentFieldList'):
+                temp_model = GetTodoTaskResponseBodyContentFieldList()
+                self.content_field_list.append(temp_model.from_map(k))
         return self
 
 
@@ -1500,6 +1558,41 @@ class UpdateTodoTaskHeaders(TeaModel):
         return self
 
 
+class UpdateTodoTaskRequestContentFieldList(TeaModel):
+    def __init__(
+        self,
+        field_key: str = None,
+        field_value: str = None,
+    ):
+        # 字段唯一标识
+        self.field_key = field_key
+        # 字段值
+        self.field_value = field_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_key is not None:
+            result['fieldKey'] = self.field_key
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldKey') is not None:
+            self.field_key = m.get('fieldKey')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        return self
+
+
 class UpdateTodoTaskRequest(TeaModel):
     def __init__(
         self,
@@ -1509,6 +1602,8 @@ class UpdateTodoTaskRequest(TeaModel):
         done: bool = None,
         executor_ids: List[str] = None,
         participant_ids: List[str] = None,
+        card_type_id: str = None,
+        content_field_list: List[UpdateTodoTaskRequestContentFieldList] = None,
         operator_id: str = None,
     ):
         # 待办标题
@@ -1523,11 +1618,18 @@ class UpdateTodoTaskRequest(TeaModel):
         self.executor_ids = executor_ids
         # 参与者列表，需传用户的unionId
         self.participant_ids = participant_ids
+        # 待办卡片类型id
+        self.card_type_id = card_type_id
+        # 内容区表单字段配置
+        self.content_field_list = content_field_list
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
-        pass
+        if self.content_field_list:
+            for k in self.content_field_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1547,6 +1649,12 @@ class UpdateTodoTaskRequest(TeaModel):
             result['executorIds'] = self.executor_ids
         if self.participant_ids is not None:
             result['participantIds'] = self.participant_ids
+        if self.card_type_id is not None:
+            result['cardTypeId'] = self.card_type_id
+        result['contentFieldList'] = []
+        if self.content_field_list is not None:
+            for k in self.content_field_list:
+                result['contentFieldList'].append(k.to_map() if k else None)
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -1565,6 +1673,13 @@ class UpdateTodoTaskRequest(TeaModel):
             self.executor_ids = m.get('executorIds')
         if m.get('participantIds') is not None:
             self.participant_ids = m.get('participantIds')
+        if m.get('cardTypeId') is not None:
+            self.card_type_id = m.get('cardTypeId')
+        self.content_field_list = []
+        if m.get('contentFieldList') is not None:
+            for k in m.get('contentFieldList'):
+                temp_model = UpdateTodoTaskRequestContentFieldList()
+                self.content_field_list.append(temp_model.from_map(k))
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -1894,14 +2009,11 @@ class CreateTodoTaskResponseBodyContentFieldList(TeaModel):
         self,
         field_key: str = None,
         field_value: str = None,
-        field_link: str = None,
     ):
         # 字段唯一标识
         self.field_key = field_key
         # 字段值
         self.field_value = field_value
-        # 字段内容链接
-        self.field_link = field_link
 
     def validate(self):
         pass
@@ -1916,8 +2028,6 @@ class CreateTodoTaskResponseBodyContentFieldList(TeaModel):
             result['fieldKey'] = self.field_key
         if self.field_value is not None:
             result['fieldValue'] = self.field_value
-        if self.field_link is not None:
-            result['fieldLink'] = self.field_link
         return result
 
     def from_map(self, m: dict = None):
@@ -1926,8 +2036,6 @@ class CreateTodoTaskResponseBodyContentFieldList(TeaModel):
             self.field_key = m.get('fieldKey')
         if m.get('fieldValue') is not None:
             self.field_value = m.get('fieldValue')
-        if m.get('fieldLink') is not None:
-            self.field_link = m.get('fieldLink')
         return self
 
 

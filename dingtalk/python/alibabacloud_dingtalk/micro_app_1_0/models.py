@@ -473,9 +473,12 @@ class RegisterCustomAppRoleResponseBody(TeaModel):
     def __init__(
         self,
         role_id: int = None,
+        scope_version: int = None,
     ):
         # 角色id
         self.role_id = role_id
+        # 角色版本号
+        self.scope_version = scope_version
 
     def validate(self):
         pass
@@ -488,12 +491,16 @@ class RegisterCustomAppRoleResponseBody(TeaModel):
         result = dict()
         if self.role_id is not None:
             result['roleId'] = self.role_id
+        if self.scope_version is not None:
+            result['scopeVersion'] = self.scope_version
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('roleId') is not None:
             self.role_id = m.get('roleId')
+        if m.get('scopeVersion') is not None:
+            self.scope_version = m.get('scopeVersion')
         return self
 
 

@@ -220,6 +220,245 @@ class CreateTicketResponse(TeaModel):
         return self
 
 
+class PageListRobotHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageListRobotRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        open_instance_id: str = None,
+        production_type: int = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 查询的企业Id
+        self.corp_id = corp_id
+        # 多实例ID
+        self.open_instance_id = open_instance_id
+        # 产品类型
+        self.production_type = production_type
+        # 用来标记当前开始读取的位置，置空表示从头开始
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.open_instance_id is not None:
+            result['openInstanceId'] = self.open_instance_id
+        if self.production_type is not None:
+            result['productionType'] = self.production_type
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('openInstanceId') is not None:
+            self.open_instance_id = m.get('openInstanceId')
+        if m.get('productionType') is not None:
+            self.production_type = m.get('productionType')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class PageListRobotResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+        app_key: str = None,
+        account_id: int = None,
+        status: int = None,
+    ):
+        # 机器人自增Id
+        self.id = id
+        # 机器人名称
+        self.name = name
+        # 机器人APPKEY
+        self.app_key = app_key
+        # 机器人所在租户ID
+        self.account_id = account_id
+        # 机器人状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class PageListRobotResponseBody(TeaModel):
+    def __init__(
+        self,
+        total: int = None,
+        next_cursor: int = None,
+        has_more: bool = None,
+        list: List[PageListRobotResponseBodyList] = None,
+    ):
+        # 查询结果总数
+        self.total = total
+        # 下一次查询起始游标
+        self.next_cursor = next_cursor
+        # 是否有更多结果
+        self.has_more = has_more
+        # 查询结果列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total is not None:
+            result['total'] = self.total
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PageListRobotResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class PageListRobotResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PageListRobotResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PageListRobotResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PageListActionHeaders(TeaModel):
     def __init__(
         self,
