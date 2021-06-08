@@ -314,10 +314,6 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         @NameInMap("fieldValue")
         public String fieldValue;
 
-        // 字段内容链接
-        @NameInMap("fieldLink")
-        public String fieldLink;
-
         public static CreateTodoTaskResponseBodyContentFieldList build(java.util.Map<String, ?> map) throws Exception {
             CreateTodoTaskResponseBodyContentFieldList self = new CreateTodoTaskResponseBodyContentFieldList();
             return TeaModel.build(map, self);
@@ -337,14 +333,6 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         }
         public String getFieldValue() {
             return this.fieldValue;
-        }
-
-        public CreateTodoTaskResponseBodyContentFieldList setFieldLink(String fieldLink) {
-            this.fieldLink = fieldLink;
-            return this;
-        }
-        public String getFieldLink() {
-            return this.fieldLink;
         }
 
     }

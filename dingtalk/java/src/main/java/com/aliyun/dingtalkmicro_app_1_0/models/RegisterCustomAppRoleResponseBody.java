@@ -8,6 +8,10 @@ public class RegisterCustomAppRoleResponseBody extends TeaModel {
     @NameInMap("roleId")
     public Long roleId;
 
+    // 角色版本号
+    @NameInMap("scopeVersion")
+    public Long scopeVersion;
+
     public static RegisterCustomAppRoleResponseBody build(java.util.Map<String, ?> map) throws Exception {
         RegisterCustomAppRoleResponseBody self = new RegisterCustomAppRoleResponseBody();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class RegisterCustomAppRoleResponseBody extends TeaModel {
     }
     public Long getRoleId() {
         return this.roleId;
+    }
+
+    public RegisterCustomAppRoleResponseBody setScopeVersion(Long scopeVersion) {
+        this.scopeVersion = scopeVersion;
+        return this;
+    }
+    public Long getScopeVersion() {
+        return this.scopeVersion;
     }
 
 }

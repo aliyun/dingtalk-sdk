@@ -70,6 +70,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/approves", "json", req, runtime), new CreateApproveResponse());
     }
 
+    public CheckClosingAccountResponse checkClosingAccount(CheckClosingAccountRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CheckClosingAccountHeaders headers = new CheckClosingAccountHeaders();
+        return this.checkClosingAccountWithOptions(request, headers, runtime);
+    }
+
+    public CheckClosingAccountResponse checkClosingAccountWithOptions(CheckClosingAccountRequest request, CheckClosingAccountHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userTimeRange)) {
+            body.put("userTimeRange", request.userTimeRange);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/closingAccounts/status/query", "json", req, runtime), new CheckClosingAccountResponse());
+    }
+
     public GetUserHolidaysResponse getUserHolidays(GetUserHolidaysRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUserHolidaysHeaders headers = new GetUserHolidaysHeaders();
