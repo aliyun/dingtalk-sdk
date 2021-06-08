@@ -185,13 +185,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public string FieldValue { get; set; }
 
-            /// <summary>
-            /// 字段内容链接
-            /// </summary>
-            [NameInMap("fieldLink")]
-            [Validation(Required=false)]
-            public string FieldLink { get; set; }
-
         }
 
     }

@@ -469,6 +469,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["participantIds"] = request.ParticipantIds;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTypeId))
+            {
+                body["cardTypeId"] = request.CardTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
+            {
+                body["contentFieldList"] = request.ContentFieldList;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -519,6 +527,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
             {
                 body["participantIds"] = request.ParticipantIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTypeId))
+            {
+                body["cardTypeId"] = request.CardTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
+            {
+                body["contentFieldList"] = request.ContentFieldList;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

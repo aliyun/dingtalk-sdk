@@ -130,6 +130,86 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return TeaModel.ToObject<CreateApproveResponse>(await DoROARequestAsync("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/approves", "json", req, runtime));
         }
 
+        public CheckClosingAccountResponse CheckClosingAccount(CheckClosingAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckClosingAccountHeaders headers = new CheckClosingAccountHeaders();
+            return CheckClosingAccountWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CheckClosingAccountResponse> CheckClosingAccountAsync(CheckClosingAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckClosingAccountHeaders headers = new CheckClosingAccountHeaders();
+            return await CheckClosingAccountWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CheckClosingAccountResponse CheckClosingAccountWithOptions(CheckClosingAccountRequest request, CheckClosingAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserTimeRange))
+            {
+                body["userTimeRange"] = request.UserTimeRange;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CheckClosingAccountResponse>(DoROARequest("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/closingAccounts/status/query", "json", req, runtime));
+        }
+
+        public async Task<CheckClosingAccountResponse> CheckClosingAccountWithOptionsAsync(CheckClosingAccountRequest request, CheckClosingAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserTimeRange))
+            {
+                body["userTimeRange"] = request.UserTimeRange;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CheckClosingAccountResponse>(await DoROARequestAsync("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/closingAccounts/status/query", "json", req, runtime));
+        }
+
         public GetUserHolidaysResponse GetUserHolidays(GetUserHolidaysRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

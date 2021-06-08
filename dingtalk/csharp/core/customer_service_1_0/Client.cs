@@ -146,6 +146,102 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
             return TeaModel.ToObject<CreateTicketResponse>(await DoROARequestAsync("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/tickets", "json", req, runtime));
         }
 
+        public PageListRobotResponse PageListRobot(PageListRobotRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PageListRobotHeaders headers = new PageListRobotHeaders();
+            return PageListRobotWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PageListRobotResponse> PageListRobotAsync(PageListRobotRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PageListRobotHeaders headers = new PageListRobotHeaders();
+            return await PageListRobotWithOptionsAsync(request, headers, runtime);
+        }
+
+        public PageListRobotResponse PageListRobotWithOptions(PageListRobotRequest request, PageListRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
+            {
+                query["openInstanceId"] = request.OpenInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
+            {
+                query["productionType"] = request.ProductionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<PageListRobotResponse>(DoROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime));
+        }
+
+        public async Task<PageListRobotResponse> PageListRobotWithOptionsAsync(PageListRobotRequest request, PageListRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
+            {
+                query["openInstanceId"] = request.OpenInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
+            {
+                query["productionType"] = request.ProductionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<PageListRobotResponse>(await DoROARequestAsync("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime));
+        }
+
         public PageListActionResponse PageListAction(string ticketId, PageListActionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
