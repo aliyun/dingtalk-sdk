@@ -110,6 +110,109 @@ export class CreateTicketResponse extends $tea.Model {
   }
 }
 
+export class PageListRobotHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotRequest extends $tea.Model {
+  corpId?: string;
+  openInstanceId?: string;
+  productionType?: number;
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      openInstanceId: 'string',
+      productionType: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotResponseBody extends $tea.Model {
+  total?: number;
+  nextCursor?: number;
+  hasMore?: boolean;
+  list?: PageListRobotResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      total: 'total',
+      nextCursor: 'nextCursor',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      total: 'number',
+      nextCursor: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PageListRobotResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageListRobotResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageListRobotResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PageListActionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -447,6 +550,37 @@ export class CreateTicketRequestProperties extends $tea.Model {
   }
 }
 
+export class PageListRobotResponseBodyList extends $tea.Model {
+  id?: number;
+  name?: string;
+  appKey?: string;
+  accountId?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      appKey: 'appKey',
+      accountId: 'accountId',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      appKey: 'string',
+      accountId: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PageListActionResponseBodyListActionContent extends $tea.Model {
   displayValue?: string;
   displayName?: string;
@@ -651,6 +785,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new CreateTicketResponse({}));
+  }
+
+  async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageListRobotHeaders({ });
+    return await this.pageListRobotWithOptions(request, headers, runtime);
+  }
+
+  async pageListRobotWithOptions(request: PageListRobotRequest, headers: PageListRobotHeaders, runtime: $Util.RuntimeOptions): Promise<PageListRobotResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.openInstanceId)) {
+      query["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      query["productionType"] = request.productionType;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PageListRobotResponse>(await this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/robots`, "json", req, runtime), new PageListRobotResponse({}));
   }
 
   async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {

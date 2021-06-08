@@ -249,6 +249,8 @@ export class GetTodoTaskResponseBody extends $tea.Model {
   tenantType?: string;
   bizTag?: string;
   requestId?: string;
+  cardTypeId?: string;
+  contentFieldList?: GetTodoTaskResponseBodyContentFieldList[];
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -271,6 +273,8 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       tenantType: 'tenantType',
       bizTag: 'bizTag',
       requestId: 'requestId',
+      cardTypeId: 'cardTypeId',
+      contentFieldList: 'contentFieldList',
     };
   }
 
@@ -296,6 +300,8 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       tenantType: 'string',
       bizTag: 'string',
       requestId: 'string',
+      cardTypeId: 'string',
+      contentFieldList: { 'type': 'array', 'itemType': GetTodoTaskResponseBodyContentFieldList },
     };
   }
 
@@ -576,6 +582,8 @@ export class UpdateTodoTaskRequest extends $tea.Model {
   done?: boolean;
   executorIds?: string[];
   participantIds?: string[];
+  cardTypeId?: string;
+  contentFieldList?: UpdateTodoTaskRequestContentFieldList[];
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -585,6 +593,8 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       done: 'done',
       executorIds: 'executorIds',
       participantIds: 'participantIds',
+      cardTypeId: 'cardTypeId',
+      contentFieldList: 'contentFieldList',
       operatorId: 'operatorId',
     };
   }
@@ -597,6 +607,8 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       done: 'boolean',
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
+      cardTypeId: 'string',
+      contentFieldList: { 'type': 'array', 'itemType': UpdateTodoTaskRequestContentFieldList },
       operatorId: 'string',
     };
   }
@@ -956,6 +968,28 @@ export class GetTodoTaskResponseBodyDetailUrl extends $tea.Model {
   }
 }
 
+export class GetTodoTaskResponseBodyContentFieldList extends $tea.Model {
+  fieldKey?: string;
+  fieldValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldKey: 'fieldKey',
+      fieldValue: 'fieldValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldKey: 'string',
+      fieldValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTypeConfigRequestContentFieldList extends $tea.Model {
   fieldKey?: string;
   fieldType?: string;
@@ -1068,6 +1102,28 @@ export class CreateTodoTypeConfigResponseBodyActionList extends $tea.Model {
   }
 }
 
+export class UpdateTodoTaskRequestContentFieldList extends $tea.Model {
+  fieldKey?: string;
+  fieldValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldKey: 'fieldKey',
+      fieldValue: 'fieldValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldKey: 'string',
+      fieldValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   appUrl?: string;
   pcUrl?: string;
@@ -1140,12 +1196,10 @@ export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
 export class CreateTodoTaskResponseBodyContentFieldList extends $tea.Model {
   fieldKey?: string;
   fieldValue?: string;
-  fieldLink?: string;
   static names(): { [key: string]: string } {
     return {
       fieldKey: 'fieldKey',
       fieldValue: 'fieldValue',
-      fieldLink: 'fieldLink',
     };
   }
 
@@ -1153,7 +1207,6 @@ export class CreateTodoTaskResponseBodyContentFieldList extends $tea.Model {
     return {
       fieldKey: 'string',
       fieldValue: 'string',
-      fieldLink: 'string',
     };
   }
 
@@ -1394,6 +1447,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.participantIds)) {
       body["participantIds"] = request.participantIds;
+    }
+
+    if (!Util.isUnset(request.cardTypeId)) {
+      body["cardTypeId"] = request.cardTypeId;
+    }
+
+    if (!Util.isUnset(request.contentFieldList)) {
+      body["contentFieldList"] = request.contentFieldList;
     }
 
     let realHeaders : {[key: string ]: string} = { };

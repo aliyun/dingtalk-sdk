@@ -280,15 +280,18 @@ export class RegisterCustomAppRoleRequest extends $tea.Model {
 
 export class RegisterCustomAppRoleResponseBody extends $tea.Model {
   roleId?: number;
+  scopeVersion?: number;
   static names(): { [key: string]: string } {
     return {
       roleId: 'roleId',
+      scopeVersion: 'scopeVersion',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       roleId: 'number',
+      scopeVersion: 'number',
     };
   }
 

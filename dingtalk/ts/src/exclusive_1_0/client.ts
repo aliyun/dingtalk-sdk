@@ -7,6 +7,100 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class GetGroupActiveInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoRequest extends $tea.Model {
+  statDate?: string;
+  dingGroupId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+      dingGroupId: 'dingGroupId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+      dingGroupId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoResponseBody extends $tea.Model {
+  data?: GetGroupActiveInfoResponseBodyData[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetGroupActiveInfoResponseBodyData },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetGroupActiveInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetGroupActiveInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -131,6 +225,55 @@ export class SearchOrgInnerGroupInfoResponse extends $tea.Model {
   }
 }
 
+export class GetGroupActiveInfoResponseBodyData extends $tea.Model {
+  statDate?: string;
+  dingGroupId?: string;
+  groupCreateTime?: string;
+  groupCreateUserId?: string;
+  groupCreateUserName?: string;
+  groupName?: string;
+  groupType?: number;
+  groupUserCnt1d?: number;
+  sendMessageUserCnt1d?: number;
+  sendMessageCnt1d?: number;
+  openConvUv1d?: number;
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+      dingGroupId: 'dingGroupId',
+      groupCreateTime: 'groupCreateTime',
+      groupCreateUserId: 'groupCreateUserId',
+      groupCreateUserName: 'groupCreateUserName',
+      groupName: 'groupName',
+      groupType: 'groupType',
+      groupUserCnt1d: 'groupUserCnt1d',
+      sendMessageUserCnt1d: 'sendMessageUserCnt1d',
+      sendMessageCnt1d: 'sendMessageCnt1d',
+      openConvUv1d: 'openConvUv1d',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+      dingGroupId: 'string',
+      groupCreateTime: 'string',
+      groupCreateUserId: 'string',
+      groupCreateUserName: 'string',
+      groupName: 'string',
+      groupType: 'number',
+      groupUserCnt1d: 'number',
+      sendMessageUserCnt1d: 'number',
+      sendMessageCnt1d: 'number',
+      openConvUv1d: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   openConversationId?: string;
   groupOwner?: string;
@@ -201,6 +344,47 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async getGroupActiveInfo(request: GetGroupActiveInfoRequest): Promise<GetGroupActiveInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetGroupActiveInfoHeaders({ });
+    return await this.getGroupActiveInfoWithOptions(request, headers, runtime);
+  }
+
+  async getGroupActiveInfoWithOptions(request: GetGroupActiveInfoRequest, headers: GetGroupActiveInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetGroupActiveInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.statDate)) {
+      query["statDate"] = request.statDate;
+    }
+
+    if (!Util.isUnset(request.dingGroupId)) {
+      query["dingGroupId"] = request.dingGroupId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetGroupActiveInfoResponse>(await this.doROARequest("GetGroupActiveInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/activeGroups`, "json", req, runtime), new GetGroupActiveInfoResponse({}));
+  }
 
   async searchOrgInnerGroupInfo(request: SearchOrgInnerGroupInfoRequest): Promise<SearchOrgInnerGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });

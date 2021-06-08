@@ -104,6 +104,100 @@ export class CreateApproveResponse extends $tea.Model {
   }
 }
 
+export class CheckClosingAccountHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountRequest extends $tea.Model {
+  userIds?: string[];
+  userTimeRange?: CheckClosingAccountRequestUserTimeRange[];
+  bizCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userIds: 'userIds',
+      userTimeRange: 'userTimeRange',
+      bizCode: 'bizCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      userTimeRange: { 'type': 'array', 'itemType': CheckClosingAccountRequestUserTimeRange },
+      bizCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountResponseBody extends $tea.Model {
+  mesage?: string;
+  code?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      mesage: 'mesage',
+      code: 'code',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mesage: 'string',
+      code: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckClosingAccountResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckClosingAccountResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckClosingAccountResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHolidaysHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -314,6 +408,28 @@ export class CreateApproveRequestPunchParam extends $tea.Model {
   }
 }
 
+export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
+  startTime?: number;
+  endTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      startTime: 'startTime',
+      endTime: 'endTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      startTime: 'number',
+      endTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHolidaysResponseBodyResultHolidays extends $tea.Model {
   workDate?: number;
   holidayName?: string;
@@ -424,6 +540,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateApproveResponse>(await this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approves`, "json", req, runtime), new CreateApproveResponse({}));
+  }
+
+  async checkClosingAccount(request: CheckClosingAccountRequest): Promise<CheckClosingAccountResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckClosingAccountHeaders({ });
+    return await this.checkClosingAccountWithOptions(request, headers, runtime);
+  }
+
+  async checkClosingAccountWithOptions(request: CheckClosingAccountRequest, headers: CheckClosingAccountHeaders, runtime: $Util.RuntimeOptions): Promise<CheckClosingAccountResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    if (!Util.isUnset(request.userTimeRange)) {
+      body["userTimeRange"] = request.userTimeRange;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CheckClosingAccountResponse>(await this.doROARequest("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/status/query`, "json", req, runtime), new CheckClosingAccountResponse({}));
   }
 
   async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {
