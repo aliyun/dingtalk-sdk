@@ -8,10 +8,10 @@ public class CheckClosingAccountResponseBody extends TeaModel {
     public String mesage;
 
     @NameInMap("code")
-    public Long code;
+    public String code;
 
-    @NameInMap("success")
-    public Boolean success;
+    @NameInMap("pass")
+    public Boolean pass;
 
     public static CheckClosingAccountResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CheckClosingAccountResponseBody self = new CheckClosingAccountResponseBody();
@@ -26,20 +26,20 @@ public class CheckClosingAccountResponseBody extends TeaModel {
         return this.mesage;
     }
 
-    public CheckClosingAccountResponseBody setCode(Long code) {
+    public CheckClosingAccountResponseBody setCode(String code) {
         this.code = code;
         return this;
     }
-    public Long getCode() {
+    public String getCode() {
         return this.code;
     }
 
-    public CheckClosingAccountResponseBody setSuccess(Boolean success) {
-        this.success = success;
+    public CheckClosingAccountResponseBody setPass(Boolean pass) {
+        this.pass = pass;
         return this;
     }
-    public Boolean getSuccess() {
-        return this.success;
+    public Boolean getPass() {
+        return this.pass;
     }
 
 }
