@@ -14,18 +14,18 @@ class CheckClosingAccountResponseBody extends Model
     public $mesage;
 
     /**
-     * @var int
+     * @var string
      */
     public $code;
 
     /**
      * @var bool
      */
-    public $success;
+    public $pass;
     protected $_name = [
-        'mesage'  => 'mesage',
-        'code'    => 'code',
-        'success' => 'success',
+        'mesage' => 'mesage',
+        'code'   => 'code',
+        'pass'   => 'pass',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class CheckClosingAccountResponseBody extends Model
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
+        if (null !== $this->pass) {
+            $res['pass'] = $this->pass;
         }
 
         return $res;
@@ -62,8 +62,8 @@ class CheckClosingAccountResponseBody extends Model
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
+        if (isset($map['pass'])) {
+            $model->pass = $map['pass'];
         }
 
         return $model;
