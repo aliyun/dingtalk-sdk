@@ -7,6 +7,88 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class QueryConferenceInfoBatchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchRequest extends $tea.Model {
+  conferenceIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      conferenceIdList: 'conferenceIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchResponseBody extends $tea.Model {
+  infos?: QueryConferenceInfoBatchResponseBodyInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      infos: 'infos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      infos: { 'type': 'array', 'itemType': QueryConferenceInfoBatchResponseBodyInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryConferenceInfoBatchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryConferenceInfoBatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateVideoConferenceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -192,6 +274,74 @@ export class CloseVideoConferenceResponse extends $tea.Model {
   }
 }
 
+export class QueryConferenceInfoBatchResponseBodyInfosUserList extends $tea.Model {
+  userId?: string;
+  nick?: string;
+  attendStatus?: number;
+  cameraStatus?: number;
+  micStatus?: number;
+  rejectDescription?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      nick: 'nick',
+      attendStatus: 'attendStatus',
+      cameraStatus: 'cameraStatus',
+      micStatus: 'micStatus',
+      rejectDescription: 'rejectDescription',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      nick: 'string',
+      attendStatus: 'number',
+      cameraStatus: 'number',
+      micStatus: 'number',
+      rejectDescription: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchResponseBodyInfos extends $tea.Model {
+  conferenceId?: string;
+  title?: string;
+  startTime?: number;
+  status?: number;
+  mediaStatus?: number;
+  userList?: QueryConferenceInfoBatchResponseBodyInfosUserList[];
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      title: 'title',
+      startTime: 'startTime',
+      status: 'status',
+      mediaStatus: 'mediaStatus',
+      userList: 'userList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      title: 'string',
+      startTime: 'number',
+      status: 'number',
+      mediaStatus: 'number',
+      userList: { 'type': 'array', 'itemType': QueryConferenceInfoBatchResponseBodyInfosUserList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -204,6 +354,35 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async queryConferenceInfoBatch(request: QueryConferenceInfoBatchRequest): Promise<QueryConferenceInfoBatchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryConferenceInfoBatchHeaders({ });
+    return await this.queryConferenceInfoBatchWithOptions(request, headers, runtime);
+  }
+
+  async queryConferenceInfoBatchWithOptions(request: QueryConferenceInfoBatchRequest, headers: QueryConferenceInfoBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoBatchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conferenceIdList)) {
+      body["conferenceIdList"] = request.conferenceIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryConferenceInfoBatchResponse>(await this.doROARequest("QueryConferenceInfoBatch", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/query`, "json", req, runtime), new QueryConferenceInfoBatchResponse({}));
+  }
 
   async createVideoConference(request: CreateVideoConferenceRequest): Promise<CreateVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });

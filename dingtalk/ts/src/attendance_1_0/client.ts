@@ -153,21 +153,21 @@ export class CheckClosingAccountRequest extends $tea.Model {
 
 export class CheckClosingAccountResponseBody extends $tea.Model {
   mesage?: string;
-  code?: number;
-  success?: boolean;
+  code?: string;
+  pass?: boolean;
   static names(): { [key: string]: string } {
     return {
       mesage: 'mesage',
       code: 'code',
-      success: 'success',
+      pass: 'pass',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       mesage: 'string',
-      code: 'number',
-      success: 'boolean',
+      code: 'string',
+      pass: 'boolean',
     };
   }
 
