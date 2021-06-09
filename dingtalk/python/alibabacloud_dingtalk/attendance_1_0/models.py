@@ -336,12 +336,12 @@ class CheckClosingAccountResponseBody(TeaModel):
     def __init__(
         self,
         mesage: str = None,
-        code: int = None,
-        success: bool = None,
+        code: str = None,
+        pass_: bool = None,
     ):
         self.mesage = mesage
         self.code = code
-        self.success = success
+        self.pass_ = pass_
 
     def validate(self):
         pass
@@ -356,8 +356,8 @@ class CheckClosingAccountResponseBody(TeaModel):
             result['mesage'] = self.mesage
         if self.code is not None:
             result['code'] = self.code
-        if self.success is not None:
-            result['success'] = self.success
+        if self.pass_ is not None:
+            result['pass'] = self.pass_
         return result
 
     def from_map(self, m: dict = None):
@@ -366,8 +366,8 @@ class CheckClosingAccountResponseBody(TeaModel):
             self.mesage = m.get('mesage')
         if m.get('code') is not None:
             self.code = m.get('code')
-        if m.get('success') is not None:
-            self.success = m.get('success')
+        if m.get('pass') is not None:
+            self.pass_ = m.get('pass')
         return self
 
 
