@@ -15,11 +15,11 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         [NameInMap("code")]
         [Validation(Required=false)]
-        public long? Code { get; set; }
+        public string Code { get; set; }
 
-        [NameInMap("success")]
+        [NameInMap("pass")]
         [Validation(Required=false)]
-        public bool? Success { get; set; }
+        public bool? Pass { get; set; }
 
     }
 
