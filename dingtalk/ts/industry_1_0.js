@@ -1,0 +1,1 @@
+module.exports = require('./dist').industry_1_0;
