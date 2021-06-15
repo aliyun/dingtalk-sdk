@@ -77,338 +77,6 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
         return this.dingSuiteKey;
     }
 
-    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyText extends TeaModel {
-        // 消息内容，建议500字符以内。
-        @NameInMap("content")
-        public String content;
-
-        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyText build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetailMessageBodyText self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyText();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyText setContent(String content) {
-            this.content = content;
-            return this;
-        }
-        public String getContent() {
-            return this.content;
-        }
-
-    }
-
-    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown extends TeaModel {
-        // 首屏会话透出的展示内容。
-        @NameInMap("title")
-        public String title;
-
-        // markdown格式的消息，建议500字符以内。
-        @NameInMap("text")
-        public String text;
-
-        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown setText(String text) {
-            this.text = text;
-            return this;
-        }
-        public String getText() {
-            return this.text;
-        }
-
-    }
-
-    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends TeaModel {
-        // 图片地址
-        @NameInMap("picUrl")
-        public String picUrl;
-
-        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
-        @NameInMap("messageUrl")
-        public String messageUrl;
-
-        // 消息标题，建议100字符以内。
-        @NameInMap("title")
-        public String title;
-
-        // 消息描述，建议500字符以内。
-        @NameInMap("text")
-        public String text;
-
-        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyLink build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetailMessageBodyLink self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyLink();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setPicUrl(String picUrl) {
-            this.picUrl = picUrl;
-            return this;
-        }
-        public String getPicUrl() {
-            return this.picUrl;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setMessageUrl(String messageUrl) {
-            this.messageUrl = messageUrl;
-            return this;
-        }
-        public String getMessageUrl() {
-            return this.messageUrl;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setText(String text) {
-            this.text = text;
-            return this;
-        }
-        public String getText() {
-            return this.text;
-        }
-
-    }
-
-    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList extends TeaModel {
-        // 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
-        @NameInMap("title")
-        public String title;
-
-        // 使用独立跳转ActionCard样式时的跳转链接。
-        @NameInMap("actionUrl")
-        public String actionUrl;
-
-        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList setActionUrl(String actionUrl) {
-            this.actionUrl = actionUrl;
-            return this;
-        }
-        public String getActionUrl() {
-            return this.actionUrl;
-        }
-
-    }
-
-    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard extends TeaModel {
-        // 按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。
-        @NameInMap("buttonOrientation")
-        public String buttonOrientation;
-
-        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。
-        @NameInMap("singleUrl")
-        public String singleUrl;
-
-        // 使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。
-        @NameInMap("singleTitle")
-        public String singleTitle;
-
-        // 消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。
-        @NameInMap("markdown")
-        public String markdown;
-
-        // 透出到会话列表和通知的文案
-        @NameInMap("title")
-        public String title;
-
-        // 使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。
-        @NameInMap("buttonList")
-        public java.util.List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList;
-
-        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setButtonOrientation(String buttonOrientation) {
-            this.buttonOrientation = buttonOrientation;
-            return this;
-        }
-        public String getButtonOrientation() {
-            return this.buttonOrientation;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setSingleUrl(String singleUrl) {
-            this.singleUrl = singleUrl;
-            return this;
-        }
-        public String getSingleUrl() {
-            return this.singleUrl;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setSingleTitle(String singleTitle) {
-            this.singleTitle = singleTitle;
-            return this;
-        }
-        public String getSingleTitle() {
-            return this.singleTitle;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setMarkdown(String markdown) {
-            this.markdown = markdown;
-            return this;
-        }
-        public String getMarkdown() {
-            return this.markdown;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-        public String getTitle() {
-            return this.title;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setButtonList(java.util.List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList) {
-            this.buttonList = buttonList;
-            return this;
-        }
-        public java.util.List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> getButtonList() {
-            return this.buttonList;
-        }
-
-    }
-
-    public static class SendOfficialAccountOTOMessageRequestDetailMessageBody extends TeaModel {
-        // 文本消息体  对于文本类型消息时必填
-        @NameInMap("text")
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyText text;
-
-        // markdown消息，仅对消息类型为markdown时有效
-        @NameInMap("markdown")
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown markdown;
-
-        // 链接消息类型
-        @NameInMap("link")
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink link;
-
-        // 卡片消息
-        @NameInMap("actionCard")
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard actionCard;
-
-        public static SendOfficialAccountOTOMessageRequestDetailMessageBody build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetailMessageBody self = new SendOfficialAccountOTOMessageRequestDetailMessageBody();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBody setText(SendOfficialAccountOTOMessageRequestDetailMessageBodyText text) {
-            this.text = text;
-            return this;
-        }
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyText getText() {
-            return this.text;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBody setMarkdown(SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown markdown) {
-            this.markdown = markdown;
-            return this;
-        }
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown getMarkdown() {
-            return this.markdown;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBody setLink(SendOfficialAccountOTOMessageRequestDetailMessageBodyLink link) {
-            this.link = link;
-            return this;
-        }
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink getLink() {
-            return this.link;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetailMessageBody setActionCard(SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard actionCard) {
-            this.actionCard = actionCard;
-            return this;
-        }
-        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard getActionCard() {
-            return this.actionCard;
-        }
-
-    }
-
-    public static class SendOfficialAccountOTOMessageRequestDetail extends TeaModel {
-        // 消息类型
-        @NameInMap("msgType")
-        public String msgType;
-
-        // 请求唯一 ID
-        @NameInMap("uuid")
-        public String uuid;
-
-        // 消息接收人id
-        @NameInMap("userId")
-        public String userId;
-
-        // 消息体
-        @NameInMap("messageBody")
-        public SendOfficialAccountOTOMessageRequestDetailMessageBody messageBody;
-
-        public static SendOfficialAccountOTOMessageRequestDetail build(java.util.Map<String, ?> map) throws Exception {
-            SendOfficialAccountOTOMessageRequestDetail self = new SendOfficialAccountOTOMessageRequestDetail();
-            return TeaModel.build(map, self);
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetail setMsgType(String msgType) {
-            this.msgType = msgType;
-            return this;
-        }
-        public String getMsgType() {
-            return this.msgType;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetail setUuid(String uuid) {
-            this.uuid = uuid;
-            return this;
-        }
-        public String getUuid() {
-            return this.uuid;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetail setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-        public SendOfficialAccountOTOMessageRequestDetail setMessageBody(SendOfficialAccountOTOMessageRequestDetailMessageBody messageBody) {
-            this.messageBody = messageBody;
-            return this;
-        }
-        public SendOfficialAccountOTOMessageRequestDetailMessageBody getMessageBody() {
-            return this.messageBody;
-        }
-
-    }
-
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText extends TeaModel {
         // 消息内容，建议500字符以内。
         @NameInMap("content")
@@ -761,6 +429,338 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
         }
         public Boolean getSendToAll() {
             return this.sendToAll;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyText extends TeaModel {
+        // 消息内容，建议500字符以内。
+        @NameInMap("content")
+        public String content;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyText build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBodyText self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyText();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyText setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown extends TeaModel {
+        // 首屏会话透出的展示内容。
+        @NameInMap("title")
+        public String title;
+
+        // markdown格式的消息，建议500字符以内。
+        @NameInMap("text")
+        public String text;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown setText(String text) {
+            this.text = text;
+            return this;
+        }
+        public String getText() {
+            return this.text;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends TeaModel {
+        // 图片地址
+        @NameInMap("picUrl")
+        public String picUrl;
+
+        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
+        @NameInMap("messageUrl")
+        public String messageUrl;
+
+        // 消息标题，建议100字符以内。
+        @NameInMap("title")
+        public String title;
+
+        // 消息描述，建议500字符以内。
+        @NameInMap("text")
+        public String text;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyLink build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBodyLink self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyLink();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setPicUrl(String picUrl) {
+            this.picUrl = picUrl;
+            return this;
+        }
+        public String getPicUrl() {
+            return this.picUrl;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setMessageUrl(String messageUrl) {
+            this.messageUrl = messageUrl;
+            return this;
+        }
+        public String getMessageUrl() {
+            return this.messageUrl;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink setText(String text) {
+            this.text = text;
+            return this;
+        }
+        public String getText() {
+            return this.text;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList extends TeaModel {
+        // 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
+        @NameInMap("title")
+        public String title;
+
+        // 使用独立跳转ActionCard样式时的跳转链接。
+        @NameInMap("actionUrl")
+        public String actionUrl;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList setActionUrl(String actionUrl) {
+            this.actionUrl = actionUrl;
+            return this;
+        }
+        public String getActionUrl() {
+            return this.actionUrl;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard extends TeaModel {
+        // 按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。
+        @NameInMap("buttonOrientation")
+        public String buttonOrientation;
+
+        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。
+        @NameInMap("singleUrl")
+        public String singleUrl;
+
+        // 使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。
+        @NameInMap("singleTitle")
+        public String singleTitle;
+
+        // 消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。
+        @NameInMap("markdown")
+        public String markdown;
+
+        // 透出到会话列表和通知的文案
+        @NameInMap("title")
+        public String title;
+
+        // 使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。
+        @NameInMap("buttonList")
+        public java.util.List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setButtonOrientation(String buttonOrientation) {
+            this.buttonOrientation = buttonOrientation;
+            return this;
+        }
+        public String getButtonOrientation() {
+            return this.buttonOrientation;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setSingleUrl(String singleUrl) {
+            this.singleUrl = singleUrl;
+            return this;
+        }
+        public String getSingleUrl() {
+            return this.singleUrl;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setSingleTitle(String singleTitle) {
+            this.singleTitle = singleTitle;
+            return this;
+        }
+        public String getSingleTitle() {
+            return this.singleTitle;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setMarkdown(String markdown) {
+            this.markdown = markdown;
+            return this;
+        }
+        public String getMarkdown() {
+            return this.markdown;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard setButtonList(java.util.List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList) {
+            this.buttonList = buttonList;
+            return this;
+        }
+        public java.util.List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> getButtonList() {
+            return this.buttonList;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBody extends TeaModel {
+        // 文本消息体  对于文本类型消息时必填
+        @NameInMap("text")
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyText text;
+
+        // markdown消息，仅对消息类型为markdown时有效
+        @NameInMap("markdown")
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown markdown;
+
+        // 链接消息类型
+        @NameInMap("link")
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink link;
+
+        // 卡片消息
+        @NameInMap("actionCard")
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard actionCard;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBody build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBody self = new SendOfficialAccountOTOMessageRequestDetailMessageBody();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody setText(SendOfficialAccountOTOMessageRequestDetailMessageBodyText text) {
+            this.text = text;
+            return this;
+        }
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyText getText() {
+            return this.text;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody setMarkdown(SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown markdown) {
+            this.markdown = markdown;
+            return this;
+        }
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown getMarkdown() {
+            return this.markdown;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody setLink(SendOfficialAccountOTOMessageRequestDetailMessageBodyLink link) {
+            this.link = link;
+            return this;
+        }
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink getLink() {
+            return this.link;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody setActionCard(SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard actionCard) {
+            this.actionCard = actionCard;
+            return this;
+        }
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard getActionCard() {
+            return this.actionCard;
+        }
+
+    }
+
+    public static class SendOfficialAccountOTOMessageRequestDetail extends TeaModel {
+        // 消息类型
+        @NameInMap("msgType")
+        public String msgType;
+
+        // 请求唯一 ID
+        @NameInMap("uuid")
+        public String uuid;
+
+        // 消息接收人id
+        @NameInMap("userId")
+        public String userId;
+
+        // 消息体
+        @NameInMap("messageBody")
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody messageBody;
+
+        public static SendOfficialAccountOTOMessageRequestDetail build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetail self = new SendOfficialAccountOTOMessageRequestDetail();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetail setMsgType(String msgType) {
+            this.msgType = msgType;
+            return this;
+        }
+        public String getMsgType() {
+            return this.msgType;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetail setUuid(String uuid) {
+            this.uuid = uuid;
+            return this;
+        }
+        public String getUuid() {
+            return this.uuid;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetail setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetail setMessageBody(SendOfficialAccountOTOMessageRequestDetailMessageBody messageBody) {
+            this.messageBody = messageBody;
+            return this;
+        }
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody getMessageBody() {
+            return this.messageBody;
         }
 
     }

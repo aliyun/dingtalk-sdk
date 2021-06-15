@@ -33,6 +33,25 @@ public class SendOfficialAccountOTOMessageResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class BatchSendOfficialAccountOTOMessageResponseBodyResult extends TeaModel {
+        @NameInMap("openPushId")
+        public String openPushId;
+
+        public static BatchSendOfficialAccountOTOMessageResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            BatchSendOfficialAccountOTOMessageResponseBodyResult self = new BatchSendOfficialAccountOTOMessageResponseBodyResult();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchSendOfficialAccountOTOMessageResponseBodyResult setOpenPushId(String openPushId) {
+            this.openPushId = openPushId;
+            return this;
+        }
+        public String getOpenPushId() {
+            return this.openPushId;
+        }
+
+    }
+
     public static class SendOfficialAccountOTOMessageResponseBodyResult extends TeaModel {
         // 推送ID
         @NameInMap("openPushId")
@@ -44,25 +63,6 @@ public class SendOfficialAccountOTOMessageResponseBody extends TeaModel {
         }
 
         public SendOfficialAccountOTOMessageResponseBodyResult setOpenPushId(String openPushId) {
-            this.openPushId = openPushId;
-            return this;
-        }
-        public String getOpenPushId() {
-            return this.openPushId;
-        }
-
-    }
-
-    public static class BatchSendOfficialAccountOTOMessageResponseBodyResult extends TeaModel {
-        @NameInMap("openPushId")
-        public String openPushId;
-
-        public static BatchSendOfficialAccountOTOMessageResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
-            BatchSendOfficialAccountOTOMessageResponseBodyResult self = new BatchSendOfficialAccountOTOMessageResponseBodyResult();
-            return TeaModel.build(map, self);
-        }
-
-        public BatchSendOfficialAccountOTOMessageResponseBodyResult setOpenPushId(String openPushId) {
             this.openPushId = openPushId;
             return this;
         }
