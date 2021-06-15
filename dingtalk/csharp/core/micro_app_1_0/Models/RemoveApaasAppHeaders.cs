@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
-    public class QueryAllCustomerHeaders : TeaModel {
+    public class RemoveApaasAppHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
