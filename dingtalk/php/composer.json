@@ -37,6 +37,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vhrbrain_1_0\\": "src/hrbrain_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vhrm_1_0\\": "src/hrm_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vim_1_0\\": "src/im_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vindustry_1_0\\": "src/industry_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vjzcrm_1_0\\": "src/jzcrm_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vlive_1_0\\": "src/live_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmicro_app_1_0\\": "src/micro_app_1_0/",

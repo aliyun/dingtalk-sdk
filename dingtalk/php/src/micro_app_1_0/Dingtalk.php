@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddAppToWorkBenchGroupRespon
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateInnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateInnerAppResponse;
@@ -42,9 +45,15 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleRe
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RegisterCustomAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RegisterCustomAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RegisterCustomAppRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RemoveApaasAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RemoveApaasAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RemoveApaasAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RemoveMemberForAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RemoveMemberForAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RemoveMemberForAppRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateApaasAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateApaasAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateApaasAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateAppRoleInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateAppRoleInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateAppRoleInfoResponse;
@@ -228,6 +237,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RegisterCustomAppRoleResponse::fromMap($this->doROARequest('RegisterCustomAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateApaasAppRequest $request
+     *
+     * @return UpdateApaasAppResponse
+     */
+    public function updateApaasApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateApaasAppHeaders([]);
+
+        return $this->updateApaasAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateApaasAppRequest $request
+     * @param UpdateApaasAppHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateApaasAppResponse
+     */
+    public function updateApaasAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->appIcon)) {
+            @$body['appIcon'] = $request->appIcon;
+        }
+        if (!Utils::isUnset($request->appStatus)) {
+            @$body['appStatus'] = $request->appStatus;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->bizAppId)) {
+            @$body['bizAppId'] = $request->bizAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateApaasAppResponse::fromMap($this->doROARequest('UpdateApaasApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/microApp/apaasApps', 'json', $req, $runtime));
     }
 
     /**
@@ -735,6 +798,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param RemoveApaasAppRequest $request
+     *
+     * @return RemoveApaasAppResponse
+     */
+    public function removeApaasApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveApaasAppHeaders([]);
+
+        return $this->removeApaasAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveApaasAppRequest $request
+     * @param RemoveApaasAppHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return RemoveApaasAppResponse
+     */
+    public function removeApaasAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->bizAppId)) {
+            @$body['bizAppId'] = $request->bizAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveApaasAppResponse::fromMap($this->doROARequest('RemoveApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apaasApps/remove', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string               $agentId
      * @param string               $roleId
      * @param DeleteAppRoleRequest $request
@@ -778,6 +886,78 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteAppRoleResponse::fromMap($this->doROARequest('DeleteAppRole', 'microApp_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateApaasAppRequest $request
+     *
+     * @return CreateApaasAppResponse
+     */
+    public function createApaasApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateApaasAppHeaders([]);
+
+        return $this->createApaasAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateApaasAppRequest $request
+     * @param CreateApaasAppHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateApaasAppResponse
+     */
+    public function createApaasAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appName)) {
+            @$body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->appDesc)) {
+            @$body['appDesc'] = $request->appDesc;
+        }
+        if (!Utils::isUnset($request->appIcon)) {
+            @$body['appIcon'] = $request->appIcon;
+        }
+        if (!Utils::isUnset($request->homepageLink)) {
+            @$body['homepageLink'] = $request->homepageLink;
+        }
+        if (!Utils::isUnset($request->pcHomepageLink)) {
+            @$body['pcHomepageLink'] = $request->pcHomepageLink;
+        }
+        if (!Utils::isUnset($request->ompLink)) {
+            @$body['ompLink'] = $request->ompLink;
+        }
+        if (!Utils::isUnset($request->homepageEditLink)) {
+            @$body['homepageEditLink'] = $request->homepageEditLink;
+        }
+        if (!Utils::isUnset($request->pcHomepageEditLink)) {
+            @$body['pcHomepageEditLink'] = $request->pcHomepageEditLink;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->bizAppId)) {
+            @$body['bizAppId'] = $request->bizAppId;
+        }
+        if (!Utils::isUnset($request->templateKey)) {
+            @$body['templateKey'] = $request->templateKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateApaasAppResponse::fromMap($this->doROARequest('CreateApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apaasApps', 'json', $req, $runtime));
     }
 
     /**

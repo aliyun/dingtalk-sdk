@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoResponse;
@@ -79,6 +82,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UserTaskReportResponse::fromMap($this->doROARequest('UserTaskReport', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/tasks', 'boolean', $req, $runtime));
+    }
+
+    /**
+     * @param CreateAppGoodsServiceConversationRequest $request
+     *
+     * @return CreateAppGoodsServiceConversationResponse
+     */
+    public function createAppGoodsServiceConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAppGoodsServiceConversationHeaders([]);
+
+        return $this->createAppGoodsServiceConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateAppGoodsServiceConversationRequest $request
+     * @param CreateAppGoodsServiceConversationHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return CreateAppGoodsServiceConversationResponse
+     */
+    public function createAppGoodsServiceConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->orderId)) {
+            @$body['orderId'] = $request->orderId;
+        }
+        if (!Utils::isUnset($request->isvUserId)) {
+            @$body['isvUserId'] = $request->isvUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateAppGoodsServiceConversationResponse::fromMap($this->doROARequest('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/orders/serviceGroups', 'json', $req, $runtime));
     }
 
     /**
