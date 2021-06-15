@@ -126,6 +126,144 @@ class UserTaskReportResponse(TeaModel):
         return self
 
 
+class CreateAppGoodsServiceConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAppGoodsServiceConversationRequest(TeaModel):
+    def __init__(
+        self,
+        order_id: int = None,
+        isv_user_id: str = None,
+    ):
+        self.order_id = order_id
+        self.isv_user_id = isv_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.isv_user_id is not None:
+            result['isvUserId'] = self.isv_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('isvUserId') is not None:
+            self.isv_user_id = m.get('isvUserId')
+        return self
+
+
+class CreateAppGoodsServiceConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        conversation_name: str = None,
+        new_conversation: bool = None,
+    ):
+        # 群名称
+        self.conversation_name = conversation_name
+        # 是否是新群
+        self.new_conversation = new_conversation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conversation_name is not None:
+            result['conversationName'] = self.conversation_name
+        if self.new_conversation is not None:
+            result['newConversation'] = self.new_conversation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conversationName') is not None:
+            self.conversation_name = m.get('conversationName')
+        if m.get('newConversation') is not None:
+            self.new_conversation = m.get('newConversation')
+        return self
+
+
+class CreateAppGoodsServiceConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateAppGoodsServiceConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateAppGoodsServiceConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPersonalExperienceInfoHeaders(TeaModel):
     def __init__(
         self,

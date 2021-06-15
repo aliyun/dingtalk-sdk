@@ -541,6 +541,162 @@ class RegisterCustomAppRoleResponse(TeaModel):
         return self
 
 
+class UpdateApaasAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateApaasAppRequest(TeaModel):
+    def __init__(
+        self,
+        app_name: str = None,
+        app_icon: str = None,
+        app_status: int = None,
+        op_user_id: str = None,
+        biz_app_id: str = None,
+    ):
+        self.app_name = app_name
+        self.app_icon = app_icon
+        self.app_status = app_status
+        self.op_user_id = op_user_id
+        self.biz_app_id = biz_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.app_icon is not None:
+            result['appIcon'] = self.app_icon
+        if self.app_status is not None:
+            result['appStatus'] = self.app_status
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.biz_app_id is not None:
+            result['bizAppId'] = self.biz_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('appIcon') is not None:
+            self.app_icon = m.get('appIcon')
+        if m.get('appStatus') is not None:
+            self.app_status = m.get('appStatus')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('bizAppId') is not None:
+            self.biz_app_id = m.get('bizAppId')
+        return self
+
+
+class UpdateApaasAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        biz_app_id: str = None,
+    ):
+        # 钉钉侧应用id
+        self.agent_id = agent_id
+        # ISV侧应用id
+        self.biz_app_id = biz_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.biz_app_id is not None:
+            result['bizAppId'] = self.biz_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('bizAppId') is not None:
+            self.biz_app_id = m.get('bizAppId')
+        return self
+
+
+class UpdateApaasAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateApaasAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateApaasAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddAppRolesToMemberHeaders(TeaModel):
     def __init__(
         self,
@@ -2257,6 +2413,137 @@ class RebuildRoleScopeForAppRoleResponse(TeaModel):
         return self
 
 
+class RemoveApaasAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveApaasAppRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        biz_app_id: str = None,
+    ):
+        self.op_user_id = op_user_id
+        self.biz_app_id = biz_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.biz_app_id is not None:
+            result['bizAppId'] = self.biz_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('bizAppId') is not None:
+            self.biz_app_id = m.get('bizAppId')
+        return self
+
+
+class RemoveApaasAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RemoveApaasAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RemoveApaasAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RemoveApaasAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteAppRoleHeaders(TeaModel):
     def __init__(
         self,
@@ -2378,6 +2665,198 @@ class DeleteAppRoleResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteAppRoleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateApaasAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateApaasAppRequest(TeaModel):
+    def __init__(
+        self,
+        app_name: str = None,
+        app_desc: str = None,
+        app_icon: str = None,
+        homepage_link: str = None,
+        pc_homepage_link: str = None,
+        omp_link: str = None,
+        homepage_edit_link: str = None,
+        pc_homepage_edit_link: str = None,
+        op_user_id: str = None,
+        biz_app_id: str = None,
+        template_key: str = None,
+    ):
+        self.app_name = app_name
+        self.app_desc = app_desc
+        self.app_icon = app_icon
+        self.homepage_link = homepage_link
+        self.pc_homepage_link = pc_homepage_link
+        self.omp_link = omp_link
+        self.homepage_edit_link = homepage_edit_link
+        self.pc_homepage_edit_link = pc_homepage_edit_link
+        self.op_user_id = op_user_id
+        self.biz_app_id = biz_app_id
+        self.template_key = template_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.app_desc is not None:
+            result['appDesc'] = self.app_desc
+        if self.app_icon is not None:
+            result['appIcon'] = self.app_icon
+        if self.homepage_link is not None:
+            result['homepageLink'] = self.homepage_link
+        if self.pc_homepage_link is not None:
+            result['pcHomepageLink'] = self.pc_homepage_link
+        if self.omp_link is not None:
+            result['ompLink'] = self.omp_link
+        if self.homepage_edit_link is not None:
+            result['homepageEditLink'] = self.homepage_edit_link
+        if self.pc_homepage_edit_link is not None:
+            result['pcHomepageEditLink'] = self.pc_homepage_edit_link
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.biz_app_id is not None:
+            result['bizAppId'] = self.biz_app_id
+        if self.template_key is not None:
+            result['templateKey'] = self.template_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('appDesc') is not None:
+            self.app_desc = m.get('appDesc')
+        if m.get('appIcon') is not None:
+            self.app_icon = m.get('appIcon')
+        if m.get('homepageLink') is not None:
+            self.homepage_link = m.get('homepageLink')
+        if m.get('pcHomepageLink') is not None:
+            self.pc_homepage_link = m.get('pcHomepageLink')
+        if m.get('ompLink') is not None:
+            self.omp_link = m.get('ompLink')
+        if m.get('homepageEditLink') is not None:
+            self.homepage_edit_link = m.get('homepageEditLink')
+        if m.get('pcHomepageEditLink') is not None:
+            self.pc_homepage_edit_link = m.get('pcHomepageEditLink')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('bizAppId') is not None:
+            self.biz_app_id = m.get('bizAppId')
+        if m.get('templateKey') is not None:
+            self.template_key = m.get('templateKey')
+        return self
+
+
+class CreateApaasAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        biz_app_id: str = None,
+    ):
+        # 钉钉侧应用id
+        self.agent_id = agent_id
+        # ISV侧应用id
+        self.biz_app_id = biz_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.biz_app_id is not None:
+            result['bizAppId'] = self.biz_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('bizAppId') is not None:
+            self.biz_app_id = m.get('bizAppId')
+        return self
+
+
+class CreateApaasAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateApaasAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateApaasAppResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

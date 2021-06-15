@@ -103,6 +103,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UserTaskReport', 'appMarket_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/appMarket/tasks', 'boolean', req, runtime)
         )
 
+    def create_app_goods_service_conversation(
+        self,
+        request: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationRequest,
+    ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders()
+        return self.create_app_goods_service_conversation_with_options(request, headers, runtime)
+
+    async def create_app_goods_service_conversation_async(
+        self,
+        request: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationRequest,
+    ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders()
+        return await self.create_app_goods_service_conversation_with_options_async(request, headers, runtime)
+
+    def create_app_goods_service_conversation_with_options(
+        self,
+        request: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationRequest,
+        headers: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        if not UtilClient.is_unset(request.isv_user_id):
+            body['isvUserId'] = request.isv_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse(),
+            self.do_roarequest('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/appMarket/orders/serviceGroups', 'json', req, runtime)
+        )
+
+    async def create_app_goods_service_conversation_with_options_async(
+        self,
+        request: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationRequest,
+        headers: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        if not UtilClient.is_unset(request.isv_user_id):
+            body['isvUserId'] = request.isv_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse(),
+            await self.do_roarequest_async('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/appMarket/orders/serviceGroups', 'json', req, runtime)
+        )
+
     def get_personal_experience_info(
         self,
         request: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoRequest,
