@@ -149,6 +149,188 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryComponentScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/components/{component_id}/scopes', 'json', req, runtime)
         )
 
+    def query_shortcut_scopes(
+        self,
+        shortcut_key: str,
+    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
+        return self.query_shortcut_scopes_with_options(shortcut_key, headers, runtime)
+
+    async def query_shortcut_scopes_async(
+        self,
+        shortcut_key: str,
+    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
+        return await self.query_shortcut_scopes_with_options_async(shortcut_key, headers, runtime)
+
+    def query_shortcut_scopes_with_options(
+        self,
+        shortcut_key: str,
+        headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.QueryShortcutScopesResponse(),
+            self.do_roarequest('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/shortcuts/{shortcut_key}/scopes', 'json', req, runtime)
+        )
+
+    async def query_shortcut_scopes_with_options_async(
+        self,
+        shortcut_key: str,
+        headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.QueryShortcutScopesResponse(),
+            await self.do_roarequest_async('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/shortcuts/{shortcut_key}/scopes', 'json', req, runtime)
+        )
+
+    def get_plugin_permission_point(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginPermissionPointRequest,
+    ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders()
+        return self.get_plugin_permission_point_with_options(request, headers, runtime)
+
+    async def get_plugin_permission_point_async(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginPermissionPointRequest,
+    ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders()
+        return await self.get_plugin_permission_point_with_options_async(request, headers, runtime)
+
+    def get_plugin_permission_point_with_options(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginPermissionPointRequest,
+        headers: dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mini_app_id):
+            query['miniAppId'] = request.mini_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse(),
+            self.do_roarequest('GetPluginPermissionPoint', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/plugins/permissions', 'json', req, runtime)
+        )
+
+    async def get_plugin_permission_point_with_options_async(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginPermissionPointRequest,
+        headers: dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mini_app_id):
+            query['miniAppId'] = request.mini_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse(),
+            await self.do_roarequest_async('GetPluginPermissionPoint', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/plugins/permissions', 'json', req, runtime)
+        )
+
+    def get_plugin_rule_check_info(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoRequest,
+    ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders()
+        return self.get_plugin_rule_check_info_with_options(request, headers, runtime)
+
+    async def get_plugin_rule_check_info_async(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoRequest,
+    ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders()
+        return await self.get_plugin_rule_check_info_with_options_async(request, headers, runtime)
+
+    def get_plugin_rule_check_info_with_options(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoRequest,
+        headers: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mini_app_id):
+            query['miniAppId'] = request.mini_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse(),
+            self.do_roarequest('GetPluginRuleCheckInfo', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/plugins/validationRules', 'json', req, runtime)
+        )
+
+    async def get_plugin_rule_check_info_with_options_async(
+        self,
+        request: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoRequest,
+        headers: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mini_app_id):
+            query['miniAppId'] = request.mini_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse(),
+            await self.do_roarequest_async('GetPluginRuleCheckInfo', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/plugins/validationRules', 'json', req, runtime)
+        )
+
     def update_ding_portal_page_scope(
         self,
         page_uuid: str,
@@ -231,60 +413,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse(),
             await self.do_roarequest_async('UpdateDingPortalPageScope', 'workbench_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/workbench/dingPortals/{app_uuid}/pageScopes/{page_uuid}', 'none', req, runtime)
-        )
-
-    def query_shortcut_scopes(
-        self,
-        shortcut_key: str,
-    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
-        return self.query_shortcut_scopes_with_options(shortcut_key, headers, runtime)
-
-    async def query_shortcut_scopes_async(
-        self,
-        shortcut_key: str,
-    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
-        return await self.query_shortcut_scopes_with_options_async(shortcut_key, headers, runtime)
-
-    def query_shortcut_scopes_with_options(
-        self,
-        shortcut_key: str,
-        headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkworkbench__1__0_models.QueryShortcutScopesResponse(),
-            self.do_roarequest('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/shortcuts/{shortcut_key}/scopes', 'json', req, runtime)
-        )
-
-    async def query_shortcut_scopes_with_options_async(
-        self,
-        shortcut_key: str,
-        headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkworkbench__1__0_models.QueryShortcutScopesResponse(),
-            await self.do_roarequest_async('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/workbench/shortcuts/{shortcut_key}/scopes', 'json', req, runtime)
         )
 
     def get_ding_portal_detail(

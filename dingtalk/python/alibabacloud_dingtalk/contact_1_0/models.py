@@ -4,6 +4,146 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class CreateCooperateOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCooperateOrgRequest(TeaModel):
+    def __init__(
+        self,
+        org_name: str = None,
+        logo_media_id: str = None,
+        industry_code: int = None,
+    ):
+        # 合作空间组织名称
+        self.org_name = org_name
+        # 合作空间的logo
+        self.logo_media_id = logo_media_id
+        # 行业code
+        self.industry_code = industry_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.logo_media_id is not None:
+            result['logoMediaId'] = self.logo_media_id
+        if self.industry_code is not None:
+            result['industryCode'] = self.industry_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('logoMediaId') is not None:
+            self.logo_media_id = m.get('logoMediaId')
+        if m.get('industryCode') is not None:
+            self.industry_code = m.get('industryCode')
+        return self
+
+
+class CreateCooperateOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        cooperate_corp_id: str = None,
+    ):
+        # result
+        self.cooperate_corp_id = cooperate_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cooperate_corp_id is not None:
+            result['cooperateCorpId'] = self.cooperate_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cooperateCorpId') is not None:
+            self.cooperate_corp_id = m.get('cooperateCorpId')
+        return self
+
+
+class CreateCooperateOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateCooperateOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateCooperateOrgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryResourceManagementMembersHeaders(TeaModel):
     def __init__(
         self,
@@ -531,6 +671,103 @@ class ListManagementGroupsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListManagementGroupsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCooperateOrgInviteInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCooperateOrgInviteInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        invite_url: str = None,
+    ):
+        self.invite_url = invite_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invite_url is not None:
+            result['inviteUrl'] = self.invite_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('inviteUrl') is not None:
+            self.invite_url = m.get('inviteUrl')
+        return self
+
+
+class GetCooperateOrgInviteInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCooperateOrgInviteInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCooperateOrgInviteInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

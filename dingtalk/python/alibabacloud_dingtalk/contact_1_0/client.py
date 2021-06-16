@@ -23,6 +23,78 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_cooperate_org(
+        self,
+        request: dingtalkcontact__1__0_models.CreateCooperateOrgRequest,
+    ) -> dingtalkcontact__1__0_models.CreateCooperateOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.CreateCooperateOrgHeaders()
+        return self.create_cooperate_org_with_options(request, headers, runtime)
+
+    async def create_cooperate_org_async(
+        self,
+        request: dingtalkcontact__1__0_models.CreateCooperateOrgRequest,
+    ) -> dingtalkcontact__1__0_models.CreateCooperateOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.CreateCooperateOrgHeaders()
+        return await self.create_cooperate_org_with_options_async(request, headers, runtime)
+
+    def create_cooperate_org_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.CreateCooperateOrgRequest,
+        headers: dingtalkcontact__1__0_models.CreateCooperateOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.CreateCooperateOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.logo_media_id):
+            body['logoMediaId'] = request.logo_media_id
+        if not UtilClient.is_unset(request.industry_code):
+            body['industryCode'] = request.industry_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.CreateCooperateOrgResponse(),
+            self.do_roarequest('CreateCooperateOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps', 'json', req, runtime)
+        )
+
+    async def create_cooperate_org_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.CreateCooperateOrgRequest,
+        headers: dingtalkcontact__1__0_models.CreateCooperateOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.CreateCooperateOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.logo_media_id):
+            body['logoMediaId'] = request.logo_media_id
+        if not UtilClient.is_unset(request.industry_code):
+            body['industryCode'] = request.industry_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.CreateCooperateOrgResponse(),
+            await self.do_roarequest_async('CreateCooperateOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps', 'json', req, runtime)
+        )
+
     def query_resource_management_members(
         self,
         resource_id: str,
@@ -197,6 +269,60 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.ListManagementGroupsResponse(),
             await self.do_roarequest_async('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/managementGroups', 'json', req, runtime)
+        )
+
+    def get_cooperate_org_invite_info(
+        self,
+        cooperate_corp_id: str,
+    ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders()
+        return self.get_cooperate_org_invite_info_with_options(cooperate_corp_id, headers, runtime)
+
+    async def get_cooperate_org_invite_info_async(
+        self,
+        cooperate_corp_id: str,
+    ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders()
+        return await self.get_cooperate_org_invite_info_with_options_async(cooperate_corp_id, headers, runtime)
+
+    def get_cooperate_org_invite_info_with_options(
+        self,
+        cooperate_corp_id: str,
+        headers: dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse(),
+            self.do_roarequest('GetCooperateOrgInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cooperateCorps/{cooperate_corp_id}/inviteInfos', 'json', req, runtime)
+        )
+
+    async def get_cooperate_org_invite_info_with_options_async(
+        self,
+        cooperate_corp_id: str,
+        headers: dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse(),
+            await self.do_roarequest_async('GetCooperateOrgInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cooperateCorps/{cooperate_corp_id}/inviteInfos', 'json', req, runtime)
         )
 
     def create_management_group(

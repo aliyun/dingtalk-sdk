@@ -291,6 +291,368 @@ class QueryComponentScopesResponse(TeaModel):
         return self
 
 
+class QueryShortcutScopesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryShortcutScopesResponseBody(TeaModel):
+    def __init__(
+        self,
+        user_visible_scopes: List[str] = None,
+        dept_visible_scopes: List[int] = None,
+    ):
+        # errorMsg
+        self.user_visible_scopes = user_visible_scopes
+        self.dept_visible_scopes = dept_visible_scopes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_visible_scopes is not None:
+            result['userVisibleScopes'] = self.user_visible_scopes
+        if self.dept_visible_scopes is not None:
+            result['deptVisibleScopes'] = self.dept_visible_scopes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userVisibleScopes') is not None:
+            self.user_visible_scopes = m.get('userVisibleScopes')
+        if m.get('deptVisibleScopes') is not None:
+            self.dept_visible_scopes = m.get('deptVisibleScopes')
+        return self
+
+
+class QueryShortcutScopesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryShortcutScopesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryShortcutScopesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPluginPermissionPointHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPluginPermissionPointRequest(TeaModel):
+    def __init__(
+        self,
+        mini_app_id: str = None,
+    ):
+        # 插件id
+        self.mini_app_id = mini_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        return self
+
+
+class GetPluginPermissionPointResponseBody(TeaModel):
+    def __init__(
+        self,
+        permission_point_list: List[str] = None,
+    ):
+        # 插件权限点列表
+        self.permission_point_list = permission_point_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.permission_point_list is not None:
+            result['permissionPointList'] = self.permission_point_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('permissionPointList') is not None:
+            self.permission_point_list = m.get('permissionPointList')
+        return self
+
+
+class GetPluginPermissionPointResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPluginPermissionPointResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPluginPermissionPointResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPluginRuleCheckInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPluginRuleCheckInfoRequest(TeaModel):
+    def __init__(
+        self,
+        mini_app_id: str = None,
+    ):
+        self.mini_app_id = mini_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        return self
+
+
+class GetPluginRuleCheckInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        pack_code: str = None,
+        plugin_rule_check_detail: str = None,
+    ):
+        # 权限包code
+        self.pack_code = pack_code
+        # 校验规则
+        self.plugin_rule_check_detail = plugin_rule_check_detail
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pack_code is not None:
+            result['packCode'] = self.pack_code
+        if self.plugin_rule_check_detail is not None:
+            result['pluginRuleCheckDetail'] = self.plugin_rule_check_detail
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('packCode') is not None:
+            self.pack_code = m.get('packCode')
+        if m.get('pluginRuleCheckDetail') is not None:
+            self.plugin_rule_check_detail = m.get('pluginRuleCheckDetail')
+        return self
+
+
+class GetPluginRuleCheckInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPluginRuleCheckInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPluginRuleCheckInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateDingPortalPageScopeHeaders(TeaModel):
     def __init__(
         self,
@@ -397,110 +759,6 @@ class UpdateDingPortalPageScopeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
-        return self
-
-
-class QueryShortcutScopesHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class QueryShortcutScopesResponseBody(TeaModel):
-    def __init__(
-        self,
-        user_visible_scopes: List[str] = None,
-        dept_visible_scopes: List[int] = None,
-    ):
-        # errorMsg
-        self.user_visible_scopes = user_visible_scopes
-        self.dept_visible_scopes = dept_visible_scopes
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.user_visible_scopes is not None:
-            result['userVisibleScopes'] = self.user_visible_scopes
-        if self.dept_visible_scopes is not None:
-            result['deptVisibleScopes'] = self.dept_visible_scopes
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('userVisibleScopes') is not None:
-            self.user_visible_scopes = m.get('userVisibleScopes')
-        if m.get('deptVisibleScopes') is not None:
-            self.dept_visible_scopes = m.get('deptVisibleScopes')
-        return self
-
-
-class QueryShortcutScopesResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: QueryShortcutScopesResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = QueryShortcutScopesResponseBody()
-            self.body = temp_model.from_map(m['body'])
         return self
 
 
