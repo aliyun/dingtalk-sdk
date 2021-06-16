@@ -7,6 +7,12 @@ namespace AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0;
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetDingPortalDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetDingPortalDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginPermissionPointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginPermissionPointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginPermissionPointResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginRuleCheckInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginRuleCheckInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginRuleCheckInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupResponse;
@@ -118,6 +124,126 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string $shortcutKey
+     *
+     * @return QueryShortcutScopesResponse
+     */
+    public function queryShortcutScopes($shortcutKey)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryShortcutScopesHeaders([]);
+
+        return $this->queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $shortcutKey
+     * @param QueryShortcutScopesHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryShortcutScopesResponse
+     */
+    public function queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryShortcutScopesResponse::fromMap($this->doROARequest('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workbench/shortcuts/' . $shortcutKey . '/scopes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetPluginPermissionPointRequest $request
+     *
+     * @return GetPluginPermissionPointResponse
+     */
+    public function getPluginPermissionPoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPluginPermissionPointHeaders([]);
+
+        return $this->getPluginPermissionPointWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPluginPermissionPointRequest $request
+     * @param GetPluginPermissionPointHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetPluginPermissionPointResponse
+     */
+    public function getPluginPermissionPointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->miniAppId)) {
+            @$query['miniAppId'] = $request->miniAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPluginPermissionPointResponse::fromMap($this->doROARequest('GetPluginPermissionPoint', 'workbench_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workbench/plugins/permissions', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetPluginRuleCheckInfoRequest $request
+     *
+     * @return GetPluginRuleCheckInfoResponse
+     */
+    public function getPluginRuleCheckInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPluginRuleCheckInfoHeaders([]);
+
+        return $this->getPluginRuleCheckInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPluginRuleCheckInfoRequest $request
+     * @param GetPluginRuleCheckInfoHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetPluginRuleCheckInfoResponse
+     */
+    public function getPluginRuleCheckInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->miniAppId)) {
+            @$query['miniAppId'] = $request->miniAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPluginRuleCheckInfoResponse::fromMap($this->doROARequest('GetPluginRuleCheckInfo', 'workbench_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workbench/plugins/validationRules', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                           $pageUuid
      * @param string                           $appUuid
      * @param UpdateDingPortalPageScopeRequest $request
@@ -170,42 +296,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateDingPortalPageScopeResponse::fromMap($this->doROARequest('UpdateDingPortalPageScope', 'workbench_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/workbench/dingPortals/' . $appUuid . '/pageScopes/' . $pageUuid . '', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param string $shortcutKey
-     *
-     * @return QueryShortcutScopesResponse
-     */
-    public function queryShortcutScopes($shortcutKey)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryShortcutScopesHeaders([]);
-
-        return $this->queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime);
-    }
-
-    /**
-     * @param string                     $shortcutKey
-     * @param QueryShortcutScopesHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return QueryShortcutScopesResponse
-     */
-    public function queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryShortcutScopesResponse::fromMap($this->doROARequest('QueryShortcutScopes', 'workbench_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workbench/shortcuts/' . $shortcutKey . '/scopes', 'json', $req, $runtime));
     }
 
     /**

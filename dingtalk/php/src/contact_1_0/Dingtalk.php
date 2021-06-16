@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
@@ -16,6 +19,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
@@ -44,6 +49,54 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateCooperateOrgRequest $request
+     *
+     * @return CreateCooperateOrgResponse
+     */
+    public function createCooperateOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCooperateOrgHeaders([]);
+
+        return $this->createCooperateOrgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateCooperateOrgRequest $request
+     * @param CreateCooperateOrgHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CreateCooperateOrgResponse
+     */
+    public function createCooperateOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->orgName)) {
+            @$body['orgName'] = $request->orgName;
+        }
+        if (!Utils::isUnset($request->logoMediaId)) {
+            @$body['logoMediaId'] = $request->logoMediaId;
+        }
+        if (!Utils::isUnset($request->industryCode)) {
+            @$body['industryCode'] = $request->industryCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateCooperateOrgResponse::fromMap($this->doROARequest('CreateCooperateOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps', 'json', $req, $runtime));
     }
 
     /**
@@ -161,6 +214,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListManagementGroupsResponse::fromMap($this->doROARequest('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/managementGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $cooperateCorpId
+     *
+     * @return GetCooperateOrgInviteInfoResponse
+     */
+    public function getCooperateOrgInviteInfo($cooperateCorpId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCooperateOrgInviteInfoHeaders([]);
+
+        return $this->getCooperateOrgInviteInfoWithOptions($cooperateCorpId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                           $cooperateCorpId
+     * @param GetCooperateOrgInviteInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetCooperateOrgInviteInfoResponse
+     */
+    public function getCooperateOrgInviteInfoWithOptions($cooperateCorpId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetCooperateOrgInviteInfoResponse::fromMap($this->doROARequest('GetCooperateOrgInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cooperateCorps/' . $cooperateCorpId . '/inviteInfos', 'json', $req, $runtime));
     }
 
     /**
