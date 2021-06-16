@@ -7,6 +7,94 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CreateCooperateOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCooperateOrgRequest extends $tea.Model {
+  orgName?: string;
+  logoMediaId?: string;
+  industryCode?: number;
+  static names(): { [key: string]: string } {
+    return {
+      orgName: 'orgName',
+      logoMediaId: 'logoMediaId',
+      industryCode: 'industryCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orgName: 'string',
+      logoMediaId: 'string',
+      industryCode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCooperateOrgResponseBody extends $tea.Model {
+  cooperateCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cooperateCorpId: 'cooperateCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cooperateCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCooperateOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateCooperateOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateCooperateOrgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryResourceManagementMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -216,6 +304,69 @@ export class ListManagementGroupsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListManagementGroupsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCooperateOrgInviteInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCooperateOrgInviteInfoResponseBody extends $tea.Model {
+  inviteUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      inviteUrl: 'inviteUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      inviteUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCooperateOrgInviteInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCooperateOrgInviteInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCooperateOrgInviteInfoResponseBody,
     };
   }
 
@@ -995,6 +1146,43 @@ export default class Client extends OpenApi {
   }
 
 
+  async createCooperateOrg(request: CreateCooperateOrgRequest): Promise<CreateCooperateOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCooperateOrgHeaders({ });
+    return await this.createCooperateOrgWithOptions(request, headers, runtime);
+  }
+
+  async createCooperateOrgWithOptions(request: CreateCooperateOrgRequest, headers: CreateCooperateOrgHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCooperateOrgResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.orgName)) {
+      body["orgName"] = request.orgName;
+    }
+
+    if (!Util.isUnset(request.logoMediaId)) {
+      body["logoMediaId"] = request.logoMediaId;
+    }
+
+    if (!Util.isUnset(request.industryCode)) {
+      body["industryCode"] = request.industryCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateCooperateOrgResponse>(await this.doROARequest("CreateCooperateOrg", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps`, "json", req, runtime), new CreateCooperateOrgResponse({}));
+  }
+
   async queryResourceManagementMembers(resourceId: string): Promise<QueryResourceManagementMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryResourceManagementMembersHeaders({ });
@@ -1070,6 +1258,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListManagementGroupsResponse>(await this.doROARequest("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new ListManagementGroupsResponse({}));
+  }
+
+  async getCooperateOrgInviteInfo(cooperateCorpId: string): Promise<GetCooperateOrgInviteInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCooperateOrgInviteInfoHeaders({ });
+    return await this.getCooperateOrgInviteInfoWithOptions(cooperateCorpId, headers, runtime);
+  }
+
+  async getCooperateOrgInviteInfoWithOptions(cooperateCorpId: string, headers: GetCooperateOrgInviteInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCooperateOrgInviteInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCooperateOrgInviteInfoResponse>(await this.doROARequest("GetCooperateOrgInviteInfo", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cooperateCorps/${cooperateCorpId}/inviteInfos`, "json", req, runtime), new GetCooperateOrgInviteInfoResponse({}));
   }
 
   async createManagementGroup(request: CreateManagementGroupRequest): Promise<CreateManagementGroupResponse> {

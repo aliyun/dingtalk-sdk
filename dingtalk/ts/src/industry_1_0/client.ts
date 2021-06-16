@@ -565,6 +565,69 @@ export class QueryBizOptLogResponse extends $tea.Model {
   }
 }
 
+export class QueryUserExtInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtInfoResponseBody extends $tea.Model {
+  content?: QueryUserExtInfoResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryUserExtInfoResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserExtInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserExtInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserExtInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAllDepartmentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1265,6 +1328,31 @@ export class QueryBizOptLogResponseBodyContent extends $tea.Model {
   }
 }
 
+export class QueryUserExtInfoResponseBodyContent extends $tea.Model {
+  userExtendKey?: string;
+  userExtendValue?: string;
+  userExtendDisplayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userExtendKey: 'userExtendKey',
+      userExtendValue: 'userExtendValue',
+      userExtendDisplayName: 'userExtendDisplayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userExtendKey: 'string',
+      userExtendValue: 'string',
+      userExtendDisplayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAllDepartmentResponseBodyContent extends $tea.Model {
   id?: number;
   name?: string;
@@ -1726,6 +1814,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryBizOptLogResponse>(await this.doROARequest("QueryBizOptLog", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/bizOptLogs`, "json", req, runtime), new QueryBizOptLogResponse({}));
+  }
+
+  async queryUserExtInfo(userId: string): Promise<QueryUserExtInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserExtInfoHeaders({ });
+    return await this.queryUserExtInfoWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserExtInfoWithOptions(userId: string, headers: QueryUserExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserExtInfoResponse>(await this.doROARequest("QueryUserExtInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "json", req, runtime), new QueryUserExtInfoResponse({}));
   }
 
   async queryAllDepartment(request: QueryAllDepartmentRequest): Promise<QueryAllDepartmentResponse> {
