@@ -12,6 +12,10 @@ public class RegisterCustomAppRoleRequest extends TeaModel {
     @NameInMap("roleName")
     public String roleName;
 
+    // 是否拥有管理角色的权限，可不传，默认false
+    @NameInMap("canManageRole")
+    public Boolean canManageRole;
+
     public static RegisterCustomAppRoleRequest build(java.util.Map<String, ?> map) throws Exception {
         RegisterCustomAppRoleRequest self = new RegisterCustomAppRoleRequest();
         return TeaModel.build(map, self);
@@ -31,6 +35,14 @@ public class RegisterCustomAppRoleRequest extends TeaModel {
     }
     public String getRoleName() {
         return this.roleName;
+    }
+
+    public RegisterCustomAppRoleRequest setCanManageRole(Boolean canManageRole) {
+        this.canManageRole = canManageRole;
+        return this;
+    }
+    public Boolean getCanManageRole() {
+        return this.canManageRole;
     }
 
 }

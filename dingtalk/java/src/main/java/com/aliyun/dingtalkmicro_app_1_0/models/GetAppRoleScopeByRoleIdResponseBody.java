@@ -28,6 +28,10 @@ public class GetAppRoleScopeByRoleIdResponseBody extends TeaModel {
     @NameInMap("scopeVersion")
     public String scopeVersion;
 
+    // 是否拥有角色管理权限，默认false
+    @NameInMap("canManageRole")
+    public Boolean canManageRole;
+
     public static GetAppRoleScopeByRoleIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetAppRoleScopeByRoleIdResponseBody self = new GetAppRoleScopeByRoleIdResponseBody();
         return TeaModel.build(map, self);
@@ -79,6 +83,14 @@ public class GetAppRoleScopeByRoleIdResponseBody extends TeaModel {
     }
     public String getScopeVersion() {
         return this.scopeVersion;
+    }
+
+    public GetAppRoleScopeByRoleIdResponseBody setCanManageRole(Boolean canManageRole) {
+        this.canManageRole = canManageRole;
+        return this;
+    }
+    public Boolean getCanManageRole() {
+        return this.canManageRole;
     }
 
 }

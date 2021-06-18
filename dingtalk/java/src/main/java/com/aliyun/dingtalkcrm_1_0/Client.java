@@ -459,7 +459,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PATCH", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime), new UpdateCrmPersonalCustomerResponse());
+        return TeaModel.toModel(this.doROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime), new UpdateCrmPersonalCustomerResponse());
     }
 
     public QueryCrmPersonalCustomerResponse queryCrmPersonalCustomer(QueryCrmPersonalCustomerRequest request) throws Exception {

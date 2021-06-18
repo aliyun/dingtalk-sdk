@@ -8,9 +8,13 @@ public class UpdateAppRoleInfoRequest extends TeaModel {
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 新角色名称
+    // 变更角色名称，可不传，不传则不变
     @NameInMap("newRoleName")
     public String newRoleName;
+
+    // 变更角色管理权限，可不传，不传则不变
+    @NameInMap("canManageRole")
+    public Boolean canManageRole;
 
     public static UpdateAppRoleInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateAppRoleInfoRequest self = new UpdateAppRoleInfoRequest();
@@ -31,6 +35,14 @@ public class UpdateAppRoleInfoRequest extends TeaModel {
     }
     public String getNewRoleName() {
         return this.newRoleName;
+    }
+
+    public UpdateAppRoleInfoRequest setCanManageRole(Boolean canManageRole) {
+        this.canManageRole = canManageRole;
+        return this;
+    }
+    public Boolean getCanManageRole() {
+        return this.canManageRole;
     }
 
 }

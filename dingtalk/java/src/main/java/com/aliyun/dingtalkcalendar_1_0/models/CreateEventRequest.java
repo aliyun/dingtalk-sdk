@@ -34,6 +34,12 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("location")
     public CreateEventRequestLocation location;
 
+    @NameInMap("reminders")
+    public java.util.List<CreateEventRequestReminders> reminders;
+
+    @NameInMap("onlineMeetingInfo")
+    public CreateEventRequestOnlineMeetingInfo onlineMeetingInfo;
+
     // 扩展信息
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
@@ -105,6 +111,22 @@ public class CreateEventRequest extends TeaModel {
     }
     public CreateEventRequestLocation getLocation() {
         return this.location;
+    }
+
+    public CreateEventRequest setReminders(java.util.List<CreateEventRequestReminders> reminders) {
+        this.reminders = reminders;
+        return this;
+    }
+    public java.util.List<CreateEventRequestReminders> getReminders() {
+        return this.reminders;
+    }
+
+    public CreateEventRequest setOnlineMeetingInfo(CreateEventRequestOnlineMeetingInfo onlineMeetingInfo) {
+        this.onlineMeetingInfo = onlineMeetingInfo;
+        return this;
+    }
+    public CreateEventRequestOnlineMeetingInfo getOnlineMeetingInfo() {
+        return this.onlineMeetingInfo;
     }
 
     public CreateEventRequest setExtra(java.util.Map<String, String> extra) {
@@ -374,6 +396,55 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+    }
+
+    public static class CreateEventRequestReminders extends TeaModel {
+        @NameInMap("method")
+        public String method;
+
+        @NameInMap("minutes")
+        public Integer minutes;
+
+        public static CreateEventRequestReminders build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestReminders self = new CreateEventRequestReminders();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestReminders setMethod(String method) {
+            this.method = method;
+            return this;
+        }
+        public String getMethod() {
+            return this.method;
+        }
+
+        public CreateEventRequestReminders setMinutes(Integer minutes) {
+            this.minutes = minutes;
+            return this;
+        }
+        public Integer getMinutes() {
+            return this.minutes;
+        }
+
+    }
+
+    public static class CreateEventRequestOnlineMeetingInfo extends TeaModel {
+        @NameInMap("type")
+        public String type;
+
+        public static CreateEventRequestOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestOnlineMeetingInfo self = new CreateEventRequestOnlineMeetingInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestOnlineMeetingInfo setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
     }

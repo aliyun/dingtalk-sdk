@@ -21,6 +21,84 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public PullDataByPageResponse pullDataByPage(PullDataByPageRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PullDataByPageHeaders headers = new PullDataByPageHeaders();
+        return this.pullDataByPageWithOptions(request, headers, runtime);
+    }
+
+    public PullDataByPageResponse pullDataByPageWithOptions(PullDataByPageRequest request, PullDataByPageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dataModelId)) {
+            query.put("dataModelId", request.dataModelId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datetimeFilterField)) {
+            query.put("datetimeFilterField", request.datetimeFilterField);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.minDatetime)) {
+            query.put("minDatetime", request.minDatetime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxDatetime)) {
+            query.put("maxDatetime", request.maxDatetime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("PullDataByPage", "connector_1.0", "HTTP", "GET", "AK", "/v1.0/connector/data", "json", req, runtime), new PullDataByPageResponse());
+    }
+
+    public PullDataByPkResponse pullDataByPk(String dataModelId, PullDataByPkRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PullDataByPkHeaders headers = new PullDataByPkHeaders();
+        return this.pullDataByPkWithOptions(dataModelId, request, headers, runtime);
+    }
+
+    public PullDataByPkResponse pullDataByPkWithOptions(String dataModelId, PullDataByPkRequest request, PullDataByPkHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.primaryKey)) {
+            query.put("primaryKey", request.primaryKey);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("PullDataByPk", "connector_1.0", "HTTP", "GET", "AK", "/v1.0/connector/data/" + dataModelId + "", "json", req, runtime), new PullDataByPkResponse());
+    }
+
     public SyncDataResponse syncData(SyncDataRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SyncDataHeaders headers = new SyncDataHeaders();

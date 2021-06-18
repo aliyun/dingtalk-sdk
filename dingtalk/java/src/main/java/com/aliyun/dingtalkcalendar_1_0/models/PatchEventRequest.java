@@ -38,6 +38,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
+    @NameInMap("reminders")
+    public java.util.List<PatchEventRequestReminders> reminders;
+
     public static PatchEventRequest build(java.util.Map<String, ?> map) throws Exception {
         PatchEventRequest self = new PatchEventRequest();
         return TeaModel.build(map, self);
@@ -121,6 +124,14 @@ public class PatchEventRequest extends TeaModel {
     }
     public java.util.Map<String, String> getExtra() {
         return this.extra;
+    }
+
+    public PatchEventRequest setReminders(java.util.List<PatchEventRequestReminders> reminders) {
+        this.reminders = reminders;
+        return this;
+    }
+    public java.util.List<PatchEventRequestReminders> getReminders() {
+        return this.reminders;
     }
 
     public static class PatchEventRequestStart extends TeaModel {
@@ -373,6 +384,36 @@ public class PatchEventRequest extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+    }
+
+    public static class PatchEventRequestReminders extends TeaModel {
+        @NameInMap("method")
+        public String method;
+
+        @NameInMap("minutes")
+        public Integer minutes;
+
+        public static PatchEventRequestReminders build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestReminders self = new PatchEventRequestReminders();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestReminders setMethod(String method) {
+            this.method = method;
+            return this;
+        }
+        public String getMethod() {
+            return this.method;
+        }
+
+        public PatchEventRequestReminders setMinutes(Integer minutes) {
+            this.minutes = minutes;
+            return this;
+        }
+        public Integer getMinutes() {
+            return this.minutes;
         }
 
     }

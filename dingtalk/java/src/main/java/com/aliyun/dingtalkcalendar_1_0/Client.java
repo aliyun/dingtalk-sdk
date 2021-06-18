@@ -332,6 +332,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("extra", request.extra);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.reminders)) {
+            body.put("reminders", request.reminders);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -387,6 +391,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.location))) {
             body.put("location", request.location);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reminders)) {
+            body.put("reminders", request.reminders);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.onlineMeetingInfo))) {
+            body.put("onlineMeetingInfo", request.onlineMeetingInfo);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.extra)) {

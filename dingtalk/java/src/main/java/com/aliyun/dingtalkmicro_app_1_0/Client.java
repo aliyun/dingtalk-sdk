@@ -136,6 +136,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("roleName", request.roleName);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.canManageRole)) {
+            body.put("canManageRole", request.canManageRole);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -748,6 +752,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.newRoleName)) {
             body.put("newRoleName", request.newRoleName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.canManageRole)) {
+            body.put("canManageRole", request.canManageRole);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

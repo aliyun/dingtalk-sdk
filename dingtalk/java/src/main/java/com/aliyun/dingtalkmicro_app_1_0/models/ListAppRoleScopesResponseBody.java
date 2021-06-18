@@ -70,6 +70,10 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
         @NameInMap("scopeVersion")
         public Long scopeVersion;
 
+        // 是否拥有角色管理权限，默认false
+        @NameInMap("canManageRole")
+        public Boolean canManageRole;
+
         public static ListAppRoleScopesResponseBodyDataList build(java.util.Map<String, ?> map) throws Exception {
             ListAppRoleScopesResponseBodyDataList self = new ListAppRoleScopesResponseBodyDataList();
             return TeaModel.build(map, self);
@@ -121,6 +125,14 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
         }
         public Long getScopeVersion() {
             return this.scopeVersion;
+        }
+
+        public ListAppRoleScopesResponseBodyDataList setCanManageRole(Boolean canManageRole) {
+            this.canManageRole = canManageRole;
+            return this;
+        }
+        public Boolean getCanManageRole() {
+            return this.canManageRole;
         }
 
     }

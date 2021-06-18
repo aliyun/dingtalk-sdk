@@ -29,6 +29,10 @@ public class ListRoleInfoByUserResponseBody extends TeaModel {
         @NameInMap("roleId")
         public Long roleId;
 
+        // 是否拥有角色管理权限，默认false
+        @NameInMap("canManageRole")
+        public Boolean canManageRole;
+
         public static ListRoleInfoByUserResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListRoleInfoByUserResponseBodyResult self = new ListRoleInfoByUserResponseBodyResult();
             return TeaModel.build(map, self);
@@ -48,6 +52,14 @@ public class ListRoleInfoByUserResponseBody extends TeaModel {
         }
         public Long getRoleId() {
             return this.roleId;
+        }
+
+        public ListRoleInfoByUserResponseBodyResult setCanManageRole(Boolean canManageRole) {
+            this.canManageRole = canManageRole;
+            return this;
+        }
+        public Boolean getCanManageRole() {
+            return this.canManageRole;
         }
 
     }
