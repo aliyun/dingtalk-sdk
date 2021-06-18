@@ -411,6 +411,7 @@ export class GetOfficialAccountContactInfoResponseBody extends $tea.Model {
   stateCode?: string;
   unionId?: string;
   authItems?: string[];
+  userInfos?: string[];
   static names(): { [key: string]: string } {
     return {
       corpName: 'corpName',
@@ -418,6 +419,7 @@ export class GetOfficialAccountContactInfoResponseBody extends $tea.Model {
       stateCode: 'stateCode',
       unionId: 'unionId',
       authItems: 'authItems',
+      userInfos: 'userInfos',
     };
   }
 
@@ -428,6 +430,7 @@ export class GetOfficialAccountContactInfoResponseBody extends $tea.Model {
       stateCode: 'string',
       unionId: 'string',
       authItems: { 'type': 'array', 'itemType': 'string' },
+      userInfos: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
