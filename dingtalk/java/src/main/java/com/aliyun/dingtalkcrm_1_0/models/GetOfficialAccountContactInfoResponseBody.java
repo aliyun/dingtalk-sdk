@@ -24,6 +24,10 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     @NameInMap("authItems")
     public java.util.List<String> authItems;
 
+    // 已授权的字段
+    @NameInMap("userInfos")
+    public java.util.List<String> userInfos;
+
     public static GetOfficialAccountContactInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetOfficialAccountContactInfoResponseBody self = new GetOfficialAccountContactInfoResponseBody();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     }
     public java.util.List<String> getAuthItems() {
         return this.authItems;
+    }
+
+    public GetOfficialAccountContactInfoResponseBody setUserInfos(java.util.List<String> userInfos) {
+        this.userInfos = userInfos;
+        return this;
+    }
+    public java.util.List<String> getUserInfos() {
+        return this.userInfos;
     }
 
 }
