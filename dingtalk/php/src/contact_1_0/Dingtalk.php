@@ -11,6 +11,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoHeaders;
@@ -25,6 +27,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsResponse;
@@ -32,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembers
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupResponse;
@@ -49,6 +57,294 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string $resourceId
+     *
+     * @return QueryResourceManagementMembersResponse
+     */
+    public function queryResourceManagementMembers($resourceId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryResourceManagementMembersHeaders([]);
+
+        return $this->queryResourceManagementMembersWithOptions($resourceId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                $resourceId
+     * @param QueryResourceManagementMembersHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return QueryResourceManagementMembersResponse
+     */
+    public function queryResourceManagementMembersWithOptions($resourceId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryResourceManagementMembersResponse::fromMap($this->doROARequest('QueryResourceManagementMembers', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/resources/' . $resourceId . '/managementMembers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateEmpAttrbuteVisibilitySettingRequest $request
+     *
+     * @return UpdateEmpAttrbuteVisibilitySettingResponse
+     */
+    public function updateEmpAttrbuteVisibilitySetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateEmpAttrbuteVisibilitySettingHeaders([]);
+
+        return $this->updateEmpAttrbuteVisibilitySettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateEmpAttrbuteVisibilitySettingRequest $request
+     * @param UpdateEmpAttrbuteVisibilitySettingHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return UpdateEmpAttrbuteVisibilitySettingResponse
+     */
+    public function updateEmpAttrbuteVisibilitySettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->id)) {
+            @$body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->gmtCreate)) {
+            @$body['gmtCreate'] = $request->gmtCreate;
+        }
+        if (!Utils::isUnset($request->gmtModified)) {
+            @$body['gmtModified'] = $request->gmtModified;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->objectStaffIds)) {
+            @$body['objectStaffIds'] = $request->objectStaffIds;
+        }
+        if (!Utils::isUnset($request->objectDeptIds)) {
+            @$body['objectDeptIds'] = $request->objectDeptIds;
+        }
+        if (!Utils::isUnset($request->objectTagIds)) {
+            @$body['objectTagIds'] = $request->objectTagIds;
+        }
+        if (!Utils::isUnset($request->objectNodeConditions)) {
+            @$body['objectNodeConditions'] = $request->objectNodeConditions;
+        }
+        if (!Utils::isUnset($request->hideFields)) {
+            @$body['hideFields'] = $request->hideFields;
+        }
+        if (!Utils::isUnset($request->excludeStaffIds)) {
+            @$body['excludeStaffIds'] = $request->excludeStaffIds;
+        }
+        if (!Utils::isUnset($request->excludeDeptIds)) {
+            @$body['excludeDeptIds'] = $request->excludeDeptIds;
+        }
+        if (!Utils::isUnset($request->excludeTagIds)) {
+            @$body['excludeTagIds'] = $request->excludeTagIds;
+        }
+        if (!Utils::isUnset($request->active)) {
+            @$body['active'] = $request->active;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateEmpAttrbuteVisibilitySettingResponse::fromMap($this->doROARequest('UpdateEmpAttrbuteVisibilitySetting', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/staffAttributes/visibilitySettings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $settingId
+     *
+     * @return DeleteEmpAttributeVisibilityResponse
+     */
+    public function deleteEmpAttributeVisibility($settingId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteEmpAttributeVisibilityHeaders([]);
+
+        return $this->deleteEmpAttributeVisibilityWithOptions($settingId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $settingId
+     * @param DeleteEmpAttributeVisibilityHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return DeleteEmpAttributeVisibilityResponse
+     */
+    public function deleteEmpAttributeVisibilityWithOptions($settingId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteEmpAttributeVisibilityResponse::fromMap($this->doROARequest('DeleteEmpAttributeVisibility', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/staffAttributes/visibilitySettings/' . $settingId . '', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param ListManagementGroupsRequest $request
+     *
+     * @return ListManagementGroupsResponse
+     */
+    public function listManagementGroups($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListManagementGroupsHeaders([]);
+
+        return $this->listManagementGroupsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListManagementGroupsRequest $request
+     * @param ListManagementGroupsHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ListManagementGroupsResponse
+     */
+    public function listManagementGroupsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListManagementGroupsResponse::fromMap($this->doROARequest('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/managementGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListEmpAttributeVisibilityRequest $request
+     *
+     * @return ListEmpAttributeVisibilityResponse
+     */
+    public function listEmpAttributeVisibility($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListEmpAttributeVisibilityHeaders([]);
+
+        return $this->listEmpAttributeVisibilityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListEmpAttributeVisibilityRequest $request
+     * @param ListEmpAttributeVisibilityHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return ListEmpAttributeVisibilityResponse
+     */
+    public function listEmpAttributeVisibilityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListEmpAttributeVisibilityResponse::fromMap($this->doROARequest('ListEmpAttributeVisibility', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/staffAttributes/visibilitySettings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetApplyInviteInfoRequest $request
+     *
+     * @return GetApplyInviteInfoResponse
+     */
+    public function getApplyInviteInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetApplyInviteInfoHeaders([]);
+
+        return $this->getApplyInviteInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetApplyInviteInfoRequest $request
+     * @param GetApplyInviteInfoHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetApplyInviteInfoResponse
+     */
+    public function getApplyInviteInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->inviterUserId)) {
+            @$query['inviterUserId'] = $request->inviterUserId;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetApplyInviteInfoResponse::fromMap($this->doROARequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/invites/infos', 'json', $req, $runtime));
     }
 
     /**
@@ -100,42 +396,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $resourceId
-     *
-     * @return QueryResourceManagementMembersResponse
-     */
-    public function queryResourceManagementMembers($resourceId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryResourceManagementMembersHeaders([]);
-
-        return $this->queryResourceManagementMembersWithOptions($resourceId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                                $resourceId
-     * @param QueryResourceManagementMembersHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryResourceManagementMembersResponse
-     */
-    public function queryResourceManagementMembersWithOptions($resourceId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryResourceManagementMembersResponse::fromMap($this->doROARequest('QueryResourceManagementMembers', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/resources/' . $resourceId . '/managementMembers', 'json', $req, $runtime));
-    }
-
-    /**
      * @param string $userId
      *
      * @return QueryUserManagementResourcesResponse
@@ -169,51 +429,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserManagementResourcesResponse::fromMap($this->doROARequest('QueryUserManagementResources', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/users/' . $userId . '/managemementResources', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param ListManagementGroupsRequest $request
-     *
-     * @return ListManagementGroupsResponse
-     */
-    public function listManagementGroups($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListManagementGroupsHeaders([]);
-
-        return $this->listManagementGroupsWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ListManagementGroupsRequest $request
-     * @param ListManagementGroupsHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return ListManagementGroupsResponse
-     */
-    public function listManagementGroupsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListManagementGroupsResponse::fromMap($this->doROARequest('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/managementGroups', 'json', $req, $runtime));
     }
 
     /**
@@ -390,51 +605,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteManagementGroupResponse::fromMap($this->doROARequest('DeleteManagementGroup', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/managementGroups/' . $groupId . '', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param GetApplyInviteInfoRequest $request
-     *
-     * @return GetApplyInviteInfoResponse
-     */
-    public function getApplyInviteInfo($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetApplyInviteInfoHeaders([]);
-
-        return $this->getApplyInviteInfoWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetApplyInviteInfoRequest $request
-     * @param GetApplyInviteInfoHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return GetApplyInviteInfoResponse
-     */
-    public function getApplyInviteInfoWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->inviterUserId)) {
-            @$query['inviterUserId'] = $request->inviterUserId;
-        }
-        if (!Utils::isUnset($request->deptId)) {
-            @$query['deptId'] = $request->deptId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetApplyInviteInfoResponse::fromMap($this->doROARequest('GetApplyInviteInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/invites/infos', 'json', $req, $runtime));
     }
 
     /**
