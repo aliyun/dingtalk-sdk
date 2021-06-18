@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
-    public class CreateCooperateOrgHeaders : TeaModel {
-        [NameInMap("commonHeaders")]
+    public class ListEmpAttributeVisibilityRequest : TeaModel {
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public Dictionary<string, string> CommonHeaders { get; set; }
+        public long? NextToken { get; set; }
 
-        [NameInMap("x-acs-dingtalk-access-token")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public string XAcsDingtalkAccessToken { get; set; }
+        public int? MaxResults { get; set; }
 
     }
 

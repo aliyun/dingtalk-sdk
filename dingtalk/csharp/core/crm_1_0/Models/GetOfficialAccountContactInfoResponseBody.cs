@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<string> AuthItems { get; set; }
 
+        /// <summary>
+        /// 已授权的字段
+        /// </summary>
+        [NameInMap("userInfos")]
+        [Validation(Required=false)]
+        public List<string> UserInfos { get; set; }
+
     }
 
 }
