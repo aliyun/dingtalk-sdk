@@ -17,11 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// 新角色名称
+        /// 变更角色名称，可不传，不传则不变
         /// </summary>
         [NameInMap("newRoleName")]
         [Validation(Required=false)]
         public string NewRoleName { get; set; }
+
+        /// <summary>
+        /// 变更角色管理权限，可不传，不传则不变
+        /// </summary>
+        [NameInMap("canManageRole")]
+        [Validation(Required=false)]
+        public bool? CanManageRole { get; set; }
 
     }
 

@@ -656,6 +656,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["extra"] = request.Extra;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -716,6 +720,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -784,6 +792,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["location"] = request.Location;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
@@ -840,6 +856,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
             {
                 body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {

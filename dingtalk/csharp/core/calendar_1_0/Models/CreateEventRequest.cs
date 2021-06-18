@@ -140,6 +140,29 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public string DisplayName { get; set; }
         };
 
+        [NameInMap("reminders")]
+        [Validation(Required=false)]
+        public List<CreateEventRequestReminders> Reminders { get; set; }
+        public class CreateEventRequestReminders : TeaModel {
+            [NameInMap("method")]
+            [Validation(Required=false)]
+            public string Method { get; set; }
+
+            [NameInMap("minutes")]
+            [Validation(Required=false)]
+            public int? Minutes { get; set; }
+
+        }
+
+        [NameInMap("onlineMeetingInfo")]
+        [Validation(Required=false)]
+        public CreateEventRequestOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+        public class CreateEventRequestOnlineMeetingInfo : TeaModel {
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+        };
+
         /// <summary>
         /// 扩展信息
         /// </summary>

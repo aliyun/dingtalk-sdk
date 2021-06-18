@@ -926,7 +926,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateCrmPersonalCustomerResponse>(DoROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PATCH", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime));
+            return TeaModel.ToObject<UpdateCrmPersonalCustomerResponse>(DoROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime));
         }
 
         public async Task<UpdateCrmPersonalCustomerResponse> UpdateCrmPersonalCustomerWithOptionsAsync(UpdateCrmPersonalCustomerRequest request, UpdateCrmPersonalCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -971,7 +971,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateCrmPersonalCustomerResponse>(await DoROARequestAsync("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PATCH", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime));
+            return TeaModel.ToObject<UpdateCrmPersonalCustomerResponse>(await DoROARequestAsync("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime));
         }
 
         public QueryCrmPersonalCustomerResponse QueryCrmPersonalCustomer(QueryCrmPersonalCustomerRequest request)

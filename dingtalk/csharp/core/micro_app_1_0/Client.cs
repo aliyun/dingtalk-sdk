@@ -260,6 +260,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             {
                 body["roleName"] = request.RoleName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanManageRole))
+            {
+                body["canManageRole"] = request.CanManageRole;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -288,6 +292,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleName))
             {
                 body["roleName"] = request.RoleName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanManageRole))
+            {
+                body["canManageRole"] = request.CanManageRole;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1584,6 +1592,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             {
                 body["newRoleName"] = request.NewRoleName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanManageRole))
+            {
+                body["canManageRole"] = request.CanManageRole;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1612,6 +1624,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewRoleName))
             {
                 body["newRoleName"] = request.NewRoleName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanManageRole))
+            {
+                body["canManageRole"] = request.CanManageRole;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

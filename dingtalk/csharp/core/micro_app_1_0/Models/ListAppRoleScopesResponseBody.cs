@@ -72,6 +72,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public long? ScopeVersion { get; set; }
 
+            /// <summary>
+            /// 是否拥有角色管理权限，默认false
+            /// </summary>
+            [NameInMap("canManageRole")]
+            [Validation(Required=false)]
+            public bool? CanManageRole { get; set; }
+
         }
 
     }
