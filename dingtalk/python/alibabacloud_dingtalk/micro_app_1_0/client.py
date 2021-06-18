@@ -226,6 +226,8 @@ class Client(OpenApiClient):
             body['opUserId'] = request.op_user_id
         if not UtilClient.is_unset(request.role_name):
             body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.can_manage_role):
+            body['canManageRole'] = request.can_manage_role
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -253,6 +255,8 @@ class Client(OpenApiClient):
             body['opUserId'] = request.op_user_id
         if not UtilClient.is_unset(request.role_name):
             body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.can_manage_role):
+            body['canManageRole'] = request.can_manage_role
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1461,6 +1465,8 @@ class Client(OpenApiClient):
             body['opUserId'] = request.op_user_id
         if not UtilClient.is_unset(request.new_role_name):
             body['newRoleName'] = request.new_role_name
+        if not UtilClient.is_unset(request.can_manage_role):
+            body['canManageRole'] = request.can_manage_role
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1489,6 +1495,8 @@ class Client(OpenApiClient):
             body['opUserId'] = request.op_user_id
         if not UtilClient.is_unset(request.new_role_name):
             body['newRoleName'] = request.new_role_name
+        if not UtilClient.is_unset(request.can_manage_role):
+            body['canManageRole'] = request.can_manage_role
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -439,11 +439,14 @@ class RegisterCustomAppRoleRequest(TeaModel):
         self,
         op_user_id: str = None,
         role_name: str = None,
+        can_manage_role: bool = None,
     ):
         # 执行用户userId
         self.op_user_id = op_user_id
         # 角色名称
         self.role_name = role_name
+        # 是否拥有管理角色的权限，可不传，默认false
+        self.can_manage_role = can_manage_role
 
     def validate(self):
         pass
@@ -458,6 +461,8 @@ class RegisterCustomAppRoleRequest(TeaModel):
             result['opUserId'] = self.op_user_id
         if self.role_name is not None:
             result['roleName'] = self.role_name
+        if self.can_manage_role is not None:
+            result['canManageRole'] = self.can_manage_role
         return result
 
     def from_map(self, m: dict = None):
@@ -466,6 +471,8 @@ class RegisterCustomAppRoleRequest(TeaModel):
             self.op_user_id = m.get('opUserId')
         if m.get('roleName') is not None:
             self.role_name = m.get('roleName')
+        if m.get('canManageRole') is not None:
+            self.can_manage_role = m.get('canManageRole')
         return self
 
 
@@ -990,6 +997,7 @@ class GetAppRoleScopeByRoleIdResponseBody(TeaModel):
         dept_id_list: List[int] = None,
         user_id_list: List[str] = None,
         scope_version: str = None,
+        can_manage_role: bool = None,
     ):
         # 角色名称
         self.role_name = role_name
@@ -1003,6 +1011,8 @@ class GetAppRoleScopeByRoleIdResponseBody(TeaModel):
         self.user_id_list = user_id_list
         # 角色范围版本号
         self.scope_version = scope_version
+        # 是否拥有角色管理权限，默认false
+        self.can_manage_role = can_manage_role
 
     def validate(self):
         pass
@@ -1025,6 +1035,8 @@ class GetAppRoleScopeByRoleIdResponseBody(TeaModel):
             result['userIdList'] = self.user_id_list
         if self.scope_version is not None:
             result['scopeVersion'] = self.scope_version
+        if self.can_manage_role is not None:
+            result['canManageRole'] = self.can_manage_role
         return result
 
     def from_map(self, m: dict = None):
@@ -1041,6 +1053,8 @@ class GetAppRoleScopeByRoleIdResponseBody(TeaModel):
             self.user_id_list = m.get('userIdList')
         if m.get('scopeVersion') is not None:
             self.scope_version = m.get('scopeVersion')
+        if m.get('canManageRole') is not None:
+            self.can_manage_role = m.get('canManageRole')
         return self
 
 
@@ -1119,11 +1133,14 @@ class ListRoleInfoByUserResponseBodyResult(TeaModel):
         self,
         role_name: str = None,
         role_id: int = None,
+        can_manage_role: bool = None,
     ):
         # 角色名称
         self.role_name = role_name
         # 角色id
         self.role_id = role_id
+        # 是否拥有角色管理权限，默认false
+        self.can_manage_role = can_manage_role
 
     def validate(self):
         pass
@@ -1138,6 +1155,8 @@ class ListRoleInfoByUserResponseBodyResult(TeaModel):
             result['roleName'] = self.role_name
         if self.role_id is not None:
             result['roleId'] = self.role_id
+        if self.can_manage_role is not None:
+            result['canManageRole'] = self.can_manage_role
         return result
 
     def from_map(self, m: dict = None):
@@ -1146,6 +1165,8 @@ class ListRoleInfoByUserResponseBodyResult(TeaModel):
             self.role_name = m.get('roleName')
         if m.get('roleId') is not None:
             self.role_id = m.get('roleId')
+        if m.get('canManageRole') is not None:
+            self.can_manage_role = m.get('canManageRole')
         return self
 
 
@@ -1978,6 +1999,7 @@ class ListAppRoleScopesResponseBodyDataList(TeaModel):
         dept_id_list: List[int] = None,
         user_id_list: List[str] = None,
         scope_version: int = None,
+        can_manage_role: bool = None,
     ):
         # 角色名称
         self.role_name = role_name
@@ -1991,6 +2013,8 @@ class ListAppRoleScopesResponseBodyDataList(TeaModel):
         self.user_id_list = user_id_list
         # 角色范围最新版本号
         self.scope_version = scope_version
+        # 是否拥有角色管理权限，默认false
+        self.can_manage_role = can_manage_role
 
     def validate(self):
         pass
@@ -2013,6 +2037,8 @@ class ListAppRoleScopesResponseBodyDataList(TeaModel):
             result['userIdList'] = self.user_id_list
         if self.scope_version is not None:
             result['scopeVersion'] = self.scope_version
+        if self.can_manage_role is not None:
+            result['canManageRole'] = self.can_manage_role
         return result
 
     def from_map(self, m: dict = None):
@@ -2029,6 +2055,8 @@ class ListAppRoleScopesResponseBodyDataList(TeaModel):
             self.user_id_list = m.get('userIdList')
         if m.get('scopeVersion') is not None:
             self.scope_version = m.get('scopeVersion')
+        if m.get('canManageRole') is not None:
+            self.can_manage_role = m.get('canManageRole')
         return self
 
 
@@ -3032,11 +3060,14 @@ class UpdateAppRoleInfoRequest(TeaModel):
         self,
         op_user_id: str = None,
         new_role_name: str = None,
+        can_manage_role: bool = None,
     ):
         # 执行用户userId
         self.op_user_id = op_user_id
-        # 新角色名称
+        # 变更角色名称，可不传，不传则不变
         self.new_role_name = new_role_name
+        # 变更角色管理权限，可不传，不传则不变
+        self.can_manage_role = can_manage_role
 
     def validate(self):
         pass
@@ -3051,6 +3082,8 @@ class UpdateAppRoleInfoRequest(TeaModel):
             result['opUserId'] = self.op_user_id
         if self.new_role_name is not None:
             result['newRoleName'] = self.new_role_name
+        if self.can_manage_role is not None:
+            result['canManageRole'] = self.can_manage_role
         return result
 
     def from_map(self, m: dict = None):
@@ -3059,6 +3092,8 @@ class UpdateAppRoleInfoRequest(TeaModel):
             self.op_user_id = m.get('opUserId')
         if m.get('newRoleName') is not None:
             self.new_role_name = m.get('newRoleName')
+        if m.get('canManageRole') is not None:
+            self.can_manage_role = m.get('canManageRole')
         return self
 
 

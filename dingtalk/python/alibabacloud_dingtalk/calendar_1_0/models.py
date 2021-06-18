@@ -2373,6 +2373,39 @@ class PatchEventRequestLocation(TeaModel):
         return self
 
 
+class PatchEventRequestReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: int = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
 class PatchEventRequest(TeaModel):
     def __init__(
         self,
@@ -2386,6 +2419,7 @@ class PatchEventRequest(TeaModel):
         attendees: List[PatchEventRequestAttendees] = None,
         location: PatchEventRequestLocation = None,
         extra: Dict[str, str] = None,
+        reminders: List[PatchEventRequestReminders] = None,
     ):
         # 日程标题
         self.summary = summary
@@ -2401,6 +2435,7 @@ class PatchEventRequest(TeaModel):
         self.location = location
         # 扩展信息
         self.extra = extra
+        self.reminders = reminders
 
     def validate(self):
         if self.start:
@@ -2415,6 +2450,10 @@ class PatchEventRequest(TeaModel):
                     k.validate()
         if self.location:
             self.location.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2444,6 +2483,10 @@ class PatchEventRequest(TeaModel):
             result['location'] = self.location.to_map()
         if self.extra is not None:
             result['extra'] = self.extra
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -2475,6 +2518,11 @@ class PatchEventRequest(TeaModel):
             self.location = temp_model.from_map(m['location'])
         if m.get('extra') is not None:
             self.extra = m.get('extra')
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = PatchEventRequestReminders()
+                self.reminders.append(temp_model.from_map(k))
         return self
 
 
@@ -3265,6 +3313,66 @@ class CreateEventRequestLocation(TeaModel):
         return self
 
 
+class CreateEventRequestReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: int = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
+class CreateEventRequestOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+    ):
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class CreateEventRequest(TeaModel):
     def __init__(
         self,
@@ -3276,6 +3384,8 @@ class CreateEventRequest(TeaModel):
         recurrence: CreateEventRequestRecurrence = None,
         attendees: List[CreateEventRequestAttendees] = None,
         location: CreateEventRequestLocation = None,
+        reminders: List[CreateEventRequestReminders] = None,
+        online_meeting_info: CreateEventRequestOnlineMeetingInfo = None,
         extra: Dict[str, str] = None,
     ):
         # 日程标题
@@ -3292,6 +3402,8 @@ class CreateEventRequest(TeaModel):
         self.recurrence = recurrence
         self.attendees = attendees
         self.location = location
+        self.reminders = reminders
+        self.online_meeting_info = online_meeting_info
         # 扩展信息
         self.extra = extra
 
@@ -3308,6 +3420,12 @@ class CreateEventRequest(TeaModel):
                     k.validate()
         if self.location:
             self.location.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3333,6 +3451,12 @@ class CreateEventRequest(TeaModel):
                 result['attendees'].append(k.to_map() if k else None)
         if self.location is not None:
             result['location'] = self.location.to_map()
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.extra is not None:
             result['extra'] = self.extra
         return result
@@ -3362,6 +3486,14 @@ class CreateEventRequest(TeaModel):
         if m.get('location') is not None:
             temp_model = CreateEventRequestLocation()
             self.location = temp_model.from_map(m['location'])
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = CreateEventRequestReminders()
+                self.reminders.append(temp_model.from_map(k))
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = CreateEventRequestOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
         if m.get('extra') is not None:
             self.extra = m.get('extra')
         return self

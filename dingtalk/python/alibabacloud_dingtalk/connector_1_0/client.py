@@ -23,6 +23,158 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def pull_data_by_page(
+        self,
+        request: dingtalkconnector__1__0_models.PullDataByPageRequest,
+    ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.PullDataByPageHeaders()
+        return self.pull_data_by_page_with_options(request, headers, runtime)
+
+    async def pull_data_by_page_async(
+        self,
+        request: dingtalkconnector__1__0_models.PullDataByPageRequest,
+    ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.PullDataByPageHeaders()
+        return await self.pull_data_by_page_with_options_async(request, headers, runtime)
+
+    def pull_data_by_page_with_options(
+        self,
+        request: dingtalkconnector__1__0_models.PullDataByPageRequest,
+        headers: dingtalkconnector__1__0_models.PullDataByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.data_model_id):
+            query['dataModelId'] = request.data_model_id
+        if not UtilClient.is_unset(request.datetime_filter_field):
+            query['datetimeFilterField'] = request.datetime_filter_field
+        if not UtilClient.is_unset(request.min_datetime):
+            query['minDatetime'] = request.min_datetime
+        if not UtilClient.is_unset(request.max_datetime):
+            query['maxDatetime'] = request.max_datetime
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.PullDataByPageResponse(),
+            self.do_roarequest('PullDataByPage', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/data', 'json', req, runtime)
+        )
+
+    async def pull_data_by_page_with_options_async(
+        self,
+        request: dingtalkconnector__1__0_models.PullDataByPageRequest,
+        headers: dingtalkconnector__1__0_models.PullDataByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.data_model_id):
+            query['dataModelId'] = request.data_model_id
+        if not UtilClient.is_unset(request.datetime_filter_field):
+            query['datetimeFilterField'] = request.datetime_filter_field
+        if not UtilClient.is_unset(request.min_datetime):
+            query['minDatetime'] = request.min_datetime
+        if not UtilClient.is_unset(request.max_datetime):
+            query['maxDatetime'] = request.max_datetime
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.PullDataByPageResponse(),
+            await self.do_roarequest_async('PullDataByPage', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/data', 'json', req, runtime)
+        )
+
+    def pull_data_by_pk(
+        self,
+        data_model_id: str,
+        request: dingtalkconnector__1__0_models.PullDataByPkRequest,
+    ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.PullDataByPkHeaders()
+        return self.pull_data_by_pk_with_options(data_model_id, request, headers, runtime)
+
+    async def pull_data_by_pk_async(
+        self,
+        data_model_id: str,
+        request: dingtalkconnector__1__0_models.PullDataByPkRequest,
+    ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.PullDataByPkHeaders()
+        return await self.pull_data_by_pk_with_options_async(data_model_id, request, headers, runtime)
+
+    def pull_data_by_pk_with_options(
+        self,
+        data_model_id: str,
+        request: dingtalkconnector__1__0_models.PullDataByPkRequest,
+        headers: dingtalkconnector__1__0_models.PullDataByPkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.primary_key):
+            query['primaryKey'] = request.primary_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.PullDataByPkResponse(),
+            self.do_roarequest('PullDataByPk', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/data/{data_model_id}', 'json', req, runtime)
+        )
+
+    async def pull_data_by_pk_with_options_async(
+        self,
+        data_model_id: str,
+        request: dingtalkconnector__1__0_models.PullDataByPkRequest,
+        headers: dingtalkconnector__1__0_models.PullDataByPkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.primary_key):
+            query['primaryKey'] = request.primary_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.PullDataByPkResponse(),
+            await self.do_roarequest_async('PullDataByPk', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/data/{data_model_id}', 'json', req, runtime)
+        )
+
     def sync_data(
         self,
         request: dingtalkconnector__1__0_models.SyncDataRequest,

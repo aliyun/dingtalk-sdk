@@ -806,7 +806,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse(),
-            self.do_roarequest('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PATCH', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            self.do_roarequest('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
         )
 
     async def update_crm_personal_customer_with_options_async(
@@ -840,7 +840,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse(),
-            await self.do_roarequest_async('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PATCH', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            await self.do_roarequest_async('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
         )
 
     def query_crm_personal_customer(
