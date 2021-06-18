@@ -654,6 +654,7 @@ export class PatchEventRequest extends $tea.Model {
   attendees?: PatchEventRequestAttendees[];
   location?: PatchEventRequestLocation;
   extra?: { [key: string]: string };
+  reminders?: PatchEventRequestReminders[];
   static names(): { [key: string]: string } {
     return {
       summary: 'summary',
@@ -666,6 +667,7 @@ export class PatchEventRequest extends $tea.Model {
       attendees: 'attendees',
       location: 'location',
       extra: 'extra',
+      reminders: 'reminders',
     };
   }
 
@@ -681,6 +683,7 @@ export class PatchEventRequest extends $tea.Model {
       attendees: { 'type': 'array', 'itemType': PatchEventRequestAttendees },
       location: PatchEventRequestLocation,
       extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      reminders: { 'type': 'array', 'itemType': PatchEventRequestReminders },
     };
   }
 
@@ -794,6 +797,8 @@ export class CreateEventRequest extends $tea.Model {
   recurrence?: CreateEventRequestRecurrence;
   attendees?: CreateEventRequestAttendees[];
   location?: CreateEventRequestLocation;
+  reminders?: CreateEventRequestReminders[];
+  onlineMeetingInfo?: CreateEventRequestOnlineMeetingInfo;
   extra?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -805,6 +810,8 @@ export class CreateEventRequest extends $tea.Model {
       recurrence: 'recurrence',
       attendees: 'attendees',
       location: 'location',
+      reminders: 'reminders',
+      onlineMeetingInfo: 'onlineMeetingInfo',
       extra: 'extra',
     };
   }
@@ -819,6 +826,8 @@ export class CreateEventRequest extends $tea.Model {
       recurrence: CreateEventRequestRecurrence,
       attendees: { 'type': 'array', 'itemType': CreateEventRequestAttendees },
       location: CreateEventRequestLocation,
+      reminders: { 'type': 'array', 'itemType': CreateEventRequestReminders },
+      onlineMeetingInfo: CreateEventRequestOnlineMeetingInfo,
       extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
@@ -1676,6 +1685,28 @@ export class PatchEventRequestLocation extends $tea.Model {
   }
 }
 
+export class PatchEventRequestReminders extends $tea.Model {
+  method?: string;
+  minutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PatchEventResponseBodyStart extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -2037,6 +2068,47 @@ export class CreateEventRequestLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventRequestReminders extends $tea.Model {
+  method?: string;
+  minutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventRequestOnlineMeetingInfo extends $tea.Model {
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
     };
   }
 
@@ -2622,6 +2694,10 @@ export default class Client extends OpenApi {
       body["extra"] = request.extra;
     }
 
+    if (!Util.isUnset(request.reminders)) {
+      body["reminders"] = request.reminders;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2677,6 +2753,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.location))) {
       body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.reminders)) {
+      body["reminders"] = request.reminders;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.onlineMeetingInfo))) {
+      body["onlineMeetingInfo"] = request.onlineMeetingInfo;
     }
 
     if (!Util.isUnset(request.extra)) {

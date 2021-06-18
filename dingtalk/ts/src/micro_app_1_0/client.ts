@@ -259,10 +259,12 @@ export class RegisterCustomAppRoleHeaders extends $tea.Model {
 export class RegisterCustomAppRoleRequest extends $tea.Model {
   opUserId?: string;
   roleName?: string;
+  canManageRole?: boolean;
   static names(): { [key: string]: string } {
     return {
       opUserId: 'opUserId',
       roleName: 'roleName',
+      canManageRole: 'canManageRole',
     };
   }
 
@@ -270,6 +272,7 @@ export class RegisterCustomAppRoleRequest extends $tea.Model {
     return {
       opUserId: 'string',
       roleName: 'string',
+      canManageRole: 'boolean',
     };
   }
 
@@ -539,6 +542,7 @@ export class GetAppRoleScopeByRoleIdResponseBody extends $tea.Model {
   deptIdList?: number[];
   userIdList?: string[];
   scopeVersion?: string;
+  canManageRole?: boolean;
   static names(): { [key: string]: string } {
     return {
       roleName: 'roleName',
@@ -547,6 +551,7 @@ export class GetAppRoleScopeByRoleIdResponseBody extends $tea.Model {
       deptIdList: 'deptIdList',
       userIdList: 'userIdList',
       scopeVersion: 'scopeVersion',
+      canManageRole: 'canManageRole',
     };
   }
 
@@ -558,6 +563,7 @@ export class GetAppRoleScopeByRoleIdResponseBody extends $tea.Model {
       deptIdList: { 'type': 'array', 'itemType': 'number' },
       userIdList: { 'type': 'array', 'itemType': 'string' },
       scopeVersion: 'string',
+      canManageRole: 'boolean',
     };
   }
 
@@ -1686,10 +1692,12 @@ export class UpdateAppRoleInfoHeaders extends $tea.Model {
 export class UpdateAppRoleInfoRequest extends $tea.Model {
   opUserId?: string;
   newRoleName?: string;
+  canManageRole?: boolean;
   static names(): { [key: string]: string } {
     return {
       opUserId: 'opUserId',
       newRoleName: 'newRoleName',
+      canManageRole: 'canManageRole',
     };
   }
 
@@ -1697,6 +1705,7 @@ export class UpdateAppRoleInfoRequest extends $tea.Model {
     return {
       opUserId: 'string',
       newRoleName: 'string',
+      canManageRole: 'boolean',
     };
   }
 
@@ -1802,10 +1811,12 @@ export class AddAppRolesToMemberResponseBodyResult extends $tea.Model {
 export class ListRoleInfoByUserResponseBodyResult extends $tea.Model {
   roleName?: string;
   roleId?: number;
+  canManageRole?: boolean;
   static names(): { [key: string]: string } {
     return {
       roleName: 'roleName',
       roleId: 'roleId',
+      canManageRole: 'canManageRole',
     };
   }
 
@@ -1813,6 +1824,7 @@ export class ListRoleInfoByUserResponseBodyResult extends $tea.Model {
     return {
       roleName: 'string',
       roleId: 'number',
+      canManageRole: 'boolean',
     };
   }
 
@@ -1865,6 +1877,7 @@ export class ListAppRoleScopesResponseBodyDataList extends $tea.Model {
   deptIdList?: number[];
   userIdList?: string[];
   scopeVersion?: number;
+  canManageRole?: boolean;
   static names(): { [key: string]: string } {
     return {
       roleName: 'roleName',
@@ -1873,6 +1886,7 @@ export class ListAppRoleScopesResponseBodyDataList extends $tea.Model {
       deptIdList: 'deptIdList',
       userIdList: 'userIdList',
       scopeVersion: 'scopeVersion',
+      canManageRole: 'canManageRole',
     };
   }
 
@@ -1884,6 +1898,7 @@ export class ListAppRoleScopesResponseBodyDataList extends $tea.Model {
       deptIdList: { 'type': 'array', 'itemType': 'number' },
       userIdList: { 'type': 'array', 'itemType': 'string' },
       scopeVersion: 'number',
+      canManageRole: 'boolean',
     };
   }
 
@@ -2018,6 +2033,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.roleName)) {
       body["roleName"] = request.roleName;
+    }
+
+    if (!Util.isUnset(request.canManageRole)) {
+      body["canManageRole"] = request.canManageRole;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2632,6 +2651,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.newRoleName)) {
       body["newRoleName"] = request.newRoleName;
+    }
+
+    if (!Util.isUnset(request.canManageRole)) {
+      body["canManageRole"] = request.canManageRole;
     }
 
     let realHeaders : {[key: string ]: string} = { };

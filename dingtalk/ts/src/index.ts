@@ -32,6 +32,7 @@ import * as trade_1_0 from './trade_1_0/client';
 import * as trajectory_1_0 from './trajectory_1_0/client';
 import * as workbench_1_0 from './workbench_1_0/client';
 import * as workrecord_1_0 from './workrecord_1_0/client';
+import * as yida_1_0 from './yida_1_0/client';
 
 export = {
   alitrip_1_0,
@@ -68,4 +69,5 @@ export = {
   trajectory_1_0,
   workbench_1_0,
   workrecord_1_0,
+  yida_1_0,
 }

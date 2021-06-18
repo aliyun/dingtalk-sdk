@@ -2787,7 +2787,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateCrmPersonalCustomerResponse>(await this.doROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PATCH", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new UpdateCrmPersonalCustomerResponse({}));
+    return $tea.cast<UpdateCrmPersonalCustomerResponse>(await this.doROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new UpdateCrmPersonalCustomerResponse({}));
   }
 
   async queryCrmPersonalCustomer(request: QueryCrmPersonalCustomerRequest): Promise<QueryCrmPersonalCustomerResponse> {
