@@ -500,6 +500,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->extra)) {
             @$body['extra'] = $request->extra;
         }
+        if (!Utils::isUnset($request->reminders)) {
+            @$body['reminders'] = $request->reminders;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -566,6 +569,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->location)) {
             @$body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->reminders)) {
+            @$body['reminders'] = $request->reminders;
+        }
+        if (!Utils::isUnset($request->onlineMeetingInfo)) {
+            @$body['onlineMeetingInfo'] = $request->onlineMeetingInfo;
         }
         if (!Utils::isUnset($request->extra)) {
             @$body['extra'] = $request->extra;

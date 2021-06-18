@@ -16,14 +16,22 @@ class UpdateAppRoleInfoRequest extends Model
     public $opUserId;
 
     /**
-     * @description 新角色名称
+     * @description 变更角色名称，可不传，不传则不变
      *
      * @var string
      */
     public $newRoleName;
+
+    /**
+     * @description 变更角色管理权限，可不传，不传则不变
+     *
+     * @var bool
+     */
+    public $canManageRole;
     protected $_name = [
-        'opUserId'    => 'opUserId',
-        'newRoleName' => 'newRoleName',
+        'opUserId'      => 'opUserId',
+        'newRoleName'   => 'newRoleName',
+        'canManageRole' => 'canManageRole',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class UpdateAppRoleInfoRequest extends Model
         }
         if (null !== $this->newRoleName) {
             $res['newRoleName'] = $this->newRoleName;
+        }
+        if (null !== $this->canManageRole) {
+            $res['canManageRole'] = $this->canManageRole;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class UpdateAppRoleInfoRequest extends Model
         }
         if (isset($map['newRoleName'])) {
             $model->newRoleName = $map['newRoleName'];
+        }
+        if (isset($map['canManageRole'])) {
+            $model->canManageRole = $map['canManageRole'];
         }
 
         return $model;

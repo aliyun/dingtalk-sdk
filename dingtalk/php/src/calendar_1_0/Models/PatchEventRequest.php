@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\recurrence;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\start;
 use AlibabaCloud\Tea\Model;
 
@@ -70,6 +71,11 @@ class PatchEventRequest extends Model
      * @var string[]
      */
     public $extra;
+
+    /**
+     * @var reminders[]
+     */
+    public $reminders;
     protected $_name = [
         'summary'     => 'summary',
         'id'          => 'id',
@@ -81,6 +87,7 @@ class PatchEventRequest extends Model
         'attendees'   => 'attendees',
         'location'    => 'location',
         'extra'       => 'extra',
+        'reminders'   => 'reminders',
     ];
 
     public function validate()
@@ -125,6 +132,15 @@ class PatchEventRequest extends Model
         }
         if (null !== $this->extra) {
             $res['extra'] = $this->extra;
+        }
+        if (null !== $this->reminders) {
+            $res['reminders'] = [];
+            if (null !== $this->reminders && \is_array($this->reminders)) {
+                $n = 0;
+                foreach ($this->reminders as $item) {
+                    $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -173,6 +189,15 @@ class PatchEventRequest extends Model
         }
         if (isset($map['extra'])) {
             $model->extra = $map['extra'];
+        }
+        if (isset($map['reminders'])) {
+            if (!empty($map['reminders'])) {
+                $model->reminders = [];
+                $n                = 0;
+                foreach ($map['reminders'] as $item) {
+                    $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

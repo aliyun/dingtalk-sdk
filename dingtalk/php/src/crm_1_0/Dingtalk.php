@@ -608,7 +608,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return UpdateCrmPersonalCustomerResponse::fromMap($this->doROARequest('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PATCH', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+        return UpdateCrmPersonalCustomerResponse::fromMap($this->doROARequest('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
     }
 
     /**

@@ -21,9 +21,17 @@ class result extends Model
      * @var int
      */
     public $roleId;
+
+    /**
+     * @description 是否拥有角色管理权限，默认false
+     *
+     * @var bool
+     */
+    public $canManageRole;
     protected $_name = [
-        'roleName' => 'roleName',
-        'roleId'   => 'roleId',
+        'roleName'      => 'roleName',
+        'roleId'        => 'roleId',
+        'canManageRole' => 'canManageRole',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class result extends Model
         }
         if (null !== $this->roleId) {
             $res['roleId'] = $this->roleId;
+        }
+        if (null !== $this->canManageRole) {
+            $res['canManageRole'] = $this->canManageRole;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class result extends Model
         }
         if (isset($map['roleId'])) {
             $model->roleId = $map['roleId'];
+        }
+        if (isset($map['canManageRole'])) {
+            $model->canManageRole = $map['canManageRole'];
         }
 
         return $model;

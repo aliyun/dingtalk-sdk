@@ -49,13 +49,21 @@ class dataList extends Model
      * @var int
      */
     public $scopeVersion;
+
+    /**
+     * @description 是否拥有角色管理权限，默认false
+     *
+     * @var bool
+     */
+    public $canManageRole;
     protected $_name = [
-        'roleName'     => 'roleName',
-        'roleId'       => 'roleId',
-        'scopeType'    => 'scopeType',
-        'deptIdList'   => 'deptIdList',
-        'userIdList'   => 'userIdList',
-        'scopeVersion' => 'scopeVersion',
+        'roleName'      => 'roleName',
+        'roleId'        => 'roleId',
+        'scopeType'     => 'scopeType',
+        'deptIdList'    => 'deptIdList',
+        'userIdList'    => 'userIdList',
+        'scopeVersion'  => 'scopeVersion',
+        'canManageRole' => 'canManageRole',
     ];
 
     public function validate()
@@ -82,6 +90,9 @@ class dataList extends Model
         }
         if (null !== $this->scopeVersion) {
             $res['scopeVersion'] = $this->scopeVersion;
+        }
+        if (null !== $this->canManageRole) {
+            $res['canManageRole'] = $this->canManageRole;
         }
 
         return $res;
@@ -116,6 +127,9 @@ class dataList extends Model
         }
         if (isset($map['scopeVersion'])) {
             $model->scopeVersion = $map['scopeVersion'];
+        }
+        if (isset($map['canManageRole'])) {
+            $model->canManageRole = $map['canManageRole'];
         }
 
         return $model;

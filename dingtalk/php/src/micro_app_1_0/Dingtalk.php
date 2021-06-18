@@ -224,6 +224,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->roleName)) {
             @$body['roleName'] = $request->roleName;
         }
+        if (!Utils::isUnset($request->canManageRole)) {
+            @$body['canManageRole'] = $request->canManageRole;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1040,6 +1043,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->newRoleName)) {
             @$body['newRoleName'] = $request->newRoleName;
+        }
+        if (!Utils::isUnset($request->canManageRole)) {
+            @$body['canManageRole'] = $request->canManageRole;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

@@ -21,9 +21,17 @@ class RegisterCustomAppRoleRequest extends Model
      * @var string
      */
     public $roleName;
+
+    /**
+     * @description 是否拥有管理角色的权限，可不传，默认false
+     *
+     * @var bool
+     */
+    public $canManageRole;
     protected $_name = [
-        'opUserId' => 'opUserId',
-        'roleName' => 'roleName',
+        'opUserId'      => 'opUserId',
+        'roleName'      => 'roleName',
+        'canManageRole' => 'canManageRole',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class RegisterCustomAppRoleRequest extends Model
         }
         if (null !== $this->roleName) {
             $res['roleName'] = $this->roleName;
+        }
+        if (null !== $this->canManageRole) {
+            $res['canManageRole'] = $this->canManageRole;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class RegisterCustomAppRoleRequest extends Model
         }
         if (isset($map['roleName'])) {
             $model->roleName = $map['roleName'];
+        }
+        if (isset($map['canManageRole'])) {
+            $model->canManageRole = $map['canManageRole'];
         }
 
         return $model;
