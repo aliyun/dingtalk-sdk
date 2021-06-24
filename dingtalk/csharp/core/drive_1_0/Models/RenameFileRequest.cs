@@ -16,6 +16,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public string NewFileName { get; set; }
 
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
+
     }
 
 }

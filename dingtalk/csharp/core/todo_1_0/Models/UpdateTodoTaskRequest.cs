@@ -82,6 +82,20 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         }
 
         /// <summary>
+        /// 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        /// </summary>
+        [NameInMap("priority")]
+        [Validation(Required=false)]
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// 业务来源展示名称
+        /// </summary>
+        [NameInMap("sourceTitle")]
+        [Validation(Required=false)]
+        public string SourceTitle { get; set; }
+
+        /// <summary>
         /// 当前操作者id，需传用户的unionId
         /// </summary>
         [NameInMap("operatorId")]

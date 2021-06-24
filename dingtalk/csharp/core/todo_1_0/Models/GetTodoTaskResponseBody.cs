@@ -187,6 +187,27 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 
         }
 
+        /// <summary>
+        /// 待办是否仅展示在执行人的待办列表中
+        /// </summary>
+        [NameInMap("isOnlyShowExecutor")]
+        [Validation(Required=false)]
+        public bool? IsOnlyShowExecutor { get; set; }
+
+        /// <summary>
+        /// 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        /// </summary>
+        [NameInMap("priority")]
+        [Validation(Required=false)]
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// 业务来源展示名称
+        /// </summary>
+        [NameInMap("sourceTitle")]
+        [Validation(Required=false)]
+        public string SourceTitle { get; set; }
+
     }
 
 }

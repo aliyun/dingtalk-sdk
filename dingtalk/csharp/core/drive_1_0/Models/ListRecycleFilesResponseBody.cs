@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string RecycleItemId { get; set; }
 
             /// <summary>
-            /// 删除者id
-            /// </summary>
-            [NameInMap("deleteUid")]
-            [Validation(Required=false)]
-            public long? DeleteUid { get; set; }
-
-            /// <summary>
             /// 删除时间
             /// </summary>
             [NameInMap("deleteTime")]

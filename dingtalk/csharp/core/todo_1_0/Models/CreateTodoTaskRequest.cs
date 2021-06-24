@@ -101,14 +101,28 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public string FieldValue { get; set; }
 
-            /// <summary>
-            /// 字段内容链接
-            /// </summary>
-            [NameInMap("fieldLink")]
-            [Validation(Required=false)]
-            public string FieldLink { get; set; }
-
         }
+
+        /// <summary>
+        /// 生成的待办是否仅展示在执行者的待办列表中
+        /// </summary>
+        [NameInMap("isOnlyShowExecutor")]
+        [Validation(Required=false)]
+        public bool? IsOnlyShowExecutor { get; set; }
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        [NameInMap("priority")]
+        [Validation(Required=false)]
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// 业务来源展示名称
+        /// </summary>
+        [NameInMap("sourceTitle")]
+        [Validation(Required=false)]
+        public string SourceTitle { get; set; }
 
         /// <summary>
         /// 当前操作者id，需传用户的unionId

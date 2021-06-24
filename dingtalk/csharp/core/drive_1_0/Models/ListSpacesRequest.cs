@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListSpacesRequest : TeaModel {
         /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
+
+        /// <summary>
         /// 空间类型
         /// </summary>
         [NameInMap("spaceType")]

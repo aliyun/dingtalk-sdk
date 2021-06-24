@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetUploadInfoRequest : TeaModel {
         /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
+
+        /// <summary>
         /// 文件名
         /// </summary>
         [NameInMap("fileName")]
