@@ -35,6 +35,7 @@ export class AddFileRequest extends $tea.Model {
   fileName?: string;
   mediaId?: string;
   addConflictPolicy?: string;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       parentId: 'parentId',
@@ -42,6 +43,7 @@ export class AddFileRequest extends $tea.Model {
       fileName: 'fileName',
       mediaId: 'mediaId',
       addConflictPolicy: 'addConflictPolicy',
+      unionId: 'unionId',
     };
   }
 
@@ -52,6 +54,7 @@ export class AddFileRequest extends $tea.Model {
       fileName: 'string',
       mediaId: 'string',
       addConflictPolicy: 'string',
+      unionId: 'string',
     };
   }
 
@@ -141,10 +144,12 @@ export class RecoverRecycleFilesHeaders extends $tea.Model {
 export class RecoverRecycleFilesRequest extends $tea.Model {
   recycleItemIdList?: number[];
   recycleType?: string;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       recycleItemIdList: 'recycleItemIdList',
       recycleType: 'recycleType',
+      unionId: 'unionId',
     };
   }
 
@@ -152,6 +157,7 @@ export class RecoverRecycleFilesRequest extends $tea.Model {
     return {
       recycleItemIdList: { 'type': 'array', 'itemType': 'number' },
       recycleType: 'string',
+      unionId: 'string',
     };
   }
 
@@ -171,6 +177,109 @@ export class RecoverRecycleFilesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSpaceRequest extends $tea.Model {
+  name?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSpaceResponseBody extends $tea.Model {
+  spaceId?: string;
+  spaceName?: string;
+  spaceType?: string;
+  quota?: number;
+  usedQuota?: number;
+  createTime?: string;
+  modifyTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceId: 'spaceId',
+      spaceName: 'spaceName',
+      spaceType: 'spaceType',
+      quota: 'quota',
+      usedQuota: 'usedQuota',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceId: 'string',
+      spaceName: 'string',
+      spaceType: 'string',
+      quota: 'number',
+      usedQuota: 'number',
+      createTime: 'string',
+      modifyTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddSpaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddSpaceResponseBody,
     };
   }
 
@@ -204,10 +313,12 @@ export class DeleteRecycleFilesHeaders extends $tea.Model {
 export class DeleteRecycleFilesRequest extends $tea.Model {
   recycleItemIdList?: number[];
   recycleType?: string;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       recycleItemIdList: 'recycleItemIdList',
       recycleType: 'recycleType',
+      unionId: 'unionId',
     };
   }
 
@@ -215,6 +326,7 @@ export class DeleteRecycleFilesRequest extends $tea.Model {
     return {
       recycleItemIdList: { 'type': 'array', 'itemType': 'number' },
       recycleType: 'string',
+      unionId: 'string',
     };
   }
 
@@ -224,6 +336,72 @@ export class DeleteRecycleFilesRequest extends $tea.Model {
 }
 
 export class DeleteRecycleFilesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPermissionRequest extends $tea.Model {
+  role?: string;
+  members?: AddPermissionRequestMembers[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      role: 'role',
+      members: 'members',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      role: 'string',
+      members: { 'type': 'array', 'itemType': AddPermissionRequestMembers },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -256,6 +434,25 @@ export class GetFileInfoHeaders extends $tea.Model {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileInfoRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
     };
   }
 
@@ -343,12 +540,14 @@ export class ListRecycleFilesHeaders extends $tea.Model {
 }
 
 export class ListRecycleFilesRequest extends $tea.Model {
+  unionId?: string;
   recycleType?: string;
   nextToken?: string;
   maxResults?: number;
   orderType?: string;
   static names(): { [key: string]: string } {
     return {
+      unionId: 'unionId',
       recycleType: 'recycleType',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
@@ -358,6 +557,7 @@ export class ListRecycleFilesRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      unionId: 'string',
       recycleType: 'string',
       nextToken: 'string',
       maxResults: 'number',
@@ -438,15 +638,18 @@ export class RenameFileHeaders extends $tea.Model {
 
 export class RenameFileRequest extends $tea.Model {
   newFileName?: string;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       newFileName: 'newFileName',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       newFileName: 'string',
+      unionId: 'string',
     };
   }
 
@@ -534,11 +737,13 @@ export class ListFilesHeaders extends $tea.Model {
 }
 
 export class ListFilesRequest extends $tea.Model {
+  unionId?: string;
   parentId?: string;
   nextToken?: string;
   maxResults?: number;
   static names(): { [key: string]: string } {
     return {
+      unionId: 'unionId',
       parentId: 'parentId',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
@@ -547,6 +752,7 @@ export class ListFilesRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      unionId: 'string',
       parentId: 'string',
       nextToken: 'string',
       maxResults: 'number',
@@ -602,6 +808,157 @@ export class ListFilesResponse extends $tea.Model {
   }
 }
 
+export class ModifyPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyPermissionRequest extends $tea.Model {
+  role?: string;
+  members?: ModifyPermissionRequestMembers[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      role: 'role',
+      members: 'members',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      role: 'string',
+      members: { 'type': 'array', 'itemType': ModifyPermissionRequestMembers },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyPermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsResponseBody extends $tea.Model {
+  members?: ListPermissionsResponseBodyMembers[];
+  outMembers?: ListPermissionsResponseBodyOutMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      members: 'members',
+      outMembers: 'outMembers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      members: { 'type': 'array', 'itemType': ListPermissionsResponseBodyMembers },
+      outMembers: { 'type': 'array', 'itemType': ListPermissionsResponseBodyOutMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListPermissionsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListPermissionsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MoveFileHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -628,11 +985,13 @@ export class MoveFileRequest extends $tea.Model {
   targetSpaceId?: string;
   targetParentId?: string;
   addConflictPolicy?: string;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       targetSpaceId: 'targetSpaceId',
       targetParentId: 'targetParentId',
       addConflictPolicy: 'addConflictPolicy',
+      unionId: 'unionId',
     };
   }
 
@@ -641,6 +1000,7 @@ export class MoveFileRequest extends $tea.Model {
       targetSpaceId: 'string',
       targetParentId: 'string',
       addConflictPolicy: 'string',
+      unionId: 'string',
     };
   }
 
@@ -727,6 +1087,25 @@ export class GetDownloadInfoHeaders extends $tea.Model {
   }
 }
 
+export class GetDownloadInfoRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDownloadInfoResponseBody extends $tea.Model {
   downloadInfo?: GetDownloadInfoResponseBodyDownloadInfo;
   static names(): { [key: string]: string } {
@@ -791,6 +1170,7 @@ export class GetUploadInfoHeaders extends $tea.Model {
 }
 
 export class GetUploadInfoRequest extends $tea.Model {
+  unionId?: string;
   fileName?: string;
   fileSize?: number;
   md5?: string;
@@ -798,6 +1178,7 @@ export class GetUploadInfoRequest extends $tea.Model {
   mediaId?: string;
   static names(): { [key: string]: string } {
     return {
+      unionId: 'unionId',
       fileName: 'fileName',
       fileSize: 'fileSize',
       md5: 'md5',
@@ -808,6 +1189,7 @@ export class GetUploadInfoRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      unionId: 'string',
       fileName: 'string',
       fileSize: 'number',
       md5: 'string',
@@ -885,11 +1267,13 @@ export class ListSpacesHeaders extends $tea.Model {
 }
 
 export class ListSpacesRequest extends $tea.Model {
+  unionId?: string;
   spaceType?: string;
   nextToken?: string;
   maxResults?: number;
   static names(): { [key: string]: string } {
     return {
+      unionId: 'unionId',
       spaceType: 'spaceType',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
@@ -898,6 +1282,7 @@ export class ListSpacesRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      unionId: 'string',
       spaceType: 'string',
       nextToken: 'string',
       maxResults: 'number',
@@ -953,6 +1338,132 @@ export class ListSpacesResponse extends $tea.Model {
   }
 }
 
+export class DeletePermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionRequest extends $tea.Model {
+  role?: string;
+  members?: DeletePermissionRequestMembers[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      role: 'role',
+      members: 'members',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      role: 'string',
+      members: { 'type': 'array', 'itemType': DeletePermissionRequestMembers },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ClearRecycleFilesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -977,15 +1488,18 @@ export class ClearRecycleFilesHeaders extends $tea.Model {
 
 export class ClearRecycleFilesRequest extends $tea.Model {
   recycleType?: string;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
       recycleType: 'recycleType',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       recycleType: 'string',
+      unionId: 'string',
     };
   }
 
@@ -1036,15 +1550,18 @@ export class DeleteFileHeaders extends $tea.Model {
 }
 
 export class DeleteFileRequest extends $tea.Model {
+  unionId?: string;
   deletePolicy?: string;
   static names(): { [key: string]: string } {
     return {
+      unionId: 'unionId',
       deletePolicy: 'deletePolicy',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      unionId: 'string',
       deletePolicy: 'string',
     };
   }
@@ -1095,9 +1612,33 @@ export class DeleteFileResponse extends $tea.Model {
   }
 }
 
+export class AddPermissionRequestMembers extends $tea.Model {
+  corpId?: string;
+  memberType?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      memberType: 'memberType',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      memberType: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   recycleItemId?: string;
-  deleteUid?: number;
   deleteTime?: string;
   fileSize?: number;
   fileType?: string;
@@ -1107,7 +1648,6 @@ export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       recycleItemId: 'recycleItemId',
-      deleteUid: 'deleteUid',
       deleteTime: 'deleteTime',
       fileSize: 'fileSize',
       fileType: 'fileType',
@@ -1120,7 +1660,6 @@ export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       recycleItemId: 'string',
-      deleteUid: 'number',
       deleteTime: 'string',
       fileSize: 'number',
       fileType: 'string',
@@ -1161,6 +1700,137 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
       filePath: 'string',
       fileType: 'string',
       fileExtension: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyPermissionRequestMembers extends $tea.Model {
+  corpId?: string;
+  memberType?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      memberType: 'memberType',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      memberType: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsResponseBodyMembersMember extends $tea.Model {
+  corpId?: string;
+  memberType?: string;
+  memberId?: string;
+  memberName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      memberType: 'memberType',
+      memberId: 'memberId',
+      memberName: 'memberName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      memberType: 'string',
+      memberId: 'string',
+      memberName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsResponseBodyMembers extends $tea.Model {
+  role?: string;
+  member?: ListPermissionsResponseBodyMembersMember;
+  extend?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      role: 'role',
+      member: 'member',
+      extend: 'extend',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      role: 'string',
+      member: ListPermissionsResponseBodyMembersMember,
+      extend: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsResponseBodyOutMembersMember extends $tea.Model {
+  corpId?: string;
+  memberType?: string;
+  memberId?: string;
+  memberName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      memberType: 'memberType',
+      memberId: 'memberId',
+      memberName: 'memberName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      memberType: 'string',
+      memberId: 'string',
+      memberName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPermissionsResponseBodyOutMembers extends $tea.Model {
+  role?: string;
+  member?: ListPermissionsResponseBodyOutMembersMember;
+  extend?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      role: 'role',
+      member: 'member',
+      extend: 'extend',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      role: 'string',
+      member: ListPermissionsResponseBodyOutMembersMember,
+      extend: 'boolean',
     };
   }
 
@@ -1268,6 +1938,31 @@ export class ListSpacesResponseBodySpaces extends $tea.Model {
   }
 }
 
+export class DeletePermissionRequestMembers extends $tea.Model {
+  corpId?: string;
+  memberType?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      memberType: 'memberType',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      memberType: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1281,13 +1976,13 @@ export default class Client extends OpenApi {
   }
 
 
-  async addFile(unionId: string, spaceId: string, request: AddFileRequest): Promise<AddFileResponse> {
+  async addFile(spaceId: string, request: AddFileRequest): Promise<AddFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddFileHeaders({ });
-    return await this.addFileWithOptions(unionId, spaceId, request, headers, runtime);
+    return await this.addFileWithOptions(spaceId, request, headers, runtime);
   }
 
-  async addFileWithOptions(unionId: string, spaceId: string, request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
+  async addFileWithOptions(spaceId: string, request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.parentId)) {
@@ -1310,6 +2005,10 @@ export default class Client extends OpenApi {
       body["addConflictPolicy"] = request.addConflictPolicy;
     }
 
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1323,16 +2022,16 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddFileResponse>(await this.doROARequest("AddFile", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files`, "json", req, runtime), new AddFileResponse({}));
+    return $tea.cast<AddFileResponse>(await this.doROARequest("AddFile", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/spaces/${spaceId}/files`, "json", req, runtime), new AddFileResponse({}));
   }
 
-  async recoverRecycleFiles(unionId: string, request: RecoverRecycleFilesRequest): Promise<RecoverRecycleFilesResponse> {
+  async recoverRecycleFiles(request: RecoverRecycleFilesRequest): Promise<RecoverRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RecoverRecycleFilesHeaders({ });
-    return await this.recoverRecycleFilesWithOptions(unionId, request, headers, runtime);
+    return await this.recoverRecycleFilesWithOptions(request, headers, runtime);
   }
 
-  async recoverRecycleFilesWithOptions(unionId: string, request: RecoverRecycleFilesRequest, headers: RecoverRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<RecoverRecycleFilesResponse> {
+  async recoverRecycleFilesWithOptions(request: RecoverRecycleFilesRequest, headers: RecoverRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<RecoverRecycleFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.recycleItemIdList)) {
@@ -1341,6 +2040,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.recycleType)) {
       body["recycleType"] = request.recycleType;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1356,16 +2059,49 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RecoverRecycleFilesResponse>(await this.doROARequest("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/users/${unionId}/recycleItems/recover`, "none", req, runtime), new RecoverRecycleFilesResponse({}));
+    return $tea.cast<RecoverRecycleFilesResponse>(await this.doROARequest("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/recycleItems/recover`, "none", req, runtime), new RecoverRecycleFilesResponse({}));
   }
 
-  async deleteRecycleFiles(unionId: string, request: DeleteRecycleFilesRequest): Promise<DeleteRecycleFilesResponse> {
+  async addSpace(request: AddSpaceRequest): Promise<AddSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddSpaceHeaders({ });
+    return await this.addSpaceWithOptions(request, headers, runtime);
+  }
+
+  async addSpaceWithOptions(request: AddSpaceRequest, headers: AddSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddSpaceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddSpaceResponse>(await this.doROARequest("AddSpace", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/spaces`, "json", req, runtime), new AddSpaceResponse({}));
+  }
+
+  async deleteRecycleFiles(request: DeleteRecycleFilesRequest): Promise<DeleteRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteRecycleFilesHeaders({ });
-    return await this.deleteRecycleFilesWithOptions(unionId, request, headers, runtime);
+    return await this.deleteRecycleFilesWithOptions(request, headers, runtime);
   }
 
-  async deleteRecycleFilesWithOptions(unionId: string, request: DeleteRecycleFilesRequest, headers: DeleteRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleFilesResponse> {
+  async deleteRecycleFilesWithOptions(request: DeleteRecycleFilesRequest, headers: DeleteRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.recycleItemIdList)) {
@@ -1374,6 +2110,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.recycleType)) {
       body["recycleType"] = request.recycleType;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1389,16 +2129,30 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteRecycleFilesResponse>(await this.doROARequest("DeleteRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/users/${unionId}/recycleItems/delete`, "none", req, runtime), new DeleteRecycleFilesResponse({}));
+    return $tea.cast<DeleteRecycleFilesResponse>(await this.doROARequest("DeleteRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/recycleItems/delete`, "none", req, runtime), new DeleteRecycleFilesResponse({}));
   }
 
-  async getFileInfo(unionId: string, spaceId: string, fileId: string): Promise<GetFileInfoResponse> {
+  async addPermission(spaceId: string, fileId: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileInfoHeaders({ });
-    return await this.getFileInfoWithOptions(unionId, spaceId, fileId, headers, runtime);
+    let headers = new AddPermissionHeaders({ });
+    return await this.addPermissionWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async getFileInfoWithOptions(unionId: string, spaceId: string, fileId: string, headers: GetFileInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileInfoResponse> {
+  async addPermissionWithOptions(spaceId: string, fileId: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.role)) {
+      body["role"] = request.role;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1410,19 +2164,53 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFileInfoResponse>(await this.doROARequest("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files/${fileId}`, "json", req, runtime), new GetFileInfoResponse({}));
+    return $tea.cast<AddPermissionResponse>(await this.doROARequest("AddPermission", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/permissions`, "none", req, runtime), new AddPermissionResponse({}));
   }
 
-  async listRecycleFiles(unionId: string, request: ListRecycleFilesRequest): Promise<ListRecycleFilesResponse> {
+  async getFileInfo(spaceId: string, fileId: string, request: GetFileInfoRequest): Promise<GetFileInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListRecycleFilesHeaders({ });
-    return await this.listRecycleFilesWithOptions(unionId, request, headers, runtime);
+    let headers = new GetFileInfoHeaders({ });
+    return await this.getFileInfoWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async listRecycleFilesWithOptions(unionId: string, request: ListRecycleFilesRequest, headers: ListRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecycleFilesResponse> {
+  async getFileInfoWithOptions(spaceId: string, fileId: string, request: GetFileInfoRequest, headers: GetFileInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFileInfoResponse>(await this.doROARequest("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}`, "json", req, runtime), new GetFileInfoResponse({}));
+  }
+
+  async listRecycleFiles(request: ListRecycleFilesRequest): Promise<ListRecycleFilesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListRecycleFilesHeaders({ });
+    return await this.listRecycleFilesWithOptions(request, headers, runtime);
+  }
+
+  async listRecycleFilesWithOptions(request: ListRecycleFilesRequest, headers: ListRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecycleFilesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
     if (!Util.isUnset(request.recycleType)) {
       query["recycleType"] = request.recycleType;
     }
@@ -1452,20 +2240,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListRecycleFilesResponse>(await this.doROARequest("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/users/${unionId}/recycleItems`, "json", req, runtime), new ListRecycleFilesResponse({}));
+    return $tea.cast<ListRecycleFilesResponse>(await this.doROARequest("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/recycleItems`, "json", req, runtime), new ListRecycleFilesResponse({}));
   }
 
-  async renameFile(unionId: string, spaceId: string, fileId: string, request: RenameFileRequest): Promise<RenameFileResponse> {
+  async renameFile(spaceId: string, fileId: string, request: RenameFileRequest): Promise<RenameFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RenameFileHeaders({ });
-    return await this.renameFileWithOptions(unionId, spaceId, fileId, request, headers, runtime);
+    return await this.renameFileWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async renameFileWithOptions(unionId: string, spaceId: string, fileId: string, request: RenameFileRequest, headers: RenameFileHeaders, runtime: $Util.RuntimeOptions): Promise<RenameFileResponse> {
+  async renameFileWithOptions(spaceId: string, fileId: string, request: RenameFileRequest, headers: RenameFileHeaders, runtime: $Util.RuntimeOptions): Promise<RenameFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.newFileName)) {
       body["newFileName"] = request.newFileName;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1481,18 +2273,22 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RenameFileResponse>(await this.doROARequest("RenameFile", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files/${fileId}/rename`, "json", req, runtime), new RenameFileResponse({}));
+    return $tea.cast<RenameFileResponse>(await this.doROARequest("RenameFile", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/rename`, "json", req, runtime), new RenameFileResponse({}));
   }
 
-  async listFiles(unionId: string, spaceId: string, request: ListFilesRequest): Promise<ListFilesResponse> {
+  async listFiles(spaceId: string, request: ListFilesRequest): Promise<ListFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFilesHeaders({ });
-    return await this.listFilesWithOptions(unionId, spaceId, request, headers, runtime);
+    return await this.listFilesWithOptions(spaceId, request, headers, runtime);
   }
 
-  async listFilesWithOptions(unionId: string, spaceId: string, request: ListFilesRequest, headers: ListFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFilesResponse> {
+  async listFilesWithOptions(spaceId: string, request: ListFilesRequest, headers: ListFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFilesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
     if (!Util.isUnset(request.parentId)) {
       query["parentId"] = request.parentId;
     }
@@ -1518,28 +2314,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListFilesResponse>(await this.doROARequest("ListFiles", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files`, "json", req, runtime), new ListFilesResponse({}));
+    return $tea.cast<ListFilesResponse>(await this.doROARequest("ListFiles", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files`, "json", req, runtime), new ListFilesResponse({}));
   }
 
-  async moveFile(unionId: string, spaceId: string, fileId: string, request: MoveFileRequest): Promise<MoveFileResponse> {
+  async modifyPermission(spaceId: string, fileId: string, request: ModifyPermissionRequest): Promise<ModifyPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MoveFileHeaders({ });
-    return await this.moveFileWithOptions(unionId, spaceId, fileId, request, headers, runtime);
+    let headers = new ModifyPermissionHeaders({ });
+    return await this.modifyPermissionWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async moveFileWithOptions(unionId: string, spaceId: string, fileId: string, request: MoveFileRequest, headers: MoveFileHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFileResponse> {
+  async modifyPermissionWithOptions(spaceId: string, fileId: string, request: ModifyPermissionRequest, headers: ModifyPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyPermissionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.targetSpaceId)) {
-      body["targetSpaceId"] = request.targetSpaceId;
+    if (!Util.isUnset(request.role)) {
+      body["role"] = request.role;
     }
 
-    if (!Util.isUnset(request.targetParentId)) {
-      body["targetParentId"] = request.targetParentId;
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
     }
 
-    if (!Util.isUnset(request.addConflictPolicy)) {
-      body["addConflictPolicy"] = request.addConflictPolicy;
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1555,16 +2351,22 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MoveFileResponse>(await this.doROARequest("MoveFile", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files/${fileId}/move`, "json", req, runtime), new MoveFileResponse({}));
+    return $tea.cast<ModifyPermissionResponse>(await this.doROARequest("ModifyPermission", "drive_1.0", "HTTP", "PUT", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/permissions`, "none", req, runtime), new ModifyPermissionResponse({}));
   }
 
-  async getDownloadInfo(unionId: string, spaceId: string, fileId: string): Promise<GetDownloadInfoResponse> {
+  async listPermissions(spaceId: string, fileId: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDownloadInfoHeaders({ });
-    return await this.getDownloadInfoWithOptions(unionId, spaceId, fileId, headers, runtime);
+    let headers = new ListPermissionsHeaders({ });
+    return await this.listPermissionsWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async getDownloadInfoWithOptions(unionId: string, spaceId: string, fileId: string, headers: GetDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDownloadInfoResponse> {
+  async listPermissionsWithOptions(spaceId: string, fileId: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1576,19 +2378,94 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDownloadInfoResponse>(await this.doROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files/${fileId}/downloadInfos`, "json", req, runtime), new GetDownloadInfoResponse({}));
+    return $tea.cast<ListPermissionsResponse>(await this.doROARequest("ListPermissions", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/permissions`, "json", req, runtime), new ListPermissionsResponse({}));
   }
 
-  async getUploadInfo(unionId: string, spaceId: string, parentId: string, request: GetUploadInfoRequest): Promise<GetUploadInfoResponse> {
+  async moveFile(spaceId: string, fileId: string, request: MoveFileRequest): Promise<MoveFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUploadInfoHeaders({ });
-    return await this.getUploadInfoWithOptions(unionId, spaceId, parentId, request, headers, runtime);
+    let headers = new MoveFileHeaders({ });
+    return await this.moveFileWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async getUploadInfoWithOptions(unionId: string, spaceId: string, parentId: string, request: GetUploadInfoRequest, headers: GetUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadInfoResponse> {
+  async moveFileWithOptions(spaceId: string, fileId: string, request: MoveFileRequest, headers: MoveFileHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFileResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetSpaceId)) {
+      body["targetSpaceId"] = request.targetSpaceId;
+    }
+
+    if (!Util.isUnset(request.targetParentId)) {
+      body["targetParentId"] = request.targetParentId;
+    }
+
+    if (!Util.isUnset(request.addConflictPolicy)) {
+      body["addConflictPolicy"] = request.addConflictPolicy;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<MoveFileResponse>(await this.doROARequest("MoveFile", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/move`, "json", req, runtime), new MoveFileResponse({}));
+  }
+
+  async getDownloadInfo(spaceId: string, fileId: string, request: GetDownloadInfoRequest): Promise<GetDownloadInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDownloadInfoHeaders({ });
+    return await this.getDownloadInfoWithOptions(spaceId, fileId, request, headers, runtime);
+  }
+
+  async getDownloadInfoWithOptions(spaceId: string, fileId: string, request: GetDownloadInfoRequest, headers: GetDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDownloadInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetDownloadInfoResponse>(await this.doROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/downloadInfos`, "json", req, runtime), new GetDownloadInfoResponse({}));
+  }
+
+  async getUploadInfo(spaceId: string, parentId: string, request: GetUploadInfoRequest): Promise<GetUploadInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUploadInfoHeaders({ });
+    return await this.getUploadInfoWithOptions(spaceId, parentId, request, headers, runtime);
+  }
+
+  async getUploadInfoWithOptions(spaceId: string, parentId: string, request: GetUploadInfoRequest, headers: GetUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
     if (!Util.isUnset(request.fileName)) {
       query["fileName"] = request.fileName;
     }
@@ -1622,18 +2499,22 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUploadInfoResponse>(await this.doROARequest("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files/${parentId}/uploadInfos`, "json", req, runtime), new GetUploadInfoResponse({}));
+    return $tea.cast<GetUploadInfoResponse>(await this.doROARequest("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files/${parentId}/uploadInfos`, "json", req, runtime), new GetUploadInfoResponse({}));
   }
 
-  async listSpaces(unionId: string, request: ListSpacesRequest): Promise<ListSpacesResponse> {
+  async listSpaces(request: ListSpacesRequest): Promise<ListSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSpacesHeaders({ });
-    return await this.listSpacesWithOptions(unionId, request, headers, runtime);
+    return await this.listSpacesWithOptions(request, headers, runtime);
   }
 
-  async listSpacesWithOptions(unionId: string, request: ListSpacesRequest, headers: ListSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListSpacesResponse> {
+  async listSpacesWithOptions(request: ListSpacesRequest, headers: ListSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListSpacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
     if (!Util.isUnset(request.spaceType)) {
       query["spaceType"] = request.spaceType;
     }
@@ -1659,20 +2540,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListSpacesResponse>(await this.doROARequest("ListSpaces", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/users/${unionId}/spaces`, "json", req, runtime), new ListSpacesResponse({}));
+    return $tea.cast<ListSpacesResponse>(await this.doROARequest("ListSpaces", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces`, "json", req, runtime), new ListSpacesResponse({}));
   }
 
-  async clearRecycleFiles(unionId: string, request: ClearRecycleFilesRequest): Promise<ClearRecycleFilesResponse> {
+  async deletePermission(spaceId: string, fileId: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ClearRecycleFilesHeaders({ });
-    return await this.clearRecycleFilesWithOptions(unionId, request, headers, runtime);
+    let headers = new DeletePermissionHeaders({ });
+    return await this.deletePermissionWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
-  async clearRecycleFilesWithOptions(unionId: string, request: ClearRecycleFilesRequest, headers: ClearRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRecycleFilesResponse> {
+  async deletePermissionWithOptions(spaceId: string, fileId: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.recycleType)) {
-      body["recycleType"] = request.recycleType;
+    if (!Util.isUnset(request.role)) {
+      body["role"] = request.role;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1688,18 +2577,84 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ClearRecycleFilesResponse>(await this.doROARequest("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/users/${unionId}/recycleItems/clear`, "none", req, runtime), new ClearRecycleFilesResponse({}));
+    return $tea.cast<DeletePermissionResponse>(await this.doROARequest("DeletePermission", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}/permissions/delete`, "none", req, runtime), new DeletePermissionResponse({}));
   }
 
-  async deleteFile(unionId: string, spaceId: string, fileId: string, request: DeleteFileRequest): Promise<DeleteFileResponse> {
+  async deleteSpace(spaceId: string, request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteFileHeaders({ });
-    return await this.deleteFileWithOptions(unionId, spaceId, fileId, request, headers, runtime);
+    let headers = new DeleteSpaceHeaders({ });
+    return await this.deleteSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
-  async deleteFileWithOptions(unionId: string, spaceId: string, fileId: string, request: DeleteFileRequest, headers: DeleteFileHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFileResponse> {
+  async deleteSpaceWithOptions(spaceId: string, request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteSpaceResponse>(await this.doROARequest("DeleteSpace", "drive_1.0", "HTTP", "DELETE", "AK", `/v1.0/drive/spaces/${spaceId}`, "none", req, runtime), new DeleteSpaceResponse({}));
+  }
+
+  async clearRecycleFiles(request: ClearRecycleFilesRequest): Promise<ClearRecycleFilesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ClearRecycleFilesHeaders({ });
+    return await this.clearRecycleFilesWithOptions(request, headers, runtime);
+  }
+
+  async clearRecycleFilesWithOptions(request: ClearRecycleFilesRequest, headers: ClearRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRecycleFilesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.recycleType)) {
+      body["recycleType"] = request.recycleType;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ClearRecycleFilesResponse>(await this.doROARequest("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", `/v1.0/drive/recycleItems/clear`, "none", req, runtime), new ClearRecycleFilesResponse({}));
+  }
+
+  async deleteFile(spaceId: string, fileId: string, request: DeleteFileRequest): Promise<DeleteFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteFileHeaders({ });
+    return await this.deleteFileWithOptions(spaceId, fileId, request, headers, runtime);
+  }
+
+  async deleteFileWithOptions(spaceId: string, fileId: string, request: DeleteFileRequest, headers: DeleteFileHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFileResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
     if (!Util.isUnset(request.deletePolicy)) {
       query["deletePolicy"] = request.deletePolicy;
     }
@@ -1717,7 +2672,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteFileResponse>(await this.doROARequest("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", `/v1.0/drive/users/${unionId}/spaces/${spaceId}/files/${fileId}`, "json", req, runtime), new DeleteFileResponse({}));
+    return $tea.cast<DeleteFileResponse>(await this.doROARequest("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}`, "json", req, runtime), new DeleteFileResponse({}));
   }
 
 }

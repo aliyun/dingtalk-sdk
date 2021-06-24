@@ -106,6 +106,118 @@ export class GetTodoTypeConfigResponse extends $tea.Model {
   }
 }
 
+export class QueryTodoTasksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksRequest extends $tea.Model {
+  nextToken?: string;
+  orderBy?: string;
+  orderDirection?: string;
+  isDone?: boolean;
+  roleTypes?: string[][];
+  fromDueTime?: number;
+  toDueTime?: number;
+  category?: string;
+  isRecycled?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      orderBy: 'orderBy',
+      orderDirection: 'orderDirection',
+      isDone: 'isDone',
+      roleTypes: 'roleTypes',
+      fromDueTime: 'fromDueTime',
+      toDueTime: 'toDueTime',
+      category: 'category',
+      isRecycled: 'isRecycled',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      orderBy: 'string',
+      orderDirection: 'string',
+      isDone: 'boolean',
+      roleTypes: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
+      fromDueTime: 'number',
+      toDueTime: 'number',
+      category: 'string',
+      isRecycled: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponseBody extends $tea.Model {
+  nextToken?: string;
+  todoCards?: QueryTodoTasksResponseBodyTodoCards[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      todoCards: 'todoCards',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      todoCards: { 'type': 'array', 'itemType': QueryTodoTasksResponseBodyTodoCards },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryTodoTasksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryTodoTasksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateTodoTypeConfigHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -251,6 +363,9 @@ export class GetTodoTaskResponseBody extends $tea.Model {
   requestId?: string;
   cardTypeId?: string;
   contentFieldList?: GetTodoTaskResponseBodyContentFieldList[];
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
+  sourceTitle?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -275,6 +390,9 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       requestId: 'requestId',
       cardTypeId: 'cardTypeId',
       contentFieldList: 'contentFieldList',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
+      sourceTitle: 'sourceTitle',
     };
   }
 
@@ -302,6 +420,9 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       requestId: 'string',
       cardTypeId: 'string',
       contentFieldList: { 'type': 'array', 'itemType': GetTodoTaskResponseBodyContentFieldList },
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
+      sourceTitle: 'string',
     };
   }
 
@@ -409,6 +530,91 @@ export class DeleteTodoTaskResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteTodoTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTodoTaskExecutorStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTodoTaskExecutorStatusRequest extends $tea.Model {
+  executorStatusList?: UpdateTodoTaskExecutorStatusRequestExecutorStatusList[];
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      executorStatusList: 'executorStatusList',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      executorStatusList: { 'type': 'array', 'itemType': UpdateTodoTaskExecutorStatusRequestExecutorStatusList },
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTodoTaskExecutorStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTodoTaskExecutorStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateTodoTaskExecutorStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateTodoTaskExecutorStatusResponseBody,
     };
   }
 
@@ -553,6 +759,103 @@ export class CreateTodoTypeConfigResponse extends $tea.Model {
   }
 }
 
+export class CountTodoTasksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CountTodoTasksRequest extends $tea.Model {
+  isDone?: boolean;
+  roleTypes?: string[][];
+  fromDueTime?: number;
+  toDueTime?: number;
+  category?: string;
+  isRecycled?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isDone: 'isDone',
+      roleTypes: 'roleTypes',
+      fromDueTime: 'fromDueTime',
+      toDueTime: 'toDueTime',
+      category: 'category',
+      isRecycled: 'isRecycled',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isDone: 'boolean',
+      roleTypes: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
+      fromDueTime: 'number',
+      toDueTime: 'number',
+      category: 'string',
+      isRecycled: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CountTodoTasksResponseBody extends $tea.Model {
+  result?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CountTodoTasksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CountTodoTasksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CountTodoTasksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateTodoTaskHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -584,6 +887,8 @@ export class UpdateTodoTaskRequest extends $tea.Model {
   participantIds?: string[];
   cardTypeId?: string;
   contentFieldList?: UpdateTodoTaskRequestContentFieldList[];
+  priority?: number;
+  sourceTitle?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -595,6 +900,8 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       participantIds: 'participantIds',
       cardTypeId: 'cardTypeId',
       contentFieldList: 'contentFieldList',
+      priority: 'priority',
+      sourceTitle: 'sourceTitle',
       operatorId: 'operatorId',
     };
   }
@@ -609,6 +916,8 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       participantIds: { 'type': 'array', 'itemType': 'string' },
       cardTypeId: 'string',
       contentFieldList: { 'type': 'array', 'itemType': UpdateTodoTaskRequestContentFieldList },
+      priority: 'number',
+      sourceTitle: 'string',
       operatorId: 'string',
     };
   }
@@ -692,6 +1001,9 @@ export class CreateTodoTaskRequest extends $tea.Model {
   detailUrl?: CreateTodoTaskRequestDetailUrl;
   cardTypeId?: string;
   contentFieldList?: CreateTodoTaskRequestContentFieldList[];
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
+  sourceTitle?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -705,6 +1017,9 @@ export class CreateTodoTaskRequest extends $tea.Model {
       detailUrl: 'detailUrl',
       cardTypeId: 'cardTypeId',
       contentFieldList: 'contentFieldList',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
+      sourceTitle: 'sourceTitle',
       operatorId: 'operatorId',
     };
   }
@@ -721,6 +1036,9 @@ export class CreateTodoTaskRequest extends $tea.Model {
       detailUrl: CreateTodoTaskRequestDetailUrl,
       cardTypeId: 'string',
       contentFieldList: { 'type': 'array', 'itemType': CreateTodoTaskRequestContentFieldList },
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
+      sourceTitle: 'string',
       operatorId: 'string',
     };
   }
@@ -747,12 +1065,13 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   modifiedTime?: number;
   creatorId?: string;
   modifierId?: string;
-  tenantId?: string;
-  tenantType?: string;
   bizTag?: string;
   requestId?: string;
   cardTypeId?: string;
   contentFieldList?: CreateTodoTaskResponseBodyContentFieldList[];
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
+  sourceTitle?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -771,12 +1090,13 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       modifiedTime: 'modifiedTime',
       creatorId: 'creatorId',
       modifierId: 'modifierId',
-      tenantId: 'tenantId',
-      tenantType: 'tenantType',
       bizTag: 'bizTag',
       requestId: 'requestId',
       cardTypeId: 'cardTypeId',
       contentFieldList: 'contentFieldList',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
+      sourceTitle: 'sourceTitle',
     };
   }
 
@@ -798,12 +1118,13 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       modifiedTime: 'number',
       creatorId: 'string',
       modifierId: 'string',
-      tenantId: 'string',
-      tenantType: 'string',
       bizTag: 'string',
       requestId: 'string',
       cardTypeId: 'string',
       contentFieldList: { 'type': 'array', 'itemType': CreateTodoTaskResponseBodyContentFieldList },
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
+      sourceTitle: 'string',
     };
   }
 
@@ -882,6 +1203,167 @@ export class GetTodoTypeConfigResponseBodyActionList extends $tea.Model {
       actionType: 'number',
       url: 'string',
       nameI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponseBodyTodoCardsDetailUrl extends $tea.Model {
+  appUrl?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUrl: 'appUrl',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUrl: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList extends $tea.Model {
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponseBodyTodoCardsTodoCardView extends $tea.Model {
+  cardType?: string;
+  circleELType?: string;
+  contentType?: string;
+  actionType?: string;
+  icon?: string;
+  todoCardTitle?: string;
+  todoCardContentList?: QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList[];
+  static names(): { [key: string]: string } {
+    return {
+      cardType: 'cardType',
+      circleELType: 'circleELType',
+      contentType: 'contentType',
+      actionType: 'actionType',
+      icon: 'icon',
+      todoCardTitle: 'todoCardTitle',
+      todoCardContentList: 'todoCardContentList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardType: 'string',
+      circleELType: 'string',
+      contentType: 'string',
+      actionType: 'string',
+      icon: 'string',
+      todoCardTitle: 'string',
+      todoCardContentList: { 'type': 'array', 'itemType': QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponseBodyTodoCardsOriginalSource extends $tea.Model {
+  sourceTitle?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sourceTitle: 'sourceTitle',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sourceTitle: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTodoTasksResponseBodyTodoCards extends $tea.Model {
+  taskId?: string;
+  subject?: string;
+  dueTime?: number;
+  detailUrl?: QueryTodoTasksResponseBodyTodoCardsDetailUrl;
+  todoCardView?: QueryTodoTasksResponseBodyTodoCardsTodoCardView;
+  priority?: number;
+  createdTime?: number;
+  modifiedTime?: number;
+  todoStatus?: string;
+  creatorId?: string;
+  sourceId?: string;
+  category?: string;
+  bizTag?: string;
+  originalSource?: QueryTodoTasksResponseBodyTodoCardsOriginalSource;
+  isDone?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+      subject: 'subject',
+      dueTime: 'dueTime',
+      detailUrl: 'detailUrl',
+      todoCardView: 'todoCardView',
+      priority: 'priority',
+      createdTime: 'createdTime',
+      modifiedTime: 'modifiedTime',
+      todoStatus: 'todoStatus',
+      creatorId: 'creatorId',
+      sourceId: 'sourceId',
+      category: 'category',
+      bizTag: 'bizTag',
+      originalSource: 'originalSource',
+      isDone: 'isDone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+      subject: 'string',
+      dueTime: 'number',
+      detailUrl: QueryTodoTasksResponseBodyTodoCardsDetailUrl,
+      todoCardView: QueryTodoTasksResponseBodyTodoCardsTodoCardView,
+      priority: 'number',
+      createdTime: 'number',
+      modifiedTime: 'number',
+      todoStatus: 'string',
+      creatorId: 'string',
+      sourceId: 'string',
+      category: 'string',
+      bizTag: 'string',
+      originalSource: QueryTodoTasksResponseBodyTodoCardsOriginalSource,
+      isDone: 'boolean',
     };
   }
 
@@ -982,6 +1464,28 @@ export class GetTodoTaskResponseBodyContentFieldList extends $tea.Model {
     return {
       fieldKey: 'string',
       fieldValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTodoTaskExecutorStatusRequestExecutorStatusList extends $tea.Model {
+  id?: string;
+  isDone?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      isDone: 'isDone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      isDone: 'boolean',
     };
   }
 
@@ -1149,12 +1653,10 @@ export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
 export class CreateTodoTaskRequestContentFieldList extends $tea.Model {
   fieldKey?: string;
   fieldValue?: string;
-  fieldLink?: string;
   static names(): { [key: string]: string } {
     return {
       fieldKey: 'fieldKey',
       fieldValue: 'fieldValue',
-      fieldLink: 'fieldLink',
     };
   }
 
@@ -1162,7 +1664,6 @@ export class CreateTodoTaskRequestContentFieldList extends $tea.Model {
     return {
       fieldKey: 'string',
       fieldValue: 'string',
-      fieldLink: 'string',
     };
   }
 
@@ -1248,6 +1749,67 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetTodoTypeConfigResponse>(await this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`, "json", req, runtime), new GetTodoTypeConfigResponse({}));
+  }
+
+  async queryTodoTasks(unionId: string, request: QueryTodoTasksRequest): Promise<QueryTodoTasksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryTodoTasksHeaders({ });
+    return await this.queryTodoTasksWithOptions(unionId, request, headers, runtime);
+  }
+
+  async queryTodoTasksWithOptions(unionId: string, request: QueryTodoTasksRequest, headers: QueryTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoTasksResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.orderBy)) {
+      body["orderBy"] = request.orderBy;
+    }
+
+    if (!Util.isUnset(request.orderDirection)) {
+      body["orderDirection"] = request.orderDirection;
+    }
+
+    if (!Util.isUnset(request.isDone)) {
+      body["isDone"] = request.isDone;
+    }
+
+    if (!Util.isUnset(request.roleTypes)) {
+      body["roleTypes"] = request.roleTypes;
+    }
+
+    if (!Util.isUnset(request.fromDueTime)) {
+      body["fromDueTime"] = request.fromDueTime;
+    }
+
+    if (!Util.isUnset(request.toDueTime)) {
+      body["toDueTime"] = request.toDueTime;
+    }
+
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.isRecycled)) {
+      body["isRecycled"] = request.isRecycled;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryTodoTasksResponse>(await this.doROARequest("QueryTodoTasks", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/tasks/list`, "json", req, runtime), new QueryTodoTasksResponse({}));
   }
 
   async updateTodoTypeConfig(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
@@ -1356,6 +1918,41 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteTodoTaskResponse>(await this.doROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", `/v1.0/todo/users/${unionId}/tasks/${taskId}`, "json", req, runtime), new DeleteTodoTaskResponse({}));
   }
 
+  async updateTodoTaskExecutorStatus(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest): Promise<UpdateTodoTaskExecutorStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTodoTaskExecutorStatusHeaders({ });
+    return await this.updateTodoTaskExecutorStatusWithOptions(unionId, taskId, request, headers, runtime);
+  }
+
+  async updateTodoTaskExecutorStatusWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest, headers: UpdateTodoTaskExecutorStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskExecutorStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.executorStatusList)) {
+      body["executorStatusList"] = request.executorStatusList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateTodoTaskExecutorStatusResponse>(await this.doROARequest("UpdateTodoTaskExecutorStatus", "todo_1.0", "HTTP", "PUT", "AK", `/v1.0/todo/users/${unionId}/tasks/${taskId}/executorStatus`, "json", req, runtime), new UpdateTodoTaskExecutorStatusResponse({}));
+  }
+
   async createTodoTypeConfig(unionId: string, request: CreateTodoTypeConfigRequest): Promise<CreateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTodoTypeConfigHeaders({ });
@@ -1411,6 +2008,55 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTodoTypeConfigResponse>(await this.doROARequest("CreateTodoTypeConfig", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/configs/types`, "json", req, runtime), new CreateTodoTypeConfigResponse({}));
   }
 
+  async countTodoTasks(unionId: string, request: CountTodoTasksRequest): Promise<CountTodoTasksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CountTodoTasksHeaders({ });
+    return await this.countTodoTasksWithOptions(unionId, request, headers, runtime);
+  }
+
+  async countTodoTasksWithOptions(unionId: string, request: CountTodoTasksRequest, headers: CountTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<CountTodoTasksResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isDone)) {
+      body["isDone"] = request.isDone;
+    }
+
+    if (!Util.isUnset(request.roleTypes)) {
+      body["roleTypes"] = request.roleTypes;
+    }
+
+    if (!Util.isUnset(request.fromDueTime)) {
+      body["fromDueTime"] = request.fromDueTime;
+    }
+
+    if (!Util.isUnset(request.toDueTime)) {
+      body["toDueTime"] = request.toDueTime;
+    }
+
+    if (!Util.isUnset(request.category)) {
+      body["category"] = request.category;
+    }
+
+    if (!Util.isUnset(request.isRecycled)) {
+      body["isRecycled"] = request.isRecycled;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CountTodoTasksResponse>(await this.doROARequest("CountTodoTasks", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/tasks/count`, "json", req, runtime), new CountTodoTasksResponse({}));
+  }
+
   async updateTodoTask(unionId: string, taskId: string, request: UpdateTodoTaskRequest): Promise<UpdateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTodoTaskHeaders({ });
@@ -1455,6 +2101,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.contentFieldList)) {
       body["contentFieldList"] = request.contentFieldList;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.sourceTitle)) {
+      body["sourceTitle"] = request.sourceTitle;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1526,6 +2180,18 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.contentFieldList)) {
       body["contentFieldList"] = request.contentFieldList;
+    }
+
+    if (!Util.isUnset(request.isOnlyShowExecutor)) {
+      body["isOnlyShowExecutor"] = request.isOnlyShowExecutor;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset(request.sourceTitle)) {
+      body["sourceTitle"] = request.sourceTitle;
     }
 
     let realHeaders : {[key: string ]: string} = { };
