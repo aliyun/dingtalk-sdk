@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ListFilesRequest extends Model
 {
     /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
      * @description 父目录id
      *
      * @var string
@@ -29,6 +36,7 @@ class ListFilesRequest extends Model
      */
     public $maxResults;
     protected $_name = [
+        'unionId'    => 'unionId',
         'parentId'   => 'parentId',
         'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
@@ -41,6 +49,9 @@ class ListFilesRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
+        }
         if (null !== $this->parentId) {
             $res['parentId'] = $this->parentId;
         }
@@ -62,6 +73,9 @@ class ListFilesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
+        }
         if (isset($map['parentId'])) {
             $model->parentId = $map['parentId'];
         }

@@ -14,8 +14,16 @@ class ClearRecycleFilesRequest extends Model
      * @var string
      */
     public $recycleType;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'recycleType' => 'recycleType',
+        'unionId'     => 'unionId',
     ];
 
     public function validate()
@@ -27,6 +35,9 @@ class ClearRecycleFilesRequest extends Model
         $res = [];
         if (null !== $this->recycleType) {
             $res['recycleType'] = $this->recycleType;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -42,6 +53,9 @@ class ClearRecycleFilesRequest extends Model
         $model = new self();
         if (isset($map['recycleType'])) {
             $model->recycleType = $map['recycleType'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

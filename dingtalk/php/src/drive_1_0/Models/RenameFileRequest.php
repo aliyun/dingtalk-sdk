@@ -14,8 +14,16 @@ class RenameFileRequest extends Model
      * @var string
      */
     public $newFileName;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'newFileName' => 'newFileName',
+        'unionId'     => 'unionId',
     ];
 
     public function validate()
@@ -27,6 +35,9 @@ class RenameFileRequest extends Model
         $res = [];
         if (null !== $this->newFileName) {
             $res['newFileName'] = $this->newFileName;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -42,6 +53,9 @@ class RenameFileRequest extends Model
         $model = new self();
         if (isset($map['newFileName'])) {
             $model->newFileName = $map['newFileName'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

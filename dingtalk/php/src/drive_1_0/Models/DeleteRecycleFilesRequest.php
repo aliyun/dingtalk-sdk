@@ -21,9 +21,17 @@ class DeleteRecycleFilesRequest extends Model
      * @var string
      */
     public $recycleType;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'recycleItemIdList' => 'recycleItemIdList',
         'recycleType'       => 'recycleType',
+        'unionId'           => 'unionId',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class DeleteRecycleFilesRequest extends Model
         }
         if (null !== $this->recycleType) {
             $res['recycleType'] = $this->recycleType;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -58,6 +69,9 @@ class DeleteRecycleFilesRequest extends Model
         }
         if (isset($map['recycleType'])) {
             $model->recycleType = $map['recycleType'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

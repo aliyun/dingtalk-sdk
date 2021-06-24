@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetUploadInfoRequest extends Model
 {
     /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
      * @description 文件名
      *
      * @var string
@@ -43,6 +50,7 @@ class GetUploadInfoRequest extends Model
      */
     public $mediaId;
     protected $_name = [
+        'unionId'           => 'unionId',
         'fileName'          => 'fileName',
         'fileSize'          => 'fileSize',
         'md5'               => 'md5',
@@ -57,6 +65,9 @@ class GetUploadInfoRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
+        }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
         }
@@ -84,6 +95,9 @@ class GetUploadInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
+        }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
         }

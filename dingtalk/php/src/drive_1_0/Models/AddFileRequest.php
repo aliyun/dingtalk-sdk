@@ -42,12 +42,20 @@ class AddFileRequest extends Model
      * @var string
      */
     public $addConflictPolicy;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'parentId'          => 'parentId',
         'fileType'          => 'fileType',
         'fileName'          => 'fileName',
         'mediaId'           => 'mediaId',
         'addConflictPolicy' => 'addConflictPolicy',
+        'unionId'           => 'unionId',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class AddFileRequest extends Model
         }
         if (null !== $this->addConflictPolicy) {
             $res['addConflictPolicy'] = $this->addConflictPolicy;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class AddFileRequest extends Model
         }
         if (isset($map['addConflictPolicy'])) {
             $model->addConflictPolicy = $map['addConflictPolicy'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

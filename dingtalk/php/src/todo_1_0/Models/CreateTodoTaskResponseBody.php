@@ -123,20 +123,6 @@ class CreateTodoTaskResponseBody extends Model
     public $modifierId;
 
     /**
-     * @description 租户id(unionId/orgId/groupId)
-     *
-     * @var string
-     */
-    public $tenantId;
-
-    /**
-     * @description 租户类型（user/org/group）
-     *
-     * @var string
-     */
-    public $tenantType;
-
-    /**
      * @description 接入应用标识
      *
      * @var string
@@ -163,29 +149,51 @@ class CreateTodoTaskResponseBody extends Model
      * @var contentFieldList[]
      */
     public $contentFieldList;
+
+    /**
+     * @description 生成的待办是否仅展示在执行者的待办列表中
+     *
+     * @var bool
+     */
+    public $isOnlyShowExecutor;
+
+    /**
+     * @description 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+     *
+     * @var int
+     */
+    public $priority;
+
+    /**
+     * @description 业务来源展示名称
+     *
+     * @var string
+     */
+    public $sourceTitle;
     protected $_name = [
-        'id'               => 'id',
-        'subject'          => 'subject',
-        'description'      => 'description',
-        'startTime'        => 'startTime',
-        'dueTime'          => 'dueTime',
-        'finishTime'       => 'finishTime',
-        'done'             => 'done',
-        'executorIds'      => 'executorIds',
-        'participantIds'   => 'participantIds',
-        'detailUrl'        => 'detailUrl',
-        'source'           => 'source',
-        'sourceId'         => 'sourceId',
-        'createdTime'      => 'createdTime',
-        'modifiedTime'     => 'modifiedTime',
-        'creatorId'        => 'creatorId',
-        'modifierId'       => 'modifierId',
-        'tenantId'         => 'tenantId',
-        'tenantType'       => 'tenantType',
-        'bizTag'           => 'bizTag',
-        'requestId'        => 'requestId',
-        'cardTypeId'       => 'cardTypeId',
-        'contentFieldList' => 'contentFieldList',
+        'id'                 => 'id',
+        'subject'            => 'subject',
+        'description'        => 'description',
+        'startTime'          => 'startTime',
+        'dueTime'            => 'dueTime',
+        'finishTime'         => 'finishTime',
+        'done'               => 'done',
+        'executorIds'        => 'executorIds',
+        'participantIds'     => 'participantIds',
+        'detailUrl'          => 'detailUrl',
+        'source'             => 'source',
+        'sourceId'           => 'sourceId',
+        'createdTime'        => 'createdTime',
+        'modifiedTime'       => 'modifiedTime',
+        'creatorId'          => 'creatorId',
+        'modifierId'         => 'modifierId',
+        'bizTag'             => 'bizTag',
+        'requestId'          => 'requestId',
+        'cardTypeId'         => 'cardTypeId',
+        'contentFieldList'   => 'contentFieldList',
+        'isOnlyShowExecutor' => 'isOnlyShowExecutor',
+        'priority'           => 'priority',
+        'sourceTitle'        => 'sourceTitle',
     ];
 
     public function validate()
@@ -243,12 +251,6 @@ class CreateTodoTaskResponseBody extends Model
         if (null !== $this->modifierId) {
             $res['modifierId'] = $this->modifierId;
         }
-        if (null !== $this->tenantId) {
-            $res['tenantId'] = $this->tenantId;
-        }
-        if (null !== $this->tenantType) {
-            $res['tenantType'] = $this->tenantType;
-        }
         if (null !== $this->bizTag) {
             $res['bizTag'] = $this->bizTag;
         }
@@ -266,6 +268,15 @@ class CreateTodoTaskResponseBody extends Model
                     $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->isOnlyShowExecutor) {
+            $res['isOnlyShowExecutor'] = $this->isOnlyShowExecutor;
+        }
+        if (null !== $this->priority) {
+            $res['priority'] = $this->priority;
+        }
+        if (null !== $this->sourceTitle) {
+            $res['sourceTitle'] = $this->sourceTitle;
         }
 
         return $res;
@@ -331,12 +342,6 @@ class CreateTodoTaskResponseBody extends Model
         if (isset($map['modifierId'])) {
             $model->modifierId = $map['modifierId'];
         }
-        if (isset($map['tenantId'])) {
-            $model->tenantId = $map['tenantId'];
-        }
-        if (isset($map['tenantType'])) {
-            $model->tenantType = $map['tenantType'];
-        }
         if (isset($map['bizTag'])) {
             $model->bizTag = $map['bizTag'];
         }
@@ -354,6 +359,15 @@ class CreateTodoTaskResponseBody extends Model
                     $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['isOnlyShowExecutor'])) {
+            $model->isOnlyShowExecutor = $map['isOnlyShowExecutor'];
+        }
+        if (isset($map['priority'])) {
+            $model->priority = $map['priority'];
+        }
+        if (isset($map['sourceTitle'])) {
+            $model->sourceTitle = $map['sourceTitle'];
         }
 
         return $model;

@@ -21,17 +21,9 @@ class contentFieldList extends Model
      * @var string
      */
     public $fieldValue;
-
-    /**
-     * @description 字段内容链接
-     *
-     * @var string
-     */
-    public $fieldLink;
     protected $_name = [
         'fieldKey'   => 'fieldKey',
         'fieldValue' => 'fieldValue',
-        'fieldLink'  => 'fieldLink',
     ];
 
     public function validate()
@@ -46,9 +38,6 @@ class contentFieldList extends Model
         }
         if (null !== $this->fieldValue) {
             $res['fieldValue'] = $this->fieldValue;
-        }
-        if (null !== $this->fieldLink) {
-            $res['fieldLink'] = $this->fieldLink;
         }
 
         return $res;
@@ -67,9 +56,6 @@ class contentFieldList extends Model
         }
         if (isset($map['fieldValue'])) {
             $model->fieldValue = $map['fieldValue'];
-        }
-        if (isset($map['fieldLink'])) {
-            $model->fieldLink = $map['fieldLink'];
         }
 
         return $model;

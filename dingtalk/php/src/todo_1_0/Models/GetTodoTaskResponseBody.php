@@ -163,29 +163,53 @@ class GetTodoTaskResponseBody extends Model
      * @var contentFieldList[]
      */
     public $contentFieldList;
+
+    /**
+     * @description 待办是否仅展示在执行人的待办列表中
+     *
+     * @var bool
+     */
+    public $isOnlyShowExecutor;
+
+    /**
+     * @description 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+     *
+     * @var int
+     */
+    public $priority;
+
+    /**
+     * @description 业务来源展示名称
+     *
+     * @var string
+     */
+    public $sourceTitle;
     protected $_name = [
-        'id'               => 'id',
-        'subject'          => 'subject',
-        'description'      => 'description',
-        'startTime'        => 'startTime',
-        'dueTime'          => 'dueTime',
-        'finishTime'       => 'finishTime',
-        'done'             => 'done',
-        'executorIds'      => 'executorIds',
-        'participantIds'   => 'participantIds',
-        'detailUrl'        => 'detailUrl',
-        'sourceId'         => 'sourceId',
-        'source'           => 'source',
-        'createdTime'      => 'createdTime',
-        'modifiedTime'     => 'modifiedTime',
-        'creatorId'        => 'creatorId',
-        'modifierId'       => 'modifierId',
-        'tenantId'         => 'tenantId',
-        'tenantType'       => 'tenantType',
-        'bizTag'           => 'bizTag',
-        'requestId'        => 'requestId',
-        'cardTypeId'       => 'cardTypeId',
-        'contentFieldList' => 'contentFieldList',
+        'id'                 => 'id',
+        'subject'            => 'subject',
+        'description'        => 'description',
+        'startTime'          => 'startTime',
+        'dueTime'            => 'dueTime',
+        'finishTime'         => 'finishTime',
+        'done'               => 'done',
+        'executorIds'        => 'executorIds',
+        'participantIds'     => 'participantIds',
+        'detailUrl'          => 'detailUrl',
+        'sourceId'           => 'sourceId',
+        'source'             => 'source',
+        'createdTime'        => 'createdTime',
+        'modifiedTime'       => 'modifiedTime',
+        'creatorId'          => 'creatorId',
+        'modifierId'         => 'modifierId',
+        'tenantId'           => 'tenantId',
+        'tenantType'         => 'tenantType',
+        'bizTag'             => 'bizTag',
+        'requestId'          => 'requestId',
+        'cardTypeId'         => 'cardTypeId',
+        'contentFieldList'   => 'contentFieldList',
+        'isOnlyShowExecutor' => 'isOnlyShowExecutor',
+        'priority'           => 'priority',
+        'sourceTitle'        => 'sourceTitle',
     ];
 
     public function validate()
@@ -266,6 +290,15 @@ class GetTodoTaskResponseBody extends Model
                     $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->isOnlyShowExecutor) {
+            $res['isOnlyShowExecutor'] = $this->isOnlyShowExecutor;
+        }
+        if (null !== $this->priority) {
+            $res['priority'] = $this->priority;
+        }
+        if (null !== $this->sourceTitle) {
+            $res['sourceTitle'] = $this->sourceTitle;
         }
 
         return $res;
@@ -354,6 +387,15 @@ class GetTodoTaskResponseBody extends Model
                     $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['isOnlyShowExecutor'])) {
+            $model->isOnlyShowExecutor = $map['isOnlyShowExecutor'];
+        }
+        if (isset($map['priority'])) {
+            $model->priority = $map['priority'];
+        }
+        if (isset($map['sourceTitle'])) {
+            $model->sourceTitle = $map['sourceTitle'];
         }
 
         return $model;

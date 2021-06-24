@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesRequest extends Model
 {
     /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
      * @description 回收站类型
      *
      * @var string
@@ -36,6 +43,7 @@ class ListRecycleFilesRequest extends Model
      */
     public $orderType;
     protected $_name = [
+        'unionId'     => 'unionId',
         'recycleType' => 'recycleType',
         'nextToken'   => 'nextToken',
         'maxResults'  => 'maxResults',
@@ -49,6 +57,9 @@ class ListRecycleFilesRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
+        }
         if (null !== $this->recycleType) {
             $res['recycleType'] = $this->recycleType;
         }
@@ -73,6 +84,9 @@ class ListRecycleFilesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
+        }
         if (isset($map['recycleType'])) {
             $model->recycleType = $map['recycleType'];
         }

@@ -28,10 +28,18 @@ class MoveFileRequest extends Model
      * @var string
      */
     public $addConflictPolicy;
+
+    /**
+     * @description 用户id
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'targetSpaceId'     => 'targetSpaceId',
         'targetParentId'    => 'targetParentId',
         'addConflictPolicy' => 'addConflictPolicy',
+        'unionId'           => 'unionId',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class MoveFileRequest extends Model
         }
         if (null !== $this->addConflictPolicy) {
             $res['addConflictPolicy'] = $this->addConflictPolicy;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class MoveFileRequest extends Model
         }
         if (isset($map['addConflictPolicy'])) {
             $model->addConflictPolicy = $map['addConflictPolicy'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

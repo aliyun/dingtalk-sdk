@@ -66,6 +66,20 @@ class UpdateTodoTaskRequest extends Model
     public $contentFieldList;
 
     /**
+     * @description 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+     *
+     * @var int
+     */
+    public $priority;
+
+    /**
+     * @description 业务来源展示名称
+     *
+     * @var string
+     */
+    public $sourceTitle;
+
+    /**
      * @description 当前操作者id，需传用户的unionId
      *
      * @var string
@@ -80,6 +94,8 @@ class UpdateTodoTaskRequest extends Model
         'participantIds'   => 'participantIds',
         'cardTypeId'       => 'cardTypeId',
         'contentFieldList' => 'contentFieldList',
+        'priority'         => 'priority',
+        'sourceTitle'      => 'sourceTitle',
         'operatorId'       => 'operatorId',
     ];
 
@@ -119,6 +135,12 @@ class UpdateTodoTaskRequest extends Model
                     $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->priority) {
+            $res['priority'] = $this->priority;
+        }
+        if (null !== $this->sourceTitle) {
+            $res['sourceTitle'] = $this->sourceTitle;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -168,6 +190,12 @@ class UpdateTodoTaskRequest extends Model
                     $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['priority'])) {
+            $model->priority = $map['priority'];
+        }
+        if (isset($map['sourceTitle'])) {
+            $model->sourceTitle = $map['sourceTitle'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

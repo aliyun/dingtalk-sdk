@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CountTodoTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CountTodoTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CountTodoTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponse;
@@ -18,6 +21,12 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskResponse;
@@ -76,6 +85,74 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTodoTypeConfigResponse::fromMap($this->doROARequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $unionId
+     * @param QueryTodoTasksRequest $request
+     *
+     * @return QueryTodoTasksResponse
+     */
+    public function queryTodoTasks($unionId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTodoTasksHeaders([]);
+
+        return $this->queryTodoTasksWithOptions($unionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $unionId
+     * @param QueryTodoTasksRequest $request
+     * @param QueryTodoTasksHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return QueryTodoTasksResponse
+     */
+    public function queryTodoTasksWithOptions($unionId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->orderBy)) {
+            @$body['orderBy'] = $request->orderBy;
+        }
+        if (!Utils::isUnset($request->orderDirection)) {
+            @$body['orderDirection'] = $request->orderDirection;
+        }
+        if (!Utils::isUnset($request->isDone)) {
+            @$body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            @$body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->fromDueTime)) {
+            @$body['fromDueTime'] = $request->fromDueTime;
+        }
+        if (!Utils::isUnset($request->toDueTime)) {
+            @$body['toDueTime'] = $request->toDueTime;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->isRecycled)) {
+            @$body['isRecycled'] = $request->isRecycled;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryTodoTasksResponse::fromMap($this->doROARequest('QueryTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/list', 'json', $req, $runtime));
     }
 
     /**
@@ -229,6 +306,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                              $unionId
+     * @param string                              $taskId
+     * @param UpdateTodoTaskExecutorStatusRequest $request
+     *
+     * @return UpdateTodoTaskExecutorStatusResponse
+     */
+    public function updateTodoTaskExecutorStatus($unionId, $taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateTodoTaskExecutorStatusHeaders([]);
+
+        return $this->updateTodoTaskExecutorStatusWithOptions($unionId, $taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $unionId
+     * @param string                              $taskId
+     * @param UpdateTodoTaskExecutorStatusRequest $request
+     * @param UpdateTodoTaskExecutorStatusHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return UpdateTodoTaskExecutorStatusResponse
+     */
+    public function updateTodoTaskExecutorStatusWithOptions($unionId, $taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->executorStatusList)) {
+            @$body['executorStatusList'] = $request->executorStatusList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateTodoTaskExecutorStatusResponse::fromMap($this->doROARequest('UpdateTodoTaskExecutorStatus', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '/executorStatus', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                      $unionId
      * @param CreateTodoTypeConfigRequest $request
      *
@@ -294,6 +422,65 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                $unionId
+     * @param CountTodoTasksRequest $request
+     *
+     * @return CountTodoTasksResponse
+     */
+    public function countTodoTasks($unionId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CountTodoTasksHeaders([]);
+
+        return $this->countTodoTasksWithOptions($unionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $unionId
+     * @param CountTodoTasksRequest $request
+     * @param CountTodoTasksHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CountTodoTasksResponse
+     */
+    public function countTodoTasksWithOptions($unionId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isDone)) {
+            @$body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            @$body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->fromDueTime)) {
+            @$body['fromDueTime'] = $request->fromDueTime;
+        }
+        if (!Utils::isUnset($request->toDueTime)) {
+            @$body['toDueTime'] = $request->toDueTime;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->isRecycled)) {
+            @$body['isRecycled'] = $request->isRecycled;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CountTodoTasksResponse::fromMap($this->doROARequest('CountTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/count', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $unionId
      * @param string                $taskId
      * @param UpdateTodoTaskRequest $request
      *
@@ -347,6 +534,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->contentFieldList)) {
             @$body['contentFieldList'] = $request->contentFieldList;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->sourceTitle)) {
+            @$body['sourceTitle'] = $request->sourceTitle;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -423,6 +616,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->contentFieldList)) {
             @$body['contentFieldList'] = $request->contentFieldList;
+        }
+        if (!Utils::isUnset($request->isOnlyShowExecutor)) {
+            @$body['isOnlyShowExecutor'] = $request->isOnlyShowExecutor;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            @$body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->sourceTitle)) {
+            @$body['sourceTitle'] = $request->sourceTitle;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
