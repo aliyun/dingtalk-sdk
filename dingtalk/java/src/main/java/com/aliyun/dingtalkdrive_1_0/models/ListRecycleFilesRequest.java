@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleFilesRequest extends TeaModel {
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     // 回收站类型
     @NameInMap("recycleType")
     public String recycleType;
@@ -23,6 +27,14 @@ public class ListRecycleFilesRequest extends TeaModel {
     public static ListRecycleFilesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListRecycleFilesRequest self = new ListRecycleFilesRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListRecycleFilesRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public ListRecycleFilesRequest setRecycleType(String recycleType) {

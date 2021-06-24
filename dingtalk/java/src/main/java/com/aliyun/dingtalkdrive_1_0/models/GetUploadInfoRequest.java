@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadInfoRequest extends TeaModel {
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     // 文件名
     @NameInMap("fileName")
     public String fileName;
@@ -27,6 +31,14 @@ public class GetUploadInfoRequest extends TeaModel {
     public static GetUploadInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUploadInfoRequest self = new GetUploadInfoRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetUploadInfoRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public GetUploadInfoRequest setFileName(String fileName) {

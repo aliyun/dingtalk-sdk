@@ -12,6 +12,10 @@ public class RecoverRecycleFilesRequest extends TeaModel {
     @NameInMap("recycleType")
     public String recycleType;
 
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     public static RecoverRecycleFilesRequest build(java.util.Map<String, ?> map) throws Exception {
         RecoverRecycleFilesRequest self = new RecoverRecycleFilesRequest();
         return TeaModel.build(map, self);
@@ -31,6 +35,14 @@ public class RecoverRecycleFilesRequest extends TeaModel {
     }
     public String getRecycleType() {
         return this.recycleType;
+    }
+
+    public RecoverRecycleFilesRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
 }

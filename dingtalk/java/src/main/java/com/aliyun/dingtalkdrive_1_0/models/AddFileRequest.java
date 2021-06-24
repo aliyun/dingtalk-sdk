@@ -24,6 +24,10 @@ public class AddFileRequest extends TeaModel {
     @NameInMap("addConflictPolicy")
     public String addConflictPolicy;
 
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     public static AddFileRequest build(java.util.Map<String, ?> map) throws Exception {
         AddFileRequest self = new AddFileRequest();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class AddFileRequest extends TeaModel {
     }
     public String getAddConflictPolicy() {
         return this.addConflictPolicy;
+    }
+
+    public AddFileRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
 }

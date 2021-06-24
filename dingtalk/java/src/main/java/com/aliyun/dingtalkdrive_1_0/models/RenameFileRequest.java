@@ -8,6 +8,10 @@ public class RenameFileRequest extends TeaModel {
     @NameInMap("newFileName")
     public String newFileName;
 
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     public static RenameFileRequest build(java.util.Map<String, ?> map) throws Exception {
         RenameFileRequest self = new RenameFileRequest();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class RenameFileRequest extends TeaModel {
     }
     public String getNewFileName() {
         return this.newFileName;
+    }
+
+    public RenameFileRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
 }

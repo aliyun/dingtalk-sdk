@@ -92,6 +92,18 @@ public class GetTodoTaskResponseBody extends TeaModel {
     @NameInMap("contentFieldList")
     public java.util.List<GetTodoTaskResponseBodyContentFieldList> contentFieldList;
 
+    // 待办是否仅展示在执行人的待办列表中
+    @NameInMap("isOnlyShowExecutor")
+    public Boolean isOnlyShowExecutor;
+
+    // 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+    @NameInMap("priority")
+    public Integer priority;
+
+    // 业务来源展示名称
+    @NameInMap("sourceTitle")
+    public String sourceTitle;
+
     public static GetTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTodoTaskResponseBody self = new GetTodoTaskResponseBody();
         return TeaModel.build(map, self);
@@ -271,6 +283,30 @@ public class GetTodoTaskResponseBody extends TeaModel {
     }
     public java.util.List<GetTodoTaskResponseBodyContentFieldList> getContentFieldList() {
         return this.contentFieldList;
+    }
+
+    public GetTodoTaskResponseBody setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
+        this.isOnlyShowExecutor = isOnlyShowExecutor;
+        return this;
+    }
+    public Boolean getIsOnlyShowExecutor() {
+        return this.isOnlyShowExecutor;
+    }
+
+    public GetTodoTaskResponseBody setPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public GetTodoTaskResponseBody setSourceTitle(String sourceTitle) {
+        this.sourceTitle = sourceTitle;
+        return this;
+    }
+    public String getSourceTitle() {
+        return this.sourceTitle;
     }
 
     public static class GetTodoTaskResponseBodyDetailUrl extends TeaModel {

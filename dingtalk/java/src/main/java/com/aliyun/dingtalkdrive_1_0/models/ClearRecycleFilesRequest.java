@@ -8,6 +8,10 @@ public class ClearRecycleFilesRequest extends TeaModel {
     @NameInMap("recycleType")
     public String recycleType;
 
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     public static ClearRecycleFilesRequest build(java.util.Map<String, ?> map) throws Exception {
         ClearRecycleFilesRequest self = new ClearRecycleFilesRequest();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class ClearRecycleFilesRequest extends TeaModel {
     }
     public String getRecycleType() {
         return this.recycleType;
+    }
+
+    public ClearRecycleFilesRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
 }

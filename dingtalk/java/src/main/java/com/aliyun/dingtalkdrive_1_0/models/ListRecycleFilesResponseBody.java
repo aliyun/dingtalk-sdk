@@ -38,10 +38,6 @@ public class ListRecycleFilesResponseBody extends TeaModel {
         @NameInMap("recycleItemId")
         public String recycleItemId;
 
-        // 删除者id
-        @NameInMap("deleteUid")
-        public Long deleteUid;
-
         // 删除时间
         @NameInMap("deleteTime")
         public String deleteTime;
@@ -77,14 +73,6 @@ public class ListRecycleFilesResponseBody extends TeaModel {
         }
         public String getRecycleItemId() {
             return this.recycleItemId;
-        }
-
-        public ListRecycleFilesResponseBodyRecycleItems setDeleteUid(Long deleteUid) {
-            this.deleteUid = deleteUid;
-            return this;
-        }
-        public Long getDeleteUid() {
-            return this.deleteUid;
         }
 
         public ListRecycleFilesResponseBodyRecycleItems setDeleteTime(String deleteTime) {

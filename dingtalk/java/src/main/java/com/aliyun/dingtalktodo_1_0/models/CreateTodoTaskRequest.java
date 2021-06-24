@@ -44,6 +44,18 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("contentFieldList")
     public java.util.List<CreateTodoTaskRequestContentFieldList> contentFieldList;
 
+    // 生成的待办是否仅展示在执行者的待办列表中
+    @NameInMap("isOnlyShowExecutor")
+    public Boolean isOnlyShowExecutor;
+
+    // 优先级
+    @NameInMap("priority")
+    public Integer priority;
+
+    // 业务来源展示名称
+    @NameInMap("sourceTitle")
+    public String sourceTitle;
+
     // 当前操作者id，需传用户的unionId
     @NameInMap("operatorId")
     public String operatorId;
@@ -133,6 +145,30 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.contentFieldList;
     }
 
+    public CreateTodoTaskRequest setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
+        this.isOnlyShowExecutor = isOnlyShowExecutor;
+        return this;
+    }
+    public Boolean getIsOnlyShowExecutor() {
+        return this.isOnlyShowExecutor;
+    }
+
+    public CreateTodoTaskRequest setPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public CreateTodoTaskRequest setSourceTitle(String sourceTitle) {
+        this.sourceTitle = sourceTitle;
+        return this;
+    }
+    public String getSourceTitle() {
+        return this.sourceTitle;
+    }
+
     public CreateTodoTaskRequest setOperatorId(String operatorId) {
         this.operatorId = operatorId;
         return this;
@@ -182,10 +218,6 @@ public class CreateTodoTaskRequest extends TeaModel {
         @NameInMap("fieldValue")
         public String fieldValue;
 
-        // 字段内容链接
-        @NameInMap("fieldLink")
-        public String fieldLink;
-
         public static CreateTodoTaskRequestContentFieldList build(java.util.Map<String, ?> map) throws Exception {
             CreateTodoTaskRequestContentFieldList self = new CreateTodoTaskRequestContentFieldList();
             return TeaModel.build(map, self);
@@ -205,14 +237,6 @@ public class CreateTodoTaskRequest extends TeaModel {
         }
         public String getFieldValue() {
             return this.fieldValue;
-        }
-
-        public CreateTodoTaskRequestContentFieldList setFieldLink(String fieldLink) {
-            this.fieldLink = fieldLink;
-            return this;
-        }
-        public String getFieldLink() {
-            return this.fieldLink;
         }
 
     }

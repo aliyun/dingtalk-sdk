@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSpacesRequest extends TeaModel {
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     // 空间类型
     @NameInMap("spaceType")
     public String spaceType;
@@ -19,6 +23,14 @@ public class ListSpacesRequest extends TeaModel {
     public static ListSpacesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListSpacesRequest self = new ListSpacesRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListSpacesRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public ListSpacesRequest setSpaceType(String spaceType) {

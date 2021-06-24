@@ -68,14 +68,6 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("modifierId")
     public String modifierId;
 
-    // 租户id(unionId/orgId/groupId)
-    @NameInMap("tenantId")
-    public String tenantId;
-
-    // 租户类型（user/org/group）
-    @NameInMap("tenantType")
-    public String tenantType;
-
     // 接入应用标识
     @NameInMap("bizTag")
     public String bizTag;
@@ -91,6 +83,18 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     // 内容区表单字段配置
     @NameInMap("contentFieldList")
     public java.util.List<CreateTodoTaskResponseBodyContentFieldList> contentFieldList;
+
+    // 生成的待办是否仅展示在执行者的待办列表中
+    @NameInMap("isOnlyShowExecutor")
+    public Boolean isOnlyShowExecutor;
+
+    // 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+    @NameInMap("priority")
+    public Integer priority;
+
+    // 业务来源展示名称
+    @NameInMap("sourceTitle")
+    public String sourceTitle;
 
     public static CreateTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateTodoTaskResponseBody self = new CreateTodoTaskResponseBody();
@@ -225,22 +229,6 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         return this.modifierId;
     }
 
-    public CreateTodoTaskResponseBody setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-    public String getTenantId() {
-        return this.tenantId;
-    }
-
-    public CreateTodoTaskResponseBody setTenantType(String tenantType) {
-        this.tenantType = tenantType;
-        return this;
-    }
-    public String getTenantType() {
-        return this.tenantType;
-    }
-
     public CreateTodoTaskResponseBody setBizTag(String bizTag) {
         this.bizTag = bizTag;
         return this;
@@ -271,6 +259,30 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     }
     public java.util.List<CreateTodoTaskResponseBodyContentFieldList> getContentFieldList() {
         return this.contentFieldList;
+    }
+
+    public CreateTodoTaskResponseBody setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
+        this.isOnlyShowExecutor = isOnlyShowExecutor;
+        return this;
+    }
+    public Boolean getIsOnlyShowExecutor() {
+        return this.isOnlyShowExecutor;
+    }
+
+    public CreateTodoTaskResponseBody setPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public CreateTodoTaskResponseBody setSourceTitle(String sourceTitle) {
+        this.sourceTitle = sourceTitle;
+        return this;
+    }
+    public String getSourceTitle() {
+        return this.sourceTitle;
     }
 
     public static class CreateTodoTaskResponseBodyDetailUrl extends TeaModel {

@@ -43,6 +43,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", "/v1.0/todo/users/" + unionId + "/configs/types/" + cardTypeId + "", "json", req, runtime), new GetTodoTypeConfigResponse());
     }
 
+    public QueryTodoTasksResponse queryTodoTasks(String unionId, QueryTodoTasksRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryTodoTasksHeaders headers = new QueryTodoTasksHeaders();
+        return this.queryTodoTasksWithOptions(unionId, request, headers, runtime);
+    }
+
+    public QueryTodoTasksResponse queryTodoTasksWithOptions(String unionId, QueryTodoTasksRequest request, QueryTodoTasksHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderBy)) {
+            body.put("orderBy", request.orderBy);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderDirection)) {
+            body.put("orderDirection", request.orderDirection);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isDone)) {
+            body.put("isDone", request.isDone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleTypes)) {
+            body.put("roleTypes", request.roleTypes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fromDueTime)) {
+            body.put("fromDueTime", request.fromDueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toDueTime)) {
+            body.put("toDueTime", request.toDueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
+            body.put("category", request.category);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isRecycled)) {
+            body.put("isRecycled", request.isRecycled);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryTodoTasks", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/tasks/list", "json", req, runtime), new QueryTodoTasksResponse());
+    }
+
     public UpdateTodoTypeConfigResponse updateTodoTypeConfig(String unionId, String cardTypeId, UpdateTodoTypeConfigRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateTodoTypeConfigHeaders headers = new UpdateTodoTypeConfigHeaders();
@@ -149,6 +210,41 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "", "json", req, runtime), new DeleteTodoTaskResponse());
     }
 
+    public UpdateTodoTaskExecutorStatusResponse updateTodoTaskExecutorStatus(String unionId, String taskId, UpdateTodoTaskExecutorStatusRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateTodoTaskExecutorStatusHeaders headers = new UpdateTodoTaskExecutorStatusHeaders();
+        return this.updateTodoTaskExecutorStatusWithOptions(unionId, taskId, request, headers, runtime);
+    }
+
+    public UpdateTodoTaskExecutorStatusResponse updateTodoTaskExecutorStatusWithOptions(String unionId, String taskId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.executorStatusList)) {
+            body.put("executorStatusList", request.executorStatusList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateTodoTaskExecutorStatus", "todo_1.0", "HTTP", "PUT", "AK", "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "/executorStatus", "json", req, runtime), new UpdateTodoTaskExecutorStatusResponse());
+    }
+
     public CreateTodoTypeConfigResponse createTodoTypeConfig(String unionId, CreateTodoTypeConfigRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateTodoTypeConfigHeaders headers = new CreateTodoTypeConfigHeaders();
@@ -204,6 +300,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateTodoTypeConfig", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/configs/types", "json", req, runtime), new CreateTodoTypeConfigResponse());
     }
 
+    public CountTodoTasksResponse countTodoTasks(String unionId, CountTodoTasksRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CountTodoTasksHeaders headers = new CountTodoTasksHeaders();
+        return this.countTodoTasksWithOptions(unionId, request, headers, runtime);
+    }
+
+    public CountTodoTasksResponse countTodoTasksWithOptions(String unionId, CountTodoTasksRequest request, CountTodoTasksHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isDone)) {
+            body.put("isDone", request.isDone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleTypes)) {
+            body.put("roleTypes", request.roleTypes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fromDueTime)) {
+            body.put("fromDueTime", request.fromDueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toDueTime)) {
+            body.put("toDueTime", request.toDueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
+            body.put("category", request.category);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isRecycled)) {
+            body.put("isRecycled", request.isRecycled);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CountTodoTasks", "todo_1.0", "HTTP", "POST", "AK", "/v1.0/todo/users/" + unionId + "/tasks/count", "json", req, runtime), new CountTodoTasksResponse());
+    }
+
     public UpdateTodoTaskResponse updateTodoTask(String unionId, String taskId, UpdateTodoTaskRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateTodoTaskHeaders headers = new UpdateTodoTaskHeaders();
@@ -248,6 +393,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.contentFieldList)) {
             body.put("contentFieldList", request.contentFieldList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
+            body.put("priority", request.priority);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceTitle)) {
+            body.put("sourceTitle", request.sourceTitle);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -319,6 +472,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.contentFieldList)) {
             body.put("contentFieldList", request.contentFieldList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isOnlyShowExecutor)) {
+            body.put("isOnlyShowExecutor", request.isOnlyShowExecutor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
+            body.put("priority", request.priority);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceTitle)) {
+            body.put("sourceTitle", request.sourceTitle);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

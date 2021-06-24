@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFilesRequest extends TeaModel {
+    // 用户id
+    @NameInMap("unionId")
+    public String unionId;
+
     // 父目录id
     @NameInMap("parentId")
     public String parentId;
@@ -19,6 +23,14 @@ public class ListFilesRequest extends TeaModel {
     public static ListFilesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListFilesRequest self = new ListFilesRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListFilesRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public ListFilesRequest setParentId(String parentId) {
