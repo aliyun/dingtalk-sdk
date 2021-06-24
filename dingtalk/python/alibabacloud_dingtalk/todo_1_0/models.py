@@ -301,6 +301,519 @@ class GetTodoTypeConfigResponse(TeaModel):
         return self
 
 
+class QueryTodoTasksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTodoTasksRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        order_by: str = None,
+        order_direction: str = None,
+        is_done: bool = None,
+        role_types: List[List[str]] = None,
+        from_due_time: int = None,
+        to_due_time: int = None,
+        category: str = None,
+        is_recycled: bool = None,
+    ):
+        # 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
+        self.next_token = next_token
+        # 排序字段。枚举值 默认为截止时间 dueTime。created | modified | finished | startTime | dueTime 创建时间 | 更新时间 | 完成时间 | 开始时间 | 截止时间
+        self.order_by = order_by
+        # 排序方向。枚举值asc | desc 默认 asc
+        self.order_direction = order_direction
+        # 待办完成状态。
+        self.is_done = is_done
+        # 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+        self.role_types = role_types
+        # 查询从计划完成时间开始
+        self.from_due_time = from_due_time
+        # 查询到计划完成时间结束
+        self.to_due_time = to_due_time
+        # 所属分类
+        self.category = category
+        # 待办回收状态
+        self.is_recycled = is_recycled
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.order_by is not None:
+            result['orderBy'] = self.order_by
+        if self.order_direction is not None:
+            result['orderDirection'] = self.order_direction
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.role_types is not None:
+            result['roleTypes'] = self.role_types
+        if self.from_due_time is not None:
+            result['fromDueTime'] = self.from_due_time
+        if self.to_due_time is not None:
+            result['toDueTime'] = self.to_due_time
+        if self.category is not None:
+            result['category'] = self.category
+        if self.is_recycled is not None:
+            result['isRecycled'] = self.is_recycled
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('orderBy') is not None:
+            self.order_by = m.get('orderBy')
+        if m.get('orderDirection') is not None:
+            self.order_direction = m.get('orderDirection')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('roleTypes') is not None:
+            self.role_types = m.get('roleTypes')
+        if m.get('fromDueTime') is not None:
+            self.from_due_time = m.get('fromDueTime')
+        if m.get('toDueTime') is not None:
+            self.to_due_time = m.get('toDueTime')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('isRecycled') is not None:
+            self.is_recycled = m.get('isRecycled')
+        return self
+
+
+class QueryTodoTasksResponseBodyTodoCardsDetailUrl(TeaModel):
+    def __init__(
+        self,
+        app_url: str = None,
+        pc_url: str = None,
+    ):
+        # 移动端url地址
+        self.app_url = app_url
+        # pc端url地址
+        self.pc_url = pc_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_url is not None:
+            result['appUrl'] = self.app_url
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUrl') is not None:
+            self.app_url = m.get('appUrl')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        return self
+
+
+class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+    ):
+        # 自定义表单内容名字
+        self.name = name
+        # 自定义表单内容值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class QueryTodoTasksResponseBodyTodoCardsTodoCardView(TeaModel):
+    def __init__(
+        self,
+        card_type: str = None,
+        circle_eltype: str = None,
+        content_type: str = None,
+        action_type: str = None,
+        icon: str = None,
+        todo_card_title: str = None,
+        todo_card_content_list: List[QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList] = None,
+    ):
+        # 卡片类型
+        self.card_type = card_type
+        # 卡片左上角 区域类型是 icon, 或者checkbox 类型的
+        self.circle_eltype = circle_eltype
+        # icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
+        self.content_type = content_type
+        # link, button, 操作区类型，是链接类型，或者按钮类型
+        self.action_type = action_type
+        # 卡片icon
+        self.icon = icon
+        # 卡片标题
+        self.todo_card_title = todo_card_title
+        self.todo_card_content_list = todo_card_content_list
+
+    def validate(self):
+        if self.todo_card_content_list:
+            for k in self.todo_card_content_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_type is not None:
+            result['cardType'] = self.card_type
+        if self.circle_eltype is not None:
+            result['circleELType'] = self.circle_eltype
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.todo_card_title is not None:
+            result['todoCardTitle'] = self.todo_card_title
+        result['todoCardContentList'] = []
+        if self.todo_card_content_list is not None:
+            for k in self.todo_card_content_list:
+                result['todoCardContentList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardType') is not None:
+            self.card_type = m.get('cardType')
+        if m.get('circleELType') is not None:
+            self.circle_eltype = m.get('circleELType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('todoCardTitle') is not None:
+            self.todo_card_title = m.get('todoCardTitle')
+        self.todo_card_content_list = []
+        if m.get('todoCardContentList') is not None:
+            for k in m.get('todoCardContentList'):
+                temp_model = QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList()
+                self.todo_card_content_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryTodoTasksResponseBodyTodoCardsOriginalSource(TeaModel):
+    def __init__(
+        self,
+        source_title: str = None,
+    ):
+        # 业务来源展示名称
+        self.source_title = source_title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.source_title is not None:
+            result['sourceTitle'] = self.source_title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sourceTitle') is not None:
+            self.source_title = m.get('sourceTitle')
+        return self
+
+
+class QueryTodoTasksResponseBodyTodoCards(TeaModel):
+    def __init__(
+        self,
+        task_id: str = None,
+        subject: str = None,
+        due_time: int = None,
+        detail_url: QueryTodoTasksResponseBodyTodoCardsDetailUrl = None,
+        todo_card_view: QueryTodoTasksResponseBodyTodoCardsTodoCardView = None,
+        priority: int = None,
+        created_time: int = None,
+        modified_time: int = None,
+        todo_status: str = None,
+        creator_id: str = None,
+        source_id: str = None,
+        category: str = None,
+        biz_tag: str = None,
+        original_source: QueryTodoTasksResponseBodyTodoCardsOriginalSource = None,
+        is_done: bool = None,
+    ):
+        # 待办id
+        self.task_id = task_id
+        # 待办标题
+        self.subject = subject
+        # 待办截止时间
+        self.due_time = due_time
+        # 详情页链接
+        self.detail_url = detail_url
+        # 待办卡片视图模型
+        self.todo_card_view = todo_card_view
+        # 优先级
+        self.priority = priority
+        # 创建时间
+        self.created_time = created_time
+        # 更新时间
+        self.modified_time = modified_time
+        # 待办状态
+        self.todo_status = todo_status
+        # 创建者id
+        self.creator_id = creator_id
+        # 来源id
+        self.source_id = source_id
+        # 所属分类
+        self.category = category
+        # 所属应用
+        self.biz_tag = biz_tag
+        # 业务来源信息
+        self.original_source = original_source
+        # 待办完成状态
+        self.is_done = is_done
+
+    def validate(self):
+        if self.detail_url:
+            self.detail_url.validate()
+        if self.todo_card_view:
+            self.todo_card_view.validate()
+        if self.original_source:
+            self.original_source.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.subject is not None:
+            result['subject'] = self.subject
+        if self.due_time is not None:
+            result['dueTime'] = self.due_time
+        if self.detail_url is not None:
+            result['detailUrl'] = self.detail_url.to_map()
+        if self.todo_card_view is not None:
+            result['todoCardView'] = self.todo_card_view.to_map()
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.created_time is not None:
+            result['createdTime'] = self.created_time
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.todo_status is not None:
+            result['todoStatus'] = self.todo_status
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.source_id is not None:
+            result['sourceId'] = self.source_id
+        if self.category is not None:
+            result['category'] = self.category
+        if self.biz_tag is not None:
+            result['bizTag'] = self.biz_tag
+        if self.original_source is not None:
+            result['originalSource'] = self.original_source.to_map()
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        if m.get('dueTime') is not None:
+            self.due_time = m.get('dueTime')
+        if m.get('detailUrl') is not None:
+            temp_model = QueryTodoTasksResponseBodyTodoCardsDetailUrl()
+            self.detail_url = temp_model.from_map(m['detailUrl'])
+        if m.get('todoCardView') is not None:
+            temp_model = QueryTodoTasksResponseBodyTodoCardsTodoCardView()
+            self.todo_card_view = temp_model.from_map(m['todoCardView'])
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('createdTime') is not None:
+            self.created_time = m.get('createdTime')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('todoStatus') is not None:
+            self.todo_status = m.get('todoStatus')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('sourceId') is not None:
+            self.source_id = m.get('sourceId')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('bizTag') is not None:
+            self.biz_tag = m.get('bizTag')
+        if m.get('originalSource') is not None:
+            temp_model = QueryTodoTasksResponseBodyTodoCardsOriginalSource()
+            self.original_source = temp_model.from_map(m['originalSource'])
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        return self
+
+
+class QueryTodoTasksResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        todo_cards: List[QueryTodoTasksResponseBodyTodoCards] = None,
+        total_count: int = None,
+    ):
+        # 翻页token
+        self.next_token = next_token
+        # 待办卡片列表
+        self.todo_cards = todo_cards
+        # 数据总量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.todo_cards:
+            for k in self.todo_cards:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['todoCards'] = []
+        if self.todo_cards is not None:
+            for k in self.todo_cards:
+                result['todoCards'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.todo_cards = []
+        if m.get('todoCards') is not None:
+            for k in m.get('todoCards'):
+                temp_model = QueryTodoTasksResponseBodyTodoCards()
+                self.todo_cards.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryTodoTasksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryTodoTasksResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryTodoTasksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateTodoTypeConfigHeaders(TeaModel):
     def __init__(
         self,
@@ -712,6 +1225,9 @@ class GetTodoTaskResponseBody(TeaModel):
         request_id: str = None,
         card_type_id: str = None,
         content_field_list: List[GetTodoTaskResponseBodyContentFieldList] = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
+        source_title: str = None,
     ):
         # id
         self.id = id
@@ -757,6 +1273,12 @@ class GetTodoTaskResponseBody(TeaModel):
         self.card_type_id = card_type_id
         # 内容区表单字段配置
         self.content_field_list = content_field_list
+        # 待办是否仅展示在执行人的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
+        # 业务来源展示名称
+        self.source_title = source_title
 
     def validate(self):
         if self.detail_url:
@@ -818,6 +1340,12 @@ class GetTodoTaskResponseBody(TeaModel):
         if self.content_field_list is not None:
             for k in self.content_field_list:
                 result['contentFieldList'].append(k.to_map() if k else None)
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.source_title is not None:
+            result['sourceTitle'] = self.source_title
         return result
 
     def from_map(self, m: dict = None):
@@ -870,6 +1398,12 @@ class GetTodoTaskResponseBody(TeaModel):
             for k in m.get('contentFieldList'):
                 temp_model = GetTodoTaskResponseBodyContentFieldList()
                 self.content_field_list.append(temp_model.from_map(k))
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('sourceTitle') is not None:
+            self.source_title = m.get('sourceTitle')
         return self
 
 
@@ -1039,6 +1573,182 @@ class DeleteTodoTaskResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteTodoTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTodoTaskExecutorStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTodoTaskExecutorStatusRequestExecutorStatusList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        is_done: bool = None,
+    ):
+        # 执行者id，需传用户的unionId
+        self.id = id
+        # 执行者完成状态
+        self.is_done = is_done
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        return self
+
+
+class UpdateTodoTaskExecutorStatusRequest(TeaModel):
+    def __init__(
+        self,
+        executor_status_list: List[UpdateTodoTaskExecutorStatusRequestExecutorStatusList] = None,
+        operator_id: str = None,
+    ):
+        # 执行者状态列表，id需传用户的unionId
+        self.executor_status_list = executor_status_list
+        # 当前操作者id，需传用户的unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.executor_status_list:
+            for k in self.executor_status_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['executorStatusList'] = []
+        if self.executor_status_list is not None:
+            for k in self.executor_status_list:
+                result['executorStatusList'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.executor_status_list = []
+        if m.get('executorStatusList') is not None:
+            for k in m.get('executorStatusList'):
+                temp_model = UpdateTodoTaskExecutorStatusRequestExecutorStatusList()
+                self.executor_status_list.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UpdateTodoTaskExecutorStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 更新结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateTodoTaskExecutorStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTodoTaskExecutorStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTodoTaskExecutorStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1525,6 +2235,167 @@ class CreateTodoTypeConfigResponse(TeaModel):
         return self
 
 
+class CountTodoTasksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CountTodoTasksRequest(TeaModel):
+    def __init__(
+        self,
+        is_done: bool = None,
+        role_types: List[List[str]] = None,
+        from_due_time: int = None,
+        to_due_time: int = None,
+        category: str = None,
+        is_recycled: bool = None,
+    ):
+        # 待办完成状态。
+        self.is_done = is_done
+        # 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+        self.role_types = role_types
+        # 查询从计划完成时间开始
+        self.from_due_time = from_due_time
+        # 查询到计划完成时间结束
+        self.to_due_time = to_due_time
+        # 所属分类
+        self.category = category
+        # 待办回收状态
+        self.is_recycled = is_recycled
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.role_types is not None:
+            result['roleTypes'] = self.role_types
+        if self.from_due_time is not None:
+            result['fromDueTime'] = self.from_due_time
+        if self.to_due_time is not None:
+            result['toDueTime'] = self.to_due_time
+        if self.category is not None:
+            result['category'] = self.category
+        if self.is_recycled is not None:
+            result['isRecycled'] = self.is_recycled
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('roleTypes') is not None:
+            self.role_types = m.get('roleTypes')
+        if m.get('fromDueTime') is not None:
+            self.from_due_time = m.get('fromDueTime')
+        if m.get('toDueTime') is not None:
+            self.to_due_time = m.get('toDueTime')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('isRecycled') is not None:
+            self.is_recycled = m.get('isRecycled')
+        return self
+
+
+class CountTodoTasksResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: int = None,
+    ):
+        # 待办数量
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CountTodoTasksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CountTodoTasksResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CountTodoTasksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateTodoTaskHeaders(TeaModel):
     def __init__(
         self,
@@ -1604,6 +2475,8 @@ class UpdateTodoTaskRequest(TeaModel):
         participant_ids: List[str] = None,
         card_type_id: str = None,
         content_field_list: List[UpdateTodoTaskRequestContentFieldList] = None,
+        priority: int = None,
+        source_title: str = None,
         operator_id: str = None,
     ):
         # 待办标题
@@ -1622,6 +2495,10 @@ class UpdateTodoTaskRequest(TeaModel):
         self.card_type_id = card_type_id
         # 内容区表单字段配置
         self.content_field_list = content_field_list
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
+        # 业务来源展示名称
+        self.source_title = source_title
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
@@ -1655,6 +2532,10 @@ class UpdateTodoTaskRequest(TeaModel):
         if self.content_field_list is not None:
             for k in self.content_field_list:
                 result['contentFieldList'].append(k.to_map() if k else None)
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.source_title is not None:
+            result['sourceTitle'] = self.source_title
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -1680,6 +2561,10 @@ class UpdateTodoTaskRequest(TeaModel):
             for k in m.get('contentFieldList'):
                 temp_model = UpdateTodoTaskRequestContentFieldList()
                 self.content_field_list.append(temp_model.from_map(k))
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('sourceTitle') is not None:
+            self.source_title = m.get('sourceTitle')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -1823,14 +2708,11 @@ class CreateTodoTaskRequestContentFieldList(TeaModel):
         self,
         field_key: str = None,
         field_value: str = None,
-        field_link: str = None,
     ):
         # 字段唯一标识
         self.field_key = field_key
         # 字段值
         self.field_value = field_value
-        # 字段内容链接
-        self.field_link = field_link
 
     def validate(self):
         pass
@@ -1845,8 +2727,6 @@ class CreateTodoTaskRequestContentFieldList(TeaModel):
             result['fieldKey'] = self.field_key
         if self.field_value is not None:
             result['fieldValue'] = self.field_value
-        if self.field_link is not None:
-            result['fieldLink'] = self.field_link
         return result
 
     def from_map(self, m: dict = None):
@@ -1855,8 +2735,6 @@ class CreateTodoTaskRequestContentFieldList(TeaModel):
             self.field_key = m.get('fieldKey')
         if m.get('fieldValue') is not None:
             self.field_value = m.get('fieldValue')
-        if m.get('fieldLink') is not None:
-            self.field_link = m.get('fieldLink')
         return self
 
 
@@ -1873,6 +2751,9 @@ class CreateTodoTaskRequest(TeaModel):
         detail_url: CreateTodoTaskRequestDetailUrl = None,
         card_type_id: str = None,
         content_field_list: List[CreateTodoTaskRequestContentFieldList] = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
+        source_title: str = None,
         operator_id: str = None,
     ):
         # 来源id，接入业务系统侧的唯一标识id
@@ -1895,6 +2776,12 @@ class CreateTodoTaskRequest(TeaModel):
         self.card_type_id = card_type_id
         # 待办卡片内容区表单自定义字段列表
         self.content_field_list = content_field_list
+        # 生成的待办是否仅展示在执行者的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级
+        self.priority = priority
+        # 业务来源展示名称
+        self.source_title = source_title
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
@@ -1934,6 +2821,12 @@ class CreateTodoTaskRequest(TeaModel):
         if self.content_field_list is not None:
             for k in self.content_field_list:
                 result['contentFieldList'].append(k.to_map() if k else None)
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.source_title is not None:
+            result['sourceTitle'] = self.source_title
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -1964,6 +2857,12 @@ class CreateTodoTaskRequest(TeaModel):
             for k in m.get('contentFieldList'):
                 temp_model = CreateTodoTaskRequestContentFieldList()
                 self.content_field_list.append(temp_model.from_map(k))
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('sourceTitle') is not None:
+            self.source_title = m.get('sourceTitle')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -2058,12 +2957,13 @@ class CreateTodoTaskResponseBody(TeaModel):
         modified_time: int = None,
         creator_id: str = None,
         modifier_id: str = None,
-        tenant_id: str = None,
-        tenant_type: str = None,
         biz_tag: str = None,
         request_id: str = None,
         card_type_id: str = None,
         content_field_list: List[CreateTodoTaskResponseBodyContentFieldList] = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
+        source_title: str = None,
     ):
         # id
         self.id = id
@@ -2097,10 +2997,6 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.creator_id = creator_id
         # 更新者（用户的unionId）
         self.modifier_id = modifier_id
-        # 租户id(unionId/orgId/groupId)
-        self.tenant_id = tenant_id
-        # 租户类型（user/org/group）
-        self.tenant_type = tenant_type
         # 接入应用标识
         self.biz_tag = biz_tag
         # requestId
@@ -2109,6 +3005,12 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.card_type_id = card_type_id
         # 内容区表单字段配置
         self.content_field_list = content_field_list
+        # 生成的待办是否仅展示在执行者的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
+        # 业务来源展示名称
+        self.source_title = source_title
 
     def validate(self):
         if self.detail_url:
@@ -2156,10 +3058,6 @@ class CreateTodoTaskResponseBody(TeaModel):
             result['creatorId'] = self.creator_id
         if self.modifier_id is not None:
             result['modifierId'] = self.modifier_id
-        if self.tenant_id is not None:
-            result['tenantId'] = self.tenant_id
-        if self.tenant_type is not None:
-            result['tenantType'] = self.tenant_type
         if self.biz_tag is not None:
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
@@ -2170,6 +3068,12 @@ class CreateTodoTaskResponseBody(TeaModel):
         if self.content_field_list is not None:
             for k in self.content_field_list:
                 result['contentFieldList'].append(k.to_map() if k else None)
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.source_title is not None:
+            result['sourceTitle'] = self.source_title
         return result
 
     def from_map(self, m: dict = None):
@@ -2207,10 +3111,6 @@ class CreateTodoTaskResponseBody(TeaModel):
             self.creator_id = m.get('creatorId')
         if m.get('modifierId') is not None:
             self.modifier_id = m.get('modifierId')
-        if m.get('tenantId') is not None:
-            self.tenant_id = m.get('tenantId')
-        if m.get('tenantType') is not None:
-            self.tenant_type = m.get('tenantType')
         if m.get('bizTag') is not None:
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
@@ -2222,6 +3122,12 @@ class CreateTodoTaskResponseBody(TeaModel):
             for k in m.get('contentFieldList'):
                 temp_model = CreateTodoTaskResponseBodyContentFieldList()
                 self.content_field_list.append(temp_model.from_map(k))
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('sourceTitle') is not None:
+            self.source_title = m.get('sourceTitle')
         return self
 
 

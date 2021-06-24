@@ -81,6 +81,106 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/todo/users/{union_id}/configs/types/{card_type_id}', 'json', req, runtime)
         )
 
+    def query_todo_tasks(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryTodoTasksRequest,
+    ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.QueryTodoTasksHeaders()
+        return self.query_todo_tasks_with_options(union_id, request, headers, runtime)
+
+    async def query_todo_tasks_async(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryTodoTasksRequest,
+    ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.QueryTodoTasksHeaders()
+        return await self.query_todo_tasks_with_options_async(union_id, request, headers, runtime)
+
+    def query_todo_tasks_with_options(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryTodoTasksRequest,
+        headers: dingtalktodo__1__0_models.QueryTodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order_by):
+            body['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.order_direction):
+            body['orderDirection'] = request.order_direction
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.from_due_time):
+            body['fromDueTime'] = request.from_due_time
+        if not UtilClient.is_unset(request.to_due_time):
+            body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.is_recycled):
+            body['isRecycled'] = request.is_recycled
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.QueryTodoTasksResponse(),
+            self.do_roarequest('QueryTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/tasks/list', 'json', req, runtime)
+        )
+
+    async def query_todo_tasks_with_options_async(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.QueryTodoTasksRequest,
+        headers: dingtalktodo__1__0_models.QueryTodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order_by):
+            body['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.order_direction):
+            body['orderDirection'] = request.order_direction
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.from_due_time):
+            body['fromDueTime'] = request.from_due_time
+        if not UtilClient.is_unset(request.to_due_time):
+            body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.is_recycled):
+            body['isRecycled'] = request.is_recycled
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.QueryTodoTasksResponse(),
+            await self.do_roarequest_async('QueryTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/tasks/list', 'json', req, runtime)
+        )
+
     def update_todo_type_config(
         self,
         union_id: str,
@@ -311,6 +411,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteTodoTask', 'todo_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/todo/users/{union_id}/tasks/{task_id}', 'json', req, runtime)
         )
 
+    def update_todo_task_executor_status(
+        self,
+        union_id: str,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusRequest,
+    ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders()
+        return self.update_todo_task_executor_status_with_options(union_id, task_id, request, headers, runtime)
+
+    async def update_todo_task_executor_status_async(
+        self,
+        union_id: str,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusRequest,
+    ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders()
+        return await self.update_todo_task_executor_status_with_options_async(union_id, task_id, request, headers, runtime)
+
+    def update_todo_task_executor_status_with_options(
+        self,
+        union_id: str,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusRequest,
+        headers: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.executor_status_list):
+            body['executorStatusList'] = request.executor_status_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse(),
+            self.do_roarequest('UpdateTodoTaskExecutorStatus', 'todo_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/todo/users/{union_id}/tasks/{task_id}/executorStatus', 'json', req, runtime)
+        )
+
+    async def update_todo_task_executor_status_with_options_async(
+        self,
+        union_id: str,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusRequest,
+        headers: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.executor_status_list):
+            body['executorStatusList'] = request.executor_status_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse(),
+            await self.do_roarequest_async('UpdateTodoTaskExecutorStatus', 'todo_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/todo/users/{union_id}/tasks/{task_id}/executorStatus', 'json', req, runtime)
+        )
+
     def create_todo_type_config(
         self,
         union_id: str,
@@ -407,6 +587,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateTodoTypeConfig', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/configs/types', 'json', req, runtime)
         )
 
+    def count_todo_tasks(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.CountTodoTasksRequest,
+    ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.CountTodoTasksHeaders()
+        return self.count_todo_tasks_with_options(union_id, request, headers, runtime)
+
+    async def count_todo_tasks_async(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.CountTodoTasksRequest,
+    ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.CountTodoTasksHeaders()
+        return await self.count_todo_tasks_with_options_async(union_id, request, headers, runtime)
+
+    def count_todo_tasks_with_options(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.CountTodoTasksRequest,
+        headers: dingtalktodo__1__0_models.CountTodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.from_due_time):
+            body['fromDueTime'] = request.from_due_time
+        if not UtilClient.is_unset(request.to_due_time):
+            body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.is_recycled):
+            body['isRecycled'] = request.is_recycled
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.CountTodoTasksResponse(),
+            self.do_roarequest('CountTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/tasks/count', 'json', req, runtime)
+        )
+
+    async def count_todo_tasks_with_options_async(
+        self,
+        union_id: str,
+        request: dingtalktodo__1__0_models.CountTodoTasksRequest,
+        headers: dingtalktodo__1__0_models.CountTodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_done):
+            body['isDone'] = request.is_done
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.from_due_time):
+            body['fromDueTime'] = request.from_due_time
+        if not UtilClient.is_unset(request.to_due_time):
+            body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.is_recycled):
+            body['isRecycled'] = request.is_recycled
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.CountTodoTasksResponse(),
+            await self.do_roarequest_async('CountTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/todo/users/{union_id}/tasks/count', 'json', req, runtime)
+        )
+
     def update_todo_task(
         self,
         union_id: str,
@@ -456,6 +724,10 @@ class Client(OpenApiClient):
             body['cardTypeId'] = request.card_type_id
         if not UtilClient.is_unset(request.content_field_list):
             body['contentFieldList'] = request.content_field_list
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source_title):
+            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -500,6 +772,10 @@ class Client(OpenApiClient):
             body['cardTypeId'] = request.card_type_id
         if not UtilClient.is_unset(request.content_field_list):
             body['contentFieldList'] = request.content_field_list
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source_title):
+            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -565,6 +841,12 @@ class Client(OpenApiClient):
             body['cardTypeId'] = request.card_type_id
         if not UtilClient.is_unset(request.content_field_list):
             body['contentFieldList'] = request.content_field_list
+        if not UtilClient.is_unset(request.is_only_show_executor):
+            body['isOnlyShowExecutor'] = request.is_only_show_executor
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source_title):
+            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -612,6 +894,12 @@ class Client(OpenApiClient):
             body['cardTypeId'] = request.card_type_id
         if not UtilClient.is_unset(request.content_field_list):
             body['contentFieldList'] = request.content_field_list
+        if not UtilClient.is_unset(request.is_only_show_executor):
+            body['isOnlyShowExecutor'] = request.is_only_show_executor
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        if not UtilClient.is_unset(request.source_title):
+            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
