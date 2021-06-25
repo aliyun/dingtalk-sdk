@@ -59,6 +59,8 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -93,6 +95,8 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -136,6 +140,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.primary_key):
             query['primaryKey'] = request.primary_key
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -161,6 +167,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.primary_key):
             query['primaryKey'] = request.primary_key
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -201,6 +209,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.trigger_data_list):
             body['triggerDataList'] = request.trigger_data_list
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -225,6 +235,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.trigger_data_list):
             body['triggerDataList'] = request.trigger_data_list
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

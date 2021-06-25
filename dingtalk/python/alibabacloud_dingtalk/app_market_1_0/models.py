@@ -4,6 +4,333 @@ from Tea.model import TeaModel
 from typing import Dict
 
 
+class CreateAppGoodsServiceConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAppGoodsServiceConversationRequest(TeaModel):
+    def __init__(
+        self,
+        order_id: int = None,
+        isv_user_id: str = None,
+    ):
+        self.order_id = order_id
+        self.isv_user_id = isv_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.isv_user_id is not None:
+            result['isvUserId'] = self.isv_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('isvUserId') is not None:
+            self.isv_user_id = m.get('isvUserId')
+        return self
+
+
+class CreateAppGoodsServiceConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        conversation_name: str = None,
+        new_conversation: bool = None,
+    ):
+        # 群名称
+        self.conversation_name = conversation_name
+        # 是否新群
+        self.new_conversation = new_conversation
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conversation_name is not None:
+            result['conversationName'] = self.conversation_name
+        if self.new_conversation is not None:
+            result['newConversation'] = self.new_conversation
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conversationName') is not None:
+            self.conversation_name = m.get('conversationName')
+        if m.get('newConversation') is not None:
+            self.new_conversation = m.get('newConversation')
+        return self
+
+
+class CreateAppGoodsServiceConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateAppGoodsServiceConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateAppGoodsServiceConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryMarketOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMarketOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_order_id: int = None,
+        corp_id: str = None,
+        item_code: str = None,
+        item_name: str = None,
+        goods_code: str = None,
+        goods_name: str = None,
+        total_actual_pay_fee: int = None,
+        status: int = None,
+        quantity: int = None,
+        paid_timestamp: int = None,
+        create_timestamp: int = None,
+        start_timestamp: int = None,
+        end_timestamp: int = None,
+        in_app_order: bool = None,
+    ):
+        # 订单ID
+        self.biz_order_id = biz_order_id
+        # 组织ID
+        self.corp_id = corp_id
+        # 规格编码
+        self.item_code = item_code
+        # 规格名称
+        self.item_name = item_name
+        # 商品Code
+        self.goods_code = goods_code
+        # 商品名称
+        self.goods_name = goods_name
+        # 订单实付金额(单位分)
+        self.total_actual_pay_fee = total_actual_pay_fee
+        # 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
+        self.status = status
+        # 购买数量
+        self.quantity = quantity
+        # 支付时间戳
+        self.paid_timestamp = paid_timestamp
+        # 创建时间戳
+        self.create_timestamp = create_timestamp
+        # 开始生效时间
+        self.start_timestamp = start_timestamp
+        # 生效结束时间
+        self.end_timestamp = end_timestamp
+        # 是否内购订单
+        self.in_app_order = in_app_order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_order_id is not None:
+            result['bizOrderId'] = self.biz_order_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.item_code is not None:
+            result['itemCode'] = self.item_code
+        if self.item_name is not None:
+            result['itemName'] = self.item_name
+        if self.goods_code is not None:
+            result['goodsCode'] = self.goods_code
+        if self.goods_name is not None:
+            result['goodsName'] = self.goods_name
+        if self.total_actual_pay_fee is not None:
+            result['totalActualPayFee'] = self.total_actual_pay_fee
+        if self.status is not None:
+            result['status'] = self.status
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.paid_timestamp is not None:
+            result['paidTimestamp'] = self.paid_timestamp
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
+        if self.start_timestamp is not None:
+            result['startTimestamp'] = self.start_timestamp
+        if self.end_timestamp is not None:
+            result['endTimestamp'] = self.end_timestamp
+        if self.in_app_order is not None:
+            result['inAppOrder'] = self.in_app_order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizOrderId') is not None:
+            self.biz_order_id = m.get('bizOrderId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('itemCode') is not None:
+            self.item_code = m.get('itemCode')
+        if m.get('itemName') is not None:
+            self.item_name = m.get('itemName')
+        if m.get('goodsCode') is not None:
+            self.goods_code = m.get('goodsCode')
+        if m.get('goodsName') is not None:
+            self.goods_name = m.get('goodsName')
+        if m.get('totalActualPayFee') is not None:
+            self.total_actual_pay_fee = m.get('totalActualPayFee')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('paidTimestamp') is not None:
+            self.paid_timestamp = m.get('paidTimestamp')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
+        if m.get('startTimestamp') is not None:
+            self.start_timestamp = m.get('startTimestamp')
+        if m.get('endTimestamp') is not None:
+            self.end_timestamp = m.get('endTimestamp')
+        if m.get('inAppOrder') is not None:
+            self.in_app_order = m.get('inAppOrder')
+        return self
+
+
+class QueryMarketOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryMarketOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryMarketOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UserTaskReportHeaders(TeaModel):
     def __init__(
         self,
@@ -123,144 +450,6 @@ class UserTaskReportResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             self.body = m.get('body')
-        return self
-
-
-class CreateAppGoodsServiceConversationHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class CreateAppGoodsServiceConversationRequest(TeaModel):
-    def __init__(
-        self,
-        order_id: int = None,
-        isv_user_id: str = None,
-    ):
-        self.order_id = order_id
-        self.isv_user_id = isv_user_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.order_id is not None:
-            result['orderId'] = self.order_id
-        if self.isv_user_id is not None:
-            result['isvUserId'] = self.isv_user_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('orderId') is not None:
-            self.order_id = m.get('orderId')
-        if m.get('isvUserId') is not None:
-            self.isv_user_id = m.get('isvUserId')
-        return self
-
-
-class CreateAppGoodsServiceConversationResponseBody(TeaModel):
-    def __init__(
-        self,
-        conversation_name: str = None,
-        new_conversation: bool = None,
-    ):
-        # 群名称
-        self.conversation_name = conversation_name
-        # 是否是新群
-        self.new_conversation = new_conversation
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.conversation_name is not None:
-            result['conversationName'] = self.conversation_name
-        if self.new_conversation is not None:
-            result['newConversation'] = self.new_conversation
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('conversationName') is not None:
-            self.conversation_name = m.get('conversationName')
-        if m.get('newConversation') is not None:
-            self.new_conversation = m.get('newConversation')
-        return self
-
-
-class CreateAppGoodsServiceConversationResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: CreateAppGoodsServiceConversationResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = CreateAppGoodsServiceConversationResponseBody()
-            self.body = temp_model.from_map(m['body'])
         return self
 
 

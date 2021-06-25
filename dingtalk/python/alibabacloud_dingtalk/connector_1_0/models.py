@@ -46,6 +46,7 @@ class PullDataByPageRequest(TeaModel):
         max_datetime: int = None,
         next_token: str = None,
         max_results: int = None,
+        app_id: str = None,
     ):
         # 要拉取的主数据模型id。
         self.data_model_id = data_model_id
@@ -59,6 +60,8 @@ class PullDataByPageRequest(TeaModel):
         self.next_token = next_token
         # 单次获取的最大记录条数，最大限制100条。
         self.max_results = max_results
+        # 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+        self.app_id = app_id
 
     def validate(self):
         pass
@@ -81,6 +84,8 @@ class PullDataByPageRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.max_results is not None:
             result['maxResults'] = self.max_results
+        if self.app_id is not None:
+            result['appId'] = self.app_id
         return result
 
     def from_map(self, m: dict = None):
@@ -97,6 +102,8 @@ class PullDataByPageRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
         return self
 
 
@@ -294,9 +301,12 @@ class PullDataByPkRequest(TeaModel):
     def __init__(
         self,
         primary_key: str = None,
+        app_id: str = None,
     ):
         # 数据的主键字段值。
         self.primary_key = primary_key
+        # 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+        self.app_id = app_id
 
     def validate(self):
         pass
@@ -309,12 +319,16 @@ class PullDataByPkRequest(TeaModel):
         result = dict()
         if self.primary_key is not None:
             result['primaryKey'] = self.primary_key
+        if self.app_id is not None:
+            result['appId'] = self.app_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('primaryKey') is not None:
             self.primary_key = m.get('primaryKey')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
         return self
 
 
@@ -519,8 +533,11 @@ class SyncDataRequest(TeaModel):
     def __init__(
         self,
         trigger_data_list: List[SyncDataRequestTriggerDataList] = None,
+        app_id: str = None,
     ):
         self.trigger_data_list = trigger_data_list
+        # 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+        self.app_id = app_id
 
     def validate(self):
         if self.trigger_data_list:
@@ -538,6 +555,8 @@ class SyncDataRequest(TeaModel):
         if self.trigger_data_list is not None:
             for k in self.trigger_data_list:
                 result['triggerDataList'].append(k.to_map() if k else None)
+        if self.app_id is not None:
+            result['appId'] = self.app_id
         return result
 
     def from_map(self, m: dict = None):
@@ -547,6 +566,8 @@ class SyncDataRequest(TeaModel):
             for k in m.get('triggerDataList'):
                 temp_model = SyncDataRequestTriggerDataList()
                 self.trigger_data_list.append(temp_model.from_map(k))
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
         return self
 
 
