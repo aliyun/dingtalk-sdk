@@ -13,8 +13,16 @@ class SyncDataRequest extends Model
      * @var triggerDataList[]
      */
     public $triggerDataList;
+
+    /**
+     * @description 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+     *
+     * @var string
+     */
+    public $appId;
     protected $_name = [
         'triggerDataList' => 'triggerDataList',
+        'appId'           => 'appId',
     ];
 
     public function validate()
@@ -32,6 +40,9 @@ class SyncDataRequest extends Model
                     $res['triggerDataList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->appId) {
+            $res['appId'] = $this->appId;
         }
 
         return $res;
@@ -53,6 +64,9 @@ class SyncDataRequest extends Model
                     $model->triggerDataList[$n++] = null !== $item ? triggerDataList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['appId'])) {
+            $model->appId = $map['appId'];
         }
 
         return $model;

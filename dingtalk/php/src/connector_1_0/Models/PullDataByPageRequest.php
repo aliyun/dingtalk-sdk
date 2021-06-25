@@ -49,6 +49,13 @@ class PullDataByPageRequest extends Model
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+     *
+     * @var string
+     */
+    public $appId;
     protected $_name = [
         'dataModelId'         => 'dataModelId',
         'datetimeFilterField' => 'datetimeFilterField',
@@ -56,6 +63,7 @@ class PullDataByPageRequest extends Model
         'maxDatetime'         => 'maxDatetime',
         'nextToken'           => 'nextToken',
         'maxResults'          => 'maxResults',
+        'appId'               => 'appId',
     ];
 
     public function validate()
@@ -82,6 +90,9 @@ class PullDataByPageRequest extends Model
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->appId) {
+            $res['appId'] = $this->appId;
         }
 
         return $res;
@@ -112,6 +123,9 @@ class PullDataByPageRequest extends Model
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['appId'])) {
+            $model->appId = $map['appId'];
         }
 
         return $model;

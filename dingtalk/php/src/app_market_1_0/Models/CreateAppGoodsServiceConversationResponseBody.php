@@ -16,7 +16,7 @@ class CreateAppGoodsServiceConversationResponseBody extends Model
     public $conversationName;
 
     /**
-     * @description 是否是新群
+     * @description 是否新群
      *
      * @var bool
      */

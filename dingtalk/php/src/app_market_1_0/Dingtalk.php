@@ -11,6 +11,8 @@ use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConver
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\QueryMarketOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\QueryMarketOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportResponse;
@@ -28,6 +30,87 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateAppGoodsServiceConversationRequest $request
+     *
+     * @return CreateAppGoodsServiceConversationResponse
+     */
+    public function createAppGoodsServiceConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAppGoodsServiceConversationHeaders([]);
+
+        return $this->createAppGoodsServiceConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateAppGoodsServiceConversationRequest $request
+     * @param CreateAppGoodsServiceConversationHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return CreateAppGoodsServiceConversationResponse
+     */
+    public function createAppGoodsServiceConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->orderId)) {
+            @$body['orderId'] = $request->orderId;
+        }
+        if (!Utils::isUnset($request->isvUserId)) {
+            @$body['isvUserId'] = $request->isvUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateAppGoodsServiceConversationResponse::fromMap($this->doROARequest('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/orders/serviceGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $orderId
+     *
+     * @return QueryMarketOrderResponse
+     */
+    public function queryMarketOrder($orderId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMarketOrderHeaders([]);
+
+        return $this->queryMarketOrderWithOptions($orderId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $orderId
+     * @param QueryMarketOrderHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryMarketOrderResponse
+     */
+    public function queryMarketOrderWithOptions($orderId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryMarketOrderResponse::fromMap($this->doROARequest('QueryMarketOrder', 'appMarket_1.0', 'HTTP', 'GET', 'AK', '/v1.0/appMarket/orders/' . $orderId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -82,51 +165,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UserTaskReportResponse::fromMap($this->doROARequest('UserTaskReport', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/tasks', 'boolean', $req, $runtime));
-    }
-
-    /**
-     * @param CreateAppGoodsServiceConversationRequest $request
-     *
-     * @return CreateAppGoodsServiceConversationResponse
-     */
-    public function createAppGoodsServiceConversation($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateAppGoodsServiceConversationHeaders([]);
-
-        return $this->createAppGoodsServiceConversationWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CreateAppGoodsServiceConversationRequest $request
-     * @param CreateAppGoodsServiceConversationHeaders $headers
-     * @param RuntimeOptions                           $runtime
-     *
-     * @return CreateAppGoodsServiceConversationResponse
-     */
-    public function createAppGoodsServiceConversationWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->orderId)) {
-            @$body['orderId'] = $request->orderId;
-        }
-        if (!Utils::isUnset($request->isvUserId)) {
-            @$body['isvUserId'] = $request->isvUserId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateAppGoodsServiceConversationResponse::fromMap($this->doROARequest('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/orders/serviceGroups', 'json', $req, $runtime));
     }
 
     /**
