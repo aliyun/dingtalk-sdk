@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         public string ConversationName { get; set; }
 
         /// <summary>
-        /// 是否是新群
+        /// 是否新群
         /// </summary>
         [NameInMap("newConversation")]
         [Validation(Required=false)]

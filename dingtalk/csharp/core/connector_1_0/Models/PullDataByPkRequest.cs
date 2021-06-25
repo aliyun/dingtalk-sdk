@@ -16,6 +16,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         [Validation(Required=false)]
         public string PrimaryKey { get; set; }
 
+        /// <summary>
+        /// 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+        /// </summary>
+        [NameInMap("appId")]
+        [Validation(Required=false)]
+        public string AppId { get; set; }
+
     }
 
 }

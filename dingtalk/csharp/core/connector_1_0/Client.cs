@@ -68,6 +68,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 query["maxResults"] = request.MaxResults;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -113,6 +117,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 query["maxResults"] = request.MaxResults;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -152,6 +160,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 query["primaryKey"] = request.PrimaryKey;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -176,6 +188,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrimaryKey))
             {
                 query["primaryKey"] = request.PrimaryKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -216,6 +232,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             {
                 body["triggerDataList"] = request.TriggerDataList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -240,6 +260,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TriggerDataList))
             {
                 body["triggerDataList"] = request.TriggerDataList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
