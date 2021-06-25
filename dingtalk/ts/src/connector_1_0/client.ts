@@ -36,6 +36,7 @@ export class PullDataByPageRequest extends $tea.Model {
   maxDatetime?: number;
   nextToken?: string;
   maxResults?: number;
+  appId?: string;
   static names(): { [key: string]: string } {
     return {
       dataModelId: 'dataModelId',
@@ -44,6 +45,7 @@ export class PullDataByPageRequest extends $tea.Model {
       maxDatetime: 'maxDatetime',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
+      appId: 'appId',
     };
   }
 
@@ -55,6 +57,7 @@ export class PullDataByPageRequest extends $tea.Model {
       maxDatetime: 'number',
       nextToken: 'string',
       maxResults: 'number',
+      appId: 'string',
     };
   }
 
@@ -134,15 +137,18 @@ export class PullDataByPkHeaders extends $tea.Model {
 
 export class PullDataByPkRequest extends $tea.Model {
   primaryKey?: string;
+  appId?: string;
   static names(): { [key: string]: string } {
     return {
       primaryKey: 'primaryKey',
+      appId: 'appId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       primaryKey: 'string',
+      appId: 'string',
     };
   }
 
@@ -234,15 +240,18 @@ export class SyncDataHeaders extends $tea.Model {
 
 export class SyncDataRequest extends $tea.Model {
   triggerDataList?: SyncDataRequestTriggerDataList[];
+  appId?: string;
   static names(): { [key: string]: string } {
     return {
       triggerDataList: 'triggerDataList',
+      appId: 'appId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       triggerDataList: { 'type': 'array', 'itemType': SyncDataRequestTriggerDataList },
+      appId: 'string',
     };
   }
 
@@ -440,6 +449,10 @@ export default class Client extends OpenApi {
       query["maxResults"] = request.maxResults;
     }
 
+    if (!Util.isUnset(request.appId)) {
+      query["appId"] = request.appId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -469,6 +482,10 @@ export default class Client extends OpenApi {
       query["primaryKey"] = request.primaryKey;
     }
 
+    if (!Util.isUnset(request.appId)) {
+      query["appId"] = request.appId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -496,6 +513,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.triggerDataList)) {
       body["triggerDataList"] = request.triggerDataList;
+    }
+
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
