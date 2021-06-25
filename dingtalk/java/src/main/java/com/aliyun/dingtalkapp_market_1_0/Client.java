@@ -21,6 +21,61 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CreateAppGoodsServiceConversationResponse createAppGoodsServiceConversation(CreateAppGoodsServiceConversationRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateAppGoodsServiceConversationHeaders headers = new CreateAppGoodsServiceConversationHeaders();
+        return this.createAppGoodsServiceConversationWithOptions(request, headers, runtime);
+    }
+
+    public CreateAppGoodsServiceConversationResponse createAppGoodsServiceConversationWithOptions(CreateAppGoodsServiceConversationRequest request, CreateAppGoodsServiceConversationHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.orderId)) {
+            body.put("orderId", request.orderId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isvUserId)) {
+            body.put("isvUserId", request.isvUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/orders/serviceGroups", "json", req, runtime), new CreateAppGoodsServiceConversationResponse());
+    }
+
+    public QueryMarketOrderResponse queryMarketOrder(String orderId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryMarketOrderHeaders headers = new QueryMarketOrderHeaders();
+        return this.queryMarketOrderWithOptions(orderId, headers, runtime);
+    }
+
+    public QueryMarketOrderResponse queryMarketOrderWithOptions(String orderId, QueryMarketOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryMarketOrder", "appMarket_1.0", "HTTP", "GET", "AK", "/v1.0/appMarket/orders/" + orderId + "", "json", req, runtime), new QueryMarketOrderResponse());
+    }
+
     public UserTaskReportResponse userTaskReport(UserTaskReportRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UserTaskReportHeaders headers = new UserTaskReportHeaders();
@@ -64,39 +119,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UserTaskReport", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/tasks", "boolean", req, runtime), new UserTaskReportResponse());
-    }
-
-    public CreateAppGoodsServiceConversationResponse createAppGoodsServiceConversation(CreateAppGoodsServiceConversationRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        CreateAppGoodsServiceConversationHeaders headers = new CreateAppGoodsServiceConversationHeaders();
-        return this.createAppGoodsServiceConversationWithOptions(request, headers, runtime);
-    }
-
-    public CreateAppGoodsServiceConversationResponse createAppGoodsServiceConversationWithOptions(CreateAppGoodsServiceConversationRequest request, CreateAppGoodsServiceConversationHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.orderId)) {
-            body.put("orderId", request.orderId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.isvUserId)) {
-            body.put("isvUserId", request.isvUserId);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
-        ));
-        return TeaModel.toModel(this.doROARequest("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", "/v1.0/appMarket/orders/serviceGroups", "json", req, runtime), new CreateAppGoodsServiceConversationResponse());
     }
 
     public GetPersonalExperienceInfoResponse getPersonalExperienceInfo(GetPersonalExperienceInfoRequest request) throws Exception {

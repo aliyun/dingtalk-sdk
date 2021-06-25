@@ -8,7 +8,7 @@ public class CreateAppGoodsServiceConversationResponseBody extends TeaModel {
     @NameInMap("conversationName")
     public String conversationName;
 
-    // 是否是新群
+    // 是否新群
     @NameInMap("newConversation")
     public Boolean newConversation;
 

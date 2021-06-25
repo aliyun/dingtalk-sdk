@@ -54,6 +54,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("maxResults", request.maxResults);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            query.put("appId", request.appId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -83,6 +87,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("primaryKey", request.primaryKey);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            query.put("appId", request.appId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -110,6 +118,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.triggerDataList)) {
             body.put("triggerDataList", request.triggerDataList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

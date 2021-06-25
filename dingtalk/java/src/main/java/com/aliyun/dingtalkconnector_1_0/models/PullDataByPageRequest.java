@@ -28,6 +28,10 @@ public class PullDataByPageRequest extends TeaModel {
     @NameInMap("maxResults")
     public Long maxResults;
 
+    // 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+    @NameInMap("appId")
+    public String appId;
+
     public static PullDataByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         PullDataByPageRequest self = new PullDataByPageRequest();
         return TeaModel.build(map, self);
@@ -79,6 +83,14 @@ public class PullDataByPageRequest extends TeaModel {
     }
     public Long getMaxResults() {
         return this.maxResults;
+    }
+
+    public PullDataByPageRequest setAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+    public String getAppId() {
+        return this.appId;
     }
 
 }

@@ -7,6 +7,10 @@ public class SyncDataRequest extends TeaModel {
     @NameInMap("triggerDataList")
     public java.util.List<SyncDataRequestTriggerDataList> triggerDataList;
 
+    // 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+    @NameInMap("appId")
+    public String appId;
+
     public static SyncDataRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncDataRequest self = new SyncDataRequest();
         return TeaModel.build(map, self);
@@ -18,6 +22,14 @@ public class SyncDataRequest extends TeaModel {
     }
     public java.util.List<SyncDataRequestTriggerDataList> getTriggerDataList() {
         return this.triggerDataList;
+    }
+
+    public SyncDataRequest setAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+    public String getAppId() {
+        return this.appId;
     }
 
     public static class SyncDataRequestTriggerDataList extends TeaModel {
