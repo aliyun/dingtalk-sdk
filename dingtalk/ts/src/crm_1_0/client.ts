@@ -1194,6 +1194,115 @@ export class ListCrmPersonalCustomersResponse extends $tea.Model {
   }
 }
 
+export class CreateCustomerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomerRequest extends $tea.Model {
+  objectType?: string;
+  instanceId?: string;
+  creatorUserId?: string;
+  data?: { [key: string]: any };
+  extendData?: { [key: string]: any };
+  contacts?: CreateCustomerRequestContacts[];
+  permission?: CreateCustomerRequestPermission;
+  saveOption?: CreateCustomerRequestSaveOption;
+  static names(): { [key: string]: string } {
+    return {
+      objectType: 'objectType',
+      instanceId: 'instanceId',
+      creatorUserId: 'creatorUserId',
+      data: 'data',
+      extendData: 'extendData',
+      contacts: 'contacts',
+      permission: 'permission',
+      saveOption: 'saveOption',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      objectType: 'string',
+      instanceId: 'string',
+      creatorUserId: 'string',
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      contacts: { 'type': 'array', 'itemType': CreateCustomerRequestContacts },
+      permission: CreateCustomerRequestPermission,
+      saveOption: CreateCustomerRequestSaveOption,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomerResponseBody extends $tea.Model {
+  customerInstanceId?: string;
+  objectType?: string;
+  contacts?: CreateCustomerResponseBodyContacts[];
+  static names(): { [key: string]: string } {
+    return {
+      customerInstanceId: 'customerInstanceId',
+      objectType: 'objectType',
+      contacts: 'contacts',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerInstanceId: 'string',
+      objectType: 'string',
+      contacts: { 'type': 'array', 'itemType': CreateCustomerResponseBodyContacts },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateCustomerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOfficialAccountContactsResponseBodyValuesContactsPermission extends $tea.Model {
   participantStaffIds?: string[];
   ownerStaffIds?: string[];
@@ -2339,6 +2448,94 @@ export class ListCrmPersonalCustomersResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreateCustomerRequestContacts extends $tea.Model {
+  data?: { [key: string]: any };
+  extendData?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      extendData: 'extendData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomerRequestPermission extends $tea.Model {
+  ownerStaffIds?: string[];
+  participantStaffIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      ownerStaffIds: 'ownerStaffIds',
+      participantStaffIds: 'participantStaffIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownerStaffIds: { 'type': 'array', 'itemType': 'string' },
+      participantStaffIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomerRequestSaveOption extends $tea.Model {
+  subscribePolicy?: number;
+  throwExceptionWhileSavingContactFailed?: boolean;
+  customerExistedPolicy?: string;
+  static names(): { [key: string]: string } {
+    return {
+      subscribePolicy: 'subscribePolicy',
+      throwExceptionWhileSavingContactFailed: 'throwExceptionWhileSavingContactFailed',
+      customerExistedPolicy: 'customerExistedPolicy',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      subscribePolicy: 'number',
+      throwExceptionWhileSavingContactFailed: 'boolean',
+      customerExistedPolicy: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomerResponseBodyContacts extends $tea.Model {
+  contactInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contactInstanceId: 'contactInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contactInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -2862,6 +3059,63 @@ export default class Client extends OpenApi {
       body: request.body,
     });
     return $tea.cast<ListCrmPersonalCustomersResponse>(await this.doROARequest("ListCrmPersonalCustomers", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/personalCustomers/batchQuery`, "json", req, runtime), new ListCrmPersonalCustomersResponse({}));
+  }
+
+  async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCustomerHeaders({ });
+    return await this.createCustomerWithOptions(request, headers, runtime);
+  }
+
+  async createCustomerWithOptions(request: CreateCustomerRequest, headers: CreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomerResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.objectType)) {
+      body["objectType"] = request.objectType;
+    }
+
+    if (!Util.isUnset(request.instanceId)) {
+      body["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.creatorUserId)) {
+      body["creatorUserId"] = request.creatorUserId;
+    }
+
+    if (!Util.isUnset(request.data)) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.extendData)) {
+      body["extendData"] = request.extendData;
+    }
+
+    if (!Util.isUnset(request.contacts)) {
+      body["contacts"] = request.contacts;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.permission))) {
+      body["permission"] = request.permission;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.saveOption))) {
+      body["saveOption"] = request.saveOption;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateCustomerResponse>(await this.doROARequest("CreateCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers`, "json", req, runtime), new CreateCustomerResponse({}));
   }
 
 }

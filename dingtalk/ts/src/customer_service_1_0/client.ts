@@ -110,7 +110,7 @@ export class CreateTicketResponse extends $tea.Model {
   }
 }
 
-export class ParseMsgToDingTypeHeaders extends $tea.Model {
+export class GetUserSourceListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -132,17 +132,32 @@ export class ParseMsgToDingTypeHeaders extends $tea.Model {
   }
 }
 
-export class ParseMsgToDingTypeRequest extends $tea.Model {
-  body?: ParseMsgToDingTypeRequestBody[];
+export class GetUserSourceListRequest extends $tea.Model {
+  openInstanceId?: string;
+  description?: string;
+  orgName?: string;
+  orgId?: number;
+  corpId?: string;
+  productionType?: number;
   static names(): { [key: string]: string } {
     return {
-      body: 'body',
+      openInstanceId: 'openInstanceId',
+      description: 'description',
+      orgName: 'orgName',
+      orgId: 'orgId',
+      corpId: 'corpId',
+      productionType: 'productionType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      body: { 'type': 'array', 'itemType': ParseMsgToDingTypeRequestBody },
+      openInstanceId: 'string',
+      description: 'string',
+      orgName: 'string',
+      orgId: 'number',
+      corpId: 'string',
+      productionType: 'number',
     };
   }
 
@@ -151,8 +166,8 @@ export class ParseMsgToDingTypeRequest extends $tea.Model {
   }
 }
 
-export class ParseMsgToDingTypeResponseBody extends $tea.Model {
-  result?: ParseMsgToDingTypeResponseBodyResult[];
+export class GetUserSourceListResponseBody extends $tea.Model {
+  result?: GetUserSourceListResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
       result: 'result',
@@ -161,7 +176,7 @@ export class ParseMsgToDingTypeResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': ParseMsgToDingTypeResponseBodyResult },
+      result: { 'type': 'array', 'itemType': GetUserSourceListResponseBodyResult },
     };
   }
 
@@ -170,9 +185,9 @@ export class ParseMsgToDingTypeResponseBody extends $tea.Model {
   }
 }
 
-export class ParseMsgToDingTypeResponse extends $tea.Model {
+export class GetUserSourceListResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: ParseMsgToDingTypeResponseBody;
+  body: GetUserSourceListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -183,7 +198,110 @@ export class ParseMsgToDingTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: ParseMsgToDingTypeResponseBody,
+      body: GetUserSourceListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotRequest extends $tea.Model {
+  corpId?: string;
+  openInstanceId?: string;
+  productionType?: number;
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      openInstanceId: 'openInstanceId',
+      productionType: 'productionType',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      openInstanceId: 'string',
+      productionType: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotResponseBody extends $tea.Model {
+  total?: number;
+  nextCursor?: number;
+  hasMore?: boolean;
+  list?: PageListRobotResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      total: 'total',
+      nextCursor: 'nextCursor',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      total: 'number',
+      nextCursor: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PageListRobotResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageListRobotResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageListRobotResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageListRobotResponseBody,
     };
   }
 
@@ -507,206 +625,6 @@ export class PageListTicketResponse extends $tea.Model {
   }
 }
 
-export class GetUserSourceListHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserSourceListRequest extends $tea.Model {
-  openInstanceId?: string;
-  description?: string;
-  orgName?: string;
-  orgId?: number;
-  corpId?: string;
-  productionType?: number;
-  static names(): { [key: string]: string } {
-    return {
-      openInstanceId: 'openInstanceId',
-      description: 'description',
-      orgName: 'orgName',
-      orgId: 'orgId',
-      corpId: 'corpId',
-      productionType: 'productionType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      openInstanceId: 'string',
-      description: 'string',
-      orgName: 'string',
-      orgId: 'number',
-      corpId: 'string',
-      productionType: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserSourceListResponseBody extends $tea.Model {
-  result?: GetUserSourceListResponseBodyResult[];
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: { 'type': 'array', 'itemType': GetUserSourceListResponseBodyResult },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserSourceListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetUserSourceListResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetUserSourceListResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PageListRobotHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PageListRobotRequest extends $tea.Model {
-  corpId?: string;
-  openInstanceId?: string;
-  productionType?: number;
-  nextToken?: number;
-  maxResults?: number;
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      openInstanceId: 'openInstanceId',
-      productionType: 'productionType',
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      openInstanceId: 'string',
-      productionType: 'number',
-      nextToken: 'number',
-      maxResults: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PageListRobotResponseBody extends $tea.Model {
-  total?: number;
-  nextCursor?: number;
-  hasMore?: boolean;
-  list?: PageListRobotResponseBodyList[];
-  static names(): { [key: string]: string } {
-    return {
-      total: 'total',
-      nextCursor: 'nextCursor',
-      hasMore: 'hasMore',
-      list: 'list',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      total: 'number',
-      nextCursor: 'number',
-      hasMore: 'boolean',
-      list: { 'type': 'array', 'itemType': PageListRobotResponseBodyList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PageListRobotResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: PageListRobotResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: PageListRobotResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateTicketRequestProperties extends $tea.Model {
   name?: string;
   value?: string;
@@ -729,26 +647,32 @@ export class CreateTicketRequestProperties extends $tea.Model {
   }
 }
 
-export class ParseMsgToDingTypeRequestBody extends $tea.Model {
-  msgType?: string;
-  content?: string;
-  subType?: string;
-  extra?: string;
+export class GetUserSourceListResponseBodyResult extends $tea.Model {
+  id?: number;
+  status?: number;
+  description?: string;
+  config?: string;
+  vendor?: string;
+  name?: string;
   static names(): { [key: string]: string } {
     return {
-      msgType: 'msgType',
-      content: 'content',
-      subType: 'subType',
-      extra: 'extra',
+      id: 'id',
+      status: 'status',
+      description: 'description',
+      config: 'config',
+      vendor: 'vendor',
+      name: 'name',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      msgType: 'string',
-      content: 'string',
-      subType: 'string',
-      extra: 'string',
+      id: 'number',
+      status: 'number',
+      description: 'string',
+      config: 'string',
+      vendor: 'string',
+      name: 'string',
     };
   }
 
@@ -757,26 +681,29 @@ export class ParseMsgToDingTypeRequestBody extends $tea.Model {
   }
 }
 
-export class ParseMsgToDingTypeResponseBodyResult extends $tea.Model {
-  subType?: string;
-  extra?: string;
-  content?: string;
-  msgType?: string;
+export class PageListRobotResponseBodyList extends $tea.Model {
+  id?: number;
+  name?: string;
+  appKey?: string;
+  accountId?: number;
+  status?: number;
   static names(): { [key: string]: string } {
     return {
-      subType: 'subType',
-      extra: 'extra',
-      content: 'content',
-      msgType: 'msgType',
+      id: 'id',
+      name: 'name',
+      appKey: 'appKey',
+      accountId: 'accountId',
+      status: 'status',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      subType: 'string',
-      extra: 'string',
-      content: 'string',
-      msgType: 'string',
+      id: 'number',
+      name: 'string',
+      appKey: 'string',
+      accountId: 'number',
+      status: 'number',
     };
   }
 
@@ -921,71 +848,6 @@ export class PageListTicketResponseBodyList extends $tea.Model {
   }
 }
 
-export class GetUserSourceListResponseBodyResult extends $tea.Model {
-  id?: number;
-  status?: number;
-  description?: string;
-  config?: string;
-  vendor?: string;
-  name?: string;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      status: 'status',
-      description: 'description',
-      config: 'config',
-      vendor: 'vendor',
-      name: 'name',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-      status: 'number',
-      description: 'string',
-      config: 'string',
-      vendor: 'string',
-      name: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PageListRobotResponseBodyList extends $tea.Model {
-  id?: number;
-  name?: string;
-  appKey?: string;
-  accountId?: number;
-  status?: number;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-      appKey: 'appKey',
-      accountId: 'accountId',
-      status: 'status',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-      name: 'string',
-      appKey: 'string',
-      accountId: 'number',
-      status: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 
 export default class Client extends OpenApi {
 
@@ -1056,14 +918,39 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new CreateTicketResponse({}));
   }
 
-  async parseMsgToDingType(request: ParseMsgToDingTypeRequest): Promise<ParseMsgToDingTypeResponse> {
+  async getUserSourceList(request: GetUserSourceListRequest): Promise<GetUserSourceListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ParseMsgToDingTypeHeaders({ });
-    return await this.parseMsgToDingTypeWithOptions(request, headers, runtime);
+    let headers = new GetUserSourceListHeaders({ });
+    return await this.getUserSourceListWithOptions(request, headers, runtime);
   }
 
-  async parseMsgToDingTypeWithOptions(request: ParseMsgToDingTypeRequest, headers: ParseMsgToDingTypeHeaders, runtime: $Util.RuntimeOptions): Promise<ParseMsgToDingTypeResponse> {
+  async getUserSourceListWithOptions(request: GetUserSourceListRequest, headers: GetUserSourceListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserSourceListResponse> {
     Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openInstanceId)) {
+      query["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      query["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.orgName)) {
+      query["orgName"] = request.orgName;
+    }
+
+    if (!Util.isUnset(request.orgId)) {
+      query["orgId"] = request.orgId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      query["productionType"] = request.productionType;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1075,9 +962,54 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: Util.toArray(request.body),
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ParseMsgToDingTypeResponse>(await this.doROARequest("ParseMsgToDingType", "customerService_1.0", "HTTP", "POST", "AK", `/v1.0/customerService/messages/parse`, "json", req, runtime), new ParseMsgToDingTypeResponse({}));
+    return $tea.cast<GetUserSourceListResponse>(await this.doROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/customers/sources`, "json", req, runtime), new GetUserSourceListResponse({}));
+  }
+
+  async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageListRobotHeaders({ });
+    return await this.pageListRobotWithOptions(request, headers, runtime);
+  }
+
+  async pageListRobotWithOptions(request: PageListRobotRequest, headers: PageListRobotHeaders, runtime: $Util.RuntimeOptions): Promise<PageListRobotResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.openInstanceId)) {
+      query["openInstanceId"] = request.openInstanceId;
+    }
+
+    if (!Util.isUnset(request.productionType)) {
+      query["productionType"] = request.productionType;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PageListRobotResponse>(await this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/robots`, "json", req, runtime), new PageListRobotResponse({}));
   }
 
   async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {
@@ -1241,100 +1173,6 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<PageListTicketResponse>(await this.doROARequest("PageListTicket", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new PageListTicketResponse({}));
-  }
-
-  async getUserSourceList(request: GetUserSourceListRequest): Promise<GetUserSourceListResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserSourceListHeaders({ });
-    return await this.getUserSourceListWithOptions(request, headers, runtime);
-  }
-
-  async getUserSourceListWithOptions(request: GetUserSourceListRequest, headers: GetUserSourceListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserSourceListResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.openInstanceId)) {
-      query["openInstanceId"] = request.openInstanceId;
-    }
-
-    if (!Util.isUnset(request.description)) {
-      query["description"] = request.description;
-    }
-
-    if (!Util.isUnset(request.orgName)) {
-      query["orgName"] = request.orgName;
-    }
-
-    if (!Util.isUnset(request.orgId)) {
-      query["orgId"] = request.orgId;
-    }
-
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.productionType)) {
-      query["productionType"] = request.productionType;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetUserSourceListResponse>(await this.doROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/customers/sources`, "json", req, runtime), new GetUserSourceListResponse({}));
-  }
-
-  async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageListRobotHeaders({ });
-    return await this.pageListRobotWithOptions(request, headers, runtime);
-  }
-
-  async pageListRobotWithOptions(request: PageListRobotRequest, headers: PageListRobotHeaders, runtime: $Util.RuntimeOptions): Promise<PageListRobotResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
-    if (!Util.isUnset(request.openInstanceId)) {
-      query["openInstanceId"] = request.openInstanceId;
-    }
-
-    if (!Util.isUnset(request.productionType)) {
-      query["productionType"] = request.productionType;
-    }
-
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<PageListRobotResponse>(await this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/robots`, "json", req, runtime), new PageListRobotResponse({}));
   }
 
 }

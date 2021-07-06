@@ -7,6 +7,69 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class QueryUserInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserInfoResponseBody extends $tea.Model {
+  content?: QueryUserInfoResponseBodyContent;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: QueryUserInfoResponseBodyContent,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAllMemberByDeptHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -187,6 +250,69 @@ export class QueryAllMemberByGroupResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryAllMemberByGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRolesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRolesResponseBody extends $tea.Model {
+  content?: QueryUserRolesResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryUserRolesResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRolesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserRolesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserRolesResponseBody,
     };
   }
 
@@ -848,7 +974,7 @@ export class QueryGroupInfoResponse extends $tea.Model {
   }
 }
 
-export class QueryAllMemberByDeptResponseBodyContentJob extends $tea.Model {
+export class QueryUserInfoResponseBodyContentJob extends $tea.Model {
   code?: string;
   bizType?: string;
   category?: string;
@@ -876,7 +1002,7 @@ export class QueryAllMemberByDeptResponseBodyContentJob extends $tea.Model {
   }
 }
 
-export class QueryAllMemberByDeptResponseBodyContentJobStatus extends $tea.Model {
+export class QueryUserInfoResponseBodyContentJobStatus extends $tea.Model {
   code?: string;
   bizType?: string;
   category?: string;
@@ -904,7 +1030,7 @@ export class QueryAllMemberByDeptResponseBodyContentJobStatus extends $tea.Model
   }
 }
 
-export class QueryAllMemberByDeptResponseBodyContentUserProb extends $tea.Model {
+export class QueryUserInfoResponseBodyContentUserProb extends $tea.Model {
   code?: string;
   bizType?: string;
   category?: string;
@@ -924,6 +1050,96 @@ export class QueryAllMemberByDeptResponseBodyContentUserProb extends $tea.Model 
       bizType: 'string',
       category: 'string',
       displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserInfoResponseBodyContentGroup extends $tea.Model {
+  id?: number;
+  name?: string;
+  deptId?: number;
+  deptName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      deptId: 'deptId',
+      deptName: 'deptName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      deptId: 'number',
+      deptName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserInfoResponseBodyContentDept extends $tea.Model {
+  id?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserInfoResponseBodyContent extends $tea.Model {
+  uid?: string;
+  userName?: string;
+  job?: QueryUserInfoResponseBodyContentJob;
+  jobNum?: string;
+  jobStatus?: QueryUserInfoResponseBodyContentJobStatus;
+  userProb?: QueryUserInfoResponseBodyContentUserProb;
+  group?: QueryUserInfoResponseBodyContentGroup[];
+  dept?: QueryUserInfoResponseBodyContentDept[];
+  static names(): { [key: string]: string } {
+    return {
+      uid: 'uid',
+      userName: 'userName',
+      job: 'job',
+      jobNum: 'jobNum',
+      jobStatus: 'jobStatus',
+      userProb: 'userProb',
+      group: 'group',
+      dept: 'dept',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uid: 'string',
+      userName: 'string',
+      job: QueryUserInfoResponseBodyContentJob,
+      jobNum: 'string',
+      jobStatus: QueryUserInfoResponseBodyContentJobStatus,
+      userProb: QueryUserInfoResponseBodyContentUserProb,
+      group: { 'type': 'array', 'itemType': QueryUserInfoResponseBodyContentGroup },
+      dept: { 'type': 'array', 'itemType': QueryUserInfoResponseBodyContentDept },
     };
   }
 
@@ -933,118 +1149,22 @@ export class QueryAllMemberByDeptResponseBodyContentUserProb extends $tea.Model 
 }
 
 export class QueryAllMemberByDeptResponseBodyContent extends $tea.Model {
-  staffId?: string;
   uid?: string;
   userName?: string;
-  job?: QueryAllMemberByDeptResponseBodyContentJob;
   jobNum?: string;
-  jobStatus?: QueryAllMemberByDeptResponseBodyContentJobStatus;
-  userProb?: QueryAllMemberByDeptResponseBodyContentUserProb;
   static names(): { [key: string]: string } {
     return {
-      staffId: 'staffId',
       uid: 'uid',
       userName: 'userName',
-      job: 'job',
       jobNum: 'jobNum',
-      jobStatus: 'jobStatus',
-      userProb: 'userProb',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      staffId: 'string',
       uid: 'string',
       userName: 'string',
-      job: QueryAllMemberByDeptResponseBodyContentJob,
       jobNum: 'string',
-      jobStatus: QueryAllMemberByDeptResponseBodyContentJobStatus,
-      userProb: QueryAllMemberByDeptResponseBodyContentUserProb,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllMemberByGroupResponseBodyContentJob extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllMemberByGroupResponseBodyContentJobStatus extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllMemberByGroupResponseBodyContentUserProb extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
     };
   }
 
@@ -1054,34 +1174,44 @@ export class QueryAllMemberByGroupResponseBodyContentUserProb extends $tea.Model
 }
 
 export class QueryAllMemberByGroupResponseBodyContent extends $tea.Model {
-  staffId?: string;
   uid?: string;
   userName?: string;
-  job?: QueryAllMemberByGroupResponseBodyContentJob;
   jobNum?: string;
-  jobStatus?: QueryAllMemberByGroupResponseBodyContentJobStatus;
-  userProb?: QueryAllMemberByGroupResponseBodyContentUserProb;
   static names(): { [key: string]: string } {
     return {
-      staffId: 'staffId',
       uid: 'uid',
       userName: 'userName',
-      job: 'job',
       jobNum: 'jobNum',
-      jobStatus: 'jobStatus',
-      userProb: 'userProb',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      staffId: 'string',
       uid: 'string',
       userName: 'string',
-      job: QueryAllMemberByGroupResponseBodyContentJob,
       jobNum: 'string',
-      jobStatus: QueryAllMemberByGroupResponseBodyContentJobStatus,
-      userProb: QueryAllMemberByGroupResponseBodyContentUserProb,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRolesResponseBodyContent extends $tea.Model {
+  roleCode?: string;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roleCode: 'roleCode',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleCode: 'string',
+      roleName: 'string',
     };
   }
 
@@ -1115,119 +1245,23 @@ export class QueryAllGroupResponseBodyContent extends $tea.Model {
   }
 }
 
-export class QueryAllDoctorsResponseBodyContentJob extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllDoctorsResponseBodyContentJobStatus extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryAllDoctorsResponseBodyContentUserProb extends $tea.Model {
-  code?: string;
-  bizType?: string;
-  category?: string;
-  displayName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      code: 'code',
-      bizType: 'bizType',
-      category: 'category',
-      displayName: 'displayName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      code: 'string',
-      bizType: 'string',
-      category: 'string',
-      displayName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
-  staffId?: string;
   uid?: string;
   userName?: string;
-  job?: QueryAllDoctorsResponseBodyContentJob;
   jobNum?: string;
-  jobStatus?: QueryAllDoctorsResponseBodyContentJobStatus;
-  userProb?: QueryAllDoctorsResponseBodyContentUserProb;
   static names(): { [key: string]: string } {
     return {
-      staffId: 'staffId',
       uid: 'uid',
       userName: 'userName',
-      job: 'job',
       jobNum: 'jobNum',
-      jobStatus: 'jobStatus',
-      userProb: 'userProb',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      staffId: 'string',
       uid: 'string',
       userName: 'string',
-      job: QueryAllDoctorsResponseBodyContentJob,
       jobNum: 'string',
-      jobStatus: QueryAllDoctorsResponseBodyContentJobStatus,
-      userProb: QueryAllDoctorsResponseBodyContentUserProb,
     };
   }
 
@@ -1618,6 +1652,28 @@ export default class Client extends OpenApi {
   }
 
 
+  async queryUserInfo(userId: string): Promise<QueryUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserInfoHeaders({ });
+    return await this.queryUserInfoWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserInfoWithOptions(userId: string, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserInfoResponse>(await this.doROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}`, "json", req, runtime), new QueryUserInfoResponse({}));
+  }
+
   async queryAllMemberByDept(deptId: string, request: QueryAllMemberByDeptRequest): Promise<QueryAllMemberByDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAllMemberByDeptHeaders({ });
@@ -1682,6 +1738,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryAllMemberByGroupResponse>(await this.doROARequest("QueryAllMemberByGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups/${groupId}/members`, "json", req, runtime), new QueryAllMemberByGroupResponse({}));
+  }
+
+  async queryUserRoles(userId: string): Promise<QueryUserRolesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserRolesHeaders({ });
+    return await this.queryUserRolesWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserRolesWithOptions(userId: string, headers: QueryUserRolesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRolesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserRolesResponse>(await this.doROARequest("QueryUserRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/roles`, "json", req, runtime), new QueryUserRolesResponse({}));
   }
 
   async queryAllGroup(request: QueryAllGroupRequest): Promise<QueryAllGroupResponse> {
