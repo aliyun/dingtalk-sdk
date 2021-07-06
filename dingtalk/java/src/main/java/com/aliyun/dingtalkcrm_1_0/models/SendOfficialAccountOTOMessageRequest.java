@@ -24,6 +24,10 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
     @NameInMap("dingSuiteKey")
     public String dingSuiteKey;
 
+    // 服务窗帐号ID
+    @NameInMap("accountId")
+    public String accountId;
+
     public static SendOfficialAccountOTOMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         SendOfficialAccountOTOMessageRequest self = new SendOfficialAccountOTOMessageRequest();
         return TeaModel.build(map, self);
@@ -75,6 +79,14 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
     }
     public String getDingSuiteKey() {
         return this.dingSuiteKey;
+    }
+
+    public SendOfficialAccountOTOMessageRequest setAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+    public String getAccountId() {
+        return this.accountId;
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText extends TeaModel {

@@ -12,6 +12,10 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     @NameInMap("bizId")
     public String bizId;
 
+    // 服务窗帐号ID
+    @NameInMap("accountId")
+    public String accountId;
+
     @NameInMap("dingIsvOrgId")
     public Long dingIsvOrgId;
 
@@ -43,6 +47,14 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
     public String getBizId() {
         return this.bizId;
+    }
+
+    public BatchSendOfficialAccountOTOMessageRequest setAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+    public String getAccountId() {
+        return this.accountId;
     }
 
     public BatchSendOfficialAccountOTOMessageRequest setDingIsvOrgId(Long dingIsvOrgId) {
