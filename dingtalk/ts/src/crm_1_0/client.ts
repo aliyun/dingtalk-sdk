@@ -308,6 +308,7 @@ export class BatchSendOfficialAccountOTOMessageHeaders extends $tea.Model {
 export class BatchSendOfficialAccountOTOMessageRequest extends $tea.Model {
   detail?: BatchSendOfficialAccountOTOMessageRequestDetail;
   bizId?: string;
+  accountId?: string;
   dingIsvOrgId?: number;
   dingOrgId?: number;
   dingTokenGrantType?: number;
@@ -316,6 +317,7 @@ export class BatchSendOfficialAccountOTOMessageRequest extends $tea.Model {
     return {
       detail: 'detail',
       bizId: 'bizId',
+      accountId: 'accountId',
       dingIsvOrgId: 'dingIsvOrgId',
       dingOrgId: 'dingOrgId',
       dingTokenGrantType: 'dingTokenGrantType',
@@ -327,6 +329,7 @@ export class BatchSendOfficialAccountOTOMessageRequest extends $tea.Model {
     return {
       detail: BatchSendOfficialAccountOTOMessageRequestDetail,
       bizId: 'string',
+      accountId: 'string',
       dingIsvOrgId: 'number',
       dingOrgId: 'number',
       dingTokenGrantType: 'number',
@@ -596,6 +599,7 @@ export class SendOfficialAccountOTOMessageRequest extends $tea.Model {
   dingIsvOrgId?: number;
   dingOrgId?: number;
   dingSuiteKey?: string;
+  accountId?: string;
   static names(): { [key: string]: string } {
     return {
       detail: 'detail',
@@ -604,6 +608,7 @@ export class SendOfficialAccountOTOMessageRequest extends $tea.Model {
       dingIsvOrgId: 'dingIsvOrgId',
       dingOrgId: 'dingOrgId',
       dingSuiteKey: 'dingSuiteKey',
+      accountId: 'accountId',
     };
   }
 
@@ -615,6 +620,7 @@ export class SendOfficialAccountOTOMessageRequest extends $tea.Model {
       dingIsvOrgId: 'number',
       dingOrgId: 'number',
       dingSuiteKey: 'string',
+      accountId: 'string',
     };
   }
 
@@ -2681,6 +2687,10 @@ export default class Client extends OpenApi {
       body["bizId"] = request.bizId;
     }
 
+    if (!Util.isUnset(request.accountId)) {
+      body["accountId"] = request.accountId;
+    }
+
     if (!Util.isUnset(request.dingIsvOrgId)) {
       body["dingIsvOrgId"] = request.dingIsvOrgId;
     }
@@ -2827,6 +2837,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.dingSuiteKey)) {
       body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.accountId)) {
+      body["accountId"] = request.accountId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

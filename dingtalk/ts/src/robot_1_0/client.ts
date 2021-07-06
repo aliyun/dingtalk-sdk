@@ -104,6 +104,122 @@ export class BatchSendOTOResponse extends $tea.Model {
   }
 }
 
+export class BatchOTOQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryRequest extends $tea.Model {
+  robotCode?: string;
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+      processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryResponseBody extends $tea.Model {
+  sendStatus?: string;
+  messageReadInfoList?: BatchOTOQueryResponseBodyMessageReadInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      sendStatus: 'sendStatus',
+      messageReadInfoList: 'messageReadInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sendStatus: 'string',
+      messageReadInfoList: { 'type': 'array', 'itemType': BatchOTOQueryResponseBodyMessageReadInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchOTOQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchOTOQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
+  name?: string;
+  userId?: string;
+  readStatus?: string;
+  readTimestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+      readStatus: 'readStatus',
+      readTimestamp: 'readTimestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+      readStatus: 'string',
+      readTimestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -156,6 +272,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchSendOTOResponse>(await this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/oToMessages/batchSend`, "json", req, runtime), new BatchSendOTOResponse({}));
+  }
+
+  async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchOTOQueryHeaders({ });
+    return await this.batchOTOQueryWithOptions(request, headers, runtime);
+  }
+
+  async batchOTOQueryWithOptions(request: BatchOTOQueryRequest, headers: BatchOTOQueryHeaders, runtime: $Util.RuntimeOptions): Promise<BatchOTOQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotCode)) {
+      query["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.processQueryKey)) {
+      query["processQueryKey"] = request.processQueryKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<BatchOTOQueryResponse>(await this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", `/v1.0/robot/oToMessages/readStatus`, "json", req, runtime), new BatchOTOQueryResponse({}));
   }
 
 }
