@@ -1,21 +1,21 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkcustomer_service_1_0.models;
+package com.aliyun.dingtalkindustry_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ParseMsgToDingTypeHeaders extends TeaModel {
+public class QueryUserInfoHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
-    public static ParseMsgToDingTypeHeaders build(java.util.Map<String, ?> map) throws Exception {
-        ParseMsgToDingTypeHeaders self = new ParseMsgToDingTypeHeaders();
+    public static QueryUserInfoHeaders build(java.util.Map<String, ?> map) throws Exception {
+        QueryUserInfoHeaders self = new QueryUserInfoHeaders();
         return TeaModel.build(map, self);
     }
 
-    public ParseMsgToDingTypeHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
+    public QueryUserInfoHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
         this.commonHeaders = commonHeaders;
         return this;
     }
@@ -23,7 +23,7 @@ public class ParseMsgToDingTypeHeaders extends TeaModel {
         return this.commonHeaders;
     }
 
-    public ParseMsgToDingTypeHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
+    public QueryUserInfoHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
         this.xAcsDingtalkAccessToken = xAcsDingtalkAccessToken;
         return this;
     }

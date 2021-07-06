@@ -21,6 +21,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public QueryUserInfoResponse queryUserInfo(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryUserInfoHeaders headers = new QueryUserInfoHeaders();
+        return this.queryUserInfoWithOptions(userId, headers, runtime);
+    }
+
+    public QueryUserInfoResponse queryUserInfoWithOptions(String userId, QueryUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/users/" + userId + "", "json", req, runtime), new QueryUserInfoResponse());
+    }
+
     public QueryAllMemberByDeptResponse queryAllMemberByDept(String deptId, QueryAllMemberByDeptRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryAllMemberByDeptHeaders headers = new QueryAllMemberByDeptHeaders();
@@ -85,6 +107,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QueryAllMemberByGroup", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/groups/" + groupId + "/members", "json", req, runtime), new QueryAllMemberByGroupResponse());
+    }
+
+    public QueryUserRolesResponse queryUserRoles(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryUserRolesHeaders headers = new QueryUserRolesHeaders();
+        return this.queryUserRolesWithOptions(userId, headers, runtime);
+    }
+
+    public QueryUserRolesResponse queryUserRolesWithOptions(String userId, QueryUserRolesHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryUserRoles", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/medicals/users/" + userId + "/roles", "json", req, runtime), new QueryUserRolesResponse());
     }
 
     public QueryAllGroupResponse queryAllGroup(QueryAllGroupRequest request) throws Exception {

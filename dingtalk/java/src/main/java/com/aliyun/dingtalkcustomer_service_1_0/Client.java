@@ -78,14 +78,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/tickets", "json", req, runtime), new CreateTicketResponse());
     }
 
-    public ParseMsgToDingTypeResponse parseMsgToDingType(ParseMsgToDingTypeRequest request) throws Exception {
+    public GetUserSourceListResponse getUserSourceList(GetUserSourceListRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
-        ParseMsgToDingTypeHeaders headers = new ParseMsgToDingTypeHeaders();
-        return this.parseMsgToDingTypeWithOptions(request, headers, runtime);
+        GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
+        return this.getUserSourceListWithOptions(request, headers, runtime);
     }
 
-    public ParseMsgToDingTypeResponse parseMsgToDingTypeWithOptions(ParseMsgToDingTypeRequest request, ParseMsgToDingTypeHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetUserSourceListResponse getUserSourceListWithOptions(GetUserSourceListRequest request, GetUserSourceListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openInstanceId)) {
+            query.put("openInstanceId", request.openInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            query.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgName)) {
+            query.put("orgName", request.orgName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgId)) {
+            query.put("orgId", request.orgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productionType)) {
+            query.put("productionType", request.productionType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -97,9 +122,54 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ParseMsgToDingType", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/messages/parse", "json", req, runtime), new ParseMsgToDingTypeResponse());
+        return TeaModel.toModel(this.doROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime), new GetUserSourceListResponse());
+    }
+
+    public PageListRobotResponse pageListRobot(PageListRobotRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PageListRobotHeaders headers = new PageListRobotHeaders();
+        return this.pageListRobotWithOptions(request, headers, runtime);
+    }
+
+    public PageListRobotResponse pageListRobotWithOptions(PageListRobotRequest request, PageListRobotHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openInstanceId)) {
+            query.put("openInstanceId", request.openInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productionType)) {
+            query.put("productionType", request.productionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime), new PageListRobotResponse());
     }
 
     public PageListActionResponse pageListAction(String ticketId, PageListActionRequest request) throws Exception {
@@ -263,99 +333,5 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("PageListTicket", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/tickets", "json", req, runtime), new PageListTicketResponse());
-    }
-
-    public GetUserSourceListResponse getUserSourceList(GetUserSourceListRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
-        return this.getUserSourceListWithOptions(request, headers, runtime);
-    }
-
-    public GetUserSourceListResponse getUserSourceListWithOptions(GetUserSourceListRequest request, GetUserSourceListHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.openInstanceId)) {
-            query.put("openInstanceId", request.openInstanceId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
-            query.put("description", request.description);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.orgName)) {
-            query.put("orgName", request.orgName);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.orgId)) {
-            query.put("orgId", request.orgId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
-            query.put("corpId", request.corpId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.productionType)) {
-            query.put("productionType", request.productionType);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
-        ));
-        return TeaModel.toModel(this.doROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime), new GetUserSourceListResponse());
-    }
-
-    public PageListRobotResponse pageListRobot(PageListRobotRequest request) throws Exception {
-        RuntimeOptions runtime = new RuntimeOptions();
-        PageListRobotHeaders headers = new PageListRobotHeaders();
-        return this.pageListRobotWithOptions(request, headers, runtime);
-    }
-
-    public PageListRobotResponse pageListRobotWithOptions(PageListRobotRequest request, PageListRobotHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
-            query.put("corpId", request.corpId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.openInstanceId)) {
-            query.put("openInstanceId", request.openInstanceId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.productionType)) {
-            query.put("productionType", request.productionType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            query.put("nextToken", request.nextToken);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
-            query.put("maxResults", request.maxResults);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
-        }
-
-        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
-        ));
-        return TeaModel.toModel(this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime), new PageListRobotResponse());
     }
 }
