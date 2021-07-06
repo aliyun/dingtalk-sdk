@@ -42,6 +42,13 @@ class SendOfficialAccountOTOMessageRequest extends Model
      * @var string
      */
     public $dingSuiteKey;
+
+    /**
+     * @description 服务窗帐号ID
+     *
+     * @var string
+     */
+    public $accountId;
     protected $_name = [
         'detail'             => 'detail',
         'bizId'              => 'bizId',
@@ -49,6 +56,7 @@ class SendOfficialAccountOTOMessageRequest extends Model
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
         'dingSuiteKey'       => 'dingSuiteKey',
+        'accountId'          => 'accountId',
     ];
 
     public function validate()
@@ -75,6 +83,9 @@ class SendOfficialAccountOTOMessageRequest extends Model
         }
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
+        }
+        if (null !== $this->accountId) {
+            $res['accountId'] = $this->accountId;
         }
 
         return $res;
@@ -105,6 +116,9 @@ class SendOfficialAccountOTOMessageRequest extends Model
         }
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
+        }
+        if (isset($map['accountId'])) {
+            $model->accountId = $map['accountId'];
         }
 
         return $model;

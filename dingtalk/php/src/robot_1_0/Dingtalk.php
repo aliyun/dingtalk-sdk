@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTORequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOResponse;
@@ -73,5 +76,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchSendOTOResponse::fromMap($this->doROARequest('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/oToMessages/batchSend', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchOTOQueryRequest $request
+     *
+     * @return BatchOTOQueryResponse
+     */
+    public function batchOTOQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchOTOQueryHeaders([]);
+
+        return $this->batchOTOQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchOTOQueryRequest $request
+     * @param BatchOTOQueryHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return BatchOTOQueryResponse
+     */
+    public function batchOTOQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            @$query['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->processQueryKey)) {
+            @$query['processQueryKey'] = $request->processQueryKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return BatchOTOQueryResponse::fromMap($this->doROARequest('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', '/v1.0/robot/oToMessages/readStatus', 'json', $req, $runtime));
     }
 }

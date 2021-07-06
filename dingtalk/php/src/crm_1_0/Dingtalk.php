@@ -240,6 +240,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->bizId)) {
             @$body['bizId'] = $request->bizId;
         }
+        if (!Utils::isUnset($request->accountId)) {
+            @$body['accountId'] = $request->accountId;
+        }
         if (!Utils::isUnset($request->dingIsvOrgId)) {
             @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
         }
@@ -410,6 +413,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->dingSuiteKey)) {
             @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->accountId)) {
+            @$body['accountId'] = $request->accountId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
