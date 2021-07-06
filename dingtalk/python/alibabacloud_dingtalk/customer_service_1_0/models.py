@@ -220,7 +220,7 @@ class CreateTicketResponse(TeaModel):
         return self
 
 
-class ParseMsgToDingTypeHeaders(TeaModel):
+class GetUserSourceListHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -253,18 +253,22 @@ class ParseMsgToDingTypeHeaders(TeaModel):
         return self
 
 
-class ParseMsgToDingTypeRequestBody(TeaModel):
+class GetUserSourceListRequest(TeaModel):
     def __init__(
         self,
-        msg_type: str = None,
-        content: str = None,
-        sub_type: str = None,
-        extra: str = None,
+        open_instance_id: str = None,
+        description: str = None,
+        org_name: str = None,
+        org_id: int = None,
+        corp_id: str = None,
+        production_type: int = None,
     ):
-        self.msg_type = msg_type
-        self.content = content
-        self.sub_type = sub_type
-        self.extra = extra
+        self.open_instance_id = open_instance_id
+        self.description = description
+        self.org_name = org_name
+        self.org_id = org_id
+        self.corp_id = corp_id
+        self.production_type = production_type
 
     def validate(self):
         pass
@@ -275,81 +279,53 @@ class ParseMsgToDingTypeRequestBody(TeaModel):
             return _map
 
         result = dict()
-        if self.msg_type is not None:
-            result['msgType'] = self.msg_type
-        if self.content is not None:
-            result['content'] = self.content
-        if self.sub_type is not None:
-            result['subType'] = self.sub_type
-        if self.extra is not None:
-            result['extra'] = self.extra
+        if self.open_instance_id is not None:
+            result['openInstanceId'] = self.open_instance_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.production_type is not None:
+            result['productionType'] = self.production_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('msgType') is not None:
-            self.msg_type = m.get('msgType')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('subType') is not None:
-            self.sub_type = m.get('subType')
-        if m.get('extra') is not None:
-            self.extra = m.get('extra')
+        if m.get('openInstanceId') is not None:
+            self.open_instance_id = m.get('openInstanceId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('productionType') is not None:
+            self.production_type = m.get('productionType')
         return self
 
 
-class ParseMsgToDingTypeRequest(TeaModel):
+class GetUserSourceListResponseBodyResult(TeaModel):
     def __init__(
         self,
-        body: List[ParseMsgToDingTypeRequestBody] = None,
+        id: int = None,
+        status: int = None,
+        description: str = None,
+        config: str = None,
+        vendor: str = None,
+        name: str = None,
     ):
-        # messageList
-        self.body = body
-
-    def validate(self):
-        if self.body:
-            for k in self.body:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['body'] = []
-        if self.body is not None:
-            for k in self.body:
-                result['body'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.body = []
-        if m.get('body') is not None:
-            for k in m.get('body'):
-                temp_model = ParseMsgToDingTypeRequestBody()
-                self.body.append(temp_model.from_map(k))
-        return self
-
-
-class ParseMsgToDingTypeResponseBodyResult(TeaModel):
-    def __init__(
-        self,
-        sub_type: str = None,
-        extra: str = None,
-        content: str = None,
-        msg_type: str = None,
-    ):
-        # subType
-        self.sub_type = sub_type
-        # extra
-        self.extra = extra
-        # content
-        self.content = content
-        # msgType
-        self.msg_type = msg_type
+        self.id = id
+        self.status = status
+        self.description = description
+        self.config = config
+        self.vendor = vendor
+        self.name = name
 
     def validate(self):
         pass
@@ -360,35 +336,42 @@ class ParseMsgToDingTypeResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.sub_type is not None:
-            result['subType'] = self.sub_type
-        if self.extra is not None:
-            result['extra'] = self.extra
-        if self.content is not None:
-            result['content'] = self.content
-        if self.msg_type is not None:
-            result['msgType'] = self.msg_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.description is not None:
+            result['description'] = self.description
+        if self.config is not None:
+            result['config'] = self.config
+        if self.vendor is not None:
+            result['vendor'] = self.vendor
+        if self.name is not None:
+            result['name'] = self.name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('subType') is not None:
-            self.sub_type = m.get('subType')
-        if m.get('extra') is not None:
-            self.extra = m.get('extra')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('msgType') is not None:
-            self.msg_type = m.get('msgType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('vendor') is not None:
+            self.vendor = m.get('vendor')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         return self
 
 
-class ParseMsgToDingTypeResponseBody(TeaModel):
+class GetUserSourceListResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[ParseMsgToDingTypeResponseBodyResult] = None,
+        result: List[GetUserSourceListResponseBodyResult] = None,
     ):
-        # result
         self.result = result
 
     def validate(self):
@@ -414,16 +397,16 @@ class ParseMsgToDingTypeResponseBody(TeaModel):
         self.result = []
         if m.get('result') is not None:
             for k in m.get('result'):
-                temp_model = ParseMsgToDingTypeResponseBodyResult()
+                temp_model = GetUserSourceListResponseBodyResult()
                 self.result.append(temp_model.from_map(k))
         return self
 
 
-class ParseMsgToDingTypeResponse(TeaModel):
+class GetUserSourceListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: ParseMsgToDingTypeResponseBody = None,
+        body: GetUserSourceListResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -451,7 +434,246 @@ class ParseMsgToDingTypeResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = ParseMsgToDingTypeResponseBody()
+            temp_model = GetUserSourceListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PageListRobotHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageListRobotRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        open_instance_id: str = None,
+        production_type: int = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 查询的企业Id
+        self.corp_id = corp_id
+        # 多实例ID
+        self.open_instance_id = open_instance_id
+        # 产品类型
+        self.production_type = production_type
+        # 用来标记当前开始读取的位置，置空表示从头开始
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.open_instance_id is not None:
+            result['openInstanceId'] = self.open_instance_id
+        if self.production_type is not None:
+            result['productionType'] = self.production_type
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('openInstanceId') is not None:
+            self.open_instance_id = m.get('openInstanceId')
+        if m.get('productionType') is not None:
+            self.production_type = m.get('productionType')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class PageListRobotResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+        app_key: str = None,
+        account_id: int = None,
+        status: int = None,
+    ):
+        # 机器人自增Id
+        self.id = id
+        # 机器人名称
+        self.name = name
+        # 机器人APPKEY
+        self.app_key = app_key
+        # 机器人所在租户ID
+        self.account_id = account_id
+        # 机器人状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class PageListRobotResponseBody(TeaModel):
+    def __init__(
+        self,
+        total: int = None,
+        next_cursor: int = None,
+        has_more: bool = None,
+        list: List[PageListRobotResponseBodyList] = None,
+    ):
+        # 查询结果总数
+        self.total = total
+        # 下一次查询起始游标
+        self.next_cursor = next_cursor
+        # 是否有更多结果
+        self.has_more = has_more
+        # 查询结果列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total is not None:
+            result['total'] = self.total
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PageListRobotResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class PageListRobotResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PageListRobotResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PageListRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1275,464 +1497,6 @@ class PageListTicketResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = PageListTicketResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class GetUserSourceListHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetUserSourceListRequest(TeaModel):
-    def __init__(
-        self,
-        open_instance_id: str = None,
-        description: str = None,
-        org_name: str = None,
-        org_id: int = None,
-        corp_id: str = None,
-        production_type: int = None,
-    ):
-        self.open_instance_id = open_instance_id
-        self.description = description
-        self.org_name = org_name
-        self.org_id = org_id
-        self.corp_id = corp_id
-        self.production_type = production_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.open_instance_id is not None:
-            result['openInstanceId'] = self.open_instance_id
-        if self.description is not None:
-            result['description'] = self.description
-        if self.org_name is not None:
-            result['orgName'] = self.org_name
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.production_type is not None:
-            result['productionType'] = self.production_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('openInstanceId') is not None:
-            self.open_instance_id = m.get('openInstanceId')
-        if m.get('description') is not None:
-            self.description = m.get('description')
-        if m.get('orgName') is not None:
-            self.org_name = m.get('orgName')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('productionType') is not None:
-            self.production_type = m.get('productionType')
-        return self
-
-
-class GetUserSourceListResponseBodyResult(TeaModel):
-    def __init__(
-        self,
-        id: int = None,
-        status: int = None,
-        description: str = None,
-        config: str = None,
-        vendor: str = None,
-        name: str = None,
-    ):
-        self.id = id
-        self.status = status
-        self.description = description
-        self.config = config
-        self.vendor = vendor
-        self.name = name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.status is not None:
-            result['status'] = self.status
-        if self.description is not None:
-            result['description'] = self.description
-        if self.config is not None:
-            result['config'] = self.config
-        if self.vendor is not None:
-            result['vendor'] = self.vendor
-        if self.name is not None:
-            result['name'] = self.name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('description') is not None:
-            self.description = m.get('description')
-        if m.get('config') is not None:
-            self.config = m.get('config')
-        if m.get('vendor') is not None:
-            self.vendor = m.get('vendor')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        return self
-
-
-class GetUserSourceListResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: List[GetUserSourceListResponseBodyResult] = None,
-    ):
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            for k in self.result:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GetUserSourceListResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
-        return self
-
-
-class GetUserSourceListResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetUserSourceListResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetUserSourceListResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class PageListRobotHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class PageListRobotRequest(TeaModel):
-    def __init__(
-        self,
-        corp_id: str = None,
-        open_instance_id: str = None,
-        production_type: int = None,
-        next_token: int = None,
-        max_results: int = None,
-    ):
-        # 查询的企业Id
-        self.corp_id = corp_id
-        # 多实例ID
-        self.open_instance_id = open_instance_id
-        # 产品类型
-        self.production_type = production_type
-        # 用来标记当前开始读取的位置，置空表示从头开始
-        self.next_token = next_token
-        # 本次读取的最大数据记录数量
-        self.max_results = max_results
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.open_instance_id is not None:
-            result['openInstanceId'] = self.open_instance_id
-        if self.production_type is not None:
-            result['productionType'] = self.production_type
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('openInstanceId') is not None:
-            self.open_instance_id = m.get('openInstanceId')
-        if m.get('productionType') is not None:
-            self.production_type = m.get('productionType')
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
-        return self
-
-
-class PageListRobotResponseBodyList(TeaModel):
-    def __init__(
-        self,
-        id: int = None,
-        name: str = None,
-        app_key: str = None,
-        account_id: int = None,
-        status: int = None,
-    ):
-        # 机器人自增Id
-        self.id = id
-        # 机器人名称
-        self.name = name
-        # 机器人APPKEY
-        self.app_key = app_key
-        # 机器人所在租户ID
-        self.account_id = account_id
-        # 机器人状态
-        self.status = status
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
-        if self.app_key is not None:
-            result['appKey'] = self.app_key
-        if self.account_id is not None:
-            result['accountId'] = self.account_id
-        if self.status is not None:
-            result['status'] = self.status
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('appKey') is not None:
-            self.app_key = m.get('appKey')
-        if m.get('accountId') is not None:
-            self.account_id = m.get('accountId')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        return self
-
-
-class PageListRobotResponseBody(TeaModel):
-    def __init__(
-        self,
-        total: int = None,
-        next_cursor: int = None,
-        has_more: bool = None,
-        list: List[PageListRobotResponseBodyList] = None,
-    ):
-        # 查询结果总数
-        self.total = total
-        # 下一次查询起始游标
-        self.next_cursor = next_cursor
-        # 是否有更多结果
-        self.has_more = has_more
-        # 查询结果列表
-        self.list = list
-
-    def validate(self):
-        if self.list:
-            for k in self.list:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.total is not None:
-            result['total'] = self.total
-        if self.next_cursor is not None:
-            result['nextCursor'] = self.next_cursor
-        if self.has_more is not None:
-            result['hasMore'] = self.has_more
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('total') is not None:
-            self.total = m.get('total')
-        if m.get('nextCursor') is not None:
-            self.next_cursor = m.get('nextCursor')
-        if m.get('hasMore') is not None:
-            self.has_more = m.get('hasMore')
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = PageListRobotResponseBodyList()
-                self.list.append(temp_model.from_map(k))
-        return self
-
-
-class PageListRobotResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: PageListRobotResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = PageListRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

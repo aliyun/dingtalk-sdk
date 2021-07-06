@@ -4029,3 +4029,354 @@ class ListCrmPersonalCustomersResponse(TeaModel):
         return self
 
 
+class CreateCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCustomerRequestContacts(TeaModel):
+    def __init__(
+        self,
+        data: Dict[str, Any] = None,
+        extend_data: Dict[str, Any] = None,
+    ):
+        # 联系人表单数据
+        self.data = data
+        # 联系人扩展数据
+        self.extend_data = extend_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.extend_data is not None:
+            result['extendData'] = self.extend_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('extendData') is not None:
+            self.extend_data = m.get('extendData')
+        return self
+
+
+class CreateCustomerRequestPermission(TeaModel):
+    def __init__(
+        self,
+        owner_staff_ids: List[str] = None,
+        participant_staff_ids: List[str] = None,
+    ):
+        # 负责人
+        self.owner_staff_ids = owner_staff_ids
+        # 协同人
+        self.participant_staff_ids = participant_staff_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.owner_staff_ids is not None:
+            result['ownerStaffIds'] = self.owner_staff_ids
+        if self.participant_staff_ids is not None:
+            result['participantStaffIds'] = self.participant_staff_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ownerStaffIds') is not None:
+            self.owner_staff_ids = m.get('ownerStaffIds')
+        if m.get('participantStaffIds') is not None:
+            self.participant_staff_ids = m.get('participantStaffIds')
+        return self
+
+
+class CreateCustomerRequestSaveOption(TeaModel):
+    def __init__(
+        self,
+        subscribe_policy: int = None,
+        throw_exception_while_saving_contact_failed: bool = None,
+        customer_existed_policy: str = None,
+    ):
+        # 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
+        self.subscribe_policy = subscribe_policy
+        # 保存联系人失败时是否阻断
+        self.throw_exception_while_saving_contact_failed = throw_exception_while_saving_contact_failed
+        # 客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败
+        self.customer_existed_policy = customer_existed_policy
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.subscribe_policy is not None:
+            result['subscribePolicy'] = self.subscribe_policy
+        if self.throw_exception_while_saving_contact_failed is not None:
+            result['throwExceptionWhileSavingContactFailed'] = self.throw_exception_while_saving_contact_failed
+        if self.customer_existed_policy is not None:
+            result['customerExistedPolicy'] = self.customer_existed_policy
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('subscribePolicy') is not None:
+            self.subscribe_policy = m.get('subscribePolicy')
+        if m.get('throwExceptionWhileSavingContactFailed') is not None:
+            self.throw_exception_while_saving_contact_failed = m.get('throwExceptionWhileSavingContactFailed')
+        if m.get('customerExistedPolicy') is not None:
+            self.customer_existed_policy = m.get('customerExistedPolicy')
+        return self
+
+
+class CreateCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        object_type: str = None,
+        instance_id: str = None,
+        creator_user_id: str = None,
+        data: Dict[str, Any] = None,
+        extend_data: Dict[str, Any] = None,
+        contacts: List[CreateCustomerRequestContacts] = None,
+        permission: CreateCustomerRequestPermission = None,
+        save_option: CreateCustomerRequestSaveOption = None,
+    ):
+        # 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
+        self.object_type = object_type
+        # 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
+        self.instance_id = instance_id
+        # 创建人的userId
+        self.creator_user_id = creator_user_id
+        # 客户实例数据（表单数据）
+        self.data = data
+        # 客户实例扩展数据
+        self.extend_data = extend_data
+        # 关联联系人数据
+        self.contacts = contacts
+        # 权限
+        self.permission = permission
+        # 保存配置项
+        self.save_option = save_option
+
+    def validate(self):
+        if self.contacts:
+            for k in self.contacts:
+                if k:
+                    k.validate()
+        if self.permission:
+            self.permission.validate()
+        if self.save_option:
+            self.save_option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.data is not None:
+            result['data'] = self.data
+        if self.extend_data is not None:
+            result['extendData'] = self.extend_data
+        result['contacts'] = []
+        if self.contacts is not None:
+            for k in self.contacts:
+                result['contacts'].append(k.to_map() if k else None)
+        if self.permission is not None:
+            result['permission'] = self.permission.to_map()
+        if self.save_option is not None:
+            result['saveOption'] = self.save_option.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('extendData') is not None:
+            self.extend_data = m.get('extendData')
+        self.contacts = []
+        if m.get('contacts') is not None:
+            for k in m.get('contacts'):
+                temp_model = CreateCustomerRequestContacts()
+                self.contacts.append(temp_model.from_map(k))
+        if m.get('permission') is not None:
+            temp_model = CreateCustomerRequestPermission()
+            self.permission = temp_model.from_map(m['permission'])
+        if m.get('saveOption') is not None:
+            temp_model = CreateCustomerRequestSaveOption()
+            self.save_option = temp_model.from_map(m['saveOption'])
+        return self
+
+
+class CreateCustomerResponseBodyContacts(TeaModel):
+    def __init__(
+        self,
+        contact_instance_id: str = None,
+    ):
+        # 联系人实例id
+        self.contact_instance_id = contact_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contact_instance_id is not None:
+            result['contactInstanceId'] = self.contact_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contactInstanceId') is not None:
+            self.contact_instance_id = m.get('contactInstanceId')
+        return self
+
+
+class CreateCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        customer_instance_id: str = None,
+        object_type: str = None,
+        contacts: List[CreateCustomerResponseBodyContacts] = None,
+    ):
+        # 客户实例id
+        self.customer_instance_id = customer_instance_id
+        # 保存客户类型
+        self.object_type = object_type
+        # 联系人保存结果
+        self.contacts = contacts
+
+    def validate(self):
+        if self.contacts:
+            for k in self.contacts:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_instance_id is not None:
+            result['customerInstanceId'] = self.customer_instance_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        result['contacts'] = []
+        if self.contacts is not None:
+            for k in self.contacts:
+                result['contacts'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerInstanceId') is not None:
+            self.customer_instance_id = m.get('customerInstanceId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        self.contacts = []
+        if m.get('contacts') is not None:
+            for k in m.get('contacts'):
+                temp_model = CreateCustomerResponseBodyContacts()
+                self.contacts.append(temp_model.from_map(k))
+        return self
+
+
+class CreateCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

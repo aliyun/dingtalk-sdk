@@ -23,6 +23,60 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def query_user_info(
+        self,
+        user_id: str,
+    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserInfoHeaders()
+        return self.query_user_info_with_options(user_id, headers, runtime)
+
+    async def query_user_info_async(
+        self,
+        user_id: str,
+    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserInfoHeaders()
+        return await self.query_user_info_with_options_async(user_id, headers, runtime)
+
+    def query_user_info_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserInfoResponse(),
+            self.do_roarequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}', 'json', req, runtime)
+        )
+
+    async def query_user_info_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserInfoResponse(),
+            await self.do_roarequest_async('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}', 'json', req, runtime)
+        )
+
     def query_all_member_by_dept(
         self,
         dept_id: str,
@@ -165,6 +219,60 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse(),
             await self.do_roarequest_async('QueryAllMemberByGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups/{group_id}/members', 'json', req, runtime)
+        )
+
+    def query_user_roles(
+        self,
+        user_id: str,
+    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserRolesHeaders()
+        return self.query_user_roles_with_options(user_id, headers, runtime)
+
+    async def query_user_roles_async(
+        self,
+        user_id: str,
+    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserRolesHeaders()
+        return await self.query_user_roles_with_options_async(user_id, headers, runtime)
+
+    def query_user_roles_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserRolesResponse(),
+            self.do_roarequest('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/roles', 'json', req, runtime)
+        )
+
+    async def query_user_roles_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserRolesResponse(),
+            await self.do_roarequest_async('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/roles', 'json', req, runtime)
         )
 
     def query_all_group(
