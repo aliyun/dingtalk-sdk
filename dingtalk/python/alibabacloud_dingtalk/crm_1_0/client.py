@@ -275,6 +275,8 @@ class Client(OpenApiClient):
             body['detail'] = request.detail
         if not UtilClient.is_unset(request.biz_id):
             body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         if not UtilClient.is_unset(request.ding_org_id):
@@ -309,6 +311,8 @@ class Client(OpenApiClient):
             body['detail'] = request.detail
         if not UtilClient.is_unset(request.biz_id):
             body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         if not UtilClient.is_unset(request.ding_org_id):
@@ -517,6 +521,8 @@ class Client(OpenApiClient):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_suite_key):
             body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -551,6 +557,8 @@ class Client(OpenApiClient):
             body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_suite_key):
             body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -98,3 +98,71 @@ class Client(OpenApiClient):
             dingtalkrobot__1__0_models.BatchSendOTOResponse(),
             await self.do_roarequest_async('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/oToMessages/batchSend', 'json', req, runtime)
         )
+
+    def batch_otoquery(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
+        return self.batch_otoquery_with_options(request, headers, runtime)
+
+    async def batch_otoquery_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
+        return await self.batch_otoquery_with_options_async(request, headers, runtime)
+
+    def batch_otoquery_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+        headers: dingtalkrobot__1__0_models.BatchOTOQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.process_query_key):
+            query['processQueryKey'] = request.process_query_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
+            self.do_roarequest('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
+        )
+
+    async def batch_otoquery_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+        headers: dingtalkrobot__1__0_models.BatchOTOQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.process_query_key):
+            query['processQueryKey'] = request.process_query_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
+            await self.do_roarequest_async('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
+        )

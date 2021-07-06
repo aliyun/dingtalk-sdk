@@ -1340,6 +1340,7 @@ class BatchSendOfficialAccountOTOMessageRequest(TeaModel):
         self,
         detail: BatchSendOfficialAccountOTOMessageRequestDetail = None,
         biz_id: str = None,
+        account_id: str = None,
         ding_isv_org_id: int = None,
         ding_org_id: int = None,
         ding_token_grant_type: int = None,
@@ -1349,6 +1350,8 @@ class BatchSendOfficialAccountOTOMessageRequest(TeaModel):
         self.detail = detail
         # 服务窗授权的调用方标识，可空
         self.biz_id = biz_id
+        # 服务窗帐号ID
+        self.account_id = account_id
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_org_id = ding_org_id
         self.ding_token_grant_type = ding_token_grant_type
@@ -1368,6 +1371,8 @@ class BatchSendOfficialAccountOTOMessageRequest(TeaModel):
             result['detail'] = self.detail.to_map()
         if self.biz_id is not None:
             result['bizId'] = self.biz_id
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
         if self.ding_org_id is not None:
@@ -1385,6 +1390,8 @@ class BatchSendOfficialAccountOTOMessageRequest(TeaModel):
             self.detail = temp_model.from_map(m['detail'])
         if m.get('bizId') is not None:
             self.biz_id = m.get('bizId')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
         if m.get('dingIsvOrgId') is not None:
             self.ding_isv_org_id = m.get('dingIsvOrgId')
         if m.get('dingOrgId') is not None:
@@ -2372,6 +2379,7 @@ class SendOfficialAccountOTOMessageRequest(TeaModel):
         ding_isv_org_id: int = None,
         ding_org_id: int = None,
         ding_suite_key: str = None,
+        account_id: str = None,
     ):
         # 消息详情
         self.detail = detail
@@ -2381,6 +2389,8 @@ class SendOfficialAccountOTOMessageRequest(TeaModel):
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_org_id = ding_org_id
         self.ding_suite_key = ding_suite_key
+        # 服务窗帐号ID
+        self.account_id = account_id
 
     def validate(self):
         if self.detail:
@@ -2404,6 +2414,8 @@ class SendOfficialAccountOTOMessageRequest(TeaModel):
             result['dingOrgId'] = self.ding_org_id
         if self.ding_suite_key is not None:
             result['dingSuiteKey'] = self.ding_suite_key
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2421,6 +2433,8 @@ class SendOfficialAccountOTOMessageRequest(TeaModel):
             self.ding_org_id = m.get('dingOrgId')
         if m.get('dingSuiteKey') is not None:
             self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
         return self
 
 
