@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDoctorsResponseBody\content;
+namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\content;
 
 use AlibabaCloud\Tea\Model;
 
-class userProb extends Model
+class job extends Model
 {
     /**
      * @description 标签Code
@@ -68,7 +68,7 @@ class userProb extends Model
     /**
      * @param array $map
      *
-     * @return userProb
+     * @return job
      */
     public static function fromMap($map = [])
     {

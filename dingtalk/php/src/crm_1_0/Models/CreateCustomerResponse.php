@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ParseMsgToDingTypeResponse extends Model
+class CreateCustomerResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class ParseMsgToDingTypeResponse extends Model
     public $headers;
 
     /**
-     * @var ParseMsgToDingTypeResponseBody
+     * @var CreateCustomerResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class ParseMsgToDingTypeResponse extends Model
     /**
      * @param array $map
      *
-     * @return ParseMsgToDingTypeResponse
+     * @return CreateCustomerResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class ParseMsgToDingTypeResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = ParseMsgToDingTypeResponseBody::fromMap($map['body']);
+            $model->body = CreateCustomerResponseBody::fromMap($map['body']);
         }
 
         return $model;

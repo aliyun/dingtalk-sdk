@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceResponse;
@@ -703,5 +706,68 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListCrmPersonalCustomersResponse::fromMap($this->doROARequest('ListCrmPersonalCustomers', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers/batchQuery', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateCustomerRequest $request
+     *
+     * @return CreateCustomerResponse
+     */
+    public function createCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCustomerHeaders([]);
+
+        return $this->createCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateCustomerRequest $request
+     * @param CreateCustomerHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateCustomerResponse
+     */
+    public function createCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->objectType)) {
+            @$body['objectType'] = $request->objectType;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->creatorUserId)) {
+            @$body['creatorUserId'] = $request->creatorUserId;
+        }
+        if (!Utils::isUnset($request->data)) {
+            @$body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->contacts)) {
+            @$body['contacts'] = $request->contacts;
+        }
+        if (!Utils::isUnset($request->permission)) {
+            @$body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->saveOption)) {
+            @$body['saveOption'] = $request->saveOption;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateCustomerResponse::fromMap($this->doROARequest('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers', 'json', $req, $runtime));
     }
 }

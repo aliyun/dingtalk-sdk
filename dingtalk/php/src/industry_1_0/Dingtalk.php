@@ -32,6 +32,10 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -46,6 +50,42 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return QueryUserInfoResponse
+     */
+    public function queryUserInfo($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserInfoHeaders([]);
+
+        return $this->queryUserInfoWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $userId
+     * @param QueryUserInfoHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return QueryUserInfoResponse
+     */
+    public function queryUserInfoWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryUserInfoResponse::fromMap($this->doROARequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -140,6 +180,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryAllMemberByGroupResponse::fromMap($this->doROARequest('QueryAllMemberByGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/groups/' . $groupId . '/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return QueryUserRolesResponse
+     */
+    public function queryUserRoles($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserRolesHeaders([]);
+
+        return $this->queryUserRolesWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $userId
+     * @param QueryUserRolesHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return QueryUserRolesResponse
+     */
+    public function queryUserRolesWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryUserRolesResponse::fromMap($this->doROARequest('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/roles', 'json', $req, $runtime));
     }
 
     /**

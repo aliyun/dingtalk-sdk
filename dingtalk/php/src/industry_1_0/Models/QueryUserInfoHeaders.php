@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcustomer_service_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ParseMsgToDingTypeHeaders extends Model
+class QueryUserInfoHeaders extends Model
 {
     public $commonHeaders;
 
@@ -38,7 +38,7 @@ class ParseMsgToDingTypeHeaders extends Model
     /**
      * @param array $map
      *
-     * @return ParseMsgToDingTypeHeaders
+     * @return QueryUserInfoHeaders
      */
     public static function fromMap($map = [])
     {
