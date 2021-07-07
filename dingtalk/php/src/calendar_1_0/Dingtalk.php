@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponse;
@@ -302,6 +305,59 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetScheduleResponse::fromMap($this->doROARequest('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/getSchedule', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $userId
+     * @param ConvertLegacyEventIdRequest $request
+     *
+     * @return ConvertLegacyEventIdResponse
+     */
+    public function convertLegacyEventId($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConvertLegacyEventIdHeaders([]);
+
+        return $this->convertLegacyEventIdWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $userId
+     * @param ConvertLegacyEventIdRequest $request
+     * @param ConvertLegacyEventIdHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ConvertLegacyEventIdResponse
+     */
+    public function convertLegacyEventIdWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->legacyEventIds)) {
+            @$body['legacyEventIds'] = $request->legacyEventIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->dingOrgId)) {
+            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
+        }
+        if (!Utils::isUnset($headers->dingUid)) {
+            @$realHeaders['dingUid'] = $headers->dingUid;
+        }
+        if (!Utils::isUnset($headers->dingAccessTokenType)) {
+            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ConvertLegacyEventIdResponse::fromMap($this->doROARequest('ConvertLegacyEventId', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/legacyEventIds/convert', 'json', $req, $runtime));
     }
 
     /**
