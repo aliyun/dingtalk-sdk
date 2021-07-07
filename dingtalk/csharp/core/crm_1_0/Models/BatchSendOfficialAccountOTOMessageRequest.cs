@@ -124,6 +124,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string BizId { get; set; }
 
+        /// <summary>
+        /// 服务窗帐号ID
+        /// </summary>
+        [NameInMap("accountId")]
+        [Validation(Required=false)]
+        public string AccountId { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }

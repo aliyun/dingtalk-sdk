@@ -146,23 +146,48 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
             return TeaModel.ToObject<CreateTicketResponse>(await DoROARequestAsync("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/tickets", "json", req, runtime));
         }
 
-        public ParseMsgToDingTypeResponse ParseMsgToDingType(ParseMsgToDingTypeRequest request)
+        public GetUserSourceListResponse GetUserSourceList(GetUserSourceListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ParseMsgToDingTypeHeaders headers = new ParseMsgToDingTypeHeaders();
-            return ParseMsgToDingTypeWithOptions(request, headers, runtime);
+            GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
+            return GetUserSourceListWithOptions(request, headers, runtime);
         }
 
-        public async Task<ParseMsgToDingTypeResponse> ParseMsgToDingTypeAsync(ParseMsgToDingTypeRequest request)
+        public async Task<GetUserSourceListResponse> GetUserSourceListAsync(GetUserSourceListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ParseMsgToDingTypeHeaders headers = new ParseMsgToDingTypeHeaders();
-            return await ParseMsgToDingTypeWithOptionsAsync(request, headers, runtime);
+            GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
+            return await GetUserSourceListWithOptionsAsync(request, headers, runtime);
         }
 
-        public ParseMsgToDingTypeResponse ParseMsgToDingTypeWithOptions(ParseMsgToDingTypeRequest request, ParseMsgToDingTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetUserSourceListResponse GetUserSourceListWithOptions(GetUserSourceListRequest request, GetUserSourceListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
+            {
+                query["openInstanceId"] = request.OpenInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                query["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
+            {
+                query["orgName"] = request.OrgName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgId))
+            {
+                query["orgId"] = request.OrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
+            {
+                query["productionType"] = request.ProductionType;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -175,14 +200,39 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ParseMsgToDingTypeResponse>(DoROARequest("ParseMsgToDingType", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/messages/parse", "json", req, runtime));
+            return TeaModel.ToObject<GetUserSourceListResponse>(DoROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime));
         }
 
-        public async Task<ParseMsgToDingTypeResponse> ParseMsgToDingTypeWithOptionsAsync(ParseMsgToDingTypeRequest request, ParseMsgToDingTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetUserSourceListResponse> GetUserSourceListWithOptionsAsync(GetUserSourceListRequest request, GetUserSourceListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
+            {
+                query["openInstanceId"] = request.OpenInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                query["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
+            {
+                query["orgName"] = request.OrgName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgId))
+            {
+                query["orgId"] = request.OrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
+            {
+                query["productionType"] = request.ProductionType;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -195,9 +245,105 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ParseMsgToDingTypeResponse>(await DoROARequestAsync("ParseMsgToDingType", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/messages/parse", "json", req, runtime));
+            return TeaModel.ToObject<GetUserSourceListResponse>(await DoROARequestAsync("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime));
+        }
+
+        public PageListRobotResponse PageListRobot(PageListRobotRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PageListRobotHeaders headers = new PageListRobotHeaders();
+            return PageListRobotWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PageListRobotResponse> PageListRobotAsync(PageListRobotRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PageListRobotHeaders headers = new PageListRobotHeaders();
+            return await PageListRobotWithOptionsAsync(request, headers, runtime);
+        }
+
+        public PageListRobotResponse PageListRobotWithOptions(PageListRobotRequest request, PageListRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
+            {
+                query["openInstanceId"] = request.OpenInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
+            {
+                query["productionType"] = request.ProductionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<PageListRobotResponse>(DoROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime));
+        }
+
+        public async Task<PageListRobotResponse> PageListRobotWithOptionsAsync(PageListRobotRequest request, PageListRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
+            {
+                query["openInstanceId"] = request.OpenInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
+            {
+                query["productionType"] = request.ProductionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<PageListRobotResponse>(await DoROARequestAsync("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime));
         }
 
         public PageListActionResponse PageListAction(string ticketId, PageListActionRequest request)
@@ -542,206 +688,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<PageListTicketResponse>(await DoROARequestAsync("PageListTicket", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/tickets", "json", req, runtime));
-        }
-
-        public GetUserSourceListResponse GetUserSourceList(GetUserSourceListRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
-            return GetUserSourceListWithOptions(request, headers, runtime);
-        }
-
-        public async Task<GetUserSourceListResponse> GetUserSourceListAsync(GetUserSourceListRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
-            return await GetUserSourceListWithOptionsAsync(request, headers, runtime);
-        }
-
-        public GetUserSourceListResponse GetUserSourceListWithOptions(GetUserSourceListRequest request, GetUserSourceListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
-            {
-                query["openInstanceId"] = request.OpenInstanceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
-            {
-                query["description"] = request.Description;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
-            {
-                query["orgName"] = request.OrgName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgId))
-            {
-                query["orgId"] = request.OrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
-            {
-                query["productionType"] = request.ProductionType;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetUserSourceListResponse>(DoROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime));
-        }
-
-        public async Task<GetUserSourceListResponse> GetUserSourceListWithOptionsAsync(GetUserSourceListRequest request, GetUserSourceListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
-            {
-                query["openInstanceId"] = request.OpenInstanceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
-            {
-                query["description"] = request.Description;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
-            {
-                query["orgName"] = request.OrgName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgId))
-            {
-                query["orgId"] = request.OrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
-            {
-                query["productionType"] = request.ProductionType;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetUserSourceListResponse>(await DoROARequestAsync("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime));
-        }
-
-        public PageListRobotResponse PageListRobot(PageListRobotRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PageListRobotHeaders headers = new PageListRobotHeaders();
-            return PageListRobotWithOptions(request, headers, runtime);
-        }
-
-        public async Task<PageListRobotResponse> PageListRobotAsync(PageListRobotRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PageListRobotHeaders headers = new PageListRobotHeaders();
-            return await PageListRobotWithOptionsAsync(request, headers, runtime);
-        }
-
-        public PageListRobotResponse PageListRobotWithOptions(PageListRobotRequest request, PageListRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
-            {
-                query["openInstanceId"] = request.OpenInstanceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
-            {
-                query["productionType"] = request.ProductionType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<PageListRobotResponse>(DoROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime));
-        }
-
-        public async Task<PageListRobotResponse> PageListRobotWithOptionsAsync(PageListRobotRequest request, PageListRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
-            {
-                query["openInstanceId"] = request.OpenInstanceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductionType))
-            {
-                query["productionType"] = request.ProductionType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<PageListRobotResponse>(await DoROARequestAsync("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime));
         }
 
     }

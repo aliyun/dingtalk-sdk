@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
-    public class QueryAllMemberByDeptHeaders : TeaModel {
+    public class QueryUserRolesHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

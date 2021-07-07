@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryAllMemberByDeptResponseBodyContent> Content { get; set; }
         public class QueryAllMemberByDeptResponseBodyContent : TeaModel {
             /// <summary>
-            /// 钉钉staffId
-            /// </summary>
-            [NameInMap("staffId")]
-            [Validation(Required=false)]
-            public string StaffId { get; set; }
-
-            /// <summary>
             /// 用户Id
             /// </summary>
             [NameInMap("uid")]
@@ -38,74 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string UserName { get; set; }
 
             /// <summary>
-            /// 职称标签
-            /// </summary>
-            [NameInMap("job")]
-            [Validation(Required=false)]
-            public QueryAllMemberByDeptResponseBodyContentJob Job { get; set; }
-            public class QueryAllMemberByDeptResponseBodyContentJob : TeaModel {
-                [NameInMap("code")]
-                [Validation(Required=false)]
-                public string Code { get; set; }
-                [NameInMap("bizType")]
-                [Validation(Required=false)]
-                public string BizType { get; set; }
-                [NameInMap("category")]
-                [Validation(Required=false)]
-                public string Category { get; set; }
-                [NameInMap("displayName")]
-                [Validation(Required=false)]
-                public string DisplayName { get; set; }
-            };
-
-            /// <summary>
             /// 工号
             /// </summary>
             [NameInMap("jobNum")]
             [Validation(Required=false)]
             public string JobNum { get; set; }
-
-            /// <summary>
-            /// 工作状态标签
-            /// </summary>
-            [NameInMap("jobStatus")]
-            [Validation(Required=false)]
-            public QueryAllMemberByDeptResponseBodyContentJobStatus JobStatus { get; set; }
-            public class QueryAllMemberByDeptResponseBodyContentJobStatus : TeaModel {
-                [NameInMap("code")]
-                [Validation(Required=false)]
-                public string Code { get; set; }
-                [NameInMap("bizType")]
-                [Validation(Required=false)]
-                public string BizType { get; set; }
-                [NameInMap("category")]
-                [Validation(Required=false)]
-                public string Category { get; set; }
-                [NameInMap("displayName")]
-                [Validation(Required=false)]
-                public string DisplayName { get; set; }
-            };
-
-            /// <summary>
-            /// 人员属性标签
-            /// </summary>
-            [NameInMap("userProb")]
-            [Validation(Required=false)]
-            public QueryAllMemberByDeptResponseBodyContentUserProb UserProb { get; set; }
-            public class QueryAllMemberByDeptResponseBodyContentUserProb : TeaModel {
-                [NameInMap("code")]
-                [Validation(Required=false)]
-                public string Code { get; set; }
-                [NameInMap("bizType")]
-                [Validation(Required=false)]
-                public string BizType { get; set; }
-                [NameInMap("category")]
-                [Validation(Required=false)]
-                public string Category { get; set; }
-                [NameInMap("displayName")]
-                [Validation(Required=false)]
-                public string DisplayName { get; set; }
-            };
 
         }
 
