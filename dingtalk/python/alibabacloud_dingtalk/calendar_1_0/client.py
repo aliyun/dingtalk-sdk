@@ -413,6 +413,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/getSchedule', 'json', req, runtime)
         )
 
+    def convert_legacy_event_id(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.ConvertLegacyEventIdRequest,
+    ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders()
+        return self.convert_legacy_event_id_with_options(user_id, request, headers, runtime)
+
+    async def convert_legacy_event_id_async(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.ConvertLegacyEventIdRequest,
+    ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders()
+        return await self.convert_legacy_event_id_with_options_async(user_id, request, headers, runtime)
+
+    def convert_legacy_event_id_with_options(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.ConvertLegacyEventIdRequest,
+        headers: dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.legacy_event_ids):
+            body['legacyEventIds'] = request.legacy_event_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.ding_org_id):
+            real_headers['dingOrgId'] = headers.ding_org_id
+        if not UtilClient.is_unset(headers.ding_uid):
+            real_headers['dingUid'] = headers.ding_uid
+        if not UtilClient.is_unset(headers.ding_access_token_type):
+            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse(),
+            self.do_roarequest('ConvertLegacyEventId', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/legacyEventIds/convert', 'json', req, runtime)
+        )
+
+    async def convert_legacy_event_id_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkcalendar__1__0_models.ConvertLegacyEventIdRequest,
+        headers: dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.legacy_event_ids):
+            body['legacyEventIds'] = request.legacy_event_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.ding_org_id):
+            real_headers['dingOrgId'] = headers.ding_org_id
+        if not UtilClient.is_unset(headers.ding_uid):
+            real_headers['dingUid'] = headers.ding_uid
+        if not UtilClient.is_unset(headers.ding_access_token_type):
+            real_headers['dingAccessTokenType'] = headers.ding_access_token_type
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse(),
+            await self.do_roarequest_async('ConvertLegacyEventId', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/legacyEventIds/convert', 'json', req, runtime)
+        )
+
     def remove_attendee(
         self,
         user_id: str,
