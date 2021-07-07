@@ -203,6 +203,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetSchedule", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/getSchedule", "json", req, runtime), new GetScheduleResponse());
     }
 
+    public ConvertLegacyEventIdResponse convertLegacyEventId(String userId, ConvertLegacyEventIdRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ConvertLegacyEventIdHeaders headers = new ConvertLegacyEventIdHeaders();
+        return this.convertLegacyEventIdWithOptions(userId, request, headers, runtime);
+    }
+
+    public ConvertLegacyEventIdResponse convertLegacyEventIdWithOptions(String userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.legacyEventIds)) {
+            body.put("legacyEventIds", request.legacyEventIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingOrgId)) {
+            realHeaders.put("dingOrgId", headers.dingOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingUid)) {
+            realHeaders.put("dingUid", headers.dingUid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingAccessTokenType)) {
+            realHeaders.put("dingAccessTokenType", headers.dingAccessTokenType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/legacyEventIds/convert", "json", req, runtime), new ConvertLegacyEventIdResponse());
+    }
+
     public RemoveAttendeeResponse removeAttendee(String userId, String calendarId, String eventId, RemoveAttendeeRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();

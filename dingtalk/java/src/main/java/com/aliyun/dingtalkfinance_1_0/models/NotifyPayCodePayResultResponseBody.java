@@ -1,0 +1,24 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkfinance_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class NotifyPayCodePayResultResponseBody extends TeaModel {
+    // 处理结果
+    @NameInMap("result")
+    public String result;
+
+    public static NotifyPayCodePayResultResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        NotifyPayCodePayResultResponseBody self = new NotifyPayCodePayResultResponseBody();
+        return TeaModel.build(map, self);
+    }
+
+    public NotifyPayCodePayResultResponseBody setResult(String result) {
+        this.result = result;
+        return this;
+    }
+    public String getResult() {
+        return this.result;
+    }
+
+}
