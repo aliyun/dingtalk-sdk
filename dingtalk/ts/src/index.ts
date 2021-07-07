@@ -6,6 +6,7 @@ import * as calendar_1_0 from './calendar_1_0/client';
 import * as conference_1_0 from './conference_1_0/client';
 import * as connector_1_0 from './connector_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
+import * as content_1_0 from './content_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
@@ -14,9 +15,11 @@ import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
 import * as esign_2_0 from './esign_2_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
+import * as finance_1_0 from './finance_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
+import * as impaas_1_0 from './impaas_1_0/client';
 import * as industry_1_0 from './industry_1_0/client';
 import * as jzcrm_1_0 from './jzcrm_1_0/client';
 import * as live_1_0 from './live_1_0/client';
@@ -43,6 +46,7 @@ export = {
   conference_1_0,
   connector_1_0,
   contact_1_0,
+  content_1_0,
   crm_1_0,
   customer_service_1_0,
   dingmi_1_0,
@@ -51,9 +55,11 @@ export = {
   esign_1_0,
   esign_2_0,
   exclusive_1_0,
+  finance_1_0,
   hrbrain_1_0,
   hrm_1_0,
   im_1_0,
+  impaas_1_0,
   industry_1_0,
   jzcrm_1_0,
   live_1_0,

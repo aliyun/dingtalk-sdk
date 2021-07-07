@@ -1,0 +1,1 @@
+module.exports = require('./dist').impaas_1_0;

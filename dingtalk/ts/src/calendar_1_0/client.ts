@@ -399,6 +399,97 @@ export class GetScheduleResponse extends $tea.Model {
   }
 }
 
+export class ConvertLegacyEventIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  dingOrgId?: string;
+  dingUid?: string;
+  dingAccessTokenType?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      dingOrgId: 'dingOrgId',
+      dingUid: 'dingUid',
+      dingAccessTokenType: 'dingAccessTokenType',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      dingOrgId: 'string',
+      dingUid: 'string',
+      dingAccessTokenType: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConvertLegacyEventIdRequest extends $tea.Model {
+  legacyEventIds?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      legacyEventIds: 'legacyEventIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      legacyEventIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConvertLegacyEventIdResponseBody extends $tea.Model {
+  legacyEventIdMap?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      legacyEventIdMap: 'legacyEventIdMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      legacyEventIdMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConvertLegacyEventIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConvertLegacyEventIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConvertLegacyEventIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveAttendeeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2563,6 +2654,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetScheduleResponse>(await this.doROARequest("GetSchedule", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/getSchedule`, "json", req, runtime), new GetScheduleResponse({}));
+  }
+
+  async convertLegacyEventId(userId: string, request: ConvertLegacyEventIdRequest): Promise<ConvertLegacyEventIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConvertLegacyEventIdHeaders({ });
+    return await this.convertLegacyEventIdWithOptions(userId, request, headers, runtime);
+  }
+
+  async convertLegacyEventIdWithOptions(userId: string, request: ConvertLegacyEventIdRequest, headers: ConvertLegacyEventIdHeaders, runtime: $Util.RuntimeOptions): Promise<ConvertLegacyEventIdResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.legacyEventIds)) {
+      body["legacyEventIds"] = request.legacyEventIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.dingOrgId)) {
+      realHeaders["dingOrgId"] = headers.dingOrgId;
+    }
+
+    if (!Util.isUnset(headers.dingUid)) {
+      realHeaders["dingUid"] = headers.dingUid;
+    }
+
+    if (!Util.isUnset(headers.dingAccessTokenType)) {
+      realHeaders["dingAccessTokenType"] = headers.dingAccessTokenType;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConvertLegacyEventIdResponse>(await this.doROARequest("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/legacyEventIds/convert`, "json", req, runtime), new ConvertLegacyEventIdResponse({}));
   }
 
   async removeAttendee(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest): Promise<RemoveAttendeeResponse> {
