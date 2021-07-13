@@ -44,6 +44,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vjzcrm_1_0\\": "src/jzcrm_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vlive_1_0\\": "src/live_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmicro_app_1_0\\": "src/micro_app_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vminiapp_1_0\\": "src/miniapp_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Voauth2_1_0\\": "src/oauth2_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_integration_1_0\\": "src/project_integration_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vproject_1_0\\": "src/project_1_0/",
