@@ -380,6 +380,88 @@ export class CheckWritePermissionResponse extends $tea.Model {
   }
 }
 
+export class GetClosingAccountsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClosingAccountsRequest extends $tea.Model {
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClosingAccountsResponseBody extends $tea.Model {
+  result?: GetClosingAccountsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetClosingAccountsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClosingAccountsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetClosingAccountsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetClosingAccountsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateApproveRequestPunchParam extends $tea.Model {
   punchTime?: number;
   positionId?: string;
@@ -472,6 +554,87 @@ export class GetUserHolidaysResponseBodyResult extends $tea.Model {
     return {
       userId: 'string',
       holidays: { 'type': 'array', 'itemType': GetUserHolidaysResponseBodyResultHolidays },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
+  closingDay?: number;
+  closingHourMinutes?: number;
+  startMonth?: number;
+  startDay?: number;
+  endMonth?: number;
+  endDay?: number;
+  static names(): { [key: string]: string } {
+    return {
+      closingDay: 'closingDay',
+      closingHourMinutes: 'closingHourMinutes',
+      startMonth: 'startMonth',
+      startDay: 'startDay',
+      endMonth: 'endMonth',
+      endDay: 'endDay',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      closingDay: 'number',
+      closingHourMinutes: 'number',
+      startMonth: 'number',
+      startDay: 'number',
+      endMonth: 'number',
+      endDay: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel extends $tea.Model {
+  invalidTimeStamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      invalidTimeStamp: 'invalidTimeStamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invalidTimeStamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClosingAccountsResponseBodyResult extends $tea.Model {
+  userId?: string;
+  switchOn?: boolean;
+  closingAccountModel?: GetClosingAccountsResponseBodyResultClosingAccountModel;
+  unsealClosingAccountModel?: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      switchOn: 'switchOn',
+      closingAccountModel: 'closingAccountModel',
+      unsealClosingAccountModel: 'unsealClosingAccountModel',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      switchOn: 'boolean',
+      closingAccountModel: GetClosingAccountsResponseBodyResultClosingAccountModel,
+      unsealClosingAccountModel: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel,
     };
   }
 
@@ -661,6 +824,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CheckWritePermissionResponse>(await this.doROARequest("CheckWritePermission", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/writePermissions/query`, "json", req, runtime), new CheckWritePermissionResponse({}));
+  }
+
+  async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetClosingAccountsHeaders({ });
+    return await this.getClosingAccountsWithOptions(request, headers, runtime);
+  }
+
+  async getClosingAccountsWithOptions(request: GetClosingAccountsRequest, headers: GetClosingAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<GetClosingAccountsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetClosingAccountsResponse>(await this.doROARequest("GetClosingAccounts", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/rules/query`, "json", req, runtime), new GetClosingAccountsResponse({}));
   }
 
 }

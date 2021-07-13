@@ -304,15 +304,18 @@ export class SendInteractiveCardRequest extends $tea.Model {
 
 export class SendInteractiveCardResponseBody extends $tea.Model {
   success?: boolean;
+  result?: SendInteractiveCardResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
       success: 'success',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       success: 'boolean',
+      result: SendInteractiveCardResponseBodyResult,
     };
   }
 
@@ -588,6 +591,25 @@ export class SendInteractiveCardRequestCardData extends $tea.Model {
     return {
       cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendInteractiveCardResponseBodyResult extends $tea.Model {
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
     };
   }
 

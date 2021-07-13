@@ -1,0 +1,1 @@
+module.exports = require('./dist').miniapp_1_0;
