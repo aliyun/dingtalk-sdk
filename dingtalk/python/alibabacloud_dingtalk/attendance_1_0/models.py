@@ -802,3 +802,282 @@ class CheckWritePermissionResponse(TeaModel):
         return self
 
 
+class GetClosingAccountsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetClosingAccountsRequest(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # 人员列表
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetClosingAccountsResponseBodyResultClosingAccountModel(TeaModel):
+    def __init__(
+        self,
+        closing_day: int = None,
+        closing_hour_minutes: int = None,
+        start_month: int = None,
+        start_day: int = None,
+        end_month: int = None,
+        end_day: int = None,
+    ):
+        # 封账时间-日
+        self.closing_day = closing_day
+        # 封账时间-时分
+        self.closing_hour_minutes = closing_hour_minutes
+        # 封账范围-开始月
+        self.start_month = start_month
+        # 封账范围-开始日
+        self.start_day = start_day
+        # 封账范围-结束月
+        self.end_month = end_month
+        # 封账范围-结束日
+        self.end_day = end_day
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.closing_day is not None:
+            result['closingDay'] = self.closing_day
+        if self.closing_hour_minutes is not None:
+            result['closingHourMinutes'] = self.closing_hour_minutes
+        if self.start_month is not None:
+            result['startMonth'] = self.start_month
+        if self.start_day is not None:
+            result['startDay'] = self.start_day
+        if self.end_month is not None:
+            result['endMonth'] = self.end_month
+        if self.end_day is not None:
+            result['endDay'] = self.end_day
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('closingDay') is not None:
+            self.closing_day = m.get('closingDay')
+        if m.get('closingHourMinutes') is not None:
+            self.closing_hour_minutes = m.get('closingHourMinutes')
+        if m.get('startMonth') is not None:
+            self.start_month = m.get('startMonth')
+        if m.get('startDay') is not None:
+            self.start_day = m.get('startDay')
+        if m.get('endMonth') is not None:
+            self.end_month = m.get('endMonth')
+        if m.get('endDay') is not None:
+            self.end_day = m.get('endDay')
+        return self
+
+
+class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel(TeaModel):
+    def __init__(
+        self,
+        invalid_time_stamp: int = None,
+    ):
+        # 解封时间点
+        self.invalid_time_stamp = invalid_time_stamp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invalid_time_stamp is not None:
+            result['invalidTimeStamp'] = self.invalid_time_stamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invalidTimeStamp') is not None:
+            self.invalid_time_stamp = m.get('invalidTimeStamp')
+        return self
+
+
+class GetClosingAccountsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        switch_on: bool = None,
+        closing_account_model: GetClosingAccountsResponseBodyResultClosingAccountModel = None,
+        unseal_closing_account_model: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel = None,
+    ):
+        # 人员ID
+        self.user_id = user_id
+        # 开关
+        self.switch_on = switch_on
+        # 封账规则
+        self.closing_account_model = closing_account_model
+        # 解封规则
+        self.unseal_closing_account_model = unseal_closing_account_model
+
+    def validate(self):
+        if self.closing_account_model:
+            self.closing_account_model.validate()
+        if self.unseal_closing_account_model:
+            self.unseal_closing_account_model.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.switch_on is not None:
+            result['switchOn'] = self.switch_on
+        if self.closing_account_model is not None:
+            result['closingAccountModel'] = self.closing_account_model.to_map()
+        if self.unseal_closing_account_model is not None:
+            result['unsealClosingAccountModel'] = self.unseal_closing_account_model.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('switchOn') is not None:
+            self.switch_on = m.get('switchOn')
+        if m.get('closingAccountModel') is not None:
+            temp_model = GetClosingAccountsResponseBodyResultClosingAccountModel()
+            self.closing_account_model = temp_model.from_map(m['closingAccountModel'])
+        if m.get('unsealClosingAccountModel') is not None:
+            temp_model = GetClosingAccountsResponseBodyResultUnsealClosingAccountModel()
+            self.unseal_closing_account_model = temp_model.from_map(m['unsealClosingAccountModel'])
+        return self
+
+
+class GetClosingAccountsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetClosingAccountsResponseBodyResult] = None,
+    ):
+        # 规则列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetClosingAccountsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetClosingAccountsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetClosingAccountsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetClosingAccountsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

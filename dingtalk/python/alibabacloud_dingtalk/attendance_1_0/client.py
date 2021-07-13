@@ -334,3 +334,67 @@ class Client(OpenApiClient):
             dingtalkattendance__1__0_models.CheckWritePermissionResponse(),
             await self.do_roarequest_async('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/writePermissions/query', 'json', req, runtime)
         )
+
+    def get_closing_accounts(
+        self,
+        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
+    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
+        return self.get_closing_accounts_with_options(request, headers, runtime)
+
+    async def get_closing_accounts_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
+    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
+        return await self.get_closing_accounts_with_options_async(request, headers, runtime)
+
+    def get_closing_accounts_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
+        headers: dingtalkattendance__1__0_models.GetClosingAccountsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetClosingAccountsResponse(),
+            self.do_roarequest('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/rules/query', 'json', req, runtime)
+        )
+
+    async def get_closing_accounts_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
+        headers: dingtalkattendance__1__0_models.GetClosingAccountsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetClosingAccountsResponse(),
+            await self.do_roarequest_async('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/rules/query', 'json', req, runtime)
+        )
