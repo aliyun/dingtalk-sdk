@@ -168,6 +168,21 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public bool? IsDone { get; set; }
 
+            /// <summary>
+            /// 所属组织信息
+            /// </summary>
+            [NameInMap("orgInfo")]
+            [Validation(Required=false)]
+            public QueryTodoTasksResponseBodyTodoCardsOrgInfo OrgInfo { get; set; }
+            public class QueryTodoTasksResponseBodyTodoCardsOrgInfo : TeaModel {
+                [NameInMap("corpId")]
+                [Validation(Required=false)]
+                public string CorpId { get; set; }
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+            };
+
         }
 
         /// <summary>
