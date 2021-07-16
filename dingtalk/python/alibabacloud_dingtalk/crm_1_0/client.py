@@ -5,7 +5,7 @@ from Tea.core import TeaCore
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
-from alibabacloud_dingtalkcrm_1_0 import models as dingtalkcrm__1__0_models
+from alibabacloud_dingtalk.crm_1_0 import models as dingtalkcrm__1__0_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_openapi_util.client import Client as OpenApiUtilClient
 
@@ -571,6 +571,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse(),
             await self.do_roarequest_async('SendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/send', 'json', req, runtime)
+        )
+
+    def get_official_account_otomessage_result(
+        self,
+        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
+        return self.get_official_account_otomessage_result_with_options(request, headers, runtime)
+
+    async def get_official_account_otomessage_result_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
+        return await self.get_official_account_otomessage_result_with_options_async(request, headers, runtime)
+
+    def get_official_account_otomessage_result_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
+        headers: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_push_id):
+            query['openPushId'] = request.open_push_id
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse(),
+            self.do_roarequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', req, runtime)
+        )
+
+    async def get_official_account_otomessage_result_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
+        headers: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_push_id):
+            query['openPushId'] = request.open_push_id
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse(),
+            await self.do_roarequest_async('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', req, runtime)
         )
 
     def add_crm_personal_customer(

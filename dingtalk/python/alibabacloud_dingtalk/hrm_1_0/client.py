@@ -5,7 +5,7 @@ from Tea.core import TeaCore
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
-from alibabacloud_dingtalkhrm_1_0 import models as dingtalkhrm__1__0_models
+from alibabacloud_dingtalk.hrm_1_0 import models as dingtalkhrm__1__0_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_openapi_util.client import Client as OpenApiUtilClient
 

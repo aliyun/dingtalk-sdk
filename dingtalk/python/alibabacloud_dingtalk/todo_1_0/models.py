@@ -593,6 +593,41 @@ class QueryTodoTasksResponseBodyTodoCardsOriginalSource(TeaModel):
         return self
 
 
+class QueryTodoTasksResponseBodyTodoCardsOrgInfo(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        name: str = None,
+    ):
+        # 组织corpId
+        self.corp_id = corp_id
+        # 组织名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
 class QueryTodoTasksResponseBodyTodoCards(TeaModel):
     def __init__(
         self,
@@ -611,6 +646,7 @@ class QueryTodoTasksResponseBodyTodoCards(TeaModel):
         biz_tag: str = None,
         original_source: QueryTodoTasksResponseBodyTodoCardsOriginalSource = None,
         is_done: bool = None,
+        org_info: QueryTodoTasksResponseBodyTodoCardsOrgInfo = None,
     ):
         # 待办id
         self.task_id = task_id
@@ -642,6 +678,8 @@ class QueryTodoTasksResponseBodyTodoCards(TeaModel):
         self.original_source = original_source
         # 待办完成状态
         self.is_done = is_done
+        # 所属组织信息
+        self.org_info = org_info
 
     def validate(self):
         if self.detail_url:
@@ -650,6 +688,8 @@ class QueryTodoTasksResponseBodyTodoCards(TeaModel):
             self.todo_card_view.validate()
         if self.original_source:
             self.original_source.validate()
+        if self.org_info:
+            self.org_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -687,6 +727,8 @@ class QueryTodoTasksResponseBodyTodoCards(TeaModel):
             result['originalSource'] = self.original_source.to_map()
         if self.is_done is not None:
             result['isDone'] = self.is_done
+        if self.org_info is not None:
+            result['orgInfo'] = self.org_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -724,6 +766,9 @@ class QueryTodoTasksResponseBodyTodoCards(TeaModel):
             self.original_source = temp_model.from_map(m['originalSource'])
         if m.get('isDone') is not None:
             self.is_done = m.get('isDone')
+        if m.get('orgInfo') is not None:
+            temp_model = QueryTodoTasksResponseBodyTodoCardsOrgInfo()
+            self.org_info = temp_model.from_map(m['orgInfo'])
         return self
 
 
