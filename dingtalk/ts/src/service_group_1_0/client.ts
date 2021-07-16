@@ -110,6 +110,295 @@ export class DeleteKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class CreateTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  creatorUnionId?: string;
+  processorUnionIds?: string[];
+  scene?: string;
+  sceneContext?: CreateTicketRequestSceneContext;
+  openTemplateBizId?: string;
+  title?: string;
+  customFields?: string;
+  notify?: CreateTicketRequestNotify;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      creatorUnionId: 'creatorUnionId',
+      processorUnionIds: 'processorUnionIds',
+      scene: 'scene',
+      sceneContext: 'sceneContext',
+      openTemplateBizId: 'openTemplateBizId',
+      title: 'title',
+      customFields: 'customFields',
+      notify: 'notify',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      creatorUnionId: 'string',
+      processorUnionIds: { 'type': 'array', 'itemType': 'string' },
+      scene: 'string',
+      sceneContext: CreateTicketRequestSceneContext,
+      openTemplateBizId: 'string',
+      title: 'string',
+      customFields: 'string',
+      notify: CreateTicketRequestNotify,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketResponseBody extends $tea.Model {
+  openTicketId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTicketId: 'openTicketId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTicketId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTicketResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignTicketRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  operatorUnionId?: string;
+  openTicketId?: string;
+  processorUnionIds?: string[];
+  ticketMemo?: AssignTicketRequestTicketMemo;
+  notify?: AssignTicketRequestNotify;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      operatorUnionId: 'operatorUnionId',
+      openTicketId: 'openTicketId',
+      processorUnionIds: 'processorUnionIds',
+      ticketMemo: 'ticketMemo',
+      notify: 'notify',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      operatorUnionId: 'string',
+      openTicketId: 'string',
+      processorUnionIds: { 'type': 'array', 'itemType': 'string' },
+      ticketMemo: AssignTicketRequestTicketMemo,
+      notify: AssignTicketRequestNotify,
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishTicketRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  processorUnionId?: string;
+  openTicketId?: string;
+  ticketMemo?: FinishTicketRequestTicketMemo;
+  notify?: FinishTicketRequestNotify;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      processorUnionId: 'processorUnionId',
+      openTicketId: 'openTicketId',
+      ticketMemo: 'ticketMemo',
+      notify: 'notify',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      processorUnionId: 'string',
+      openTicketId: 'string',
+      ticketMemo: FinishTicketRequestTicketMemo,
+      notify: FinishTicketRequestNotify,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -220,6 +509,90 @@ export class SearchGroupResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SearchGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTicketRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  processorUnionId?: string;
+  openTicketId?: string;
+  customFields?: string;
+  ticketMemo?: UpdateTicketRequestTicketMemo;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      processorUnionId: 'processorUnionId',
+      openTicketId: 'openTicketId',
+      customFields: 'customFields',
+      ticketMemo: 'ticketMemo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      processorUnionId: 'string',
+      openTicketId: 'string',
+      customFields: 'string',
+      ticketMemo: UpdateTicketRequestTicketMemo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -343,7 +716,7 @@ export class CreateGroupResponse extends $tea.Model {
   }
 }
 
-export class SendServiceGroupMessageHeaders extends $tea.Model {
+export class TransferTicketHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -365,65 +738,44 @@ export class SendServiceGroupMessageHeaders extends $tea.Model {
   }
 }
 
-export class SendServiceGroupMessageRequest extends $tea.Model {
+export class TransferTicketRequest extends $tea.Model {
+  processorUnionId?: string;
+  openTicketId?: string;
+  processorUnionIds?: string[];
+  ticketMemo?: TransferTicketRequestTicketMemo;
+  notify?: TransferTicketRequestNotify;
+  openTeamId?: string;
   dingIsvOrgId?: number;
   dingOrgId?: number;
-  dingTokenGrantType?: number;
   dingSuiteKey?: string;
-  targetOpenConversationId?: string;
-  title?: string;
-  content?: string;
-  isAtAll?: boolean;
-  atMobiles?: string[];
-  atDingtalkIds?: string[];
-  atUnionIds?: string[];
-  receiverMobiles?: string[];
-  receiverDingtalkIds?: string[];
-  receiverUnionIds?: string[];
-  messageType?: string;
-  btnOrientation?: string;
-  btns?: SendServiceGroupMessageRequestBtns[];
+  dingTokenGrantType?: number;
   static names(): { [key: string]: string } {
     return {
+      processorUnionId: 'processorUnionId',
+      openTicketId: 'openTicketId',
+      processorUnionIds: 'processorUnionIds',
+      ticketMemo: 'ticketMemo',
+      notify: 'notify',
+      openTeamId: 'openTeamId',
       dingIsvOrgId: 'dingIsvOrgId',
       dingOrgId: 'dingOrgId',
-      dingTokenGrantType: 'dingTokenGrantType',
       dingSuiteKey: 'dingSuiteKey',
-      targetOpenConversationId: 'targetOpenConversationId',
-      title: 'title',
-      content: 'content',
-      isAtAll: 'isAtAll',
-      atMobiles: 'atMobiles',
-      atDingtalkIds: 'atDingtalkIds',
-      atUnionIds: 'atUnionIds',
-      receiverMobiles: 'receiverMobiles',
-      receiverDingtalkIds: 'receiverDingtalkIds',
-      receiverUnionIds: 'receiverUnionIds',
-      messageType: 'messageType',
-      btnOrientation: 'btnOrientation',
-      btns: 'btns',
+      dingTokenGrantType: 'dingTokenGrantType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      processorUnionId: 'string',
+      openTicketId: 'string',
+      processorUnionIds: { 'type': 'array', 'itemType': 'string' },
+      ticketMemo: TransferTicketRequestTicketMemo,
+      notify: TransferTicketRequestNotify,
+      openTeamId: 'string',
       dingIsvOrgId: 'number',
       dingOrgId: 'number',
-      dingTokenGrantType: 'number',
       dingSuiteKey: 'string',
-      targetOpenConversationId: 'string',
-      title: 'string',
-      content: 'string',
-      isAtAll: 'boolean',
-      atMobiles: { 'type': 'array', 'itemType': 'string' },
-      atDingtalkIds: { 'type': 'array', 'itemType': 'string' },
-      atUnionIds: { 'type': 'array', 'itemType': 'string' },
-      receiverMobiles: { 'type': 'array', 'itemType': 'string' },
-      receiverDingtalkIds: { 'type': 'array', 'itemType': 'string' },
-      receiverUnionIds: { 'type': 'array', 'itemType': 'string' },
-      messageType: 'string',
-      btnOrientation: 'string',
-      btns: { 'type': 'array', 'itemType': SendServiceGroupMessageRequestBtns },
+      dingTokenGrantType: 'number',
     };
   }
 
@@ -432,39 +784,17 @@ export class SendServiceGroupMessageRequest extends $tea.Model {
   }
 }
 
-export class SendServiceGroupMessageResponseBody extends $tea.Model {
-  openMsgTaskId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      openMsgTaskId: 'openMsgTaskId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      openMsgTaskId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SendServiceGroupMessageResponse extends $tea.Model {
+export class TransferTicketResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: SendServiceGroupMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
-      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: SendServiceGroupMessageResponseBody,
     };
   }
 
@@ -683,6 +1013,91 @@ export class BatchGetGroupSetConfigResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: BatchGetGroupSetConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordRequest extends $tea.Model {
+  openTeamId?: string;
+  openTicketId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+      openTicketId: 'openTicketId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+      openTicketId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordResponseBody extends $tea.Model {
+  records?: ListTicketOperateRecordResponseBodyRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      records: 'records',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      records: { 'type': 'array', 'itemType': ListTicketOperateRecordResponseBodyRecords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListTicketOperateRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListTicketOperateRecordResponseBody,
     };
   }
 
@@ -918,69 +1333,6 @@ export class AddLibraryResponse extends $tea.Model {
   }
 }
 
-export class ListUserTeamsHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class ListUserTeamsResponseBody extends $tea.Model {
-  teams?: ListUserTeamsResponseBodyTeams[];
-  static names(): { [key: string]: string } {
-    return {
-      teams: 'teams',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      teams: { 'type': 'array', 'itemType': ListUserTeamsResponseBodyTeams },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class ListUserTeamsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: ListUserTeamsResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: ListUserTeamsResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1199,6 +1551,976 @@ export class CloseHumanSessionResponse extends $tea.Model {
   }
 }
 
+export class UrgeTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UrgeTicketRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  operatorUnionId?: string;
+  openTicketId?: string;
+  ticketMemo?: UrgeTicketRequestTicketMemo;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      operatorUnionId: 'operatorUnionId',
+      openTicketId: 'openTicketId',
+      ticketMemo: 'ticketMemo',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      operatorUnionId: 'string',
+      openTicketId: 'string',
+      ticketMemo: UrgeTicketRequestTicketMemo,
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UrgeTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketRequest extends $tea.Model {
+  openTeamId?: string;
+  openTicketId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+      openTicketId: 'openTicketId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+      openTicketId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketResponseBody extends $tea.Model {
+  openTicketId?: string;
+  createTime?: string;
+  updateTime?: string;
+  openConversationId?: string;
+  creator?: GetTicketResponseBodyCreator;
+  processor?: GetTicketResponseBodyProcessor;
+  takers?: GetTicketResponseBodyTakers[];
+  stage?: string;
+  title?: string;
+  customFields?: string;
+  scene?: string;
+  sceneContext?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTicketId: 'openTicketId',
+      createTime: 'createTime',
+      updateTime: 'updateTime',
+      openConversationId: 'openConversationId',
+      creator: 'creator',
+      processor: 'processor',
+      takers: 'takers',
+      stage: 'stage',
+      title: 'title',
+      customFields: 'customFields',
+      scene: 'scene',
+      sceneContext: 'sceneContext',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTicketId: 'string',
+      createTime: 'string',
+      updateTime: 'string',
+      openConversationId: 'string',
+      creator: GetTicketResponseBodyCreator,
+      processor: GetTicketResponseBodyProcessor,
+      takers: { 'type': 'array', 'itemType': GetTicketResponseBodyTakers },
+      stage: 'string',
+      title: 'string',
+      customFields: 'string',
+      scene: 'string',
+      sceneContext: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTicketResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOssTempUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOssTempUrlRequest extends $tea.Model {
+  openTeamId?: string;
+  key?: string;
+  fileName?: string;
+  fetchMode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+      key: 'key',
+      fileName: 'fileName',
+      fetchMode: 'fetchMode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+      key: 'string',
+      fileName: 'string',
+      fetchMode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOssTempUrlResponseBody extends $tea.Model {
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOssTempUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOssTempUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOssTempUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TakeTicketHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TakeTicketRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  takerUnionId?: string;
+  openTicketId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      takerUnionId: 'takerUnionId',
+      openTicketId: 'openTicketId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      takerUnionId: 'string',
+      openTicketId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TakeTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  targetOpenConversationId?: string;
+  title?: string;
+  content?: string;
+  isAtAll?: boolean;
+  atMobiles?: string[];
+  atDingtalkIds?: string[];
+  atUnionIds?: string[];
+  receiverMobiles?: string[];
+  receiverDingtalkIds?: string[];
+  receiverUnionIds?: string[];
+  messageType?: string;
+  btnOrientation?: string;
+  btns?: SendServiceGroupMessageRequestBtns[];
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+      targetOpenConversationId: 'targetOpenConversationId',
+      title: 'title',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      atMobiles: 'atMobiles',
+      atDingtalkIds: 'atDingtalkIds',
+      atUnionIds: 'atUnionIds',
+      receiverMobiles: 'receiverMobiles',
+      receiverDingtalkIds: 'receiverDingtalkIds',
+      receiverUnionIds: 'receiverUnionIds',
+      messageType: 'messageType',
+      btnOrientation: 'btnOrientation',
+      btns: 'btns',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+      targetOpenConversationId: 'string',
+      title: 'string',
+      content: 'string',
+      isAtAll: 'boolean',
+      atMobiles: { 'type': 'array', 'itemType': 'string' },
+      atDingtalkIds: { 'type': 'array', 'itemType': 'string' },
+      atUnionIds: { 'type': 'array', 'itemType': 'string' },
+      receiverMobiles: { 'type': 'array', 'itemType': 'string' },
+      receiverDingtalkIds: { 'type': 'array', 'itemType': 'string' },
+      receiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      messageType: 'string',
+      btnOrientation: 'string',
+      btns: { 'type': 'array', 'itemType': SendServiceGroupMessageRequestBtns },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageResponseBody extends $tea.Model {
+  openMsgTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openMsgTaskId: 'openMsgTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openMsgTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendServiceGroupMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendServiceGroupMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStoragePolicyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStoragePolicyRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  bizType?: string;
+  fileSize?: number;
+  fileName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      bizType: 'bizType',
+      fileSize: 'fileSize',
+      fileName: 'fileName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      bizType: 'string',
+      fileSize: 'number',
+      fileName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStoragePolicyResponseBody extends $tea.Model {
+  key?: string;
+  policy?: string;
+  accessKeyId?: string;
+  endpoint?: string;
+  signature?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      policy: 'policy',
+      accessKeyId: 'accessKeyId',
+      endpoint: 'endpoint',
+      signature: 'signature',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      policy: 'string',
+      accessKeyId: 'string',
+      endpoint: 'string',
+      signature: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStoragePolicyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetStoragePolicyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetStoragePolicyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserTeamsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserTeamsResponseBody extends $tea.Model {
+  teams?: ListUserTeamsResponseBodyTeams[];
+  static names(): { [key: string]: string } {
+    return {
+      teams: 'teams',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      teams: { 'type': 'array', 'itemType': ListUserTeamsResponseBodyTeams },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserTeamsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListUserTeamsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListUserTeamsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddTicketMemoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddTicketMemoRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openTeamId?: string;
+  processorUnionId?: string;
+  openTicketId?: string;
+  ticketMemo?: AddTicketMemoRequestTicketMemo;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openTeamId: 'openTeamId',
+      processorUnionId: 'processorUnionId',
+      openTicketId: 'openTicketId',
+      ticketMemo: 'ticketMemo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openTeamId: 'string',
+      processorUnionId: 'string',
+      openTicketId: 'string',
+      ticketMemo: AddTicketMemoRequestTicketMemo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddTicketMemoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketRequestSceneContextGroupMsgs extends $tea.Model {
+  openMsgId?: string;
+  anchor?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      openMsgId: 'openMsgId',
+      anchor: 'anchor',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openMsgId: 'string',
+      anchor: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketRequestSceneContext extends $tea.Model {
+  openConversationId?: string;
+  relevantorUnionIds?: string[];
+  groupMsgs?: CreateTicketRequestSceneContextGroupMsgs[];
+  topicId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      relevantorUnionIds: 'relevantorUnionIds',
+      groupMsgs: 'groupMsgs',
+      topicId: 'topicId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      relevantorUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupMsgs: { 'type': 'array', 'itemType': CreateTicketRequestSceneContextGroupMsgs },
+      topicId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTicketRequestNotify extends $tea.Model {
+  workNoticeReceiverUnionIds?: string[];
+  groupNoticeReceiverUnionIds?: string[];
+  noticeAllGroupMember?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      workNoticeReceiverUnionIds: 'workNoticeReceiverUnionIds',
+      groupNoticeReceiverUnionIds: 'groupNoticeReceiverUnionIds',
+      noticeAllGroupMember: 'noticeAllGroupMember',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      noticeAllGroupMember: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignTicketRequestTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      key: 'key',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignTicketRequestTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: AssignTicketRequestTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': AssignTicketRequestTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignTicketRequestNotify extends $tea.Model {
+  workNoticeReceiverUnionIds?: string[];
+  groupNoticeReceiverUnionIds?: string[];
+  noticeAllGroupMember?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      workNoticeReceiverUnionIds: 'workNoticeReceiverUnionIds',
+      groupNoticeReceiverUnionIds: 'groupNoticeReceiverUnionIds',
+      noticeAllGroupMember: 'noticeAllGroupMember',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      noticeAllGroupMember: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishTicketRequestTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      key: 'key',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishTicketRequestTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: FinishTicketRequestTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': FinishTicketRequestTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishTicketRequestNotify extends $tea.Model {
+  workNoticeReceiverUnionIds?: string[];
+  groupNoticeReceiverUnionIds?: string[];
+  noticeAllGroupMember?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      workNoticeReceiverUnionIds: 'workNoticeReceiverUnionIds',
+      groupNoticeReceiverUnionIds: 'groupNoticeReceiverUnionIds',
+      noticeAllGroupMember: 'noticeAllGroupMember',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      noticeAllGroupMember: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchGroupResponseBodyRecords extends $tea.Model {
   openConversationId?: string;
   groupName?: string;
@@ -1227,20 +2549,111 @@ export class SearchGroupResponseBodyRecords extends $tea.Model {
   }
 }
 
-export class SendServiceGroupMessageRequestBtns extends $tea.Model {
-  actionURL?: string;
-  title?: string;
+export class UpdateTicketRequestTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
   static names(): { [key: string]: string } {
     return {
-      actionURL: 'actionURL',
-      title: 'title',
+      fileName: 'fileName',
+      key: 'key',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      actionURL: 'string',
-      title: 'string',
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTicketRequestTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: UpdateTicketRequestTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': UpdateTicketRequestTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransferTicketRequestTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      key: 'key',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransferTicketRequestTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: TransferTicketRequestTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': TransferTicketRequestTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransferTicketRequestNotify extends $tea.Model {
+  workNoticeReceiverUnionIds?: string[];
+  groupNoticeReceiverUnionIds?: string[];
+  noticeAllGroupMember?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      workNoticeReceiverUnionIds: 'workNoticeReceiverUnionIds',
+      groupNoticeReceiverUnionIds: 'groupNoticeReceiverUnionIds',
+      noticeAllGroupMember: 'noticeAllGroupMember',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
+      noticeAllGroupMember: 'boolean',
     };
   }
 
@@ -1263,6 +2676,109 @@ export class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends $tea.Mode
     return {
       configKey: 'string',
       configValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordResponseBodyRecordsOperator extends $tea.Model {
+  unionId?: string;
+  nickName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      nickName: 'nickName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      nickName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      key: 'key',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordResponseBodyRecordsTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': ListTicketOperateRecordResponseBodyRecordsTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListTicketOperateRecordResponseBodyRecords extends $tea.Model {
+  openTicketId?: string;
+  operateTime?: string;
+  operation?: string;
+  operationDisplayName?: string;
+  operator?: ListTicketOperateRecordResponseBodyRecordsOperator;
+  ticketMemo?: ListTicketOperateRecordResponseBodyRecordsTicketMemo;
+  operateData?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTicketId: 'openTicketId',
+      operateTime: 'operateTime',
+      operation: 'operation',
+      operationDisplayName: 'operationDisplayName',
+      operator: 'operator',
+      ticketMemo: 'ticketMemo',
+      operateData: 'operateData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTicketId: 'string',
+      operateTime: 'string',
+      operation: 'string',
+      operationDisplayName: 'string',
+      operator: ListTicketOperateRecordResponseBodyRecordsOperator,
+      ticketMemo: ListTicketOperateRecordResponseBodyRecordsTicketMemo,
+      operateData: 'string',
     };
   }
 
@@ -1302,6 +2818,138 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
   }
 }
 
+export class UrgeTicketRequestTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      key: 'key',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UrgeTicketRequestTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: UrgeTicketRequestTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': UrgeTicketRequestTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketResponseBodyCreator extends $tea.Model {
+  unionId?: string;
+  nickName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      nickName: 'nickName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      nickName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketResponseBodyProcessor extends $tea.Model {
+  unionId?: string;
+  nickName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      nickName: 'nickName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      nickName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketResponseBodyTakers extends $tea.Model {
+  unionId?: string;
+  nickName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      nickName: 'nickName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      nickName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendServiceGroupMessageRequestBtns extends $tea.Model {
+  actionURL?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionURL: 'actionURL',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionURL: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListUserTeamsResponseBodyTeams extends $tea.Model {
   openTeamId?: string;
   teamName?: string;
@@ -1316,6 +2964,50 @@ export class ListUserTeamsResponseBodyTeams extends $tea.Model {
     return {
       openTeamId: 'string',
       teamName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddTicketMemoRequestTicketMemoAttachments extends $tea.Model {
+  fileName?: string;
+  key?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      key: 'key',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      key: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddTicketMemoRequestTicketMemo extends $tea.Model {
+  memo?: string;
+  attachments?: AddTicketMemoRequestTicketMemoAttachments[];
+  static names(): { [key: string]: string } {
+    return {
+      memo: 'memo',
+      attachments: 'attachments',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memo: 'string',
+      attachments: { 'type': 'array', 'itemType': AddTicketMemoRequestTicketMemoAttachments },
     };
   }
 
@@ -1394,6 +3086,209 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteKnowledgeResponse>(await this.doROARequest("DeleteKnowledge", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/knowledges/batchDelete`, "json", req, runtime), new DeleteKnowledgeResponse({}));
   }
 
+  async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTicketHeaders({ });
+    return await this.createTicketWithOptions(request, headers, runtime);
+  }
+
+  async createTicketWithOptions(request: CreateTicketRequest, headers: CreateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.creatorUnionId)) {
+      body["creatorUnionId"] = request.creatorUnionId;
+    }
+
+    if (!Util.isUnset(request.processorUnionIds)) {
+      body["processorUnionIds"] = request.processorUnionIds;
+    }
+
+    if (!Util.isUnset(request.scene)) {
+      body["scene"] = request.scene;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.sceneContext))) {
+      body["sceneContext"] = request.sceneContext;
+    }
+
+    if (!Util.isUnset(request.openTemplateBizId)) {
+      body["openTemplateBizId"] = request.openTemplateBizId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.customFields)) {
+      body["customFields"] = request.customFields;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.notify))) {
+      body["notify"] = request.notify;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets`, "json", req, runtime), new CreateTicketResponse({}));
+  }
+
+  async assignTicket(request: AssignTicketRequest): Promise<AssignTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AssignTicketHeaders({ });
+    return await this.assignTicketWithOptions(request, headers, runtime);
+  }
+
+  async assignTicketWithOptions(request: AssignTicketRequest, headers: AssignTicketHeaders, runtime: $Util.RuntimeOptions): Promise<AssignTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    if (!Util.isUnset(request.processorUnionIds)) {
+      body["processorUnionIds"] = request.processorUnionIds;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+      body["ticketMemo"] = request.ticketMemo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.notify))) {
+      body["notify"] = request.notify;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AssignTicketResponse>(await this.doROARequest("AssignTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/assign`, "none", req, runtime), new AssignTicketResponse({}));
+  }
+
+  async finishTicket(request: FinishTicketRequest): Promise<FinishTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FinishTicketHeaders({ });
+    return await this.finishTicketWithOptions(request, headers, runtime);
+  }
+
+  async finishTicketWithOptions(request: FinishTicketRequest, headers: FinishTicketHeaders, runtime: $Util.RuntimeOptions): Promise<FinishTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.processorUnionId)) {
+      body["processorUnionId"] = request.processorUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+      body["ticketMemo"] = request.ticketMemo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.notify))) {
+      body["notify"] = request.notify;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<FinishTicketResponse>(await this.doROARequest("FinishTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/finish`, "none", req, runtime), new FinishTicketResponse({}));
+  }
+
   async searchGroup(request: SearchGroupRequest): Promise<SearchGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchGroupHeaders({ });
@@ -1457,6 +3352,67 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SearchGroupResponse>(await this.doROARequest("SearchGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups/search`, "json", req, runtime), new SearchGroupResponse({}));
+  }
+
+  async updateTicket(request: UpdateTicketRequest): Promise<UpdateTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTicketHeaders({ });
+    return await this.updateTicketWithOptions(request, headers, runtime);
+  }
+
+  async updateTicketWithOptions(request: UpdateTicketRequest, headers: UpdateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.processorUnionId)) {
+      body["processorUnionId"] = request.processorUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    if (!Util.isUnset(request.customFields)) {
+      body["customFields"] = request.customFields;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+      body["ticketMemo"] = request.ticketMemo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateTicketResponse>(await this.doROARequest("UpdateTicket", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/tickets`, "none", req, runtime), new UpdateTicketResponse({}));
   }
 
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
@@ -1528,15 +3484,39 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groups`, "json", req, runtime), new CreateGroupResponse({}));
   }
 
-  async sendServiceGroupMessage(request: SendServiceGroupMessageRequest): Promise<SendServiceGroupMessageResponse> {
+  async transferTicket(request: TransferTicketRequest): Promise<TransferTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendServiceGroupMessageHeaders({ });
-    return await this.sendServiceGroupMessageWithOptions(request, headers, runtime);
+    let headers = new TransferTicketHeaders({ });
+    return await this.transferTicketWithOptions(request, headers, runtime);
   }
 
-  async sendServiceGroupMessageWithOptions(request: SendServiceGroupMessageRequest, headers: SendServiceGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendServiceGroupMessageResponse> {
+  async transferTicketWithOptions(request: TransferTicketRequest, headers: TransferTicketHeaders, runtime: $Util.RuntimeOptions): Promise<TransferTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processorUnionId)) {
+      body["processorUnionId"] = request.processorUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    if (!Util.isUnset(request.processorUnionIds)) {
+      body["processorUnionIds"] = request.processorUnionIds;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+      body["ticketMemo"] = request.ticketMemo;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.notify))) {
+      body["notify"] = request.notify;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
     if (!Util.isUnset(request.dingIsvOrgId)) {
       body["dingIsvOrgId"] = request.dingIsvOrgId;
     }
@@ -1545,64 +3525,12 @@ export default class Client extends OpenApi {
       body["dingOrgId"] = request.dingOrgId;
     }
 
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
     if (!Util.isUnset(request.dingSuiteKey)) {
       body["dingSuiteKey"] = request.dingSuiteKey;
     }
 
-    if (!Util.isUnset(request.targetOpenConversationId)) {
-      body["targetOpenConversationId"] = request.targetOpenConversationId;
-    }
-
-    if (!Util.isUnset(request.title)) {
-      body["title"] = request.title;
-    }
-
-    if (!Util.isUnset(request.content)) {
-      body["content"] = request.content;
-    }
-
-    if (!Util.isUnset(request.isAtAll)) {
-      body["isAtAll"] = request.isAtAll;
-    }
-
-    if (!Util.isUnset(request.atMobiles)) {
-      body["atMobiles"] = request.atMobiles;
-    }
-
-    if (!Util.isUnset(request.atDingtalkIds)) {
-      body["atDingtalkIds"] = request.atDingtalkIds;
-    }
-
-    if (!Util.isUnset(request.atUnionIds)) {
-      body["atUnionIds"] = request.atUnionIds;
-    }
-
-    if (!Util.isUnset(request.receiverMobiles)) {
-      body["receiverMobiles"] = request.receiverMobiles;
-    }
-
-    if (!Util.isUnset(request.receiverDingtalkIds)) {
-      body["receiverDingtalkIds"] = request.receiverDingtalkIds;
-    }
-
-    if (!Util.isUnset(request.receiverUnionIds)) {
-      body["receiverUnionIds"] = request.receiverUnionIds;
-    }
-
-    if (!Util.isUnset(request.messageType)) {
-      body["messageType"] = request.messageType;
-    }
-
-    if (!Util.isUnset(request.btnOrientation)) {
-      body["btnOrientation"] = request.btnOrientation;
-    }
-
-    if (!Util.isUnset(request.btns)) {
-      body["btns"] = request.btns;
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1618,7 +3546,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendServiceGroupMessageResponse>(await this.doROARequest("SendServiceGroupMessage", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/messages/send`, "json", req, runtime), new SendServiceGroupMessageResponse({}));
+    return $tea.cast<TransferTicketResponse>(await this.doROARequest("TransferTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/transfer`, "none", req, runtime), new TransferTicketResponse({}));
   }
 
   async addKnowledge(request: AddKnowledgeRequest): Promise<AddKnowledgeResponse> {
@@ -1751,6 +3679,39 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchGetGroupSetConfigResponse>(await this.doROARequest("BatchGetGroupSetConfig", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groupSetConfigs/batchQuery`, "json", req, runtime), new BatchGetGroupSetConfigResponse({}));
   }
 
+  async listTicketOperateRecord(request: ListTicketOperateRecordRequest): Promise<ListTicketOperateRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListTicketOperateRecordHeaders({ });
+    return await this.listTicketOperateRecordWithOptions(request, headers, runtime);
+  }
+
+  async listTicketOperateRecordWithOptions(request: ListTicketOperateRecordRequest, headers: ListTicketOperateRecordHeaders, runtime: $Util.RuntimeOptions): Promise<ListTicketOperateRecordResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      query["openTicketId"] = request.openTicketId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListTicketOperateRecordResponse>(await this.doROARequest("ListTicketOperateRecord", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/tickets/operateRecords`, "json", req, runtime), new ListTicketOperateRecordResponse({}));
+  }
+
   async queryServiceGroupMessageReadStatus(request: QueryServiceGroupMessageReadStatusRequest): Promise<QueryServiceGroupMessageReadStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryServiceGroupMessageReadStatusHeaders({ });
@@ -1881,28 +3842,6 @@ export default class Client extends OpenApi {
     return $tea.cast<AddLibraryResponse>(await this.doROARequest("AddLibrary", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/librarys`, "json", req, runtime), new AddLibraryResponse({}));
   }
 
-  async listUserTeams(userId: string): Promise<ListUserTeamsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListUserTeamsHeaders({ });
-    return await this.listUserTeamsWithOptions(userId, headers, runtime);
-  }
-
-  async listUserTeamsWithOptions(userId: string, headers: ListUserTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserTeamsResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<ListUserTeamsResponse>(await this.doROARequest("ListUserTeams", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/users/${userId}/teams`, "json", req, runtime), new ListUserTeamsResponse({}));
-  }
-
   async queryGroup(request: QueryGroupRequest): Promise<QueryGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupHeaders({ });
@@ -2007,6 +3946,419 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CloseHumanSessionResponse>(await this.doROARequest("CloseHumanSession", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/humanSessions/close`, "json", req, runtime), new CloseHumanSessionResponse({}));
+  }
+
+  async urgeTicket(request: UrgeTicketRequest): Promise<UrgeTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UrgeTicketHeaders({ });
+    return await this.urgeTicketWithOptions(request, headers, runtime);
+  }
+
+  async urgeTicketWithOptions(request: UrgeTicketRequest, headers: UrgeTicketHeaders, runtime: $Util.RuntimeOptions): Promise<UrgeTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+      body["ticketMemo"] = request.ticketMemo;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UrgeTicketResponse>(await this.doROARequest("UrgeTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/urge`, "none", req, runtime), new UrgeTicketResponse({}));
+  }
+
+  async getTicket(request: GetTicketRequest): Promise<GetTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTicketHeaders({ });
+    return await this.getTicketWithOptions(request, headers, runtime);
+  }
+
+  async getTicketWithOptions(request: GetTicketRequest, headers: GetTicketHeaders, runtime: $Util.RuntimeOptions): Promise<GetTicketResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      query["openTicketId"] = request.openTicketId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetTicketResponse>(await this.doROARequest("GetTicket", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/tickets`, "json", req, runtime), new GetTicketResponse({}));
+  }
+
+  async getOssTempUrl(request: GetOssTempUrlRequest): Promise<GetOssTempUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOssTempUrlHeaders({ });
+    return await this.getOssTempUrlWithOptions(request, headers, runtime);
+  }
+
+  async getOssTempUrlWithOptions(request: GetOssTempUrlRequest, headers: GetOssTempUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetOssTempUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.key)) {
+      query["key"] = request.key;
+    }
+
+    if (!Util.isUnset(request.fileName)) {
+      query["fileName"] = request.fileName;
+    }
+
+    if (!Util.isUnset(request.fetchMode)) {
+      query["fetchMode"] = request.fetchMode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOssTempUrlResponse>(await this.doROARequest("GetOssTempUrl", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/ossServices/tempUrls`, "json", req, runtime), new GetOssTempUrlResponse({}));
+  }
+
+  async takeTicket(request: TakeTicketRequest): Promise<TakeTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TakeTicketHeaders({ });
+    return await this.takeTicketWithOptions(request, headers, runtime);
+  }
+
+  async takeTicketWithOptions(request: TakeTicketRequest, headers: TakeTicketHeaders, runtime: $Util.RuntimeOptions): Promise<TakeTicketResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.takerUnionId)) {
+      body["takerUnionId"] = request.takerUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<TakeTicketResponse>(await this.doROARequest("TakeTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/apply`, "none", req, runtime), new TakeTicketResponse({}));
+  }
+
+  async sendServiceGroupMessage(request: SendServiceGroupMessageRequest): Promise<SendServiceGroupMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendServiceGroupMessageHeaders({ });
+    return await this.sendServiceGroupMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendServiceGroupMessageWithOptions(request: SendServiceGroupMessageRequest, headers: SendServiceGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendServiceGroupMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.targetOpenConversationId)) {
+      body["targetOpenConversationId"] = request.targetOpenConversationId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.isAtAll)) {
+      body["isAtAll"] = request.isAtAll;
+    }
+
+    if (!Util.isUnset(request.atMobiles)) {
+      body["atMobiles"] = request.atMobiles;
+    }
+
+    if (!Util.isUnset(request.atDingtalkIds)) {
+      body["atDingtalkIds"] = request.atDingtalkIds;
+    }
+
+    if (!Util.isUnset(request.atUnionIds)) {
+      body["atUnionIds"] = request.atUnionIds;
+    }
+
+    if (!Util.isUnset(request.receiverMobiles)) {
+      body["receiverMobiles"] = request.receiverMobiles;
+    }
+
+    if (!Util.isUnset(request.receiverDingtalkIds)) {
+      body["receiverDingtalkIds"] = request.receiverDingtalkIds;
+    }
+
+    if (!Util.isUnset(request.receiverUnionIds)) {
+      body["receiverUnionIds"] = request.receiverUnionIds;
+    }
+
+    if (!Util.isUnset(request.messageType)) {
+      body["messageType"] = request.messageType;
+    }
+
+    if (!Util.isUnset(request.btnOrientation)) {
+      body["btnOrientation"] = request.btnOrientation;
+    }
+
+    if (!Util.isUnset(request.btns)) {
+      body["btns"] = request.btns;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendServiceGroupMessageResponse>(await this.doROARequest("SendServiceGroupMessage", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/messages/send`, "json", req, runtime), new SendServiceGroupMessageResponse({}));
+  }
+
+  async getStoragePolicy(request: GetStoragePolicyRequest): Promise<GetStoragePolicyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetStoragePolicyHeaders({ });
+    return await this.getStoragePolicyWithOptions(request, headers, runtime);
+  }
+
+  async getStoragePolicyWithOptions(request: GetStoragePolicyRequest, headers: GetStoragePolicyHeaders, runtime: $Util.RuntimeOptions): Promise<GetStoragePolicyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.fileSize)) {
+      body["fileSize"] = request.fileSize;
+    }
+
+    if (!Util.isUnset(request.fileName)) {
+      body["fileName"] = request.fileName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetStoragePolicyResponse>(await this.doROARequest("GetStoragePolicy", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/ossServices/policies`, "json", req, runtime), new GetStoragePolicyResponse({}));
+  }
+
+  async listUserTeams(userId: string): Promise<ListUserTeamsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListUserTeamsHeaders({ });
+    return await this.listUserTeamsWithOptions(userId, headers, runtime);
+  }
+
+  async listUserTeamsWithOptions(userId: string, headers: ListUserTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserTeamsResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListUserTeamsResponse>(await this.doROARequest("ListUserTeams", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/users/${userId}/teams`, "json", req, runtime), new ListUserTeamsResponse({}));
+  }
+
+  async addTicketMemo(request: AddTicketMemoRequest): Promise<AddTicketMemoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddTicketMemoHeaders({ });
+    return await this.addTicketMemoWithOptions(request, headers, runtime);
+  }
+
+  async addTicketMemoWithOptions(request: AddTicketMemoRequest, headers: AddTicketMemoHeaders, runtime: $Util.RuntimeOptions): Promise<AddTicketMemoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.processorUnionId)) {
+      body["processorUnionId"] = request.processorUnionId;
+    }
+
+    if (!Util.isUnset(request.openTicketId)) {
+      body["openTicketId"] = request.openTicketId;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.ticketMemo))) {
+      body["ticketMemo"] = request.ticketMemo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddTicketMemoResponse>(await this.doROARequest("AddTicketMemo", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/memos`, "none", req, runtime), new AddTicketMemoResponse({}));
   }
 
 }

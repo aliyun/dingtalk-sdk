@@ -673,6 +673,94 @@ export class SendOfficialAccountOTOMessageResponse extends $tea.Model {
   }
 }
 
+export class GetOfficialAccountOTOMessageResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOfficialAccountOTOMessageResultRequest extends $tea.Model {
+  openPushId?: string;
+  accountId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openPushId: 'openPushId',
+      accountId: 'accountId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openPushId: 'string',
+      accountId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOfficialAccountOTOMessageResultResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: GetOfficialAccountOTOMessageResultResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: GetOfficialAccountOTOMessageResultResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOfficialAccountOTOMessageResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOfficialAccountOTOMessageResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOfficialAccountOTOMessageResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddCrmPersonalCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2104,6 +2192,28 @@ export class SendOfficialAccountOTOMessageResponseBodyResult extends $tea.Model 
   }
 }
 
+export class GetOfficialAccountOTOMessageResultResponseBodyResult extends $tea.Model {
+  status?: number;
+  readUserIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+      readUserIdList: 'readUserIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+      readUserIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddCrmPersonalCustomerRequestPermission extends $tea.Model {
   ownerStaffIds?: string[];
   participantStaffIds?: string[];
@@ -2857,6 +2967,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendOfficialAccountOTOMessageResponse>(await this.doROARequest("SendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/send`, "json", req, runtime), new SendOfficialAccountOTOMessageResponse({}));
+  }
+
+  async getOfficialAccountOTOMessageResult(request: GetOfficialAccountOTOMessageResultRequest): Promise<GetOfficialAccountOTOMessageResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOfficialAccountOTOMessageResultHeaders({ });
+    return await this.getOfficialAccountOTOMessageResultWithOptions(request, headers, runtime);
+  }
+
+  async getOfficialAccountOTOMessageResultWithOptions(request: GetOfficialAccountOTOMessageResultRequest, headers: GetOfficialAccountOTOMessageResultHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountOTOMessageResultResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openPushId)) {
+      query["openPushId"] = request.openPushId;
+    }
+
+    if (!Util.isUnset(request.accountId)) {
+      query["accountId"] = request.accountId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOfficialAccountOTOMessageResultResponse>(await this.doROARequest("GetOfficialAccountOTOMessageResult", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/oToMessages/sendResults`, "json", req, runtime), new GetOfficialAccountOTOMessageResultResponse({}));
   }
 
   async addCrmPersonalCustomer(request: AddCrmPersonalCustomerRequest): Promise<AddCrmPersonalCustomerResponse> {

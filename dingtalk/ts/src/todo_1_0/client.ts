@@ -1311,6 +1311,28 @@ export class QueryTodoTasksResponseBodyTodoCardsOriginalSource extends $tea.Mode
   }
 }
 
+export class QueryTodoTasksResponseBodyTodoCardsOrgInfo extends $tea.Model {
+  corpId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryTodoTasksResponseBodyTodoCards extends $tea.Model {
   taskId?: string;
   subject?: string;
@@ -1327,6 +1349,7 @@ export class QueryTodoTasksResponseBodyTodoCards extends $tea.Model {
   bizTag?: string;
   originalSource?: QueryTodoTasksResponseBodyTodoCardsOriginalSource;
   isDone?: boolean;
+  orgInfo?: QueryTodoTasksResponseBodyTodoCardsOrgInfo;
   static names(): { [key: string]: string } {
     return {
       taskId: 'taskId',
@@ -1344,6 +1367,7 @@ export class QueryTodoTasksResponseBodyTodoCards extends $tea.Model {
       bizTag: 'bizTag',
       originalSource: 'originalSource',
       isDone: 'isDone',
+      orgInfo: 'orgInfo',
     };
   }
 
@@ -1364,6 +1388,7 @@ export class QueryTodoTasksResponseBodyTodoCards extends $tea.Model {
       bizTag: 'string',
       originalSource: QueryTodoTasksResponseBodyTodoCardsOriginalSource,
       isDone: 'boolean',
+      orgInfo: QueryTodoTasksResponseBodyTodoCardsOrgInfo,
     };
   }
 
