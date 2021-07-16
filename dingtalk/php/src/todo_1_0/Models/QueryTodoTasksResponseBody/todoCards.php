@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponseBody\todoCards\detailUrl;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponseBody\todoCards\orgInfo;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponseBody\todoCards\originalSource;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponseBody\todoCards\todoCardView;
 use AlibabaCloud\Tea\Model;
@@ -115,6 +116,13 @@ class todoCards extends Model
      * @var bool
      */
     public $isDone;
+
+    /**
+     * @description 所属组织信息
+     *
+     * @var orgInfo
+     */
+    public $orgInfo;
     protected $_name = [
         'taskId'         => 'taskId',
         'subject'        => 'subject',
@@ -131,6 +139,7 @@ class todoCards extends Model
         'bizTag'         => 'bizTag',
         'originalSource' => 'originalSource',
         'isDone'         => 'isDone',
+        'orgInfo'        => 'orgInfo',
     ];
 
     public function validate()
@@ -184,6 +193,9 @@ class todoCards extends Model
         }
         if (null !== $this->isDone) {
             $res['isDone'] = $this->isDone;
+        }
+        if (null !== $this->orgInfo) {
+            $res['orgInfo'] = null !== $this->orgInfo ? $this->orgInfo->toMap() : null;
         }
 
         return $res;
@@ -241,6 +253,9 @@ class todoCards extends Model
         }
         if (isset($map['isDone'])) {
             $model->isDone = $map['isDone'];
+        }
+        if (isset($map['orgInfo'])) {
+            $model->orgInfo = orgInfo::fromMap($map['orgInfo']);
         }
 
         return $model;

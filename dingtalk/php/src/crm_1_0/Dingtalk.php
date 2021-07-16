@@ -27,6 +27,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersResponse;
@@ -430,6 +433,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('SendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOfficialAccountOTOMessageResultRequest $request
+     *
+     * @return GetOfficialAccountOTOMessageResultResponse
+     */
+    public function getOfficialAccountOTOMessageResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOfficialAccountOTOMessageResultHeaders([]);
+
+        return $this->getOfficialAccountOTOMessageResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOfficialAccountOTOMessageResultRequest $request
+     * @param GetOfficialAccountOTOMessageResultHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return GetOfficialAccountOTOMessageResultResponse
+     */
+    public function getOfficialAccountOTOMessageResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openPushId)) {
+            @$query['openPushId'] = $request->openPushId;
+        }
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOfficialAccountOTOMessageResultResponse::fromMap($this->doROARequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', $req, $runtime));
     }
 
     /**
