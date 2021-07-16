@@ -220,6 +220,38 @@ public class QueryTodoTasksResponseBody extends TeaModel {
 
     }
 
+    public static class QueryTodoTasksResponseBodyTodoCardsOrgInfo extends TeaModel {
+        // 组织corpId
+        @NameInMap("corpId")
+        public String corpId;
+
+        // 组织名称
+        @NameInMap("name")
+        public String name;
+
+        public static QueryTodoTasksResponseBodyTodoCardsOrgInfo build(java.util.Map<String, ?> map) throws Exception {
+            QueryTodoTasksResponseBodyTodoCardsOrgInfo self = new QueryTodoTasksResponseBodyTodoCardsOrgInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryTodoTasksResponseBodyTodoCardsOrgInfo setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCardsOrgInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class QueryTodoTasksResponseBodyTodoCards extends TeaModel {
         // 待办id
         @NameInMap("taskId")
@@ -280,6 +312,10 @@ public class QueryTodoTasksResponseBody extends TeaModel {
         // 待办完成状态
         @NameInMap("isDone")
         public Boolean isDone;
+
+        // 所属组织信息
+        @NameInMap("orgInfo")
+        public QueryTodoTasksResponseBodyTodoCardsOrgInfo orgInfo;
 
         public static QueryTodoTasksResponseBodyTodoCards build(java.util.Map<String, ?> map) throws Exception {
             QueryTodoTasksResponseBodyTodoCards self = new QueryTodoTasksResponseBodyTodoCards();
@@ -404,6 +440,14 @@ public class QueryTodoTasksResponseBody extends TeaModel {
         }
         public Boolean getIsDone() {
             return this.isDone;
+        }
+
+        public QueryTodoTasksResponseBodyTodoCards setOrgInfo(QueryTodoTasksResponseBodyTodoCardsOrgInfo orgInfo) {
+            this.orgInfo = orgInfo;
+            return this;
+        }
+        public QueryTodoTasksResponseBodyTodoCardsOrgInfo getOrgInfo() {
+            return this.orgInfo;
         }
 
     }
