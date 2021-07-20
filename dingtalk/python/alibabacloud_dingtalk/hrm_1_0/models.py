@@ -228,6 +228,456 @@ class ECertQueryResponse(TeaModel):
         return self
 
 
+class QueryJobRanksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryJobRanksRequest(TeaModel):
+    def __init__(
+        self,
+        rank_category_id: str = None,
+        rank_code: str = None,
+        rank_name: str = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 职级序列
+        self.rank_category_id = rank_category_id
+        # 职级编码
+        self.rank_code = rank_code
+        # 职级名称
+        self.rank_name = rank_name
+        # 标记当前开始读取的位置
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.rank_category_id is not None:
+            result['rankCategoryId'] = self.rank_category_id
+        if self.rank_code is not None:
+            result['rankCode'] = self.rank_code
+        if self.rank_name is not None:
+            result['rankName'] = self.rank_name
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('rankCategoryId') is not None:
+            self.rank_category_id = m.get('rankCategoryId')
+        if m.get('rankCode') is not None:
+            self.rank_code = m.get('rankCode')
+        if m.get('rankName') is not None:
+            self.rank_name = m.get('rankName')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryJobRanksResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        rank_id: str = None,
+        rank_category_id: str = None,
+        rank_code: str = None,
+        rank_name: str = None,
+        min_job_grade: int = None,
+        max_job_grade: int = None,
+        rank_description: str = None,
+    ):
+        # 职级ID
+        self.rank_id = rank_id
+        # 职级序列ID
+        self.rank_category_id = rank_category_id
+        # 职级编码
+        self.rank_code = rank_code
+        # 职级名称
+        self.rank_name = rank_name
+        # 最小等级
+        self.min_job_grade = min_job_grade
+        # 最大等级
+        self.max_job_grade = max_job_grade
+        # 职级描述
+        self.rank_description = rank_description
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.rank_id is not None:
+            result['rankId'] = self.rank_id
+        if self.rank_category_id is not None:
+            result['rankCategoryId'] = self.rank_category_id
+        if self.rank_code is not None:
+            result['rankCode'] = self.rank_code
+        if self.rank_name is not None:
+            result['rankName'] = self.rank_name
+        if self.min_job_grade is not None:
+            result['minJobGrade'] = self.min_job_grade
+        if self.max_job_grade is not None:
+            result['maxJobGrade'] = self.max_job_grade
+        if self.rank_description is not None:
+            result['rankDescription'] = self.rank_description
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('rankId') is not None:
+            self.rank_id = m.get('rankId')
+        if m.get('rankCategoryId') is not None:
+            self.rank_category_id = m.get('rankCategoryId')
+        if m.get('rankCode') is not None:
+            self.rank_code = m.get('rankCode')
+        if m.get('rankName') is not None:
+            self.rank_name = m.get('rankName')
+        if m.get('minJobGrade') is not None:
+            self.min_job_grade = m.get('minJobGrade')
+        if m.get('maxJobGrade') is not None:
+            self.max_job_grade = m.get('maxJobGrade')
+        if m.get('rankDescription') is not None:
+            self.rank_description = m.get('rankDescription')
+        return self
+
+
+class QueryJobRanksResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        has_more: bool = None,
+        list: List[QueryJobRanksResponseBodyList] = None,
+    ):
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 是否有更多数据
+        self.has_more = has_more
+        # 职级列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryJobRanksResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryJobRanksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryJobRanksResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryJobRanksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryJobsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryJobsRequest(TeaModel):
+    def __init__(
+        self,
+        job_name: str = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 职务名称
+        self.job_name = job_name
+        # 偏移量
+        self.next_token = next_token
+        # 最大值
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_name is not None:
+            result['jobName'] = self.job_name
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobName') is not None:
+            self.job_name = m.get('jobName')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryJobsResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        job_id: str = None,
+        job_name: str = None,
+        job_description: str = None,
+    ):
+        # 职务ID
+        self.job_id = job_id
+        # 职务名称
+        self.job_name = job_name
+        # 职务描述
+        self.job_description = job_description
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
+        if self.job_name is not None:
+            result['jobName'] = self.job_name
+        if self.job_description is not None:
+            result['jobDescription'] = self.job_description
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
+        if m.get('jobName') is not None:
+            self.job_name = m.get('jobName')
+        if m.get('jobDescription') is not None:
+            self.job_description = m.get('jobDescription')
+        return self
+
+
+class QueryJobsResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        has_more: bool = None,
+        list: List[QueryJobsResponseBodyList] = None,
+    ):
+        # 下次获取数据的起始游标
+        self.next_token = next_token
+        # 是否有更多数据
+        self.has_more = has_more
+        # 职务列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryJobsResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryJobsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryJobsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryJobsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCustomEntryProcessesHeaders(TeaModel):
     def __init__(
         self,
@@ -703,6 +1153,252 @@ class AddHrmPreentryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AddHrmPreentryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPositionsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPositionsRequest(TeaModel):
+    def __init__(
+        self,
+        position_name: str = None,
+        in_category_ids: List[str] = None,
+        in_position_ids: List[str] = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 职位名称
+        self.position_name = position_name
+        # 职位类别列表
+        self.in_category_ids = in_category_ids
+        # 职位id列表
+        self.in_position_ids = in_position_ids
+        # 偏移量
+        self.next_token = next_token
+        # 一次查询获取记录数
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_name is not None:
+            result['positionName'] = self.position_name
+        if self.in_category_ids is not None:
+            result['inCategoryIds'] = self.in_category_ids
+        if self.in_position_ids is not None:
+            result['inPositionIds'] = self.in_position_ids
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionName') is not None:
+            self.position_name = m.get('positionName')
+        if m.get('inCategoryIds') is not None:
+            self.in_category_ids = m.get('inCategoryIds')
+        if m.get('inPositionIds') is not None:
+            self.in_position_ids = m.get('inPositionIds')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryPositionsResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        position_id: str = None,
+        position_name: str = None,
+        position_category_id: str = None,
+        job_id: str = None,
+        position_des: str = None,
+        rank_id_list: List[str] = None,
+        status: int = None,
+    ):
+        # 职位ID
+        self.position_id = position_id
+        # 职位名称
+        self.position_name = position_name
+        # 职位类别ID
+        self.position_category_id = position_category_id
+        # 所属职务ID
+        self.job_id = job_id
+        # 职位描述
+        self.position_des = position_des
+        # 职位对应职级列表
+        self.rank_id_list = rank_id_list
+        # 职位状态-0，启用；1，停用
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_id is not None:
+            result['positionId'] = self.position_id
+        if self.position_name is not None:
+            result['positionName'] = self.position_name
+        if self.position_category_id is not None:
+            result['positionCategoryId'] = self.position_category_id
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
+        if self.position_des is not None:
+            result['positionDes'] = self.position_des
+        if self.rank_id_list is not None:
+            result['rankIdList'] = self.rank_id_list
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionId') is not None:
+            self.position_id = m.get('positionId')
+        if m.get('positionName') is not None:
+            self.position_name = m.get('positionName')
+        if m.get('positionCategoryId') is not None:
+            self.position_category_id = m.get('positionCategoryId')
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
+        if m.get('positionDes') is not None:
+            self.position_des = m.get('positionDes')
+        if m.get('rankIdList') is not None:
+            self.rank_id_list = m.get('rankIdList')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryPositionsResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        has_more: bool = None,
+        list: List[QueryPositionsResponseBodyList] = None,
+    ):
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 是否有更多数据
+        self.has_more = has_more
+        # 职位列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryPositionsResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryPositionsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPositionsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPositionsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

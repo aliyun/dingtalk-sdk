@@ -221,6 +221,435 @@ class GetMediaCerficateResponse(TeaModel):
         return self
 
 
+class GetFeedHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFeedRequest(TeaModel):
+    def __init__(
+        self,
+        mcn_id: str = None,
+    ):
+        # 入驻账号Id(请联系钉钉接口同学获取)
+        self.mcn_id = mcn_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mcn_id is not None:
+            result['mcnId'] = self.mcn_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mcnId') is not None:
+            self.mcn_id = m.get('mcnId')
+        return self
+
+
+class GetFeedResponseBodyFeedItem(TeaModel):
+    def __init__(
+        self,
+        item_id: str = None,
+        title: str = None,
+        feed_content_type: int = None,
+        duration_millis: int = None,
+        url: str = None,
+    ):
+        # 子内容Id
+        self.item_id = item_id
+        # 子内容标题
+        self.title = title
+        # 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
+        self.feed_content_type = feed_content_type
+        # 子内容的持续时长，单位为毫秒
+        self.duration_millis = duration_millis
+        # 子内容的跳转链接
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.feed_content_type is not None:
+            result['feedContentType'] = self.feed_content_type
+        if self.duration_millis is not None:
+            result['durationMillis'] = self.duration_millis
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('feedContentType') is not None:
+            self.feed_content_type = m.get('feedContentType')
+        if m.get('durationMillis') is not None:
+            self.duration_millis = m.get('durationMillis')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetFeedResponseBody(TeaModel):
+    def __init__(
+        self,
+        feed_id: str = None,
+        feed_item: List[GetFeedResponseBodyFeedItem] = None,
+    ):
+        # 内容Id
+        self.feed_id = feed_id
+        # 子内容
+        self.feed_item = feed_item
+
+    def validate(self):
+        if self.feed_item:
+            for k in self.feed_item:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.feed_id is not None:
+            result['feedId'] = self.feed_id
+        result['feedItem'] = []
+        if self.feed_item is not None:
+            for k in self.feed_item:
+                result['feedItem'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('feedId') is not None:
+            self.feed_id = m.get('feedId')
+        self.feed_item = []
+        if m.get('feedItem') is not None:
+            for k in m.get('feedItem'):
+                temp_model = GetFeedResponseBodyFeedItem()
+                self.feed_item.append(temp_model.from_map(k))
+        return self
+
+
+class GetFeedResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFeedResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFeedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PageFeedHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageFeedRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+        body: List[str] = None,
+        mcn_id: str = None,
+    ):
+        # 分页参数：起始位置，初始值应为0，后续传入返回值中的nextCursor字段中的值
+        self.next_token = next_token
+        # 分页参数：页面展示数量
+        self.max_results = max_results
+        # 内容Id，如果传入该参数，表示仅筛选内容Id出现在本列表中的内容
+        self.body = body
+        # 入驻账号Id(请联系钉钉接口同学获取)
+        self.mcn_id = mcn_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.body is not None:
+            result['body'] = self.body
+        if self.mcn_id is not None:
+            result['mcnId'] = self.mcn_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        if m.get('mcnId') is not None:
+            self.mcn_id = m.get('mcnId')
+        return self
+
+
+class PageFeedResponseBodyFeedList(TeaModel):
+    def __init__(
+        self,
+        feed_id: str = None,
+        name: str = None,
+        url: str = None,
+        feed_type: int = None,
+        thumb_url: str = None,
+        feed_category: str = None,
+    ):
+        # 内容Id
+        self.feed_id = feed_id
+        # 内容名称
+        self.name = name
+        # 跳转Url，跳转到职场学堂后台页面
+        self.url = url
+        # 内容类型，0：免费内容 4：平价内容 5：专栏内容 6：训练营内容
+        self.feed_type = feed_type
+        # 封面URL
+        self.thumb_url = thumb_url
+        # 内容分类，请见https://developers.dingtalk.com/document/app/appendix-content
+        self.feed_category = feed_category
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.feed_id is not None:
+            result['feedId'] = self.feed_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.url is not None:
+            result['url'] = self.url
+        if self.feed_type is not None:
+            result['feedType'] = self.feed_type
+        if self.thumb_url is not None:
+            result['thumbUrl'] = self.thumb_url
+        if self.feed_category is not None:
+            result['feedCategory'] = self.feed_category
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('feedId') is not None:
+            self.feed_id = m.get('feedId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('feedType') is not None:
+            self.feed_type = m.get('feedType')
+        if m.get('thumbUrl') is not None:
+            self.thumb_url = m.get('thumbUrl')
+        if m.get('feedCategory') is not None:
+            self.feed_category = m.get('feedCategory')
+        return self
+
+
+class PageFeedResponseBody(TeaModel):
+    def __init__(
+        self,
+        feed_list: List[PageFeedResponseBodyFeedList] = None,
+        next_cursor: int = None,
+        has_next: bool = None,
+    ):
+        # 课程列表
+        self.feed_list = feed_list
+        # 分页参数：下一页的起始位置
+        self.next_cursor = next_cursor
+        # 分页参数：是否还有下一页，false表示没有下一页
+        self.has_next = has_next
+
+    def validate(self):
+        if self.feed_list:
+            for k in self.feed_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['feedList'] = []
+        if self.feed_list is not None:
+            for k in self.feed_list:
+                result['feedList'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.has_next is not None:
+            result['hasNext'] = self.has_next
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.feed_list = []
+        if m.get('feedList') is not None:
+            for k in m.get('feedList'):
+                temp_model = PageFeedResponseBodyFeedList()
+                self.feed_list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('hasNext') is not None:
+            self.has_next = m.get('hasNext')
+        return self
+
+
+class PageFeedResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PageFeedResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PageFeedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateFeedHeaders(TeaModel):
     def __init__(
         self,
@@ -795,6 +1224,175 @@ class CreateFeedResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateFeedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListItemUserDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListItemUserDataRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+    ):
+        # 希望查询的用户的id列表
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class ListItemUserDataResponseBodyStudyInfos(TeaModel):
+    def __init__(
+        self,
+        uid: str = None,
+        duration_millis: int = None,
+    ):
+        # 用户id
+        self.uid = uid
+        # 时间持续长度，单位为毫秒
+        self.duration_millis = duration_millis
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.uid is not None:
+            result['uid'] = self.uid
+        if self.duration_millis is not None:
+            result['durationMillis'] = self.duration_millis
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uid') is not None:
+            self.uid = m.get('uid')
+        if m.get('durationMillis') is not None:
+            self.duration_millis = m.get('durationMillis')
+        return self
+
+
+class ListItemUserDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        study_infos: List[ListItemUserDataResponseBodyStudyInfos] = None,
+    ):
+        # 学习的时长记录
+        self.study_infos = study_infos
+
+    def validate(self):
+        if self.study_infos:
+            for k in self.study_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['studyInfos'] = []
+        if self.study_infos is not None:
+            for k in self.study_infos:
+                result['studyInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.study_infos = []
+        if m.get('studyInfos') is not None:
+            for k in m.get('studyInfos'):
+                temp_model = ListItemUserDataResponseBodyStudyInfos()
+                self.study_infos.append(temp_model.from_map(k))
+        return self
+
+
+class ListItemUserDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListItemUserDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListItemUserDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

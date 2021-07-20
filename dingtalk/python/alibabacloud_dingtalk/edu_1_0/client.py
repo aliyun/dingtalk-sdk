@@ -69,6 +69,314 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles', 'json', req, runtime)
         )
 
+    def query_subject_teachers(
+        self,
+        request: dingtalkedu__1__0_models.QuerySubjectTeachersRequest,
+    ) -> dingtalkedu__1__0_models.QuerySubjectTeachersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySubjectTeachersHeaders()
+        return self.query_subject_teachers_with_options(request, headers, runtime)
+
+    async def query_subject_teachers_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySubjectTeachersRequest,
+    ) -> dingtalkedu__1__0_models.QuerySubjectTeachersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySubjectTeachersHeaders()
+        return await self.query_subject_teachers_with_options_async(request, headers, runtime)
+
+    def query_subject_teachers_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QuerySubjectTeachersRequest,
+        headers: dingtalkedu__1__0_models.QuerySubjectTeachersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySubjectTeachersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_ids):
+            query['classIds'] = request.class_ids
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.subject_code):
+            query['subjectCode'] = request.subject_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySubjectTeachersResponse(),
+            self.do_roarequest('QuerySubjectTeachers', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/subjects/teachers', 'json', req, runtime)
+        )
+
+    async def query_subject_teachers_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySubjectTeachersRequest,
+        headers: dingtalkedu__1__0_models.QuerySubjectTeachersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySubjectTeachersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_ids):
+            query['classIds'] = request.class_ids
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.subject_code):
+            query['subjectCode'] = request.subject_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySubjectTeachersResponse(),
+            await self.do_roarequest_async('QuerySubjectTeachers', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/subjects/teachers', 'json', req, runtime)
+        )
+
+    def query_statistics_data(
+        self,
+        request: dingtalkedu__1__0_models.QueryStatisticsDataRequest,
+    ) -> dingtalkedu__1__0_models.QueryStatisticsDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryStatisticsDataHeaders()
+        return self.query_statistics_data_with_options(request, headers, runtime)
+
+    async def query_statistics_data_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryStatisticsDataRequest,
+    ) -> dingtalkedu__1__0_models.QueryStatisticsDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryStatisticsDataHeaders()
+        return await self.query_statistics_data_with_options_async(request, headers, runtime)
+
+    def query_statistics_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryStatisticsDataRequest,
+        headers: dingtalkedu__1__0_models.QueryStatisticsDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryStatisticsDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.section_index_list):
+            query['sectionIndexList'] = request.section_index_list
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.teacher_user_ids):
+            query['teacherUserIds'] = request.teacher_user_ids
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryStatisticsDataResponse(),
+            self.do_roarequest('QueryStatisticsData', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/classes/schedules/statisticData', 'json', req, runtime)
+        )
+
+    async def query_statistics_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryStatisticsDataRequest,
+        headers: dingtalkedu__1__0_models.QueryStatisticsDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryStatisticsDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.section_index_list):
+            query['sectionIndexList'] = request.section_index_list
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.teacher_user_ids):
+            query['teacherUserIds'] = request.teacher_user_ids
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryStatisticsDataResponse(),
+            await self.do_roarequest_async('QueryStatisticsData', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/classes/schedules/statisticData', 'json', req, runtime)
+        )
+
+    def query_all_subjects_from_class_schedule(
+        self,
+        request: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleRequest,
+    ) -> dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleHeaders()
+        return self.query_all_subjects_from_class_schedule_with_options(request, headers, runtime)
+
+    async def query_all_subjects_from_class_schedule_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleRequest,
+    ) -> dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleHeaders()
+        return await self.query_all_subjects_from_class_schedule_with_options_async(request, headers, runtime)
+
+    def query_all_subjects_from_class_schedule_with_options(
+        self,
+        tmp_req: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleRequest,
+        headers: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.class_ids):
+            request.class_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.class_ids, 'classIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.class_ids_shrink):
+            query['classIds'] = request.class_ids_shrink
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.period_code):
+            query['periodCode'] = request.period_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleResponse(),
+            self.do_roarequest('QueryAllSubjectsFromClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/subjects/instances', 'json', req, runtime)
+        )
+
+    async def query_all_subjects_from_class_schedule_with_options_async(
+        self,
+        tmp_req: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleRequest,
+        headers: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.class_ids):
+            request.class_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.class_ids, 'classIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.class_ids_shrink):
+            query['classIds'] = request.class_ids_shrink
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.period_code):
+            query['periodCode'] = request.period_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleResponse(),
+            await self.do_roarequest_async('QueryAllSubjectsFromClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/subjects/instances', 'json', req, runtime)
+        )
+
+    def query_class_schedule_config(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassScheduleConfigRequest,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryClassScheduleConfigHeaders()
+        return self.query_class_schedule_config_with_options(request, headers, runtime)
+
+    async def query_class_schedule_config_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassScheduleConfigRequest,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryClassScheduleConfigHeaders()
+        return await self.query_class_schedule_config_with_options_async(request, headers, runtime)
+
+    def query_class_schedule_config_with_options(
+        self,
+        tmp_req: dingtalkedu__1__0_models.QueryClassScheduleConfigRequest,
+        headers: dingtalkedu__1__0_models.QueryClassScheduleConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleConfigResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.QueryClassScheduleConfigShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.class_ids):
+            request.class_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.class_ids, 'classIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.class_ids_shrink):
+            query['classIds'] = request.class_ids_shrink
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryClassScheduleConfigResponse(),
+            self.do_roarequest('QueryClassScheduleConfig', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/schedules/configs', 'json', req, runtime)
+        )
+
+    async def query_class_schedule_config_with_options_async(
+        self,
+        tmp_req: dingtalkedu__1__0_models.QueryClassScheduleConfigRequest,
+        headers: dingtalkedu__1__0_models.QueryClassScheduleConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleConfigResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.QueryClassScheduleConfigShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.class_ids):
+            request.class_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.class_ids, 'classIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.class_ids_shrink):
+            query['classIds'] = request.class_ids_shrink
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryClassScheduleConfigResponse(),
+            await self.do_roarequest_async('QueryClassScheduleConfig', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/schedules/configs', 'json', req, runtime)
+        )
+
     def get_default_child(self) -> dingtalkedu__1__0_models.GetDefaultChildResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetDefaultChildHeaders()
@@ -183,6 +491,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetOpenCourses', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/openCourses', 'json', req, runtime)
         )
 
+    def course_scheduling_compliment_notice(
+        self,
+        request: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeRequest,
+    ) -> dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeHeaders()
+        return self.course_scheduling_compliment_notice_with_options(request, headers, runtime)
+
+    async def course_scheduling_compliment_notice_async(
+        self,
+        request: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeRequest,
+    ) -> dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeHeaders()
+        return await self.course_scheduling_compliment_notice_with_options_async(request, headers, runtime)
+
+    def course_scheduling_compliment_notice_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeRequest,
+        headers: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeResponse(),
+            self.do_roarequest('CourseSchedulingComplimentNotice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schedules/finishNotify', 'json', req, runtime)
+        )
+
+    async def course_scheduling_compliment_notice_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeRequest,
+        headers: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeResponse(),
+            await self.do_roarequest_async('CourseSchedulingComplimentNotice', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schedules/finishNotify', 'json', req, runtime)
+        )
+
     def batch_create(
         self,
         request: dingtalkedu__1__0_models.BatchCreateRequest,
@@ -269,6 +641,170 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.BatchCreateResponse(),
             await self.do_roarequest_async('BatchCreate', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/cards', 'json', req, runtime)
+        )
+
+    def init_courses_of_class(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.InitCoursesOfClassRequest,
+    ) -> dingtalkedu__1__0_models.InitCoursesOfClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InitCoursesOfClassHeaders()
+        return self.init_courses_of_class_with_options(class_id, request, headers, runtime)
+
+    async def init_courses_of_class_async(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.InitCoursesOfClassRequest,
+    ) -> dingtalkedu__1__0_models.InitCoursesOfClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InitCoursesOfClassHeaders()
+        return await self.init_courses_of_class_with_options_async(class_id, request, headers, runtime)
+
+    def init_courses_of_class_with_options(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.InitCoursesOfClassRequest,
+        headers: dingtalkedu__1__0_models.InitCoursesOfClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InitCoursesOfClassResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.courses):
+            body['courses'] = request.courses
+        if not UtilClient.is_unset(request.section_config):
+            body['sectionConfig'] = request.section_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InitCoursesOfClassResponse(),
+            self.do_roarequest('InitCoursesOfClass', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/classes/{class_id}/courses/init', 'json', req, runtime)
+        )
+
+    async def init_courses_of_class_with_options_async(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.InitCoursesOfClassRequest,
+        headers: dingtalkedu__1__0_models.InitCoursesOfClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InitCoursesOfClassResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.courses):
+            body['courses'] = request.courses
+        if not UtilClient.is_unset(request.section_config):
+            body['sectionConfig'] = request.section_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InitCoursesOfClassResponse(),
+            await self.do_roarequest_async('InitCoursesOfClass', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/classes/{class_id}/courses/init', 'json', req, runtime)
+        )
+
+    def query_class_schedule(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassScheduleRequest,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryClassScheduleHeaders()
+        return self.query_class_schedule_with_options(request, headers, runtime)
+
+    async def query_class_schedule_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassScheduleRequest,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryClassScheduleHeaders()
+        return await self.query_class_schedule_with_options_async(request, headers, runtime)
+
+    def query_class_schedule_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassScheduleRequest,
+        headers: dingtalkedu__1__0_models.QueryClassScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.subscriber_ids):
+            query['subscriberIds'] = request.subscriber_ids
+        if not UtilClient.is_unset(request.subscriber_type):
+            query['subscriberType'] = request.subscriber_type
+        if not UtilClient.is_unset(request.section_index_list):
+            query['sectionIndexList'] = request.section_index_list
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryClassScheduleResponse(),
+            self.do_roarequest('QueryClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/classes/schedules', 'json', req, runtime)
+        )
+
+    async def query_class_schedule_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassScheduleRequest,
+        headers: dingtalkedu__1__0_models.QueryClassScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryClassScheduleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.subscriber_ids):
+            query['subscriberIds'] = request.subscriber_ids
+        if not UtilClient.is_unset(request.subscriber_type):
+            query['subscriberType'] = request.subscriber_type
+        if not UtilClient.is_unset(request.section_index_list):
+            query['sectionIndexList'] = request.section_index_list
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryClassScheduleResponse(),
+            await self.do_roarequest_async('QueryClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/classes/schedules', 'json', req, runtime)
         )
 
     def delete_dept(
@@ -1059,6 +1595,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteStudent', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/students/{user_id}', 'json', req, runtime)
         )
 
+    def update_courses_of_class(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.UpdateCoursesOfClassRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCoursesOfClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCoursesOfClassHeaders()
+        return self.update_courses_of_class_with_options(class_id, request, headers, runtime)
+
+    async def update_courses_of_class_async(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.UpdateCoursesOfClassRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCoursesOfClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCoursesOfClassHeaders()
+        return await self.update_courses_of_class_with_options_async(class_id, request, headers, runtime)
+
+    def update_courses_of_class_with_options(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.UpdateCoursesOfClassRequest,
+        headers: dingtalkedu__1__0_models.UpdateCoursesOfClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCoursesOfClassResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.courses):
+            body['courses'] = request.courses
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCoursesOfClassResponse(),
+            self.do_roarequest('UpdateCoursesOfClass', 'edu_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/edu/classes/{class_id}/courses/schedules', 'json', req, runtime)
+        )
+
+    async def update_courses_of_class_with_options_async(
+        self,
+        class_id: str,
+        request: dingtalkedu__1__0_models.UpdateCoursesOfClassRequest,
+        headers: dingtalkedu__1__0_models.UpdateCoursesOfClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCoursesOfClassResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.courses):
+            body['courses'] = request.courses
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCoursesOfClassResponse(),
+            await self.do_roarequest_async('UpdateCoursesOfClass', 'edu_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/edu/classes/{class_id}/courses/schedules', 'json', req, runtime)
+        )
+
     def get_share_role_members(
         self,
         share_role_code: str,
@@ -1111,4 +1723,72 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.GetShareRoleMembersResponse(),
             await self.do_roarequest_async('GetShareRoleMembers', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles/{share_role_code}/members', 'json', req, runtime)
+        )
+
+    def query_teach_subjects(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeachSubjectsRequest,
+    ) -> dingtalkedu__1__0_models.QueryTeachSubjectsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryTeachSubjectsHeaders()
+        return self.query_teach_subjects_with_options(request, headers, runtime)
+
+    async def query_teach_subjects_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeachSubjectsRequest,
+    ) -> dingtalkedu__1__0_models.QueryTeachSubjectsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryTeachSubjectsHeaders()
+        return await self.query_teach_subjects_with_options_async(request, headers, runtime)
+
+    def query_teach_subjects_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeachSubjectsRequest,
+        headers: dingtalkedu__1__0_models.QueryTeachSubjectsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryTeachSubjectsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_ids):
+            query['classIds'] = request.class_ids
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryTeachSubjectsResponse(),
+            self.do_roarequest('QueryTeachSubjects', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/teachers/subjects', 'json', req, runtime)
+        )
+
+    async def query_teach_subjects_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeachSubjectsRequest,
+        headers: dingtalkedu__1__0_models.QueryTeachSubjectsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryTeachSubjectsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_ids):
+            query['classIds'] = request.class_ids
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryTeachSubjectsResponse(),
+            await self.do_roarequest_async('QueryTeachSubjects', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/teachers/subjects', 'json', req, runtime)
         )

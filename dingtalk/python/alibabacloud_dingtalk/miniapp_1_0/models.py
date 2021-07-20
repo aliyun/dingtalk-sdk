@@ -1410,11 +1410,13 @@ class ListAvaiableVersionResponseBodyVersions(TeaModel):
         package_size: str = None,
         build_status: int = None,
         version: str = None,
+        h_5bundle: str = None,
     ):
         self.package_url = package_url
         self.package_size = package_size
         self.build_status = build_status
         self.version = version
+        self.h_5bundle = h_5bundle
 
     def validate(self):
         pass
@@ -1433,6 +1435,8 @@ class ListAvaiableVersionResponseBodyVersions(TeaModel):
             result['buildStatus'] = self.build_status
         if self.version is not None:
             result['version'] = self.version
+        if self.h_5bundle is not None:
+            result['h5Bundle'] = self.h_5bundle
         return result
 
     def from_map(self, m: dict = None):
@@ -1445,6 +1449,8 @@ class ListAvaiableVersionResponseBodyVersions(TeaModel):
             self.build_status = m.get('buildStatus')
         if m.get('version') is not None:
             self.version = m.get('version')
+        if m.get('h5Bundle') is not None:
+            self.h_5bundle = m.get('h5Bundle')
         return self
 
 

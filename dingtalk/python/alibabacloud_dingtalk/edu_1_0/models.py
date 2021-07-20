@@ -144,6 +144,1219 @@ class GetShareRolesResponse(TeaModel):
         return self
 
 
+class QuerySubjectTeachersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySubjectTeachersRequest(TeaModel):
+    def __init__(
+        self,
+        class_ids: List[int] = None,
+        op_user_id: str = None,
+        subject_code: str = None,
+    ):
+        # classIds
+        self.class_ids = class_ids
+        # opUserId
+        self.op_user_id = op_user_id
+        self.subject_code = subject_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_ids is not None:
+            result['classIds'] = self.class_ids
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classIds') is not None:
+            self.class_ids = m.get('classIds')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        return self
+
+
+class QuerySubjectTeachersResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        teacher_name: str = None,
+        subject_name: str = None,
+        subject_code: str = None,
+        period_code: str = None,
+        org_id: int = None,
+        teacher_uid: int = None,
+        class_id: int = None,
+    ):
+        self.teacher_name = teacher_name
+        self.subject_name = subject_name
+        self.subject_code = subject_code
+        self.period_code = period_code
+        self.org_id = org_id
+        self.teacher_uid = teacher_uid
+        self.class_id = class_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.teacher_uid is not None:
+            result['teacherUid'] = self.teacher_uid
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('teacherUid') is not None:
+            self.teacher_uid = m.get('teacherUid')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        return self
+
+
+class QuerySubjectTeachersResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QuerySubjectTeachersResponseBodyResult] = None,
+    ):
+        # result
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QuerySubjectTeachersResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QuerySubjectTeachersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QuerySubjectTeachersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QuerySubjectTeachersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryStatisticsDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryStatisticsDataRequest(TeaModel):
+    def __init__(
+        self,
+        section_index_list: List[int] = None,
+        start_time: int = None,
+        teacher_user_ids: List[str] = None,
+        end_time: int = None,
+        op_user_id: str = None,
+    ):
+        # sectionIndexList
+        self.section_index_list = section_index_list
+        # startTime
+        self.start_time = start_time
+        # teacherUserIds
+        self.teacher_user_ids = teacher_user_ids
+        # endTime
+        self.end_time = end_time
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_index_list is not None:
+            result['sectionIndexList'] = self.section_index_list
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.teacher_user_ids is not None:
+            result['teacherUserIds'] = self.teacher_user_ids
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionIndexList') is not None:
+            self.section_index_list = m.get('sectionIndexList')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('teacherUserIds') is not None:
+            self.teacher_user_ids = m.get('teacherUserIds')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class QueryStatisticsDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        user_name: str = None,
+        class_id: int = None,
+        subject_name: int = None,
+        course_hours: float = None,
+        course_count: int = None,
+    ):
+        self.user_id = user_id
+        self.user_name = user_name
+        self.class_id = class_id
+        self.subject_name = subject_name
+        self.course_hours = course_hours
+        self.course_count = course_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.course_hours is not None:
+            result['courseHours'] = self.course_hours
+        if self.course_count is not None:
+            result['courseCount'] = self.course_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('courseHours') is not None:
+            self.course_hours = m.get('courseHours')
+        if m.get('courseCount') is not None:
+            self.course_count = m.get('courseCount')
+        return self
+
+
+class QueryStatisticsDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryStatisticsDataResponseBodyResult] = None,
+    ):
+        # result
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryStatisticsDataResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryStatisticsDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryStatisticsDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryStatisticsDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleRequest(TeaModel):
+    def __init__(
+        self,
+        class_ids: List[int] = None,
+        op_user_id: str = None,
+        period_code: str = None,
+    ):
+        # classIds
+        self.class_ids = class_ids
+        self.op_user_id = op_user_id
+        self.period_code = period_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_ids is not None:
+            result['classIds'] = self.class_ids
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classIds') is not None:
+            self.class_ids = m.get('classIds')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        class_ids_shrink: str = None,
+        op_user_id: str = None,
+        period_code: str = None,
+    ):
+        # classIds
+        self.class_ids_shrink = class_ids_shrink
+        self.op_user_id = op_user_id
+        self.period_code = period_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_ids_shrink is not None:
+            result['classIds'] = self.class_ids_shrink
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classIds') is not None:
+            self.class_ids_shrink = m.get('classIds')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        name: str = None,
+        avator: str = None,
+        uid: int = None,
+    ):
+        self.user_id = user_id
+        self.name = name
+        self.avator = avator
+        self.uid = uid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.avator is not None:
+            result['avator'] = self.avator
+        if self.uid is not None:
+            result['uid'] = self.uid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('avator') is not None:
+            self.avator = m.get('avator')
+        if m.get('uid') is not None:
+            self.uid = m.get('uid')
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleResponseBodyResultExt(TeaModel):
+    def __init__(
+        self,
+        font_color: str = None,
+        background_color: str = None,
+        class_id: int = None,
+        teacher_list: List[QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList] = None,
+    ):
+        # 学科字体颜色
+        self.font_color = font_color
+        # 学科背景颜色
+        self.background_color = background_color
+        self.class_id = class_id
+        self.teacher_list = teacher_list
+
+    def validate(self):
+        if self.teacher_list:
+            for k in self.teacher_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.font_color is not None:
+            result['fontColor'] = self.font_color
+        if self.background_color is not None:
+            result['backgroundColor'] = self.background_color
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        result['teacherList'] = []
+        if self.teacher_list is not None:
+            for k in self.teacher_list:
+                result['teacherList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fontColor') is not None:
+            self.font_color = m.get('fontColor')
+        if m.get('backgroundColor') is not None:
+            self.background_color = m.get('backgroundColor')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        self.teacher_list = []
+        if m.get('teacherList') is not None:
+            for k in m.get('teacherList'):
+                temp_model = QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList()
+                self.teacher_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        subject_name: str = None,
+        subject_code: str = None,
+        period_code: str = None,
+        creator_org_id: int = None,
+        ext: QueryAllSubjectsFromClassScheduleResponseBodyResultExt = None,
+    ):
+        # subjectName
+        self.subject_name = subject_name
+        # subjectCode
+        self.subject_code = subject_code
+        # periodCode
+        self.period_code = period_code
+        # creatorOrgId
+        self.creator_org_id = creator_org_id
+        self.ext = ext
+
+    def validate(self):
+        if self.ext:
+            self.ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        if self.creator_org_id is not None:
+            result['creatorOrgId'] = self.creator_org_id
+        if self.ext is not None:
+            result['ext'] = self.ext.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        if m.get('creatorOrgId') is not None:
+            self.creator_org_id = m.get('creatorOrgId')
+        if m.get('ext') is not None:
+            temp_model = QueryAllSubjectsFromClassScheduleResponseBodyResultExt()
+            self.ext = temp_model.from_map(m['ext'])
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryAllSubjectsFromClassScheduleResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryAllSubjectsFromClassScheduleResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAllSubjectsFromClassScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryAllSubjectsFromClassScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryAllSubjectsFromClassScheduleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryClassScheduleConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryClassScheduleConfigRequest(TeaModel):
+    def __init__(
+        self,
+        class_ids: List[int] = None,
+        op_user_id: str = None,
+    ):
+        # classIds
+        self.class_ids = class_ids
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_ids is not None:
+            result['classIds'] = self.class_ids
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classIds') is not None:
+            self.class_ids = m.get('classIds')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class QueryClassScheduleConfigShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        class_ids_shrink: str = None,
+        op_user_id: str = None,
+    ):
+        # classIds
+        self.class_ids_shrink = class_ids_shrink
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_ids_shrink is not None:
+            result['classIds'] = self.class_ids_shrink
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classIds') is not None:
+            self.class_ids_shrink = m.get('classIds')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class QueryClassScheduleConfigResponseBodyResultStart(TeaModel):
+    def __init__(
+        self,
+        year: int = None,
+        month: int = None,
+        day_of_month: int = None,
+    ):
+        self.year = year
+        self.month = month
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.year is not None:
+            result['year'] = self.year
+        if self.month is not None:
+            result['month'] = self.month
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class QueryClassScheduleConfigResponseBodyResultEnd(TeaModel):
+    def __init__(
+        self,
+        year: int = None,
+        month: int = None,
+        day_of_month: int = None,
+    ):
+        self.year = year
+        self.month = month
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.year is not None:
+            result['year'] = self.year
+        if self.month is not None:
+            result['month'] = self.month
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class QueryClassScheduleConfigResponseBodyResultSectionModelsStart(TeaModel):
+    def __init__(
+        self,
+        min: int = None,
+        hour: int = None,
+    ):
+        # min
+        self.min = min
+        # hour
+        self.hour = hour
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min is not None:
+            result['min'] = self.min
+        if self.hour is not None:
+            result['hour'] = self.hour
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        return self
+
+
+class QueryClassScheduleConfigResponseBodyResultSectionModelsEnd(TeaModel):
+    def __init__(
+        self,
+        min: int = None,
+        hour: int = None,
+    ):
+        # min
+        self.min = min
+        # hour
+        self.hour = hour
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min is not None:
+            result['min'] = self.min
+        if self.hour is not None:
+            result['hour'] = self.hour
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        return self
+
+
+class QueryClassScheduleConfigResponseBodyResultSectionModels(TeaModel):
+    def __init__(
+        self,
+        section_type: str = None,
+        start: QueryClassScheduleConfigResponseBodyResultSectionModelsStart = None,
+        section_index: int = None,
+        end: QueryClassScheduleConfigResponseBodyResultSectionModelsEnd = None,
+        section_name: str = None,
+    ):
+        # sectionType
+        self.section_type = section_type
+        # start
+        self.start = start
+        # sectionIndex
+        self.section_index = section_index
+        # end
+        self.end = end
+        # sectionName
+        self.section_name = section_name
+
+    def validate(self):
+        if self.start:
+            self.start.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_type is not None:
+            result['sectionType'] = self.section_type
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        if self.section_name is not None:
+            result['sectionName'] = self.section_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionType') is not None:
+            self.section_type = m.get('sectionType')
+        if m.get('start') is not None:
+            temp_model = QueryClassScheduleConfigResponseBodyResultSectionModelsStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('end') is not None:
+            temp_model = QueryClassScheduleConfigResponseBodyResultSectionModelsEnd()
+            self.end = temp_model.from_map(m['end'])
+        if m.get('sectionName') is not None:
+            self.section_name = m.get('sectionName')
+        return self
+
+
+class QueryClassScheduleConfigResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        start: QueryClassScheduleConfigResponseBodyResultStart = None,
+        end: QueryClassScheduleConfigResponseBodyResultEnd = None,
+        section_models: List[QueryClassScheduleConfigResponseBodyResultSectionModels] = None,
+    ):
+        self.class_id = class_id
+        self.start = start
+        self.end = end
+        # sectionModels
+        self.section_models = section_models
+
+    def validate(self):
+        if self.start:
+            self.start.validate()
+        if self.end:
+            self.end.validate()
+        if self.section_models:
+            for k in self.section_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        result['sectionModels'] = []
+        if self.section_models is not None:
+            for k in self.section_models:
+                result['sectionModels'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('start') is not None:
+            temp_model = QueryClassScheduleConfigResponseBodyResultStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('end') is not None:
+            temp_model = QueryClassScheduleConfigResponseBodyResultEnd()
+            self.end = temp_model.from_map(m['end'])
+        self.section_models = []
+        if m.get('sectionModels') is not None:
+            for k in m.get('sectionModels'):
+                temp_model = QueryClassScheduleConfigResponseBodyResultSectionModels()
+                self.section_models.append(temp_model.from_map(k))
+        return self
+
+
+class QueryClassScheduleConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryClassScheduleConfigResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryClassScheduleConfigResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryClassScheduleConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryClassScheduleConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryClassScheduleConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetDefaultChildHeaders(TeaModel):
     def __init__(
         self,
@@ -550,6 +1763,132 @@ class GetOpenCoursesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetOpenCoursesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CourseSchedulingComplimentNoticeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CourseSchedulingComplimentNoticeRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+    ):
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class CourseSchedulingComplimentNoticeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # result
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CourseSchedulingComplimentNoticeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CourseSchedulingComplimentNoticeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CourseSchedulingComplimentNoticeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1095,6 +2434,1189 @@ class BatchCreateResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = BatchCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InitCoursesOfClassHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InitCoursesOfClassRequestCoursesDateModel(TeaModel):
+    def __init__(
+        self,
+        month: int = None,
+        year: int = None,
+        day_of_month: int = None,
+    ):
+        # month
+        self.month = month
+        # year
+        self.year = year
+        # dayOfMonth
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.month is not None:
+            result['month'] = self.month
+        if self.year is not None:
+            result['year'] = self.year
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class InitCoursesOfClassRequestCoursesSectionModel(TeaModel):
+    def __init__(
+        self,
+        section_type: str = None,
+        section_index: int = None,
+        section_name: str = None,
+    ):
+        # sectionType
+        self.section_type = section_type
+        # sectionIndex
+        self.section_index = section_index
+        # sectionName
+        self.section_name = section_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_type is not None:
+            result['sectionType'] = self.section_type
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.section_name is not None:
+            result['sectionName'] = self.section_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionType') is not None:
+            self.section_type = m.get('sectionType')
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('sectionName') is not None:
+            self.section_name = m.get('sectionName')
+        return self
+
+
+class InitCoursesOfClassRequestCourses(TeaModel):
+    def __init__(
+        self,
+        teacher_staff_ids: List[str] = None,
+        course_name: str = None,
+        date_model: InitCoursesOfClassRequestCoursesDateModel = None,
+        section_model: InitCoursesOfClassRequestCoursesSectionModel = None,
+        creator_name: str = None,
+        location: str = None,
+        delete_tag: bool = None,
+    ):
+        # teacherStaffIds
+        self.teacher_staff_ids = teacher_staff_ids
+        # courseName
+        self.course_name = course_name
+        # dateModel
+        self.date_model = date_model
+        # sectionModel
+        self.section_model = section_model
+        # creatorName
+        self.creator_name = creator_name
+        # location
+        self.location = location
+        # deleteTag
+        self.delete_tag = delete_tag
+
+    def validate(self):
+        if self.date_model:
+            self.date_model.validate()
+        if self.section_model:
+            self.section_model.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.teacher_staff_ids is not None:
+            result['teacherStaffIds'] = self.teacher_staff_ids
+        if self.course_name is not None:
+            result['courseName'] = self.course_name
+        if self.date_model is not None:
+            result['dateModel'] = self.date_model.to_map()
+        if self.section_model is not None:
+            result['sectionModel'] = self.section_model.to_map()
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.location is not None:
+            result['location'] = self.location
+        if self.delete_tag is not None:
+            result['deleteTag'] = self.delete_tag
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('teacherStaffIds') is not None:
+            self.teacher_staff_ids = m.get('teacherStaffIds')
+        if m.get('courseName') is not None:
+            self.course_name = m.get('courseName')
+        if m.get('dateModel') is not None:
+            temp_model = InitCoursesOfClassRequestCoursesDateModel()
+            self.date_model = temp_model.from_map(m['dateModel'])
+        if m.get('sectionModel') is not None:
+            temp_model = InitCoursesOfClassRequestCoursesSectionModel()
+            self.section_model = temp_model.from_map(m['sectionModel'])
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('deleteTag') is not None:
+            self.delete_tag = m.get('deleteTag')
+        return self
+
+
+class InitCoursesOfClassRequestSectionConfigSectionModelsStart(TeaModel):
+    def __init__(
+        self,
+        min: int = None,
+        hour: int = None,
+    ):
+        # min
+        self.min = min
+        # hour
+        self.hour = hour
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min is not None:
+            result['min'] = self.min
+        if self.hour is not None:
+            result['hour'] = self.hour
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        return self
+
+
+class InitCoursesOfClassRequestSectionConfigSectionModelsEnd(TeaModel):
+    def __init__(
+        self,
+        min: int = None,
+        hour: int = None,
+    ):
+        # min
+        self.min = min
+        # hour
+        self.hour = hour
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min is not None:
+            result['min'] = self.min
+        if self.hour is not None:
+            result['hour'] = self.hour
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        return self
+
+
+class InitCoursesOfClassRequestSectionConfigSectionModels(TeaModel):
+    def __init__(
+        self,
+        section_type: str = None,
+        start: InitCoursesOfClassRequestSectionConfigSectionModelsStart = None,
+        section_index: int = None,
+        end: InitCoursesOfClassRequestSectionConfigSectionModelsEnd = None,
+        section_name: str = None,
+    ):
+        # sectionType
+        self.section_type = section_type
+        # start
+        self.start = start
+        # sectionIndex
+        self.section_index = section_index
+        # end
+        self.end = end
+        # sectionName
+        self.section_name = section_name
+
+    def validate(self):
+        if self.start:
+            self.start.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_type is not None:
+            result['sectionType'] = self.section_type
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        if self.section_name is not None:
+            result['sectionName'] = self.section_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionType') is not None:
+            self.section_type = m.get('sectionType')
+        if m.get('start') is not None:
+            temp_model = InitCoursesOfClassRequestSectionConfigSectionModelsStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('end') is not None:
+            temp_model = InitCoursesOfClassRequestSectionConfigSectionModelsEnd()
+            self.end = temp_model.from_map(m['end'])
+        if m.get('sectionName') is not None:
+            self.section_name = m.get('sectionName')
+        return self
+
+
+class InitCoursesOfClassRequestSectionConfig(TeaModel):
+    def __init__(
+        self,
+        section_models: List[InitCoursesOfClassRequestSectionConfigSectionModels] = None,
+    ):
+        # sectionModels
+        self.section_models = section_models
+
+    def validate(self):
+        if self.section_models:
+            for k in self.section_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['sectionModels'] = []
+        if self.section_models is not None:
+            for k in self.section_models:
+                result['sectionModels'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.section_models = []
+        if m.get('sectionModels') is not None:
+            for k in m.get('sectionModels'):
+                temp_model = InitCoursesOfClassRequestSectionConfigSectionModels()
+                self.section_models.append(temp_model.from_map(k))
+        return self
+
+
+class InitCoursesOfClassRequest(TeaModel):
+    def __init__(
+        self,
+        courses: List[InitCoursesOfClassRequestCourses] = None,
+        section_config: InitCoursesOfClassRequestSectionConfig = None,
+        op_user_id: str = None,
+    ):
+        self.courses = courses
+        self.section_config = section_config
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.courses:
+            for k in self.courses:
+                if k:
+                    k.validate()
+        if self.section_config:
+            self.section_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['courses'] = []
+        if self.courses is not None:
+            for k in self.courses:
+                result['courses'].append(k.to_map() if k else None)
+        if self.section_config is not None:
+            result['sectionConfig'] = self.section_config.to_map()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.courses = []
+        if m.get('courses') is not None:
+            for k in m.get('courses'):
+                temp_model = InitCoursesOfClassRequestCourses()
+                self.courses.append(temp_model.from_map(k))
+        if m.get('sectionConfig') is not None:
+            temp_model = InitCoursesOfClassRequestSectionConfig()
+            self.section_config = temp_model.from_map(m['sectionConfig'])
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class InitCoursesOfClassResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # result
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class InitCoursesOfClassResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InitCoursesOfClassResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InitCoursesOfClassResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryClassScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryClassScheduleRequest(TeaModel):
+    def __init__(
+        self,
+        subscriber_ids: List[str] = None,
+        subscriber_type: str = None,
+        section_index_list: List[int] = None,
+        start_time: int = None,
+        end_time: int = None,
+        op_user_id: str = None,
+    ):
+        # subscriberIds
+        self.subscriber_ids = subscriber_ids
+        # subscriberType
+        self.subscriber_type = subscriber_type
+        # sectionIndexList
+        self.section_index_list = section_index_list
+        # startTime
+        self.start_time = start_time
+        # endTime
+        self.end_time = end_time
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.subscriber_ids is not None:
+            result['subscriberIds'] = self.subscriber_ids
+        if self.subscriber_type is not None:
+            result['subscriberType'] = self.subscriber_type
+        if self.section_index_list is not None:
+            result['sectionIndexList'] = self.section_index_list
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('subscriberIds') is not None:
+            self.subscriber_ids = m.get('subscriberIds')
+        if m.get('subscriberType') is not None:
+            self.subscriber_type = m.get('subscriberType')
+        if m.get('sectionIndexList') is not None:
+            self.section_index_list = m.get('sectionIndexList')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class QueryClassScheduleResponseBodyConfigStart(TeaModel):
+    def __init__(
+        self,
+        year: int = None,
+        month: int = None,
+        day_of_month: int = None,
+    ):
+        self.year = year
+        self.month = month
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.year is not None:
+            result['year'] = self.year
+        if self.month is not None:
+            result['month'] = self.month
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class QueryClassScheduleResponseBodyConfigSectionModelsStart(TeaModel):
+    def __init__(
+        self,
+        hour: int = None,
+        min: int = None,
+    ):
+        self.hour = hour
+        self.min = min
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.hour is not None:
+            result['hour'] = self.hour
+        if self.min is not None:
+            result['min'] = self.min
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        return self
+
+
+class QueryClassScheduleResponseBodyConfigSectionModelsEnd(TeaModel):
+    def __init__(
+        self,
+        hour: int = None,
+        min: int = None,
+    ):
+        self.hour = hour
+        self.min = min
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.hour is not None:
+            result['hour'] = self.hour
+        if self.min is not None:
+            result['min'] = self.min
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        return self
+
+
+class QueryClassScheduleResponseBodyConfigSectionModels(TeaModel):
+    def __init__(
+        self,
+        section_name: str = None,
+        section_type: str = None,
+        section_index: int = None,
+        start: QueryClassScheduleResponseBodyConfigSectionModelsStart = None,
+        end: QueryClassScheduleResponseBodyConfigSectionModelsEnd = None,
+    ):
+        # 节次名称
+        self.section_name = section_name
+        # 节次类型
+        self.section_type = section_type
+        # 节次序列
+        self.section_index = section_index
+        self.start = start
+        self.end = end
+
+    def validate(self):
+        if self.start:
+            self.start.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_name is not None:
+            result['sectionName'] = self.section_name
+        if self.section_type is not None:
+            result['sectionType'] = self.section_type
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionName') is not None:
+            self.section_name = m.get('sectionName')
+        if m.get('sectionType') is not None:
+            self.section_type = m.get('sectionType')
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('start') is not None:
+            temp_model = QueryClassScheduleResponseBodyConfigSectionModelsStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('end') is not None:
+            temp_model = QueryClassScheduleResponseBodyConfigSectionModelsEnd()
+            self.end = temp_model.from_map(m['end'])
+        return self
+
+
+class QueryClassScheduleResponseBodyConfigEnd(TeaModel):
+    def __init__(
+        self,
+        year: int = None,
+        month: int = None,
+        day_of_month: int = None,
+    ):
+        self.year = year
+        self.month = month
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.year is not None:
+            result['year'] = self.year
+        if self.month is not None:
+            result['month'] = self.month
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class QueryClassScheduleResponseBodyConfig(TeaModel):
+    def __init__(
+        self,
+        start: QueryClassScheduleResponseBodyConfigStart = None,
+        section_models: List[QueryClassScheduleResponseBodyConfigSectionModels] = None,
+        end: QueryClassScheduleResponseBodyConfigEnd = None,
+    ):
+        self.start = start
+        self.section_models = section_models
+        self.end = end
+
+    def validate(self):
+        if self.start:
+            self.start.validate()
+        if self.section_models:
+            for k in self.section_models:
+                if k:
+                    k.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        result['sectionModels'] = []
+        if self.section_models is not None:
+            for k in self.section_models:
+                result['sectionModels'].append(k.to_map() if k else None)
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('start') is not None:
+            temp_model = QueryClassScheduleResponseBodyConfigStart()
+            self.start = temp_model.from_map(m['start'])
+        self.section_models = []
+        if m.get('sectionModels') is not None:
+            for k in m.get('sectionModels'):
+                temp_model = QueryClassScheduleResponseBodyConfigSectionModels()
+                self.section_models.append(temp_model.from_map(k))
+        if m.get('end') is not None:
+            temp_model = QueryClassScheduleResponseBodyConfigEnd()
+            self.end = temp_model.from_map(m['end'])
+        return self
+
+
+class QueryClassScheduleResponseBodyCourseDTOSClassrooms(TeaModel):
+    def __init__(
+        self,
+        target_id: str = None,
+        interact_info: str = None,
+    ):
+        # 课堂唯一标识
+        self.target_id = target_id
+        # 交互信息
+        self.interact_info = interact_info
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_id is not None:
+            result['targetId'] = self.target_id
+        if self.interact_info is not None:
+            result['interactInfo'] = self.interact_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetId') is not None:
+            self.target_id = m.get('targetId')
+        if m.get('interactInfo') is not None:
+            self.interact_info = m.get('interactInfo')
+        return self
+
+
+class QueryClassScheduleResponseBodyCourseDTOSEduUserModels(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        uid: int = None,
+        name: str = None,
+    ):
+        # 用户userid
+        self.user_id = user_id
+        # 用户uid
+        self.uid = uid
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.uid is not None:
+            result['uid'] = self.uid
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('uid') is not None:
+            self.uid = m.get('uid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryClassScheduleResponseBodyCourseDTOS(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        introduce: str = None,
+        cover_url: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        creator_corp_id: str = None,
+        creator_user_id: str = None,
+        creator_user_name: str = None,
+        teacher_corp_id: str = None,
+        teacher_user_id: str = None,
+        teacher_user_name: str = None,
+        biz_key: str = None,
+        subject_code: str = None,
+        course_group_code: str = None,
+        status: int = None,
+        classrooms: List[QueryClassScheduleResponseBodyCourseDTOSClassrooms] = None,
+        edu_user_models: List[QueryClassScheduleResponseBodyCourseDTOSEduUserModels] = None,
+        platform: str = None,
+        section_name: str = None,
+        section_index: int = None,
+        class_id: int = None,
+        ext_info: str = None,
+    ):
+        # 课程编码
+        self.code = code
+        # 课程名称
+        self.name = name
+        # 课程介绍
+        self.introduce = introduce
+        # 课程封面地址
+        self.cover_url = cover_url
+        # 开始时间
+        self.start_time = start_time
+        # 结束时间
+        self.end_time = end_time
+        # 创建者组织id
+        self.creator_corp_id = creator_corp_id
+        # 创建者UserId
+        self.creator_user_id = creator_user_id
+        # 创建者UserName
+        self.creator_user_name = creator_user_name
+        # 老师CorpId
+        self.teacher_corp_id = teacher_corp_id
+        # 老师UserId
+        self.teacher_user_id = teacher_user_id
+        # 老师UserName
+        self.teacher_user_name = teacher_user_name
+        # 业务唯一键
+        self.biz_key = biz_key
+        # 学科编码
+        self.subject_code = subject_code
+        # 课程组编码
+        self.course_group_code = course_group_code
+        # 课程状态
+        self.status = status
+        # 课堂列表
+        self.classrooms = classrooms
+        # 课程参与人列表
+        self.edu_user_models = edu_user_models
+        # 授课所承载的平台
+        self.platform = platform
+        # 课程编码
+        self.section_name = section_name
+        # 课程所在节次序列号
+        self.section_index = section_index
+        # 课程所在班级id
+        self.class_id = class_id
+        # 课程扩展信息
+        self.ext_info = ext_info
+
+    def validate(self):
+        if self.classrooms:
+            for k in self.classrooms:
+                if k:
+                    k.validate()
+        if self.edu_user_models:
+            for k in self.edu_user_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.introduce is not None:
+            result['introduce'] = self.introduce
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.creator_corp_id is not None:
+            result['creatorCorpId'] = self.creator_corp_id
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.creator_user_name is not None:
+            result['creatorUserName'] = self.creator_user_name
+        if self.teacher_corp_id is not None:
+            result['teacherCorpId'] = self.teacher_corp_id
+        if self.teacher_user_id is not None:
+            result['teacherUserId'] = self.teacher_user_id
+        if self.teacher_user_name is not None:
+            result['teacherUserName'] = self.teacher_user_name
+        if self.biz_key is not None:
+            result['bizKey'] = self.biz_key
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        if self.course_group_code is not None:
+            result['courseGroupCode'] = self.course_group_code
+        if self.status is not None:
+            result['status'] = self.status
+        result['classrooms'] = []
+        if self.classrooms is not None:
+            for k in self.classrooms:
+                result['classrooms'].append(k.to_map() if k else None)
+        result['eduUserModels'] = []
+        if self.edu_user_models is not None:
+            for k in self.edu_user_models:
+                result['eduUserModels'].append(k.to_map() if k else None)
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.section_name is not None:
+            result['sectionName'] = self.section_name
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('introduce') is not None:
+            self.introduce = m.get('introduce')
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('creatorCorpId') is not None:
+            self.creator_corp_id = m.get('creatorCorpId')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('creatorUserName') is not None:
+            self.creator_user_name = m.get('creatorUserName')
+        if m.get('teacherCorpId') is not None:
+            self.teacher_corp_id = m.get('teacherCorpId')
+        if m.get('teacherUserId') is not None:
+            self.teacher_user_id = m.get('teacherUserId')
+        if m.get('teacherUserName') is not None:
+            self.teacher_user_name = m.get('teacherUserName')
+        if m.get('bizKey') is not None:
+            self.biz_key = m.get('bizKey')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        if m.get('courseGroupCode') is not None:
+            self.course_group_code = m.get('courseGroupCode')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.classrooms = []
+        if m.get('classrooms') is not None:
+            for k in m.get('classrooms'):
+                temp_model = QueryClassScheduleResponseBodyCourseDTOSClassrooms()
+                self.classrooms.append(temp_model.from_map(k))
+        self.edu_user_models = []
+        if m.get('eduUserModels') is not None:
+            for k in m.get('eduUserModels'):
+                temp_model = QueryClassScheduleResponseBodyCourseDTOSEduUserModels()
+                self.edu_user_models.append(temp_model.from_map(k))
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('sectionName') is not None:
+            self.section_name = m.get('sectionName')
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        return self
+
+
+class QueryClassScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        config: QueryClassScheduleResponseBodyConfig = None,
+        course_dtos: List[QueryClassScheduleResponseBodyCourseDTOS] = None,
+    ):
+        self.config = config
+        self.course_dtos = course_dtos
+
+    def validate(self):
+        if self.config:
+            self.config.validate()
+        if self.course_dtos:
+            for k in self.course_dtos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.config is not None:
+            result['config'] = self.config.to_map()
+        result['courseDTOS'] = []
+        if self.course_dtos is not None:
+            for k in self.course_dtos:
+                result['courseDTOS'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('config') is not None:
+            temp_model = QueryClassScheduleResponseBodyConfig()
+            self.config = temp_model.from_map(m['config'])
+        self.course_dtos = []
+        if m.get('courseDTOS') is not None:
+            for k in m.get('courseDTOS'):
+                temp_model = QueryClassScheduleResponseBodyCourseDTOS()
+                self.course_dtos.append(temp_model.from_map(k))
+        return self
+
+
+class QueryClassScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryClassScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryClassScheduleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3064,6 +5586,312 @@ class DeleteStudentResponse(TeaModel):
         return self
 
 
+class UpdateCoursesOfClassHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCoursesOfClassRequestCoursesDateModel(TeaModel):
+    def __init__(
+        self,
+        month: int = None,
+        year: int = None,
+        day_of_month: int = None,
+    ):
+        # month
+        self.month = month
+        # year
+        self.year = year
+        # dayOfMonth
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.month is not None:
+            result['month'] = self.month
+        if self.year is not None:
+            result['year'] = self.year
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class UpdateCoursesOfClassRequestCoursesSectionModel(TeaModel):
+    def __init__(
+        self,
+        section_type: str = None,
+        section_index: int = None,
+        section_name: str = None,
+    ):
+        # sectionType
+        self.section_type = section_type
+        # sectionIndex
+        self.section_index = section_index
+        # sectionName
+        self.section_name = section_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_type is not None:
+            result['sectionType'] = self.section_type
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.section_name is not None:
+            result['sectionName'] = self.section_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionType') is not None:
+            self.section_type = m.get('sectionType')
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('sectionName') is not None:
+            self.section_name = m.get('sectionName')
+        return self
+
+
+class UpdateCoursesOfClassRequestCourses(TeaModel):
+    def __init__(
+        self,
+        teacher_staff_ids: List[str] = None,
+        course_name: str = None,
+        date_model: UpdateCoursesOfClassRequestCoursesDateModel = None,
+        section_model: UpdateCoursesOfClassRequestCoursesSectionModel = None,
+        creator_name: str = None,
+        location: str = None,
+        delete_tag: bool = None,
+        course_code: str = None,
+    ):
+        # teacherStaffIds
+        self.teacher_staff_ids = teacher_staff_ids
+        # courseName
+        self.course_name = course_name
+        # dateModel
+        self.date_model = date_model
+        # sectionModel
+        self.section_model = section_model
+        # creatorName
+        self.creator_name = creator_name
+        # location
+        self.location = location
+        # deleteTag
+        self.delete_tag = delete_tag
+        # courseCode
+        self.course_code = course_code
+
+    def validate(self):
+        if self.date_model:
+            self.date_model.validate()
+        if self.section_model:
+            self.section_model.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.teacher_staff_ids is not None:
+            result['teacherStaffIds'] = self.teacher_staff_ids
+        if self.course_name is not None:
+            result['courseName'] = self.course_name
+        if self.date_model is not None:
+            result['dateModel'] = self.date_model.to_map()
+        if self.section_model is not None:
+            result['sectionModel'] = self.section_model.to_map()
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.location is not None:
+            result['location'] = self.location
+        if self.delete_tag is not None:
+            result['deleteTag'] = self.delete_tag
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('teacherStaffIds') is not None:
+            self.teacher_staff_ids = m.get('teacherStaffIds')
+        if m.get('courseName') is not None:
+            self.course_name = m.get('courseName')
+        if m.get('dateModel') is not None:
+            temp_model = UpdateCoursesOfClassRequestCoursesDateModel()
+            self.date_model = temp_model.from_map(m['dateModel'])
+        if m.get('sectionModel') is not None:
+            temp_model = UpdateCoursesOfClassRequestCoursesSectionModel()
+            self.section_model = temp_model.from_map(m['sectionModel'])
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('deleteTag') is not None:
+            self.delete_tag = m.get('deleteTag')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        return self
+
+
+class UpdateCoursesOfClassRequest(TeaModel):
+    def __init__(
+        self,
+        courses: List[UpdateCoursesOfClassRequestCourses] = None,
+        op_user_id: str = None,
+    ):
+        self.courses = courses
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.courses:
+            for k in self.courses:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['courses'] = []
+        if self.courses is not None:
+            for k in self.courses:
+                result['courses'].append(k.to_map() if k else None)
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.courses = []
+        if m.get('courses') is not None:
+            for k in m.get('courses'):
+                temp_model = UpdateCoursesOfClassRequestCourses()
+                self.courses.append(temp_model.from_map(k))
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class UpdateCoursesOfClassResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # result
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateCoursesOfClassResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateCoursesOfClassResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateCoursesOfClassResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetShareRoleMembersHeaders(TeaModel):
     def __init__(
         self,
@@ -3200,6 +6028,210 @@ class GetShareRoleMembersResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetShareRoleMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTeachSubjectsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTeachSubjectsRequest(TeaModel):
+    def __init__(
+        self,
+        class_ids: List[int] = None,
+        op_user_id: str = None,
+    ):
+        # classIds
+        self.class_ids = class_ids
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_ids is not None:
+            result['classIds'] = self.class_ids
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classIds') is not None:
+            self.class_ids = m.get('classIds')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class QueryTeachSubjectsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        teacher_name: str = None,
+        subject_name: str = None,
+        subject_code: str = None,
+        period_code: str = None,
+        org_id: int = None,
+        teacher_uid: int = None,
+        class_id: int = None,
+    ):
+        self.teacher_name = teacher_name
+        self.subject_name = subject_name
+        self.subject_code = subject_code
+        self.period_code = period_code
+        self.org_id = org_id
+        self.teacher_uid = teacher_uid
+        self.class_id = class_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.teacher_uid is not None:
+            result['teacherUid'] = self.teacher_uid
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('teacherUid') is not None:
+            self.teacher_uid = m.get('teacherUid')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        return self
+
+
+class QueryTeachSubjectsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryTeachSubjectsResponseBodyResult] = None,
+    ):
+        # result
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryTeachSubjectsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryTeachSubjectsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryTeachSubjectsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryTeachSubjectsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
