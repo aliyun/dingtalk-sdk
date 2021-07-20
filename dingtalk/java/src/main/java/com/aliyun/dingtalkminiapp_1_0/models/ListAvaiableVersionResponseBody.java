@@ -34,6 +34,9 @@ public class ListAvaiableVersionResponseBody extends TeaModel {
         @NameInMap("version")
         public String version;
 
+        @NameInMap("h5Bundle")
+        public String h5Bundle;
+
         public static ListAvaiableVersionResponseBodyVersions build(java.util.Map<String, ?> map) throws Exception {
             ListAvaiableVersionResponseBodyVersions self = new ListAvaiableVersionResponseBodyVersions();
             return TeaModel.build(map, self);
@@ -69,6 +72,14 @@ public class ListAvaiableVersionResponseBody extends TeaModel {
         }
         public String getVersion() {
             return this.version;
+        }
+
+        public ListAvaiableVersionResponseBodyVersions setH5Bundle(String h5Bundle) {
+            this.h5Bundle = h5Bundle;
+            return this;
+        }
+        public String getH5Bundle() {
+            return this.h5Bundle;
         }
 
     }

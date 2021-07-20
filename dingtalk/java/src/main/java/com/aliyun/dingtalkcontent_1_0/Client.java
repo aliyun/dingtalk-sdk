@@ -74,6 +74,73 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetMediaCerficate", "content_1.0", "HTTP", "GET", "AK", "/v1.0/content/media/cerficates", "json", req, runtime), new GetMediaCerficateResponse());
     }
 
+    public GetFeedResponse getFeed(String feedId, GetFeedRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetFeedHeaders headers = new GetFeedHeaders();
+        return this.getFeedWithOptions(feedId, request, headers, runtime);
+    }
+
+    public GetFeedResponse getFeedWithOptions(String feedId, GetFeedRequest request, GetFeedHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mcnId)) {
+            query.put("mcnId", request.mcnId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetFeed", "content_1.0", "HTTP", "GET", "AK", "/v1.0/content/feeds/" + feedId + "", "json", req, runtime), new GetFeedResponse());
+    }
+
+    public PageFeedResponse pageFeed(PageFeedRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PageFeedHeaders headers = new PageFeedHeaders();
+        return this.pageFeedWithOptions(request, headers, runtime);
+    }
+
+    public PageFeedResponse pageFeedWithOptions(PageFeedRequest request, PageFeedHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mcnId)) {
+            query.put("mcnId", request.mcnId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", request.body)
+        ));
+        return TeaModel.toModel(this.doROARequest("PageFeed", "content_1.0", "HTTP", "POST", "AK", "/v1.0/content/feeds/query", "json", req, runtime), new PageFeedResponse());
+    }
+
     public CreateFeedResponse createFeed(CreateFeedRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateFeedHeaders headers = new CreateFeedHeaders();
@@ -109,5 +176,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("CreateFeed", "content_1.0", "HTTP", "POST", "AK", "/v1.0/content/feeds", "json", req, runtime), new CreateFeedResponse());
+    }
+
+    public ListItemUserDataResponse listItemUserData(String itemId, ListItemUserDataRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListItemUserDataHeaders headers = new ListItemUserDataHeaders();
+        return this.listItemUserDataWithOptions(itemId, request, headers, runtime);
+    }
+
+    public ListItemUserDataResponse listItemUserDataWithOptions(String itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", request.body)
+        ));
+        return TeaModel.toModel(this.doROARequest("ListItemUserData", "content_1.0", "HTTP", "POST", "AK", "/v1.0/content/feeds/items/" + itemId + "/userStatistics/query", "json", req, runtime), new ListItemUserDataResponse());
     }
 }
