@@ -5,9 +5,20 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoResponse;
@@ -25,6 +36,92 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateTrustedDeviceRequest $request
+     *
+     * @return CreateTrustedDeviceResponse
+     */
+    public function createTrustedDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTrustedDeviceHeaders([]);
+
+        return $this->createTrustedDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTrustedDeviceRequest $request
+     * @param CreateTrustedDeviceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CreateTrustedDeviceResponse
+     */
+    public function createTrustedDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->macAddress)) {
+            @$body['macAddress'] = $request->macAddress;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTrustedDeviceResponse::fromMap($this->doROARequest('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $publisherId
+     * @param string $commentId
+     *
+     * @return DeleteCommentResponse
+     */
+    public function deleteComment($publisherId, $commentId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCommentHeaders([]);
+
+        return $this->deleteCommentWithOptions($publisherId, $commentId, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $publisherId
+     * @param string               $commentId
+     * @param DeleteCommentHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return DeleteCommentResponse
+     */
+    public function deleteCommentWithOptions($publisherId, $commentId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteCommentResponse::fromMap($this->doROARequest('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/' . $commentId . '', 'boolean', $req, $runtime));
     }
 
     /**
@@ -76,6 +173,95 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetGroupActiveInfoResponse::fromMap($this->doROARequest('GetGroupActiveInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/activeGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $publisherId
+     * @param GetCommentListRequest $request
+     *
+     * @return GetCommentListResponse
+     */
+    public function getCommentList($publisherId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCommentListHeaders([]);
+
+        return $this->getCommentListWithOptions($publisherId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $publisherId
+     * @param GetCommentListRequest $request
+     * @param GetCommentListHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetCommentListResponse
+     */
+    public function getCommentListWithOptions($publisherId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCommentListResponse::fromMap($this->doROARequest('GetCommentList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTrustDeviceListRequest $request
+     *
+     * @return GetTrustDeviceListResponse
+     */
+    public function getTrustDeviceList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTrustDeviceListHeaders([]);
+
+        return $this->getTrustDeviceListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTrustDeviceListRequest $request
+     * @param GetTrustDeviceListHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetTrustDeviceListResponse
+     */
+    public function getTrustDeviceListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetTrustDeviceListResponse::fromMap($this->doROARequest('GetTrustDeviceList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices/query', 'json', $req, $runtime));
     }
 
     /**

@@ -14,6 +14,15 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -70,6 +79,108 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ECertQueryResponse::fromMap($this->doROARequest('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/eCerts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryJobRanksRequest $request
+     *
+     * @return QueryJobRanksResponse
+     */
+    public function queryJobRanks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryJobRanksHeaders([]);
+
+        return $this->queryJobRanksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryJobRanksRequest $request
+     * @param QueryJobRanksHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return QueryJobRanksResponse
+     */
+    public function queryJobRanksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->rankCategoryId)) {
+            @$query['rankCategoryId'] = $request->rankCategoryId;
+        }
+        if (!Utils::isUnset($request->rankCode)) {
+            @$query['rankCode'] = $request->rankCode;
+        }
+        if (!Utils::isUnset($request->rankName)) {
+            @$query['rankName'] = $request->rankName;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryJobRanksResponse::fromMap($this->doROARequest('QueryJobRanks', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/jobRanks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryJobsRequest $request
+     *
+     * @return QueryJobsResponse
+     */
+    public function queryJobs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryJobsHeaders([]);
+
+        return $this->queryJobsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryJobsRequest $request
+     * @param QueryJobsHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return QueryJobsResponse
+     */
+    public function queryJobsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->jobName)) {
+            @$query['jobName'] = $request->jobName;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryJobsResponse::fromMap($this->doROARequest('QueryJobs', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/jobs', 'json', $req, $runtime));
     }
 
     /**
@@ -172,5 +283,61 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddHrmPreentryResponse::fromMap($this->doROARequest('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/preentries', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryPositionsRequest $request
+     *
+     * @return QueryPositionsResponse
+     */
+    public function queryPositions($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPositionsHeaders([]);
+
+        return $this->queryPositionsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryPositionsRequest $request
+     * @param QueryPositionsHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return QueryPositionsResponse
+     */
+    public function queryPositionsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->positionName)) {
+            @$body['positionName'] = $request->positionName;
+        }
+        if (!Utils::isUnset($request->inCategoryIds)) {
+            @$body['inCategoryIds'] = $request->inCategoryIds;
+        }
+        if (!Utils::isUnset($request->inPositionIds)) {
+            @$body['inPositionIds'] = $request->inPositionIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryPositionsResponse::fromMap($this->doROARequest('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/positions/query', 'json', $req, $runtime));
     }
 }

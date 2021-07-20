@@ -8,9 +8,18 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\CreateFeedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\CreateFeedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\CreateFeedResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetFeedHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetFeedRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetFeedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetMediaCerficateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetMediaCerficateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetMediaCerficateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\ListItemUserDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\ListItemUserDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\ListItemUserDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -88,6 +97,99 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string         $feedId
+     * @param GetFeedRequest $request
+     *
+     * @return GetFeedResponse
+     */
+    public function getFeed($feedId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFeedHeaders([]);
+
+        return $this->getFeedWithOptions($feedId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $feedId
+     * @param GetFeedRequest $request
+     * @param GetFeedHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return GetFeedResponse
+     */
+    public function getFeedWithOptions($feedId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->mcnId)) {
+            @$query['mcnId'] = $request->mcnId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFeedResponse::fromMap($this->doROARequest('GetFeed', 'content_1.0', 'HTTP', 'GET', 'AK', '/v1.0/content/feeds/' . $feedId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PageFeedRequest $request
+     *
+     * @return PageFeedResponse
+     */
+    public function pageFeed($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageFeedHeaders([]);
+
+        return $this->pageFeedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PageFeedRequest $request
+     * @param PageFeedHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return PageFeedResponse
+     */
+    public function pageFeedWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->mcnId)) {
+            @$query['mcnId'] = $request->mcnId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => $request->body,
+        ]);
+
+        return PageFeedResponse::fromMap($this->doROARequest('PageFeed', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateFeedRequest $request
      *
      * @return CreateFeedResponse
@@ -133,5 +235,45 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateFeedResponse::fromMap($this->doROARequest('CreateFeed', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $itemId
+     * @param ListItemUserDataRequest $request
+     *
+     * @return ListItemUserDataResponse
+     */
+    public function listItemUserData($itemId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListItemUserDataHeaders([]);
+
+        return $this->listItemUserDataWithOptions($itemId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $itemId
+     * @param ListItemUserDataRequest $request
+     * @param ListItemUserDataHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ListItemUserDataResponse
+     */
+    public function listItemUserDataWithOptions($itemId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => $request->body,
+        ]);
+
+        return ListItemUserDataResponse::fromMap($this->doROARequest('ListItemUserData', 'content_1.0', 'HTTP', 'POST', 'AK', '/v1.0/content/feeds/items/' . $itemId . '/userStatistics/query', 'json', $req, $runtime));
     }
 }

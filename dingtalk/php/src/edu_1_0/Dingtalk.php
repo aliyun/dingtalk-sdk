@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassResponse;
@@ -40,11 +43,37 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleConfigShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySubjectTeachersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySubjectTeachersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySubjectTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -92,6 +121,211 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetShareRolesResponse::fromMap($this->doROARequest('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySubjectTeachersRequest $request
+     *
+     * @return QuerySubjectTeachersResponse
+     */
+    public function querySubjectTeachers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySubjectTeachersHeaders([]);
+
+        return $this->querySubjectTeachersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySubjectTeachersRequest $request
+     * @param QuerySubjectTeachersHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QuerySubjectTeachersResponse
+     */
+    public function querySubjectTeachersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->classIds)) {
+            @$query['classIds'] = $request->classIds;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->subjectCode)) {
+            @$query['subjectCode'] = $request->subjectCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySubjectTeachersResponse::fromMap($this->doROARequest('QuerySubjectTeachers', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/subjects/teachers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryStatisticsDataRequest $request
+     *
+     * @return QueryStatisticsDataResponse
+     */
+    public function queryStatisticsData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryStatisticsDataHeaders([]);
+
+        return $this->queryStatisticsDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryStatisticsDataRequest $request
+     * @param QueryStatisticsDataHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryStatisticsDataResponse
+     */
+    public function queryStatisticsDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sectionIndexList)) {
+            @$query['sectionIndexList'] = $request->sectionIndexList;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->teacherUserIds)) {
+            @$query['teacherUserIds'] = $request->teacherUserIds;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryStatisticsDataResponse::fromMap($this->doROARequest('QueryStatisticsData', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/classes/schedules/statisticData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryAllSubjectsFromClassScheduleRequest $request
+     *
+     * @return QueryAllSubjectsFromClassScheduleResponse
+     */
+    public function queryAllSubjectsFromClassSchedule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllSubjectsFromClassScheduleHeaders([]);
+
+        return $this->queryAllSubjectsFromClassScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAllSubjectsFromClassScheduleRequest $tmpReq
+     * @param QueryAllSubjectsFromClassScheduleHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return QueryAllSubjectsFromClassScheduleResponse
+     */
+    public function queryAllSubjectsFromClassScheduleWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryAllSubjectsFromClassScheduleShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->classIds)) {
+            $request->classIdsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->classIds, 'classIds', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->classIdsShrink)) {
+            @$query['classIds'] = $request->classIdsShrink;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->periodCode)) {
+            @$query['periodCode'] = $request->periodCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryAllSubjectsFromClassScheduleResponse::fromMap($this->doROARequest('QueryAllSubjectsFromClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/subjects/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryClassScheduleConfigRequest $request
+     *
+     * @return QueryClassScheduleConfigResponse
+     */
+    public function queryClassScheduleConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryClassScheduleConfigHeaders([]);
+
+        return $this->queryClassScheduleConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryClassScheduleConfigRequest $tmpReq
+     * @param QueryClassScheduleConfigHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return QueryClassScheduleConfigResponse
+     */
+    public function queryClassScheduleConfigWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryClassScheduleConfigShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->classIds)) {
+            $request->classIdsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->classIds, 'classIds', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->classIdsShrink)) {
+            @$query['classIds'] = $request->classIdsShrink;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryClassScheduleConfigResponse::fromMap($this->doROARequest('QueryClassScheduleConfig', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/schedules/configs', 'json', $req, $runtime));
     }
 
     /**
@@ -173,6 +407,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CourseSchedulingComplimentNoticeRequest $request
+     *
+     * @return CourseSchedulingComplimentNoticeResponse
+     */
+    public function courseSchedulingComplimentNotice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CourseSchedulingComplimentNoticeHeaders([]);
+
+        return $this->courseSchedulingComplimentNoticeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CourseSchedulingComplimentNoticeRequest $request
+     * @param CourseSchedulingComplimentNoticeHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return CourseSchedulingComplimentNoticeResponse
+     */
+    public function courseSchedulingComplimentNoticeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CourseSchedulingComplimentNoticeResponse::fromMap($this->doROARequest('CourseSchedulingComplimentNotice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/finishNotify', 'json', $req, $runtime));
+    }
+
+    /**
      * @param BatchCreateRequest $request
      *
      * @return BatchCreateResponse
@@ -230,6 +506,115 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchCreateResponse::fromMap($this->doROARequest('BatchCreate', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/cards', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $classId
+     * @param InitCoursesOfClassRequest $request
+     *
+     * @return InitCoursesOfClassResponse
+     */
+    public function initCoursesOfClass($classId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InitCoursesOfClassHeaders([]);
+
+        return $this->initCoursesOfClassWithOptions($classId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $classId
+     * @param InitCoursesOfClassRequest $request
+     * @param InitCoursesOfClassHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return InitCoursesOfClassResponse
+     */
+    public function initCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->courses)) {
+            @$body['courses'] = $request->courses;
+        }
+        if (!Utils::isUnset($request->sectionConfig)) {
+            @$body['sectionConfig'] = $request->sectionConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InitCoursesOfClassResponse::fromMap($this->doROARequest('InitCoursesOfClass', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/classes/' . $classId . '/courses/init', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryClassScheduleRequest $request
+     *
+     * @return QueryClassScheduleResponse
+     */
+    public function queryClassSchedule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryClassScheduleHeaders([]);
+
+        return $this->queryClassScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryClassScheduleRequest $request
+     * @param QueryClassScheduleHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryClassScheduleResponse
+     */
+    public function queryClassScheduleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->subscriberIds)) {
+            @$query['subscriberIds'] = $request->subscriberIds;
+        }
+        if (!Utils::isUnset($request->subscriberType)) {
+            @$query['subscriberType'] = $request->subscriberType;
+        }
+        if (!Utils::isUnset($request->sectionIndexList)) {
+            @$query['sectionIndexList'] = $request->sectionIndexList;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryClassScheduleResponse::fromMap($this->doROARequest('QueryClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/classes/schedules', 'json', $req, $runtime));
     }
 
     /**
@@ -763,6 +1148,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                      $classId
+     * @param UpdateCoursesOfClassRequest $request
+     *
+     * @return UpdateCoursesOfClassResponse
+     */
+    public function updateCoursesOfClass($classId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCoursesOfClassHeaders([]);
+
+        return $this->updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $classId
+     * @param UpdateCoursesOfClassRequest $request
+     * @param UpdateCoursesOfClassHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateCoursesOfClassResponse
+     */
+    public function updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->courses)) {
+            @$body['courses'] = $request->courses;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateCoursesOfClassResponse::fromMap($this->doROARequest('UpdateCoursesOfClass', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/classes/' . $classId . '/courses/schedules', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $shareRoleCode
      *
      * @return GetShareRoleMembersResponse
@@ -796,5 +1230,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetShareRoleMembersResponse::fromMap($this->doROARequest('GetShareRoleMembers', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles/' . $shareRoleCode . '/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryTeachSubjectsRequest $request
+     *
+     * @return QueryTeachSubjectsResponse
+     */
+    public function queryTeachSubjects($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTeachSubjectsHeaders([]);
+
+        return $this->queryTeachSubjectsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryTeachSubjectsRequest $request
+     * @param QueryTeachSubjectsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryTeachSubjectsResponse
+     */
+    public function queryTeachSubjectsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->classIds)) {
+            @$query['classIds'] = $request->classIds;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryTeachSubjectsResponse::fromMap($this->doROARequest('QueryTeachSubjects', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/teachers/subjects', 'json', $req, $runtime));
     }
 }

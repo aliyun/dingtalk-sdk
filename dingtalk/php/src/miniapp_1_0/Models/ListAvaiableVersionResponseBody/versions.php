@@ -27,11 +27,17 @@ class versions extends Model
      * @var string
      */
     public $version;
+
+    /**
+     * @var string
+     */
+    public $h5Bundle;
     protected $_name = [
         'packageUrl'  => 'packageUrl',
         'packageSize' => 'packageSize',
         'buildStatus' => 'buildStatus',
         'version'     => 'version',
+        'h5Bundle'    => 'h5Bundle',
     ];
 
     public function validate()
@@ -52,6 +58,9 @@ class versions extends Model
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
+        }
+        if (null !== $this->h5Bundle) {
+            $res['h5Bundle'] = $this->h5Bundle;
         }
 
         return $res;
@@ -76,6 +85,9 @@ class versions extends Model
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];
+        }
+        if (isset($map['h5Bundle'])) {
+            $model->h5Bundle = $map['h5Bundle'];
         }
 
         return $model;
