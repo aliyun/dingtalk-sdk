@@ -1,0 +1,1 @@
+module.exports = require('./dist').datacenter_1_0;

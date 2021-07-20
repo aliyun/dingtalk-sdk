@@ -131,6 +131,200 @@ export class ECertQueryResponse extends $tea.Model {
   }
 }
 
+export class QueryJobRanksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobRanksRequest extends $tea.Model {
+  rankCategoryId?: string;
+  rankCode?: string;
+  rankName?: string;
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      rankCategoryId: 'rankCategoryId',
+      rankCode: 'rankCode',
+      rankName: 'rankName',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      rankCategoryId: 'string',
+      rankCode: 'string',
+      rankName: 'string',
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobRanksResponseBody extends $tea.Model {
+  nextToken?: number;
+  hasMore?: boolean;
+  list?: QueryJobRanksResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryJobRanksResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobRanksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryJobRanksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryJobRanksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobsRequest extends $tea.Model {
+  jobName?: string;
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      jobName: 'jobName',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobName: 'string',
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobsResponseBody extends $tea.Model {
+  nextToken?: number;
+  hasMore?: boolean;
+  list?: QueryJobsResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryJobsResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryJobsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryJobsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -319,6 +513,168 @@ export class AddHrmPreentryResponse extends $tea.Model {
   }
 }
 
+export class QueryPositionsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPositionsRequest extends $tea.Model {
+  positionName?: string;
+  inCategoryIds?: string[];
+  inPositionIds?: string[];
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      positionName: 'positionName',
+      inCategoryIds: 'inCategoryIds',
+      inPositionIds: 'inPositionIds',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      positionName: 'string',
+      inCategoryIds: { 'type': 'array', 'itemType': 'string' },
+      inPositionIds: { 'type': 'array', 'itemType': 'string' },
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPositionsResponseBody extends $tea.Model {
+  nextToken?: number;
+  hasMore?: boolean;
+  list?: QueryPositionsResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryPositionsResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPositionsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryPositionsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryPositionsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobRanksResponseBodyList extends $tea.Model {
+  rankId?: string;
+  rankCategoryId?: string;
+  rankCode?: string;
+  rankName?: string;
+  minJobGrade?: number;
+  maxJobGrade?: number;
+  rankDescription?: string;
+  static names(): { [key: string]: string } {
+    return {
+      rankId: 'rankId',
+      rankCategoryId: 'rankCategoryId',
+      rankCode: 'rankCode',
+      rankName: 'rankName',
+      minJobGrade: 'minJobGrade',
+      maxJobGrade: 'maxJobGrade',
+      rankDescription: 'rankDescription',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      rankId: 'string',
+      rankCategoryId: 'string',
+      rankCode: 'string',
+      rankName: 'string',
+      minJobGrade: 'number',
+      maxJobGrade: 'number',
+      rankDescription: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryJobsResponseBodyList extends $tea.Model {
+  jobId?: string;
+  jobName?: string;
+  jobDescription?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobId: 'jobId',
+      jobName: 'jobName',
+      jobDescription: 'jobDescription',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobId: 'string',
+      jobName: 'string',
+      jobDescription: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesResponseBodyList extends $tea.Model {
   formId?: string;
   formName?: string;
@@ -413,6 +769,43 @@ export class AddHrmPreentryRequestGroups extends $tea.Model {
   }
 }
 
+export class QueryPositionsResponseBodyList extends $tea.Model {
+  positionId?: string;
+  positionName?: string;
+  positionCategoryId?: string;
+  jobId?: string;
+  positionDes?: string;
+  rankIdList?: string[];
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      positionId: 'positionId',
+      positionName: 'positionName',
+      positionCategoryId: 'positionCategoryId',
+      jobId: 'jobId',
+      positionDes: 'positionDes',
+      rankIdList: 'rankIdList',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      positionId: 'string',
+      positionName: 'string',
+      positionCategoryId: 'string',
+      jobId: 'string',
+      positionDes: 'string',
+      rankIdList: { 'type': 'array', 'itemType': 'string' },
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -453,6 +846,88 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
+  }
+
+  async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryJobRanksHeaders({ });
+    return await this.queryJobRanksWithOptions(request, headers, runtime);
+  }
+
+  async queryJobRanksWithOptions(request: QueryJobRanksRequest, headers: QueryJobRanksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobRanksResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.rankCategoryId)) {
+      query["rankCategoryId"] = request.rankCategoryId;
+    }
+
+    if (!Util.isUnset(request.rankCode)) {
+      query["rankCode"] = request.rankCode;
+    }
+
+    if (!Util.isUnset(request.rankName)) {
+      query["rankName"] = request.rankName;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryJobRanksResponse>(await this.doROARequest("QueryJobRanks", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/jobRanks`, "json", req, runtime), new QueryJobRanksResponse({}));
+  }
+
+  async queryJobs(request: QueryJobsRequest): Promise<QueryJobsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryJobsHeaders({ });
+    return await this.queryJobsWithOptions(request, headers, runtime);
+  }
+
+  async queryJobsWithOptions(request: QueryJobsRequest, headers: QueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.jobName)) {
+      query["jobName"] = request.jobName;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryJobsResponse>(await this.doROARequest("QueryJobs", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/jobs`, "json", req, runtime), new QueryJobsResponse({}));
   }
 
   async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {
@@ -535,6 +1010,53 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddHrmPreentryResponse>(await this.doROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/preentries`, "json", req, runtime), new AddHrmPreentryResponse({}));
+  }
+
+  async queryPositions(request: QueryPositionsRequest): Promise<QueryPositionsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPositionsHeaders({ });
+    return await this.queryPositionsWithOptions(request, headers, runtime);
+  }
+
+  async queryPositionsWithOptions(request: QueryPositionsRequest, headers: QueryPositionsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPositionsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.positionName)) {
+      body["positionName"] = request.positionName;
+    }
+
+    if (!Util.isUnset(request.inCategoryIds)) {
+      body["inCategoryIds"] = request.inCategoryIds;
+    }
+
+    if (!Util.isUnset(request.inPositionIds)) {
+      body["inPositionIds"] = request.inPositionIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryPositionsResponse>(await this.doROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/positions/query`, "json", req, runtime), new QueryPositionsResponse({}));
   }
 
 }

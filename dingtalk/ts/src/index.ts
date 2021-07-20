@@ -9,6 +9,7 @@ import * as contact_1_0 from './contact_1_0/client';
 import * as content_1_0 from './content_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
+import * as datacenter_1_0 from './datacenter_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
@@ -50,6 +51,7 @@ export = {
   content_1_0,
   crm_1_0,
   customer_service_1_0,
+  datacenter_1_0,
   dingmi_1_0,
   drive_1_0,
   edu_1_0,

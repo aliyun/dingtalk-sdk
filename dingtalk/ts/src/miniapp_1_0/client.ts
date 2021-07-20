@@ -1017,12 +1017,14 @@ export class ListAvaiableVersionResponseBodyVersions extends $tea.Model {
   packageSize?: string;
   buildStatus?: number;
   version?: string;
+  h5Bundle?: string;
   static names(): { [key: string]: string } {
     return {
       packageUrl: 'packageUrl',
       packageSize: 'packageSize',
       buildStatus: 'buildStatus',
       version: 'version',
+      h5Bundle: 'h5Bundle',
     };
   }
 
@@ -1032,6 +1034,7 @@ export class ListAvaiableVersionResponseBodyVersions extends $tea.Model {
       packageSize: 'string',
       buildStatus: 'number',
       version: 'string',
+      h5Bundle: 'string',
     };
   }
 
