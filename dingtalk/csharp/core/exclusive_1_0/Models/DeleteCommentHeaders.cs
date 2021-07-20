@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class GetGroupActiveInfoHeaders : TeaModel {
+    public class DeleteCommentHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

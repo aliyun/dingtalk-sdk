@@ -32,6 +32,10 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
             [Validation(Required=false)]
             public string Version { get; set; }
 
+            [NameInMap("h5Bundle")]
+            [Validation(Required=false)]
+            public string H5Bundle { get; set; }
+
         }
 
     }
