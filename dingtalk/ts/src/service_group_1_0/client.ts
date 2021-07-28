@@ -1400,6 +1400,7 @@ export class QueryGroupResponseBody extends $tea.Model {
   groupUrl?: string;
   robotCode?: string;
   robotName?: string;
+  bizId?: string;
   static names(): { [key: string]: string } {
     return {
       openConversationId: 'openConversationId',
@@ -1409,6 +1410,7 @@ export class QueryGroupResponseBody extends $tea.Model {
       groupUrl: 'groupUrl',
       robotCode: 'robotCode',
       robotName: 'robotName',
+      bizId: 'bizId',
     };
   }
 
@@ -1421,6 +1423,7 @@ export class QueryGroupResponseBody extends $tea.Model {
       groupUrl: 'string',
       robotCode: 'string',
       robotName: 'string',
+      bizId: 'string',
     };
   }
 

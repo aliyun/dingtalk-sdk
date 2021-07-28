@@ -7,7 +7,7 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class CreateTrustedDeviceHeaders extends $tea.Model {
+export class GetConferenceDetailHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -29,23 +29,44 @@ export class CreateTrustedDeviceHeaders extends $tea.Model {
   }
 }
 
-export class CreateTrustedDeviceRequest extends $tea.Model {
-  userId?: string;
-  platform?: string;
-  macAddress?: string;
+export class GetConferenceDetailResponseBody extends $tea.Model {
+  conferenceId?: string;
+  title?: string;
+  confStartTime?: number;
+  duration?: number;
+  totalNum?: number;
+  attendeeNum?: number;
+  attendeePercentage?: string;
+  callerId?: string;
+  callerName?: string;
+  memberList?: GetConferenceDetailResponseBodyMemberList[];
   static names(): { [key: string]: string } {
     return {
-      userId: 'userId',
-      platform: 'platform',
-      macAddress: 'macAddress',
+      conferenceId: 'conferenceId',
+      title: 'title',
+      confStartTime: 'confStartTime',
+      duration: 'duration',
+      totalNum: 'totalNum',
+      attendeeNum: 'attendeeNum',
+      attendeePercentage: 'attendeePercentage',
+      callerId: 'callerId',
+      callerName: 'callerName',
+      memberList: 'memberList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      userId: 'string',
-      platform: 'string',
-      macAddress: 'string',
+      conferenceId: 'string',
+      title: 'string',
+      confStartTime: 'number',
+      duration: 'number',
+      totalNum: 'number',
+      attendeeNum: 'number',
+      attendeePercentage: 'string',
+      callerId: 'string',
+      callerName: 'string',
+      memberList: { 'type': 'array', 'itemType': GetConferenceDetailResponseBodyMemberList },
     };
   }
 
@@ -54,28 +75,9 @@ export class CreateTrustedDeviceRequest extends $tea.Model {
   }
 }
 
-export class CreateTrustedDeviceResponseBody extends $tea.Model {
-  success?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      success: 'success',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      success: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTrustedDeviceResponse extends $tea.Model {
+export class GetConferenceDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: CreateTrustedDeviceResponseBody;
+  body: GetConferenceDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -86,7 +88,7 @@ export class CreateTrustedDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: CreateTrustedDeviceResponseBody,
+      body: GetConferenceDetailResponseBody,
     };
   }
 
@@ -139,7 +141,7 @@ export class DeleteCommentResponse extends $tea.Model {
   }
 }
 
-export class GetGroupActiveInfoHeaders extends $tea.Model {
+export class GetAllLabelableDeptsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -161,48 +163,17 @@ export class GetGroupActiveInfoHeaders extends $tea.Model {
   }
 }
 
-export class GetGroupActiveInfoRequest extends $tea.Model {
-  statDate?: string;
-  dingGroupId?: string;
-  pageNumber?: number;
-  pageSize?: number;
-  static names(): { [key: string]: string } {
-    return {
-      statDate: 'statDate',
-      dingGroupId: 'dingGroupId',
-      pageNumber: 'pageNumber',
-      pageSize: 'pageSize',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      statDate: 'string',
-      dingGroupId: 'string',
-      pageNumber: 'number',
-      pageSize: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetGroupActiveInfoResponseBody extends $tea.Model {
-  data?: GetGroupActiveInfoResponseBodyData[];
-  totalCount?: number;
+export class GetAllLabelableDeptsResponseBody extends $tea.Model {
+  data?: GetAllLabelableDeptsResponseBodyData[];
   static names(): { [key: string]: string } {
     return {
       data: 'data',
-      totalCount: 'totalCount',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      data: { 'type': 'array', 'itemType': GetGroupActiveInfoResponseBodyData },
-      totalCount: 'number',
+      data: { 'type': 'array', 'itemType': GetAllLabelableDeptsResponseBodyData },
     };
   }
 
@@ -211,9 +182,9 @@ export class GetGroupActiveInfoResponseBody extends $tea.Model {
   }
 }
 
-export class GetGroupActiveInfoResponse extends $tea.Model {
+export class GetAllLabelableDeptsResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetGroupActiveInfoResponseBody;
+  body: GetAllLabelableDeptsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -224,95 +195,7 @@ export class GetGroupActiveInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetGroupActiveInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCommentListHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCommentListRequest extends $tea.Model {
-  pageNumber?: number;
-  pageSize?: number;
-  static names(): { [key: string]: string } {
-    return {
-      pageNumber: 'pageNumber',
-      pageSize: 'pageSize',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      pageNumber: 'number',
-      pageSize: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCommentListResponseBody extends $tea.Model {
-  data?: GetCommentListResponseBodyData[];
-  totalCount?: number;
-  static names(): { [key: string]: string } {
-    return {
-      data: 'data',
-      totalCount: 'totalCount',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      data: { 'type': 'array', 'itemType': GetCommentListResponseBodyData },
-      totalCount: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCommentListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetCommentListResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetCommentListResponseBody,
+      body: GetAllLabelableDeptsResponseBody,
     };
   }
 
@@ -527,47 +410,20 @@ export class SearchOrgInnerGroupInfoResponse extends $tea.Model {
   }
 }
 
-export class GetGroupActiveInfoResponseBodyData extends $tea.Model {
-  statDate?: string;
-  dingGroupId?: string;
-  groupCreateTime?: string;
-  groupCreateUserId?: string;
-  groupCreateUserName?: string;
-  groupName?: string;
-  groupType?: number;
-  groupUserCnt1d?: number;
-  sendMessageUserCnt1d?: number;
-  sendMessageCnt1d?: number;
-  openConvUv1d?: number;
+export class CreateTrustedDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
-      statDate: 'statDate',
-      dingGroupId: 'dingGroupId',
-      groupCreateTime: 'groupCreateTime',
-      groupCreateUserId: 'groupCreateUserId',
-      groupCreateUserName: 'groupCreateUserName',
-      groupName: 'groupName',
-      groupType: 'groupType',
-      groupUserCnt1d: 'groupUserCnt1d',
-      sendMessageUserCnt1d: 'sendMessageUserCnt1d',
-      sendMessageCnt1d: 'sendMessageCnt1d',
-      openConvUv1d: 'openConvUv1d',
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      statDate: 'string',
-      dingGroupId: 'string',
-      groupCreateTime: 'string',
-      groupCreateUserId: 'string',
-      groupCreateUserName: 'string',
-      groupName: 'string',
-      groupType: 'number',
-      groupUserCnt1d: 'number',
-      sendMessageUserCnt1d: 'number',
-      sendMessageCnt1d: 'number',
-      openConvUv1d: 'number',
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
     };
   }
 
@@ -576,26 +432,574 @@ export class GetGroupActiveInfoResponseBodyData extends $tea.Model {
   }
 }
 
-export class GetCommentListResponseBodyData extends $tea.Model {
-  commentUserName?: string;
-  content?: string;
-  commentTime?: number;
-  commentId?: string;
+export class CreateTrustedDeviceRequest extends $tea.Model {
+  userId?: string;
+  platform?: string;
+  macAddress?: string;
   static names(): { [key: string]: string } {
     return {
-      commentUserName: 'commentUserName',
-      content: 'content',
-      commentTime: 'commentTime',
-      commentId: 'commentId',
+      userId: 'userId',
+      platform: 'platform',
+      macAddress: 'macAddress',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      commentUserName: 'string',
-      content: 'string',
-      commentTime: 'number',
-      commentId: 'string',
+      userId: 'string',
+      platform: 'string',
+      macAddress: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustedDeviceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTrustedDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTrustedDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTrustedDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoRequest extends $tea.Model {
+  statDate?: string;
+  dingGroupId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+      dingGroupId: 'dingGroupId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+      dingGroupId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoResponseBody extends $tea.Model {
+  data?: GetGroupActiveInfoResponseBodyData[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetGroupActiveInfoResponseBodyData },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGroupActiveInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetGroupActiveInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetGroupActiveInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCommentListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCommentListRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCommentListResponseBody extends $tea.Model {
+  data?: GetCommentListResponseBodyData[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetCommentListResponseBodyData },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCommentListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCommentListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCommentListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPartnerTypeByParentIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPartnerTypeByParentIdResponseBody extends $tea.Model {
+  data?: GetPartnerTypeByParentIdResponseBodyData[];
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetPartnerTypeByParentIdResponseBodyData },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPartnerTypeByParentIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPartnerTypeByParentIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPartnerTypeByParentIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDeptPartnerTypeAndNumHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDeptPartnerTypeAndNumRequest extends $tea.Model {
+  deptId?: string;
+  partnerNum?: string;
+  labelIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      partnerNum: 'partnerNum',
+      labelIds: 'labelIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+      partnerNum: 'string',
+      labelIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDeptPartnerTypeAndNumResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConferenceDetailResponseBodyMemberList extends $tea.Model {
+  unionId?: string;
+  name?: string;
+  attendDuration?: number;
+  staffId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      name: 'name',
+      attendDuration: 'attendDuration',
+      staffId: 'staffId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      name: 'string',
+      attendDuration: 'number',
+      staffId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends $tea.Model {
+  labelId?: number;
+  labelName?: string;
+  levelNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      labelId: 'labelId',
+      labelName: 'labelName',
+      levelNum: 'levelNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labelId: 'number',
+      labelName: 'string',
+      levelNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 extends $tea.Model {
+  labelId?: number;
+  labelName?: string;
+  levelNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      labelId: 'labelId',
+      labelName: 'labelName',
+      levelNum: 'levelNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labelId: 'number',
+      labelName: 'string',
+      levelNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 extends $tea.Model {
+  labelId?: number;
+  labelName?: string;
+  levelNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      labelId: 'labelId',
+      labelName: 'labelName',
+      levelNum: 'levelNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labelId: 'number',
+      labelName: 'string',
+      levelNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 extends $tea.Model {
+  labelId?: number;
+  labelName?: string;
+  levelNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      labelId: 'labelId',
+      labelName: 'labelName',
+      levelNum: 'levelNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labelId: 'number',
+      labelName: 'string',
+      levelNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 extends $tea.Model {
+  labelId?: number;
+  labelName?: string;
+  levelNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      labelId: 'labelId',
+      labelName: 'labelName',
+      levelNum: 'levelNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labelId: 'number',
+      labelName: 'string',
+      levelNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBodyData extends $tea.Model {
+  deptId?: string;
+  superDeptId?: string;
+  deptName?: string;
+  memberCount?: number;
+  partnerNum?: string;
+  partnerLabelVOLevel1?: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1;
+  partnerLabelVOLevel2?: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2;
+  partnerLabelVOLevel3?: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3;
+  partnerLabelVOLevel4?: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4;
+  partnerLabelVOLevel5?: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      superDeptId: 'superDeptId',
+      deptName: 'deptName',
+      memberCount: 'memberCount',
+      partnerNum: 'partnerNum',
+      partnerLabelVOLevel1: 'partnerLabelVOLevel1',
+      partnerLabelVOLevel2: 'partnerLabelVOLevel2',
+      partnerLabelVOLevel3: 'partnerLabelVOLevel3',
+      partnerLabelVOLevel4: 'partnerLabelVOLevel4',
+      partnerLabelVOLevel5: 'partnerLabelVOLevel5',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+      superDeptId: 'string',
+      deptName: 'string',
+      memberCount: 'number',
+      partnerNum: 'string',
+      partnerLabelVOLevel1: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1,
+      partnerLabelVOLevel2: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2,
+      partnerLabelVOLevel3: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3,
+      partnerLabelVOLevel4: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4,
+      partnerLabelVOLevel5: GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5,
     };
   }
 
@@ -687,6 +1091,105 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   }
 }
 
+export class GetGroupActiveInfoResponseBodyData extends $tea.Model {
+  statDate?: string;
+  dingGroupId?: string;
+  groupCreateTime?: string;
+  groupCreateUserId?: string;
+  groupCreateUserName?: string;
+  groupName?: string;
+  groupType?: number;
+  groupUserCnt1d?: number;
+  sendMessageUserCnt1d?: number;
+  sendMessageCnt1d?: number;
+  openConvUv1d?: number;
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+      dingGroupId: 'dingGroupId',
+      groupCreateTime: 'groupCreateTime',
+      groupCreateUserId: 'groupCreateUserId',
+      groupCreateUserName: 'groupCreateUserName',
+      groupName: 'groupName',
+      groupType: 'groupType',
+      groupUserCnt1d: 'groupUserCnt1d',
+      sendMessageUserCnt1d: 'sendMessageUserCnt1d',
+      sendMessageCnt1d: 'sendMessageCnt1d',
+      openConvUv1d: 'openConvUv1d',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+      dingGroupId: 'string',
+      groupCreateTime: 'string',
+      groupCreateUserId: 'string',
+      groupCreateUserName: 'string',
+      groupName: 'string',
+      groupType: 'number',
+      groupUserCnt1d: 'number',
+      sendMessageUserCnt1d: 'number',
+      sendMessageCnt1d: 'number',
+      openConvUv1d: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCommentListResponseBodyData extends $tea.Model {
+  commentUserName?: string;
+  content?: string;
+  commentTime?: number;
+  commentId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commentUserName: 'commentUserName',
+      content: 'content',
+      commentTime: 'commentTime',
+      commentId: 'commentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commentUserName: 'string',
+      content: 'string',
+      commentTime: 'number',
+      commentId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
+  typeId?: number;
+  typeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      typeId: 'typeId',
+      typeName: 'typeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      typeId: 'number',
+      typeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -700,27 +1203,13 @@ export default class Client extends OpenApi {
   }
 
 
-  async createTrustedDevice(request: CreateTrustedDeviceRequest): Promise<CreateTrustedDeviceResponse> {
+  async getConferenceDetail(conferenceId: string): Promise<GetConferenceDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTrustedDeviceHeaders({ });
-    return await this.createTrustedDeviceWithOptions(request, headers, runtime);
+    let headers = new GetConferenceDetailHeaders({ });
+    return await this.getConferenceDetailWithOptions(conferenceId, headers, runtime);
   }
 
-  async createTrustedDeviceWithOptions(request: CreateTrustedDeviceRequest, headers: CreateTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustedDeviceResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
-    }
-
-    if (!Util.isUnset(request.platform)) {
-      body["platform"] = request.platform;
-    }
-
-    if (!Util.isUnset(request.macAddress)) {
-      body["macAddress"] = request.macAddress;
-    }
-
+  async getConferenceDetailWithOptions(conferenceId: string, headers: GetConferenceDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetConferenceDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -732,9 +1221,8 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTrustedDeviceResponse>(await this.doROARequest("CreateTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trustedDevices`, "json", req, runtime), new CreateTrustedDeviceResponse({}));
+    return $tea.cast<GetConferenceDetailResponse>(await this.doROARequest("GetConferenceDetail", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/conferences/${conferenceId}`, "json", req, runtime), new GetConferenceDetailResponse({}));
   }
 
   async deleteComment(publisherId: string, commentId: string): Promise<DeleteCommentResponse> {
@@ -759,31 +1247,13 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteCommentResponse>(await this.doROARequest("DeleteComment", "exclusive_1.0", "HTTP", "DELETE", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/${commentId}`, "boolean", req, runtime), new DeleteCommentResponse({}));
   }
 
-  async getGroupActiveInfo(request: GetGroupActiveInfoRequest): Promise<GetGroupActiveInfoResponse> {
+  async getAllLabelableDepts(): Promise<GetAllLabelableDeptsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetGroupActiveInfoHeaders({ });
-    return await this.getGroupActiveInfoWithOptions(request, headers, runtime);
+    let headers = new GetAllLabelableDeptsHeaders({ });
+    return await this.getAllLabelableDeptsWithOptions(headers, runtime);
   }
 
-  async getGroupActiveInfoWithOptions(request: GetGroupActiveInfoRequest, headers: GetGroupActiveInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetGroupActiveInfoResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.statDate)) {
-      query["statDate"] = request.statDate;
-    }
-
-    if (!Util.isUnset(request.dingGroupId)) {
-      query["dingGroupId"] = request.dingGroupId;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
+  async getAllLabelableDeptsWithOptions(headers: GetAllLabelableDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllLabelableDeptsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -795,42 +1265,8 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetGroupActiveInfoResponse>(await this.doROARequest("GetGroupActiveInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/activeGroups`, "json", req, runtime), new GetGroupActiveInfoResponse({}));
-  }
-
-  async getCommentList(publisherId: string, request: GetCommentListRequest): Promise<GetCommentListResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCommentListHeaders({ });
-    return await this.getCommentListWithOptions(publisherId, request, headers, runtime);
-  }
-
-  async getCommentListWithOptions(publisherId: string, request: GetCommentListRequest, headers: GetCommentListHeaders, runtime: $Util.RuntimeOptions): Promise<GetCommentListResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetCommentListResponse>(await this.doROARequest("GetCommentList", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/list`, "json", req, runtime), new GetCommentListResponse({}));
+    return $tea.cast<GetAllLabelableDeptsResponse>(await this.doROARequest("GetAllLabelableDepts", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partnerDepartments`, "json", req, runtime), new GetAllLabelableDeptsResponse({}));
   }
 
   async getTrustDeviceList(request: GetTrustDeviceListRequest): Promise<GetTrustDeviceListResponse> {
@@ -937,6 +1373,176 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<SearchOrgInnerGroupInfoResponse>(await this.doROARequest("SearchOrgInnerGroupInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/securities/orgGroupInfos`, "json", req, runtime), new SearchOrgInnerGroupInfoResponse({}));
+  }
+
+  async createTrustedDevice(request: CreateTrustedDeviceRequest): Promise<CreateTrustedDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTrustedDeviceHeaders({ });
+    return await this.createTrustedDeviceWithOptions(request, headers, runtime);
+  }
+
+  async createTrustedDeviceWithOptions(request: CreateTrustedDeviceRequest, headers: CreateTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustedDeviceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.platform)) {
+      body["platform"] = request.platform;
+    }
+
+    if (!Util.isUnset(request.macAddress)) {
+      body["macAddress"] = request.macAddress;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTrustedDeviceResponse>(await this.doROARequest("CreateTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trustedDevices`, "json", req, runtime), new CreateTrustedDeviceResponse({}));
+  }
+
+  async getGroupActiveInfo(request: GetGroupActiveInfoRequest): Promise<GetGroupActiveInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetGroupActiveInfoHeaders({ });
+    return await this.getGroupActiveInfoWithOptions(request, headers, runtime);
+  }
+
+  async getGroupActiveInfoWithOptions(request: GetGroupActiveInfoRequest, headers: GetGroupActiveInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetGroupActiveInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.statDate)) {
+      query["statDate"] = request.statDate;
+    }
+
+    if (!Util.isUnset(request.dingGroupId)) {
+      query["dingGroupId"] = request.dingGroupId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetGroupActiveInfoResponse>(await this.doROARequest("GetGroupActiveInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/activeGroups`, "json", req, runtime), new GetGroupActiveInfoResponse({}));
+  }
+
+  async getCommentList(publisherId: string, request: GetCommentListRequest): Promise<GetCommentListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCommentListHeaders({ });
+    return await this.getCommentListWithOptions(publisherId, request, headers, runtime);
+  }
+
+  async getCommentListWithOptions(publisherId: string, request: GetCommentListRequest, headers: GetCommentListHeaders, runtime: $Util.RuntimeOptions): Promise<GetCommentListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetCommentListResponse>(await this.doROARequest("GetCommentList", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/list`, "json", req, runtime), new GetCommentListResponse({}));
+  }
+
+  async getPartnerTypeByParentId(parentId: string): Promise<GetPartnerTypeByParentIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPartnerTypeByParentIdHeaders({ });
+    return await this.getPartnerTypeByParentIdWithOptions(parentId, headers, runtime);
+  }
+
+  async getPartnerTypeByParentIdWithOptions(parentId: string, headers: GetPartnerTypeByParentIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetPartnerTypeByParentIdResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetPartnerTypeByParentIdResponse>(await this.doROARequest("GetPartnerTypeByParentId", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partnerLabels/${parentId}`, "json", req, runtime), new GetPartnerTypeByParentIdResponse({}));
+  }
+
+  async setDeptPartnerTypeAndNum(request: SetDeptPartnerTypeAndNumRequest): Promise<SetDeptPartnerTypeAndNumResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetDeptPartnerTypeAndNumHeaders({ });
+    return await this.setDeptPartnerTypeAndNumWithOptions(request, headers, runtime);
+  }
+
+  async setDeptPartnerTypeAndNumWithOptions(request: SetDeptPartnerTypeAndNumRequest, headers: SetDeptPartnerTypeAndNumHeaders, runtime: $Util.RuntimeOptions): Promise<SetDeptPartnerTypeAndNumResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.partnerNum)) {
+      body["partnerNum"] = request.partnerNum;
+    }
+
+    if (!Util.isUnset(request.labelIds)) {
+      body["labelIds"] = request.labelIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SetDeptPartnerTypeAndNumResponse>(await this.doROARequest("SetDeptPartnerTypeAndNum", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/partnerDepartments`, "none", req, runtime), new SetDeptPartnerTypeAndNumResponse({}));
   }
 
 }

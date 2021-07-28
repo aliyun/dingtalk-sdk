@@ -70,6 +70,94 @@ export class QueryResourceManagementMembersResponse extends $tea.Model {
   }
 }
 
+export class SortUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SortUserRequest extends $tea.Model {
+  dingOrgId?: number;
+  userIdList?: string[];
+  sortType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingOrgId: 'dingOrgId',
+      userIdList: 'userIdList',
+      sortType: 'sortType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOrgId: 'number',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+      sortType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SortUserResponseBody extends $tea.Model {
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SortUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SortUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SortUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateEmpAttrbuteVisibilitySettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -224,6 +312,103 @@ export class DeleteEmpAttributeVisibilityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchDepartmentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchDepartmentRequest extends $tea.Model {
+  dingOrgId?: number;
+  queryWord?: string;
+  offset?: number;
+  size?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingOrgId: 'dingOrgId',
+      queryWord: 'queryWord',
+      offset: 'offset',
+      size: 'size',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOrgId: 'number',
+      queryWord: 'string',
+      offset: 'number',
+      size: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchDepartmentResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  totalCount?: number;
+  list?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      totalCount: 'totalCount',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      totalCount: 'number',
+      list: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchDepartmentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchDepartmentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchDepartmentResponseBody,
     };
   }
 
@@ -406,6 +591,103 @@ export class ListEmpAttributeVisibilityResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListEmpAttributeVisibilityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserRequest extends $tea.Model {
+  dingOrgId?: number;
+  queryWord?: string;
+  offset?: number;
+  size?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingOrgId: 'dingOrgId',
+      queryWord: 'queryWord',
+      offset: 'offset',
+      size: 'size',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOrgId: 'number',
+      queryWord: 'string',
+      offset: 'number',
+      size: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  totalCount?: number;
+  list?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      totalCount: 'totalCount',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      totalCount: 'number',
+      list: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchUserResponseBody,
     };
   }
 
@@ -1479,6 +1761,43 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryResourceManagementMembersResponse>(await this.doROARequest("QueryResourceManagementMembers", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/resources/${resourceId}/managementMembers`, "json", req, runtime), new QueryResourceManagementMembersResponse({}));
   }
 
+  async sortUser(request: SortUserRequest): Promise<SortUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SortUserHeaders({ });
+    return await this.sortUserWithOptions(request, headers, runtime);
+  }
+
+  async sortUserWithOptions(request: SortUserRequest, headers: SortUserHeaders, runtime: $Util.RuntimeOptions): Promise<SortUserResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    if (!Util.isUnset(request.sortType)) {
+      body["sortType"] = request.sortType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SortUserResponse>(await this.doROARequest("SortUser", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/users/sort`, "json", req, runtime), new SortUserResponse({}));
+  }
+
   async updateEmpAttrbuteVisibilitySetting(request: UpdateEmpAttrbuteVisibilitySettingRequest): Promise<UpdateEmpAttrbuteVisibilitySettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateEmpAttrbuteVisibilitySettingHeaders({ });
@@ -1582,6 +1901,47 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteEmpAttributeVisibilityResponse>(await this.doROARequest("DeleteEmpAttributeVisibility", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/staffAttributes/visibilitySettings/${settingId}`, "none", req, runtime), new DeleteEmpAttributeVisibilityResponse({}));
   }
 
+  async searchDepartment(request: SearchDepartmentRequest): Promise<SearchDepartmentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchDepartmentHeaders({ });
+    return await this.searchDepartmentWithOptions(request, headers, runtime);
+  }
+
+  async searchDepartmentWithOptions(request: SearchDepartmentRequest, headers: SearchDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<SearchDepartmentResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.queryWord)) {
+      body["queryWord"] = request.queryWord;
+    }
+
+    if (!Util.isUnset(request.offset)) {
+      body["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.size)) {
+      body["size"] = request.size;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchDepartmentResponse>(await this.doROARequest("SearchDepartment", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/departments/search`, "json", req, runtime), new SearchDepartmentResponse({}));
+  }
+
   async listManagementGroups(request: ListManagementGroupsRequest): Promise<ListManagementGroupsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListManagementGroupsHeaders({ });
@@ -1646,6 +2006,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListEmpAttributeVisibilityResponse>(await this.doROARequest("ListEmpAttributeVisibility", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/staffAttributes/visibilitySettings`, "json", req, runtime), new ListEmpAttributeVisibilityResponse({}));
+  }
+
+  async searchUser(request: SearchUserRequest): Promise<SearchUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchUserHeaders({ });
+    return await this.searchUserWithOptions(request, headers, runtime);
+  }
+
+  async searchUserWithOptions(request: SearchUserRequest, headers: SearchUserHeaders, runtime: $Util.RuntimeOptions): Promise<SearchUserResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.queryWord)) {
+      body["queryWord"] = request.queryWord;
+    }
+
+    if (!Util.isUnset(request.offset)) {
+      body["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.size)) {
+      body["size"] = request.size;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchUserResponse>(await this.doROARequest("SearchUser", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/users/search`, "json", req, runtime), new SearchUserResponse({}));
   }
 
   async getApplyInviteInfo(request: GetApplyInviteInfoRequest): Promise<GetApplyInviteInfoResponse> {

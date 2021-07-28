@@ -7,157 +7,6 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class GetShareRolesHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetShareRolesResponseBody extends $tea.Model {
-  result?: GetShareRolesResponseBodyResult[];
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: { 'type': 'array', 'itemType': GetShareRolesResponseBodyResult },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetShareRolesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetShareRolesResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetShareRolesResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QuerySubjectTeachersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QuerySubjectTeachersRequest extends $tea.Model {
-  classIds?: number[];
-  opUserId?: string;
-  subjectCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      classIds: 'classIds',
-      opUserId: 'opUserId',
-      subjectCode: 'subjectCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      classIds: { 'type': 'array', 'itemType': 'number' },
-      opUserId: 'string',
-      subjectCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QuerySubjectTeachersResponseBody extends $tea.Model {
-  result?: QuerySubjectTeachersResponseBodyResult[];
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: { 'type': 'array', 'itemType': QuerySubjectTeachersResponseBodyResult },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QuerySubjectTeachersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QuerySubjectTeachersResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QuerySubjectTeachersResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryStatisticsDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -181,28 +30,28 @@ export class QueryStatisticsDataHeaders extends $tea.Model {
 }
 
 export class QueryStatisticsDataRequest extends $tea.Model {
-  sectionIndexList?: number[];
   startTime?: number;
-  teacherUserIds?: string[];
   endTime?: number;
   opUserId?: string;
+  sectionIndexList?: number[];
+  teacherUserIds?: string[];
   static names(): { [key: string]: string } {
     return {
-      sectionIndexList: 'sectionIndexList',
       startTime: 'startTime',
-      teacherUserIds: 'teacherUserIds',
       endTime: 'endTime',
       opUserId: 'opUserId',
+      sectionIndexList: 'sectionIndexList',
+      teacherUserIds: 'teacherUserIds',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      sectionIndexList: { 'type': 'array', 'itemType': 'number' },
       startTime: 'number',
-      teacherUserIds: { 'type': 'array', 'itemType': 'string' },
       endTime: 'number',
       opUserId: 'string',
+      sectionIndexList: { 'type': 'array', 'itemType': 'number' },
+      teacherUserIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -871,7 +720,7 @@ export class InitCoursesOfClassRequest extends $tea.Model {
 }
 
 export class InitCoursesOfClassResponseBody extends $tea.Model {
-  result?: string;
+  result?: boolean;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
@@ -880,7 +729,7 @@ export class InitCoursesOfClassResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: 'string',
+      result: 'boolean',
     };
   }
 
@@ -903,106 +752,6 @@ export class InitCoursesOfClassResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: InitCoursesOfClassResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryClassScheduleHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryClassScheduleRequest extends $tea.Model {
-  subscriberIds?: string[];
-  subscriberType?: string;
-  sectionIndexList?: number[];
-  startTime?: number;
-  endTime?: number;
-  opUserId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      subscriberIds: 'subscriberIds',
-      subscriberType: 'subscriberType',
-      sectionIndexList: 'sectionIndexList',
-      startTime: 'startTime',
-      endTime: 'endTime',
-      opUserId: 'opUserId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      subscriberIds: { 'type': 'array', 'itemType': 'string' },
-      subscriberType: 'string',
-      sectionIndexList: { 'type': 'array', 'itemType': 'number' },
-      startTime: 'number',
-      endTime: 'number',
-      opUserId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryClassScheduleResponseBody extends $tea.Model {
-  config?: QueryClassScheduleResponseBodyConfig;
-  courseDTOS?: QueryClassScheduleResponseBodyCourseDTOS[];
-  static names(): { [key: string]: string } {
-    return {
-      config: 'config',
-      courseDTOS: 'courseDTOS',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      config: QueryClassScheduleResponseBodyConfig,
-      courseDTOS: { 'type': 'array', 'itemType': QueryClassScheduleResponseBodyCourseDTOS },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryClassScheduleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryClassScheduleResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryClassScheduleResponseBody,
     };
   }
 
@@ -1178,115 +927,6 @@ export class DeleteGuardianResponse extends $tea.Model {
   }
 }
 
-export class CreateCustomClassHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateCustomClassRequest extends $tea.Model {
-  customClass?: CreateCustomClassRequestCustomClass;
-  superId?: number;
-  operator?: string;
-  dingIsvOrgId?: number;
-  dingCorpId?: string;
-  dingOauthAppId?: number;
-  dingSuiteKey?: string;
-  dingTokenGrantType?: number;
-  dingOrgId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      customClass: 'customClass',
-      superId: 'superId',
-      operator: 'operator',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingCorpId: 'dingCorpId',
-      dingOauthAppId: 'dingOauthAppId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingTokenGrantType: 'dingTokenGrantType',
-      dingOrgId: 'dingOrgId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      customClass: CreateCustomClassRequestCustomClass,
-      superId: 'number',
-      operator: 'string',
-      dingIsvOrgId: 'number',
-      dingCorpId: 'string',
-      dingOauthAppId: 'number',
-      dingSuiteKey: 'string',
-      dingTokenGrantType: 'number',
-      dingOrgId: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateCustomClassResponseBody extends $tea.Model {
-  result?: CreateCustomClassResponseBodyResult;
-  success?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-      success: 'success',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: CreateCustomClassResponseBodyResult,
-      success: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateCustomClassResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: CreateCustomClassResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: CreateCustomClassResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class DeleteTeacherHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1364,151 +1004,6 @@ export class DeleteTeacherResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteTeacherResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SearchTeachersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SearchTeachersRequest extends $tea.Model {
-  nameKeyword?: string;
-  static names(): { [key: string]: string } {
-    return {
-      nameKeyword: 'nameKeyword',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      nameKeyword: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SearchTeachersResponseBody extends $tea.Model {
-  users?: SearchTeachersResponseBodyUsers[];
-  static names(): { [key: string]: string } {
-    return {
-      users: 'users',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      users: { 'type': 'array', 'itemType': SearchTeachersResponseBodyUsers },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SearchTeachersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: SearchTeachersResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: SearchTeachersResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryOrgTypeHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryOrgTypeResponseBody extends $tea.Model {
-  orgType?: number;
-  static names(): { [key: string]: string } {
-    return {
-      orgType: 'orgType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      orgType: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryOrgTypeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryOrgTypeResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryOrgTypeResponseBody,
     };
   }
 
@@ -1934,6 +1429,94 @@ export class DeleteStudentResponse extends $tea.Model {
   }
 }
 
+export class QueryClassScheduleByTimeSchoolHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleByTimeSchoolRequest extends $tea.Model {
+  startTime?: number;
+  endTime?: number;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      startTime: 'startTime',
+      endTime: 'endTime',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      startTime: 'number',
+      endTime: 'number',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleByTimeSchoolResponseBody extends $tea.Model {
+  result?: QueryClassScheduleByTimeSchoolResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QueryClassScheduleByTimeSchoolResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleByTimeSchoolResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryClassScheduleByTimeSchoolResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryClassScheduleByTimeSchoolResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCoursesOfClassHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2011,69 +1594,6 @@ export class UpdateCoursesOfClassResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateCoursesOfClassResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetShareRoleMembersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetShareRoleMembersResponseBody extends $tea.Model {
-  result?: GetShareRoleMembersResponseBodyResult[];
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: { 'type': 'array', 'itemType': GetShareRoleMembersResponseBodyResult },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetShareRoleMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetShareRoleMembersResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetShareRoleMembersResponseBody,
     };
   }
 
@@ -2167,20 +1687,20 @@ export class QueryTeachSubjectsResponse extends $tea.Model {
   }
 }
 
-export class GetShareRolesResponseBodyResult extends $tea.Model {
-  shareRoleCode?: string;
-  shareRoleName?: string;
+export class GetShareRolesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
-      shareRoleCode: 'shareRoleCode',
-      shareRoleName: 'shareRoleName',
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      shareRoleCode: 'string',
-      shareRoleName: 'string',
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
     };
   }
 
@@ -2189,35 +1709,544 @@ export class GetShareRolesResponseBodyResult extends $tea.Model {
   }
 }
 
-export class QuerySubjectTeachersResponseBodyResult extends $tea.Model {
-  teacherName?: string;
-  subjectName?: string;
-  subjectCode?: string;
-  periodCode?: string;
-  orgId?: number;
-  teacherUid?: number;
-  classId?: number;
+export class GetShareRolesResponseBody extends $tea.Model {
+  result?: GetShareRolesResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
-      teacherName: 'teacherName',
-      subjectName: 'subjectName',
-      subjectCode: 'subjectCode',
-      periodCode: 'periodCode',
-      orgId: 'orgId',
-      teacherUid: 'teacherUid',
-      classId: 'classId',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      teacherName: 'string',
-      subjectName: 'string',
+      result: { 'type': 'array', 'itemType': GetShareRolesResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShareRolesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetShareRolesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetShareRolesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySubjectTeachersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySubjectTeachersRequest extends $tea.Model {
+  classIds?: number[];
+  opUserId?: string;
+  subjectCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      classIds: 'classIds',
+      opUserId: 'opUserId',
+      subjectCode: 'subjectCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classIds: { 'type': 'array', 'itemType': 'number' },
+      opUserId: 'string',
       subjectCode: 'string',
-      periodCode: 'string',
-      orgId: 'number',
-      teacherUid: 'number',
-      classId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySubjectTeachersResponseBody extends $tea.Model {
+  result?: QuerySubjectTeachersResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QuerySubjectTeachersResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySubjectTeachersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QuerySubjectTeachersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QuerySubjectTeachersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleRequest extends $tea.Model {
+  subscriberType?: string;
+  startTime?: number;
+  endTime?: number;
+  opUserId?: string;
+  subscriberIds?: string[];
+  sectionIndexList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      subscriberType: 'subscriberType',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      opUserId: 'opUserId',
+      subscriberIds: 'subscriberIds',
+      sectionIndexList: 'sectionIndexList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      subscriberType: 'string',
+      startTime: 'number',
+      endTime: 'number',
+      opUserId: 'string',
+      subscriberIds: { 'type': 'array', 'itemType': 'string' },
+      sectionIndexList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleResponseBody extends $tea.Model {
+  config?: QueryClassScheduleResponseBodyConfig;
+  courseDTOS?: QueryClassScheduleResponseBodyCourseDTOS[];
+  static names(): { [key: string]: string } {
+    return {
+      config: 'config',
+      courseDTOS: 'courseDTOS',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      config: QueryClassScheduleResponseBodyConfig,
+      courseDTOS: { 'type': 'array', 'itemType': QueryClassScheduleResponseBodyCourseDTOS },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryClassScheduleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryClassScheduleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomClassHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomClassRequest extends $tea.Model {
+  customClass?: CreateCustomClassRequestCustomClass;
+  superId?: number;
+  operator?: string;
+  dingIsvOrgId?: number;
+  dingCorpId?: string;
+  dingOauthAppId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  dingOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      customClass: 'customClass',
+      superId: 'superId',
+      operator: 'operator',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingCorpId: 'dingCorpId',
+      dingOauthAppId: 'dingOauthAppId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingOrgId: 'dingOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customClass: CreateCustomClassRequestCustomClass,
+      superId: 'number',
+      operator: 'string',
+      dingIsvOrgId: 'number',
+      dingCorpId: 'string',
+      dingOauthAppId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      dingOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomClassResponseBody extends $tea.Model {
+  result?: CreateCustomClassResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateCustomClassResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomClassResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateCustomClassResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateCustomClassResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTeachersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTeachersRequest extends $tea.Model {
+  nameKeyword?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameKeyword: 'nameKeyword',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameKeyword: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTeachersResponseBody extends $tea.Model {
+  users?: SearchTeachersResponseBodyUsers[];
+  static names(): { [key: string]: string } {
+    return {
+      users: 'users',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      users: { 'type': 'array', 'itemType': SearchTeachersResponseBodyUsers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTeachersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchTeachersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchTeachersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTypeResponseBody extends $tea.Model {
+  orgType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      orgType: 'orgType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orgType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOrgTypeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryOrgTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryOrgTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShareRoleMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShareRoleMembersResponseBody extends $tea.Model {
+  result?: GetShareRoleMembersResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetShareRoleMembersResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShareRoleMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetShareRoleMembersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetShareRoleMembersResponseBody,
     };
   }
 
@@ -2783,12 +2812,10 @@ export class InitCoursesOfClassRequestCoursesDateModel extends $tea.Model {
 }
 
 export class InitCoursesOfClassRequestCoursesSectionModel extends $tea.Model {
-  sectionType?: string;
   sectionIndex?: number;
   sectionName?: string;
   static names(): { [key: string]: string } {
     return {
-      sectionType: 'sectionType',
       sectionIndex: 'sectionIndex',
       sectionName: 'sectionName',
     };
@@ -2796,7 +2823,6 @@ export class InitCoursesOfClassRequestCoursesSectionModel extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      sectionType: 'string',
       sectionIndex: 'number',
       sectionName: 'string',
     };
@@ -2814,7 +2840,6 @@ export class InitCoursesOfClassRequestCourses extends $tea.Model {
   sectionModel?: InitCoursesOfClassRequestCoursesSectionModel;
   creatorName?: string;
   location?: string;
-  deleteTag?: boolean;
   static names(): { [key: string]: string } {
     return {
       teacherStaffIds: 'teacherStaffIds',
@@ -2823,7 +2848,6 @@ export class InitCoursesOfClassRequestCourses extends $tea.Model {
       sectionModel: 'sectionModel',
       creatorName: 'creatorName',
       location: 'location',
-      deleteTag: 'deleteTag',
     };
   }
 
@@ -2835,7 +2859,6 @@ export class InitCoursesOfClassRequestCourses extends $tea.Model {
       sectionModel: InitCoursesOfClassRequestCoursesSectionModel,
       creatorName: 'string',
       location: 'string',
-      deleteTag: 'boolean',
     };
   }
 
@@ -2893,14 +2916,12 @@ export class InitCoursesOfClassRequestSectionConfigSectionModels extends $tea.Mo
   start?: InitCoursesOfClassRequestSectionConfigSectionModelsStart;
   sectionIndex?: number;
   end?: InitCoursesOfClassRequestSectionConfigSectionModelsEnd;
-  sectionName?: string;
   static names(): { [key: string]: string } {
     return {
       sectionType: 'sectionType',
       start: 'start',
       sectionIndex: 'sectionIndex',
       end: 'end',
-      sectionName: 'sectionName',
     };
   }
 
@@ -2910,7 +2931,6 @@ export class InitCoursesOfClassRequestSectionConfigSectionModels extends $tea.Mo
       start: InitCoursesOfClassRequestSectionConfigSectionModelsStart,
       sectionIndex: 'number',
       end: InitCoursesOfClassRequestSectionConfigSectionModelsEnd,
-      sectionName: 'string',
     };
   }
 
@@ -2930,6 +2950,503 @@ export class InitCoursesOfClassRequestSectionConfig extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       sectionModels: { 'type': 'array', 'itemType': InitCoursesOfClassRequestSectionConfigSectionModels },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents extends $tea.Model {
+  name?: string;
+  staffId?: string;
+  avatar?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      staffId: 'staffId',
+      avatar: 'avatar',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      staffId: 'string',
+      avatar: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOrgCreateHWRequestOpenSelectItemListClassList extends $tea.Model {
+  classId?: string;
+  className?: string;
+  all?: boolean;
+  students?: BatchOrgCreateHWRequestOpenSelectItemListClassListStudents[];
+  static names(): { [key: string]: string } {
+    return {
+      classId: 'classId',
+      className: 'className',
+      all: 'all',
+      students: 'students',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classId: 'string',
+      className: 'string',
+      all: 'boolean',
+      students: { 'type': 'array', 'itemType': BatchOrgCreateHWRequestOpenSelectItemListClassListStudents },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOrgCreateHWRequestOpenSelectItemList extends $tea.Model {
+  corpId?: string;
+  selectedClassesDesc?: string;
+  classList?: BatchOrgCreateHWRequestOpenSelectItemListClassList[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      selectedClassesDesc: 'selectedClassesDesc',
+      classList: 'classList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      selectedClassesDesc: 'string',
+      classList: { 'type': 'array', 'itemType': BatchOrgCreateHWRequestOpenSelectItemListClassList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOrgCreateHWResponseBodyResultPublishList extends $tea.Model {
+  corpid?: string;
+  hwid?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpid: 'corpid',
+      hwid: 'hwid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpid: 'string',
+      hwid: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchOrgCreateHWResponseBodyResult extends $tea.Model {
+  publishList?: BatchOrgCreateHWResponseBodyResultPublishList[];
+  static names(): { [key: string]: string } {
+    return {
+      publishList: 'publishList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      publishList: { 'type': 'array', 'itemType': BatchOrgCreateHWResponseBodyResultPublishList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomDeptRequestCustomDept extends $tea.Model {
+  type?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomDeptResponseBodyResult extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOpenCourseDetailResponseBodyPushModel extends $tea.Model {
+  pushOrgNameList?: string[];
+  pushRoleNameList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      pushOrgNameList: 'pushOrgNameList',
+      pushRoleNameList: 'pushRoleNameList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pushOrgNameList: { 'type': 'array', 'itemType': 'string' },
+      pushRoleNameList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms extends $tea.Model {
+  targetId?: string;
+  interactInfo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetId: 'targetId',
+      interactInfo: 'interactInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetId: 'string',
+      interactInfo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleByTimeSchoolResponseBodyResultEduUserModels extends $tea.Model {
+  userId?: string;
+  uid?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      uid: 'uid',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      uid: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClassScheduleByTimeSchoolResponseBodyResult extends $tea.Model {
+  code?: string;
+  name?: string;
+  introduce?: string;
+  coverUrl?: string;
+  startTime?: number;
+  endTime?: number;
+  creatorCorpId?: string;
+  creatorUserId?: string;
+  creatorUserName?: string;
+  teacherCorpId?: string;
+  teacherUserId?: string;
+  teacherUserName?: string;
+  bizKey?: string;
+  subjectCode?: string;
+  courseGroupCode?: string;
+  status?: number;
+  classrooms?: QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms[];
+  eduUserModels?: QueryClassScheduleByTimeSchoolResponseBodyResultEduUserModels[];
+  sectionName?: string;
+  sectionIndex?: number;
+  classId?: number;
+  extInfo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      introduce: 'introduce',
+      coverUrl: 'coverUrl',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      creatorCorpId: 'creatorCorpId',
+      creatorUserId: 'creatorUserId',
+      creatorUserName: 'creatorUserName',
+      teacherCorpId: 'teacherCorpId',
+      teacherUserId: 'teacherUserId',
+      teacherUserName: 'teacherUserName',
+      bizKey: 'bizKey',
+      subjectCode: 'subjectCode',
+      courseGroupCode: 'courseGroupCode',
+      status: 'status',
+      classrooms: 'classrooms',
+      eduUserModels: 'eduUserModels',
+      sectionName: 'sectionName',
+      sectionIndex: 'sectionIndex',
+      classId: 'classId',
+      extInfo: 'extInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      introduce: 'string',
+      coverUrl: 'string',
+      startTime: 'number',
+      endTime: 'number',
+      creatorCorpId: 'string',
+      creatorUserId: 'string',
+      creatorUserName: 'string',
+      teacherCorpId: 'string',
+      teacherUserId: 'string',
+      teacherUserName: 'string',
+      bizKey: 'string',
+      subjectCode: 'string',
+      courseGroupCode: 'string',
+      status: 'number',
+      classrooms: { 'type': 'array', 'itemType': QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms },
+      eduUserModels: { 'type': 'array', 'itemType': QueryClassScheduleByTimeSchoolResponseBodyResultEduUserModels },
+      sectionName: 'string',
+      sectionIndex: 'number',
+      classId: 'number',
+      extInfo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCoursesOfClassRequestCoursesDateModel extends $tea.Model {
+  month?: number;
+  year?: number;
+  dayOfMonth?: number;
+  static names(): { [key: string]: string } {
+    return {
+      month: 'month',
+      year: 'year',
+      dayOfMonth: 'dayOfMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      month: 'number',
+      year: 'number',
+      dayOfMonth: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCoursesOfClassRequestCoursesSectionModel extends $tea.Model {
+  sectionType?: string;
+  sectionIndex?: number;
+  sectionName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sectionType: 'sectionType',
+      sectionIndex: 'sectionIndex',
+      sectionName: 'sectionName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sectionType: 'string',
+      sectionIndex: 'number',
+      sectionName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCoursesOfClassRequestCourses extends $tea.Model {
+  teacherStaffIds?: string[];
+  courseName?: string;
+  dateModel?: UpdateCoursesOfClassRequestCoursesDateModel;
+  sectionModel?: UpdateCoursesOfClassRequestCoursesSectionModel;
+  creatorName?: string;
+  location?: string;
+  deleteTag?: boolean;
+  courseCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      teacherStaffIds: 'teacherStaffIds',
+      courseName: 'courseName',
+      dateModel: 'dateModel',
+      sectionModel: 'sectionModel',
+      creatorName: 'creatorName',
+      location: 'location',
+      deleteTag: 'deleteTag',
+      courseCode: 'courseCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      teacherStaffIds: { 'type': 'array', 'itemType': 'string' },
+      courseName: 'string',
+      dateModel: UpdateCoursesOfClassRequestCoursesDateModel,
+      sectionModel: UpdateCoursesOfClassRequestCoursesSectionModel,
+      creatorName: 'string',
+      location: 'string',
+      deleteTag: 'boolean',
+      courseCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
+  teacherName?: string;
+  subjectName?: string;
+  subjectCode?: string;
+  periodCode?: string;
+  orgId?: number;
+  teacherUid?: number;
+  classId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      teacherName: 'teacherName',
+      subjectName: 'subjectName',
+      subjectCode: 'subjectCode',
+      periodCode: 'periodCode',
+      orgId: 'orgId',
+      teacherUid: 'teacherUid',
+      classId: 'classId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      teacherName: 'string',
+      subjectName: 'string',
+      subjectCode: 'string',
+      periodCode: 'string',
+      orgId: 'number',
+      teacherUid: 'number',
+      classId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShareRolesResponseBodyResult extends $tea.Model {
+  shareRoleCode?: string;
+  shareRoleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      shareRoleCode: 'shareRoleCode',
+      shareRoleName: 'shareRoleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      shareRoleCode: 'string',
+      shareRoleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySubjectTeachersResponseBodyResult extends $tea.Model {
+  teacherName?: string;
+  subjectName?: string;
+  subjectCode?: string;
+  periodCode?: string;
+  orgId?: number;
+  teacherUid?: number;
+  classId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      teacherName: 'teacherName',
+      subjectName: 'subjectName',
+      subjectCode: 'subjectCode',
+      periodCode: 'periodCode',
+      orgId: 'orgId',
+      teacherUid: 'teacherUid',
+      classId: 'classId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      teacherName: 'string',
+      subjectName: 'string',
+      subjectCode: 'string',
+      periodCode: 'string',
+      orgId: 'number',
+      teacherUid: 'number',
+      classId: 'number',
     };
   }
 
@@ -3148,13 +3665,11 @@ export class QueryClassScheduleResponseBodyCourseDTOS extends $tea.Model {
   teacherCorpId?: string;
   teacherUserId?: string;
   teacherUserName?: string;
-  bizKey?: string;
   subjectCode?: string;
   courseGroupCode?: string;
   status?: number;
   classrooms?: QueryClassScheduleResponseBodyCourseDTOSClassrooms[];
   eduUserModels?: QueryClassScheduleResponseBodyCourseDTOSEduUserModels[];
-  platform?: string;
   sectionName?: string;
   sectionIndex?: number;
   classId?: number;
@@ -3173,13 +3688,11 @@ export class QueryClassScheduleResponseBodyCourseDTOS extends $tea.Model {
       teacherCorpId: 'teacherCorpId',
       teacherUserId: 'teacherUserId',
       teacherUserName: 'teacherUserName',
-      bizKey: 'bizKey',
       subjectCode: 'subjectCode',
       courseGroupCode: 'courseGroupCode',
       status: 'status',
       classrooms: 'classrooms',
       eduUserModels: 'eduUserModels',
-      platform: 'platform',
       sectionName: 'sectionName',
       sectionIndex: 'sectionIndex',
       classId: 'classId',
@@ -3201,13 +3714,11 @@ export class QueryClassScheduleResponseBodyCourseDTOS extends $tea.Model {
       teacherCorpId: 'string',
       teacherUserId: 'string',
       teacherUserName: 'string',
-      bizKey: 'string',
       subjectCode: 'string',
       courseGroupCode: 'string',
       status: 'number',
       classrooms: { 'type': 'array', 'itemType': QueryClassScheduleResponseBodyCourseDTOSClassrooms },
       eduUserModels: { 'type': 'array', 'itemType': QueryClassScheduleResponseBodyCourseDTOSEduUserModels },
-      platform: 'string',
       sectionName: 'string',
       sectionIndex: 'number',
       classId: 'number',
@@ -3286,278 +3797,6 @@ export class SearchTeachersResponseBodyUsers extends $tea.Model {
   }
 }
 
-export class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents extends $tea.Model {
-  name?: string;
-  staffId?: string;
-  avatar?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      staffId: 'staffId',
-      avatar: 'avatar',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      staffId: 'string',
-      avatar: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOrgCreateHWRequestOpenSelectItemListClassList extends $tea.Model {
-  classId?: string;
-  className?: string;
-  all?: boolean;
-  students?: BatchOrgCreateHWRequestOpenSelectItemListClassListStudents[];
-  static names(): { [key: string]: string } {
-    return {
-      classId: 'classId',
-      className: 'className',
-      all: 'all',
-      students: 'students',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      classId: 'string',
-      className: 'string',
-      all: 'boolean',
-      students: { 'type': 'array', 'itemType': BatchOrgCreateHWRequestOpenSelectItemListClassListStudents },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOrgCreateHWRequestOpenSelectItemList extends $tea.Model {
-  corpId?: string;
-  selectedClassesDesc?: string;
-  classList?: BatchOrgCreateHWRequestOpenSelectItemListClassList[];
-  static names(): { [key: string]: string } {
-    return {
-      corpId: 'corpId',
-      selectedClassesDesc: 'selectedClassesDesc',
-      classList: 'classList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpId: 'string',
-      selectedClassesDesc: 'string',
-      classList: { 'type': 'array', 'itemType': BatchOrgCreateHWRequestOpenSelectItemListClassList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOrgCreateHWResponseBodyResultPublishList extends $tea.Model {
-  corpid?: string;
-  hwid?: number;
-  static names(): { [key: string]: string } {
-    return {
-      corpid: 'corpid',
-      hwid: 'hwid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      corpid: 'string',
-      hwid: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class BatchOrgCreateHWResponseBodyResult extends $tea.Model {
-  publishList?: BatchOrgCreateHWResponseBodyResultPublishList[];
-  static names(): { [key: string]: string } {
-    return {
-      publishList: 'publishList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      publishList: { 'type': 'array', 'itemType': BatchOrgCreateHWResponseBodyResultPublishList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateCustomDeptRequestCustomDept extends $tea.Model {
-  type?: string;
-  name?: string;
-  static names(): { [key: string]: string } {
-    return {
-      type: 'type',
-      name: 'name',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      type: 'string',
-      name: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateCustomDeptResponseBodyResult extends $tea.Model {
-  deptId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      deptId: 'deptId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      deptId: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetOpenCourseDetailResponseBodyPushModel extends $tea.Model {
-  pushOrgNameList?: string[];
-  pushRoleNameList?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      pushOrgNameList: 'pushOrgNameList',
-      pushRoleNameList: 'pushRoleNameList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      pushOrgNameList: { 'type': 'array', 'itemType': 'string' },
-      pushRoleNameList: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateCoursesOfClassRequestCoursesDateModel extends $tea.Model {
-  month?: number;
-  year?: number;
-  dayOfMonth?: number;
-  static names(): { [key: string]: string } {
-    return {
-      month: 'month',
-      year: 'year',
-      dayOfMonth: 'dayOfMonth',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      month: 'number',
-      year: 'number',
-      dayOfMonth: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateCoursesOfClassRequestCoursesSectionModel extends $tea.Model {
-  sectionType?: string;
-  sectionIndex?: number;
-  sectionName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      sectionType: 'sectionType',
-      sectionIndex: 'sectionIndex',
-      sectionName: 'sectionName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      sectionType: 'string',
-      sectionIndex: 'number',
-      sectionName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateCoursesOfClassRequestCourses extends $tea.Model {
-  teacherStaffIds?: string[];
-  courseName?: string;
-  dateModel?: UpdateCoursesOfClassRequestCoursesDateModel;
-  sectionModel?: UpdateCoursesOfClassRequestCoursesSectionModel;
-  creatorName?: string;
-  location?: string;
-  deleteTag?: boolean;
-  courseCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      teacherStaffIds: 'teacherStaffIds',
-      courseName: 'courseName',
-      dateModel: 'dateModel',
-      sectionModel: 'sectionModel',
-      creatorName: 'creatorName',
-      location: 'location',
-      deleteTag: 'deleteTag',
-      courseCode: 'courseCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      teacherStaffIds: { 'type': 'array', 'itemType': 'string' },
-      courseName: 'string',
-      dateModel: UpdateCoursesOfClassRequestCoursesDateModel,
-      sectionModel: UpdateCoursesOfClassRequestCoursesSectionModel,
-      creatorName: 'string',
-      location: 'string',
-      deleteTag: 'boolean',
-      courseCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetShareRoleMembersResponseBodyResult extends $tea.Model {
   corpId?: string;
   memberUserIdListInTrunkOrg?: string[];
@@ -3580,43 +3819,6 @@ export class GetShareRoleMembersResponseBodyResult extends $tea.Model {
   }
 }
 
-export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
-  teacherName?: string;
-  subjectName?: string;
-  subjectCode?: string;
-  periodCode?: string;
-  orgId?: number;
-  teacherUid?: number;
-  classId?: number;
-  static names(): { [key: string]: string } {
-    return {
-      teacherName: 'teacherName',
-      subjectName: 'subjectName',
-      subjectCode: 'subjectCode',
-      periodCode: 'periodCode',
-      orgId: 'orgId',
-      teacherUid: 'teacherUid',
-      classId: 'classId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      teacherName: 'string',
-      subjectName: 'string',
-      subjectCode: 'string',
-      periodCode: 'string',
-      orgId: 'number',
-      teacherUid: 'number',
-      classId: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 
 export default class Client extends OpenApi {
 
@@ -3630,65 +3832,6 @@ export default class Client extends OpenApi {
   }
 
 
-  async getShareRoles(): Promise<GetShareRolesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetShareRolesHeaders({ });
-    return await this.getShareRolesWithOptions(headers, runtime);
-  }
-
-  async getShareRolesWithOptions(headers: GetShareRolesHeaders, runtime: $Util.RuntimeOptions): Promise<GetShareRolesResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetShareRolesResponse>(await this.doROARequest("GetShareRoles", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/shareRoles`, "json", req, runtime), new GetShareRolesResponse({}));
-  }
-
-  async querySubjectTeachers(request: QuerySubjectTeachersRequest): Promise<QuerySubjectTeachersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySubjectTeachersHeaders({ });
-    return await this.querySubjectTeachersWithOptions(request, headers, runtime);
-  }
-
-  async querySubjectTeachersWithOptions(request: QuerySubjectTeachersRequest, headers: QuerySubjectTeachersHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySubjectTeachersResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.classIds)) {
-      query["classIds"] = request.classIds;
-    }
-
-    if (!Util.isUnset(request.opUserId)) {
-      query["opUserId"] = request.opUserId;
-    }
-
-    if (!Util.isUnset(request.subjectCode)) {
-      query["subjectCode"] = request.subjectCode;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QuerySubjectTeachersResponse>(await this.doROARequest("QuerySubjectTeachers", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/subjects/teachers`, "json", req, runtime), new QuerySubjectTeachersResponse({}));
-  }
-
   async queryStatisticsData(request: QueryStatisticsDataRequest): Promise<QueryStatisticsDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryStatisticsDataHeaders({ });
@@ -3698,16 +3841,8 @@ export default class Client extends OpenApi {
   async queryStatisticsDataWithOptions(request: QueryStatisticsDataRequest, headers: QueryStatisticsDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryStatisticsDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.sectionIndexList)) {
-      query["sectionIndexList"] = request.sectionIndexList;
-    }
-
     if (!Util.isUnset(request.startTime)) {
       query["startTime"] = request.startTime;
-    }
-
-    if (!Util.isUnset(request.teacherUserIds)) {
-      query["teacherUserIds"] = request.teacherUserIds;
     }
 
     if (!Util.isUnset(request.endTime)) {
@@ -3718,6 +3853,15 @@ export default class Client extends OpenApi {
       query["opUserId"] = request.opUserId;
     }
 
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sectionIndexList)) {
+      body["sectionIndexList"] = request.sectionIndexList;
+    }
+
+    if (!Util.isUnset(request.teacherUserIds)) {
+      body["teacherUserIds"] = request.teacherUserIds;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3730,8 +3874,9 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryStatisticsDataResponse>(await this.doROARequest("QueryStatisticsData", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/classes/schedules/statisticData`, "json", req, runtime), new QueryStatisticsDataResponse({}));
+    return $tea.cast<QueryStatisticsDataResponse>(await this.doROARequest("QueryStatisticsData", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/classes/schedules/statisticData/query`, "json", req, runtime), new QueryStatisticsDataResponse({}));
   }
 
   async queryAllSubjectsFromClassSchedule(request: QueryAllSubjectsFromClassScheduleRequest): Promise<QueryAllSubjectsFromClassScheduleResponse> {
@@ -3992,55 +4137,6 @@ export default class Client extends OpenApi {
     return $tea.cast<InitCoursesOfClassResponse>(await this.doROARequest("InitCoursesOfClass", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/classes/${classId}/courses/init`, "json", req, runtime), new InitCoursesOfClassResponse({}));
   }
 
-  async queryClassSchedule(request: QueryClassScheduleRequest): Promise<QueryClassScheduleResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryClassScheduleHeaders({ });
-    return await this.queryClassScheduleWithOptions(request, headers, runtime);
-  }
-
-  async queryClassScheduleWithOptions(request: QueryClassScheduleRequest, headers: QueryClassScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryClassScheduleResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.subscriberIds)) {
-      query["subscriberIds"] = request.subscriberIds;
-    }
-
-    if (!Util.isUnset(request.subscriberType)) {
-      query["subscriberType"] = request.subscriberType;
-    }
-
-    if (!Util.isUnset(request.sectionIndexList)) {
-      query["sectionIndexList"] = request.sectionIndexList;
-    }
-
-    if (!Util.isUnset(request.startTime)) {
-      query["startTime"] = request.startTime;
-    }
-
-    if (!Util.isUnset(request.endTime)) {
-      query["endTime"] = request.endTime;
-    }
-
-    if (!Util.isUnset(request.opUserId)) {
-      query["opUserId"] = request.opUserId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QueryClassScheduleResponse>(await this.doROARequest("QueryClassSchedule", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/classes/schedules`, "json", req, runtime), new QueryClassScheduleResponse({}));
-  }
-
   async deleteDept(deptId: string, request: DeleteDeptRequest): Promise<DeleteDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteDeptHeaders({ });
@@ -4103,67 +4199,6 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteGuardianResponse>(await this.doROARequest("DeleteGuardian", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/classes/${classId}/guardians/${userId}`, "json", req, runtime), new DeleteGuardianResponse({}));
   }
 
-  async createCustomClass(request: CreateCustomClassRequest): Promise<CreateCustomClassResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateCustomClassHeaders({ });
-    return await this.createCustomClassWithOptions(request, headers, runtime);
-  }
-
-  async createCustomClassWithOptions(request: CreateCustomClassRequest, headers: CreateCustomClassHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomClassResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.customClass))) {
-      body["customClass"] = request.customClass;
-    }
-
-    if (!Util.isUnset(request.superId)) {
-      body["superId"] = request.superId;
-    }
-
-    if (!Util.isUnset(request.operator)) {
-      body["operator"] = request.operator;
-    }
-
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.dingOauthAppId)) {
-      body["dingOauthAppId"] = request.dingOauthAppId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<CreateCustomClassResponse>(await this.doROARequest("CreateCustomClass", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/customClasses`, "json", req, runtime), new CreateCustomClassResponse({}));
-  }
-
   async deleteTeacher(classId: string, userId: string, request: DeleteTeacherRequest): Promise<DeleteTeacherResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteTeacherHeaders({ });
@@ -4195,57 +4230,6 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteTeacherResponse>(await this.doROARequest("DeleteTeacher", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/classes/${classId}/teachers/${userId}`, "json", req, runtime), new DeleteTeacherResponse({}));
-  }
-
-  async searchTeachers(request: SearchTeachersRequest): Promise<SearchTeachersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchTeachersHeaders({ });
-    return await this.searchTeachersWithOptions(request, headers, runtime);
-  }
-
-  async searchTeachersWithOptions(request: SearchTeachersRequest, headers: SearchTeachersHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTeachersResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nameKeyword)) {
-      query["nameKeyword"] = request.nameKeyword;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<SearchTeachersResponse>(await this.doROARequest("SearchTeachers", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/teachers/search`, "json", req, runtime), new SearchTeachersResponse({}));
-  }
-
-  async queryOrgType(): Promise<QueryOrgTypeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOrgTypeHeaders({ });
-    return await this.queryOrgTypeWithOptions(headers, runtime);
-  }
-
-  async queryOrgTypeWithOptions(headers: QueryOrgTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTypeResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryOrgTypeResponse>(await this.doROARequest("QueryOrgType", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/orgTypes`, "json", req, runtime), new QueryOrgTypeResponse({}));
   }
 
   async batchOrgCreateHW(request: BatchOrgCreateHWRequest): Promise<BatchOrgCreateHWResponse> {
@@ -4465,6 +4449,43 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteStudentResponse>(await this.doROARequest("DeleteStudent", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/classes/${classId}/students/${userId}`, "json", req, runtime), new DeleteStudentResponse({}));
   }
 
+  async queryClassScheduleByTimeSchool(request: QueryClassScheduleByTimeSchoolRequest): Promise<QueryClassScheduleByTimeSchoolResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryClassScheduleByTimeSchoolHeaders({ });
+    return await this.queryClassScheduleByTimeSchoolWithOptions(request, headers, runtime);
+  }
+
+  async queryClassScheduleByTimeSchoolWithOptions(request: QueryClassScheduleByTimeSchoolRequest, headers: QueryClassScheduleByTimeSchoolHeaders, runtime: $Util.RuntimeOptions): Promise<QueryClassScheduleByTimeSchoolResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryClassScheduleByTimeSchoolResponse>(await this.doROARequest("QueryClassScheduleByTimeSchool", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/schools/classes/courses `, "json", req, runtime), new QueryClassScheduleByTimeSchoolResponse({}));
+  }
+
   async updateCoursesOfClass(classId: string, request: UpdateCoursesOfClassRequest): Promise<UpdateCoursesOfClassResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCoursesOfClassHeaders({ });
@@ -4500,28 +4521,6 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateCoursesOfClassResponse>(await this.doROARequest("UpdateCoursesOfClass", "edu_1.0", "HTTP", "PUT", "AK", `/v1.0/edu/classes/${classId}/courses/schedules`, "json", req, runtime), new UpdateCoursesOfClassResponse({}));
   }
 
-  async getShareRoleMembers(shareRoleCode: string): Promise<GetShareRoleMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetShareRoleMembersHeaders({ });
-    return await this.getShareRoleMembersWithOptions(shareRoleCode, headers, runtime);
-  }
-
-  async getShareRoleMembersWithOptions(shareRoleCode: string, headers: GetShareRoleMembersHeaders, runtime: $Util.RuntimeOptions): Promise<GetShareRoleMembersResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetShareRoleMembersResponse>(await this.doROARequest("GetShareRoleMembers", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/shareRoles/${shareRoleCode}/members`, "json", req, runtime), new GetShareRoleMembersResponse({}));
-  }
-
   async queryTeachSubjects(request: QueryTeachSubjectsRequest): Promise<QueryTeachSubjectsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTeachSubjectsHeaders({ });
@@ -4553,6 +4552,250 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryTeachSubjectsResponse>(await this.doROARequest("QueryTeachSubjects", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/teachers/subjects`, "json", req, runtime), new QueryTeachSubjectsResponse({}));
+  }
+
+  async getShareRoles(): Promise<GetShareRolesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetShareRolesHeaders({ });
+    return await this.getShareRolesWithOptions(headers, runtime);
+  }
+
+  async getShareRolesWithOptions(headers: GetShareRolesHeaders, runtime: $Util.RuntimeOptions): Promise<GetShareRolesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetShareRolesResponse>(await this.doROARequest("GetShareRoles", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/shareRoles`, "json", req, runtime), new GetShareRolesResponse({}));
+  }
+
+  async querySubjectTeachers(request: QuerySubjectTeachersRequest): Promise<QuerySubjectTeachersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySubjectTeachersHeaders({ });
+    return await this.querySubjectTeachersWithOptions(request, headers, runtime);
+  }
+
+  async querySubjectTeachersWithOptions(request: QuerySubjectTeachersRequest, headers: QuerySubjectTeachersHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySubjectTeachersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.classIds)) {
+      query["classIds"] = request.classIds;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.subjectCode)) {
+      query["subjectCode"] = request.subjectCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QuerySubjectTeachersResponse>(await this.doROARequest("QuerySubjectTeachers", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/subjects/teachers`, "json", req, runtime), new QuerySubjectTeachersResponse({}));
+  }
+
+  async queryClassSchedule(request: QueryClassScheduleRequest): Promise<QueryClassScheduleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryClassScheduleHeaders({ });
+    return await this.queryClassScheduleWithOptions(request, headers, runtime);
+  }
+
+  async queryClassScheduleWithOptions(request: QueryClassScheduleRequest, headers: QueryClassScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryClassScheduleResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.subscriberType)) {
+      query["subscriberType"] = request.subscriberType;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.subscriberIds)) {
+      body["subscriberIds"] = request.subscriberIds;
+    }
+
+    if (!Util.isUnset(request.sectionIndexList)) {
+      body["sectionIndexList"] = request.sectionIndexList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryClassScheduleResponse>(await this.doROARequest("QueryClassSchedule", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/classes/schedules/query`, "json", req, runtime), new QueryClassScheduleResponse({}));
+  }
+
+  async createCustomClass(request: CreateCustomClassRequest): Promise<CreateCustomClassResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCustomClassHeaders({ });
+    return await this.createCustomClassWithOptions(request, headers, runtime);
+  }
+
+  async createCustomClassWithOptions(request: CreateCustomClassRequest, headers: CreateCustomClassHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomClassResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.customClass))) {
+      body["customClass"] = request.customClass;
+    }
+
+    if (!Util.isUnset(request.superId)) {
+      body["superId"] = request.superId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingOauthAppId)) {
+      body["dingOauthAppId"] = request.dingOauthAppId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateCustomClassResponse>(await this.doROARequest("CreateCustomClass", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/customClasses`, "json", req, runtime), new CreateCustomClassResponse({}));
+  }
+
+  async searchTeachers(request: SearchTeachersRequest): Promise<SearchTeachersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchTeachersHeaders({ });
+    return await this.searchTeachersWithOptions(request, headers, runtime);
+  }
+
+  async searchTeachersWithOptions(request: SearchTeachersRequest, headers: SearchTeachersHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTeachersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nameKeyword)) {
+      query["nameKeyword"] = request.nameKeyword;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SearchTeachersResponse>(await this.doROARequest("SearchTeachers", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/teachers/search`, "json", req, runtime), new SearchTeachersResponse({}));
+  }
+
+  async queryOrgType(): Promise<QueryOrgTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOrgTypeHeaders({ });
+    return await this.queryOrgTypeWithOptions(headers, runtime);
+  }
+
+  async queryOrgTypeWithOptions(headers: QueryOrgTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTypeResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryOrgTypeResponse>(await this.doROARequest("QueryOrgType", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/orgTypes`, "json", req, runtime), new QueryOrgTypeResponse({}));
+  }
+
+  async getShareRoleMembers(shareRoleCode: string): Promise<GetShareRoleMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetShareRoleMembersHeaders({ });
+    return await this.getShareRoleMembersWithOptions(shareRoleCode, headers, runtime);
+  }
+
+  async getShareRoleMembersWithOptions(shareRoleCode: string, headers: GetShareRoleMembersHeaders, runtime: $Util.RuntimeOptions): Promise<GetShareRoleMembersResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetShareRoleMembersResponse>(await this.doROARequest("GetShareRoleMembers", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/shareRoles/${shareRoleCode}/members`, "json", req, runtime), new GetShareRoleMembersResponse({}));
   }
 
 }
