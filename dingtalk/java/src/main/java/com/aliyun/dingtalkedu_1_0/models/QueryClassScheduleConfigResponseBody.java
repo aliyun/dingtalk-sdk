@@ -4,6 +4,7 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleConfigResponseBody extends TeaModel {
+    // 查询结果
     @NameInMap("result")
     public java.util.List<QueryClassScheduleConfigResponseBodyResult> result;
 
@@ -21,12 +22,15 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultStart extends TeaModel {
+        // 年份
         @NameInMap("year")
         public Long year;
 
+        // 月份
         @NameInMap("month")
         public Long month;
 
+        // 一个月中的第几天
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
@@ -62,12 +66,15 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultEnd extends TeaModel {
+        // 年份
         @NameInMap("year")
         public Long year;
 
+        // 月份
         @NameInMap("month")
         public Long month;
 
+        // 一个月中第几天
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
@@ -103,11 +110,11 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModelsStart extends TeaModel {
-        // min
+        // 分钟
         @NameInMap("min")
         public Integer min;
 
-        // hour
+        // 小时
         @NameInMap("hour")
         public Integer hour;
 
@@ -135,11 +142,11 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModelsEnd extends TeaModel {
-        // min
+        // 分钟
         @NameInMap("min")
         public Integer min;
 
-        // hour
+        // 小时
         @NameInMap("hour")
         public Integer hour;
 
@@ -167,23 +174,23 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModels extends TeaModel {
-        // sectionType
+        // 节次类型：COURSE/REST
         @NameInMap("sectionType")
         public String sectionType;
 
-        // start
+        // 开始时间（时分）
         @NameInMap("start")
         public QueryClassScheduleConfigResponseBodyResultSectionModelsStart start;
 
-        // sectionIndex
+        // 节次设置
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // end
+        // 结束时间
         @NameInMap("end")
         public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd end;
 
-        // sectionName
+        // 节次名称
         @NameInMap("sectionName")
         public String sectionName;
 
@@ -235,16 +242,18 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResult extends TeaModel {
+        // 班级的Id.
         @NameInMap("classId")
         public Long classId;
 
+        // 开始时间
         @NameInMap("start")
         public QueryClassScheduleConfigResponseBodyResultStart start;
 
         @NameInMap("end")
         public QueryClassScheduleConfigResponseBodyResultEnd end;
 
-        // sectionModels
+        // 节次模型。
         @NameInMap("sectionModels")
         public java.util.List<QueryClassScheduleConfigResponseBodyResultSectionModels> sectionModels;
 

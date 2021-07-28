@@ -4,7 +4,7 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySubjectTeachersResponseBody extends TeaModel {
-    // result
+    // 结果
     @NameInMap("result")
     public java.util.List<QuerySubjectTeachersResponseBodyResult> result;
 
@@ -22,24 +22,31 @@ public class QuerySubjectTeachersResponseBody extends TeaModel {
     }
 
     public static class QuerySubjectTeachersResponseBodyResult extends TeaModel {
+        // 老师名称
         @NameInMap("teacherName")
         public String teacherName;
 
+        // 学科名称
         @NameInMap("subjectName")
         public String subjectName;
 
+        // 学科code
         @NameInMap("subjectCode")
         public String subjectCode;
 
+        // 学段code
         @NameInMap("periodCode")
         public String periodCode;
 
+        // 组织id
         @NameInMap("orgId")
         public Long orgId;
 
+        // 老师Uid
         @NameInMap("teacherUid")
         public Long teacherUid;
 
+        // 班级id
         @NameInMap("classId")
         public Long classId;
 

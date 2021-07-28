@@ -4,9 +4,11 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleResponseBody extends TeaModel {
+    // 课表时间节次配置。
     @NameInMap("config")
     public QueryClassScheduleResponseBodyConfig config;
 
+    // 课程列表
     @NameInMap("courseDTOS")
     public java.util.List<QueryClassScheduleResponseBodyCourseDTOS> courseDTOS;
 
@@ -32,12 +34,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigStart extends TeaModel {
+        // 年份。
         @NameInMap("year")
         public Long year;
 
+        // 月份。
         @NameInMap("month")
         public Long month;
 
+        // 一个月中第几天
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
@@ -73,9 +78,11 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsStart extends TeaModel {
+        // 小时。
         @NameInMap("hour")
         public Long hour;
 
+        // 分钟
         @NameInMap("min")
         public Long min;
 
@@ -103,9 +110,11 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsEnd extends TeaModel {
+        // 小时。
         @NameInMap("hour")
         public Long hour;
 
+        // 分钟。
         @NameInMap("min")
         public Long min;
 
@@ -133,21 +142,23 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModels extends TeaModel {
-        // 节次名称
+        // 节次名称。
         @NameInMap("sectionName")
         public String sectionName;
 
-        // 节次类型
+        // 节次类型：  COURSE：上课节次 REST：休息节次
         @NameInMap("sectionType")
         public String sectionType;
 
-        // 节次序列
+        // 节次序列。
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
+        // 开始时间（时分级别）。
         @NameInMap("start")
         public QueryClassScheduleResponseBodyConfigSectionModelsStart start;
 
+        // 结束时间（时分级别）
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigSectionModelsEnd end;
 
@@ -199,12 +210,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigEnd extends TeaModel {
+        // 年份。
         @NameInMap("year")
         public Long year;
 
+        // 月份。
         @NameInMap("month")
         public Long month;
 
+        // 一个月中第几天
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
@@ -240,12 +254,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfig extends TeaModel {
+        // 开始时间（到日）。
         @NameInMap("start")
         public QueryClassScheduleResponseBodyConfigStart start;
 
+        // 节次模型。
         @NameInMap("sectionModels")
         public java.util.List<QueryClassScheduleResponseBodyConfigSectionModels> sectionModels;
 
+        // 开始时间（到日）。
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigEnd end;
 
@@ -404,10 +421,6 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         @NameInMap("teacherUserName")
         public String teacherUserName;
 
-        // 业务唯一键
-        @NameInMap("bizKey")
-        public String bizKey;
-
         // 学科编码
         @NameInMap("subjectCode")
         public String subjectCode;
@@ -428,11 +441,7 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         @NameInMap("eduUserModels")
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSEduUserModels> eduUserModels;
 
-        // 授课所承载的平台
-        @NameInMap("platform")
-        public String platform;
-
-        // 课程编码
+        // 课程名称
         @NameInMap("sectionName")
         public String sectionName;
 
@@ -549,14 +558,6 @@ public class QueryClassScheduleResponseBody extends TeaModel {
             return this.teacherUserName;
         }
 
-        public QueryClassScheduleResponseBodyCourseDTOS setBizKey(String bizKey) {
-            this.bizKey = bizKey;
-            return this;
-        }
-        public String getBizKey() {
-            return this.bizKey;
-        }
-
         public QueryClassScheduleResponseBodyCourseDTOS setSubjectCode(String subjectCode) {
             this.subjectCode = subjectCode;
             return this;
@@ -595,14 +596,6 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         }
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSEduUserModels> getEduUserModels() {
             return this.eduUserModels;
-        }
-
-        public QueryClassScheduleResponseBodyCourseDTOS setPlatform(String platform) {
-            this.platform = platform;
-            return this;
-        }
-        public String getPlatform() {
-            return this.platform;
         }
 
         public QueryClassScheduleResponseBodyCourseDTOS setSectionName(String sectionName) {

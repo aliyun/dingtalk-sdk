@@ -22,21 +22,27 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
     }
 
     public static class QueryStatisticsDataResponseBodyResult extends TeaModel {
+        // 用户id
         @NameInMap("userId")
         public String userId;
 
+        // 用户名称
         @NameInMap("userName")
         public String userName;
 
+        // 班级id
         @NameInMap("classId")
         public Long classId;
 
+        // 学科名称
         @NameInMap("subjectName")
         public Long subjectName;
 
+        // 总学时
         @NameInMap("courseHours")
         public Float courseHours;
 
+        // 总课程数
         @NameInMap("courseCount")
         public Long courseCount;
 

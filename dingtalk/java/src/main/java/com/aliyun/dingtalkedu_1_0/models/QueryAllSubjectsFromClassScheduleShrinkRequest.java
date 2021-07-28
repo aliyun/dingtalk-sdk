@@ -4,13 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllSubjectsFromClassScheduleShrinkRequest extends TeaModel {
-    // classIds
+    // 班级ID。
     @NameInMap("classIds")
     public String classIdsShrink;
 
+    // 操作者的userid。
     @NameInMap("opUserId")
     public String opUserId;
 
+    // 学段编码：KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
     @NameInMap("periodCode")
     public String periodCode;
 

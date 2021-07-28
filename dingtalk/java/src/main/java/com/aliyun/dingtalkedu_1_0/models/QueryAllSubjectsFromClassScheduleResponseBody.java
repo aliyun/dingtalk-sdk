@@ -4,6 +4,7 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
+    // 查询结果。
     @NameInMap("result")
     public java.util.List<QueryAllSubjectsFromClassScheduleResponseBodyResult> result;
 
@@ -21,15 +22,19 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList extends TeaModel {
+        // 老师的userid。
         @NameInMap("userId")
         public String userId;
 
+        // 老师名称。
         @NameInMap("name")
         public String name;
 
+        // 老师的头像url
         @NameInMap("avator")
         public String avator;
 
+        // 老师的uid。
         @NameInMap("uid")
         public Long uid;
 
@@ -81,9 +86,11 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
         @NameInMap("backgroundColor")
         public String backgroundColor;
 
+        // 班级id。
         @NameInMap("classId")
         public Long classId;
 
+        // 老师列表
         @NameInMap("teacherList")
         public java.util.List<QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList> teacherList;
 
@@ -127,15 +134,15 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResult extends TeaModel {
-        // subjectName
+        // 学科名称。
         @NameInMap("subjectName")
         public String subjectName;
 
-        // subjectCode
+        // 学科code。
         @NameInMap("subjectCode")
         public String subjectCode;
 
-        // periodCode
+        // 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
         @NameInMap("periodCode")
         public String periodCode;
 
@@ -143,6 +150,7 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
         @NameInMap("creatorOrgId")
         public Long creatorOrgId;
 
+        // 拓展信息
         @NameInMap("ext")
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExt ext;
 

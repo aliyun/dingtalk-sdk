@@ -4,10 +4,11 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleConfigShrinkRequest extends TeaModel {
-    // classIds
+    // 课程id列表
     @NameInMap("classIds")
     public String classIdsShrink;
 
+    // 操作者的UserID
     @NameInMap("opUserId")
     public String opUserId;
 

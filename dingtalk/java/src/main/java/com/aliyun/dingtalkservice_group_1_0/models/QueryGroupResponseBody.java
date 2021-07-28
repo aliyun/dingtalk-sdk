@@ -32,6 +32,10 @@ public class QueryGroupResponseBody extends TeaModel {
     @NameInMap("robotName")
     public String robotName;
 
+    // 群bizId
+    @NameInMap("bizId")
+    public String bizId;
+
     public static QueryGroupResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryGroupResponseBody self = new QueryGroupResponseBody();
         return TeaModel.build(map, self);
@@ -91,6 +95,14 @@ public class QueryGroupResponseBody extends TeaModel {
     }
     public String getRobotName() {
         return this.robotName;
+    }
+
+    public QueryGroupResponseBody setBizId(String bizId) {
+        this.bizId = bizId;
+        return this;
+    }
+    public String getBizId() {
+        return this.bizId;
     }
 
 }

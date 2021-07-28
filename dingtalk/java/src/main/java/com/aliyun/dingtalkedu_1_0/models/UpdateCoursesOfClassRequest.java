@@ -7,7 +7,7 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     @NameInMap("courses")
     public java.util.List<UpdateCoursesOfClassRequestCourses> courses;
 
-    // opUserId
+    // 操作者id
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -81,11 +81,11 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("sectionType")
         public String sectionType;
 
-        // sectionIndex
+        // 节次index
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // sectionName
+        // 节次名称
         @NameInMap("sectionName")
         public String sectionName;
 
@@ -121,35 +121,35 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCourses extends TeaModel {
-        // teacherStaffIds
+        // 老师Staffid
         @NameInMap("teacherStaffIds")
         public java.util.List<String> teacherStaffIds;
 
-        // courseName
+        // 课程名称
         @NameInMap("courseName")
         public String courseName;
 
-        // dateModel
+        // 上课日期
         @NameInMap("dateModel")
         public UpdateCoursesOfClassRequestCoursesDateModel dateModel;
 
-        // sectionModel
+        // 节次模型
         @NameInMap("sectionModel")
         public UpdateCoursesOfClassRequestCoursesSectionModel sectionModel;
 
-        // creatorName
+        // 创建者名字
         @NameInMap("creatorName")
         public String creatorName;
 
-        // location
+        // 上课地点
         @NameInMap("location")
         public String location;
 
-        // deleteTag
+        // 删除标记：要删除为ture
         @NameInMap("deleteTag")
         public Boolean deleteTag;
 
-        // courseCode
+        // 课程code：删除/更新必填
         @NameInMap("courseCode")
         public String courseCode;
 

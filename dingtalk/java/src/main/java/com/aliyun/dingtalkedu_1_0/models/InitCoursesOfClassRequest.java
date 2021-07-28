@@ -4,13 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitCoursesOfClassRequest extends TeaModel {
+    // 课程设置。
     @NameInMap("courses")
     public java.util.List<InitCoursesOfClassRequestCourses> courses;
 
+    // 节次设置
     @NameInMap("sectionConfig")
     public InitCoursesOfClassRequestSectionConfig sectionConfig;
 
-    // opUserId
+    // 操作人的userid。
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -44,15 +46,15 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCoursesDateModel extends TeaModel {
-        // month
+        // 月份。
         @NameInMap("month")
         public Integer month;
 
-        // year
+        // 年份。
         @NameInMap("year")
         public Integer year;
 
-        // dayOfMonth
+        // 每个月的第几天。
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
@@ -88,29 +90,17 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCoursesSectionModel extends TeaModel {
-        // sectionType
-        @NameInMap("sectionType")
-        public String sectionType;
-
-        // sectionIndex
+        // 节次序列号。
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // sectionName
+        // 节次名称。
         @NameInMap("sectionName")
         public String sectionName;
 
         public static InitCoursesOfClassRequestCoursesSectionModel build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestCoursesSectionModel self = new InitCoursesOfClassRequestCoursesSectionModel();
             return TeaModel.build(map, self);
-        }
-
-        public InitCoursesOfClassRequestCoursesSectionModel setSectionType(String sectionType) {
-            this.sectionType = sectionType;
-            return this;
-        }
-        public String getSectionType() {
-            return this.sectionType;
         }
 
         public InitCoursesOfClassRequestCoursesSectionModel setSectionIndex(Integer sectionIndex) {
@@ -132,33 +122,29 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCourses extends TeaModel {
-        // teacherStaffIds
+        // 老师的staffId。
         @NameInMap("teacherStaffIds")
         public java.util.List<String> teacherStaffIds;
 
-        // courseName
+        // 课程名称。
         @NameInMap("courseName")
         public String courseName;
 
-        // dateModel
+        // 上课时间。
         @NameInMap("dateModel")
         public InitCoursesOfClassRequestCoursesDateModel dateModel;
 
-        // sectionModel
+        // 课程节次。
         @NameInMap("sectionModel")
         public InitCoursesOfClassRequestCoursesSectionModel sectionModel;
 
-        // creatorName
+        // 创建者名称。
         @NameInMap("creatorName")
         public String creatorName;
 
-        // location
+        // 上课地点
         @NameInMap("location")
         public String location;
-
-        // deleteTag
-        @NameInMap("deleteTag")
-        public Boolean deleteTag;
 
         public static InitCoursesOfClassRequestCourses build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestCourses self = new InitCoursesOfClassRequestCourses();
@@ -213,22 +199,14 @@ public class InitCoursesOfClassRequest extends TeaModel {
             return this.location;
         }
 
-        public InitCoursesOfClassRequestCourses setDeleteTag(Boolean deleteTag) {
-            this.deleteTag = deleteTag;
-            return this;
-        }
-        public Boolean getDeleteTag() {
-            return this.deleteTag;
-        }
-
     }
 
     public static class InitCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
-        // min
+        // 分钟
         @NameInMap("min")
         public Integer min;
 
-        // hour
+        // 小时
         @NameInMap("hour")
         public Integer hour;
 
@@ -256,11 +234,11 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
-        // min
+        // 分钟
         @NameInMap("min")
         public Integer min;
 
-        // hour
+        // 小时
         @NameInMap("hour")
         public Integer hour;
 
@@ -288,25 +266,21 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
-        // sectionType
+        // 节次类型枚举：COURSE/REST
         @NameInMap("sectionType")
         public String sectionType;
 
-        // start
+        // 开始时间
         @NameInMap("start")
         public InitCoursesOfClassRequestSectionConfigSectionModelsStart start;
 
-        // sectionIndex
+        // 第几节。
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // end
+        // 结束时间
         @NameInMap("end")
         public InitCoursesOfClassRequestSectionConfigSectionModelsEnd end;
-
-        // sectionName
-        @NameInMap("sectionName")
-        public String sectionName;
 
         public static InitCoursesOfClassRequestSectionConfigSectionModels build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestSectionConfigSectionModels self = new InitCoursesOfClassRequestSectionConfigSectionModels();
@@ -345,18 +319,10 @@ public class InitCoursesOfClassRequest extends TeaModel {
             return this.end;
         }
 
-        public InitCoursesOfClassRequestSectionConfigSectionModels setSectionName(String sectionName) {
-            this.sectionName = sectionName;
-            return this;
-        }
-        public String getSectionName() {
-            return this.sectionName;
-        }
-
     }
 
     public static class InitCoursesOfClassRequestSectionConfig extends TeaModel {
-        // sectionModels
+        // 节次模型
         @NameInMap("sectionModels")
         public java.util.List<InitCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
 

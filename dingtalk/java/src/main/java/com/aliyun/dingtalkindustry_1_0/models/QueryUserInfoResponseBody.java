@@ -277,6 +277,62 @@ public class QueryUserInfoResponseBody extends TeaModel {
 
     }
 
+    public static class QueryUserInfoResponseBodyContentJobStatusList extends TeaModel {
+        // 标签Code
+        @NameInMap("code")
+        public String code;
+
+        // 标签类型
+        @NameInMap("bizType")
+        public String bizType;
+
+        // 分类
+        @NameInMap("category")
+        public String category;
+
+        // 展示名称
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static QueryUserInfoResponseBodyContentJobStatusList build(java.util.Map<String, ?> map) throws Exception {
+            QueryUserInfoResponseBodyContentJobStatusList self = new QueryUserInfoResponseBodyContentJobStatusList();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryUserInfoResponseBodyContentJobStatusList setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public QueryUserInfoResponseBodyContentJobStatusList setBizType(String bizType) {
+            this.bizType = bizType;
+            return this;
+        }
+        public String getBizType() {
+            return this.bizType;
+        }
+
+        public QueryUserInfoResponseBodyContentJobStatusList setCategory(String category) {
+            this.category = category;
+            return this;
+        }
+        public String getCategory() {
+            return this.category;
+        }
+
+        public QueryUserInfoResponseBodyContentJobStatusList setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+    }
+
     public static class QueryUserInfoResponseBodyContent extends TeaModel {
         // 用户Id
         @NameInMap("uid")
@@ -294,7 +350,7 @@ public class QueryUserInfoResponseBody extends TeaModel {
         @NameInMap("jobNum")
         public String jobNum;
 
-        // 工作状态标签
+        // 工作状态标签, 已废弃, 请使用jobStatusList字段
         @NameInMap("jobStatus")
         public QueryUserInfoResponseBodyContentJobStatus jobStatus;
 
@@ -309,6 +365,14 @@ public class QueryUserInfoResponseBody extends TeaModel {
         // 所在科室
         @NameInMap("dept")
         public java.util.List<QueryUserInfoResponseBodyContentDept> dept;
+
+        // comments
+        @NameInMap("comments")
+        public String comments;
+
+        // 工作状态标签
+        @NameInMap("jobStatusList")
+        public java.util.List<QueryUserInfoResponseBodyContentJobStatusList> jobStatusList;
 
         public static QueryUserInfoResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryUserInfoResponseBodyContent self = new QueryUserInfoResponseBodyContent();
@@ -377,6 +441,22 @@ public class QueryUserInfoResponseBody extends TeaModel {
         }
         public java.util.List<QueryUserInfoResponseBodyContentDept> getDept() {
             return this.dept;
+        }
+
+        public QueryUserInfoResponseBodyContent setComments(String comments) {
+            this.comments = comments;
+            return this;
+        }
+        public String getComments() {
+            return this.comments;
+        }
+
+        public QueryUserInfoResponseBodyContent setJobStatusList(java.util.List<QueryUserInfoResponseBodyContentJobStatusList> jobStatusList) {
+            this.jobStatusList = jobStatusList;
+            return this;
+        }
+        public java.util.List<QueryUserInfoResponseBodyContentJobStatusList> getJobStatusList() {
+            return this.jobStatusList;
         }
 
     }

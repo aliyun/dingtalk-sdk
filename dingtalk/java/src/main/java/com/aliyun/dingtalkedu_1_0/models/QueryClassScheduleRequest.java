@@ -4,41 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleRequest extends TeaModel {
-    // subscriberIds
-    @NameInMap("subscriberIds")
-    public java.util.List<String> subscriberIds;
-
-    // subscriberType
+    // 订阅者类型：  DEPARTMENT：班级订阅 USER：老师订阅
     @NameInMap("subscriberType")
     public String subscriberType;
 
-    // sectionIndexList
-    @NameInMap("sectionIndexList")
-    public java.util.List<Integer> sectionIndexList;
-
-    // startTime
+    // 开始时间（unix时间戳）
     @NameInMap("startTime")
     public Long startTime;
 
-    // endTime
+    // 结束时间（unix时间戳）
     @NameInMap("endTime")
     public Long endTime;
 
-    // opUserId
+    // 操作者UserId
     @NameInMap("opUserId")
     public String opUserId;
+
+    // 订阅者的Id。
+    @NameInMap("subscriberIds")
+    public java.util.List<String> subscriberIds;
+
+    // 查询课程的节次。
+    @NameInMap("sectionIndexList")
+    public java.util.List<Long> sectionIndexList;
 
     public static QueryClassScheduleRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryClassScheduleRequest self = new QueryClassScheduleRequest();
         return TeaModel.build(map, self);
-    }
-
-    public QueryClassScheduleRequest setSubscriberIds(java.util.List<String> subscriberIds) {
-        this.subscriberIds = subscriberIds;
-        return this;
-    }
-    public java.util.List<String> getSubscriberIds() {
-        return this.subscriberIds;
     }
 
     public QueryClassScheduleRequest setSubscriberType(String subscriberType) {
@@ -47,14 +39,6 @@ public class QueryClassScheduleRequest extends TeaModel {
     }
     public String getSubscriberType() {
         return this.subscriberType;
-    }
-
-    public QueryClassScheduleRequest setSectionIndexList(java.util.List<Integer> sectionIndexList) {
-        this.sectionIndexList = sectionIndexList;
-        return this;
-    }
-    public java.util.List<Integer> getSectionIndexList() {
-        return this.sectionIndexList;
     }
 
     public QueryClassScheduleRequest setStartTime(Long startTime) {
@@ -79,6 +63,22 @@ public class QueryClassScheduleRequest extends TeaModel {
     }
     public String getOpUserId() {
         return this.opUserId;
+    }
+
+    public QueryClassScheduleRequest setSubscriberIds(java.util.List<String> subscriberIds) {
+        this.subscriberIds = subscriberIds;
+        return this;
+    }
+    public java.util.List<String> getSubscriberIds() {
+        return this.subscriberIds;
+    }
+
+    public QueryClassScheduleRequest setSectionIndexList(java.util.List<Long> sectionIndexList) {
+        this.sectionIndexList = sectionIndexList;
+        return this;
+    }
+    public java.util.List<Long> getSectionIndexList() {
+        return this.sectionIndexList;
     }
 
 }
