@@ -140,6 +140,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public long? Id { get; set; }
                 public string Name { get; set; }
             }
+            [NameInMap("comments")]
+            [Validation(Required=false)]
+            public string Comments { get; set; }
+            [NameInMap("jobStatusList")]
+            [Validation(Required=false)]
+            public List<QueryUserInfoResponseBodyContentJobStatusList> JobStatusList { get; set; }
+            public class QueryUserInfoResponseBodyContentJobStatusList : TeaModel {
+                public string Code { get; set; }
+                public string BizType { get; set; }
+                public string Category { get; set; }
+                public string DisplayName { get; set; }
+            }
         };
 
     }

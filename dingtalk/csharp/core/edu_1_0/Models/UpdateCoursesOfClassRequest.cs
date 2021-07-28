@@ -14,21 +14,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<UpdateCoursesOfClassRequestCourses> Courses { get; set; }
         public class UpdateCoursesOfClassRequestCourses : TeaModel {
             /// <summary>
-            /// teacherStaffIds
+            /// 老师Staffid
             /// </summary>
             [NameInMap("teacherStaffIds")]
             [Validation(Required=false)]
             public List<string> TeacherStaffIds { get; set; }
 
             /// <summary>
-            /// courseName
+            /// 课程名称
             /// </summary>
             [NameInMap("courseName")]
             [Validation(Required=false)]
             public string CourseName { get; set; }
 
             /// <summary>
-            /// dateModel
+            /// 上课日期
             /// </summary>
             [NameInMap("dateModel")]
             [Validation(Required=false)]
@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             };
 
             /// <summary>
-            /// sectionModel
+            /// 节次模型
             /// </summary>
             [NameInMap("sectionModel")]
             [Validation(Required=false)]
@@ -64,28 +64,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             };
 
             /// <summary>
-            /// creatorName
+            /// 创建者名字
             /// </summary>
             [NameInMap("creatorName")]
             [Validation(Required=false)]
             public string CreatorName { get; set; }
 
             /// <summary>
-            /// location
+            /// 上课地点
             /// </summary>
             [NameInMap("location")]
             [Validation(Required=false)]
             public string Location { get; set; }
 
             /// <summary>
-            /// deleteTag
+            /// 删除标记：要删除为ture
             /// </summary>
             [NameInMap("deleteTag")]
             [Validation(Required=false)]
             public bool? DeleteTag { get; set; }
 
             /// <summary>
-            /// courseCode
+            /// 课程code：删除/更新必填
             /// </summary>
             [NameInMap("courseCode")]
             [Validation(Required=false)]
@@ -94,7 +94,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
-        /// opUserId
+        /// 操作者id
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

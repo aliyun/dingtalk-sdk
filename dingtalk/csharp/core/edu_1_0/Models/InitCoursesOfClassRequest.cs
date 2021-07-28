@@ -9,26 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class InitCoursesOfClassRequest : TeaModel {
+        /// <summary>
+        /// 课程设置。
+        /// </summary>
         [NameInMap("courses")]
         [Validation(Required=false)]
         public List<InitCoursesOfClassRequestCourses> Courses { get; set; }
         public class InitCoursesOfClassRequestCourses : TeaModel {
             /// <summary>
-            /// teacherStaffIds
+            /// 老师的staffId。
             /// </summary>
             [NameInMap("teacherStaffIds")]
             [Validation(Required=false)]
             public List<string> TeacherStaffIds { get; set; }
 
             /// <summary>
-            /// courseName
+            /// 课程名称。
             /// </summary>
             [NameInMap("courseName")]
             [Validation(Required=false)]
             public string CourseName { get; set; }
 
             /// <summary>
-            /// dateModel
+            /// 上课时间。
             /// </summary>
             [NameInMap("dateModel")]
             [Validation(Required=false)]
@@ -46,15 +49,12 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             };
 
             /// <summary>
-            /// sectionModel
+            /// 课程节次。
             /// </summary>
             [NameInMap("sectionModel")]
             [Validation(Required=false)]
             public InitCoursesOfClassRequestCoursesSectionModel SectionModel { get; set; }
             public class InitCoursesOfClassRequestCoursesSectionModel : TeaModel {
-                [NameInMap("sectionType")]
-                [Validation(Required=false)]
-                public string SectionType { get; set; }
                 [NameInMap("sectionIndex")]
                 [Validation(Required=false)]
                 public int? SectionIndex { get; set; }
@@ -64,28 +64,24 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             };
 
             /// <summary>
-            /// creatorName
+            /// 创建者名称。
             /// </summary>
             [NameInMap("creatorName")]
             [Validation(Required=false)]
             public string CreatorName { get; set; }
 
             /// <summary>
-            /// location
+            /// 上课地点
             /// </summary>
             [NameInMap("location")]
             [Validation(Required=false)]
             public string Location { get; set; }
 
-            /// <summary>
-            /// deleteTag
-            /// </summary>
-            [NameInMap("deleteTag")]
-            [Validation(Required=false)]
-            public bool? DeleteTag { get; set; }
-
         }
 
+        /// <summary>
+        /// 节次设置
+        /// </summary>
         [NameInMap("sectionConfig")]
         [Validation(Required=false)]
         public InitCoursesOfClassRequestSectionConfig SectionConfig { get; set; }
@@ -98,14 +94,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public InitCoursesOfClassRequestSectionConfigSectionModelsStart Start { get; set; }
                 public class InitCoursesOfClassRequestSectionConfigSectionModelsStart : TeaModel {
                     /// <summary>
-                    /// min
+                    /// 分钟
                     /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public int? Min { get; set; }
 
                     /// <summary>
-                    /// hour
+                    /// 小时
                     /// </summary>
                     [NameInMap("hour")]
                     [Validation(Required=false)]
@@ -116,26 +112,25 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public InitCoursesOfClassRequestSectionConfigSectionModelsEnd End { get; set; }
                 public class InitCoursesOfClassRequestSectionConfigSectionModelsEnd : TeaModel {
                     /// <summary>
-                    /// min
+                    /// 分钟
                     /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public int? Min { get; set; }
 
                     /// <summary>
-                    /// hour
+                    /// 小时
                     /// </summary>
                     [NameInMap("hour")]
                     [Validation(Required=false)]
                     public int? Hour { get; set; }
 
                 }
-                public string SectionName { get; set; }
             }
         };
 
         /// <summary>
-        /// opUserId
+        /// 操作人的userid。
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

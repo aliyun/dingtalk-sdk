@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryClassScheduleResponseBody : TeaModel {
+        /// <summary>
+        /// 课表时间节次配置。
+        /// </summary>
         [NameInMap("config")]
         [Validation(Required=false)]
         public QueryClassScheduleResponseBodyConfig Config { get; set; }
@@ -17,14 +20,23 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public QueryClassScheduleResponseBodyConfigStart Start { get; set; }
             public class QueryClassScheduleResponseBodyConfigStart : TeaModel {
+                /// <summary>
+                /// 年份。
+                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public long? Year { get; set; }
 
+                /// <summary>
+                /// 月份。
+                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public long? Month { get; set; }
 
+                /// <summary>
+                /// 一个月中第几天
+                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public long? DayOfMonth { get; set; }
@@ -39,10 +51,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public long? SectionIndex { get; set; }
                 public QueryClassScheduleResponseBodyConfigSectionModelsStart Start { get; set; }
                 public class QueryClassScheduleResponseBodyConfigSectionModelsStart : TeaModel {
+                    /// <summary>
+                    /// 小时。
+                    /// </summary>
                     [NameInMap("hour")]
                     [Validation(Required=false)]
                     public long? Hour { get; set; }
 
+                    /// <summary>
+                    /// 分钟
+                    /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public long? Min { get; set; }
@@ -50,10 +68,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 }
                 public QueryClassScheduleResponseBodyConfigSectionModelsEnd End { get; set; }
                 public class QueryClassScheduleResponseBodyConfigSectionModelsEnd : TeaModel {
+                    /// <summary>
+                    /// 小时。
+                    /// </summary>
                     [NameInMap("hour")]
                     [Validation(Required=false)]
                     public long? Hour { get; set; }
 
+                    /// <summary>
+                    /// 分钟。
+                    /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public long? Min { get; set; }
@@ -64,14 +88,23 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public QueryClassScheduleResponseBodyConfigEnd End { get; set; }
             public class QueryClassScheduleResponseBodyConfigEnd : TeaModel {
+                /// <summary>
+                /// 年份。
+                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public long? Year { get; set; }
 
+                /// <summary>
+                /// 月份。
+                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public long? Month { get; set; }
 
+                /// <summary>
+                /// 一个月中第几天
+                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public long? DayOfMonth { get; set; }
@@ -79,6 +112,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             }
         };
 
+        /// <summary>
+        /// 课程列表
+        /// </summary>
         [NameInMap("courseDTOS")]
         [Validation(Required=false)]
         public List<QueryClassScheduleResponseBodyCourseDTOS> CourseDTOS { get; set; }
@@ -168,13 +204,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string TeacherUserName { get; set; }
 
             /// <summary>
-            /// 业务唯一键
-            /// </summary>
-            [NameInMap("bizKey")]
-            [Validation(Required=false)]
-            public string BizKey { get; set; }
-
-            /// <summary>
             /// 学科编码
             /// </summary>
             [NameInMap("subjectCode")]
@@ -246,14 +275,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             }
 
             /// <summary>
-            /// 授课所承载的平台
-            /// </summary>
-            [NameInMap("platform")]
-            [Validation(Required=false)]
-            public string Platform { get; set; }
-
-            /// <summary>
-            /// 课程编码
+            /// 课程名称
             /// </summary>
             [NameInMap("sectionName")]
             [Validation(Required=false)]

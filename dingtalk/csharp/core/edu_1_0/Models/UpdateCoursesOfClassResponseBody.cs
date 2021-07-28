@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class UpdateCoursesOfClassResponseBody : TeaModel {
         /// <summary>
-        /// result
+        /// 结果
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

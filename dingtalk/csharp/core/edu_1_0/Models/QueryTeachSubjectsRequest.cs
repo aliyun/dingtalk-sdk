@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryTeachSubjectsRequest : TeaModel {
         /// <summary>
-        /// classIds
+        /// 班级ids
         /// </summary>
         [NameInMap("classIds")]
         [Validation(Required=false)]
         public List<long?> ClassIds { get; set; }
 
         /// <summary>
-        /// opUserId
+        /// 操作者UserId
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

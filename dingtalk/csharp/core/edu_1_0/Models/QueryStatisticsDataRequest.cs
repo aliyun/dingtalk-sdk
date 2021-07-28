@@ -10,25 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryStatisticsDataRequest : TeaModel {
         /// <summary>
-        /// sectionIndexList
-        /// </summary>
-        [NameInMap("sectionIndexList")]
-        [Validation(Required=false)]
-        public List<int?> SectionIndexList { get; set; }
-
-        /// <summary>
         /// startTime
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }
-
-        /// <summary>
-        /// teacherUserIds
-        /// </summary>
-        [NameInMap("teacherUserIds")]
-        [Validation(Required=false)]
-        public List<string> TeacherUserIds { get; set; }
 
         /// <summary>
         /// endTime
@@ -43,6 +29,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
+
+        /// <summary>
+        /// 课程节次列表
+        /// </summary>
+        [NameInMap("sectionIndexList")]
+        [Validation(Required=false)]
+        public List<long?> SectionIndexList { get; set; }
+
+        /// <summary>
+        /// 老师UserIds
+        /// </summary>
+        [NameInMap("teacherUserIds")]
+        [Validation(Required=false)]
+        public List<string> TeacherUserIds { get; set; }
 
     }
 

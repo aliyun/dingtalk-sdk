@@ -58,6 +58,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string RobotName { get; set; }
 
+        /// <summary>
+        /// 群bizId
+        /// </summary>
+        [NameInMap("bizId")]
+        [Validation(Required=false)]
+        public string BizId { get; set; }
+
     }
 
 }

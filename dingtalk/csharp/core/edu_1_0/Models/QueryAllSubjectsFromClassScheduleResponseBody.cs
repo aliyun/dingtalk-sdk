@@ -9,26 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryAllSubjectsFromClassScheduleResponseBody : TeaModel {
+        /// <summary>
+        /// 查询结果。
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<QueryAllSubjectsFromClassScheduleResponseBodyResult> Result { get; set; }
         public class QueryAllSubjectsFromClassScheduleResponseBodyResult : TeaModel {
             /// <summary>
-            /// subjectName
+            /// 学科名称。
             /// </summary>
             [NameInMap("subjectName")]
             [Validation(Required=false)]
             public string SubjectName { get; set; }
 
             /// <summary>
-            /// subjectCode
+            /// 学科code。
             /// </summary>
             [NameInMap("subjectCode")]
             [Validation(Required=false)]
             public string SubjectCode { get; set; }
 
             /// <summary>
-            /// periodCode
+            /// 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
             /// </summary>
             [NameInMap("periodCode")]
             [Validation(Required=false)]
@@ -41,6 +44,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public long? CreatorOrgId { get; set; }
 
+            /// <summary>
+            /// 拓展信息
+            /// </summary>
             [NameInMap("ext")]
             [Validation(Required=false)]
             public QueryAllSubjectsFromClassScheduleResponseBodyResultExt Ext { get; set; }

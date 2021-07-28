@@ -9,14 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryClassScheduleConfigResponseBody : TeaModel {
+        /// <summary>
+        /// 查询结果
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<QueryClassScheduleConfigResponseBodyResult> Result { get; set; }
         public class QueryClassScheduleConfigResponseBodyResult : TeaModel {
+            /// <summary>
+            /// 班级的Id.
+            /// </summary>
             [NameInMap("classId")]
             [Validation(Required=false)]
             public long? ClassId { get; set; }
 
+            /// <summary>
+            /// 开始时间
+            /// </summary>
             [NameInMap("start")]
             [Validation(Required=false)]
             public QueryClassScheduleConfigResponseBodyResultStart Start { get; set; }
@@ -48,21 +57,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             };
 
             /// <summary>
-            /// sectionModels
+            /// 节次模型。
             /// </summary>
             [NameInMap("sectionModels")]
             [Validation(Required=false)]
             public List<QueryClassScheduleConfigResponseBodyResultSectionModels> SectionModels { get; set; }
             public class QueryClassScheduleConfigResponseBodyResultSectionModels : TeaModel {
                 /// <summary>
-                /// sectionType
+                /// 节次类型：COURSE/REST
                 /// </summary>
                 [NameInMap("sectionType")]
                 [Validation(Required=false)]
                 public string SectionType { get; set; }
 
                 /// <summary>
-                /// start
+                /// 开始时间（时分）
                 /// </summary>
                 [NameInMap("start")]
                 [Validation(Required=false)]
@@ -77,14 +86,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 };
 
                 /// <summary>
-                /// sectionIndex
+                /// 节次设置
                 /// </summary>
                 [NameInMap("sectionIndex")]
                 [Validation(Required=false)]
                 public int? SectionIndex { get; set; }
 
                 /// <summary>
-                /// end
+                /// 结束时间
                 /// </summary>
                 [NameInMap("end")]
                 [Validation(Required=false)]
@@ -99,7 +108,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 };
 
                 /// <summary>
-                /// sectionName
+                /// 节次名称
                 /// </summary>
                 [NameInMap("sectionName")]
                 [Validation(Required=false)]

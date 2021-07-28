@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CourseSchedulingComplimentNoticeResponseBody : TeaModel {
         /// <summary>
-        /// result
+        /// 通知课程导入完成是否成功。
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

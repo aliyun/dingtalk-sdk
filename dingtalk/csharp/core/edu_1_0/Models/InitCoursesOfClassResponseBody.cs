@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class InitCoursesOfClassResponseBody : TeaModel {
         /// <summary>
-        /// result
+        /// 初始化是否成功。
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
-        public string Result { get; set; }
+        public bool? Result { get; set; }
 
     }
 
