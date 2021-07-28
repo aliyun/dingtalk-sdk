@@ -77,6 +77,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryResourceManagementMembers', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/resources/{resource_id}/managementMembers', 'json', req, runtime)
         )
 
+    def sort_user(
+        self,
+        request: dingtalkcontact__1__0_models.SortUserRequest,
+    ) -> dingtalkcontact__1__0_models.SortUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SortUserHeaders()
+        return self.sort_user_with_options(request, headers, runtime)
+
+    async def sort_user_async(
+        self,
+        request: dingtalkcontact__1__0_models.SortUserRequest,
+    ) -> dingtalkcontact__1__0_models.SortUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SortUserHeaders()
+        return await self.sort_user_with_options_async(request, headers, runtime)
+
+    def sort_user_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SortUserRequest,
+        headers: dingtalkcontact__1__0_models.SortUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SortUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.sort_type):
+            body['sortType'] = request.sort_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SortUserResponse(),
+            self.do_roarequest('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/sort', 'json', req, runtime)
+        )
+
+    async def sort_user_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SortUserRequest,
+        headers: dingtalkcontact__1__0_models.SortUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SortUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.sort_type):
+            body['sortType'] = request.sort_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SortUserResponse(),
+            await self.do_roarequest_async('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/sort', 'json', req, runtime)
+        )
+
     def update_emp_attrbute_visibility_setting(
         self,
         request: dingtalkcontact__1__0_models.UpdateEmpAttrbuteVisibilitySettingRequest,
@@ -247,6 +319,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteEmpAttributeVisibility', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/staffAttributes/visibilitySettings/{setting_id}', 'none', req, runtime)
         )
 
+    def search_department(
+        self,
+        request: dingtalkcontact__1__0_models.SearchDepartmentRequest,
+    ) -> dingtalkcontact__1__0_models.SearchDepartmentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SearchDepartmentHeaders()
+        return self.search_department_with_options(request, headers, runtime)
+
+    async def search_department_async(
+        self,
+        request: dingtalkcontact__1__0_models.SearchDepartmentRequest,
+    ) -> dingtalkcontact__1__0_models.SearchDepartmentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SearchDepartmentHeaders()
+        return await self.search_department_with_options_async(request, headers, runtime)
+
+    def search_department_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SearchDepartmentRequest,
+        headers: dingtalkcontact__1__0_models.SearchDepartmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SearchDepartmentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.query_word):
+            body['queryWord'] = request.query_word
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SearchDepartmentResponse(),
+            self.do_roarequest('SearchDepartment', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/departments/search', 'json', req, runtime)
+        )
+
+    async def search_department_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SearchDepartmentRequest,
+        headers: dingtalkcontact__1__0_models.SearchDepartmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SearchDepartmentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.query_word):
+            body['queryWord'] = request.query_word
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SearchDepartmentResponse(),
+            await self.do_roarequest_async('SearchDepartment', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/departments/search', 'json', req, runtime)
+        )
+
     def list_management_groups(
         self,
         request: dingtalkcontact__1__0_models.ListManagementGroupsRequest,
@@ -381,6 +529,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.ListEmpAttributeVisibilityResponse(),
             await self.do_roarequest_async('ListEmpAttributeVisibility', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/staffAttributes/visibilitySettings', 'json', req, runtime)
+        )
+
+    def search_user(
+        self,
+        request: dingtalkcontact__1__0_models.SearchUserRequest,
+    ) -> dingtalkcontact__1__0_models.SearchUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SearchUserHeaders()
+        return self.search_user_with_options(request, headers, runtime)
+
+    async def search_user_async(
+        self,
+        request: dingtalkcontact__1__0_models.SearchUserRequest,
+    ) -> dingtalkcontact__1__0_models.SearchUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SearchUserHeaders()
+        return await self.search_user_with_options_async(request, headers, runtime)
+
+    def search_user_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SearchUserRequest,
+        headers: dingtalkcontact__1__0_models.SearchUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SearchUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.query_word):
+            body['queryWord'] = request.query_word
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SearchUserResponse(),
+            self.do_roarequest('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/search', 'json', req, runtime)
+        )
+
+    async def search_user_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SearchUserRequest,
+        headers: dingtalkcontact__1__0_models.SearchUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SearchUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.query_word):
+            body['queryWord'] = request.query_word
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SearchUserResponse(),
+            await self.do_roarequest_async('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/search', 'json', req, runtime)
         )
 
     def get_apply_invite_info(

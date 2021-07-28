@@ -343,74 +343,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryAllGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups', 'json', req, runtime)
         )
 
-    def query_all_doctors(
-        self,
-        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
-        return self.query_all_doctors_with_options(request, headers, runtime)
-
-    async def query_all_doctors_async(
-        self,
-        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
-        return await self.query_all_doctors_with_options_async(request, headers, runtime)
-
-    def query_all_doctors_with_options(
-        self,
-        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllDoctorsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.page_num):
-            query['pageNum'] = request.page_num
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllDoctorsResponse(),
-            self.do_roarequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors', 'json', req, runtime)
-        )
-
-    async def query_all_doctors_with_options_async(
-        self,
-        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllDoctorsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.page_num):
-            query['pageNum'] = request.page_num
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllDoctorsResponse(),
-            await self.do_roarequest_async('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors', 'json', req, runtime)
-        )
-
     def query_all_groups_in_dept(
         self,
         dept_id: str,
@@ -551,6 +483,300 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/bizOptLogs', 'json', req, runtime)
         )
 
+    def query_user_prob_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders()
+        return self.query_user_prob_code_dictionary_with_options(headers, runtime)
+
+    async def query_user_prob_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders()
+        return await self.query_user_prob_code_dictionary_with_options_async(headers, runtime)
+
+    def query_user_prob_code_dictionary_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse(),
+            self.do_roarequest('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/userProbCodes', 'json', req, runtime)
+        )
+
+    async def query_user_prob_code_dictionary_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse(),
+            await self.do_roarequest_async('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/userProbCodes', 'json', req, runtime)
+        )
+
+    def query_job_status_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders()
+        return self.query_job_status_code_dictionary_with_options(headers, runtime)
+
+    async def query_job_status_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders()
+        return await self.query_job_status_code_dictionary_with_options_async(headers, runtime)
+
+    def query_job_status_code_dictionary_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse(),
+            self.do_roarequest('QueryJobStatusCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobStatusCodes', 'json', req, runtime)
+        )
+
+    async def query_job_status_code_dictionary_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse(),
+            await self.do_roarequest_async('QueryJobStatusCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobStatusCodes', 'json', req, runtime)
+        )
+
+    def query_department_info(
+        self,
+        dept_id: str,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders()
+        return self.query_department_info_with_options(dept_id, headers, runtime)
+
+    async def query_department_info_async(
+        self,
+        dept_id: str,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders()
+        return await self.query_department_info_with_options_async(dept_id, headers, runtime)
+
+    def query_department_info_with_options(
+        self,
+        dept_id: str,
+        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
+            self.do_roarequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
+        )
+
+    async def query_department_info_with_options_async(
+        self,
+        dept_id: str,
+        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
+            await self.do_roarequest_async('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
+        )
+
+    def update_user_extend_info(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
+    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders()
+        return self.update_user_extend_info_with_options(user_id, request, headers, runtime)
+
+    async def update_user_extend_info_async(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
+    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders()
+        return await self.update_user_extend_info_with_options_async(user_id, request, headers, runtime)
+
+    def update_user_extend_info_with_options(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
+        headers: dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.job_code):
+            body['jobCode'] = request.job_code
+        if not UtilClient.is_unset(request.user_prob_code):
+            body['userProbCode'] = request.user_prob_code
+        if not UtilClient.is_unset(request.job_status_code):
+            body['jobStatusCode'] = request.job_status_code
+        if not UtilClient.is_unset(request.comments):
+            body['comments'] = request.comments
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
+            self.do_roarequest('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'none', req, runtime)
+        )
+
+    async def update_user_extend_info_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
+        headers: dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.job_code):
+            body['jobCode'] = request.job_code
+        if not UtilClient.is_unset(request.user_prob_code):
+            body['userProbCode'] = request.user_prob_code
+        if not UtilClient.is_unset(request.job_status_code):
+            body['jobStatusCode'] = request.job_status_code
+        if not UtilClient.is_unset(request.comments):
+            body['comments'] = request.comments
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
+            await self.do_roarequest_async('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'none', req, runtime)
+        )
+
+    def query_all_doctors(
+        self,
+        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
+        return self.query_all_doctors_with_options(request, headers, runtime)
+
+    async def query_all_doctors_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
+        return await self.query_all_doctors_with_options_async(request, headers, runtime)
+
+    def query_all_doctors_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllDoctorsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_num):
+            query['pageNum'] = request.page_num
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryAllDoctorsResponse(),
+            self.do_roarequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors', 'json', req, runtime)
+        )
+
+    async def query_all_doctors_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllDoctorsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_num):
+            query['pageNum'] = request.page_num
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryAllDoctorsResponse(),
+            await self.do_roarequest_async('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors', 'json', req, runtime)
+        )
+
     def query_user_ext_info(
         self,
         user_id: str,
@@ -603,6 +829,52 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserExtInfoResponse(),
             await self.do_roarequest_async('QueryUserExtInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'json', req, runtime)
+        )
+
+    def query_job_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders()
+        return self.query_job_code_dictionary_with_options(headers, runtime)
+
+    async def query_job_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders()
+        return await self.query_job_code_dictionary_with_options_async(headers, runtime)
+
+    def query_job_code_dictionary_with_options(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse(),
+            self.do_roarequest('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobCodes', 'json', req, runtime)
+        )
+
+    async def query_job_code_dictionary_with_options_async(
+        self,
+        headers: dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse(),
+            await self.do_roarequest_async('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobCodes', 'json', req, runtime)
         )
 
     def query_all_department(
@@ -671,60 +943,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllDepartmentResponse(),
             await self.do_roarequest_async('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments', 'json', req, runtime)
-        )
-
-    def query_department_info(
-        self,
-        dept_id: str,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders()
-        return self.query_department_info_with_options(dept_id, headers, runtime)
-
-    async def query_department_info_async(
-        self,
-        dept_id: str,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders()
-        return await self.query_department_info_with_options_async(dept_id, headers, runtime)
-
-    def query_department_info_with_options(
-        self,
-        dept_id: str,
-        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
-            self.do_roarequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
-        )
-
-    async def query_department_info_with_options_async(
-        self,
-        dept_id: str,
-        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
-            await self.do_roarequest_async('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
         )
 
     def query_group_info(

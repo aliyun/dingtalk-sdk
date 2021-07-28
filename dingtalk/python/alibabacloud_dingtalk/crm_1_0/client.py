@@ -721,6 +721,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
         )
 
+    def recall_official_account_otomessage(
+        self,
+        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
+        return self.recall_official_account_otomessage_with_options(request, headers, runtime)
+
+    async def recall_official_account_otomessage_async(
+        self,
+        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
+        return await self.recall_official_account_otomessage_with_options_async(request, headers, runtime)
+
+    def recall_official_account_otomessage_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
+        headers: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.open_push_id):
+            body['openPushId'] = request.open_push_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse(),
+            self.do_roarequest('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/recall', 'json', req, runtime)
+        )
+
+    async def recall_official_account_otomessage_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
+        headers: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.open_push_id):
+            body['openPushId'] = request.open_push_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse(),
+            await self.do_roarequest_async('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/recall', 'json', req, runtime)
+        )
+
     def describe_crm_personal_customer_object_meta(self) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()

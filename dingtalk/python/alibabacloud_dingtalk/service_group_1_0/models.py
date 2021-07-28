@@ -3300,6 +3300,7 @@ class QueryGroupResponseBody(TeaModel):
         group_url: str = None,
         robot_code: str = None,
         robot_name: str = None,
+        biz_id: str = None,
     ):
         # 开放群ID
         self.open_conversation_id = open_conversation_id
@@ -3315,6 +3316,8 @@ class QueryGroupResponseBody(TeaModel):
         self.robot_code = robot_code
         # 服务群机器人名称
         self.robot_name = robot_name
+        # 群bizId
+        self.biz_id = biz_id
 
     def validate(self):
         pass
@@ -3339,6 +3342,8 @@ class QueryGroupResponseBody(TeaModel):
             result['robotCode'] = self.robot_code
         if self.robot_name is not None:
             result['robotName'] = self.robot_name
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
         return result
 
     def from_map(self, m: dict = None):
@@ -3357,6 +3362,8 @@ class QueryGroupResponseBody(TeaModel):
             self.robot_code = m.get('robotCode')
         if m.get('robotName') is not None:
             self.robot_name = m.get('robotName')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
         return self
 
 
