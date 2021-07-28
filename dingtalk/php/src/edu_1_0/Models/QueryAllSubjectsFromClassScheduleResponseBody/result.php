@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description subjectName
+     * @description 学科名称。
      *
      * @var string
      */
     public $subjectName;
 
     /**
-     * @description subjectCode
+     * @description 学科code。
      *
      * @var string
      */
     public $subjectCode;
 
     /**
-     * @description periodCode
+     * @description 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
      *
      * @var string
      */
@@ -38,6 +38,8 @@ class result extends Model
     public $creatorOrgId;
 
     /**
+     * @description 拓展信息
+     *
      * @var ext
      */
     public $ext;

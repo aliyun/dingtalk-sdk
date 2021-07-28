@@ -15,7 +15,7 @@ class UpdateCoursesOfClassRequest extends Model
     public $courses;
 
     /**
-     * @description opUserId
+     * @description 操作者id
      *
      * @var string
      */

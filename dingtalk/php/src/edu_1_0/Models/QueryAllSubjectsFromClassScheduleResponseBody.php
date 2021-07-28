@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryAllSubjectsFromClassScheduleResponseBody extends Model
 {
     /**
+     * @description 查询结果。
+     *
      * @var result[]
      */
     public $result;

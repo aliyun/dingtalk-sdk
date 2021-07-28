@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CourseSchedulingComplimentNoticeResponseBody extends Model
 {
     /**
-     * @description result
+     * @description 通知课程导入完成是否成功。
      *
      * @var bool
      */

@@ -30,12 +30,21 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobCodeDictionaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobCodeDictionaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserExtInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserProbCodeDictionaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserProbCodeDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -264,51 +273,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAllDoctorsRequest $request
-     *
-     * @return QueryAllDoctorsResponse
-     */
-    public function queryAllDoctors($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryAllDoctorsHeaders([]);
-
-        return $this->queryAllDoctorsWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryAllDoctorsRequest $request
-     * @param QueryAllDoctorsHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return QueryAllDoctorsResponse
-     */
-    public function queryAllDoctorsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->pageNum)) {
-            @$query['pageNum'] = $request->pageNum;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryAllDoctorsResponse::fromMap($this->doROARequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/doctors', 'json', $req, $runtime));
-    }
-
-    /**
      * @param string                      $deptId
      * @param QueryAllGroupsInDeptRequest $request
      *
@@ -401,6 +365,206 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @return QueryUserProbCodeDictionaryResponse
+     */
+    public function queryUserProbCodeDictionary()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserProbCodeDictionaryHeaders([]);
+
+        return $this->queryUserProbCodeDictionaryWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserProbCodeDictionaryHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return QueryUserProbCodeDictionaryResponse
+     */
+    public function queryUserProbCodeDictionaryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryUserProbCodeDictionaryResponse::fromMap($this->doROARequest('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/userProbCodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryJobStatusCodeDictionaryResponse
+     */
+    public function queryJobStatusCodeDictionary()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryJobStatusCodeDictionaryHeaders([]);
+
+        return $this->queryJobStatusCodeDictionaryWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryJobStatusCodeDictionaryHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return QueryJobStatusCodeDictionaryResponse
+     */
+    public function queryJobStatusCodeDictionaryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryJobStatusCodeDictionaryResponse::fromMap($this->doROARequest('QueryJobStatusCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/jobStatusCodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $deptId
+     *
+     * @return QueryDepartmentInfoResponse
+     */
+    public function queryDepartmentInfo($deptId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDepartmentInfoHeaders([]);
+
+        return $this->queryDepartmentInfoWithOptions($deptId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $deptId
+     * @param QueryDepartmentInfoHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryDepartmentInfoResponse
+     */
+    public function queryDepartmentInfoWithOptions($deptId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryDepartmentInfoResponse::fromMap($this->doROARequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $userId
+     * @param UpdateUserExtendInfoRequest $request
+     *
+     * @return UpdateUserExtendInfoResponse
+     */
+    public function updateUserExtendInfo($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateUserExtendInfoHeaders([]);
+
+        return $this->updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $userId
+     * @param UpdateUserExtendInfoRequest $request
+     * @param UpdateUserExtendInfoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateUserExtendInfoResponse
+     */
+    public function updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->jobCode)) {
+            @$body['jobCode'] = $request->jobCode;
+        }
+        if (!Utils::isUnset($request->userProbCode)) {
+            @$body['userProbCode'] = $request->userProbCode;
+        }
+        if (!Utils::isUnset($request->jobStatusCode)) {
+            @$body['jobStatusCode'] = $request->jobStatusCode;
+        }
+        if (!Utils::isUnset($request->comments)) {
+            @$body['comments'] = $request->comments;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateUserExtendInfoResponse::fromMap($this->doROARequest('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param QueryAllDoctorsRequest $request
+     *
+     * @return QueryAllDoctorsResponse
+     */
+    public function queryAllDoctors($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllDoctorsHeaders([]);
+
+        return $this->queryAllDoctorsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAllDoctorsRequest $request
+     * @param QueryAllDoctorsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryAllDoctorsResponse
+     */
+    public function queryAllDoctorsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->pageNum)) {
+            @$query['pageNum'] = $request->pageNum;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryAllDoctorsResponse::fromMap($this->doROARequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/doctors', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $userId
      *
      * @return QueryUserExtInfoResponse
@@ -434,6 +598,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserExtInfoResponse::fromMap($this->doROARequest('QueryUserExtInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return QueryJobCodeDictionaryResponse
+     */
+    public function queryJobCodeDictionary()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryJobCodeDictionaryHeaders([]);
+
+        return $this->queryJobCodeDictionaryWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryJobCodeDictionaryHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return QueryJobCodeDictionaryResponse
+     */
+    public function queryJobCodeDictionaryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryJobCodeDictionaryResponse::fromMap($this->doROARequest('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/jobCodes', 'json', $req, $runtime));
     }
 
     /**
@@ -479,42 +676,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryAllDepartmentResponse::fromMap($this->doROARequest('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $deptId
-     *
-     * @return QueryDepartmentInfoResponse
-     */
-    public function queryDepartmentInfo($deptId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryDepartmentInfoHeaders([]);
-
-        return $this->queryDepartmentInfoWithOptions($deptId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                     $deptId
-     * @param QueryDepartmentInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return QueryDepartmentInfoResponse
-     */
-    public function queryDepartmentInfoWithOptions($deptId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return QueryDepartmentInfoResponse::fromMap($this->doROARequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '', 'json', $req, $runtime));
     }
 
     /**

@@ -95,13 +95,6 @@ class courseDTOS extends Model
     public $teacherUserName;
 
     /**
-     * @description 业务唯一键
-     *
-     * @var string
-     */
-    public $bizKey;
-
-    /**
      * @description 学科编码
      *
      * @var string
@@ -137,14 +130,7 @@ class courseDTOS extends Model
     public $eduUserModels;
 
     /**
-     * @description 授课所承载的平台
-     *
-     * @var string
-     */
-    public $platform;
-
-    /**
-     * @description 课程编码
+     * @description 课程名称
      *
      * @var string
      */
@@ -183,13 +169,11 @@ class courseDTOS extends Model
         'teacherCorpId'   => 'teacherCorpId',
         'teacherUserId'   => 'teacherUserId',
         'teacherUserName' => 'teacherUserName',
-        'bizKey'          => 'bizKey',
         'subjectCode'     => 'subjectCode',
         'courseGroupCode' => 'courseGroupCode',
         'status'          => 'status',
         'classrooms'      => 'classrooms',
         'eduUserModels'   => 'eduUserModels',
-        'platform'        => 'platform',
         'sectionName'     => 'sectionName',
         'sectionIndex'    => 'sectionIndex',
         'classId'         => 'classId',
@@ -239,9 +223,6 @@ class courseDTOS extends Model
         if (null !== $this->teacherUserName) {
             $res['teacherUserName'] = $this->teacherUserName;
         }
-        if (null !== $this->bizKey) {
-            $res['bizKey'] = $this->bizKey;
-        }
         if (null !== $this->subjectCode) {
             $res['subjectCode'] = $this->subjectCode;
         }
@@ -268,9 +249,6 @@ class courseDTOS extends Model
                     $res['eduUserModels'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->platform) {
-            $res['platform'] = $this->platform;
         }
         if (null !== $this->sectionName) {
             $res['sectionName'] = $this->sectionName;
@@ -332,9 +310,6 @@ class courseDTOS extends Model
         if (isset($map['teacherUserName'])) {
             $model->teacherUserName = $map['teacherUserName'];
         }
-        if (isset($map['bizKey'])) {
-            $model->bizKey = $map['bizKey'];
-        }
         if (isset($map['subjectCode'])) {
             $model->subjectCode = $map['subjectCode'];
         }
@@ -361,9 +336,6 @@ class courseDTOS extends Model
                     $model->eduUserModels[$n++] = null !== $item ? eduUserModels::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['platform'])) {
-            $model->platform = $map['platform'];
         }
         if (isset($map['sectionName'])) {
             $model->sectionName = $map['sectionName'];

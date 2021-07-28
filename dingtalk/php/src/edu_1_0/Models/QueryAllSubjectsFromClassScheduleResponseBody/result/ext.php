@@ -24,11 +24,15 @@ class ext extends Model
     public $backgroundColor;
 
     /**
+     * @description 班级id。
+     *
      * @var int
      */
     public $classId;
 
     /**
+     * @description 老师列表
+     *
      * @var teacherList[]
      */
     public $teacherList;

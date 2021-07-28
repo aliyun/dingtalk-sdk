@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class end extends Model
 {
     /**
+     * @description 年份。
+     *
      * @var int
      */
     public $year;
 
     /**
+     * @description 月份。
+     *
      * @var int
      */
     public $month;
 
     /**
+     * @description 一个月中第几天
+     *
      * @var int
      */
     public $dayOfMonth;

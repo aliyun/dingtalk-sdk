@@ -16,14 +16,14 @@ class sectionModel extends Model
     public $sectionType;
 
     /**
-     * @description sectionIndex
+     * @description 节次index
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
-     * @description sectionName
+     * @description 节次名称
      *
      * @var string
      */

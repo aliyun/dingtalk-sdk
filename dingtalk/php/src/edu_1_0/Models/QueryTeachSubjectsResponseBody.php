@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class QueryTeachSubjectsResponseBody extends Model
 {
     /**
-     * @description result
+     * @description 结果
      *
      * @var result[]
      */

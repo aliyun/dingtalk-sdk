@@ -11,53 +11,46 @@ use AlibabaCloud\Tea\Model;
 class courses extends Model
 {
     /**
-     * @description teacherStaffIds
+     * @description 老师的staffId。
      *
      * @var string[]
      */
     public $teacherStaffIds;
 
     /**
-     * @description courseName
+     * @description 课程名称。
      *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description dateModel
+     * @description 上课时间。
      *
      * @var dateModel
      */
     public $dateModel;
 
     /**
-     * @description sectionModel
+     * @description 课程节次。
      *
      * @var sectionModel
      */
     public $sectionModel;
 
     /**
-     * @description creatorName
+     * @description 创建者名称。
      *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description location
+     * @description 上课地点
      *
      * @var string
      */
     public $location;
-
-    /**
-     * @description deleteTag
-     *
-     * @var bool
-     */
-    public $deleteTag;
     protected $_name = [
         'teacherStaffIds' => 'teacherStaffIds',
         'courseName'      => 'courseName',
@@ -65,7 +58,6 @@ class courses extends Model
         'sectionModel'    => 'sectionModel',
         'creatorName'     => 'creatorName',
         'location'        => 'location',
-        'deleteTag'       => 'deleteTag',
     ];
 
     public function validate()
@@ -92,9 +84,6 @@ class courses extends Model
         }
         if (null !== $this->location) {
             $res['location'] = $this->location;
-        }
-        if (null !== $this->deleteTag) {
-            $res['deleteTag'] = $this->deleteTag;
         }
 
         return $res;
@@ -127,9 +116,6 @@ class courses extends Model
         }
         if (isset($map['location'])) {
             $model->location = $map['location'];
-        }
-        if (isset($map['deleteTag'])) {
-            $model->deleteTag = $map['deleteTag'];
         }
 
         return $model;

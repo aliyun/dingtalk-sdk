@@ -11,32 +11,36 @@ use AlibabaCloud\Tea\Model;
 class sectionModels extends Model
 {
     /**
-     * @description 节次名称
+     * @description 节次名称。
      *
      * @var string
      */
     public $sectionName;
 
     /**
-     * @description 节次类型
+     * @description 节次类型：  COURSE：上课节次 REST：休息节次
      *
      * @var string
      */
     public $sectionType;
 
     /**
-     * @description 节次序列
+     * @description 节次序列。
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
+     * @description 开始时间（时分级别）。
+     *
      * @var start
      */
     public $start;
 
     /**
+     * @description 结束时间（时分级别）
+     *
      * @var end
      */
     public $end;

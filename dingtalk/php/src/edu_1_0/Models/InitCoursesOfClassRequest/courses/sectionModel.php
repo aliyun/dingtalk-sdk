@@ -9,27 +9,19 @@ use AlibabaCloud\Tea\Model;
 class sectionModel extends Model
 {
     /**
-     * @description sectionType
-     *
-     * @var string
-     */
-    public $sectionType;
-
-    /**
-     * @description sectionIndex
+     * @description 节次序列号。
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
-     * @description sectionName
+     * @description 节次名称。
      *
      * @var string
      */
     public $sectionName;
     protected $_name = [
-        'sectionType'  => 'sectionType',
         'sectionIndex' => 'sectionIndex',
         'sectionName'  => 'sectionName',
     ];
@@ -41,9 +33,6 @@ class sectionModel extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->sectionType) {
-            $res['sectionType'] = $this->sectionType;
-        }
         if (null !== $this->sectionIndex) {
             $res['sectionIndex'] = $this->sectionIndex;
         }
@@ -62,9 +51,6 @@ class sectionModel extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['sectionType'])) {
-            $model->sectionType = $map['sectionType'];
-        }
         if (isset($map['sectionIndex'])) {
             $model->sectionIndex = $map['sectionIndex'];
         }

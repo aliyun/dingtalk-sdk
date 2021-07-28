@@ -10,18 +10,27 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -39,38 +48,27 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTrustedDeviceRequest $request
+     * @param string $conferenceId
      *
-     * @return CreateTrustedDeviceResponse
+     * @return GetConferenceDetailResponse
      */
-    public function createTrustedDevice($request)
+    public function getConferenceDetail($conferenceId)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new CreateTrustedDeviceHeaders([]);
+        $headers = new GetConferenceDetailHeaders([]);
 
-        return $this->createTrustedDeviceWithOptions($request, $headers, $runtime);
+        return $this->getConferenceDetailWithOptions($conferenceId, $headers, $runtime);
     }
 
     /**
-     * @param CreateTrustedDeviceRequest $request
-     * @param CreateTrustedDeviceHeaders $headers
+     * @param string                     $conferenceId
+     * @param GetConferenceDetailHeaders $headers
      * @param RuntimeOptions             $runtime
      *
-     * @return CreateTrustedDeviceResponse
+     * @return GetConferenceDetailResponse
      */
-    public function createTrustedDeviceWithOptions($request, $headers, $runtime)
+    public function getConferenceDetailWithOptions($conferenceId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->platform)) {
-            @$body['platform'] = $request->platform;
-        }
-        if (!Utils::isUnset($request->macAddress)) {
-            @$body['macAddress'] = $request->macAddress;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -80,10 +78,9 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreateTrustedDeviceResponse::fromMap($this->doROARequest('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices', 'json', $req, $runtime));
+        return GetConferenceDetailResponse::fromMap($this->doROARequest('GetConferenceDetail', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/conferences/' . $conferenceId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -125,41 +122,24 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetGroupActiveInfoRequest $request
-     *
-     * @return GetGroupActiveInfoResponse
+     * @return GetAllLabelableDeptsResponse
      */
-    public function getGroupActiveInfo($request)
+    public function getAllLabelableDepts()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetGroupActiveInfoHeaders([]);
+        $headers = new GetAllLabelableDeptsHeaders([]);
 
-        return $this->getGroupActiveInfoWithOptions($request, $headers, $runtime);
+        return $this->getAllLabelableDeptsWithOptions($headers, $runtime);
     }
 
     /**
-     * @param GetGroupActiveInfoRequest $request
-     * @param GetGroupActiveInfoHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetAllLabelableDeptsHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetGroupActiveInfoResponse
+     * @return GetAllLabelableDeptsResponse
      */
-    public function getGroupActiveInfoWithOptions($request, $headers, $runtime)
+    public function getAllLabelableDeptsWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
-        }
-        if (!Utils::isUnset($request->dingGroupId)) {
-            @$query['dingGroupId'] = $request->dingGroupId;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -169,57 +149,9 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetGroupActiveInfoResponse::fromMap($this->doROARequest('GetGroupActiveInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/activeGroups', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                $publisherId
-     * @param GetCommentListRequest $request
-     *
-     * @return GetCommentListResponse
-     */
-    public function getCommentList($publisherId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetCommentListHeaders([]);
-
-        return $this->getCommentListWithOptions($publisherId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                $publisherId
-     * @param GetCommentListRequest $request
-     * @param GetCommentListHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return GetCommentListResponse
-     */
-    public function getCommentListWithOptions($publisherId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetCommentListResponse::fromMap($this->doROARequest('GetCommentList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list', 'json', $req, $runtime));
+        return GetAllLabelableDeptsResponse::fromMap($this->doROARequest('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partnerDepartments', 'json', $req, $runtime));
     }
 
     /**
@@ -340,5 +272,235 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchOrgInnerGroupInfoResponse::fromMap($this->doROARequest('SearchOrgInnerGroupInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/securities/orgGroupInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTrustedDeviceRequest $request
+     *
+     * @return CreateTrustedDeviceResponse
+     */
+    public function createTrustedDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTrustedDeviceHeaders([]);
+
+        return $this->createTrustedDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTrustedDeviceRequest $request
+     * @param CreateTrustedDeviceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CreateTrustedDeviceResponse
+     */
+    public function createTrustedDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->macAddress)) {
+            @$body['macAddress'] = $request->macAddress;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTrustedDeviceResponse::fromMap($this->doROARequest('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetGroupActiveInfoRequest $request
+     *
+     * @return GetGroupActiveInfoResponse
+     */
+    public function getGroupActiveInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGroupActiveInfoHeaders([]);
+
+        return $this->getGroupActiveInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetGroupActiveInfoRequest $request
+     * @param GetGroupActiveInfoHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetGroupActiveInfoResponse
+     */
+    public function getGroupActiveInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$query['statDate'] = $request->statDate;
+        }
+        if (!Utils::isUnset($request->dingGroupId)) {
+            @$query['dingGroupId'] = $request->dingGroupId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetGroupActiveInfoResponse::fromMap($this->doROARequest('GetGroupActiveInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/activeGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $publisherId
+     * @param GetCommentListRequest $request
+     *
+     * @return GetCommentListResponse
+     */
+    public function getCommentList($publisherId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCommentListHeaders([]);
+
+        return $this->getCommentListWithOptions($publisherId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $publisherId
+     * @param GetCommentListRequest $request
+     * @param GetCommentListHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetCommentListResponse
+     */
+    public function getCommentListWithOptions($publisherId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCommentListResponse::fromMap($this->doROARequest('GetCommentList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $parentId
+     *
+     * @return GetPartnerTypeByParentIdResponse
+     */
+    public function getPartnerTypeByParentId($parentId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPartnerTypeByParentIdHeaders([]);
+
+        return $this->getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $parentId
+     * @param GetPartnerTypeByParentIdHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetPartnerTypeByParentIdResponse
+     */
+    public function getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetPartnerTypeByParentIdResponse::fromMap($this->doROARequest('GetPartnerTypeByParentId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partnerLabels/' . $parentId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SetDeptPartnerTypeAndNumRequest $request
+     *
+     * @return SetDeptPartnerTypeAndNumResponse
+     */
+    public function setDeptPartnerTypeAndNum($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetDeptPartnerTypeAndNumHeaders([]);
+
+        return $this->setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetDeptPartnerTypeAndNumRequest $request
+     * @param SetDeptPartnerTypeAndNumHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return SetDeptPartnerTypeAndNumResponse
+     */
+    public function setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->partnerNum)) {
+            @$body['partnerNum'] = $request->partnerNum;
+        }
+        if (!Utils::isUnset($request->labelIds)) {
+            @$body['labelIds'] = $request->labelIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetDeptPartnerTypeAndNumResponse::fromMap($this->doROARequest('SetDeptPartnerTypeAndNum', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partnerDepartments', 'none', $req, $runtime));
     }
 }

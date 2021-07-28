@@ -12,11 +12,15 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description 班级的Id.
+     *
      * @var int
      */
     public $classId;
 
     /**
+     * @description 开始时间
+     *
      * @var start
      */
     public $start;
@@ -27,7 +31,7 @@ class result extends Model
     public $end;
 
     /**
-     * @description sectionModels
+     * @description 节次模型。
      *
      * @var sectionModels[]
      */

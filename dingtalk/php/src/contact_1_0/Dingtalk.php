@@ -37,6 +37,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembers
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingResponse;
@@ -93,6 +102,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryResourceManagementMembersResponse::fromMap($this->doROARequest('QueryResourceManagementMembers', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/resources/' . $resourceId . '/managementMembers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SortUserRequest $request
+     *
+     * @return SortUserResponse
+     */
+    public function sortUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SortUserHeaders([]);
+
+        return $this->sortUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SortUserRequest $request
+     * @param SortUserHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return SortUserResponse
+     */
+    public function sortUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        if (!Utils::isUnset($request->sortType)) {
+            @$body['sortType'] = $request->sortType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SortUserResponse::fromMap($this->doROARequest('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/users/sort', 'json', $req, $runtime));
     }
 
     /**
@@ -213,6 +270,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SearchDepartmentRequest $request
+     *
+     * @return SearchDepartmentResponse
+     */
+    public function searchDepartment($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchDepartmentHeaders([]);
+
+        return $this->searchDepartmentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchDepartmentRequest $request
+     * @param SearchDepartmentHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SearchDepartmentResponse
+     */
+    public function searchDepartmentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->queryWord)) {
+            @$body['queryWord'] = $request->queryWord;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            @$body['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->size)) {
+            @$body['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchDepartmentResponse::fromMap($this->doROARequest('SearchDepartment', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/departments/search', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ListManagementGroupsRequest $request
      *
      * @return ListManagementGroupsResponse
@@ -300,6 +408,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListEmpAttributeVisibilityResponse::fromMap($this->doROARequest('ListEmpAttributeVisibility', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/staffAttributes/visibilitySettings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchUserRequest $request
+     *
+     * @return SearchUserResponse
+     */
+    public function searchUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchUserHeaders([]);
+
+        return $this->searchUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchUserRequest $request
+     * @param SearchUserHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return SearchUserResponse
+     */
+    public function searchUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->queryWord)) {
+            @$body['queryWord'] = $request->queryWord;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            @$body['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->size)) {
+            @$body['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchUserResponse::fromMap($this->doROARequest('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/users/search', 'json', $req, $runtime));
     }
 
     /**

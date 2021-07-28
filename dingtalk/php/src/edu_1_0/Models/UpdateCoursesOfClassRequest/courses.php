@@ -11,56 +11,56 @@ use AlibabaCloud\Tea\Model;
 class courses extends Model
 {
     /**
-     * @description teacherStaffIds
+     * @description 老师Staffid
      *
      * @var string[]
      */
     public $teacherStaffIds;
 
     /**
-     * @description courseName
+     * @description 课程名称
      *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description dateModel
+     * @description 上课日期
      *
      * @var dateModel
      */
     public $dateModel;
 
     /**
-     * @description sectionModel
+     * @description 节次模型
      *
      * @var sectionModel
      */
     public $sectionModel;
 
     /**
-     * @description creatorName
+     * @description 创建者名字
      *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description location
+     * @description 上课地点
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description deleteTag
+     * @description 删除标记：要删除为ture
      *
      * @var bool
      */
     public $deleteTag;
 
     /**
-     * @description courseCode
+     * @description 课程code：删除/更新必填
      *
      * @var string
      */

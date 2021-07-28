@@ -56,6 +56,13 @@ class QueryGroupResponseBody extends Model
      * @var string
      */
     public $robotName;
+
+    /**
+     * @description 群bizId
+     *
+     * @var string
+     */
+    public $bizId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
         'groupName'          => 'groupName',
@@ -64,6 +71,7 @@ class QueryGroupResponseBody extends Model
         'groupUrl'           => 'groupUrl',
         'robotCode'          => 'robotCode',
         'robotName'          => 'robotName',
+        'bizId'              => 'bizId',
     ];
 
     public function validate()
@@ -93,6 +101,9 @@ class QueryGroupResponseBody extends Model
         }
         if (null !== $this->robotName) {
             $res['robotName'] = $this->robotName;
+        }
+        if (null !== $this->bizId) {
+            $res['bizId'] = $this->bizId;
         }
 
         return $res;
@@ -126,6 +137,9 @@ class QueryGroupResponseBody extends Model
         }
         if (isset($map['robotName'])) {
             $model->robotName = $map['robotName'];
+        }
+        if (isset($map['bizId'])) {
+            $model->bizId = $map['bizId'];
         }
 
         return $model;

@@ -9,20 +9,22 @@ use AlibabaCloud\Tea\Model;
 class QuerySubjectTeachersRequest extends Model
 {
     /**
-     * @description classIds
+     * @description 班级ids
      *
      * @var int[]
      */
     public $classIds;
 
     /**
-     * @description opUserId
+     * @description 操作人id
      *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description 学科code
+     *
      * @var string
      */
     public $subjectCode;

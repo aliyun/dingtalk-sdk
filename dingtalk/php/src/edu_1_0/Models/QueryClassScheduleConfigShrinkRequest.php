@@ -9,13 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleConfigShrinkRequest extends Model
 {
     /**
-     * @description classIds
+     * @description 课程id列表
      *
      * @var string
      */
     public $classIdsShrink;
 
     /**
+     * @description 操作者的UserID
+     *
      * @var string
      */
     public $opUserId;

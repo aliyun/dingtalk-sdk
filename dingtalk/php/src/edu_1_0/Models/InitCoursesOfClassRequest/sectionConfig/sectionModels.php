@@ -11,45 +11,37 @@ use AlibabaCloud\Tea\Model;
 class sectionModels extends Model
 {
     /**
-     * @description sectionType
+     * @description 节次类型枚举：COURSE/REST
      *
      * @var string
      */
     public $sectionType;
 
     /**
-     * @description start
+     * @description 开始时间
      *
      * @var start
      */
     public $start;
 
     /**
-     * @description sectionIndex
+     * @description 第几节。
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
-     * @description end
+     * @description 结束时间
      *
      * @var end
      */
     public $end;
-
-    /**
-     * @description sectionName
-     *
-     * @var string
-     */
-    public $sectionName;
     protected $_name = [
         'sectionType'  => 'sectionType',
         'start'        => 'start',
         'sectionIndex' => 'sectionIndex',
         'end'          => 'end',
-        'sectionName'  => 'sectionName',
     ];
 
     public function validate()
@@ -70,9 +62,6 @@ class sectionModels extends Model
         }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
-        }
-        if (null !== $this->sectionName) {
-            $res['sectionName'] = $this->sectionName;
         }
 
         return $res;
@@ -97,9 +86,6 @@ class sectionModels extends Model
         }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
-        }
-        if (isset($map['sectionName'])) {
-            $model->sectionName = $map['sectionName'];
         }
 
         return $model;

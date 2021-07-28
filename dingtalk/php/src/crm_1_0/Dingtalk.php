@@ -39,6 +39,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageResponse;
@@ -532,6 +535,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddCrmPersonalCustomerResponse::fromMap($this->doROARequest('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RecallOfficialAccountOTOMessageRequest $request
+     *
+     * @return RecallOfficialAccountOTOMessageResponse
+     */
+    public function recallOfficialAccountOTOMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallOfficialAccountOTOMessageHeaders([]);
+
+        return $this->recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RecallOfficialAccountOTOMessageRequest $request
+     * @param RecallOfficialAccountOTOMessageHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return RecallOfficialAccountOTOMessageResponse
+     */
+    public function recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->accountId)) {
+            @$body['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->openPushId)) {
+            @$body['openPushId'] = $request->openPushId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RecallOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/recall', 'json', $req, $runtime));
     }
 
     /**

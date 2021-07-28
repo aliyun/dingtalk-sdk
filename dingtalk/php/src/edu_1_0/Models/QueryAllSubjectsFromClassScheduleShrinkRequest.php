@@ -9,18 +9,22 @@ use AlibabaCloud\Tea\Model;
 class QueryAllSubjectsFromClassScheduleShrinkRequest extends Model
 {
     /**
-     * @description classIds
+     * @description 班级ID。
      *
      * @var string
      */
     public $classIdsShrink;
 
     /**
+     * @description 操作者的userid。
+     *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description 学段编码：KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
+     *
      * @var string
      */
     public $periodCode;

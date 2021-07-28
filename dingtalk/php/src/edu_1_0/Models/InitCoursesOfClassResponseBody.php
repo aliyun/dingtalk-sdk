@@ -9,9 +9,9 @@ use AlibabaCloud\Tea\Model;
 class InitCoursesOfClassResponseBody extends Model
 {
     /**
-     * @description result
+     * @description 初始化是否成功。
      *
-     * @var string
+     * @var bool
      */
     public $result;
     protected $_name = [

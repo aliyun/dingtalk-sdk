@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\con
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\content\group;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\content\job;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\content\jobStatus;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\content\jobStatusList;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserInfoResponseBody\content\userProb;
 use AlibabaCloud\Tea\Model;
 
@@ -42,7 +43,7 @@ class content extends Model
     public $jobNum;
 
     /**
-     * @description 工作状态标签
+     * @description 工作状态标签, 已废弃, 请使用jobStatusList字段
      *
      * @var jobStatus
      */
@@ -68,15 +69,31 @@ class content extends Model
      * @var dept[]
      */
     public $dept;
+
+    /**
+     * @description comments
+     *
+     * @var string
+     */
+    public $comments;
+
+    /**
+     * @description 工作状态标签
+     *
+     * @var jobStatusList[]
+     */
+    public $jobStatusList;
     protected $_name = [
-        'uid'       => 'uid',
-        'userName'  => 'userName',
-        'job'       => 'job',
-        'jobNum'    => 'jobNum',
-        'jobStatus' => 'jobStatus',
-        'userProb'  => 'userProb',
-        'group'     => 'group',
-        'dept'      => 'dept',
+        'uid'           => 'uid',
+        'userName'      => 'userName',
+        'job'           => 'job',
+        'jobNum'        => 'jobNum',
+        'jobStatus'     => 'jobStatus',
+        'userProb'      => 'userProb',
+        'group'         => 'group',
+        'dept'          => 'dept',
+        'comments'      => 'comments',
+        'jobStatusList' => 'jobStatusList',
     ];
 
     public function validate()
@@ -119,6 +136,18 @@ class content extends Model
                 $n = 0;
                 foreach ($this->dept as $item) {
                     $res['dept'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->comments) {
+            $res['comments'] = $this->comments;
+        }
+        if (null !== $this->jobStatusList) {
+            $res['jobStatusList'] = [];
+            if (null !== $this->jobStatusList && \is_array($this->jobStatusList)) {
+                $n = 0;
+                foreach ($this->jobStatusList as $item) {
+                    $res['jobStatusList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -167,6 +196,18 @@ class content extends Model
                 $n           = 0;
                 foreach ($map['dept'] as $item) {
                     $model->dept[$n++] = null !== $item ? dept::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['comments'])) {
+            $model->comments = $map['comments'];
+        }
+        if (isset($map['jobStatusList'])) {
+            if (!empty($map['jobStatusList'])) {
+                $model->jobStatusList = [];
+                $n                    = 0;
+                foreach ($map['jobStatusList'] as $item) {
+                    $model->jobStatusList[$n++] = null !== $item ? jobStatusList::fromMap($item) : $item;
                 }
             }
         }

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateCoursesOfClassResponseBody extends Model
 {
     /**
-     * @description result
+     * @description 结果
      *
      * @var bool
      */

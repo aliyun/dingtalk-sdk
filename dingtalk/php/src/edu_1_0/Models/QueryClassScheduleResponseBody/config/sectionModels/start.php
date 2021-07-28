@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class start extends Model
 {
     /**
+     * @description 小时。
+     *
      * @var int
      */
     public $hour;
 
     /**
+     * @description 分钟
+     *
      * @var int
      */
     public $min;

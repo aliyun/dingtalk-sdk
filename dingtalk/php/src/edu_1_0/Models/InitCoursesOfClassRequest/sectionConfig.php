@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class sectionConfig extends Model
 {
     /**
-     * @description sectionModels
+     * @description 节次模型
      *
      * @var sectionModels[]
      */
