@@ -43,12 +43,20 @@ class AddCrmPersonalCustomerRequest extends Model
      * @var permission
      */
     public $permission;
+
+    /**
+     * @description 跳过uk查重
+     *
+     * @var bool
+     */
+    public $skipDuplicateCheck;
     protected $_name = [
-        'creatorUserId' => 'creatorUserId',
-        'creatorNick'   => 'creatorNick',
-        'data'          => 'data',
-        'extendData'    => 'extendData',
-        'permission'    => 'permission',
+        'creatorUserId'      => 'creatorUserId',
+        'creatorNick'        => 'creatorNick',
+        'data'               => 'data',
+        'extendData'         => 'extendData',
+        'permission'         => 'permission',
+        'skipDuplicateCheck' => 'skipDuplicateCheck',
     ];
 
     public function validate()
@@ -72,6 +80,9 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
+        }
+        if (null !== $this->skipDuplicateCheck) {
+            $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
         }
 
         return $res;
@@ -99,6 +110,9 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);
+        }
+        if (isset($map['skipDuplicateCheck'])) {
+            $model->skipDuplicateCheck = $map['skipDuplicateCheck'];
         }
 
         return $model;

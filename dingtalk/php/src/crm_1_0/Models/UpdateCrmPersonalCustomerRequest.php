@@ -38,13 +38,21 @@ class UpdateCrmPersonalCustomerRequest extends Model
      * @var permission
      */
     public $permission;
+
+    /**
+     * @description 跳过uk查重
+     *
+     * @var bool
+     */
+    public $skipDuplicateCheck;
     protected $_name = [
-        'instanceId'     => 'instanceId',
-        'modifierUserId' => 'modifierUserId',
-        'modifierNick'   => 'modifierNick',
-        'data'           => 'data',
-        'extendData'     => 'extendData',
-        'permission'     => 'permission',
+        'instanceId'         => 'instanceId',
+        'modifierUserId'     => 'modifierUserId',
+        'modifierNick'       => 'modifierNick',
+        'data'               => 'data',
+        'extendData'         => 'extendData',
+        'permission'         => 'permission',
+        'skipDuplicateCheck' => 'skipDuplicateCheck',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class UpdateCrmPersonalCustomerRequest extends Model
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
+        }
+        if (null !== $this->skipDuplicateCheck) {
+            $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
         }
 
         return $res;
@@ -101,6 +112,9 @@ class UpdateCrmPersonalCustomerRequest extends Model
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);
+        }
+        if (isset($map['skipDuplicateCheck'])) {
+            $model->skipDuplicateCheck = $map['skipDuplicateCheck'];
         }
 
         return $model;

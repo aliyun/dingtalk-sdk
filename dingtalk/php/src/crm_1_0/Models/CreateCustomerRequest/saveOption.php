@@ -28,10 +28,18 @@ class saveOption extends Model
      * @var string
      */
     public $customerExistedPolicy;
+
+    /**
+     * @description 跳过uk查重
+     *
+     * @var bool
+     */
+    public $skipDuplicateCheck;
     protected $_name = [
         'subscribePolicy'                        => 'subscribePolicy',
         'throwExceptionWhileSavingContactFailed' => 'throwExceptionWhileSavingContactFailed',
         'customerExistedPolicy'                  => 'customerExistedPolicy',
+        'skipDuplicateCheck'                     => 'skipDuplicateCheck',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class saveOption extends Model
         }
         if (null !== $this->customerExistedPolicy) {
             $res['customerExistedPolicy'] = $this->customerExistedPolicy;
+        }
+        if (null !== $this->skipDuplicateCheck) {
+            $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class saveOption extends Model
         }
         if (isset($map['customerExistedPolicy'])) {
             $model->customerExistedPolicy = $map['customerExistedPolicy'];
+        }
+        if (isset($map['skipDuplicateCheck'])) {
+            $model->skipDuplicateCheck = $map['skipDuplicateCheck'];
         }
 
         return $model;

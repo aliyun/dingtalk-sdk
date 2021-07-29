@@ -5,24 +5,42 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\AddGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\AddGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\AddGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\AddProfileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\AddProfileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\AddProfileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\CreateGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\DismissGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\DismissGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\DismissGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetConversationIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetConversationIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ReadMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ReadMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ReadMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RecallMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RecallMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RecallMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RemoveGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RemoveGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\RemoveGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\SendMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -220,6 +238,99 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DismissGroupRequest $request
+     *
+     * @return DismissGroupResponse
+     */
+    public function dismissGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DismissGroupHeaders([]);
+
+        return $this->dismissGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DismissGroupRequest $request
+     * @param DismissGroupHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return DismissGroupResponse
+     */
+    public function dismissGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUid)) {
+            @$body['operatorUid'] = $request->operatorUid;
+        }
+        if (!Utils::isUnset($request->conversationId)) {
+            @$body['conversationId'] = $request->conversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DismissGroupResponse::fromMap($this->doROARequest('DismissGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/dismiss', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupNameRequest $request
+     *
+     * @return UpdateGroupNameResponse
+     */
+    public function updateGroupName($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupNameHeaders([]);
+
+        return $this->updateGroupNameWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupNameRequest $request
+     * @param UpdateGroupNameHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return UpdateGroupNameResponse
+     */
+    public function updateGroupNameWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUid)) {
+            @$body['operatorUid'] = $request->operatorUid;
+        }
+        if (!Utils::isUnset($request->conversationId)) {
+            @$body['conversationId'] = $request->conversationId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupNameResponse::fromMap($this->doROARequest('UpdateGroupName', 'impaas_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/impaas/interconnections/groups/names', 'none', $req, $runtime));
+    }
+
+    /**
      * @param AddProfileRequest $request
      *
      * @return AddProfileResponse
@@ -268,6 +379,204 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddProfileResponse::fromMap($this->doROARequest('AddProfile', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/users/profiles', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param AddGroupMembersRequest $request
+     *
+     * @return AddGroupMembersResponse
+     */
+    public function addGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddGroupMembersHeaders([]);
+
+        return $this->addGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddGroupMembersRequest $request
+     * @param AddGroupMembersHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AddGroupMembersResponse
+     */
+    public function addGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUid)) {
+            @$body['operatorUid'] = $request->operatorUid;
+        }
+        if (!Utils::isUnset($request->conversationId)) {
+            @$body['conversationId'] = $request->conversationId;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddGroupMembersResponse::fromMap($this->doROARequest('AddGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/members/batchAdd', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupHeaders([]);
+
+        return $this->createGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     * @param CreateGroupHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        if (!Utils::isUnset($request->creatorUid)) {
+            @$body['creatorUid'] = $request->creatorUid;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->iconMediaId)) {
+            @$body['iconMediaId'] = $request->iconMediaId;
+        }
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->properties)) {
+            @$body['properties'] = $request->properties;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateGroupResponse::fromMap($this->doROARequest('CreateGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListGroupStaffMembersRequest $request
+     *
+     * @return ListGroupStaffMembersResponse
+     */
+    public function listGroupStaffMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListGroupStaffMembersHeaders([]);
+
+        return $this->listGroupStaffMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListGroupStaffMembersRequest $request
+     * @param ListGroupStaffMembersHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ListGroupStaffMembersResponse
+     */
+    public function listGroupStaffMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->conversationId)) {
+            @$body['conversationId'] = $request->conversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListGroupStaffMembersResponse::fromMap($this->doROARequest('ListGroupStaffMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/staffMemers/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RemoveGroupMembersRequest $request
+     *
+     * @return RemoveGroupMembersResponse
+     */
+    public function removeGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveGroupMembersHeaders([]);
+
+        return $this->removeGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveGroupMembersRequest $request
+     * @param RemoveGroupMembersHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return RemoveGroupMembersResponse
+     */
+    public function removeGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUid)) {
+            @$body['operatorUid'] = $request->operatorUid;
+        }
+        if (!Utils::isUnset($request->conversationId)) {
+            @$body['conversationId'] = $request->conversationId;
+        }
+        if (!Utils::isUnset($request->memberUids)) {
+            @$body['memberUids'] = $request->memberUids;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RemoveGroupMembersResponse::fromMap($this->doROARequest('RemoveGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/members/batchRemove', 'none', $req, $runtime));
     }
 
     /**

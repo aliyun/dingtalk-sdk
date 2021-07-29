@@ -522,6 +522,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->permission)) {
             @$body['permission'] = $request->permission;
         }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -712,6 +715,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->permission)) {
             @$body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
