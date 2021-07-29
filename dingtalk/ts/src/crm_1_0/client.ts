@@ -789,6 +789,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
   data?: { [key: string]: any };
   extendData?: { [key: string]: any };
   permission?: AddCrmPersonalCustomerRequestPermission;
+  skipDuplicateCheck?: boolean;
   static names(): { [key: string]: string } {
     return {
       creatorUserId: 'creatorUserId',
@@ -796,6 +797,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
       data: 'data',
       extendData: 'extendData',
       permission: 'permission',
+      skipDuplicateCheck: 'skipDuplicateCheck',
     };
   }
 
@@ -806,6 +808,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
       data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       permission: AddCrmPersonalCustomerRequestPermission,
+      skipDuplicateCheck: 'boolean',
     };
   }
 
@@ -1132,6 +1135,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
   data?: { [key: string]: any };
   extendData?: { [key: string]: any };
   permission?: UpdateCrmPersonalCustomerRequestPermission;
+  skipDuplicateCheck?: boolean;
   static names(): { [key: string]: string } {
     return {
       instanceId: 'instanceId',
@@ -1140,6 +1144,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
       data: 'data',
       extendData: 'extendData',
       permission: 'permission',
+      skipDuplicateCheck: 'skipDuplicateCheck',
     };
   }
 
@@ -1151,6 +1156,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
       data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       permission: UpdateCrmPersonalCustomerRequestPermission,
+      skipDuplicateCheck: 'boolean',
     };
   }
 
@@ -2709,11 +2715,13 @@ export class CreateCustomerRequestSaveOption extends $tea.Model {
   subscribePolicy?: number;
   throwExceptionWhileSavingContactFailed?: boolean;
   customerExistedPolicy?: string;
+  skipDuplicateCheck?: boolean;
   static names(): { [key: string]: string } {
     return {
       subscribePolicy: 'subscribePolicy',
       throwExceptionWhileSavingContactFailed: 'throwExceptionWhileSavingContactFailed',
       customerExistedPolicy: 'customerExistedPolicy',
+      skipDuplicateCheck: 'skipDuplicateCheck',
     };
   }
 
@@ -2722,6 +2730,7 @@ export class CreateCustomerRequestSaveOption extends $tea.Model {
       subscribePolicy: 'number',
       throwExceptionWhileSavingContactFailed: 'boolean',
       customerExistedPolicy: 'string',
+      skipDuplicateCheck: 'boolean',
     };
   }
 
@@ -3128,6 +3137,10 @@ export default class Client extends OpenApi {
       body["permission"] = request.permission;
     }
 
+    if (!Util.isUnset(request.skipDuplicateCheck)) {
+      body["skipDuplicateCheck"] = request.skipDuplicateCheck;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3275,6 +3288,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.permission))) {
       body["permission"] = request.permission;
+    }
+
+    if (!Util.isUnset(request.skipDuplicateCheck)) {
+      body["skipDuplicateCheck"] = request.skipDuplicateCheck;
     }
 
     let realHeaders : {[key: string ]: string} = { };
