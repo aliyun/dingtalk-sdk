@@ -182,6 +182,10 @@ public class CreateCustomerRequest extends TeaModel {
         @NameInMap("customerExistedPolicy")
         public String customerExistedPolicy;
 
+        // 跳过uk查重
+        @NameInMap("skipDuplicateCheck")
+        public Boolean skipDuplicateCheck;
+
         public static CreateCustomerRequestSaveOption build(java.util.Map<String, ?> map) throws Exception {
             CreateCustomerRequestSaveOption self = new CreateCustomerRequestSaveOption();
             return TeaModel.build(map, self);
@@ -209,6 +213,14 @@ public class CreateCustomerRequest extends TeaModel {
         }
         public String getCustomerExistedPolicy() {
             return this.customerExistedPolicy;
+        }
+
+        public CreateCustomerRequestSaveOption setSkipDuplicateCheck(Boolean skipDuplicateCheck) {
+            this.skipDuplicateCheck = skipDuplicateCheck;
+            return this;
+        }
+        public Boolean getSkipDuplicateCheck() {
+            return this.skipDuplicateCheck;
         }
 
     }

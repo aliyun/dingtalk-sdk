@@ -24,6 +24,10 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("permission")
     public AddCrmPersonalCustomerRequestPermission permission;
 
+    // 跳过uk查重
+    @NameInMap("skipDuplicateCheck")
+    public Boolean skipDuplicateCheck;
+
     public static AddCrmPersonalCustomerRequest build(java.util.Map<String, ?> map) throws Exception {
         AddCrmPersonalCustomerRequest self = new AddCrmPersonalCustomerRequest();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     }
     public AddCrmPersonalCustomerRequestPermission getPermission() {
         return this.permission;
+    }
+
+    public AddCrmPersonalCustomerRequest setSkipDuplicateCheck(Boolean skipDuplicateCheck) {
+        this.skipDuplicateCheck = skipDuplicateCheck;
+        return this;
+    }
+    public Boolean getSkipDuplicateCheck() {
+        return this.skipDuplicateCheck;
     }
 
     public static class AddCrmPersonalCustomerRequestPermission extends TeaModel {
