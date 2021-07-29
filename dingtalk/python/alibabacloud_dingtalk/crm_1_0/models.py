@@ -2792,6 +2792,7 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         data: Dict[str, Any] = None,
         extend_data: Dict[str, Any] = None,
         permission: AddCrmPersonalCustomerRequestPermission = None,
+        skip_duplicate_check: bool = None,
     ):
         # 记录创建人的用户ID
         self.creator_user_id = creator_user_id
@@ -2803,6 +2804,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         self.extend_data = extend_data
         # 权限
         self.permission = permission
+        # 跳过uk查重
+        self.skip_duplicate_check = skip_duplicate_check
 
     def validate(self):
         if self.permission:
@@ -2824,6 +2827,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
             result['extendData'] = self.extend_data
         if self.permission is not None:
             result['permission'] = self.permission.to_map()
+        if self.skip_duplicate_check is not None:
+            result['skipDuplicateCheck'] = self.skip_duplicate_check
         return result
 
     def from_map(self, m: dict = None):
@@ -2839,6 +2844,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         if m.get('permission') is not None:
             temp_model = AddCrmPersonalCustomerRequestPermission()
             self.permission = temp_model.from_map(m['permission'])
+        if m.get('skipDuplicateCheck') is not None:
+            self.skip_duplicate_check = m.get('skipDuplicateCheck')
         return self
 
 
@@ -3674,6 +3681,7 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         data: Dict[str, Any] = None,
         extend_data: Dict[str, Any] = None,
         permission: UpdateCrmPersonalCustomerRequestPermission = None,
+        skip_duplicate_check: bool = None,
     ):
         self.instance_id = instance_id
         self.modifier_user_id = modifier_user_id
@@ -3681,6 +3689,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         self.data = data
         self.extend_data = extend_data
         self.permission = permission
+        # 跳过uk查重
+        self.skip_duplicate_check = skip_duplicate_check
 
     def validate(self):
         if self.permission:
@@ -3704,6 +3714,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
             result['extendData'] = self.extend_data
         if self.permission is not None:
             result['permission'] = self.permission.to_map()
+        if self.skip_duplicate_check is not None:
+            result['skipDuplicateCheck'] = self.skip_duplicate_check
         return result
 
     def from_map(self, m: dict = None):
@@ -3721,6 +3733,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         if m.get('permission') is not None:
             temp_model = UpdateCrmPersonalCustomerRequestPermission()
             self.permission = temp_model.from_map(m['permission'])
+        if m.get('skipDuplicateCheck') is not None:
+            self.skip_duplicate_check = m.get('skipDuplicateCheck')
         return self
 
 
@@ -4485,6 +4499,7 @@ class CreateCustomerRequestSaveOption(TeaModel):
         subscribe_policy: int = None,
         throw_exception_while_saving_contact_failed: bool = None,
         customer_existed_policy: str = None,
+        skip_duplicate_check: bool = None,
     ):
         # 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
         self.subscribe_policy = subscribe_policy
@@ -4492,6 +4507,8 @@ class CreateCustomerRequestSaveOption(TeaModel):
         self.throw_exception_while_saving_contact_failed = throw_exception_while_saving_contact_failed
         # 客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败
         self.customer_existed_policy = customer_existed_policy
+        # 跳过uk查重
+        self.skip_duplicate_check = skip_duplicate_check
 
     def validate(self):
         pass
@@ -4508,6 +4525,8 @@ class CreateCustomerRequestSaveOption(TeaModel):
             result['throwExceptionWhileSavingContactFailed'] = self.throw_exception_while_saving_contact_failed
         if self.customer_existed_policy is not None:
             result['customerExistedPolicy'] = self.customer_existed_policy
+        if self.skip_duplicate_check is not None:
+            result['skipDuplicateCheck'] = self.skip_duplicate_check
         return result
 
     def from_map(self, m: dict = None):
@@ -4518,6 +4537,8 @@ class CreateCustomerRequestSaveOption(TeaModel):
             self.throw_exception_while_saving_contact_failed = m.get('throwExceptionWhileSavingContactFailed')
         if m.get('customerExistedPolicy') is not None:
             self.customer_existed_policy = m.get('customerExistedPolicy')
+        if m.get('skipDuplicateCheck') is not None:
+            self.skip_duplicate_check = m.get('skipDuplicateCheck')
         return self
 
 

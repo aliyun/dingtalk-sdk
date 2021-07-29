@@ -675,6 +675,8 @@ class Client(OpenApiClient):
             body['extendData'] = request.extend_data
         if not UtilClient.is_unset(request.permission):
             body['permission'] = request.permission
+        if not UtilClient.is_unset(request.skip_duplicate_check):
+            body['skipDuplicateCheck'] = request.skip_duplicate_check
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -707,6 +709,8 @@ class Client(OpenApiClient):
             body['extendData'] = request.extend_data
         if not UtilClient.is_unset(request.permission):
             body['permission'] = request.permission
+        if not UtilClient.is_unset(request.skip_duplicate_check):
+            body['skipDuplicateCheck'] = request.skip_duplicate_check
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -955,6 +959,8 @@ class Client(OpenApiClient):
             body['extendData'] = request.extend_data
         if not UtilClient.is_unset(request.permission):
             body['permission'] = request.permission
+        if not UtilClient.is_unset(request.skip_duplicate_check):
+            body['skipDuplicateCheck'] = request.skip_duplicate_check
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -989,6 +995,8 @@ class Client(OpenApiClient):
             body['extendData'] = request.extend_data
         if not UtilClient.is_unset(request.permission):
             body['permission'] = request.permission
+        if not UtilClient.is_unset(request.skip_duplicate_check):
+            body['skipDuplicateCheck'] = request.skip_duplicate_check
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
