@@ -52,6 +52,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public List<string> ParticipantStaffIds { get; set; }
         };
 
+        /// <summary>
+        /// 跳过uk查重
+        /// </summary>
+        [NameInMap("skipDuplicateCheck")]
+        [Validation(Required=false)]
+        public bool? SkipDuplicateCheck { get; set; }
+
     }
 
 }

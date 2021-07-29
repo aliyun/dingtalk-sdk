@@ -98,6 +98,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("customerExistedPolicy")]
             [Validation(Required=false)]
             public string CustomerExistedPolicy { get; set; }
+            [NameInMap("skipDuplicateCheck")]
+            [Validation(Required=false)]
+            public bool? SkipDuplicateCheck { get; set; }
         };
 
     }
