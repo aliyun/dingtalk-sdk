@@ -155,6 +155,241 @@ export class RecallMessageResponse extends $tea.Model {
   }
 }
 
+export class UpdateGroupNameHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupNameRequest extends $tea.Model {
+  operatorUid?: string;
+  conversationId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorUid: 'operatorUid',
+      conversationId: 'conversationId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUid: 'string',
+      conversationId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupNameResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupRequest extends $tea.Model {
+  uuid?: string;
+  creatorUid?: string;
+  name?: string;
+  iconMediaId?: string;
+  channel?: string;
+  properties?: { [key: string]: string };
+  members?: CreateGroupRequestMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      uuid: 'uuid',
+      creatorUid: 'creatorUid',
+      name: 'name',
+      iconMediaId: 'iconMediaId',
+      channel: 'channel',
+      properties: 'properties',
+      members: 'members',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uuid: 'string',
+      creatorUid: 'string',
+      name: 'string',
+      iconMediaId: 'string',
+      channel: 'string',
+      properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      members: { 'type': 'array', 'itemType': CreateGroupRequestMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponseBody extends $tea.Model {
+  conversationId?: string;
+  createTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      createTime: 'createTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      createTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveGroupMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveGroupMembersRequest extends $tea.Model {
+  operatorUid?: string;
+  conversationId?: string;
+  memberUids?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorUid: 'operatorUid',
+      conversationId: 'conversationId',
+      memberUids: 'memberUids',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUid: 'string',
+      conversationId: 'string',
+      memberUids: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RemoveGroupMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMediaUrlHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -366,72 +601,6 @@ export class DismissGroupResponse extends $tea.Model {
   }
 }
 
-export class UpdateGroupNameHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateGroupNameRequest extends $tea.Model {
-  operatorUid?: string;
-  conversationId?: string;
-  name?: string;
-  static names(): { [key: string]: string } {
-    return {
-      operatorUid: 'operatorUid',
-      conversationId: 'conversationId',
-      name: 'name',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      operatorUid: 'string',
-      conversationId: 'string',
-      name: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateGroupNameResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class AddProfileHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -567,7 +736,7 @@ export class AddGroupMembersResponse extends $tea.Model {
   }
 }
 
-export class CreateGroupHeaders extends $tea.Model {
+export class BatchSendHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -589,35 +758,23 @@ export class CreateGroupHeaders extends $tea.Model {
   }
 }
 
-export class CreateGroupRequest extends $tea.Model {
-  uuid?: string;
-  creatorUid?: string;
-  name?: string;
-  iconMediaId?: string;
-  channel?: string;
-  properties?: { [key: string]: string };
-  members?: CreateGroupRequestMembers[];
+export class BatchSendRequest extends $tea.Model {
+  userId?: string;
+  appUids?: string[];
+  content?: string;
   static names(): { [key: string]: string } {
     return {
-      uuid: 'uuid',
-      creatorUid: 'creatorUid',
-      name: 'name',
-      iconMediaId: 'iconMediaId',
-      channel: 'channel',
-      properties: 'properties',
-      members: 'members',
+      userId: 'userId',
+      appUids: 'appUids',
+      content: 'content',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      uuid: 'string',
-      creatorUid: 'string',
-      name: 'string',
-      iconMediaId: 'string',
-      channel: 'string',
-      properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      members: { 'type': 'array', 'itemType': CreateGroupRequestMembers },
+      userId: 'string',
+      appUids: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
     };
   }
 
@@ -626,20 +783,17 @@ export class CreateGroupRequest extends $tea.Model {
   }
 }
 
-export class CreateGroupResponseBody extends $tea.Model {
-  conversationId?: string;
-  createTime?: number;
+export class BatchSendResponseBody extends $tea.Model {
+  taskId?: string;
   static names(): { [key: string]: string } {
     return {
-      conversationId: 'conversationId',
-      createTime: 'createTime',
+      taskId: 'taskId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      conversationId: 'string',
-      createTime: 'number',
+      taskId: 'string',
     };
   }
 
@@ -648,9 +802,9 @@ export class CreateGroupResponseBody extends $tea.Model {
   }
 }
 
-export class CreateGroupResponse extends $tea.Model {
+export class BatchSendResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: CreateGroupResponseBody;
+  body: BatchSendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -661,7 +815,7 @@ export class CreateGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: CreateGroupResponseBody,
+      body: BatchSendResponseBody,
     };
   }
 
@@ -744,72 +898,6 @@ export class ListGroupStaffMembersResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListGroupStaffMembersResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RemoveGroupMembersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RemoveGroupMembersRequest extends $tea.Model {
-  operatorUid?: string;
-  conversationId?: string;
-  memberUids?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      operatorUid: 'operatorUid',
-      conversationId: 'conversationId',
-      memberUids: 'memberUids',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      operatorUid: 'string',
-      conversationId: 'string',
-      memberUids: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RemoveGroupMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -918,7 +1006,7 @@ export class SendMessageResponse extends $tea.Model {
   }
 }
 
-export class AddGroupMembersRequestMembers extends $tea.Model {
+export class CreateGroupRequestMembers extends $tea.Model {
   uid?: string;
   nick?: string;
   static names(): { [key: string]: string } {
@@ -940,7 +1028,7 @@ export class AddGroupMembersRequestMembers extends $tea.Model {
   }
 }
 
-export class CreateGroupRequestMembers extends $tea.Model {
+export class AddGroupMembersRequestMembers extends $tea.Model {
   uid?: string;
   nick?: string;
   static names(): { [key: string]: string } {
@@ -1063,6 +1151,133 @@ export default class Client extends OpenApi {
     return $tea.cast<RecallMessageResponse>(await this.doROARequest("RecallMessage", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/messages/recall`, "none", req, runtime), new RecallMessageResponse({}));
   }
 
+  async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateGroupNameHeaders({ });
+    return await this.updateGroupNameWithOptions(request, headers, runtime);
+  }
+
+  async updateGroupNameWithOptions(request: UpdateGroupNameRequest, headers: UpdateGroupNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupNameResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUid)) {
+      body["operatorUid"] = request.operatorUid;
+    }
+
+    if (!Util.isUnset(request.conversationId)) {
+      body["conversationId"] = request.conversationId;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateGroupNameResponse>(await this.doROARequest("UpdateGroupName", "impaas_1.0", "HTTP", "PUT", "AK", `/v1.0/impaas/interconnections/groups/names`, "none", req, runtime), new UpdateGroupNameResponse({}));
+  }
+
+  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupHeaders({ });
+    return await this.createGroupWithOptions(request, headers, runtime);
+  }
+
+  async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    if (!Util.isUnset(request.creatorUid)) {
+      body["creatorUid"] = request.creatorUid;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.iconMediaId)) {
+      body["iconMediaId"] = request.iconMediaId;
+    }
+
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.properties)) {
+      body["properties"] = request.properties;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups`, "json", req, runtime), new CreateGroupResponse({}));
+  }
+
+  async removeGroupMembers(request: RemoveGroupMembersRequest): Promise<RemoveGroupMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RemoveGroupMembersHeaders({ });
+    return await this.removeGroupMembersWithOptions(request, headers, runtime);
+  }
+
+  async removeGroupMembersWithOptions(request: RemoveGroupMembersRequest, headers: RemoveGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveGroupMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUid)) {
+      body["operatorUid"] = request.operatorUid;
+    }
+
+    if (!Util.isUnset(request.conversationId)) {
+      body["conversationId"] = request.conversationId;
+    }
+
+    if (!Util.isUnset(request.memberUids)) {
+      body["memberUids"] = request.memberUids;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RemoveGroupMembersResponse>(await this.doROARequest("RemoveGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/members/batchRemove`, "none", req, runtime), new RemoveGroupMembersResponse({}));
+  }
+
   async getMediaUrl(request: GetMediaUrlRequest): Promise<GetMediaUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMediaUrlHeaders({ });
@@ -1162,43 +1377,6 @@ export default class Client extends OpenApi {
     return $tea.cast<DismissGroupResponse>(await this.doROARequest("DismissGroup", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/dismiss`, "none", req, runtime), new DismissGroupResponse({}));
   }
 
-  async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateGroupNameHeaders({ });
-    return await this.updateGroupNameWithOptions(request, headers, runtime);
-  }
-
-  async updateGroupNameWithOptions(request: UpdateGroupNameRequest, headers: UpdateGroupNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupNameResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorUid)) {
-      body["operatorUid"] = request.operatorUid;
-    }
-
-    if (!Util.isUnset(request.conversationId)) {
-      body["conversationId"] = request.conversationId;
-    }
-
-    if (!Util.isUnset(request.name)) {
-      body["name"] = request.name;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UpdateGroupNameResponse>(await this.doROARequest("UpdateGroupName", "impaas_1.0", "HTTP", "PUT", "AK", `/v1.0/impaas/interconnections/groups/names`, "none", req, runtime), new UpdateGroupNameResponse({}));
-  }
-
   async addProfile(request: AddProfileRequest): Promise<AddProfileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddProfileHeaders({ });
@@ -1277,41 +1455,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AddGroupMembersResponse>(await this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/members/batchAdd`, "none", req, runtime), new AddGroupMembersResponse({}));
   }
 
-  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
+  async batchSend(request: BatchSendRequest): Promise<BatchSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateGroupHeaders({ });
-    return await this.createGroupWithOptions(request, headers, runtime);
+    let headers = new BatchSendHeaders({ });
+    return await this.batchSendWithOptions(request, headers, runtime);
   }
 
-  async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
+  async batchSendWithOptions(request: BatchSendRequest, headers: BatchSendHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.uuid)) {
-      body["uuid"] = request.uuid;
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
     }
 
-    if (!Util.isUnset(request.creatorUid)) {
-      body["creatorUid"] = request.creatorUid;
+    if (!Util.isUnset(request.appUids)) {
+      body["appUids"] = request.appUids;
     }
 
-    if (!Util.isUnset(request.name)) {
-      body["name"] = request.name;
-    }
-
-    if (!Util.isUnset(request.iconMediaId)) {
-      body["iconMediaId"] = request.iconMediaId;
-    }
-
-    if (!Util.isUnset(request.channel)) {
-      body["channel"] = request.channel;
-    }
-
-    if (!Util.isUnset(request.properties)) {
-      body["properties"] = request.properties;
-    }
-
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1327,7 +1489,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups`, "json", req, runtime), new CreateGroupResponse({}));
+    return $tea.cast<BatchSendResponse>(await this.doROARequest("BatchSend", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/messages/batchSend`, "json", req, runtime), new BatchSendResponse({}));
   }
 
   async listGroupStaffMembers(request: ListGroupStaffMembersRequest): Promise<ListGroupStaffMembersResponse> {
@@ -1357,43 +1519,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ListGroupStaffMembersResponse>(await this.doROARequest("ListGroupStaffMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/staffMemers/query`, "json", req, runtime), new ListGroupStaffMembersResponse({}));
-  }
-
-  async removeGroupMembers(request: RemoveGroupMembersRequest): Promise<RemoveGroupMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveGroupMembersHeaders({ });
-    return await this.removeGroupMembersWithOptions(request, headers, runtime);
-  }
-
-  async removeGroupMembersWithOptions(request: RemoveGroupMembersRequest, headers: RemoveGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveGroupMembersResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorUid)) {
-      body["operatorUid"] = request.operatorUid;
-    }
-
-    if (!Util.isUnset(request.conversationId)) {
-      body["conversationId"] = request.conversationId;
-    }
-
-    if (!Util.isUnset(request.memberUids)) {
-      body["memberUids"] = request.memberUids;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<RemoveGroupMembersResponse>(await this.doROARequest("RemoveGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/members/batchRemove`, "none", req, runtime), new RemoveGroupMembersResponse({}));
   }
 
   async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
