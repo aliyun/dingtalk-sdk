@@ -565,6 +565,210 @@ class GetSignDetailResponse(TeaModel):
         return self
 
 
+class GetAttachsApprovalHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        service_group: str = None,
+        tsign_open_app_id: str = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.service_group = service_group
+        self.tsign_open_app_id = tsign_open_app_id
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.service_group is not None:
+            result['serviceGroup'] = self.service_group
+        if self.tsign_open_app_id is not None:
+            result['tsignOpenAppId'] = self.tsign_open_app_id
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('serviceGroup') is not None:
+            self.service_group = m.get('serviceGroup')
+        if m.get('tsignOpenAppId') is not None:
+            self.tsign_open_app_id = m.get('tsignOpenAppId')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAttachsApprovalResponseBodyDataFiles(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        original_file_url: str = None,
+        sign_finish_file_url: str = None,
+    ):
+        self.file_name = file_name
+        self.original_file_url = original_file_url
+        self.sign_finish_file_url = sign_finish_file_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.original_file_url is not None:
+            result['originalFileUrl'] = self.original_file_url
+        if self.sign_finish_file_url is not None:
+            result['signFinishFileUrl'] = self.sign_finish_file_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('originalFileUrl') is not None:
+            self.original_file_url = m.get('originalFileUrl')
+        if m.get('signFinishFileUrl') is not None:
+            self.sign_finish_file_url = m.get('signFinishFileUrl')
+        return self
+
+
+class GetAttachsApprovalResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        flow_id: str = None,
+        status: str = None,
+        files: List[GetAttachsApprovalResponseBodyDataFiles] = None,
+    ):
+        self.flow_id = flow_id
+        self.status = status
+        self.files = files
+
+    def validate(self):
+        if self.files:
+            for k in self.files:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_id is not None:
+            result['flowId'] = self.flow_id
+        if self.status is not None:
+            result['status'] = self.status
+        result['files'] = []
+        if self.files is not None:
+            for k in self.files:
+                result['files'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowId') is not None:
+            self.flow_id = m.get('flowId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.files = []
+        if m.get('files') is not None:
+            for k in m.get('files'):
+                temp_model = GetAttachsApprovalResponseBodyDataFiles()
+                self.files.append(temp_model.from_map(k))
+        return self
+
+
+class GetAttachsApprovalResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetAttachsApprovalResponseBodyData] = None,
+    ):
+        # Id of the request
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetAttachsApprovalResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        return self
+
+
+class GetAttachsApprovalResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAttachsApprovalResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAttachsApprovalResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ProcessStartHeaders(TeaModel):
     def __init__(
         self,
@@ -821,7 +1025,7 @@ class ProcessStartRequest(TeaModel):
         files: List[ProcessStartRequestFiles] = None,
         participants: List[ProcessStartRequestParticipants] = None,
         ccs: List[ProcessStartRequestCcs] = None,
-        source_info: List[ProcessStartRequestSourceInfo] = None,
+        source_info: ProcessStartRequestSourceInfo = None,
     ):
         # 是否跳过发起签署页直接发起
         self.auto_start = auto_start
@@ -855,9 +1059,7 @@ class ProcessStartRequest(TeaModel):
                 if k:
                     k.validate()
         if self.source_info:
-            for k in self.source_info:
-                if k:
-                    k.validate()
+            self.source_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -887,10 +1089,8 @@ class ProcessStartRequest(TeaModel):
         if self.ccs is not None:
             for k in self.ccs:
                 result['ccs'].append(k.to_map() if k else None)
-        result['sourceInfo'] = []
         if self.source_info is not None:
-            for k in self.source_info:
-                result['sourceInfo'].append(k.to_map() if k else None)
+            result['sourceInfo'] = self.source_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -920,11 +1120,9 @@ class ProcessStartRequest(TeaModel):
             for k in m.get('ccs'):
                 temp_model = ProcessStartRequestCcs()
                 self.ccs.append(temp_model.from_map(k))
-        self.source_info = []
         if m.get('sourceInfo') is not None:
-            for k in m.get('sourceInfo'):
-                temp_model = ProcessStartRequestSourceInfo()
-                self.source_info.append(temp_model.from_map(k))
+            temp_model = ProcessStartRequestSourceInfo()
+            self.source_info = temp_model.from_map(m['sourceInfo'])
         return self
 
 

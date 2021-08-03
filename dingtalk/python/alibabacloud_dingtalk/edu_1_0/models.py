@@ -4630,13 +4630,176 @@ class UpdateCoursesOfClassRequestCourses(TeaModel):
         return self
 
 
+class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart(TeaModel):
+    def __init__(
+        self,
+        min: int = None,
+        hour: int = None,
+    ):
+        # 分钟
+        self.min = min
+        # 小时
+        self.hour = hour
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min is not None:
+            result['min'] = self.min
+        if self.hour is not None:
+            result['hour'] = self.hour
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        return self
+
+
+class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd(TeaModel):
+    def __init__(
+        self,
+        min: int = None,
+        hour: int = None,
+    ):
+        # 分钟
+        self.min = min
+        # 小时
+        self.hour = hour
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.min is not None:
+            result['min'] = self.min
+        if self.hour is not None:
+            result['hour'] = self.hour
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('min') is not None:
+            self.min = m.get('min')
+        if m.get('hour') is not None:
+            self.hour = m.get('hour')
+        return self
+
+
+class UpdateCoursesOfClassRequestSectionConfigSectionModels(TeaModel):
+    def __init__(
+        self,
+        section_type: str = None,
+        start: UpdateCoursesOfClassRequestSectionConfigSectionModelsStart = None,
+        section_index: int = None,
+        end: UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd = None,
+    ):
+        # 节次类型枚举：COURSE/REST
+        self.section_type = section_type
+        # 开始时间
+        self.start = start
+        # 第几节。
+        self.section_index = section_index
+        # 结束时间
+        self.end = end
+
+    def validate(self):
+        if self.start:
+            self.start.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.section_type is not None:
+            result['sectionType'] = self.section_type
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sectionType') is not None:
+            self.section_type = m.get('sectionType')
+        if m.get('start') is not None:
+            temp_model = UpdateCoursesOfClassRequestSectionConfigSectionModelsStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('end') is not None:
+            temp_model = UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd()
+            self.end = temp_model.from_map(m['end'])
+        return self
+
+
+class UpdateCoursesOfClassRequestSectionConfig(TeaModel):
+    def __init__(
+        self,
+        section_models: List[UpdateCoursesOfClassRequestSectionConfigSectionModels] = None,
+    ):
+        # 节次模型
+        self.section_models = section_models
+
+    def validate(self):
+        if self.section_models:
+            for k in self.section_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['sectionModels'] = []
+        if self.section_models is not None:
+            for k in self.section_models:
+                result['sectionModels'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.section_models = []
+        if m.get('sectionModels') is not None:
+            for k in m.get('sectionModels'):
+                temp_model = UpdateCoursesOfClassRequestSectionConfigSectionModels()
+                self.section_models.append(temp_model.from_map(k))
+        return self
+
+
 class UpdateCoursesOfClassRequest(TeaModel):
     def __init__(
         self,
         courses: List[UpdateCoursesOfClassRequestCourses] = None,
+        section_config: UpdateCoursesOfClassRequestSectionConfig = None,
         op_user_id: str = None,
     ):
         self.courses = courses
+        # 节次设置
+        self.section_config = section_config
         # 操作者id
         self.op_user_id = op_user_id
 
@@ -4645,6 +4808,8 @@ class UpdateCoursesOfClassRequest(TeaModel):
             for k in self.courses:
                 if k:
                     k.validate()
+        if self.section_config:
+            self.section_config.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -4656,6 +4821,8 @@ class UpdateCoursesOfClassRequest(TeaModel):
         if self.courses is not None:
             for k in self.courses:
                 result['courses'].append(k.to_map() if k else None)
+        if self.section_config is not None:
+            result['sectionConfig'] = self.section_config.to_map()
         if self.op_user_id is not None:
             result['opUserId'] = self.op_user_id
         return result
@@ -4667,6 +4834,9 @@ class UpdateCoursesOfClassRequest(TeaModel):
             for k in m.get('courses'):
                 temp_model = UpdateCoursesOfClassRequestCourses()
                 self.courses.append(temp_model.from_map(k))
+        if m.get('sectionConfig') is not None:
+            temp_model = UpdateCoursesOfClassRequestSectionConfig()
+            self.section_config = temp_model.from_map(m['sectionConfig'])
         if m.get('opUserId') is not None:
             self.op_user_id = m.get('opUserId')
         return self

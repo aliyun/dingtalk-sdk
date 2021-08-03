@@ -137,16 +137,31 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         return self
 
 
-class IndustrializeManufactureJobBookResponseBodyContent(TeaModel):
+class IndustrializeManufactureJobBookResponseBody(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        count: int = None,
+        http_code: str = None,
+        uuid: str = None,
+        content: str = None,
+        error_msg: str = None,
+        error_level: int = None,
+        error_code: str = None,
+        success: bool = None,
     ):
-        # 新增记录的数据id
-        self.id = id
-        # 更新记录的条数
-        self.count = count
+        # httpCode
+        self.http_code = http_code
+        # 此次报工记录的唯一标识
+        self.uuid = uuid
+        # content
+        self.content = content
+        # errorMsg
+        self.error_msg = error_msg
+        # errorLevel
+        self.error_level = error_level
+        # errorCode
+        self.error_code = error_code
+        # success
+        self.success = success
 
     def validate(self):
         pass
@@ -157,55 +172,38 @@ class IndustrializeManufactureJobBookResponseBodyContent(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.count is not None:
-            result['count'] = self.count
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('count') is not None:
-            self.count = m.get('count')
-        return self
-
-
-class IndustrializeManufactureJobBookResponseBody(TeaModel):
-    def __init__(
-        self,
-        content: IndustrializeManufactureJobBookResponseBodyContent = None,
-        uuid: str = None,
-    ):
-        # content
-        self.content = content
-        # 此次报工记录的唯一标识
-        self.uuid = uuid
-
-    def validate(self):
-        if self.content:
-            self.content.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.content is not None:
-            result['content'] = self.content.to_map()
+        if self.http_code is not None:
+            result['httpCode'] = self.http_code
         if self.uuid is not None:
             result['uuid'] = self.uuid
+        if self.content is not None:
+            result['content'] = self.content
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.error_level is not None:
+            result['errorLevel'] = self.error_level
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('content') is not None:
-            temp_model = IndustrializeManufactureJobBookResponseBodyContent()
-            self.content = temp_model.from_map(m['content'])
+        if m.get('httpCode') is not None:
+            self.http_code = m.get('httpCode')
         if m.get('uuid') is not None:
             self.uuid = m.get('uuid')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('errorLevel') is not None:
+            self.error_level = m.get('errorLevel')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 

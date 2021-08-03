@@ -1015,6 +1015,9 @@ class GetApplicationRegFormByFlowIdRequest(TeaModel):
 class GetApplicationRegFormByFlowIdResponseBody(TeaModel):
     def __init__(
         self,
+        flow_id: str = None,
+        candidate_id: str = None,
+        job_id: str = None,
         gmt_create_millis: int = None,
         gmt_modified_millis: int = None,
         template_id: str = None,
@@ -1023,6 +1026,12 @@ class GetApplicationRegFormByFlowIdResponseBody(TeaModel):
         status: int = None,
         creator_user_id: str = None,
     ):
+        # 招聘流程标识
+        self.flow_id = flow_id
+        # 候选人标识
+        self.candidate_id = candidate_id
+        # 职位标识
+        self.job_id = job_id
         # 创建时间（邀填时间，单位：毫秒）
         self.gmt_create_millis = gmt_create_millis
         # 更新时间（填写时间，单位：毫秒），仅当表单状态为已填写时有效
@@ -1047,6 +1056,12 @@ class GetApplicationRegFormByFlowIdResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.flow_id is not None:
+            result['flowId'] = self.flow_id
+        if self.candidate_id is not None:
+            result['candidateId'] = self.candidate_id
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
         if self.gmt_create_millis is not None:
             result['gmtCreateMillis'] = self.gmt_create_millis
         if self.gmt_modified_millis is not None:
@@ -1065,6 +1080,12 @@ class GetApplicationRegFormByFlowIdResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('flowId') is not None:
+            self.flow_id = m.get('flowId')
+        if m.get('candidateId') is not None:
+            self.candidate_id = m.get('candidateId')
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
         if m.get('gmtCreateMillis') is not None:
             self.gmt_create_millis = m.get('gmtCreateMillis')
         if m.get('gmtModifiedMillis') is not None:

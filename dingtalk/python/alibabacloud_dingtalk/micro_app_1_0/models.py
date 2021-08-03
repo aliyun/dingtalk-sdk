@@ -2744,6 +2744,7 @@ class CreateApaasAppRequest(TeaModel):
         op_user_id: str = None,
         biz_app_id: str = None,
         template_key: str = None,
+        is_short_cut: int = None,
     ):
         self.app_name = app_name
         self.app_desc = app_desc
@@ -2756,6 +2757,7 @@ class CreateApaasAppRequest(TeaModel):
         self.op_user_id = op_user_id
         self.biz_app_id = biz_app_id
         self.template_key = template_key
+        self.is_short_cut = is_short_cut
 
     def validate(self):
         pass
@@ -2788,6 +2790,8 @@ class CreateApaasAppRequest(TeaModel):
             result['bizAppId'] = self.biz_app_id
         if self.template_key is not None:
             result['templateKey'] = self.template_key
+        if self.is_short_cut is not None:
+            result['isShortCut'] = self.is_short_cut
         return result
 
     def from_map(self, m: dict = None):
@@ -2814,6 +2818,8 @@ class CreateApaasAppRequest(TeaModel):
             self.biz_app_id = m.get('bizAppId')
         if m.get('templateKey') is not None:
             self.template_key = m.get('templateKey')
+        if m.get('isShortCut') is not None:
+            self.is_short_cut = m.get('isShortCut')
         return self
 
 

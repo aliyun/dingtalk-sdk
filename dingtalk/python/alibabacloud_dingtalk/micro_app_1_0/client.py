@@ -1301,6 +1301,8 @@ class Client(OpenApiClient):
             body['bizAppId'] = request.biz_app_id
         if not UtilClient.is_unset(request.template_key):
             body['templateKey'] = request.template_key
+        if not UtilClient.is_unset(request.is_short_cut):
+            body['isShortCut'] = request.is_short_cut
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1345,6 +1347,8 @@ class Client(OpenApiClient):
             body['bizAppId'] = request.biz_app_id
         if not UtilClient.is_unset(request.template_key):
             body['templateKey'] = request.template_key
+        if not UtilClient.is_unset(request.is_short_cut):
+            body['isShortCut'] = request.is_short_cut
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -720,14 +720,6 @@ class Client(OpenApiClient):
             body['executorIds'] = request.executor_ids
         if not UtilClient.is_unset(request.participant_ids):
             body['participantIds'] = request.participant_ids
-        if not UtilClient.is_unset(request.card_type_id):
-            body['cardTypeId'] = request.card_type_id
-        if not UtilClient.is_unset(request.content_field_list):
-            body['contentFieldList'] = request.content_field_list
-        if not UtilClient.is_unset(request.priority):
-            body['priority'] = request.priority
-        if not UtilClient.is_unset(request.source_title):
-            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -768,14 +760,6 @@ class Client(OpenApiClient):
             body['executorIds'] = request.executor_ids
         if not UtilClient.is_unset(request.participant_ids):
             body['participantIds'] = request.participant_ids
-        if not UtilClient.is_unset(request.card_type_id):
-            body['cardTypeId'] = request.card_type_id
-        if not UtilClient.is_unset(request.content_field_list):
-            body['contentFieldList'] = request.content_field_list
-        if not UtilClient.is_unset(request.priority):
-            body['priority'] = request.priority
-        if not UtilClient.is_unset(request.source_title):
-            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -837,16 +821,6 @@ class Client(OpenApiClient):
             body['participantIds'] = request.participant_ids
         if not UtilClient.is_unset(request.detail_url):
             body['detailUrl'] = request.detail_url
-        if not UtilClient.is_unset(request.card_type_id):
-            body['cardTypeId'] = request.card_type_id
-        if not UtilClient.is_unset(request.content_field_list):
-            body['contentFieldList'] = request.content_field_list
-        if not UtilClient.is_unset(request.is_only_show_executor):
-            body['isOnlyShowExecutor'] = request.is_only_show_executor
-        if not UtilClient.is_unset(request.priority):
-            body['priority'] = request.priority
-        if not UtilClient.is_unset(request.source_title):
-            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -890,16 +864,6 @@ class Client(OpenApiClient):
             body['participantIds'] = request.participant_ids
         if not UtilClient.is_unset(request.detail_url):
             body['detailUrl'] = request.detail_url
-        if not UtilClient.is_unset(request.card_type_id):
-            body['cardTypeId'] = request.card_type_id
-        if not UtilClient.is_unset(request.content_field_list):
-            body['contentFieldList'] = request.content_field_list
-        if not UtilClient.is_unset(request.is_only_show_executor):
-            body['isOnlyShowExecutor'] = request.is_only_show_executor
-        if not UtilClient.is_unset(request.priority):
-            body['priority'] = request.priority
-        if not UtilClient.is_unset(request.source_title):
-            body['sourceTitle'] = request.source_title
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

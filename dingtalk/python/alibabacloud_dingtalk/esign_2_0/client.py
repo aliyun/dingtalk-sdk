@@ -177,6 +177,68 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSignDetail', 'esign_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/esign/signTasks/{task_id}', 'json', req, runtime)
         )
 
+    def get_attachs_approval(
+        self,
+        instance_id: str,
+    ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__2__0_models.GetAttachsApprovalHeaders()
+        return self.get_attachs_approval_with_options(instance_id, headers, runtime)
+
+    async def get_attachs_approval_async(
+        self,
+        instance_id: str,
+    ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__2__0_models.GetAttachsApprovalHeaders()
+        return await self.get_attachs_approval_with_options_async(instance_id, headers, runtime)
+
+    def get_attachs_approval_with_options(
+        self,
+        instance_id: str,
+        headers: dingtalkesign__2__0_models.GetAttachsApprovalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.service_group):
+            real_headers['serviceGroup'] = headers.service_group
+        if not UtilClient.is_unset(headers.tsign_open_app_id):
+            real_headers['tsignOpenAppId'] = headers.tsign_open_app_id
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkesign__2__0_models.GetAttachsApprovalResponse(),
+            self.do_roarequest('GetAttachsApproval', 'esign_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/esign/dingInstances/{instance_id}/attachments', 'json', req, runtime)
+        )
+
+    async def get_attachs_approval_with_options_async(
+        self,
+        instance_id: str,
+        headers: dingtalkesign__2__0_models.GetAttachsApprovalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.service_group):
+            real_headers['serviceGroup'] = headers.service_group
+        if not UtilClient.is_unset(headers.tsign_open_app_id):
+            real_headers['tsignOpenAppId'] = headers.tsign_open_app_id
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkesign__2__0_models.GetAttachsApprovalResponse(),
+            await self.do_roarequest_async('GetAttachsApproval', 'esign_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/esign/dingInstances/{instance_id}/attachments', 'json', req, runtime)
+        )
+
     def process_start(
         self,
         request: dingtalkesign__2__0_models.ProcessStartRequest,

@@ -1210,41 +1210,6 @@ class GetTodoTaskResponseBodyDetailUrl(TeaModel):
         return self
 
 
-class GetTodoTaskResponseBodyContentFieldList(TeaModel):
-    def __init__(
-        self,
-        field_key: str = None,
-        field_value: str = None,
-    ):
-        # 字段唯一标识
-        self.field_key = field_key
-        # 字段值
-        self.field_value = field_value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_key is not None:
-            result['fieldKey'] = self.field_key
-        if self.field_value is not None:
-            result['fieldValue'] = self.field_value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldKey') is not None:
-            self.field_key = m.get('fieldKey')
-        if m.get('fieldValue') is not None:
-            self.field_value = m.get('fieldValue')
-        return self
-
-
 class GetTodoTaskResponseBody(TeaModel):
     def __init__(
         self,
@@ -1269,10 +1234,6 @@ class GetTodoTaskResponseBody(TeaModel):
         biz_tag: str = None,
         request_id: str = None,
         card_type_id: str = None,
-        content_field_list: List[GetTodoTaskResponseBodyContentFieldList] = None,
-        is_only_show_executor: bool = None,
-        priority: int = None,
-        source_title: str = None,
     ):
         # id
         self.id = id
@@ -1316,22 +1277,10 @@ class GetTodoTaskResponseBody(TeaModel):
         self.request_id = request_id
         # 待办卡片类型id
         self.card_type_id = card_type_id
-        # 内容区表单字段配置
-        self.content_field_list = content_field_list
-        # 待办是否仅展示在执行人的待办列表中
-        self.is_only_show_executor = is_only_show_executor
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-        self.priority = priority
-        # 业务来源展示名称
-        self.source_title = source_title
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
-        if self.content_field_list:
-            for k in self.content_field_list:
-                if k:
-                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1381,16 +1330,6 @@ class GetTodoTaskResponseBody(TeaModel):
             result['requestId'] = self.request_id
         if self.card_type_id is not None:
             result['cardTypeId'] = self.card_type_id
-        result['contentFieldList'] = []
-        if self.content_field_list is not None:
-            for k in self.content_field_list:
-                result['contentFieldList'].append(k.to_map() if k else None)
-        if self.is_only_show_executor is not None:
-            result['isOnlyShowExecutor'] = self.is_only_show_executor
-        if self.priority is not None:
-            result['priority'] = self.priority
-        if self.source_title is not None:
-            result['sourceTitle'] = self.source_title
         return result
 
     def from_map(self, m: dict = None):
@@ -1438,17 +1377,6 @@ class GetTodoTaskResponseBody(TeaModel):
             self.request_id = m.get('requestId')
         if m.get('cardTypeId') is not None:
             self.card_type_id = m.get('cardTypeId')
-        self.content_field_list = []
-        if m.get('contentFieldList') is not None:
-            for k in m.get('contentFieldList'):
-                temp_model = GetTodoTaskResponseBodyContentFieldList()
-                self.content_field_list.append(temp_model.from_map(k))
-        if m.get('isOnlyShowExecutor') is not None:
-            self.is_only_show_executor = m.get('isOnlyShowExecutor')
-        if m.get('priority') is not None:
-            self.priority = m.get('priority')
-        if m.get('sourceTitle') is not None:
-            self.source_title = m.get('sourceTitle')
         return self
 
 
@@ -2474,41 +2402,6 @@ class UpdateTodoTaskHeaders(TeaModel):
         return self
 
 
-class UpdateTodoTaskRequestContentFieldList(TeaModel):
-    def __init__(
-        self,
-        field_key: str = None,
-        field_value: str = None,
-    ):
-        # 字段唯一标识
-        self.field_key = field_key
-        # 字段值
-        self.field_value = field_value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_key is not None:
-            result['fieldKey'] = self.field_key
-        if self.field_value is not None:
-            result['fieldValue'] = self.field_value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldKey') is not None:
-            self.field_key = m.get('fieldKey')
-        if m.get('fieldValue') is not None:
-            self.field_value = m.get('fieldValue')
-        return self
-
-
 class UpdateTodoTaskRequest(TeaModel):
     def __init__(
         self,
@@ -2518,10 +2411,6 @@ class UpdateTodoTaskRequest(TeaModel):
         done: bool = None,
         executor_ids: List[str] = None,
         participant_ids: List[str] = None,
-        card_type_id: str = None,
-        content_field_list: List[UpdateTodoTaskRequestContentFieldList] = None,
-        priority: int = None,
-        source_title: str = None,
         operator_id: str = None,
     ):
         # 待办标题
@@ -2536,22 +2425,11 @@ class UpdateTodoTaskRequest(TeaModel):
         self.executor_ids = executor_ids
         # 参与者列表，需传用户的unionId
         self.participant_ids = participant_ids
-        # 待办卡片类型id
-        self.card_type_id = card_type_id
-        # 内容区表单字段配置
-        self.content_field_list = content_field_list
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-        self.priority = priority
-        # 业务来源展示名称
-        self.source_title = source_title
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
-        if self.content_field_list:
-            for k in self.content_field_list:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -2571,16 +2449,6 @@ class UpdateTodoTaskRequest(TeaModel):
             result['executorIds'] = self.executor_ids
         if self.participant_ids is not None:
             result['participantIds'] = self.participant_ids
-        if self.card_type_id is not None:
-            result['cardTypeId'] = self.card_type_id
-        result['contentFieldList'] = []
-        if self.content_field_list is not None:
-            for k in self.content_field_list:
-                result['contentFieldList'].append(k.to_map() if k else None)
-        if self.priority is not None:
-            result['priority'] = self.priority
-        if self.source_title is not None:
-            result['sourceTitle'] = self.source_title
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -2599,17 +2467,6 @@ class UpdateTodoTaskRequest(TeaModel):
             self.executor_ids = m.get('executorIds')
         if m.get('participantIds') is not None:
             self.participant_ids = m.get('participantIds')
-        if m.get('cardTypeId') is not None:
-            self.card_type_id = m.get('cardTypeId')
-        self.content_field_list = []
-        if m.get('contentFieldList') is not None:
-            for k in m.get('contentFieldList'):
-                temp_model = UpdateTodoTaskRequestContentFieldList()
-                self.content_field_list.append(temp_model.from_map(k))
-        if m.get('priority') is not None:
-            self.priority = m.get('priority')
-        if m.get('sourceTitle') is not None:
-            self.source_title = m.get('sourceTitle')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -2748,41 +2605,6 @@ class CreateTodoTaskRequestDetailUrl(TeaModel):
         return self
 
 
-class CreateTodoTaskRequestContentFieldList(TeaModel):
-    def __init__(
-        self,
-        field_key: str = None,
-        field_value: str = None,
-    ):
-        # 字段唯一标识
-        self.field_key = field_key
-        # 字段值
-        self.field_value = field_value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_key is not None:
-            result['fieldKey'] = self.field_key
-        if self.field_value is not None:
-            result['fieldValue'] = self.field_value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldKey') is not None:
-            self.field_key = m.get('fieldKey')
-        if m.get('fieldValue') is not None:
-            self.field_value = m.get('fieldValue')
-        return self
-
-
 class CreateTodoTaskRequest(TeaModel):
     def __init__(
         self,
@@ -2794,11 +2616,6 @@ class CreateTodoTaskRequest(TeaModel):
         executor_ids: List[str] = None,
         participant_ids: List[str] = None,
         detail_url: CreateTodoTaskRequestDetailUrl = None,
-        card_type_id: str = None,
-        content_field_list: List[CreateTodoTaskRequestContentFieldList] = None,
-        is_only_show_executor: bool = None,
-        priority: int = None,
-        source_title: str = None,
         operator_id: str = None,
     ):
         # 来源id，接入业务系统侧的唯一标识id
@@ -2817,26 +2634,12 @@ class CreateTodoTaskRequest(TeaModel):
         self.participant_ids = participant_ids
         # 详情页url跳转地址
         self.detail_url = detail_url
-        # 待办卡片类型id
-        self.card_type_id = card_type_id
-        # 待办卡片内容区表单自定义字段列表
-        self.content_field_list = content_field_list
-        # 生成的待办是否仅展示在执行者的待办列表中
-        self.is_only_show_executor = is_only_show_executor
-        # 优先级
-        self.priority = priority
-        # 业务来源展示名称
-        self.source_title = source_title
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
-        if self.content_field_list:
-            for k in self.content_field_list:
-                if k:
-                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2860,18 +2663,6 @@ class CreateTodoTaskRequest(TeaModel):
             result['participantIds'] = self.participant_ids
         if self.detail_url is not None:
             result['detailUrl'] = self.detail_url.to_map()
-        if self.card_type_id is not None:
-            result['cardTypeId'] = self.card_type_id
-        result['contentFieldList'] = []
-        if self.content_field_list is not None:
-            for k in self.content_field_list:
-                result['contentFieldList'].append(k.to_map() if k else None)
-        if self.is_only_show_executor is not None:
-            result['isOnlyShowExecutor'] = self.is_only_show_executor
-        if self.priority is not None:
-            result['priority'] = self.priority
-        if self.source_title is not None:
-            result['sourceTitle'] = self.source_title
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -2895,19 +2686,6 @@ class CreateTodoTaskRequest(TeaModel):
         if m.get('detailUrl') is not None:
             temp_model = CreateTodoTaskRequestDetailUrl()
             self.detail_url = temp_model.from_map(m['detailUrl'])
-        if m.get('cardTypeId') is not None:
-            self.card_type_id = m.get('cardTypeId')
-        self.content_field_list = []
-        if m.get('contentFieldList') is not None:
-            for k in m.get('contentFieldList'):
-                temp_model = CreateTodoTaskRequestContentFieldList()
-                self.content_field_list.append(temp_model.from_map(k))
-        if m.get('isOnlyShowExecutor') is not None:
-            self.is_only_show_executor = m.get('isOnlyShowExecutor')
-        if m.get('priority') is not None:
-            self.priority = m.get('priority')
-        if m.get('sourceTitle') is not None:
-            self.source_title = m.get('sourceTitle')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -2948,41 +2726,6 @@ class CreateTodoTaskResponseBodyDetailUrl(TeaModel):
         return self
 
 
-class CreateTodoTaskResponseBodyContentFieldList(TeaModel):
-    def __init__(
-        self,
-        field_key: str = None,
-        field_value: str = None,
-    ):
-        # 字段唯一标识
-        self.field_key = field_key
-        # 字段值
-        self.field_value = field_value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_key is not None:
-            result['fieldKey'] = self.field_key
-        if self.field_value is not None:
-            result['fieldValue'] = self.field_value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldKey') is not None:
-            self.field_key = m.get('fieldKey')
-        if m.get('fieldValue') is not None:
-            self.field_value = m.get('fieldValue')
-        return self
-
-
 class CreateTodoTaskResponseBody(TeaModel):
     def __init__(
         self,
@@ -3004,11 +2747,6 @@ class CreateTodoTaskResponseBody(TeaModel):
         modifier_id: str = None,
         biz_tag: str = None,
         request_id: str = None,
-        card_type_id: str = None,
-        content_field_list: List[CreateTodoTaskResponseBodyContentFieldList] = None,
-        is_only_show_executor: bool = None,
-        priority: int = None,
-        source_title: str = None,
     ):
         # id
         self.id = id
@@ -3046,24 +2784,10 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.biz_tag = biz_tag
         # requestId
         self.request_id = request_id
-        # 待办卡片类型id
-        self.card_type_id = card_type_id
-        # 内容区表单字段配置
-        self.content_field_list = content_field_list
-        # 生成的待办是否仅展示在执行者的待办列表中
-        self.is_only_show_executor = is_only_show_executor
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-        self.priority = priority
-        # 业务来源展示名称
-        self.source_title = source_title
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
-        if self.content_field_list:
-            for k in self.content_field_list:
-                if k:
-                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3107,18 +2831,6 @@ class CreateTodoTaskResponseBody(TeaModel):
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
             result['requestId'] = self.request_id
-        if self.card_type_id is not None:
-            result['cardTypeId'] = self.card_type_id
-        result['contentFieldList'] = []
-        if self.content_field_list is not None:
-            for k in self.content_field_list:
-                result['contentFieldList'].append(k.to_map() if k else None)
-        if self.is_only_show_executor is not None:
-            result['isOnlyShowExecutor'] = self.is_only_show_executor
-        if self.priority is not None:
-            result['priority'] = self.priority
-        if self.source_title is not None:
-            result['sourceTitle'] = self.source_title
         return result
 
     def from_map(self, m: dict = None):
@@ -3160,19 +2872,6 @@ class CreateTodoTaskResponseBody(TeaModel):
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
-        if m.get('cardTypeId') is not None:
-            self.card_type_id = m.get('cardTypeId')
-        self.content_field_list = []
-        if m.get('contentFieldList') is not None:
-            for k in m.get('contentFieldList'):
-                temp_model = CreateTodoTaskResponseBodyContentFieldList()
-                self.content_field_list.append(temp_model.from_map(k))
-        if m.get('isOnlyShowExecutor') is not None:
-            self.is_only_show_executor = m.get('isOnlyShowExecutor')
-        if m.get('priority') is not None:
-            self.priority = m.get('priority')
-        if m.get('sourceTitle') is not None:
-            self.source_title = m.get('sourceTitle')
         return self
 
 
