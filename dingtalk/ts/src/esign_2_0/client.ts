@@ -185,6 +185,75 @@ export class GetSignDetailResponse extends $tea.Model {
   }
 }
 
+export class GetAttachsApprovalHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  serviceGroup?: string;
+  tsignOpenAppId?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      serviceGroup: 'serviceGroup',
+      tsignOpenAppId: 'tsignOpenAppId',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      serviceGroup: 'string',
+      tsignOpenAppId: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachsApprovalResponseBody extends $tea.Model {
+  data?: GetAttachsApprovalResponseBodyData[];
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetAttachsApprovalResponseBodyData },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachsApprovalResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAttachsApprovalResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAttachsApprovalResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProcessStartHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   serviceGroup?: string;
@@ -219,7 +288,7 @@ export class ProcessStartRequest extends $tea.Model {
   files?: ProcessStartRequestFiles[];
   participants?: ProcessStartRequestParticipants[];
   ccs?: ProcessStartRequestCcs[];
-  sourceInfo?: ProcessStartRequestSourceInfo[];
+  sourceInfo?: ProcessStartRequestSourceInfo;
   static names(): { [key: string]: string } {
     return {
       autoStart: 'autoStart',
@@ -244,7 +313,7 @@ export class ProcessStartRequest extends $tea.Model {
       files: { 'type': 'array', 'itemType': ProcessStartRequestFiles },
       participants: { 'type': 'array', 'itemType': ProcessStartRequestParticipants },
       ccs: { 'type': 'array', 'itemType': ProcessStartRequestCcs },
-      sourceInfo: { 'type': 'array', 'itemType': ProcessStartRequestSourceInfo },
+      sourceInfo: ProcessStartRequestSourceInfo,
     };
   }
 
@@ -1946,6 +2015,56 @@ export class GetSignDetailResponseBodySigners extends $tea.Model {
   }
 }
 
+export class GetAttachsApprovalResponseBodyDataFiles extends $tea.Model {
+  fileName?: string;
+  originalFileUrl?: string;
+  signFinishFileUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      originalFileUrl: 'originalFileUrl',
+      signFinishFileUrl: 'signFinishFileUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      originalFileUrl: 'string',
+      signFinishFileUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachsApprovalResponseBodyData extends $tea.Model {
+  flowId?: string;
+  status?: string;
+  files?: GetAttachsApprovalResponseBodyDataFiles[];
+  static names(): { [key: string]: string } {
+    return {
+      flowId: 'flowId',
+      status: 'status',
+      files: 'files',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flowId: 'string',
+      status: 'string',
+      files: { 'type': 'array', 'itemType': GetAttachsApprovalResponseBodyDataFiles },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProcessStartRequestFiles extends $tea.Model {
   fileId?: string;
   fileName?: string;
@@ -2285,6 +2404,36 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignDetailResponse>(await this.doROARequest("GetSignDetail", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/signTasks/${taskId}`, "json", req, runtime), new GetSignDetailResponse({}));
   }
 
+  async getAttachsApproval(instanceId: string): Promise<GetAttachsApprovalResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAttachsApprovalHeaders({ });
+    return await this.getAttachsApprovalWithOptions(instanceId, headers, runtime);
+  }
+
+  async getAttachsApprovalWithOptions(instanceId: string, headers: GetAttachsApprovalHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachsApprovalResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.serviceGroup)) {
+      realHeaders["serviceGroup"] = headers.serviceGroup;
+    }
+
+    if (!Util.isUnset(headers.tsignOpenAppId)) {
+      realHeaders["tsignOpenAppId"] = headers.tsignOpenAppId;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetAttachsApprovalResponse>(await this.doROARequest("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/dingInstances/${instanceId}/attachments`, "json", req, runtime), new GetAttachsApprovalResponse({}));
+  }
+
   async processStart(request: ProcessStartRequest): Promise<ProcessStartResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ProcessStartHeaders({ });
@@ -2326,7 +2475,7 @@ export default class Client extends OpenApi {
       body["ccs"] = request.ccs;
     }
 
-    if (!Util.isUnset(request.sourceInfo)) {
+    if (!Util.isUnset($tea.toMap(request.sourceInfo))) {
       body["sourceInfo"] = request.sourceInfo;
     }
 

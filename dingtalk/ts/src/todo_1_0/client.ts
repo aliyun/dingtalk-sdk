@@ -362,10 +362,6 @@ export class GetTodoTaskResponseBody extends $tea.Model {
   bizTag?: string;
   requestId?: string;
   cardTypeId?: string;
-  contentFieldList?: GetTodoTaskResponseBodyContentFieldList[];
-  isOnlyShowExecutor?: boolean;
-  priority?: number;
-  sourceTitle?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -389,10 +385,6 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       bizTag: 'bizTag',
       requestId: 'requestId',
       cardTypeId: 'cardTypeId',
-      contentFieldList: 'contentFieldList',
-      isOnlyShowExecutor: 'isOnlyShowExecutor',
-      priority: 'priority',
-      sourceTitle: 'sourceTitle',
     };
   }
 
@@ -419,10 +411,6 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       bizTag: 'string',
       requestId: 'string',
       cardTypeId: 'string',
-      contentFieldList: { 'type': 'array', 'itemType': GetTodoTaskResponseBodyContentFieldList },
-      isOnlyShowExecutor: 'boolean',
-      priority: 'number',
-      sourceTitle: 'string',
     };
   }
 
@@ -885,10 +873,6 @@ export class UpdateTodoTaskRequest extends $tea.Model {
   done?: boolean;
   executorIds?: string[];
   participantIds?: string[];
-  cardTypeId?: string;
-  contentFieldList?: UpdateTodoTaskRequestContentFieldList[];
-  priority?: number;
-  sourceTitle?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -898,10 +882,6 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       done: 'done',
       executorIds: 'executorIds',
       participantIds: 'participantIds',
-      cardTypeId: 'cardTypeId',
-      contentFieldList: 'contentFieldList',
-      priority: 'priority',
-      sourceTitle: 'sourceTitle',
       operatorId: 'operatorId',
     };
   }
@@ -914,10 +894,6 @@ export class UpdateTodoTaskRequest extends $tea.Model {
       done: 'boolean',
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
-      cardTypeId: 'string',
-      contentFieldList: { 'type': 'array', 'itemType': UpdateTodoTaskRequestContentFieldList },
-      priority: 'number',
-      sourceTitle: 'string',
       operatorId: 'string',
     };
   }
@@ -999,11 +975,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
   executorIds?: string[];
   participantIds?: string[];
   detailUrl?: CreateTodoTaskRequestDetailUrl;
-  cardTypeId?: string;
-  contentFieldList?: CreateTodoTaskRequestContentFieldList[];
-  isOnlyShowExecutor?: boolean;
-  priority?: number;
-  sourceTitle?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1015,11 +986,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: 'executorIds',
       participantIds: 'participantIds',
       detailUrl: 'detailUrl',
-      cardTypeId: 'cardTypeId',
-      contentFieldList: 'contentFieldList',
-      isOnlyShowExecutor: 'isOnlyShowExecutor',
-      priority: 'priority',
-      sourceTitle: 'sourceTitle',
       operatorId: 'operatorId',
     };
   }
@@ -1034,11 +1000,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
       detailUrl: CreateTodoTaskRequestDetailUrl,
-      cardTypeId: 'string',
-      contentFieldList: { 'type': 'array', 'itemType': CreateTodoTaskRequestContentFieldList },
-      isOnlyShowExecutor: 'boolean',
-      priority: 'number',
-      sourceTitle: 'string',
       operatorId: 'string',
     };
   }
@@ -1067,11 +1028,6 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   modifierId?: string;
   bizTag?: string;
   requestId?: string;
-  cardTypeId?: string;
-  contentFieldList?: CreateTodoTaskResponseBodyContentFieldList[];
-  isOnlyShowExecutor?: boolean;
-  priority?: number;
-  sourceTitle?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -1092,11 +1048,6 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       modifierId: 'modifierId',
       bizTag: 'bizTag',
       requestId: 'requestId',
-      cardTypeId: 'cardTypeId',
-      contentFieldList: 'contentFieldList',
-      isOnlyShowExecutor: 'isOnlyShowExecutor',
-      priority: 'priority',
-      sourceTitle: 'sourceTitle',
     };
   }
 
@@ -1120,11 +1071,6 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       modifierId: 'string',
       bizTag: 'string',
       requestId: 'string',
-      cardTypeId: 'string',
-      contentFieldList: { 'type': 'array', 'itemType': CreateTodoTaskResponseBodyContentFieldList },
-      isOnlyShowExecutor: 'boolean',
-      priority: 'number',
-      sourceTitle: 'string',
     };
   }
 
@@ -1475,28 +1421,6 @@ export class GetTodoTaskResponseBodyDetailUrl extends $tea.Model {
   }
 }
 
-export class GetTodoTaskResponseBodyContentFieldList extends $tea.Model {
-  fieldKey?: string;
-  fieldValue?: string;
-  static names(): { [key: string]: string } {
-    return {
-      fieldKey: 'fieldKey',
-      fieldValue: 'fieldValue',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldKey: 'string',
-      fieldValue: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class UpdateTodoTaskExecutorStatusRequestExecutorStatusList extends $tea.Model {
   id?: string;
   isDone?: boolean;
@@ -1631,28 +1555,6 @@ export class CreateTodoTypeConfigResponseBodyActionList extends $tea.Model {
   }
 }
 
-export class UpdateTodoTaskRequestContentFieldList extends $tea.Model {
-  fieldKey?: string;
-  fieldValue?: string;
-  static names(): { [key: string]: string } {
-    return {
-      fieldKey: 'fieldKey',
-      fieldValue: 'fieldValue',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldKey: 'string',
-      fieldValue: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   appUrl?: string;
   pcUrl?: string;
@@ -1675,28 +1577,6 @@ export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   }
 }
 
-export class CreateTodoTaskRequestContentFieldList extends $tea.Model {
-  fieldKey?: string;
-  fieldValue?: string;
-  static names(): { [key: string]: string } {
-    return {
-      fieldKey: 'fieldKey',
-      fieldValue: 'fieldValue',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldKey: 'string',
-      fieldValue: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
   pcUrl?: string;
   appUrl?: string;
@@ -1711,28 +1591,6 @@ export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
     return {
       pcUrl: 'string',
       appUrl: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateTodoTaskResponseBodyContentFieldList extends $tea.Model {
-  fieldKey?: string;
-  fieldValue?: string;
-  static names(): { [key: string]: string } {
-    return {
-      fieldKey: 'fieldKey',
-      fieldValue: 'fieldValue',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldKey: 'string',
-      fieldValue: 'string',
     };
   }
 
@@ -2120,22 +1978,6 @@ export default class Client extends OpenApi {
       body["participantIds"] = request.participantIds;
     }
 
-    if (!Util.isUnset(request.cardTypeId)) {
-      body["cardTypeId"] = request.cardTypeId;
-    }
-
-    if (!Util.isUnset(request.contentFieldList)) {
-      body["contentFieldList"] = request.contentFieldList;
-    }
-
-    if (!Util.isUnset(request.priority)) {
-      body["priority"] = request.priority;
-    }
-
-    if (!Util.isUnset(request.sourceTitle)) {
-      body["sourceTitle"] = request.sourceTitle;
-    }
-
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2197,26 +2039,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.detailUrl))) {
       body["detailUrl"] = request.detailUrl;
-    }
-
-    if (!Util.isUnset(request.cardTypeId)) {
-      body["cardTypeId"] = request.cardTypeId;
-    }
-
-    if (!Util.isUnset(request.contentFieldList)) {
-      body["contentFieldList"] = request.contentFieldList;
-    }
-
-    if (!Util.isUnset(request.isOnlyShowExecutor)) {
-      body["isOnlyShowExecutor"] = request.isOnlyShowExecutor;
-    }
-
-    if (!Util.isUnset(request.priority)) {
-      body["priority"] = request.priority;
-    }
-
-    if (!Util.isUnset(request.sourceTitle)) {
-      body["sourceTitle"] = request.sourceTitle;
     }
 
     let realHeaders : {[key: string ]: string} = { };

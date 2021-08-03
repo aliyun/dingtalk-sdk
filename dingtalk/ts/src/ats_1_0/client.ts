@@ -549,6 +549,9 @@ export class GetApplicationRegFormByFlowIdRequest extends $tea.Model {
 }
 
 export class GetApplicationRegFormByFlowIdResponseBody extends $tea.Model {
+  flowId?: string;
+  candidateId?: string;
+  jobId?: string;
   gmtCreateMillis?: number;
   gmtModifiedMillis?: number;
   templateId?: string;
@@ -558,6 +561,9 @@ export class GetApplicationRegFormByFlowIdResponseBody extends $tea.Model {
   creatorUserId?: string;
   static names(): { [key: string]: string } {
     return {
+      flowId: 'flowId',
+      candidateId: 'candidateId',
+      jobId: 'jobId',
       gmtCreateMillis: 'gmtCreateMillis',
       gmtModifiedMillis: 'gmtModifiedMillis',
       templateId: 'templateId',
@@ -570,6 +576,9 @@ export class GetApplicationRegFormByFlowIdResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      flowId: 'string',
+      candidateId: 'string',
+      jobId: 'string',
       gmtCreateMillis: 'number',
       gmtModifiedMillis: 'number',
       templateId: 'string',

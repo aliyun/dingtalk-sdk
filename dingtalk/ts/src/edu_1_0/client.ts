@@ -1541,10 +1541,12 @@ export class UpdateCoursesOfClassHeaders extends $tea.Model {
 
 export class UpdateCoursesOfClassRequest extends $tea.Model {
   courses?: UpdateCoursesOfClassRequestCourses[];
+  sectionConfig?: UpdateCoursesOfClassRequestSectionConfig;
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
       courses: 'courses',
+      sectionConfig: 'sectionConfig',
       opUserId: 'opUserId',
     };
   }
@@ -1552,6 +1554,7 @@ export class UpdateCoursesOfClassRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       courses: { 'type': 'array', 'itemType': UpdateCoursesOfClassRequestCourses },
+      sectionConfig: UpdateCoursesOfClassRequestSectionConfig,
       opUserId: 'string',
     };
   }
@@ -3359,6 +3362,97 @@ export class UpdateCoursesOfClassRequestCourses extends $tea.Model {
   }
 }
 
+export class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends $tea.Model {
+  min?: number;
+  hour?: number;
+  static names(): { [key: string]: string } {
+    return {
+      min: 'min',
+      hour: 'hour',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      min: 'number',
+      hour: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd extends $tea.Model {
+  min?: number;
+  hour?: number;
+  static names(): { [key: string]: string } {
+    return {
+      min: 'min',
+      hour: 'hour',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      min: 'number',
+      hour: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCoursesOfClassRequestSectionConfigSectionModels extends $tea.Model {
+  sectionType?: string;
+  start?: UpdateCoursesOfClassRequestSectionConfigSectionModelsStart;
+  sectionIndex?: number;
+  end?: UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd;
+  static names(): { [key: string]: string } {
+    return {
+      sectionType: 'sectionType',
+      start: 'start',
+      sectionIndex: 'sectionIndex',
+      end: 'end',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sectionType: 'string',
+      start: UpdateCoursesOfClassRequestSectionConfigSectionModelsStart,
+      sectionIndex: 'number',
+      end: UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCoursesOfClassRequestSectionConfig extends $tea.Model {
+  sectionModels?: UpdateCoursesOfClassRequestSectionConfigSectionModels[];
+  static names(): { [key: string]: string } {
+    return {
+      sectionModels: 'sectionModels',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sectionModels: { 'type': 'array', 'itemType': UpdateCoursesOfClassRequestSectionConfigSectionModels },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
   teacherName?: string;
   subjectName?: string;
@@ -4502,6 +4596,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.courses)) {
       body["courses"] = request.courses;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.sectionConfig))) {
+      body["sectionConfig"] = request.sectionConfig;
     }
 
     let realHeaders : {[key: string ]: string} = { };

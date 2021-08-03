@@ -1501,6 +1501,7 @@ export class CreateApaasAppRequest extends $tea.Model {
   opUserId?: string;
   bizAppId?: string;
   templateKey?: string;
+  isShortCut?: number;
   static names(): { [key: string]: string } {
     return {
       appName: 'appName',
@@ -1514,6 +1515,7 @@ export class CreateApaasAppRequest extends $tea.Model {
       opUserId: 'opUserId',
       bizAppId: 'bizAppId',
       templateKey: 'templateKey',
+      isShortCut: 'isShortCut',
     };
   }
 
@@ -1530,6 +1532,7 @@ export class CreateApaasAppRequest extends $tea.Model {
       opUserId: 'string',
       bizAppId: 'string',
       templateKey: 'string',
+      isShortCut: 'number',
     };
   }
 
@@ -2585,6 +2588,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.templateKey)) {
       body["templateKey"] = request.templateKey;
+    }
+
+    if (!Util.isUnset(request.isShortCut)) {
+      body["isShortCut"] = request.isShortCut;
     }
 
     let realHeaders : {[key: string ]: string} = { };

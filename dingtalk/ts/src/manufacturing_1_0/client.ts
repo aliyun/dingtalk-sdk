@@ -72,19 +72,34 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
 }
 
 export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
-  content?: IndustrializeManufactureJobBookResponseBodyContent;
+  httpCode?: string;
   uuid?: string;
+  content?: string;
+  errorMsg?: string;
+  errorLevel?: number;
+  errorCode?: string;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      content: 'content',
+      httpCode: 'httpCode',
       uuid: 'uuid',
+      content: 'content',
+      errorMsg: 'errorMsg',
+      errorLevel: 'errorLevel',
+      errorCode: 'errorCode',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      content: IndustrializeManufactureJobBookResponseBodyContent,
+      httpCode: 'string',
       uuid: 'string',
+      content: 'string',
+      errorMsg: 'string',
+      errorLevel: 'number',
+      errorCode: 'string',
+      success: 'boolean',
     };
   }
 
@@ -107,28 +122,6 @@ export class IndustrializeManufactureJobBookResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: IndustrializeManufactureJobBookResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class IndustrializeManufactureJobBookResponseBodyContent extends $tea.Model {
-  id?: number;
-  count?: number;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      count: 'count',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'number',
-      count: 'number',
     };
   }
 
