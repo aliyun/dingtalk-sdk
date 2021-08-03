@@ -143,57 +143,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
-        /// <summary>
-        /// 待办卡片类型id
-        /// </summary>
-        [NameInMap("cardTypeId")]
-        [Validation(Required=false)]
-        public string CardTypeId { get; set; }
-
-        /// <summary>
-        /// 内容区表单字段配置
-        /// </summary>
-        [NameInMap("contentFieldList")]
-        [Validation(Required=false)]
-        public List<CreateTodoTaskResponseBodyContentFieldList> ContentFieldList { get; set; }
-        public class CreateTodoTaskResponseBodyContentFieldList : TeaModel {
-            /// <summary>
-            /// 字段唯一标识
-            /// </summary>
-            [NameInMap("fieldKey")]
-            [Validation(Required=false)]
-            public string FieldKey { get; set; }
-
-            /// <summary>
-            /// 字段值
-            /// </summary>
-            [NameInMap("fieldValue")]
-            [Validation(Required=false)]
-            public string FieldValue { get; set; }
-
-        }
-
-        /// <summary>
-        /// 生成的待办是否仅展示在执行者的待办列表中
-        /// </summary>
-        [NameInMap("isOnlyShowExecutor")]
-        [Validation(Required=false)]
-        public bool? IsOnlyShowExecutor { get; set; }
-
-        /// <summary>
-        /// 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-        /// </summary>
-        [NameInMap("priority")]
-        [Validation(Required=false)]
-        public int? Priority { get; set; }
-
-        /// <summary>
-        /// 业务来源展示名称
-        /// </summary>
-        [NameInMap("sourceTitle")]
-        [Validation(Required=false)]
-        public string SourceTitle { get; set; }
-
     }
 
 }

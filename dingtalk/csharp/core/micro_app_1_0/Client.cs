@@ -1412,6 +1412,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             {
                 body["templateKey"] = request.TemplateKey;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsShortCut))
+            {
+                body["isShortCut"] = request.IsShortCut;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1476,6 +1480,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateKey))
             {
                 body["templateKey"] = request.TemplateKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsShortCut))
+            {
+                body["isShortCut"] = request.IsShortCut;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

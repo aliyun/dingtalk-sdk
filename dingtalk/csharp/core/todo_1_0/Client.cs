@@ -777,22 +777,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["participantIds"] = request.ParticipantIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTypeId))
-            {
-                body["cardTypeId"] = request.CardTypeId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
-            {
-                body["contentFieldList"] = request.ContentFieldList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Priority))
-            {
-                body["priority"] = request.Priority;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceTitle))
-            {
-                body["sourceTitle"] = request.SourceTitle;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -843,22 +827,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
             {
                 body["participantIds"] = request.ParticipantIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTypeId))
-            {
-                body["cardTypeId"] = request.CardTypeId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
-            {
-                body["contentFieldList"] = request.ContentFieldList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Priority))
-            {
-                body["priority"] = request.Priority;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceTitle))
-            {
-                body["sourceTitle"] = request.SourceTitle;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -933,26 +901,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["detailUrl"] = request.DetailUrl;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTypeId))
-            {
-                body["cardTypeId"] = request.CardTypeId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
-            {
-                body["contentFieldList"] = request.ContentFieldList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsOnlyShowExecutor))
-            {
-                body["isOnlyShowExecutor"] = request.IsOnlyShowExecutor;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Priority))
-            {
-                body["priority"] = request.Priority;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceTitle))
-            {
-                body["sourceTitle"] = request.SourceTitle;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1011,26 +959,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl.ToMap()))
             {
                 body["detailUrl"] = request.DetailUrl;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTypeId))
-            {
-                body["cardTypeId"] = request.CardTypeId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
-            {
-                body["contentFieldList"] = request.ContentFieldList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsOnlyShowExecutor))
-            {
-                body["isOnlyShowExecutor"] = request.IsOnlyShowExecutor;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Priority))
-            {
-                body["priority"] = request.Priority;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceTitle))
-            {
-                body["sourceTitle"] = request.SourceTitle;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

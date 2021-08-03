@@ -53,6 +53,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string TemplateKey { get; set; }
 
+        [NameInMap("isShortCut")]
+        [Validation(Required=false)]
+        public int? IsShortCut { get; set; }
+
     }
 
 }

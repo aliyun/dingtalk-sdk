@@ -10,19 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
 {
     public class IndustrializeManufactureJobBookResponseBody : TeaModel {
         /// <summary>
-        /// content
+        /// httpCode
         /// </summary>
-        [NameInMap("content")]
+        [NameInMap("httpCode")]
         [Validation(Required=false)]
-        public IndustrializeManufactureJobBookResponseBodyContent Content { get; set; }
-        public class IndustrializeManufactureJobBookResponseBodyContent : TeaModel {
-            [NameInMap("id")]
-            [Validation(Required=false)]
-            public long? Id { get; set; }
-            [NameInMap("count")]
-            [Validation(Required=false)]
-            public long? Count { get; set; }
-        };
+        public string HttpCode { get; set; }
 
         /// <summary>
         /// 此次报工记录的唯一标识
@@ -30,6 +22,41 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [NameInMap("uuid")]
         [Validation(Required=false)]
         public string Uuid { get; set; }
+
+        /// <summary>
+        /// content
+        /// </summary>
+        [NameInMap("content")]
+        [Validation(Required=false)]
+        public string Content { get; set; }
+
+        /// <summary>
+        /// errorMsg
+        /// </summary>
+        [NameInMap("errorMsg")]
+        [Validation(Required=false)]
+        public string ErrorMsg { get; set; }
+
+        /// <summary>
+        /// errorLevel
+        /// </summary>
+        [NameInMap("errorLevel")]
+        [Validation(Required=false)]
+        public int? ErrorLevel { get; set; }
+
+        /// <summary>
+        /// errorCode
+        /// </summary>
+        [NameInMap("errorCode")]
+        [Validation(Required=false)]
+        public string ErrorCode { get; set; }
+
+        /// <summary>
+        /// success
+        /// </summary>
+        [NameInMap("success")]
+        [Validation(Required=false)]
+        public bool? Success { get; set; }
 
     }
 

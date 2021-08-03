@@ -212,6 +212,72 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetSignDetailResponse>(await DoROARequestAsync("GetSignDetail", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/signTasks/" + taskId, "json", req, runtime));
         }
 
+        public GetAttachsApprovalResponse GetAttachsApproval(string instanceId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAttachsApprovalHeaders headers = new GetAttachsApprovalHeaders();
+            return GetAttachsApprovalWithOptions(instanceId, headers, runtime);
+        }
+
+        public async Task<GetAttachsApprovalResponse> GetAttachsApprovalAsync(string instanceId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAttachsApprovalHeaders headers = new GetAttachsApprovalHeaders();
+            return await GetAttachsApprovalWithOptionsAsync(instanceId, headers, runtime);
+        }
+
+        public GetAttachsApprovalResponse GetAttachsApprovalWithOptions(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = headers.ServiceGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
+            {
+                realHeaders["tsignOpenAppId"] = headers.TsignOpenAppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAttachsApprovalResponse>(DoROARequest("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/dingInstances/" + instanceId + "/attachments", "json", req, runtime));
+        }
+
+        public async Task<GetAttachsApprovalResponse> GetAttachsApprovalWithOptionsAsync(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = headers.ServiceGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
+            {
+                realHeaders["tsignOpenAppId"] = headers.TsignOpenAppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAttachsApprovalResponse>(await DoROARequestAsync("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/dingInstances/" + instanceId + "/attachments", "json", req, runtime));
+        }
+
         public ProcessStartResponse ProcessStart(ProcessStartRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -262,7 +328,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["ccs"] = request.Ccs;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo.ToMap()))
             {
                 body["sourceInfo"] = request.SourceInfo;
             }
@@ -323,7 +389,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 body["ccs"] = request.Ccs;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceInfo.ToMap()))
             {
                 body["sourceInfo"] = request.SourceInfo;
             }

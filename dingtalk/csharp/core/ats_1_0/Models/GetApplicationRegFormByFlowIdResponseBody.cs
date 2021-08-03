@@ -10,6 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class GetApplicationRegFormByFlowIdResponseBody : TeaModel {
         /// <summary>
+        /// 招聘流程标识
+        /// </summary>
+        [NameInMap("flowId")]
+        [Validation(Required=false)]
+        public string FlowId { get; set; }
+
+        /// <summary>
+        /// 候选人标识
+        /// </summary>
+        [NameInMap("candidateId")]
+        [Validation(Required=false)]
+        public string CandidateId { get; set; }
+
+        /// <summary>
+        /// 职位标识
+        /// </summary>
+        [NameInMap("jobId")]
+        [Validation(Required=false)]
+        public string JobId { get; set; }
+
+        /// <summary>
         /// 创建时间（邀填时间，单位：毫秒）
         /// </summary>
         [NameInMap("gmtCreateMillis")]

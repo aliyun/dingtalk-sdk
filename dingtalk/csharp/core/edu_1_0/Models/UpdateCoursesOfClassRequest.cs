@@ -94,6 +94,56 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
+        /// 节次设置
+        /// </summary>
+        [NameInMap("sectionConfig")]
+        [Validation(Required=false)]
+        public UpdateCoursesOfClassRequestSectionConfig SectionConfig { get; set; }
+        public class UpdateCoursesOfClassRequestSectionConfig : TeaModel {
+            [NameInMap("sectionModels")]
+            [Validation(Required=false)]
+            public List<UpdateCoursesOfClassRequestSectionConfigSectionModels> SectionModels { get; set; }
+            public class UpdateCoursesOfClassRequestSectionConfigSectionModels : TeaModel {
+                public string SectionType { get; set; }
+                public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart Start { get; set; }
+                public class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart : TeaModel {
+                    /// <summary>
+                    /// 分钟
+                    /// </summary>
+                    [NameInMap("min")]
+                    [Validation(Required=false)]
+                    public int? Min { get; set; }
+
+                    /// <summary>
+                    /// 小时
+                    /// </summary>
+                    [NameInMap("hour")]
+                    [Validation(Required=false)]
+                    public int? Hour { get; set; }
+
+                }
+                public int? SectionIndex { get; set; }
+                public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd End { get; set; }
+                public class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd : TeaModel {
+                    /// <summary>
+                    /// 分钟
+                    /// </summary>
+                    [NameInMap("min")]
+                    [Validation(Required=false)]
+                    public int? Min { get; set; }
+
+                    /// <summary>
+                    /// 小时
+                    /// </summary>
+                    [NameInMap("hour")]
+                    [Validation(Required=false)]
+                    public int? Hour { get; set; }
+
+                }
+            }
+        };
+
+        /// <summary>
         /// 操作者id
         /// </summary>
         [NameInMap("opUserId")]

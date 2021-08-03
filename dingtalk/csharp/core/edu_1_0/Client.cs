@@ -1457,6 +1457,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["courses"] = request.Courses;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SectionConfig.ToMap()))
+            {
+                body["sectionConfig"] = request.SectionConfig;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1487,6 +1491,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Courses))
             {
                 body["courses"] = request.Courses;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SectionConfig.ToMap()))
+            {
+                body["sectionConfig"] = request.SectionConfig;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
