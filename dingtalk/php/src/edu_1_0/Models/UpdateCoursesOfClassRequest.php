@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest\courses;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest\sectionConfig;
 use AlibabaCloud\Tea\Model;
 
 class UpdateCoursesOfClassRequest extends Model
@@ -15,14 +16,22 @@ class UpdateCoursesOfClassRequest extends Model
     public $courses;
 
     /**
+     * @description 节次设置
+     *
+     * @var sectionConfig
+     */
+    public $sectionConfig;
+
+    /**
      * @description 操作者id
      *
      * @var string
      */
     public $opUserId;
     protected $_name = [
-        'courses'  => 'courses',
-        'opUserId' => 'opUserId',
+        'courses'       => 'courses',
+        'sectionConfig' => 'sectionConfig',
+        'opUserId'      => 'opUserId',
     ];
 
     public function validate()
@@ -40,6 +49,9 @@ class UpdateCoursesOfClassRequest extends Model
                     $res['courses'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->sectionConfig) {
+            $res['sectionConfig'] = null !== $this->sectionConfig ? $this->sectionConfig->toMap() : null;
         }
         if (null !== $this->opUserId) {
             $res['opUserId'] = $this->opUserId;
@@ -64,6 +76,9 @@ class UpdateCoursesOfClassRequest extends Model
                     $model->courses[$n++] = null !== $item ? courses::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['sectionConfig'])) {
+            $model->sectionConfig = sectionConfig::fromMap($map['sectionConfig']);
         }
         if (isset($map['opUserId'])) {
             $model->opUserId = $map['opUserId'];

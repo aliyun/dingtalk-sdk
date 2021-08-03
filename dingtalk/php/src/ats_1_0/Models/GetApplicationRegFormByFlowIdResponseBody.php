@@ -9,6 +9,27 @@ use AlibabaCloud\Tea\Model;
 class GetApplicationRegFormByFlowIdResponseBody extends Model
 {
     /**
+     * @description 招聘流程标识
+     *
+     * @var string
+     */
+    public $flowId;
+
+    /**
+     * @description 候选人标识
+     *
+     * @var string
+     */
+    public $candidateId;
+
+    /**
+     * @description 职位标识
+     *
+     * @var string
+     */
+    public $jobId;
+
+    /**
      * @description 创建时间（邀填时间，单位：毫秒）
      *
      * @var int
@@ -57,6 +78,9 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
      */
     public $creatorUserId;
     protected $_name = [
+        'flowId'            => 'flowId',
+        'candidateId'       => 'candidateId',
+        'jobId'             => 'jobId',
         'gmtCreateMillis'   => 'gmtCreateMillis',
         'gmtModifiedMillis' => 'gmtModifiedMillis',
         'templateId'        => 'templateId',
@@ -73,6 +97,15 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->flowId) {
+            $res['flowId'] = $this->flowId;
+        }
+        if (null !== $this->candidateId) {
+            $res['candidateId'] = $this->candidateId;
+        }
+        if (null !== $this->jobId) {
+            $res['jobId'] = $this->jobId;
+        }
         if (null !== $this->gmtCreateMillis) {
             $res['gmtCreateMillis'] = $this->gmtCreateMillis;
         }
@@ -106,6 +139,15 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['flowId'])) {
+            $model->flowId = $map['flowId'];
+        }
+        if (isset($map['candidateId'])) {
+            $model->candidateId = $map['candidateId'];
+        }
+        if (isset($map['jobId'])) {
+            $model->jobId = $map['jobId'];
+        }
         if (isset($map['gmtCreateMillis'])) {
             $model->gmtCreateMillis = $map['gmtCreateMillis'];
         }

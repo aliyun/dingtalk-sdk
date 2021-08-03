@@ -22,6 +22,8 @@ use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\CreateDevelopersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\CreateProcessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\CreateProcessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\CreateProcessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\GetAttachsApprovalHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\GetAttachsApprovalResponse;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\GetAuthUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\GetAuthUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\GetAuthUrlResponse;
@@ -177,6 +179,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSignDetailResponse::fromMap($this->doROARequest('GetSignDetail', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/signTasks/' . $taskId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return GetAttachsApprovalResponse
+     */
+    public function getAttachsApproval($instanceId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAttachsApprovalHeaders([]);
+
+        return $this->getAttachsApprovalWithOptions($instanceId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $instanceId
+     * @param GetAttachsApprovalHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetAttachsApprovalResponse
+     */
+    public function getAttachsApprovalWithOptions($instanceId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->serviceGroup)) {
+            @$realHeaders['serviceGroup'] = $headers->serviceGroup;
+        }
+        if (!Utils::isUnset($headers->tsignOpenAppId)) {
+            @$realHeaders['tsignOpenAppId'] = $headers->tsignOpenAppId;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetAttachsApprovalResponse::fromMap($this->doROARequest('GetAttachsApproval', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/dingInstances/' . $instanceId . '/attachments', 'json', $req, $runtime));
     }
 
     /**

@@ -62,6 +62,11 @@ class CreateApaasAppRequest extends Model
      * @var string
      */
     public $templateKey;
+
+    /**
+     * @var int
+     */
+    public $isShortCut;
     protected $_name = [
         'appName'            => 'appName',
         'appDesc'            => 'appDesc',
@@ -74,6 +79,7 @@ class CreateApaasAppRequest extends Model
         'opUserId'           => 'opUserId',
         'bizAppId'           => 'bizAppId',
         'templateKey'        => 'templateKey',
+        'isShortCut'         => 'isShortCut',
     ];
 
     public function validate()
@@ -115,6 +121,9 @@ class CreateApaasAppRequest extends Model
         }
         if (null !== $this->templateKey) {
             $res['templateKey'] = $this->templateKey;
+        }
+        if (null !== $this->isShortCut) {
+            $res['isShortCut'] = $this->isShortCut;
         }
 
         return $res;
@@ -160,6 +169,9 @@ class CreateApaasAppRequest extends Model
         }
         if (isset($map['templateKey'])) {
             $model->templateKey = $map['templateKey'];
+        }
+        if (isset($map['isShortCut'])) {
+            $model->isShortCut = $map['isShortCut'];
         }
 
         return $model;

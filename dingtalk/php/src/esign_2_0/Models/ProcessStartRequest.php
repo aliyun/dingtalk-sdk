@@ -69,7 +69,7 @@ class ProcessStartRequest extends Model
     /**
      * @description 来源信息(目前支持传入审批信息和跳转地址)
      *
-     * @var sourceInfo[]
+     * @var sourceInfo
      */
     public $sourceInfo;
     protected $_name = [
@@ -134,13 +134,7 @@ class ProcessStartRequest extends Model
             }
         }
         if (null !== $this->sourceInfo) {
-            $res['sourceInfo'] = [];
-            if (null !== $this->sourceInfo && \is_array($this->sourceInfo)) {
-                $n = 0;
-                foreach ($this->sourceInfo as $item) {
-                    $res['sourceInfo'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['sourceInfo'] = null !== $this->sourceInfo ? $this->sourceInfo->toMap() : null;
         }
 
         return $res;
@@ -197,13 +191,7 @@ class ProcessStartRequest extends Model
             }
         }
         if (isset($map['sourceInfo'])) {
-            if (!empty($map['sourceInfo'])) {
-                $model->sourceInfo = [];
-                $n                 = 0;
-                foreach ($map['sourceInfo'] as $item) {
-                    $model->sourceInfo[$n++] = null !== $item ? sourceInfo::fromMap($item) : $item;
-                }
-            }
+            $model->sourceInfo = sourceInfo::fromMap($map['sourceInfo']);
         }
 
         return $model;

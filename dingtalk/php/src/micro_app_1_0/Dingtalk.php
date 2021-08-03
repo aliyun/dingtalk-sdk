@@ -948,6 +948,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->templateKey)) {
             @$body['templateKey'] = $request->templateKey;
         }
+        if (!Utils::isUnset($request->isShortCut)) {
+            @$body['isShortCut'] = $request->isShortCut;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

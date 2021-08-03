@@ -529,18 +529,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->participantIds)) {
             @$body['participantIds'] = $request->participantIds;
         }
-        if (!Utils::isUnset($request->cardTypeId)) {
-            @$body['cardTypeId'] = $request->cardTypeId;
-        }
-        if (!Utils::isUnset($request->contentFieldList)) {
-            @$body['contentFieldList'] = $request->contentFieldList;
-        }
-        if (!Utils::isUnset($request->priority)) {
-            @$body['priority'] = $request->priority;
-        }
-        if (!Utils::isUnset($request->sourceTitle)) {
-            @$body['sourceTitle'] = $request->sourceTitle;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -610,21 +598,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->detailUrl)) {
             @$body['detailUrl'] = $request->detailUrl;
-        }
-        if (!Utils::isUnset($request->cardTypeId)) {
-            @$body['cardTypeId'] = $request->cardTypeId;
-        }
-        if (!Utils::isUnset($request->contentFieldList)) {
-            @$body['contentFieldList'] = $request->contentFieldList;
-        }
-        if (!Utils::isUnset($request->isOnlyShowExecutor)) {
-            @$body['isOnlyShowExecutor'] = $request->isOnlyShowExecutor;
-        }
-        if (!Utils::isUnset($request->priority)) {
-            @$body['priority'] = $request->priority;
-        }
-        if (!Utils::isUnset($request->sourceTitle)) {
-            @$body['sourceTitle'] = $request->sourceTitle;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
