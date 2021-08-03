@@ -7,6 +7,10 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     @NameInMap("courses")
     public java.util.List<UpdateCoursesOfClassRequestCourses> courses;
 
+    // 节次设置
+    @NameInMap("sectionConfig")
+    public UpdateCoursesOfClassRequestSectionConfig sectionConfig;
+
     // 操作者id
     @NameInMap("opUserId")
     public String opUserId;
@@ -22,6 +26,14 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
     public java.util.List<UpdateCoursesOfClassRequestCourses> getCourses() {
         return this.courses;
+    }
+
+    public UpdateCoursesOfClassRequest setSectionConfig(UpdateCoursesOfClassRequestSectionConfig sectionConfig) {
+        this.sectionConfig = sectionConfig;
+        return this;
+    }
+    public UpdateCoursesOfClassRequestSectionConfig getSectionConfig() {
+        return this.sectionConfig;
     }
 
     public UpdateCoursesOfClassRequest setOpUserId(String opUserId) {
@@ -220,6 +232,146 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         }
         public String getCourseCode() {
             return this.courseCode;
+        }
+
+    }
+
+    public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
+        // 小时
+        @NameInMap("hour")
+        public Integer hour;
+
+        public static UpdateCoursesOfClassRequestSectionConfigSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCoursesOfClassRequestSectionConfigSectionModelsStart self = new UpdateCoursesOfClassRequestSectionConfigSectionModelsStart();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart setHour(Integer hour) {
+            this.hour = hour;
+            return this;
+        }
+        public Integer getHour() {
+            return this.hour;
+        }
+
+    }
+
+    public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
+        // 分钟
+        @NameInMap("min")
+        public Integer min;
+
+        // 小时
+        @NameInMap("hour")
+        public Integer hour;
+
+        public static UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd self = new UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd setMin(Integer min) {
+            this.min = min;
+            return this;
+        }
+        public Integer getMin() {
+            return this.min;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd setHour(Integer hour) {
+            this.hour = hour;
+            return this;
+        }
+        public Integer getHour() {
+            return this.hour;
+        }
+
+    }
+
+    public static class UpdateCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
+        // 节次类型枚举：COURSE/REST
+        @NameInMap("sectionType")
+        public String sectionType;
+
+        // 开始时间
+        @NameInMap("start")
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart start;
+
+        // 第几节。
+        @NameInMap("sectionIndex")
+        public Integer sectionIndex;
+
+        // 结束时间
+        @NameInMap("end")
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end;
+
+        public static UpdateCoursesOfClassRequestSectionConfigSectionModels build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCoursesOfClassRequestSectionConfigSectionModels self = new UpdateCoursesOfClassRequestSectionConfigSectionModels();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModels setSectionType(String sectionType) {
+            this.sectionType = sectionType;
+            return this;
+        }
+        public String getSectionType() {
+            return this.sectionType;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModels setStart(UpdateCoursesOfClassRequestSectionConfigSectionModelsStart start) {
+            this.start = start;
+            return this;
+        }
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart getStart() {
+            return this.start;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModels setSectionIndex(Integer sectionIndex) {
+            this.sectionIndex = sectionIndex;
+            return this;
+        }
+        public Integer getSectionIndex() {
+            return this.sectionIndex;
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfigSectionModels setEnd(UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end) {
+            this.end = end;
+            return this;
+        }
+        public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd getEnd() {
+            return this.end;
+        }
+
+    }
+
+    public static class UpdateCoursesOfClassRequestSectionConfig extends TeaModel {
+        // 节次模型
+        @NameInMap("sectionModels")
+        public java.util.List<UpdateCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
+
+        public static UpdateCoursesOfClassRequestSectionConfig build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCoursesOfClassRequestSectionConfig self = new UpdateCoursesOfClassRequestSectionConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateCoursesOfClassRequestSectionConfig setSectionModels(java.util.List<UpdateCoursesOfClassRequestSectionConfigSectionModels> sectionModels) {
+            this.sectionModels = sectionModels;
+            return this;
+        }
+        public java.util.List<UpdateCoursesOfClassRequestSectionConfigSectionModels> getSectionModels() {
+            return this.sectionModels;
         }
 
     }

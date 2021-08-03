@@ -88,22 +88,6 @@ public class GetTodoTaskResponseBody extends TeaModel {
     @NameInMap("cardTypeId")
     public String cardTypeId;
 
-    // 内容区表单字段配置
-    @NameInMap("contentFieldList")
-    public java.util.List<GetTodoTaskResponseBodyContentFieldList> contentFieldList;
-
-    // 待办是否仅展示在执行人的待办列表中
-    @NameInMap("isOnlyShowExecutor")
-    public Boolean isOnlyShowExecutor;
-
-    // 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-    @NameInMap("priority")
-    public Integer priority;
-
-    // 业务来源展示名称
-    @NameInMap("sourceTitle")
-    public String sourceTitle;
-
     public static GetTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTodoTaskResponseBody self = new GetTodoTaskResponseBody();
         return TeaModel.build(map, self);
@@ -277,38 +261,6 @@ public class GetTodoTaskResponseBody extends TeaModel {
         return this.cardTypeId;
     }
 
-    public GetTodoTaskResponseBody setContentFieldList(java.util.List<GetTodoTaskResponseBodyContentFieldList> contentFieldList) {
-        this.contentFieldList = contentFieldList;
-        return this;
-    }
-    public java.util.List<GetTodoTaskResponseBodyContentFieldList> getContentFieldList() {
-        return this.contentFieldList;
-    }
-
-    public GetTodoTaskResponseBody setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
-        this.isOnlyShowExecutor = isOnlyShowExecutor;
-        return this;
-    }
-    public Boolean getIsOnlyShowExecutor() {
-        return this.isOnlyShowExecutor;
-    }
-
-    public GetTodoTaskResponseBody setPriority(Integer priority) {
-        this.priority = priority;
-        return this;
-    }
-    public Integer getPriority() {
-        return this.priority;
-    }
-
-    public GetTodoTaskResponseBody setSourceTitle(String sourceTitle) {
-        this.sourceTitle = sourceTitle;
-        return this;
-    }
-    public String getSourceTitle() {
-        return this.sourceTitle;
-    }
-
     public static class GetTodoTaskResponseBodyDetailUrl extends TeaModel {
         // pc端详情页地址
         @NameInMap("pcUrl")
@@ -337,38 +289,6 @@ public class GetTodoTaskResponseBody extends TeaModel {
         }
         public String getAppUrl() {
             return this.appUrl;
-        }
-
-    }
-
-    public static class GetTodoTaskResponseBodyContentFieldList extends TeaModel {
-        // 字段唯一标识
-        @NameInMap("fieldKey")
-        public String fieldKey;
-
-        // 字段值
-        @NameInMap("fieldValue")
-        public String fieldValue;
-
-        public static GetTodoTaskResponseBodyContentFieldList build(java.util.Map<String, ?> map) throws Exception {
-            GetTodoTaskResponseBodyContentFieldList self = new GetTodoTaskResponseBodyContentFieldList();
-            return TeaModel.build(map, self);
-        }
-
-        public GetTodoTaskResponseBodyContentFieldList setFieldKey(String fieldKey) {
-            this.fieldKey = fieldKey;
-            return this;
-        }
-        public String getFieldKey() {
-            return this.fieldKey;
-        }
-
-        public GetTodoTaskResponseBodyContentFieldList setFieldValue(String fieldValue) {
-            this.fieldValue = fieldValue;
-            return this;
-        }
-        public String getFieldValue() {
-            return this.fieldValue;
         }
 
     }

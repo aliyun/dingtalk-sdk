@@ -4,25 +4,45 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
-    // content
-    @NameInMap("content")
-    public IndustrializeManufactureJobBookResponseBodyContent content;
+    // httpCode
+    @NameInMap("httpCode")
+    public String httpCode;
 
     // 此次报工记录的唯一标识
     @NameInMap("uuid")
     public String uuid;
+
+    // content
+    @NameInMap("content")
+    public String content;
+
+    // errorMsg
+    @NameInMap("errorMsg")
+    public String errorMsg;
+
+    // errorLevel
+    @NameInMap("errorLevel")
+    public Integer errorLevel;
+
+    // errorCode
+    @NameInMap("errorCode")
+    public String errorCode;
+
+    // success
+    @NameInMap("success")
+    public Boolean success;
 
     public static IndustrializeManufactureJobBookResponseBody build(java.util.Map<String, ?> map) throws Exception {
         IndustrializeManufactureJobBookResponseBody self = new IndustrializeManufactureJobBookResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public IndustrializeManufactureJobBookResponseBody setContent(IndustrializeManufactureJobBookResponseBodyContent content) {
-        this.content = content;
+    public IndustrializeManufactureJobBookResponseBody setHttpCode(String httpCode) {
+        this.httpCode = httpCode;
         return this;
     }
-    public IndustrializeManufactureJobBookResponseBodyContent getContent() {
-        return this.content;
+    public String getHttpCode() {
+        return this.httpCode;
     }
 
     public IndustrializeManufactureJobBookResponseBody setUuid(String uuid) {
@@ -33,36 +53,44 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
         return this.uuid;
     }
 
-    public static class IndustrializeManufactureJobBookResponseBodyContent extends TeaModel {
-        // 新增记录的数据id
-        @NameInMap("id")
-        public Long id;
+    public IndustrializeManufactureJobBookResponseBody setContent(String content) {
+        this.content = content;
+        return this;
+    }
+    public String getContent() {
+        return this.content;
+    }
 
-        // 更新记录的条数
-        @NameInMap("count")
-        public Long count;
+    public IndustrializeManufactureJobBookResponseBody setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+    public String getErrorMsg() {
+        return this.errorMsg;
+    }
 
-        public static IndustrializeManufactureJobBookResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
-            IndustrializeManufactureJobBookResponseBodyContent self = new IndustrializeManufactureJobBookResponseBodyContent();
-            return TeaModel.build(map, self);
-        }
+    public IndustrializeManufactureJobBookResponseBody setErrorLevel(Integer errorLevel) {
+        this.errorLevel = errorLevel;
+        return this;
+    }
+    public Integer getErrorLevel() {
+        return this.errorLevel;
+    }
 
-        public IndustrializeManufactureJobBookResponseBodyContent setId(Long id) {
-            this.id = id;
-            return this;
-        }
-        public Long getId() {
-            return this.id;
-        }
+    public IndustrializeManufactureJobBookResponseBody setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+    public String getErrorCode() {
+        return this.errorCode;
+    }
 
-        public IndustrializeManufactureJobBookResponseBodyContent setCount(Long count) {
-            this.count = count;
-            return this;
-        }
-        public Long getCount() {
-            return this.count;
-        }
-
+    public IndustrializeManufactureJobBookResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
 }

@@ -37,7 +37,7 @@ public class ProcessStartRequest extends TeaModel {
 
     // 来源信息(目前支持传入审批信息和跳转地址)
     @NameInMap("sourceInfo")
-    public java.util.List<ProcessStartRequestSourceInfo> sourceInfo;
+    public ProcessStartRequestSourceInfo sourceInfo;
 
     public static ProcessStartRequest build(java.util.Map<String, ?> map) throws Exception {
         ProcessStartRequest self = new ProcessStartRequest();
@@ -108,11 +108,11 @@ public class ProcessStartRequest extends TeaModel {
         return this.ccs;
     }
 
-    public ProcessStartRequest setSourceInfo(java.util.List<ProcessStartRequestSourceInfo> sourceInfo) {
+    public ProcessStartRequest setSourceInfo(ProcessStartRequestSourceInfo sourceInfo) {
         this.sourceInfo = sourceInfo;
         return this;
     }
-    public java.util.List<ProcessStartRequestSourceInfo> getSourceInfo() {
+    public ProcessStartRequestSourceInfo getSourceInfo() {
         return this.sourceInfo;
     }
 

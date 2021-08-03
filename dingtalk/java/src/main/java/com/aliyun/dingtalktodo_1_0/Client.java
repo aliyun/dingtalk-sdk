@@ -387,22 +387,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("participantIds", request.participantIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.cardTypeId)) {
-            body.put("cardTypeId", request.cardTypeId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.contentFieldList)) {
-            body.put("contentFieldList", request.contentFieldList);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
-            body.put("priority", request.priority);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.sourceTitle)) {
-            body.put("sourceTitle", request.sourceTitle);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -464,26 +448,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detailUrl))) {
             body.put("detailUrl", request.detailUrl);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.cardTypeId)) {
-            body.put("cardTypeId", request.cardTypeId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.contentFieldList)) {
-            body.put("contentFieldList", request.contentFieldList);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.isOnlyShowExecutor)) {
-            body.put("isOnlyShowExecutor", request.isOnlyShowExecutor);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
-            body.put("priority", request.priority);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.sourceTitle)) {
-            body.put("sourceTitle", request.sourceTitle);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

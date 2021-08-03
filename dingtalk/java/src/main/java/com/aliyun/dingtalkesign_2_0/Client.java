@@ -108,6 +108,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetSignDetail", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/signTasks/" + taskId + "", "json", req, runtime), new GetSignDetailResponse());
     }
 
+    public GetAttachsApprovalResponse getAttachsApproval(String instanceId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetAttachsApprovalHeaders headers = new GetAttachsApprovalHeaders();
+        return this.getAttachsApprovalWithOptions(instanceId, headers, runtime);
+    }
+
+    public GetAttachsApprovalResponse getAttachsApprovalWithOptions(String instanceId, GetAttachsApprovalHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.serviceGroup)) {
+            realHeaders.put("serviceGroup", headers.serviceGroup);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.tsignOpenAppId)) {
+            realHeaders.put("tsignOpenAppId", headers.tsignOpenAppId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/dingInstances/" + instanceId + "/attachments", "json", req, runtime), new GetAttachsApprovalResponse());
+    }
+
     public ProcessStartResponse processStart(ProcessStartRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ProcessStartHeaders headers = new ProcessStartHeaders();
@@ -149,7 +179,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("ccs", request.ccs);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.sourceInfo)) {
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sourceInfo))) {
             body.put("sourceInfo", request.sourceInfo);
         }
 

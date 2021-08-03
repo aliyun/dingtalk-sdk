@@ -37,6 +37,9 @@ public class CreateApaasAppRequest extends TeaModel {
     @NameInMap("templateKey")
     public String templateKey;
 
+    @NameInMap("isShortCut")
+    public Integer isShortCut;
+
     public static CreateApaasAppRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateApaasAppRequest self = new CreateApaasAppRequest();
         return TeaModel.build(map, self);
@@ -128,6 +131,14 @@ public class CreateApaasAppRequest extends TeaModel {
     }
     public String getTemplateKey() {
         return this.templateKey;
+    }
+
+    public CreateApaasAppRequest setIsShortCut(Integer isShortCut) {
+        this.isShortCut = isShortCut;
+        return this;
+    }
+    public Integer getIsShortCut() {
+        return this.isShortCut;
     }
 
 }

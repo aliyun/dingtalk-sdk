@@ -688,6 +688,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("templateKey", request.templateKey);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.isShortCut)) {
+            body.put("isShortCut", request.isShortCut);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

@@ -4,6 +4,18 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
+    // 招聘流程标识
+    @NameInMap("flowId")
+    public String flowId;
+
+    // 候选人标识
+    @NameInMap("candidateId")
+    public String candidateId;
+
+    // 职位标识
+    @NameInMap("jobId")
+    public String jobId;
+
     // 创建时间（邀填时间，单位：毫秒）
     @NameInMap("gmtCreateMillis")
     public Long gmtCreateMillis;
@@ -35,6 +47,30 @@ public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
     public static GetApplicationRegFormByFlowIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetApplicationRegFormByFlowIdResponseBody self = new GetApplicationRegFormByFlowIdResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetApplicationRegFormByFlowIdResponseBody setFlowId(String flowId) {
+        this.flowId = flowId;
+        return this;
+    }
+    public String getFlowId() {
+        return this.flowId;
+    }
+
+    public GetApplicationRegFormByFlowIdResponseBody setCandidateId(String candidateId) {
+        this.candidateId = candidateId;
+        return this;
+    }
+    public String getCandidateId() {
+        return this.candidateId;
+    }
+
+    public GetApplicationRegFormByFlowIdResponseBody setJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+    public String getJobId() {
+        return this.jobId;
     }
 
     public GetApplicationRegFormByFlowIdResponseBody setGmtCreateMillis(Long gmtCreateMillis) {
