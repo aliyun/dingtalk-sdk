@@ -182,14 +182,11 @@ export class UpdateEmpAttrbuteVisibilitySettingHeaders extends $tea.Model {
 
 export class UpdateEmpAttrbuteVisibilitySettingRequest extends $tea.Model {
   id?: number;
-  gmtCreate?: string;
-  gmtModified?: string;
   name?: string;
   description?: string;
   objectStaffIds?: string[];
   objectDeptIds?: number[];
   objectTagIds?: number[];
-  objectNodeConditions?: string[];
   hideFields?: string[];
   excludeStaffIds?: string[];
   excludeDeptIds?: number[];
@@ -198,14 +195,11 @@ export class UpdateEmpAttrbuteVisibilitySettingRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       id: 'id',
-      gmtCreate: 'gmtCreate',
-      gmtModified: 'gmtModified',
       name: 'name',
       description: 'description',
       objectStaffIds: 'objectStaffIds',
       objectDeptIds: 'objectDeptIds',
       objectTagIds: 'objectTagIds',
-      objectNodeConditions: 'objectNodeConditions',
       hideFields: 'hideFields',
       excludeStaffIds: 'excludeStaffIds',
       excludeDeptIds: 'excludeDeptIds',
@@ -217,14 +211,11 @@ export class UpdateEmpAttrbuteVisibilitySettingRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'number',
-      gmtCreate: 'string',
-      gmtModified: 'string',
       name: 'string',
       description: 'string',
       objectStaffIds: { 'type': 'array', 'itemType': 'string' },
       objectDeptIds: { 'type': 'array', 'itemType': 'number' },
       objectTagIds: { 'type': 'array', 'itemType': 'number' },
-      objectNodeConditions: { 'type': 'array', 'itemType': 'string' },
       hideFields: { 'type': 'array', 'itemType': 'string' },
       excludeStaffIds: { 'type': 'array', 'itemType': 'string' },
       excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
@@ -950,6 +941,100 @@ export class QueryUserManagementResourcesResponse extends $tea.Model {
   }
 }
 
+export class UpdateUserOwnnessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessRequest extends $tea.Model {
+  ownenssType?: number;
+  id?: number;
+  startTime?: number;
+  endTime?: number;
+  deletedFlag?: number;
+  static names(): { [key: string]: string } {
+    return {
+      ownenssType: 'ownenssType',
+      id: 'id',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      deletedFlag: 'deletedFlag',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownenssType: 'number',
+      id: 'number',
+      startTime: 'number',
+      endTime: 'number',
+      deletedFlag: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateUserOwnnessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateUserOwnnessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCooperateOrgInviteInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1564,7 +1649,6 @@ export class ListEmpAttributeVisibilityResponseBodyList extends $tea.Model {
   objectStaffIds?: string[];
   objectDeptIds?: number[];
   objectTagIds?: number[];
-  objectNodeConditions?: string[];
   hideFields?: string[];
   excludeStaffIds?: string[];
   excludeDeptIds?: number[];
@@ -1580,7 +1664,6 @@ export class ListEmpAttributeVisibilityResponseBodyList extends $tea.Model {
       objectStaffIds: 'objectStaffIds',
       objectDeptIds: 'objectDeptIds',
       objectTagIds: 'objectTagIds',
-      objectNodeConditions: 'objectNodeConditions',
       hideFields: 'hideFields',
       excludeStaffIds: 'excludeStaffIds',
       excludeDeptIds: 'excludeDeptIds',
@@ -1599,7 +1682,6 @@ export class ListEmpAttributeVisibilityResponseBodyList extends $tea.Model {
       objectStaffIds: { 'type': 'array', 'itemType': 'string' },
       objectDeptIds: { 'type': 'array', 'itemType': 'number' },
       objectTagIds: { 'type': 'array', 'itemType': 'number' },
-      objectNodeConditions: { 'type': 'array', 'itemType': 'string' },
       hideFields: { 'type': 'array', 'itemType': 'string' },
       excludeStaffIds: { 'type': 'array', 'itemType': 'string' },
       excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
@@ -1811,14 +1893,6 @@ export default class Client extends OpenApi {
       body["id"] = request.id;
     }
 
-    if (!Util.isUnset(request.gmtCreate)) {
-      body["gmtCreate"] = request.gmtCreate;
-    }
-
-    if (!Util.isUnset(request.gmtModified)) {
-      body["gmtModified"] = request.gmtModified;
-    }
-
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }
@@ -1837,10 +1911,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.objectTagIds)) {
       body["objectTagIds"] = request.objectTagIds;
-    }
-
-    if (!Util.isUnset(request.objectNodeConditions)) {
-      body["objectNodeConditions"] = request.objectNodeConditions;
     }
 
     if (!Util.isUnset(request.hideFields)) {
@@ -2139,6 +2209,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryUserManagementResourcesResponse>(await this.doROARequest("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/users/${userId}/managemementResources`, "json", req, runtime), new QueryUserManagementResourcesResponse({}));
+  }
+
+  async updateUserOwnness(userId: string, request: UpdateUserOwnnessRequest): Promise<UpdateUserOwnnessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateUserOwnnessHeaders({ });
+    return await this.updateUserOwnnessWithOptions(userId, request, headers, runtime);
+  }
+
+  async updateUserOwnnessWithOptions(userId: string, request: UpdateUserOwnnessRequest, headers: UpdateUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserOwnnessResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ownenssType)) {
+      body["ownenssType"] = request.ownenssType;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.deletedFlag)) {
+      body["deletedFlag"] = request.deletedFlag;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateUserOwnnessResponse>(await this.doROARequest("UpdateUserOwnness", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/user/${userId}/ownness`, "json", req, runtime), new UpdateUserOwnnessResponse({}));
   }
 
   async getCooperateOrgInviteInfo(cooperateCorpId: string): Promise<GetCooperateOrgInviteInfoResponse> {

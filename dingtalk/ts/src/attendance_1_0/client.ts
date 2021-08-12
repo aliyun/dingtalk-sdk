@@ -286,6 +286,273 @@ export class GetUserHolidaysResponse extends $tea.Model {
   }
 }
 
+export class AttendanceBleDevicesQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryRequest extends $tea.Model {
+  opUserId?: string;
+  groupKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      groupKey: 'groupKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      groupKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryResponseBody extends $tea.Model {
+  result?: AttendanceBleDevicesQueryResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': AttendanceBleDevicesQueryResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AttendanceBleDevicesQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AttendanceBleDevicesQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddRequest extends $tea.Model {
+  opUserId?: string;
+  groupKey?: string;
+  deviceIdList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      groupKey: 'groupKey',
+      deviceIdList: 'deviceIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      groupKey: 'string',
+      deviceIdList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponseBody extends $tea.Model {
+  errorList?: AttendanceBleDevicesAddResponseBodyErrorList[];
+  successList?: AttendanceBleDevicesAddResponseBodySuccessList[];
+  static names(): { [key: string]: string } {
+    return {
+      errorList: 'errorList',
+      successList: 'successList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodyErrorList },
+      successList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodySuccessList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AttendanceBleDevicesAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AttendanceBleDevicesAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveRequest extends $tea.Model {
+  opUserId?: string;
+  groupKey?: string;
+  deviceIdList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      groupKey: 'groupKey',
+      deviceIdList: 'deviceIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      groupKey: 'string',
+      deviceIdList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveResponseBody extends $tea.Model {
+  errorList?: AttendanceBleDevicesRemoveResponseBodyErrorList[];
+  successList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      errorList: 'errorList',
+      successList: 'successList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorList: { 'type': 'array', 'itemType': AttendanceBleDevicesRemoveResponseBodyErrorList },
+      successList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AttendanceBleDevicesRemoveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AttendanceBleDevicesRemoveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckWritePermissionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -562,6 +829,131 @@ export class GetUserHolidaysResponseBodyResult extends $tea.Model {
   }
 }
 
+export class AttendanceBleDevicesQueryResponseBodyResult extends $tea.Model {
+  deviceId?: number;
+  deviceName?: string;
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      deviceName: 'deviceName',
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'number',
+      deviceName: 'string',
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends $tea.Model {
+  deviceId?: number;
+  deviceName?: string;
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      deviceName: 'deviceName',
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'number',
+      deviceName: 'string',
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponseBodyErrorList extends $tea.Model {
+  code?: string;
+  failureList?: AttendanceBleDevicesAddResponseBodyErrorListFailureList[];
+  msg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      failureList: 'failureList',
+      msg: 'msg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      failureList: { 'type': 'array', 'itemType': AttendanceBleDevicesAddResponseBodyErrorListFailureList },
+      msg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesAddResponseBodySuccessList extends $tea.Model {
+  deviceId?: number;
+  deviceName?: string;
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      deviceName: 'deviceName',
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'number',
+      deviceName: 'string',
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AttendanceBleDevicesRemoveResponseBodyErrorList extends $tea.Model {
+  code?: string;
+  failureList?: number[];
+  msg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      failureList: 'failureList',
+      msg: 'msg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      failureList: { 'type': 'array', 'itemType': 'number' },
+      msg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
   closingDay?: number;
   closingHourMinutes?: number;
@@ -777,6 +1169,113 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+  }
+
+  async attendanceBleDevicesQuery(request: AttendanceBleDevicesQueryRequest): Promise<AttendanceBleDevicesQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AttendanceBleDevicesQueryHeaders({ });
+    return await this.attendanceBleDevicesQueryWithOptions(request, headers, runtime);
+  }
+
+  async attendanceBleDevicesQueryWithOptions(request: AttendanceBleDevicesQueryRequest, headers: AttendanceBleDevicesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.groupKey)) {
+      body["groupKey"] = request.groupKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AttendanceBleDevicesQueryResponse>(await this.doROARequestWithForm("AttendanceBleDevicesQuery", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/query`, "json", req, runtime), new AttendanceBleDevicesQueryResponse({}));
+  }
+
+  async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AttendanceBleDevicesAddHeaders({ });
+    return await this.attendanceBleDevicesAddWithOptions(request, headers, runtime);
+  }
+
+  async attendanceBleDevicesAddWithOptions(request: AttendanceBleDevicesAddRequest, headers: AttendanceBleDevicesAddHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesAddResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.groupKey)) {
+      body["groupKey"] = request.groupKey;
+    }
+
+    if (!Util.isUnset(request.deviceIdList)) {
+      body["deviceIdList"] = request.deviceIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AttendanceBleDevicesAddResponse>(await this.doROARequest("AttendanceBleDevicesAdd", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices`, "json", req, runtime), new AttendanceBleDevicesAddResponse({}));
+  }
+
+  async attendanceBleDevicesRemove(request: AttendanceBleDevicesRemoveRequest): Promise<AttendanceBleDevicesRemoveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AttendanceBleDevicesRemoveHeaders({ });
+    return await this.attendanceBleDevicesRemoveWithOptions(request, headers, runtime);
+  }
+
+  async attendanceBleDevicesRemoveWithOptions(request: AttendanceBleDevicesRemoveRequest, headers: AttendanceBleDevicesRemoveHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesRemoveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.groupKey)) {
+      body["groupKey"] = request.groupKey;
+    }
+
+    if (!Util.isUnset(request.deviceIdList)) {
+      body["deviceIdList"] = request.deviceIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AttendanceBleDevicesRemoveResponse>(await this.doROARequest("AttendanceBleDevicesRemove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/remove`, "json", req, runtime), new AttendanceBleDevicesRemoveResponse({}));
   }
 
   async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {

@@ -117,10 +117,12 @@ export class RecallMessageHeaders extends $tea.Model {
 export class RecallMessageRequest extends $tea.Model {
   operatorUid?: string;
   messageId?: string;
+  type?: number;
   static names(): { [key: string]: string } {
     return {
       operatorUid: 'operatorUid',
       messageId: 'messageId',
+      type: 'type',
     };
   }
 
@@ -128,6 +130,7 @@ export class RecallMessageRequest extends $tea.Model {
     return {
       operatorUid: 'string',
       messageId: 'string',
+      type: 'number',
     };
   }
 
@@ -250,7 +253,6 @@ export class CreateGroupRequest extends $tea.Model {
   iconMediaId?: string;
   channel?: string;
   properties?: { [key: string]: string };
-  members?: CreateGroupRequestMembers[];
   static names(): { [key: string]: string } {
     return {
       uuid: 'uuid',
@@ -259,7 +261,6 @@ export class CreateGroupRequest extends $tea.Model {
       iconMediaId: 'iconMediaId',
       channel: 'channel',
       properties: 'properties',
-      members: 'members',
     };
   }
 
@@ -271,7 +272,6 @@ export class CreateGroupRequest extends $tea.Model {
       iconMediaId: 'string',
       channel: 'string',
       properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      members: { 'type': 'array', 'itemType': CreateGroupRequestMembers },
     };
   }
 
@@ -965,10 +965,12 @@ export class SendMessageRequest extends $tea.Model {
 export class SendMessageResponseBody extends $tea.Model {
   msgId?: string;
   createTime?: number;
+  messageId?: string;
   static names(): { [key: string]: string } {
     return {
       msgId: 'msgId',
       createTime: 'createTime',
+      messageId: 'messageId',
     };
   }
 
@@ -976,6 +978,7 @@ export class SendMessageResponseBody extends $tea.Model {
     return {
       msgId: 'string',
       createTime: 'number',
+      messageId: 'string',
     };
   }
 
@@ -1006,42 +1009,20 @@ export class SendMessageResponse extends $tea.Model {
   }
 }
 
-export class CreateGroupRequestMembers extends $tea.Model {
-  uid?: string;
-  nick?: string;
-  static names(): { [key: string]: string } {
-    return {
-      uid: 'uid',
-      nick: 'nick',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      uid: 'string',
-      nick: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class AddGroupMembersRequestMembers extends $tea.Model {
-  uid?: string;
   nick?: string;
+  uid?: string;
   static names(): { [key: string]: string } {
     return {
-      uid: 'uid',
       nick: 'nick',
+      uid: 'uid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      uid: 'string',
       nick: 'string',
+      uid: 'string',
     };
   }
 
@@ -1135,6 +1116,10 @@ export default class Client extends OpenApi {
       body["messageId"] = request.messageId;
     }
 
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1219,10 +1204,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.properties)) {
       body["properties"] = request.properties;
-    }
-
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
     }
 
     let realHeaders : {[key: string ]: string} = { };

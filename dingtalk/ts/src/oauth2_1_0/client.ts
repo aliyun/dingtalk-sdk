@@ -42,11 +42,13 @@ export class GetUserTokenResponseBody extends $tea.Model {
   accessToken?: string;
   refreshToken?: string;
   expireIn?: number;
+  corpId?: string;
   static names(): { [key: string]: string } {
     return {
       accessToken: 'accessToken',
       refreshToken: 'refreshToken',
       expireIn: 'expireIn',
+      corpId: 'corpId',
     };
   }
 
@@ -55,6 +57,7 @@ export class GetUserTokenResponseBody extends $tea.Model {
       accessToken: 'string',
       refreshToken: 'string',
       expireIn: 'number',
+      corpId: 'string',
     };
   }
 

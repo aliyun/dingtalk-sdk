@@ -647,6 +647,7 @@ export class GetEventResponseBody extends $tea.Model {
   seriesMasterId?: string;
   createTime?: string;
   updateTime?: string;
+  onlineMeetingInfo?: GetEventResponseBodyOnlineMeetingInfo;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -663,6 +664,7 @@ export class GetEventResponseBody extends $tea.Model {
       seriesMasterId: 'seriesMasterId',
       createTime: 'createTime',
       updateTime: 'updateTime',
+      onlineMeetingInfo: 'onlineMeetingInfo',
     };
   }
 
@@ -682,6 +684,7 @@ export class GetEventResponseBody extends $tea.Model {
       seriesMasterId: 'string',
       createTime: 'string',
       updateTime: 'string',
+      onlineMeetingInfo: GetEventResponseBodyOnlineMeetingInfo,
     };
   }
 
@@ -1211,6 +1214,34 @@ export class ListEventsResponseBodyEventsLocation extends $tea.Model {
   }
 }
 
+export class ListEventsResponseBodyEventsOnlineMeetingInfo extends $tea.Model {
+  type?: string;
+  conferenceId?: string;
+  url?: string;
+  extraInfo?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      conferenceId: 'conferenceId',
+      url: 'url',
+      extraInfo: 'extraInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      conferenceId: 'string',
+      url: 'string',
+      extraInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsResponseBodyEvents extends $tea.Model {
   id?: string;
   summary?: string;
@@ -1226,6 +1257,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   createTime?: string;
   updateTime?: string;
   status?: string;
+  onlineMeetingInfo?: ListEventsResponseBodyEventsOnlineMeetingInfo;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -1242,6 +1274,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       createTime: 'createTime',
       updateTime: 'updateTime',
       status: 'status',
+      onlineMeetingInfo: 'onlineMeetingInfo',
     };
   }
 
@@ -1261,6 +1294,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       createTime: 'string',
       updateTime: 'string',
       status: 'string',
+      onlineMeetingInfo: ListEventsResponseBodyEventsOnlineMeetingInfo,
     };
   }
 
@@ -1602,6 +1636,34 @@ export class GetEventResponseBodyLocation extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventResponseBodyOnlineMeetingInfo extends $tea.Model {
+  type?: string;
+  conferenceId?: string;
+  url?: string;
+  extraInfo?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      conferenceId: 'conferenceId',
+      url: 'url',
+      extraInfo: 'extraInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      conferenceId: 'string',
+      url: 'string',
+      extraInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 

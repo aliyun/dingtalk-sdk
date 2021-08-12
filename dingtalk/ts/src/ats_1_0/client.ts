@@ -982,6 +982,7 @@ export class QueryInterviewsResponseBodyList extends $tea.Model {
   jobId?: string;
   startTimeMillis?: number;
   endTimeMillis?: number;
+  cancelled?: boolean;
   creatorUserId?: string;
   interviewers?: QueryInterviewsResponseBodyListInterviewers[];
   static names(): { [key: string]: string } {
@@ -990,6 +991,7 @@ export class QueryInterviewsResponseBodyList extends $tea.Model {
       jobId: 'jobId',
       startTimeMillis: 'startTimeMillis',
       endTimeMillis: 'endTimeMillis',
+      cancelled: 'cancelled',
       creatorUserId: 'creatorUserId',
       interviewers: 'interviewers',
     };
@@ -1001,6 +1003,7 @@ export class QueryInterviewsResponseBodyList extends $tea.Model {
       jobId: 'string',
       startTimeMillis: 'number',
       endTimeMillis: 'number',
+      cancelled: 'boolean',
       creatorUserId: 'string',
       interviewers: { 'type': 'array', 'itemType': QueryInterviewsResponseBodyListInterviewers },
     };

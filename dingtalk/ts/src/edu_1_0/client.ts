@@ -2942,17 +2942,73 @@ export class InitCoursesOfClassRequestSectionConfigSectionModels extends $tea.Mo
   }
 }
 
+export class InitCoursesOfClassRequestSectionConfigStart extends $tea.Model {
+  month?: number;
+  year?: number;
+  dayOfMonth?: number;
+  static names(): { [key: string]: string } {
+    return {
+      month: 'month',
+      year: 'year',
+      dayOfMonth: 'dayOfMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      month: 'number',
+      year: 'number',
+      dayOfMonth: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitCoursesOfClassRequestSectionConfigEnd extends $tea.Model {
+  month?: number;
+  year?: number;
+  dayOfMonth?: number;
+  static names(): { [key: string]: string } {
+    return {
+      month: 'month',
+      year: 'year',
+      dayOfMonth: 'dayOfMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      month: 'number',
+      year: 'number',
+      dayOfMonth: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InitCoursesOfClassRequestSectionConfig extends $tea.Model {
   sectionModels?: InitCoursesOfClassRequestSectionConfigSectionModels[];
+  start?: InitCoursesOfClassRequestSectionConfigStart;
+  end?: InitCoursesOfClassRequestSectionConfigEnd;
   static names(): { [key: string]: string } {
     return {
       sectionModels: 'sectionModels',
+      start: 'start',
+      end: 'end',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       sectionModels: { 'type': 'array', 'itemType': InitCoursesOfClassRequestSectionConfigSectionModels },
+      start: InitCoursesOfClassRequestSectionConfigStart,
+      end: InitCoursesOfClassRequestSectionConfigEnd,
     };
   }
 
@@ -3331,6 +3387,7 @@ export class UpdateCoursesOfClassRequestCourses extends $tea.Model {
   location?: string;
   deleteTag?: boolean;
   courseCode?: string;
+  courseGroupCode?: string;
   static names(): { [key: string]: string } {
     return {
       teacherStaffIds: 'teacherStaffIds',
@@ -3341,6 +3398,7 @@ export class UpdateCoursesOfClassRequestCourses extends $tea.Model {
       location: 'location',
       deleteTag: 'deleteTag',
       courseCode: 'courseCode',
+      courseGroupCode: 'courseGroupCode',
     };
   }
 
@@ -3354,6 +3412,7 @@ export class UpdateCoursesOfClassRequestCourses extends $tea.Model {
       location: 'string',
       deleteTag: 'boolean',
       courseCode: 'string',
+      courseGroupCode: 'string',
     };
   }
 

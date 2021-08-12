@@ -1692,6 +1692,7 @@ export class GetTicketResponseBody extends $tea.Model {
   customFields?: string;
   scene?: string;
   sceneContext?: string;
+  template?: GetTicketResponseBodyTemplate;
   static names(): { [key: string]: string } {
     return {
       openTicketId: 'openTicketId',
@@ -1706,6 +1707,7 @@ export class GetTicketResponseBody extends $tea.Model {
       customFields: 'customFields',
       scene: 'scene',
       sceneContext: 'sceneContext',
+      template: 'template',
     };
   }
 
@@ -1723,6 +1725,7 @@ export class GetTicketResponseBody extends $tea.Model {
       customFields: 'string',
       scene: 'string',
       sceneContext: 'string',
+      template: GetTicketResponseBodyTemplate,
     };
   }
 
@@ -2923,6 +2926,31 @@ export class GetTicketResponseBodyTakers extends $tea.Model {
     return {
       unionId: 'string',
       nickName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTicketResponseBodyTemplate extends $tea.Model {
+  openTemplateId?: string;
+  openTemplateBizId?: string;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTemplateId: 'openTemplateId',
+      openTemplateBizId: 'openTemplateBizId',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTemplateId: 'string',
+      openTemplateBizId: 'string',
+      templateName: 'string',
     };
   }
 

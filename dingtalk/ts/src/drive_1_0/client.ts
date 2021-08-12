@@ -69,7 +69,10 @@ export class AddFileResponseBody extends $tea.Model {
   fileName?: string;
   filePath?: string;
   fileType?: string;
+  contentType?: string;
   fileExtension?: string;
+  createTime?: string;
+  modifyTime?: string;
   static names(): { [key: string]: string } {
     return {
       spaceId: 'spaceId',
@@ -77,7 +80,10 @@ export class AddFileResponseBody extends $tea.Model {
       fileName: 'fileName',
       filePath: 'filePath',
       fileType: 'fileType',
+      contentType: 'contentType',
       fileExtension: 'fileExtension',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
     };
   }
 
@@ -88,7 +94,10 @@ export class AddFileResponseBody extends $tea.Model {
       fileName: 'string',
       filePath: 'string',
       fileType: 'string',
+      contentType: 'string',
       fileExtension: 'string',
+      createTime: 'string',
+      modifyTime: 'string',
     };
   }
 
@@ -467,7 +476,10 @@ export class GetFileInfoResponseBody extends $tea.Model {
   fileName?: string;
   filePath?: string;
   fileType?: string;
+  contentType?: string;
   fileExtension?: string;
+  createTime?: string;
+  modifyTime?: string;
   static names(): { [key: string]: string } {
     return {
       spaceId: 'spaceId',
@@ -475,7 +487,10 @@ export class GetFileInfoResponseBody extends $tea.Model {
       fileName: 'fileName',
       filePath: 'filePath',
       fileType: 'fileType',
+      contentType: 'contentType',
       fileExtension: 'fileExtension',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
     };
   }
 
@@ -486,7 +501,10 @@ export class GetFileInfoResponseBody extends $tea.Model {
       fileName: 'string',
       filePath: 'string',
       fileType: 'string',
+      contentType: 'string',
       fileExtension: 'string',
+      createTime: 'string',
+      modifyTime: 'string',
     };
   }
 
@@ -509,6 +527,106 @@ export class GetFileInfoResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetFileInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InfoSpaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InfoSpaceRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InfoSpaceResponseBody extends $tea.Model {
+  spaceId?: string;
+  spaceName?: string;
+  spaceType?: string;
+  quota?: number;
+  usedQuota?: number;
+  createTime?: string;
+  modifyTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceId: 'spaceId',
+      spaceName: 'spaceName',
+      spaceType: 'spaceType',
+      quota: 'quota',
+      usedQuota: 'usedQuota',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceId: 'string',
+      spaceName: 'string',
+      spaceType: 'string',
+      quota: 'number',
+      usedQuota: 'number',
+      createTime: 'string',
+      modifyTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InfoSpaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InfoSpaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InfoSpaceResponseBody,
     };
   }
 
@@ -664,7 +782,10 @@ export class RenameFileResponseBody extends $tea.Model {
   fileName?: string;
   filePath?: string;
   fileType?: string;
+  contentType?: string;
   fileExtension?: string;
+  createTime?: string;
+  modifyTime?: string;
   static names(): { [key: string]: string } {
     return {
       spaceId: 'spaceId',
@@ -672,7 +793,10 @@ export class RenameFileResponseBody extends $tea.Model {
       fileName: 'fileName',
       filePath: 'filePath',
       fileType: 'fileType',
+      contentType: 'contentType',
       fileExtension: 'fileExtension',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
     };
   }
 
@@ -683,7 +807,10 @@ export class RenameFileResponseBody extends $tea.Model {
       fileName: 'string',
       filePath: 'string',
       fileType: 'string',
+      contentType: 'string',
       fileExtension: 'string',
+      createTime: 'string',
+      modifyTime: 'string',
     };
   }
 
@@ -1015,7 +1142,10 @@ export class MoveFileResponseBody extends $tea.Model {
   fileName?: string;
   filePath?: string;
   fileType?: string;
+  contentType?: string;
   fileExtension?: string;
+  createTime?: string;
+  modifyTime?: string;
   static names(): { [key: string]: string } {
     return {
       spaceId: 'spaceId',
@@ -1023,7 +1153,10 @@ export class MoveFileResponseBody extends $tea.Model {
       fileName: 'fileName',
       filePath: 'filePath',
       fileType: 'fileType',
+      contentType: 'contentType',
       fileExtension: 'fileExtension',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
     };
   }
 
@@ -1034,7 +1167,10 @@ export class MoveFileResponseBody extends $tea.Model {
       fileName: 'string',
       filePath: 'string',
       fileType: 'string',
+      contentType: 'string',
       fileExtension: 'string',
+      createTime: 'string',
+      modifyTime: 'string',
     };
   }
 
@@ -1639,6 +1775,7 @@ export class AddPermissionRequestMembers extends $tea.Model {
 
 export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   recycleItemId?: string;
+  deleteStaffId?: string;
   deleteTime?: string;
   fileSize?: number;
   fileType?: string;
@@ -1648,6 +1785,7 @@ export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       recycleItemId: 'recycleItemId',
+      deleteStaffId: 'deleteStaffId',
       deleteTime: 'deleteTime',
       fileSize: 'fileSize',
       fileType: 'fileType',
@@ -1660,6 +1798,7 @@ export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       recycleItemId: 'string',
+      deleteStaffId: 'string',
       deleteTime: 'string',
       fileSize: 'number',
       fileType: 'string',
@@ -1680,7 +1819,10 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
   fileName?: string;
   filePath?: string;
   fileType?: string;
+  contentType?: string;
   fileExtension?: string;
+  createTime?: string;
+  modifyTime?: string;
   static names(): { [key: string]: string } {
     return {
       spaceId: 'spaceId',
@@ -1688,7 +1830,10 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
       fileName: 'fileName',
       filePath: 'filePath',
       fileType: 'fileType',
+      contentType: 'contentType',
       fileExtension: 'fileExtension',
+      createTime: 'createTime',
+      modifyTime: 'modifyTime',
     };
   }
 
@@ -1699,7 +1844,10 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
       fileName: 'string',
       filePath: 'string',
       fileType: 'string',
+      contentType: 'string',
       fileExtension: 'string',
+      createTime: 'string',
+      modifyTime: 'string',
     };
   }
 
@@ -2196,6 +2344,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetFileInfoResponse>(await this.doROARequest("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}/files/${fileId}`, "json", req, runtime), new GetFileInfoResponse({}));
+  }
+
+  async infoSpace(spaceId: string, request: InfoSpaceRequest): Promise<InfoSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InfoSpaceHeaders({ });
+    return await this.infoSpaceWithOptions(spaceId, request, headers, runtime);
+  }
+
+  async infoSpaceWithOptions(spaceId: string, request: InfoSpaceRequest, headers: InfoSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<InfoSpaceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<InfoSpaceResponse>(await this.doROARequest("InfoSpace", "drive_1.0", "HTTP", "GET", "AK", `/v1.0/drive/spaces/${spaceId}`, "json", req, runtime), new InfoSpaceResponse({}));
   }
 
   async listRecycleFiles(request: ListRecycleFilesRequest): Promise<ListRecycleFilesResponse> {

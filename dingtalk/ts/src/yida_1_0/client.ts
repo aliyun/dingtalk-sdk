@@ -7,6 +7,206 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class GetFormDataByIDHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormDataByIDRequest extends $tea.Model {
+  appType?: string;
+  systemToken?: string;
+  userId?: string;
+  language?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      systemToken: 'systemToken',
+      userId: 'userId',
+      language: 'language',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      systemToken: 'string',
+      userId: 'string',
+      language: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormDataByIDResponseBody extends $tea.Model {
+  originator?: GetFormDataByIDResponseBodyOriginator;
+  modifiedTimeGMT?: string;
+  formUuid?: string;
+  formInstId?: string;
+  formData?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      originator: 'originator',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      formUuid: 'formUuid',
+      formInstId: 'formInstId',
+      formData: 'formData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      originator: GetFormDataByIDResponseBodyOriginator,
+      modifiedTimeGMT: 'string',
+      formUuid: 'string',
+      formInstId: 'string',
+      formData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormDataByIDResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetFormDataByIDResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetFormDataByIDResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveFormDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveFormDataRequest extends $tea.Model {
+  appType?: string;
+  systemToken?: string;
+  userId?: string;
+  language?: string;
+  formUuid?: string;
+  formDataJson?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      systemToken: 'systemToken',
+      userId: 'userId',
+      language: 'language',
+      formUuid: 'formUuid',
+      formDataJson: 'formDataJson',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      systemToken: 'string',
+      userId: 'string',
+      language: 'string',
+      formUuid: 'string',
+      formDataJson: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveFormDataResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveFormDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SaveFormDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SaveFormDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class LoginCodeGenHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -89,6 +289,59 @@ export class LoginCodeGenResponse extends $tea.Model {
   }
 }
 
+export class GetFormDataByIDResponseBodyOriginatorName extends $tea.Model {
+  nameInChinese?: string;
+  nameInEnglish?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nameInChinese: 'nameInChinese',
+      nameInEnglish: 'nameInEnglish',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nameInChinese: 'string',
+      nameInEnglish: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormDataByIDResponseBodyOriginator extends $tea.Model {
+  userId?: string;
+  name?: GetFormDataByIDResponseBodyOriginatorName;
+  departmentName?: string;
+  email?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      name: 'name',
+      departmentName: 'departmentName',
+      email: 'email',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      name: GetFormDataByIDResponseBodyOriginatorName,
+      departmentName: 'string',
+      email: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -101,6 +354,96 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async getFormDataByID(id: string, request: GetFormDataByIDRequest): Promise<GetFormDataByIDResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFormDataByIDHeaders({ });
+    return await this.getFormDataByIDWithOptions(id, request, headers, runtime);
+  }
+
+  async getFormDataByIDWithOptions(id: string, request: GetFormDataByIDRequest, headers: GetFormDataByIDHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormDataByIDResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      query["language"] = request.language;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFormDataByIDResponse>(await this.doROARequest("GetFormDataByID", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/instances/${id}`, "json", req, runtime), new GetFormDataByIDResponse({}));
+  }
+
+  async saveFormData(request: SaveFormDataRequest): Promise<SaveFormDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveFormDataHeaders({ });
+    return await this.saveFormDataWithOptions(request, headers, runtime);
+  }
+
+  async saveFormDataWithOptions(request: SaveFormDataRequest, headers: SaveFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<SaveFormDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.formDataJson)) {
+      body["formDataJson"] = request.formDataJson;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SaveFormDataResponse>(await this.doROARequest("SaveFormData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances`, "json", req, runtime), new SaveFormDataResponse({}));
+  }
 
   async loginCodeGen(request: LoginCodeGenRequest): Promise<LoginCodeGenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
