@@ -21,13 +21,13 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public List<AddGroupMembersRequestMembers> Members { get; set; }
         public class AddGroupMembersRequestMembers : TeaModel {
-            [NameInMap("uid")]
-            [Validation(Required=false)]
-            public string Uid { get; set; }
-
             [NameInMap("nick")]
             [Validation(Required=false)]
             public string Nick { get; set; }
+
+            [NameInMap("uid")]
+            [Validation(Required=false)]
+            public string Uid { get; set; }
 
         }
 

@@ -45,11 +45,32 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string FileType { get; set; }
 
         /// <summary>
+        /// 文件内容类型
+        /// </summary>
+        [NameInMap("contentType")]
+        [Validation(Required=false)]
+        public string ContentType { get; set; }
+
+        /// <summary>
         /// 文件后缀
         /// </summary>
         [NameInMap("fileExtension")]
         [Validation(Required=false)]
         public string FileExtension { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [NameInMap("createTime")]
+        [Validation(Required=false)]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        [NameInMap("modifyTime")]
+        [Validation(Required=false)]
+        public string ModifyTime { get; set; }
 
     }
 

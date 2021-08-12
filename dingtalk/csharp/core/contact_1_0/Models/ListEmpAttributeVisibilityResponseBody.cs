@@ -87,13 +87,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public List<long?> ObjectTagIds { get; set; }
 
             /// <summary>
-            /// 被查看方condition列表
-            /// </summary>
-            [NameInMap("objectNodeConditions")]
-            [Validation(Required=false)]
-            public List<string> ObjectNodeConditions { get; set; }
-
-            /// <summary>
             /// 隐藏的字段id列表
             /// </summary>
             [NameInMap("hideFields")]

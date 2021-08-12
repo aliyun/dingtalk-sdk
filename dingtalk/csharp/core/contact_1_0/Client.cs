@@ -178,14 +178,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["id"] = request.Id;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreate))
-            {
-                body["gmtCreate"] = request.GmtCreate;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtModified))
-            {
-                body["gmtModified"] = request.GmtModified;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -205,10 +197,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
             {
                 body["objectTagIds"] = request.ObjectTagIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectNodeConditions))
-            {
-                body["objectNodeConditions"] = request.ObjectNodeConditions;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideFields))
             {
@@ -255,14 +243,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["id"] = request.Id;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreate))
-            {
-                body["gmtCreate"] = request.GmtCreate;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtModified))
-            {
-                body["gmtModified"] = request.GmtModified;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -282,10 +262,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
             {
                 body["objectTagIds"] = request.ObjectTagIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectNodeConditions))
-            {
-                body["objectNodeConditions"] = request.ObjectNodeConditions;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideFields))
             {
@@ -894,6 +870,102 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
             };
             return TeaModel.ToObject<QueryUserManagementResourcesResponse>(await DoROARequestAsync("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/users/" + userId + "/managemementResources", "json", req, runtime));
+        }
+
+        public UpdateUserOwnnessResponse UpdateUserOwnness(string userId, UpdateUserOwnnessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUserOwnnessHeaders headers = new UpdateUserOwnnessHeaders();
+            return UpdateUserOwnnessWithOptions(userId, request, headers, runtime);
+        }
+
+        public async Task<UpdateUserOwnnessResponse> UpdateUserOwnnessAsync(string userId, UpdateUserOwnnessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUserOwnnessHeaders headers = new UpdateUserOwnnessHeaders();
+            return await UpdateUserOwnnessWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        public UpdateUserOwnnessResponse UpdateUserOwnnessWithOptions(string userId, UpdateUserOwnnessRequest request, UpdateUserOwnnessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnenssType))
+            {
+                body["ownenssType"] = request.OwnenssType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeletedFlag))
+            {
+                body["deletedFlag"] = request.DeletedFlag;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateUserOwnnessResponse>(DoROARequest("UpdateUserOwnness", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/user/" + userId + "/ownness", "json", req, runtime));
+        }
+
+        public async Task<UpdateUserOwnnessResponse> UpdateUserOwnnessWithOptionsAsync(string userId, UpdateUserOwnnessRequest request, UpdateUserOwnnessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnenssType))
+            {
+                body["ownenssType"] = request.OwnenssType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeletedFlag))
+            {
+                body["deletedFlag"] = request.DeletedFlag;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateUserOwnnessResponse>(await DoROARequestAsync("UpdateUserOwnness", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/user/" + userId + "/ownness", "json", req, runtime));
         }
 
         public GetCooperateOrgInviteInfoResponse GetCooperateOrgInviteInfo(string cooperateCorpId)

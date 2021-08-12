@@ -242,6 +242,24 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string Status { get; set; }
 
+            [NameInMap("onlineMeetingInfo")]
+            [Validation(Required=false)]
+            public ListEventsResponseBodyEventsOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+            public class ListEventsResponseBodyEventsOnlineMeetingInfo : TeaModel {
+                [NameInMap("type")]
+                [Validation(Required=false)]
+                public string Type { get; set; }
+                [NameInMap("conferenceId")]
+                [Validation(Required=false)]
+                public string ConferenceId { get; set; }
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
+                [NameInMap("extraInfo")]
+                [Validation(Required=false)]
+                public Dictionary<string, string> ExtraInfo { get; set; }
+            };
+
         }
 
         /// <summary>

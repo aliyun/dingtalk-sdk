@@ -66,6 +66,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
             public long? EndTimeMillis { get; set; }
 
             /// <summary>
+            /// 面试是否已取消
+            /// </summary>
+            [NameInMap("cancelled")]
+            [Validation(Required=false)]
+            public bool? Cancelled { get; set; }
+
+            /// <summary>
             /// 面试创建人员工标识
             /// </summary>
             [NameInMap("creatorUserId")]

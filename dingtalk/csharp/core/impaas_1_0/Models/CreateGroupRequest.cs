@@ -33,20 +33,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, string> Properties { get; set; }
 
-        [NameInMap("members")]
-        [Validation(Required=false)]
-        public List<CreateGroupRequestMembers> Members { get; set; }
-        public class CreateGroupRequestMembers : TeaModel {
-            [NameInMap("uid")]
-            [Validation(Required=false)]
-            public string Uid { get; set; }
-
-            [NameInMap("nick")]
-            [Validation(Required=false)]
-            public string Nick { get; set; }
-
-        }
-
     }
 
 }

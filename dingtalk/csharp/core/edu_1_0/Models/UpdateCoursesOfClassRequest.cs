@@ -91,6 +91,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public string CourseCode { get; set; }
 
+            /// <summary>
+            /// 课组code
+            /// </summary>
+            [NameInMap("courseGroupCode")]
+            [Validation(Required=false)]
+            public string CourseGroupCode { get; set; }
+
         }
 
         /// <summary>

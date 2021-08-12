@@ -124,6 +124,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 body["messageId"] = request.MessageId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -152,6 +156,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MessageId))
             {
                 body["messageId"] = request.MessageId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -292,10 +300,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 body["properties"] = request.Properties;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -340,10 +344,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Properties))
             {
                 body["properties"] = request.Properties;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

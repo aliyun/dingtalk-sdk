@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public string MessageId { get; set; }
 
+        [NameInMap("type")]
+        [Validation(Required=false)]
+        public int? Type { get; set; }
+
     }
 
 }

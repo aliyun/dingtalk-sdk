@@ -17,20 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public long? Id { get; set; }
 
         /// <summary>
-        /// 创建时间
-        /// </summary>
-        [NameInMap("gmtCreate")]
-        [Validation(Required=false)]
-        public string GmtCreate { get; set; }
-
-        /// <summary>
-        /// 修改时间
-        /// </summary>
-        [NameInMap("gmtModified")]
-        [Validation(Required=false)]
-        public string GmtModified { get; set; }
-
-        /// <summary>
         /// 名称
         /// </summary>
         [NameInMap("name")]
@@ -64,13 +50,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [NameInMap("objectTagIds")]
         [Validation(Required=false)]
         public List<long?> ObjectTagIds { get; set; }
-
-        /// <summary>
-        /// object节点限制条件列表
-        /// </summary>
-        [NameInMap("objectNodeConditions")]
-        [Validation(Required=false)]
-        public List<string> ObjectNodeConditions { get; set; }
 
         /// <summary>
         /// 隐藏字段id列表

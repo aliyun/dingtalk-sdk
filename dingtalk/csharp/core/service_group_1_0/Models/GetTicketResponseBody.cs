@@ -86,6 +86,21 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string SceneContext { get; set; }
 
+        [NameInMap("template")]
+        [Validation(Required=false)]
+        public GetTicketResponseBodyTemplate Template { get; set; }
+        public class GetTicketResponseBodyTemplate : TeaModel {
+            [NameInMap("openTemplateId")]
+            [Validation(Required=false)]
+            public string OpenTemplateId { get; set; }
+            [NameInMap("openTemplateBizId")]
+            [Validation(Required=false)]
+            public string OpenTemplateBizId { get; set; }
+            [NameInMap("templateName")]
+            [Validation(Required=false)]
+            public string TemplateName { get; set; }
+        };
+
     }
 
 }

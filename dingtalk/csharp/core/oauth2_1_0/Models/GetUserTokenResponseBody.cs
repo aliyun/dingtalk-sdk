@@ -30,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
         [Validation(Required=false)]
         public long? ExpireIn { get; set; }
 
+        /// <summary>
+        /// 所选企业corpId
+        /// </summary>
+        [NameInMap("corpId")]
+        [Validation(Required=false)]
+        public string CorpId { get; set; }
+
     }
 
 }
