@@ -65,13 +65,6 @@ class list_ extends Model
     public $objectTagIds;
 
     /**
-     * @description 被查看方condition列表
-     *
-     * @var string[]
-     */
-    public $objectNodeConditions;
-
-    /**
      * @description 隐藏的字段id列表
      *
      * @var string[]
@@ -106,20 +99,19 @@ class list_ extends Model
      */
     public $active;
     protected $_name = [
-        'id'                   => 'id',
-        'gmtCreate'            => 'gmtCreate',
-        'gmtModified'          => 'gmtModified',
-        'name'                 => 'name',
-        'description'          => 'description',
-        'objectStaffIds'       => 'objectStaffIds',
-        'objectDeptIds'        => 'objectDeptIds',
-        'objectTagIds'         => 'objectTagIds',
-        'objectNodeConditions' => 'objectNodeConditions',
-        'hideFields'           => 'hideFields',
-        'excludeStaffIds'      => 'excludeStaffIds',
-        'excludeDeptIds'       => 'excludeDeptIds',
-        'excludeTagIds'        => 'excludeTagIds',
-        'active'               => 'active',
+        'id'              => 'id',
+        'gmtCreate'       => 'gmtCreate',
+        'gmtModified'     => 'gmtModified',
+        'name'            => 'name',
+        'description'     => 'description',
+        'objectStaffIds'  => 'objectStaffIds',
+        'objectDeptIds'   => 'objectDeptIds',
+        'objectTagIds'    => 'objectTagIds',
+        'hideFields'      => 'hideFields',
+        'excludeStaffIds' => 'excludeStaffIds',
+        'excludeDeptIds'  => 'excludeDeptIds',
+        'excludeTagIds'   => 'excludeTagIds',
+        'active'          => 'active',
     ];
 
     public function validate()
@@ -152,9 +144,6 @@ class list_ extends Model
         }
         if (null !== $this->objectTagIds) {
             $res['objectTagIds'] = $this->objectTagIds;
-        }
-        if (null !== $this->objectNodeConditions) {
-            $res['objectNodeConditions'] = $this->objectNodeConditions;
         }
         if (null !== $this->hideFields) {
             $res['hideFields'] = $this->hideFields;
@@ -211,11 +200,6 @@ class list_ extends Model
         if (isset($map['objectTagIds'])) {
             if (!empty($map['objectTagIds'])) {
                 $model->objectTagIds = $map['objectTagIds'];
-            }
-        }
-        if (isset($map['objectNodeConditions'])) {
-            if (!empty($map['objectNodeConditions'])) {
-                $model->objectNodeConditions = $map['objectNodeConditions'];
             }
         }
         if (isset($map['hideFields'])) {

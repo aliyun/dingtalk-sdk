@@ -135,6 +135,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->messageId)) {
             @$body['messageId'] = $request->messageId;
         }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -239,9 +242,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->properties)) {
             @$body['properties'] = $request->properties;
-        }
-        if (!Utils::isUnset($request->members)) {
-            @$body['members'] = $request->members;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

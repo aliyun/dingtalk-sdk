@@ -7,6 +7,9 @@ namespace AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0;
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureJobBookRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureJobBookResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureQueryJobsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureQueryJobsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmanufacturing_1_0\Models\IndustrializeManufactureQueryJobsResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -103,5 +106,83 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return IndustrializeManufactureJobBookResponse::fromMap($this->doROARequest('IndustrializeManufactureJobBook', 'manufacturing_1.0', 'HTTP', 'POST', 'AK', '/v1.0/manufacturing/users/' . $userId . '/jobs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IndustrializeManufactureQueryJobsRequest $request
+     *
+     * @return IndustrializeManufactureQueryJobsResponse
+     */
+    public function industrializeManufactureQueryJobs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IndustrializeManufactureQueryJobsHeaders([]);
+
+        return $this->industrializeManufactureQueryJobsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IndustrializeManufactureQueryJobsRequest $request
+     * @param IndustrializeManufactureQueryJobsHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return IndustrializeManufactureQueryJobsResponse
+     */
+    public function industrializeManufactureQueryJobsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->productName)) {
+            @$body['productName'] = $request->productName;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->qualifiedQuantity)) {
+            @$body['qualifiedQuantity'] = $request->qualifiedQuantity;
+        }
+        if (!Utils::isUnset($request->manufactureDay)) {
+            @$body['manufactureDay'] = $request->manufactureDay;
+        }
+        if (!Utils::isUnset($request->instNo)) {
+            @$body['instNo'] = $request->instNo;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            @$body['userName'] = $request->userName;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productSpecification)) {
+            @$body['productSpecification'] = $request->productSpecification;
+        }
+        if (!Utils::isUnset($request->unitPrice)) {
+            @$body['unitPrice'] = $request->unitPrice;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$body['uuid'] = $request->uuid;
+        }
+        if (!Utils::isUnset($request->currentPage)) {
+            @$body['currentPage'] = $request->currentPage;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->mesAppKey)) {
+            @$body['mesAppKey'] = $request->mesAppKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IndustrializeManufactureQueryJobsResponse::fromMap($this->doROARequest('IndustrializeManufactureQueryJobs', 'manufacturing_1.0', 'HTTP', 'POST', 'AK', '/v1.0/manufacturing/users/jobs/query', 'json', $req, $runtime));
     }
 }

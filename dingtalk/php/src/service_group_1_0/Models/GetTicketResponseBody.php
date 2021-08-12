@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketResponseBody\creator;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketResponseBody\processor;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketResponseBody\takers;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\GetTicketResponseBody\template;
 use AlibabaCloud\Tea\Model;
 
 class GetTicketResponseBody extends Model
@@ -72,6 +73,11 @@ class GetTicketResponseBody extends Model
      * @var string
      */
     public $sceneContext;
+
+    /**
+     * @var template
+     */
+    public $template;
     protected $_name = [
         'openTicketId'       => 'openTicketId',
         'createTime'         => 'createTime',
@@ -85,6 +91,7 @@ class GetTicketResponseBody extends Model
         'customFields'       => 'customFields',
         'scene'              => 'scene',
         'sceneContext'       => 'sceneContext',
+        'template'           => 'template',
     ];
 
     public function validate()
@@ -135,6 +142,9 @@ class GetTicketResponseBody extends Model
         }
         if (null !== $this->sceneContext) {
             $res['sceneContext'] = $this->sceneContext;
+        }
+        if (null !== $this->template) {
+            $res['template'] = null !== $this->template ? $this->template->toMap() : null;
         }
 
         return $res;
@@ -189,6 +199,9 @@ class GetTicketResponseBody extends Model
         }
         if (isset($map['sceneContext'])) {
             $model->sceneContext = $map['sceneContext'];
+        }
+        if (isset($map['template'])) {
+            $model->template = template::fromMap($map['template']);
         }
 
         return $model;

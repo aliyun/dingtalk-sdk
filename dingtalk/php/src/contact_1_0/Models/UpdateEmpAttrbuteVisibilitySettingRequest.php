@@ -16,20 +16,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
     public $id;
 
     /**
-     * @description 创建时间
-     *
-     * @var string
-     */
-    public $gmtCreate;
-
-    /**
-     * @description 修改时间
-     *
-     * @var string
-     */
-    public $gmtModified;
-
-    /**
      * @description 名称
      *
      * @var string
@@ -63,13 +49,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
      * @var int[]
      */
     public $objectTagIds;
-
-    /**
-     * @description object节点限制条件列表
-     *
-     * @var string[]
-     */
-    public $objectNodeConditions;
 
     /**
      * @description 隐藏字段id列表
@@ -106,20 +85,17 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
      */
     public $active;
     protected $_name = [
-        'id'                   => 'id',
-        'gmtCreate'            => 'gmtCreate',
-        'gmtModified'          => 'gmtModified',
-        'name'                 => 'name',
-        'description'          => 'description',
-        'objectStaffIds'       => 'objectStaffIds',
-        'objectDeptIds'        => 'objectDeptIds',
-        'objectTagIds'         => 'objectTagIds',
-        'objectNodeConditions' => 'objectNodeConditions',
-        'hideFields'           => 'hideFields',
-        'excludeStaffIds'      => 'excludeStaffIds',
-        'excludeDeptIds'       => 'excludeDeptIds',
-        'excludeTagIds'        => 'excludeTagIds',
-        'active'               => 'active',
+        'id'              => 'id',
+        'name'            => 'name',
+        'description'     => 'description',
+        'objectStaffIds'  => 'objectStaffIds',
+        'objectDeptIds'   => 'objectDeptIds',
+        'objectTagIds'    => 'objectTagIds',
+        'hideFields'      => 'hideFields',
+        'excludeStaffIds' => 'excludeStaffIds',
+        'excludeDeptIds'  => 'excludeDeptIds',
+        'excludeTagIds'   => 'excludeTagIds',
+        'active'          => 'active',
     ];
 
     public function validate()
@@ -131,12 +107,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
         $res = [];
         if (null !== $this->id) {
             $res['id'] = $this->id;
-        }
-        if (null !== $this->gmtCreate) {
-            $res['gmtCreate'] = $this->gmtCreate;
-        }
-        if (null !== $this->gmtModified) {
-            $res['gmtModified'] = $this->gmtModified;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -152,9 +122,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
         }
         if (null !== $this->objectTagIds) {
             $res['objectTagIds'] = $this->objectTagIds;
-        }
-        if (null !== $this->objectNodeConditions) {
-            $res['objectNodeConditions'] = $this->objectNodeConditions;
         }
         if (null !== $this->hideFields) {
             $res['hideFields'] = $this->hideFields;
@@ -186,12 +153,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
-        if (isset($map['gmtCreate'])) {
-            $model->gmtCreate = $map['gmtCreate'];
-        }
-        if (isset($map['gmtModified'])) {
-            $model->gmtModified = $map['gmtModified'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
@@ -211,11 +172,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
         if (isset($map['objectTagIds'])) {
             if (!empty($map['objectTagIds'])) {
                 $model->objectTagIds = $map['objectTagIds'];
-            }
-        }
-        if (isset($map['objectNodeConditions'])) {
-            if (!empty($map['objectNodeConditions'])) {
-                $model->objectNodeConditions = $map['objectNodeConditions'];
             }
         }
         if (isset($map['hideFields'])) {

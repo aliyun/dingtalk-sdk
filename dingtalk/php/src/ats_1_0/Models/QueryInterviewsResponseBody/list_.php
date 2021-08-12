@@ -38,6 +38,13 @@ class list_ extends Model
     public $endTimeMillis;
 
     /**
+     * @description 面试是否已取消
+     *
+     * @var bool
+     */
+    public $cancelled;
+
+    /**
      * @description 面试创建人员工标识
      *
      * @var string
@@ -55,6 +62,7 @@ class list_ extends Model
         'jobId'           => 'jobId',
         'startTimeMillis' => 'startTimeMillis',
         'endTimeMillis'   => 'endTimeMillis',
+        'cancelled'       => 'cancelled',
         'creatorUserId'   => 'creatorUserId',
         'interviewers'    => 'interviewers',
     ];
@@ -77,6 +85,9 @@ class list_ extends Model
         }
         if (null !== $this->endTimeMillis) {
             $res['endTimeMillis'] = $this->endTimeMillis;
+        }
+        if (null !== $this->cancelled) {
+            $res['cancelled'] = $this->cancelled;
         }
         if (null !== $this->creatorUserId) {
             $res['creatorUserId'] = $this->creatorUserId;
@@ -113,6 +124,9 @@ class list_ extends Model
         }
         if (isset($map['endTimeMillis'])) {
             $model->endTimeMillis = $map['endTimeMillis'];
+        }
+        if (isset($map['cancelled'])) {
+            $model->cancelled = $map['cancelled'];
         }
         if (isset($map['creatorUserId'])) {
             $model->creatorUserId = $map['creatorUserId'];

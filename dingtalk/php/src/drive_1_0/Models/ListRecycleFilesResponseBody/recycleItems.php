@@ -16,6 +16,13 @@ class recycleItems extends Model
     public $recycleItemId;
 
     /**
+     * @description 删除员工工号
+     *
+     * @var string
+     */
+    public $deleteStaffId;
+
+    /**
      * @description 删除时间
      *
      * @var string
@@ -58,6 +65,7 @@ class recycleItems extends Model
     public $filePath;
     protected $_name = [
         'recycleItemId' => 'recycleItemId',
+        'deleteStaffId' => 'deleteStaffId',
         'deleteTime'    => 'deleteTime',
         'fileSize'      => 'fileSize',
         'fileType'      => 'fileType',
@@ -75,6 +83,9 @@ class recycleItems extends Model
         $res = [];
         if (null !== $this->recycleItemId) {
             $res['recycleItemId'] = $this->recycleItemId;
+        }
+        if (null !== $this->deleteStaffId) {
+            $res['deleteStaffId'] = $this->deleteStaffId;
         }
         if (null !== $this->deleteTime) {
             $res['deleteTime'] = $this->deleteTime;
@@ -108,6 +119,9 @@ class recycleItems extends Model
         $model = new self();
         if (isset($map['recycleItemId'])) {
             $model->recycleItemId = $map['recycleItemId'];
+        }
+        if (isset($map['deleteStaffId'])) {
+            $model->deleteStaffId = $map['deleteStaffId'];
         }
         if (isset($map['deleteTime'])) {
             $model->deleteTime = $map['deleteTime'];

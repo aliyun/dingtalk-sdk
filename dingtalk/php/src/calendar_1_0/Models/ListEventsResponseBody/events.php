@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\location;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\start;
@@ -111,21 +112,27 @@ class events extends Model
      * @var string
      */
     public $status;
+
+    /**
+     * @var onlineMeetingInfo
+     */
+    public $onlineMeetingInfo;
     protected $_name = [
-        'id'             => 'id',
-        'summary'        => 'summary',
-        'description'    => 'description',
-        'start'          => 'start',
-        'end'            => 'end',
-        'isAllDay'       => 'isAllDay',
-        'recurrence'     => 'recurrence',
-        'attendees'      => 'attendees',
-        'organizer'      => 'organizer',
-        'location'       => 'location',
-        'seriesMasterId' => 'seriesMasterId',
-        'createTime'     => 'createTime',
-        'updateTime'     => 'updateTime',
-        'status'         => 'status',
+        'id'                => 'id',
+        'summary'           => 'summary',
+        'description'       => 'description',
+        'start'             => 'start',
+        'end'               => 'end',
+        'isAllDay'          => 'isAllDay',
+        'recurrence'        => 'recurrence',
+        'attendees'         => 'attendees',
+        'organizer'         => 'organizer',
+        'location'          => 'location',
+        'seriesMasterId'    => 'seriesMasterId',
+        'createTime'        => 'createTime',
+        'updateTime'        => 'updateTime',
+        'status'            => 'status',
+        'onlineMeetingInfo' => 'onlineMeetingInfo',
     ];
 
     public function validate()
@@ -182,6 +189,9 @@ class events extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->onlineMeetingInfo) {
+            $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
         }
 
         return $res;
@@ -242,6 +252,9 @@ class events extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['onlineMeetingInfo'])) {
+            $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
         }
 
         return $model;

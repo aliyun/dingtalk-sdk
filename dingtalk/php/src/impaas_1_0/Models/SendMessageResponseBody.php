@@ -17,9 +17,15 @@ class SendMessageResponseBody extends Model
      * @var int
      */
     public $createTime;
+
+    /**
+     * @var string
+     */
+    public $messageId;
     protected $_name = [
         'msgId'      => 'msgId',
         'createTime' => 'createTime',
+        'messageId'  => 'messageId',
     ];
 
     public function validate()
@@ -34,6 +40,9 @@ class SendMessageResponseBody extends Model
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->messageId) {
+            $res['messageId'] = $this->messageId;
         }
 
         return $res;
@@ -52,6 +61,9 @@ class SendMessageResponseBody extends Model
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
+        }
+        if (isset($map['messageId'])) {
+            $model->messageId = $map['messageId'];
         }
 
         return $model;

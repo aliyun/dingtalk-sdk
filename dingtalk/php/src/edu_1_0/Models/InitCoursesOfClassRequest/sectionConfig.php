@@ -4,7 +4,9 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest\sectionConfig\end;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest\sectionConfig\sectionModels;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest\sectionConfig\start;
 use AlibabaCloud\Tea\Model;
 
 class sectionConfig extends Model
@@ -15,8 +17,24 @@ class sectionConfig extends Model
      * @var sectionModels[]
      */
     public $sectionModels;
+
+    /**
+     * @description 课程表开始时间（精确到日）
+     *
+     * @var start
+     */
+    public $start;
+
+    /**
+     * @description 课程表结束开始时间（精确到日）
+     *
+     * @var end
+     */
+    public $end;
     protected $_name = [
         'sectionModels' => 'sectionModels',
+        'start'         => 'start',
+        'end'           => 'end',
     ];
 
     public function validate()
@@ -34,6 +52,12 @@ class sectionConfig extends Model
                     $res['sectionModels'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->start) {
+            $res['start'] = null !== $this->start ? $this->start->toMap() : null;
+        }
+        if (null !== $this->end) {
+            $res['end'] = null !== $this->end ? $this->end->toMap() : null;
         }
 
         return $res;
@@ -55,6 +79,12 @@ class sectionConfig extends Model
                     $model->sectionModels[$n++] = null !== $item ? sectionModels::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['start'])) {
+            $model->start = start::fromMap($map['start']);
+        }
+        if (isset($map['end'])) {
+            $model->end = end::fromMap($map['end']);
         }
 
         return $model;

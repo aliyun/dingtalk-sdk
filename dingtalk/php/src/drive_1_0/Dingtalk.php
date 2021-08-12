@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\InfoSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\InfoSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\InfoSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListFilesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListFilesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListFilesResponse;
@@ -374,6 +377,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFileInfoResponse::fromMap($this->doROARequest('GetFileInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string           $spaceId
+     * @param InfoSpaceRequest $request
+     *
+     * @return InfoSpaceResponse
+     */
+    public function infoSpace($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InfoSpaceHeaders([]);
+
+        return $this->infoSpaceWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $spaceId
+     * @param InfoSpaceRequest $request
+     * @param InfoSpaceHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return InfoSpaceResponse
+     */
+    public function infoSpaceWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return InfoSpaceResponse::fromMap($this->doROARequest('InfoSpace', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '', 'json', $req, $runtime));
     }
 
     /**

@@ -17,9 +17,15 @@ class RecallMessageRequest extends Model
      * @var string
      */
     public $messageId;
+
+    /**
+     * @var int
+     */
+    public $type;
     protected $_name = [
         'operatorUid' => 'operatorUid',
         'messageId'   => 'messageId',
+        'type'        => 'type',
     ];
 
     public function validate()
@@ -34,6 +40,9 @@ class RecallMessageRequest extends Model
         }
         if (null !== $this->messageId) {
             $res['messageId'] = $this->messageId;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -52,6 +61,9 @@ class RecallMessageRequest extends Model
         }
         if (isset($map['messageId'])) {
             $model->messageId = $map['messageId'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

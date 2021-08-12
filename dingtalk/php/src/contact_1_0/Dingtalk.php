@@ -52,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySet
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -179,12 +182,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->id)) {
             @$body['id'] = $request->id;
         }
-        if (!Utils::isUnset($request->gmtCreate)) {
-            @$body['gmtCreate'] = $request->gmtCreate;
-        }
-        if (!Utils::isUnset($request->gmtModified)) {
-            @$body['gmtModified'] = $request->gmtModified;
-        }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
@@ -199,9 +196,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->objectTagIds)) {
             @$body['objectTagIds'] = $request->objectTagIds;
-        }
-        if (!Utils::isUnset($request->objectNodeConditions)) {
-            @$body['objectNodeConditions'] = $request->objectNodeConditions;
         }
         if (!Utils::isUnset($request->hideFields)) {
             @$body['hideFields'] = $request->hideFields;
@@ -588,6 +582,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserManagementResourcesResponse::fromMap($this->doROARequest('QueryUserManagementResources', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/users/' . $userId . '/managemementResources', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                   $userId
+     * @param UpdateUserOwnnessRequest $request
+     *
+     * @return UpdateUserOwnnessResponse
+     */
+    public function updateUserOwnness($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateUserOwnnessHeaders([]);
+
+        return $this->updateUserOwnnessWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $userId
+     * @param UpdateUserOwnnessRequest $request
+     * @param UpdateUserOwnnessHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return UpdateUserOwnnessResponse
+     */
+    public function updateUserOwnnessWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->ownenssType)) {
+            @$body['ownenssType'] = $request->ownenssType;
+        }
+        if (!Utils::isUnset($request->id)) {
+            @$body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->deletedFlag)) {
+            @$body['deletedFlag'] = $request->deletedFlag;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateUserOwnnessResponse::fromMap($this->doROARequest('UpdateUserOwnness', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/user/' . $userId . '/ownness', 'json', $req, $runtime));
     }
 
     /**

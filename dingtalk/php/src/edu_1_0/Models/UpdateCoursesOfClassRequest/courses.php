@@ -65,6 +65,13 @@ class courses extends Model
      * @var string
      */
     public $courseCode;
+
+    /**
+     * @description 课组code
+     *
+     * @var string
+     */
+    public $courseGroupCode;
     protected $_name = [
         'teacherStaffIds' => 'teacherStaffIds',
         'courseName'      => 'courseName',
@@ -74,6 +81,7 @@ class courses extends Model
         'location'        => 'location',
         'deleteTag'       => 'deleteTag',
         'courseCode'      => 'courseCode',
+        'courseGroupCode' => 'courseGroupCode',
     ];
 
     public function validate()
@@ -106,6 +114,9 @@ class courses extends Model
         }
         if (null !== $this->courseCode) {
             $res['courseCode'] = $this->courseCode;
+        }
+        if (null !== $this->courseGroupCode) {
+            $res['courseGroupCode'] = $this->courseGroupCode;
         }
 
         return $res;
@@ -144,6 +155,9 @@ class courses extends Model
         }
         if (isset($map['courseCode'])) {
             $model->courseCode = $map['courseCode'];
+        }
+        if (isset($map['courseGroupCode'])) {
+            $model->courseGroupCode = $map['courseGroupCode'];
         }
 
         return $model;

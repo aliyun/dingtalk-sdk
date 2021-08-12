@@ -5,6 +5,15 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesAddResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesRemoveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesRemoveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesRemoveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountResponse;
@@ -187,6 +196,147 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUserHolidaysResponse::fromMap($this->doROARequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/holidays', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AttendanceBleDevicesQueryRequest $request
+     *
+     * @return AttendanceBleDevicesQueryResponse
+     */
+    public function attendanceBleDevicesQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AttendanceBleDevicesQueryHeaders([]);
+
+        return $this->attendanceBleDevicesQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AttendanceBleDevicesQueryRequest $request
+     * @param AttendanceBleDevicesQueryHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return AttendanceBleDevicesQueryResponse
+     */
+    public function attendanceBleDevicesQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->groupKey)) {
+            @$body['groupKey'] = $request->groupKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AttendanceBleDevicesQueryResponse::fromMap($this->doROARequestWithForm('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AttendanceBleDevicesAddRequest $request
+     *
+     * @return AttendanceBleDevicesAddResponse
+     */
+    public function attendanceBleDevicesAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AttendanceBleDevicesAddHeaders([]);
+
+        return $this->attendanceBleDevicesAddWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AttendanceBleDevicesAddRequest $request
+     * @param AttendanceBleDevicesAddHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AttendanceBleDevicesAddResponse
+     */
+    public function attendanceBleDevicesAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->groupKey)) {
+            @$body['groupKey'] = $request->groupKey;
+        }
+        if (!Utils::isUnset($request->deviceIdList)) {
+            @$body['deviceIdList'] = $request->deviceIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AttendanceBleDevicesAddResponse::fromMap($this->doROARequest('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AttendanceBleDevicesRemoveRequest $request
+     *
+     * @return AttendanceBleDevicesRemoveResponse
+     */
+    public function attendanceBleDevicesRemove($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AttendanceBleDevicesRemoveHeaders([]);
+
+        return $this->attendanceBleDevicesRemoveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AttendanceBleDevicesRemoveRequest $request
+     * @param AttendanceBleDevicesRemoveHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return AttendanceBleDevicesRemoveResponse
+     */
+    public function attendanceBleDevicesRemoveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->groupKey)) {
+            @$body['groupKey'] = $request->groupKey;
+        }
+        if (!Utils::isUnset($request->deviceIdList)) {
+            @$body['deviceIdList'] = $request->deviceIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AttendanceBleDevicesRemoveResponse::fromMap($this->doROARequest('AttendanceBleDevicesRemove', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices/remove', 'json', $req, $runtime));
     }
 
     /**

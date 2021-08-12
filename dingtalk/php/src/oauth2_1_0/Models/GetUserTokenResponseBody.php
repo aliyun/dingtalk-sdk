@@ -28,10 +28,18 @@ class GetUserTokenResponseBody extends Model
      * @var int
      */
     public $expireIn;
+
+    /**
+     * @description 所选企业corpId
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
         'accessToken'  => 'accessToken',
         'refreshToken' => 'refreshToken',
         'expireIn'     => 'expireIn',
+        'corpId'       => 'corpId',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class GetUserTokenResponseBody extends Model
         }
         if (null !== $this->expireIn) {
             $res['expireIn'] = $this->expireIn;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class GetUserTokenResponseBody extends Model
         }
         if (isset($map['expireIn'])) {
             $model->expireIn = $map['expireIn'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

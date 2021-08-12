@@ -11,15 +11,15 @@ class members extends Model
     /**
      * @var string
      */
-    public $uid;
+    public $nick;
 
     /**
      * @var string
      */
-    public $nick;
+    public $uid;
     protected $_name = [
-        'uid'  => 'uid',
         'nick' => 'nick',
+        'uid'  => 'uid',
     ];
 
     public function validate()
@@ -29,11 +29,11 @@ class members extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->uid) {
-            $res['uid'] = $this->uid;
-        }
         if (null !== $this->nick) {
             $res['nick'] = $this->nick;
+        }
+        if (null !== $this->uid) {
+            $res['uid'] = $this->uid;
         }
 
         return $res;
@@ -47,11 +47,11 @@ class members extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['uid'])) {
-            $model->uid = $map['uid'];
-        }
         if (isset($map['nick'])) {
             $model->nick = $map['nick'];
+        }
+        if (isset($map['uid'])) {
+            $model->uid = $map['uid'];
         }
 
         return $model;
