@@ -3947,6 +3947,48 @@ class GetTicketResponseBodyTakers(TeaModel):
         return self
 
 
+class GetTicketResponseBodyTemplate(TeaModel):
+    def __init__(
+        self,
+        open_template_id: str = None,
+        open_template_biz_id: str = None,
+        template_name: str = None,
+    ):
+        # 工单模版ID
+        self.open_template_id = open_template_id
+        # 工单模版业务ID
+        self.open_template_biz_id = open_template_biz_id
+        # 工单模版名称
+        self.template_name = template_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_template_id is not None:
+            result['openTemplateId'] = self.open_template_id
+        if self.open_template_biz_id is not None:
+            result['openTemplateBizId'] = self.open_template_biz_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openTemplateId') is not None:
+            self.open_template_id = m.get('openTemplateId')
+        if m.get('openTemplateBizId') is not None:
+            self.open_template_biz_id = m.get('openTemplateBizId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
 class GetTicketResponseBody(TeaModel):
     def __init__(
         self,
@@ -3962,6 +4004,7 @@ class GetTicketResponseBody(TeaModel):
         custom_fields: str = None,
         scene: str = None,
         scene_context: str = None,
+        template: GetTicketResponseBodyTemplate = None,
     ):
         # Id of the request
         self.open_ticket_id = open_ticket_id
@@ -3976,6 +4019,7 @@ class GetTicketResponseBody(TeaModel):
         self.custom_fields = custom_fields
         self.scene = scene
         self.scene_context = scene_context
+        self.template = template
 
     def validate(self):
         if self.creator:
@@ -3986,6 +4030,8 @@ class GetTicketResponseBody(TeaModel):
             for k in self.takers:
                 if k:
                     k.validate()
+        if self.template:
+            self.template.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -4019,6 +4065,8 @@ class GetTicketResponseBody(TeaModel):
             result['scene'] = self.scene
         if self.scene_context is not None:
             result['sceneContext'] = self.scene_context
+        if self.template is not None:
+            result['template'] = self.template.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -4052,6 +4100,9 @@ class GetTicketResponseBody(TeaModel):
             self.scene = m.get('scene')
         if m.get('sceneContext') is not None:
             self.scene_context = m.get('sceneContext')
+        if m.get('template') is not None:
+            temp_model = GetTicketResponseBodyTemplate()
+            self.template = temp_model.from_map(m['template'])
         return self
 
 

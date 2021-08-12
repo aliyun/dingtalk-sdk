@@ -141,3 +141,115 @@ class Client(OpenApiClient):
             dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse(),
             await self.do_roarequest_async('IndustrializeManufactureJobBook', 'manufacturing_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/manufacturing/users/{user_id}/jobs', 'json', req, runtime)
         )
+
+    def industrialize_manufacture_query_jobs(
+        self,
+        request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsRequest,
+    ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders()
+        return self.industrialize_manufacture_query_jobs_with_options(request, headers, runtime)
+
+    async def industrialize_manufacture_query_jobs_async(
+        self,
+        request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsRequest,
+    ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders()
+        return await self.industrialize_manufacture_query_jobs_with_options_async(request, headers, runtime)
+
+    def industrialize_manufacture_query_jobs_with_options(
+        self,
+        request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsRequest,
+        headers: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.qualified_quantity):
+            body['qualifiedQuantity'] = request.qualified_quantity
+        if not UtilClient.is_unset(request.manufacture_day):
+            body['manufactureDay'] = request.manufacture_day
+        if not UtilClient.is_unset(request.inst_no):
+            body['instNo'] = request.inst_no
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_specification):
+            body['productSpecification'] = request.product_specification
+        if not UtilClient.is_unset(request.unit_price):
+            body['unitPrice'] = request.unit_price
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        if not UtilClient.is_unset(request.current_page):
+            body['currentPage'] = request.current_page
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.mes_app_key):
+            body['mesAppKey'] = request.mes_app_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse(),
+            self.do_roarequest('IndustrializeManufactureQueryJobs', 'manufacturing_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/manufacturing/users/jobs/query', 'json', req, runtime)
+        )
+
+    async def industrialize_manufacture_query_jobs_with_options_async(
+        self,
+        request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsRequest,
+        headers: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.qualified_quantity):
+            body['qualifiedQuantity'] = request.qualified_quantity
+        if not UtilClient.is_unset(request.manufacture_day):
+            body['manufactureDay'] = request.manufacture_day
+        if not UtilClient.is_unset(request.inst_no):
+            body['instNo'] = request.inst_no
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_specification):
+            body['productSpecification'] = request.product_specification
+        if not UtilClient.is_unset(request.unit_price):
+            body['unitPrice'] = request.unit_price
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        if not UtilClient.is_unset(request.current_page):
+            body['currentPage'] = request.current_page
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.mes_app_key):
+            body['mesAppKey'] = request.mes_app_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse(),
+            await self.do_roarequest_async('IndustrializeManufactureQueryJobs', 'manufacturing_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/manufacturing/users/jobs/query', 'json', req, runtime)
+        )

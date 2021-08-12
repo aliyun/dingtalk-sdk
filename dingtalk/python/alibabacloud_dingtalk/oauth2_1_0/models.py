@@ -66,6 +66,7 @@ class GetUserTokenResponseBody(TeaModel):
         access_token: str = None,
         refresh_token: str = None,
         expire_in: int = None,
+        corp_id: str = None,
     ):
         # accessToken
         self.access_token = access_token
@@ -73,6 +74,8 @@ class GetUserTokenResponseBody(TeaModel):
         self.refresh_token = refresh_token
         # 超时时间
         self.expire_in = expire_in
+        # 所选企业corpId
+        self.corp_id = corp_id
 
     def validate(self):
         pass
@@ -89,6 +92,8 @@ class GetUserTokenResponseBody(TeaModel):
             result['refreshToken'] = self.refresh_token
         if self.expire_in is not None:
             result['expireIn'] = self.expire_in
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
         return result
 
     def from_map(self, m: dict = None):
@@ -99,6 +104,8 @@ class GetUserTokenResponseBody(TeaModel):
             self.refresh_token = m.get('refreshToken')
         if m.get('expireIn') is not None:
             self.expire_in = m.get('expireIn')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
         return self
 
 

@@ -597,6 +597,7 @@ class QueryInterviewsResponseBodyList(TeaModel):
         job_id: str = None,
         start_time_millis: int = None,
         end_time_millis: int = None,
+        cancelled: bool = None,
         creator_user_id: str = None,
         interviewers: List[QueryInterviewsResponseBodyListInterviewers] = None,
     ):
@@ -608,6 +609,8 @@ class QueryInterviewsResponseBodyList(TeaModel):
         self.start_time_millis = start_time_millis
         # 面试结束时间（单位：毫秒）
         self.end_time_millis = end_time_millis
+        # 面试是否已取消
+        self.cancelled = cancelled
         # 面试创建人员工标识
         self.creator_user_id = creator_user_id
         # 面试官列表
@@ -633,6 +636,8 @@ class QueryInterviewsResponseBodyList(TeaModel):
             result['startTimeMillis'] = self.start_time_millis
         if self.end_time_millis is not None:
             result['endTimeMillis'] = self.end_time_millis
+        if self.cancelled is not None:
+            result['cancelled'] = self.cancelled
         if self.creator_user_id is not None:
             result['creatorUserId'] = self.creator_user_id
         result['interviewers'] = []
@@ -651,6 +656,8 @@ class QueryInterviewsResponseBodyList(TeaModel):
             self.start_time_millis = m.get('startTimeMillis')
         if m.get('endTimeMillis') is not None:
             self.end_time_millis = m.get('endTimeMillis')
+        if m.get('cancelled') is not None:
+            self.cancelled = m.get('cancelled')
         if m.get('creatorUserId') is not None:
             self.creator_user_id = m.get('creatorUserId')
         self.interviewers = []

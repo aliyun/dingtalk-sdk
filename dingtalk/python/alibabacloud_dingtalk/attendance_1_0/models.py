@@ -648,6 +648,684 @@ class GetUserHolidaysResponse(TeaModel):
         return self
 
 
+class AttendanceBleDevicesQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AttendanceBleDevicesQueryRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        group_key: str = None,
+    ):
+        # 操作人Id
+        self.op_user_id = op_user_id
+        # 考勤组Id
+        self.group_key = group_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.group_key is not None:
+            result['groupKey'] = self.group_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('groupKey') is not None:
+            self.group_key = m.get('groupKey')
+        return self
+
+
+class AttendanceBleDevicesQueryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        device_id: int = None,
+        device_name: str = None,
+        sn: str = None,
+    ):
+        # 蓝牙设备Id
+        self.device_id = device_id
+        # 蓝牙设备名称
+        self.device_name = device_name
+        # sn
+        self.sn = sn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.sn is not None:
+            result['sn'] = self.sn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        return self
+
+
+class AttendanceBleDevicesQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[AttendanceBleDevicesQueryResponseBodyResult] = None,
+    ):
+        # 蓝牙列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = AttendanceBleDevicesQueryResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class AttendanceBleDevicesQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AttendanceBleDevicesQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AttendanceBleDevicesQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AttendanceBleDevicesAddHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AttendanceBleDevicesAddRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        group_key: str = None,
+        device_id_list: List[int] = None,
+    ):
+        # 操作人Id
+        self.op_user_id = op_user_id
+        # 考勤组Id
+        self.group_key = group_key
+        # 蓝牙设备Id列表
+        self.device_id_list = device_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.group_key is not None:
+            result['groupKey'] = self.group_key
+        if self.device_id_list is not None:
+            result['deviceIdList'] = self.device_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('groupKey') is not None:
+            self.group_key = m.get('groupKey')
+        if m.get('deviceIdList') is not None:
+            self.device_id_list = m.get('deviceIdList')
+        return self
+
+
+class AttendanceBleDevicesAddResponseBodyErrorListFailureList(TeaModel):
+    def __init__(
+        self,
+        device_id: int = None,
+        device_name: str = None,
+        sn: str = None,
+    ):
+        # 蓝牙设备Id
+        self.device_id = device_id
+        # 蓝牙设备名称
+        self.device_name = device_name
+        # sn
+        self.sn = sn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.sn is not None:
+            result['sn'] = self.sn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        return self
+
+
+class AttendanceBleDevicesAddResponseBodyErrorList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        failure_list: List[AttendanceBleDevicesAddResponseBodyErrorListFailureList] = None,
+        msg: str = None,
+    ):
+        # 错误code
+        self.code = code
+        # 失败蓝牙设备列表
+        self.failure_list = failure_list
+        # errorMsg
+        self.msg = msg
+
+    def validate(self):
+        if self.failure_list:
+            for k in self.failure_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        result['failureList'] = []
+        if self.failure_list is not None:
+            for k in self.failure_list:
+                result['failureList'].append(k.to_map() if k else None)
+        if self.msg is not None:
+            result['msg'] = self.msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        self.failure_list = []
+        if m.get('failureList') is not None:
+            for k in m.get('failureList'):
+                temp_model = AttendanceBleDevicesAddResponseBodyErrorListFailureList()
+                self.failure_list.append(temp_model.from_map(k))
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        return self
+
+
+class AttendanceBleDevicesAddResponseBodySuccessList(TeaModel):
+    def __init__(
+        self,
+        device_id: int = None,
+        device_name: str = None,
+        sn: str = None,
+    ):
+        # 蓝牙设备Id
+        self.device_id = device_id
+        # 蓝牙设备名称
+        self.device_name = device_name
+        # sn
+        self.sn = sn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.sn is not None:
+            result['sn'] = self.sn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        return self
+
+
+class AttendanceBleDevicesAddResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_list: List[AttendanceBleDevicesAddResponseBodyErrorList] = None,
+        success_list: List[AttendanceBleDevicesAddResponseBodySuccessList] = None,
+    ):
+        # 添加错误列表
+        self.error_list = error_list
+        # 添加成功蓝牙设备列表
+        self.success_list = success_list
+
+    def validate(self):
+        if self.error_list:
+            for k in self.error_list:
+                if k:
+                    k.validate()
+        if self.success_list:
+            for k in self.success_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['errorList'] = []
+        if self.error_list is not None:
+            for k in self.error_list:
+                result['errorList'].append(k.to_map() if k else None)
+        result['successList'] = []
+        if self.success_list is not None:
+            for k in self.success_list:
+                result['successList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.error_list = []
+        if m.get('errorList') is not None:
+            for k in m.get('errorList'):
+                temp_model = AttendanceBleDevicesAddResponseBodyErrorList()
+                self.error_list.append(temp_model.from_map(k))
+        self.success_list = []
+        if m.get('successList') is not None:
+            for k in m.get('successList'):
+                temp_model = AttendanceBleDevicesAddResponseBodySuccessList()
+                self.success_list.append(temp_model.from_map(k))
+        return self
+
+
+class AttendanceBleDevicesAddResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AttendanceBleDevicesAddResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AttendanceBleDevicesAddResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AttendanceBleDevicesRemoveHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AttendanceBleDevicesRemoveRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        group_key: str = None,
+        device_id_list: List[int] = None,
+    ):
+        # 操作人id
+        self.op_user_id = op_user_id
+        # 考勤组Id
+        self.group_key = group_key
+        # 蓝牙设备Id列表
+        self.device_id_list = device_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.group_key is not None:
+            result['groupKey'] = self.group_key
+        if self.device_id_list is not None:
+            result['deviceIdList'] = self.device_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('groupKey') is not None:
+            self.group_key = m.get('groupKey')
+        if m.get('deviceIdList') is not None:
+            self.device_id_list = m.get('deviceIdList')
+        return self
+
+
+class AttendanceBleDevicesRemoveResponseBodyErrorList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        failure_list: List[int] = None,
+        msg: str = None,
+    ):
+        # 错误code
+        self.code = code
+        # 移除失败蓝牙设备Id列表
+        self.failure_list = failure_list
+        # 错误信息
+        self.msg = msg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.failure_list is not None:
+            result['failureList'] = self.failure_list
+        if self.msg is not None:
+            result['msg'] = self.msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('failureList') is not None:
+            self.failure_list = m.get('failureList')
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        return self
+
+
+class AttendanceBleDevicesRemoveResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_list: List[AttendanceBleDevicesRemoveResponseBodyErrorList] = None,
+        success_list: List[int] = None,
+    ):
+        # 移出错误列表
+        self.error_list = error_list
+        # 移除成功蓝牙设备Id列表
+        self.success_list = success_list
+
+    def validate(self):
+        if self.error_list:
+            for k in self.error_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['errorList'] = []
+        if self.error_list is not None:
+            for k in self.error_list:
+                result['errorList'].append(k.to_map() if k else None)
+        if self.success_list is not None:
+            result['successList'] = self.success_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.error_list = []
+        if m.get('errorList') is not None:
+            for k in m.get('errorList'):
+                temp_model = AttendanceBleDevicesRemoveResponseBodyErrorList()
+                self.error_list.append(temp_model.from_map(k))
+        if m.get('successList') is not None:
+            self.success_list = m.get('successList')
+        return self
+
+
+class AttendanceBleDevicesRemoveResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AttendanceBleDevicesRemoveResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AttendanceBleDevicesRemoveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CheckWritePermissionHeaders(TeaModel):
     def __init__(
         self,

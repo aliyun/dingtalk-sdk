@@ -251,6 +251,218 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
         )
 
+    def attendance_ble_devices_query(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders()
+        return self.attendance_ble_devices_query_with_options(request, headers, runtime)
+
+    async def attendance_ble_devices_query_async(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders()
+        return await self.attendance_ble_devices_query_with_options_async(request, headers, runtime)
+
+    def attendance_ble_devices_query_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
+        headers: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.group_key):
+            body['groupKey'] = request.group_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse(),
+            self.do_roarequest_with_form('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/query', 'json', req, runtime)
+        )
+
+    async def attendance_ble_devices_query_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
+        headers: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.group_key):
+            body['groupKey'] = request.group_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse(),
+            await self.do_roarequest_with_form_async('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/query', 'json', req, runtime)
+        )
+
+    def attendance_ble_devices_add(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders()
+        return self.attendance_ble_devices_add_with_options(request, headers, runtime)
+
+    async def attendance_ble_devices_add_async(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders()
+        return await self.attendance_ble_devices_add_with_options_async(request, headers, runtime)
+
+    def attendance_ble_devices_add_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
+        headers: dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.group_key):
+            body['groupKey'] = request.group_key
+        if not UtilClient.is_unset(request.device_id_list):
+            body['deviceIdList'] = request.device_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse(),
+            self.do_roarequest('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices', 'json', req, runtime)
+        )
+
+    async def attendance_ble_devices_add_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
+        headers: dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.group_key):
+            body['groupKey'] = request.group_key
+        if not UtilClient.is_unset(request.device_id_list):
+            body['deviceIdList'] = request.device_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse(),
+            await self.do_roarequest_async('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices', 'json', req, runtime)
+        )
+
+    def attendance_ble_devices_remove(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
+        return self.attendance_ble_devices_remove_with_options(request, headers, runtime)
+
+    async def attendance_ble_devices_remove_async(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
+        return await self.attendance_ble_devices_remove_with_options_async(request, headers, runtime)
+
+    def attendance_ble_devices_remove_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
+        headers: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.group_key):
+            body['groupKey'] = request.group_key
+        if not UtilClient.is_unset(request.device_id_list):
+            body['deviceIdList'] = request.device_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse(),
+            self.do_roarequest('AttendanceBleDevicesRemove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/remove', 'json', req, runtime)
+        )
+
+    async def attendance_ble_devices_remove_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
+        headers: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.group_key):
+            body['groupKey'] = request.group_key
+        if not UtilClient.is_unset(request.device_id_list):
+            body['deviceIdList'] = request.device_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse(),
+            await self.do_roarequest_async('AttendanceBleDevicesRemove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/remove', 'json', req, runtime)
+        )
+
     def check_write_permission(
         self,
         request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,

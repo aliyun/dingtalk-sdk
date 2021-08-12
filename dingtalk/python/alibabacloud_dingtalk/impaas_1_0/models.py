@@ -174,9 +174,11 @@ class RecallMessageRequest(TeaModel):
         self,
         operator_uid: str = None,
         message_id: str = None,
+        type: int = None,
     ):
         self.operator_uid = operator_uid
         self.message_id = message_id
+        self.type = type
 
     def validate(self):
         pass
@@ -191,6 +193,8 @@ class RecallMessageRequest(TeaModel):
             result['operatorUid'] = self.operator_uid
         if self.message_id is not None:
             result['messageId'] = self.message_id
+        if self.type is not None:
+            result['type'] = self.type
         return result
 
     def from_map(self, m: dict = None):
@@ -199,6 +203,8 @@ class RecallMessageRequest(TeaModel):
             self.operator_uid = m.get('operatorUid')
         if m.get('messageId') is not None:
             self.message_id = m.get('messageId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
         return self
 
 
@@ -361,39 +367,6 @@ class CreateGroupHeaders(TeaModel):
         return self
 
 
-class CreateGroupRequestMembers(TeaModel):
-    def __init__(
-        self,
-        uid: str = None,
-        nick: str = None,
-    ):
-        self.uid = uid
-        self.nick = nick
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.uid is not None:
-            result['uid'] = self.uid
-        if self.nick is not None:
-            result['nick'] = self.nick
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('uid') is not None:
-            self.uid = m.get('uid')
-        if m.get('nick') is not None:
-            self.nick = m.get('nick')
-        return self
-
-
 class CreateGroupRequest(TeaModel):
     def __init__(
         self,
@@ -403,7 +376,6 @@ class CreateGroupRequest(TeaModel):
         icon_media_id: str = None,
         channel: str = None,
         properties: Dict[str, str] = None,
-        members: List[CreateGroupRequestMembers] = None,
     ):
         self.uuid = uuid
         self.creator_uid = creator_uid
@@ -411,13 +383,9 @@ class CreateGroupRequest(TeaModel):
         self.icon_media_id = icon_media_id
         self.channel = channel
         self.properties = properties
-        self.members = members
 
     def validate(self):
-        if self.members:
-            for k in self.members:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -437,10 +405,6 @@ class CreateGroupRequest(TeaModel):
             result['channel'] = self.channel
         if self.properties is not None:
             result['properties'] = self.properties
-        result['members'] = []
-        if self.members is not None:
-            for k in self.members:
-                result['members'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -457,11 +421,6 @@ class CreateGroupRequest(TeaModel):
             self.channel = m.get('channel')
         if m.get('properties') is not None:
             self.properties = m.get('properties')
-        self.members = []
-        if m.get('members') is not None:
-            for k in m.get('members'):
-                temp_model = CreateGroupRequestMembers()
-                self.members.append(temp_model.from_map(k))
         return self
 
 
@@ -1097,11 +1056,11 @@ class AddGroupMembersHeaders(TeaModel):
 class AddGroupMembersRequestMembers(TeaModel):
     def __init__(
         self,
-        uid: str = None,
         nick: str = None,
+        uid: str = None,
     ):
-        self.uid = uid
         self.nick = nick
+        self.uid = uid
 
     def validate(self):
         pass
@@ -1112,18 +1071,18 @@ class AddGroupMembersRequestMembers(TeaModel):
             return _map
 
         result = dict()
-        if self.uid is not None:
-            result['uid'] = self.uid
         if self.nick is not None:
             result['nick'] = self.nick
+        if self.uid is not None:
+            result['uid'] = self.uid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('uid') is not None:
-            self.uid = m.get('uid')
         if m.get('nick') is not None:
             self.nick = m.get('nick')
+        if m.get('uid') is not None:
+            self.uid = m.get('uid')
         return self
 
 
@@ -1601,9 +1560,11 @@ class SendMessageResponseBody(TeaModel):
         self,
         msg_id: str = None,
         create_time: int = None,
+        message_id: str = None,
     ):
         self.msg_id = msg_id
         self.create_time = create_time
+        self.message_id = message_id
 
     def validate(self):
         pass
@@ -1618,6 +1579,8 @@ class SendMessageResponseBody(TeaModel):
             result['msgId'] = self.msg_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.message_id is not None:
+            result['messageId'] = self.message_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1626,6 +1589,8 @@ class SendMessageResponseBody(TeaModel):
             self.msg_id = m.get('msgId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('messageId') is not None:
+            self.message_id = m.get('messageId')
         return self
 
 

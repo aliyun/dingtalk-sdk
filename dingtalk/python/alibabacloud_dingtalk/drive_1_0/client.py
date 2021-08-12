@@ -475,6 +475,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetFileInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/spaces/{space_id}/files/{file_id}', 'json', req, runtime)
         )
 
+    def info_space(
+        self,
+        space_id: str,
+        request: dingtalkdrive__1__0_models.InfoSpaceRequest,
+    ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdrive__1__0_models.InfoSpaceHeaders()
+        return self.info_space_with_options(space_id, request, headers, runtime)
+
+    async def info_space_async(
+        self,
+        space_id: str,
+        request: dingtalkdrive__1__0_models.InfoSpaceRequest,
+    ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdrive__1__0_models.InfoSpaceHeaders()
+        return await self.info_space_with_options_async(space_id, request, headers, runtime)
+
+    def info_space_with_options(
+        self,
+        space_id: str,
+        request: dingtalkdrive__1__0_models.InfoSpaceRequest,
+        headers: dingtalkdrive__1__0_models.InfoSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdrive__1__0_models.InfoSpaceResponse(),
+            self.do_roarequest('InfoSpace', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/spaces/{space_id}', 'json', req, runtime)
+        )
+
+    async def info_space_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkdrive__1__0_models.InfoSpaceRequest,
+        headers: dingtalkdrive__1__0_models.InfoSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdrive__1__0_models.InfoSpaceResponse(),
+            await self.do_roarequest_async('InfoSpace', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/spaces/{space_id}', 'json', req, runtime)
+        )
+
     def list_recycle_files(
         self,
         request: dingtalkdrive__1__0_models.ListRecycleFilesRequest,

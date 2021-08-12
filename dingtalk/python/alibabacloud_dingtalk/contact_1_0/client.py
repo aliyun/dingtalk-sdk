@@ -175,10 +175,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
-        if not UtilClient.is_unset(request.gmt_create):
-            body['gmtCreate'] = request.gmt_create
-        if not UtilClient.is_unset(request.gmt_modified):
-            body['gmtModified'] = request.gmt_modified
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.description):
@@ -189,8 +185,6 @@ class Client(OpenApiClient):
             body['objectDeptIds'] = request.object_dept_ids
         if not UtilClient.is_unset(request.object_tag_ids):
             body['objectTagIds'] = request.object_tag_ids
-        if not UtilClient.is_unset(request.object_node_conditions):
-            body['objectNodeConditions'] = request.object_node_conditions
         if not UtilClient.is_unset(request.hide_fields):
             body['hideFields'] = request.hide_fields
         if not UtilClient.is_unset(request.exclude_staff_ids):
@@ -225,10 +219,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
-        if not UtilClient.is_unset(request.gmt_create):
-            body['gmtCreate'] = request.gmt_create
-        if not UtilClient.is_unset(request.gmt_modified):
-            body['gmtModified'] = request.gmt_modified
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.description):
@@ -239,8 +229,6 @@ class Client(OpenApiClient):
             body['objectDeptIds'] = request.object_dept_ids
         if not UtilClient.is_unset(request.object_tag_ids):
             body['objectTagIds'] = request.object_tag_ids
-        if not UtilClient.is_unset(request.object_node_conditions):
-            body['objectNodeConditions'] = request.object_node_conditions
         if not UtilClient.is_unset(request.hide_fields):
             body['hideFields'] = request.hide_fields
         if not UtilClient.is_unset(request.exclude_staff_ids):
@@ -799,6 +787,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.QueryUserManagementResourcesResponse(),
             await self.do_roarequest_async('QueryUserManagementResources', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/users/{user_id}/managemementResources', 'json', req, runtime)
+        )
+
+    def update_user_ownness(
+        self,
+        user_id: str,
+        request: dingtalkcontact__1__0_models.UpdateUserOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateUserOwnnessHeaders()
+        return self.update_user_ownness_with_options(user_id, request, headers, runtime)
+
+    async def update_user_ownness_async(
+        self,
+        user_id: str,
+        request: dingtalkcontact__1__0_models.UpdateUserOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateUserOwnnessHeaders()
+        return await self.update_user_ownness_with_options_async(user_id, request, headers, runtime)
+
+    def update_user_ownness_with_options(
+        self,
+        user_id: str,
+        request: dingtalkcontact__1__0_models.UpdateUserOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.UpdateUserOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ownenss_type):
+            body['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.deleted_flag):
+            body['deletedFlag'] = request.deleted_flag
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateUserOwnnessResponse(),
+            self.do_roarequest('UpdateUserOwnness', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/user/{user_id}/ownness', 'json', req, runtime)
+        )
+
+    async def update_user_ownness_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkcontact__1__0_models.UpdateUserOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.UpdateUserOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ownenss_type):
+            body['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.deleted_flag):
+            body['deletedFlag'] = request.deleted_flag
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateUserOwnnessResponse(),
+            await self.do_roarequest_async('UpdateUserOwnness', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/user/{user_id}/ownness', 'json', req, runtime)
         )
 
     def get_cooperate_org_invite_info(

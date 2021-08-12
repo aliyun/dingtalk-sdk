@@ -119,6 +119,8 @@ class Client(OpenApiClient):
             body['operatorUid'] = request.operator_uid
         if not UtilClient.is_unset(request.message_id):
             body['messageId'] = request.message_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -145,6 +147,8 @@ class Client(OpenApiClient):
             body['operatorUid'] = request.operator_uid
         if not UtilClient.is_unset(request.message_id):
             body['messageId'] = request.message_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -267,8 +271,6 @@ class Client(OpenApiClient):
             body['channel'] = request.channel
         if not UtilClient.is_unset(request.properties):
             body['properties'] = request.properties
-        if not UtilClient.is_unset(request.members):
-            body['members'] = request.members
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -303,8 +305,6 @@ class Client(OpenApiClient):
             body['channel'] = request.channel
         if not UtilClient.is_unset(request.properties):
             body['properties'] = request.properties
-        if not UtilClient.is_unset(request.members):
-            body['members'] = request.members
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -2419,19 +2419,113 @@ class InitCoursesOfClassRequestSectionConfigSectionModels(TeaModel):
         return self
 
 
+class InitCoursesOfClassRequestSectionConfigStart(TeaModel):
+    def __init__(
+        self,
+        month: int = None,
+        year: int = None,
+        day_of_month: int = None,
+    ):
+        # 月份。
+        self.month = month
+        # 年份。
+        self.year = year
+        # 每个月的第几天。
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.month is not None:
+            result['month'] = self.month
+        if self.year is not None:
+            result['year'] = self.year
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
+class InitCoursesOfClassRequestSectionConfigEnd(TeaModel):
+    def __init__(
+        self,
+        month: int = None,
+        year: int = None,
+        day_of_month: int = None,
+    ):
+        # 月份。
+        self.month = month
+        # 年份。
+        self.year = year
+        # 每个月的第几天。
+        self.day_of_month = day_of_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.month is not None:
+            result['month'] = self.month
+        if self.year is not None:
+            result['year'] = self.year
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('month') is not None:
+            self.month = m.get('month')
+        if m.get('year') is not None:
+            self.year = m.get('year')
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        return self
+
+
 class InitCoursesOfClassRequestSectionConfig(TeaModel):
     def __init__(
         self,
         section_models: List[InitCoursesOfClassRequestSectionConfigSectionModels] = None,
+        start: InitCoursesOfClassRequestSectionConfigStart = None,
+        end: InitCoursesOfClassRequestSectionConfigEnd = None,
     ):
         # 节次模型
         self.section_models = section_models
+        # 课程表开始时间（精确到日）
+        self.start = start
+        # 课程表结束开始时间（精确到日）
+        self.end = end
 
     def validate(self):
         if self.section_models:
             for k in self.section_models:
                 if k:
                     k.validate()
+        if self.start:
+            self.start.validate()
+        if self.end:
+            self.end.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2443,6 +2537,10 @@ class InitCoursesOfClassRequestSectionConfig(TeaModel):
         if self.section_models is not None:
             for k in self.section_models:
                 result['sectionModels'].append(k.to_map() if k else None)
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.end is not None:
+            result['end'] = self.end.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -2452,6 +2550,12 @@ class InitCoursesOfClassRequestSectionConfig(TeaModel):
             for k in m.get('sectionModels'):
                 temp_model = InitCoursesOfClassRequestSectionConfigSectionModels()
                 self.section_models.append(temp_model.from_map(k))
+        if m.get('start') is not None:
+            temp_model = InitCoursesOfClassRequestSectionConfigStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('end') is not None:
+            temp_model = InitCoursesOfClassRequestSectionConfigEnd()
+            self.end = temp_model.from_map(m['end'])
         return self
 
 
@@ -4559,6 +4663,7 @@ class UpdateCoursesOfClassRequestCourses(TeaModel):
         location: str = None,
         delete_tag: bool = None,
         course_code: str = None,
+        course_group_code: str = None,
     ):
         # 老师Staffid
         self.teacher_staff_ids = teacher_staff_ids
@@ -4576,6 +4681,8 @@ class UpdateCoursesOfClassRequestCourses(TeaModel):
         self.delete_tag = delete_tag
         # 课程code：删除/更新必填
         self.course_code = course_code
+        # 课组code
+        self.course_group_code = course_group_code
 
     def validate(self):
         if self.date_model:
@@ -4605,6 +4712,8 @@ class UpdateCoursesOfClassRequestCourses(TeaModel):
             result['deleteTag'] = self.delete_tag
         if self.course_code is not None:
             result['courseCode'] = self.course_code
+        if self.course_group_code is not None:
+            result['courseGroupCode'] = self.course_group_code
         return result
 
     def from_map(self, m: dict = None):
@@ -4627,6 +4736,8 @@ class UpdateCoursesOfClassRequestCourses(TeaModel):
             self.delete_tag = m.get('deleteTag')
         if m.get('courseCode') is not None:
             self.course_code = m.get('courseCode')
+        if m.get('courseGroupCode') is not None:
+            self.course_group_code = m.get('courseGroupCode')
         return self
 
 

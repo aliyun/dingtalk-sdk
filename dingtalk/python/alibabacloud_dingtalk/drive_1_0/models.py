@@ -108,7 +108,10 @@ class AddFileResponseBody(TeaModel):
         file_name: str = None,
         file_path: str = None,
         file_type: str = None,
+        content_type: str = None,
         file_extension: str = None,
+        create_time: str = None,
+        modify_time: str = None,
     ):
         # 空间id
         self.space_id = space_id
@@ -120,8 +123,14 @@ class AddFileResponseBody(TeaModel):
         self.file_path = file_path
         # 文件类型
         self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
         # 文件后缀
         self.file_extension = file_extension
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
 
     def validate(self):
         pass
@@ -142,8 +151,14 @@ class AddFileResponseBody(TeaModel):
             result['filePath'] = self.file_path
         if self.file_type is not None:
             result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
         if self.file_extension is not None:
             result['fileExtension'] = self.file_extension
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
         return result
 
     def from_map(self, m: dict = None):
@@ -158,8 +173,14 @@ class AddFileResponseBody(TeaModel):
             self.file_path = m.get('filePath')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
         if m.get('fileExtension') is not None:
             self.file_extension = m.get('fileExtension')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
         return self
 
 
@@ -799,7 +820,10 @@ class GetFileInfoResponseBody(TeaModel):
         file_name: str = None,
         file_path: str = None,
         file_type: str = None,
+        content_type: str = None,
         file_extension: str = None,
+        create_time: str = None,
+        modify_time: str = None,
     ):
         # 空间id
         self.space_id = space_id
@@ -811,8 +835,14 @@ class GetFileInfoResponseBody(TeaModel):
         self.file_path = file_path
         # 文件类型
         self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
         # 文件后缀
         self.file_extension = file_extension
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
 
     def validate(self):
         pass
@@ -833,8 +863,14 @@ class GetFileInfoResponseBody(TeaModel):
             result['filePath'] = self.file_path
         if self.file_type is not None:
             result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
         if self.file_extension is not None:
             result['fileExtension'] = self.file_extension
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
         return result
 
     def from_map(self, m: dict = None):
@@ -849,8 +885,14 @@ class GetFileInfoResponseBody(TeaModel):
             self.file_path = m.get('filePath')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
         if m.get('fileExtension') is not None:
             self.file_extension = m.get('fileExtension')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
         return self
 
 
@@ -887,6 +929,174 @@ class GetFileInfoResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetFileInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InfoSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InfoSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class InfoSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        create_time: str = None,
+        modify_time: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 容量
+        self.quota = quota
+        # 已使用容量
+        self.used_quota = used_quota
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class InfoSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InfoSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InfoSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -984,6 +1194,7 @@ class ListRecycleFilesResponseBodyRecycleItems(TeaModel):
     def __init__(
         self,
         recycle_item_id: str = None,
+        delete_staff_id: str = None,
         delete_time: str = None,
         file_size: int = None,
         file_type: str = None,
@@ -993,6 +1204,8 @@ class ListRecycleFilesResponseBodyRecycleItems(TeaModel):
     ):
         # 回收站item id
         self.recycle_item_id = recycle_item_id
+        # 删除员工工号
+        self.delete_staff_id = delete_staff_id
         # 删除时间
         self.delete_time = delete_time
         # 文件大小
@@ -1017,6 +1230,8 @@ class ListRecycleFilesResponseBodyRecycleItems(TeaModel):
         result = dict()
         if self.recycle_item_id is not None:
             result['recycleItemId'] = self.recycle_item_id
+        if self.delete_staff_id is not None:
+            result['deleteStaffId'] = self.delete_staff_id
         if self.delete_time is not None:
             result['deleteTime'] = self.delete_time
         if self.file_size is not None:
@@ -1035,6 +1250,8 @@ class ListRecycleFilesResponseBodyRecycleItems(TeaModel):
         m = m or dict()
         if m.get('recycleItemId') is not None:
             self.recycle_item_id = m.get('recycleItemId')
+        if m.get('deleteStaffId') is not None:
+            self.delete_staff_id = m.get('deleteStaffId')
         if m.get('deleteTime') is not None:
             self.delete_time = m.get('deleteTime')
         if m.get('fileSize') is not None:
@@ -1206,7 +1423,10 @@ class RenameFileResponseBody(TeaModel):
         file_name: str = None,
         file_path: str = None,
         file_type: str = None,
+        content_type: str = None,
         file_extension: str = None,
+        create_time: str = None,
+        modify_time: str = None,
     ):
         # 空间id
         self.space_id = space_id
@@ -1218,8 +1438,14 @@ class RenameFileResponseBody(TeaModel):
         self.file_path = file_path
         # 文件类型
         self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
         # 文件后缀
         self.file_extension = file_extension
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
 
     def validate(self):
         pass
@@ -1240,8 +1466,14 @@ class RenameFileResponseBody(TeaModel):
             result['filePath'] = self.file_path
         if self.file_type is not None:
             result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
         if self.file_extension is not None:
             result['fileExtension'] = self.file_extension
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
         return result
 
     def from_map(self, m: dict = None):
@@ -1256,8 +1488,14 @@ class RenameFileResponseBody(TeaModel):
             self.file_path = m.get('filePath')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
         if m.get('fileExtension') is not None:
             self.file_extension = m.get('fileExtension')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
         return self
 
 
@@ -1388,7 +1626,10 @@ class ListFilesResponseBodyFiles(TeaModel):
         file_name: str = None,
         file_path: str = None,
         file_type: str = None,
+        content_type: str = None,
         file_extension: str = None,
+        create_time: str = None,
+        modify_time: str = None,
     ):
         # 空间id
         self.space_id = space_id
@@ -1400,8 +1641,14 @@ class ListFilesResponseBodyFiles(TeaModel):
         self.file_path = file_path
         # 文件类型
         self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
         # 文件后缀
         self.file_extension = file_extension
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
 
     def validate(self):
         pass
@@ -1422,8 +1669,14 @@ class ListFilesResponseBodyFiles(TeaModel):
             result['filePath'] = self.file_path
         if self.file_type is not None:
             result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
         if self.file_extension is not None:
             result['fileExtension'] = self.file_extension
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
         return result
 
     def from_map(self, m: dict = None):
@@ -1438,8 +1691,14 @@ class ListFilesResponseBodyFiles(TeaModel):
             self.file_path = m.get('filePath')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
         if m.get('fileExtension') is not None:
             self.file_extension = m.get('fileExtension')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
         return self
 
 
@@ -2100,7 +2359,10 @@ class MoveFileResponseBody(TeaModel):
         file_name: str = None,
         file_path: str = None,
         file_type: str = None,
+        content_type: str = None,
         file_extension: str = None,
+        create_time: str = None,
+        modify_time: str = None,
     ):
         # 空间id
         self.space_id = space_id
@@ -2112,8 +2374,14 @@ class MoveFileResponseBody(TeaModel):
         self.file_path = file_path
         # 文件类型
         self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
         # 文件后缀
         self.file_extension = file_extension
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
 
     def validate(self):
         pass
@@ -2134,8 +2402,14 @@ class MoveFileResponseBody(TeaModel):
             result['filePath'] = self.file_path
         if self.file_type is not None:
             result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
         if self.file_extension is not None:
             result['fileExtension'] = self.file_extension
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
         return result
 
     def from_map(self, m: dict = None):
@@ -2150,8 +2424,14 @@ class MoveFileResponseBody(TeaModel):
             self.file_path = m.get('filePath')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
         if m.get('fileExtension') is not None:
             self.file_extension = m.get('fileExtension')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
         return self
 
 

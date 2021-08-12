@@ -321,14 +321,11 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
     def __init__(
         self,
         id: int = None,
-        gmt_create: str = None,
-        gmt_modified: str = None,
         name: str = None,
         description: str = None,
         object_staff_ids: List[str] = None,
         object_dept_ids: List[int] = None,
         object_tag_ids: List[int] = None,
-        object_node_conditions: List[str] = None,
         hide_fields: List[str] = None,
         exclude_staff_ids: List[str] = None,
         exclude_dept_ids: List[int] = None,
@@ -337,10 +334,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
     ):
         # id
         self.id = id
-        # 创建时间
-        self.gmt_create = gmt_create
-        # 修改时间
-        self.gmt_modified = gmt_modified
         # 名称
         self.name = name
         # 描述信息
@@ -351,8 +344,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
         self.object_dept_ids = object_dept_ids
         # object角色id列表
         self.object_tag_ids = object_tag_ids
-        # object节点限制条件列表
-        self.object_node_conditions = object_node_conditions
         # 隐藏字段id列表
         self.hide_fields = hide_fields
         # 例外员工id列表
@@ -375,10 +366,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
-        if self.gmt_create is not None:
-            result['gmtCreate'] = self.gmt_create
-        if self.gmt_modified is not None:
-            result['gmtModified'] = self.gmt_modified
         if self.name is not None:
             result['name'] = self.name
         if self.description is not None:
@@ -389,8 +376,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
             result['objectDeptIds'] = self.object_dept_ids
         if self.object_tag_ids is not None:
             result['objectTagIds'] = self.object_tag_ids
-        if self.object_node_conditions is not None:
-            result['objectNodeConditions'] = self.object_node_conditions
         if self.hide_fields is not None:
             result['hideFields'] = self.hide_fields
         if self.exclude_staff_ids is not None:
@@ -407,10 +392,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
-        if m.get('gmtCreate') is not None:
-            self.gmt_create = m.get('gmtCreate')
-        if m.get('gmtModified') is not None:
-            self.gmt_modified = m.get('gmtModified')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('description') is not None:
@@ -421,8 +402,6 @@ class UpdateEmpAttrbuteVisibilitySettingRequest(TeaModel):
             self.object_dept_ids = m.get('objectDeptIds')
         if m.get('objectTagIds') is not None:
             self.object_tag_ids = m.get('objectTagIds')
-        if m.get('objectNodeConditions') is not None:
-            self.object_node_conditions = m.get('objectNodeConditions')
         if m.get('hideFields') is not None:
             self.hide_fields = m.get('hideFields')
         if m.get('excludeStaffIds') is not None:
@@ -1087,7 +1066,6 @@ class ListEmpAttributeVisibilityResponseBodyList(TeaModel):
         object_staff_ids: List[str] = None,
         object_dept_ids: List[int] = None,
         object_tag_ids: List[int] = None,
-        object_node_conditions: List[str] = None,
         hide_fields: List[str] = None,
         exclude_staff_ids: List[str] = None,
         exclude_dept_ids: List[int] = None,
@@ -1110,8 +1088,6 @@ class ListEmpAttributeVisibilityResponseBodyList(TeaModel):
         self.object_dept_ids = object_dept_ids
         # 被查看的角色id列表
         self.object_tag_ids = object_tag_ids
-        # 被查看方condition列表
-        self.object_node_conditions = object_node_conditions
         # 隐藏的字段id列表
         self.hide_fields = hide_fields
         # 白名单用户id列表
@@ -1148,8 +1124,6 @@ class ListEmpAttributeVisibilityResponseBodyList(TeaModel):
             result['objectDeptIds'] = self.object_dept_ids
         if self.object_tag_ids is not None:
             result['objectTagIds'] = self.object_tag_ids
-        if self.object_node_conditions is not None:
-            result['objectNodeConditions'] = self.object_node_conditions
         if self.hide_fields is not None:
             result['hideFields'] = self.hide_fields
         if self.exclude_staff_ids is not None:
@@ -1180,8 +1154,6 @@ class ListEmpAttributeVisibilityResponseBodyList(TeaModel):
             self.object_dept_ids = m.get('objectDeptIds')
         if m.get('objectTagIds') is not None:
             self.object_tag_ids = m.get('objectTagIds')
-        if m.get('objectNodeConditions') is not None:
-            self.object_node_conditions = m.get('objectNodeConditions')
         if m.get('hideFields') is not None:
             self.hide_fields = m.get('hideFields')
         if m.get('excludeStaffIds') is not None:
@@ -1849,6 +1821,160 @@ class QueryUserManagementResourcesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryUserManagementResourcesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateUserOwnnessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateUserOwnnessRequest(TeaModel):
+    def __init__(
+        self,
+        ownenss_type: int = None,
+        id: int = None,
+        start_time: int = None,
+        end_time: int = None,
+        deleted_flag: int = None,
+    ):
+        # 状态类型
+        self.ownenss_type = ownenss_type
+        # 业务标志id
+        self.id = id
+        # 开始时间戳（毫秒）
+        self.start_time = start_time
+        # 结束时间戳（毫秒）
+        self.end_time = end_time
+        # 删除标记
+        self.deleted_flag = deleted_flag
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ownenss_type is not None:
+            result['ownenssType'] = self.ownenss_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.deleted_flag is not None:
+            result['deletedFlag'] = self.deleted_flag
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ownenssType') is not None:
+            self.ownenss_type = m.get('ownenssType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('deletedFlag') is not None:
+            self.deleted_flag = m.get('deletedFlag')
+        return self
+
+
+class UpdateUserOwnnessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 业务标识id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateUserOwnnessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateUserOwnnessResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateUserOwnnessResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

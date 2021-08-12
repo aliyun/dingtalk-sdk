@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List, Any
+from typing import Dict, Any, List
 
 
 class DeleteEventHeaders(TeaModel):
@@ -586,6 +586,51 @@ class ListEventsResponseBodyEventsLocation(TeaModel):
         return self
 
 
+class ListEventsResponseBodyEventsOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        conference_id: str = None,
+        url: str = None,
+        extra_info: Dict[str, Any] = None,
+    ):
+        self.type = type
+        self.conference_id = conference_id
+        self.url = url
+        self.extra_info = extra_info
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.url is not None:
+            result['url'] = self.url
+        if self.extra_info is not None:
+            result['extraInfo'] = self.extra_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('extraInfo') is not None:
+            self.extra_info = m.get('extraInfo')
+        return self
+
+
 class ListEventsResponseBodyEvents(TeaModel):
     def __init__(
         self,
@@ -603,6 +648,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         create_time: str = None,
         update_time: str = None,
         status: str = None,
+        online_meeting_info: ListEventsResponseBodyEventsOnlineMeetingInfo = None,
     ):
         # 日程事件id
         self.id = id
@@ -632,6 +678,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.update_time = update_time
         # 日程状态
         self.status = status
+        self.online_meeting_info = online_meeting_info
 
     def validate(self):
         if self.start:
@@ -648,6 +695,8 @@ class ListEventsResponseBodyEvents(TeaModel):
             self.organizer.validate()
         if self.location:
             self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -685,6 +734,8 @@ class ListEventsResponseBodyEvents(TeaModel):
             result['updateTime'] = self.update_time
         if self.status is not None:
             result['status'] = self.status
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -725,6 +776,9 @@ class ListEventsResponseBodyEvents(TeaModel):
             self.update_time = m.get('updateTime')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = ListEventsResponseBodyEventsOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
         return self
 
 
@@ -2052,6 +2106,51 @@ class GetEventResponseBodyLocation(TeaModel):
         return self
 
 
+class GetEventResponseBodyOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        conference_id: str = None,
+        url: str = None,
+        extra_info: Dict[str, Any] = None,
+    ):
+        self.type = type
+        self.conference_id = conference_id
+        self.url = url
+        self.extra_info = extra_info
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.url is not None:
+            result['url'] = self.url
+        if self.extra_info is not None:
+            result['extraInfo'] = self.extra_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('extraInfo') is not None:
+            self.extra_info = m.get('extraInfo')
+        return self
+
+
 class GetEventResponseBody(TeaModel):
     def __init__(
         self,
@@ -2069,6 +2168,7 @@ class GetEventResponseBody(TeaModel):
         series_master_id: str = None,
         create_time: str = None,
         update_time: str = None,
+        online_meeting_info: GetEventResponseBodyOnlineMeetingInfo = None,
     ):
         self.id = id
         # 日程标题
@@ -2093,6 +2193,7 @@ class GetEventResponseBody(TeaModel):
         self.create_time = create_time
         # 更新时间
         self.update_time = update_time
+        self.online_meeting_info = online_meeting_info
 
     def validate(self):
         if self.start:
@@ -2109,6 +2210,8 @@ class GetEventResponseBody(TeaModel):
             self.organizer.validate()
         if self.location:
             self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2146,6 +2249,8 @@ class GetEventResponseBody(TeaModel):
             result['createTime'] = self.create_time
         if self.update_time is not None:
             result['updateTime'] = self.update_time
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -2186,6 +2291,9 @@ class GetEventResponseBody(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('updateTime') is not None:
             self.update_time = m.get('updateTime')
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = GetEventResponseBodyOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
         return self
 
 
