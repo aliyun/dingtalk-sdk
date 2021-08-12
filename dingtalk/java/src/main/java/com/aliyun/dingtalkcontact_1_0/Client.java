@@ -93,14 +93,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("id", request.id);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.gmtCreate)) {
-            body.put("gmtCreate", request.gmtCreate);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.gmtModified)) {
-            body.put("gmtModified", request.gmtModified);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
@@ -119,10 +111,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.objectTagIds)) {
             body.put("objectTagIds", request.objectTagIds);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.objectNodeConditions)) {
-            body.put("objectNodeConditions", request.objectNodeConditions);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.hideFields)) {
@@ -421,6 +409,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/users/" + userId + "/managemementResources", "json", req, runtime), new QueryUserManagementResourcesResponse());
+    }
+
+    public UpdateUserOwnnessResponse updateUserOwnness(String userId, UpdateUserOwnnessRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateUserOwnnessHeaders headers = new UpdateUserOwnnessHeaders();
+        return this.updateUserOwnnessWithOptions(userId, request, headers, runtime);
+    }
+
+    public UpdateUserOwnnessResponse updateUserOwnnessWithOptions(String userId, UpdateUserOwnnessRequest request, UpdateUserOwnnessHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.ownenssType)) {
+            body.put("ownenssType", request.ownenssType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deletedFlag)) {
+            body.put("deletedFlag", request.deletedFlag);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateUserOwnness", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/user/" + userId + "/ownness", "json", req, runtime), new UpdateUserOwnnessResponse());
     }
 
     public GetCooperateOrgInviteInfoResponse getCooperateOrgInviteInfo(String cooperateCorpId) throws Exception {

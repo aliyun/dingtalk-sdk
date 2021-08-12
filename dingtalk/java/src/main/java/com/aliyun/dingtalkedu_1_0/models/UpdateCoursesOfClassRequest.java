@@ -165,6 +165,10 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("courseCode")
         public String courseCode;
 
+        // 课组code
+        @NameInMap("courseGroupCode")
+        public String courseGroupCode;
+
         public static UpdateCoursesOfClassRequestCourses build(java.util.Map<String, ?> map) throws Exception {
             UpdateCoursesOfClassRequestCourses self = new UpdateCoursesOfClassRequestCourses();
             return TeaModel.build(map, self);
@@ -232,6 +236,14 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         }
         public String getCourseCode() {
             return this.courseCode;
+        }
+
+        public UpdateCoursesOfClassRequestCourses setCourseGroupCode(String courseGroupCode) {
+            this.courseGroupCode = courseGroupCode;
+            return this;
+        }
+        public String getCourseGroupCode() {
+            return this.courseGroupCode;
         }
 
     }

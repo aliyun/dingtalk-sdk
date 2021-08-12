@@ -16,6 +16,10 @@ public class GetUserTokenResponseBody extends TeaModel {
     @NameInMap("expireIn")
     public Long expireIn;
 
+    // 所选企业corpId
+    @NameInMap("corpId")
+    public String corpId;
+
     public static GetUserTokenResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUserTokenResponseBody self = new GetUserTokenResponseBody();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class GetUserTokenResponseBody extends TeaModel {
     }
     public Long getExpireIn() {
         return this.expireIn;
+    }
+
+    public GetUserTokenResponseBody setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
 }

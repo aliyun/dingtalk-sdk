@@ -8,14 +8,6 @@ public class UpdateEmpAttrbuteVisibilitySettingRequest extends TeaModel {
     @NameInMap("id")
     public Long id;
 
-    // 创建时间
-    @NameInMap("gmtCreate")
-    public String gmtCreate;
-
-    // 修改时间
-    @NameInMap("gmtModified")
-    public String gmtModified;
-
     // 名称
     @NameInMap("name")
     public String name;
@@ -35,10 +27,6 @@ public class UpdateEmpAttrbuteVisibilitySettingRequest extends TeaModel {
     // object角色id列表
     @NameInMap("objectTagIds")
     public java.util.List<Long> objectTagIds;
-
-    // object节点限制条件列表
-    @NameInMap("objectNodeConditions")
-    public java.util.List<String> objectNodeConditions;
 
     // 隐藏字段id列表
     @NameInMap("hideFields")
@@ -71,22 +59,6 @@ public class UpdateEmpAttrbuteVisibilitySettingRequest extends TeaModel {
     }
     public Long getId() {
         return this.id;
-    }
-
-    public UpdateEmpAttrbuteVisibilitySettingRequest setGmtCreate(String gmtCreate) {
-        this.gmtCreate = gmtCreate;
-        return this;
-    }
-    public String getGmtCreate() {
-        return this.gmtCreate;
-    }
-
-    public UpdateEmpAttrbuteVisibilitySettingRequest setGmtModified(String gmtModified) {
-        this.gmtModified = gmtModified;
-        return this;
-    }
-    public String getGmtModified() {
-        return this.gmtModified;
     }
 
     public UpdateEmpAttrbuteVisibilitySettingRequest setName(String name) {
@@ -127,14 +99,6 @@ public class UpdateEmpAttrbuteVisibilitySettingRequest extends TeaModel {
     }
     public java.util.List<Long> getObjectTagIds() {
         return this.objectTagIds;
-    }
-
-    public UpdateEmpAttrbuteVisibilitySettingRequest setObjectNodeConditions(java.util.List<String> objectNodeConditions) {
-        this.objectNodeConditions = objectNodeConditions;
-        return this;
-    }
-    public java.util.List<String> getObjectNodeConditions() {
-        return this.objectNodeConditions;
     }
 
     public UpdateEmpAttrbuteVisibilitySettingRequest setHideFields(java.util.List<String> hideFields) {

@@ -400,6 +400,58 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsResponseBodyEventsOnlineMeetingInfo extends TeaModel {
+        @NameInMap("type")
+        public String type;
+
+        @NameInMap("conferenceId")
+        public String conferenceId;
+
+        @NameInMap("url")
+        public String url;
+
+        @NameInMap("extraInfo")
+        public java.util.Map<String, ?> extraInfo;
+
+        public static ListEventsResponseBodyEventsOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsResponseBodyEventsOnlineMeetingInfo self = new ListEventsResponseBodyEventsOnlineMeetingInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsResponseBodyEventsOnlineMeetingInfo setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public ListEventsResponseBodyEventsOnlineMeetingInfo setConferenceId(String conferenceId) {
+            this.conferenceId = conferenceId;
+            return this;
+        }
+        public String getConferenceId() {
+            return this.conferenceId;
+        }
+
+        public ListEventsResponseBodyEventsOnlineMeetingInfo setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public ListEventsResponseBodyEventsOnlineMeetingInfo setExtraInfo(java.util.Map<String, ?> extraInfo) {
+            this.extraInfo = extraInfo;
+            return this;
+        }
+        public java.util.Map<String, ?> getExtraInfo() {
+            return this.extraInfo;
+        }
+
+    }
+
     public static class ListEventsResponseBodyEvents extends TeaModel {
         // 日程事件id
         @NameInMap("id")
@@ -456,6 +508,9 @@ public class ListEventsResponseBody extends TeaModel {
         // 日程状态
         @NameInMap("status")
         public String status;
+
+        @NameInMap("onlineMeetingInfo")
+        public ListEventsResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
 
         public static ListEventsResponseBodyEvents build(java.util.Map<String, ?> map) throws Exception {
             ListEventsResponseBodyEvents self = new ListEventsResponseBodyEvents();
@@ -572,6 +627,14 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public ListEventsResponseBodyEvents setOnlineMeetingInfo(ListEventsResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo) {
+            this.onlineMeetingInfo = onlineMeetingInfo;
+            return this;
+        }
+        public ListEventsResponseBodyEventsOnlineMeetingInfo getOnlineMeetingInfo() {
+            return this.onlineMeetingInfo;
         }
 
     }

@@ -78,10 +78,6 @@ public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
         @NameInMap("objectTagIds")
         public java.util.List<Long> objectTagIds;
 
-        // 被查看方condition列表
-        @NameInMap("objectNodeConditions")
-        public java.util.List<String> objectNodeConditions;
-
         // 隐藏的字段id列表
         @NameInMap("hideFields")
         public java.util.List<String> hideFields;
@@ -169,14 +165,6 @@ public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
         }
         public java.util.List<Long> getObjectTagIds() {
             return this.objectTagIds;
-        }
-
-        public ListEmpAttributeVisibilityResponseBodyList setObjectNodeConditions(java.util.List<String> objectNodeConditions) {
-            this.objectNodeConditions = objectNodeConditions;
-            return this;
-        }
-        public java.util.List<String> getObjectNodeConditions() {
-            return this.objectNodeConditions;
         }
 
         public ListEmpAttributeVisibilityResponseBodyList setHideFields(java.util.List<String> hideFields) {

@@ -94,6 +94,10 @@ public class QueryInterviewsResponseBody extends TeaModel {
         @NameInMap("endTimeMillis")
         public Long endTimeMillis;
 
+        // 面试是否已取消
+        @NameInMap("cancelled")
+        public Boolean cancelled;
+
         // 面试创建人员工标识
         @NameInMap("creatorUserId")
         public String creatorUserId;
@@ -137,6 +141,14 @@ public class QueryInterviewsResponseBody extends TeaModel {
         }
         public Long getEndTimeMillis() {
             return this.endTimeMillis;
+        }
+
+        public QueryInterviewsResponseBodyList setCancelled(Boolean cancelled) {
+            this.cancelled = cancelled;
+            return this;
+        }
+        public Boolean getCancelled() {
+            return this.cancelled;
         }
 
         public QueryInterviewsResponseBodyList setCreatorUserId(String creatorUserId) {

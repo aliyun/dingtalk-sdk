@@ -10,6 +10,9 @@ public class RecallMessageRequest extends TeaModel {
     @NameInMap("messageId")
     public String messageId;
 
+    @NameInMap("type")
+    public Integer type;
+
     public static RecallMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         RecallMessageRequest self = new RecallMessageRequest();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class RecallMessageRequest extends TeaModel {
     }
     public String getMessageId() {
         return this.messageId;
+    }
+
+    public RecallMessageRequest setType(Integer type) {
+        this.type = type;
+        return this;
+    }
+    public Integer getType() {
+        return this.type;
     }
 
 }

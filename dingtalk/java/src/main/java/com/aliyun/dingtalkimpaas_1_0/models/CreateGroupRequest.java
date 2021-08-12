@@ -22,9 +22,6 @@ public class CreateGroupRequest extends TeaModel {
     @NameInMap("properties")
     public java.util.Map<String, String> properties;
 
-    @NameInMap("members")
-    public java.util.List<CreateGroupRequestMembers> members;
-
     public static CreateGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateGroupRequest self = new CreateGroupRequest();
         return TeaModel.build(map, self);
@@ -76,44 +73,6 @@ public class CreateGroupRequest extends TeaModel {
     }
     public java.util.Map<String, String> getProperties() {
         return this.properties;
-    }
-
-    public CreateGroupRequest setMembers(java.util.List<CreateGroupRequestMembers> members) {
-        this.members = members;
-        return this;
-    }
-    public java.util.List<CreateGroupRequestMembers> getMembers() {
-        return this.members;
-    }
-
-    public static class CreateGroupRequestMembers extends TeaModel {
-        @NameInMap("uid")
-        public String uid;
-
-        @NameInMap("nick")
-        public String nick;
-
-        public static CreateGroupRequestMembers build(java.util.Map<String, ?> map) throws Exception {
-            CreateGroupRequestMembers self = new CreateGroupRequestMembers();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateGroupRequestMembers setUid(String uid) {
-            this.uid = uid;
-            return this;
-        }
-        public String getUid() {
-            return this.uid;
-        }
-
-        public CreateGroupRequestMembers setNick(String nick) {
-            this.nick = nick;
-            return this;
-        }
-        public String getNick() {
-            return this.nick;
-        }
-
     }
 
 }

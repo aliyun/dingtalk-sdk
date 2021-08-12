@@ -55,6 +55,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("updateTime")
     public String updateTime;
 
+    @NameInMap("onlineMeetingInfo")
+    public GetEventResponseBodyOnlineMeetingInfo onlineMeetingInfo;
+
     public static GetEventResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetEventResponseBody self = new GetEventResponseBody();
         return TeaModel.build(map, self);
@@ -170,6 +173,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public String getUpdateTime() {
         return this.updateTime;
+    }
+
+    public GetEventResponseBody setOnlineMeetingInfo(GetEventResponseBodyOnlineMeetingInfo onlineMeetingInfo) {
+        this.onlineMeetingInfo = onlineMeetingInfo;
+        return this;
+    }
+    public GetEventResponseBodyOnlineMeetingInfo getOnlineMeetingInfo() {
+        return this.onlineMeetingInfo;
     }
 
     public static class GetEventResponseBodyStart extends TeaModel {
@@ -520,6 +531,58 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+    }
+
+    public static class GetEventResponseBodyOnlineMeetingInfo extends TeaModel {
+        @NameInMap("type")
+        public String type;
+
+        @NameInMap("conferenceId")
+        public String conferenceId;
+
+        @NameInMap("url")
+        public String url;
+
+        @NameInMap("extraInfo")
+        public java.util.Map<String, ?> extraInfo;
+
+        public static GetEventResponseBodyOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyOnlineMeetingInfo self = new GetEventResponseBodyOnlineMeetingInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyOnlineMeetingInfo setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public GetEventResponseBodyOnlineMeetingInfo setConferenceId(String conferenceId) {
+            this.conferenceId = conferenceId;
+            return this;
+        }
+        public String getConferenceId() {
+            return this.conferenceId;
+        }
+
+        public GetEventResponseBodyOnlineMeetingInfo setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public GetEventResponseBodyOnlineMeetingInfo setExtraInfo(java.util.Map<String, ?> extraInfo) {
+            this.extraInfo = extraInfo;
+            return this;
+        }
+        public java.util.Map<String, ?> getExtraInfo() {
+            return this.extraInfo;
         }
 
     }

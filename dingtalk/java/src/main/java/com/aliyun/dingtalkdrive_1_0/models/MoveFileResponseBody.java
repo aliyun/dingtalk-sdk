@@ -24,9 +24,21 @@ public class MoveFileResponseBody extends TeaModel {
     @NameInMap("fileType")
     public String fileType;
 
+    // 文件内容类型
+    @NameInMap("contentType")
+    public String contentType;
+
     // 文件后缀
     @NameInMap("fileExtension")
     public String fileExtension;
+
+    // 创建时间
+    @NameInMap("createTime")
+    public String createTime;
+
+    // 修改时间
+    @NameInMap("modifyTime")
+    public String modifyTime;
 
     public static MoveFileResponseBody build(java.util.Map<String, ?> map) throws Exception {
         MoveFileResponseBody self = new MoveFileResponseBody();
@@ -73,12 +85,36 @@ public class MoveFileResponseBody extends TeaModel {
         return this.fileType;
     }
 
+    public MoveFileResponseBody setContentType(String contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+    public String getContentType() {
+        return this.contentType;
+    }
+
     public MoveFileResponseBody setFileExtension(String fileExtension) {
         this.fileExtension = fileExtension;
         return this;
     }
     public String getFileExtension() {
         return this.fileExtension;
+    }
+
+    public MoveFileResponseBody setCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+    public String getCreateTime() {
+        return this.createTime;
+    }
+
+    public MoveFileResponseBody setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime;
+        return this;
+    }
+    public String getModifyTime() {
+        return this.modifyTime;
     }
 
 }

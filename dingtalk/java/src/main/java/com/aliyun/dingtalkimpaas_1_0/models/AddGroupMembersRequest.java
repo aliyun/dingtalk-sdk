@@ -43,23 +43,15 @@ public class AddGroupMembersRequest extends TeaModel {
     }
 
     public static class AddGroupMembersRequestMembers extends TeaModel {
-        @NameInMap("uid")
-        public String uid;
-
         @NameInMap("nick")
         public String nick;
+
+        @NameInMap("uid")
+        public String uid;
 
         public static AddGroupMembersRequestMembers build(java.util.Map<String, ?> map) throws Exception {
             AddGroupMembersRequestMembers self = new AddGroupMembersRequestMembers();
             return TeaModel.build(map, self);
-        }
-
-        public AddGroupMembersRequestMembers setUid(String uid) {
-            this.uid = uid;
-            return this;
-        }
-        public String getUid() {
-            return this.uid;
         }
 
         public AddGroupMembersRequestMembers setNick(String nick) {
@@ -68,6 +60,14 @@ public class AddGroupMembersRequest extends TeaModel {
         }
         public String getNick() {
             return this.nick;
+        }
+
+        public AddGroupMembersRequestMembers setUid(String uid) {
+            this.uid = uid;
+            return this;
+        }
+        public String getUid() {
+            return this.uid;
         }
 
     }

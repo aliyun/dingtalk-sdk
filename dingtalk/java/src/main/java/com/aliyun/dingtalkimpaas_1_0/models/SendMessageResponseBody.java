@@ -10,6 +10,9 @@ public class SendMessageResponseBody extends TeaModel {
     @NameInMap("createTime")
     public Long createTime;
 
+    @NameInMap("messageId")
+    public String messageId;
+
     public static SendMessageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SendMessageResponseBody self = new SendMessageResponseBody();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class SendMessageResponseBody extends TeaModel {
     }
     public Long getCreateTime() {
         return this.createTime;
+    }
+
+    public SendMessageResponseBody setMessageId(String messageId) {
+        this.messageId = messageId;
+        return this;
+    }
+    public String getMessageId() {
+        return this.messageId;
     }
 
 }

@@ -41,6 +41,9 @@ public class GetTicketResponseBody extends TeaModel {
     @NameInMap("sceneContext")
     public String sceneContext;
 
+    @NameInMap("template")
+    public GetTicketResponseBodyTemplate template;
+
     public static GetTicketResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTicketResponseBody self = new GetTicketResponseBody();
         return TeaModel.build(map, self);
@@ -142,6 +145,14 @@ public class GetTicketResponseBody extends TeaModel {
         return this.sceneContext;
     }
 
+    public GetTicketResponseBody setTemplate(GetTicketResponseBodyTemplate template) {
+        this.template = template;
+        return this;
+    }
+    public GetTicketResponseBodyTemplate getTemplate() {
+        return this.template;
+    }
+
     public static class GetTicketResponseBodyCreator extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
@@ -228,6 +239,50 @@ public class GetTicketResponseBody extends TeaModel {
         }
         public String getNickName() {
             return this.nickName;
+        }
+
+    }
+
+    public static class GetTicketResponseBodyTemplate extends TeaModel {
+        // 工单模版ID
+        @NameInMap("openTemplateId")
+        public String openTemplateId;
+
+        // 工单模版业务ID
+        @NameInMap("openTemplateBizId")
+        public String openTemplateBizId;
+
+        // 工单模版名称
+        @NameInMap("templateName")
+        public String templateName;
+
+        public static GetTicketResponseBodyTemplate build(java.util.Map<String, ?> map) throws Exception {
+            GetTicketResponseBodyTemplate self = new GetTicketResponseBodyTemplate();
+            return TeaModel.build(map, self);
+        }
+
+        public GetTicketResponseBodyTemplate setOpenTemplateId(String openTemplateId) {
+            this.openTemplateId = openTemplateId;
+            return this;
+        }
+        public String getOpenTemplateId() {
+            return this.openTemplateId;
+        }
+
+        public GetTicketResponseBodyTemplate setOpenTemplateBizId(String openTemplateBizId) {
+            this.openTemplateBizId = openTemplateBizId;
+            return this;
+        }
+        public String getOpenTemplateBizId() {
+            return this.openTemplateBizId;
+        }
+
+        public GetTicketResponseBodyTemplate setTemplateName(String templateName) {
+            this.templateName = templateName;
+            return this;
+        }
+        public String getTemplateName() {
+            return this.templateName;
         }
 
     }

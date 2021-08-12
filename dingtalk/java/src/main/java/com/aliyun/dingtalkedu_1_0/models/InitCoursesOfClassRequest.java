@@ -321,10 +321,106 @@ public class InitCoursesOfClassRequest extends TeaModel {
 
     }
 
+    public static class InitCoursesOfClassRequestSectionConfigStart extends TeaModel {
+        // 月份。
+        @NameInMap("month")
+        public Integer month;
+
+        // 年份。
+        @NameInMap("year")
+        public Integer year;
+
+        // 每个月的第几天。
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
+        public static InitCoursesOfClassRequestSectionConfigStart build(java.util.Map<String, ?> map) throws Exception {
+            InitCoursesOfClassRequestSectionConfigStart self = new InitCoursesOfClassRequestSectionConfigStart();
+            return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigStart setMonth(Integer month) {
+            this.month = month;
+            return this;
+        }
+        public Integer getMonth() {
+            return this.month;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigStart setYear(Integer year) {
+            this.year = year;
+            return this;
+        }
+        public Integer getYear() {
+            return this.year;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigStart setDayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
+            return this;
+        }
+        public Integer getDayOfMonth() {
+            return this.dayOfMonth;
+        }
+
+    }
+
+    public static class InitCoursesOfClassRequestSectionConfigEnd extends TeaModel {
+        // 月份。
+        @NameInMap("month")
+        public Integer month;
+
+        // 年份。
+        @NameInMap("year")
+        public Integer year;
+
+        // 每个月的第几天。
+        @NameInMap("dayOfMonth")
+        public Integer dayOfMonth;
+
+        public static InitCoursesOfClassRequestSectionConfigEnd build(java.util.Map<String, ?> map) throws Exception {
+            InitCoursesOfClassRequestSectionConfigEnd self = new InitCoursesOfClassRequestSectionConfigEnd();
+            return TeaModel.build(map, self);
+        }
+
+        public InitCoursesOfClassRequestSectionConfigEnd setMonth(Integer month) {
+            this.month = month;
+            return this;
+        }
+        public Integer getMonth() {
+            return this.month;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigEnd setYear(Integer year) {
+            this.year = year;
+            return this;
+        }
+        public Integer getYear() {
+            return this.year;
+        }
+
+        public InitCoursesOfClassRequestSectionConfigEnd setDayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
+            return this;
+        }
+        public Integer getDayOfMonth() {
+            return this.dayOfMonth;
+        }
+
+    }
+
     public static class InitCoursesOfClassRequestSectionConfig extends TeaModel {
         // 节次模型
         @NameInMap("sectionModels")
         public java.util.List<InitCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
+
+        // 课程表开始时间（精确到日）
+        @NameInMap("start")
+        public InitCoursesOfClassRequestSectionConfigStart start;
+
+        // 课程表结束开始时间（精确到日）
+        @NameInMap("end")
+        public InitCoursesOfClassRequestSectionConfigEnd end;
 
         public static InitCoursesOfClassRequestSectionConfig build(java.util.Map<String, ?> map) throws Exception {
             InitCoursesOfClassRequestSectionConfig self = new InitCoursesOfClassRequestSectionConfig();
@@ -337,6 +433,22 @@ public class InitCoursesOfClassRequest extends TeaModel {
         }
         public java.util.List<InitCoursesOfClassRequestSectionConfigSectionModels> getSectionModels() {
             return this.sectionModels;
+        }
+
+        public InitCoursesOfClassRequestSectionConfig setStart(InitCoursesOfClassRequestSectionConfigStart start) {
+            this.start = start;
+            return this;
+        }
+        public InitCoursesOfClassRequestSectionConfigStart getStart() {
+            return this.start;
+        }
+
+        public InitCoursesOfClassRequestSectionConfig setEnd(InitCoursesOfClassRequestSectionConfigEnd end) {
+            this.end = end;
+            return this;
+        }
+        public InitCoursesOfClassRequestSectionConfigEnd getEnd() {
+            return this.end;
         }
 
     }
