@@ -33,6 +33,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("macAddress")
         public String macAddress;
 
+        // 设备状态
+        @NameInMap("status")
+        public Integer status;
+
+        // 创建时间
+        @NameInMap("createTime")
+        public Long createTime;
+
         public static GetTrustDeviceListResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetTrustDeviceListResponseBodyData self = new GetTrustDeviceListResponseBodyData();
             return TeaModel.build(map, self);
@@ -60,6 +68,22 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public String getMacAddress() {
             return this.macAddress;
+        }
+
+        public GetTrustDeviceListResponseBodyData setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
+        }
+
+        public GetTrustDeviceListResponseBodyData setCreateTime(Long createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
     }

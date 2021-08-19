@@ -24,42 +24,42 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     public static class QueryClassScheduleConfigResponseBodyResultStart extends TeaModel {
         // 年份
         @NameInMap("year")
-        public Long year;
+        public Integer year;
 
         // 月份
         @NameInMap("month")
-        public Long month;
+        public Integer month;
 
         // 一个月中的第几天
         @NameInMap("dayOfMonth")
-        public Long dayOfMonth;
+        public Integer dayOfMonth;
 
         public static QueryClassScheduleConfigResponseBodyResultStart build(java.util.Map<String, ?> map) throws Exception {
             QueryClassScheduleConfigResponseBodyResultStart self = new QueryClassScheduleConfigResponseBodyResultStart();
             return TeaModel.build(map, self);
         }
 
-        public QueryClassScheduleConfigResponseBodyResultStart setYear(Long year) {
+        public QueryClassScheduleConfigResponseBodyResultStart setYear(Integer year) {
             this.year = year;
             return this;
         }
-        public Long getYear() {
+        public Integer getYear() {
             return this.year;
         }
 
-        public QueryClassScheduleConfigResponseBodyResultStart setMonth(Long month) {
+        public QueryClassScheduleConfigResponseBodyResultStart setMonth(Integer month) {
             this.month = month;
             return this;
         }
-        public Long getMonth() {
+        public Integer getMonth() {
             return this.month;
         }
 
-        public QueryClassScheduleConfigResponseBodyResultStart setDayOfMonth(Long dayOfMonth) {
+        public QueryClassScheduleConfigResponseBodyResultStart setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
-        public Long getDayOfMonth() {
+        public Integer getDayOfMonth() {
             return this.dayOfMonth;
         }
 

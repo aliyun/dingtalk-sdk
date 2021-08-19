@@ -16,6 +16,10 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     @NameInMap("macAddress")
     public String macAddress;
 
+    // 设备状态
+    @NameInMap("status")
+    public Integer status;
+
     public static CreateTrustedDeviceRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateTrustedDeviceRequest self = new CreateTrustedDeviceRequest();
         return TeaModel.build(map, self);
@@ -43,6 +47,14 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     }
     public String getMacAddress() {
         return this.macAddress;
+    }
+
+    public CreateTrustedDeviceRequest setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
     }
 
 }

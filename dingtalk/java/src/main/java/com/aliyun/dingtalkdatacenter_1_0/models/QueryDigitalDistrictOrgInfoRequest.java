@@ -10,8 +10,8 @@ public class QueryDigitalDistrictOrgInfoRequest extends TeaModel {
     @NameInMap("statDates")
     public java.util.List<String> statDates;
 
-    @NameInMap("orgIds")
-    public java.util.List<String> orgIds;
+    @NameInMap("corpIds")
+    public java.util.List<String> corpIds;
 
     public static QueryDigitalDistrictOrgInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryDigitalDistrictOrgInfoRequest self = new QueryDigitalDistrictOrgInfoRequest();
@@ -34,12 +34,12 @@ public class QueryDigitalDistrictOrgInfoRequest extends TeaModel {
         return this.statDates;
     }
 
-    public QueryDigitalDistrictOrgInfoRequest setOrgIds(java.util.List<String> orgIds) {
-        this.orgIds = orgIds;
+    public QueryDigitalDistrictOrgInfoRequest setCorpIds(java.util.List<String> corpIds) {
+        this.corpIds = corpIds;
         return this;
     }
-    public java.util.List<String> getOrgIds() {
-        return this.orgIds;
+    public java.util.List<String> getCorpIds() {
+        return this.corpIds;
     }
 
 }
