@@ -32,13 +32,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public class QueryClassScheduleConfigResponseBodyResultStart : TeaModel {
                 [NameInMap("year")]
                 [Validation(Required=false)]
-                public long? Year { get; set; }
+                public int? Year { get; set; }
                 [NameInMap("month")]
                 [Validation(Required=false)]
-                public long? Month { get; set; }
+                public int? Month { get; set; }
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
-                public long? DayOfMonth { get; set; }
+                public int? DayOfMonth { get; set; }
             };
 
             [NameInMap("end")]

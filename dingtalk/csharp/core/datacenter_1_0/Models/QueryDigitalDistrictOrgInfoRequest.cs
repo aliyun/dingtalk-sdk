@@ -17,9 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public List<string> StatDates { get; set; }
 
-        [NameInMap("orgIds")]
+        [NameInMap("corpIds")]
         [Validation(Required=false)]
-        public List<string> OrgIds { get; set; }
+        public List<string> CorpIds { get; set; }
 
     }
 

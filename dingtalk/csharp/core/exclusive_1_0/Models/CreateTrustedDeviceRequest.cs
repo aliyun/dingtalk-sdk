@@ -30,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public string MacAddress { get; set; }
 
+        /// <summary>
+        /// 设备状态
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public int? Status { get; set; }
+
     }
 
 }
