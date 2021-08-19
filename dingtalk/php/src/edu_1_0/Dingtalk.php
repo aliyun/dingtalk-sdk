@@ -46,6 +46,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
@@ -575,6 +578,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteGuardianResponse::fromMap($this->doROARequest('DeleteGuardian', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/classes/' . $classId . '/guardians/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param InsertSectionConfigRequest $request
+     *
+     * @return InsertSectionConfigResponse
+     */
+    public function insertSectionConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertSectionConfigHeaders([]);
+
+        return $this->insertSectionConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param InsertSectionConfigRequest $request
+     * @param InsertSectionConfigHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return InsertSectionConfigResponse
+     */
+    public function insertSectionConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->sectionModels)) {
+            @$body['sectionModels'] = $request->sectionModels;
+        }
+        if (!Utils::isUnset($request->start)) {
+            @$body['start'] = $request->start;
+        }
+        if (!Utils::isUnset($request->end)) {
+            @$body['end'] = $request->end;
+        }
+        if (!Utils::isUnset($request->scheduleName)) {
+            @$body['scheduleName'] = $request->scheduleName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InsertSectionConfigResponse::fromMap($this->doROARequest('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/configs', 'json', $req, $runtime));
     }
 
     /**

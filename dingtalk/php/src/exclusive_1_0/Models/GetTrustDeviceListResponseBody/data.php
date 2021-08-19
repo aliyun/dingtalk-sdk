@@ -28,10 +28,26 @@ class data extends Model
      * @var string
      */
     public $macAddress;
+
+    /**
+     * @description 设备状态
+     *
+     * @var int
+     */
+    public $status;
+
+    /**
+     * @description 创建时间
+     *
+     * @var int
+     */
+    public $createTime;
     protected $_name = [
         'userId'     => 'userId',
         'platform'   => 'platform',
         'macAddress' => 'macAddress',
+        'status'     => 'status',
+        'createTime' => 'createTime',
     ];
 
     public function validate()
@@ -49,6 +65,12 @@ class data extends Model
         }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
 
         return $res;
@@ -70,6 +92,12 @@ class data extends Model
         }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
 
         return $model;

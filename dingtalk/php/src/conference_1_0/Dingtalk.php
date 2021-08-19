@@ -14,6 +14,8 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateVideoConferenceRespon
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoBatchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoBatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoBatchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceExtInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceExtInfoResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -28,48 +30,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param QueryConferenceInfoBatchRequest $request
-     *
-     * @return QueryConferenceInfoBatchResponse
-     */
-    public function queryConferenceInfoBatch($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryConferenceInfoBatchHeaders([]);
-
-        return $this->queryConferenceInfoBatchWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryConferenceInfoBatchRequest $request
-     * @param QueryConferenceInfoBatchHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return QueryConferenceInfoBatchResponse
-     */
-    public function queryConferenceInfoBatchWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->conferenceIdList)) {
-            @$body['conferenceIdList'] = $request->conferenceIdList;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return QueryConferenceInfoBatchResponse::fromMap($this->doROARequest('QueryConferenceInfoBatch', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/query', 'json', $req, $runtime));
     }
 
     /**
@@ -121,6 +81,42 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string $conferenceId
+     *
+     * @return UpdateVideoConferenceExtInfoResponse
+     */
+    public function updateVideoConferenceExtInfo($conferenceId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateVideoConferenceExtInfoHeaders([]);
+
+        return $this->updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $conferenceId
+     * @param UpdateVideoConferenceExtInfoHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return UpdateVideoConferenceExtInfoResponse
+     */
+    public function updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return UpdateVideoConferenceExtInfoResponse::fromMap($this->doROARequest('UpdateVideoConferenceExtInfo', 'conference_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '/extInfo', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                      $conferenceId
      * @param CloseVideoConferenceRequest $request
      *
@@ -162,5 +158,47 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CloseVideoConferenceResponse::fromMap($this->doROARequest('CloseVideoConference', 'conference_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/conference/videoConferences/' . $conferenceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryConferenceInfoBatchRequest $request
+     *
+     * @return QueryConferenceInfoBatchResponse
+     */
+    public function queryConferenceInfoBatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryConferenceInfoBatchHeaders([]);
+
+        return $this->queryConferenceInfoBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryConferenceInfoBatchRequest $request
+     * @param QueryConferenceInfoBatchHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return QueryConferenceInfoBatchResponse
+     */
+    public function queryConferenceInfoBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->conferenceIdList)) {
+            @$body['conferenceIdList'] = $request->conferenceIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryConferenceInfoBatchResponse::fromMap($this->doROARequest('QueryConferenceInfoBatch', 'conference_1.0', 'HTTP', 'POST', 'AK', '/v1.0/conference/videoConferences/query', 'json', $req, $runtime));
     }
 }

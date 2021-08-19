@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -241,6 +244,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AttendanceBleDevicesQueryResponse::fromMap($this->doROARequestWithForm('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/group/bledevices/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SyncScheduleInfoRequest $request
+     *
+     * @return SyncScheduleInfoResponse
+     */
+    public function syncScheduleInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncScheduleInfoHeaders([]);
+
+        return $this->syncScheduleInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncScheduleInfoRequest $request
+     * @param SyncScheduleInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SyncScheduleInfoResponse
+     */
+    public function syncScheduleInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->scheduleInfos)) {
+            @$body['scheduleInfos'] = $request->scheduleInfos;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SyncScheduleInfoResponse::fromMap($this->doROARequest('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/attendance/schedules/additionalInfo', 'none', $req, $runtime));
     }
 
     /**

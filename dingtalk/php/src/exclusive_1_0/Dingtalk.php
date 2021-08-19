@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListHeaders;
@@ -81,6 +84,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetConferenceDetailResponse::fromMap($this->doROARequest('GetConferenceDetail', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/conferences/' . $conferenceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOaOperatorLogListRequest $request
+     *
+     * @return GetOaOperatorLogListResponse
+     */
+    public function getOaOperatorLogList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOaOperatorLogListHeaders([]);
+
+        return $this->getOaOperatorLogListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOaOperatorLogListRequest $request
+     * @param GetOaOperatorLogListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetOaOperatorLogListResponse
+     */
+    public function getOaOperatorLogListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->categoryList)) {
+            @$body['categoryList'] = $request->categoryList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetOaOperatorLogListResponse::fromMap($this->doROARequest('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/oaOperatorLogs/query', 'json', $req, $runtime));
     }
 
     /**
@@ -306,6 +366,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->macAddress)) {
             @$body['macAddress'] = $request->macAddress;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

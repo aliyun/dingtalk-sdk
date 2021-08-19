@@ -21,11 +21,11 @@ class QueryDigitalDistrictOrgInfoRequest extends Model
     /**
      * @var string[]
      */
-    public $orgIds;
+    public $corpIds;
     protected $_name = [
         'kpiGroupId' => 'kpiGroupId',
         'statDates'  => 'statDates',
-        'orgIds'     => 'orgIds',
+        'corpIds'    => 'corpIds',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class QueryDigitalDistrictOrgInfoRequest extends Model
         if (null !== $this->statDates) {
             $res['statDates'] = $this->statDates;
         }
-        if (null !== $this->orgIds) {
-            $res['orgIds'] = $this->orgIds;
+        if (null !== $this->corpIds) {
+            $res['corpIds'] = $this->corpIds;
         }
 
         return $res;
@@ -64,9 +64,9 @@ class QueryDigitalDistrictOrgInfoRequest extends Model
                 $model->statDates = $map['statDates'];
             }
         }
-        if (isset($map['orgIds'])) {
-            if (!empty($map['orgIds'])) {
-                $model->orgIds = $map['orgIds'];
+        if (isset($map['corpIds'])) {
+            if (!empty($map['corpIds'])) {
+                $model->corpIds = $map['corpIds'];
             }
         }
 

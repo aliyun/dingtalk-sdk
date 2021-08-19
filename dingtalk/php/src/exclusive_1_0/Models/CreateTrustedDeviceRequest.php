@@ -28,10 +28,18 @@ class CreateTrustedDeviceRequest extends Model
      * @var string
      */
     public $macAddress;
+
+    /**
+     * @description 设备状态
+     *
+     * @var int
+     */
+    public $status;
     protected $_name = [
         'userId'     => 'userId',
         'platform'   => 'platform',
         'macAddress' => 'macAddress',
+        'status'     => 'status',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class CreateTrustedDeviceRequest extends Model
         }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class CreateTrustedDeviceRequest extends Model
         }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
 
         return $model;
