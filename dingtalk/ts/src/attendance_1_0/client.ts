@@ -371,6 +371,69 @@ export class AttendanceBleDevicesQueryResponse extends $tea.Model {
   }
 }
 
+export class SyncScheduleInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncScheduleInfoRequest extends $tea.Model {
+  scheduleInfos?: SyncScheduleInfoRequestScheduleInfos[];
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scheduleInfos: 'scheduleInfos',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scheduleInfos: { 'type': 'array', 'itemType': SyncScheduleInfoRequestScheduleInfos },
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncScheduleInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AttendanceBleDevicesAddHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -854,6 +917,31 @@ export class AttendanceBleDevicesQueryResponseBodyResult extends $tea.Model {
   }
 }
 
+export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
+  planId?: number;
+  wifiKeys?: string[];
+  positionKeys?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      planId: 'planId',
+      wifiKeys: 'wifiKeys',
+      positionKeys: 'positionKeys',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      planId: 'number',
+      wifiKeys: { 'type': 'array', 'itemType': 'string' },
+      positionKeys: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends $tea.Model {
   deviceId?: number;
   deviceName?: string;
@@ -1202,6 +1290,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AttendanceBleDevicesQueryResponse>(await this.doROARequestWithForm("AttendanceBleDevicesQuery", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/query`, "json", req, runtime), new AttendanceBleDevicesQueryResponse({}));
+  }
+
+  async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncScheduleInfoHeaders({ });
+    return await this.syncScheduleInfoWithOptions(request, headers, runtime);
+  }
+
+  async syncScheduleInfoWithOptions(request: SyncScheduleInfoRequest, headers: SyncScheduleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncScheduleInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.scheduleInfos)) {
+      body["scheduleInfos"] = request.scheduleInfos;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SyncScheduleInfoResponse>(await this.doROARequest("SyncScheduleInfo", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/schedules/additionalInfo`, "none", req, runtime), new SyncScheduleInfoResponse({}));
   }
 
   async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {

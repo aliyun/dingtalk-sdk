@@ -97,6 +97,106 @@ export class GetConferenceDetailResponse extends $tea.Model {
   }
 }
 
+export class GetOaOperatorLogListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOaOperatorLogListRequest extends $tea.Model {
+  opUserId?: string;
+  startTime?: number;
+  endTime?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  categoryList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      categoryList: 'categoryList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      startTime: 'number',
+      endTime: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      categoryList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOaOperatorLogListResponseBody extends $tea.Model {
+  data?: GetOaOperatorLogListResponseBodyData[];
+  itemCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      itemCount: 'itemCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetOaOperatorLogListResponseBodyData },
+      itemCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOaOperatorLogListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOaOperatorLogListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOaOperatorLogListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteCommentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -436,11 +536,13 @@ export class CreateTrustedDeviceRequest extends $tea.Model {
   userId?: string;
   platform?: string;
   macAddress?: string;
+  status?: number;
   static names(): { [key: string]: string } {
     return {
       userId: 'userId',
       platform: 'platform',
       macAddress: 'macAddress',
+      status: 'status',
     };
   }
 
@@ -449,6 +551,7 @@ export class CreateTrustedDeviceRequest extends $tea.Model {
       userId: 'string',
       platform: 'string',
       macAddress: 'string',
+      status: 'number',
     };
   }
 
@@ -837,6 +940,43 @@ export class GetConferenceDetailResponseBodyMemberList extends $tea.Model {
   }
 }
 
+export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
+  opUserId?: string;
+  opName?: string;
+  opTime?: number;
+  category1Name?: string;
+  category2Name?: string;
+  content?: string;
+  extension?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      opName: 'opName',
+      opTime: 'opTime',
+      category1Name: 'category1Name',
+      category2Name: 'category2Name',
+      content: 'content',
+      extension: 'extension',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      opName: 'string',
+      opTime: 'number',
+      category1Name: 'string',
+      category2Name: 'string',
+      content: 'string',
+      extension: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends $tea.Model {
   labelId?: number;
   labelName?: string;
@@ -1012,11 +1152,15 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   userId?: string;
   platform?: string;
   macAddress?: string;
+  status?: number;
+  createTime?: number;
   static names(): { [key: string]: string } {
     return {
       userId: 'userId',
       platform: 'platform',
       macAddress: 'macAddress',
+      status: 'status',
+      createTime: 'createTime',
     };
   }
 
@@ -1025,6 +1169,8 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
       userId: 'string',
       platform: 'string',
       macAddress: 'string',
+      status: 'number',
+      createTime: 'number',
     };
   }
 
@@ -1225,6 +1371,55 @@ export default class Client extends OpenApi {
     return $tea.cast<GetConferenceDetailResponse>(await this.doROARequest("GetConferenceDetail", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/conferences/${conferenceId}`, "json", req, runtime), new GetConferenceDetailResponse({}));
   }
 
+  async getOaOperatorLogList(request: GetOaOperatorLogListRequest): Promise<GetOaOperatorLogListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOaOperatorLogListHeaders({ });
+    return await this.getOaOperatorLogListWithOptions(request, headers, runtime);
+  }
+
+  async getOaOperatorLogListWithOptions(request: GetOaOperatorLogListRequest, headers: GetOaOperatorLogListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOaOperatorLogListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.categoryList)) {
+      body["categoryList"] = request.categoryList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetOaOperatorLogListResponse>(await this.doROARequest("GetOaOperatorLogList", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/oaOperatorLogs/query`, "json", req, runtime), new GetOaOperatorLogListResponse({}));
+  }
+
   async deleteComment(publisherId: string, commentId: string): Promise<DeleteCommentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteCommentHeaders({ });
@@ -1394,6 +1589,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.macAddress)) {
       body["macAddress"] = request.macAddress;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
     }
 
     let realHeaders : {[key: string ]: string} = { };

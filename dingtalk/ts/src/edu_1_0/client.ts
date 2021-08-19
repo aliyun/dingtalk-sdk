@@ -927,6 +927,100 @@ export class DeleteGuardianResponse extends $tea.Model {
   }
 }
 
+export class InsertSectionConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigRequest extends $tea.Model {
+  sectionModels?: InsertSectionConfigRequestSectionModels[];
+  start?: InsertSectionConfigRequestStart;
+  end?: InsertSectionConfigRequestEnd;
+  scheduleName?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sectionModels: 'sectionModels',
+      start: 'start',
+      end: 'end',
+      scheduleName: 'scheduleName',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sectionModels: { 'type': 'array', 'itemType': InsertSectionConfigRequestSectionModels },
+      start: InsertSectionConfigRequestStart,
+      end: InsertSectionConfigRequestEnd,
+      scheduleName: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InsertSectionConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InsertSectionConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteTeacherHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3017,6 +3111,131 @@ export class InitCoursesOfClassRequestSectionConfig extends $tea.Model {
   }
 }
 
+export class InsertSectionConfigRequestSectionModelsStart extends $tea.Model {
+  min?: number;
+  hour?: number;
+  static names(): { [key: string]: string } {
+    return {
+      min: 'min',
+      hour: 'hour',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      min: 'number',
+      hour: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigRequestSectionModelsEnd extends $tea.Model {
+  min?: number;
+  hour?: number;
+  static names(): { [key: string]: string } {
+    return {
+      min: 'min',
+      hour: 'hour',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      min: 'number',
+      hour: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigRequestSectionModels extends $tea.Model {
+  sectionType?: string;
+  start?: InsertSectionConfigRequestSectionModelsStart;
+  sectionIndex?: number;
+  end?: InsertSectionConfigRequestSectionModelsEnd;
+  sectionName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sectionType: 'sectionType',
+      start: 'start',
+      sectionIndex: 'sectionIndex',
+      end: 'end',
+      sectionName: 'sectionName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sectionType: 'string',
+      start: InsertSectionConfigRequestSectionModelsStart,
+      sectionIndex: 'number',
+      end: InsertSectionConfigRequestSectionModelsEnd,
+      sectionName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigRequestStart extends $tea.Model {
+  month?: number;
+  year?: number;
+  dayOfMonth?: number;
+  static names(): { [key: string]: string } {
+    return {
+      month: 'month',
+      year: 'year',
+      dayOfMonth: 'dayOfMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      month: 'number',
+      year: 'number',
+      dayOfMonth: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertSectionConfigRequestEnd extends $tea.Model {
+  month?: number;
+  year?: number;
+  dayOfMonth?: number;
+  static names(): { [key: string]: string } {
+    return {
+      month: 'month',
+      year: 'year',
+      dayOfMonth: 'dayOfMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      month: 'number',
+      year: 'number',
+      dayOfMonth: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents extends $tea.Model {
   name?: string;
   staffId?: string;
@@ -4350,6 +4569,53 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteGuardianResponse>(await this.doROARequest("DeleteGuardian", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/classes/${classId}/guardians/${userId}`, "json", req, runtime), new DeleteGuardianResponse({}));
+  }
+
+  async insertSectionConfig(request: InsertSectionConfigRequest): Promise<InsertSectionConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InsertSectionConfigHeaders({ });
+    return await this.insertSectionConfigWithOptions(request, headers, runtime);
+  }
+
+  async insertSectionConfigWithOptions(request: InsertSectionConfigRequest, headers: InsertSectionConfigHeaders, runtime: $Util.RuntimeOptions): Promise<InsertSectionConfigResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sectionModels)) {
+      body["sectionModels"] = request.sectionModels;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.start))) {
+      body["start"] = request.start;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.end))) {
+      body["end"] = request.end;
+    }
+
+    if (!Util.isUnset(request.scheduleName)) {
+      body["scheduleName"] = request.scheduleName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InsertSectionConfigResponse>(await this.doROARequest("InsertSectionConfig", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/schedules/configs`, "json", req, runtime), new InsertSectionConfigResponse({}));
   }
 
   async deleteTeacher(classId: string, userId: string, request: DeleteTeacherRequest): Promise<DeleteTeacherResponse> {
