@@ -222,6 +222,251 @@ class GetConferenceDetailResponse(TeaModel):
         return self
 
 
+class GetOaOperatorLogListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOaOperatorLogListRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        category_list: List[str] = None,
+    ):
+        # 操作员userId
+        self.op_user_id = op_user_id
+        # 起始时间
+        self.start_time = start_time
+        # 结束时间
+        self.end_time = end_time
+        # 分页起始页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 操作分类（一级目录）
+        self.category_list = category_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.category_list is not None:
+            result['categoryList'] = self.category_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('categoryList') is not None:
+            self.category_list = m.get('categoryList')
+        return self
+
+
+class GetOaOperatorLogListResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        op_name: str = None,
+        op_time: int = None,
+        category_1name: str = None,
+        category_2name: str = None,
+        content: str = None,
+        extension: str = None,
+    ):
+        # 操作员userId
+        self.op_user_id = op_user_id
+        # 操作员名字
+        self.op_name = op_name
+        # 操作时间
+        self.op_time = op_time
+        # 操作分类（一级）
+        self.category_1name = category_1name
+        # 操作分类（二级）
+        self.category_2name = category_2name
+        # 操作详情
+        self.content = content
+        # 扩展字段
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.op_name is not None:
+            result['opName'] = self.op_name
+        if self.op_time is not None:
+            result['opTime'] = self.op_time
+        if self.category_1name is not None:
+            result['category1Name'] = self.category_1name
+        if self.category_2name is not None:
+            result['category2Name'] = self.category_2name
+        if self.content is not None:
+            result['content'] = self.content
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('opName') is not None:
+            self.op_name = m.get('opName')
+        if m.get('opTime') is not None:
+            self.op_time = m.get('opTime')
+        if m.get('category1Name') is not None:
+            self.category_1name = m.get('category1Name')
+        if m.get('category2Name') is not None:
+            self.category_2name = m.get('category2Name')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
+class GetOaOperatorLogListResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetOaOperatorLogListResponseBodyData] = None,
+        item_count: int = None,
+    ):
+        self.data = data
+        # 当前获取记录数
+        self.item_count = item_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.item_count is not None:
+            result['itemCount'] = self.item_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetOaOperatorLogListResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('itemCount') is not None:
+            self.item_count = m.get('itemCount')
+        return self
+
+
+class GetOaOperatorLogListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOaOperatorLogListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOaOperatorLogListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteCommentHeaders(TeaModel):
     def __init__(
         self,
@@ -776,6 +1021,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         user_id: str = None,
         platform: str = None,
         mac_address: str = None,
+        status: int = None,
+        create_time: int = None,
     ):
         # 员工Id
         self.user_id = user_id
@@ -783,6 +1030,10 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         self.platform = platform
         # mac地址
         self.mac_address = mac_address
+        # 设备状态
+        self.status = status
+        # 创建时间
+        self.create_time = create_time
 
     def validate(self):
         pass
@@ -799,6 +1050,10 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             result['platform'] = self.platform
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
+        if self.status is not None:
+            result['status'] = self.status
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         return result
 
     def from_map(self, m: dict = None):
@@ -809,6 +1064,10 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             self.platform = m.get('platform')
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         return self
 
 
@@ -1257,6 +1516,7 @@ class CreateTrustedDeviceRequest(TeaModel):
         user_id: str = None,
         platform: str = None,
         mac_address: str = None,
+        status: int = None,
     ):
         # 员工userId
         self.user_id = user_id
@@ -1264,6 +1524,8 @@ class CreateTrustedDeviceRequest(TeaModel):
         self.platform = platform
         # mac地址
         self.mac_address = mac_address
+        # 设备状态
+        self.status = status
 
     def validate(self):
         pass
@@ -1280,6 +1542,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             result['platform'] = self.platform
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
+        if self.status is not None:
+            result['status'] = self.status
         return result
 
     def from_map(self, m: dict = None):
@@ -1290,6 +1554,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             self.platform = m.get('platform')
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         return self
 
 

@@ -319,6 +319,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_with_form_async('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/query', 'json', req, runtime)
         )
 
+    def sync_schedule_info(
+        self,
+        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
+    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.SyncScheduleInfoHeaders()
+        return self.sync_schedule_info_with_options(request, headers, runtime)
+
+    async def sync_schedule_info_async(
+        self,
+        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
+    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.SyncScheduleInfoHeaders()
+        return await self.sync_schedule_info_with_options_async(request, headers, runtime)
+
+    def sync_schedule_info_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
+        headers: dingtalkattendance__1__0_models.SyncScheduleInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.schedule_infos):
+            body['scheduleInfos'] = request.schedule_infos
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.SyncScheduleInfoResponse(),
+            self.do_roarequest('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/schedules/additionalInfo', 'none', req, runtime)
+        )
+
+    async def sync_schedule_info_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
+        headers: dingtalkattendance__1__0_models.SyncScheduleInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.schedule_infos):
+            body['scheduleInfos'] = request.schedule_infos
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.SyncScheduleInfoResponse(),
+            await self.do_roarequest_async('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/schedules/additionalInfo', 'none', req, runtime)
+        )
+
     def attendance_ble_devices_add(
         self,
         request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,

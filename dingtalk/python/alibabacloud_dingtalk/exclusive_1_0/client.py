@@ -77,6 +77,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetConferenceDetail', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/conferences/{conference_id}', 'json', req, runtime)
         )
 
+    def get_oa_operator_log_list(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetOaOperatorLogListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetOaOperatorLogListHeaders()
+        return self.get_oa_operator_log_list_with_options(request, headers, runtime)
+
+    async def get_oa_operator_log_list_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetOaOperatorLogListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetOaOperatorLogListHeaders()
+        return await self.get_oa_operator_log_list_with_options_async(request, headers, runtime)
+
+    def get_oa_operator_log_list_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
+        headers: dingtalkexclusive__1__0_models.GetOaOperatorLogListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetOaOperatorLogListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.category_list):
+            body['categoryList'] = request.category_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetOaOperatorLogListResponse(),
+            self.do_roarequest('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/oaOperatorLogs/query', 'json', req, runtime)
+        )
+
+    async def get_oa_operator_log_list_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
+        headers: dingtalkexclusive__1__0_models.GetOaOperatorLogListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetOaOperatorLogListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.category_list):
+            body['categoryList'] = request.category_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetOaOperatorLogListResponse(),
+            await self.do_roarequest_async('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/oaOperatorLogs/query', 'json', req, runtime)
+        )
+
     def delete_comment(
         self,
         publisher_id: str,
@@ -387,6 +471,8 @@ class Client(OpenApiClient):
             body['platform'] = request.platform
         if not UtilClient.is_unset(request.mac_address):
             body['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -415,6 +501,8 @@ class Client(OpenApiClient):
             body['platform'] = request.platform
         if not UtilClient.is_unset(request.mac_address):
             body['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

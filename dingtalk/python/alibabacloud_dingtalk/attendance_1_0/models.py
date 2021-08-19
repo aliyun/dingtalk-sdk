@@ -831,6 +831,146 @@ class AttendanceBleDevicesQueryResponse(TeaModel):
         return self
 
 
+class SyncScheduleInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncScheduleInfoRequestScheduleInfos(TeaModel):
+    def __init__(
+        self,
+        plan_id: int = None,
+        wifi_keys: List[str] = None,
+        position_keys: List[str] = None,
+    ):
+        self.plan_id = plan_id
+        self.wifi_keys = wifi_keys
+        self.position_keys = position_keys
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.plan_id is not None:
+            result['planId'] = self.plan_id
+        if self.wifi_keys is not None:
+            result['wifiKeys'] = self.wifi_keys
+        if self.position_keys is not None:
+            result['positionKeys'] = self.position_keys
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('planId') is not None:
+            self.plan_id = m.get('planId')
+        if m.get('wifiKeys') is not None:
+            self.wifi_keys = m.get('wifiKeys')
+        if m.get('positionKeys') is not None:
+            self.position_keys = m.get('positionKeys')
+        return self
+
+
+class SyncScheduleInfoRequest(TeaModel):
+    def __init__(
+        self,
+        schedule_infos: List[SyncScheduleInfoRequestScheduleInfos] = None,
+        op_user_id: str = None,
+    ):
+        self.schedule_infos = schedule_infos
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.schedule_infos:
+            for k in self.schedule_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['scheduleInfos'] = []
+        if self.schedule_infos is not None:
+            for k in self.schedule_infos:
+                result['scheduleInfos'].append(k.to_map() if k else None)
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.schedule_infos = []
+        if m.get('scheduleInfos') is not None:
+            for k in m.get('scheduleInfos'):
+                temp_model = SyncScheduleInfoRequestScheduleInfos()
+                self.schedule_infos.append(temp_model.from_map(k))
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class SyncScheduleInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class AttendanceBleDevicesAddHeaders(TeaModel):
     def __init__(
         self,

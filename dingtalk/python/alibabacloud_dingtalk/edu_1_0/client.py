@@ -753,6 +753,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteGuardian', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/classes/{class_id}/guardians/{user_id}', 'json', req, runtime)
         )
 
+    def insert_section_config(
+        self,
+        request: dingtalkedu__1__0_models.InsertSectionConfigRequest,
+    ) -> dingtalkedu__1__0_models.InsertSectionConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InsertSectionConfigHeaders()
+        return self.insert_section_config_with_options(request, headers, runtime)
+
+    async def insert_section_config_async(
+        self,
+        request: dingtalkedu__1__0_models.InsertSectionConfigRequest,
+    ) -> dingtalkedu__1__0_models.InsertSectionConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InsertSectionConfigHeaders()
+        return await self.insert_section_config_with_options_async(request, headers, runtime)
+
+    def insert_section_config_with_options(
+        self,
+        request: dingtalkedu__1__0_models.InsertSectionConfigRequest,
+        headers: dingtalkedu__1__0_models.InsertSectionConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InsertSectionConfigResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.section_models):
+            body['sectionModels'] = request.section_models
+        if not UtilClient.is_unset(request.start):
+            body['start'] = request.start
+        if not UtilClient.is_unset(request.end):
+            body['end'] = request.end
+        if not UtilClient.is_unset(request.schedule_name):
+            body['scheduleName'] = request.schedule_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InsertSectionConfigResponse(),
+            self.do_roarequest('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schedules/configs', 'json', req, runtime)
+        )
+
+    async def insert_section_config_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.InsertSectionConfigRequest,
+        headers: dingtalkedu__1__0_models.InsertSectionConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InsertSectionConfigResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.section_models):
+            body['sectionModels'] = request.section_models
+        if not UtilClient.is_unset(request.start):
+            body['start'] = request.start
+        if not UtilClient.is_unset(request.end):
+            body['end'] = request.end
+        if not UtilClient.is_unset(request.schedule_name):
+            body['scheduleName'] = request.schedule_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InsertSectionConfigResponse(),
+            await self.do_roarequest_async('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schedules/configs', 'json', req, runtime)
+        )
+
     def delete_teacher(
         self,
         class_id: str,
