@@ -45,18 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string PeriodCode { get; set; }
 
             /// <summary>
-            /// 组织id
+            /// 学校corpId
             /// </summary>
-            [NameInMap("orgId")]
+            [NameInMap("corpId")]
             [Validation(Required=false)]
-            public long? OrgId { get; set; }
+            public string CorpId { get; set; }
 
             /// <summary>
-            /// 老师Uid
+            /// 老师Userid
             /// </summary>
-            [NameInMap("teacherUid")]
+            [NameInMap("teacherUserId")]
             [Validation(Required=false)]
-            public long? TeacherUid { get; set; }
+            public string TeacherUserId { get; set; }
 
             /// <summary>
             /// 班级id

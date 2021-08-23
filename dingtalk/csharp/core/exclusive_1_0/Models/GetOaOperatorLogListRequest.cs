@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
-        public long? PageSize { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 操作分类（一级目录）

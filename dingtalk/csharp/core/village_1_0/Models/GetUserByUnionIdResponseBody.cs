@@ -1,0 +1,28 @@
+// This file is auto-generated, don't edit it. Thanks.
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+using Tea;
+
+namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
+{
+    public class GetUserByUnionIdResponseBody : TeaModel {
+        /// <summary>
+        /// 联系类型，0表示企业内部员工，1表示企业外部联系人
+        /// </summary>
+        [NameInMap("contactType")]
+        [Validation(Required=false)]
+        public int? ContactType { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
+
+    }
+
+}

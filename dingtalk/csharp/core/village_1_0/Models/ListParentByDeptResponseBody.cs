@@ -1,0 +1,21 @@
+// This file is auto-generated, don't edit it. Thanks.
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+using Tea;
+
+namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
+{
+    public class ListParentByDeptResponseBody : TeaModel {
+        /// <summary>
+        /// 父部门列表
+        /// </summary>
+        [NameInMap("parentIdList")]
+        [Validation(Required=false)]
+        public List<long?> ParentIdList { get; set; }
+
+    }
+
+}
