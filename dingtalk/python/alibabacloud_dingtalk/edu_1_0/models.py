@@ -5476,8 +5476,8 @@ class QueryTeachSubjectsResponseBodyResult(TeaModel):
         subject_name: str = None,
         subject_code: str = None,
         period_code: str = None,
-        org_id: int = None,
-        teacher_uid: int = None,
+        corp_id: str = None,
+        teacher_user_id: str = None,
         class_id: int = None,
     ):
         # 老师名称
@@ -5488,10 +5488,10 @@ class QueryTeachSubjectsResponseBodyResult(TeaModel):
         self.subject_code = subject_code
         # 学段code
         self.period_code = period_code
-        # 组织id
-        self.org_id = org_id
-        # 老师uid
-        self.teacher_uid = teacher_uid
+        # 学校corpId
+        self.corp_id = corp_id
+        # 老师Userid
+        self.teacher_user_id = teacher_user_id
         # 班级id
         self.class_id = class_id
 
@@ -5512,10 +5512,10 @@ class QueryTeachSubjectsResponseBodyResult(TeaModel):
             result['subjectCode'] = self.subject_code
         if self.period_code is not None:
             result['periodCode'] = self.period_code
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
-        if self.teacher_uid is not None:
-            result['teacherUid'] = self.teacher_uid
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.teacher_user_id is not None:
+            result['teacherUserId'] = self.teacher_user_id
         if self.class_id is not None:
             result['classId'] = self.class_id
         return result
@@ -5530,10 +5530,10 @@ class QueryTeachSubjectsResponseBodyResult(TeaModel):
             self.subject_code = m.get('subjectCode')
         if m.get('periodCode') is not None:
             self.period_code = m.get('periodCode')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
-        if m.get('teacherUid') is not None:
-            self.teacher_uid = m.get('teacherUid')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('teacherUserId') is not None:
+            self.teacher_user_id = m.get('teacherUserId')
         if m.get('classId') is not None:
             self.class_id = m.get('classId')
         return self
@@ -5834,8 +5834,8 @@ class QuerySubjectTeachersResponseBodyResult(TeaModel):
         subject_name: str = None,
         subject_code: str = None,
         period_code: str = None,
-        org_id: int = None,
-        teacher_uid: int = None,
+        corp_id: str = None,
+        teacher_user_id: str = None,
         class_id: int = None,
     ):
         # 老师名称
@@ -5846,10 +5846,10 @@ class QuerySubjectTeachersResponseBodyResult(TeaModel):
         self.subject_code = subject_code
         # 学段code
         self.period_code = period_code
-        # 组织id
-        self.org_id = org_id
-        # 老师Uid
-        self.teacher_uid = teacher_uid
+        # 学校corpId
+        self.corp_id = corp_id
+        # 老师Userid
+        self.teacher_user_id = teacher_user_id
         # 班级id
         self.class_id = class_id
 
@@ -5870,10 +5870,10 @@ class QuerySubjectTeachersResponseBodyResult(TeaModel):
             result['subjectCode'] = self.subject_code
         if self.period_code is not None:
             result['periodCode'] = self.period_code
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
-        if self.teacher_uid is not None:
-            result['teacherUid'] = self.teacher_uid
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.teacher_user_id is not None:
+            result['teacherUserId'] = self.teacher_user_id
         if self.class_id is not None:
             result['classId'] = self.class_id
         return result
@@ -5888,10 +5888,10 @@ class QuerySubjectTeachersResponseBodyResult(TeaModel):
             self.subject_code = m.get('subjectCode')
         if m.get('periodCode') is not None:
             self.period_code = m.get('periodCode')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
-        if m.get('teacherUid') is not None:
-            self.teacher_uid = m.get('teacherUid')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('teacherUserId') is not None:
+            self.teacher_user_id = m.get('teacherUserId')
         if m.get('classId') is not None:
             self.class_id = m.get('classId')
         return self

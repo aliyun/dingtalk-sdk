@@ -2269,6 +2269,122 @@ class ListPermissionsResponse(TeaModel):
         return self
 
 
+class GrantPrivilegeOfCustomSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GrantPrivilegeOfCustomSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        user_id: str = None,
+        file_ids: List[str] = None,
+        duration: int = None,
+        union_id: str = None,
+    ):
+        # 权限类型
+        self.type = type
+        # 被授予权限的员工id
+        self.user_id = user_id
+        # 授权访问的文件id列表
+        self.file_ids = file_ids
+        # 权限有效时间
+        self.duration = duration
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.file_ids is not None:
+            result['fileIds'] = self.file_ids
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('fileIds') is not None:
+            self.file_ids = m.get('fileIds')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GrantPrivilegeOfCustomSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class MoveFileHeaders(TeaModel):
     def __init__(
         self,
@@ -3253,6 +3369,181 @@ class DeletePermissionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class AddCustomSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCustomSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        identifier: str = None,
+        union_id: str = None,
+    ):
+        # 空间标识
+        self.identifier = identifier
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.identifier is not None:
+            result['identifier'] = self.identifier
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('identifier') is not None:
+            self.identifier = m.get('identifier')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddCustomSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        create_time: str = None,
+        modify_time: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 空间总额度
+        self.quota = quota
+        # 空间已使用额度
+        self.used_quota = used_quota
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class AddCustomSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddCustomSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddCustomSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
