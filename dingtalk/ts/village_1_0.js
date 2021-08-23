@@ -1,0 +1,1 @@
+module.exports = require('./dist').village_1_0;

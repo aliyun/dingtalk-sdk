@@ -3736,8 +3736,8 @@ export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
   subjectName?: string;
   subjectCode?: string;
   periodCode?: string;
-  orgId?: number;
-  teacherUid?: number;
+  corpId?: string;
+  teacherUserId?: string;
   classId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3745,8 +3745,8 @@ export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
       subjectName: 'subjectName',
       subjectCode: 'subjectCode',
       periodCode: 'periodCode',
-      orgId: 'orgId',
-      teacherUid: 'teacherUid',
+      corpId: 'corpId',
+      teacherUserId: 'teacherUserId',
       classId: 'classId',
     };
   }
@@ -3757,8 +3757,8 @@ export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
       subjectName: 'string',
       subjectCode: 'string',
       periodCode: 'string',
-      orgId: 'number',
-      teacherUid: 'number',
+      corpId: 'string',
+      teacherUserId: 'string',
       classId: 'number',
     };
   }
@@ -3795,8 +3795,8 @@ export class QuerySubjectTeachersResponseBodyResult extends $tea.Model {
   subjectName?: string;
   subjectCode?: string;
   periodCode?: string;
-  orgId?: number;
-  teacherUid?: number;
+  corpId?: string;
+  teacherUserId?: string;
   classId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3804,8 +3804,8 @@ export class QuerySubjectTeachersResponseBodyResult extends $tea.Model {
       subjectName: 'subjectName',
       subjectCode: 'subjectCode',
       periodCode: 'periodCode',
-      orgId: 'orgId',
-      teacherUid: 'teacherUid',
+      corpId: 'corpId',
+      teacherUserId: 'teacherUserId',
       classId: 'classId',
     };
   }
@@ -3816,8 +3816,8 @@ export class QuerySubjectTeachersResponseBodyResult extends $tea.Model {
       subjectName: 'string',
       subjectCode: 'string',
       periodCode: 'string',
-      orgId: 'number',
-      teacherUid: 'number',
+      corpId: 'string',
+      teacherUserId: 'string',
       classId: 'number',
     };
   }
