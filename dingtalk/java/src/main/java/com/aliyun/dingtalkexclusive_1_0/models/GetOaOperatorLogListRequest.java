@@ -22,7 +22,7 @@ public class GetOaOperatorLogListRequest extends TeaModel {
 
     // 分页大小
     @NameInMap("pageSize")
-    public Long pageSize;
+    public Integer pageSize;
 
     // 操作分类（一级目录）
     @NameInMap("categoryList")
@@ -65,11 +65,11 @@ public class GetOaOperatorLogListRequest extends TeaModel {
         return this.pageNumber;
     }
 
-    public GetOaOperatorLogListRequest setPageSize(Long pageSize) {
+    public GetOaOperatorLogListRequest setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
-    public Long getPageSize() {
+    public Integer getPageSize() {
         return this.pageSize;
     }
 

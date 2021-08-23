@@ -38,13 +38,13 @@ public class QueryTeachSubjectsResponseBody extends TeaModel {
         @NameInMap("periodCode")
         public String periodCode;
 
-        // 组织id
-        @NameInMap("orgId")
-        public Long orgId;
+        // 学校corpId
+        @NameInMap("corpId")
+        public String corpId;
 
-        // 老师uid
-        @NameInMap("teacherUid")
-        public Long teacherUid;
+        // 老师Userid
+        @NameInMap("teacherUserId")
+        public String teacherUserId;
 
         // 班级id
         @NameInMap("classId")
@@ -87,20 +87,20 @@ public class QueryTeachSubjectsResponseBody extends TeaModel {
             return this.periodCode;
         }
 
-        public QueryTeachSubjectsResponseBodyResult setOrgId(Long orgId) {
-            this.orgId = orgId;
+        public QueryTeachSubjectsResponseBodyResult setCorpId(String corpId) {
+            this.corpId = corpId;
             return this;
         }
-        public Long getOrgId() {
-            return this.orgId;
+        public String getCorpId() {
+            return this.corpId;
         }
 
-        public QueryTeachSubjectsResponseBodyResult setTeacherUid(Long teacherUid) {
-            this.teacherUid = teacherUid;
+        public QueryTeachSubjectsResponseBodyResult setTeacherUserId(String teacherUserId) {
+            this.teacherUserId = teacherUserId;
             return this;
         }
-        public Long getTeacherUid() {
-            return this.teacherUid;
+        public String getTeacherUserId() {
+            return this.teacherUserId;
         }
 
         public QueryTeachSubjectsResponseBodyResult setClassId(Long classId) {
