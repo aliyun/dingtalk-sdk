@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdrive_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\AddCustomSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\AddCustomSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\AddCustomSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\AddFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\AddFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\AddFileResponse;
@@ -38,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GrantPrivilegeOfCustomSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GrantPrivilegeOfCustomSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GrantPrivilegeOfCustomSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\InfoSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\InfoSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\InfoSpaceResponse;
@@ -678,6 +684,62 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                             $spaceId
+     * @param GrantPrivilegeOfCustomSpaceRequest $request
+     *
+     * @return GrantPrivilegeOfCustomSpaceResponse
+     */
+    public function grantPrivilegeOfCustomSpace($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GrantPrivilegeOfCustomSpaceHeaders([]);
+
+        return $this->grantPrivilegeOfCustomSpaceWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                             $spaceId
+     * @param GrantPrivilegeOfCustomSpaceRequest $request
+     * @param GrantPrivilegeOfCustomSpaceHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return GrantPrivilegeOfCustomSpaceResponse
+     */
+    public function grantPrivilegeOfCustomSpaceWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->fileIds)) {
+            @$body['fileIds'] = $request->fileIds;
+        }
+        if (!Utils::isUnset($request->duration)) {
+            @$body['duration'] = $request->duration;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GrantPrivilegeOfCustomSpaceResponse::fromMap($this->doROARequest('GrantPrivilegeOfCustomSpace', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/customSpacePrivileges', 'none', $req, $runtime));
+    }
+
+    /**
      * @param string          $spaceId
      * @param string          $fileId
      * @param MoveFileRequest $request
@@ -940,6 +1002,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeletePermissionResponse::fromMap($this->doROARequest('DeletePermission', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions/delete', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param AddCustomSpaceRequest $request
+     *
+     * @return AddCustomSpaceResponse
+     */
+    public function addCustomSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCustomSpaceHeaders([]);
+
+        return $this->addCustomSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddCustomSpaceRequest $request
+     * @param AddCustomSpaceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return AddCustomSpaceResponse
+     */
+    public function addCustomSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->identifier)) {
+            @$body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddCustomSpaceResponse::fromMap($this->doROARequest('AddCustomSpace', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/customSpaces', 'json', $req, $runtime));
     }
 
     /**

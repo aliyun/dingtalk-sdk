@@ -37,18 +37,18 @@ class result extends Model
     public $periodCode;
 
     /**
-     * @description 组织id
+     * @description 学校corpId
      *
-     * @var int
+     * @var string
      */
-    public $orgId;
+    public $corpId;
 
     /**
-     * @description 老师Uid
+     * @description 老师Userid
      *
-     * @var int
+     * @var string
      */
-    public $teacherUid;
+    public $teacherUserId;
 
     /**
      * @description 班级id
@@ -57,13 +57,13 @@ class result extends Model
      */
     public $classId;
     protected $_name = [
-        'teacherName' => 'teacherName',
-        'subjectName' => 'subjectName',
-        'subjectCode' => 'subjectCode',
-        'periodCode'  => 'periodCode',
-        'orgId'       => 'orgId',
-        'teacherUid'  => 'teacherUid',
-        'classId'     => 'classId',
+        'teacherName'   => 'teacherName',
+        'subjectName'   => 'subjectName',
+        'subjectCode'   => 'subjectCode',
+        'periodCode'    => 'periodCode',
+        'corpId'        => 'corpId',
+        'teacherUserId' => 'teacherUserId',
+        'classId'       => 'classId',
     ];
 
     public function validate()
@@ -85,11 +85,11 @@ class result extends Model
         if (null !== $this->periodCode) {
             $res['periodCode'] = $this->periodCode;
         }
-        if (null !== $this->orgId) {
-            $res['orgId'] = $this->orgId;
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
-        if (null !== $this->teacherUid) {
-            $res['teacherUid'] = $this->teacherUid;
+        if (null !== $this->teacherUserId) {
+            $res['teacherUserId'] = $this->teacherUserId;
         }
         if (null !== $this->classId) {
             $res['classId'] = $this->classId;
@@ -118,11 +118,11 @@ class result extends Model
         if (isset($map['periodCode'])) {
             $model->periodCode = $map['periodCode'];
         }
-        if (isset($map['orgId'])) {
-            $model->orgId = $map['orgId'];
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
-        if (isset($map['teacherUid'])) {
-            $model->teacherUid = $map['teacherUid'];
+        if (isset($map['teacherUserId'])) {
+            $model->teacherUserId = $map['teacherUserId'];
         }
         if (isset($map['classId'])) {
             $model->classId = $map['classId'];
