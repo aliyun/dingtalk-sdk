@@ -115,44 +115,42 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateGroupPermission', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/permissions', 'json', req, runtime)
         )
 
-    def update_the_group_roles_of_group_member(
+    def topbox_close(
         self,
-        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        request: dingtalkim__1__0_models.TopboxCloseRequest,
+    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
-        return self.update_the_group_roles_of_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.TopboxCloseHeaders()
+        return self.topbox_close_with_options(request, headers, runtime)
 
-    async def update_the_group_roles_of_group_member_async(
+    async def topbox_close_async(
         self,
-        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        request: dingtalkim__1__0_models.TopboxCloseRequest,
+    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
-        return await self.update_the_group_roles_of_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.TopboxCloseHeaders()
+        return await self.topbox_close_with_options_async(request, headers, runtime)
 
-    def update_the_group_roles_of_group_member_with_options(
+    def topbox_close_with_options(
         self,
-        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
-        headers: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders,
+        request: dingtalkim__1__0_models.TopboxCloseRequest,
+        headers: dingtalkim__1__0_models.TopboxCloseHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.open_conversation_id):
-            body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.open_role_ids):
-            body['openRoleIds'] = request.open_role_ids
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.ding_suite_key):
             body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_oauth_app_id):
             body['dingOauthAppId'] = request.ding_oauth_app_id
         real_headers = {}
@@ -165,32 +163,30 @@ class Client(OpenApiClient):
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
-            self.do_roarequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
+            dingtalkim__1__0_models.TopboxCloseResponse(),
+            self.do_roarequest('TopboxClose', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/close', 'none', req, runtime)
         )
 
-    async def update_the_group_roles_of_group_member_with_options_async(
+    async def topbox_close_with_options_async(
         self,
-        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
-        headers: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders,
+        request: dingtalkim__1__0_models.TopboxCloseRequest,
+        headers: dingtalkim__1__0_models.TopboxCloseHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.open_conversation_id):
-            body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.open_role_ids):
-            body['openRoleIds'] = request.open_role_ids
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.ding_suite_key):
             body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
         if not UtilClient.is_unset(request.ding_oauth_app_id):
             body['dingOauthAppId'] = request.ding_oauth_app_id
         real_headers = {}
@@ -203,8 +199,8 @@ class Client(OpenApiClient):
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
-            await self.do_roarequest_async('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
+            dingtalkim__1__0_models.TopboxCloseResponse(),
+            await self.do_roarequest_async('TopboxClose', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/close', 'none', req, runtime)
         )
 
     def send_interactive_card(
@@ -431,6 +427,130 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interactiveCards', 'json', req, runtime)
         )
 
+    def interactive_card_create_instance(
+        self,
+        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
+    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
+        return self.interactive_card_create_instance_with_options(request, headers, runtime)
+
+    async def interactive_card_create_instance_async(
+        self,
+        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
+    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
+        return await self.interactive_card_create_instance_with_options_async(request, headers, runtime)
+
+    def interactive_card_create_instance_with_options(
+        self,
+        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
+        headers: dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.conversation_type):
+            body['conversationType'] = request.conversation_type
+        if not UtilClient.is_unset(request.callback_route_key):
+            body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.private_data):
+            body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.chat_bot_id):
+            body['chatBotId'] = request.chat_bot_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse(),
+            self.do_roarequest('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/instances', 'json', req, runtime)
+        )
+
+    async def interactive_card_create_instance_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
+        headers: dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.conversation_type):
+            body['conversationType'] = request.conversation_type
+        if not UtilClient.is_unset(request.callback_route_key):
+            body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.private_data):
+            body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.chat_bot_id):
+            body['chatBotId'] = request.chat_bot_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse(),
+            await self.do_roarequest_async('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/instances', 'json', req, runtime)
+        )
+
     def query_members_of_group_role(
         self,
         request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
@@ -521,4 +641,192 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse(),
             await self.do_roarequest_async('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/roles/members/query', 'json', req, runtime)
+        )
+
+    def topbox_open(
+        self,
+        request: dingtalkim__1__0_models.TopboxOpenRequest,
+    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.TopboxOpenHeaders()
+        return self.topbox_open_with_options(request, headers, runtime)
+
+    async def topbox_open_async(
+        self,
+        request: dingtalkim__1__0_models.TopboxOpenRequest,
+    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.TopboxOpenHeaders()
+        return await self.topbox_open_with_options_async(request, headers, runtime)
+
+    def topbox_open_with_options(
+        self,
+        request: dingtalkim__1__0_models.TopboxOpenRequest,
+        headers: dingtalkim__1__0_models.TopboxOpenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.expired_time):
+            body['expiredTime'] = request.expired_time
+        if not UtilClient.is_unset(request.platforms):
+            body['platforms'] = request.platforms
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.TopboxOpenResponse(),
+            self.do_roarequest('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/open', 'none', req, runtime)
+        )
+
+    async def topbox_open_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.TopboxOpenRequest,
+        headers: dingtalkim__1__0_models.TopboxOpenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.expired_time):
+            body['expiredTime'] = request.expired_time
+        if not UtilClient.is_unset(request.platforms):
+            body['platforms'] = request.platforms
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.TopboxOpenResponse(),
+            await self.do_roarequest_async('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/open', 'none', req, runtime)
+        )
+
+    def update_the_group_roles_of_group_member(
+        self,
+        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
+        return self.update_the_group_roles_of_group_member_with_options(request, headers, runtime)
+
+    async def update_the_group_roles_of_group_member_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
+        return await self.update_the_group_roles_of_group_member_with_options_async(request, headers, runtime)
+
+    def update_the_group_roles_of_group_member_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
+        headers: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.open_role_ids):
+            body['openRoleIds'] = request.open_role_ids
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
+            self.do_roarequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
+        )
+
+    async def update_the_group_roles_of_group_member_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
+        headers: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.open_role_ids):
+            body['openRoleIds'] = request.open_role_ids
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
+            await self.do_roarequest_async('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
         )
