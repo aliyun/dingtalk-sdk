@@ -4,15 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\ListDeptUsersResponseBody\list_;
+use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\ListDeptUsersResponseBody\userList;
 use AlibabaCloud\Tea\Model;
 
 class ListDeptUsersResponseBody extends Model
 {
     /**
-     * @var list_[]
+     * @description 用户列表
+     *
+     * @var userList[]
      */
-    public $list;
+    public $userList;
 
     /**
      * @var int
@@ -24,7 +26,7 @@ class ListDeptUsersResponseBody extends Model
      */
     public $hasMore;
     protected $_name = [
-        'list'       => 'list',
+        'userList'   => 'userList',
         'nextCursor' => 'nextCursor',
         'hasMore'    => 'hasMore',
     ];
@@ -36,12 +38,12 @@ class ListDeptUsersResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->list) {
-            $res['list'] = [];
-            if (null !== $this->list && \is_array($this->list)) {
+        if (null !== $this->userList) {
+            $res['userList'] = [];
+            if (null !== $this->userList && \is_array($this->userList)) {
                 $n = 0;
-                foreach ($this->list as $item) {
-                    $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->userList as $item) {
+                    $res['userList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -63,12 +65,12 @@ class ListDeptUsersResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['list'])) {
-            if (!empty($map['list'])) {
-                $model->list = [];
-                $n           = 0;
-                foreach ($map['list'] as $item) {
-                    $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
+        if (isset($map['userList'])) {
+            if (!empty($map['userList'])) {
+                $model->userList = [];
+                $n               = 0;
+                foreach ($map['userList'] as $item) {
+                    $model->userList[$n++] = null !== $item ? userList::fromMap($item) : $item;
                 }
             }
         }

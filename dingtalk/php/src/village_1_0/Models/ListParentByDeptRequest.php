@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListParentByDeptRequest extends Model
 {
     /**
-     * @description 真实请求的组织corpId
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
      *
      * @var string
      */
     public $subCorpId;
 
     /**
-     * @description 部门id
+     * @description 下属组织的部门ID
      *
      * @var int
      */
-    public $deptId;
+    public $departmentId;
     protected $_name = [
-        'subCorpId' => 'subCorpId',
-        'deptId'    => 'deptId',
+        'subCorpId'    => 'subCorpId',
+        'departmentId' => 'departmentId',
     ];
 
     public function validate()
@@ -36,8 +36,8 @@ class ListParentByDeptRequest extends Model
         if (null !== $this->subCorpId) {
             $res['subCorpId'] = $this->subCorpId;
         }
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
+        if (null !== $this->departmentId) {
+            $res['departmentId'] = $this->departmentId;
         }
 
         return $res;
@@ -54,8 +54,8 @@ class ListParentByDeptRequest extends Model
         if (isset($map['subCorpId'])) {
             $model->subCorpId = $map['subCorpId'];
         }
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
+        if (isset($map['departmentId'])) {
+            $model->departmentId = $map['departmentId'];
         }
 
         return $model;

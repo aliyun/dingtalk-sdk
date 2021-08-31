@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 部门ID
+     * @description 下属组织的部门ID
      *
      * @var int
      */
-    public $deptId;
+    public $departmentId;
 
     /**
      * @description 部门名称
@@ -22,8 +22,8 @@ class result extends Model
      */
     public $name;
     protected $_name = [
-        'deptId' => 'deptId',
-        'name'   => 'name',
+        'departmentId' => 'departmentId',
+        'name'         => 'name',
     ];
 
     public function validate()
@@ -33,8 +33,8 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
+        if (null !== $this->departmentId) {
+            $res['departmentId'] = $this->departmentId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -51,8 +51,8 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
+        if (isset($map['departmentId'])) {
+            $model->departmentId = $map['departmentId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

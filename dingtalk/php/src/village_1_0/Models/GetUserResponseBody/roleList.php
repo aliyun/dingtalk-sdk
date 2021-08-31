@@ -13,14 +13,14 @@ class roleList extends Model
      *
      * @var int
      */
-    public $id;
+    public $roleId;
 
     /**
      * @description 角色名称
      *
      * @var string
      */
-    public $name;
+    public $roleName;
 
     /**
      * @description 角色组名称
@@ -29,8 +29,8 @@ class roleList extends Model
      */
     public $groupName;
     protected $_name = [
-        'id'        => 'id',
-        'name'      => 'name',
+        'roleId'    => 'roleId',
+        'roleName'  => 'roleName',
         'groupName' => 'groupName',
     ];
 
@@ -41,11 +41,11 @@ class roleList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->roleId) {
+            $res['roleId'] = $this->roleId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->roleName) {
+            $res['roleName'] = $this->roleName;
         }
         if (null !== $this->groupName) {
             $res['groupName'] = $this->groupName;
@@ -62,11 +62,11 @@ class roleList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['roleId'])) {
+            $model->roleId = $map['roleId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['roleName'])) {
+            $model->roleName = $map['roleName'];
         }
         if (isset($map['groupName'])) {
             $model->groupName = $map['groupName'];

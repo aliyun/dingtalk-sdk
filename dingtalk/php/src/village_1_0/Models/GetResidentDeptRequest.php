@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetResidentDeptRequest extends Model
 {
     /**
-     * @description 真实请求的组织corpId
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ListResidentDeptUsersRequest extends Model
 {
     /**
-     * @description 真实请求的组织corpId
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
      *
      * @var string
      */
     public $subCorpId;
 
     /**
-     * @description 标签
+     * @description 角色标签
      *
      * @var string
      */

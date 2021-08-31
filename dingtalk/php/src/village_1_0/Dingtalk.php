@@ -160,28 +160,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $deptId
+     * @param string                       $departmentId
      * @param ListResidentDeptUsersRequest $request
      *
      * @return ListResidentDeptUsersResponse
      */
-    public function listResidentDeptUsers($deptId, $request)
+    public function listResidentDeptUsers($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListResidentDeptUsersHeaders([]);
 
-        return $this->listResidentDeptUsersWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                       $deptId
+     * @param string                       $departmentId
      * @param ListResidentDeptUsersRequest $request
      * @param ListResidentDeptUsersHeaders $headers
      * @param RuntimeOptions               $runtime
      *
      * @return ListResidentDeptUsersResponse
      */
-    public function listResidentDeptUsersWithOptions($deptId, $request, $headers, $runtime)
+    public function listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -209,32 +209,32 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListResidentDeptUsersResponse::fromMap($this->doROARequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $deptId . '/users', 'json', $req, $runtime));
+        return ListResidentDeptUsersResponse::fromMap($this->doROARequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/users', 'json', $req, $runtime));
     }
 
     /**
-     * @param string                     $deptId
+     * @param string                     $departmentId
      * @param ListDeptSimpleUsersRequest $request
      *
      * @return ListDeptSimpleUsersResponse
      */
-    public function listDeptSimpleUsers($deptId, $request)
+    public function listDeptSimpleUsers($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListDeptSimpleUsersHeaders([]);
 
-        return $this->listDeptSimpleUsersWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                     $deptId
+     * @param string                     $departmentId
      * @param ListDeptSimpleUsersRequest $request
      * @param ListDeptSimpleUsersHeaders $headers
      * @param RuntimeOptions             $runtime
      *
      * @return ListDeptSimpleUsersResponse
      */
-    public function listDeptSimpleUsersWithOptions($deptId, $request, $headers, $runtime)
+    public function listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -268,7 +268,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListDeptSimpleUsersResponse::fromMap($this->doROARequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $deptId . '/simpleUsers', 'json', $req, $runtime));
+        return ListDeptSimpleUsersResponse::fromMap($this->doROARequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/simpleUsers', 'json', $req, $runtime));
     }
 
     /**
@@ -364,22 +364,22 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $deptId
+     * @param string                     $departmentId
      * @param string                     $userId
      * @param GetResidentUserInfoRequest $request
      *
      * @return GetResidentUserInfoResponse
      */
-    public function getResidentUserInfo($deptId, $userId, $request)
+    public function getResidentUserInfo($departmentId, $userId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetResidentUserInfoHeaders([]);
 
-        return $this->getResidentUserInfoWithOptions($deptId, $userId, $request, $headers, $runtime);
+        return $this->getResidentUserInfoWithOptions($departmentId, $userId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                     $deptId
+     * @param string                     $departmentId
      * @param string                     $userId
      * @param GetResidentUserInfoRequest $request
      * @param GetResidentUserInfoHeaders $headers
@@ -387,7 +387,7 @@ class Dingtalk extends OpenApiClient
      *
      * @return GetResidentUserInfoResponse
      */
-    public function getResidentUserInfoWithOptions($deptId, $userId, $request, $headers, $runtime)
+    public function getResidentUserInfoWithOptions($departmentId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -406,7 +406,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetResidentUserInfoResponse::fromMap($this->doROARequest('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $deptId . '/users/' . $userId . '', 'json', $req, $runtime));
+        return GetResidentUserInfoResponse::fromMap($this->doROARequest('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/users/' . $userId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -483,8 +483,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
-        if (!Utils::isUnset($request->deptId)) {
-            @$query['deptId'] = $request->deptId;
+        if (!Utils::isUnset($request->departmentId)) {
+            @$query['departmentId'] = $request->departmentId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -502,28 +502,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                 $deptId
+     * @param string                 $departmentId
      * @param ListDeptUserIdsRequest $request
      *
      * @return ListDeptUserIdsResponse
      */
-    public function listDeptUserIds($deptId, $request)
+    public function listDeptUserIds($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListDeptUserIdsHeaders([]);
 
-        return $this->listDeptUserIdsWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listDeptUserIdsWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                 $deptId
+     * @param string                 $departmentId
      * @param ListDeptUserIdsRequest $request
      * @param ListDeptUserIdsHeaders $headers
      * @param RuntimeOptions         $runtime
      *
      * @return ListDeptUserIdsResponse
      */
-    public function listDeptUserIdsWithOptions($deptId, $request, $headers, $runtime)
+    public function listDeptUserIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -542,7 +542,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListDeptUserIdsResponse::fromMap($this->doROARequest('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $deptId . '/userIds', 'json', $req, $runtime));
+        return ListDeptUserIdsResponse::fromMap($this->doROARequest('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/userIds', 'json', $req, $runtime));
     }
 
     /**
@@ -597,28 +597,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                      $deptId
+     * @param string                      $departmentId
      * @param ListResidentSubDeptsRequest $request
      *
      * @return ListResidentSubDeptsResponse
      */
-    public function listResidentSubDepts($deptId, $request)
+    public function listResidentSubDepts($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListResidentSubDeptsHeaders([]);
 
-        return $this->listResidentSubDeptsWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                      $deptId
+     * @param string                      $departmentId
      * @param ListResidentSubDeptsRequest $request
      * @param ListResidentSubDeptsHeaders $headers
      * @param RuntimeOptions              $runtime
      *
      * @return ListResidentSubDeptsResponse
      */
-    public function listResidentSubDeptsWithOptions($deptId, $request, $headers, $runtime)
+    public function listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -643,7 +643,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListResidentSubDeptsResponse::fromMap($this->doROARequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $deptId . '/subDepartments', 'json', $req, $runtime));
+        return ListResidentSubDeptsResponse::fromMap($this->doROARequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/residentDepartments/' . $departmentId . '/subDepartments', 'json', $req, $runtime));
     }
 
     /**
@@ -692,28 +692,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $deptId
+     * @param string             $departmentId
      * @param ListSubDeptRequest $request
      *
      * @return ListSubDeptResponse
      */
-    public function listSubDept($deptId, $request)
+    public function listSubDept($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListSubDeptHeaders([]);
 
-        return $this->listSubDeptWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listSubDeptWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string             $deptId
+     * @param string             $departmentId
      * @param ListSubDeptRequest $request
      * @param ListSubDeptHeaders $headers
      * @param RuntimeOptions     $runtime
      *
      * @return ListSubDeptResponse
      */
-    public function listSubDeptWithOptions($deptId, $request, $headers, $runtime)
+    public function listSubDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -735,7 +735,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListSubDeptResponse::fromMap($this->doROARequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $deptId . '/subDepartments', 'json', $req, $runtime));
+        return ListSubDeptResponse::fromMap($this->doROARequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/subDepartments', 'json', $req, $runtime));
     }
 
     /**
@@ -786,28 +786,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $deptId
+     * @param string               $departmentId
      * @param ListDeptUsersRequest $request
      *
      * @return ListDeptUsersResponse
      */
-    public function listDeptUsers($deptId, $request)
+    public function listDeptUsers($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListDeptUsersHeaders([]);
 
-        return $this->listDeptUsersWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listDeptUsersWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string               $deptId
+     * @param string               $departmentId
      * @param ListDeptUsersRequest $request
      * @param ListDeptUsersHeaders $headers
      * @param RuntimeOptions       $runtime
      *
      * @return ListDeptUsersResponse
      */
-    public function listDeptUsersWithOptions($deptId, $request, $headers, $runtime)
+    public function listDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -841,7 +841,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListDeptUsersResponse::fromMap($this->doROARequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $deptId . '/users', 'json', $req, $runtime));
+        return ListDeptUsersResponse::fromMap($this->doROARequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/users', 'json', $req, $runtime));
     }
 
     /**
@@ -895,28 +895,28 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $deptId
+     * @param string                $departmentId
      * @param ListSubDeptIdsRequest $request
      *
      * @return ListSubDeptIdsResponse
      */
-    public function listSubDeptIds($deptId, $request)
+    public function listSubDeptIds($departmentId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListSubDeptIdsHeaders([]);
 
-        return $this->listSubDeptIdsWithOptions($deptId, $request, $headers, $runtime);
+        return $this->listSubDeptIdsWithOptions($departmentId, $request, $headers, $runtime);
     }
 
     /**
-     * @param string                $deptId
+     * @param string                $departmentId
      * @param ListSubDeptIdsRequest $request
      * @param ListSubDeptIdsHeaders $headers
      * @param RuntimeOptions        $runtime
      *
      * @return ListSubDeptIdsResponse
      */
-    public function listSubDeptIdsWithOptions($deptId, $request, $headers, $runtime)
+    public function listSubDeptIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
@@ -935,6 +935,6 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListSubDeptIdsResponse::fromMap($this->doROARequest('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $deptId . '/subDepartmentIds', 'json', $req, $runtime));
+        return ListSubDeptIdsResponse::fromMap($this->doROARequest('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', '/v1.0/village/departments/' . $departmentId . '/subDepartmentIds', 'json', $req, $runtime));
     }
 }

@@ -9,13 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ListParentByDeptResponseBody extends Model
 {
     /**
-     * @description 父部门列表
+     * @description 父部门ID列表
      *
      * @var int[]
      */
-    public $parentIdList;
+    public $departmentIdList;
     protected $_name = [
-        'parentIdList' => 'parentIdList',
+        'departmentIdList' => 'departmentIdList',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class ListParentByDeptResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->parentIdList) {
-            $res['parentIdList'] = $this->parentIdList;
+        if (null !== $this->departmentIdList) {
+            $res['departmentIdList'] = $this->departmentIdList;
         }
 
         return $res;
@@ -40,9 +40,9 @@ class ListParentByDeptResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['parentIdList'])) {
-            if (!empty($map['parentIdList'])) {
-                $model->parentIdList = $map['parentIdList'];
+        if (isset($map['departmentIdList'])) {
+            if (!empty($map['departmentIdList'])) {
+                $model->departmentIdList = $map['departmentIdList'];
             }
         }
 

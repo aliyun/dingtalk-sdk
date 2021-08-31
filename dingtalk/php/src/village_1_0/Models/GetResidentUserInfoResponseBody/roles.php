@@ -13,14 +13,14 @@ class roles extends Model
      *
      * @var int
      */
-    public $id;
+    public $roleId;
 
     /**
      * @description 标签名称
      *
      * @var string
      */
-    public $name;
+    public $roleName;
 
     /**
      * @description 标签名称 tagCode
@@ -29,9 +29,9 @@ class roles extends Model
      */
     public $tagCode;
     protected $_name = [
-        'id'      => 'id',
-        'name'    => 'name',
-        'tagCode' => 'tagCode',
+        'roleId'   => 'roleId',
+        'roleName' => 'roleName',
+        'tagCode'  => 'tagCode',
     ];
 
     public function validate()
@@ -41,11 +41,11 @@ class roles extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->roleId) {
+            $res['roleId'] = $this->roleId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->roleName) {
+            $res['roleName'] = $this->roleName;
         }
         if (null !== $this->tagCode) {
             $res['tagCode'] = $this->tagCode;
@@ -62,11 +62,11 @@ class roles extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['roleId'])) {
+            $model->roleId = $map['roleId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['roleName'])) {
+            $model->roleName = $map['roleName'];
         }
         if (isset($map['tagCode'])) {
             $model->tagCode = $map['tagCode'];

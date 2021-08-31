@@ -49,13 +49,6 @@ class data extends Model
      * @var string
      */
     public $content;
-
-    /**
-     * @description 扩展字段
-     *
-     * @var string
-     */
-    public $extension;
     protected $_name = [
         'opUserId'      => 'opUserId',
         'opName'        => 'opName',
@@ -63,7 +56,6 @@ class data extends Model
         'category1Name' => 'category1Name',
         'category2Name' => 'category2Name',
         'content'       => 'content',
-        'extension'     => 'extension',
     ];
 
     public function validate()
@@ -90,9 +82,6 @@ class data extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
-        }
-        if (null !== $this->extension) {
-            $res['extension'] = $this->extension;
         }
 
         return $res;
@@ -123,9 +112,6 @@ class data extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
-        }
-        if (isset($map['extension'])) {
-            $model->extension = $map['extension'];
         }
 
         return $model;

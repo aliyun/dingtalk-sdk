@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyResponse;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryCityCarApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryCityCarApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryCityCarApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryUnionOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryUnionOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryUnionOrderResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -190,6 +193,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ApproveCityCarApplyResponse::fromMap($this->doROARequest('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/alitrip/cityCarApprovals', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUnionOrderRequest $request
+     *
+     * @return QueryUnionOrderResponse
+     */
+    public function queryUnionOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUnionOrderHeaders([]);
+
+        return $this->queryUnionOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUnionOrderRequest $request
+     * @param QueryUnionOrderHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryUnionOrderResponse
+     */
+    public function queryUnionOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->thirdPartApplyId)) {
+            @$query['thirdPartApplyId'] = $request->thirdPartApplyId;
+        }
+        if (!Utils::isUnset($request->unionNo)) {
+            @$query['unionNo'] = $request->unionNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryUnionOrderResponse::fromMap($this->doROARequest('QueryUnionOrder', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/unionOrders', 'json', $req, $runtime));
     }
 
     /**

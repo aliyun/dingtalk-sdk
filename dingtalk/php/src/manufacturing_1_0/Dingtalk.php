@@ -100,6 +100,18 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingCorpId)) {
             @$body['dingCorpId'] = $request->dingCorpId;
         }
+        if (!Utils::isUnset($request->isBatchJob)) {
+            @$body['isBatchJob'] = $request->isBatchJob;
+        }
+        if (!Utils::isUnset($request->userNameList)) {
+            @$body['userNameList'] = $request->userNameList;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            @$body['userIdList'] = $request->userIdList;
+        }
+        if (!Utils::isUnset($request->unitPrice)) {
+            @$body['unitPrice'] = $request->unitPrice;
+        }
         $req = new OpenApiRequest([
             'headers' => $headers,
             'body'    => OpenApiUtilClient::parseToMap($body),

@@ -37,6 +37,13 @@ class result extends Model
     public $subjectName;
 
     /**
+     * @description 学科code
+     *
+     * @var string
+     */
+    public $subjectCode;
+
+    /**
      * @description 总学时
      *
      * @var float
@@ -54,6 +61,7 @@ class result extends Model
         'userName'    => 'userName',
         'classId'     => 'classId',
         'subjectName' => 'subjectName',
+        'subjectCode' => 'subjectCode',
         'courseHours' => 'courseHours',
         'courseCount' => 'courseCount',
     ];
@@ -76,6 +84,9 @@ class result extends Model
         }
         if (null !== $this->subjectName) {
             $res['subjectName'] = $this->subjectName;
+        }
+        if (null !== $this->subjectCode) {
+            $res['subjectCode'] = $this->subjectCode;
         }
         if (null !== $this->courseHours) {
             $res['courseHours'] = $this->courseHours;
@@ -106,6 +117,9 @@ class result extends Model
         }
         if (isset($map['subjectName'])) {
             $model->subjectName = $map['subjectName'];
+        }
+        if (isset($map['subjectCode'])) {
+            $model->subjectCode = $map['subjectCode'];
         }
         if (isset($map['courseHours'])) {
             $model->courseHours = $map['courseHours'];

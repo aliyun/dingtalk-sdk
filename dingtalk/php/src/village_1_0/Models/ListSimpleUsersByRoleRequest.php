@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ListSimpleUsersByRoleRequest extends Model
 {
     /**
-     * @description cursor
+     * @description 起始位置
      *
      * @var int
      */
     public $offset;
 
     /**
-     * @description size
+     * @description 查询数量
      *
      * @var int
      */
     public $size;
 
     /**
-     * @description roleId
+     * @description 角色ID
      *
      * @var int
      */
     public $roleId;
 
     /**
-     * @description subCorpId
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
      *
      * @var string
      */

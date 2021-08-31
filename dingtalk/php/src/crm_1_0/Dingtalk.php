@@ -36,6 +36,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
@@ -889,5 +892,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateCustomerResponse::fromMap($this->doROARequest('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryAllTracksRequest $request
+     *
+     * @return QueryAllTracksResponse
+     */
+    public function queryAllTracks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllTracksHeaders([]);
+
+        return $this->queryAllTracksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAllTracksRequest $request
+     * @param QueryAllTracksHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return QueryAllTracksResponse
+     */
+    public function queryAllTracksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->order)) {
+            @$query['order'] = $request->order;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryAllTracksResponse::fromMap($this->doROARequest('QueryAllTracks', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/customers/tracks', 'json', $req, $runtime));
     }
 }

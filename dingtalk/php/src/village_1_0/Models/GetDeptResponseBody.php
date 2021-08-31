@@ -16,25 +16,25 @@ class GetDeptResponseBody extends Model
     public $order;
 
     /**
-     * @description 部门id
+     * @description 下属组织的部门ID
      *
      * @var int
      */
-    public $deptId;
+    public $departmentId;
 
     /**
      * @description 部门名称
      *
      * @var string
      */
-    public $name;
+    public $departmentName;
 
     /**
      * @description 父部门id
      *
      * @var int
      */
-    public $parentId;
+    public $parentDepartmentId;
 
     /**
      * @description 部门是否来自关联组织
@@ -43,11 +43,11 @@ class GetDeptResponseBody extends Model
      */
     public $fromUnionOrg;
     protected $_name = [
-        'order'        => 'order',
-        'deptId'       => 'deptId',
-        'name'         => 'name',
-        'parentId'     => 'parentId',
-        'fromUnionOrg' => 'fromUnionOrg',
+        'order'              => 'order',
+        'departmentId'       => 'departmentId',
+        'departmentName'     => 'departmentName',
+        'parentDepartmentId' => 'parentDepartmentId',
+        'fromUnionOrg'       => 'fromUnionOrg',
     ];
 
     public function validate()
@@ -60,14 +60,14 @@ class GetDeptResponseBody extends Model
         if (null !== $this->order) {
             $res['order'] = $this->order;
         }
-        if (null !== $this->deptId) {
-            $res['deptId'] = $this->deptId;
+        if (null !== $this->departmentId) {
+            $res['departmentId'] = $this->departmentId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->departmentName) {
+            $res['departmentName'] = $this->departmentName;
         }
-        if (null !== $this->parentId) {
-            $res['parentId'] = $this->parentId;
+        if (null !== $this->parentDepartmentId) {
+            $res['parentDepartmentId'] = $this->parentDepartmentId;
         }
         if (null !== $this->fromUnionOrg) {
             $res['fromUnionOrg'] = $this->fromUnionOrg;
@@ -87,14 +87,14 @@ class GetDeptResponseBody extends Model
         if (isset($map['order'])) {
             $model->order = $map['order'];
         }
-        if (isset($map['deptId'])) {
-            $model->deptId = $map['deptId'];
+        if (isset($map['departmentId'])) {
+            $model->departmentId = $map['departmentId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['departmentName'])) {
+            $model->departmentName = $map['departmentName'];
         }
-        if (isset($map['parentId'])) {
-            $model->parentId = $map['parentId'];
+        if (isset($map['parentDepartmentId'])) {
+            $model->parentDepartmentId = $map['parentDepartmentId'];
         }
         if (isset($map['fromUnionOrg'])) {
             $model->fromUnionOrg = $map['fromUnionOrg'];

@@ -119,6 +119,34 @@ class IndustrializeManufactureJobBookRequest extends Model
      * @var string
      */
     public $dingCorpId;
+
+    /**
+     * @description 是否是批量报工(取值[n,y])
+     *
+     * @var string
+     */
+    public $isBatchJob;
+
+    /**
+     * @description 批量报工时多个人名以英文逗号分隔
+     *
+     * @var string
+     */
+    public $userNameList;
+
+    /**
+     * @description 批量报工时多个工人userId以英文逗号分隔
+     *
+     * @var string
+     */
+    public $userIdList;
+
+    /**
+     * @description 计件单价，单位：分
+     *
+     * @var string
+     */
+    public $unitPrice;
     protected $_name = [
         'scrappedQuantity'     => 'scrappedQuantity',
         'productSpecification' => 'productSpecification',
@@ -136,6 +164,10 @@ class IndustrializeManufactureJobBookRequest extends Model
         'instNo'               => 'instNo',
         'manufactureDate'      => 'manufactureDate',
         'dingCorpId'           => 'dingCorpId',
+        'isBatchJob'           => 'isBatchJob',
+        'userNameList'         => 'userNameList',
+        'userIdList'           => 'userIdList',
+        'unitPrice'            => 'unitPrice',
     ];
 
     public function validate()
@@ -192,6 +224,18 @@ class IndustrializeManufactureJobBookRequest extends Model
         }
         if (null !== $this->dingCorpId) {
             $res['dingCorpId'] = $this->dingCorpId;
+        }
+        if (null !== $this->isBatchJob) {
+            $res['isBatchJob'] = $this->isBatchJob;
+        }
+        if (null !== $this->userNameList) {
+            $res['userNameList'] = $this->userNameList;
+        }
+        if (null !== $this->userIdList) {
+            $res['userIdList'] = $this->userIdList;
+        }
+        if (null !== $this->unitPrice) {
+            $res['unitPrice'] = $this->unitPrice;
         }
 
         return $res;
@@ -252,6 +296,18 @@ class IndustrializeManufactureJobBookRequest extends Model
         }
         if (isset($map['dingCorpId'])) {
             $model->dingCorpId = $map['dingCorpId'];
+        }
+        if (isset($map['isBatchJob'])) {
+            $model->isBatchJob = $map['isBatchJob'];
+        }
+        if (isset($map['userNameList'])) {
+            $model->userNameList = $map['userNameList'];
+        }
+        if (isset($map['userIdList'])) {
+            $model->userIdList = $map['userIdList'];
+        }
+        if (isset($map['unitPrice'])) {
+            $model->unitPrice = $map['unitPrice'];
         }
 
         return $model;

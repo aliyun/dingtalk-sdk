@@ -4,8 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\GetUserResponseBody\deptOrderSet;
-use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\GetUserResponseBody\leaderInDept;
+use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\GetUserResponseBody\departmentOrderSet;
+use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\GetUserResponseBody\leaderInDepartment;
 use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\GetUserResponseBody\roleList;
 use AlibabaCloud\SDK\Dingtalk\Vvillage_1_0\Models\GetUserResponseBody\unionEmpExt;
 use AlibabaCloud\Tea\Model;
@@ -32,13 +32,6 @@ class GetUserResponseBody extends Model
      * @var string
      */
     public $name;
-
-    /**
-     * @description 头像
-     *
-     * @var string
-     */
-    public $avatar;
 
     /**
      * @description 员工工号
@@ -73,14 +66,14 @@ class GetUserResponseBody extends Model
      *
      * @var int[]
      */
-    public $deptIdList;
+    public $departmentIdList;
 
     /**
      * @description 员工在对应的部门中的排序。
      *
-     * @var deptOrderSet[]
+     * @var departmentOrderSet[]
      */
-    public $deptOrderSet;
+    public $departmentOrderSet;
 
     /**
      * @description 扩展属性，长度最大2000个字符。可以设置多种属性（手机上最多显示10个扩展属性，具体显示哪些属性，请到OA管理后台->设置->通讯录信息设置和OA管理后台->设置->手机端显示信息设置）。 该字段的值支持链接类型填写，同时链接支持变量通配符自动替换，目前支持通配符有：userid，corpid。示例： [工位地址](http://www.dingtalk.com?userid=#userid#&corpid=#corpid#)
@@ -148,9 +141,9 @@ class GetUserResponseBody extends Model
     /**
      * @description 员工在对应的部门中是否领导。
      *
-     * @var leaderInDept[]
+     * @var leaderInDepartment[]
      */
-    public $leaderInDept;
+    public $leaderInDepartment;
 
     /**
      * @description 角色列表
@@ -176,13 +169,12 @@ class GetUserResponseBody extends Model
         'userId'               => 'userId',
         'unionId'              => 'unionId',
         'name'                 => 'name',
-        'avatar'               => 'avatar',
         'jobNumber'            => 'jobNumber',
         'title'                => 'title',
         'workPlace'            => 'workPlace',
         'remark'               => 'remark',
-        'deptIdList'           => 'deptIdList',
-        'deptOrderSet'         => 'deptOrderSet',
+        'departmentIdList'     => 'departmentIdList',
+        'departmentOrderSet'   => 'departmentOrderSet',
         'extension'            => 'extension',
         'hiredDate'            => 'hiredDate',
         'active'               => 'active',
@@ -192,7 +184,7 @@ class GetUserResponseBody extends Model
         'boss'                 => 'boss',
         'exclusiveAccount'     => 'exclusiveAccount',
         'exclusiveAccountType' => 'exclusiveAccountType',
-        'leaderInDept'         => 'leaderInDept',
+        'leaderInDepartment'   => 'leaderInDepartment',
         'roleList'             => 'roleList',
         'unionEmpExt'          => 'unionEmpExt',
         'managerUserId'        => 'managerUserId',
@@ -214,9 +206,6 @@ class GetUserResponseBody extends Model
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
-        if (null !== $this->avatar) {
-            $res['avatar'] = $this->avatar;
-        }
         if (null !== $this->jobNumber) {
             $res['jobNumber'] = $this->jobNumber;
         }
@@ -229,15 +218,15 @@ class GetUserResponseBody extends Model
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
         }
-        if (null !== $this->deptIdList) {
-            $res['deptIdList'] = $this->deptIdList;
+        if (null !== $this->departmentIdList) {
+            $res['departmentIdList'] = $this->departmentIdList;
         }
-        if (null !== $this->deptOrderSet) {
-            $res['deptOrderSet'] = [];
-            if (null !== $this->deptOrderSet && \is_array($this->deptOrderSet)) {
+        if (null !== $this->departmentOrderSet) {
+            $res['departmentOrderSet'] = [];
+            if (null !== $this->departmentOrderSet && \is_array($this->departmentOrderSet)) {
                 $n = 0;
-                foreach ($this->deptOrderSet as $item) {
-                    $res['deptOrderSet'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->departmentOrderSet as $item) {
+                    $res['departmentOrderSet'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -268,12 +257,12 @@ class GetUserResponseBody extends Model
         if (null !== $this->exclusiveAccountType) {
             $res['exclusiveAccountType'] = $this->exclusiveAccountType;
         }
-        if (null !== $this->leaderInDept) {
-            $res['leaderInDept'] = [];
-            if (null !== $this->leaderInDept && \is_array($this->leaderInDept)) {
+        if (null !== $this->leaderInDepartment) {
+            $res['leaderInDepartment'] = [];
+            if (null !== $this->leaderInDepartment && \is_array($this->leaderInDepartment)) {
                 $n = 0;
-                foreach ($this->leaderInDept as $item) {
-                    $res['leaderInDept'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->leaderInDepartment as $item) {
+                    $res['leaderInDepartment'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -313,9 +302,6 @@ class GetUserResponseBody extends Model
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
-        if (isset($map['avatar'])) {
-            $model->avatar = $map['avatar'];
-        }
         if (isset($map['jobNumber'])) {
             $model->jobNumber = $map['jobNumber'];
         }
@@ -328,17 +314,17 @@ class GetUserResponseBody extends Model
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
         }
-        if (isset($map['deptIdList'])) {
-            if (!empty($map['deptIdList'])) {
-                $model->deptIdList = $map['deptIdList'];
+        if (isset($map['departmentIdList'])) {
+            if (!empty($map['departmentIdList'])) {
+                $model->departmentIdList = $map['departmentIdList'];
             }
         }
-        if (isset($map['deptOrderSet'])) {
-            if (!empty($map['deptOrderSet'])) {
-                $model->deptOrderSet = [];
-                $n                   = 0;
-                foreach ($map['deptOrderSet'] as $item) {
-                    $model->deptOrderSet[$n++] = null !== $item ? deptOrderSet::fromMap($item) : $item;
+        if (isset($map['departmentOrderSet'])) {
+            if (!empty($map['departmentOrderSet'])) {
+                $model->departmentOrderSet = [];
+                $n                         = 0;
+                foreach ($map['departmentOrderSet'] as $item) {
+                    $model->departmentOrderSet[$n++] = null !== $item ? departmentOrderSet::fromMap($item) : $item;
                 }
             }
         }
@@ -369,12 +355,12 @@ class GetUserResponseBody extends Model
         if (isset($map['exclusiveAccountType'])) {
             $model->exclusiveAccountType = $map['exclusiveAccountType'];
         }
-        if (isset($map['leaderInDept'])) {
-            if (!empty($map['leaderInDept'])) {
-                $model->leaderInDept = [];
-                $n                   = 0;
-                foreach ($map['leaderInDept'] as $item) {
-                    $model->leaderInDept[$n++] = null !== $item ? leaderInDept::fromMap($item) : $item;
+        if (isset($map['leaderInDepartment'])) {
+            if (!empty($map['leaderInDepartment'])) {
+                $model->leaderInDepartment = [];
+                $n                         = 0;
+                foreach ($map['leaderInDepartment'] as $item) {
+                    $model->leaderInDepartment[$n++] = null !== $item ? leaderInDepartment::fromMap($item) : $item;
                 }
             }
         }

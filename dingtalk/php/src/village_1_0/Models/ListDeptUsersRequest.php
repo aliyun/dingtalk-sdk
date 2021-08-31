@@ -30,7 +30,7 @@ class ListDeptUsersRequest extends Model
     public $containAccessLimit;
 
     /**
-     * @description subCorpId
+     * @description 下属组织的组织ID，比如下属镇、村的corpId
      *
      * @var string
      */
