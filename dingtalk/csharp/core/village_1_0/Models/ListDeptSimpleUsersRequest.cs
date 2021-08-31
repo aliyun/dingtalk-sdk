@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public bool? ContainAccessLimit { get; set; }
 
         /// <summary>
-        /// subCorpId
+        /// 下属组织的组织ID，比如下属镇、村的corpId
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]

@@ -17,25 +17,25 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public long? Order { get; set; }
 
         /// <summary>
-        /// 部门id
+        /// 下属组织的部门ID
         /// </summary>
-        [NameInMap("deptId")]
+        [NameInMap("departmentId")]
         [Validation(Required=false)]
-        public long? DeptId { get; set; }
+        public long? DepartmentId { get; set; }
 
         /// <summary>
         /// 部门名称
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("departmentName")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public string DepartmentName { get; set; }
 
         /// <summary>
         /// 父部门id
         /// </summary>
-        [NameInMap("parentId")]
+        [NameInMap("parentDepartmentId")]
         [Validation(Required=false)]
-        public long? ParentId { get; set; }
+        public long? ParentDepartmentId { get; set; }
 
         /// <summary>
         /// 部门是否来自关联组织

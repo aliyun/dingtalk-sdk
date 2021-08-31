@@ -9,14 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListDeptSimpleUsersResponseBody : TeaModel {
-        [NameInMap("list")]
+        /// <summary>
+        /// 用户列表
+        /// </summary>
+        [NameInMap("userList")]
         [Validation(Required=false)]
-        public List<ListDeptSimpleUsersResponseBodyList> List { get; set; }
-        public class ListDeptSimpleUsersResponseBodyList : TeaModel {
+        public List<ListDeptSimpleUsersResponseBodyUserList> UserList { get; set; }
+        public class ListDeptSimpleUsersResponseBodyUserList : TeaModel {
+            /// <summary>
+            /// 用户ID
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
 
+            /// <summary>
+            /// 用户姓名
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

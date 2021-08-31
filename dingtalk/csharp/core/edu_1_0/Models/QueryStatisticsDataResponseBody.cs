@@ -45,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public long? SubjectName { get; set; }
 
             /// <summary>
+            /// 学科code
+            /// </summary>
+            [NameInMap("subjectCode")]
+            [Validation(Required=false)]
+            public string SubjectCode { get; set; }
+
+            /// <summary>
             /// 总学时
             /// </summary>
             [NameInMap("courseHours")]

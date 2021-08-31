@@ -33,16 +33,16 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             /// <summary>
             /// 标签id
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("roleId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? RoleId { get; set; }
 
             /// <summary>
             /// 标签名称
             /// </summary>
-            [NameInMap("name")]
+            [NameInMap("roleName")]
             [Validation(Required=false)]
-            public string Name { get; set; }
+            public string RoleName { get; set; }
 
             /// <summary>
             /// 标签名称 tagCode

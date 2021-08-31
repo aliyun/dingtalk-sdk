@@ -10,46 +10,46 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListResidentUserInfosResponseBody : TeaModel {
         /// <summary>
-        /// result
+        /// 员工信息列表
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("userList")]
         [Validation(Required=false)]
-        public List<ListResidentUserInfosResponseBodyResult> Result { get; set; }
-        public class ListResidentUserInfosResponseBodyResult : TeaModel {
+        public List<ListResidentUserInfosResponseBodyUserList> UserList { get; set; }
+        public class ListResidentUserInfosResponseBodyUserList : TeaModel {
             /// <summary>
-            /// 员工id
+            /// 员工 ID
             /// </summary>
-            [NameInMap("userid")]
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public string Userid { get; set; }
+            public string UserId { get; set; }
 
             /// <summary>
             /// 员工名字
             /// </summary>
-            [NameInMap("name")]
+            [NameInMap("userName")]
             [Validation(Required=false)]
-            public string Name { get; set; }
+            public string UserName { get; set; }
 
             /// <summary>
             /// 标签列表
             /// </summary>
             [NameInMap("roles")]
             [Validation(Required=false)]
-            public List<ListResidentUserInfosResponseBodyResultRoles> Roles { get; set; }
-            public class ListResidentUserInfosResponseBodyResultRoles : TeaModel {
+            public List<ListResidentUserInfosResponseBodyUserListRoles> Roles { get; set; }
+            public class ListResidentUserInfosResponseBodyUserListRoles : TeaModel {
                 /// <summary>
                 /// 标签id
                 /// </summary>
-                [NameInMap("id")]
+                [NameInMap("tagId")]
                 [Validation(Required=false)]
-                public long? Id { get; set; }
+                public long? TagId { get; set; }
 
                 /// <summary>
                 /// 标签名称
                 /// </summary>
-                [NameInMap("name")]
+                [NameInMap("tagName")]
                 [Validation(Required=false)]
-                public string Name { get; set; }
+                public string TagName { get; set; }
 
                 /// <summary>
                 /// 标签名称 tagCode

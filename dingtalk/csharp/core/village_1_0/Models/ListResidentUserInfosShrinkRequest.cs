@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListResidentUserInfosShrinkRequest : TeaModel {
         /// <summary>
-        /// 真实请求的组织corpId
+        /// 下属组织的组织ID，比如下属镇、村的corpId
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]

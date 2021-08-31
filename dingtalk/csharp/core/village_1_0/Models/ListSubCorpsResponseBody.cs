@@ -12,23 +12,23 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         /// <summary>
         /// result
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("corpList")]
         [Validation(Required=false)]
-        public List<ListSubCorpsResponseBodyResult> Result { get; set; }
-        public class ListSubCorpsResponseBodyResult : TeaModel {
+        public List<ListSubCorpsResponseBodyCorpList> CorpList { get; set; }
+        public class ListSubCorpsResponseBodyCorpList : TeaModel {
             /// <summary>
-            /// 企业corpid
+            /// 组织corpid
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// 企业名字
+            /// 组织名字
             /// </summary>
-            [NameInMap("name")]
+            [NameInMap("corpName")]
             [Validation(Required=false)]
-            public string Name { get; set; }
+            public string CorpName { get; set; }
 
             /// <summary>
             /// 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
@@ -52,14 +52,14 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public string RegionLocation { get; set; }
 
             /// <summary>
-            /// 企业行业码
+            /// 组织行业码
             /// </summary>
             [NameInMap("industryCode")]
             [Validation(Required=false)]
             public int? IndustryCode { get; set; }
 
             /// <summary>
-            /// 企业行业名称
+            /// 组织行业名称
             /// </summary>
             [NameInMap("industry")]
             [Validation(Required=false)]

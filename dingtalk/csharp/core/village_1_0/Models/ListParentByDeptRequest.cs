@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListParentByDeptRequest : TeaModel {
         /// <summary>
-        /// 真实请求的组织corpId
+        /// 下属组织的组织ID，比如下属镇、村的corpId
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]
         public string SubCorpId { get; set; }
 
         /// <summary>
-        /// 部门id
+        /// 下属组织的部门ID
         /// </summary>
-        [NameInMap("deptId")]
+        [NameInMap("departmentId")]
         [Validation(Required=false)]
-        public long? DeptId { get; set; }
+        public long? DepartmentId { get; set; }
 
     }
 

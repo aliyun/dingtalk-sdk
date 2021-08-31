@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListParentByUserResponseBody : TeaModel {
         /// <summary>
-        /// 上级部门id链
+        /// 上级部门ID列表
         /// </summary>
-        [NameInMap("parentDeptIdList")]
+        [NameInMap("departmentIdList")]
         [Validation(Required=false)]
-        public List<long?> ParentDeptIdList { get; set; }
+        public List<long?> DepartmentIdList { get; set; }
 
     }
 

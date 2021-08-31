@@ -24,12 +24,12 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// 分页数据
+        /// 用户列表
         /// </summary>
-        [NameInMap("list")]
+        [NameInMap("userList")]
         [Validation(Required=false)]
-        public List<ListResidentDeptUsersResponseBodyList> List { get; set; }
-        public class ListResidentDeptUsersResponseBodyList : TeaModel {
+        public List<ListResidentDeptUsersResponseBodyUserList> UserList { get; set; }
+        public class ListResidentDeptUsersResponseBodyUserList : TeaModel {
             /// <summary>
             /// 员工id
             /// </summary>
@@ -49,21 +49,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             /// </summary>
             [NameInMap("roles")]
             [Validation(Required=false)]
-            public List<ListResidentDeptUsersResponseBodyListRoles> Roles { get; set; }
-            public class ListResidentDeptUsersResponseBodyListRoles : TeaModel {
+            public List<ListResidentDeptUsersResponseBodyUserListRoles> Roles { get; set; }
+            public class ListResidentDeptUsersResponseBodyUserListRoles : TeaModel {
                 /// <summary>
                 /// 标签id
                 /// </summary>
-                [NameInMap("id")]
+                [NameInMap("tagId")]
                 [Validation(Required=false)]
-                public long? Id { get; set; }
+                public long? TagId { get; set; }
 
                 /// <summary>
                 /// 标签名称
                 /// </summary>
-                [NameInMap("name")]
+                [NameInMap("tagName")]
                 [Validation(Required=false)]
-                public string Name { get; set; }
+                public string TagName { get; set; }
 
                 /// <summary>
                 /// 标签名称 tagCode

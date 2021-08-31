@@ -108,6 +108,22 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             {
                 body["dingCorpId"] = request.DingCorpId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
+            {
+                body["isBatchJob"] = request.IsBatchJob;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
+            {
+                body["userNameList"] = request.UserNameList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
+            {
+                body["unitPrice"] = request.UnitPrice;
+            }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = headers,
@@ -183,6 +199,22 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
             {
                 body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
+            {
+                body["isBatchJob"] = request.IsBatchJob;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
+            {
+                body["userNameList"] = request.UserNameList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
+            {
+                body["unitPrice"] = request.UnitPrice;
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {

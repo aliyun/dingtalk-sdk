@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListResidentDeptUsersRequest : TeaModel {
         /// <summary>
-        /// 真实请求的组织corpId
+        /// 下属组织的组织ID，比如下属镇、村的corpId
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]
         public string SubCorpId { get; set; }
 
         /// <summary>
-        /// 标签
+        /// 角色标签
         /// </summary>
         [NameInMap("role")]
         [Validation(Required=false)]

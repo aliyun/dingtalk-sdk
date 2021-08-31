@@ -55,13 +55,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string Content { get; set; }
 
-            /// <summary>
-            /// 扩展字段
-            /// </summary>
-            [NameInMap("extension")]
-            [Validation(Required=false)]
-            public string Extension { get; set; }
-
         }
 
         /// <summary>

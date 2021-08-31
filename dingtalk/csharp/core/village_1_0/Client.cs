@@ -156,21 +156,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<GetVillageOrgInfoResponse>(await DoROARequestAsync("GetVillageOrgInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/corps/" + subCorpId, "json", req, runtime));
         }
 
-        public ListResidentDeptUsersResponse ListResidentDeptUsers(string deptId, ListResidentDeptUsersRequest request)
+        public ListResidentDeptUsersResponse ListResidentDeptUsers(string departmentId, ListResidentDeptUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListResidentDeptUsersHeaders headers = new ListResidentDeptUsersHeaders();
-            return ListResidentDeptUsersWithOptions(deptId, request, headers, runtime);
+            return ListResidentDeptUsersWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListResidentDeptUsersResponse> ListResidentDeptUsersAsync(string deptId, ListResidentDeptUsersRequest request)
+        public async Task<ListResidentDeptUsersResponse> ListResidentDeptUsersAsync(string departmentId, ListResidentDeptUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListResidentDeptUsersHeaders headers = new ListResidentDeptUsersHeaders();
-            return await ListResidentDeptUsersWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListResidentDeptUsersWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListResidentDeptUsersResponse ListResidentDeptUsersWithOptions(string deptId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListResidentDeptUsersResponse ListResidentDeptUsersWithOptions(string departmentId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -204,10 +204,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListResidentDeptUsersResponse>(DoROARequest("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/users", "json", req, runtime));
+            return TeaModel.ToObject<ListResidentDeptUsersResponse>(DoROARequest("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/users", "json", req, runtime));
         }
 
-        public async Task<ListResidentDeptUsersResponse> ListResidentDeptUsersWithOptionsAsync(string deptId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListResidentDeptUsersResponse> ListResidentDeptUsersWithOptionsAsync(string departmentId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -241,24 +241,24 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListResidentDeptUsersResponse>(await DoROARequestAsync("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/users", "json", req, runtime));
+            return TeaModel.ToObject<ListResidentDeptUsersResponse>(await DoROARequestAsync("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/users", "json", req, runtime));
         }
 
-        public ListDeptSimpleUsersResponse ListDeptSimpleUsers(string deptId, ListDeptSimpleUsersRequest request)
+        public ListDeptSimpleUsersResponse ListDeptSimpleUsers(string departmentId, ListDeptSimpleUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListDeptSimpleUsersHeaders headers = new ListDeptSimpleUsersHeaders();
-            return ListDeptSimpleUsersWithOptions(deptId, request, headers, runtime);
+            return ListDeptSimpleUsersWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListDeptSimpleUsersResponse> ListDeptSimpleUsersAsync(string deptId, ListDeptSimpleUsersRequest request)
+        public async Task<ListDeptSimpleUsersResponse> ListDeptSimpleUsersAsync(string departmentId, ListDeptSimpleUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListDeptSimpleUsersHeaders headers = new ListDeptSimpleUsersHeaders();
-            return await ListDeptSimpleUsersWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListDeptSimpleUsersWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListDeptSimpleUsersResponse ListDeptSimpleUsersWithOptions(string deptId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListDeptSimpleUsersResponse ListDeptSimpleUsersWithOptions(string departmentId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -300,10 +300,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListDeptSimpleUsersResponse>(DoROARequest("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/simpleUsers", "json", req, runtime));
+            return TeaModel.ToObject<ListDeptSimpleUsersResponse>(DoROARequest("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/simpleUsers", "json", req, runtime));
         }
 
-        public async Task<ListDeptSimpleUsersResponse> ListDeptSimpleUsersWithOptionsAsync(string deptId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListDeptSimpleUsersResponse> ListDeptSimpleUsersWithOptionsAsync(string departmentId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -345,7 +345,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListDeptSimpleUsersResponse>(await DoROARequestAsync("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/simpleUsers", "json", req, runtime));
+            return TeaModel.ToObject<ListDeptSimpleUsersResponse>(await DoROARequestAsync("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/simpleUsers", "json", req, runtime));
         }
 
         public GetUserByUnionIdResponse GetUserByUnionId(GetUserByUnionIdRequest request)
@@ -492,21 +492,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<GetResidentDeptResponse>(await DoROARequestAsync("GetResidentDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/departments/" + departmentId, "json", req, runtime));
         }
 
-        public GetResidentUserInfoResponse GetResidentUserInfo(string deptId, string userId, GetResidentUserInfoRequest request)
+        public GetResidentUserInfoResponse GetResidentUserInfo(string departmentId, string userId, GetResidentUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetResidentUserInfoHeaders headers = new GetResidentUserInfoHeaders();
-            return GetResidentUserInfoWithOptions(deptId, userId, request, headers, runtime);
+            return GetResidentUserInfoWithOptions(departmentId, userId, request, headers, runtime);
         }
 
-        public async Task<GetResidentUserInfoResponse> GetResidentUserInfoAsync(string deptId, string userId, GetResidentUserInfoRequest request)
+        public async Task<GetResidentUserInfoResponse> GetResidentUserInfoAsync(string departmentId, string userId, GetResidentUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetResidentUserInfoHeaders headers = new GetResidentUserInfoHeaders();
-            return await GetResidentUserInfoWithOptionsAsync(deptId, userId, request, headers, runtime);
+            return await GetResidentUserInfoWithOptionsAsync(departmentId, userId, request, headers, runtime);
         }
 
-        public GetResidentUserInfoResponse GetResidentUserInfoWithOptions(string deptId, string userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetResidentUserInfoResponse GetResidentUserInfoWithOptions(string departmentId, string userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -528,10 +528,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetResidentUserInfoResponse>(DoROARequest("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/users/" + userId, "json", req, runtime));
+            return TeaModel.ToObject<GetResidentUserInfoResponse>(DoROARequest("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/users/" + userId, "json", req, runtime));
         }
 
-        public async Task<GetResidentUserInfoResponse> GetResidentUserInfoWithOptionsAsync(string deptId, string userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetResidentUserInfoResponse> GetResidentUserInfoWithOptionsAsync(string departmentId, string userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -553,7 +553,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetResidentUserInfoResponse>(await DoROARequestAsync("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/users/" + userId, "json", req, runtime));
+            return TeaModel.ToObject<GetResidentUserInfoResponse>(await DoROARequestAsync("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/users/" + userId, "json", req, runtime));
         }
 
         public GetDeptResponse GetDept(string departmentId, GetDeptRequest request)
@@ -650,9 +650,9 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             {
                 query["subCorpId"] = request.SubCorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
             {
-                query["deptId"] = request.DeptId;
+                query["departmentId"] = request.DepartmentId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -679,9 +679,9 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             {
                 query["subCorpId"] = request.SubCorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
             {
-                query["deptId"] = request.DeptId;
+                query["departmentId"] = request.DepartmentId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -700,21 +700,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<ListParentByDeptResponse>(await DoROARequestAsync("ListParentByDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/listParentByDepartment", "json", req, runtime));
         }
 
-        public ListDeptUserIdsResponse ListDeptUserIds(string deptId, ListDeptUserIdsRequest request)
+        public ListDeptUserIdsResponse ListDeptUserIds(string departmentId, ListDeptUserIdsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListDeptUserIdsHeaders headers = new ListDeptUserIdsHeaders();
-            return ListDeptUserIdsWithOptions(deptId, request, headers, runtime);
+            return ListDeptUserIdsWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListDeptUserIdsResponse> ListDeptUserIdsAsync(string deptId, ListDeptUserIdsRequest request)
+        public async Task<ListDeptUserIdsResponse> ListDeptUserIdsAsync(string departmentId, ListDeptUserIdsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListDeptUserIdsHeaders headers = new ListDeptUserIdsHeaders();
-            return await ListDeptUserIdsWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListDeptUserIdsWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListDeptUserIdsResponse ListDeptUserIdsWithOptions(string deptId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListDeptUserIdsResponse ListDeptUserIdsWithOptions(string departmentId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -736,10 +736,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListDeptUserIdsResponse>(DoROARequest("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/userIds", "json", req, runtime));
+            return TeaModel.ToObject<ListDeptUserIdsResponse>(DoROARequest("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/userIds", "json", req, runtime));
         }
 
-        public async Task<ListDeptUserIdsResponse> ListDeptUserIdsWithOptionsAsync(string deptId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListDeptUserIdsResponse> ListDeptUserIdsWithOptionsAsync(string departmentId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -761,7 +761,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListDeptUserIdsResponse>(await DoROARequestAsync("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/userIds", "json", req, runtime));
+            return TeaModel.ToObject<ListDeptUserIdsResponse>(await DoROARequestAsync("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/userIds", "json", req, runtime));
         }
 
         public ListSimpleUsersByRoleResponse ListSimpleUsersByRole(ListSimpleUsersByRoleRequest request)
@@ -852,21 +852,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<ListSimpleUsersByRoleResponse>(await DoROARequestAsync("ListSimpleUsersByRole", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/users/listByRole", "json", req, runtime));
         }
 
-        public ListResidentSubDeptsResponse ListResidentSubDepts(string deptId, ListResidentSubDeptsRequest request)
+        public ListResidentSubDeptsResponse ListResidentSubDepts(string departmentId, ListResidentSubDeptsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListResidentSubDeptsHeaders headers = new ListResidentSubDeptsHeaders();
-            return ListResidentSubDeptsWithOptions(deptId, request, headers, runtime);
+            return ListResidentSubDeptsWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListResidentSubDeptsResponse> ListResidentSubDeptsAsync(string deptId, ListResidentSubDeptsRequest request)
+        public async Task<ListResidentSubDeptsResponse> ListResidentSubDeptsAsync(string departmentId, ListResidentSubDeptsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListResidentSubDeptsHeaders headers = new ListResidentSubDeptsHeaders();
-            return await ListResidentSubDeptsWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListResidentSubDeptsWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListResidentSubDeptsResponse ListResidentSubDeptsWithOptions(string deptId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListResidentSubDeptsResponse ListResidentSubDeptsWithOptions(string departmentId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -896,10 +896,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListResidentSubDeptsResponse>(DoROARequest("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/subDepartments", "json", req, runtime));
+            return TeaModel.ToObject<ListResidentSubDeptsResponse>(DoROARequest("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/subDepartments", "json", req, runtime));
         }
 
-        public async Task<ListResidentSubDeptsResponse> ListResidentSubDeptsWithOptionsAsync(string deptId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListResidentSubDeptsResponse> ListResidentSubDeptsWithOptionsAsync(string departmentId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -929,7 +929,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListResidentSubDeptsResponse>(await DoROARequestAsync("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/subDepartments", "json", req, runtime));
+            return TeaModel.ToObject<ListResidentSubDeptsResponse>(await DoROARequestAsync("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/subDepartments", "json", req, runtime));
         }
 
         public ListParentByUserResponse ListParentByUser(ListParentByUserRequest request)
@@ -1004,21 +1004,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<ListParentByUserResponse>(await DoROARequestAsync("ListParentByUser", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/listParentByUser", "json", req, runtime));
         }
 
-        public ListSubDeptResponse ListSubDept(string deptId, ListSubDeptRequest request)
+        public ListSubDeptResponse ListSubDept(string departmentId, ListSubDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListSubDeptHeaders headers = new ListSubDeptHeaders();
-            return ListSubDeptWithOptions(deptId, request, headers, runtime);
+            return ListSubDeptWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListSubDeptResponse> ListSubDeptAsync(string deptId, ListSubDeptRequest request)
+        public async Task<ListSubDeptResponse> ListSubDeptAsync(string departmentId, ListSubDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListSubDeptHeaders headers = new ListSubDeptHeaders();
-            return await ListSubDeptWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListSubDeptWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListSubDeptResponse ListSubDeptWithOptions(string deptId, ListSubDeptRequest request, ListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListSubDeptResponse ListSubDeptWithOptions(string departmentId, ListSubDeptRequest request, ListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -1044,10 +1044,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListSubDeptResponse>(DoROARequest("ListSubDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/subDepartments", "json", req, runtime));
+            return TeaModel.ToObject<ListSubDeptResponse>(DoROARequest("ListSubDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/subDepartments", "json", req, runtime));
         }
 
-        public async Task<ListSubDeptResponse> ListSubDeptWithOptionsAsync(string deptId, ListSubDeptRequest request, ListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListSubDeptResponse> ListSubDeptWithOptionsAsync(string departmentId, ListSubDeptRequest request, ListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -1073,7 +1073,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListSubDeptResponse>(await DoROARequestAsync("ListSubDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/subDepartments", "json", req, runtime));
+            return TeaModel.ToObject<ListSubDeptResponse>(await DoROARequestAsync("ListSubDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/subDepartments", "json", req, runtime));
         }
 
         public GetUserResponse GetUser(string userId, GetUserRequest request)
@@ -1148,21 +1148,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<GetUserResponse>(await DoROARequestAsync("GetUser", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/users/getByUserId", "json", req, runtime));
         }
 
-        public ListDeptUsersResponse ListDeptUsers(string deptId, ListDeptUsersRequest request)
+        public ListDeptUsersResponse ListDeptUsers(string departmentId, ListDeptUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListDeptUsersHeaders headers = new ListDeptUsersHeaders();
-            return ListDeptUsersWithOptions(deptId, request, headers, runtime);
+            return ListDeptUsersWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListDeptUsersResponse> ListDeptUsersAsync(string deptId, ListDeptUsersRequest request)
+        public async Task<ListDeptUsersResponse> ListDeptUsersAsync(string departmentId, ListDeptUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListDeptUsersHeaders headers = new ListDeptUsersHeaders();
-            return await ListDeptUsersWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListDeptUsersWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListDeptUsersResponse ListDeptUsersWithOptions(string deptId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListDeptUsersResponse ListDeptUsersWithOptions(string departmentId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -1204,10 +1204,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListDeptUsersResponse>(DoROARequest("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/users", "json", req, runtime));
+            return TeaModel.ToObject<ListDeptUsersResponse>(DoROARequest("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/users", "json", req, runtime));
         }
 
-        public async Task<ListDeptUsersResponse> ListDeptUsersWithOptionsAsync(string deptId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListDeptUsersResponse> ListDeptUsersWithOptionsAsync(string departmentId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -1249,7 +1249,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListDeptUsersResponse>(await DoROARequestAsync("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/users", "json", req, runtime));
+            return TeaModel.ToObject<ListDeptUsersResponse>(await DoROARequestAsync("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/users", "json", req, runtime));
         }
 
         public ListResidentUserInfosResponse ListResidentUserInfos(ListResidentUserInfosRequest request)
@@ -1336,21 +1336,21 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
             return TeaModel.ToObject<ListResidentUserInfosResponse>(await DoROARequestAsync("ListResidentUserInfos", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentUsers/getByUserIds", "json", req, runtime));
         }
 
-        public ListSubDeptIdsResponse ListSubDeptIds(string deptId, ListSubDeptIdsRequest request)
+        public ListSubDeptIdsResponse ListSubDeptIds(string departmentId, ListSubDeptIdsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListSubDeptIdsHeaders headers = new ListSubDeptIdsHeaders();
-            return ListSubDeptIdsWithOptions(deptId, request, headers, runtime);
+            return ListSubDeptIdsWithOptions(departmentId, request, headers, runtime);
         }
 
-        public async Task<ListSubDeptIdsResponse> ListSubDeptIdsAsync(string deptId, ListSubDeptIdsRequest request)
+        public async Task<ListSubDeptIdsResponse> ListSubDeptIdsAsync(string departmentId, ListSubDeptIdsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListSubDeptIdsHeaders headers = new ListSubDeptIdsHeaders();
-            return await ListSubDeptIdsWithOptionsAsync(deptId, request, headers, runtime);
+            return await ListSubDeptIdsWithOptionsAsync(departmentId, request, headers, runtime);
         }
 
-        public ListSubDeptIdsResponse ListSubDeptIdsWithOptions(string deptId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListSubDeptIdsResponse ListSubDeptIdsWithOptions(string departmentId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -1372,10 +1372,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListSubDeptIdsResponse>(DoROARequest("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/subDepartmentIds", "json", req, runtime));
+            return TeaModel.ToObject<ListSubDeptIdsResponse>(DoROARequest("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/subDepartmentIds", "json", req, runtime));
         }
 
-        public async Task<ListSubDeptIdsResponse> ListSubDeptIdsWithOptionsAsync(string deptId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListSubDeptIdsResponse> ListSubDeptIdsWithOptionsAsync(string departmentId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
@@ -1397,7 +1397,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListSubDeptIdsResponse>(await DoROARequestAsync("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/subDepartmentIds", "json", req, runtime));
+            return TeaModel.ToObject<ListSubDeptIdsResponse>(await DoROARequestAsync("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/subDepartmentIds", "json", req, runtime));
         }
 
     }

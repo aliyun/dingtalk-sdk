@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryAllDoctorsResponseBodyContent> Content { get; set; }
         public class QueryAllDoctorsResponseBodyContent : TeaModel {
             /// <summary>
-            /// 用户Id
+            /// 租户下staffId
             /// </summary>
             [NameInMap("uid")]
             [Validation(Required=false)]
@@ -36,6 +36,55 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("jobNum")]
             [Validation(Required=false)]
             public string JobNum { get; set; }
+
+            /// <summary>
+            /// 用户id
+            /// </summary>
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public long? Id { get; set; }
+
+            /// <summary>
+            /// 用户创建时间
+            /// </summary>
+            [NameInMap("gmtCreateStr")]
+            [Validation(Required=false)]
+            public string GmtCreateStr { get; set; }
+
+            /// <summary>
+            /// 用户最后修改时间
+            /// </summary>
+            [NameInMap("gmtModifiedStr")]
+            [Validation(Required=false)]
+            public string GmtModifiedStr { get; set; }
+
+            /// <summary>
+            /// 租户CorpId
+            /// </summary>
+            [NameInMap("corpId")]
+            [Validation(Required=false)]
+            public string CorpId { get; set; }
+
+            /// <summary>
+            /// 租户内staffId
+            /// </summary>
+            [NameInMap("userCode")]
+            [Validation(Required=false)]
+            public string UserCode { get; set; }
+
+            /// <summary>
+            /// 关联的部门id
+            /// </summary>
+            [NameInMap("deptCode")]
+            [Validation(Required=false)]
+            public string DeptCode { get; set; }
+
+            /// <summary>
+            /// 状态0-有效，1-删除
+            /// </summary>
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
 
         }
 

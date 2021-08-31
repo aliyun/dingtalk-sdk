@@ -9,32 +9,53 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListResidentSubDeptsResponseBody : TeaModel {
-        [NameInMap("list")]
+        /// <summary>
+        /// 组户列表
+        /// </summary>
+        [NameInMap("departmentList")]
         [Validation(Required=false)]
-        public List<ListResidentSubDeptsResponseBodyList> List { get; set; }
-        public class ListResidentSubDeptsResponseBodyList : TeaModel {
-            [NameInMap("deptId")]
+        public List<ListResidentSubDeptsResponseBodyDepartmentList> DepartmentList { get; set; }
+        public class ListResidentSubDeptsResponseBodyDepartmentList : TeaModel {
+            /// <summary>
+            /// 下属组织的部门ID
+            /// </summary>
+            [NameInMap("departmentId")]
             [Validation(Required=false)]
-            public long? DeptId { get; set; }
+            public long? DepartmentId { get; set; }
 
-            [NameInMap("name")]
+            /// <summary>
+            /// 组户名称
+            /// </summary>
+            [NameInMap("departmentName")]
             [Validation(Required=false)]
-            public string Name { get; set; }
+            public string DepartmentName { get; set; }
 
-            [NameInMap("superId")]
+            /// <summary>
+            /// 父部门ID
+            /// </summary>
+            [NameInMap("superDepartmentId")]
             [Validation(Required=false)]
-            public long? SuperId { get; set; }
+            public long? SuperDepartmentId { get; set; }
 
         }
 
+        /// <summary>
+        /// 游标
+        /// </summary>
         [NameInMap("nextCursor")]
         [Validation(Required=false)]
         public long? NextCursor { get; set; }
 
+        /// <summary>
+        /// 是否还有记录
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
+        /// <summary>
+        /// 总数
+        /// </summary>
         [NameInMap("total")]
         [Validation(Required=false)]
         public long? Total { get; set; }

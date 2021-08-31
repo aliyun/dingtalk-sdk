@@ -124,6 +124,34 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
+        /// <summary>
+        /// 是否是批量报工(取值[n,y])
+        /// </summary>
+        [NameInMap("isBatchJob")]
+        [Validation(Required=false)]
+        public string IsBatchJob { get; set; }
+
+        /// <summary>
+        /// 批量报工时多个人名以英文逗号分隔
+        /// </summary>
+        [NameInMap("userNameList")]
+        [Validation(Required=false)]
+        public string UserNameList { get; set; }
+
+        /// <summary>
+        /// 批量报工时多个工人userId以英文逗号分隔
+        /// </summary>
+        [NameInMap("userIdList")]
+        [Validation(Required=false)]
+        public string UserIdList { get; set; }
+
+        /// <summary>
+        /// 计件单价，单位：分
+        /// </summary>
+        [NameInMap("unitPrice")]
+        [Validation(Required=false)]
+        public string UnitPrice { get; set; }
+
     }
 
 }

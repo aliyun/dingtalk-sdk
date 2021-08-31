@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// 头像
-        /// </summary>
-        [NameInMap("avatar")]
-        [Validation(Required=false)]
-        public string Avatar { get; set; }
-
-        /// <summary>
         /// 员工工号
         /// </summary>
         [NameInMap("jobNumber")]
@@ -68,23 +61,23 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         /// <summary>
         /// 所属部门id列表
         /// </summary>
-        [NameInMap("deptIdList")]
+        [NameInMap("departmentIdList")]
         [Validation(Required=false)]
-        public List<long?> DeptIdList { get; set; }
+        public List<long?> DepartmentIdList { get; set; }
 
         /// <summary>
         /// 员工在对应的部门中的排序。
         /// </summary>
-        [NameInMap("deptOrderSet")]
+        [NameInMap("departmentOrderSet")]
         [Validation(Required=false)]
-        public List<GetUserResponseBodyDeptOrderSet> DeptOrderSet { get; set; }
-        public class GetUserResponseBodyDeptOrderSet : TeaModel {
+        public List<GetUserResponseBodyDepartmentOrderSet> DepartmentOrderSet { get; set; }
+        public class GetUserResponseBodyDepartmentOrderSet : TeaModel {
             /// <summary>
-            /// 部门id
+            /// 下属组织的部门ID
             /// </summary>
-            [NameInMap("deptId")]
+            [NameInMap("departmentId")]
             [Validation(Required=false)]
-            public long? DeptId { get; set; }
+            public long? DepartmentId { get; set; }
 
             /// <summary>
             /// 员工在部门中的排序。
@@ -161,16 +154,16 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         /// <summary>
         /// 员工在对应的部门中是否领导。
         /// </summary>
-        [NameInMap("leaderInDept")]
+        [NameInMap("leaderInDepartment")]
         [Validation(Required=false)]
-        public List<GetUserResponseBodyLeaderInDept> LeaderInDept { get; set; }
-        public class GetUserResponseBodyLeaderInDept : TeaModel {
+        public List<GetUserResponseBodyLeaderInDepartment> LeaderInDepartment { get; set; }
+        public class GetUserResponseBodyLeaderInDepartment : TeaModel {
             /// <summary>
-            /// 部门 id
+            /// 下属组织的部门ID
             /// </summary>
-            [NameInMap("deptId")]
+            [NameInMap("departmentId")]
             [Validation(Required=false)]
-            public long? DeptId { get; set; }
+            public long? DepartmentId { get; set; }
 
             /// <summary>
             /// 员工在对应的部门中是否领导
@@ -191,16 +184,16 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             /// <summary>
             /// 角色id
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("roleId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? RoleId { get; set; }
 
             /// <summary>
             /// 角色名称
             /// </summary>
-            [NameInMap("name")]
+            [NameInMap("roleName")]
             [Validation(Required=false)]
-            public string Name { get; set; }
+            public string RoleName { get; set; }
 
             /// <summary>
             /// 角色组名称
