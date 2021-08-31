@@ -55,16 +55,16 @@ export class ListSubCorpsRequest extends $tea.Model {
 }
 
 export class ListSubCorpsResponseBody extends $tea.Model {
-  result?: ListSubCorpsResponseBodyResult[];
+  corpList?: ListSubCorpsResponseBodyCorpList[];
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      corpList: 'corpList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': ListSubCorpsResponseBodyResult },
+      corpList: { 'type': 'array', 'itemType': ListSubCorpsResponseBodyCorpList },
     };
   }
 
@@ -217,12 +217,12 @@ export class ListResidentDeptUsersRequest extends $tea.Model {
 export class ListResidentDeptUsersResponseBody extends $tea.Model {
   nextCursor?: number;
   hasMore?: boolean;
-  list?: ListResidentDeptUsersResponseBodyList[];
+  userList?: ListResidentDeptUsersResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
       nextCursor: 'nextCursor',
       hasMore: 'hasMore',
-      list: 'list',
+      userList: 'userList',
     };
   }
 
@@ -230,7 +230,7 @@ export class ListResidentDeptUsersResponseBody extends $tea.Model {
     return {
       nextCursor: 'number',
       hasMore: 'boolean',
-      list: { 'type': 'array', 'itemType': ListResidentDeptUsersResponseBodyList },
+      userList: { 'type': 'array', 'itemType': ListResidentDeptUsersResponseBodyUserList },
     };
   }
 
@@ -318,13 +318,13 @@ export class ListDeptSimpleUsersRequest extends $tea.Model {
 }
 
 export class ListDeptSimpleUsersResponseBody extends $tea.Model {
-  list?: ListDeptSimpleUsersResponseBodyList[];
+  userList?: ListDeptSimpleUsersResponseBodyUserList[];
   totalCount?: number;
   nextCursor?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
+      userList: 'userList',
       totalCount: 'totalCount',
       nextCursor: 'nextCursor',
       hasMore: 'hasMore',
@@ -333,7 +333,7 @@ export class ListDeptSimpleUsersResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': ListDeptSimpleUsersResponseBodyList },
+      userList: { 'type': 'array', 'itemType': ListDeptSimpleUsersResponseBodyUserList },
       totalCount: 'number',
       nextCursor: 'number',
       hasMore: 'boolean',
@@ -500,15 +500,15 @@ export class GetResidentDeptRequest extends $tea.Model {
 }
 
 export class GetResidentDeptResponseBody extends $tea.Model {
-  deptId?: number;
-  name?: string;
+  departmentId?: number;
+  departmentName?: string;
   deptType?: string;
   contactType?: string;
   feature?: string;
   static names(): { [key: string]: string } {
     return {
-      deptId: 'deptId',
-      name: 'name',
+      departmentId: 'departmentId',
+      departmentName: 'departmentName',
       deptType: 'deptType',
       contactType: 'contactType',
       feature: 'feature',
@@ -517,8 +517,8 @@ export class GetResidentDeptResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      deptId: 'number',
-      name: 'string',
+      departmentId: 'number',
+      departmentName: 'string',
       deptType: 'string',
       contactType: 'string',
       feature: 'string',
@@ -692,16 +692,16 @@ export class GetDeptRequest extends $tea.Model {
 
 export class GetDeptResponseBody extends $tea.Model {
   order?: number;
-  deptId?: number;
-  name?: string;
-  parentId?: number;
+  departmentId?: number;
+  departmentName?: string;
+  parentDepartmentId?: number;
   fromUnionOrg?: boolean;
   static names(): { [key: string]: string } {
     return {
       order: 'order',
-      deptId: 'deptId',
-      name: 'name',
-      parentId: 'parentId',
+      departmentId: 'departmentId',
+      departmentName: 'departmentName',
+      parentDepartmentId: 'parentDepartmentId',
       fromUnionOrg: 'fromUnionOrg',
     };
   }
@@ -709,9 +709,9 @@ export class GetDeptResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       order: 'number',
-      deptId: 'number',
-      name: 'string',
-      parentId: 'number',
+      departmentId: 'number',
+      departmentName: 'string',
+      parentDepartmentId: 'number',
       fromUnionOrg: 'boolean',
     };
   }
@@ -767,18 +767,18 @@ export class ListParentByDeptHeaders extends $tea.Model {
 
 export class ListParentByDeptRequest extends $tea.Model {
   subCorpId?: string;
-  deptId?: number;
+  departmentId?: number;
   static names(): { [key: string]: string } {
     return {
       subCorpId: 'subCorpId',
-      deptId: 'deptId',
+      departmentId: 'departmentId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       subCorpId: 'string',
-      deptId: 'number',
+      departmentId: 'number',
     };
   }
 
@@ -788,16 +788,16 @@ export class ListParentByDeptRequest extends $tea.Model {
 }
 
 export class ListParentByDeptResponseBody extends $tea.Model {
-  parentIdList?: number[];
+  departmentIdList?: number[];
   static names(): { [key: string]: string } {
     return {
-      parentIdList: 'parentIdList',
+      departmentIdList: 'departmentIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      parentIdList: { 'type': 'array', 'itemType': 'number' },
+      departmentIdList: { 'type': 'array', 'itemType': 'number' },
     };
   }
 
@@ -961,14 +961,12 @@ export class ListSimpleUsersByRoleRequest extends $tea.Model {
 }
 
 export class ListSimpleUsersByRoleResponseBody extends $tea.Model {
-  list?: ListSimpleUsersByRoleResponseBodyList[];
-  nextCursorString?: string;
+  userList?: ListSimpleUsersByRoleResponseBodyUserList[];
   nextCursor?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
-      nextCursorString: 'nextCursorString',
+      userList: 'userList',
       nextCursor: 'nextCursor',
       hasMore: 'hasMore',
     };
@@ -976,8 +974,7 @@ export class ListSimpleUsersByRoleResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': ListSimpleUsersByRoleResponseBodyList },
-      nextCursorString: 'string',
+      userList: { 'type': 'array', 'itemType': ListSimpleUsersByRoleResponseBodyUserList },
       nextCursor: 'number',
       hasMore: 'boolean',
     };
@@ -1058,13 +1055,13 @@ export class ListResidentSubDeptsRequest extends $tea.Model {
 }
 
 export class ListResidentSubDeptsResponseBody extends $tea.Model {
-  list?: ListResidentSubDeptsResponseBodyList[];
+  departmentList?: ListResidentSubDeptsResponseBodyDepartmentList[];
   nextCursor?: number;
   hasMore?: boolean;
   total?: number;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
+      departmentList: 'departmentList',
       nextCursor: 'nextCursor',
       hasMore: 'hasMore',
       total: 'total',
@@ -1073,7 +1070,7 @@ export class ListResidentSubDeptsResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': ListResidentSubDeptsResponseBodyList },
+      departmentList: { 'type': 'array', 'itemType': ListResidentSubDeptsResponseBodyDepartmentList },
       nextCursor: 'number',
       hasMore: 'boolean',
       total: 'number',
@@ -1152,16 +1149,16 @@ export class ListParentByUserRequest extends $tea.Model {
 }
 
 export class ListParentByUserResponseBody extends $tea.Model {
-  parentDeptIdList?: number[];
+  departmentIdList?: number[];
   static names(): { [key: string]: string } {
     return {
-      parentDeptIdList: 'parentDeptIdList',
+      departmentIdList: 'departmentIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      parentDeptIdList: { 'type': 'array', 'itemType': 'number' },
+      departmentIdList: { 'type': 'array', 'itemType': 'number' },
     };
   }
 
@@ -1325,13 +1322,12 @@ export class GetUserResponseBody extends $tea.Model {
   userId?: string;
   unionId?: string;
   name?: string;
-  avatar?: string;
   jobNumber?: string;
   title?: string;
   workPlace?: string;
   remark?: string;
-  deptIdList?: number[];
-  deptOrderSet?: GetUserResponseBodyDeptOrderSet[];
+  departmentIdList?: number[];
+  departmentOrderSet?: GetUserResponseBodyDepartmentOrderSet[];
   extension?: string;
   hiredDate?: number;
   active?: boolean;
@@ -1341,7 +1337,7 @@ export class GetUserResponseBody extends $tea.Model {
   boss?: boolean;
   exclusiveAccount?: boolean;
   exclusiveAccountType?: string;
-  leaderInDept?: GetUserResponseBodyLeaderInDept[];
+  leaderInDepartment?: GetUserResponseBodyLeaderInDepartment[];
   roleList?: GetUserResponseBodyRoleList[];
   unionEmpExt?: GetUserResponseBodyUnionEmpExt;
   managerUserId?: string;
@@ -1350,13 +1346,12 @@ export class GetUserResponseBody extends $tea.Model {
       userId: 'userId',
       unionId: 'unionId',
       name: 'name',
-      avatar: 'avatar',
       jobNumber: 'jobNumber',
       title: 'title',
       workPlace: 'workPlace',
       remark: 'remark',
-      deptIdList: 'deptIdList',
-      deptOrderSet: 'deptOrderSet',
+      departmentIdList: 'departmentIdList',
+      departmentOrderSet: 'departmentOrderSet',
       extension: 'extension',
       hiredDate: 'hiredDate',
       active: 'active',
@@ -1366,7 +1361,7 @@ export class GetUserResponseBody extends $tea.Model {
       boss: 'boss',
       exclusiveAccount: 'exclusiveAccount',
       exclusiveAccountType: 'exclusiveAccountType',
-      leaderInDept: 'leaderInDept',
+      leaderInDepartment: 'leaderInDepartment',
       roleList: 'roleList',
       unionEmpExt: 'unionEmpExt',
       managerUserId: 'managerUserId',
@@ -1378,13 +1373,12 @@ export class GetUserResponseBody extends $tea.Model {
       userId: 'string',
       unionId: 'string',
       name: 'string',
-      avatar: 'string',
       jobNumber: 'string',
       title: 'string',
       workPlace: 'string',
       remark: 'string',
-      deptIdList: { 'type': 'array', 'itemType': 'number' },
-      deptOrderSet: { 'type': 'array', 'itemType': GetUserResponseBodyDeptOrderSet },
+      departmentIdList: { 'type': 'array', 'itemType': 'number' },
+      departmentOrderSet: { 'type': 'array', 'itemType': GetUserResponseBodyDepartmentOrderSet },
       extension: 'string',
       hiredDate: 'number',
       active: 'boolean',
@@ -1394,7 +1388,7 @@ export class GetUserResponseBody extends $tea.Model {
       boss: 'boolean',
       exclusiveAccount: 'boolean',
       exclusiveAccountType: 'string',
-      leaderInDept: { 'type': 'array', 'itemType': GetUserResponseBodyLeaderInDept },
+      leaderInDepartment: { 'type': 'array', 'itemType': GetUserResponseBodyLeaderInDepartment },
       roleList: { 'type': 'array', 'itemType': GetUserResponseBodyRoleList },
       unionEmpExt: GetUserResponseBodyUnionEmpExt,
       managerUserId: 'string',
@@ -1485,12 +1479,12 @@ export class ListDeptUsersRequest extends $tea.Model {
 }
 
 export class ListDeptUsersResponseBody extends $tea.Model {
-  list?: ListDeptUsersResponseBodyList[];
+  userList?: ListDeptUsersResponseBodyUserList[];
   nextCursor?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
-      list: 'list',
+      userList: 'userList',
       nextCursor: 'nextCursor',
       hasMore: 'hasMore',
     };
@@ -1498,7 +1492,7 @@ export class ListDeptUsersResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      list: { 'type': 'array', 'itemType': ListDeptUsersResponseBodyList },
+      userList: { 'type': 'array', 'itemType': ListDeptUsersResponseBodyUserList },
       nextCursor: 'number',
       hasMore: 'boolean',
     };
@@ -1598,16 +1592,16 @@ export class ListResidentUserInfosShrinkRequest extends $tea.Model {
 }
 
 export class ListResidentUserInfosResponseBody extends $tea.Model {
-  result?: ListResidentUserInfosResponseBodyResult[];
+  userList?: ListResidentUserInfosResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      userList: 'userList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': ListResidentUserInfosResponseBodyResult },
+      userList: { 'type': 'array', 'itemType': ListResidentUserInfosResponseBodyUserList },
     };
   }
 
@@ -1680,16 +1674,16 @@ export class ListSubDeptIdsRequest extends $tea.Model {
 }
 
 export class ListSubDeptIdsResponseBody extends $tea.Model {
-  deptIdList?: number[];
+  departmentIdList?: number[];
   static names(): { [key: string]: string } {
     return {
-      deptIdList: 'deptIdList',
+      departmentIdList: 'departmentIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      departmentIdList: { 'type': 'array', 'itemType': 'number' },
     };
   }
 
@@ -1720,9 +1714,9 @@ export class ListSubDeptIdsResponse extends $tea.Model {
   }
 }
 
-export class ListSubCorpsResponseBodyResult extends $tea.Model {
+export class ListSubCorpsResponseBodyCorpList extends $tea.Model {
   corpId?: string;
-  name?: string;
+  corpName?: string;
   regionType?: string;
   regionId?: string;
   regionLocation?: string;
@@ -1731,7 +1725,7 @@ export class ListSubCorpsResponseBodyResult extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
-      name: 'name',
+      corpName: 'corpName',
       regionType: 'regionType',
       regionId: 'regionId',
       regionLocation: 'regionLocation',
@@ -1743,7 +1737,7 @@ export class ListSubCorpsResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       corpId: 'string',
-      name: 'string',
+      corpName: 'string',
       regionType: 'string',
       regionId: 'string',
       regionLocation: 'string',
@@ -1757,22 +1751,22 @@ export class ListSubCorpsResponseBodyResult extends $tea.Model {
   }
 }
 
-export class ListResidentDeptUsersResponseBodyListRoles extends $tea.Model {
-  id?: number;
-  name?: string;
+export class ListResidentDeptUsersResponseBodyUserListRoles extends $tea.Model {
+  tagId?: number;
+  tagName?: string;
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      name: 'name',
+      tagId: 'tagId',
+      tagName: 'tagName',
       tagCode: 'tagCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      name: 'string',
+      tagId: 'number',
+      tagName: 'string',
       tagCode: 'string',
     };
   }
@@ -1782,10 +1776,10 @@ export class ListResidentDeptUsersResponseBodyListRoles extends $tea.Model {
   }
 }
 
-export class ListResidentDeptUsersResponseBodyList extends $tea.Model {
+export class ListResidentDeptUsersResponseBodyUserList extends $tea.Model {
   userId?: string;
   name?: string;
-  roles?: ListResidentDeptUsersResponseBodyListRoles[];
+  roles?: ListResidentDeptUsersResponseBodyUserListRoles[];
   feature?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -1802,7 +1796,7 @@ export class ListResidentDeptUsersResponseBodyList extends $tea.Model {
     return {
       userId: 'string',
       name: 'string',
-      roles: { 'type': 'array', 'itemType': ListResidentDeptUsersResponseBodyListRoles },
+      roles: { 'type': 'array', 'itemType': ListResidentDeptUsersResponseBodyUserListRoles },
       feature: 'string',
       unionId: 'string',
     };
@@ -1813,7 +1807,7 @@ export class ListResidentDeptUsersResponseBodyList extends $tea.Model {
   }
 }
 
-export class ListDeptSimpleUsersResponseBodyList extends $tea.Model {
+export class ListDeptSimpleUsersResponseBodyUserList extends $tea.Model {
   userId?: string;
   name?: string;
   static names(): { [key: string]: string } {
@@ -1836,21 +1830,21 @@ export class ListDeptSimpleUsersResponseBodyList extends $tea.Model {
 }
 
 export class GetResidentUserInfoResponseBodyRoles extends $tea.Model {
-  id?: number;
-  name?: string;
+  roleId?: number;
+  roleName?: string;
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      name: 'name',
+      roleId: 'roleId',
+      roleName: 'roleName',
       tagCode: 'tagCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      name: 'string',
+      roleId: 'number',
+      roleName: 'string',
       tagCode: 'string',
     };
   }
@@ -1860,7 +1854,7 @@ export class GetResidentUserInfoResponseBodyRoles extends $tea.Model {
   }
 }
 
-export class ListSimpleUsersByRoleResponseBodyList extends $tea.Model {
+export class ListSimpleUsersByRoleResponseBodyUserList extends $tea.Model {
   userId?: string;
   unionId?: string;
   jobNumber?: string;
@@ -1888,23 +1882,23 @@ export class ListSimpleUsersByRoleResponseBodyList extends $tea.Model {
   }
 }
 
-export class ListResidentSubDeptsResponseBodyList extends $tea.Model {
-  deptId?: number;
-  name?: string;
-  superId?: number;
+export class ListResidentSubDeptsResponseBodyDepartmentList extends $tea.Model {
+  departmentId?: number;
+  departmentName?: string;
+  superDepartmentId?: number;
   static names(): { [key: string]: string } {
     return {
-      deptId: 'deptId',
-      name: 'name',
-      superId: 'superId',
+      departmentId: 'departmentId',
+      departmentName: 'departmentName',
+      superDepartmentId: 'superDepartmentId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      deptId: 'number',
-      name: 'string',
-      superId: 'number',
+      departmentId: 'number',
+      departmentName: 'string',
+      superDepartmentId: 'number',
     };
   }
 
@@ -1914,18 +1908,18 @@ export class ListResidentSubDeptsResponseBodyList extends $tea.Model {
 }
 
 export class ListSubDeptResponseBodyResult extends $tea.Model {
-  deptId?: number;
+  departmentId?: number;
   name?: string;
   static names(): { [key: string]: string } {
     return {
-      deptId: 'deptId',
+      departmentId: 'departmentId',
       name: 'name',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      deptId: 'number',
+      departmentId: 'number',
       name: 'string',
     };
   }
@@ -1935,19 +1929,19 @@ export class ListSubDeptResponseBodyResult extends $tea.Model {
   }
 }
 
-export class GetUserResponseBodyDeptOrderSet extends $tea.Model {
-  deptId?: number;
+export class GetUserResponseBodyDepartmentOrderSet extends $tea.Model {
+  departmentId?: number;
   order?: number;
   static names(): { [key: string]: string } {
     return {
-      deptId: 'deptId',
+      departmentId: 'departmentId',
       order: 'order',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      deptId: 'number',
+      departmentId: 'number',
       order: 'number',
     };
   }
@@ -1957,19 +1951,19 @@ export class GetUserResponseBodyDeptOrderSet extends $tea.Model {
   }
 }
 
-export class GetUserResponseBodyLeaderInDept extends $tea.Model {
-  deptId?: number;
+export class GetUserResponseBodyLeaderInDepartment extends $tea.Model {
+  departmentId?: number;
   leader?: boolean;
   static names(): { [key: string]: string } {
     return {
-      deptId: 'deptId',
+      departmentId: 'departmentId',
       leader: 'leader',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      deptId: 'number',
+      departmentId: 'number',
       leader: 'boolean',
     };
   }
@@ -1980,21 +1974,21 @@ export class GetUserResponseBodyLeaderInDept extends $tea.Model {
 }
 
 export class GetUserResponseBodyRoleList extends $tea.Model {
-  id?: number;
-  name?: string;
+  roleId?: number;
+  roleName?: string;
   groupName?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      name: 'name',
+      roleId: 'roleId',
+      roleName: 'roleName',
       groupName: 'groupName',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      name: 'string',
+      roleId: 'number',
+      roleName: 'string',
       groupName: 'string',
     };
   }
@@ -2051,12 +2045,12 @@ export class GetUserResponseBodyUnionEmpExt extends $tea.Model {
   }
 }
 
-export class ListDeptUsersResponseBodyList extends $tea.Model {
+export class ListDeptUsersResponseBodyUserList extends $tea.Model {
   userId?: string;
   unionId?: string;
   jobNumber?: string;
   name?: string;
-  deptIdList?: number[];
+  departmentList?: number[];
   active?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2064,7 +2058,7 @@ export class ListDeptUsersResponseBodyList extends $tea.Model {
       unionId: 'unionId',
       jobNumber: 'jobNumber',
       name: 'name',
-      deptIdList: 'deptIdList',
+      departmentList: 'departmentList',
       active: 'active',
     };
   }
@@ -2075,7 +2069,7 @@ export class ListDeptUsersResponseBodyList extends $tea.Model {
       unionId: 'string',
       jobNumber: 'string',
       name: 'string',
-      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      departmentList: { 'type': 'array', 'itemType': 'number' },
       active: 'boolean',
     };
   }
@@ -2085,22 +2079,22 @@ export class ListDeptUsersResponseBodyList extends $tea.Model {
   }
 }
 
-export class ListResidentUserInfosResponseBodyResultRoles extends $tea.Model {
-  id?: number;
-  name?: string;
+export class ListResidentUserInfosResponseBodyUserListRoles extends $tea.Model {
+  tagId?: number;
+  tagName?: string;
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      name: 'name',
+      tagId: 'tagId',
+      tagName: 'tagName',
       tagCode: 'tagCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      name: 'string',
+      tagId: 'number',
+      tagName: 'string',
       tagCode: 'string',
     };
   }
@@ -2110,16 +2104,16 @@ export class ListResidentUserInfosResponseBodyResultRoles extends $tea.Model {
   }
 }
 
-export class ListResidentUserInfosResponseBodyResult extends $tea.Model {
-  userid?: string;
-  name?: string;
-  roles?: ListResidentUserInfosResponseBodyResultRoles[];
+export class ListResidentUserInfosResponseBodyUserList extends $tea.Model {
+  userId?: string;
+  userName?: string;
+  roles?: ListResidentUserInfosResponseBodyUserListRoles[];
   feature?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      userid: 'userid',
-      name: 'name',
+      userId: 'userId',
+      userName: 'userName',
       roles: 'roles',
       feature: 'feature',
       unionId: 'unionId',
@@ -2128,9 +2122,9 @@ export class ListResidentUserInfosResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      userid: 'string',
-      name: 'string',
-      roles: { 'type': 'array', 'itemType': ListResidentUserInfosResponseBodyResultRoles },
+      userId: 'string',
+      userName: 'string',
+      roles: { 'type': 'array', 'itemType': ListResidentUserInfosResponseBodyUserListRoles },
       feature: 'string',
       unionId: 'string',
     };
@@ -2213,13 +2207,13 @@ export default class Client extends OpenApi {
     return $tea.cast<GetVillageOrgInfoResponse>(await this.doROARequest("GetVillageOrgInfo", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/corps/${subCorpId}`, "json", req, runtime), new GetVillageOrgInfoResponse({}));
   }
 
-  async listResidentDeptUsers(deptId: string, request: ListResidentDeptUsersRequest): Promise<ListResidentDeptUsersResponse> {
+  async listResidentDeptUsers(departmentId: string, request: ListResidentDeptUsersRequest): Promise<ListResidentDeptUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListResidentDeptUsersHeaders({ });
-    return await this.listResidentDeptUsersWithOptions(deptId, request, headers, runtime);
+    return await this.listResidentDeptUsersWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listResidentDeptUsersWithOptions(deptId: string, request: ListResidentDeptUsersRequest, headers: ListResidentDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentDeptUsersResponse> {
+  async listResidentDeptUsersWithOptions(departmentId: string, request: ListResidentDeptUsersRequest, headers: ListResidentDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentDeptUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
@@ -2251,16 +2245,16 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListResidentDeptUsersResponse>(await this.doROARequest("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/${deptId}/users`, "json", req, runtime), new ListResidentDeptUsersResponse({}));
+    return $tea.cast<ListResidentDeptUsersResponse>(await this.doROARequest("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/${departmentId}/users`, "json", req, runtime), new ListResidentDeptUsersResponse({}));
   }
 
-  async listDeptSimpleUsers(deptId: string, request: ListDeptSimpleUsersRequest): Promise<ListDeptSimpleUsersResponse> {
+  async listDeptSimpleUsers(departmentId: string, request: ListDeptSimpleUsersRequest): Promise<ListDeptSimpleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListDeptSimpleUsersHeaders({ });
-    return await this.listDeptSimpleUsersWithOptions(deptId, request, headers, runtime);
+    return await this.listDeptSimpleUsersWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listDeptSimpleUsersWithOptions(deptId: string, request: ListDeptSimpleUsersRequest, headers: ListDeptSimpleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptSimpleUsersResponse> {
+  async listDeptSimpleUsersWithOptions(departmentId: string, request: ListDeptSimpleUsersRequest, headers: ListDeptSimpleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptSimpleUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.cursor)) {
@@ -2300,7 +2294,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListDeptSimpleUsersResponse>(await this.doROARequest("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${deptId}/simpleUsers`, "json", req, runtime), new ListDeptSimpleUsersResponse({}));
+    return $tea.cast<ListDeptSimpleUsersResponse>(await this.doROARequest("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${departmentId}/simpleUsers`, "json", req, runtime), new ListDeptSimpleUsersResponse({}));
   }
 
   async getUserByUnionId(request: GetUserByUnionIdRequest): Promise<GetUserByUnionIdResponse> {
@@ -2369,13 +2363,13 @@ export default class Client extends OpenApi {
     return $tea.cast<GetResidentDeptResponse>(await this.doROARequest("GetResidentDept", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/departments/${departmentId}`, "json", req, runtime), new GetResidentDeptResponse({}));
   }
 
-  async getResidentUserInfo(deptId: string, userId: string, request: GetResidentUserInfoRequest): Promise<GetResidentUserInfoResponse> {
+  async getResidentUserInfo(departmentId: string, userId: string, request: GetResidentUserInfoRequest): Promise<GetResidentUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetResidentUserInfoHeaders({ });
-    return await this.getResidentUserInfoWithOptions(deptId, userId, request, headers, runtime);
+    return await this.getResidentUserInfoWithOptions(departmentId, userId, request, headers, runtime);
   }
 
-  async getResidentUserInfoWithOptions(deptId: string, userId: string, request: GetResidentUserInfoRequest, headers: GetResidentUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentUserInfoResponse> {
+  async getResidentUserInfoWithOptions(departmentId: string, userId: string, request: GetResidentUserInfoRequest, headers: GetResidentUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentUserInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
@@ -2395,7 +2389,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetResidentUserInfoResponse>(await this.doROARequest("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/${deptId}/users/${userId}`, "json", req, runtime), new GetResidentUserInfoResponse({}));
+    return $tea.cast<GetResidentUserInfoResponse>(await this.doROARequest("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/${departmentId}/users/${userId}`, "json", req, runtime), new GetResidentUserInfoResponse({}));
   }
 
   async getDept(departmentId: string, request: GetDeptRequest): Promise<GetDeptResponse> {
@@ -2444,8 +2438,8 @@ export default class Client extends OpenApi {
       query["subCorpId"] = request.subCorpId;
     }
 
-    if (!Util.isUnset(request.deptId)) {
-      query["deptId"] = request.deptId;
+    if (!Util.isUnset(request.departmentId)) {
+      query["departmentId"] = request.departmentId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2464,13 +2458,13 @@ export default class Client extends OpenApi {
     return $tea.cast<ListParentByDeptResponse>(await this.doROARequest("ListParentByDept", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/listParentByDepartment`, "json", req, runtime), new ListParentByDeptResponse({}));
   }
 
-  async listDeptUserIds(deptId: string, request: ListDeptUserIdsRequest): Promise<ListDeptUserIdsResponse> {
+  async listDeptUserIds(departmentId: string, request: ListDeptUserIdsRequest): Promise<ListDeptUserIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListDeptUserIdsHeaders({ });
-    return await this.listDeptUserIdsWithOptions(deptId, request, headers, runtime);
+    return await this.listDeptUserIdsWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listDeptUserIdsWithOptions(deptId: string, request: ListDeptUserIdsRequest, headers: ListDeptUserIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUserIdsResponse> {
+  async listDeptUserIdsWithOptions(departmentId: string, request: ListDeptUserIdsRequest, headers: ListDeptUserIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUserIdsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
@@ -2490,7 +2484,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListDeptUserIdsResponse>(await this.doROARequest("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${deptId}/userIds`, "json", req, runtime), new ListDeptUserIdsResponse({}));
+    return $tea.cast<ListDeptUserIdsResponse>(await this.doROARequest("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${departmentId}/userIds`, "json", req, runtime), new ListDeptUserIdsResponse({}));
   }
 
   async listSimpleUsersByRole(request: ListSimpleUsersByRoleRequest): Promise<ListSimpleUsersByRoleResponse> {
@@ -2534,13 +2528,13 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSimpleUsersByRoleResponse>(await this.doROARequest("ListSimpleUsersByRole", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/users/listByRole`, "json", req, runtime), new ListSimpleUsersByRoleResponse({}));
   }
 
-  async listResidentSubDepts(deptId: string, request: ListResidentSubDeptsRequest): Promise<ListResidentSubDeptsResponse> {
+  async listResidentSubDepts(departmentId: string, request: ListResidentSubDeptsRequest): Promise<ListResidentSubDeptsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListResidentSubDeptsHeaders({ });
-    return await this.listResidentSubDeptsWithOptions(deptId, request, headers, runtime);
+    return await this.listResidentSubDeptsWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listResidentSubDeptsWithOptions(deptId: string, request: ListResidentSubDeptsRequest, headers: ListResidentSubDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentSubDeptsResponse> {
+  async listResidentSubDeptsWithOptions(departmentId: string, request: ListResidentSubDeptsRequest, headers: ListResidentSubDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentSubDeptsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
@@ -2568,7 +2562,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListResidentSubDeptsResponse>(await this.doROARequest("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/${deptId}/subDepartments`, "json", req, runtime), new ListResidentSubDeptsResponse({}));
+    return $tea.cast<ListResidentSubDeptsResponse>(await this.doROARequest("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentDepartments/${departmentId}/subDepartments`, "json", req, runtime), new ListResidentSubDeptsResponse({}));
   }
 
   async listParentByUser(request: ListParentByUserRequest): Promise<ListParentByUserResponse> {
@@ -2604,13 +2598,13 @@ export default class Client extends OpenApi {
     return $tea.cast<ListParentByUserResponse>(await this.doROARequest("ListParentByUser", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/listParentByUser`, "json", req, runtime), new ListParentByUserResponse({}));
   }
 
-  async listSubDept(deptId: string, request: ListSubDeptRequest): Promise<ListSubDeptResponse> {
+  async listSubDept(departmentId: string, request: ListSubDeptRequest): Promise<ListSubDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSubDeptHeaders({ });
-    return await this.listSubDeptWithOptions(deptId, request, headers, runtime);
+    return await this.listSubDeptWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listSubDeptWithOptions(deptId: string, request: ListSubDeptRequest, headers: ListSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptResponse> {
+  async listSubDeptWithOptions(departmentId: string, request: ListSubDeptRequest, headers: ListSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
@@ -2634,7 +2628,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListSubDeptResponse>(await this.doROARequest("ListSubDept", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${deptId}/subDepartments`, "json", req, runtime), new ListSubDeptResponse({}));
+    return $tea.cast<ListSubDeptResponse>(await this.doROARequest("ListSubDept", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${departmentId}/subDepartments`, "json", req, runtime), new ListSubDeptResponse({}));
   }
 
   async getUser(userId: string, request: GetUserRequest): Promise<GetUserResponse> {
@@ -2670,13 +2664,13 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserResponse>(await this.doROARequest("GetUser", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/users/getByUserId`, "json", req, runtime), new GetUserResponse({}));
   }
 
-  async listDeptUsers(deptId: string, request: ListDeptUsersRequest): Promise<ListDeptUsersResponse> {
+  async listDeptUsers(departmentId: string, request: ListDeptUsersRequest): Promise<ListDeptUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListDeptUsersHeaders({ });
-    return await this.listDeptUsersWithOptions(deptId, request, headers, runtime);
+    return await this.listDeptUsersWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listDeptUsersWithOptions(deptId: string, request: ListDeptUsersRequest, headers: ListDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUsersResponse> {
+  async listDeptUsersWithOptions(departmentId: string, request: ListDeptUsersRequest, headers: ListDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.cursor)) {
@@ -2716,7 +2710,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListDeptUsersResponse>(await this.doROARequest("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${deptId}/users`, "json", req, runtime), new ListDeptUsersResponse({}));
+    return $tea.cast<ListDeptUsersResponse>(await this.doROARequest("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${departmentId}/users`, "json", req, runtime), new ListDeptUsersResponse({}));
   }
 
   async listResidentUserInfos(request: ListResidentUserInfosRequest): Promise<ListResidentUserInfosResponse> {
@@ -2758,13 +2752,13 @@ export default class Client extends OpenApi {
     return $tea.cast<ListResidentUserInfosResponse>(await this.doROARequest("ListResidentUserInfos", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/residentUsers/getByUserIds`, "json", req, runtime), new ListResidentUserInfosResponse({}));
   }
 
-  async listSubDeptIds(deptId: string, request: ListSubDeptIdsRequest): Promise<ListSubDeptIdsResponse> {
+  async listSubDeptIds(departmentId: string, request: ListSubDeptIdsRequest): Promise<ListSubDeptIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSubDeptIdsHeaders({ });
-    return await this.listSubDeptIdsWithOptions(deptId, request, headers, runtime);
+    return await this.listSubDeptIdsWithOptions(departmentId, request, headers, runtime);
   }
 
-  async listSubDeptIdsWithOptions(deptId: string, request: ListSubDeptIdsRequest, headers: ListSubDeptIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptIdsResponse> {
+  async listSubDeptIdsWithOptions(departmentId: string, request: ListSubDeptIdsRequest, headers: ListSubDeptIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptIdsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
@@ -2784,7 +2778,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListSubDeptIdsResponse>(await this.doROARequest("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${deptId}/subDepartmentIds`, "json", req, runtime), new ListSubDeptIdsResponse({}));
+    return $tea.cast<ListSubDeptIdsResponse>(await this.doROARequest("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", `/v1.0/village/departments/${departmentId}/subDepartmentIds`, "json", req, runtime), new ListSubDeptIdsResponse({}));
   }
 
 }

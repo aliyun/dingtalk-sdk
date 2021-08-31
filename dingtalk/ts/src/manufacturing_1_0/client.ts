@@ -24,6 +24,10 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
   instNo?: string;
   manufactureDate?: string;
   dingCorpId?: string;
+  isBatchJob?: string;
+  userNameList?: string;
+  userIdList?: string;
+  unitPrice?: string;
   static names(): { [key: string]: string } {
     return {
       scrappedQuantity: 'scrappedQuantity',
@@ -42,6 +46,10 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
       instNo: 'instNo',
       manufactureDate: 'manufactureDate',
       dingCorpId: 'dingCorpId',
+      isBatchJob: 'isBatchJob',
+      userNameList: 'userNameList',
+      userIdList: 'userIdList',
+      unitPrice: 'unitPrice',
     };
   }
 
@@ -63,6 +71,10 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
       instNo: 'string',
       manufactureDate: 'string',
       dingCorpId: 'string',
+      isBatchJob: 'string',
+      userNameList: 'string',
+      userIdList: 'string',
+      unitPrice: 'string',
     };
   }
 
@@ -335,6 +347,22 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.dingCorpId)) {
       body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.isBatchJob)) {
+      body["isBatchJob"] = request.isBatchJob;
+    }
+
+    if (!Util.isUnset(request.userNameList)) {
+      body["userNameList"] = request.userNameList;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    if (!Util.isUnset(request.unitPrice)) {
+      body["unitPrice"] = request.unitPrice;
     }
 
     let req = new $OpenApi.OpenApiRequest({

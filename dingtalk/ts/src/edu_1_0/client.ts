@@ -2357,6 +2357,7 @@ export class QueryStatisticsDataResponseBodyResult extends $tea.Model {
   userName?: string;
   classId?: number;
   subjectName?: number;
+  subjectCode?: string;
   courseHours?: number;
   courseCount?: number;
   static names(): { [key: string]: string } {
@@ -2365,6 +2366,7 @@ export class QueryStatisticsDataResponseBodyResult extends $tea.Model {
       userName: 'userName',
       classId: 'classId',
       subjectName: 'subjectName',
+      subjectCode: 'subjectCode',
       courseHours: 'courseHours',
       courseCount: 'courseCount',
     };
@@ -2376,6 +2378,7 @@ export class QueryStatisticsDataResponseBodyResult extends $tea.Model {
       userName: 'string',
       classId: 'number',
       subjectName: 'number',
+      subjectCode: 'string',
       courseHours: 'number',
       courseCount: 'number',
     };

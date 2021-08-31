@@ -1500,6 +1500,103 @@ export class CreateCustomerResponse extends $tea.Model {
   }
 }
 
+export class QueryAllTracksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllTracksRequest extends $tea.Model {
+  nextToken?: string;
+  maxResults?: number;
+  order?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      maxResults: 'number',
+      order: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllTracksResponseBody extends $tea.Model {
+  values?: QueryAllTracksResponseBodyValues[];
+  hasMore?: boolean;
+  nextToken?: string;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      values: 'values',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      values: { 'type': 'array', 'itemType': QueryAllTracksResponseBodyValues },
+      hasMore: 'boolean',
+      nextToken: 'string',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllTracksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryAllTracksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryAllTracksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOfficialAccountContactsResponseBodyValuesContactsPermission extends $tea.Model {
   participantStaffIds?: string[];
   ownerStaffIds?: string[];
@@ -2758,6 +2855,43 @@ export class CreateCustomerResponseBodyContacts extends $tea.Model {
   }
 }
 
+export class QueryAllTracksResponseBodyValues extends $tea.Model {
+  corpId?: string;
+  customerId?: string;
+  type?: number;
+  subType?: number;
+  gmtCreate?: number;
+  creator?: string;
+  bizId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      customerId: 'customerId',
+      type: 'type',
+      subType: 'subType',
+      gmtCreate: 'gmtCreate',
+      creator: 'creator',
+      bizId: 'bizId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      customerId: 'string',
+      type: 'number',
+      subType: 'number',
+      gmtCreate: 'number',
+      creator: 'string',
+      bizId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -3436,6 +3570,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateCustomerResponse>(await this.doROARequest("CreateCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers`, "json", req, runtime), new CreateCustomerResponse({}));
+  }
+
+  async queryAllTracks(request: QueryAllTracksRequest): Promise<QueryAllTracksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAllTracksHeaders({ });
+    return await this.queryAllTracksWithOptions(request, headers, runtime);
+  }
+
+  async queryAllTracksWithOptions(request: QueryAllTracksRequest, headers: QueryAllTracksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllTracksResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      query["order"] = request.order;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryAllTracksResponse>(await this.doROARequest("QueryAllTracks", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/customers/tracks`, "json", req, runtime), new QueryAllTracksResponse({}));
   }
 
 }

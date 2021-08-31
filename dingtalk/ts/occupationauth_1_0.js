@@ -1,0 +1,1 @@
+module.exports = require('./dist').occupationauth_1_0;

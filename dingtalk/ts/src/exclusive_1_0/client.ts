@@ -947,7 +947,6 @@ export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
   category1Name?: string;
   category2Name?: string;
   content?: string;
-  extension?: string;
   static names(): { [key: string]: string } {
     return {
       opUserId: 'opUserId',
@@ -956,7 +955,6 @@ export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
       category1Name: 'category1Name',
       category2Name: 'category2Name',
       content: 'content',
-      extension: 'extension',
     };
   }
 
@@ -968,7 +966,6 @@ export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
       category1Name: 'string',
       category2Name: 'string',
       content: 'string',
-      extension: 'string',
     };
   }
 

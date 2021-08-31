@@ -107,6 +107,173 @@ export class CreateVideoConferenceResponse extends $tea.Model {
   }
 }
 
+export class QueryConferenceInfoBatchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchRequest extends $tea.Model {
+  conferenceIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      conferenceIdList: 'conferenceIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchResponseBody extends $tea.Model {
+  infos?: QueryConferenceInfoBatchResponseBodyInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      infos: 'infos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      infos: { 'type': 'array', 'itemType': QueryConferenceInfoBatchResponseBodyInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConferenceInfoBatchResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryConferenceInfoBatchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryConferenceInfoBatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopCloudRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopCloudRecordRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopCloudRecordResponseBody extends $tea.Model {
+  code?: string;
+  cause?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      cause: 'cause',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      cause: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopCloudRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: StopCloudRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: StopCloudRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateVideoConferenceExtInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -258,7 +425,7 @@ export class CloseVideoConferenceResponse extends $tea.Model {
   }
 }
 
-export class QueryConferenceInfoBatchHeaders extends $tea.Model {
+export class StopStreamOutHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -280,17 +447,23 @@ export class QueryConferenceInfoBatchHeaders extends $tea.Model {
   }
 }
 
-export class QueryConferenceInfoBatchRequest extends $tea.Model {
-  conferenceIdList?: string[];
+export class StopStreamOutRequest extends $tea.Model {
+  streamId?: string;
+  stopAllStream?: boolean;
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      conferenceIdList: 'conferenceIdList',
+      streamId: 'streamId',
+      stopAllStream: 'stopAllStream',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      conferenceIdList: { 'type': 'array', 'itemType': 'string' },
+      streamId: 'string',
+      stopAllStream: 'boolean',
+      unionId: 'string',
     };
   }
 
@@ -299,17 +472,20 @@ export class QueryConferenceInfoBatchRequest extends $tea.Model {
   }
 }
 
-export class QueryConferenceInfoBatchResponseBody extends $tea.Model {
-  infos?: QueryConferenceInfoBatchResponseBodyInfos[];
+export class StopStreamOutResponseBody extends $tea.Model {
+  code?: string;
+  cause?: string;
   static names(): { [key: string]: string } {
     return {
-      infos: 'infos',
+      code: 'code',
+      cause: 'cause',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      infos: { 'type': 'array', 'itemType': QueryConferenceInfoBatchResponseBodyInfos },
+      code: 'string',
+      cause: 'string',
     };
   }
 
@@ -318,9 +494,9 @@ export class QueryConferenceInfoBatchResponseBody extends $tea.Model {
   }
 }
 
-export class QueryConferenceInfoBatchResponse extends $tea.Model {
+export class StopStreamOutResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: QueryConferenceInfoBatchResponseBody;
+  body: StopStreamOutResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -331,7 +507,198 @@ export class QueryConferenceInfoBatchResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryConferenceInfoBatchResponseBody,
+      body: StopStreamOutResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCloudRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCloudRecordRequest extends $tea.Model {
+  unionId?: string;
+  smallWindowPosition?: string;
+  mode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      smallWindowPosition: 'smallWindowPosition',
+      mode: 'mode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      smallWindowPosition: 'string',
+      mode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCloudRecordResponseBody extends $tea.Model {
+  code?: string;
+  cause?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      cause: 'cause',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      cause: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCloudRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: StartCloudRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: StartCloudRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartStreamOutHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartStreamOutRequest extends $tea.Model {
+  unionId?: string;
+  needHostJoin?: boolean;
+  streamUrlList?: string[];
+  streamName?: string;
+  mode?: string;
+  smallWindowPosition?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      needHostJoin: 'needHostJoin',
+      streamUrlList: 'streamUrlList',
+      streamName: 'streamName',
+      mode: 'mode',
+      smallWindowPosition: 'smallWindowPosition',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      needHostJoin: 'boolean',
+      streamUrlList: { 'type': 'array', 'itemType': 'string' },
+      streamName: 'string',
+      mode: 'string',
+      smallWindowPosition: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartStreamOutResponseBody extends $tea.Model {
+  successStreamMap?: { [key: string]: any };
+  failStreamMap?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      successStreamMap: 'successStreamMap',
+      failStreamMap: 'failStreamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      successStreamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      failStreamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartStreamOutResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: StartStreamOutResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: StartStreamOutResponseBody,
     };
   }
 
@@ -458,6 +825,64 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateVideoConferenceResponse>(await this.doROARequest("CreateVideoConference", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences`, "json", req, runtime), new CreateVideoConferenceResponse({}));
   }
 
+  async queryConferenceInfoBatch(request: QueryConferenceInfoBatchRequest): Promise<QueryConferenceInfoBatchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryConferenceInfoBatchHeaders({ });
+    return await this.queryConferenceInfoBatchWithOptions(request, headers, runtime);
+  }
+
+  async queryConferenceInfoBatchWithOptions(request: QueryConferenceInfoBatchRequest, headers: QueryConferenceInfoBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoBatchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conferenceIdList)) {
+      body["conferenceIdList"] = request.conferenceIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryConferenceInfoBatchResponse>(await this.doROARequest("QueryConferenceInfoBatch", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/query`, "json", req, runtime), new QueryConferenceInfoBatchResponse({}));
+  }
+
+  async stopCloudRecord(conferenceId: string, request: StopCloudRecordRequest): Promise<StopCloudRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StopCloudRecordHeaders({ });
+    return await this.stopCloudRecordWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async stopCloudRecordWithOptions(conferenceId: string, request: StopCloudRecordRequest, headers: StopCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<StopCloudRecordResponse>(await this.doROARequest("StopCloudRecord", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/${conferenceId}/cloudRecords/stop`, "json", req, runtime), new StopCloudRecordResponse({}));
+  }
+
   async updateVideoConferenceExtInfo(conferenceId: string): Promise<UpdateVideoConferenceExtInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateVideoConferenceExtInfoHeaders({ });
@@ -509,17 +934,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CloseVideoConferenceResponse>(await this.doROARequest("CloseVideoConference", "conference_1.0", "HTTP", "DELETE", "AK", `/v1.0/conference/videoConferences/${conferenceId}`, "json", req, runtime), new CloseVideoConferenceResponse({}));
   }
 
-  async queryConferenceInfoBatch(request: QueryConferenceInfoBatchRequest): Promise<QueryConferenceInfoBatchResponse> {
+  async stopStreamOut(conferenceId: string, request: StopStreamOutRequest): Promise<StopStreamOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryConferenceInfoBatchHeaders({ });
-    return await this.queryConferenceInfoBatchWithOptions(request, headers, runtime);
+    let headers = new StopStreamOutHeaders({ });
+    return await this.stopStreamOutWithOptions(conferenceId, request, headers, runtime);
   }
 
-  async queryConferenceInfoBatchWithOptions(request: QueryConferenceInfoBatchRequest, headers: QueryConferenceInfoBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoBatchResponse> {
+  async stopStreamOutWithOptions(conferenceId: string, request: StopStreamOutRequest, headers: StopStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StopStreamOutResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.conferenceIdList)) {
-      body["conferenceIdList"] = request.conferenceIdList;
+    if (!Util.isUnset(request.streamId)) {
+      body["streamId"] = request.streamId;
+    }
+
+    if (!Util.isUnset(request.stopAllStream)) {
+      body["stopAllStream"] = request.stopAllStream;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -535,7 +968,93 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryConferenceInfoBatchResponse>(await this.doROARequest("QueryConferenceInfoBatch", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/query`, "json", req, runtime), new QueryConferenceInfoBatchResponse({}));
+    return $tea.cast<StopStreamOutResponse>(await this.doROARequest("StopStreamOut", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/${conferenceId}/streamOuts/stop`, "json", req, runtime), new StopStreamOutResponse({}));
+  }
+
+  async startCloudRecord(conferenceId: string, request: StartCloudRecordRequest): Promise<StartCloudRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StartCloudRecordHeaders({ });
+    return await this.startCloudRecordWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async startCloudRecordWithOptions(conferenceId: string, request: StartCloudRecordRequest, headers: StartCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.smallWindowPosition)) {
+      body["smallWindowPosition"] = request.smallWindowPosition;
+    }
+
+    if (!Util.isUnset(request.mode)) {
+      body["mode"] = request.mode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<StartCloudRecordResponse>(await this.doROARequest("StartCloudRecord", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/${conferenceId}/cloudRecords/start`, "json", req, runtime), new StartCloudRecordResponse({}));
+  }
+
+  async startStreamOut(conferenceId: string, request: StartStreamOutRequest): Promise<StartStreamOutResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StartStreamOutHeaders({ });
+    return await this.startStreamOutWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async startStreamOutWithOptions(conferenceId: string, request: StartStreamOutRequest, headers: StartStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StartStreamOutResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.needHostJoin)) {
+      body["needHostJoin"] = request.needHostJoin;
+    }
+
+    if (!Util.isUnset(request.streamUrlList)) {
+      body["streamUrlList"] = request.streamUrlList;
+    }
+
+    if (!Util.isUnset(request.streamName)) {
+      body["streamName"] = request.streamName;
+    }
+
+    if (!Util.isUnset(request.mode)) {
+      body["mode"] = request.mode;
+    }
+
+    if (!Util.isUnset(request.smallWindowPosition)) {
+      body["smallWindowPosition"] = request.smallWindowPosition;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<StartStreamOutResponse>(await this.doROARequest("StartStreamOut", "conference_1.0", "HTTP", "POST", "AK", `/v1.0/conference/videoConferences/${conferenceId}/streamOuts/start`, "json", req, runtime), new StartStreamOutResponse({}));
   }
 
 }

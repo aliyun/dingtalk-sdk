@@ -11,6 +11,7 @@ import * as crm_1_0 from './crm_1_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as datacenter_1_0 from './datacenter_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
+import * as doc_1_0 from './doc_1_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
@@ -28,6 +29,7 @@ import * as manufacturing_1_0 from './manufacturing_1_0/client';
 import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as miniapp_1_0 from './miniapp_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
+import * as occupationauth_1_0 from './occupationauth_1_0/client';
 import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
 import * as robot_1_0 from './robot_1_0/client';
@@ -55,6 +57,7 @@ export = {
   customer_service_1_0,
   datacenter_1_0,
   dingmi_1_0,
+  doc_1_0,
   drive_1_0,
   edu_1_0,
   esign_1_0,
@@ -72,6 +75,7 @@ export = {
   micro_app_1_0,
   miniapp_1_0,
   oauth2_1_0,
+  occupationauth_1_0,
   project_1_0,
   project_integration_1_0,
   robot_1_0,

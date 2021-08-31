@@ -1823,11 +1823,25 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
   uid?: string;
   userName?: string;
   jobNum?: string;
+  id?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  corpId?: string;
+  userCode?: string;
+  deptCode?: string;
+  status?: number;
   static names(): { [key: string]: string } {
     return {
       uid: 'uid',
       userName: 'userName',
       jobNum: 'jobNum',
+      id: 'id',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      corpId: 'corpId',
+      userCode: 'userCode',
+      deptCode: 'deptCode',
+      status: 'status',
     };
   }
 
@@ -1836,6 +1850,13 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
       uid: 'string',
       userName: 'string',
       jobNum: 'string',
+      id: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      corpId: 'string',
+      userCode: 'string',
+      deptCode: 'string',
+      status: 'number',
     };
   }
 
@@ -1897,12 +1918,32 @@ export class QueryJobCodeDictionaryResponseBodyContent extends $tea.Model {
   }
 }
 
-export class QueryAllDepartmentResponseBodyContent extends $tea.Model {
+export class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends $tea.Model {
   id?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  corpId?: string;
+  deptCode?: string;
+  deptType?: number;
+  deptStatus?: number;
+  parentDeptCode?: string;
+  deptOrder?: number;
+  remark?: string;
+  deptName?: string;
   name?: string;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      corpId: 'corpId',
+      deptCode: 'deptCode',
+      deptType: 'deptType',
+      deptStatus: 'deptStatus',
+      parentDeptCode: 'parentDeptCode',
+      deptOrder: 'deptOrder',
+      remark: 'remark',
+      deptName: 'deptName',
       name: 'name',
     };
   }
@@ -1910,7 +1951,246 @@ export class QueryAllDepartmentResponseBodyContent extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      corpId: 'string',
+      deptCode: 'string',
+      deptType: 'number',
+      deptStatus: 'number',
+      parentDeptCode: 'string',
+      deptOrder: 'number',
+      remark: 'string',
+      deptName: 'string',
       name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends $tea.Model {
+  id?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  corpId?: string;
+  deptCode?: string;
+  deptExtendKey?: string;
+  deptExtendValue?: string;
+  deptExtendDisplayName?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      corpId: 'corpId',
+      deptCode: 'deptCode',
+      deptExtendKey: 'deptExtendKey',
+      deptExtendValue: 'deptExtendValue',
+      deptExtendDisplayName: 'deptExtendDisplayName',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      corpId: 'string',
+      deptCode: 'string',
+      deptExtendKey: 'string',
+      deptExtendValue: 'string',
+      deptExtendDisplayName: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContentDeptAndExt extends $tea.Model {
+  department?: QueryAllDepartmentResponseBodyContentDeptAndExtDepartment;
+  extendInfos?: QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      department: 'department',
+      extendInfos: 'extendInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      department: QueryAllDepartmentResponseBodyContentDeptAndExtDepartment,
+      extendInfos: { 'type': 'array', 'itemType': QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader extends $tea.Model {
+  name?: string;
+  userId?: string;
+  jobNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+      jobNumber: 'jobNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+      jobNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends $tea.Model {
+  id?: number;
+  name?: string;
+  deptId?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  corpId?: string;
+  leader?: QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader;
+  deptStatus?: number;
+  parentDeptCode?: string;
+  remark?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      deptId: 'deptId',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      corpId: 'corpId',
+      leader: 'leader',
+      deptStatus: 'deptStatus',
+      parentDeptCode: 'parentDeptCode',
+      remark: 'remark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      deptId: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      corpId: 'string',
+      leader: QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader,
+      deptStatus: 'number',
+      parentDeptCode: 'string',
+      remark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos extends $tea.Model {
+  id?: number;
+  gmtCreateStr?: string;
+  gmtModifiedStr?: string;
+  corpId?: string;
+  deptCode?: string;
+  deptExtendKey?: string;
+  deptExtendValue?: string;
+  deptExtendDisplayName?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      gmtCreateStr: 'gmtCreateStr',
+      gmtModifiedStr: 'gmtModifiedStr',
+      corpId: 'corpId',
+      deptCode: 'deptCode',
+      deptExtendKey: 'deptExtendKey',
+      deptExtendValue: 'deptExtendValue',
+      deptExtendDisplayName: 'deptExtendDisplayName',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      gmtCreateStr: 'string',
+      gmtModifiedStr: 'string',
+      corpId: 'string',
+      deptCode: 'string',
+      deptExtendKey: 'string',
+      deptExtendValue: 'string',
+      deptExtendDisplayName: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContentGroupAndExtList extends $tea.Model {
+  group?: QueryAllDepartmentResponseBodyContentGroupAndExtListGroup;
+  extendInfos?: QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      group: 'group',
+      extendInfos: 'extendInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      group: QueryAllDepartmentResponseBodyContentGroupAndExtListGroup,
+      extendInfos: { 'type': 'array', 'itemType': QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryAllDepartmentResponseBodyContent extends $tea.Model {
+  id?: number;
+  name?: string;
+  deptAndExt?: QueryAllDepartmentResponseBodyContentDeptAndExt;
+  groupAndExtList?: QueryAllDepartmentResponseBodyContentGroupAndExtList[];
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+      deptAndExt: 'deptAndExt',
+      groupAndExtList: 'groupAndExtList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+      deptAndExt: QueryAllDepartmentResponseBodyContentDeptAndExt,
+      groupAndExtList: { 'type': 'array', 'itemType': QueryAllDepartmentResponseBodyContentGroupAndExtList },
     };
   }
 

@@ -249,6 +249,106 @@ export class ApproveCityCarApplyResponse extends $tea.Model {
   }
 }
 
+export class QueryUnionOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderRequest extends $tea.Model {
+  corpId?: string;
+  thirdPartApplyId?: string;
+  unionNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      thirdPartApplyId: 'thirdPartApplyId',
+      unionNo: 'unionNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      thirdPartApplyId: 'string',
+      unionNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBody extends $tea.Model {
+  flightList?: QueryUnionOrderResponseBodyFlightList[];
+  corpId?: string;
+  trainList?: QueryUnionOrderResponseBodyTrainList[];
+  hotelList?: QueryUnionOrderResponseBodyHotelList[];
+  vehicleList?: QueryUnionOrderResponseBodyVehicleList[];
+  static names(): { [key: string]: string } {
+    return {
+      flightList: 'flightList',
+      corpId: 'corpId',
+      trainList: 'trainList',
+      hotelList: 'hotelList',
+      vehicleList: 'vehicleList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flightList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyFlightList },
+      corpId: 'string',
+      trainList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyTrainList },
+      hotelList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyHotelList },
+      vehicleList: { 'type': 'array', 'itemType': QueryUnionOrderResponseBodyVehicleList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUnionOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUnionOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCityCarApplyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -344,6 +444,94 @@ export class QueryCityCarApplyResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryCityCarApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
+  id?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
+  id?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
+  id?: number;
+  orderStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      orderStatus: 'orderStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      orderStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
+  id?: number;
+  orderStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      orderStatus: 'orderStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      orderStatus: 'number',
     };
   }
 
@@ -675,6 +863,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ApproveCityCarApplyResponse>(await this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new ApproveCityCarApplyResponse({}));
+  }
+
+  async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUnionOrderHeaders({ });
+    return await this.queryUnionOrderWithOptions(request, headers, runtime);
+  }
+
+  async queryUnionOrderWithOptions(request: QueryUnionOrderRequest, headers: QueryUnionOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnionOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.thirdPartApplyId)) {
+      query["thirdPartApplyId"] = request.thirdPartApplyId;
+    }
+
+    if (!Util.isUnset(request.unionNo)) {
+      query["unionNo"] = request.unionNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryUnionOrderResponse>(await this.doROARequest("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/unionOrders`, "json", req, runtime), new QueryUnionOrderResponse({}));
   }
 
   async queryCityCarApply(request: QueryCityCarApplyRequest): Promise<QueryCityCarApplyResponse> {

@@ -1,0 +1,1 @@
+module.exports = require('./dist').doc_1_0;
