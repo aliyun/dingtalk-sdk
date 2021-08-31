@@ -4748,3 +4748,242 @@ class CreateCustomerResponse(TeaModel):
         return self
 
 
+class QueryAllTracksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAllTracksRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        max_results: int = None,
+        order: str = None,
+    ):
+        # 分页游标
+        self.next_token = next_token
+        # 分页size
+        self.max_results = max_results
+        # 排序
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class QueryAllTracksResponseBodyValues(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        customer_id: str = None,
+        type: int = None,
+        sub_type: int = None,
+        gmt_create: int = None,
+        creator: str = None,
+        biz_id: str = None,
+    ):
+        # 企业id
+        self.corp_id = corp_id
+        # 客户id
+        self.customer_id = customer_id
+        # 动态类型
+        self.type = type
+        # 动态子类型
+        self.sub_type = sub_type
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 创建人userId
+        self.creator = creator
+        # 动态外键
+        self.biz_id = biz_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.customer_id is not None:
+            result['customerId'] = self.customer_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.sub_type is not None:
+            result['subType'] = self.sub_type
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('customerId') is not None:
+            self.customer_id = m.get('customerId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('subType') is not None:
+            self.sub_type = m.get('subType')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        return self
+
+
+class QueryAllTracksResponseBody(TeaModel):
+    def __init__(
+        self,
+        values: List[QueryAllTracksResponseBodyValues] = None,
+        has_more: bool = None,
+        next_token: str = None,
+        max_results: int = None,
+    ):
+        # 客户动态分页数据
+        self.values = values
+        # 是否还有数据
+        self.has_more = has_more
+        # 下页翻页起始游标
+        self.next_token = next_token
+        # 翻页size
+        self.max_results = max_results
+
+    def validate(self):
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = QueryAllTracksResponseBodyValues()
+                self.values.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryAllTracksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryAllTracksResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryAllTracksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

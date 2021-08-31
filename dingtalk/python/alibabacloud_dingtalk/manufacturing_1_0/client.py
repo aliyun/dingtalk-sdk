@@ -83,6 +83,14 @@ class Client(OpenApiClient):
             body['manufactureDate'] = request.manufacture_date
         if not UtilClient.is_unset(request.ding_corp_id):
             body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.is_batch_job):
+            body['isBatchJob'] = request.is_batch_job
+        if not UtilClient.is_unset(request.user_name_list):
+            body['userNameList'] = request.user_name_list
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.unit_price):
+            body['unitPrice'] = request.unit_price
         req = open_api_models.OpenApiRequest(
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
@@ -133,6 +141,14 @@ class Client(OpenApiClient):
             body['manufactureDate'] = request.manufacture_date
         if not UtilClient.is_unset(request.ding_corp_id):
             body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.is_batch_job):
+            body['isBatchJob'] = request.is_batch_job
+        if not UtilClient.is_unset(request.user_name_list):
+            body['userNameList'] = request.user_name_list
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.unit_price):
+            body['unitPrice'] = request.unit_price
         req = open_api_models.OpenApiRequest(
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)

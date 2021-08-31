@@ -2588,13 +2588,34 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         uid: str = None,
         user_name: str = None,
         job_num: str = None,
+        id: int = None,
+        gmt_create_str: str = None,
+        gmt_modified_str: str = None,
+        corp_id: str = None,
+        user_code: str = None,
+        dept_code: str = None,
+        status: int = None,
     ):
-        # 用户Id
+        # 租户下staffId
         self.uid = uid
         # 用户名称
         self.user_name = user_name
         # 工号
         self.job_num = job_num
+        # 用户id
+        self.id = id
+        # 用户创建时间
+        self.gmt_create_str = gmt_create_str
+        # 用户最后修改时间
+        self.gmt_modified_str = gmt_modified_str
+        # 租户CorpId
+        self.corp_id = corp_id
+        # 租户内staffId
+        self.user_code = user_code
+        # 关联的部门id
+        self.dept_code = dept_code
+        # 状态0-有效，1-删除
+        self.status = status
 
     def validate(self):
         pass
@@ -2611,6 +2632,20 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             result['userName'] = self.user_name
         if self.job_num is not None:
             result['jobNum'] = self.job_num
+        if self.id is not None:
+            result['id'] = self.id
+        if self.gmt_create_str is not None:
+            result['gmtCreateStr'] = self.gmt_create_str
+        if self.gmt_modified_str is not None:
+            result['gmtModifiedStr'] = self.gmt_modified_str
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.user_code is not None:
+            result['userCode'] = self.user_code
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.status is not None:
+            result['status'] = self.status
         return result
 
     def from_map(self, m: dict = None):
@@ -2621,6 +2656,20 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             self.user_name = m.get('userName')
         if m.get('jobNum') is not None:
             self.job_num = m.get('jobNum')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('gmtCreateStr') is not None:
+            self.gmt_create_str = m.get('gmtCreateStr')
+        if m.get('gmtModifiedStr') is not None:
+            self.gmt_modified_str = m.get('gmtModifiedStr')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('userCode') is not None:
+            self.user_code = m.get('userCode')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         return self
 
 
@@ -3089,15 +3138,45 @@ class QueryAllDepartmentRequest(TeaModel):
         return self
 
 
-class QueryAllDepartmentResponseBodyContent(TeaModel):
+class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
     def __init__(
         self,
         id: int = None,
+        gmt_create_str: str = None,
+        gmt_modified_str: str = None,
+        corp_id: str = None,
+        dept_code: str = None,
+        dept_type: int = None,
+        dept_status: int = None,
+        parent_dept_code: str = None,
+        dept_order: int = None,
+        remark: str = None,
+        dept_name: str = None,
         name: str = None,
     ):
-        # 科室Id
+        # 科室ID
         self.id = id
-        # 科室名称
+        # 创建时间
+        self.gmt_create_str = gmt_create_str
+        # 修改时间
+        self.gmt_modified_str = gmt_modified_str
+        # 租户CorpID
+        self.corp_id = corp_id
+        # 部门code
+        self.dept_code = dept_code
+        # 部门类型：1-科室，2-医疗组
+        self.dept_type = dept_type
+        # 部门状态：0-正常，1-删除
+        self.dept_status = dept_status
+        # 父部门code（与dept_code来源保持一致）
+        self.parent_dept_code = parent_dept_code
+        # 排序
+        self.dept_order = dept_order
+        # 备注
+        self.remark = remark
+        # 科室名称，同name
+        self.dept_name = dept_name
+        # 科室名称，同deptName
         self.name = name
 
     def validate(self):
@@ -3111,6 +3190,26 @@ class QueryAllDepartmentResponseBodyContent(TeaModel):
         result = dict()
         if self.id is not None:
             result['id'] = self.id
+        if self.gmt_create_str is not None:
+            result['gmtCreateStr'] = self.gmt_create_str
+        if self.gmt_modified_str is not None:
+            result['gmtModifiedStr'] = self.gmt_modified_str
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.dept_status is not None:
+            result['deptStatus'] = self.dept_status
+        if self.parent_dept_code is not None:
+            result['parentDeptCode'] = self.parent_dept_code
+        if self.dept_order is not None:
+            result['deptOrder'] = self.dept_order
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
         if self.name is not None:
             result['name'] = self.name
         return result
@@ -3119,8 +3218,483 @@ class QueryAllDepartmentResponseBodyContent(TeaModel):
         m = m or dict()
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('gmtCreateStr') is not None:
+            self.gmt_create_str = m.get('gmtCreateStr')
+        if m.get('gmtModifiedStr') is not None:
+            self.gmt_modified_str = m.get('gmtModifiedStr')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('deptStatus') is not None:
+            self.dept_status = m.get('deptStatus')
+        if m.get('parentDeptCode') is not None:
+            self.parent_dept_code = m.get('parentDeptCode')
+        if m.get('deptOrder') is not None:
+            self.dept_order = m.get('deptOrder')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
         if m.get('name') is not None:
             self.name = m.get('name')
+        return self
+
+
+class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        gmt_create_str: str = None,
+        gmt_modified_str: str = None,
+        corp_id: str = None,
+        dept_code: str = None,
+        dept_extend_key: str = None,
+        dept_extend_value: str = None,
+        dept_extend_display_name: str = None,
+        status: int = None,
+    ):
+        # 扩展信息id
+        self.id = id
+        # 创建时间
+        self.gmt_create_str = gmt_create_str
+        # 修改时间
+        self.gmt_modified_str = gmt_modified_str
+        # 租户CorpID
+        self.corp_id = corp_id
+        # 部门code
+        self.dept_code = dept_code
+        # 科室扩展字段key
+        self.dept_extend_key = dept_extend_key
+        # 科室扩展字段value
+        self.dept_extend_value = dept_extend_value
+        # 科室扩展字段描述
+        self.dept_extend_display_name = dept_extend_display_name
+        # 0-有效 ，1-无效
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.gmt_create_str is not None:
+            result['gmtCreateStr'] = self.gmt_create_str
+        if self.gmt_modified_str is not None:
+            result['gmtModifiedStr'] = self.gmt_modified_str
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_extend_key is not None:
+            result['deptExtendKey'] = self.dept_extend_key
+        if self.dept_extend_value is not None:
+            result['deptExtendValue'] = self.dept_extend_value
+        if self.dept_extend_display_name is not None:
+            result['deptExtendDisplayName'] = self.dept_extend_display_name
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('gmtCreateStr') is not None:
+            self.gmt_create_str = m.get('gmtCreateStr')
+        if m.get('gmtModifiedStr') is not None:
+            self.gmt_modified_str = m.get('gmtModifiedStr')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptExtendKey') is not None:
+            self.dept_extend_key = m.get('deptExtendKey')
+        if m.get('deptExtendValue') is not None:
+            self.dept_extend_value = m.get('deptExtendValue')
+        if m.get('deptExtendDisplayName') is not None:
+            self.dept_extend_display_name = m.get('deptExtendDisplayName')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryAllDepartmentResponseBodyContentDeptAndExt(TeaModel):
+    def __init__(
+        self,
+        department: QueryAllDepartmentResponseBodyContentDeptAndExtDepartment = None,
+        extend_infos: List[QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos] = None,
+    ):
+        # 科室详情
+        self.department = department
+        # 科室扩展信息列表
+        self.extend_infos = extend_infos
+
+    def validate(self):
+        if self.department:
+            self.department.validate()
+        if self.extend_infos:
+            for k in self.extend_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department is not None:
+            result['department'] = self.department.to_map()
+        result['extendInfos'] = []
+        if self.extend_infos is not None:
+            for k in self.extend_infos:
+                result['extendInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('department') is not None:
+            temp_model = QueryAllDepartmentResponseBodyContentDeptAndExtDepartment()
+            self.department = temp_model.from_map(m['department'])
+        self.extend_infos = []
+        if m.get('extendInfos') is not None:
+            for k in m.get('extendInfos'):
+                temp_model = QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos()
+                self.extend_infos.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+        job_number: str = None,
+    ):
+        # 姓名
+        self.name = name
+        # 用户ID
+        self.user_id = user_id
+        # 用户工号
+        self.job_number = job_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        return self
+
+
+class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+        dept_id: int = None,
+        gmt_create_str: str = None,
+        gmt_modified_str: str = None,
+        corp_id: str = None,
+        leader: QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader = None,
+        dept_status: int = None,
+        parent_dept_code: str = None,
+        remark: str = None,
+    ):
+        # 医疗组ID
+        self.id = id
+        # 医疗组名称
+        self.name = name
+        # 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
+        self.dept_id = dept_id
+        # 创建时间
+        self.gmt_create_str = gmt_create_str
+        # 修改时间
+        self.gmt_modified_str = gmt_modified_str
+        # 租户CorpID
+        self.corp_id = corp_id
+        # 医疗组组长信息
+        self.leader = leader
+        # 部门状态：0-正常，1-删除
+        self.dept_status = dept_status
+        # 父级组织id，这里医疗组的父级就是科室
+        self.parent_dept_code = parent_dept_code
+        # 备注
+        self.remark = remark
+
+    def validate(self):
+        if self.leader:
+            self.leader.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.gmt_create_str is not None:
+            result['gmtCreateStr'] = self.gmt_create_str
+        if self.gmt_modified_str is not None:
+            result['gmtModifiedStr'] = self.gmt_modified_str
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.leader is not None:
+            result['leader'] = self.leader.to_map()
+        if self.dept_status is not None:
+            result['deptStatus'] = self.dept_status
+        if self.parent_dept_code is not None:
+            result['parentDeptCode'] = self.parent_dept_code
+        if self.remark is not None:
+            result['remark'] = self.remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('gmtCreateStr') is not None:
+            self.gmt_create_str = m.get('gmtCreateStr')
+        if m.get('gmtModifiedStr') is not None:
+            self.gmt_modified_str = m.get('gmtModifiedStr')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('leader') is not None:
+            temp_model = QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader()
+            self.leader = temp_model.from_map(m['leader'])
+        if m.get('deptStatus') is not None:
+            self.dept_status = m.get('deptStatus')
+        if m.get('parentDeptCode') is not None:
+            self.parent_dept_code = m.get('parentDeptCode')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        return self
+
+
+class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        gmt_create_str: str = None,
+        gmt_modified_str: str = None,
+        corp_id: str = None,
+        dept_code: str = None,
+        dept_extend_key: str = None,
+        dept_extend_value: str = None,
+        dept_extend_display_name: str = None,
+        status: int = None,
+    ):
+        # 扩展信息id
+        self.id = id
+        # 创建时间
+        self.gmt_create_str = gmt_create_str
+        # 修改时间
+        self.gmt_modified_str = gmt_modified_str
+        # 租户CorpID
+        self.corp_id = corp_id
+        # 部门code
+        self.dept_code = dept_code
+        # 医疗组扩展字段key
+        self.dept_extend_key = dept_extend_key
+        # 医疗组扩展字段value
+        self.dept_extend_value = dept_extend_value
+        # 医疗组扩展字段描述
+        self.dept_extend_display_name = dept_extend_display_name
+        # 0-有效 ，1-无效
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.gmt_create_str is not None:
+            result['gmtCreateStr'] = self.gmt_create_str
+        if self.gmt_modified_str is not None:
+            result['gmtModifiedStr'] = self.gmt_modified_str
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_extend_key is not None:
+            result['deptExtendKey'] = self.dept_extend_key
+        if self.dept_extend_value is not None:
+            result['deptExtendValue'] = self.dept_extend_value
+        if self.dept_extend_display_name is not None:
+            result['deptExtendDisplayName'] = self.dept_extend_display_name
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('gmtCreateStr') is not None:
+            self.gmt_create_str = m.get('gmtCreateStr')
+        if m.get('gmtModifiedStr') is not None:
+            self.gmt_modified_str = m.get('gmtModifiedStr')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptExtendKey') is not None:
+            self.dept_extend_key = m.get('deptExtendKey')
+        if m.get('deptExtendValue') is not None:
+            self.dept_extend_value = m.get('deptExtendValue')
+        if m.get('deptExtendDisplayName') is not None:
+            self.dept_extend_display_name = m.get('deptExtendDisplayName')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryAllDepartmentResponseBodyContentGroupAndExtList(TeaModel):
+    def __init__(
+        self,
+        group: QueryAllDepartmentResponseBodyContentGroupAndExtListGroup = None,
+        extend_infos: List[QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos] = None,
+    ):
+        # 医疗组详细信息
+        self.group = group
+        # 医疗组扩展信息列表
+        self.extend_infos = extend_infos
+
+    def validate(self):
+        if self.group:
+            self.group.validate()
+        if self.extend_infos:
+            for k in self.extend_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group is not None:
+            result['group'] = self.group.to_map()
+        result['extendInfos'] = []
+        if self.extend_infos is not None:
+            for k in self.extend_infos:
+                result['extendInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('group') is not None:
+            temp_model = QueryAllDepartmentResponseBodyContentGroupAndExtListGroup()
+            self.group = temp_model.from_map(m['group'])
+        self.extend_infos = []
+        if m.get('extendInfos') is not None:
+            for k in m.get('extendInfos'):
+                temp_model = QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos()
+                self.extend_infos.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAllDepartmentResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+        dept_and_ext: QueryAllDepartmentResponseBodyContentDeptAndExt = None,
+        group_and_ext_list: List[QueryAllDepartmentResponseBodyContentGroupAndExtList] = None,
+    ):
+        # 科室ID
+        self.id = id
+        # 科室名称
+        self.name = name
+        # 科室详情
+        self.dept_and_ext = dept_and_ext
+        # 医疗组列表
+        self.group_and_ext_list = group_and_ext_list
+
+    def validate(self):
+        if self.dept_and_ext:
+            self.dept_and_ext.validate()
+        if self.group_and_ext_list:
+            for k in self.group_and_ext_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.dept_and_ext is not None:
+            result['deptAndExt'] = self.dept_and_ext.to_map()
+        result['groupAndExtList'] = []
+        if self.group_and_ext_list is not None:
+            for k in self.group_and_ext_list:
+                result['groupAndExtList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('deptAndExt') is not None:
+            temp_model = QueryAllDepartmentResponseBodyContentDeptAndExt()
+            self.dept_and_ext = temp_model.from_map(m['deptAndExt'])
+        self.group_and_ext_list = []
+        if m.get('groupAndExtList') is not None:
+            for k in m.get('groupAndExtList'):
+                temp_model = QueryAllDepartmentResponseBodyContentGroupAndExtList()
+                self.group_and_ext_list.append(temp_model.from_map(k))
         return self
 
 

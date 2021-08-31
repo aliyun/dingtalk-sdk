@@ -1244,3 +1244,75 @@ class Client(OpenApiClient):
             dingtalkcrm__1__0_models.CreateCustomerResponse(),
             await self.do_roarequest_async('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers', 'json', req, runtime)
         )
+
+    def query_all_tracks(
+        self,
+        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
+    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
+        return self.query_all_tracks_with_options(request, headers, runtime)
+
+    async def query_all_tracks_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
+    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
+        return await self.query_all_tracks_with_options_async(request, headers, runtime)
+
+    def query_all_tracks_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
+        headers: dingtalkcrm__1__0_models.QueryAllTracksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.order):
+            query['order'] = request.order
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryAllTracksResponse(),
+            self.do_roarequest('QueryAllTracks', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customers/tracks', 'json', req, runtime)
+        )
+
+    async def query_all_tracks_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
+        headers: dingtalkcrm__1__0_models.QueryAllTracksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.order):
+            query['order'] = request.order
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryAllTracksResponse(),
+            await self.do_roarequest_async('QueryAllTracks', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customers/tracks', 'json', req, runtime)
+        )

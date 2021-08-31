@@ -255,6 +255,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
         )
 
+    def query_union_order(
+        self,
+        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
+    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
+        return self.query_union_order_with_options(request, headers, runtime)
+
+    async def query_union_order_async(
+        self,
+        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
+    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
+        return await self.query_union_order_with_options_async(request, headers, runtime)
+
+    def query_union_order_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
+        headers: dingtalkalitrip__1__0_models.QueryUnionOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.third_part_apply_id):
+            query['thirdPartApplyId'] = request.third_part_apply_id
+        if not UtilClient.is_unset(request.union_no):
+            query['unionNo'] = request.union_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.QueryUnionOrderResponse(),
+            self.do_roarequest('QueryUnionOrder', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/unionOrders', 'json', req, runtime)
+        )
+
+    async def query_union_order_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
+        headers: dingtalkalitrip__1__0_models.QueryUnionOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.third_part_apply_id):
+            query['thirdPartApplyId'] = request.third_part_apply_id
+        if not UtilClient.is_unset(request.union_no):
+            query['unionNo'] = request.union_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.QueryUnionOrderResponse(),
+            await self.do_roarequest_async('QueryUnionOrder', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/unionOrders', 'json', req, runtime)
+        )
+
     def query_city_car_apply(
         self,
         request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,

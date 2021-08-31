@@ -46,7 +46,7 @@ class ListSubCorpsRequest(TeaModel):
     ):
         # 下级指定组织层级列表，组织层级为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区，如果查多个用 '|' 分隔
         self.types = types
-        # 真正查询的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 是否查询直接下级
         self.is_only_direct = is_only_direct
@@ -79,30 +79,30 @@ class ListSubCorpsRequest(TeaModel):
         return self
 
 
-class ListSubCorpsResponseBodyResult(TeaModel):
+class ListSubCorpsResponseBodyCorpList(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
-        name: str = None,
+        corp_name: str = None,
         region_type: str = None,
         region_id: str = None,
         region_location: str = None,
         industry_code: int = None,
         industry: str = None,
     ):
-        # 企业corpid
+        # 组织corpid
         self.corp_id = corp_id
-        # 企业名字
-        self.name = name
+        # 组织名字
+        self.corp_name = corp_name
         # 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
         self.region_type = region_type
         # 区域码
         self.region_id = region_id
         # 区域详细信息
         self.region_location = region_location
-        # 企业行业码
+        # 组织行业码
         self.industry_code = industry_code
-        # 企业行业名称
+        # 组织行业名称
         self.industry = industry
 
     def validate(self):
@@ -116,8 +116,8 @@ class ListSubCorpsResponseBodyResult(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
         if self.region_type is not None:
             result['regionType'] = self.region_type
         if self.region_id is not None:
@@ -134,8 +134,8 @@ class ListSubCorpsResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
         if m.get('regionType') is not None:
             self.region_type = m.get('regionType')
         if m.get('regionId') is not None:
@@ -152,14 +152,14 @@ class ListSubCorpsResponseBodyResult(TeaModel):
 class ListSubCorpsResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[ListSubCorpsResponseBodyResult] = None,
+        corp_list: List[ListSubCorpsResponseBodyCorpList] = None,
     ):
         # result
-        self.result = result
+        self.corp_list = corp_list
 
     def validate(self):
-        if self.result:
-            for k in self.result:
+        if self.corp_list:
+            for k in self.corp_list:
                 if k:
                     k.validate()
 
@@ -169,19 +169,19 @@ class ListSubCorpsResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+        result['corpList'] = []
+        if self.corp_list is not None:
+            for k in self.corp_list:
+                result['corpList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = ListSubCorpsResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+        self.corp_list = []
+        if m.get('corpList') is not None:
+            for k in m.get('corpList'):
+                temp_model = ListSubCorpsResponseBodyCorpList()
+                self.corp_list.append(temp_model.from_map(k))
         return self
 
 
@@ -375,9 +375,9 @@ class ListResidentDeptUsersRequest(TeaModel):
         cursor: int = None,
         size: int = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
-        # 标签
+        # 角色标签
         self.role = role
         # 游标，不传默认1
         self.cursor = cursor
@@ -416,17 +416,17 @@ class ListResidentDeptUsersRequest(TeaModel):
         return self
 
 
-class ListResidentDeptUsersResponseBodyListRoles(TeaModel):
+class ListResidentDeptUsersResponseBodyUserListRoles(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        name: str = None,
+        tag_id: int = None,
+        tag_name: str = None,
         tag_code: str = None,
     ):
         # 标签id
-        self.id = id
+        self.tag_id = tag_id
         # 标签名称
-        self.name = name
+        self.tag_name = tag_name
         # 标签名称 tagCode
         self.tag_code = tag_code
 
@@ -439,31 +439,31 @@ class ListResidentDeptUsersResponseBodyListRoles(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.tag_id is not None:
+            result['tagId'] = self.tag_id
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
         if self.tag_code is not None:
             result['tagCode'] = self.tag_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('tagId') is not None:
+            self.tag_id = m.get('tagId')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
         if m.get('tagCode') is not None:
             self.tag_code = m.get('tagCode')
         return self
 
 
-class ListResidentDeptUsersResponseBodyList(TeaModel):
+class ListResidentDeptUsersResponseBodyUserList(TeaModel):
     def __init__(
         self,
         user_id: str = None,
         name: str = None,
-        roles: List[ListResidentDeptUsersResponseBodyListRoles] = None,
+        roles: List[ListResidentDeptUsersResponseBodyUserListRoles] = None,
         feature: str = None,
         union_id: str = None,
     ):
@@ -513,7 +513,7 @@ class ListResidentDeptUsersResponseBodyList(TeaModel):
         self.roles = []
         if m.get('roles') is not None:
             for k in m.get('roles'):
-                temp_model = ListResidentDeptUsersResponseBodyListRoles()
+                temp_model = ListResidentDeptUsersResponseBodyUserListRoles()
                 self.roles.append(temp_model.from_map(k))
         if m.get('feature') is not None:
             self.feature = m.get('feature')
@@ -527,18 +527,18 @@ class ListResidentDeptUsersResponseBody(TeaModel):
         self,
         next_cursor: int = None,
         has_more: bool = None,
-        list: List[ListResidentDeptUsersResponseBodyList] = None,
+        user_list: List[ListResidentDeptUsersResponseBodyUserList] = None,
     ):
         # 下一个游标
         self.next_cursor = next_cursor
         # 是否还有更多数据
         self.has_more = has_more
-        # 分页数据
-        self.list = list
+        # 用户列表
+        self.user_list = user_list
 
     def validate(self):
-        if self.list:
-            for k in self.list:
+        if self.user_list:
+            for k in self.user_list:
                 if k:
                     k.validate()
 
@@ -552,10 +552,10 @@ class ListResidentDeptUsersResponseBody(TeaModel):
             result['nextCursor'] = self.next_cursor
         if self.has_more is not None:
             result['hasMore'] = self.has_more
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -564,11 +564,11 @@ class ListResidentDeptUsersResponseBody(TeaModel):
             self.next_cursor = m.get('nextCursor')
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = ListResidentDeptUsersResponseBodyList()
-                self.list.append(temp_model.from_map(k))
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = ListResidentDeptUsersResponseBodyUserList()
+                self.user_list.append(temp_model.from_map(k))
         return self
 
 
@@ -658,7 +658,7 @@ class ListDeptSimpleUsersRequest(TeaModel):
         self.size = size
         # containAccessLimit
         self.contain_access_limit = contain_access_limit
-        # subCorpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # language
         self.language = language
@@ -705,13 +705,15 @@ class ListDeptSimpleUsersRequest(TeaModel):
         return self
 
 
-class ListDeptSimpleUsersResponseBodyList(TeaModel):
+class ListDeptSimpleUsersResponseBodyUserList(TeaModel):
     def __init__(
         self,
         user_id: str = None,
         name: str = None,
     ):
+        # 用户ID
         self.user_id = user_id
+        # 用户姓名
         self.name = name
 
     def validate(self):
@@ -741,19 +743,20 @@ class ListDeptSimpleUsersResponseBodyList(TeaModel):
 class ListDeptSimpleUsersResponseBody(TeaModel):
     def __init__(
         self,
-        list: List[ListDeptSimpleUsersResponseBodyList] = None,
+        user_list: List[ListDeptSimpleUsersResponseBodyUserList] = None,
         total_count: int = None,
         next_cursor: int = None,
         has_more: bool = None,
     ):
-        self.list = list
+        # 用户列表
+        self.user_list = user_list
         self.total_count = total_count
         self.next_cursor = next_cursor
         self.has_more = has_more
 
     def validate(self):
-        if self.list:
-            for k in self.list:
+        if self.user_list:
+            for k in self.user_list:
                 if k:
                     k.validate()
 
@@ -763,10 +766,10 @@ class ListDeptSimpleUsersResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
         if self.total_count is not None:
             result['totalCount'] = self.total_count
         if self.next_cursor is not None:
@@ -777,11 +780,11 @@ class ListDeptSimpleUsersResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = ListDeptSimpleUsersResponseBodyList()
-                self.list.append(temp_model.from_map(k))
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = ListDeptSimpleUsersResponseBodyUserList()
+                self.user_list.append(temp_model.from_map(k))
         if m.get('totalCount') is not None:
             self.total_count = m.get('totalCount')
         if m.get('nextCursor') is not None:
@@ -868,7 +871,7 @@ class GetUserByUnionIdRequest(TeaModel):
         union_id: str = None,
         language: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 人员 id
         self.union_id = union_id
@@ -1013,7 +1016,7 @@ class GetResidentDeptRequest(TeaModel):
         self,
         sub_corp_id: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
 
     def validate(self):
@@ -1039,16 +1042,16 @@ class GetResidentDeptRequest(TeaModel):
 class GetResidentDeptResponseBody(TeaModel):
     def __init__(
         self,
-        dept_id: int = None,
-        name: str = None,
+        department_id: int = None,
+        department_name: str = None,
         dept_type: str = None,
         contact_type: str = None,
         feature: str = None,
     ):
-        # 部门ID
-        self.dept_id = dept_id
+        # 下属组织的部门ID
+        self.department_id = department_id
         # 部门名称
-        self.name = name
+        self.department_name = department_name
         # 部门类型
         self.dept_type = dept_type
         # 通讯录架构类型
@@ -1065,10 +1068,10 @@ class GetResidentDeptResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
         if self.dept_type is not None:
             result['deptType'] = self.dept_type
         if self.contact_type is not None:
@@ -1079,10 +1082,10 @@ class GetResidentDeptResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
         if m.get('deptType') is not None:
             self.dept_type = m.get('deptType')
         if m.get('contactType') is not None:
@@ -1167,7 +1170,7 @@ class GetResidentUserInfoRequest(TeaModel):
         self,
         sub_corp_id: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
 
     def validate(self):
@@ -1193,14 +1196,14 @@ class GetResidentUserInfoRequest(TeaModel):
 class GetResidentUserInfoResponseBodyRoles(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        name: str = None,
+        role_id: int = None,
+        role_name: str = None,
         tag_code: str = None,
     ):
         # 标签id
-        self.id = id
+        self.role_id = role_id
         # 标签名称
-        self.name = name
+        self.role_name = role_name
         # 标签名称 tagCode
         self.tag_code = tag_code
 
@@ -1213,20 +1216,20 @@ class GetResidentUserInfoResponseBodyRoles(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
         if self.tag_code is not None:
             result['tagCode'] = self.tag_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
         if m.get('tagCode') is not None:
             self.tag_code = m.get('tagCode')
         return self
@@ -1372,7 +1375,7 @@ class GetDeptRequest(TeaModel):
         sub_corp_id: str = None,
         language: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 通讯录语言(默认zh_CN另外支持en_US)
         self.language = language
@@ -1405,19 +1408,19 @@ class GetDeptResponseBody(TeaModel):
     def __init__(
         self,
         order: int = None,
-        dept_id: int = None,
-        name: str = None,
-        parent_id: int = None,
+        department_id: int = None,
+        department_name: str = None,
+        parent_department_id: int = None,
         from_union_org: bool = None,
     ):
         # 在父部门中的次序值
         self.order = order
-        # 部门id
-        self.dept_id = dept_id
+        # 下属组织的部门ID
+        self.department_id = department_id
         # 部门名称
-        self.name = name
+        self.department_name = department_name
         # 父部门id
-        self.parent_id = parent_id
+        self.parent_department_id = parent_department_id
         # 部门是否来自关联组织
         self.from_union_org = from_union_org
 
@@ -1432,12 +1435,12 @@ class GetDeptResponseBody(TeaModel):
         result = dict()
         if self.order is not None:
             result['order'] = self.order
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.name is not None:
-            result['name'] = self.name
-        if self.parent_id is not None:
-            result['parentId'] = self.parent_id
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.parent_department_id is not None:
+            result['parentDepartmentId'] = self.parent_department_id
         if self.from_union_org is not None:
             result['fromUnionOrg'] = self.from_union_org
         return result
@@ -1446,12 +1449,12 @@ class GetDeptResponseBody(TeaModel):
         m = m or dict()
         if m.get('order') is not None:
             self.order = m.get('order')
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('parentId') is not None:
-            self.parent_id = m.get('parentId')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('parentDepartmentId') is not None:
+            self.parent_department_id = m.get('parentDepartmentId')
         if m.get('fromUnionOrg') is not None:
             self.from_union_org = m.get('fromUnionOrg')
         return self
@@ -1531,12 +1534,12 @@ class ListParentByDeptRequest(TeaModel):
     def __init__(
         self,
         sub_corp_id: str = None,
-        dept_id: int = None,
+        department_id: int = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
-        # 部门id
-        self.dept_id = dept_id
+        # 下属组织的部门ID
+        self.department_id = department_id
 
     def validate(self):
         pass
@@ -1549,26 +1552,26 @@ class ListParentByDeptRequest(TeaModel):
         result = dict()
         if self.sub_corp_id is not None:
             result['subCorpId'] = self.sub_corp_id
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('subCorpId') is not None:
             self.sub_corp_id = m.get('subCorpId')
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
         return self
 
 
 class ListParentByDeptResponseBody(TeaModel):
     def __init__(
         self,
-        parent_id_list: List[int] = None,
+        department_id_list: List[int] = None,
     ):
-        # 父部门列表
-        self.parent_id_list = parent_id_list
+        # 父部门ID列表
+        self.department_id_list = department_id_list
 
     def validate(self):
         pass
@@ -1579,14 +1582,14 @@ class ListParentByDeptResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.parent_id_list is not None:
-            result['parentIdList'] = self.parent_id_list
+        if self.department_id_list is not None:
+            result['departmentIdList'] = self.department_id_list
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('parentIdList') is not None:
-            self.parent_id_list = m.get('parentIdList')
+        if m.get('departmentIdList') is not None:
+            self.department_id_list = m.get('departmentIdList')
         return self
 
 
@@ -1665,7 +1668,7 @@ class ListDeptUserIdsRequest(TeaModel):
         self,
         sub_corp_id: str = None,
     ):
-        # subCorpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
 
     def validate(self):
@@ -1693,6 +1696,7 @@ class ListDeptUserIdsResponseBody(TeaModel):
         self,
         user_id_list: List[str] = None,
     ):
+        # 用户ID列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -1793,13 +1797,13 @@ class ListSimpleUsersByRoleRequest(TeaModel):
         role_id: int = None,
         sub_corp_id: str = None,
     ):
-        # cursor
+        # 起始位置
         self.offset = offset
-        # size
+        # 查询数量
         self.size = size
-        # roleId
+        # 角色ID
         self.role_id = role_id
-        # subCorpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
 
     def validate(self):
@@ -1834,7 +1838,7 @@ class ListSimpleUsersByRoleRequest(TeaModel):
         return self
 
 
-class ListSimpleUsersByRoleResponseBodyList(TeaModel):
+class ListSimpleUsersByRoleResponseBodyUserList(TeaModel):
     def __init__(
         self,
         user_id: str = None,
@@ -1842,9 +1846,13 @@ class ListSimpleUsersByRoleResponseBodyList(TeaModel):
         job_number: str = None,
         name: str = None,
     ):
+        # 用户ID
         self.user_id = user_id
+        # unionId
         self.union_id = union_id
+        # 工号
         self.job_number = job_number
+        # 姓名
         self.name = name
 
     def validate(self):
@@ -1882,19 +1890,20 @@ class ListSimpleUsersByRoleResponseBodyList(TeaModel):
 class ListSimpleUsersByRoleResponseBody(TeaModel):
     def __init__(
         self,
-        list: List[ListSimpleUsersByRoleResponseBodyList] = None,
-        next_cursor_string: str = None,
+        user_list: List[ListSimpleUsersByRoleResponseBodyUserList] = None,
         next_cursor: int = None,
         has_more: bool = None,
     ):
-        self.list = list
-        self.next_cursor_string = next_cursor_string
+        # 用户列表
+        self.user_list = user_list
+        # 下一条记录
         self.next_cursor = next_cursor
+        # 是否还有记录
         self.has_more = has_more
 
     def validate(self):
-        if self.list:
-            for k in self.list:
+        if self.user_list:
+            for k in self.user_list:
                 if k:
                     k.validate()
 
@@ -1904,12 +1913,10 @@ class ListSimpleUsersByRoleResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
-        if self.next_cursor_string is not None:
-            result['nextCursorString'] = self.next_cursor_string
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
         if self.next_cursor is not None:
             result['nextCursor'] = self.next_cursor
         if self.has_more is not None:
@@ -1918,13 +1925,11 @@ class ListSimpleUsersByRoleResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = ListSimpleUsersByRoleResponseBodyList()
-                self.list.append(temp_model.from_map(k))
-        if m.get('nextCursorString') is not None:
-            self.next_cursor_string = m.get('nextCursorString')
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = ListSimpleUsersByRoleResponseBodyUserList()
+                self.user_list.append(temp_model.from_map(k))
         if m.get('nextCursor') is not None:
             self.next_cursor = m.get('nextCursor')
         if m.get('hasMore') is not None:
@@ -2009,7 +2014,7 @@ class ListResidentSubDeptsRequest(TeaModel):
         cursor: int = None,
         size: int = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 游标，不传默认1
         self.cursor = cursor
@@ -2044,16 +2049,19 @@ class ListResidentSubDeptsRequest(TeaModel):
         return self
 
 
-class ListResidentSubDeptsResponseBodyList(TeaModel):
+class ListResidentSubDeptsResponseBodyDepartmentList(TeaModel):
     def __init__(
         self,
-        dept_id: int = None,
-        name: str = None,
-        super_id: int = None,
+        department_id: int = None,
+        department_name: str = None,
+        super_department_id: int = None,
     ):
-        self.dept_id = dept_id
-        self.name = name
-        self.super_id = super_id
+        # 下属组织的部门ID
+        self.department_id = department_id
+        # 组户名称
+        self.department_name = department_name
+        # 父部门ID
+        self.super_department_id = super_department_id
 
     def validate(self):
         pass
@@ -2064,41 +2072,45 @@ class ListResidentSubDeptsResponseBodyList(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.name is not None:
-            result['name'] = self.name
-        if self.super_id is not None:
-            result['superId'] = self.super_id
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.super_department_id is not None:
+            result['superDepartmentId'] = self.super_department_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('superId') is not None:
-            self.super_id = m.get('superId')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('superDepartmentId') is not None:
+            self.super_department_id = m.get('superDepartmentId')
         return self
 
 
 class ListResidentSubDeptsResponseBody(TeaModel):
     def __init__(
         self,
-        list: List[ListResidentSubDeptsResponseBodyList] = None,
+        department_list: List[ListResidentSubDeptsResponseBodyDepartmentList] = None,
         next_cursor: int = None,
         has_more: bool = None,
         total: int = None,
     ):
-        self.list = list
+        # 组户列表
+        self.department_list = department_list
+        # 游标
         self.next_cursor = next_cursor
+        # 是否还有记录
         self.has_more = has_more
+        # 总数
         self.total = total
 
     def validate(self):
-        if self.list:
-            for k in self.list:
+        if self.department_list:
+            for k in self.department_list:
                 if k:
                     k.validate()
 
@@ -2108,10 +2120,10 @@ class ListResidentSubDeptsResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
+        result['departmentList'] = []
+        if self.department_list is not None:
+            for k in self.department_list:
+                result['departmentList'].append(k.to_map() if k else None)
         if self.next_cursor is not None:
             result['nextCursor'] = self.next_cursor
         if self.has_more is not None:
@@ -2122,11 +2134,11 @@ class ListResidentSubDeptsResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = ListResidentSubDeptsResponseBodyList()
-                self.list.append(temp_model.from_map(k))
+        self.department_list = []
+        if m.get('departmentList') is not None:
+            for k in m.get('departmentList'):
+                temp_model = ListResidentSubDeptsResponseBodyDepartmentList()
+                self.department_list.append(temp_model.from_map(k))
         if m.get('nextCursor') is not None:
             self.next_cursor = m.get('nextCursor')
         if m.get('hasMore') is not None:
@@ -2212,7 +2224,7 @@ class ListParentByUserRequest(TeaModel):
         sub_corp_id: str = None,
         user_id: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 用户userId
         self.user_id = user_id
@@ -2244,10 +2256,10 @@ class ListParentByUserRequest(TeaModel):
 class ListParentByUserResponseBody(TeaModel):
     def __init__(
         self,
-        parent_dept_id_list: List[int] = None,
+        department_id_list: List[int] = None,
     ):
-        # 上级部门id链
-        self.parent_dept_id_list = parent_dept_id_list
+        # 上级部门ID列表
+        self.department_id_list = department_id_list
 
     def validate(self):
         pass
@@ -2258,14 +2270,14 @@ class ListParentByUserResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.parent_dept_id_list is not None:
-            result['parentDeptIdList'] = self.parent_dept_id_list
+        if self.department_id_list is not None:
+            result['departmentIdList'] = self.department_id_list
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('parentDeptIdList') is not None:
-            self.parent_dept_id_list = m.get('parentDeptIdList')
+        if m.get('departmentIdList') is not None:
+            self.department_id_list = m.get('departmentIdList')
         return self
 
 
@@ -2345,7 +2357,7 @@ class ListSubDeptRequest(TeaModel):
         sub_corp_id: str = None,
         language: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 通讯录语言(默认zh_CN另外支持en_US)
         self.language = language
@@ -2377,11 +2389,11 @@ class ListSubDeptRequest(TeaModel):
 class ListSubDeptResponseBodyResult(TeaModel):
     def __init__(
         self,
-        dept_id: int = None,
+        department_id: int = None,
         name: str = None,
     ):
-        # 部门ID
-        self.dept_id = dept_id
+        # 下属组织的部门ID
+        self.department_id = department_id
         # 部门名称
         self.name = name
 
@@ -2394,16 +2406,16 @@ class ListSubDeptResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
         if self.name is not None:
             result['name'] = self.name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
         if m.get('name') is not None:
             self.name = m.get('name')
         return self
@@ -2521,7 +2533,7 @@ class GetUserRequest(TeaModel):
         sub_corp_id: str = None,
         language: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 通讯录语言(默认zh_CN另外支持en_US)
         self.language = language
@@ -2550,14 +2562,14 @@ class GetUserRequest(TeaModel):
         return self
 
 
-class GetUserResponseBodyDeptOrderSet(TeaModel):
+class GetUserResponseBodyDepartmentOrderSet(TeaModel):
     def __init__(
         self,
-        dept_id: int = None,
+        department_id: int = None,
         order: int = None,
     ):
-        # 部门id
-        self.dept_id = dept_id
+        # 下属组织的部门ID
+        self.department_id = department_id
         # 员工在部门中的排序。
         self.order = order
 
@@ -2570,29 +2582,29 @@ class GetUserResponseBodyDeptOrderSet(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
         if self.order is not None:
             result['order'] = self.order
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
         if m.get('order') is not None:
             self.order = m.get('order')
         return self
 
 
-class GetUserResponseBodyLeaderInDept(TeaModel):
+class GetUserResponseBodyLeaderInDepartment(TeaModel):
     def __init__(
         self,
-        dept_id: int = None,
+        department_id: int = None,
         leader: bool = None,
     ):
-        # 部门 id
-        self.dept_id = dept_id
+        # 下属组织的部门ID
+        self.department_id = department_id
         # 员工在对应的部门中是否领导
         self.leader = leader
 
@@ -2605,16 +2617,16 @@ class GetUserResponseBodyLeaderInDept(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
         if self.leader is not None:
             result['leader'] = self.leader
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
         if m.get('leader') is not None:
             self.leader = m.get('leader')
         return self
@@ -2623,14 +2635,14 @@ class GetUserResponseBodyLeaderInDept(TeaModel):
 class GetUserResponseBodyRoleList(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        name: str = None,
+        role_id: int = None,
+        role_name: str = None,
         group_name: str = None,
     ):
         # 角色id
-        self.id = id
+        self.role_id = role_id
         # 角色名称
-        self.name = name
+        self.role_name = role_name
         # 角色组名称
         self.group_name = group_name
 
@@ -2643,20 +2655,20 @@ class GetUserResponseBodyRoleList(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
         if self.group_name is not None:
             result['groupName'] = self.group_name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
         if m.get('groupName') is not None:
             self.group_name = m.get('groupName')
         return self
@@ -2753,13 +2765,12 @@ class GetUserResponseBody(TeaModel):
         user_id: str = None,
         union_id: str = None,
         name: str = None,
-        avatar: str = None,
         job_number: str = None,
         title: str = None,
         work_place: str = None,
         remark: str = None,
-        dept_id_list: List[int] = None,
-        dept_order_set: List[GetUserResponseBodyDeptOrderSet] = None,
+        department_id_list: List[int] = None,
+        department_order_set: List[GetUserResponseBodyDepartmentOrderSet] = None,
         extension: str = None,
         hired_date: int = None,
         active: bool = None,
@@ -2769,7 +2780,7 @@ class GetUserResponseBody(TeaModel):
         boss: bool = None,
         exclusive_account: bool = None,
         exclusive_account_type: str = None,
-        leader_in_dept: List[GetUserResponseBodyLeaderInDept] = None,
+        leader_in_department: List[GetUserResponseBodyLeaderInDepartment] = None,
         role_list: List[GetUserResponseBodyRoleList] = None,
         union_emp_ext: GetUserResponseBodyUnionEmpExt = None,
         manager_user_id: str = None,
@@ -2780,8 +2791,6 @@ class GetUserResponseBody(TeaModel):
         self.union_id = union_id
         # 姓名
         self.name = name
-        # 头像
-        self.avatar = avatar
         # 员工工号
         self.job_number = job_number
         # 职位
@@ -2791,9 +2800,9 @@ class GetUserResponseBody(TeaModel):
         # 备注
         self.remark = remark
         # 所属部门id列表
-        self.dept_id_list = dept_id_list
+        self.department_id_list = department_id_list
         # 员工在对应的部门中的排序。
-        self.dept_order_set = dept_order_set
+        self.department_order_set = department_order_set
         # 扩展属性，长度最大2000个字符。可以设置多种属性（手机上最多显示10个扩展属性，具体显示哪些属性，请到OA管理后台->设置->通讯录信息设置和OA管理后台->设置->手机端显示信息设置）。 该字段的值支持链接类型填写，同时链接支持变量通配符自动替换，目前支持通配符有：userid，corpid。示例： [工位地址](http://www.dingtalk.com?userid=#userid#&corpid=#corpid#)
         self.extension = extension
         # 入职时间，Unix时间戳，单位ms。
@@ -2813,7 +2822,7 @@ class GetUserResponseBody(TeaModel):
         # 专属帐号类型：{sso: 企业自定义idp;dingtalk: 钉钉idp}
         self.exclusive_account_type = exclusive_account_type
         # 员工在对应的部门中是否领导。
-        self.leader_in_dept = leader_in_dept
+        self.leader_in_department = leader_in_department
         # 角色列表
         self.role_list = role_list
         # 关联信息
@@ -2822,12 +2831,12 @@ class GetUserResponseBody(TeaModel):
         self.manager_user_id = manager_user_id
 
     def validate(self):
-        if self.dept_order_set:
-            for k in self.dept_order_set:
+        if self.department_order_set:
+            for k in self.department_order_set:
                 if k:
                     k.validate()
-        if self.leader_in_dept:
-            for k in self.leader_in_dept:
+        if self.leader_in_department:
+            for k in self.leader_in_department:
                 if k:
                     k.validate()
         if self.role_list:
@@ -2849,8 +2858,6 @@ class GetUserResponseBody(TeaModel):
             result['unionId'] = self.union_id
         if self.name is not None:
             result['name'] = self.name
-        if self.avatar is not None:
-            result['avatar'] = self.avatar
         if self.job_number is not None:
             result['jobNumber'] = self.job_number
         if self.title is not None:
@@ -2859,12 +2866,12 @@ class GetUserResponseBody(TeaModel):
             result['workPlace'] = self.work_place
         if self.remark is not None:
             result['remark'] = self.remark
-        if self.dept_id_list is not None:
-            result['deptIdList'] = self.dept_id_list
-        result['deptOrderSet'] = []
-        if self.dept_order_set is not None:
-            for k in self.dept_order_set:
-                result['deptOrderSet'].append(k.to_map() if k else None)
+        if self.department_id_list is not None:
+            result['departmentIdList'] = self.department_id_list
+        result['departmentOrderSet'] = []
+        if self.department_order_set is not None:
+            for k in self.department_order_set:
+                result['departmentOrderSet'].append(k.to_map() if k else None)
         if self.extension is not None:
             result['extension'] = self.extension
         if self.hired_date is not None:
@@ -2883,10 +2890,10 @@ class GetUserResponseBody(TeaModel):
             result['exclusiveAccount'] = self.exclusive_account
         if self.exclusive_account_type is not None:
             result['exclusiveAccountType'] = self.exclusive_account_type
-        result['leaderInDept'] = []
-        if self.leader_in_dept is not None:
-            for k in self.leader_in_dept:
-                result['leaderInDept'].append(k.to_map() if k else None)
+        result['leaderInDepartment'] = []
+        if self.leader_in_department is not None:
+            for k in self.leader_in_department:
+                result['leaderInDepartment'].append(k.to_map() if k else None)
         result['roleList'] = []
         if self.role_list is not None:
             for k in self.role_list:
@@ -2905,8 +2912,6 @@ class GetUserResponseBody(TeaModel):
             self.union_id = m.get('unionId')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('avatar') is not None:
-            self.avatar = m.get('avatar')
         if m.get('jobNumber') is not None:
             self.job_number = m.get('jobNumber')
         if m.get('title') is not None:
@@ -2915,13 +2920,13 @@ class GetUserResponseBody(TeaModel):
             self.work_place = m.get('workPlace')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
-        if m.get('deptIdList') is not None:
-            self.dept_id_list = m.get('deptIdList')
-        self.dept_order_set = []
-        if m.get('deptOrderSet') is not None:
-            for k in m.get('deptOrderSet'):
-                temp_model = GetUserResponseBodyDeptOrderSet()
-                self.dept_order_set.append(temp_model.from_map(k))
+        if m.get('departmentIdList') is not None:
+            self.department_id_list = m.get('departmentIdList')
+        self.department_order_set = []
+        if m.get('departmentOrderSet') is not None:
+            for k in m.get('departmentOrderSet'):
+                temp_model = GetUserResponseBodyDepartmentOrderSet()
+                self.department_order_set.append(temp_model.from_map(k))
         if m.get('extension') is not None:
             self.extension = m.get('extension')
         if m.get('hiredDate') is not None:
@@ -2940,11 +2945,11 @@ class GetUserResponseBody(TeaModel):
             self.exclusive_account = m.get('exclusiveAccount')
         if m.get('exclusiveAccountType') is not None:
             self.exclusive_account_type = m.get('exclusiveAccountType')
-        self.leader_in_dept = []
-        if m.get('leaderInDept') is not None:
-            for k in m.get('leaderInDept'):
-                temp_model = GetUserResponseBodyLeaderInDept()
-                self.leader_in_dept.append(temp_model.from_map(k))
+        self.leader_in_department = []
+        if m.get('leaderInDepartment') is not None:
+            for k in m.get('leaderInDepartment'):
+                temp_model = GetUserResponseBodyLeaderInDepartment()
+                self.leader_in_department.append(temp_model.from_map(k))
         self.role_list = []
         if m.get('roleList') is not None:
             for k in m.get('roleList'):
@@ -3044,7 +3049,7 @@ class ListDeptUsersRequest(TeaModel):
         self.size = size
         # containAccessLimit
         self.contain_access_limit = contain_access_limit
-        # subCorpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # language
         self.language = language
@@ -3091,21 +3096,24 @@ class ListDeptUsersRequest(TeaModel):
         return self
 
 
-class ListDeptUsersResponseBodyList(TeaModel):
+class ListDeptUsersResponseBodyUserList(TeaModel):
     def __init__(
         self,
         user_id: str = None,
         union_id: str = None,
         job_number: str = None,
         name: str = None,
-        dept_id_list: List[int] = None,
+        department_list: List[int] = None,
         active: bool = None,
     ):
+        # 用户ID
         self.user_id = user_id
+        # unionId
         self.union_id = union_id
         self.job_number = job_number
         self.name = name
-        self.dept_id_list = dept_id_list
+        # 部门ID列表
+        self.department_list = department_list
         self.active = active
 
     def validate(self):
@@ -3125,8 +3133,8 @@ class ListDeptUsersResponseBodyList(TeaModel):
             result['jobNumber'] = self.job_number
         if self.name is not None:
             result['name'] = self.name
-        if self.dept_id_list is not None:
-            result['deptIdList'] = self.dept_id_list
+        if self.department_list is not None:
+            result['departmentList'] = self.department_list
         if self.active is not None:
             result['active'] = self.active
         return result
@@ -3141,8 +3149,8 @@ class ListDeptUsersResponseBodyList(TeaModel):
             self.job_number = m.get('jobNumber')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('deptIdList') is not None:
-            self.dept_id_list = m.get('deptIdList')
+        if m.get('departmentList') is not None:
+            self.department_list = m.get('departmentList')
         if m.get('active') is not None:
             self.active = m.get('active')
         return self
@@ -3151,17 +3159,18 @@ class ListDeptUsersResponseBodyList(TeaModel):
 class ListDeptUsersResponseBody(TeaModel):
     def __init__(
         self,
-        list: List[ListDeptUsersResponseBodyList] = None,
+        user_list: List[ListDeptUsersResponseBodyUserList] = None,
         next_cursor: int = None,
         has_more: bool = None,
     ):
-        self.list = list
+        # 用户列表
+        self.user_list = user_list
         self.next_cursor = next_cursor
         self.has_more = has_more
 
     def validate(self):
-        if self.list:
-            for k in self.list:
+        if self.user_list:
+            for k in self.user_list:
                 if k:
                     k.validate()
 
@@ -3171,10 +3180,10 @@ class ListDeptUsersResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
         if self.next_cursor is not None:
             result['nextCursor'] = self.next_cursor
         if self.has_more is not None:
@@ -3183,11 +3192,11 @@ class ListDeptUsersResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = ListDeptUsersResponseBodyList()
-                self.list.append(temp_model.from_map(k))
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = ListDeptUsersResponseBodyUserList()
+                self.user_list.append(temp_model.from_map(k))
         if m.get('nextCursor') is not None:
             self.next_cursor = m.get('nextCursor')
         if m.get('hasMore') is not None:
@@ -3271,7 +3280,7 @@ class ListResidentUserInfosRequest(TeaModel):
         sub_corp_id: str = None,
         user_ids: List[str] = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 用户id列表
         self.user_ids = user_ids
@@ -3306,7 +3315,7 @@ class ListResidentUserInfosShrinkRequest(TeaModel):
         sub_corp_id: str = None,
         user_ids_shrink: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
         # 用户id列表
         self.user_ids_shrink = user_ids_shrink
@@ -3335,17 +3344,17 @@ class ListResidentUserInfosShrinkRequest(TeaModel):
         return self
 
 
-class ListResidentUserInfosResponseBodyResultRoles(TeaModel):
+class ListResidentUserInfosResponseBodyUserListRoles(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        name: str = None,
+        tag_id: int = None,
+        tag_name: str = None,
         tag_code: str = None,
     ):
         # 标签id
-        self.id = id
+        self.tag_id = tag_id
         # 标签名称
-        self.name = name
+        self.tag_name = tag_name
         # 标签名称 tagCode
         self.tag_code = tag_code
 
@@ -3358,38 +3367,38 @@ class ListResidentUserInfosResponseBodyResultRoles(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.tag_id is not None:
+            result['tagId'] = self.tag_id
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
         if self.tag_code is not None:
             result['tagCode'] = self.tag_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('tagId') is not None:
+            self.tag_id = m.get('tagId')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
         if m.get('tagCode') is not None:
             self.tag_code = m.get('tagCode')
         return self
 
 
-class ListResidentUserInfosResponseBodyResult(TeaModel):
+class ListResidentUserInfosResponseBodyUserList(TeaModel):
     def __init__(
         self,
-        userid: str = None,
-        name: str = None,
-        roles: List[ListResidentUserInfosResponseBodyResultRoles] = None,
+        user_id: str = None,
+        user_name: str = None,
+        roles: List[ListResidentUserInfosResponseBodyUserListRoles] = None,
         feature: str = None,
         union_id: str = None,
     ):
-        # 员工id
-        self.userid = userid
+        # 员工 ID
+        self.user_id = user_id
         # 员工名字
-        self.name = name
+        self.user_name = user_name
         # 标签列表
         self.roles = roles
         # 员工特征
@@ -3409,10 +3418,10 @@ class ListResidentUserInfosResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.userid is not None:
-            result['userid'] = self.userid
-        if self.name is not None:
-            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
         result['roles'] = []
         if self.roles is not None:
             for k in self.roles:
@@ -3425,14 +3434,14 @@ class ListResidentUserInfosResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('userid') is not None:
-            self.userid = m.get('userid')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
         self.roles = []
         if m.get('roles') is not None:
             for k in m.get('roles'):
-                temp_model = ListResidentUserInfosResponseBodyResultRoles()
+                temp_model = ListResidentUserInfosResponseBodyUserListRoles()
                 self.roles.append(temp_model.from_map(k))
         if m.get('feature') is not None:
             self.feature = m.get('feature')
@@ -3444,14 +3453,14 @@ class ListResidentUserInfosResponseBodyResult(TeaModel):
 class ListResidentUserInfosResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[ListResidentUserInfosResponseBodyResult] = None,
+        user_list: List[ListResidentUserInfosResponseBodyUserList] = None,
     ):
-        # result
-        self.result = result
+        # 员工信息列表
+        self.user_list = user_list
 
     def validate(self):
-        if self.result:
-            for k in self.result:
+        if self.user_list:
+            for k in self.user_list:
                 if k:
                     k.validate()
 
@@ -3461,19 +3470,19 @@ class ListResidentUserInfosResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = ListResidentUserInfosResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = ListResidentUserInfosResponseBodyUserList()
+                self.user_list.append(temp_model.from_map(k))
         return self
 
 
@@ -3552,7 +3561,7 @@ class ListSubDeptIdsRequest(TeaModel):
         self,
         sub_corp_id: str = None,
     ):
-        # 真实请求的组织corpId
+        # 下属组织的组织ID，比如下属镇、村的corpId
         self.sub_corp_id = sub_corp_id
 
     def validate(self):
@@ -3578,10 +3587,10 @@ class ListSubDeptIdsRequest(TeaModel):
 class ListSubDeptIdsResponseBody(TeaModel):
     def __init__(
         self,
-        dept_id_list: List[int] = None,
+        department_id_list: List[int] = None,
     ):
-        # 部门ID列表
-        self.dept_id_list = dept_id_list
+        # 下属组织的子部门 ID 列表
+        self.department_id_list = department_id_list
 
     def validate(self):
         pass
@@ -3592,14 +3601,14 @@ class ListSubDeptIdsResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id_list is not None:
-            result['deptIdList'] = self.dept_id_list
+        if self.department_id_list is not None:
+            result['departmentIdList'] = self.department_id_list
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptIdList') is not None:
-            self.dept_id_list = m.get('deptIdList')
+        if m.get('departmentIdList') is not None:
+            self.department_id_list = m.get('departmentIdList')
         return self
 
 

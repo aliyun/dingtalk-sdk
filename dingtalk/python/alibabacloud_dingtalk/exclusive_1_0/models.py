@@ -327,7 +327,6 @@ class GetOaOperatorLogListResponseBodyData(TeaModel):
         category_1name: str = None,
         category_2name: str = None,
         content: str = None,
-        extension: str = None,
     ):
         # 操作员userId
         self.op_user_id = op_user_id
@@ -341,8 +340,6 @@ class GetOaOperatorLogListResponseBodyData(TeaModel):
         self.category_2name = category_2name
         # 操作详情
         self.content = content
-        # 扩展字段
-        self.extension = extension
 
     def validate(self):
         pass
@@ -365,8 +362,6 @@ class GetOaOperatorLogListResponseBodyData(TeaModel):
             result['category2Name'] = self.category_2name
         if self.content is not None:
             result['content'] = self.content
-        if self.extension is not None:
-            result['extension'] = self.extension
         return result
 
     def from_map(self, m: dict = None):
@@ -383,8 +378,6 @@ class GetOaOperatorLogListResponseBodyData(TeaModel):
             self.category_2name = m.get('category2Name')
         if m.get('content') is not None:
             self.content = m.get('content')
-        if m.get('extension') is not None:
-            self.extension = m.get('extension')
         return self
 
 

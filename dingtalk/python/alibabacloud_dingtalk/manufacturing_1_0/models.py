@@ -23,6 +23,10 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         inst_no: str = None,
         manufacture_date: str = None,
         ding_corp_id: str = None,
+        is_batch_job: str = None,
+        user_name_list: str = None,
+        user_id_list: str = None,
+        unit_price: str = None,
     ):
         # 报废数量
         self.scrapped_quantity = scrapped_quantity
@@ -56,6 +60,14 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         self.manufacture_date = manufacture_date
         # 钉钉组织id
         self.ding_corp_id = ding_corp_id
+        # 是否是批量报工(取值[n,y])
+        self.is_batch_job = is_batch_job
+        # 批量报工时多个人名以英文逗号分隔
+        self.user_name_list = user_name_list
+        # 批量报工时多个工人userId以英文逗号分隔
+        self.user_id_list = user_id_list
+        # 计件单价，单位：分
+        self.unit_price = unit_price
 
     def validate(self):
         pass
@@ -98,6 +110,14 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
             result['manufactureDate'] = self.manufacture_date
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
+        if self.is_batch_job is not None:
+            result['isBatchJob'] = self.is_batch_job
+        if self.user_name_list is not None:
+            result['userNameList'] = self.user_name_list
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
         return result
 
     def from_map(self, m: dict = None):
@@ -134,6 +154,14 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
             self.manufacture_date = m.get('manufactureDate')
         if m.get('dingCorpId') is not None:
             self.ding_corp_id = m.get('dingCorpId')
+        if m.get('isBatchJob') is not None:
+            self.is_batch_job = m.get('isBatchJob')
+        if m.get('userNameList') is not None:
+            self.user_name_list = m.get('userNameList')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
         return self
 
 

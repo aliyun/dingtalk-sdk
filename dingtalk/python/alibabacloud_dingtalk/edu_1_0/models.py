@@ -100,6 +100,7 @@ class QueryStatisticsDataResponseBodyResult(TeaModel):
         user_name: str = None,
         class_id: int = None,
         subject_name: int = None,
+        subject_code: str = None,
         course_hours: float = None,
         course_count: int = None,
     ):
@@ -111,6 +112,8 @@ class QueryStatisticsDataResponseBodyResult(TeaModel):
         self.class_id = class_id
         # 学科名称
         self.subject_name = subject_name
+        # 学科code
+        self.subject_code = subject_code
         # 总学时
         self.course_hours = course_hours
         # 总课程数
@@ -133,6 +136,8 @@ class QueryStatisticsDataResponseBodyResult(TeaModel):
             result['classId'] = self.class_id
         if self.subject_name is not None:
             result['subjectName'] = self.subject_name
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
         if self.course_hours is not None:
             result['courseHours'] = self.course_hours
         if self.course_count is not None:
@@ -149,6 +154,8 @@ class QueryStatisticsDataResponseBodyResult(TeaModel):
             self.class_id = m.get('classId')
         if m.get('subjectName') is not None:
             self.subject_name = m.get('subjectName')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
         if m.get('courseHours') is not None:
             self.course_hours = m.get('courseHours')
         if m.get('courseCount') is not None:

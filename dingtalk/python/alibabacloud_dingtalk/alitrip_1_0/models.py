@@ -438,6 +438,349 @@ class ApproveCityCarApplyResponse(TeaModel):
         return self
 
 
+class QueryUnionOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUnionOrderRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        third_part_apply_id: str = None,
+        union_no: str = None,
+    ):
+        # 第三方企业id
+        self.corp_id = corp_id
+        # 第三方申请单id
+        self.third_part_apply_id = third_part_apply_id
+        # 关联单号
+        self.union_no = union_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.third_part_apply_id is not None:
+            result['thirdPartApplyId'] = self.third_part_apply_id
+        if self.union_no is not None:
+            result['unionNo'] = self.union_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('thirdPartApplyId') is not None:
+            self.third_part_apply_id = m.get('thirdPartApplyId')
+        if m.get('unionNo') is not None:
+            self.union_no = m.get('unionNo')
+        return self
+
+
+class QueryUnionOrderResponseBodyFlightList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        status: int = None,
+    ):
+        # 订单id
+        self.id = id
+        # 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryUnionOrderResponseBodyTrainList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        status: int = None,
+    ):
+        # 火车订单号
+        self.id = id
+        # 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryUnionOrderResponseBodyHotelList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        order_status: int = None,
+    ):
+        # 酒店订单号
+        self.id = id
+        # 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
+        self.order_status = order_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.order_status is not None:
+            result['orderStatus'] = self.order_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('orderStatus') is not None:
+            self.order_status = m.get('orderStatus')
+        return self
+
+
+class QueryUnionOrderResponseBodyVehicleList(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        order_status: int = None,
+    ):
+        # 用车订单号
+        self.id = id
+        # 订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消
+        self.order_status = order_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.order_status is not None:
+            result['orderStatus'] = self.order_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('orderStatus') is not None:
+            self.order_status = m.get('orderStatus')
+        return self
+
+
+class QueryUnionOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        flight_list: List[QueryUnionOrderResponseBodyFlightList] = None,
+        corp_id: str = None,
+        train_list: List[QueryUnionOrderResponseBodyTrainList] = None,
+        hotel_list: List[QueryUnionOrderResponseBodyHotelList] = None,
+        vehicle_list: List[QueryUnionOrderResponseBodyVehicleList] = None,
+    ):
+        # 飞机订单信息
+        self.flight_list = flight_list
+        # 企业id
+        self.corp_id = corp_id
+        # 火车订单信息
+        self.train_list = train_list
+        # 酒店订单信息
+        self.hotel_list = hotel_list
+        # 用车订单信息
+        self.vehicle_list = vehicle_list
+
+    def validate(self):
+        if self.flight_list:
+            for k in self.flight_list:
+                if k:
+                    k.validate()
+        if self.train_list:
+            for k in self.train_list:
+                if k:
+                    k.validate()
+        if self.hotel_list:
+            for k in self.hotel_list:
+                if k:
+                    k.validate()
+        if self.vehicle_list:
+            for k in self.vehicle_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['flightList'] = []
+        if self.flight_list is not None:
+            for k in self.flight_list:
+                result['flightList'].append(k.to_map() if k else None)
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['trainList'] = []
+        if self.train_list is not None:
+            for k in self.train_list:
+                result['trainList'].append(k.to_map() if k else None)
+        result['hotelList'] = []
+        if self.hotel_list is not None:
+            for k in self.hotel_list:
+                result['hotelList'].append(k.to_map() if k else None)
+        result['vehicleList'] = []
+        if self.vehicle_list is not None:
+            for k in self.vehicle_list:
+                result['vehicleList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.flight_list = []
+        if m.get('flightList') is not None:
+            for k in m.get('flightList'):
+                temp_model = QueryUnionOrderResponseBodyFlightList()
+                self.flight_list.append(temp_model.from_map(k))
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.train_list = []
+        if m.get('trainList') is not None:
+            for k in m.get('trainList'):
+                temp_model = QueryUnionOrderResponseBodyTrainList()
+                self.train_list.append(temp_model.from_map(k))
+        self.hotel_list = []
+        if m.get('hotelList') is not None:
+            for k in m.get('hotelList'):
+                temp_model = QueryUnionOrderResponseBodyHotelList()
+                self.hotel_list.append(temp_model.from_map(k))
+        self.vehicle_list = []
+        if m.get('vehicleList') is not None:
+            for k in m.get('vehicleList'):
+                temp_model = QueryUnionOrderResponseBodyVehicleList()
+                self.vehicle_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryUnionOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryUnionOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryUnionOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCityCarApplyHeaders(TeaModel):
     def __init__(
         self,

@@ -151,25 +151,25 @@ class Client(OpenApiClient):
 
     def list_resident_dept_users(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
     ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders()
-        return self.list_resident_dept_users_with_options(dept_id, request, headers, runtime)
+        return self.list_resident_dept_users_with_options(department_id, request, headers, runtime)
 
     async def list_resident_dept_users_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
     ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders()
-        return await self.list_resident_dept_users_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_resident_dept_users_with_options_async(department_id, request, headers, runtime)
 
     def list_resident_dept_users_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
         headers: dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders,
         runtime: util_models.RuntimeOptions,
@@ -195,12 +195,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListResidentDeptUsersResponse(),
-            self.do_roarequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{dept_id}/users', 'json', req, runtime)
+            self.do_roarequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users', 'json', req, runtime)
         )
 
     async def list_resident_dept_users_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
         headers: dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders,
         runtime: util_models.RuntimeOptions,
@@ -226,30 +226,30 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListResidentDeptUsersResponse(),
-            await self.do_roarequest_async('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{dept_id}/users', 'json', req, runtime)
+            await self.do_roarequest_async('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users', 'json', req, runtime)
         )
 
     def list_dept_simple_users(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
     ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders()
-        return self.list_dept_simple_users_with_options(dept_id, request, headers, runtime)
+        return self.list_dept_simple_users_with_options(department_id, request, headers, runtime)
 
     async def list_dept_simple_users_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
     ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders()
-        return await self.list_dept_simple_users_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_dept_simple_users_with_options_async(department_id, request, headers, runtime)
 
     def list_dept_simple_users_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
         headers: dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders,
         runtime: util_models.RuntimeOptions,
@@ -279,12 +279,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse(),
-            self.do_roarequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/simpleUsers', 'json', req, runtime)
+            self.do_roarequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/simpleUsers', 'json', req, runtime)
         )
 
     async def list_dept_simple_users_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
         headers: dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders,
         runtime: util_models.RuntimeOptions,
@@ -314,7 +314,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse(),
-            await self.do_roarequest_async('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/simpleUsers', 'json', req, runtime)
+            await self.do_roarequest_async('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/simpleUsers', 'json', req, runtime)
         )
 
     def get_user_by_union_id(
@@ -459,27 +459,27 @@ class Client(OpenApiClient):
 
     def get_resident_user_info(
         self,
-        dept_id: str,
+        department_id: str,
         user_id: str,
         request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
     ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.GetResidentUserInfoHeaders()
-        return self.get_resident_user_info_with_options(dept_id, user_id, request, headers, runtime)
+        return self.get_resident_user_info_with_options(department_id, user_id, request, headers, runtime)
 
     async def get_resident_user_info_async(
         self,
-        dept_id: str,
+        department_id: str,
         user_id: str,
         request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
     ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.GetResidentUserInfoHeaders()
-        return await self.get_resident_user_info_with_options_async(dept_id, user_id, request, headers, runtime)
+        return await self.get_resident_user_info_with_options_async(department_id, user_id, request, headers, runtime)
 
     def get_resident_user_info_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         user_id: str,
         request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
         headers: dingtalkvillage__1__0_models.GetResidentUserInfoHeaders,
@@ -500,12 +500,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.GetResidentUserInfoResponse(),
-            self.do_roarequest('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{dept_id}/users/{user_id}', 'json', req, runtime)
+            self.do_roarequest('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users/{user_id}', 'json', req, runtime)
         )
 
     async def get_resident_user_info_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         user_id: str,
         request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
         headers: dingtalkvillage__1__0_models.GetResidentUserInfoHeaders,
@@ -526,7 +526,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.GetResidentUserInfoResponse(),
-            await self.do_roarequest_async('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{dept_id}/users/{user_id}', 'json', req, runtime)
+            await self.do_roarequest_async('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users/{user_id}', 'json', req, runtime)
         )
 
     def get_dept(
@@ -627,8 +627,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
-        if not UtilClient.is_unset(request.dept_id):
-            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.department_id):
+            query['departmentId'] = request.department_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -653,8 +653,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
-        if not UtilClient.is_unset(request.dept_id):
-            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.department_id):
+            query['departmentId'] = request.department_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -671,25 +671,25 @@ class Client(OpenApiClient):
 
     def list_dept_user_ids(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
     ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptUserIdsHeaders()
-        return self.list_dept_user_ids_with_options(dept_id, request, headers, runtime)
+        return self.list_dept_user_ids_with_options(department_id, request, headers, runtime)
 
     async def list_dept_user_ids_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
     ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptUserIdsHeaders()
-        return await self.list_dept_user_ids_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_dept_user_ids_with_options_async(department_id, request, headers, runtime)
 
     def list_dept_user_ids_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
         headers: dingtalkvillage__1__0_models.ListDeptUserIdsHeaders,
         runtime: util_models.RuntimeOptions,
@@ -709,12 +709,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListDeptUserIdsResponse(),
-            self.do_roarequest('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/userIds', 'json', req, runtime)
+            self.do_roarequest('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/userIds', 'json', req, runtime)
         )
 
     async def list_dept_user_ids_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
         headers: dingtalkvillage__1__0_models.ListDeptUserIdsHeaders,
         runtime: util_models.RuntimeOptions,
@@ -734,7 +734,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListDeptUserIdsResponse(),
-            await self.do_roarequest_async('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/userIds', 'json', req, runtime)
+            await self.do_roarequest_async('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/userIds', 'json', req, runtime)
         )
 
     def list_simple_users_by_role(
@@ -815,25 +815,25 @@ class Client(OpenApiClient):
 
     def list_resident_sub_depts(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
     ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders()
-        return self.list_resident_sub_depts_with_options(dept_id, request, headers, runtime)
+        return self.list_resident_sub_depts_with_options(department_id, request, headers, runtime)
 
     async def list_resident_sub_depts_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
     ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders()
-        return await self.list_resident_sub_depts_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_resident_sub_depts_with_options_async(department_id, request, headers, runtime)
 
     def list_resident_sub_depts_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
         headers: dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders,
         runtime: util_models.RuntimeOptions,
@@ -857,12 +857,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListResidentSubDeptsResponse(),
-            self.do_roarequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{dept_id}/subDepartments', 'json', req, runtime)
+            self.do_roarequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/subDepartments', 'json', req, runtime)
         )
 
     async def list_resident_sub_depts_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
         headers: dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders,
         runtime: util_models.RuntimeOptions,
@@ -886,7 +886,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListResidentSubDeptsResponse(),
-            await self.do_roarequest_async('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{dept_id}/subDepartments', 'json', req, runtime)
+            await self.do_roarequest_async('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/subDepartments', 'json', req, runtime)
         )
 
     def list_parent_by_user(
@@ -959,25 +959,25 @@ class Client(OpenApiClient):
 
     def list_sub_dept(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptRequest,
     ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListSubDeptHeaders()
-        return self.list_sub_dept_with_options(dept_id, request, headers, runtime)
+        return self.list_sub_dept_with_options(department_id, request, headers, runtime)
 
     async def list_sub_dept_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptRequest,
     ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListSubDeptHeaders()
-        return await self.list_sub_dept_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_sub_dept_with_options_async(department_id, request, headers, runtime)
 
     def list_sub_dept_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptRequest,
         headers: dingtalkvillage__1__0_models.ListSubDeptHeaders,
         runtime: util_models.RuntimeOptions,
@@ -999,12 +999,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSubDeptResponse(),
-            self.do_roarequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/subDepartments', 'json', req, runtime)
+            self.do_roarequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartments', 'json', req, runtime)
         )
 
     async def list_sub_dept_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptRequest,
         headers: dingtalkvillage__1__0_models.ListSubDeptHeaders,
         runtime: util_models.RuntimeOptions,
@@ -1026,7 +1026,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSubDeptResponse(),
-            await self.do_roarequest_async('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/subDepartments', 'json', req, runtime)
+            await self.do_roarequest_async('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartments', 'json', req, runtime)
         )
 
     def get_user(
@@ -1103,25 +1103,25 @@ class Client(OpenApiClient):
 
     def list_dept_users(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
     ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptUsersHeaders()
-        return self.list_dept_users_with_options(dept_id, request, headers, runtime)
+        return self.list_dept_users_with_options(department_id, request, headers, runtime)
 
     async def list_dept_users_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
     ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptUsersHeaders()
-        return await self.list_dept_users_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_dept_users_with_options_async(department_id, request, headers, runtime)
 
     def list_dept_users_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
         headers: dingtalkvillage__1__0_models.ListDeptUsersHeaders,
         runtime: util_models.RuntimeOptions,
@@ -1151,12 +1151,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListDeptUsersResponse(),
-            self.do_roarequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/users', 'json', req, runtime)
+            self.do_roarequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/users', 'json', req, runtime)
         )
 
     async def list_dept_users_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
         headers: dingtalkvillage__1__0_models.ListDeptUsersHeaders,
         runtime: util_models.RuntimeOptions,
@@ -1186,7 +1186,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListDeptUsersResponse(),
-            await self.do_roarequest_async('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/users', 'json', req, runtime)
+            await self.do_roarequest_async('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/users', 'json', req, runtime)
         )
 
     def list_resident_user_infos(
@@ -1267,25 +1267,25 @@ class Client(OpenApiClient):
 
     def list_sub_dept_ids(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
     ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListSubDeptIdsHeaders()
-        return self.list_sub_dept_ids_with_options(dept_id, request, headers, runtime)
+        return self.list_sub_dept_ids_with_options(department_id, request, headers, runtime)
 
     async def list_sub_dept_ids_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
     ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListSubDeptIdsHeaders()
-        return await self.list_sub_dept_ids_with_options_async(dept_id, request, headers, runtime)
+        return await self.list_sub_dept_ids_with_options_async(department_id, request, headers, runtime)
 
     def list_sub_dept_ids_with_options(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
         headers: dingtalkvillage__1__0_models.ListSubDeptIdsHeaders,
         runtime: util_models.RuntimeOptions,
@@ -1305,12 +1305,12 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSubDeptIdsResponse(),
-            self.do_roarequest('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/subDepartmentIds', 'json', req, runtime)
+            self.do_roarequest('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartmentIds', 'json', req, runtime)
         )
 
     async def list_sub_dept_ids_with_options_async(
         self,
-        dept_id: str,
+        department_id: str,
         request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
         headers: dingtalkvillage__1__0_models.ListSubDeptIdsHeaders,
         runtime: util_models.RuntimeOptions,
@@ -1330,5 +1330,5 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSubDeptIdsResponse(),
-            await self.do_roarequest_async('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{dept_id}/subDepartmentIds', 'json', req, runtime)
+            await self.do_roarequest_async('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartmentIds', 'json', req, runtime)
         )
