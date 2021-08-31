@@ -22,9 +22,9 @@ public class ListSubDeptResponseBody extends TeaModel {
     }
 
     public static class ListSubDeptResponseBodyResult extends TeaModel {
-        // 部门ID
-        @NameInMap("deptId")
-        public Long deptId;
+        // 下属组织的部门ID
+        @NameInMap("departmentId")
+        public Long departmentId;
 
         // 部门名称
         @NameInMap("name")
@@ -35,12 +35,12 @@ public class ListSubDeptResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public ListSubDeptResponseBodyResult setDeptId(Long deptId) {
-            this.deptId = deptId;
+        public ListSubDeptResponseBodyResult setDepartmentId(Long departmentId) {
+            this.departmentId = departmentId;
             return this;
         }
-        public Long getDeptId() {
-            return this.deptId;
+        public Long getDepartmentId() {
+            return this.departmentId;
         }
 
         public ListSubDeptResponseBodyResult setName(String name) {

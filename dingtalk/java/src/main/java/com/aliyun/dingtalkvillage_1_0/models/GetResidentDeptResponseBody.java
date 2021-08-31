@@ -4,13 +4,13 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentDeptResponseBody extends TeaModel {
-    // 部门ID
-    @NameInMap("deptId")
-    public Long deptId;
+    // 下属组织的部门ID
+    @NameInMap("departmentId")
+    public Long departmentId;
 
     // 部门名称
-    @NameInMap("name")
-    public String name;
+    @NameInMap("departmentName")
+    public String departmentName;
 
     // 部门类型
     @NameInMap("deptType")
@@ -29,20 +29,20 @@ public class GetResidentDeptResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetResidentDeptResponseBody setDeptId(Long deptId) {
-        this.deptId = deptId;
+    public GetResidentDeptResponseBody setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
         return this;
     }
-    public Long getDeptId() {
-        return this.deptId;
+    public Long getDepartmentId() {
+        return this.departmentId;
     }
 
-    public GetResidentDeptResponseBody setName(String name) {
-        this.name = name;
+    public GetResidentDeptResponseBody setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getDepartmentName() {
+        return this.departmentName;
     }
 
     public GetResidentDeptResponseBody setDeptType(String deptType) {

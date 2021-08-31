@@ -94,6 +94,22 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dingCorpId", request.dingCorpId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.isBatchJob)) {
+            body.put("isBatchJob", request.isBatchJob);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userNameList)) {
+            body.put("userNameList", request.userNameList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unitPrice)) {
+            body.put("unitPrice", request.unitPrice);
+        }
+
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))

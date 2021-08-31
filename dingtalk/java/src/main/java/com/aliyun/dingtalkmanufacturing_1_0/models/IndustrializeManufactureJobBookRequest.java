@@ -68,6 +68,22 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     @NameInMap("dingCorpId")
     public String dingCorpId;
 
+    // 是否是批量报工(取值[n,y])
+    @NameInMap("isBatchJob")
+    public String isBatchJob;
+
+    // 批量报工时多个人名以英文逗号分隔
+    @NameInMap("userNameList")
+    public String userNameList;
+
+    // 批量报工时多个工人userId以英文逗号分隔
+    @NameInMap("userIdList")
+    public String userIdList;
+
+    // 计件单价，单位：分
+    @NameInMap("unitPrice")
+    public String unitPrice;
+
     public static IndustrializeManufactureJobBookRequest build(java.util.Map<String, ?> map) throws Exception {
         IndustrializeManufactureJobBookRequest self = new IndustrializeManufactureJobBookRequest();
         return TeaModel.build(map, self);
@@ -199,6 +215,38 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     }
     public String getDingCorpId() {
         return this.dingCorpId;
+    }
+
+    public IndustrializeManufactureJobBookRequest setIsBatchJob(String isBatchJob) {
+        this.isBatchJob = isBatchJob;
+        return this;
+    }
+    public String getIsBatchJob() {
+        return this.isBatchJob;
+    }
+
+    public IndustrializeManufactureJobBookRequest setUserNameList(String userNameList) {
+        this.userNameList = userNameList;
+        return this;
+    }
+    public String getUserNameList() {
+        return this.userNameList;
+    }
+
+    public IndustrializeManufactureJobBookRequest setUserIdList(String userIdList) {
+        this.userIdList = userIdList;
+        return this;
+    }
+    public String getUserIdList() {
+        return this.userIdList;
+    }
+
+    public IndustrializeManufactureJobBookRequest setUnitPrice(String unitPrice) {
+        this.unitPrice = unitPrice;
+        return this;
+    }
+    public String getUnitPrice() {
+        return this.unitPrice;
     }
 
 }

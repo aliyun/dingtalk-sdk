@@ -4,8 +4,9 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDeptSimpleUsersResponseBody extends TeaModel {
-    @NameInMap("list")
-    public java.util.List<ListDeptSimpleUsersResponseBodyList> list;
+    // 用户列表
+    @NameInMap("userList")
+    public java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList;
 
     @NameInMap("totalCount")
     public Long totalCount;
@@ -21,12 +22,12 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListDeptSimpleUsersResponseBody setList(java.util.List<ListDeptSimpleUsersResponseBodyList> list) {
-        this.list = list;
+    public ListDeptSimpleUsersResponseBody setUserList(java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList) {
+        this.userList = userList;
         return this;
     }
-    public java.util.List<ListDeptSimpleUsersResponseBodyList> getList() {
-        return this.list;
+    public java.util.List<ListDeptSimpleUsersResponseBodyUserList> getUserList() {
+        return this.userList;
     }
 
     public ListDeptSimpleUsersResponseBody setTotalCount(Long totalCount) {
@@ -53,19 +54,21 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public static class ListDeptSimpleUsersResponseBodyList extends TeaModel {
+    public static class ListDeptSimpleUsersResponseBodyUserList extends TeaModel {
+        // 用户ID
         @NameInMap("userId")
         public String userId;
 
+        // 用户姓名
         @NameInMap("name")
         public String name;
 
-        public static ListDeptSimpleUsersResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            ListDeptSimpleUsersResponseBodyList self = new ListDeptSimpleUsersResponseBodyList();
+        public static ListDeptSimpleUsersResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
+            ListDeptSimpleUsersResponseBodyUserList self = new ListDeptSimpleUsersResponseBodyUserList();
             return TeaModel.build(map, self);
         }
 
-        public ListDeptSimpleUsersResponseBodyList setUserId(String userId) {
+        public ListDeptSimpleUsersResponseBodyUserList setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -73,7 +76,7 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public ListDeptSimpleUsersResponseBodyList setName(String name) {
+        public ListDeptSimpleUsersResponseBodyUserList setName(String name) {
             this.name = name;
             return this;
         }

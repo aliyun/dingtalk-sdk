@@ -8,17 +8,17 @@ public class GetDeptResponseBody extends TeaModel {
     @NameInMap("order")
     public Long order;
 
-    // 部门id
-    @NameInMap("deptId")
-    public Long deptId;
+    // 下属组织的部门ID
+    @NameInMap("departmentId")
+    public Long departmentId;
 
     // 部门名称
-    @NameInMap("name")
-    public String name;
+    @NameInMap("departmentName")
+    public String departmentName;
 
     // 父部门id
-    @NameInMap("parentId")
-    public Long parentId;
+    @NameInMap("parentDepartmentId")
+    public Long parentDepartmentId;
 
     // 部门是否来自关联组织
     @NameInMap("fromUnionOrg")
@@ -37,28 +37,28 @@ public class GetDeptResponseBody extends TeaModel {
         return this.order;
     }
 
-    public GetDeptResponseBody setDeptId(Long deptId) {
-        this.deptId = deptId;
+    public GetDeptResponseBody setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
         return this;
     }
-    public Long getDeptId() {
-        return this.deptId;
+    public Long getDepartmentId() {
+        return this.departmentId;
     }
 
-    public GetDeptResponseBody setName(String name) {
-        this.name = name;
+    public GetDeptResponseBody setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getDepartmentName() {
+        return this.departmentName;
     }
 
-    public GetDeptResponseBody setParentId(Long parentId) {
-        this.parentId = parentId;
+    public GetDeptResponseBody setParentDepartmentId(Long parentDepartmentId) {
+        this.parentDepartmentId = parentDepartmentId;
         return this;
     }
-    public Long getParentId() {
-        return this.parentId;
+    public Long getParentDepartmentId() {
+        return this.parentDepartmentId;
     }
 
     public GetDeptResponseBody setFromUnionOrg(Boolean fromUnionOrg) {

@@ -8,7 +8,7 @@ public class ListSubCorpsRequest extends TeaModel {
     @NameInMap("types")
     public String types;
 
-    // 真正查询的组织corpId
+    // 下属组织的组织ID，比如下属镇、村的corpId
     @NameInMap("subCorpId")
     public String subCorpId;
 

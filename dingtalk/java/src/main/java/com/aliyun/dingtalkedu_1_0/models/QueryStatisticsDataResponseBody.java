@@ -38,6 +38,10 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
         @NameInMap("subjectName")
         public Long subjectName;
 
+        // 学科code
+        @NameInMap("subjectCode")
+        public String subjectCode;
+
         // 总学时
         @NameInMap("courseHours")
         public Float courseHours;
@@ -81,6 +85,14 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
         }
         public Long getSubjectName() {
             return this.subjectName;
+        }
+
+        public QueryStatisticsDataResponseBodyResult setSubjectCode(String subjectCode) {
+            this.subjectCode = subjectCode;
+            return this;
+        }
+        public String getSubjectCode() {
+            return this.subjectCode;
         }
 
         public QueryStatisticsDataResponseBodyResult setCourseHours(Float courseHours) {

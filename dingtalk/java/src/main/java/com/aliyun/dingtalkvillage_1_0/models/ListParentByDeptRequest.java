@@ -4,13 +4,13 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListParentByDeptRequest extends TeaModel {
-    // 真实请求的组织corpId
+    // 下属组织的组织ID，比如下属镇、村的corpId
     @NameInMap("subCorpId")
     public String subCorpId;
 
-    // 部门id
-    @NameInMap("deptId")
-    public Long deptId;
+    // 下属组织的部门ID
+    @NameInMap("departmentId")
+    public Long departmentId;
 
     public static ListParentByDeptRequest build(java.util.Map<String, ?> map) throws Exception {
         ListParentByDeptRequest self = new ListParentByDeptRequest();
@@ -25,12 +25,12 @@ public class ListParentByDeptRequest extends TeaModel {
         return this.subCorpId;
     }
 
-    public ListParentByDeptRequest setDeptId(Long deptId) {
-        this.deptId = deptId;
+    public ListParentByDeptRequest setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
         return this;
     }
-    public Long getDeptId() {
-        return this.deptId;
+    public Long getDepartmentId() {
+        return this.departmentId;
     }
 
 }

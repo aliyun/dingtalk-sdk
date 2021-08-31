@@ -16,10 +16,6 @@ public class GetUserResponseBody extends TeaModel {
     @NameInMap("name")
     public String name;
 
-    // 头像
-    @NameInMap("avatar")
-    public String avatar;
-
     // 员工工号
     @NameInMap("jobNumber")
     public String jobNumber;
@@ -37,12 +33,12 @@ public class GetUserResponseBody extends TeaModel {
     public String remark;
 
     // 所属部门id列表
-    @NameInMap("deptIdList")
-    public java.util.List<Long> deptIdList;
+    @NameInMap("departmentIdList")
+    public java.util.List<Long> departmentIdList;
 
     // 员工在对应的部门中的排序。
-    @NameInMap("deptOrderSet")
-    public java.util.List<GetUserResponseBodyDeptOrderSet> deptOrderSet;
+    @NameInMap("departmentOrderSet")
+    public java.util.List<GetUserResponseBodyDepartmentOrderSet> departmentOrderSet;
 
     // 扩展属性，长度最大2000个字符。可以设置多种属性（手机上最多显示10个扩展属性，具体显示哪些属性，请到OA管理后台->设置->通讯录信息设置和OA管理后台->设置->手机端显示信息设置）。 该字段的值支持链接类型填写，同时链接支持变量通配符自动替换，目前支持通配符有：userid，corpid。示例： [工位地址](http://www.dingtalk.com?userid=#userid#&corpid=#corpid#)
     @NameInMap("extension")
@@ -81,8 +77,8 @@ public class GetUserResponseBody extends TeaModel {
     public String exclusiveAccountType;
 
     // 员工在对应的部门中是否领导。
-    @NameInMap("leaderInDept")
-    public java.util.List<GetUserResponseBodyLeaderInDept> leaderInDept;
+    @NameInMap("leaderInDepartment")
+    public java.util.List<GetUserResponseBodyLeaderInDepartment> leaderInDepartment;
 
     // 角色列表
     @NameInMap("roleList")
@@ -125,14 +121,6 @@ public class GetUserResponseBody extends TeaModel {
         return this.name;
     }
 
-    public GetUserResponseBody setAvatar(String avatar) {
-        this.avatar = avatar;
-        return this;
-    }
-    public String getAvatar() {
-        return this.avatar;
-    }
-
     public GetUserResponseBody setJobNumber(String jobNumber) {
         this.jobNumber = jobNumber;
         return this;
@@ -165,20 +153,20 @@ public class GetUserResponseBody extends TeaModel {
         return this.remark;
     }
 
-    public GetUserResponseBody setDeptIdList(java.util.List<Long> deptIdList) {
-        this.deptIdList = deptIdList;
+    public GetUserResponseBody setDepartmentIdList(java.util.List<Long> departmentIdList) {
+        this.departmentIdList = departmentIdList;
         return this;
     }
-    public java.util.List<Long> getDeptIdList() {
-        return this.deptIdList;
+    public java.util.List<Long> getDepartmentIdList() {
+        return this.departmentIdList;
     }
 
-    public GetUserResponseBody setDeptOrderSet(java.util.List<GetUserResponseBodyDeptOrderSet> deptOrderSet) {
-        this.deptOrderSet = deptOrderSet;
+    public GetUserResponseBody setDepartmentOrderSet(java.util.List<GetUserResponseBodyDepartmentOrderSet> departmentOrderSet) {
+        this.departmentOrderSet = departmentOrderSet;
         return this;
     }
-    public java.util.List<GetUserResponseBodyDeptOrderSet> getDeptOrderSet() {
-        return this.deptOrderSet;
+    public java.util.List<GetUserResponseBodyDepartmentOrderSet> getDepartmentOrderSet() {
+        return this.departmentOrderSet;
     }
 
     public GetUserResponseBody setExtension(String extension) {
@@ -253,12 +241,12 @@ public class GetUserResponseBody extends TeaModel {
         return this.exclusiveAccountType;
     }
 
-    public GetUserResponseBody setLeaderInDept(java.util.List<GetUserResponseBodyLeaderInDept> leaderInDept) {
-        this.leaderInDept = leaderInDept;
+    public GetUserResponseBody setLeaderInDepartment(java.util.List<GetUserResponseBodyLeaderInDepartment> leaderInDepartment) {
+        this.leaderInDepartment = leaderInDepartment;
         return this;
     }
-    public java.util.List<GetUserResponseBodyLeaderInDept> getLeaderInDept() {
-        return this.leaderInDept;
+    public java.util.List<GetUserResponseBodyLeaderInDepartment> getLeaderInDepartment() {
+        return this.leaderInDepartment;
     }
 
     public GetUserResponseBody setRoleList(java.util.List<GetUserResponseBodyRoleList> roleList) {
@@ -285,29 +273,29 @@ public class GetUserResponseBody extends TeaModel {
         return this.managerUserId;
     }
 
-    public static class GetUserResponseBodyDeptOrderSet extends TeaModel {
-        // 部门id
-        @NameInMap("deptId")
-        public Long deptId;
+    public static class GetUserResponseBodyDepartmentOrderSet extends TeaModel {
+        // 下属组织的部门ID
+        @NameInMap("departmentId")
+        public Long departmentId;
 
         // 员工在部门中的排序。
         @NameInMap("order")
         public Long order;
 
-        public static GetUserResponseBodyDeptOrderSet build(java.util.Map<String, ?> map) throws Exception {
-            GetUserResponseBodyDeptOrderSet self = new GetUserResponseBodyDeptOrderSet();
+        public static GetUserResponseBodyDepartmentOrderSet build(java.util.Map<String, ?> map) throws Exception {
+            GetUserResponseBodyDepartmentOrderSet self = new GetUserResponseBodyDepartmentOrderSet();
             return TeaModel.build(map, self);
         }
 
-        public GetUserResponseBodyDeptOrderSet setDeptId(Long deptId) {
-            this.deptId = deptId;
+        public GetUserResponseBodyDepartmentOrderSet setDepartmentId(Long departmentId) {
+            this.departmentId = departmentId;
             return this;
         }
-        public Long getDeptId() {
-            return this.deptId;
+        public Long getDepartmentId() {
+            return this.departmentId;
         }
 
-        public GetUserResponseBodyDeptOrderSet setOrder(Long order) {
+        public GetUserResponseBodyDepartmentOrderSet setOrder(Long order) {
             this.order = order;
             return this;
         }
@@ -317,29 +305,29 @@ public class GetUserResponseBody extends TeaModel {
 
     }
 
-    public static class GetUserResponseBodyLeaderInDept extends TeaModel {
-        // 部门 id
-        @NameInMap("deptId")
-        public Long deptId;
+    public static class GetUserResponseBodyLeaderInDepartment extends TeaModel {
+        // 下属组织的部门ID
+        @NameInMap("departmentId")
+        public Long departmentId;
 
         // 员工在对应的部门中是否领导
         @NameInMap("leader")
         public Boolean leader;
 
-        public static GetUserResponseBodyLeaderInDept build(java.util.Map<String, ?> map) throws Exception {
-            GetUserResponseBodyLeaderInDept self = new GetUserResponseBodyLeaderInDept();
+        public static GetUserResponseBodyLeaderInDepartment build(java.util.Map<String, ?> map) throws Exception {
+            GetUserResponseBodyLeaderInDepartment self = new GetUserResponseBodyLeaderInDepartment();
             return TeaModel.build(map, self);
         }
 
-        public GetUserResponseBodyLeaderInDept setDeptId(Long deptId) {
-            this.deptId = deptId;
+        public GetUserResponseBodyLeaderInDepartment setDepartmentId(Long departmentId) {
+            this.departmentId = departmentId;
             return this;
         }
-        public Long getDeptId() {
-            return this.deptId;
+        public Long getDepartmentId() {
+            return this.departmentId;
         }
 
-        public GetUserResponseBodyLeaderInDept setLeader(Boolean leader) {
+        public GetUserResponseBodyLeaderInDepartment setLeader(Boolean leader) {
             this.leader = leader;
             return this;
         }
@@ -351,12 +339,12 @@ public class GetUserResponseBody extends TeaModel {
 
     public static class GetUserResponseBodyRoleList extends TeaModel {
         // 角色id
-        @NameInMap("id")
-        public Long id;
+        @NameInMap("roleId")
+        public Long roleId;
 
         // 角色名称
-        @NameInMap("name")
-        public String name;
+        @NameInMap("roleName")
+        public String roleName;
 
         // 角色组名称
         @NameInMap("groupName")
@@ -367,20 +355,20 @@ public class GetUserResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public GetUserResponseBodyRoleList setId(Long id) {
-            this.id = id;
+        public GetUserResponseBodyRoleList setRoleId(Long roleId) {
+            this.roleId = roleId;
             return this;
         }
-        public Long getId() {
-            return this.id;
+        public Long getRoleId() {
+            return this.roleId;
         }
 
-        public GetUserResponseBodyRoleList setName(String name) {
-            this.name = name;
+        public GetUserResponseBodyRoleList setRoleName(String roleName) {
+            this.roleName = roleName;
             return this;
         }
-        public String getName() {
-            return this.name;
+        public String getRoleName() {
+            return this.roleName;
         }
 
         public GetUserResponseBodyRoleList setGroupName(String groupName) {

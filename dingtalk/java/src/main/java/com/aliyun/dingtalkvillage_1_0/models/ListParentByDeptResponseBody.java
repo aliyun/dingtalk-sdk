@@ -4,21 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListParentByDeptResponseBody extends TeaModel {
-    // 父部门列表
-    @NameInMap("parentIdList")
-    public java.util.List<Long> parentIdList;
+    // 父部门ID列表
+    @NameInMap("departmentIdList")
+    public java.util.List<Long> departmentIdList;
 
     public static ListParentByDeptResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListParentByDeptResponseBody self = new ListParentByDeptResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public ListParentByDeptResponseBody setParentIdList(java.util.List<Long> parentIdList) {
-        this.parentIdList = parentIdList;
+    public ListParentByDeptResponseBody setDepartmentIdList(java.util.List<Long> departmentIdList) {
+        this.departmentIdList = departmentIdList;
         return this;
     }
-    public java.util.List<Long> getParentIdList() {
-        return this.parentIdList;
+    public java.util.List<Long> getDepartmentIdList() {
+        return this.departmentIdList;
     }
 
 }

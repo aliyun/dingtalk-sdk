@@ -4,8 +4,9 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDeptUsersResponseBody extends TeaModel {
-    @NameInMap("list")
-    public java.util.List<ListDeptUsersResponseBodyList> list;
+    // 用户列表
+    @NameInMap("userList")
+    public java.util.List<ListDeptUsersResponseBodyUserList> userList;
 
     @NameInMap("nextCursor")
     public Long nextCursor;
@@ -18,12 +19,12 @@ public class ListDeptUsersResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListDeptUsersResponseBody setList(java.util.List<ListDeptUsersResponseBodyList> list) {
-        this.list = list;
+    public ListDeptUsersResponseBody setUserList(java.util.List<ListDeptUsersResponseBodyUserList> userList) {
+        this.userList = userList;
         return this;
     }
-    public java.util.List<ListDeptUsersResponseBodyList> getList() {
-        return this.list;
+    public java.util.List<ListDeptUsersResponseBodyUserList> getUserList() {
+        return this.userList;
     }
 
     public ListDeptUsersResponseBody setNextCursor(Long nextCursor) {
@@ -42,10 +43,12 @@ public class ListDeptUsersResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public static class ListDeptUsersResponseBodyList extends TeaModel {
+    public static class ListDeptUsersResponseBodyUserList extends TeaModel {
+        // 用户ID
         @NameInMap("userId")
         public String userId;
 
+        // unionId
         @NameInMap("unionId")
         public String unionId;
 
@@ -55,18 +58,19 @@ public class ListDeptUsersResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        @NameInMap("deptIdList")
-        public java.util.List<Long> deptIdList;
+        // 部门ID列表
+        @NameInMap("departmentList")
+        public java.util.List<Long> departmentList;
 
         @NameInMap("active")
         public Boolean active;
 
-        public static ListDeptUsersResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            ListDeptUsersResponseBodyList self = new ListDeptUsersResponseBodyList();
+        public static ListDeptUsersResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
+            ListDeptUsersResponseBodyUserList self = new ListDeptUsersResponseBodyUserList();
             return TeaModel.build(map, self);
         }
 
-        public ListDeptUsersResponseBodyList setUserId(String userId) {
+        public ListDeptUsersResponseBodyUserList setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -74,7 +78,7 @@ public class ListDeptUsersResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public ListDeptUsersResponseBodyList setUnionId(String unionId) {
+        public ListDeptUsersResponseBodyUserList setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }
@@ -82,7 +86,7 @@ public class ListDeptUsersResponseBody extends TeaModel {
             return this.unionId;
         }
 
-        public ListDeptUsersResponseBodyList setJobNumber(String jobNumber) {
+        public ListDeptUsersResponseBodyUserList setJobNumber(String jobNumber) {
             this.jobNumber = jobNumber;
             return this;
         }
@@ -90,7 +94,7 @@ public class ListDeptUsersResponseBody extends TeaModel {
             return this.jobNumber;
         }
 
-        public ListDeptUsersResponseBodyList setName(String name) {
+        public ListDeptUsersResponseBodyUserList setName(String name) {
             this.name = name;
             return this;
         }
@@ -98,15 +102,15 @@ public class ListDeptUsersResponseBody extends TeaModel {
             return this.name;
         }
 
-        public ListDeptUsersResponseBodyList setDeptIdList(java.util.List<Long> deptIdList) {
-            this.deptIdList = deptIdList;
+        public ListDeptUsersResponseBodyUserList setDepartmentList(java.util.List<Long> departmentList) {
+            this.departmentList = departmentList;
             return this;
         }
-        public java.util.List<Long> getDeptIdList() {
-            return this.deptIdList;
+        public java.util.List<Long> getDepartmentList() {
+            return this.departmentList;
         }
 
-        public ListDeptUsersResponseBodyList setActive(Boolean active) {
+        public ListDeptUsersResponseBodyUserList setActive(Boolean active) {
             this.active = active;
             return this;
         }

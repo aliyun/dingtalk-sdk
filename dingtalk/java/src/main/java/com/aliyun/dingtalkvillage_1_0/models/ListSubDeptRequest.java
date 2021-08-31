@@ -4,7 +4,7 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSubDeptRequest extends TeaModel {
-    // 真实请求的组织corpId
+    // 下属组织的组织ID，比如下属镇、村的corpId
     @NameInMap("subCorpId")
     public String subCorpId;
 

@@ -4,15 +4,19 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListResidentSubDeptsResponseBody extends TeaModel {
-    @NameInMap("list")
-    public java.util.List<ListResidentSubDeptsResponseBodyList> list;
+    // 组户列表
+    @NameInMap("departmentList")
+    public java.util.List<ListResidentSubDeptsResponseBodyDepartmentList> departmentList;
 
+    // 游标
     @NameInMap("nextCursor")
     public Long nextCursor;
 
+    // 是否还有记录
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    // 总数
     @NameInMap("total")
     public Long total;
 
@@ -21,12 +25,12 @@ public class ListResidentSubDeptsResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListResidentSubDeptsResponseBody setList(java.util.List<ListResidentSubDeptsResponseBodyList> list) {
-        this.list = list;
+    public ListResidentSubDeptsResponseBody setDepartmentList(java.util.List<ListResidentSubDeptsResponseBodyDepartmentList> departmentList) {
+        this.departmentList = departmentList;
         return this;
     }
-    public java.util.List<ListResidentSubDeptsResponseBodyList> getList() {
-        return this.list;
+    public java.util.List<ListResidentSubDeptsResponseBodyDepartmentList> getDepartmentList() {
+        return this.departmentList;
     }
 
     public ListResidentSubDeptsResponseBody setNextCursor(Long nextCursor) {
@@ -53,43 +57,46 @@ public class ListResidentSubDeptsResponseBody extends TeaModel {
         return this.total;
     }
 
-    public static class ListResidentSubDeptsResponseBodyList extends TeaModel {
-        @NameInMap("deptId")
-        public Long deptId;
+    public static class ListResidentSubDeptsResponseBodyDepartmentList extends TeaModel {
+        // 下属组织的部门ID
+        @NameInMap("departmentId")
+        public Long departmentId;
 
-        @NameInMap("name")
-        public String name;
+        // 组户名称
+        @NameInMap("departmentName")
+        public String departmentName;
 
-        @NameInMap("superId")
-        public Long superId;
+        // 父部门ID
+        @NameInMap("superDepartmentId")
+        public Long superDepartmentId;
 
-        public static ListResidentSubDeptsResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            ListResidentSubDeptsResponseBodyList self = new ListResidentSubDeptsResponseBodyList();
+        public static ListResidentSubDeptsResponseBodyDepartmentList build(java.util.Map<String, ?> map) throws Exception {
+            ListResidentSubDeptsResponseBodyDepartmentList self = new ListResidentSubDeptsResponseBodyDepartmentList();
             return TeaModel.build(map, self);
         }
 
-        public ListResidentSubDeptsResponseBodyList setDeptId(Long deptId) {
-            this.deptId = deptId;
+        public ListResidentSubDeptsResponseBodyDepartmentList setDepartmentId(Long departmentId) {
+            this.departmentId = departmentId;
             return this;
         }
-        public Long getDeptId() {
-            return this.deptId;
+        public Long getDepartmentId() {
+            return this.departmentId;
         }
 
-        public ListResidentSubDeptsResponseBodyList setName(String name) {
-            this.name = name;
+        public ListResidentSubDeptsResponseBodyDepartmentList setDepartmentName(String departmentName) {
+            this.departmentName = departmentName;
             return this;
         }
-        public String getName() {
-            return this.name;
+        public String getDepartmentName() {
+            return this.departmentName;
         }
 
-        public ListResidentSubDeptsResponseBodyList setSuperId(Long superId) {
-            this.superId = superId;
+        public ListResidentSubDeptsResponseBodyDepartmentList setSuperDepartmentId(Long superDepartmentId) {
+            this.superDepartmentId = superDepartmentId;
             return this;
         }
-        public Long getSuperId() {
-            return this.superId;
+        public Long getSuperDepartmentId() {
+            return this.superDepartmentId;
         }
 
     }

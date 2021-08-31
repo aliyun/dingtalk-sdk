@@ -12,9 +12,9 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 分页数据
-    @NameInMap("list")
-    public java.util.List<ListResidentDeptUsersResponseBodyList> list;
+    // 用户列表
+    @NameInMap("userList")
+    public java.util.List<ListResidentDeptUsersResponseBodyUserList> userList;
 
     public static ListResidentDeptUsersResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListResidentDeptUsersResponseBody self = new ListResidentDeptUsersResponseBody();
@@ -37,49 +37,49 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public ListResidentDeptUsersResponseBody setList(java.util.List<ListResidentDeptUsersResponseBodyList> list) {
-        this.list = list;
+    public ListResidentDeptUsersResponseBody setUserList(java.util.List<ListResidentDeptUsersResponseBodyUserList> userList) {
+        this.userList = userList;
         return this;
     }
-    public java.util.List<ListResidentDeptUsersResponseBodyList> getList() {
-        return this.list;
+    public java.util.List<ListResidentDeptUsersResponseBodyUserList> getUserList() {
+        return this.userList;
     }
 
-    public static class ListResidentDeptUsersResponseBodyListRoles extends TeaModel {
+    public static class ListResidentDeptUsersResponseBodyUserListRoles extends TeaModel {
         // 标签id
-        @NameInMap("id")
-        public Long id;
+        @NameInMap("tagId")
+        public Long tagId;
 
         // 标签名称
-        @NameInMap("name")
-        public String name;
+        @NameInMap("tagName")
+        public String tagName;
 
         // 标签名称 tagCode
         @NameInMap("tagCode")
         public String tagCode;
 
-        public static ListResidentDeptUsersResponseBodyListRoles build(java.util.Map<String, ?> map) throws Exception {
-            ListResidentDeptUsersResponseBodyListRoles self = new ListResidentDeptUsersResponseBodyListRoles();
+        public static ListResidentDeptUsersResponseBodyUserListRoles build(java.util.Map<String, ?> map) throws Exception {
+            ListResidentDeptUsersResponseBodyUserListRoles self = new ListResidentDeptUsersResponseBodyUserListRoles();
             return TeaModel.build(map, self);
         }
 
-        public ListResidentDeptUsersResponseBodyListRoles setId(Long id) {
-            this.id = id;
+        public ListResidentDeptUsersResponseBodyUserListRoles setTagId(Long tagId) {
+            this.tagId = tagId;
             return this;
         }
-        public Long getId() {
-            return this.id;
+        public Long getTagId() {
+            return this.tagId;
         }
 
-        public ListResidentDeptUsersResponseBodyListRoles setName(String name) {
-            this.name = name;
+        public ListResidentDeptUsersResponseBodyUserListRoles setTagName(String tagName) {
+            this.tagName = tagName;
             return this;
         }
-        public String getName() {
-            return this.name;
+        public String getTagName() {
+            return this.tagName;
         }
 
-        public ListResidentDeptUsersResponseBodyListRoles setTagCode(String tagCode) {
+        public ListResidentDeptUsersResponseBodyUserListRoles setTagCode(String tagCode) {
             this.tagCode = tagCode;
             return this;
         }
@@ -89,7 +89,7 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
 
     }
 
-    public static class ListResidentDeptUsersResponseBodyList extends TeaModel {
+    public static class ListResidentDeptUsersResponseBodyUserList extends TeaModel {
         // 员工id
         @NameInMap("userId")
         public String userId;
@@ -100,7 +100,7 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
 
         // 标签列表
         @NameInMap("roles")
-        public java.util.List<ListResidentDeptUsersResponseBodyListRoles> roles;
+        public java.util.List<ListResidentDeptUsersResponseBodyUserListRoles> roles;
 
         // 员工特征
         @NameInMap("feature")
@@ -110,12 +110,12 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
 
-        public static ListResidentDeptUsersResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            ListResidentDeptUsersResponseBodyList self = new ListResidentDeptUsersResponseBodyList();
+        public static ListResidentDeptUsersResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
+            ListResidentDeptUsersResponseBodyUserList self = new ListResidentDeptUsersResponseBodyUserList();
             return TeaModel.build(map, self);
         }
 
-        public ListResidentDeptUsersResponseBodyList setUserId(String userId) {
+        public ListResidentDeptUsersResponseBodyUserList setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -123,7 +123,7 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public ListResidentDeptUsersResponseBodyList setName(String name) {
+        public ListResidentDeptUsersResponseBodyUserList setName(String name) {
             this.name = name;
             return this;
         }
@@ -131,15 +131,15 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
             return this.name;
         }
 
-        public ListResidentDeptUsersResponseBodyList setRoles(java.util.List<ListResidentDeptUsersResponseBodyListRoles> roles) {
+        public ListResidentDeptUsersResponseBodyUserList setRoles(java.util.List<ListResidentDeptUsersResponseBodyUserListRoles> roles) {
             this.roles = roles;
             return this;
         }
-        public java.util.List<ListResidentDeptUsersResponseBodyListRoles> getRoles() {
+        public java.util.List<ListResidentDeptUsersResponseBodyUserListRoles> getRoles() {
             return this.roles;
         }
 
-        public ListResidentDeptUsersResponseBodyList setFeature(String feature) {
+        public ListResidentDeptUsersResponseBodyUserList setFeature(String feature) {
             this.feature = feature;
             return this;
         }
@@ -147,7 +147,7 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
             return this.feature;
         }
 
-        public ListResidentDeptUsersResponseBodyList setUnionId(String unionId) {
+        public ListResidentDeptUsersResponseBodyUserList setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }

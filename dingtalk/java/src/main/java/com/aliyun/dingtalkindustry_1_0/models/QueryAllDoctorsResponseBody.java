@@ -58,7 +58,7 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
     }
 
     public static class QueryAllDoctorsResponseBodyContent extends TeaModel {
-        // 用户Id
+        // 租户下staffId
         @NameInMap("uid")
         public String uid;
 
@@ -69,6 +69,34 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         // 工号
         @NameInMap("jobNum")
         public String jobNum;
+
+        // 用户id
+        @NameInMap("id")
+        public Long id;
+
+        // 用户创建时间
+        @NameInMap("gmtCreateStr")
+        public String gmtCreateStr;
+
+        // 用户最后修改时间
+        @NameInMap("gmtModifiedStr")
+        public String gmtModifiedStr;
+
+        // 租户CorpId
+        @NameInMap("corpId")
+        public String corpId;
+
+        // 租户内staffId
+        @NameInMap("userCode")
+        public String userCode;
+
+        // 关联的部门id
+        @NameInMap("deptCode")
+        public String deptCode;
+
+        // 状态0-有效，1-删除
+        @NameInMap("status")
+        public Integer status;
 
         public static QueryAllDoctorsResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDoctorsResponseBodyContent self = new QueryAllDoctorsResponseBodyContent();
@@ -97,6 +125,62 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         }
         public String getJobNum() {
             return this.jobNum;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setGmtCreateStr(String gmtCreateStr) {
+            this.gmtCreateStr = gmtCreateStr;
+            return this;
+        }
+        public String getGmtCreateStr() {
+            return this.gmtCreateStr;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setGmtModifiedStr(String gmtModifiedStr) {
+            this.gmtModifiedStr = gmtModifiedStr;
+            return this;
+        }
+        public String getGmtModifiedStr() {
+            return this.gmtModifiedStr;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setUserCode(String userCode) {
+            this.userCode = userCode;
+            return this;
+        }
+        public String getUserCode() {
+            return this.userCode;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setDeptCode(String deptCode) {
+            this.deptCode = deptCode;
+            return this;
+        }
+        public String getDeptCode() {
+            return this.deptCode;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
         }
 
     }

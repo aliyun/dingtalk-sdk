@@ -71,12 +71,12 @@ public class GetResidentUserInfoResponseBody extends TeaModel {
 
     public static class GetResidentUserInfoResponseBodyRoles extends TeaModel {
         // 标签id
-        @NameInMap("id")
-        public Long id;
+        @NameInMap("roleId")
+        public Long roleId;
 
         // 标签名称
-        @NameInMap("name")
-        public String name;
+        @NameInMap("roleName")
+        public String roleName;
 
         // 标签名称 tagCode
         @NameInMap("tagCode")
@@ -87,20 +87,20 @@ public class GetResidentUserInfoResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public GetResidentUserInfoResponseBodyRoles setId(Long id) {
-            this.id = id;
+        public GetResidentUserInfoResponseBodyRoles setRoleId(Long roleId) {
+            this.roleId = roleId;
             return this;
         }
-        public Long getId() {
-            return this.id;
+        public Long getRoleId() {
+            return this.roleId;
         }
 
-        public GetResidentUserInfoResponseBodyRoles setName(String name) {
-            this.name = name;
+        public GetResidentUserInfoResponseBodyRoles setRoleName(String roleName) {
+            this.roleName = roleName;
             return this;
         }
-        public String getName() {
-            return this.name;
+        public String getRoleName() {
+            return this.roleName;
         }
 
         public GetResidentUserInfoResponseBodyRoles setTagCode(String tagCode) {

@@ -57,10 +57,6 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
         @NameInMap("content")
         public String content;
 
-        // 扩展字段
-        @NameInMap("extension")
-        public String extension;
-
         public static GetOaOperatorLogListResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             GetOaOperatorLogListResponseBodyData self = new GetOaOperatorLogListResponseBodyData();
             return TeaModel.build(map, self);
@@ -112,14 +108,6 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
         }
         public String getContent() {
             return this.content;
-        }
-
-        public GetOaOperatorLogListResponseBodyData setExtension(String extension) {
-            this.extension = extension;
-            return this;
-        }
-        public String getExtension() {
-            return this.extension;
         }
 
     }

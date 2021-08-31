@@ -80,13 +80,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetVillageOrgInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/corps/" + subCorpId + "", "json", req, runtime), new GetVillageOrgInfoResponse());
     }
 
-    public ListResidentDeptUsersResponse listResidentDeptUsers(String deptId, ListResidentDeptUsersRequest request) throws Exception {
+    public ListResidentDeptUsersResponse listResidentDeptUsers(String departmentId, ListResidentDeptUsersRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListResidentDeptUsersHeaders headers = new ListResidentDeptUsersHeaders();
-        return this.listResidentDeptUsersWithOptions(deptId, request, headers, runtime);
+        return this.listResidentDeptUsersWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListResidentDeptUsersResponse listResidentDeptUsersWithOptions(String deptId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListResidentDeptUsersResponse listResidentDeptUsersWithOptions(String departmentId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
@@ -118,16 +118,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/users", "json", req, runtime), new ListResidentDeptUsersResponse());
+        return TeaModel.toModel(this.doROARequest("ListResidentDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/users", "json", req, runtime), new ListResidentDeptUsersResponse());
     }
 
-    public ListDeptSimpleUsersResponse listDeptSimpleUsers(String deptId, ListDeptSimpleUsersRequest request) throws Exception {
+    public ListDeptSimpleUsersResponse listDeptSimpleUsers(String departmentId, ListDeptSimpleUsersRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListDeptSimpleUsersHeaders headers = new ListDeptSimpleUsersHeaders();
-        return this.listDeptSimpleUsersWithOptions(deptId, request, headers, runtime);
+        return this.listDeptSimpleUsersWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListDeptSimpleUsersResponse listDeptSimpleUsersWithOptions(String deptId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListDeptSimpleUsersResponse listDeptSimpleUsersWithOptions(String departmentId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
@@ -167,7 +167,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/simpleUsers", "json", req, runtime), new ListDeptSimpleUsersResponse());
+        return TeaModel.toModel(this.doROARequest("ListDeptSimpleUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/simpleUsers", "json", req, runtime), new ListDeptSimpleUsersResponse());
     }
 
     public GetUserByUnionIdResponse getUserByUnionId(GetUserByUnionIdRequest request) throws Exception {
@@ -236,13 +236,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetResidentDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/departments/" + departmentId + "", "json", req, runtime), new GetResidentDeptResponse());
     }
 
-    public GetResidentUserInfoResponse getResidentUserInfo(String deptId, String userId, GetResidentUserInfoRequest request) throws Exception {
+    public GetResidentUserInfoResponse getResidentUserInfo(String departmentId, String userId, GetResidentUserInfoRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetResidentUserInfoHeaders headers = new GetResidentUserInfoHeaders();
-        return this.getResidentUserInfoWithOptions(deptId, userId, request, headers, runtime);
+        return this.getResidentUserInfoWithOptions(departmentId, userId, request, headers, runtime);
     }
 
-    public GetResidentUserInfoResponse getResidentUserInfoWithOptions(String deptId, String userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetResidentUserInfoResponse getResidentUserInfoWithOptions(String departmentId, String userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
@@ -262,7 +262,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/users/" + userId + "", "json", req, runtime), new GetResidentUserInfoResponse());
+        return TeaModel.toModel(this.doROARequest("GetResidentUserInfo", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/users/" + userId + "", "json", req, runtime), new GetResidentUserInfoResponse());
     }
 
     public GetDeptResponse getDept(String departmentId, GetDeptRequest request) throws Exception {
@@ -311,8 +311,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("subCorpId", request.subCorpId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
-            query.put("deptId", request.deptId);
+        if (!com.aliyun.teautil.Common.isUnset(request.departmentId)) {
+            query.put("departmentId", request.departmentId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -331,13 +331,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListParentByDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/listParentByDepartment", "json", req, runtime), new ListParentByDeptResponse());
     }
 
-    public ListDeptUserIdsResponse listDeptUserIds(String deptId, ListDeptUserIdsRequest request) throws Exception {
+    public ListDeptUserIdsResponse listDeptUserIds(String departmentId, ListDeptUserIdsRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListDeptUserIdsHeaders headers = new ListDeptUserIdsHeaders();
-        return this.listDeptUserIdsWithOptions(deptId, request, headers, runtime);
+        return this.listDeptUserIdsWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListDeptUserIdsResponse listDeptUserIdsWithOptions(String deptId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListDeptUserIdsResponse listDeptUserIdsWithOptions(String departmentId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
@@ -357,7 +357,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/userIds", "json", req, runtime), new ListDeptUserIdsResponse());
+        return TeaModel.toModel(this.doROARequest("ListDeptUserIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/userIds", "json", req, runtime), new ListDeptUserIdsResponse());
     }
 
     public ListSimpleUsersByRoleResponse listSimpleUsersByRole(ListSimpleUsersByRoleRequest request) throws Exception {
@@ -401,13 +401,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListSimpleUsersByRole", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/users/listByRole", "json", req, runtime), new ListSimpleUsersByRoleResponse());
     }
 
-    public ListResidentSubDeptsResponse listResidentSubDepts(String deptId, ListResidentSubDeptsRequest request) throws Exception {
+    public ListResidentSubDeptsResponse listResidentSubDepts(String departmentId, ListResidentSubDeptsRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListResidentSubDeptsHeaders headers = new ListResidentSubDeptsHeaders();
-        return this.listResidentSubDeptsWithOptions(deptId, request, headers, runtime);
+        return this.listResidentSubDeptsWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListResidentSubDeptsResponse listResidentSubDeptsWithOptions(String deptId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListResidentSubDeptsResponse listResidentSubDeptsWithOptions(String departmentId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
@@ -435,7 +435,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + deptId + "/subDepartments", "json", req, runtime), new ListResidentSubDeptsResponse());
+        return TeaModel.toModel(this.doROARequest("ListResidentSubDepts", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentDepartments/" + departmentId + "/subDepartments", "json", req, runtime), new ListResidentSubDeptsResponse());
     }
 
     public ListParentByUserResponse listParentByUser(ListParentByUserRequest request) throws Exception {
@@ -471,13 +471,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListParentByUser", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/listParentByUser", "json", req, runtime), new ListParentByUserResponse());
     }
 
-    public ListSubDeptResponse listSubDept(String deptId, ListSubDeptRequest request) throws Exception {
+    public ListSubDeptResponse listSubDept(String departmentId, ListSubDeptRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListSubDeptHeaders headers = new ListSubDeptHeaders();
-        return this.listSubDeptWithOptions(deptId, request, headers, runtime);
+        return this.listSubDeptWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListSubDeptResponse listSubDeptWithOptions(String deptId, ListSubDeptRequest request, ListSubDeptHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListSubDeptResponse listSubDeptWithOptions(String departmentId, ListSubDeptRequest request, ListSubDeptHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
@@ -501,7 +501,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListSubDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/subDepartments", "json", req, runtime), new ListSubDeptResponse());
+        return TeaModel.toModel(this.doROARequest("ListSubDept", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/subDepartments", "json", req, runtime), new ListSubDeptResponse());
     }
 
     public GetUserResponse getUser(String userId, GetUserRequest request) throws Exception {
@@ -537,13 +537,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetUser", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/users/getByUserId", "json", req, runtime), new GetUserResponse());
     }
 
-    public ListDeptUsersResponse listDeptUsers(String deptId, ListDeptUsersRequest request) throws Exception {
+    public ListDeptUsersResponse listDeptUsers(String departmentId, ListDeptUsersRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListDeptUsersHeaders headers = new ListDeptUsersHeaders();
-        return this.listDeptUsersWithOptions(deptId, request, headers, runtime);
+        return this.listDeptUsersWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListDeptUsersResponse listDeptUsersWithOptions(String deptId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListDeptUsersResponse listDeptUsersWithOptions(String departmentId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
@@ -583,7 +583,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/users", "json", req, runtime), new ListDeptUsersResponse());
+        return TeaModel.toModel(this.doROARequest("ListDeptUsers", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/users", "json", req, runtime), new ListDeptUsersResponse());
     }
 
     public ListResidentUserInfosResponse listResidentUserInfos(ListResidentUserInfosRequest request) throws Exception {
@@ -625,13 +625,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListResidentUserInfos", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/residentUsers/getByUserIds", "json", req, runtime), new ListResidentUserInfosResponse());
     }
 
-    public ListSubDeptIdsResponse listSubDeptIds(String deptId, ListSubDeptIdsRequest request) throws Exception {
+    public ListSubDeptIdsResponse listSubDeptIds(String departmentId, ListSubDeptIdsRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListSubDeptIdsHeaders headers = new ListSubDeptIdsHeaders();
-        return this.listSubDeptIdsWithOptions(deptId, request, headers, runtime);
+        return this.listSubDeptIdsWithOptions(departmentId, request, headers, runtime);
     }
 
-    public ListSubDeptIdsResponse listSubDeptIdsWithOptions(String deptId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public ListSubDeptIdsResponse listSubDeptIdsWithOptions(String departmentId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
@@ -651,6 +651,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + deptId + "/subDepartmentIds", "json", req, runtime), new ListSubDeptIdsResponse());
+        return TeaModel.toModel(this.doROARequest("ListSubDeptIds", "village_1.0", "HTTP", "GET", "AK", "/v1.0/village/departments/" + departmentId + "/subDepartmentIds", "json", req, runtime), new ListSubDeptIdsResponse());
     }
 }

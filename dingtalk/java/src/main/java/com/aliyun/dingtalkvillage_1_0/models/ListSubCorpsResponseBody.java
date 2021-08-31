@@ -5,30 +5,30 @@ import com.aliyun.tea.*;
 
 public class ListSubCorpsResponseBody extends TeaModel {
     // result
-    @NameInMap("result")
-    public java.util.List<ListSubCorpsResponseBodyResult> result;
+    @NameInMap("corpList")
+    public java.util.List<ListSubCorpsResponseBodyCorpList> corpList;
 
     public static ListSubCorpsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ListSubCorpsResponseBody self = new ListSubCorpsResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public ListSubCorpsResponseBody setResult(java.util.List<ListSubCorpsResponseBodyResult> result) {
-        this.result = result;
+    public ListSubCorpsResponseBody setCorpList(java.util.List<ListSubCorpsResponseBodyCorpList> corpList) {
+        this.corpList = corpList;
         return this;
     }
-    public java.util.List<ListSubCorpsResponseBodyResult> getResult() {
-        return this.result;
+    public java.util.List<ListSubCorpsResponseBodyCorpList> getCorpList() {
+        return this.corpList;
     }
 
-    public static class ListSubCorpsResponseBodyResult extends TeaModel {
-        // 企业corpid
+    public static class ListSubCorpsResponseBodyCorpList extends TeaModel {
+        // 组织corpid
         @NameInMap("corpId")
         public String corpId;
 
-        // 企业名字
-        @NameInMap("name")
-        public String name;
+        // 组织名字
+        @NameInMap("corpName")
+        public String corpName;
 
         // 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
         @NameInMap("regionType")
@@ -42,20 +42,20 @@ public class ListSubCorpsResponseBody extends TeaModel {
         @NameInMap("regionLocation")
         public String regionLocation;
 
-        // 企业行业码
+        // 组织行业码
         @NameInMap("industryCode")
         public Integer industryCode;
 
-        // 企业行业名称
+        // 组织行业名称
         @NameInMap("industry")
         public String industry;
 
-        public static ListSubCorpsResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
-            ListSubCorpsResponseBodyResult self = new ListSubCorpsResponseBodyResult();
+        public static ListSubCorpsResponseBodyCorpList build(java.util.Map<String, ?> map) throws Exception {
+            ListSubCorpsResponseBodyCorpList self = new ListSubCorpsResponseBodyCorpList();
             return TeaModel.build(map, self);
         }
 
-        public ListSubCorpsResponseBodyResult setCorpId(String corpId) {
+        public ListSubCorpsResponseBodyCorpList setCorpId(String corpId) {
             this.corpId = corpId;
             return this;
         }
@@ -63,15 +63,15 @@ public class ListSubCorpsResponseBody extends TeaModel {
             return this.corpId;
         }
 
-        public ListSubCorpsResponseBodyResult setName(String name) {
-            this.name = name;
+        public ListSubCorpsResponseBodyCorpList setCorpName(String corpName) {
+            this.corpName = corpName;
             return this;
         }
-        public String getName() {
-            return this.name;
+        public String getCorpName() {
+            return this.corpName;
         }
 
-        public ListSubCorpsResponseBodyResult setRegionType(String regionType) {
+        public ListSubCorpsResponseBodyCorpList setRegionType(String regionType) {
             this.regionType = regionType;
             return this;
         }
@@ -79,7 +79,7 @@ public class ListSubCorpsResponseBody extends TeaModel {
             return this.regionType;
         }
 
-        public ListSubCorpsResponseBodyResult setRegionId(String regionId) {
+        public ListSubCorpsResponseBodyCorpList setRegionId(String regionId) {
             this.regionId = regionId;
             return this;
         }
@@ -87,7 +87,7 @@ public class ListSubCorpsResponseBody extends TeaModel {
             return this.regionId;
         }
 
-        public ListSubCorpsResponseBodyResult setRegionLocation(String regionLocation) {
+        public ListSubCorpsResponseBodyCorpList setRegionLocation(String regionLocation) {
             this.regionLocation = regionLocation;
             return this;
         }
@@ -95,7 +95,7 @@ public class ListSubCorpsResponseBody extends TeaModel {
             return this.regionLocation;
         }
 
-        public ListSubCorpsResponseBodyResult setIndustryCode(Integer industryCode) {
+        public ListSubCorpsResponseBodyCorpList setIndustryCode(Integer industryCode) {
             this.industryCode = industryCode;
             return this;
         }
@@ -103,7 +103,7 @@ public class ListSubCorpsResponseBody extends TeaModel {
             return this.industryCode;
         }
 
-        public ListSubCorpsResponseBodyResult setIndustry(String industry) {
+        public ListSubCorpsResponseBodyCorpList setIndustry(String industry) {
             this.industry = industry;
             return this;
         }

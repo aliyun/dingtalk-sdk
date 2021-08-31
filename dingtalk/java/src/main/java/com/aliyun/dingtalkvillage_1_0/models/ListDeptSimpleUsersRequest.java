@@ -16,7 +16,7 @@ public class ListDeptSimpleUsersRequest extends TeaModel {
     @NameInMap("containAccessLimit")
     public Boolean containAccessLimit;
 
-    // subCorpId
+    // 下属组织的组织ID，比如下属镇、村的corpId
     @NameInMap("subCorpId")
     public String subCorpId;
 

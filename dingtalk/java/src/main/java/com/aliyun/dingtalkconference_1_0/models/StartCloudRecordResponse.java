@@ -1,0 +1,36 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkconference_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class StartCloudRecordResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    @NameInMap("body")
+    @Validation(required = true)
+    public StartCloudRecordResponseBody body;
+
+    public static StartCloudRecordResponse build(java.util.Map<String, ?> map) throws Exception {
+        StartCloudRecordResponse self = new StartCloudRecordResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public StartCloudRecordResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    public StartCloudRecordResponse setBody(StartCloudRecordResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public StartCloudRecordResponseBody getBody() {
+        return this.body;
+    }
+
+}

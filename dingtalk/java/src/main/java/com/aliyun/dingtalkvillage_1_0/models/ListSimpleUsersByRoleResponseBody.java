@@ -4,15 +4,15 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSimpleUsersByRoleResponseBody extends TeaModel {
-    @NameInMap("list")
-    public java.util.List<ListSimpleUsersByRoleResponseBodyList> list;
+    // 用户列表
+    @NameInMap("userList")
+    public java.util.List<ListSimpleUsersByRoleResponseBodyUserList> userList;
 
-    @NameInMap("nextCursorString")
-    public String nextCursorString;
-
+    // 下一条记录
     @NameInMap("nextCursor")
     public Long nextCursor;
 
+    // 是否还有记录
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -21,20 +21,12 @@ public class ListSimpleUsersByRoleResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public ListSimpleUsersByRoleResponseBody setList(java.util.List<ListSimpleUsersByRoleResponseBodyList> list) {
-        this.list = list;
+    public ListSimpleUsersByRoleResponseBody setUserList(java.util.List<ListSimpleUsersByRoleResponseBodyUserList> userList) {
+        this.userList = userList;
         return this;
     }
-    public java.util.List<ListSimpleUsersByRoleResponseBodyList> getList() {
-        return this.list;
-    }
-
-    public ListSimpleUsersByRoleResponseBody setNextCursorString(String nextCursorString) {
-        this.nextCursorString = nextCursorString;
-        return this;
-    }
-    public String getNextCursorString() {
-        return this.nextCursorString;
+    public java.util.List<ListSimpleUsersByRoleResponseBodyUserList> getUserList() {
+        return this.userList;
     }
 
     public ListSimpleUsersByRoleResponseBody setNextCursor(Long nextCursor) {
@@ -53,25 +45,29 @@ public class ListSimpleUsersByRoleResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public static class ListSimpleUsersByRoleResponseBodyList extends TeaModel {
+    public static class ListSimpleUsersByRoleResponseBodyUserList extends TeaModel {
+        // 用户ID
         @NameInMap("userId")
         public String userId;
 
+        // unionId
         @NameInMap("unionId")
         public String unionId;
 
+        // 工号
         @NameInMap("jobNumber")
         public String jobNumber;
 
+        // 姓名
         @NameInMap("name")
         public String name;
 
-        public static ListSimpleUsersByRoleResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            ListSimpleUsersByRoleResponseBodyList self = new ListSimpleUsersByRoleResponseBodyList();
+        public static ListSimpleUsersByRoleResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
+            ListSimpleUsersByRoleResponseBodyUserList self = new ListSimpleUsersByRoleResponseBodyUserList();
             return TeaModel.build(map, self);
         }
 
-        public ListSimpleUsersByRoleResponseBodyList setUserId(String userId) {
+        public ListSimpleUsersByRoleResponseBodyUserList setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -79,7 +75,7 @@ public class ListSimpleUsersByRoleResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public ListSimpleUsersByRoleResponseBodyList setUnionId(String unionId) {
+        public ListSimpleUsersByRoleResponseBodyUserList setUnionId(String unionId) {
             this.unionId = unionId;
             return this;
         }
@@ -87,7 +83,7 @@ public class ListSimpleUsersByRoleResponseBody extends TeaModel {
             return this.unionId;
         }
 
-        public ListSimpleUsersByRoleResponseBodyList setJobNumber(String jobNumber) {
+        public ListSimpleUsersByRoleResponseBodyUserList setJobNumber(String jobNumber) {
             this.jobNumber = jobNumber;
             return this;
         }
@@ -95,7 +91,7 @@ public class ListSimpleUsersByRoleResponseBody extends TeaModel {
             return this.jobNumber;
         }
 
-        public ListSimpleUsersByRoleResponseBodyList setName(String name) {
+        public ListSimpleUsersByRoleResponseBodyUserList setName(String name) {
             this.name = name;
             return this;
         }
