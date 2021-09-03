@@ -89,6 +89,88 @@ export class CheckUserTaskStatusResponse extends $tea.Model {
   }
 }
 
+export class CheckUserTasksStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckUserTasksStatusRequest extends $tea.Model {
+  provinceCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      provinceCode: 'provinceCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      provinceCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckUserTasksStatusResponseBody extends $tea.Model {
+  status?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckUserTasksStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckUserTasksStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckUserTasksStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -129,6 +211,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CheckUserTaskStatusResponse>(await this.doROARequest("CheckUserTaskStatus", "occupationauth_1.0", "HTTP", "POST", "AK", `/v1.0/occupationauth/auths/userTasks`, "json", req, runtime), new CheckUserTaskStatusResponse({}));
+  }
+
+  async checkUserTasksStatus(request: CheckUserTasksStatusRequest): Promise<CheckUserTasksStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckUserTasksStatusHeaders({ });
+    return await this.checkUserTasksStatusWithOptions(request, headers, runtime);
+  }
+
+  async checkUserTasksStatusWithOptions(request: CheckUserTasksStatusRequest, headers: CheckUserTasksStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTasksStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.provinceCode)) {
+      query["provinceCode"] = request.provinceCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CheckUserTasksStatusResponse>(await this.doROARequest("CheckUserTasksStatus", "occupationauth_1.0", "HTTP", "POST", "AK", `/v1.0/occupationauth/userTasks/check`, "json", req, runtime), new CheckUserTasksStatusResponse({}));
   }
 
 }

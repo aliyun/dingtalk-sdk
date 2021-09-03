@@ -453,19 +453,19 @@ export class QueryCityCarApplyResponse extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
-  id?: number;
-  status?: number;
+  flightOrderId?: number;
+  flightOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      status: 'status',
+      flightOrderId: 'flightOrderId',
+      flightOrderStatus: 'flightOrderStatus',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      status: 'number',
+      flightOrderId: 'number',
+      flightOrderStatus: 'number',
     };
   }
 
@@ -475,19 +475,19 @@ export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
-  id?: number;
-  status?: number;
+  trainOrderId?: number;
+  trainOrderstatus?: number;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      status: 'status',
+      trainOrderId: 'trainOrderId',
+      trainOrderstatus: 'trainOrderstatus',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      status: 'number',
+      trainOrderId: 'number',
+      trainOrderstatus: 'number',
     };
   }
 
@@ -497,19 +497,19 @@ export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
-  id?: number;
-  orderStatus?: number;
+  hotelOrderId?: number;
+  hotelOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      orderStatus: 'orderStatus',
+      hotelOrderId: 'hotelOrderId',
+      hotelOrderStatus: 'hotelOrderStatus',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      orderStatus: 'number',
+      hotelOrderId: 'number',
+      hotelOrderStatus: 'number',
     };
   }
 
@@ -519,19 +519,19 @@ export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
-  id?: number;
-  orderStatus?: number;
+  vehicleOrderId?: number;
+  vehicleOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      orderStatus: 'orderStatus',
+      vehicleOrderId: 'vehicleOrderId',
+      vehicleOrderStatus: 'vehicleOrderStatus',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      orderStatus: 'number',
+      vehicleOrderId: 'number',
+      vehicleOrderStatus: 'number',
     };
   }
 

@@ -416,7 +416,7 @@ export class GetFormDataByIDResponse extends $tea.Model {
   }
 }
 
-export class SearchFormDatasResponseBodyDataOriginatorName extends $tea.Model {
+export class SearchFormDatasResponseBodyDataOriginatorUserName extends $tea.Model {
   nameInChinese?: string;
   nameInEnglish?: string;
   type?: string;
@@ -443,13 +443,13 @@ export class SearchFormDatasResponseBodyDataOriginatorName extends $tea.Model {
 
 export class SearchFormDatasResponseBodyDataOriginator extends $tea.Model {
   userId?: string;
-  name?: SearchFormDatasResponseBodyDataOriginatorName;
+  userName?: SearchFormDatasResponseBodyDataOriginatorUserName;
   departmentName?: string;
   email?: string;
   static names(): { [key: string]: string } {
     return {
       userId: 'userId',
-      name: 'name',
+      userName: 'userName',
       departmentName: 'departmentName',
       email: 'email',
     };
@@ -458,7 +458,7 @@ export class SearchFormDatasResponseBodyDataOriginator extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       userId: 'string',
-      name: SearchFormDatasResponseBodyDataOriginatorName,
+      userName: SearchFormDatasResponseBodyDataOriginatorUserName,
       departmentName: 'string',
       email: 'string',
     };
@@ -469,7 +469,7 @@ export class SearchFormDatasResponseBodyDataOriginator extends $tea.Model {
   }
 }
 
-export class SearchFormDatasResponseBodyDataModifyUserName extends $tea.Model {
+export class SearchFormDatasResponseBodyDataModifyUserUserName extends $tea.Model {
   nameInChinese?: string;
   nameInEnglish?: string;
   type?: string;
@@ -496,13 +496,13 @@ export class SearchFormDatasResponseBodyDataModifyUserName extends $tea.Model {
 
 export class SearchFormDatasResponseBodyDataModifyUser extends $tea.Model {
   userId?: string;
-  name?: SearchFormDatasResponseBodyDataModifyUserName;
+  userName?: SearchFormDatasResponseBodyDataModifyUserUserName;
   departmentName?: string;
   email?: string;
   static names(): { [key: string]: string } {
     return {
       userId: 'userId',
-      name: 'name',
+      userName: 'userName',
       departmentName: 'departmentName',
       email: 'email',
     };
@@ -511,7 +511,7 @@ export class SearchFormDatasResponseBodyDataModifyUser extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       userId: 'string',
-      name: SearchFormDatasResponseBodyDataModifyUserName,
+      userName: SearchFormDatasResponseBodyDataModifyUserUserName,
       departmentName: 'string',
       email: 'string',
     };
@@ -523,8 +523,8 @@ export class SearchFormDatasResponseBodyDataModifyUser extends $tea.Model {
 }
 
 export class SearchFormDatasResponseBodyData extends $tea.Model {
-  id?: number;
-  formInstId?: string;
+  dataId?: number;
+  formInstanceId?: string;
   createdTimeGMT?: string;
   modifiedTimeGMT?: string;
   formUuid?: string;
@@ -536,13 +536,13 @@ export class SearchFormDatasResponseBodyData extends $tea.Model {
   serialNo?: string;
   instanceValue?: string;
   version?: number;
-  creator?: string;
-  modifier?: string;
+  creatorUserId?: string;
+  modifierUserId?: string;
   sequence?: string;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
-      formInstId: 'formInstId',
+      dataId: 'dataId',
+      formInstanceId: 'formInstanceId',
       createdTimeGMT: 'createdTimeGMT',
       modifiedTimeGMT: 'modifiedTimeGMT',
       formUuid: 'formUuid',
@@ -554,16 +554,16 @@ export class SearchFormDatasResponseBodyData extends $tea.Model {
       serialNo: 'serialNo',
       instanceValue: 'instanceValue',
       version: 'version',
-      creator: 'creator',
-      modifier: 'modifier',
+      creatorUserId: 'creatorUserId',
+      modifierUserId: 'modifierUserId',
       sequence: 'sequence',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'number',
-      formInstId: 'string',
+      dataId: 'number',
+      formInstanceId: 'string',
       createdTimeGMT: 'string',
       modifiedTimeGMT: 'string',
       formUuid: 'string',
@@ -575,8 +575,8 @@ export class SearchFormDatasResponseBodyData extends $tea.Model {
       serialNo: 'string',
       instanceValue: 'string',
       version: 'number',
-      creator: 'string',
-      modifier: 'string',
+      creatorUserId: 'string',
+      modifierUserId: 'string',
       sequence: 'string',
     };
   }
