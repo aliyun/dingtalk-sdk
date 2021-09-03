@@ -45,7 +45,7 @@ public class SearchFormDatasResponseBody extends TeaModel {
         return this.data;
     }
 
-    public static class SearchFormDatasResponseBodyDataOriginatorName extends TeaModel {
+    public static class SearchFormDatasResponseBodyDataOriginatorUserName extends TeaModel {
         // 中文名称
         @NameInMap("nameInChinese")
         public String nameInChinese;
@@ -58,12 +58,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static SearchFormDatasResponseBodyDataOriginatorName build(java.util.Map<String, ?> map) throws Exception {
-            SearchFormDatasResponseBodyDataOriginatorName self = new SearchFormDatasResponseBodyDataOriginatorName();
+        public static SearchFormDatasResponseBodyDataOriginatorUserName build(java.util.Map<String, ?> map) throws Exception {
+            SearchFormDatasResponseBodyDataOriginatorUserName self = new SearchFormDatasResponseBodyDataOriginatorUserName();
             return TeaModel.build(map, self);
         }
 
-        public SearchFormDatasResponseBodyDataOriginatorName setNameInChinese(String nameInChinese) {
+        public SearchFormDatasResponseBodyDataOriginatorUserName setNameInChinese(String nameInChinese) {
             this.nameInChinese = nameInChinese;
             return this;
         }
@@ -71,7 +71,7 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.nameInChinese;
         }
 
-        public SearchFormDatasResponseBodyDataOriginatorName setNameInEnglish(String nameInEnglish) {
+        public SearchFormDatasResponseBodyDataOriginatorUserName setNameInEnglish(String nameInEnglish) {
             this.nameInEnglish = nameInEnglish;
             return this;
         }
@@ -79,7 +79,7 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.nameInEnglish;
         }
 
-        public SearchFormDatasResponseBodyDataOriginatorName setType(String type) {
+        public SearchFormDatasResponseBodyDataOriginatorUserName setType(String type) {
             this.type = type;
             return this;
         }
@@ -95,8 +95,8 @@ public class SearchFormDatasResponseBody extends TeaModel {
         public String userId;
 
         // 用户名
-        @NameInMap("name")
-        public SearchFormDatasResponseBodyDataOriginatorName name;
+        @NameInMap("userName")
+        public SearchFormDatasResponseBodyDataOriginatorUserName userName;
 
         // 部门名称
         @NameInMap("departmentName")
@@ -119,12 +119,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public SearchFormDatasResponseBodyDataOriginator setName(SearchFormDatasResponseBodyDataOriginatorName name) {
-            this.name = name;
+        public SearchFormDatasResponseBodyDataOriginator setUserName(SearchFormDatasResponseBodyDataOriginatorUserName userName) {
+            this.userName = userName;
             return this;
         }
-        public SearchFormDatasResponseBodyDataOriginatorName getName() {
-            return this.name;
+        public SearchFormDatasResponseBodyDataOriginatorUserName getUserName() {
+            return this.userName;
         }
 
         public SearchFormDatasResponseBodyDataOriginator setDepartmentName(String departmentName) {
@@ -145,7 +145,7 @@ public class SearchFormDatasResponseBody extends TeaModel {
 
     }
 
-    public static class SearchFormDatasResponseBodyDataModifyUserName extends TeaModel {
+    public static class SearchFormDatasResponseBodyDataModifyUserUserName extends TeaModel {
         // 中文名称
         @NameInMap("nameInChinese")
         public String nameInChinese;
@@ -158,12 +158,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static SearchFormDatasResponseBodyDataModifyUserName build(java.util.Map<String, ?> map) throws Exception {
-            SearchFormDatasResponseBodyDataModifyUserName self = new SearchFormDatasResponseBodyDataModifyUserName();
+        public static SearchFormDatasResponseBodyDataModifyUserUserName build(java.util.Map<String, ?> map) throws Exception {
+            SearchFormDatasResponseBodyDataModifyUserUserName self = new SearchFormDatasResponseBodyDataModifyUserUserName();
             return TeaModel.build(map, self);
         }
 
-        public SearchFormDatasResponseBodyDataModifyUserName setNameInChinese(String nameInChinese) {
+        public SearchFormDatasResponseBodyDataModifyUserUserName setNameInChinese(String nameInChinese) {
             this.nameInChinese = nameInChinese;
             return this;
         }
@@ -171,7 +171,7 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.nameInChinese;
         }
 
-        public SearchFormDatasResponseBodyDataModifyUserName setNameInEnglish(String nameInEnglish) {
+        public SearchFormDatasResponseBodyDataModifyUserUserName setNameInEnglish(String nameInEnglish) {
             this.nameInEnglish = nameInEnglish;
             return this;
         }
@@ -179,7 +179,7 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.nameInEnglish;
         }
 
-        public SearchFormDatasResponseBodyDataModifyUserName setType(String type) {
+        public SearchFormDatasResponseBodyDataModifyUserUserName setType(String type) {
             this.type = type;
             return this;
         }
@@ -195,8 +195,8 @@ public class SearchFormDatasResponseBody extends TeaModel {
         public String userId;
 
         // 用户名
-        @NameInMap("name")
-        public SearchFormDatasResponseBodyDataModifyUserName name;
+        @NameInMap("userName")
+        public SearchFormDatasResponseBodyDataModifyUserUserName userName;
 
         // 部门名称
         @NameInMap("departmentName")
@@ -219,12 +219,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.userId;
         }
 
-        public SearchFormDatasResponseBodyDataModifyUser setName(SearchFormDatasResponseBodyDataModifyUserName name) {
-            this.name = name;
+        public SearchFormDatasResponseBodyDataModifyUser setUserName(SearchFormDatasResponseBodyDataModifyUserUserName userName) {
+            this.userName = userName;
             return this;
         }
-        public SearchFormDatasResponseBodyDataModifyUserName getName() {
-            return this.name;
+        public SearchFormDatasResponseBodyDataModifyUserUserName getUserName() {
+            return this.userName;
         }
 
         public SearchFormDatasResponseBodyDataModifyUser setDepartmentName(String departmentName) {
@@ -246,12 +246,13 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyData extends TeaModel {
-        @NameInMap("id")
-        public Long id;
+        // 实体主键id
+        @NameInMap("dataId")
+        public Long dataId;
 
-        // 实例ID
-        @NameInMap("formInstId")
-        public String formInstId;
+        // 表单实例ID
+        @NameInMap("formInstanceId")
+        public String formInstanceId;
 
         // 数据创建时间
         @NameInMap("createdTimeGMT")
@@ -298,12 +299,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
         public Long version;
 
         // 创建人
-        @NameInMap("creator")
-        public String creator;
+        @NameInMap("creatorUserId")
+        public String creatorUserId;
 
         // 修改人
-        @NameInMap("modifier")
-        public String modifier;
+        @NameInMap("modifierUserId")
+        public String modifierUserId;
 
         // 批次号
         @NameInMap("sequence")
@@ -314,20 +315,20 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public SearchFormDatasResponseBodyData setId(Long id) {
-            this.id = id;
+        public SearchFormDatasResponseBodyData setDataId(Long dataId) {
+            this.dataId = dataId;
             return this;
         }
-        public Long getId() {
-            return this.id;
+        public Long getDataId() {
+            return this.dataId;
         }
 
-        public SearchFormDatasResponseBodyData setFormInstId(String formInstId) {
-            this.formInstId = formInstId;
+        public SearchFormDatasResponseBodyData setFormInstanceId(String formInstanceId) {
+            this.formInstanceId = formInstanceId;
             return this;
         }
-        public String getFormInstId() {
-            return this.formInstId;
+        public String getFormInstanceId() {
+            return this.formInstanceId;
         }
 
         public SearchFormDatasResponseBodyData setCreatedTimeGMT(String createdTimeGMT) {
@@ -418,20 +419,20 @@ public class SearchFormDatasResponseBody extends TeaModel {
             return this.version;
         }
 
-        public SearchFormDatasResponseBodyData setCreator(String creator) {
-            this.creator = creator;
+        public SearchFormDatasResponseBodyData setCreatorUserId(String creatorUserId) {
+            this.creatorUserId = creatorUserId;
             return this;
         }
-        public String getCreator() {
-            return this.creator;
+        public String getCreatorUserId() {
+            return this.creatorUserId;
         }
 
-        public SearchFormDatasResponseBodyData setModifier(String modifier) {
-            this.modifier = modifier;
+        public SearchFormDatasResponseBodyData setModifierUserId(String modifierUserId) {
+            this.modifierUserId = modifierUserId;
             return this;
         }
-        public String getModifier() {
-            return this.modifier;
+        public String getModifierUserId() {
+            return this.modifierUserId;
         }
 
         public SearchFormDatasResponseBodyData setSequence(String sequence) {
