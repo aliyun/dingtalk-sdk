@@ -317,7 +317,7 @@ class SearchFormDatasRequest(TeaModel):
         return self
 
 
-class SearchFormDatasResponseBodyDataOriginatorName(TeaModel):
+class SearchFormDatasResponseBodyDataOriginatorUserName(TeaModel):
     def __init__(
         self,
         name_in_chinese: str = None,
@@ -363,22 +363,22 @@ class SearchFormDatasResponseBodyDataOriginator(TeaModel):
     def __init__(
         self,
         user_id: str = None,
-        name: SearchFormDatasResponseBodyDataOriginatorName = None,
+        user_name: SearchFormDatasResponseBodyDataOriginatorUserName = None,
         department_name: str = None,
         email: str = None,
     ):
         # 用户工号
         self.user_id = user_id
         # 用户名
-        self.name = name
+        self.user_name = user_name
         # 部门名称
         self.department_name = department_name
         # 邮箱
         self.email = email
 
     def validate(self):
-        if self.name:
-            self.name.validate()
+        if self.user_name:
+            self.user_name.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -388,8 +388,8 @@ class SearchFormDatasResponseBodyDataOriginator(TeaModel):
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
-        if self.name is not None:
-            result['name'] = self.name.to_map()
+        if self.user_name is not None:
+            result['userName'] = self.user_name.to_map()
         if self.department_name is not None:
             result['departmentName'] = self.department_name
         if self.email is not None:
@@ -400,9 +400,9 @@ class SearchFormDatasResponseBodyDataOriginator(TeaModel):
         m = m or dict()
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
-        if m.get('name') is not None:
-            temp_model = SearchFormDatasResponseBodyDataOriginatorName()
-            self.name = temp_model.from_map(m['name'])
+        if m.get('userName') is not None:
+            temp_model = SearchFormDatasResponseBodyDataOriginatorUserName()
+            self.user_name = temp_model.from_map(m['userName'])
         if m.get('departmentName') is not None:
             self.department_name = m.get('departmentName')
         if m.get('email') is not None:
@@ -410,7 +410,7 @@ class SearchFormDatasResponseBodyDataOriginator(TeaModel):
         return self
 
 
-class SearchFormDatasResponseBodyDataModifyUserName(TeaModel):
+class SearchFormDatasResponseBodyDataModifyUserUserName(TeaModel):
     def __init__(
         self,
         name_in_chinese: str = None,
@@ -456,22 +456,22 @@ class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
     def __init__(
         self,
         user_id: str = None,
-        name: SearchFormDatasResponseBodyDataModifyUserName = None,
+        user_name: SearchFormDatasResponseBodyDataModifyUserUserName = None,
         department_name: str = None,
         email: str = None,
     ):
         # 用户工号
         self.user_id = user_id
         # 用户名
-        self.name = name
+        self.user_name = user_name
         # 部门名称
         self.department_name = department_name
         # 邮箱
         self.email = email
 
     def validate(self):
-        if self.name:
-            self.name.validate()
+        if self.user_name:
+            self.user_name.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -481,8 +481,8 @@ class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
         result = dict()
         if self.user_id is not None:
             result['userId'] = self.user_id
-        if self.name is not None:
-            result['name'] = self.name.to_map()
+        if self.user_name is not None:
+            result['userName'] = self.user_name.to_map()
         if self.department_name is not None:
             result['departmentName'] = self.department_name
         if self.email is not None:
@@ -493,9 +493,9 @@ class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
         m = m or dict()
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
-        if m.get('name') is not None:
-            temp_model = SearchFormDatasResponseBodyDataModifyUserName()
-            self.name = temp_model.from_map(m['name'])
+        if m.get('userName') is not None:
+            temp_model = SearchFormDatasResponseBodyDataModifyUserUserName()
+            self.user_name = temp_model.from_map(m['userName'])
         if m.get('departmentName') is not None:
             self.department_name = m.get('departmentName')
         if m.get('email') is not None:
@@ -506,8 +506,8 @@ class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
 class SearchFormDatasResponseBodyData(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        form_inst_id: str = None,
+        data_id: int = None,
+        form_instance_id: str = None,
         created_time_gmt: str = None,
         modified_time_gmt: str = None,
         form_uuid: str = None,
@@ -519,13 +519,14 @@ class SearchFormDatasResponseBodyData(TeaModel):
         serial_no: str = None,
         instance_value: str = None,
         version: int = None,
-        creator: str = None,
-        modifier: str = None,
+        creator_user_id: str = None,
+        modifier_user_id: str = None,
         sequence: str = None,
     ):
-        self.id = id
-        # 实例ID
-        self.form_inst_id = form_inst_id
+        # 实体主键id
+        self.data_id = data_id
+        # 表单实例ID
+        self.form_instance_id = form_instance_id
         # 数据创建时间
         self.created_time_gmt = created_time_gmt
         # 最近修改时间
@@ -549,9 +550,9 @@ class SearchFormDatasResponseBodyData(TeaModel):
         # 数据版本
         self.version = version
         # 创建人
-        self.creator = creator
+        self.creator_user_id = creator_user_id
         # 修改人
-        self.modifier = modifier
+        self.modifier_user_id = modifier_user_id
         # 批次号
         self.sequence = sequence
 
@@ -567,10 +568,10 @@ class SearchFormDatasResponseBodyData(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.form_inst_id is not None:
-            result['formInstId'] = self.form_inst_id
+        if self.data_id is not None:
+            result['dataId'] = self.data_id
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
         if self.created_time_gmt is not None:
             result['createdTimeGMT'] = self.created_time_gmt
         if self.modified_time_gmt is not None:
@@ -593,20 +594,20 @@ class SearchFormDatasResponseBodyData(TeaModel):
             result['instanceValue'] = self.instance_value
         if self.version is not None:
             result['version'] = self.version
-        if self.creator is not None:
-            result['creator'] = self.creator
-        if self.modifier is not None:
-            result['modifier'] = self.modifier
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.modifier_user_id is not None:
+            result['modifierUserId'] = self.modifier_user_id
         if self.sequence is not None:
             result['sequence'] = self.sequence
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('formInstId') is not None:
-            self.form_inst_id = m.get('formInstId')
+        if m.get('dataId') is not None:
+            self.data_id = m.get('dataId')
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
         if m.get('createdTimeGMT') is not None:
             self.created_time_gmt = m.get('createdTimeGMT')
         if m.get('modifiedTimeGMT') is not None:
@@ -631,10 +632,10 @@ class SearchFormDatasResponseBodyData(TeaModel):
             self.instance_value = m.get('instanceValue')
         if m.get('version') is not None:
             self.version = m.get('version')
-        if m.get('creator') is not None:
-            self.creator = m.get('creator')
-        if m.get('modifier') is not None:
-            self.modifier = m.get('modifier')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('modifierUserId') is not None:
+            self.modifier_user_id = m.get('modifierUserId')
         if m.get('sequence') is not None:
             self.sequence = m.get('sequence')
         return self

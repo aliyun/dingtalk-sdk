@@ -516,13 +516,13 @@ class QueryUnionOrderRequest(TeaModel):
 class QueryUnionOrderResponseBodyFlightList(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        status: int = None,
+        flight_order_id: int = None,
+        flight_order_status: int = None,
     ):
         # 订单id
-        self.id = id
+        self.flight_order_id = flight_order_id
         # 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
-        self.status = status
+        self.flight_order_status = flight_order_status
 
     def validate(self):
         pass
@@ -533,31 +533,31 @@ class QueryUnionOrderResponseBodyFlightList(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.status is not None:
-            result['status'] = self.status
+        if self.flight_order_id is not None:
+            result['flightOrderId'] = self.flight_order_id
+        if self.flight_order_status is not None:
+            result['flightOrderStatus'] = self.flight_order_status
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('status') is not None:
-            self.status = m.get('status')
+        if m.get('flightOrderId') is not None:
+            self.flight_order_id = m.get('flightOrderId')
+        if m.get('flightOrderStatus') is not None:
+            self.flight_order_status = m.get('flightOrderStatus')
         return self
 
 
 class QueryUnionOrderResponseBodyTrainList(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        status: int = None,
+        train_order_id: int = None,
+        train_orderstatus: int = None,
     ):
         # 火车订单号
-        self.id = id
+        self.train_order_id = train_order_id
         # 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
-        self.status = status
+        self.train_orderstatus = train_orderstatus
 
     def validate(self):
         pass
@@ -568,31 +568,31 @@ class QueryUnionOrderResponseBodyTrainList(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.status is not None:
-            result['status'] = self.status
+        if self.train_order_id is not None:
+            result['trainOrderId'] = self.train_order_id
+        if self.train_orderstatus is not None:
+            result['trainOrderstatus'] = self.train_orderstatus
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('status') is not None:
-            self.status = m.get('status')
+        if m.get('trainOrderId') is not None:
+            self.train_order_id = m.get('trainOrderId')
+        if m.get('trainOrderstatus') is not None:
+            self.train_orderstatus = m.get('trainOrderstatus')
         return self
 
 
 class QueryUnionOrderResponseBodyHotelList(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        order_status: int = None,
+        hotel_order_id: int = None,
+        hotel_order_status: int = None,
     ):
         # 酒店订单号
-        self.id = id
+        self.hotel_order_id = hotel_order_id
         # 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
-        self.order_status = order_status
+        self.hotel_order_status = hotel_order_status
 
     def validate(self):
         pass
@@ -603,31 +603,31 @@ class QueryUnionOrderResponseBodyHotelList(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.order_status is not None:
-            result['orderStatus'] = self.order_status
+        if self.hotel_order_id is not None:
+            result['hotelOrderId'] = self.hotel_order_id
+        if self.hotel_order_status is not None:
+            result['hotelOrderStatus'] = self.hotel_order_status
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('orderStatus') is not None:
-            self.order_status = m.get('orderStatus')
+        if m.get('hotelOrderId') is not None:
+            self.hotel_order_id = m.get('hotelOrderId')
+        if m.get('hotelOrderStatus') is not None:
+            self.hotel_order_status = m.get('hotelOrderStatus')
         return self
 
 
 class QueryUnionOrderResponseBodyVehicleList(TeaModel):
     def __init__(
         self,
-        id: int = None,
-        order_status: int = None,
+        vehicle_order_id: int = None,
+        vehicle_order_status: int = None,
     ):
         # 用车订单号
-        self.id = id
+        self.vehicle_order_id = vehicle_order_id
         # 订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消
-        self.order_status = order_status
+        self.vehicle_order_status = vehicle_order_status
 
     def validate(self):
         pass
@@ -638,18 +638,18 @@ class QueryUnionOrderResponseBodyVehicleList(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
-        if self.order_status is not None:
-            result['orderStatus'] = self.order_status
+        if self.vehicle_order_id is not None:
+            result['vehicleOrderId'] = self.vehicle_order_id
+        if self.vehicle_order_status is not None:
+            result['vehicleOrderStatus'] = self.vehicle_order_status
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('orderStatus') is not None:
-            self.order_status = m.get('orderStatus')
+        if m.get('vehicleOrderId') is not None:
+            self.vehicle_order_id = m.get('vehicleOrderId')
+        if m.get('vehicleOrderStatus') is not None:
+            self.vehicle_order_status = m.get('vehicleOrderStatus')
         return self
 
 

@@ -451,6 +451,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/managementGroups', 'json', req, runtime)
         )
 
+    def translate_file(
+        self,
+        request: dingtalkcontact__1__0_models.TranslateFileRequest,
+    ) -> dingtalkcontact__1__0_models.TranslateFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TranslateFileHeaders()
+        return self.translate_file_with_options(request, headers, runtime)
+
+    async def translate_file_async(
+        self,
+        request: dingtalkcontact__1__0_models.TranslateFileRequest,
+    ) -> dingtalkcontact__1__0_models.TranslateFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TranslateFileHeaders()
+        return await self.translate_file_with_options_async(request, headers, runtime)
+
+    def translate_file_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TranslateFileRequest,
+        headers: dingtalkcontact__1__0_models.TranslateFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TranslateFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.output_file_name):
+            body['outputFileName'] = request.output_file_name
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TranslateFileResponse(),
+            self.do_roarequest('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/files/translate', 'json', req, runtime)
+        )
+
+    async def translate_file_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TranslateFileRequest,
+        headers: dingtalkcontact__1__0_models.TranslateFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TranslateFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.output_file_name):
+            body['outputFileName'] = request.output_file_name
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TranslateFileResponse(),
+            await self.do_roarequest_async('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/files/translate', 'json', req, runtime)
+        )
+
     def list_emp_attribute_visibility(
         self,
         request: dingtalkcontact__1__0_models.ListEmpAttributeVisibilityRequest,
@@ -593,6 +681,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SearchUserResponse(),
             await self.do_roarequest_async('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/search', 'json', req, runtime)
+        )
+
+    def get_translate_file_job_result(
+        self,
+        request: dingtalkcontact__1__0_models.GetTranslateFileJobResultRequest,
+    ) -> dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetTranslateFileJobResultHeaders()
+        return self.get_translate_file_job_result_with_options(request, headers, runtime)
+
+    async def get_translate_file_job_result_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetTranslateFileJobResultRequest,
+    ) -> dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetTranslateFileJobResultHeaders()
+        return await self.get_translate_file_job_result_with_options_async(request, headers, runtime)
+
+    def get_translate_file_job_result_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.GetTranslateFileJobResultRequest,
+        headers: dingtalkcontact__1__0_models.GetTranslateFileJobResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.job_id):
+            query['jobId'] = request.job_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse(),
+            self.do_roarequest('GetTranslateFileJobResult', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/files/translateResults', 'json', req, runtime)
+        )
+
+    async def get_translate_file_job_result_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetTranslateFileJobResultRequest,
+        headers: dingtalkcontact__1__0_models.GetTranslateFileJobResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.job_id):
+            query['jobId'] = request.job_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse(),
+            await self.do_roarequest_async('GetTranslateFileJobResult', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/files/translateResults', 'json', req, runtime)
         )
 
     def get_apply_invite_info(
