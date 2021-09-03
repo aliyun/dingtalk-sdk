@@ -25,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoHeade
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetTranslateFileJobResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetTranslateFileJobResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetTranslateFileJobResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityHeaders;
@@ -46,6 +49,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingResponse;
@@ -360,6 +366,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param TranslateFileRequest $request
+     *
+     * @return TranslateFileResponse
+     */
+    public function translateFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TranslateFileHeaders([]);
+
+        return $this->translateFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TranslateFileRequest $request
+     * @param TranslateFileHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return TranslateFileResponse
+     */
+    public function translateFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$body['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->outputFileName)) {
+            @$body['outputFileName'] = $request->outputFileName;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return TranslateFileResponse::fromMap($this->doROARequest('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/files/translate', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ListEmpAttributeVisibilityRequest $request
      *
      * @return ListEmpAttributeVisibilityResponse
@@ -453,6 +519,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchUserResponse::fromMap($this->doROARequest('SearchUser', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/users/search', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTranslateFileJobResultRequest $request
+     *
+     * @return GetTranslateFileJobResultResponse
+     */
+    public function getTranslateFileJobResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTranslateFileJobResultHeaders([]);
+
+        return $this->getTranslateFileJobResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTranslateFileJobResultRequest $request
+     * @param GetTranslateFileJobResultHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetTranslateFileJobResultResponse
+     */
+    public function getTranslateFileJobResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->jobId)) {
+            @$query['jobId'] = $request->jobId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTranslateFileJobResultResponse::fromMap($this->doROARequest('GetTranslateFileJobResult', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/files/translateResults', 'json', $req, $runtime));
     }
 
     /**

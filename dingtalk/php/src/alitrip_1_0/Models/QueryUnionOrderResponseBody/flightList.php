@@ -13,17 +13,17 @@ class flightList extends Model
      *
      * @var int
      */
-    public $id;
+    public $flightOrderId;
 
     /**
      * @description 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
      *
      * @var int
      */
-    public $status;
+    public $flightOrderStatus;
     protected $_name = [
-        'id'     => 'id',
-        'status' => 'status',
+        'flightOrderId'     => 'flightOrderId',
+        'flightOrderStatus' => 'flightOrderStatus',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class flightList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->flightOrderId) {
+            $res['flightOrderId'] = $this->flightOrderId;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->flightOrderStatus) {
+            $res['flightOrderStatus'] = $this->flightOrderStatus;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class flightList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['flightOrderId'])) {
+            $model->flightOrderId = $map['flightOrderId'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['flightOrderStatus'])) {
+            $model->flightOrderStatus = $map['flightOrderStatus'];
         }
 
         return $model;

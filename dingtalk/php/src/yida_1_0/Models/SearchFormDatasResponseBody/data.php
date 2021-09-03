@@ -11,16 +11,18 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description 实体主键id
+     *
      * @var int
      */
-    public $id;
+    public $dataId;
 
     /**
-     * @description 实例ID
+     * @description 表单实例ID
      *
      * @var string
      */
-    public $formInstId;
+    public $formInstanceId;
 
     /**
      * @description 数据创建时间
@@ -104,14 +106,14 @@ class data extends Model
      *
      * @var string
      */
-    public $creator;
+    public $creatorUserId;
 
     /**
      * @description 修改人
      *
      * @var string
      */
-    public $modifier;
+    public $modifierUserId;
 
     /**
      * @description 批次号
@@ -120,8 +122,8 @@ class data extends Model
      */
     public $sequence;
     protected $_name = [
-        'id'              => 'id',
-        'formInstId'      => 'formInstId',
+        'dataId'          => 'dataId',
+        'formInstanceId'  => 'formInstanceId',
         'createdTimeGMT'  => 'createdTimeGMT',
         'modifiedTimeGMT' => 'modifiedTimeGMT',
         'formUuid'        => 'formUuid',
@@ -133,8 +135,8 @@ class data extends Model
         'serialNo'        => 'serialNo',
         'instanceValue'   => 'instanceValue',
         'version'         => 'version',
-        'creator'         => 'creator',
-        'modifier'        => 'modifier',
+        'creatorUserId'   => 'creatorUserId',
+        'modifierUserId'  => 'modifierUserId',
         'sequence'        => 'sequence',
     ];
 
@@ -145,11 +147,11 @@ class data extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->dataId) {
+            $res['dataId'] = $this->dataId;
         }
-        if (null !== $this->formInstId) {
-            $res['formInstId'] = $this->formInstId;
+        if (null !== $this->formInstanceId) {
+            $res['formInstanceId'] = $this->formInstanceId;
         }
         if (null !== $this->createdTimeGMT) {
             $res['createdTimeGMT'] = $this->createdTimeGMT;
@@ -184,11 +186,11 @@ class data extends Model
         if (null !== $this->version) {
             $res['version'] = $this->version;
         }
-        if (null !== $this->creator) {
-            $res['creator'] = $this->creator;
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
         }
-        if (null !== $this->modifier) {
-            $res['modifier'] = $this->modifier;
+        if (null !== $this->modifierUserId) {
+            $res['modifierUserId'] = $this->modifierUserId;
         }
         if (null !== $this->sequence) {
             $res['sequence'] = $this->sequence;
@@ -205,11 +207,11 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['dataId'])) {
+            $model->dataId = $map['dataId'];
         }
-        if (isset($map['formInstId'])) {
-            $model->formInstId = $map['formInstId'];
+        if (isset($map['formInstanceId'])) {
+            $model->formInstanceId = $map['formInstanceId'];
         }
         if (isset($map['createdTimeGMT'])) {
             $model->createdTimeGMT = $map['createdTimeGMT'];
@@ -244,11 +246,11 @@ class data extends Model
         if (isset($map['version'])) {
             $model->version = $map['version'];
         }
-        if (isset($map['creator'])) {
-            $model->creator = $map['creator'];
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
         }
-        if (isset($map['modifier'])) {
-            $model->modifier = $map['modifier'];
+        if (isset($map['modifierUserId'])) {
+            $model->modifierUserId = $map['modifierUserId'];
         }
         if (isset($map['sequence'])) {
             $model->sequence = $map['sequence'];

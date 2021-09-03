@@ -10,13 +10,30 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetActiveUserSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAllLabelableDeptsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedDeptSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDocCreatedSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedDeptSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedDeptSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedDeptSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
@@ -25,9 +42,15 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetTrustDeviceListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserAppVersionSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoResponse;
@@ -87,46 +110,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOaOperatorLogListRequest $request
+     * @param string                          $dataId
+     * @param GetUserAppVersionSummaryRequest $request
      *
-     * @return GetOaOperatorLogListResponse
+     * @return GetUserAppVersionSummaryResponse
      */
-    public function getOaOperatorLogList($request)
+    public function getUserAppVersionSummary($dataId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetOaOperatorLogListHeaders([]);
+        $headers = new GetUserAppVersionSummaryHeaders([]);
 
-        return $this->getOaOperatorLogListWithOptions($request, $headers, $runtime);
+        return $this->getUserAppVersionSummaryWithOptions($dataId, $request, $headers, $runtime);
     }
 
     /**
-     * @param GetOaOperatorLogListRequest $request
-     * @param GetOaOperatorLogListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param string                          $dataId
+     * @param GetUserAppVersionSummaryRequest $request
+     * @param GetUserAppVersionSummaryHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return GetOaOperatorLogListResponse
+     * @return GetUserAppVersionSummaryResponse
      */
-    public function getOaOperatorLogListWithOptions($request, $headers, $runtime)
+    public function getUserAppVersionSummaryWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$body['pageNumber'] = $request->pageNumber;
+        $query = [];
+        if (!Utils::isUnset($request->pageStart)) {
+            @$query['pageStart'] = $request->pageStart;
         }
         if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->categoryList)) {
-            @$body['categoryList'] = $request->categoryList;
+            @$query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -137,10 +150,10 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetOaOperatorLogListResponse::fromMap($this->doROARequest('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/oaOperatorLogs/query', 'json', $req, $runtime));
+        return GetUserAppVersionSummaryResponse::fromMap($this->doROARequest('GetUserAppVersionSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/appVersion/org/' . $dataId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -215,6 +228,447 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                     $dataId
+     * @param GetPublisherSummaryRequest $request
+     *
+     * @return GetPublisherSummaryResponse
+     */
+    public function getPublisherSummary($dataId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPublisherSummaryHeaders([]);
+
+        return $this->getPublisherSummaryWithOptions($dataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $dataId
+     * @param GetPublisherSummaryRequest $request
+     * @param GetPublisherSummaryHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetPublisherSummaryResponse
+     */
+    public function getPublisherSummaryWithOptions($dataId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageStart)) {
+            @$query['pageStart'] = $request->pageStart;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPublisherSummaryResponse::fromMap($this->doROARequest('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/publisher/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                          $dataId
+     * @param GetDocCreatedDeptSummaryRequest $request
+     *
+     * @return GetDocCreatedDeptSummaryResponse
+     */
+    public function getDocCreatedDeptSummary($dataId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDocCreatedDeptSummaryHeaders([]);
+
+        return $this->getDocCreatedDeptSummaryWithOptions($dataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $dataId
+     * @param GetDocCreatedDeptSummaryRequest $request
+     * @param GetDocCreatedDeptSummaryHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetDocCreatedDeptSummaryResponse
+     */
+    public function getDocCreatedDeptSummaryWithOptions($dataId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageStart)) {
+            @$query['pageStart'] = $request->pageStart;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetDocCreatedDeptSummaryResponse::fromMap($this->doROARequest('GetDocCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/doc/dept/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $dataId
+     *
+     * @return GetGeneralFormCreatedSummaryResponse
+     */
+    public function getGeneralFormCreatedSummary($dataId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGeneralFormCreatedSummaryHeaders([]);
+
+        return $this->getGeneralFormCreatedSummaryWithOptions($dataId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $dataId
+     * @param GetGeneralFormCreatedSummaryHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return GetGeneralFormCreatedSummaryResponse
+     */
+    public function getGeneralFormCreatedSummaryWithOptions($dataId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetGeneralFormCreatedSummaryResponse::fromMap($this->doROARequest('GetGeneralFormCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/generalForm/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTrustedDeviceRequest $request
+     *
+     * @return CreateTrustedDeviceResponse
+     */
+    public function createTrustedDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTrustedDeviceHeaders([]);
+
+        return $this->createTrustedDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTrustedDeviceRequest $request
+     * @param CreateTrustedDeviceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CreateTrustedDeviceResponse
+     */
+    public function createTrustedDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->macAddress)) {
+            @$body['macAddress'] = $request->macAddress;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTrustedDeviceResponse::fromMap($this->doROARequest('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $dataId
+     *
+     * @return GetDocCreatedSummaryResponse
+     */
+    public function getDocCreatedSummary($dataId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDocCreatedSummaryHeaders([]);
+
+        return $this->getDocCreatedSummaryWithOptions($dataId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $dataId
+     * @param GetDocCreatedSummaryHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetDocCreatedSummaryResponse
+     */
+    public function getDocCreatedSummaryWithOptions($dataId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetDocCreatedSummaryResponse::fromMap($this->doROARequest('GetDocCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/doc/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $parentId
+     *
+     * @return GetPartnerTypeByParentIdResponse
+     */
+    public function getPartnerTypeByParentId($parentId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPartnerTypeByParentIdHeaders([]);
+
+        return $this->getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $parentId
+     * @param GetPartnerTypeByParentIdHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetPartnerTypeByParentIdResponse
+     */
+    public function getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetPartnerTypeByParentIdResponse::fromMap($this->doROARequest('GetPartnerTypeByParentId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partnerLabels/' . $parentId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SetDeptPartnerTypeAndNumRequest $request
+     *
+     * @return SetDeptPartnerTypeAndNumResponse
+     */
+    public function setDeptPartnerTypeAndNum($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetDeptPartnerTypeAndNumHeaders([]);
+
+        return $this->setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetDeptPartnerTypeAndNumRequest $request
+     * @param SetDeptPartnerTypeAndNumHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return SetDeptPartnerTypeAndNumResponse
+     */
+    public function setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->partnerNum)) {
+            @$body['partnerNum'] = $request->partnerNum;
+        }
+        if (!Utils::isUnset($request->labelIds)) {
+            @$body['labelIds'] = $request->labelIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetDeptPartnerTypeAndNumResponse::fromMap($this->doROARequest('SetDeptPartnerTypeAndNum', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partnerDepartments', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string $dataId
+     *
+     * @return GetActiveUserSummaryResponse
+     */
+    public function getActiveUserSummary($dataId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetActiveUserSummaryHeaders([]);
+
+        return $this->getActiveUserSummaryWithOptions($dataId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $dataId
+     * @param GetActiveUserSummaryHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetActiveUserSummaryResponse
+     */
+    public function getActiveUserSummaryWithOptions($dataId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetActiveUserSummaryResponse::fromMap($this->doROARequest('GetActiveUserSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/dau/org/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOaOperatorLogListRequest $request
+     *
+     * @return GetOaOperatorLogListResponse
+     */
+    public function getOaOperatorLogList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOaOperatorLogListHeaders([]);
+
+        return $this->getOaOperatorLogListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOaOperatorLogListRequest $request
+     * @param GetOaOperatorLogListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetOaOperatorLogListResponse
+     */
+    public function getOaOperatorLogListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->categoryList)) {
+            @$body['categoryList'] = $request->categoryList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetOaOperatorLogListResponse::fromMap($this->doROARequest('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/oaOperatorLogs/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                          $dataId
+     * @param GetDingReportDeptSummaryRequest $request
+     *
+     * @return GetDingReportDeptSummaryResponse
+     */
+    public function getDingReportDeptSummary($dataId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDingReportDeptSummaryHeaders([]);
+
+        return $this->getDingReportDeptSummaryWithOptions($dataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $dataId
+     * @param GetDingReportDeptSummaryRequest $request
+     * @param GetDingReportDeptSummaryHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return GetDingReportDeptSummaryResponse
+     */
+    public function getDingReportDeptSummaryWithOptions($dataId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageStart)) {
+            @$query['pageStart'] = $request->pageStart;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetDingReportDeptSummaryResponse::fromMap($this->doROARequest('GetDingReportDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/report/dept/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetTrustDeviceListRequest $request
      *
      * @return GetTrustDeviceListResponse
@@ -254,6 +708,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTrustDeviceListResponse::fromMap($this->doROARequest('GetTrustDeviceList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                  $dataId
+     * @param GetGeneralFormCreatedDeptSummaryRequest $request
+     *
+     * @return GetGeneralFormCreatedDeptSummaryResponse
+     */
+    public function getGeneralFormCreatedDeptSummary($dataId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGeneralFormCreatedDeptSummaryHeaders([]);
+
+        return $this->getGeneralFormCreatedDeptSummaryWithOptions($dataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                  $dataId
+     * @param GetGeneralFormCreatedDeptSummaryRequest $request
+     * @param GetGeneralFormCreatedDeptSummaryHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return GetGeneralFormCreatedDeptSummaryResponse
+     */
+    public function getGeneralFormCreatedDeptSummaryWithOptions($dataId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageStart)) {
+            @$query['pageStart'] = $request->pageStart;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetGeneralFormCreatedDeptSummaryResponse::fromMap($this->doROARequest('GetGeneralFormCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/generalForm/dept/' . $dataId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -335,41 +836,27 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTrustedDeviceRequest $request
+     * @param string $dataId
      *
-     * @return CreateTrustedDeviceResponse
+     * @return GetCalenderSummaryResponse
      */
-    public function createTrustedDevice($request)
+    public function getCalenderSummary($dataId)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new CreateTrustedDeviceHeaders([]);
+        $headers = new GetCalenderSummaryHeaders([]);
 
-        return $this->createTrustedDeviceWithOptions($request, $headers, $runtime);
+        return $this->getCalenderSummaryWithOptions($dataId, $headers, $runtime);
     }
 
     /**
-     * @param CreateTrustedDeviceRequest $request
-     * @param CreateTrustedDeviceHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param string                    $dataId
+     * @param GetCalenderSummaryHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return CreateTrustedDeviceResponse
+     * @return GetCalenderSummaryResponse
      */
-    public function createTrustedDeviceWithOptions($request, $headers, $runtime)
+    public function getCalenderSummaryWithOptions($dataId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->platform)) {
-            @$body['platform'] = $request->platform;
-        }
-        if (!Utils::isUnset($request->macAddress)) {
-            @$body['macAddress'] = $request->macAddress;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -379,10 +866,9 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return CreateTrustedDeviceResponse::fromMap($this->doROARequest('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/trustedDevices', 'json', $req, $runtime));
+        return GetCalenderSummaryResponse::fromMap($this->doROARequest('GetCalenderSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/calendar/org/' . $dataId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -481,89 +967,5 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetCommentListResponse::fromMap($this->doROARequest('GetCommentList', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string $parentId
-     *
-     * @return GetPartnerTypeByParentIdResponse
-     */
-    public function getPartnerTypeByParentId($parentId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetPartnerTypeByParentIdHeaders([]);
-
-        return $this->getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                          $parentId
-     * @param GetPartnerTypeByParentIdHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return GetPartnerTypeByParentIdResponse
-     */
-    public function getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetPartnerTypeByParentIdResponse::fromMap($this->doROARequest('GetPartnerTypeByParentId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partnerLabels/' . $parentId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param SetDeptPartnerTypeAndNumRequest $request
-     *
-     * @return SetDeptPartnerTypeAndNumResponse
-     */
-    public function setDeptPartnerTypeAndNum($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new SetDeptPartnerTypeAndNumHeaders([]);
-
-        return $this->setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param SetDeptPartnerTypeAndNumRequest $request
-     * @param SetDeptPartnerTypeAndNumHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return SetDeptPartnerTypeAndNumResponse
-     */
-    public function setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->deptId)) {
-            @$body['deptId'] = $request->deptId;
-        }
-        if (!Utils::isUnset($request->partnerNum)) {
-            @$body['partnerNum'] = $request->partnerNum;
-        }
-        if (!Utils::isUnset($request->labelIds)) {
-            @$body['labelIds'] = $request->labelIds;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return SetDeptPartnerTypeAndNumResponse::fromMap($this->doROARequest('SetDeptPartnerTypeAndNum', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partnerDepartments', 'none', $req, $runtime));
     }
 }

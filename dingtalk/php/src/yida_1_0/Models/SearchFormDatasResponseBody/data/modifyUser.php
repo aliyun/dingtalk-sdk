@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponseBody\data;
 
-use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponseBody\data\modifyUser\name;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponseBody\data\modifyUser\userName;
 use AlibabaCloud\Tea\Model;
 
 class modifyUser extends Model
@@ -19,9 +19,9 @@ class modifyUser extends Model
     /**
      * @description 用户名
      *
-     * @var name
+     * @var userName
      */
-    public $name;
+    public $userName;
 
     /**
      * @description 部门名称
@@ -38,7 +38,7 @@ class modifyUser extends Model
     public $email;
     protected $_name = [
         'userId'         => 'userId',
-        'name'           => 'name',
+        'userName'       => 'userName',
         'departmentName' => 'departmentName',
         'email'          => 'email',
     ];
@@ -53,8 +53,8 @@ class modifyUser extends Model
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
-        if (null !== $this->name) {
-            $res['name'] = null !== $this->name ? $this->name->toMap() : null;
+        if (null !== $this->userName) {
+            $res['userName'] = null !== $this->userName ? $this->userName->toMap() : null;
         }
         if (null !== $this->departmentName) {
             $res['departmentName'] = $this->departmentName;
@@ -77,8 +77,8 @@ class modifyUser extends Model
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }
-        if (isset($map['name'])) {
-            $model->name = name::fromMap($map['name']);
+        if (isset($map['userName'])) {
+            $model->userName = userName::fromMap($map['userName']);
         }
         if (isset($map['departmentName'])) {
             $model->departmentName = $map['departmentName'];

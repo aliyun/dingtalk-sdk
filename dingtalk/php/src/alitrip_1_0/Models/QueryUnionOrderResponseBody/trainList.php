@@ -13,17 +13,17 @@ class trainList extends Model
      *
      * @var int
      */
-    public $id;
+    public $trainOrderId;
 
     /**
      * @description 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
      *
      * @var int
      */
-    public $status;
+    public $trainOrderstatus;
     protected $_name = [
-        'id'     => 'id',
-        'status' => 'status',
+        'trainOrderId'     => 'trainOrderId',
+        'trainOrderstatus' => 'trainOrderstatus',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class trainList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->trainOrderId) {
+            $res['trainOrderId'] = $this->trainOrderId;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->trainOrderstatus) {
+            $res['trainOrderstatus'] = $this->trainOrderstatus;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class trainList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['trainOrderId'])) {
+            $model->trainOrderId = $map['trainOrderId'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['trainOrderstatus'])) {
+            $model->trainOrderstatus = $map['trainOrderstatus'];
         }
 
         return $model;

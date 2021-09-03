@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponseBody\data\modifyUser;
+namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponseBody\data\originator;
 
 use AlibabaCloud\Tea\Model;
 
-class name extends Model
+class userName extends Model
 {
     /**
      * @description 中文名称
@@ -57,7 +57,7 @@ class name extends Model
     /**
      * @param array $map
      *
-     * @return name
+     * @return userName
      */
     public static function fromMap($map = [])
     {

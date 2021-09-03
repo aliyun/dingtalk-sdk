@@ -13,17 +13,17 @@ class hotelList extends Model
      *
      * @var int
      */
-    public $id;
+    public $hotelOrderId;
 
     /**
      * @description 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
      *
      * @var int
      */
-    public $orderStatus;
+    public $hotelOrderStatus;
     protected $_name = [
-        'id'          => 'id',
-        'orderStatus' => 'orderStatus',
+        'hotelOrderId'     => 'hotelOrderId',
+        'hotelOrderStatus' => 'hotelOrderStatus',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class hotelList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->hotelOrderId) {
+            $res['hotelOrderId'] = $this->hotelOrderId;
         }
-        if (null !== $this->orderStatus) {
-            $res['orderStatus'] = $this->orderStatus;
+        if (null !== $this->hotelOrderStatus) {
+            $res['hotelOrderStatus'] = $this->hotelOrderStatus;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class hotelList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['hotelOrderId'])) {
+            $model->hotelOrderId = $map['hotelOrderId'];
         }
-        if (isset($map['orderStatus'])) {
-            $model->orderStatus = $map['orderStatus'];
+        if (isset($map['hotelOrderStatus'])) {
+            $model->hotelOrderStatus = $map['hotelOrderStatus'];
         }
 
         return $model;
