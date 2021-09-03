@@ -30,16 +30,19 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public List<SearchFormDatasResponseBodyData> Data { get; set; }
         public class SearchFormDatasResponseBodyData : TeaModel {
-            [NameInMap("id")]
+            /// <summary>
+            /// 实体主键id
+            /// </summary>
+            [NameInMap("dataId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? DataId { get; set; }
 
             /// <summary>
-            /// 实例ID
+            /// 表单实例ID
             /// </summary>
-            [NameInMap("formInstId")]
+            [NameInMap("formInstanceId")]
             [Validation(Required=false)]
-            public string FormInstId { get; set; }
+            public string FormInstanceId { get; set; }
 
             /// <summary>
             /// 数据创建时间
@@ -79,10 +82,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-                [NameInMap("name")]
+                [NameInMap("userName")]
                 [Validation(Required=false)]
-                public SearchFormDatasResponseBodyDataOriginatorName Name { get; set; }
-                public class SearchFormDatasResponseBodyDataOriginatorName : TeaModel {
+                public SearchFormDatasResponseBodyDataOriginatorUserName UserName { get; set; }
+                public class SearchFormDatasResponseBodyDataOriginatorUserName : TeaModel {
                     /// <summary>
                     /// 中文名称
                     /// </summary>
@@ -123,10 +126,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
-                [NameInMap("name")]
+                [NameInMap("userName")]
                 [Validation(Required=false)]
-                public SearchFormDatasResponseBodyDataModifyUserName Name { get; set; }
-                public class SearchFormDatasResponseBodyDataModifyUserName : TeaModel {
+                public SearchFormDatasResponseBodyDataModifyUserUserName UserName { get; set; }
+                public class SearchFormDatasResponseBodyDataModifyUserUserName : TeaModel {
                     /// <summary>
                     /// 中文名称
                     /// </summary>
@@ -195,16 +198,16 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             /// <summary>
             /// 创建人
             /// </summary>
-            [NameInMap("creator")]
+            [NameInMap("creatorUserId")]
             [Validation(Required=false)]
-            public string Creator { get; set; }
+            public string CreatorUserId { get; set; }
 
             /// <summary>
             /// 修改人
             /// </summary>
-            [NameInMap("modifier")]
+            [NameInMap("modifierUserId")]
             [Validation(Required=false)]
-            public string Modifier { get; set; }
+            public string ModifierUserId { get; set; }
 
             /// <summary>
             /// 批次号

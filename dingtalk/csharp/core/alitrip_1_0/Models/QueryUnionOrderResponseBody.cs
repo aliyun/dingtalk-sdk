@@ -19,16 +19,16 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
             /// <summary>
             /// 订单id
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("flightOrderId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? FlightOrderId { get; set; }
 
             /// <summary>
             /// 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
             /// </summary>
-            [NameInMap("status")]
+            [NameInMap("flightOrderStatus")]
             [Validation(Required=false)]
-            public long? Status { get; set; }
+            public long? FlightOrderStatus { get; set; }
 
         }
 
@@ -49,16 +49,16 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
             /// <summary>
             /// 火车订单号
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("trainOrderId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? TrainOrderId { get; set; }
 
             /// <summary>
             /// 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
             /// </summary>
-            [NameInMap("status")]
+            [NameInMap("trainOrderstatus")]
             [Validation(Required=false)]
-            public long? Status { get; set; }
+            public long? TrainOrderstatus { get; set; }
 
         }
 
@@ -72,16 +72,16 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
             /// <summary>
             /// 酒店订单号
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("hotelOrderId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? HotelOrderId { get; set; }
 
             /// <summary>
             /// 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
             /// </summary>
-            [NameInMap("orderStatus")]
+            [NameInMap("hotelOrderStatus")]
             [Validation(Required=false)]
-            public long? OrderStatus { get; set; }
+            public long? HotelOrderStatus { get; set; }
 
         }
 
@@ -95,16 +95,16 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
             /// <summary>
             /// 用车订单号
             /// </summary>
-            [NameInMap("id")]
+            [NameInMap("vehicleOrderId")]
             [Validation(Required=false)]
-            public long? Id { get; set; }
+            public long? VehicleOrderId { get; set; }
 
             /// <summary>
             /// 订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消
             /// </summary>
-            [NameInMap("orderStatus")]
+            [NameInMap("vehicleOrderStatus")]
             [Validation(Required=false)]
-            public long? OrderStatus { get; set; }
+            public long? VehicleOrderStatus { get; set; }
 
         }
 
