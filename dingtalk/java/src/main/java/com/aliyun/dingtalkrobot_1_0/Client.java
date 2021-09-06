@@ -94,4 +94,49 @@ public class Client extends com.aliyun.teaopenapi.Client {
         ));
         return TeaModel.toModel(this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", "/v1.0/robot/oToMessages/readStatus", "json", req, runtime), new BatchOTOQueryResponse());
     }
+
+    public SendRobotDingMessageResponse sendRobotDingMessage(SendRobotDingMessageRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SendRobotDingMessageHeaders headers = new SendRobotDingMessageHeaders();
+        return this.sendRobotDingMessageWithOptions(request, headers, runtime);
+    }
+
+    public SendRobotDingMessageResponse sendRobotDingMessageWithOptions(SendRobotDingMessageRequest request, SendRobotDingMessageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIdList)) {
+            body.put("receiverUserIdList", request.receiverUserIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTemplateId)) {
+            body.put("dingTemplateId", request.dingTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contentParams)) {
+            body.put("contentParams", request.contentParams);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendRobotDingMessage", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/dingMessages/send", "json", req, runtime), new SendRobotDingMessageResponse());
+    }
 }
