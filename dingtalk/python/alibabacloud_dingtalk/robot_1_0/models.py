@@ -362,3 +362,157 @@ class BatchOTOQueryResponse(TeaModel):
         return self
 
 
+class SendRobotDingMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendRobotDingMessageRequest(TeaModel):
+    def __init__(
+        self,
+        robot_code: str = None,
+        open_conversation_id: str = None,
+        receiver_user_id_list: List[str] = None,
+        ding_template_id: str = None,
+        content_params: Dict[str, str] = None,
+    ):
+        # 机器人的Id
+        self.robot_code = robot_code
+        # 群聊的对外开放Id
+        self.open_conversation_id = open_conversation_id
+        # 接受人的userId列表
+        self.receiver_user_id_list = receiver_user_id_list
+        # 颁发的模版id，可通过宜搭申请：https://yida.alibaba-inc.com/alibaba/web/APP_NSUGAGIQUMI4ESRA7O7D/inst/homepage/#/FORM-WO866371VGXSECXX4M0NC9KSGAT92VSA3TZSK9B
+        self.ding_template_id = ding_template_id
+        # 模版对应的参数
+        self.content_params = content_params
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.receiver_user_id_list is not None:
+            result['receiverUserIdList'] = self.receiver_user_id_list
+        if self.ding_template_id is not None:
+            result['dingTemplateId'] = self.ding_template_id
+        if self.content_params is not None:
+            result['contentParams'] = self.content_params
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('receiverUserIdList') is not None:
+            self.receiver_user_id_list = m.get('receiverUserIdList')
+        if m.get('dingTemplateId') is not None:
+            self.ding_template_id = m.get('dingTemplateId')
+        if m.get('contentParams') is not None:
+            self.content_params = m.get('contentParams')
+        return self
+
+
+class SendRobotDingMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_send_result_id: str = None,
+    ):
+        # 返回的ding消息id
+        self.ding_send_result_id = ding_send_result_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_send_result_id is not None:
+            result['dingSendResultId'] = self.ding_send_result_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingSendResultId') is not None:
+            self.ding_send_result_id = m.get('dingSendResultId')
+        return self
+
+
+class SendRobotDingMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendRobotDingMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendRobotDingMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
