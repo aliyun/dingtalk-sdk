@@ -192,6 +192,100 @@ export class BatchOTOQueryResponse extends $tea.Model {
   }
 }
 
+export class SendRobotDingMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotDingMessageRequest extends $tea.Model {
+  robotCode?: string;
+  openConversationId?: string;
+  receiverUserIdList?: string[];
+  dingTemplateId?: string;
+  contentParams?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+      openConversationId: 'openConversationId',
+      receiverUserIdList: 'receiverUserIdList',
+      dingTemplateId: 'dingTemplateId',
+      contentParams: 'contentParams',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+      openConversationId: 'string',
+      receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
+      dingTemplateId: 'string',
+      contentParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotDingMessageResponseBody extends $tea.Model {
+  dingSendResultId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingSendResultId: 'dingSendResultId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingSendResultId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendRobotDingMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendRobotDingMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendRobotDingMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
   name?: string;
   userId?: string;
@@ -305,6 +399,51 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<BatchOTOQueryResponse>(await this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", `/v1.0/robot/oToMessages/readStatus`, "json", req, runtime), new BatchOTOQueryResponse({}));
+  }
+
+  async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendRobotDingMessageHeaders({ });
+    return await this.sendRobotDingMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendRobotDingMessageWithOptions(request: SendRobotDingMessageRequest, headers: SendRobotDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotDingMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.receiverUserIdList)) {
+      body["receiverUserIdList"] = request.receiverUserIdList;
+    }
+
+    if (!Util.isUnset(request.dingTemplateId)) {
+      body["dingTemplateId"] = request.dingTemplateId;
+    }
+
+    if (!Util.isUnset(request.contentParams)) {
+      body["contentParams"] = request.contentParams;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendRobotDingMessageResponse>(await this.doROARequest("SendRobotDingMessage", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/dingMessages/send`, "json", req, runtime), new SendRobotDingMessageResponse({}));
   }
 
 }
