@@ -366,3 +366,95 @@ class Client(OpenApiClient):
             dingtalkyida__1__0_models.GetFormDataByIDResponse(),
             await self.do_roarequest_async('GetFormDataByID', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms/instances/{id}', 'json', req, runtime)
         )
+
+    def start_instance(
+        self,
+        request: dingtalkyida__1__0_models.StartInstanceRequest,
+    ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.StartInstanceHeaders()
+        return self.start_instance_with_options(request, headers, runtime)
+
+    async def start_instance_async(
+        self,
+        request: dingtalkyida__1__0_models.StartInstanceRequest,
+    ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.StartInstanceHeaders()
+        return await self.start_instance_with_options_async(request, headers, runtime)
+
+    def start_instance_with_options(
+        self,
+        request: dingtalkyida__1__0_models.StartInstanceRequest,
+        headers: dingtalkyida__1__0_models.StartInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.form_data_json):
+            body['formDataJson'] = request.form_data_json
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.department_id):
+            body['departmentId'] = request.department_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.StartInstanceResponse(),
+            self.do_roarequest('StartInstance', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/processes/instances/start', 'json', req, runtime)
+        )
+
+    async def start_instance_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.StartInstanceRequest,
+        headers: dingtalkyida__1__0_models.StartInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.form_data_json):
+            body['formDataJson'] = request.form_data_json
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.department_id):
+            body['departmentId'] = request.department_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.StartInstanceResponse(),
+            await self.do_roarequest_async('StartInstance', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/processes/instances/start', 'json', req, runtime)
+        )

@@ -427,6 +427,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetFileUploadInfo', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/files/uploadInfos', 'json', req, runtime)
         )
 
+    def finish_beginner_task(
+        self,
+        task_code: str,
+        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
+    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.FinishBeginnerTaskHeaders()
+        return self.finish_beginner_task_with_options(task_code, request, headers, runtime)
+
+    async def finish_beginner_task_async(
+        self,
+        task_code: str,
+        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
+    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.FinishBeginnerTaskHeaders()
+        return await self.finish_beginner_task_with_options_async(task_code, request, headers, runtime)
+
+    def finish_beginner_task_with_options(
+        self,
+        task_code: str,
+        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
+        headers: dingtalkats__1__0_models.FinishBeginnerTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.FinishBeginnerTaskResponse(),
+            self.do_roarequest('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/beginnerTasks/{task_code}/finish', 'json', req, runtime)
+        )
+
+    async def finish_beginner_task_with_options_async(
+        self,
+        task_code: str,
+        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
+        headers: dingtalkats__1__0_models.FinishBeginnerTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.FinishBeginnerTaskResponse(),
+            await self.do_roarequest_async('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/beginnerTasks/{task_code}/finish', 'json', req, runtime)
+        )
+
     def get_application_reg_form_by_flow_id(
         self,
         flow_id: str,

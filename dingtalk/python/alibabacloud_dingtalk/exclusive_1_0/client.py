@@ -104,10 +104,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -131,10 +131,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -280,10 +280,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -307,10 +307,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -352,10 +352,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -379,10 +379,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -872,10 +872,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetDingReportDeptSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -899,10 +899,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetDingReportDeptSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1008,10 +1008,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1035,10 +1035,10 @@ class Client(OpenApiClient):
     ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.page_start):
-            query['pageStart'] = request.page_start
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

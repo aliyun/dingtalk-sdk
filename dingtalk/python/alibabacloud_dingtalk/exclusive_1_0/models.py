@@ -258,13 +258,13 @@ class GetUserAppVersionSummaryHeaders(TeaModel):
 class GetUserAppVersionSummaryRequest(TeaModel):
     def __init__(
         self,
-        page_start: int = None,
-        page_size: int = None,
+        next_token: int = None,
+        max_results: int = None,
     ):
         # 启始数据游标
-        self.page_start = page_start
+        self.next_token = next_token
         # 每页包含的数据条数
-        self.page_size = page_size
+        self.max_results = max_results
 
     def validate(self):
         pass
@@ -275,18 +275,18 @@ class GetUserAppVersionSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.page_start is not None:
-            result['pageStart'] = self.page_start
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('pageStart') is not None:
-            self.page_start = m.get('pageStart')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         return self
 
 
@@ -350,13 +350,13 @@ class GetUserAppVersionSummaryResponseBody(TeaModel):
     def __init__(
         self,
         data: List[GetUserAppVersionSummaryResponseBodyData] = None,
-        next_id: int = None,
+        next_token: int = None,
         has_more: bool = None,
     ):
         # 用户版本分布情况列表
         self.data = data
         # 下一次请求的分页游标
-        self.next_id = next_id
+        self.next_token = next_token
         # 是否有更多数据
         self.has_more = has_more
 
@@ -376,8 +376,8 @@ class GetUserAppVersionSummaryResponseBody(TeaModel):
         if self.data is not None:
             for k in self.data:
                 result['data'].append(k.to_map() if k else None)
-        if self.next_id is not None:
-            result['nextId'] = self.next_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.has_more is not None:
             result['hasMore'] = self.has_more
         return result
@@ -389,8 +389,8 @@ class GetUserAppVersionSummaryResponseBody(TeaModel):
             for k in m.get('data'):
                 temp_model = GetUserAppVersionSummaryResponseBodyData()
                 self.data.append(temp_model.from_map(k))
-        if m.get('nextId') is not None:
-            self.next_id = m.get('nextId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
         return self
@@ -957,13 +957,13 @@ class GetPublisherSummaryHeaders(TeaModel):
 class GetPublisherSummaryRequest(TeaModel):
     def __init__(
         self,
-        page_start: int = None,
-        page_size: int = None,
+        next_token: int = None,
+        max_results: int = None,
     ):
         # 启始数据游标
-        self.page_start = page_start
+        self.next_token = next_token
         # 每页包含的数据条数
-        self.page_size = page_size
+        self.max_results = max_results
 
     def validate(self):
         pass
@@ -974,18 +974,18 @@ class GetPublisherSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.page_start is not None:
-            result['pageStart'] = self.page_start
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('pageStart') is not None:
-            self.page_start = m.get('pageStart')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         return self
 
 
@@ -1074,7 +1074,7 @@ class GetPublisherSummaryResponseBody(TeaModel):
         publisher_article_cnt_std: str = None,
         publisher_article_pv_cnt_std: str = None,
         publisher_article_pv_top_5: List[GetPublisherSummaryResponseBodyPublisherArticlePvTop5] = None,
-        next_id: int = None,
+        next_token: int = None,
         has_more: bool = None,
     ):
         # 互动服务窗相关数据
@@ -1088,7 +1088,7 @@ class GetPublisherSummaryResponseBody(TeaModel):
         # 阅读量最高的5个文章
         self.publisher_article_pv_top_5 = publisher_article_pv_top_5
         # 下一次请求的分页游标
-        self.next_id = next_id
+        self.next_token = next_token
         # 是否有更多数据
         self.has_more = has_more
 
@@ -1122,8 +1122,8 @@ class GetPublisherSummaryResponseBody(TeaModel):
         if self.publisher_article_pv_top_5 is not None:
             for k in self.publisher_article_pv_top_5:
                 result['publisherArticlePvTop5'].append(k.to_map() if k else None)
-        if self.next_id is not None:
-            result['nextId'] = self.next_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.has_more is not None:
             result['hasMore'] = self.has_more
         return result
@@ -1146,8 +1146,8 @@ class GetPublisherSummaryResponseBody(TeaModel):
             for k in m.get('publisherArticlePvTop5'):
                 temp_model = GetPublisherSummaryResponseBodyPublisherArticlePvTop5()
                 self.publisher_article_pv_top_5.append(temp_model.from_map(k))
-        if m.get('nextId') is not None:
-            self.next_id = m.get('nextId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
         return self
@@ -1226,13 +1226,13 @@ class GetDocCreatedDeptSummaryHeaders(TeaModel):
 class GetDocCreatedDeptSummaryRequest(TeaModel):
     def __init__(
         self,
-        page_start: int = None,
-        page_size: int = None,
+        next_token: int = None,
+        max_results: int = None,
     ):
         # 启始数据游标
-        self.page_start = page_start
+        self.next_token = next_token
         # 每页包含的数据条数
-        self.page_size = page_size
+        self.max_results = max_results
 
     def validate(self):
         pass
@@ -1243,18 +1243,18 @@ class GetDocCreatedDeptSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.page_start is not None:
-            result['pageStart'] = self.page_start
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('pageStart') is not None:
-            self.page_start = m.get('pageStart')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         return self
 
 
@@ -1304,13 +1304,13 @@ class GetDocCreatedDeptSummaryResponseBody(TeaModel):
     def __init__(
         self,
         data: List[GetDocCreatedDeptSummaryResponseBodyData] = None,
-        next_id: int = None,
+        next_token: int = None,
         has_more: bool = None,
     ):
         # 部门维度用户创建文档数
         self.data = data
         # 下一次请求的分页游标
-        self.next_id = next_id
+        self.next_token = next_token
         # 是否有更多数据
         self.has_more = has_more
 
@@ -1330,8 +1330,8 @@ class GetDocCreatedDeptSummaryResponseBody(TeaModel):
         if self.data is not None:
             for k in self.data:
                 result['data'].append(k.to_map() if k else None)
-        if self.next_id is not None:
-            result['nextId'] = self.next_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.has_more is not None:
             result['hasMore'] = self.has_more
         return result
@@ -1343,8 +1343,8 @@ class GetDocCreatedDeptSummaryResponseBody(TeaModel):
             for k in m.get('data'):
                 temp_model = GetDocCreatedDeptSummaryResponseBodyData()
                 self.data.append(temp_model.from_map(k))
-        if m.get('nextId') is not None:
-            self.next_id = m.get('nextId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
         return self
@@ -2344,13 +2344,13 @@ class GetDingReportDeptSummaryHeaders(TeaModel):
 class GetDingReportDeptSummaryRequest(TeaModel):
     def __init__(
         self,
-        page_start: int = None,
-        page_size: int = None,
+        next_token: int = None,
+        max_results: int = None,
     ):
         # 启始数据游标
-        self.page_start = page_start
+        self.next_token = next_token
         # 每页包含的数据条数
-        self.page_size = page_size
+        self.max_results = max_results
 
     def validate(self):
         pass
@@ -2361,18 +2361,18 @@ class GetDingReportDeptSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.page_start is not None:
-            result['pageStart'] = self.page_start
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('pageStart') is not None:
-            self.page_start = m.get('pageStart')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         return self
 
 
@@ -2429,13 +2429,13 @@ class GetDingReportDeptSummaryResponseBody(TeaModel):
     def __init__(
         self,
         data: List[GetDingReportDeptSummaryResponseBodyData] = None,
-        next_id: int = None,
+        next_token: int = None,
         has_more: bool = None,
     ):
         # 部门维度发布日志信息
         self.data = data
         # 下一次请求的分页游标
-        self.next_id = next_id
+        self.next_token = next_token
         # 是否有更多数据
         self.has_more = has_more
 
@@ -2455,8 +2455,8 @@ class GetDingReportDeptSummaryResponseBody(TeaModel):
         if self.data is not None:
             for k in self.data:
                 result['data'].append(k.to_map() if k else None)
-        if self.next_id is not None:
-            result['nextId'] = self.next_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.has_more is not None:
             result['hasMore'] = self.has_more
         return result
@@ -2468,8 +2468,8 @@ class GetDingReportDeptSummaryResponseBody(TeaModel):
             for k in m.get('data'):
                 temp_model = GetDingReportDeptSummaryResponseBodyData()
                 self.data.append(temp_model.from_map(k))
-        if m.get('nextId') is not None:
-            self.next_id = m.get('nextId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
         return self
@@ -2736,13 +2736,13 @@ class GetGeneralFormCreatedDeptSummaryHeaders(TeaModel):
 class GetGeneralFormCreatedDeptSummaryRequest(TeaModel):
     def __init__(
         self,
-        page_start: int = None,
-        page_size: int = None,
+        next_token: int = None,
+        max_results: int = None,
     ):
         # 启始数据游标
-        self.page_start = page_start
+        self.next_token = next_token
         # 每页包含的数据条数
-        self.page_size = page_size
+        self.max_results = max_results
 
     def validate(self):
         pass
@@ -2753,18 +2753,18 @@ class GetGeneralFormCreatedDeptSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.page_start is not None:
-            result['pageStart'] = self.page_start
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('pageStart') is not None:
-            self.page_start = m.get('pageStart')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         return self
 
 
@@ -2814,13 +2814,13 @@ class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
     def __init__(
         self,
         data: List[GetGeneralFormCreatedDeptSummaryResponseBodyData] = None,
-        next_id: int = None,
+        next_token: int = None,
         has_more: bool = None,
     ):
         # 用户版本分布情况列表
         self.data = data
         # 下一次请 求的分页游标
-        self.next_id = next_id
+        self.next_token = next_token
         # 是否有更多数据
         self.has_more = has_more
 
@@ -2840,8 +2840,8 @@ class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
         if self.data is not None:
             for k in self.data:
                 result['data'].append(k.to_map() if k else None)
-        if self.next_id is not None:
-            result['nextId'] = self.next_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.has_more is not None:
             result['hasMore'] = self.has_more
         return result
@@ -2853,8 +2853,8 @@ class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
             for k in m.get('data'):
                 temp_model = GetGeneralFormCreatedDeptSummaryResponseBodyData()
                 self.data.append(temp_model.from_map(k))
-        if m.get('nextId') is not None:
-            self.next_id = m.get('nextId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
         return self

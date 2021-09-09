@@ -1124,3 +1124,178 @@ class GetFormDataByIDResponse(TeaModel):
         return self
 
 
+class StartInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class StartInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        system_token: str = None,
+        user_id: str = None,
+        language: str = None,
+        form_uuid: str = None,
+        form_data_json: str = None,
+        process_code: str = None,
+        department_id: str = None,
+    ):
+        # 应用编码
+        self.app_type = app_type
+        # 应用秘钥。在应用数据中获取。
+        self.system_token = system_token
+        # 钉钉userId
+        self.user_id = user_id
+        # 语言。可选值：zh_CN/en_US 默认：zh_CN
+        self.language = language
+        # 表单唯一编码
+        self.form_uuid = form_uuid
+        # 表单数据
+        self.form_data_json = form_data_json
+        # 流程编码
+        self.process_code = process_code
+        # 发起人所在部门编号
+        self.department_id = department_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.language is not None:
+            result['language'] = self.language
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.form_data_json is not None:
+            result['formDataJson'] = self.form_data_json
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('formDataJson') is not None:
+            self.form_data_json = m.get('formDataJson')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        return self
+
+
+class StartInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 流程实例ID
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class StartInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: StartInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = StartInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

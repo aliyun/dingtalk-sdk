@@ -403,6 +403,8 @@ class Client(OpenApiClient):
             body['participantIds'] = request.participant_ids
         if not UtilClient.is_unset(request.detail_url):
             body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.notify_configs):
+            body['notifyConfigs'] = request.notify_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -446,6 +448,8 @@ class Client(OpenApiClient):
             body['participantIds'] = request.participant_ids
         if not UtilClient.is_unset(request.detail_url):
             body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.notify_configs):
+            body['notifyConfigs'] = request.notify_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

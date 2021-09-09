@@ -791,6 +791,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryOnlineUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/onlineUserData', 'json', req, runtime)
         )
 
+    def query_company_basic_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders()
+        return self.query_company_basic_info_with_options(request, headers, runtime)
+
+    async def query_company_basic_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders()
+        return await self.query_company_basic_info_with_options_async(request, headers, runtime)
+
+    def query_company_basic_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse(),
+            self.do_roarequest('QueryCompanyBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/basicInfo', 'json', req, runtime)
+        )
+
+    async def query_company_basic_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse(),
+            await self.do_roarequest_async('QueryCompanyBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/basicInfo', 'json', req, runtime)
+        )
+
     def query_approval_statistical_data(
         self,
         request: dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataRequest,

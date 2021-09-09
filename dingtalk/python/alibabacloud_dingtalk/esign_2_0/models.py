@@ -76,6 +76,112 @@ class CreateProcessRequestFiles(TeaModel):
         return self
 
 
+class CreateProcessRequestParticipantsSignPosListSignDate(TeaModel):
+    def __init__(
+        self,
+        format: str = None,
+    ):
+        # 签署区时间格式， 支持yyyy/MM/dd, yyyy-MM-dd, yyyy年MM月dd日
+        self.format = format
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.format is not None:
+            result['format'] = self.format
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        return self
+
+
+class CreateProcessRequestParticipantsSignPosList(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        is_cross_page: bool = None,
+        need_sign_date: bool = None,
+        page: str = None,
+        sign_date: CreateProcessRequestParticipantsSignPosListSignDate = None,
+        sign_requirement: str = None,
+        x: float = None,
+        y: float = None,
+    ):
+        # 文件id
+        self.file_id = file_id
+        # 是否为骑缝章
+        self.is_cross_page = is_cross_page
+        # 是否需要显示签署时间
+        self.need_sign_date = need_sign_date
+        # 签署区页码
+        self.page = page
+        self.sign_date = sign_date
+        # 签署要求,1-企业章 2-经办人
+        self.sign_requirement = sign_requirement
+        # 签署区x坐标
+        self.x = x
+        # 签署区y坐标
+        self.y = y
+
+    def validate(self):
+        if self.sign_date:
+            self.sign_date.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.is_cross_page is not None:
+            result['isCrossPage'] = self.is_cross_page
+        if self.need_sign_date is not None:
+            result['needSignDate'] = self.need_sign_date
+        if self.page is not None:
+            result['page'] = self.page
+        if self.sign_date is not None:
+            result['signDate'] = self.sign_date.to_map()
+        if self.sign_requirement is not None:
+            result['signRequirement'] = self.sign_requirement
+        if self.x is not None:
+            result['x'] = self.x
+        if self.y is not None:
+            result['y'] = self.y
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('isCrossPage') is not None:
+            self.is_cross_page = m.get('isCrossPage')
+        if m.get('needSignDate') is not None:
+            self.need_sign_date = m.get('needSignDate')
+        if m.get('page') is not None:
+            self.page = m.get('page')
+        if m.get('signDate') is not None:
+            temp_model = CreateProcessRequestParticipantsSignPosListSignDate()
+            self.sign_date = temp_model.from_map(m['signDate'])
+        if m.get('signRequirement') is not None:
+            self.sign_requirement = m.get('signRequirement')
+        if m.get('x') is not None:
+            self.x = m.get('x')
+        if m.get('y') is not None:
+            self.y = m.get('y')
+        return self
+
+
 class CreateProcessRequestParticipants(TeaModel):
     def __init__(
         self,
@@ -87,6 +193,7 @@ class CreateProcessRequestParticipants(TeaModel):
         user_id: str = None,
         account_name: str = None,
         org_name: str = None,
+        sign_pos_list: List[CreateProcessRequestParticipantsSignPosList] = None,
     ):
         self.sign_requirements = sign_requirements
         self.sign_order = sign_order
@@ -96,9 +203,14 @@ class CreateProcessRequestParticipants(TeaModel):
         self.user_id = user_id
         self.account_name = account_name
         self.org_name = org_name
+        # 参与方签署位置信息列表
+        self.sign_pos_list = sign_pos_list
 
     def validate(self):
-        pass
+        if self.sign_pos_list:
+            for k in self.sign_pos_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -122,6 +234,10 @@ class CreateProcessRequestParticipants(TeaModel):
             result['accountName'] = self.account_name
         if self.org_name is not None:
             result['orgName'] = self.org_name
+        result['signPosList'] = []
+        if self.sign_pos_list is not None:
+            for k in self.sign_pos_list:
+                result['signPosList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -142,6 +258,11 @@ class CreateProcessRequestParticipants(TeaModel):
             self.account_name = m.get('accountName')
         if m.get('orgName') is not None:
             self.org_name = m.get('orgName')
+        self.sign_pos_list = []
+        if m.get('signPosList') is not None:
+            for k in m.get('signPosList'):
+                temp_model = CreateProcessRequestParticipantsSignPosList()
+                self.sign_pos_list.append(temp_model.from_map(k))
         return self
 
 
