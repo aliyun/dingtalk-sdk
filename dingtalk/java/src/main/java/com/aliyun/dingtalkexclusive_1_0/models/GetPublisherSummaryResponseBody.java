@@ -25,8 +25,8 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     public java.util.List<GetPublisherSummaryResponseBodyPublisherArticlePvTop5> publisherArticlePvTop5;
 
     // 下一次请求的分页游标
-    @NameInMap("nextId")
-    public Long nextId;
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 是否有更多数据
     @NameInMap("hasMore")
@@ -77,12 +77,12 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
         return this.publisherArticlePvTop5;
     }
 
-    public GetPublisherSummaryResponseBody setNextId(Long nextId) {
-        this.nextId = nextId;
+    public GetPublisherSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public Long getNextId() {
-        return this.nextId;
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public GetPublisherSummaryResponseBody setHasMore(Boolean hasMore) {

@@ -5,32 +5,32 @@ import com.aliyun.tea.*;
 
 public class GetUserAppVersionSummaryRequest extends TeaModel {
     // 启始数据游标
-    @NameInMap("pageStart")
-    public Long pageStart;
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 每页包含的数据条数
-    @NameInMap("pageSize")
-    public Long pageSize;
+    @NameInMap("maxResults")
+    public Long maxResults;
 
     public static GetUserAppVersionSummaryRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUserAppVersionSummaryRequest self = new GetUserAppVersionSummaryRequest();
         return TeaModel.build(map, self);
     }
 
-    public GetUserAppVersionSummaryRequest setPageStart(Long pageStart) {
-        this.pageStart = pageStart;
+    public GetUserAppVersionSummaryRequest setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public Long getPageStart() {
-        return this.pageStart;
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
-    public GetUserAppVersionSummaryRequest setPageSize(Long pageSize) {
-        this.pageSize = pageSize;
+    public GetUserAppVersionSummaryRequest setMaxResults(Long maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public Long getPageSize() {
-        return this.pageSize;
+    public Long getMaxResults() {
+        return this.maxResults;
     }
 
 }

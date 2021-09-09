@@ -9,8 +9,8 @@ public class GetUserAppVersionSummaryResponseBody extends TeaModel {
     public java.util.List<GetUserAppVersionSummaryResponseBodyData> data;
 
     // 下一次请求的分页游标
-    @NameInMap("nextId")
-    public Long nextId;
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 是否有更多数据
     @NameInMap("hasMore")
@@ -29,12 +29,12 @@ public class GetUserAppVersionSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetUserAppVersionSummaryResponseBody setNextId(Long nextId) {
-        this.nextId = nextId;
+    public GetUserAppVersionSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public Long getNextId() {
-        return this.nextId;
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public GetUserAppVersionSummaryResponseBody setHasMore(Boolean hasMore) {

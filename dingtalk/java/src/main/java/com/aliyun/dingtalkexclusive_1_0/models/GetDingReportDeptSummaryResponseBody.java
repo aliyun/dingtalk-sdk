@@ -9,8 +9,8 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
     public java.util.List<GetDingReportDeptSummaryResponseBodyData> data;
 
     // 下一次请求的分页游标
-    @NameInMap("nextId")
-    public Long nextId;
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 是否有更多数据
     @NameInMap("hasMore")
@@ -29,12 +29,12 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetDingReportDeptSummaryResponseBody setNextId(Long nextId) {
-        this.nextId = nextId;
+    public GetDingReportDeptSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public Long getNextId() {
-        return this.nextId;
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public GetDingReportDeptSummaryResponseBody setHasMore(Boolean hasMore) {

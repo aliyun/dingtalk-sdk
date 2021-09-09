@@ -9,8 +9,8 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
     public java.util.List<GetGeneralFormCreatedDeptSummaryResponseBodyData> data;
 
     // 下一次请 求的分页游标
-    @NameInMap("nextId")
-    public Long nextId;
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 是否有更多数据
     @NameInMap("hasMore")
@@ -29,12 +29,12 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
         return this.data;
     }
 
-    public GetGeneralFormCreatedDeptSummaryResponseBody setNextId(Long nextId) {
-        this.nextId = nextId;
+    public GetGeneralFormCreatedDeptSummaryResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public Long getNextId() {
-        return this.nextId;
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public GetGeneralFormCreatedDeptSummaryResponseBody setHasMore(Boolean hasMore) {

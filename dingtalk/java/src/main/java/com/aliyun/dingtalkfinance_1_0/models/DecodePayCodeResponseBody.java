@@ -24,6 +24,10 @@ public class DecodePayCodeResponseBody extends TeaModel {
     @NameInMap("alipayCode")
     public String alipayCode;
 
+    // 用户和企业关系
+    @NameInMap("userCorpRelationType")
+    public String userCorpRelationType;
+
     public static DecodePayCodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         DecodePayCodeResponseBody self = new DecodePayCodeResponseBody();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class DecodePayCodeResponseBody extends TeaModel {
     }
     public String getAlipayCode() {
         return this.alipayCode;
+    }
+
+    public DecodePayCodeResponseBody setUserCorpRelationType(String userCorpRelationType) {
+        this.userCorpRelationType = userCorpRelationType;
+        return this;
+    }
+    public String getUserCorpRelationType() {
+        return this.userCorpRelationType;
     }
 
 }

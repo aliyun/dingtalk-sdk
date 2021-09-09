@@ -7,6 +7,9 @@ public class RecallMessageHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
+    @NameInMap("operatingSource")
+    public String operatingSource;
+
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
@@ -21,6 +24,14 @@ public class RecallMessageHeaders extends TeaModel {
     }
     public java.util.Map<String, String> getCommonHeaders() {
         return this.commonHeaders;
+    }
+
+    public RecallMessageHeaders setOperatingSource(String operatingSource) {
+        this.operatingSource = operatingSource;
+        return this;
+    }
+    public String getOperatingSource() {
+        return this.operatingSource;
     }
 
     public RecallMessageHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

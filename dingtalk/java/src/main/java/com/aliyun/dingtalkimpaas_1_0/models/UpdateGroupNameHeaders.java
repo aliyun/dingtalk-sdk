@@ -7,6 +7,9 @@ public class UpdateGroupNameHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
+    @NameInMap("operatingSource")
+    public String operatingSource;
+
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
@@ -21,6 +24,14 @@ public class UpdateGroupNameHeaders extends TeaModel {
     }
     public java.util.Map<String, String> getCommonHeaders() {
         return this.commonHeaders;
+    }
+
+    public UpdateGroupNameHeaders setOperatingSource(String operatingSource) {
+        this.operatingSource = operatingSource;
+        return this;
+    }
+    public String getOperatingSource() {
+        return this.operatingSource;
     }
 
     public UpdateGroupNameHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

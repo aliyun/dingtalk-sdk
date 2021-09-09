@@ -149,6 +149,129 @@ public class CreateProcessRequest extends TeaModel {
 
     }
 
+    public static class CreateProcessRequestParticipantsSignPosListSignDate extends TeaModel {
+        // 签署区时间格式， 支持yyyy/MM/dd, yyyy-MM-dd, yyyy年MM月dd日
+        @NameInMap("format")
+        public String format;
+
+        public static CreateProcessRequestParticipantsSignPosListSignDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateProcessRequestParticipantsSignPosListSignDate self = new CreateProcessRequestParticipantsSignPosListSignDate();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateProcessRequestParticipantsSignPosListSignDate setFormat(String format) {
+            this.format = format;
+            return this;
+        }
+        public String getFormat() {
+            return this.format;
+        }
+
+    }
+
+    public static class CreateProcessRequestParticipantsSignPosList extends TeaModel {
+        // 文件id
+        @NameInMap("fileId")
+        public String fileId;
+
+        // 是否为骑缝章
+        @NameInMap("isCrossPage")
+        public Boolean isCrossPage;
+
+        // 是否需要显示签署时间
+        @NameInMap("needSignDate")
+        public Boolean needSignDate;
+
+        // 签署区页码
+        @NameInMap("page")
+        public String page;
+
+        @NameInMap("signDate")
+        public CreateProcessRequestParticipantsSignPosListSignDate signDate;
+
+        // 签署要求,1-企业章 2-经办人
+        @NameInMap("signRequirement")
+        public String signRequirement;
+
+        // 签署区x坐标
+        @NameInMap("x")
+        public Double x;
+
+        // 签署区y坐标
+        @NameInMap("y")
+        public Double y;
+
+        public static CreateProcessRequestParticipantsSignPosList build(java.util.Map<String, ?> map) throws Exception {
+            CreateProcessRequestParticipantsSignPosList self = new CreateProcessRequestParticipantsSignPosList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setFileId(String fileId) {
+            this.fileId = fileId;
+            return this;
+        }
+        public String getFileId() {
+            return this.fileId;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setIsCrossPage(Boolean isCrossPage) {
+            this.isCrossPage = isCrossPage;
+            return this;
+        }
+        public Boolean getIsCrossPage() {
+            return this.isCrossPage;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setNeedSignDate(Boolean needSignDate) {
+            this.needSignDate = needSignDate;
+            return this;
+        }
+        public Boolean getNeedSignDate() {
+            return this.needSignDate;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setPage(String page) {
+            this.page = page;
+            return this;
+        }
+        public String getPage() {
+            return this.page;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setSignDate(CreateProcessRequestParticipantsSignPosListSignDate signDate) {
+            this.signDate = signDate;
+            return this;
+        }
+        public CreateProcessRequestParticipantsSignPosListSignDate getSignDate() {
+            return this.signDate;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setSignRequirement(String signRequirement) {
+            this.signRequirement = signRequirement;
+            return this;
+        }
+        public String getSignRequirement() {
+            return this.signRequirement;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setX(Double x) {
+            this.x = x;
+            return this;
+        }
+        public Double getX() {
+            return this.x;
+        }
+
+        public CreateProcessRequestParticipantsSignPosList setY(Double y) {
+            this.y = y;
+            return this;
+        }
+        public Double getY() {
+            return this.y;
+        }
+
+    }
+
     public static class CreateProcessRequestParticipants extends TeaModel {
         @NameInMap("signRequirements")
         public String signRequirements;
@@ -173,6 +296,10 @@ public class CreateProcessRequest extends TeaModel {
 
         @NameInMap("orgName")
         public String orgName;
+
+        // 参与方签署位置信息列表
+        @NameInMap("signPosList")
+        public java.util.List<CreateProcessRequestParticipantsSignPosList> signPosList;
 
         public static CreateProcessRequestParticipants build(java.util.Map<String, ?> map) throws Exception {
             CreateProcessRequestParticipants self = new CreateProcessRequestParticipants();
@@ -241,6 +368,14 @@ public class CreateProcessRequest extends TeaModel {
         }
         public String getOrgName() {
             return this.orgName;
+        }
+
+        public CreateProcessRequestParticipants setSignPosList(java.util.List<CreateProcessRequestParticipantsSignPosList> signPosList) {
+            this.signPosList = signPosList;
+            return this;
+        }
+        public java.util.List<CreateProcessRequestParticipantsSignPosList> getSignPosList() {
+            return this.signPosList;
         }
 
     }

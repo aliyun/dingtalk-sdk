@@ -5,32 +5,32 @@ import com.aliyun.tea.*;
 
 public class GetDocCreatedDeptSummaryRequest extends TeaModel {
     // 启始数据游标
-    @NameInMap("pageStart")
-    public Long pageStart;
+    @NameInMap("nextToken")
+    public Long nextToken;
 
     // 每页包含的数据条数
-    @NameInMap("pageSize")
-    public Long pageSize;
+    @NameInMap("maxResults")
+    public Long maxResults;
 
     public static GetDocCreatedDeptSummaryRequest build(java.util.Map<String, ?> map) throws Exception {
         GetDocCreatedDeptSummaryRequest self = new GetDocCreatedDeptSummaryRequest();
         return TeaModel.build(map, self);
     }
 
-    public GetDocCreatedDeptSummaryRequest setPageStart(Long pageStart) {
-        this.pageStart = pageStart;
+    public GetDocCreatedDeptSummaryRequest setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public Long getPageStart() {
-        return this.pageStart;
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
-    public GetDocCreatedDeptSummaryRequest setPageSize(Long pageSize) {
-        this.pageSize = pageSize;
+    public GetDocCreatedDeptSummaryRequest setMaxResults(Long maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public Long getPageSize() {
-        return this.pageSize;
+    public Long getMaxResults() {
+        return this.maxResults;
     }
 
 }

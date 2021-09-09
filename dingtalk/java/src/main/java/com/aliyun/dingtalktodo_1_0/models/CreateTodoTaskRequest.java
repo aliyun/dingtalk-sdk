@@ -36,6 +36,10 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("detailUrl")
     public CreateTodoTaskRequestDetailUrl detailUrl;
 
+    // 通知提醒配置
+    @NameInMap("notifyConfigs")
+    public CreateTodoTaskRequestNotifyConfigs notifyConfigs;
+
     // 当前操作者id，需传用户的unionId
     @NameInMap("operatorId")
     public String operatorId;
@@ -109,6 +113,14 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.detailUrl;
     }
 
+    public CreateTodoTaskRequest setNotifyConfigs(CreateTodoTaskRequestNotifyConfigs notifyConfigs) {
+        this.notifyConfigs = notifyConfigs;
+        return this;
+    }
+    public CreateTodoTaskRequestNotifyConfigs getNotifyConfigs() {
+        return this.notifyConfigs;
+    }
+
     public CreateTodoTaskRequest setOperatorId(String operatorId) {
         this.operatorId = operatorId;
         return this;
@@ -145,6 +157,14 @@ public class CreateTodoTaskRequest extends TeaModel {
         }
         public String getPcUrl() {
             return this.pcUrl;
+        }
+
+    }
+
+    public static class CreateTodoTaskRequestNotifyConfigs extends TeaModel {
+        public static CreateTodoTaskRequestNotifyConfigs build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskRequestNotifyConfigs self = new CreateTodoTaskRequestNotifyConfigs();
+            return TeaModel.build(map, self);
         }
 
     }
