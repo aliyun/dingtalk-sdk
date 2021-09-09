@@ -140,7 +140,7 @@ export class NotifyPayCodePayResultResponse extends $tea.Model {
   }
 }
 
-export class NotifyPayCodeRefundResultHeaders extends $tea.Model {
+export class UpateUserCodeInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -162,47 +162,50 @@ export class NotifyPayCodeRefundResultHeaders extends $tea.Model {
   }
 }
 
-export class NotifyPayCodeRefundResultRequest extends $tea.Model {
+export class UpateUserCodeInstanceRequest extends $tea.Model {
+  codeId?: string;
+  codeIdentity?: string;
+  codeValue?: string;
+  status?: string;
   corpId?: string;
-  userId?: string;
-  tradeNo?: string;
-  refundOrderNo?: string;
-  remark?: string;
-  refundAmount?: string;
-  refundPromotionAmount?: string;
-  gmtRefund?: string;
-  payChannelDetailList?: NotifyPayCodeRefundResultRequestPayChannelDetailList[];
+  userCorpRelationType?: string;
+  userIdentity?: string;
+  gmtExpired?: string;
+  availableTimes?: UpateUserCodeInstanceRequestAvailableTimes[];
+  extInfo?: { [key: string]: any };
+  dingOrgId?: number;
   dingIsvOrgId?: number;
-  payCode?: string;
   static names(): { [key: string]: string } {
     return {
+      codeId: 'codeId',
+      codeIdentity: 'codeIdentity',
+      codeValue: 'codeValue',
+      status: 'status',
       corpId: 'corpId',
-      userId: 'userId',
-      tradeNo: 'tradeNo',
-      refundOrderNo: 'refundOrderNo',
-      remark: 'remark',
-      refundAmount: 'refundAmount',
-      refundPromotionAmount: 'refundPromotionAmount',
-      gmtRefund: 'gmtRefund',
-      payChannelDetailList: 'payChannelDetailList',
+      userCorpRelationType: 'userCorpRelationType',
+      userIdentity: 'userIdentity',
+      gmtExpired: 'gmtExpired',
+      availableTimes: 'availableTimes',
+      extInfo: 'extInfo',
+      dingOrgId: 'dingOrgId',
       dingIsvOrgId: 'dingIsvOrgId',
-      payCode: 'payCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      codeId: 'string',
+      codeIdentity: 'string',
+      codeValue: 'string',
+      status: 'string',
       corpId: 'string',
-      userId: 'string',
-      tradeNo: 'string',
-      refundOrderNo: 'string',
-      remark: 'string',
-      refundAmount: 'string',
-      refundPromotionAmount: 'string',
-      gmtRefund: 'string',
-      payChannelDetailList: { 'type': 'array', 'itemType': NotifyPayCodeRefundResultRequestPayChannelDetailList },
+      userCorpRelationType: 'string',
+      userIdentity: 'string',
+      gmtExpired: 'string',
+      availableTimes: { 'type': 'array', 'itemType': UpateUserCodeInstanceRequestAvailableTimes },
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      dingOrgId: 'number',
       dingIsvOrgId: 'number',
-      payCode: 'string',
     };
   }
 
@@ -211,17 +214,17 @@ export class NotifyPayCodeRefundResultRequest extends $tea.Model {
   }
 }
 
-export class NotifyPayCodeRefundResultResponseBody extends $tea.Model {
-  result?: string;
+export class UpateUserCodeInstanceResponseBody extends $tea.Model {
+  codeId?: string;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      codeId: 'codeId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: 'string',
+      codeId: 'string',
     };
   }
 
@@ -230,9 +233,9 @@ export class NotifyPayCodeRefundResultResponseBody extends $tea.Model {
   }
 }
 
-export class NotifyPayCodeRefundResultResponse extends $tea.Model {
+export class UpateUserCodeInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: NotifyPayCodeRefundResultResponseBody;
+  body: UpateUserCodeInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -243,7 +246,7 @@ export class NotifyPayCodeRefundResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: NotifyPayCodeRefundResultResponseBody,
+      body: UpateUserCodeInstanceResponseBody,
     };
   }
 
@@ -302,6 +305,7 @@ export class DecodePayCodeResponseBody extends $tea.Model {
   userInCorp?: boolean;
   codeType?: string;
   alipayCode?: string;
+  userCorpRelationType?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
@@ -309,6 +313,7 @@ export class DecodePayCodeResponseBody extends $tea.Model {
       userInCorp: 'userInCorp',
       codeType: 'codeType',
       alipayCode: 'alipayCode',
+      userCorpRelationType: 'userCorpRelationType',
     };
   }
 
@@ -319,6 +324,7 @@ export class DecodePayCodeResponseBody extends $tea.Model {
       userInCorp: 'boolean',
       codeType: 'string',
       alipayCode: 'string',
+      userCorpRelationType: 'string',
     };
   }
 
@@ -458,6 +464,339 @@ export class SaveCorpPayCodeResponse extends $tea.Model {
   }
 }
 
+export class NotifyVerifyResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyVerifyResultRequest extends $tea.Model {
+  payCode?: string;
+  corpId?: string;
+  userCorpRelationType?: string;
+  userIdentity?: string;
+  verifyTime?: string;
+  verifyResult?: boolean;
+  verifyLocation?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      payCode: 'payCode',
+      corpId: 'corpId',
+      userCorpRelationType: 'userCorpRelationType',
+      userIdentity: 'userIdentity',
+      verifyTime: 'verifyTime',
+      verifyResult: 'verifyResult',
+      verifyLocation: 'verifyLocation',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      payCode: 'string',
+      corpId: 'string',
+      userCorpRelationType: 'string',
+      userIdentity: 'string',
+      verifyTime: 'string',
+      verifyResult: 'boolean',
+      verifyLocation: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyVerifyResultResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyVerifyResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: NotifyVerifyResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: NotifyVerifyResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyPayCodeRefundResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyPayCodeRefundResultRequest extends $tea.Model {
+  corpId?: string;
+  userId?: string;
+  tradeNo?: string;
+  refundOrderNo?: string;
+  remark?: string;
+  refundAmount?: string;
+  refundPromotionAmount?: string;
+  gmtRefund?: string;
+  payChannelDetailList?: NotifyPayCodeRefundResultRequestPayChannelDetailList[];
+  dingIsvOrgId?: number;
+  payCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      userId: 'userId',
+      tradeNo: 'tradeNo',
+      refundOrderNo: 'refundOrderNo',
+      remark: 'remark',
+      refundAmount: 'refundAmount',
+      refundPromotionAmount: 'refundPromotionAmount',
+      gmtRefund: 'gmtRefund',
+      payChannelDetailList: 'payChannelDetailList',
+      dingIsvOrgId: 'dingIsvOrgId',
+      payCode: 'payCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      userId: 'string',
+      tradeNo: 'string',
+      refundOrderNo: 'string',
+      remark: 'string',
+      refundAmount: 'string',
+      refundPromotionAmount: 'string',
+      gmtRefund: 'string',
+      payChannelDetailList: { 'type': 'array', 'itemType': NotifyPayCodeRefundResultRequestPayChannelDetailList },
+      dingIsvOrgId: 'number',
+      payCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyPayCodeRefundResultResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NotifyPayCodeRefundResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: NotifyPayCodeRefundResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: NotifyPayCodeRefundResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateUserCodeInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateUserCodeInstanceRequest extends $tea.Model {
+  requestId?: string;
+  codeIdentity?: string;
+  codeValue?: string;
+  status?: string;
+  corpId?: string;
+  userCorpRelationType?: string;
+  userIdentity?: string;
+  gmtExpired?: string;
+  availableTimes?: CreateUserCodeInstanceRequestAvailableTimes[];
+  extInfo?: { [key: string]: any };
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      codeIdentity: 'codeIdentity',
+      codeValue: 'codeValue',
+      status: 'status',
+      corpId: 'corpId',
+      userCorpRelationType: 'userCorpRelationType',
+      userIdentity: 'userIdentity',
+      gmtExpired: 'gmtExpired',
+      availableTimes: 'availableTimes',
+      extInfo: 'extInfo',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      codeIdentity: 'string',
+      codeValue: 'string',
+      status: 'string',
+      corpId: 'string',
+      userCorpRelationType: 'string',
+      userIdentity: 'string',
+      gmtExpired: 'string',
+      availableTimes: { 'type': 'array', 'itemType': CreateUserCodeInstanceRequestAvailableTimes },
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateUserCodeInstanceResponseBody extends $tea.Model {
+  codeId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      codeId: 'codeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      codeId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateUserCodeInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateUserCodeInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateUserCodeInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList extends $tea.Model {
   fundToolName?: string;
   amount?: string;
@@ -532,6 +871,28 @@ export class NotifyPayCodePayResultRequestPayChannelDetailList extends $tea.Mode
   }
 }
 
+export class UpateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
+  gmtStart?: string;
+  gmtEnd?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtStart: 'gmtStart',
+      gmtEnd: 'gmtEnd',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtStart: 'string',
+      gmtEnd: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList extends $tea.Model {
   fundToolName?: string;
   amount?: string;
@@ -595,6 +956,28 @@ export class NotifyPayCodeRefundResultRequestPayChannelDetailList extends $tea.M
       payChannelRefundOrderNo: 'string',
       promotionAmount: 'string',
       fundToolDetailList: { 'type': 'array', 'itemType': NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
+  gmtStart?: string;
+  gmtEnd?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtStart: 'gmtStart',
+      gmtEnd: 'gmtEnd',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtStart: 'string',
+      gmtEnd: 'string',
     };
   }
 
@@ -713,57 +1096,61 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyPayCodePayResultResponse>(await this.doROARequest("NotifyPayCodePayResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/payResults/notify`, "json", req, runtime), new NotifyPayCodePayResultResponse({}));
   }
 
-  async notifyPayCodeRefundResult(request: NotifyPayCodeRefundResultRequest): Promise<NotifyPayCodeRefundResultResponse> {
+  async upateUserCodeInstance(request: UpateUserCodeInstanceRequest): Promise<UpateUserCodeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyPayCodeRefundResultHeaders({ });
-    return await this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
+    let headers = new UpateUserCodeInstanceHeaders({ });
+    return await this.upateUserCodeInstanceWithOptions(request, headers, runtime);
   }
 
-  async notifyPayCodeRefundResultWithOptions(request: NotifyPayCodeRefundResultRequest, headers: NotifyPayCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyPayCodeRefundResultResponse> {
+  async upateUserCodeInstanceWithOptions(request: UpateUserCodeInstanceRequest, headers: UpateUserCodeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpateUserCodeInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.codeId)) {
+      body["codeId"] = request.codeId;
+    }
+
+    if (!Util.isUnset(request.codeIdentity)) {
+      body["codeIdentity"] = request.codeIdentity;
+    }
+
+    if (!Util.isUnset(request.codeValue)) {
+      body["codeValue"] = request.codeValue;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
     if (!Util.isUnset(request.corpId)) {
       body["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
+    if (!Util.isUnset(request.userCorpRelationType)) {
+      body["userCorpRelationType"] = request.userCorpRelationType;
     }
 
-    if (!Util.isUnset(request.tradeNo)) {
-      body["tradeNo"] = request.tradeNo;
+    if (!Util.isUnset(request.userIdentity)) {
+      body["userIdentity"] = request.userIdentity;
     }
 
-    if (!Util.isUnset(request.refundOrderNo)) {
-      body["refundOrderNo"] = request.refundOrderNo;
+    if (!Util.isUnset(request.gmtExpired)) {
+      body["gmtExpired"] = request.gmtExpired;
     }
 
-    if (!Util.isUnset(request.remark)) {
-      body["remark"] = request.remark;
+    if (!Util.isUnset(request.availableTimes)) {
+      body["availableTimes"] = request.availableTimes;
     }
 
-    if (!Util.isUnset(request.refundAmount)) {
-      body["refundAmount"] = request.refundAmount;
+    if (!Util.isUnset(request.extInfo)) {
+      body["extInfo"] = request.extInfo;
     }
 
-    if (!Util.isUnset(request.refundPromotionAmount)) {
-      body["refundPromotionAmount"] = request.refundPromotionAmount;
-    }
-
-    if (!Util.isUnset(request.gmtRefund)) {
-      body["gmtRefund"] = request.gmtRefund;
-    }
-
-    if (!Util.isUnset(request.payChannelDetailList)) {
-      body["payChannelDetailList"] = request.payChannelDetailList;
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
     }
 
     if (!Util.isUnset(request.dingIsvOrgId)) {
       body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.payCode)) {
-      body["payCode"] = request.payCode;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -779,7 +1166,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyPayCodeRefundResultResponse>(await this.doROARequest("NotifyPayCodeRefundResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/refundResults/notify`, "json", req, runtime), new NotifyPayCodeRefundResultResponse({}));
+    return $tea.cast<UpateUserCodeInstanceResponse>(await this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new UpateUserCodeInstanceResponse({}));
   }
 
   async decodePayCode(request: DecodePayCodeRequest): Promise<DecodePayCodeResponse> {
@@ -866,6 +1253,209 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SaveCorpPayCodeResponse>(await this.doROARequest("SaveCorpPayCode", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/corpSettings`, "json", req, runtime), new SaveCorpPayCodeResponse({}));
+  }
+
+  async notifyVerifyResult(request: NotifyVerifyResultRequest): Promise<NotifyVerifyResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new NotifyVerifyResultHeaders({ });
+    return await this.notifyVerifyResultWithOptions(request, headers, runtime);
+  }
+
+  async notifyVerifyResultWithOptions(request: NotifyVerifyResultRequest, headers: NotifyVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyVerifyResultResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.payCode)) {
+      body["payCode"] = request.payCode;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.userCorpRelationType)) {
+      body["userCorpRelationType"] = request.userCorpRelationType;
+    }
+
+    if (!Util.isUnset(request.userIdentity)) {
+      body["userIdentity"] = request.userIdentity;
+    }
+
+    if (!Util.isUnset(request.verifyTime)) {
+      body["verifyTime"] = request.verifyTime;
+    }
+
+    if (!Util.isUnset(request.verifyResult)) {
+      body["verifyResult"] = request.verifyResult;
+    }
+
+    if (!Util.isUnset(request.verifyLocation)) {
+      body["verifyLocation"] = request.verifyLocation;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<NotifyVerifyResultResponse>(await this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/verifyResults/notify`, "json", req, runtime), new NotifyVerifyResultResponse({}));
+  }
+
+  async notifyPayCodeRefundResult(request: NotifyPayCodeRefundResultRequest): Promise<NotifyPayCodeRefundResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new NotifyPayCodeRefundResultHeaders({ });
+    return await this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
+  }
+
+  async notifyPayCodeRefundResultWithOptions(request: NotifyPayCodeRefundResultRequest, headers: NotifyPayCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyPayCodeRefundResultResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.tradeNo)) {
+      body["tradeNo"] = request.tradeNo;
+    }
+
+    if (!Util.isUnset(request.refundOrderNo)) {
+      body["refundOrderNo"] = request.refundOrderNo;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.refundAmount)) {
+      body["refundAmount"] = request.refundAmount;
+    }
+
+    if (!Util.isUnset(request.refundPromotionAmount)) {
+      body["refundPromotionAmount"] = request.refundPromotionAmount;
+    }
+
+    if (!Util.isUnset(request.gmtRefund)) {
+      body["gmtRefund"] = request.gmtRefund;
+    }
+
+    if (!Util.isUnset(request.payChannelDetailList)) {
+      body["payChannelDetailList"] = request.payChannelDetailList;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.payCode)) {
+      body["payCode"] = request.payCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<NotifyPayCodeRefundResultResponse>(await this.doROARequest("NotifyPayCodeRefundResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/refundResults/notify`, "json", req, runtime), new NotifyPayCodeRefundResultResponse({}));
+  }
+
+  async createUserCodeInstance(request: CreateUserCodeInstanceRequest): Promise<CreateUserCodeInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateUserCodeInstanceHeaders({ });
+    return await this.createUserCodeInstanceWithOptions(request, headers, runtime);
+  }
+
+  async createUserCodeInstanceWithOptions(request: CreateUserCodeInstanceRequest, headers: CreateUserCodeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateUserCodeInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.requestId)) {
+      body["requestId"] = request.requestId;
+    }
+
+    if (!Util.isUnset(request.codeIdentity)) {
+      body["codeIdentity"] = request.codeIdentity;
+    }
+
+    if (!Util.isUnset(request.codeValue)) {
+      body["codeValue"] = request.codeValue;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.userCorpRelationType)) {
+      body["userCorpRelationType"] = request.userCorpRelationType;
+    }
+
+    if (!Util.isUnset(request.userIdentity)) {
+      body["userIdentity"] = request.userIdentity;
+    }
+
+    if (!Util.isUnset(request.gmtExpired)) {
+      body["gmtExpired"] = request.gmtExpired;
+    }
+
+    if (!Util.isUnset(request.availableTimes)) {
+      body["availableTimes"] = request.availableTimes;
+    }
+
+    if (!Util.isUnset(request.extInfo)) {
+      body["extInfo"] = request.extInfo;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateUserCodeInstanceResponse>(await this.doROARequest("CreateUserCodeInstance", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new CreateUserCodeInstanceResponse({}));
   }
 
 }

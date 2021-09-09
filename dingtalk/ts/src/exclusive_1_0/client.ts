@@ -120,19 +120,19 @@ export class GetUserAppVersionSummaryHeaders extends $tea.Model {
 }
 
 export class GetUserAppVersionSummaryRequest extends $tea.Model {
-  pageStart?: number;
-  pageSize?: number;
+  nextToken?: number;
+  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
-      pageStart: 'pageStart',
-      pageSize: 'pageSize',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      pageStart: 'number',
-      pageSize: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
     };
   }
 
@@ -143,12 +143,12 @@ export class GetUserAppVersionSummaryRequest extends $tea.Model {
 
 export class GetUserAppVersionSummaryResponseBody extends $tea.Model {
   data?: GetUserAppVersionSummaryResponseBodyData[];
-  nextId?: number;
+  nextToken?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
       data: 'data',
-      nextId: 'nextId',
+      nextToken: 'nextToken',
       hasMore: 'hasMore',
     };
   }
@@ -156,7 +156,7 @@ export class GetUserAppVersionSummaryResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       data: { 'type': 'array', 'itemType': GetUserAppVersionSummaryResponseBodyData },
-      nextId: 'number',
+      nextToken: 'number',
       hasMore: 'boolean',
     };
   }
@@ -318,19 +318,19 @@ export class GetPublisherSummaryHeaders extends $tea.Model {
 }
 
 export class GetPublisherSummaryRequest extends $tea.Model {
-  pageStart?: number;
-  pageSize?: number;
+  nextToken?: number;
+  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
-      pageStart: 'pageStart',
-      pageSize: 'pageSize',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      pageStart: 'number',
-      pageSize: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
     };
   }
 
@@ -345,7 +345,7 @@ export class GetPublisherSummaryResponseBody extends $tea.Model {
   publisherArticleCntStd?: string;
   publisherArticlePvCntStd?: string;
   publisherArticlePvTop5?: GetPublisherSummaryResponseBodyPublisherArticlePvTop5[];
-  nextId?: number;
+  nextToken?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -354,7 +354,7 @@ export class GetPublisherSummaryResponseBody extends $tea.Model {
       publisherArticleCntStd: 'publisherArticleCntStd',
       publisherArticlePvCntStd: 'publisherArticlePvCntStd',
       publisherArticlePvTop5: 'publisherArticlePvTop5',
-      nextId: 'nextId',
+      nextToken: 'nextToken',
       hasMore: 'hasMore',
     };
   }
@@ -366,7 +366,7 @@ export class GetPublisherSummaryResponseBody extends $tea.Model {
       publisherArticleCntStd: 'string',
       publisherArticlePvCntStd: 'string',
       publisherArticlePvTop5: { 'type': 'array', 'itemType': GetPublisherSummaryResponseBodyPublisherArticlePvTop5 },
-      nextId: 'number',
+      nextToken: 'number',
       hasMore: 'boolean',
     };
   }
@@ -421,19 +421,19 @@ export class GetDocCreatedDeptSummaryHeaders extends $tea.Model {
 }
 
 export class GetDocCreatedDeptSummaryRequest extends $tea.Model {
-  pageStart?: number;
-  pageSize?: number;
+  nextToken?: number;
+  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
-      pageStart: 'pageStart',
-      pageSize: 'pageSize',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      pageStart: 'number',
-      pageSize: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
     };
   }
 
@@ -444,12 +444,12 @@ export class GetDocCreatedDeptSummaryRequest extends $tea.Model {
 
 export class GetDocCreatedDeptSummaryResponseBody extends $tea.Model {
   data?: GetDocCreatedDeptSummaryResponseBodyData[];
-  nextId?: number;
+  nextToken?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
       data: 'data',
-      nextId: 'nextId',
+      nextToken: 'nextToken',
       hasMore: 'hasMore',
     };
   }
@@ -457,7 +457,7 @@ export class GetDocCreatedDeptSummaryResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       data: { 'type': 'array', 'itemType': GetDocCreatedDeptSummaryResponseBodyData },
-      nextId: 'number',
+      nextToken: 'number',
       hasMore: 'boolean',
     };
   }
@@ -1021,19 +1021,19 @@ export class GetDingReportDeptSummaryHeaders extends $tea.Model {
 }
 
 export class GetDingReportDeptSummaryRequest extends $tea.Model {
-  pageStart?: number;
-  pageSize?: number;
+  nextToken?: number;
+  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
-      pageStart: 'pageStart',
-      pageSize: 'pageSize',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      pageStart: 'number',
-      pageSize: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
     };
   }
 
@@ -1044,12 +1044,12 @@ export class GetDingReportDeptSummaryRequest extends $tea.Model {
 
 export class GetDingReportDeptSummaryResponseBody extends $tea.Model {
   data?: GetDingReportDeptSummaryResponseBodyData[];
-  nextId?: number;
+  nextToken?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
       data: 'data',
-      nextId: 'nextId',
+      nextToken: 'nextToken',
       hasMore: 'hasMore',
     };
   }
@@ -1057,7 +1057,7 @@ export class GetDingReportDeptSummaryResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       data: { 'type': 'array', 'itemType': GetDingReportDeptSummaryResponseBodyData },
-      nextId: 'number',
+      nextToken: 'number',
       hasMore: 'boolean',
     };
   }
@@ -1194,19 +1194,19 @@ export class GetGeneralFormCreatedDeptSummaryHeaders extends $tea.Model {
 }
 
 export class GetGeneralFormCreatedDeptSummaryRequest extends $tea.Model {
-  pageStart?: number;
-  pageSize?: number;
+  nextToken?: number;
+  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
-      pageStart: 'pageStart',
-      pageSize: 'pageSize',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      pageStart: 'number',
-      pageSize: 'number',
+      nextToken: 'number',
+      maxResults: 'number',
     };
   }
 
@@ -1217,12 +1217,12 @@ export class GetGeneralFormCreatedDeptSummaryRequest extends $tea.Model {
 
 export class GetGeneralFormCreatedDeptSummaryResponseBody extends $tea.Model {
   data?: GetGeneralFormCreatedDeptSummaryResponseBodyData[];
-  nextId?: number;
+  nextToken?: number;
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
       data: 'data',
-      nextId: 'nextId',
+      nextToken: 'nextToken',
       hasMore: 'hasMore',
     };
   }
@@ -1230,7 +1230,7 @@ export class GetGeneralFormCreatedDeptSummaryResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       data: { 'type': 'array', 'itemType': GetGeneralFormCreatedDeptSummaryResponseBodyData },
-      nextId: 'number',
+      nextToken: 'number',
       hasMore: 'boolean',
     };
   }
@@ -2252,12 +2252,12 @@ export default class Client extends OpenApi {
   async getUserAppVersionSummaryWithOptions(dataId: string, request: GetUserAppVersionSummaryRequest, headers: GetUserAppVersionSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAppVersionSummaryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageStart)) {
-      query["pageStart"] = request.pageStart;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2329,12 +2329,12 @@ export default class Client extends OpenApi {
   async getPublisherSummaryWithOptions(dataId: string, request: GetPublisherSummaryRequest, headers: GetPublisherSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPublisherSummaryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageStart)) {
-      query["pageStart"] = request.pageStart;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2362,12 +2362,12 @@ export default class Client extends OpenApi {
   async getDocCreatedDeptSummaryWithOptions(dataId: string, request: GetDocCreatedDeptSummaryRequest, headers: GetDocCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocCreatedDeptSummaryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageStart)) {
-      query["pageStart"] = request.pageStart;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2610,12 +2610,12 @@ export default class Client extends OpenApi {
   async getDingReportDeptSummaryWithOptions(dataId: string, request: GetDingReportDeptSummaryRequest, headers: GetDingReportDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingReportDeptSummaryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageStart)) {
-      query["pageStart"] = request.pageStart;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2672,12 +2672,12 @@ export default class Client extends OpenApi {
   async getGeneralFormCreatedDeptSummaryWithOptions(dataId: string, request: GetGeneralFormCreatedDeptSummaryRequest, headers: GetGeneralFormCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedDeptSummaryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.pageStart)) {
-      query["pageStart"] = request.pageStart;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     let realHeaders : {[key: string ]: string} = { };

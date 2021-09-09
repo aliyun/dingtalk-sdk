@@ -595,6 +595,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
   executorIds?: string[];
   participantIds?: string[];
   detailUrl?: CreateTodoTaskRequestDetailUrl;
+  notifyConfigs?: CreateTodoTaskRequestNotifyConfigs;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -606,6 +607,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: 'executorIds',
       participantIds: 'participantIds',
       detailUrl: 'detailUrl',
+      notifyConfigs: 'notifyConfigs',
       operatorId: 'operatorId',
     };
   }
@@ -620,6 +622,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
       detailUrl: CreateTodoTaskRequestDetailUrl,
+      notifyConfigs: CreateTodoTaskRequestNotifyConfigs,
       operatorId: 'string',
     };
   }
@@ -1641,6 +1644,22 @@ export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   }
 }
 
+export class CreateTodoTaskRequestNotifyConfigs extends $tea.Model {
+  static names(): { [key: string]: string } {
+    return {
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
   pcUrl?: string;
   appUrl?: string;
@@ -2300,6 +2319,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.detailUrl))) {
       body["detailUrl"] = request.detailUrl;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.notifyConfigs))) {
+      body["notifyConfigs"] = request.notifyConfigs;
     }
 
     let realHeaders : {[key: string ]: string} = { };

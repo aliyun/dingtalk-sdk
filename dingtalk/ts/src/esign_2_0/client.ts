@@ -1894,6 +1894,65 @@ export class CreateProcessRequestFiles extends $tea.Model {
   }
 }
 
+export class CreateProcessRequestParticipantsSignPosListSignDate extends $tea.Model {
+  format?: string;
+  static names(): { [key: string]: string } {
+    return {
+      format: 'format',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      format: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateProcessRequestParticipantsSignPosList extends $tea.Model {
+  fileId?: string;
+  isCrossPage?: boolean;
+  needSignDate?: boolean;
+  page?: string;
+  signDate?: CreateProcessRequestParticipantsSignPosListSignDate;
+  signRequirement?: string;
+  x?: number;
+  y?: number;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      isCrossPage: 'isCrossPage',
+      needSignDate: 'needSignDate',
+      page: 'page',
+      signDate: 'signDate',
+      signRequirement: 'signRequirement',
+      x: 'x',
+      y: 'y',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      isCrossPage: 'boolean',
+      needSignDate: 'boolean',
+      page: 'string',
+      signDate: CreateProcessRequestParticipantsSignPosListSignDate,
+      signRequirement: 'string',
+      x: 'number',
+      y: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateProcessRequestParticipants extends $tea.Model {
   signRequirements?: string;
   signOrder?: number;
@@ -1903,6 +1962,7 @@ export class CreateProcessRequestParticipants extends $tea.Model {
   userId?: string;
   accountName?: string;
   orgName?: string;
+  signPosList?: CreateProcessRequestParticipantsSignPosList[];
   static names(): { [key: string]: string } {
     return {
       signRequirements: 'signRequirements',
@@ -1913,6 +1973,7 @@ export class CreateProcessRequestParticipants extends $tea.Model {
       userId: 'userId',
       accountName: 'accountName',
       orgName: 'orgName',
+      signPosList: 'signPosList',
     };
   }
 
@@ -1926,6 +1987,7 @@ export class CreateProcessRequestParticipants extends $tea.Model {
       userId: 'string',
       accountName: 'string',
       orgName: 'string',
+      signPosList: { 'type': 'array', 'itemType': CreateProcessRequestParticipantsSignPosList },
     };
   }
 

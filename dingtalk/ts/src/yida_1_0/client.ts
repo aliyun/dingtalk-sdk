@@ -416,6 +416,109 @@ export class GetFormDataByIDResponse extends $tea.Model {
   }
 }
 
+export class StartInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartInstanceRequest extends $tea.Model {
+  appType?: string;
+  systemToken?: string;
+  userId?: string;
+  language?: string;
+  formUuid?: string;
+  formDataJson?: string;
+  processCode?: string;
+  departmentId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      systemToken: 'systemToken',
+      userId: 'userId',
+      language: 'language',
+      formUuid: 'formUuid',
+      formDataJson: 'formDataJson',
+      processCode: 'processCode',
+      departmentId: 'departmentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      systemToken: 'string',
+      userId: 'string',
+      language: 'string',
+      formUuid: 'string',
+      formDataJson: 'string',
+      processCode: 'string',
+      departmentId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartInstanceResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: StartInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: StartInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchFormDatasResponseBodyDataOriginatorUserName extends $tea.Model {
   nameInChinese?: string;
   nameInEnglish?: string;
@@ -850,6 +953,63 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetFormDataByIDResponse>(await this.doROARequest("GetFormDataByID", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/instances/${id}`, "json", req, runtime), new GetFormDataByIDResponse({}));
+  }
+
+  async startInstance(request: StartInstanceRequest): Promise<StartInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StartInstanceHeaders({ });
+    return await this.startInstanceWithOptions(request, headers, runtime);
+  }
+
+  async startInstanceWithOptions(request: StartInstanceRequest, headers: StartInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<StartInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.formDataJson)) {
+      body["formDataJson"] = request.formDataJson;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      body["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.departmentId)) {
+      body["departmentId"] = request.departmentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<StartInstanceResponse>(await this.doROARequest("StartInstance", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/processes/instances/start`, "json", req, runtime), new StartInstanceResponse({}));
   }
 
 }
