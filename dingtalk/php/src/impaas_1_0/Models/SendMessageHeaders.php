@@ -13,8 +13,14 @@ class SendMessageHeaders extends Model
     /**
      * @var string
      */
+    public $operatingSource;
+
+    /**
+     * @var string
+     */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
+        'operatingSource'         => 'operatingSource',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
@@ -27,6 +33,9 @@ class SendMessageHeaders extends Model
         $res = [];
         if (null !== $this->commonHeaders) {
             $res['commonHeaders'] = $this->commonHeaders;
+        }
+        if (null !== $this->operatingSource) {
+            $res['operatingSource'] = $this->operatingSource;
         }
         if (null !== $this->xAcsDingtalkAccessToken) {
             $res['x-acs-dingtalk-access-token'] = $this->xAcsDingtalkAccessToken;
@@ -45,6 +54,9 @@ class SendMessageHeaders extends Model
         $model = new self();
         if (isset($map['commonHeaders'])) {
             $model->commonHeaders = $map['commonHeaders'];
+        }
+        if (isset($map['operatingSource'])) {
+            $model->operatingSource = $map['operatingSource'];
         }
         if (isset($map['x-acs-dingtalk-access-token'])) {
             $model->xAcsDingtalkAccessToken = $map['x-acs-dingtalk-access-token'];

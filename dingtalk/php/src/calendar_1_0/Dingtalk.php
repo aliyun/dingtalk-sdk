@@ -24,12 +24,17 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponse;
@@ -53,46 +58,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param string $userId
-     * @param string $calendarId
-     * @param string $eventId
-     *
-     * @return DeleteEventResponse
-     */
-    public function deleteEvent($userId, $calendarId, $eventId)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DeleteEventHeaders([]);
-
-        return $this->deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
-    }
-
-    /**
-     * @param string             $userId
-     * @param string             $calendarId
-     * @param string             $eventId
-     * @param DeleteEventHeaders $headers
-     * @param RuntimeOptions     $runtime
-     *
-     * @return DeleteEventResponse
-     */
-    public function deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return DeleteEventResponse::fromMap($this->doROARequest('DeleteEvent', 'calendar_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '', 'none', $req, $runtime));
     }
 
     /**
@@ -141,122 +106,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RespondEventResponse::fromMap($this->doROARequest('RespondEvent', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/respond', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param string            $userId
-     * @param string            $calendarId
-     * @param ListEventsRequest $request
-     *
-     * @return ListEventsResponse
-     */
-    public function listEvents($userId, $calendarId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListEventsHeaders([]);
-
-        return $this->listEventsWithOptions($userId, $calendarId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string            $userId
-     * @param string            $calendarId
-     * @param ListEventsRequest $request
-     * @param ListEventsHeaders $headers
-     * @param RuntimeOptions    $runtime
-     *
-     * @return ListEventsResponse
-     */
-    public function listEventsWithOptions($userId, $calendarId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->timeMin)) {
-            @$query['timeMin'] = $request->timeMin;
-        }
-        if (!Utils::isUnset($request->timeMax)) {
-            @$query['timeMax'] = $request->timeMax;
-        }
-        if (!Utils::isUnset($request->showDeleted)) {
-            @$query['showDeleted'] = $request->showDeleted;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->syncToken)) {
-            @$query['syncToken'] = $request->syncToken;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListEventsResponse::fromMap($this->doROARequest('ListEvents', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                $userId
-     * @param string                $calendarId
-     * @param ListEventsViewRequest $request
-     *
-     * @return ListEventsViewResponse
-     */
-    public function listEventsView($userId, $calendarId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListEventsViewHeaders([]);
-
-        return $this->listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                $userId
-     * @param string                $calendarId
-     * @param ListEventsViewRequest $request
-     * @param ListEventsViewHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return ListEventsViewResponse
-     */
-    public function listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->timeMin)) {
-            @$query['timeMin'] = $request->timeMin;
-        }
-        if (!Utils::isUnset($request->timeMax)) {
-            @$query['timeMax'] = $request->timeMax;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ListEventsViewResponse::fromMap($this->doROARequest('ListEventsView', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/eventsview', 'json', $req, $runtime));
     }
 
     /**
@@ -345,15 +194,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->dingOrgId)) {
-            @$realHeaders['dingOrgId'] = $headers->dingOrgId;
-        }
-        if (!Utils::isUnset($headers->dingUid)) {
-            @$realHeaders['dingUid'] = $headers->dingUid;
-        }
-        if (!Utils::isUnset($headers->dingAccessTokenType)) {
-            @$realHeaders['dingAccessTokenType'] = $headers->dingAccessTokenType;
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
         }
@@ -362,7 +202,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return GetScheduleResponse::fromMap($this->doROARequest('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/getSchedule', 'json', $req, $runtime));
+        return GetScheduleResponse::fromMap($this->doROARequest('GetSchedule', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/querySchedule', 'json', $req, $runtime));
     }
 
     /**
@@ -515,6 +355,328 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string             $userId
+     * @param string             $calendarId
+     * @param CreateEventRequest $request
+     *
+     * @return CreateEventResponse
+     */
+    public function createEvent($userId, $calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateEventHeaders([]);
+
+        return $this->createEventWithOptions($userId, $calendarId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $userId
+     * @param string             $calendarId
+     * @param CreateEventRequest $request
+     * @param CreateEventHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateEventResponse
+     */
+    public function createEventWithOptions($userId, $calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->summary)) {
+            @$body['summary'] = $request->summary;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->start)) {
+            @$body['start'] = $request->start;
+        }
+        if (!Utils::isUnset($request->end)) {
+            @$body['end'] = $request->end;
+        }
+        if (!Utils::isUnset($request->isAllDay)) {
+            @$body['isAllDay'] = $request->isAllDay;
+        }
+        if (!Utils::isUnset($request->recurrence)) {
+            @$body['recurrence'] = $request->recurrence;
+        }
+        if (!Utils::isUnset($request->attendees)) {
+            @$body['attendees'] = $request->attendees;
+        }
+        if (!Utils::isUnset($request->location)) {
+            @$body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->reminders)) {
+            @$body['reminders'] = $request->reminders;
+        }
+        if (!Utils::isUnset($request->onlineMeetingInfo)) {
+            @$body['onlineMeetingInfo'] = $request->onlineMeetingInfo;
+        }
+        if (!Utils::isUnset($request->extra)) {
+            @$body['extra'] = $request->extra;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateEventResponse::fromMap($this->doROARequest('CreateEvent', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return ListCalendarsResponse
+     */
+    public function listCalendars($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCalendarsHeaders([]);
+
+        return $this->listCalendarsWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $userId
+     * @param ListCalendarsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ListCalendarsResponse
+     */
+    public function listCalendarsWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListCalendarsResponse::fromMap($this->doROARequest('ListCalendars', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $userId
+     * @param string               $calendarId
+     * @param string               $eventId
+     * @param ListReceiversRequest $request
+     *
+     * @return ListReceiversResponse
+     */
+    public function listReceivers($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListReceiversHeaders([]);
+
+        return $this->listReceiversWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $userId
+     * @param string               $calendarId
+     * @param string               $eventId
+     * @param ListReceiversRequest $request
+     * @param ListReceiversHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ListReceiversResponse
+     */
+    public function listReceiversWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListReceiversResponse::fromMap($this->doROARequest('ListReceivers', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/receivers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     * @param string $eventId
+     *
+     * @return DeleteEventResponse
+     */
+    public function deleteEvent($userId, $calendarId, $eventId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteEventHeaders([]);
+
+        return $this->deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $userId
+     * @param string             $calendarId
+     * @param string             $eventId
+     * @param DeleteEventHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return DeleteEventResponse
+     */
+    public function deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteEventResponse::fromMap($this->doROARequest('DeleteEvent', 'calendar_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string            $userId
+     * @param string            $calendarId
+     * @param ListEventsRequest $request
+     *
+     * @return ListEventsResponse
+     */
+    public function listEvents($userId, $calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListEventsHeaders([]);
+
+        return $this->listEventsWithOptions($userId, $calendarId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $userId
+     * @param string            $calendarId
+     * @param ListEventsRequest $request
+     * @param ListEventsHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return ListEventsResponse
+     */
+    public function listEventsWithOptions($userId, $calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->timeMin)) {
+            @$query['timeMin'] = $request->timeMin;
+        }
+        if (!Utils::isUnset($request->timeMax)) {
+            @$query['timeMax'] = $request->timeMax;
+        }
+        if (!Utils::isUnset($request->showDeleted)) {
+            @$query['showDeleted'] = $request->showDeleted;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->syncToken)) {
+            @$query['syncToken'] = $request->syncToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListEventsResponse::fromMap($this->doROARequest('ListEvents', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $userId
+     * @param string                $calendarId
+     * @param ListEventsViewRequest $request
+     *
+     * @return ListEventsViewResponse
+     */
+    public function listEventsView($userId, $calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListEventsViewHeaders([]);
+
+        return $this->listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $userId
+     * @param string                $calendarId
+     * @param ListEventsViewRequest $request
+     * @param ListEventsViewHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return ListEventsViewResponse
+     */
+    public function listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->timeMin)) {
+            @$query['timeMin'] = $request->timeMin;
+        }
+        if (!Utils::isUnset($request->timeMax)) {
+            @$query['timeMax'] = $request->timeMax;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListEventsViewResponse::fromMap($this->doROARequest('ListEventsView', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/eventsview', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $userId
      * @param string $calendarId
      * @param string $eventId
@@ -630,81 +792,5 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return PatchEventResponse::fromMap($this->doROARequest('PatchEvent', 'calendar_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string             $userId
-     * @param string             $calendarId
-     * @param CreateEventRequest $request
-     *
-     * @return CreateEventResponse
-     */
-    public function createEvent($userId, $calendarId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateEventHeaders([]);
-
-        return $this->createEventWithOptions($userId, $calendarId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string             $userId
-     * @param string             $calendarId
-     * @param CreateEventRequest $request
-     * @param CreateEventHeaders $headers
-     * @param RuntimeOptions     $runtime
-     *
-     * @return CreateEventResponse
-     */
-    public function createEventWithOptions($userId, $calendarId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->summary)) {
-            @$body['summary'] = $request->summary;
-        }
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
-        }
-        if (!Utils::isUnset($request->start)) {
-            @$body['start'] = $request->start;
-        }
-        if (!Utils::isUnset($request->end)) {
-            @$body['end'] = $request->end;
-        }
-        if (!Utils::isUnset($request->isAllDay)) {
-            @$body['isAllDay'] = $request->isAllDay;
-        }
-        if (!Utils::isUnset($request->recurrence)) {
-            @$body['recurrence'] = $request->recurrence;
-        }
-        if (!Utils::isUnset($request->attendees)) {
-            @$body['attendees'] = $request->attendees;
-        }
-        if (!Utils::isUnset($request->location)) {
-            @$body['location'] = $request->location;
-        }
-        if (!Utils::isUnset($request->reminders)) {
-            @$body['reminders'] = $request->reminders;
-        }
-        if (!Utils::isUnset($request->onlineMeetingInfo)) {
-            @$body['onlineMeetingInfo'] = $request->onlineMeetingInfo;
-        }
-        if (!Utils::isUnset($request->extra)) {
-            @$body['extra'] = $request->extra;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateEventResponse::fromMap($this->doROARequest('CreateEvent', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events', 'json', $req, $runtime));
     }
 }

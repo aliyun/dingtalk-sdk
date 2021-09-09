@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\CreateProcessRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\CreateProcessRequest\participants\signPosList;
 use AlibabaCloud\Tea\Model;
 
 class participants extends Model
@@ -47,6 +48,13 @@ class participants extends Model
      * @var string
      */
     public $orgName;
+
+    /**
+     * @description 参与方签署位置信息列表
+     *
+     * @var signPosList[]
+     */
+    public $signPosList;
     protected $_name = [
         'signRequirements' => 'signRequirements',
         'signOrder'        => 'signOrder',
@@ -56,6 +64,7 @@ class participants extends Model
         'userId'           => 'userId',
         'accountName'      => 'accountName',
         'orgName'          => 'orgName',
+        'signPosList'      => 'signPosList',
     ];
 
     public function validate()
@@ -88,6 +97,15 @@ class participants extends Model
         }
         if (null !== $this->orgName) {
             $res['orgName'] = $this->orgName;
+        }
+        if (null !== $this->signPosList) {
+            $res['signPosList'] = [];
+            if (null !== $this->signPosList && \is_array($this->signPosList)) {
+                $n = 0;
+                foreach ($this->signPosList as $item) {
+                    $res['signPosList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -124,6 +142,15 @@ class participants extends Model
         }
         if (isset($map['orgName'])) {
             $model->orgName = $map['orgName'];
+        }
+        if (isset($map['signPosList'])) {
+            if (!empty($map['signPosList'])) {
+                $model->signPosList = [];
+                $n                  = 0;
+                foreach ($map['signPosList'] as $item) {
+                    $model->signPosList[$n++] = null !== $item ? signPosList::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

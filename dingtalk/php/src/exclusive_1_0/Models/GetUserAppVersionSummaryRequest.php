@@ -13,17 +13,17 @@ class GetUserAppVersionSummaryRequest extends Model
      *
      * @var int
      */
-    public $pageStart;
+    public $nextToken;
 
     /**
      * @description 每页包含的数据条数
      *
      * @var int
      */
-    public $pageSize;
+    public $maxResults;
     protected $_name = [
-        'pageStart' => 'pageStart',
-        'pageSize'  => 'pageSize',
+        'nextToken'  => 'nextToken',
+        'maxResults' => 'maxResults',
     ];
 
     public function validate()
@@ -33,11 +33,11 @@ class GetUserAppVersionSummaryRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->pageStart) {
-            $res['pageStart'] = $this->pageStart;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->pageSize) {
-            $res['pageSize'] = $this->pageSize;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
 
         return $res;
@@ -51,11 +51,11 @@ class GetUserAppVersionSummaryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['pageStart'])) {
-            $model->pageStart = $map['pageStart'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['pageSize'])) {
-            $model->pageSize = $map['pageSize'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
 
         return $model;

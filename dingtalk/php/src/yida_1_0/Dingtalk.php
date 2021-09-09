@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\StartInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\StartInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\StartInstanceResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -264,5 +267,68 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFormDataByIDResponse::fromMap($this->doROARequest('GetFormDataByID', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/instances/' . $id . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param StartInstanceRequest $request
+     *
+     * @return StartInstanceResponse
+     */
+    public function startInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StartInstanceHeaders([]);
+
+        return $this->startInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param StartInstanceRequest $request
+     * @param StartInstanceHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return StartInstanceResponse
+     */
+    public function startInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->formDataJson)) {
+            @$body['formDataJson'] = $request->formDataJson;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            @$body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->departmentId)) {
+            @$body['departmentId'] = $request->departmentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return StartInstanceResponse::fromMap($this->doROARequest('StartInstance', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/processes/instances/start', 'json', $req, $runtime));
     }
 }

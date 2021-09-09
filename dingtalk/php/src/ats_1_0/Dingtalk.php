@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddApplicationRegFormTemplateRespo
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\FinishBeginnerTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\FinishBeginnerTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\FinishBeginnerTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetApplicationRegFormByFlowIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetApplicationRegFormByFlowIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetApplicationRegFormByFlowIdResponse;
@@ -319,6 +322,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFileUploadInfoResponse::fromMap($this->doROARequest('GetFileUploadInfo', 'ats_1.0', 'HTTP', 'GET', 'AK', '/v1.0/ats/files/uploadInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                    $taskCode
+     * @param FinishBeginnerTaskRequest $request
+     *
+     * @return FinishBeginnerTaskResponse
+     */
+    public function finishBeginnerTask($taskCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FinishBeginnerTaskHeaders([]);
+
+        return $this->finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $taskCode
+     * @param FinishBeginnerTaskRequest $request
+     * @param FinishBeginnerTaskHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return FinishBeginnerTaskResponse
+     */
+    public function finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            @$query['scope'] = $request->scope;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return FinishBeginnerTaskResponse::fromMap($this->doROARequest('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/beginnerTasks/' . $taskCode . '/finish', 'json', $req, $runtime));
     }
 
     /**

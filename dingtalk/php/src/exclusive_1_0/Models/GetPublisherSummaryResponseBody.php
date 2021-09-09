@@ -50,7 +50,7 @@ class GetPublisherSummaryResponseBody extends Model
      *
      * @var int
      */
-    public $nextId;
+    public $nextToken;
 
     /**
      * @description 是否有更多数据
@@ -64,7 +64,7 @@ class GetPublisherSummaryResponseBody extends Model
         'publisherArticleCntStd'   => 'publisherArticleCntStd',
         'publisherArticlePvCntStd' => 'publisherArticlePvCntStd',
         'publisherArticlePvTop5'   => 'publisherArticlePvTop5',
-        'nextId'                   => 'nextId',
+        'nextToken'                => 'nextToken',
         'hasMore'                  => 'hasMore',
     ];
 
@@ -102,8 +102,8 @@ class GetPublisherSummaryResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextId) {
-            $res['nextId'] = $this->nextId;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
@@ -147,8 +147,8 @@ class GetPublisherSummaryResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextId'])) {
-            $model->nextId = $map['nextId'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];

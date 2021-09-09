@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCheckinStatisticalData
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCircleStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCircleStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCircleStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCompanyBasicInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCompanyBasicInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCompanyBasicInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDigitalDistrictOrgInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDigitalDistrictOrgInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDigitalDistrictOrgInfoResponse;
@@ -598,6 +601,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryOnlineUserStatisticalDataResponse::fromMap($this->doROARequest('QueryOnlineUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/onlineUserData', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryCompanyBasicInfoRequest $request
+     *
+     * @return QueryCompanyBasicInfoResponse
+     */
+    public function queryCompanyBasicInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCompanyBasicInfoHeaders([]);
+
+        return $this->queryCompanyBasicInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCompanyBasicInfoRequest $request
+     * @param QueryCompanyBasicInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryCompanyBasicInfoResponse
+     */
+    public function queryCompanyBasicInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryCompanyBasicInfoResponse::fromMap($this->doROARequest('QueryCompanyBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', '/v1.0/datacenter/companies/basicInfo', 'json', $req, $runtime));
     }
 
     /**

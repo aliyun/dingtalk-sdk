@@ -21,7 +21,7 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
      *
      * @var int
      */
-    public $nextId;
+    public $nextToken;
 
     /**
      * @description 是否有更多数据
@@ -30,9 +30,9 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
      */
     public $hasMore;
     protected $_name = [
-        'data'    => 'data',
-        'nextId'  => 'nextId',
-        'hasMore' => 'hasMore',
+        'data'      => 'data',
+        'nextToken' => 'nextToken',
+        'hasMore'   => 'hasMore',
     ];
 
     public function validate()
@@ -51,8 +51,8 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->nextId) {
-            $res['nextId'] = $this->nextId;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
@@ -78,8 +78,8 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
                 }
             }
         }
-        if (isset($map['nextId'])) {
-            $model->nextId = $map['nextId'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];

@@ -42,12 +42,20 @@ class DecodePayCodeResponseBody extends Model
      * @var string
      */
     public $alipayCode;
+
+    /**
+     * @description 用户和企业关系
+     *
+     * @var string
+     */
+    public $userCorpRelationType;
     protected $_name = [
-        'corpId'     => 'corpId',
-        'userId'     => 'userId',
-        'userInCorp' => 'userInCorp',
-        'codeType'   => 'codeType',
-        'alipayCode' => 'alipayCode',
+        'corpId'               => 'corpId',
+        'userId'               => 'userId',
+        'userInCorp'           => 'userInCorp',
+        'codeType'             => 'codeType',
+        'alipayCode'           => 'alipayCode',
+        'userCorpRelationType' => 'userCorpRelationType',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class DecodePayCodeResponseBody extends Model
         }
         if (null !== $this->alipayCode) {
             $res['alipayCode'] = $this->alipayCode;
+        }
+        if (null !== $this->userCorpRelationType) {
+            $res['userCorpRelationType'] = $this->userCorpRelationType;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class DecodePayCodeResponseBody extends Model
         }
         if (isset($map['alipayCode'])) {
             $model->alipayCode = $map['alipayCode'];
+        }
+        if (isset($map['userCorpRelationType'])) {
+            $model->userCorpRelationType = $map['userCorpRelationType'];
         }
 
         return $model;
