@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         /// <summary>
         /// 下一次请 求的分页游标
         /// </summary>
-        [NameInMap("nextId")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public long? NextId { get; set; }
+        public long? NextToken { get; set; }
 
         /// <summary>
         /// 是否有更多数据

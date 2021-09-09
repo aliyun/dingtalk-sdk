@@ -94,13 +94,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -123,13 +123,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -266,13 +266,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -295,13 +295,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -338,13 +338,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -367,13 +367,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -882,13 +882,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -911,13 +911,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1018,13 +1018,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1047,13 +1047,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageStart))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["pageStart"] = request.PageStart;
+                query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["pageSize"] = request.PageSize;
+                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public string AlipayCode { get; set; }
 
+        /// <summary>
+        /// 用户和企业关系
+        /// </summary>
+        [NameInMap("userCorpRelationType")]
+        [Validation(Required=false)]
+        public string UserCorpRelationType { get; set; }
+
     }
 
 }

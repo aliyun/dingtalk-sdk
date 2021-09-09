@@ -83,6 +83,73 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             [Validation(Required=false)]
             public string OrgName { get; set; }
 
+            /// <summary>
+            /// 参与方签署位置信息列表
+            /// </summary>
+            [NameInMap("signPosList")]
+            [Validation(Required=false)]
+            public List<CreateProcessRequestParticipantsSignPosList> SignPosList { get; set; }
+            public class CreateProcessRequestParticipantsSignPosList : TeaModel {
+                /// <summary>
+                /// 文件id
+                /// </summary>
+                [NameInMap("fileId")]
+                [Validation(Required=false)]
+                public string FileId { get; set; }
+
+                /// <summary>
+                /// 是否为骑缝章
+                /// </summary>
+                [NameInMap("isCrossPage")]
+                [Validation(Required=false)]
+                public bool? IsCrossPage { get; set; }
+
+                /// <summary>
+                /// 是否需要显示签署时间
+                /// </summary>
+                [NameInMap("needSignDate")]
+                [Validation(Required=false)]
+                public bool? NeedSignDate { get; set; }
+
+                /// <summary>
+                /// 签署区页码
+                /// </summary>
+                [NameInMap("page")]
+                [Validation(Required=false)]
+                public string Page { get; set; }
+
+                [NameInMap("signDate")]
+                [Validation(Required=false)]
+                public CreateProcessRequestParticipantsSignPosListSignDate SignDate { get; set; }
+                public class CreateProcessRequestParticipantsSignPosListSignDate : TeaModel {
+                    [NameInMap("format")]
+                    [Validation(Required=false)]
+                    public string Format { get; set; }
+                };
+
+                /// <summary>
+                /// 签署要求,1-企业章 2-经办人
+                /// </summary>
+                [NameInMap("signRequirement")]
+                [Validation(Required=false)]
+                public string SignRequirement { get; set; }
+
+                /// <summary>
+                /// 签署区x坐标
+                /// </summary>
+                [NameInMap("x")]
+                [Validation(Required=false)]
+                public double? X { get; set; }
+
+                /// <summary>
+                /// 签署区y坐标
+                /// </summary>
+                [NameInMap("y")]
+                [Validation(Required=false)]
+                public double? Y { get; set; }
+
+            }
+
         }
 
         [NameInMap("ccs")]

@@ -12,16 +12,16 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         /// <summary>
         /// 启始数据游标
         /// </summary>
-        [NameInMap("pageStart")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public long? PageStart { get; set; }
+        public long? NextToken { get; set; }
 
         /// <summary>
         /// 每页包含的数据条数
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public long? PageSize { get; set; }
+        public long? MaxResults { get; set; }
 
     }
 
