@@ -5,8 +5,8 @@ import com.aliyun.tea.*;
 
 public class QueryCloudRecordTextResponseBody extends TeaModel {
     // 是否有更多
-    @NameInMap("hasNext")
-    public Boolean hasNext;
+    @NameInMap("hasMore")
+    public Boolean hasMore;
 
     // MP4格式下载链接
     @NameInMap("paragraphList")
@@ -17,12 +17,12 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public QueryCloudRecordTextResponseBody setHasNext(Boolean hasNext) {
-        this.hasNext = hasNext;
+    public QueryCloudRecordTextResponseBody setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
         return this;
     }
-    public Boolean getHasNext() {
-        return this.hasNext;
+    public Boolean getHasMore() {
+        return this.hasMore;
     }
 
     public QueryCloudRecordTextResponseBody setParagraphList(java.util.List<QueryCloudRecordTextResponseBodyParagraphList> paragraphList) {
@@ -159,8 +159,8 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
 
     public static class QueryCloudRecordTextResponseBodyParagraphList extends TeaModel {
         // 游标，下次查询时使用
-        @NameInMap("token")
-        public Long token;
+        @NameInMap("nextTtoken")
+        public Long nextTtoken;
 
         // 状态，暂不解析
         @NameInMap("status")
@@ -199,12 +199,12 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryCloudRecordTextResponseBodyParagraphList setToken(Long token) {
-            this.token = token;
+        public QueryCloudRecordTextResponseBodyParagraphList setNextTtoken(Long nextTtoken) {
+            this.nextTtoken = nextTtoken;
             return this;
         }
-        public Long getToken() {
-            return this.token;
+        public Long getNextTtoken() {
+            return this.nextTtoken;
         }
 
         public QueryCloudRecordTextResponseBodyParagraphList setStatus(Long status) {

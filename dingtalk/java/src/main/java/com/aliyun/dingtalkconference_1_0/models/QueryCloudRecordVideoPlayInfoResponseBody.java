@@ -13,8 +13,8 @@ public class QueryCloudRecordVideoPlayInfoResponseBody extends TeaModel {
     public String mp4FileUrl;
 
     // 大小
-    @NameInMap("size")
-    public Long size;
+    @NameInMap("fileSize")
+    public Long fileSize;
 
     // 时长
     @NameInMap("duration")
@@ -45,12 +45,12 @@ public class QueryCloudRecordVideoPlayInfoResponseBody extends TeaModel {
         return this.mp4FileUrl;
     }
 
-    public QueryCloudRecordVideoPlayInfoResponseBody setSize(Long size) {
-        this.size = size;
+    public QueryCloudRecordVideoPlayInfoResponseBody setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
         return this;
     }
-    public Long getSize() {
-        return this.size;
+    public Long getFileSize() {
+        return this.fileSize;
     }
 
     public QueryCloudRecordVideoPlayInfoResponseBody setDuration(Long duration) {
