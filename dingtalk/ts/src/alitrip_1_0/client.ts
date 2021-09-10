@@ -7,6 +7,324 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ApproveCityCarApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApproveCityCarApplyRequest extends $tea.Model {
+  corpId?: string;
+  operateTime?: string;
+  remark?: string;
+  status?: number;
+  thirdPartApplyId?: string;
+  userId?: string;
+  dingSuiteKey?: string;
+  dingCorpId?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      operateTime: 'operateTime',
+      remark: 'remark',
+      status: 'status',
+      thirdPartApplyId: 'thirdPartApplyId',
+      userId: 'userId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingCorpId: 'dingCorpId',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      operateTime: 'string',
+      remark: 'string',
+      status: 'number',
+      thirdPartApplyId: 'string',
+      userId: 'string',
+      dingSuiteKey: 'string',
+      dingCorpId: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApproveCityCarApplyResponseBody extends $tea.Model {
+  approveResult?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      approveResult: 'approveResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approveResult: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApproveCityCarApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ApproveCityCarApplyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ApproveCityCarApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFlightExceedApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFlightExceedApplyRequest extends $tea.Model {
+  corpId?: string;
+  applyId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      applyId: 'applyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      applyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFlightExceedApplyResponseBody extends $tea.Model {
+  corpId?: string;
+  applyId?: number;
+  status?: number;
+  btripCause?: string;
+  exceedType?: number;
+  exceedReason?: string;
+  originStandard?: string;
+  submitTime?: string;
+  userId?: string;
+  applyIntentionInfoDO?: GetFlightExceedApplyResponseBodyApplyIntentionInfoDO;
+  thirdpartApplyId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      applyId: 'applyId',
+      status: 'status',
+      btripCause: 'btripCause',
+      exceedType: 'exceedType',
+      exceedReason: 'exceedReason',
+      originStandard: 'originStandard',
+      submitTime: 'submitTime',
+      userId: 'userId',
+      applyIntentionInfoDO: 'applyIntentionInfoDO',
+      thirdpartApplyId: 'thirdpartApplyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      applyId: 'number',
+      status: 'number',
+      btripCause: 'string',
+      exceedType: 'number',
+      exceedReason: 'string',
+      originStandard: 'string',
+      submitTime: 'string',
+      userId: 'string',
+      applyIntentionInfoDO: GetFlightExceedApplyResponseBodyApplyIntentionInfoDO,
+      thirdpartApplyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFlightExceedApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetFlightExceedApplyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetFlightExceedApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyRequest extends $tea.Model {
+  remark?: string;
+  applyId?: string;
+  corpId?: string;
+  thirdpartyFlowId?: string;
+  userId?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      remark: 'remark',
+      applyId: 'applyId',
+      corpId: 'corpId',
+      thirdpartyFlowId: 'thirdpartyFlowId',
+      userId: 'userId',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      remark: 'string',
+      applyId: 'string',
+      corpId: 'string',
+      thirdpartyFlowId: 'string',
+      userId: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyResponseBody extends $tea.Model {
+  module?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncExceedApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SyncExceedApplyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SyncExceedApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddCityCarApplyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -143,7 +461,7 @@ export class AddCityCarApplyResponse extends $tea.Model {
   }
 }
 
-export class ApproveCityCarApplyHeaders extends $tea.Model {
+export class GetHotelExceedApplyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -165,41 +483,20 @@ export class ApproveCityCarApplyHeaders extends $tea.Model {
   }
 }
 
-export class ApproveCityCarApplyRequest extends $tea.Model {
+export class GetHotelExceedApplyRequest extends $tea.Model {
   corpId?: string;
-  operateTime?: string;
-  remark?: string;
-  status?: number;
-  thirdPartApplyId?: string;
-  userId?: string;
-  dingSuiteKey?: string;
-  dingCorpId?: string;
-  dingTokenGrantType?: number;
+  applyId?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
-      operateTime: 'operateTime',
-      remark: 'remark',
-      status: 'status',
-      thirdPartApplyId: 'thirdPartApplyId',
-      userId: 'userId',
-      dingSuiteKey: 'dingSuiteKey',
-      dingCorpId: 'dingCorpId',
-      dingTokenGrantType: 'dingTokenGrantType',
+      applyId: 'applyId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       corpId: 'string',
-      operateTime: 'string',
-      remark: 'string',
-      status: 'number',
-      thirdPartApplyId: 'string',
-      userId: 'string',
-      dingSuiteKey: 'string',
-      dingCorpId: 'string',
-      dingTokenGrantType: 'number',
+      applyId: 'string',
     };
   }
 
@@ -208,17 +505,47 @@ export class ApproveCityCarApplyRequest extends $tea.Model {
   }
 }
 
-export class ApproveCityCarApplyResponseBody extends $tea.Model {
-  approveResult?: boolean;
+export class GetHotelExceedApplyResponseBody extends $tea.Model {
+  corpId?: string;
+  applyId?: number;
+  status?: number;
+  btripCause?: string;
+  exceedType?: number;
+  exceedReason?: string;
+  originStandard?: string;
+  submitTime?: string;
+  userId?: string;
+  applyIntentionInfoDO?: GetHotelExceedApplyResponseBodyApplyIntentionInfoDO;
+  thirdpartApplyId?: string;
   static names(): { [key: string]: string } {
     return {
-      approveResult: 'approveResult',
+      corpId: 'corpId',
+      applyId: 'applyId',
+      status: 'status',
+      btripCause: 'btripCause',
+      exceedType: 'exceedType',
+      exceedReason: 'exceedReason',
+      originStandard: 'originStandard',
+      submitTime: 'submitTime',
+      userId: 'userId',
+      applyIntentionInfoDO: 'applyIntentionInfoDO',
+      thirdpartApplyId: 'thirdpartApplyId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      approveResult: 'boolean',
+      corpId: 'string',
+      applyId: 'number',
+      status: 'number',
+      btripCause: 'string',
+      exceedType: 'number',
+      exceedReason: 'string',
+      originStandard: 'string',
+      submitTime: 'string',
+      userId: 'string',
+      applyIntentionInfoDO: GetHotelExceedApplyResponseBodyApplyIntentionInfoDO,
+      thirdpartApplyId: 'string',
     };
   }
 
@@ -227,9 +554,9 @@ export class ApproveCityCarApplyResponseBody extends $tea.Model {
   }
 }
 
-export class ApproveCityCarApplyResponse extends $tea.Model {
+export class GetHotelExceedApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: ApproveCityCarApplyResponseBody;
+  body: GetHotelExceedApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -240,7 +567,7 @@ export class ApproveCityCarApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: ApproveCityCarApplyResponseBody,
+      body: GetHotelExceedApplyResponseBody,
     };
   }
 
@@ -444,6 +771,213 @@ export class QueryCityCarApplyResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryCityCarApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTrainExceedApplyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTrainExceedApplyRequest extends $tea.Model {
+  corpId?: string;
+  applyId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      applyId: 'applyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      applyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTrainExceedApplyResponseBody extends $tea.Model {
+  corpId?: string;
+  applyId?: number;
+  status?: number;
+  btripCause?: string;
+  exceedType?: number;
+  exceedReason?: string;
+  originStandard?: string;
+  submitTime?: string;
+  userId?: string;
+  applyIntentionInfoDO?: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO;
+  thirdpartApplyId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      applyId: 'applyId',
+      status: 'status',
+      btripCause: 'btripCause',
+      exceedType: 'exceedType',
+      exceedReason: 'exceedReason',
+      originStandard: 'originStandard',
+      submitTime: 'submitTime',
+      userId: 'userId',
+      applyIntentionInfoDO: 'applyIntentionInfoDO',
+      thirdpartApplyId: 'thirdpartApplyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      applyId: 'number',
+      status: 'number',
+      btripCause: 'string',
+      exceedType: 'number',
+      exceedReason: 'string',
+      originStandard: 'string',
+      submitTime: 'string',
+      userId: 'string',
+      applyIntentionInfoDO: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO,
+      thirdpartApplyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTrainExceedApplyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetTrainExceedApplyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetTrainExceedApplyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  arrCity?: string;
+  arrCityName?: string;
+  arrTime?: string;
+  cabin?: string;
+  cabinClass?: number;
+  cabinClassStr?: string;
+  depCity?: string;
+  depCityName?: string;
+  depTime?: string;
+  discount?: number;
+  flightNo?: string;
+  price?: number;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      arrCity: 'arrCity',
+      arrCityName: 'arrCityName',
+      arrTime: 'arrTime',
+      cabin: 'cabin',
+      cabinClass: 'cabinClass',
+      cabinClassStr: 'cabinClassStr',
+      depCity: 'depCity',
+      depCityName: 'depCityName',
+      depTime: 'depTime',
+      discount: 'discount',
+      flightNo: 'flightNo',
+      price: 'price',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      arrCity: 'string',
+      arrCityName: 'string',
+      arrTime: 'string',
+      cabin: 'string',
+      cabinClass: 'number',
+      cabinClassStr: 'string',
+      depCity: 'string',
+      depCityName: 'string',
+      depTime: 'string',
+      discount: 'number',
+      flightNo: 'string',
+      price: 'number',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  checkIn?: string;
+  checkOut?: string;
+  cityCode?: string;
+  cityName?: string;
+  price?: number;
+  together?: boolean;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      checkIn: 'checkIn',
+      checkOut: 'checkOut',
+      cityCode: 'cityCode',
+      cityName: 'cityName',
+      price: 'price',
+      together: 'together',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      checkIn: 'string',
+      checkOut: 'string',
+      cityCode: 'string',
+      cityName: 'string',
+      price: 'number',
+      together: 'boolean',
+      type: 'number',
     };
   }
 
@@ -690,6 +1224,58 @@ export class QueryCityCarApplyResponseBodyApplyList extends $tea.Model {
   }
 }
 
+export class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  price?: number;
+  depCityName?: string;
+  arrCityName?: string;
+  depCity?: string;
+  arrCity?: string;
+  depTime?: string;
+  arrTime?: string;
+  arrStation?: string;
+  depStation?: string;
+  trainNo?: string;
+  trainTypeDesc?: string;
+  seatName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      price: 'price',
+      depCityName: 'depCityName',
+      arrCityName: 'arrCityName',
+      depCity: 'depCity',
+      arrCity: 'arrCity',
+      depTime: 'depTime',
+      arrTime: 'arrTime',
+      arrStation: 'arrStation',
+      depStation: 'depStation',
+      trainNo: 'trainNo',
+      trainTypeDesc: 'trainTypeDesc',
+      seatName: 'seatName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      price: 'number',
+      depCityName: 'string',
+      arrCityName: 'string',
+      depCity: 'string',
+      arrCity: 'string',
+      depTime: 'string',
+      arrTime: 'string',
+      arrStation: 'string',
+      depStation: 'string',
+      trainNo: 'string',
+      trainTypeDesc: 'string',
+      seatName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -702,6 +1288,149 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ApproveCityCarApplyHeaders({ });
+    return await this.approveCityCarApplyWithOptions(request, headers, runtime);
+  }
+
+  async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.operateTime)) {
+      body["operateTime"] = request.operateTime;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.thirdPartApplyId)) {
+      body["thirdPartApplyId"] = request.thirdPartApplyId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ApproveCityCarApplyResponse>(await this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new ApproveCityCarApplyResponse({}));
+  }
+
+  async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFlightExceedApplyHeaders({ });
+    return await this.getFlightExceedApplyWithOptions(request, headers, runtime);
+  }
+
+  async getFlightExceedApplyWithOptions(request: GetFlightExceedApplyRequest, headers: GetFlightExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlightExceedApplyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetFlightExceedApplyResponse>(await this.doROARequest("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getFlight`, "json", req, runtime), new GetFlightExceedApplyResponse({}));
+  }
+
+  async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncExceedApplyHeaders({ });
+    return await this.syncExceedApplyWithOptions(request, headers, runtime);
+  }
+
+  async syncExceedApplyWithOptions(request: SyncExceedApplyRequest, headers: SyncExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncExceedApplyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.remark)) {
+      query["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.thirdpartyFlowId)) {
+      query["thirdpartyFlowId"] = request.thirdpartyFlowId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SyncExceedApplyResponse>(await this.doROARequest("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/exceedapply/sync`, "json", req, runtime), new SyncExceedApplyResponse({}));
+  }
 
   async addCityCarApply(request: AddCityCarApplyRequest): Promise<AddCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -804,49 +1533,21 @@ export default class Client extends OpenApi {
     return $tea.cast<AddCityCarApplyResponse>(await this.doROARequest("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new AddCityCarApplyResponse({}));
   }
 
-  async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
+  async getHotelExceedApply(request: GetHotelExceedApplyRequest): Promise<GetHotelExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ApproveCityCarApplyHeaders({ });
-    return await this.approveCityCarApplyWithOptions(request, headers, runtime);
+    let headers = new GetHotelExceedApplyHeaders({ });
+    return await this.getHotelExceedApplyWithOptions(request, headers, runtime);
   }
 
-  async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
+  async getHotelExceedApplyWithOptions(request: GetHotelExceedApplyRequest, headers: GetHotelExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetHotelExceedApplyResponse> {
     Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
+    let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
+      query["corpId"] = request.corpId;
     }
 
-    if (!Util.isUnset(request.operateTime)) {
-      body["operateTime"] = request.operateTime;
-    }
-
-    if (!Util.isUnset(request.remark)) {
-      body["remark"] = request.remark;
-    }
-
-    if (!Util.isUnset(request.status)) {
-      body["status"] = request.status;
-    }
-
-    if (!Util.isUnset(request.thirdPartApplyId)) {
-      body["thirdPartApplyId"] = request.thirdPartApplyId;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -860,9 +1561,9 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ApproveCityCarApplyResponse>(await this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new ApproveCityCarApplyResponse({}));
+    return $tea.cast<GetHotelExceedApplyResponse>(await this.doROARequest("GetHotelExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getHotel`, "json", req, runtime), new GetHotelExceedApplyResponse({}));
   }
 
   async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
@@ -953,6 +1654,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryCityCarApplyResponse>(await this.doROARequest("QueryCityCarApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new QueryCityCarApplyResponse({}));
+  }
+
+  async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTrainExceedApplyHeaders({ });
+    return await this.getTrainExceedApplyWithOptions(request, headers, runtime);
+  }
+
+  async getTrainExceedApplyWithOptions(request: GetTrainExceedApplyRequest, headers: GetTrainExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrainExceedApplyResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.applyId)) {
+      query["applyId"] = request.applyId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetTrainExceedApplyResponse>(await this.doROARequest("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getTrain`, "json", req, runtime), new GetTrainExceedApplyResponse({}));
   }
 
 }

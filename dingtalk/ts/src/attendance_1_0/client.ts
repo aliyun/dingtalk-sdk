@@ -198,6 +198,154 @@ export class CheckClosingAccountResponse extends $tea.Model {
   }
 }
 
+export class GetMachineHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineResponseBody extends $tea.Model {
+  result?: GetMachineResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetMachineResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMachineResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMachineResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserRequest extends $tea.Model {
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserResponseBody extends $tea.Model {
+  result?: GetMachineUserResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetMachineUserResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMachineUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMachineUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHolidaysHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -842,6 +990,148 @@ export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
   }
 }
 
+export class GetMachineResponseBodyResultMachineBluetoothVO extends $tea.Model {
+  bluetoothValue?: boolean;
+  bluetoothCheckWithFace?: boolean;
+  bluetoothDistanceMode?: string;
+  bluetoothDistanceModeDesc?: string;
+  monitorLocationAbnormal?: boolean;
+  address?: string;
+  longitude?: number;
+  latitude?: number;
+  limitUserDeviceCount?: boolean;
+  userDeviceCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bluetoothValue: 'bluetoothValue',
+      bluetoothCheckWithFace: 'bluetoothCheckWithFace',
+      bluetoothDistanceMode: 'bluetoothDistanceMode',
+      bluetoothDistanceModeDesc: 'bluetoothDistanceModeDesc',
+      monitorLocationAbnormal: 'monitorLocationAbnormal',
+      address: 'address',
+      longitude: 'longitude',
+      latitude: 'latitude',
+      limitUserDeviceCount: 'limitUserDeviceCount',
+      userDeviceCount: 'userDeviceCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bluetoothValue: 'boolean',
+      bluetoothCheckWithFace: 'boolean',
+      bluetoothDistanceMode: 'string',
+      bluetoothDistanceModeDesc: 'string',
+      monitorLocationAbnormal: 'boolean',
+      address: 'string',
+      longitude: 'number',
+      latitude: 'number',
+      limitUserDeviceCount: 'boolean',
+      userDeviceCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineResponseBodyResult extends $tea.Model {
+  deviceId?: string;
+  devId?: number;
+  deviceName?: string;
+  productName?: string;
+  netStatus?: string;
+  productVersion?: string;
+  deviceSn?: string;
+  maxFace?: number;
+  voiceMode?: number;
+  atmManagerList?: string[];
+  machineBluetoothVO?: GetMachineResponseBodyResultMachineBluetoothVO;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      devId: 'devId',
+      deviceName: 'deviceName',
+      productName: 'productName',
+      netStatus: 'netStatus',
+      productVersion: 'productVersion',
+      deviceSn: 'deviceSn',
+      maxFace: 'maxFace',
+      voiceMode: 'voiceMode',
+      atmManagerList: 'atmManagerList',
+      machineBluetoothVO: 'machineBluetoothVO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'string',
+      devId: 'number',
+      deviceName: 'string',
+      productName: 'string',
+      netStatus: 'string',
+      productVersion: 'string',
+      deviceSn: 'string',
+      maxFace: 'number',
+      voiceMode: 'number',
+      atmManagerList: { 'type': 'array', 'itemType': 'string' },
+      machineBluetoothVO: GetMachineResponseBodyResultMachineBluetoothVO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserResponseBodyResultUserList extends $tea.Model {
+  userId?: string;
+  name?: string;
+  hasFace?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      name: 'name',
+      hasFace: 'hasFace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      name: 'string',
+      hasFace: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMachineUserResponseBodyResult extends $tea.Model {
+  userList?: GetMachineUserResponseBodyResultUserList[];
+  hasMore?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      userList: 'userList',
+      hasMore: 'hasMore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userList: { 'type': 'array', 'itemType': GetMachineUserResponseBodyResultUserList },
+      hasMore: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserHolidaysResponseBodyResultHolidays extends $tea.Model {
   workDate?: number;
   holidayName?: string;
@@ -1220,6 +1510,61 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CheckClosingAccountResponse>(await this.doROARequest("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/status/query`, "json", req, runtime), new CheckClosingAccountResponse({}));
+  }
+
+  async getMachine(devId: string): Promise<GetMachineResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMachineHeaders({ });
+    return await this.getMachineWithOptions(devId, headers, runtime);
+  }
+
+  async getMachineWithOptions(devId: string, headers: GetMachineHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetMachineResponse>(await this.doROARequest("GetMachine", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/machines/${devId}`, "json", req, runtime), new GetMachineResponse({}));
+  }
+
+  async getMachineUser(devId: string, request: GetMachineUserRequest): Promise<GetMachineUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMachineUserHeaders({ });
+    return await this.getMachineUserWithOptions(devId, request, headers, runtime);
+  }
+
+  async getMachineUserWithOptions(devId: string, request: GetMachineUserRequest, headers: GetMachineUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineUserResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetMachineUserResponse>(await this.doROARequest("GetMachineUser", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/machines/getUser/${devId}`, "json", req, runtime), new GetMachineUserResponse({}));
   }
 
   async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {

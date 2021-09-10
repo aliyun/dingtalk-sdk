@@ -50,6 +50,8 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
   tenantType?: string;
   bizTag?: string;
   requestId?: string;
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
   category?: string;
   orgInfo?: GetTodoTaskDetailResponseBodyOrgInfo;
   executorStatus?: GetTodoTaskDetailResponseBodyExecutorStatus[];
@@ -75,6 +77,8 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
       tenantType: 'tenantType',
       bizTag: 'bizTag',
       requestId: 'requestId',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
       category: 'category',
       orgInfo: 'orgInfo',
       executorStatus: 'executorStatus',
@@ -103,6 +107,8 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
       tenantType: 'string',
       bizTag: 'string',
       requestId: 'string',
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
       category: 'string',
       orgInfo: GetTodoTaskDetailResponseBodyOrgInfo,
       executorStatus: { 'type': 'array', 'itemType': GetTodoTaskDetailResponseBodyExecutorStatus },
@@ -180,6 +186,8 @@ export class GetTodoTaskResponseBody extends $tea.Model {
   bizTag?: string;
   requestId?: string;
   cardTypeId?: string;
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -203,6 +211,8 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       bizTag: 'bizTag',
       requestId: 'requestId',
       cardTypeId: 'cardTypeId',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
     };
   }
 
@@ -229,6 +239,8 @@ export class GetTodoTaskResponseBody extends $tea.Model {
       bizTag: 'string',
       requestId: 'string',
       cardTypeId: 'string',
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
     };
   }
 
@@ -302,6 +314,8 @@ export class GetTodoTaskBySourceIdResponseBody extends $tea.Model {
   tenantType?: string;
   bizTag?: string;
   requestId?: string;
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -324,6 +338,8 @@ export class GetTodoTaskBySourceIdResponseBody extends $tea.Model {
       tenantType: 'tenantType',
       bizTag: 'bizTag',
       requestId: 'requestId',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
     };
   }
 
@@ -349,6 +365,8 @@ export class GetTodoTaskBySourceIdResponseBody extends $tea.Model {
       tenantType: 'string',
       bizTag: 'string',
       requestId: 'string',
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
     };
   }
 
@@ -595,6 +613,8 @@ export class CreateTodoTaskRequest extends $tea.Model {
   executorIds?: string[];
   participantIds?: string[];
   detailUrl?: CreateTodoTaskRequestDetailUrl;
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
   notifyConfigs?: CreateTodoTaskRequestNotifyConfigs;
   operatorId?: string;
   static names(): { [key: string]: string } {
@@ -607,6 +627,8 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: 'executorIds',
       participantIds: 'participantIds',
       detailUrl: 'detailUrl',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
       notifyConfigs: 'notifyConfigs',
       operatorId: 'operatorId',
     };
@@ -622,6 +644,8 @@ export class CreateTodoTaskRequest extends $tea.Model {
       executorIds: { 'type': 'array', 'itemType': 'string' },
       participantIds: { 'type': 'array', 'itemType': 'string' },
       detailUrl: CreateTodoTaskRequestDetailUrl,
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
       notifyConfigs: CreateTodoTaskRequestNotifyConfigs,
       operatorId: 'string',
     };
@@ -651,6 +675,8 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   modifierId?: string;
   bizTag?: string;
   requestId?: string;
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -671,6 +697,8 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       modifierId: 'modifierId',
       bizTag: 'bizTag',
       requestId: 'requestId',
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
     };
   }
 
@@ -694,6 +722,8 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       modifierId: 'string',
       bizTag: 'string',
       requestId: 'string',
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
     };
   }
 
@@ -2319,6 +2349,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.detailUrl))) {
       body["detailUrl"] = request.detailUrl;
+    }
+
+    if (!Util.isUnset(request.isOnlyShowExecutor)) {
+      body["isOnlyShowExecutor"] = request.isOnlyShowExecutor;
+    }
+
+    if (!Util.isUnset(request.priority)) {
+      body["priority"] = request.priority;
     }
 
     if (!Util.isUnset($tea.toMap(request.notifyConfigs))) {

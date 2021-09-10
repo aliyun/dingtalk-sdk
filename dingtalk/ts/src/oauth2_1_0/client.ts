@@ -295,6 +295,91 @@ export class GetCorpAccessTokenResponse extends $tea.Model {
   }
 }
 
+export class GetPersonalAuthRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalAuthRuleResponseBody extends $tea.Model {
+  result?: GetPersonalAuthRuleResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetPersonalAuthRuleResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalAuthRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPersonalAuthRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPersonalAuthRuleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPersonalAuthRuleResponseBodyResult extends $tea.Model {
+  resource?: string;
+  authItems?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      resource: 'resource',
+      authItems: 'authItems',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resource: 'string',
+      authItems: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -426,6 +511,28 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetCorpAccessTokenResponse>(await this.doROARequest("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/corpAccessToken`, "json", req, runtime), new GetCorpAccessTokenResponse({}));
+  }
+
+  async getPersonalAuthRule(): Promise<GetPersonalAuthRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPersonalAuthRuleHeaders({ });
+    return await this.getPersonalAuthRuleWithOptions(headers, runtime);
+  }
+
+  async getPersonalAuthRuleWithOptions(headers: GetPersonalAuthRuleHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalAuthRuleResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetPersonalAuthRuleResponse>(await this.doROARequest("GetPersonalAuthRule", "oauth2_1.0", "HTTP", "GET", "AK", `/v1.0/oauth2/authRules/user`, "json", req, runtime), new GetPersonalAuthRuleResponse({}));
   }
 
 }
