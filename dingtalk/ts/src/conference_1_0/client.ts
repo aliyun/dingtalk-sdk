@@ -61,18 +61,18 @@ export class QueryCloudRecordTextRequest extends $tea.Model {
 }
 
 export class QueryCloudRecordTextResponseBody extends $tea.Model {
-  hasNext?: boolean;
+  hasMore?: boolean;
   paragraphList?: QueryCloudRecordTextResponseBodyParagraphList[];
   static names(): { [key: string]: string } {
     return {
-      hasNext: 'hasNext',
+      hasMore: 'hasMore',
       paragraphList: 'paragraphList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      hasNext: 'boolean',
+      hasMore: 'boolean',
       paragraphList: { 'type': 'array', 'itemType': QueryCloudRecordTextResponseBodyParagraphList },
     };
   }
@@ -254,14 +254,14 @@ export class QueryCloudRecordVideoPlayInfoRequest extends $tea.Model {
 export class QueryCloudRecordVideoPlayInfoResponseBody extends $tea.Model {
   playUrl?: string;
   mp4FileUrl?: string;
-  size?: number;
+  fileSize?: number;
   duration?: number;
   status?: number;
   static names(): { [key: string]: string } {
     return {
       playUrl: 'playUrl',
       mp4FileUrl: 'mp4FileUrl',
-      size: 'size',
+      fileSize: 'fileSize',
       duration: 'duration',
       status: 'status',
     };
@@ -271,7 +271,7 @@ export class QueryCloudRecordVideoPlayInfoResponseBody extends $tea.Model {
     return {
       playUrl: 'string',
       mp4FileUrl: 'string',
-      size: 'number',
+      fileSize: 'number',
       duration: 'number',
       status: 'number',
     };
@@ -1046,7 +1046,7 @@ export class QueryCloudRecordTextResponseBodyParagraphListSentenceList extends $
 }
 
 export class QueryCloudRecordTextResponseBodyParagraphList extends $tea.Model {
-  token?: number;
+  nextTtoken?: number;
   status?: number;
   unionId?: string;
   nickName?: string;
@@ -1057,7 +1057,7 @@ export class QueryCloudRecordTextResponseBodyParagraphList extends $tea.Model {
   sentenceList?: QueryCloudRecordTextResponseBodyParagraphListSentenceList[];
   static names(): { [key: string]: string } {
     return {
-      token: 'token',
+      nextTtoken: 'nextTtoken',
       status: 'status',
       unionId: 'unionId',
       nickName: 'nickName',
@@ -1071,7 +1071,7 @@ export class QueryCloudRecordTextResponseBodyParagraphList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      token: 'number',
+      nextTtoken: 'number',
       status: 'number',
       unionId: 'string',
       nickName: 'string',
