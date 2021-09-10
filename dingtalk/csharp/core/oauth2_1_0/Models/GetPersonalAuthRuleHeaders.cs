@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
-    public class CreateVideoConferenceHeaders : TeaModel {
+    public class GetPersonalAuthRuleHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

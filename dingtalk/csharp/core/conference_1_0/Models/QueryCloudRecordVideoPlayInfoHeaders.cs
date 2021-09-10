@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
-    public class CreateVideoConferenceHeaders : TeaModel {
+    public class QueryCloudRecordVideoPlayInfoHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

@@ -290,5 +290,55 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetCorpAccessTokenResponse>(await DoROARequestAsync("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/corpAccessToken", "json", req, runtime));
         }
 
+        public GetPersonalAuthRuleResponse GetPersonalAuthRule()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPersonalAuthRuleHeaders headers = new GetPersonalAuthRuleHeaders();
+            return GetPersonalAuthRuleWithOptions(headers, runtime);
+        }
+
+        public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPersonalAuthRuleHeaders headers = new GetPersonalAuthRuleHeaders();
+            return await GetPersonalAuthRuleWithOptionsAsync(headers, runtime);
+        }
+
+        public GetPersonalAuthRuleResponse GetPersonalAuthRuleWithOptions(GetPersonalAuthRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetPersonalAuthRuleResponse>(DoROARequest("GetPersonalAuthRule", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/authRules/user", "json", req, runtime));
+        }
+
+        public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleWithOptionsAsync(GetPersonalAuthRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetPersonalAuthRuleResponse>(await DoROARequestAsync("GetPersonalAuthRule", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/authRules/user", "json", req, runtime));
+        }
+
     }
 }
