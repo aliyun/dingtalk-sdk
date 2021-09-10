@@ -14,7 +14,7 @@ class paragraphList extends Model
      *
      * @var int
      */
-    public $token;
+    public $nextTtoken;
 
     /**
      * @description 状态，暂不解析
@@ -72,7 +72,7 @@ class paragraphList extends Model
      */
     public $sentenceList;
     protected $_name = [
-        'token'        => 'token',
+        'nextTtoken'   => 'nextTtoken',
         'status'       => 'status',
         'unionId'      => 'unionId',
         'nickName'     => 'nickName',
@@ -90,8 +90,8 @@ class paragraphList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->token) {
-            $res['token'] = $this->token;
+        if (null !== $this->nextTtoken) {
+            $res['nextTtoken'] = $this->nextTtoken;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -135,8 +135,8 @@ class paragraphList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['token'])) {
-            $model->token = $map['token'];
+        if (isset($map['nextTtoken'])) {
+            $model->nextTtoken = $map['nextTtoken'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

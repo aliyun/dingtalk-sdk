@@ -27,7 +27,7 @@ class QueryCloudRecordVideoPlayInfoResponseBody extends Model
      *
      * @var int
      */
-    public $size;
+    public $fileSize;
 
     /**
      * @description 时长
@@ -45,7 +45,7 @@ class QueryCloudRecordVideoPlayInfoResponseBody extends Model
     protected $_name = [
         'playUrl'    => 'playUrl',
         'mp4FileUrl' => 'mp4FileUrl',
-        'size'       => 'size',
+        'fileSize'   => 'fileSize',
         'duration'   => 'duration',
         'status'     => 'status',
     ];
@@ -63,8 +63,8 @@ class QueryCloudRecordVideoPlayInfoResponseBody extends Model
         if (null !== $this->mp4FileUrl) {
             $res['mp4FileUrl'] = $this->mp4FileUrl;
         }
-        if (null !== $this->size) {
-            $res['size'] = $this->size;
+        if (null !== $this->fileSize) {
+            $res['fileSize'] = $this->fileSize;
         }
         if (null !== $this->duration) {
             $res['duration'] = $this->duration;
@@ -90,8 +90,8 @@ class QueryCloudRecordVideoPlayInfoResponseBody extends Model
         if (isset($map['mp4FileUrl'])) {
             $model->mp4FileUrl = $map['mp4FileUrl'];
         }
-        if (isset($map['size'])) {
-            $model->size = $map['size'];
+        if (isset($map['fileSize'])) {
+            $model->fileSize = $map['fileSize'];
         }
         if (isset($map['duration'])) {
             $model->duration = $map['duration'];

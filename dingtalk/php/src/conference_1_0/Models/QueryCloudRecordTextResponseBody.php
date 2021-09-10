@@ -14,7 +14,7 @@ class QueryCloudRecordTextResponseBody extends Model
      *
      * @var bool
      */
-    public $hasNext;
+    public $hasMore;
 
     /**
      * @description MP4格式下载链接
@@ -23,7 +23,7 @@ class QueryCloudRecordTextResponseBody extends Model
      */
     public $paragraphList;
     protected $_name = [
-        'hasNext'       => 'hasNext',
+        'hasMore'       => 'hasMore',
         'paragraphList' => 'paragraphList',
     ];
 
@@ -34,8 +34,8 @@ class QueryCloudRecordTextResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->hasNext) {
-            $res['hasNext'] = $this->hasNext;
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
         }
         if (null !== $this->paragraphList) {
             $res['paragraphList'] = [];
@@ -58,8 +58,8 @@ class QueryCloudRecordTextResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['hasNext'])) {
-            $model->hasNext = $map['hasNext'];
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
         }
         if (isset($map['paragraphList'])) {
             if (!empty($map['paragraphList'])) {
