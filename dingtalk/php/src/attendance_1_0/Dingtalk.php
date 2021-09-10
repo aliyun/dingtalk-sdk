@@ -26,6 +26,11 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CreateApproveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetUserHolidaysResponse;
@@ -151,6 +156,89 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CheckClosingAccountResponse::fromMap($this->doROARequest('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/closingAccounts/status/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $devId
+     *
+     * @return GetMachineResponse
+     */
+    public function getMachine($devId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMachineHeaders([]);
+
+        return $this->getMachineWithOptions($devId, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $devId
+     * @param GetMachineHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetMachineResponse
+     */
+    public function getMachineWithOptions($devId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetMachineResponse::fromMap($this->doROARequest('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/' . $devId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $devId
+     * @param GetMachineUserRequest $request
+     *
+     * @return GetMachineUserResponse
+     */
+    public function getMachineUser($devId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMachineUserHeaders([]);
+
+        return $this->getMachineUserWithOptions($devId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $devId
+     * @param GetMachineUserRequest $request
+     * @param GetMachineUserHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetMachineUserResponse
+     */
+    public function getMachineUserWithOptions($devId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetMachineUserResponse::fromMap($this->doROARequest('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/machines/getUser/' . $devId . '', 'json', $req, $runtime));
     }
 
     /**

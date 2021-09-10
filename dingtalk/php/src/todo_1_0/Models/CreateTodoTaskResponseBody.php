@@ -134,25 +134,41 @@ class CreateTodoTaskResponseBody extends Model
      * @var string
      */
     public $requestId;
+
+    /**
+     * @description 生成的待办是否仅展示在执行者的待办列表中
+     *
+     * @var bool
+     */
+    public $isOnlyShowExecutor;
+
+    /**
+     * @description 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+     *
+     * @var int
+     */
+    public $priority;
     protected $_name = [
-        'id'             => 'id',
-        'subject'        => 'subject',
-        'description'    => 'description',
-        'startTime'      => 'startTime',
-        'dueTime'        => 'dueTime',
-        'finishTime'     => 'finishTime',
-        'done'           => 'done',
-        'executorIds'    => 'executorIds',
-        'participantIds' => 'participantIds',
-        'detailUrl'      => 'detailUrl',
-        'source'         => 'source',
-        'sourceId'       => 'sourceId',
-        'createdTime'    => 'createdTime',
-        'modifiedTime'   => 'modifiedTime',
-        'creatorId'      => 'creatorId',
-        'modifierId'     => 'modifierId',
-        'bizTag'         => 'bizTag',
-        'requestId'      => 'requestId',
+        'id'                 => 'id',
+        'subject'            => 'subject',
+        'description'        => 'description',
+        'startTime'          => 'startTime',
+        'dueTime'            => 'dueTime',
+        'finishTime'         => 'finishTime',
+        'done'               => 'done',
+        'executorIds'        => 'executorIds',
+        'participantIds'     => 'participantIds',
+        'detailUrl'          => 'detailUrl',
+        'source'             => 'source',
+        'sourceId'           => 'sourceId',
+        'createdTime'        => 'createdTime',
+        'modifiedTime'       => 'modifiedTime',
+        'creatorId'          => 'creatorId',
+        'modifierId'         => 'modifierId',
+        'bizTag'             => 'bizTag',
+        'requestId'          => 'requestId',
+        'isOnlyShowExecutor' => 'isOnlyShowExecutor',
+        'priority'           => 'priority',
     ];
 
     public function validate()
@@ -215,6 +231,12 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (null !== $this->requestId) {
             $res['requestId'] = $this->requestId;
+        }
+        if (null !== $this->isOnlyShowExecutor) {
+            $res['isOnlyShowExecutor'] = $this->isOnlyShowExecutor;
+        }
+        if (null !== $this->priority) {
+            $res['priority'] = $this->priority;
         }
 
         return $res;
@@ -285,6 +307,12 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (isset($map['requestId'])) {
             $model->requestId = $map['requestId'];
+        }
+        if (isset($map['isOnlyShowExecutor'])) {
+            $model->isOnlyShowExecutor = $map['isOnlyShowExecutor'];
+        }
+        if (isset($map['priority'])) {
+            $model->priority = $map['priority'];
         }
 
         return $model;

@@ -11,12 +11,24 @@ use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\AddCityCarApplyResponse;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetFlightExceedApplyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetFlightExceedApplyRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetFlightExceedApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetHotelExceedApplyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetHotelExceedApplyRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetHotelExceedApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetTrainExceedApplyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetTrainExceedApplyRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetTrainExceedApplyResponse;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryCityCarApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryCityCarApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryCityCarApplyResponse;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryUnionOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryUnionOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\QueryUnionOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\SyncExceedApplyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\SyncExceedApplyRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\SyncExceedApplyResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -31,6 +43,174 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param ApproveCityCarApplyRequest $request
+     *
+     * @return ApproveCityCarApplyResponse
+     */
+    public function approveCityCarApply($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ApproveCityCarApplyHeaders([]);
+
+        return $this->approveCityCarApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ApproveCityCarApplyRequest $request
+     * @param ApproveCityCarApplyHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ApproveCityCarApplyResponse
+     */
+    public function approveCityCarApplyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->operateTime)) {
+            @$body['operateTime'] = $request->operateTime;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->thirdPartApplyId)) {
+            @$body['thirdPartApplyId'] = $request->thirdPartApplyId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ApproveCityCarApplyResponse::fromMap($this->doROARequest('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/alitrip/cityCarApprovals', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetFlightExceedApplyRequest $request
+     *
+     * @return GetFlightExceedApplyResponse
+     */
+    public function getFlightExceedApply($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFlightExceedApplyHeaders([]);
+
+        return $this->getFlightExceedApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFlightExceedApplyRequest $request
+     * @param GetFlightExceedApplyHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetFlightExceedApplyResponse
+     */
+    public function getFlightExceedApplyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->applyId)) {
+            @$query['applyId'] = $request->applyId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFlightExceedApplyResponse::fromMap($this->doROARequest('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/exceedapply/getFlight', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SyncExceedApplyRequest $request
+     *
+     * @return SyncExceedApplyResponse
+     */
+    public function syncExceedApply($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncExceedApplyHeaders([]);
+
+        return $this->syncExceedApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncExceedApplyRequest $request
+     * @param SyncExceedApplyHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return SyncExceedApplyResponse
+     */
+    public function syncExceedApplyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->remark)) {
+            @$query['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->applyId)) {
+            @$query['applyId'] = $request->applyId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->thirdpartyFlowId)) {
+            @$query['thirdpartyFlowId'] = $request->thirdpartyFlowId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SyncExceedApplyResponse::fromMap($this->doROARequest('SyncExceedApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', '/v1.0/alitrip/exceedapply/sync', 'json', $req, $runtime));
     }
 
     /**
@@ -130,55 +310,34 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ApproveCityCarApplyRequest $request
+     * @param GetHotelExceedApplyRequest $request
      *
-     * @return ApproveCityCarApplyResponse
+     * @return GetHotelExceedApplyResponse
      */
-    public function approveCityCarApply($request)
+    public function getHotelExceedApply($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ApproveCityCarApplyHeaders([]);
+        $headers = new GetHotelExceedApplyHeaders([]);
 
-        return $this->approveCityCarApplyWithOptions($request, $headers, $runtime);
+        return $this->getHotelExceedApplyWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param ApproveCityCarApplyRequest $request
-     * @param ApproveCityCarApplyHeaders $headers
+     * @param GetHotelExceedApplyRequest $request
+     * @param GetHotelExceedApplyHeaders $headers
      * @param RuntimeOptions             $runtime
      *
-     * @return ApproveCityCarApplyResponse
+     * @return GetHotelExceedApplyResponse
      */
-    public function approveCityCarApplyWithOptions($request, $headers, $runtime)
+    public function getHotelExceedApplyWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
+            @$query['corpId'] = $request->corpId;
         }
-        if (!Utils::isUnset($request->operateTime)) {
-            @$body['operateTime'] = $request->operateTime;
-        }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->thirdPartApplyId)) {
-            @$body['thirdPartApplyId'] = $request->thirdPartApplyId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        if (!Utils::isUnset($request->applyId)) {
+            @$query['applyId'] = $request->applyId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -189,10 +348,10 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ApproveCityCarApplyResponse::fromMap($this->doROARequest('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/alitrip/cityCarApprovals', 'json', $req, $runtime));
+        return GetHotelExceedApplyResponse::fromMap($this->doROARequest('GetHotelExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/exceedapply/getHotel', 'json', $req, $runtime));
     }
 
     /**
@@ -301,5 +460,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryCityCarApplyResponse::fromMap($this->doROARequest('QueryCityCarApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/cityCarApprovals', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTrainExceedApplyRequest $request
+     *
+     * @return GetTrainExceedApplyResponse
+     */
+    public function getTrainExceedApply($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTrainExceedApplyHeaders([]);
+
+        return $this->getTrainExceedApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTrainExceedApplyRequest $request
+     * @param GetTrainExceedApplyHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetTrainExceedApplyResponse
+     */
+    public function getTrainExceedApplyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->applyId)) {
+            @$query['applyId'] = $request->applyId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTrainExceedApplyResponse::fromMap($this->doROARequest('GetTrainExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/exceedapply/getTrain', 'json', $req, $runtime));
     }
 }

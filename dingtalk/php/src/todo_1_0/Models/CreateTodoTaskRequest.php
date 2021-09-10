@@ -67,6 +67,20 @@ class CreateTodoTaskRequest extends Model
     public $detailUrl;
 
     /**
+     * @description 生成的待办是否仅展示在执行者的待办列表中
+     *
+     * @var bool
+     */
+    public $isOnlyShowExecutor;
+
+    /**
+     * @description 优先级
+     *
+     * @var int
+     */
+    public $priority;
+
+    /**
      * @description 通知提醒配置
      *
      * @var notifyConfigs
@@ -80,16 +94,18 @@ class CreateTodoTaskRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'sourceId'       => 'sourceId',
-        'subject'        => 'subject',
-        'creatorId'      => 'creatorId',
-        'description'    => 'description',
-        'dueTime'        => 'dueTime',
-        'executorIds'    => 'executorIds',
-        'participantIds' => 'participantIds',
-        'detailUrl'      => 'detailUrl',
-        'notifyConfigs'  => 'notifyConfigs',
-        'operatorId'     => 'operatorId',
+        'sourceId'           => 'sourceId',
+        'subject'            => 'subject',
+        'creatorId'          => 'creatorId',
+        'description'        => 'description',
+        'dueTime'            => 'dueTime',
+        'executorIds'        => 'executorIds',
+        'participantIds'     => 'participantIds',
+        'detailUrl'          => 'detailUrl',
+        'isOnlyShowExecutor' => 'isOnlyShowExecutor',
+        'priority'           => 'priority',
+        'notifyConfigs'      => 'notifyConfigs',
+        'operatorId'         => 'operatorId',
     ];
 
     public function validate()
@@ -122,6 +138,12 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->detailUrl) {
             $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
+        }
+        if (null !== $this->isOnlyShowExecutor) {
+            $res['isOnlyShowExecutor'] = $this->isOnlyShowExecutor;
+        }
+        if (null !== $this->priority) {
+            $res['priority'] = $this->priority;
         }
         if (null !== $this->notifyConfigs) {
             $res['notifyConfigs'] = null !== $this->notifyConfigs ? $this->notifyConfigs->toMap() : null;
@@ -168,6 +190,12 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['detailUrl'])) {
             $model->detailUrl = detailUrl::fromMap($map['detailUrl']);
+        }
+        if (isset($map['isOnlyShowExecutor'])) {
+            $model->isOnlyShowExecutor = $map['isOnlyShowExecutor'];
+        }
+        if (isset($map['priority'])) {
+            $model->priority = $map['priority'];
         }
         if (isset($map['notifyConfigs'])) {
             $model->notifyConfigs = notifyConfigs::fromMap($map['notifyConfigs']);

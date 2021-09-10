@@ -9,6 +9,8 @@ use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetAccessTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetAccessTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetCorpAccessTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetCorpAccessTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetPersonalAuthRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetPersonalAuthRuleResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetSuiteAccessTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetSuiteAccessTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenRequest;
@@ -197,5 +199,38 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetCorpAccessTokenResponse::fromMap($this->doROARequest('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/corpAccessToken', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetPersonalAuthRuleResponse
+     */
+    public function getPersonalAuthRule()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPersonalAuthRuleHeaders([]);
+
+        return $this->getPersonalAuthRuleWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetPersonalAuthRuleHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetPersonalAuthRuleResponse
+     */
+    public function getPersonalAuthRuleWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetPersonalAuthRuleResponse::fromMap($this->doROARequest('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', '/v1.0/oauth2/authRules/user', 'json', $req, $runtime));
     }
 }
