@@ -209,7 +209,7 @@ class QueryCloudRecordTextResponseBodyParagraphListSentenceList(TeaModel):
 class QueryCloudRecordTextResponseBodyParagraphList(TeaModel):
     def __init__(
         self,
-        token: int = None,
+        next_ttoken: int = None,
         status: int = None,
         union_id: str = None,
         nick_name: str = None,
@@ -220,7 +220,7 @@ class QueryCloudRecordTextResponseBodyParagraphList(TeaModel):
         sentence_list: List[QueryCloudRecordTextResponseBodyParagraphListSentenceList] = None,
     ):
         # 游标，下次查询时使用
-        self.token = token
+        self.next_ttoken = next_ttoken
         # 状态，暂不解析
         self.status = status
         # 发言人unionId
@@ -250,8 +250,8 @@ class QueryCloudRecordTextResponseBodyParagraphList(TeaModel):
             return _map
 
         result = dict()
-        if self.token is not None:
-            result['token'] = self.token
+        if self.next_ttoken is not None:
+            result['nextTtoken'] = self.next_ttoken
         if self.status is not None:
             result['status'] = self.status
         if self.union_id is not None:
@@ -274,8 +274,8 @@ class QueryCloudRecordTextResponseBodyParagraphList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('token') is not None:
-            self.token = m.get('token')
+        if m.get('nextTtoken') is not None:
+            self.next_ttoken = m.get('nextTtoken')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('unionId') is not None:
@@ -301,11 +301,11 @@ class QueryCloudRecordTextResponseBodyParagraphList(TeaModel):
 class QueryCloudRecordTextResponseBody(TeaModel):
     def __init__(
         self,
-        has_next: bool = None,
+        has_more: bool = None,
         paragraph_list: List[QueryCloudRecordTextResponseBodyParagraphList] = None,
     ):
         # 是否有更多
-        self.has_next = has_next
+        self.has_more = has_more
         # MP4格式下载链接
         self.paragraph_list = paragraph_list
 
@@ -321,8 +321,8 @@ class QueryCloudRecordTextResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.has_next is not None:
-            result['hasNext'] = self.has_next
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
         result['paragraphList'] = []
         if self.paragraph_list is not None:
             for k in self.paragraph_list:
@@ -331,8 +331,8 @@ class QueryCloudRecordTextResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('hasNext') is not None:
-            self.has_next = m.get('hasNext')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
         self.paragraph_list = []
         if m.get('paragraphList') is not None:
             for k in m.get('paragraphList'):
@@ -626,7 +626,7 @@ class QueryCloudRecordVideoPlayInfoResponseBody(TeaModel):
         self,
         play_url: str = None,
         mp_4file_url: str = None,
-        size: int = None,
+        file_size: int = None,
         duration: int = None,
         status: int = None,
     ):
@@ -635,7 +635,7 @@ class QueryCloudRecordVideoPlayInfoResponseBody(TeaModel):
         # MP4格式下载链接
         self.mp_4file_url = mp_4file_url
         # 大小
-        self.size = size
+        self.file_size = file_size
         # 时长
         self.duration = duration
         # 状态
@@ -654,8 +654,8 @@ class QueryCloudRecordVideoPlayInfoResponseBody(TeaModel):
             result['playUrl'] = self.play_url
         if self.mp_4file_url is not None:
             result['mp4FileUrl'] = self.mp_4file_url
-        if self.size is not None:
-            result['size'] = self.size
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
         if self.duration is not None:
             result['duration'] = self.duration
         if self.status is not None:
@@ -668,8 +668,8 @@ class QueryCloudRecordVideoPlayInfoResponseBody(TeaModel):
             self.play_url = m.get('playUrl')
         if m.get('mp4FileUrl') is not None:
             self.mp_4file_url = m.get('mp4FileUrl')
-        if m.get('size') is not None:
-            self.size = m.get('size')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
         if m.get('duration') is not None:
             self.duration = m.get('duration')
         if m.get('status') is not None:
