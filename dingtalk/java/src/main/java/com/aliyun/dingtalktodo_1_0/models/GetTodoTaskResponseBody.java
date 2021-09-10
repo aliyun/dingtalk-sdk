@@ -88,6 +88,14 @@ public class GetTodoTaskResponseBody extends TeaModel {
     @NameInMap("cardTypeId")
     public String cardTypeId;
 
+    // 待办是否仅展示在执行人的待办列表中
+    @NameInMap("isOnlyShowExecutor")
+    public Boolean isOnlyShowExecutor;
+
+    // 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+    @NameInMap("priority")
+    public Integer priority;
+
     public static GetTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTodoTaskResponseBody self = new GetTodoTaskResponseBody();
         return TeaModel.build(map, self);
@@ -259,6 +267,22 @@ public class GetTodoTaskResponseBody extends TeaModel {
     }
     public String getCardTypeId() {
         return this.cardTypeId;
+    }
+
+    public GetTodoTaskResponseBody setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
+        this.isOnlyShowExecutor = isOnlyShowExecutor;
+        return this;
+    }
+    public Boolean getIsOnlyShowExecutor() {
+        return this.isOnlyShowExecutor;
+    }
+
+    public GetTodoTaskResponseBody setPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+    public Integer getPriority() {
+        return this.priority;
     }
 
     public static class GetTodoTaskResponseBodyDetailUrl extends TeaModel {

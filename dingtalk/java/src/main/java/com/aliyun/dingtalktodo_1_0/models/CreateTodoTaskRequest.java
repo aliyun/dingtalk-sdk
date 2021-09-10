@@ -36,6 +36,14 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("detailUrl")
     public CreateTodoTaskRequestDetailUrl detailUrl;
 
+    // 生成的待办是否仅展示在执行者的待办列表中
+    @NameInMap("isOnlyShowExecutor")
+    public Boolean isOnlyShowExecutor;
+
+    // 优先级
+    @NameInMap("priority")
+    public Integer priority;
+
     // 通知提醒配置
     @NameInMap("notifyConfigs")
     public CreateTodoTaskRequestNotifyConfigs notifyConfigs;
@@ -111,6 +119,22 @@ public class CreateTodoTaskRequest extends TeaModel {
     }
     public CreateTodoTaskRequestDetailUrl getDetailUrl() {
         return this.detailUrl;
+    }
+
+    public CreateTodoTaskRequest setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
+        this.isOnlyShowExecutor = isOnlyShowExecutor;
+        return this;
+    }
+    public Boolean getIsOnlyShowExecutor() {
+        return this.isOnlyShowExecutor;
+    }
+
+    public CreateTodoTaskRequest setPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+    public Integer getPriority() {
+        return this.priority;
     }
 
     public CreateTodoTaskRequest setNotifyConfigs(CreateTodoTaskRequestNotifyConfigs notifyConfigs) {

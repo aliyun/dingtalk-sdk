@@ -215,6 +215,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("detailUrl", request.detailUrl);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.isOnlyShowExecutor)) {
+            body.put("isOnlyShowExecutor", request.isOnlyShowExecutor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
+            body.put("priority", request.priority);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.notifyConfigs))) {
             body.put("notifyConfigs", request.notifyConfigs);
         }

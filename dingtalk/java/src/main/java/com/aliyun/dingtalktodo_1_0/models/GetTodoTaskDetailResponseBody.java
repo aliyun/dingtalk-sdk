@@ -84,6 +84,14 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    // 待办是否仅展示在执行人的待办列表中
+    @NameInMap("isOnlyShowExecutor")
+    public Boolean isOnlyShowExecutor;
+
+    // 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+    @NameInMap("priority")
+    public Integer priority;
+
     // 所属分类
     @NameInMap("category")
     public String category;
@@ -259,6 +267,22 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
+    }
+
+    public GetTodoTaskDetailResponseBody setIsOnlyShowExecutor(Boolean isOnlyShowExecutor) {
+        this.isOnlyShowExecutor = isOnlyShowExecutor;
+        return this;
+    }
+    public Boolean getIsOnlyShowExecutor() {
+        return this.isOnlyShowExecutor;
+    }
+
+    public GetTodoTaskDetailResponseBody setPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+    public Integer getPriority() {
+        return this.priority;
     }
 
     public GetTodoTaskDetailResponseBody setCategory(String category) {

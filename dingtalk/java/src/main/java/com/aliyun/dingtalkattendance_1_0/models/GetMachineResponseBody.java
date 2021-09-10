@@ -1,0 +1,292 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkattendance_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class GetMachineResponseBody extends TeaModel {
+    // 查询结果
+    @NameInMap("result")
+    public GetMachineResponseBodyResult result;
+
+    public static GetMachineResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        GetMachineResponseBody self = new GetMachineResponseBody();
+        return TeaModel.build(map, self);
+    }
+
+    public GetMachineResponseBody setResult(GetMachineResponseBodyResult result) {
+        this.result = result;
+        return this;
+    }
+    public GetMachineResponseBodyResult getResult() {
+        return this.result;
+    }
+
+    public static class GetMachineResponseBodyResultMachineBluetoothVO extends TeaModel {
+        // 蓝牙打卡开关
+        @NameInMap("bluetoothValue")
+        public Boolean bluetoothValue;
+
+        // 蓝牙打卡人脸识别开关值
+        @NameInMap("bluetoothCheckWithFace")
+        public Boolean bluetoothCheckWithFace;
+
+        // 蓝牙打卡范围
+        @NameInMap("bluetoothDistanceMode")
+        public String bluetoothDistanceMode;
+
+        // 蓝牙打卡范围描述
+        @NameInMap("bluetoothDistanceModeDesc")
+        public String bluetoothDistanceModeDesc;
+
+        // 是否打开位置异常监控
+        @NameInMap("monitorLocationAbnormal")
+        public Boolean monitorLocationAbnormal;
+
+        // 地址位置描述
+        @NameInMap("address")
+        public String address;
+
+        // 经度
+        @NameInMap("longitude")
+        public Double longitude;
+
+        // 纬度
+        @NameInMap("latitude")
+        public Double latitude;
+
+        // 是否限制员工常用手机
+        @NameInMap("limitUserDeviceCount")
+        public Boolean limitUserDeviceCount;
+
+        // 员工常用手机数量
+        @NameInMap("userDeviceCount")
+        public Integer userDeviceCount;
+
+        public static GetMachineResponseBodyResultMachineBluetoothVO build(java.util.Map<String, ?> map) throws Exception {
+            GetMachineResponseBodyResultMachineBluetoothVO self = new GetMachineResponseBodyResultMachineBluetoothVO();
+            return TeaModel.build(map, self);
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setBluetoothValue(Boolean bluetoothValue) {
+            this.bluetoothValue = bluetoothValue;
+            return this;
+        }
+        public Boolean getBluetoothValue() {
+            return this.bluetoothValue;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setBluetoothCheckWithFace(Boolean bluetoothCheckWithFace) {
+            this.bluetoothCheckWithFace = bluetoothCheckWithFace;
+            return this;
+        }
+        public Boolean getBluetoothCheckWithFace() {
+            return this.bluetoothCheckWithFace;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setBluetoothDistanceMode(String bluetoothDistanceMode) {
+            this.bluetoothDistanceMode = bluetoothDistanceMode;
+            return this;
+        }
+        public String getBluetoothDistanceMode() {
+            return this.bluetoothDistanceMode;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setBluetoothDistanceModeDesc(String bluetoothDistanceModeDesc) {
+            this.bluetoothDistanceModeDesc = bluetoothDistanceModeDesc;
+            return this;
+        }
+        public String getBluetoothDistanceModeDesc() {
+            return this.bluetoothDistanceModeDesc;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setMonitorLocationAbnormal(Boolean monitorLocationAbnormal) {
+            this.monitorLocationAbnormal = monitorLocationAbnormal;
+            return this;
+        }
+        public Boolean getMonitorLocationAbnormal() {
+            return this.monitorLocationAbnormal;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+        public String getAddress() {
+            return this.address;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setLongitude(Double longitude) {
+            this.longitude = longitude;
+            return this;
+        }
+        public Double getLongitude() {
+            return this.longitude;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setLatitude(Double latitude) {
+            this.latitude = latitude;
+            return this;
+        }
+        public Double getLatitude() {
+            return this.latitude;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setLimitUserDeviceCount(Boolean limitUserDeviceCount) {
+            this.limitUserDeviceCount = limitUserDeviceCount;
+            return this;
+        }
+        public Boolean getLimitUserDeviceCount() {
+            return this.limitUserDeviceCount;
+        }
+
+        public GetMachineResponseBodyResultMachineBluetoothVO setUserDeviceCount(Integer userDeviceCount) {
+            this.userDeviceCount = userDeviceCount;
+            return this;
+        }
+        public Integer getUserDeviceCount() {
+            return this.userDeviceCount;
+        }
+
+    }
+
+    public static class GetMachineResponseBodyResult extends TeaModel {
+        // 设备id (deviceUid加密之后)
+        @NameInMap("deviceId")
+        public String deviceId;
+
+        // 设备id (deviceId)
+        @NameInMap("devId")
+        public Long devId;
+
+        // 设备名称
+        @NameInMap("deviceName")
+        public String deviceName;
+
+        // 设备类型名称
+        @NameInMap("productName")
+        public String productName;
+
+        // 网络状态
+        @NameInMap("netStatus")
+        public String netStatus;
+
+        // 固件版本
+        @NameInMap("productVersion")
+        public String productVersion;
+
+        // 设备sn号
+        @NameInMap("deviceSn")
+        public String deviceSn;
+
+        // 人脸容量
+        @NameInMap("maxFace")
+        public Integer maxFace;
+
+        // 音量模式
+        @NameInMap("voiceMode")
+        public Integer voiceMode;
+
+        // 设备管理员列表
+        @NameInMap("atmManagerList")
+        public java.util.List<String> atmManagerList;
+
+        // 考勤机蓝牙相关设置信息
+        @NameInMap("machineBluetoothVO")
+        public GetMachineResponseBodyResultMachineBluetoothVO machineBluetoothVO;
+
+        public static GetMachineResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            GetMachineResponseBodyResult self = new GetMachineResponseBodyResult();
+            return TeaModel.build(map, self);
+        }
+
+        public GetMachineResponseBodyResult setDeviceId(String deviceId) {
+            this.deviceId = deviceId;
+            return this;
+        }
+        public String getDeviceId() {
+            return this.deviceId;
+        }
+
+        public GetMachineResponseBodyResult setDevId(Long devId) {
+            this.devId = devId;
+            return this;
+        }
+        public Long getDevId() {
+            return this.devId;
+        }
+
+        public GetMachineResponseBodyResult setDeviceName(String deviceName) {
+            this.deviceName = deviceName;
+            return this;
+        }
+        public String getDeviceName() {
+            return this.deviceName;
+        }
+
+        public GetMachineResponseBodyResult setProductName(String productName) {
+            this.productName = productName;
+            return this;
+        }
+        public String getProductName() {
+            return this.productName;
+        }
+
+        public GetMachineResponseBodyResult setNetStatus(String netStatus) {
+            this.netStatus = netStatus;
+            return this;
+        }
+        public String getNetStatus() {
+            return this.netStatus;
+        }
+
+        public GetMachineResponseBodyResult setProductVersion(String productVersion) {
+            this.productVersion = productVersion;
+            return this;
+        }
+        public String getProductVersion() {
+            return this.productVersion;
+        }
+
+        public GetMachineResponseBodyResult setDeviceSn(String deviceSn) {
+            this.deviceSn = deviceSn;
+            return this;
+        }
+        public String getDeviceSn() {
+            return this.deviceSn;
+        }
+
+        public GetMachineResponseBodyResult setMaxFace(Integer maxFace) {
+            this.maxFace = maxFace;
+            return this;
+        }
+        public Integer getMaxFace() {
+            return this.maxFace;
+        }
+
+        public GetMachineResponseBodyResult setVoiceMode(Integer voiceMode) {
+            this.voiceMode = voiceMode;
+            return this;
+        }
+        public Integer getVoiceMode() {
+            return this.voiceMode;
+        }
+
+        public GetMachineResponseBodyResult setAtmManagerList(java.util.List<String> atmManagerList) {
+            this.atmManagerList = atmManagerList;
+            return this;
+        }
+        public java.util.List<String> getAtmManagerList() {
+            return this.atmManagerList;
+        }
+
+        public GetMachineResponseBodyResult setMachineBluetoothVO(GetMachineResponseBodyResultMachineBluetoothVO machineBluetoothVO) {
+            this.machineBluetoothVO = machineBluetoothVO;
+            return this;
+        }
+        public GetMachineResponseBodyResultMachineBluetoothVO getMachineBluetoothVO() {
+            return this.machineBluetoothVO;
+        }
+
+    }
+
+}
