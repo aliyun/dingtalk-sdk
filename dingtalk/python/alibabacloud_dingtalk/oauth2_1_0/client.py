@@ -279,3 +279,49 @@ class Client(OpenApiClient):
             dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
             await self.do_roarequest_async('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
         )
+
+    def get_personal_auth_rule(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
+        return self.get_personal_auth_rule_with_options(headers, runtime)
+
+    async def get_personal_auth_rule_async(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
+        return await self.get_personal_auth_rule_with_options_async(headers, runtime)
+
+    def get_personal_auth_rule_with_options(
+        self,
+        headers: dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse(),
+            self.do_roarequest('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/authRules/user', 'json', req, runtime)
+        )
+
+    async def get_personal_auth_rule_with_options_async(
+        self,
+        headers: dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse(),
+            await self.do_roarequest_async('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/authRules/user', 'json', req, runtime)
+        )

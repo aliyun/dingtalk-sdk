@@ -165,6 +165,8 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         tenant_type: str = None,
         biz_tag: str = None,
         request_id: str = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
         category: str = None,
         org_info: GetTodoTaskDetailResponseBodyOrgInfo = None,
         executor_status: List[GetTodoTaskDetailResponseBodyExecutorStatus] = None,
@@ -209,6 +211,10 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         self.biz_tag = biz_tag
         # requestId
         self.request_id = request_id
+        # 待办是否仅展示在执行人的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
         # 所属分类
         self.category = category
         # 所属组织信息
@@ -272,6 +278,10 @@ class GetTodoTaskDetailResponseBody(TeaModel):
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
         if self.category is not None:
             result['category'] = self.category
         if self.org_info is not None:
@@ -325,6 +335,10 @@ class GetTodoTaskDetailResponseBody(TeaModel):
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
         if m.get('category') is not None:
             self.category = m.get('category')
         if m.get('orgInfo') is not None:
@@ -467,6 +481,8 @@ class GetTodoTaskResponseBody(TeaModel):
         biz_tag: str = None,
         request_id: str = None,
         card_type_id: str = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
     ):
         # id
         self.id = id
@@ -510,6 +526,10 @@ class GetTodoTaskResponseBody(TeaModel):
         self.request_id = request_id
         # 待办卡片类型id
         self.card_type_id = card_type_id
+        # 待办是否仅展示在执行人的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
 
     def validate(self):
         if self.detail_url:
@@ -563,6 +583,10 @@ class GetTodoTaskResponseBody(TeaModel):
             result['requestId'] = self.request_id
         if self.card_type_id is not None:
             result['cardTypeId'] = self.card_type_id
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
         return result
 
     def from_map(self, m: dict = None):
@@ -610,6 +634,10 @@ class GetTodoTaskResponseBody(TeaModel):
             self.request_id = m.get('requestId')
         if m.get('cardTypeId') is not None:
             self.card_type_id = m.get('cardTypeId')
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
         return self
 
 
@@ -741,6 +769,8 @@ class GetTodoTaskBySourceIdResponseBody(TeaModel):
         tenant_type: str = None,
         biz_tag: str = None,
         request_id: str = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
     ):
         # id
         self.id = id
@@ -782,6 +812,10 @@ class GetTodoTaskBySourceIdResponseBody(TeaModel):
         self.biz_tag = biz_tag
         # requestId
         self.request_id = request_id
+        # 待办是否仅展示在执行人的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
 
     def validate(self):
         if self.detail_url:
@@ -833,6 +867,10 @@ class GetTodoTaskBySourceIdResponseBody(TeaModel):
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
         return result
 
     def from_map(self, m: dict = None):
@@ -878,6 +916,10 @@ class GetTodoTaskBySourceIdResponseBody(TeaModel):
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
         return self
 
 
@@ -1461,6 +1503,8 @@ class CreateTodoTaskRequest(TeaModel):
         executor_ids: List[str] = None,
         participant_ids: List[str] = None,
         detail_url: CreateTodoTaskRequestDetailUrl = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
         notify_configs: CreateTodoTaskRequestNotifyConfigs = None,
         operator_id: str = None,
     ):
@@ -1480,6 +1524,10 @@ class CreateTodoTaskRequest(TeaModel):
         self.participant_ids = participant_ids
         # 详情页url跳转地址
         self.detail_url = detail_url
+        # 生成的待办是否仅展示在执行者的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级
+        self.priority = priority
         # 通知提醒配置
         self.notify_configs = notify_configs
         # 当前操作者id，需传用户的unionId
@@ -1513,6 +1561,10 @@ class CreateTodoTaskRequest(TeaModel):
             result['participantIds'] = self.participant_ids
         if self.detail_url is not None:
             result['detailUrl'] = self.detail_url.to_map()
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
         if self.notify_configs is not None:
             result['notifyConfigs'] = self.notify_configs.to_map()
         if self.operator_id is not None:
@@ -1538,6 +1590,10 @@ class CreateTodoTaskRequest(TeaModel):
         if m.get('detailUrl') is not None:
             temp_model = CreateTodoTaskRequestDetailUrl()
             self.detail_url = temp_model.from_map(m['detailUrl'])
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
         if m.get('notifyConfigs') is not None:
             temp_model = CreateTodoTaskRequestNotifyConfigs()
             self.notify_configs = temp_model.from_map(m['notifyConfigs'])
@@ -1602,6 +1658,8 @@ class CreateTodoTaskResponseBody(TeaModel):
         modifier_id: str = None,
         biz_tag: str = None,
         request_id: str = None,
+        is_only_show_executor: bool = None,
+        priority: int = None,
     ):
         # id
         self.id = id
@@ -1639,6 +1697,10 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.biz_tag = biz_tag
         # requestId
         self.request_id = request_id
+        # 生成的待办是否仅展示在执行者的待办列表中
+        self.is_only_show_executor = is_only_show_executor
+        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+        self.priority = priority
 
     def validate(self):
         if self.detail_url:
@@ -1686,6 +1748,10 @@ class CreateTodoTaskResponseBody(TeaModel):
             result['bizTag'] = self.biz_tag
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        if self.is_only_show_executor is not None:
+            result['isOnlyShowExecutor'] = self.is_only_show_executor
+        if self.priority is not None:
+            result['priority'] = self.priority
         return result
 
     def from_map(self, m: dict = None):
@@ -1727,6 +1793,10 @@ class CreateTodoTaskResponseBody(TeaModel):
             self.biz_tag = m.get('bizTag')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        if m.get('isOnlyShowExecutor') is not None:
+            self.is_only_show_executor = m.get('isOnlyShowExecutor')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
         return self
 
 

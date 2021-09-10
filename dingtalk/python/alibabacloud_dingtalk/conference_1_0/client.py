@@ -23,6 +23,90 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def query_cloud_record_text(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordTextRequest,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryCloudRecordTextHeaders()
+        return self.query_cloud_record_text_with_options(conference_id, request, headers, runtime)
+
+    async def query_cloud_record_text_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordTextRequest,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryCloudRecordTextHeaders()
+        return await self.query_cloud_record_text_with_options_async(conference_id, request, headers, runtime)
+
+    def query_cloud_record_text_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordTextRequest,
+        headers: dingtalkconference__1__0_models.QueryCloudRecordTextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.direction):
+            query['direction'] = request.direction
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryCloudRecordTextResponse(),
+            self.do_roarequest('QueryCloudRecordText', 'conference_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/cloudRecords/getTexts', 'json', req, runtime)
+        )
+
+    async def query_cloud_record_text_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordTextRequest,
+        headers: dingtalkconference__1__0_models.QueryCloudRecordTextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.direction):
+            query['direction'] = request.direction
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryCloudRecordTextResponse(),
+            await self.do_roarequest_async('QueryCloudRecordText', 'conference_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/cloudRecords/getTexts', 'json', req, runtime)
+        )
+
     def create_video_conference(
         self,
         request: dingtalkconference__1__0_models.CreateVideoConferenceRequest,
@@ -93,6 +177,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkconference__1__0_models.CreateVideoConferenceResponse(),
             await self.do_roarequest_async('CreateVideoConference', 'conference_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/conference/videoConferences', 'json', req, runtime)
+        )
+
+    def query_cloud_record_video_play_info(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoRequest,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders()
+        return self.query_cloud_record_video_play_info_with_options(conference_id, request, headers, runtime)
+
+    async def query_cloud_record_video_play_info_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoRequest,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders()
+        return await self.query_cloud_record_video_play_info_with_options_async(conference_id, request, headers, runtime)
+
+    def query_cloud_record_video_play_info_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoRequest,
+        headers: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.media_id):
+            query['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.region_id):
+            query['regionId'] = request.region_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse(),
+            self.do_roarequest('QueryCloudRecordVideoPlayInfo', 'conference_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/cloudRecords/videos/getPlayInfos', 'json', req, runtime)
+        )
+
+    async def query_cloud_record_video_play_info_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoRequest,
+        headers: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.media_id):
+            query['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.region_id):
+            query['regionId'] = request.region_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse(),
+            await self.do_roarequest_async('QueryCloudRecordVideoPlayInfo', 'conference_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/cloudRecords/videos/getPlayInfos', 'json', req, runtime)
         )
 
     def query_conference_info_batch(
@@ -587,4 +747,72 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkconference__1__0_models.StartStreamOutResponse(),
             await self.do_roarequest_async('StartStreamOut', 'conference_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/streamOuts/start', 'json', req, runtime)
+        )
+
+    def query_cloud_record_video(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoRequest,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders()
+        return self.query_cloud_record_video_with_options(conference_id, request, headers, runtime)
+
+    async def query_cloud_record_video_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoRequest,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders()
+        return await self.query_cloud_record_video_with_options_async(conference_id, request, headers, runtime)
+
+    def query_cloud_record_video_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoRequest,
+        headers: dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryCloudRecordVideoResponse(),
+            self.do_roarequest('QueryCloudRecordVideo', 'conference_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/cloudRecords/getVideos', 'json', req, runtime)
+        )
+
+    async def query_cloud_record_video_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryCloudRecordVideoRequest,
+        headers: dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryCloudRecordVideoResponse(),
+            await self.do_roarequest_async('QueryCloudRecordVideo', 'conference_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/conference/videoConferences/{conference_id}/cloudRecords/getVideos', 'json', req, runtime)
         )

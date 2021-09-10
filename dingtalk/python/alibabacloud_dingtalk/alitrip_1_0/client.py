@@ -23,6 +23,254 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def approve_city_car_apply(
+        self,
+        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
+        return self.approve_city_car_apply_with_options(request, headers, runtime)
+
+    async def approve_city_car_apply_async(
+        self,
+        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
+        return await self.approve_city_car_apply_with_options_async(request, headers, runtime)
+
+    def approve_city_car_apply_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
+        headers: dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.operate_time):
+            body['operateTime'] = request.operate_time
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.third_part_apply_id):
+            body['thirdPartApplyId'] = request.third_part_apply_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse(),
+            self.do_roarequest('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+        )
+
+    async def approve_city_car_apply_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
+        headers: dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.operate_time):
+            body['operateTime'] = request.operate_time
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.third_part_apply_id):
+            body['thirdPartApplyId'] = request.third_part_apply_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse(),
+            await self.do_roarequest_async('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+        )
+
+    def get_flight_exceed_apply(
+        self,
+        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
+        return self.get_flight_exceed_apply_with_options(request, headers, runtime)
+
+    async def get_flight_exceed_apply_async(
+        self,
+        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
+        return await self.get_flight_exceed_apply_with_options_async(request, headers, runtime)
+
+    def get_flight_exceed_apply_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse(),
+            self.do_roarequest('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getFlight', 'json', req, runtime)
+        )
+
+    async def get_flight_exceed_apply_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse(),
+            await self.do_roarequest_async('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getFlight', 'json', req, runtime)
+        )
+
+    def sync_exceed_apply(
+        self,
+        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
+        return self.sync_exceed_apply_with_options(request, headers, runtime)
+
+    async def sync_exceed_apply_async(
+        self,
+        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
+        return await self.sync_exceed_apply_with_options_async(request, headers, runtime)
+
+    def sync_exceed_apply_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.SyncExceedApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.remark):
+            query['remark'] = request.remark
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.thirdparty_flow_id):
+            query['thirdpartyFlowId'] = request.thirdparty_flow_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.SyncExceedApplyResponse(),
+            self.do_roarequest('SyncExceedApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/exceedapply/sync', 'json', req, runtime)
+        )
+
+    async def sync_exceed_apply_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.SyncExceedApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.remark):
+            query['remark'] = request.remark
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.thirdparty_flow_id):
+            query['thirdpartyFlowId'] = request.thirdparty_flow_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.SyncExceedApplyResponse(),
+            await self.do_roarequest_async('SyncExceedApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/exceedapply/sync', 'json', req, runtime)
+        )
+
     def add_city_car_apply(
         self,
         request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
@@ -159,48 +407,34 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddCityCarApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
         )
 
-    def approve_city_car_apply(
+    def get_hotel_exceed_apply(
         self,
-        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
-        return self.approve_city_car_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
+        return self.get_hotel_exceed_apply_with_options(request, headers, runtime)
 
-    async def approve_city_car_apply_async(
+    async def get_hotel_exceed_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
-        return await self.approve_city_car_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
+        return await self.get_hotel_exceed_apply_with_options_async(request, headers, runtime)
 
-    def approve_city_car_apply_with_options(
+    def get_hotel_exceed_apply_with_options(
         self,
-        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
-        headers: dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders,
+        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
         UtilClient.validate_model(request)
-        body = {}
+        query = {}
         if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.operate_time):
-            body['operateTime'] = request.operate_time
-        if not UtilClient.is_unset(request.remark):
-            body['remark'] = request.remark
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
-        if not UtilClient.is_unset(request.third_part_apply_id):
-            body['thirdPartApplyId'] = request.third_part_apply_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -208,39 +442,25 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse(),
-            self.do_roarequest('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse(),
+            self.do_roarequest('GetHotelExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getHotel', 'json', req, runtime)
         )
 
-    async def approve_city_car_apply_with_options_async(
+    async def get_hotel_exceed_apply_with_options_async(
         self,
-        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
-        headers: dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders,
+        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
         UtilClient.validate_model(request)
-        body = {}
+        query = {}
         if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.operate_time):
-            body['operateTime'] = request.operate_time
-        if not UtilClient.is_unset(request.remark):
-            body['remark'] = request.remark
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
-        if not UtilClient.is_unset(request.third_part_apply_id):
-            body['thirdPartApplyId'] = request.third_part_apply_id
-        if not UtilClient.is_unset(request.user_id):
-            body['userId'] = request.user_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.ding_corp_id):
-            body['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -248,11 +468,11 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse(),
-            await self.do_roarequest_async('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse(),
+            await self.do_roarequest_async('GetHotelExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getHotel', 'json', req, runtime)
         )
 
     def query_union_order(
@@ -413,4 +633,72 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.QueryCityCarApplyResponse(),
             await self.do_roarequest_async('QueryCityCarApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+        )
+
+    def get_train_exceed_apply(
+        self,
+        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
+        return self.get_train_exceed_apply_with_options(request, headers, runtime)
+
+    async def get_train_exceed_apply_async(
+        self,
+        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
+        return await self.get_train_exceed_apply_with_options_async(request, headers, runtime)
+
+    def get_train_exceed_apply_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse(),
+            self.do_roarequest('GetTrainExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getTrain', 'json', req, runtime)
+        )
+
+    async def get_train_exceed_apply_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
+        headers: dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.apply_id):
+            query['applyId'] = request.apply_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse(),
+            await self.do_roarequest_async('GetTrainExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getTrain', 'json', req, runtime)
         )

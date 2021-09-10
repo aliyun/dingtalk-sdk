@@ -4,6 +4,380 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class QueryCloudRecordTextHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCloudRecordTextRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        start_time: int = None,
+        direction: str = None,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+        # 开始时间
+        self.start_time = start_time
+        # 0-向前查询，1-向后查询 。 向前查询：此次查询按照时间由小到大的顺序进行。
+        self.direction = direction
+        # 单页查询的最大条目数，最多2000
+        self.max_results = max_results
+        # 游标，第一次查询可为空，之后每次带上一次的游标
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList(TeaModel):
+    def __init__(
+        self,
+        word: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        word_id: str = None,
+    ):
+        # 单词
+        self.word = word
+        # 开始时间
+        self.start_time = start_time
+        # 结束时间
+        self.end_time = end_time
+        # 单词id
+        self.word_id = word_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.word is not None:
+            result['word'] = self.word
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.word_id is not None:
+            result['wordId'] = self.word_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('word') is not None:
+            self.word = m.get('word')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('wordId') is not None:
+            self.word_id = m.get('wordId')
+        return self
+
+
+class QueryCloudRecordTextResponseBodyParagraphListSentenceList(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        sentence: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        word_list: List[QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList] = None,
+    ):
+        # 用户unionId
+        self.union_id = union_id
+        # 句子
+        self.sentence = sentence
+        # 开始时间
+        self.start_time = start_time
+        # 结束时间
+        self.end_time = end_time
+        # 单词列表
+        self.word_list = word_list
+
+    def validate(self):
+        if self.word_list:
+            for k in self.word_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.sentence is not None:
+            result['sentence'] = self.sentence
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        result['wordList'] = []
+        if self.word_list is not None:
+            for k in self.word_list:
+                result['wordList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('sentence') is not None:
+            self.sentence = m.get('sentence')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        self.word_list = []
+        if m.get('wordList') is not None:
+            for k in m.get('wordList'):
+                temp_model = QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList()
+                self.word_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCloudRecordTextResponseBodyParagraphList(TeaModel):
+    def __init__(
+        self,
+        token: int = None,
+        status: int = None,
+        union_id: str = None,
+        nick_name: str = None,
+        record_id: int = None,
+        start_time: int = None,
+        end_time: int = None,
+        paragraph: str = None,
+        sentence_list: List[QueryCloudRecordTextResponseBodyParagraphListSentenceList] = None,
+    ):
+        # 游标，下次查询时使用
+        self.token = token
+        # 状态，暂不解析
+        self.status = status
+        # 发言人unionId
+        self.union_id = union_id
+        # 发言人昵称
+        self.nick_name = nick_name
+        # 云录制id
+        self.record_id = record_id
+        # 开始时间，毫秒
+        self.start_time = start_time
+        # 结束时间，毫秒
+        self.end_time = end_time
+        # 段落内容
+        self.paragraph = paragraph
+        # 句子列表
+        self.sentence_list = sentence_list
+
+    def validate(self):
+        if self.sentence_list:
+            for k in self.sentence_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.token is not None:
+            result['token'] = self.token
+        if self.status is not None:
+            result['status'] = self.status
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.record_id is not None:
+            result['recordId'] = self.record_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.paragraph is not None:
+            result['paragraph'] = self.paragraph
+        result['sentenceList'] = []
+        if self.sentence_list is not None:
+            for k in self.sentence_list:
+                result['sentenceList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('recordId') is not None:
+            self.record_id = m.get('recordId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('paragraph') is not None:
+            self.paragraph = m.get('paragraph')
+        self.sentence_list = []
+        if m.get('sentenceList') is not None:
+            for k in m.get('sentenceList'):
+                temp_model = QueryCloudRecordTextResponseBodyParagraphListSentenceList()
+                self.sentence_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCloudRecordTextResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_next: bool = None,
+        paragraph_list: List[QueryCloudRecordTextResponseBodyParagraphList] = None,
+    ):
+        # 是否有更多
+        self.has_next = has_next
+        # MP4格式下载链接
+        self.paragraph_list = paragraph_list
+
+    def validate(self):
+        if self.paragraph_list:
+            for k in self.paragraph_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_next is not None:
+            result['hasNext'] = self.has_next
+        result['paragraphList'] = []
+        if self.paragraph_list is not None:
+            for k in self.paragraph_list:
+                result['paragraphList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasNext') is not None:
+            self.has_next = m.get('hasNext')
+        self.paragraph_list = []
+        if m.get('paragraphList') is not None:
+            for k in m.get('paragraphList'):
+                temp_model = QueryCloudRecordTextResponseBodyParagraphList()
+                self.paragraph_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCloudRecordTextResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCloudRecordTextResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCloudRecordTextResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateVideoConferenceHeaders(TeaModel):
     def __init__(
         self,
@@ -168,6 +542,174 @@ class CreateVideoConferenceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateVideoConferenceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCloudRecordVideoPlayInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCloudRecordVideoPlayInfoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        media_id: str = None,
+        region_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+        # 媒体文件id
+        self.media_id = media_id
+        # 集群id
+        self.region_id = region_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.region_id is not None:
+            result['regionId'] = self.region_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('regionId') is not None:
+            self.region_id = m.get('regionId')
+        return self
+
+
+class QueryCloudRecordVideoPlayInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        play_url: str = None,
+        mp_4file_url: str = None,
+        size: int = None,
+        duration: int = None,
+        status: int = None,
+    ):
+        # 在线播放链接
+        self.play_url = play_url
+        # MP4格式下载链接
+        self.mp_4file_url = mp_4file_url
+        # 大小
+        self.size = size
+        # 时长
+        self.duration = duration
+        # 状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.play_url is not None:
+            result['playUrl'] = self.play_url
+        if self.mp_4file_url is not None:
+            result['mp4FileUrl'] = self.mp_4file_url
+        if self.size is not None:
+            result['size'] = self.size
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('playUrl') is not None:
+            self.play_url = m.get('playUrl')
+        if m.get('mp4FileUrl') is not None:
+            self.mp_4file_url = m.get('mp4FileUrl')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryCloudRecordVideoPlayInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCloudRecordVideoPlayInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCloudRecordVideoPlayInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1265,6 +1807,224 @@ class StartStreamOutResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = StartStreamOutResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCloudRecordVideoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCloudRecordVideoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryCloudRecordVideoResponseBodyVideoList(TeaModel):
+    def __init__(
+        self,
+        record_id: str = None,
+        union_id: str = None,
+        start_time: int = None,
+        record_type: int = None,
+        duration: int = None,
+        file_size: int = None,
+        end_time: int = None,
+        media_id: str = None,
+        region_id: str = None,
+    ):
+        # 音视频云录制Id，多份视频recordId一样
+        self.record_id = record_id
+        # 录制人UnionId
+        self.union_id = union_id
+        # 录制开始时间
+        self.start_time = start_time
+        # 记录类型,0-普通录制，1-合成的文件
+        self.record_type = record_type
+        # 录制持续时间
+        self.duration = duration
+        # 文件大小
+        self.file_size = file_size
+        # 录制结束时间
+        self.end_time = end_time
+        # 媒体文件id，唯一
+        self.media_id = media_id
+        # 媒体文件所在集群id
+        self.region_id = region_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.record_id is not None:
+            result['recordId'] = self.record_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.record_type is not None:
+            result['recordType'] = self.record_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.region_id is not None:
+            result['regionId'] = self.region_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('recordId') is not None:
+            self.record_id = m.get('recordId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('recordType') is not None:
+            self.record_type = m.get('recordType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('regionId') is not None:
+            self.region_id = m.get('regionId')
+        return self
+
+
+class QueryCloudRecordVideoResponseBody(TeaModel):
+    def __init__(
+        self,
+        video_list: List[QueryCloudRecordVideoResponseBodyVideoList] = None,
+    ):
+        # 视频列表
+        self.video_list = video_list
+
+    def validate(self):
+        if self.video_list:
+            for k in self.video_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['videoList'] = []
+        if self.video_list is not None:
+            for k in self.video_list:
+                result['videoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.video_list = []
+        if m.get('videoList') is not None:
+            for k in m.get('videoList'):
+                temp_model = QueryCloudRecordVideoResponseBodyVideoList()
+                self.video_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCloudRecordVideoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCloudRecordVideoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCloudRecordVideoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

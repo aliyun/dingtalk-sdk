@@ -179,6 +179,132 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/status/query', 'json', req, runtime)
         )
 
+    def get_machine(
+        self,
+        dev_id: str,
+    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetMachineHeaders()
+        return self.get_machine_with_options(dev_id, headers, runtime)
+
+    async def get_machine_async(
+        self,
+        dev_id: str,
+    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetMachineHeaders()
+        return await self.get_machine_with_options_async(dev_id, headers, runtime)
+
+    def get_machine_with_options(
+        self,
+        dev_id: str,
+        headers: dingtalkattendance__1__0_models.GetMachineHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetMachineResponse(),
+            self.do_roarequest('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/{dev_id}', 'json', req, runtime)
+        )
+
+    async def get_machine_with_options_async(
+        self,
+        dev_id: str,
+        headers: dingtalkattendance__1__0_models.GetMachineHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetMachineResponse(),
+            await self.do_roarequest_async('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/{dev_id}', 'json', req, runtime)
+        )
+
+    def get_machine_user(
+        self,
+        dev_id: str,
+        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
+    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetMachineUserHeaders()
+        return self.get_machine_user_with_options(dev_id, request, headers, runtime)
+
+    async def get_machine_user_async(
+        self,
+        dev_id: str,
+        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
+    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetMachineUserHeaders()
+        return await self.get_machine_user_with_options_async(dev_id, request, headers, runtime)
+
+    def get_machine_user_with_options(
+        self,
+        dev_id: str,
+        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
+        headers: dingtalkattendance__1__0_models.GetMachineUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetMachineUserResponse(),
+            self.do_roarequest('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/getUser/{dev_id}', 'json', req, runtime)
+        )
+
+    async def get_machine_user_with_options_async(
+        self,
+        dev_id: str,
+        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
+        headers: dingtalkattendance__1__0_models.GetMachineUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetMachineUserResponse(),
+            await self.do_roarequest_async('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/getUser/{dev_id}', 'json', req, runtime)
+        )
+
     def get_user_holidays(
         self,
         request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,

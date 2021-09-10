@@ -4,6 +4,666 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class ApproveCityCarApplyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ApproveCityCarApplyRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        operate_time: str = None,
+        remark: str = None,
+        status: int = None,
+        third_part_apply_id: str = None,
+        user_id: str = None,
+        ding_suite_key: str = None,
+        ding_corp_id: str = None,
+        ding_token_grant_type: int = None,
+    ):
+        # 第三方企业ID
+        self.corp_id = corp_id
+        # 审批时间
+        self.operate_time = operate_time
+        # 审批备注
+        self.remark = remark
+        # 审批结果：1-同意，2-拒绝
+        self.status = status
+        # 第三方审批单ID
+        self.third_part_apply_id = third_part_apply_id
+        # 审批的第三方员工ID
+        self.user_id = user_id
+        # suiteKey
+        self.ding_suite_key = ding_suite_key
+        # account
+        self.ding_corp_id = ding_corp_id
+        # tokenGrantType
+        self.ding_token_grant_type = ding_token_grant_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.operate_time is not None:
+            result['operateTime'] = self.operate_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.third_part_apply_id is not None:
+            result['thirdPartApplyId'] = self.third_part_apply_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('operateTime') is not None:
+            self.operate_time = m.get('operateTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('thirdPartApplyId') is not None:
+            self.third_part_apply_id = m.get('thirdPartApplyId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        return self
+
+
+class ApproveCityCarApplyResponseBody(TeaModel):
+    def __init__(
+        self,
+        approve_result: bool = None,
+    ):
+        # 审批结果
+        self.approve_result = approve_result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approve_result is not None:
+            result['approveResult'] = self.approve_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approveResult') is not None:
+            self.approve_result = m.get('approveResult')
+        return self
+
+
+class ApproveCityCarApplyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ApproveCityCarApplyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ApproveCityCarApplyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFlightExceedApplyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFlightExceedApplyRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        apply_id: str = None,
+    ):
+        # 第三方企业id
+        self.corp_id = corp_id
+        # 商旅超标审批单id
+        self.apply_id = apply_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        return self
+
+
+class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
+    def __init__(
+        self,
+        arr_city: str = None,
+        arr_city_name: str = None,
+        arr_time: str = None,
+        cabin: str = None,
+        cabin_class: int = None,
+        cabin_class_str: str = None,
+        dep_city: str = None,
+        dep_city_name: str = None,
+        dep_time: str = None,
+        discount: float = None,
+        flight_no: str = None,
+        price: int = None,
+        type: int = None,
+    ):
+        # 到达城市三字码
+        self.arr_city = arr_city
+        # 到达城市名称
+        self.arr_city_name = arr_city_name
+        # 到达时间
+        self.arr_time = arr_time
+        # 超标的舱位，F：头等舱 C：商务舱 Y：经济舱 P：超值经济舱
+        self.cabin = cabin
+        # 申请超标的舱等 0：头等舱 1：商务舱 2：经济舱 3：超值经济舱
+        self.cabin_class = cabin_class
+        # 舱等描述，头等舱，商务舱，经济舱，超值经济舱
+        self.cabin_class_str = cabin_class_str
+        # 出发城市三字码
+        self.dep_city = dep_city
+        # 出发城市名称
+        self.dep_city_name = dep_city_name
+        # 出发时间
+        self.dep_time = dep_time
+        # 折扣
+        self.discount = discount
+        # 航班号
+        self.flight_no = flight_no
+        # 意向航班价格（元）
+        self.price = price
+        # 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.arr_city is not None:
+            result['arrCity'] = self.arr_city
+        if self.arr_city_name is not None:
+            result['arrCityName'] = self.arr_city_name
+        if self.arr_time is not None:
+            result['arrTime'] = self.arr_time
+        if self.cabin is not None:
+            result['cabin'] = self.cabin
+        if self.cabin_class is not None:
+            result['cabinClass'] = self.cabin_class
+        if self.cabin_class_str is not None:
+            result['cabinClassStr'] = self.cabin_class_str
+        if self.dep_city is not None:
+            result['depCity'] = self.dep_city
+        if self.dep_city_name is not None:
+            result['depCityName'] = self.dep_city_name
+        if self.dep_time is not None:
+            result['depTime'] = self.dep_time
+        if self.discount is not None:
+            result['discount'] = self.discount
+        if self.flight_no is not None:
+            result['flightNo'] = self.flight_no
+        if self.price is not None:
+            result['price'] = self.price
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('arrCity') is not None:
+            self.arr_city = m.get('arrCity')
+        if m.get('arrCityName') is not None:
+            self.arr_city_name = m.get('arrCityName')
+        if m.get('arrTime') is not None:
+            self.arr_time = m.get('arrTime')
+        if m.get('cabin') is not None:
+            self.cabin = m.get('cabin')
+        if m.get('cabinClass') is not None:
+            self.cabin_class = m.get('cabinClass')
+        if m.get('cabinClassStr') is not None:
+            self.cabin_class_str = m.get('cabinClassStr')
+        if m.get('depCity') is not None:
+            self.dep_city = m.get('depCity')
+        if m.get('depCityName') is not None:
+            self.dep_city_name = m.get('depCityName')
+        if m.get('depTime') is not None:
+            self.dep_time = m.get('depTime')
+        if m.get('discount') is not None:
+            self.discount = m.get('discount')
+        if m.get('flightNo') is not None:
+            self.flight_no = m.get('flightNo')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetFlightExceedApplyResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        apply_id: int = None,
+        status: int = None,
+        btrip_cause: str = None,
+        exceed_type: int = None,
+        exceed_reason: str = None,
+        origin_standard: str = None,
+        submit_time: str = None,
+        user_id: str = None,
+        apply_intention_info_do: GetFlightExceedApplyResponseBodyApplyIntentionInfoDO = None,
+        thirdpart_apply_id: str = None,
+    ):
+        # 第三方企业id
+        self.corp_id = corp_id
+        # 商旅超标审批单id
+        self.apply_id = apply_id
+        # 审批单状态 0:审批中 1:已同意 2:已拒绝
+        self.status = status
+        # 出差原因
+        self.btrip_cause = btrip_cause
+        # 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
+        self.exceed_type = exceed_type
+        # 超标原因
+        self.exceed_reason = exceed_reason
+        # 原差旅标准
+        self.origin_standard = origin_standard
+        # 审批单提交时间
+        self.submit_time = submit_time
+        # 第三方用户id
+        self.user_id = user_id
+        # 意向出行信息
+        self.apply_intention_info_do = apply_intention_info_do
+        # 第三方出差审批单号
+        self.thirdpart_apply_id = thirdpart_apply_id
+
+    def validate(self):
+        if self.apply_intention_info_do:
+            self.apply_intention_info_do.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.btrip_cause is not None:
+            result['btripCause'] = self.btrip_cause
+        if self.exceed_type is not None:
+            result['exceedType'] = self.exceed_type
+        if self.exceed_reason is not None:
+            result['exceedReason'] = self.exceed_reason
+        if self.origin_standard is not None:
+            result['originStandard'] = self.origin_standard
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.apply_intention_info_do is not None:
+            result['applyIntentionInfoDO'] = self.apply_intention_info_do.to_map()
+        if self.thirdpart_apply_id is not None:
+            result['thirdpartApplyId'] = self.thirdpart_apply_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('btripCause') is not None:
+            self.btrip_cause = m.get('btripCause')
+        if m.get('exceedType') is not None:
+            self.exceed_type = m.get('exceedType')
+        if m.get('exceedReason') is not None:
+            self.exceed_reason = m.get('exceedReason')
+        if m.get('originStandard') is not None:
+            self.origin_standard = m.get('originStandard')
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('applyIntentionInfoDO') is not None:
+            temp_model = GetFlightExceedApplyResponseBodyApplyIntentionInfoDO()
+            self.apply_intention_info_do = temp_model.from_map(m['applyIntentionInfoDO'])
+        if m.get('thirdpartApplyId') is not None:
+            self.thirdpart_apply_id = m.get('thirdpartApplyId')
+        return self
+
+
+class GetFlightExceedApplyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFlightExceedApplyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFlightExceedApplyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncExceedApplyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncExceedApplyRequest(TeaModel):
+    def __init__(
+        self,
+        remark: str = None,
+        apply_id: str = None,
+        corp_id: str = None,
+        thirdparty_flow_id: str = None,
+        user_id: str = None,
+        status: int = None,
+    ):
+        # 审批意见
+        self.remark = remark
+        # 商旅超标审批单id
+        self.apply_id = apply_id
+        # 企业id
+        self.corp_id = corp_id
+        # 第三方流程实例id
+        self.thirdparty_flow_id = thirdparty_flow_id
+        # 用户id
+        self.user_id = user_id
+        # 审批单状态 1同意2拒绝
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.thirdparty_flow_id is not None:
+            result['thirdpartyFlowId'] = self.thirdparty_flow_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('thirdpartyFlowId') is not None:
+            self.thirdparty_flow_id = m.get('thirdpartyFlowId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class SyncExceedApplyResponseBody(TeaModel):
+    def __init__(
+        self,
+        module: bool = None,
+    ):
+        # 是否同步成功
+        self.module = module
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.module is not None:
+            result['module'] = self.module
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('module') is not None:
+            self.module = m.get('module')
+        return self
+
+
+class SyncExceedApplyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SyncExceedApplyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SyncExceedApplyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddCityCarApplyHeaders(TeaModel):
     def __init__(
         self,
@@ -256,7 +916,7 @@ class AddCityCarApplyResponse(TeaModel):
         return self
 
 
-class ApproveCityCarApplyHeaders(TeaModel):
+class GetHotelExceedApplyHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -289,37 +949,16 @@ class ApproveCityCarApplyHeaders(TeaModel):
         return self
 
 
-class ApproveCityCarApplyRequest(TeaModel):
+class GetHotelExceedApplyRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
-        operate_time: str = None,
-        remark: str = None,
-        status: int = None,
-        third_part_apply_id: str = None,
-        user_id: str = None,
-        ding_suite_key: str = None,
-        ding_corp_id: str = None,
-        ding_token_grant_type: int = None,
+        apply_id: str = None,
     ):
-        # 第三方企业ID
+        # 第三方企业id
         self.corp_id = corp_id
-        # 审批时间
-        self.operate_time = operate_time
-        # 审批备注
-        self.remark = remark
-        # 审批结果：1-同意，2-拒绝
-        self.status = status
-        # 第三方审批单ID
-        self.third_part_apply_id = third_part_apply_id
-        # 审批的第三方员工ID
-        self.user_id = user_id
-        # suiteKey
-        self.ding_suite_key = ding_suite_key
-        # account
-        self.ding_corp_id = ding_corp_id
-        # tokenGrantType
-        self.ding_token_grant_type = ding_token_grant_type
+        # 商旅超标审批单id
+        self.apply_id = apply_id
 
     def validate(self):
         pass
@@ -332,54 +971,44 @@ class ApproveCityCarApplyRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
-        if self.operate_time is not None:
-            result['operateTime'] = self.operate_time
-        if self.remark is not None:
-            result['remark'] = self.remark
-        if self.status is not None:
-            result['status'] = self.status
-        if self.third_part_apply_id is not None:
-            result['thirdPartApplyId'] = self.third_part_apply_id
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.ding_suite_key is not None:
-            result['dingSuiteKey'] = self.ding_suite_key
-        if self.ding_corp_id is not None:
-            result['dingCorpId'] = self.ding_corp_id
-        if self.ding_token_grant_type is not None:
-            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
-        if m.get('operateTime') is not None:
-            self.operate_time = m.get('operateTime')
-        if m.get('remark') is not None:
-            self.remark = m.get('remark')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('thirdPartApplyId') is not None:
-            self.third_part_apply_id = m.get('thirdPartApplyId')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('dingSuiteKey') is not None:
-            self.ding_suite_key = m.get('dingSuiteKey')
-        if m.get('dingCorpId') is not None:
-            self.ding_corp_id = m.get('dingCorpId')
-        if m.get('dingTokenGrantType') is not None:
-            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
         return self
 
 
-class ApproveCityCarApplyResponseBody(TeaModel):
+class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
     def __init__(
         self,
-        approve_result: bool = None,
+        check_in: str = None,
+        check_out: str = None,
+        city_code: str = None,
+        city_name: str = None,
+        price: int = None,
+        together: bool = None,
+        type: int = None,
     ):
-        # 审批结果
-        self.approve_result = approve_result
+        # 入住日期
+        self.check_in = check_in
+        # 离店日期
+        self.check_out = check_out
+        # 入住城市三字码
+        self.city_code = city_code
+        # 入住城市名称
+        self.city_name = city_name
+        # 意向酒店金额（分）
+        self.price = price
+        # 是否合住
+        self.together = together
+        # 超标类型，32：金额超标
+        self.type = type
 
     def validate(self):
         pass
@@ -390,22 +1019,146 @@ class ApproveCityCarApplyResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.approve_result is not None:
-            result['approveResult'] = self.approve_result
+        if self.check_in is not None:
+            result['checkIn'] = self.check_in
+        if self.check_out is not None:
+            result['checkOut'] = self.check_out
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.city_name is not None:
+            result['cityName'] = self.city_name
+        if self.price is not None:
+            result['price'] = self.price
+        if self.together is not None:
+            result['together'] = self.together
+        if self.type is not None:
+            result['type'] = self.type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('approveResult') is not None:
-            self.approve_result = m.get('approveResult')
+        if m.get('checkIn') is not None:
+            self.check_in = m.get('checkIn')
+        if m.get('checkOut') is not None:
+            self.check_out = m.get('checkOut')
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('cityName') is not None:
+            self.city_name = m.get('cityName')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('together') is not None:
+            self.together = m.get('together')
+        if m.get('type') is not None:
+            self.type = m.get('type')
         return self
 
 
-class ApproveCityCarApplyResponse(TeaModel):
+class GetHotelExceedApplyResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        apply_id: int = None,
+        status: int = None,
+        btrip_cause: str = None,
+        exceed_type: int = None,
+        exceed_reason: str = None,
+        origin_standard: str = None,
+        submit_time: str = None,
+        user_id: str = None,
+        apply_intention_info_do: GetHotelExceedApplyResponseBodyApplyIntentionInfoDO = None,
+        thirdpart_apply_id: str = None,
+    ):
+        # 第三方企业id
+        self.corp_id = corp_id
+        # 商旅超标审批单id
+        self.apply_id = apply_id
+        # 审批单状态 0:审批中 1:已同意 2:已拒绝
+        self.status = status
+        # 出差原因
+        self.btrip_cause = btrip_cause
+        # 超标类型，32：金额超标
+        self.exceed_type = exceed_type
+        # 超标原因
+        self.exceed_reason = exceed_reason
+        # 原差旅标准
+        self.origin_standard = origin_standard
+        # 审批单提交时间
+        self.submit_time = submit_time
+        # 第三方用户id
+        self.user_id = user_id
+        # 意向出行信息
+        self.apply_intention_info_do = apply_intention_info_do
+        # 第三方出差审批单号
+        self.thirdpart_apply_id = thirdpart_apply_id
+
+    def validate(self):
+        if self.apply_intention_info_do:
+            self.apply_intention_info_do.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.btrip_cause is not None:
+            result['btripCause'] = self.btrip_cause
+        if self.exceed_type is not None:
+            result['exceedType'] = self.exceed_type
+        if self.exceed_reason is not None:
+            result['exceedReason'] = self.exceed_reason
+        if self.origin_standard is not None:
+            result['originStandard'] = self.origin_standard
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.apply_intention_info_do is not None:
+            result['applyIntentionInfoDO'] = self.apply_intention_info_do.to_map()
+        if self.thirdpart_apply_id is not None:
+            result['thirdpartApplyId'] = self.thirdpart_apply_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('btripCause') is not None:
+            self.btrip_cause = m.get('btripCause')
+        if m.get('exceedType') is not None:
+            self.exceed_type = m.get('exceedType')
+        if m.get('exceedReason') is not None:
+            self.exceed_reason = m.get('exceedReason')
+        if m.get('originStandard') is not None:
+            self.origin_standard = m.get('originStandard')
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('applyIntentionInfoDO') is not None:
+            temp_model = GetHotelExceedApplyResponseBodyApplyIntentionInfoDO()
+            self.apply_intention_info_do = temp_model.from_map(m['applyIntentionInfoDO'])
+        if m.get('thirdpartApplyId') is not None:
+            self.thirdpart_apply_id = m.get('thirdpartApplyId')
+        return self
+
+
+class GetHotelExceedApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: ApproveCityCarApplyResponseBody = None,
+        body: GetHotelExceedApplyResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -433,7 +1186,7 @@ class ApproveCityCarApplyResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = ApproveCityCarApplyResponseBody()
+            temp_model = GetHotelExceedApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1278,6 +2031,316 @@ class QueryCityCarApplyResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryCityCarApplyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetTrainExceedApplyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTrainExceedApplyRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        apply_id: str = None,
+    ):
+        # 第三方企业id
+        self.corp_id = corp_id
+        # 商旅超标审批单id
+        self.apply_id = apply_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        return self
+
+
+class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
+    def __init__(
+        self,
+        price: int = None,
+        dep_city_name: str = None,
+        arr_city_name: str = None,
+        dep_city: str = None,
+        arr_city: str = None,
+        dep_time: str = None,
+        arr_time: str = None,
+        arr_station: str = None,
+        dep_station: str = None,
+        train_no: str = None,
+        train_type_desc: str = None,
+        seat_name: str = None,
+    ):
+        # 意向坐席价格（分）
+        self.price = price
+        # 出发城市名
+        self.dep_city_name = dep_city_name
+        # 到达城市名
+        self.arr_city_name = arr_city_name
+        # 出发城市三字码
+        self.dep_city = dep_city
+        # 到达城市三字码
+        self.arr_city = arr_city
+        # 出发时间
+        self.dep_time = dep_time
+        # 到达时间
+        self.arr_time = arr_time
+        # 到达站点名称
+        self.arr_station = arr_station
+        # 出发站点名称
+        self.dep_station = dep_station
+        # 意向车次号
+        self.train_no = train_no
+        # 意向车次类型
+        self.train_type_desc = train_type_desc
+        # 意向坐席名称
+        self.seat_name = seat_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.price is not None:
+            result['price'] = self.price
+        if self.dep_city_name is not None:
+            result['depCityName'] = self.dep_city_name
+        if self.arr_city_name is not None:
+            result['arrCityName'] = self.arr_city_name
+        if self.dep_city is not None:
+            result['depCity'] = self.dep_city
+        if self.arr_city is not None:
+            result['arrCity'] = self.arr_city
+        if self.dep_time is not None:
+            result['depTime'] = self.dep_time
+        if self.arr_time is not None:
+            result['arrTime'] = self.arr_time
+        if self.arr_station is not None:
+            result['arrStation'] = self.arr_station
+        if self.dep_station is not None:
+            result['depStation'] = self.dep_station
+        if self.train_no is not None:
+            result['trainNo'] = self.train_no
+        if self.train_type_desc is not None:
+            result['trainTypeDesc'] = self.train_type_desc
+        if self.seat_name is not None:
+            result['seatName'] = self.seat_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('depCityName') is not None:
+            self.dep_city_name = m.get('depCityName')
+        if m.get('arrCityName') is not None:
+            self.arr_city_name = m.get('arrCityName')
+        if m.get('depCity') is not None:
+            self.dep_city = m.get('depCity')
+        if m.get('arrCity') is not None:
+            self.arr_city = m.get('arrCity')
+        if m.get('depTime') is not None:
+            self.dep_time = m.get('depTime')
+        if m.get('arrTime') is not None:
+            self.arr_time = m.get('arrTime')
+        if m.get('arrStation') is not None:
+            self.arr_station = m.get('arrStation')
+        if m.get('depStation') is not None:
+            self.dep_station = m.get('depStation')
+        if m.get('trainNo') is not None:
+            self.train_no = m.get('trainNo')
+        if m.get('trainTypeDesc') is not None:
+            self.train_type_desc = m.get('trainTypeDesc')
+        if m.get('seatName') is not None:
+            self.seat_name = m.get('seatName')
+        return self
+
+
+class GetTrainExceedApplyResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        apply_id: int = None,
+        status: int = None,
+        btrip_cause: str = None,
+        exceed_type: int = None,
+        exceed_reason: str = None,
+        origin_standard: str = None,
+        submit_time: str = None,
+        user_id: str = None,
+        apply_intention_info_do: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO = None,
+        thirdpart_apply_id: str = None,
+    ):
+        # 第三方企业id
+        self.corp_id = corp_id
+        # 商旅超标审批单id
+        self.apply_id = apply_id
+        # 审批单状态 0:审批中 1:已同意 2:已拒绝
+        self.status = status
+        # 出差原因
+        self.btrip_cause = btrip_cause
+        # 超标类型，32：坐席超标
+        self.exceed_type = exceed_type
+        # 超标原因
+        self.exceed_reason = exceed_reason
+        # 原差旅标准
+        self.origin_standard = origin_standard
+        # 审批单提交时间
+        self.submit_time = submit_time
+        # 第三方用户id
+        self.user_id = user_id
+        # 意向出行信息
+        self.apply_intention_info_do = apply_intention_info_do
+        # 第三方出差审批单号
+        self.thirdpart_apply_id = thirdpart_apply_id
+
+    def validate(self):
+        if self.apply_intention_info_do:
+            self.apply_intention_info_do.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.btrip_cause is not None:
+            result['btripCause'] = self.btrip_cause
+        if self.exceed_type is not None:
+            result['exceedType'] = self.exceed_type
+        if self.exceed_reason is not None:
+            result['exceedReason'] = self.exceed_reason
+        if self.origin_standard is not None:
+            result['originStandard'] = self.origin_standard
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.apply_intention_info_do is not None:
+            result['applyIntentionInfoDO'] = self.apply_intention_info_do.to_map()
+        if self.thirdpart_apply_id is not None:
+            result['thirdpartApplyId'] = self.thirdpart_apply_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('btripCause') is not None:
+            self.btrip_cause = m.get('btripCause')
+        if m.get('exceedType') is not None:
+            self.exceed_type = m.get('exceedType')
+        if m.get('exceedReason') is not None:
+            self.exceed_reason = m.get('exceedReason')
+        if m.get('originStandard') is not None:
+            self.origin_standard = m.get('originStandard')
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('applyIntentionInfoDO') is not None:
+            temp_model = GetTrainExceedApplyResponseBodyApplyIntentionInfoDO()
+            self.apply_intention_info_do = temp_model.from_map(m['applyIntentionInfoDO'])
+        if m.get('thirdpartApplyId') is not None:
+            self.thirdpart_apply_id = m.get('thirdpartApplyId')
+        return self
+
+
+class GetTrainExceedApplyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetTrainExceedApplyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetTrainExceedApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

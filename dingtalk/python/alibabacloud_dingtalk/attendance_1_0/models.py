@@ -408,6 +408,515 @@ class CheckClosingAccountResponse(TeaModel):
         return self
 
 
+class GetMachineHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMachineResponseBodyResultMachineBluetoothVO(TeaModel):
+    def __init__(
+        self,
+        bluetooth_value: bool = None,
+        bluetooth_check_with_face: bool = None,
+        bluetooth_distance_mode: str = None,
+        bluetooth_distance_mode_desc: str = None,
+        monitor_location_abnormal: bool = None,
+        address: str = None,
+        longitude: float = None,
+        latitude: float = None,
+        limit_user_device_count: bool = None,
+        user_device_count: int = None,
+    ):
+        # 蓝牙打卡开关
+        self.bluetooth_value = bluetooth_value
+        # 蓝牙打卡人脸识别开关值
+        self.bluetooth_check_with_face = bluetooth_check_with_face
+        # 蓝牙打卡范围
+        self.bluetooth_distance_mode = bluetooth_distance_mode
+        # 蓝牙打卡范围描述
+        self.bluetooth_distance_mode_desc = bluetooth_distance_mode_desc
+        # 是否打开位置异常监控
+        self.monitor_location_abnormal = monitor_location_abnormal
+        # 地址位置描述
+        self.address = address
+        # 经度
+        self.longitude = longitude
+        # 纬度
+        self.latitude = latitude
+        # 是否限制员工常用手机
+        self.limit_user_device_count = limit_user_device_count
+        # 员工常用手机数量
+        self.user_device_count = user_device_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bluetooth_value is not None:
+            result['bluetoothValue'] = self.bluetooth_value
+        if self.bluetooth_check_with_face is not None:
+            result['bluetoothCheckWithFace'] = self.bluetooth_check_with_face
+        if self.bluetooth_distance_mode is not None:
+            result['bluetoothDistanceMode'] = self.bluetooth_distance_mode
+        if self.bluetooth_distance_mode_desc is not None:
+            result['bluetoothDistanceModeDesc'] = self.bluetooth_distance_mode_desc
+        if self.monitor_location_abnormal is not None:
+            result['monitorLocationAbnormal'] = self.monitor_location_abnormal
+        if self.address is not None:
+            result['address'] = self.address
+        if self.longitude is not None:
+            result['longitude'] = self.longitude
+        if self.latitude is not None:
+            result['latitude'] = self.latitude
+        if self.limit_user_device_count is not None:
+            result['limitUserDeviceCount'] = self.limit_user_device_count
+        if self.user_device_count is not None:
+            result['userDeviceCount'] = self.user_device_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bluetoothValue') is not None:
+            self.bluetooth_value = m.get('bluetoothValue')
+        if m.get('bluetoothCheckWithFace') is not None:
+            self.bluetooth_check_with_face = m.get('bluetoothCheckWithFace')
+        if m.get('bluetoothDistanceMode') is not None:
+            self.bluetooth_distance_mode = m.get('bluetoothDistanceMode')
+        if m.get('bluetoothDistanceModeDesc') is not None:
+            self.bluetooth_distance_mode_desc = m.get('bluetoothDistanceModeDesc')
+        if m.get('monitorLocationAbnormal') is not None:
+            self.monitor_location_abnormal = m.get('monitorLocationAbnormal')
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('longitude') is not None:
+            self.longitude = m.get('longitude')
+        if m.get('latitude') is not None:
+            self.latitude = m.get('latitude')
+        if m.get('limitUserDeviceCount') is not None:
+            self.limit_user_device_count = m.get('limitUserDeviceCount')
+        if m.get('userDeviceCount') is not None:
+            self.user_device_count = m.get('userDeviceCount')
+        return self
+
+
+class GetMachineResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        device_id: str = None,
+        dev_id: int = None,
+        device_name: str = None,
+        product_name: str = None,
+        net_status: str = None,
+        product_version: str = None,
+        device_sn: str = None,
+        max_face: int = None,
+        voice_mode: int = None,
+        atm_manager_list: List[str] = None,
+        machine_bluetooth_vo: GetMachineResponseBodyResultMachineBluetoothVO = None,
+    ):
+        # 设备id (deviceUid加密之后)
+        self.device_id = device_id
+        # 设备id (deviceId)
+        self.dev_id = dev_id
+        # 设备名称
+        self.device_name = device_name
+        # 设备类型名称
+        self.product_name = product_name
+        # 网络状态
+        self.net_status = net_status
+        # 固件版本
+        self.product_version = product_version
+        # 设备sn号
+        self.device_sn = device_sn
+        # 人脸容量
+        self.max_face = max_face
+        # 音量模式
+        self.voice_mode = voice_mode
+        # 设备管理员列表
+        self.atm_manager_list = atm_manager_list
+        # 考勤机蓝牙相关设置信息
+        self.machine_bluetooth_vo = machine_bluetooth_vo
+
+    def validate(self):
+        if self.machine_bluetooth_vo:
+            self.machine_bluetooth_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.dev_id is not None:
+            result['devId'] = self.dev_id
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.net_status is not None:
+            result['netStatus'] = self.net_status
+        if self.product_version is not None:
+            result['productVersion'] = self.product_version
+        if self.device_sn is not None:
+            result['deviceSn'] = self.device_sn
+        if self.max_face is not None:
+            result['maxFace'] = self.max_face
+        if self.voice_mode is not None:
+            result['voiceMode'] = self.voice_mode
+        if self.atm_manager_list is not None:
+            result['atmManagerList'] = self.atm_manager_list
+        if self.machine_bluetooth_vo is not None:
+            result['machineBluetoothVO'] = self.machine_bluetooth_vo.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('devId') is not None:
+            self.dev_id = m.get('devId')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('netStatus') is not None:
+            self.net_status = m.get('netStatus')
+        if m.get('productVersion') is not None:
+            self.product_version = m.get('productVersion')
+        if m.get('deviceSn') is not None:
+            self.device_sn = m.get('deviceSn')
+        if m.get('maxFace') is not None:
+            self.max_face = m.get('maxFace')
+        if m.get('voiceMode') is not None:
+            self.voice_mode = m.get('voiceMode')
+        if m.get('atmManagerList') is not None:
+            self.atm_manager_list = m.get('atmManagerList')
+        if m.get('machineBluetoothVO') is not None:
+            temp_model = GetMachineResponseBodyResultMachineBluetoothVO()
+            self.machine_bluetooth_vo = temp_model.from_map(m['machineBluetoothVO'])
+        return self
+
+
+class GetMachineResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetMachineResponseBodyResult = None,
+    ):
+        # 查询结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetMachineResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetMachineResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetMachineResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetMachineResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetMachineUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMachineUserRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        self.next_token = next_token
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class GetMachineUserResponseBodyResultUserList(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        name: str = None,
+        has_face: bool = None,
+    ):
+        # 员工id
+        self.user_id = user_id
+        # 员工名称
+        self.name = name
+        # 是否有人脸信息
+        self.has_face = has_face
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.has_face is not None:
+            result['hasFace'] = self.has_face
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('hasFace') is not None:
+            self.has_face = m.get('hasFace')
+        return self
+
+
+class GetMachineUserResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        user_list: List[GetMachineUserResponseBodyResultUserList] = None,
+        has_more: bool = None,
+    ):
+        # 人员列表
+        self.user_list = user_list
+        # 更多
+        self.has_more = has_more
+
+    def validate(self):
+        if self.user_list:
+            for k in self.user_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = GetMachineUserResponseBodyResultUserList()
+                self.user_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class GetMachineUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetMachineUserResponseBodyResult = None,
+    ):
+        # 查询结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetMachineUserResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetMachineUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetMachineUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetMachineUserResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUserHolidaysHeaders(TeaModel):
     def __init__(
         self,
