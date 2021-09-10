@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         /// <summary>
         /// 大小
         /// </summary>
-        [NameInMap("size")]
+        [NameInMap("fileSize")]
         [Validation(Required=false)]
-        public long? Size { get; set; }
+        public long? FileSize { get; set; }
 
         /// <summary>
         /// 时长

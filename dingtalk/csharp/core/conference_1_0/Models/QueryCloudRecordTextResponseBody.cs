@@ -12,9 +12,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         /// <summary>
         /// 是否有更多
         /// </summary>
-        [NameInMap("hasNext")]
+        [NameInMap("hasMore")]
         [Validation(Required=false)]
-        public bool? HasNext { get; set; }
+        public bool? HasMore { get; set; }
 
         /// <summary>
         /// MP4格式下载链接
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             /// <summary>
             /// 游标，下次查询时使用
             /// </summary>
-            [NameInMap("token")]
+            [NameInMap("nextTtoken")]
             [Validation(Required=false)]
-            public long? Token { get; set; }
+            public long? NextTtoken { get; set; }
 
             /// <summary>
             /// 状态，暂不解析
