@@ -407,8 +407,6 @@ class Client(OpenApiClient):
             body['isOnlyShowExecutor'] = request.is_only_show_executor
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
-        if not UtilClient.is_unset(request.notify_configs):
-            body['notifyConfigs'] = request.notify_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -456,8 +454,6 @@ class Client(OpenApiClient):
             body['isOnlyShowExecutor'] = request.is_only_show_executor
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
-        if not UtilClient.is_unset(request.notify_configs):
-            body['notifyConfigs'] = request.notify_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

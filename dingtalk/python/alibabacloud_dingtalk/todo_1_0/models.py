@@ -1472,26 +1472,6 @@ class CreateTodoTaskRequestDetailUrl(TeaModel):
         return self
 
 
-class CreateTodoTaskRequestNotifyConfigs(TeaModel):
-    def __init__(self):
-        pass
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        return self
-
-
 class CreateTodoTaskRequest(TeaModel):
     def __init__(
         self,
@@ -1505,7 +1485,6 @@ class CreateTodoTaskRequest(TeaModel):
         detail_url: CreateTodoTaskRequestDetailUrl = None,
         is_only_show_executor: bool = None,
         priority: int = None,
-        notify_configs: CreateTodoTaskRequestNotifyConfigs = None,
         operator_id: str = None,
     ):
         # 来源id，接入业务系统侧的唯一标识id
@@ -1528,16 +1507,12 @@ class CreateTodoTaskRequest(TeaModel):
         self.is_only_show_executor = is_only_show_executor
         # 优先级
         self.priority = priority
-        # 通知提醒配置
-        self.notify_configs = notify_configs
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
-        if self.notify_configs:
-            self.notify_configs.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1565,8 +1540,6 @@ class CreateTodoTaskRequest(TeaModel):
             result['isOnlyShowExecutor'] = self.is_only_show_executor
         if self.priority is not None:
             result['priority'] = self.priority
-        if self.notify_configs is not None:
-            result['notifyConfigs'] = self.notify_configs.to_map()
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -1594,9 +1567,6 @@ class CreateTodoTaskRequest(TeaModel):
             self.is_only_show_executor = m.get('isOnlyShowExecutor')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
-        if m.get('notifyConfigs') is not None:
-            temp_model = CreateTodoTaskRequestNotifyConfigs()
-            self.notify_configs = temp_model.from_map(m['notifyConfigs'])
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
