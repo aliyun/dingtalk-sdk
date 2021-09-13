@@ -140,11 +140,11 @@ class RecallMessageHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -158,8 +158,8 @@ class RecallMessageHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -168,8 +168,8 @@ class RecallMessageHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -245,11 +245,11 @@ class UpdateGroupNameHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -263,8 +263,8 @@ class UpdateGroupNameHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -273,8 +273,8 @@ class UpdateGroupNameHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -350,11 +350,11 @@ class CreateGroupHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -368,8 +368,8 @@ class CreateGroupHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -378,8 +378,8 @@ class CreateGroupHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -516,11 +516,11 @@ class UpdateGroupOwnerHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -534,8 +534,8 @@ class UpdateGroupOwnerHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -544,8 +544,8 @@ class UpdateGroupOwnerHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -621,11 +621,11 @@ class RemoveGroupMembersHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -639,8 +639,8 @@ class RemoveGroupMembersHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -649,8 +649,8 @@ class RemoveGroupMembersHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -858,11 +858,11 @@ class ReadMessageHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -876,8 +876,8 @@ class ReadMessageHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -886,8 +886,8 @@ class ReadMessageHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -957,11 +957,11 @@ class DismissGroupHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -975,8 +975,8 @@ class DismissGroupHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -985,8 +985,8 @@ class DismissGroupHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -1165,11 +1165,11 @@ class AddGroupMembersHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -1183,8 +1183,8 @@ class AddGroupMembersHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -1193,8 +1193,8 @@ class AddGroupMembersHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -1280,15 +1280,47 @@ class AddGroupMembersRequest(TeaModel):
         return self
 
 
+class AddGroupMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        member_uids: List[str] = None,
+    ):
+        self.member_uids = member_uids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_uids is not None:
+            result['memberUids'] = self.member_uids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberUids') is not None:
+            self.member_uids = m.get('memberUids')
+        return self
+
+
 class AddGroupMembersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: AddGroupMembersResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1298,12 +1330,17 @@ class AddGroupMembersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddGroupMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -1616,11 +1653,11 @@ class SendMessageHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
-        operating_source: str = None,
+        operation_source: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        self.operating_source = operating_source
+        self.operation_source = operation_source
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -1634,8 +1671,8 @@ class SendMessageHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
-        if self.operating_source is not None:
-            result['operatingSource'] = self.operating_source
+        if self.operation_source is not None:
+            result['operationSource'] = self.operation_source
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -1644,8 +1681,8 @@ class SendMessageHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
-        if m.get('operatingSource') is not None:
-            self.operating_source = m.get('operatingSource')
+        if m.get('operationSource') is not None:
+            self.operation_source = m.get('operationSource')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self

@@ -735,7 +735,7 @@ class GetMachineUserHeaders(TeaModel):
 class GetMachineUserRequest(TeaModel):
     def __init__(
         self,
-        next_token: int = None,
+        next_token: str = None,
         max_results: int = None,
     ):
         self.next_token = next_token
@@ -772,11 +772,8 @@ class GetMachineUserResponseBodyResultUserList(TeaModel):
         name: str = None,
         has_face: bool = None,
     ):
-        # 员工id
         self.user_id = user_id
-        # 员工名称
         self.name = name
-        # 是否有人脸信息
         self.has_face = has_face
 
     def validate(self):
@@ -812,11 +809,11 @@ class GetMachineUserResponseBodyResult(TeaModel):
         self,
         user_list: List[GetMachineUserResponseBodyResultUserList] = None,
         has_more: bool = None,
+        next_token: str = None,
     ):
-        # 人员列表
         self.user_list = user_list
-        # 更多
         self.has_more = has_more
+        self.next_token = next_token
 
     def validate(self):
         if self.user_list:
@@ -836,6 +833,8 @@ class GetMachineUserResponseBodyResult(TeaModel):
                 result['userList'].append(k.to_map() if k else None)
         if self.has_more is not None:
             result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         return result
 
     def from_map(self, m: dict = None):
@@ -847,6 +846,8 @@ class GetMachineUserResponseBodyResult(TeaModel):
                 self.user_list.append(temp_model.from_map(k))
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         return self
 
 
@@ -855,7 +856,6 @@ class GetMachineUserResponseBody(TeaModel):
         self,
         result: GetMachineUserResponseBodyResult = None,
     ):
-        # 查询结果
         self.result = result
 
     def validate(self):
