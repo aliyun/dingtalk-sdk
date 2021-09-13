@@ -615,7 +615,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
   detailUrl?: CreateTodoTaskRequestDetailUrl;
   isOnlyShowExecutor?: boolean;
   priority?: number;
-  notifyConfigs?: CreateTodoTaskRequestNotifyConfigs;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -629,7 +628,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
       detailUrl: 'detailUrl',
       isOnlyShowExecutor: 'isOnlyShowExecutor',
       priority: 'priority',
-      notifyConfigs: 'notifyConfigs',
       operatorId: 'operatorId',
     };
   }
@@ -646,7 +644,6 @@ export class CreateTodoTaskRequest extends $tea.Model {
       detailUrl: CreateTodoTaskRequestDetailUrl,
       isOnlyShowExecutor: 'boolean',
       priority: 'number',
-      notifyConfigs: CreateTodoTaskRequestNotifyConfigs,
       operatorId: 'string',
     };
   }
@@ -1674,22 +1671,6 @@ export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   }
 }
 
-export class CreateTodoTaskRequestNotifyConfigs extends $tea.Model {
-  static names(): { [key: string]: string } {
-    return {
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
   pcUrl?: string;
   appUrl?: string;
@@ -2357,10 +2338,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.priority)) {
       body["priority"] = request.priority;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.notifyConfigs))) {
-      body["notifyConfigs"] = request.notifyConfigs;
     }
 
     let realHeaders : {[key: string ]: string} = { };
