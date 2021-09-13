@@ -94,12 +94,12 @@ export class GetConversationIdResponse extends $tea.Model {
 
 export class RecallMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -107,7 +107,7 @@ export class RecallMessageHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -163,12 +163,12 @@ export class RecallMessageResponse extends $tea.Model {
 
 export class UpdateGroupNameHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -176,7 +176,7 @@ export class UpdateGroupNameHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -232,12 +232,12 @@ export class UpdateGroupNameResponse extends $tea.Model {
 
 export class CreateGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -245,7 +245,7 @@ export class CreateGroupHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -335,12 +335,12 @@ export class CreateGroupResponse extends $tea.Model {
 
 export class UpdateGroupOwnerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -348,7 +348,7 @@ export class UpdateGroupOwnerHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -404,12 +404,12 @@ export class UpdateGroupOwnerResponse extends $tea.Model {
 
 export class RemoveGroupMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -417,7 +417,7 @@ export class RemoveGroupMembersHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -558,12 +558,12 @@ export class GetMediaUrlResponse extends $tea.Model {
 
 export class ReadMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -571,7 +571,7 @@ export class ReadMessageHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -624,12 +624,12 @@ export class ReadMessageResponse extends $tea.Model {
 
 export class DismissGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -637,7 +637,7 @@ export class DismissGroupHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -759,12 +759,12 @@ export class AddProfileResponse extends $tea.Model {
 
 export class AddGroupMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -772,7 +772,7 @@ export class AddGroupMembersHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -807,17 +807,39 @@ export class AddGroupMembersRequest extends $tea.Model {
   }
 }
 
+export class AddGroupMembersResponseBody extends $tea.Model {
+  memberUids?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      memberUids: 'memberUids',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberUids: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddGroupMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: AddGroupMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddGroupMembersResponseBody,
     };
   }
 
@@ -998,12 +1020,12 @@ export class ListGroupStaffMembersResponse extends $tea.Model {
 
 export class SendMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
-  operatingSource?: string;
+  operationSource?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
-      operatingSource: 'operatingSource',
+      operationSource: 'operationSource',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -1011,7 +1033,7 @@ export class SendMessageHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      operatingSource: 'string',
+      operationSource: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -1218,8 +1240,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1259,8 +1281,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1312,8 +1334,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1353,8 +1375,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1394,8 +1416,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1464,8 +1486,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1501,8 +1523,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1583,8 +1605,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1595,7 +1617,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddGroupMembersResponse>(await this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/members/batchAdd`, "none", req, runtime), new AddGroupMembersResponse({}));
+    return $tea.cast<AddGroupMembersResponse>(await this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/groups/members/batchAdd`, "json", req, runtime), new AddGroupMembersResponse({}));
   }
 
   async batchSend(request: BatchSendRequest): Promise<BatchSendResponse> {
@@ -1702,8 +1724,8 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
-    if (!Util.isUnset(headers.operatingSource)) {
-      realHeaders["operatingSource"] = headers.operatingSource;
+    if (!Util.isUnset(headers.operationSource)) {
+      realHeaders["operationSource"] = headers.operationSource;
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {

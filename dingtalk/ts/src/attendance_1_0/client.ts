@@ -284,7 +284,7 @@ export class GetMachineUserHeaders extends $tea.Model {
 }
 
 export class GetMachineUserRequest extends $tea.Model {
-  nextToken?: number;
+  nextToken?: string;
   maxResults?: number;
   static names(): { [key: string]: string } {
     return {
@@ -295,7 +295,7 @@ export class GetMachineUserRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'number',
+      nextToken: 'string',
       maxResults: 'number',
     };
   }
@@ -1113,10 +1113,12 @@ export class GetMachineUserResponseBodyResultUserList extends $tea.Model {
 export class GetMachineUserResponseBodyResult extends $tea.Model {
   userList?: GetMachineUserResponseBodyResultUserList[];
   hasMore?: boolean;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       userList: 'userList',
       hasMore: 'hasMore',
+      nextToken: 'nextToken',
     };
   }
 
@@ -1124,6 +1126,7 @@ export class GetMachineUserResponseBodyResult extends $tea.Model {
     return {
       userList: { 'type': 'array', 'itemType': GetMachineUserResponseBodyResultUserList },
       hasMore: 'boolean',
+      nextToken: 'string',
     };
   }
 
