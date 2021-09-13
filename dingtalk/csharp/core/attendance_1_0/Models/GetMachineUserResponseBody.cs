@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GetMachineUserResponseBody : TeaModel {
-        /// <summary>
-        /// 查询结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public GetMachineUserResponseBodyResult Result { get; set; }
@@ -27,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [NameInMap("hasMore")]
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
+            [NameInMap("nextToken")]
+            [Validation(Required=false)]
+            public string NextToken { get; set; }
         };
 
     }

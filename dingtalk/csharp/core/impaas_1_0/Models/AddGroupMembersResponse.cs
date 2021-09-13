@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
+        [NameInMap("body")]
+        [Validation(Required=true)]
+        public AddGroupMembersResponseBody Body { get; set; }
+
     }
 
 }

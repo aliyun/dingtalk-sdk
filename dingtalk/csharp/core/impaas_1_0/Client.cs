@@ -133,9 +133,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -170,9 +170,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -221,9 +221,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -258,9 +258,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -321,9 +321,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -370,9 +370,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -421,9 +421,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -458,9 +458,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -509,9 +509,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -546,9 +546,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -665,9 +665,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -698,9 +698,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -745,9 +745,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -778,9 +778,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -917,9 +917,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -930,7 +930,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddGroupMembersResponse>(DoROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "none", req, runtime));
+            return TeaModel.ToObject<AddGroupMembersResponse>(DoROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "json", req, runtime));
         }
 
         public async Task<AddGroupMembersResponse> AddGroupMembersWithOptionsAsync(AddGroupMembersRequest request, AddGroupMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -954,9 +954,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -967,7 +967,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddGroupMembersResponse>(await DoROARequestAsync("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "none", req, runtime));
+            return TeaModel.ToObject<AddGroupMembersResponse>(await DoROARequestAsync("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "json", req, runtime));
         }
 
         public BatchSendResponse BatchSend(BatchSendRequest request)
@@ -1161,9 +1161,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
@@ -1210,9 +1210,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 realHeaders = headers.CommonHeaders;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperatingSource))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.OperationSource))
             {
-                realHeaders["operatingSource"] = headers.OperatingSource;
+                realHeaders["operationSource"] = headers.OperationSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
             {
