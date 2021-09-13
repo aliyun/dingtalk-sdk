@@ -10,21 +10,23 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 人员列表
-     *
      * @var userList[]
      */
     public $userList;
 
     /**
-     * @description 更多
-     *
      * @var bool
      */
     public $hasMore;
+
+    /**
+     * @var string
+     */
+    public $nextToken;
     protected $_name = [
-        'userList' => 'userList',
-        'hasMore'  => 'hasMore',
+        'userList'  => 'userList',
+        'hasMore'   => 'hasMore',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -45,6 +47,9 @@ class result extends Model
         }
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -69,6 +74,9 @@ class result extends Model
         }
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

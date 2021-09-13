@@ -145,8 +145,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -196,8 +196,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -256,8 +256,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -307,8 +307,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -358,8 +358,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -451,8 +451,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -499,8 +499,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -601,8 +601,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
@@ -612,7 +612,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return AddGroupMembersResponse::fromMap($this->doROARequest('AddGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/members/batchAdd', 'none', $req, $runtime));
+        return AddGroupMembersResponse::fromMap($this->doROARequest('AddGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/groups/members/batchAdd', 'json', $req, $runtime));
     }
 
     /**
@@ -751,8 +751,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->operatingSource)) {
-            @$realHeaders['operatingSource'] = $headers->operatingSource;
+        if (!Utils::isUnset($headers->operationSource)) {
+            @$realHeaders['operationSource'] = $headers->operationSource;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;

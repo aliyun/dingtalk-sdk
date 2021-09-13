@@ -13,14 +13,14 @@ class ReadMessageHeaders extends Model
     /**
      * @var string
      */
-    public $operatingSource;
+    public $operationSource;
 
     /**
      * @var string
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'operatingSource'         => 'operatingSource',
+        'operationSource'         => 'operationSource',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
@@ -34,8 +34,8 @@ class ReadMessageHeaders extends Model
         if (null !== $this->commonHeaders) {
             $res['commonHeaders'] = $this->commonHeaders;
         }
-        if (null !== $this->operatingSource) {
-            $res['operatingSource'] = $this->operatingSource;
+        if (null !== $this->operationSource) {
+            $res['operationSource'] = $this->operationSource;
         }
         if (null !== $this->xAcsDingtalkAccessToken) {
             $res['x-acs-dingtalk-access-token'] = $this->xAcsDingtalkAccessToken;
@@ -55,8 +55,8 @@ class ReadMessageHeaders extends Model
         if (isset($map['commonHeaders'])) {
             $model->commonHeaders = $map['commonHeaders'];
         }
-        if (isset($map['operatingSource'])) {
-            $model->operatingSource = $map['operatingSource'];
+        if (isset($map['operationSource'])) {
+            $model->operationSource = $map['operationSource'];
         }
         if (isset($map['x-acs-dingtalk-access-token'])) {
             $model->xAcsDingtalkAccessToken = $map['x-acs-dingtalk-access-token'];
