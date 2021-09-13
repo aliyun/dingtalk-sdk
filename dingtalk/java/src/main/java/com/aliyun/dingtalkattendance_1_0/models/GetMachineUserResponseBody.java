@@ -4,7 +4,6 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMachineUserResponseBody extends TeaModel {
-    // 查询结果
     @NameInMap("result")
     public GetMachineUserResponseBodyResult result;
 
@@ -22,15 +21,12 @@ public class GetMachineUserResponseBody extends TeaModel {
     }
 
     public static class GetMachineUserResponseBodyResultUserList extends TeaModel {
-        // 员工id
         @NameInMap("userId")
         public String userId;
 
-        // 员工名称
         @NameInMap("name")
         public String name;
 
-        // 是否有人脸信息
         @NameInMap("hasFace")
         public Boolean hasFace;
 
@@ -66,13 +62,14 @@ public class GetMachineUserResponseBody extends TeaModel {
     }
 
     public static class GetMachineUserResponseBodyResult extends TeaModel {
-        // 人员列表
         @NameInMap("userList")
         public java.util.List<GetMachineUserResponseBodyResultUserList> userList;
 
-        // 更多
         @NameInMap("hasMore")
         public Boolean hasMore;
+
+        @NameInMap("nextToken")
+        public String nextToken;
 
         public static GetMachineUserResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetMachineUserResponseBodyResult self = new GetMachineUserResponseBodyResult();
@@ -93,6 +90,14 @@ public class GetMachineUserResponseBody extends TeaModel {
         }
         public Boolean getHasMore() {
             return this.hasMore;
+        }
+
+        public GetMachineUserResponseBodyResult setNextToken(String nextToken) {
+            this.nextToken = nextToken;
+            return this;
+        }
+        public String getNextToken() {
+            return this.nextToken;
         }
 
     }

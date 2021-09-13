@@ -7,8 +7,8 @@ public class RemoveGroupMembersHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
-    @NameInMap("operatingSource")
-    public String operatingSource;
+    @NameInMap("operationSource")
+    public String operationSource;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
@@ -26,12 +26,12 @@ public class RemoveGroupMembersHeaders extends TeaModel {
         return this.commonHeaders;
     }
 
-    public RemoveGroupMembersHeaders setOperatingSource(String operatingSource) {
-        this.operatingSource = operatingSource;
+    public RemoveGroupMembersHeaders setOperationSource(String operationSource) {
+        this.operationSource = operationSource;
         return this;
     }
-    public String getOperatingSource() {
-        return this.operatingSource;
+    public String getOperationSource() {
+        return this.operationSource;
     }
 
     public RemoveGroupMembersHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

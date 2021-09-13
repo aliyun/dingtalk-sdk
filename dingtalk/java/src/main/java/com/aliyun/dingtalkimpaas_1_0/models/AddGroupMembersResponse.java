@@ -8,6 +8,10 @@ public class AddGroupMembersResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("body")
+    @Validation(required = true)
+    public AddGroupMembersResponseBody body;
+
     public static AddGroupMembersResponse build(java.util.Map<String, ?> map) throws Exception {
         AddGroupMembersResponse self = new AddGroupMembersResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class AddGroupMembersResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public AddGroupMembersResponse setBody(AddGroupMembersResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public AddGroupMembersResponseBody getBody() {
+        return this.body;
     }
 
 }

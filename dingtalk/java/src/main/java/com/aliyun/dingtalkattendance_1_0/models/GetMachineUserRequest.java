@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class GetMachineUserRequest extends TeaModel {
     @NameInMap("nextToken")
-    public Integer nextToken;
+    public String nextToken;
 
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -15,11 +15,11 @@ public class GetMachineUserRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetMachineUserRequest setNextToken(Integer nextToken) {
+    public GetMachineUserRequest setNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    public Integer getNextToken() {
+    public String getNextToken() {
         return this.nextToken;
     }
 

@@ -80,8 +80,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -121,8 +121,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -174,8 +174,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -215,8 +215,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -256,8 +256,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -326,8 +326,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -363,8 +363,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -445,8 +445,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -457,7 +457,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "none", req, runtime), new AddGroupMembersResponse());
+        return TeaModel.toModel(this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "json", req, runtime), new AddGroupMembersResponse());
     }
 
     public BatchSendResponse batchSend(BatchSendRequest request) throws Exception {
@@ -564,8 +564,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(headers.operatingSource)) {
-            realHeaders.put("operatingSource", headers.operatingSource);
+        if (!com.aliyun.teautil.Common.isUnset(headers.operationSource)) {
+            realHeaders.put("operationSource", headers.operationSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
