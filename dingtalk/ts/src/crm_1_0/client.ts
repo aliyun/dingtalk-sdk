@@ -790,6 +790,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
   extendData?: { [key: string]: any };
   permission?: AddCrmPersonalCustomerRequestPermission;
   skipDuplicateCheck?: boolean;
+  action?: string;
   static names(): { [key: string]: string } {
     return {
       creatorUserId: 'creatorUserId',
@@ -798,6 +799,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
       extendData: 'extendData',
       permission: 'permission',
       skipDuplicateCheck: 'skipDuplicateCheck',
+      action: 'action',
     };
   }
 
@@ -809,6 +811,7 @@ export class AddCrmPersonalCustomerRequest extends $tea.Model {
       extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       permission: AddCrmPersonalCustomerRequestPermission,
       skipDuplicateCheck: 'boolean',
+      action: 'string',
     };
   }
 
@@ -1106,6 +1109,91 @@ export class DeleteCrmPersonalCustomerResponse extends $tea.Model {
   }
 }
 
+export class AbandonCustomerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AbandonCustomerRequest extends $tea.Model {
+  operatorUserId?: string;
+  instanceIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorUserId: 'operatorUserId',
+      instanceIdList: 'instanceIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUserId: 'string',
+      instanceIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AbandonCustomerResponseBody extends $tea.Model {
+  instanceIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      instanceIdList: 'instanceIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AbandonCustomerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AbandonCustomerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AbandonCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCrmPersonalCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1136,6 +1224,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
   extendData?: { [key: string]: any };
   permission?: UpdateCrmPersonalCustomerRequestPermission;
   skipDuplicateCheck?: boolean;
+  action?: string;
   static names(): { [key: string]: string } {
     return {
       instanceId: 'instanceId',
@@ -1145,6 +1234,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
       extendData: 'extendData',
       permission: 'permission',
       skipDuplicateCheck: 'skipDuplicateCheck',
+      action: 'action',
     };
   }
 
@@ -1157,6 +1247,7 @@ export class UpdateCrmPersonalCustomerRequest extends $tea.Model {
       extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       permission: UpdateCrmPersonalCustomerRequestPermission,
       skipDuplicateCheck: 'boolean',
+      action: 'string',
     };
   }
 
@@ -3275,6 +3366,10 @@ export default class Client extends OpenApi {
       body["skipDuplicateCheck"] = request.skipDuplicateCheck;
     }
 
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3391,6 +3486,39 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteCrmPersonalCustomerResponse>(await this.doROARequest("DeleteCrmPersonalCustomer", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/personalCustomers/${dataId}`, "json", req, runtime), new DeleteCrmPersonalCustomerResponse({}));
   }
 
+  async abandonCustomer(request: AbandonCustomerRequest): Promise<AbandonCustomerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AbandonCustomerHeaders({ });
+    return await this.abandonCustomerWithOptions(request, headers, runtime);
+  }
+
+  async abandonCustomerWithOptions(request: AbandonCustomerRequest, headers: AbandonCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<AbandonCustomerResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    if (!Util.isUnset(request.instanceIdList)) {
+      body["instanceIdList"] = request.instanceIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AbandonCustomerResponse>(await this.doROARequest("AbandonCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers/abandon`, "json", req, runtime), new AbandonCustomerResponse({}));
+  }
+
   async updateCrmPersonalCustomer(request: UpdateCrmPersonalCustomerRequest): Promise<UpdateCrmPersonalCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCrmPersonalCustomerHeaders({ });
@@ -3426,6 +3554,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.skipDuplicateCheck)) {
       body["skipDuplicateCheck"] = request.skipDuplicateCheck;
+    }
+
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
     }
 
     let realHeaders : {[key: string ]: string} = { };

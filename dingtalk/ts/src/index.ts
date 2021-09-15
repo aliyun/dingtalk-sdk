@@ -2,6 +2,7 @@ import * as alitrip_1_0 from './alitrip_1_0/client';
 import * as app_market_1_0 from './app_market_1_0/client';
 import * as ats_1_0 from './ats_1_0/client';
 import * as attendance_1_0 from './attendance_1_0/client';
+import * as bizfinance_1_0 from './bizfinance_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
 import * as conference_1_0 from './conference_1_0/client';
 import * as connector_1_0 from './connector_1_0/client';
@@ -32,6 +33,7 @@ import * as oauth2_1_0 from './oauth2_1_0/client';
 import * as occupationauth_1_0 from './occupationauth_1_0/client';
 import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
+import * as resident_1_0 from './resident_1_0/client';
 import * as robot_1_0 from './robot_1_0/client';
 import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
@@ -48,6 +50,7 @@ export = {
   app_market_1_0,
   ats_1_0,
   attendance_1_0,
+  bizfinance_1_0,
   calendar_1_0,
   conference_1_0,
   connector_1_0,
@@ -78,6 +81,7 @@ export = {
   occupationauth_1_0,
   project_1_0,
   project_integration_1_0,
+  resident_1_0,
   robot_1_0,
   service_group_1_0,
   smart_device_1_0,

@@ -7,69 +7,6 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class QueryResourceManagementMembersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryResourceManagementMembersResponseBody extends $tea.Model {
-  members?: QueryResourceManagementMembersResponseBodyMembers[];
-  static names(): { [key: string]: string } {
-    return {
-      members: 'members',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      members: { 'type': 'array', 'itemType': QueryResourceManagementMembersResponseBodyMembers },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryResourceManagementMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: QueryResourceManagementMembersResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryResourceManagementMembersResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class SortUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -499,106 +436,6 @@ export class ListManagementGroupsResponse extends $tea.Model {
   }
 }
 
-export class TranslateFileHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class TranslateFileRequest extends $tea.Model {
-  dingTokenGrantType?: number;
-  dingOrgId?: number;
-  dingIsvOrgId?: number;
-  dingSuiteKey?: string;
-  mediaId?: string;
-  outputFileName?: string;
-  unionId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dingTokenGrantType: 'dingTokenGrantType',
-      dingOrgId: 'dingOrgId',
-      dingIsvOrgId: 'dingIsvOrgId',
-      dingSuiteKey: 'dingSuiteKey',
-      mediaId: 'mediaId',
-      outputFileName: 'outputFileName',
-      unionId: 'unionId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dingTokenGrantType: 'number',
-      dingOrgId: 'number',
-      dingIsvOrgId: 'number',
-      dingSuiteKey: 'string',
-      mediaId: 'string',
-      outputFileName: 'string',
-      unionId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class TranslateFileResponseBody extends $tea.Model {
-  jobId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      jobId: 'jobId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      jobId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class TranslateFileResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: TranslateFileResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: TranslateFileResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class ListEmpAttributeVisibilityHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -872,6 +709,791 @@ export class GetTranslateFileJobResultResponse extends $tea.Model {
   }
 }
 
+export class QueryUserManagementResourcesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserManagementResourcesResponseBody extends $tea.Model {
+  resourceIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      resourceIds: 'resourceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resourceIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserManagementResourcesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserManagementResourcesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserManagementResourcesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessRequest extends $tea.Model {
+  ownenssType?: number;
+  id?: number;
+  startTime?: number;
+  endTime?: number;
+  deletedFlag?: number;
+  static names(): { [key: string]: string } {
+    return {
+      ownenssType: 'ownenssType',
+      id: 'id',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      deletedFlag: 'deletedFlag',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownenssType: 'number',
+      id: 'number',
+      startTime: 'number',
+      endTime: 'number',
+      deletedFlag: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUserOwnnessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateUserOwnnessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateUserOwnnessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMigrationUnionIdByUnionIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMigrationUnionIdByUnionIdRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMigrationUnionIdByUnionIdResponseBody extends $tea.Model {
+  migrationUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      migrationUnionId: 'migrationUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      migrationUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMigrationUnionIdByUnionIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMigrationUnionIdByUnionIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMigrationUnionIdByUnionIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingIdByMigrationDingIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingIdByMigrationDingIdRequest extends $tea.Model {
+  migrationDingId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      migrationDingId: 'migrationDingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      migrationDingId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingIdByMigrationDingIdResponseBody extends $tea.Model {
+  dingId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingId: 'dingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingIdByMigrationDingIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDingIdByMigrationDingIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDingIdByMigrationDingIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCooperateOrgInviteInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCooperateOrgInviteInfoResponseBody extends $tea.Model {
+  inviteUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      inviteUrl: 'inviteUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      inviteUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCooperateOrgInviteInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCooperateOrgInviteInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCooperateOrgInviteInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateManagementGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateManagementGroupRequest extends $tea.Model {
+  groupName?: string;
+  members?: UpdateManagementGroupRequestMembers[];
+  scope?: UpdateManagementGroupRequestScope;
+  resourceIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      groupName: 'groupName',
+      members: 'members',
+      scope: 'scope',
+      resourceIds: 'resourceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupName: 'string',
+      members: { 'type': 'array', 'itemType': UpdateManagementGroupRequestMembers },
+      scope: UpdateManagementGroupRequestScope,
+      resourceIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateManagementGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBranchAuthDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBranchAuthDataRequest extends $tea.Model {
+  branchCorpId?: string;
+  code?: string;
+  body?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      branchCorpId: 'branchCorpId',
+      code: 'code',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      branchCorpId: 'string',
+      code: 'string',
+      body: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBranchAuthDataResponseBody extends $tea.Model {
+  result?: GetBranchAuthDataResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetBranchAuthDataResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBranchAuthDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetBranchAuthDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetBranchAuthDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserResponseBody extends $tea.Model {
+  nick?: string;
+  avatarUrl?: string;
+  mobile?: string;
+  openId?: string;
+  unionId?: string;
+  email?: string;
+  stateCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nick: 'nick',
+      avatarUrl: 'avatarUrl',
+      mobile: 'mobile',
+      openId: 'openId',
+      unionId: 'unionId',
+      email: 'email',
+      stateCode: 'stateCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nick: 'string',
+      avatarUrl: 'string',
+      mobile: 'string',
+      openId: 'string',
+      unionId: 'string',
+      email: 'string',
+      stateCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryResourceManagementMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryResourceManagementMembersResponseBody extends $tea.Model {
+  members?: QueryResourceManagementMembersResponseBodyMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      members: 'members',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      members: { 'type': 'array', 'itemType': QueryResourceManagementMembersResponseBodyMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryResourceManagementMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryResourceManagementMembersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryResourceManagementMembersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TranslateFileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TranslateFileRequest extends $tea.Model {
+  dingTokenGrantType?: number;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingSuiteKey?: string;
+  mediaId?: string;
+  outputFileName?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      mediaId: 'mediaId',
+      outputFileName: 'outputFileName',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingTokenGrantType: 'number',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingSuiteKey: 'string',
+      mediaId: 'string',
+      outputFileName: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TranslateFileResponseBody extends $tea.Model {
+  jobId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobId: 'jobId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TranslateFileResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: TranslateFileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: TranslateFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetApplyInviteInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1063,7 +1685,7 @@ export class CreateCooperateOrgResponse extends $tea.Model {
   }
 }
 
-export class QueryUserManagementResourcesHeaders extends $tea.Model {
+export class GetMigrationDingIdByDingIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -1085,17 +1707,17 @@ export class QueryUserManagementResourcesHeaders extends $tea.Model {
   }
 }
 
-export class QueryUserManagementResourcesResponseBody extends $tea.Model {
-  resourceIds?: string[];
+export class GetMigrationDingIdByDingIdRequest extends $tea.Model {
+  dingId?: string;
   static names(): { [key: string]: string } {
     return {
-      resourceIds: 'resourceIds',
+      dingId: 'dingId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      resourceIds: { 'type': 'array', 'itemType': 'string' },
+      dingId: 'string',
     };
   }
 
@@ -1104,9 +1726,28 @@ export class QueryUserManagementResourcesResponseBody extends $tea.Model {
   }
 }
 
-export class QueryUserManagementResourcesResponse extends $tea.Model {
+export class GetMigrationDingIdByDingIdResponseBody extends $tea.Model {
+  migrationDingId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      migrationDingId: 'migrationDingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      migrationDingId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMigrationDingIdByDingIdResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: QueryUserManagementResourcesResponseBody;
+  body: GetMigrationDingIdByDingIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1117,164 +1758,7 @@ export class QueryUserManagementResourcesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: QueryUserManagementResourcesResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserOwnnessHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserOwnnessRequest extends $tea.Model {
-  ownenssType?: number;
-  id?: number;
-  startTime?: number;
-  endTime?: number;
-  deletedFlag?: number;
-  static names(): { [key: string]: string } {
-    return {
-      ownenssType: 'ownenssType',
-      id: 'id',
-      startTime: 'startTime',
-      endTime: 'endTime',
-      deletedFlag: 'deletedFlag',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      ownenssType: 'number',
-      id: 'number',
-      startTime: 'number',
-      endTime: 'number',
-      deletedFlag: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserOwnnessResponseBody extends $tea.Model {
-  result?: string;
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateUserOwnnessResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: UpdateUserOwnnessResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: UpdateUserOwnnessResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCooperateOrgInviteInfoHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCooperateOrgInviteInfoResponseBody extends $tea.Model {
-  inviteUrl?: string;
-  static names(): { [key: string]: string } {
-    return {
-      inviteUrl: 'inviteUrl',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      inviteUrl: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCooperateOrgInviteInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetCooperateOrgInviteInfoResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetCooperateOrgInviteInfoResponseBody,
+      body: GetMigrationDingIdByDingIdResponseBody,
     };
   }
 
@@ -1374,75 +1858,6 @@ export class CreateManagementGroupResponse extends $tea.Model {
   }
 }
 
-export class UpdateManagementGroupHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateManagementGroupRequest extends $tea.Model {
-  groupName?: string;
-  members?: UpdateManagementGroupRequestMembers[];
-  scope?: UpdateManagementGroupRequestScope;
-  resourceIds?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      groupName: 'groupName',
-      members: 'members',
-      scope: 'scope',
-      resourceIds: 'resourceIds',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      groupName: 'string',
-      members: { 'type': 'array', 'itemType': UpdateManagementGroupRequestMembers },
-      scope: UpdateManagementGroupRequestScope,
-      resourceIds: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateManagementGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class DeleteManagementGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1484,7 +1899,7 @@ export class DeleteManagementGroupResponse extends $tea.Model {
   }
 }
 
-export class GetBranchAuthDataHeaders extends $tea.Model {
+export class GetUnionIdByMigrationUnionIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -1506,23 +1921,17 @@ export class GetBranchAuthDataHeaders extends $tea.Model {
   }
 }
 
-export class GetBranchAuthDataRequest extends $tea.Model {
-  branchCorpId?: string;
-  code?: string;
-  body?: { [key: string]: string };
+export class GetUnionIdByMigrationUnionIdRequest extends $tea.Model {
+  migrationUnionId?: string;
   static names(): { [key: string]: string } {
     return {
-      branchCorpId: 'branchCorpId',
-      code: 'code',
-      body: 'body',
+      migrationUnionId: 'migrationUnionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      branchCorpId: 'string',
-      code: 'string',
-      body: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      migrationUnionId: 'string',
     };
   }
 
@@ -1531,17 +1940,17 @@ export class GetBranchAuthDataRequest extends $tea.Model {
   }
 }
 
-export class GetBranchAuthDataResponseBody extends $tea.Model {
-  result?: GetBranchAuthDataResponseBodyResult[];
+export class GetUnionIdByMigrationUnionIdResponseBody extends $tea.Model {
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': GetBranchAuthDataResponseBodyResult },
+      unionId: 'string',
     };
   }
 
@@ -1550,9 +1959,9 @@ export class GetBranchAuthDataResponseBody extends $tea.Model {
   }
 }
 
-export class GetBranchAuthDataResponse extends $tea.Model {
+export class GetUnionIdByMigrationUnionIdResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetBranchAuthDataResponseBody;
+  body: GetUnionIdByMigrationUnionIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1563,7 +1972,7 @@ export class GetBranchAuthDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetBranchAuthDataResponseBody,
+      body: GetUnionIdByMigrationUnionIdResponseBody,
     };
   }
 
@@ -1639,109 +2048,6 @@ export class GetLatestDingIndexResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetLatestDingIndexResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserResponseBody extends $tea.Model {
-  nick?: string;
-  avatarUrl?: string;
-  mobile?: string;
-  openId?: string;
-  unionId?: string;
-  email?: string;
-  stateCode?: string;
-  static names(): { [key: string]: string } {
-    return {
-      nick: 'nick',
-      avatarUrl: 'avatarUrl',
-      mobile: 'mobile',
-      openId: 'openId',
-      unionId: 'unionId',
-      email: 'email',
-      stateCode: 'stateCode',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      nick: 'string',
-      avatarUrl: 'string',
-      mobile: 'string',
-      openId: 'string',
-      unionId: 'string',
-      email: 'string',
-      stateCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetUserResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetUserResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryResourceManagementMembersResponseBodyMembers extends $tea.Model {
-  memberType?: string;
-  memberId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      memberType: 'memberType',
-      memberId: 'memberId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      memberType: 'string',
-      memberId: 'string',
     };
   }
 
@@ -1880,50 +2186,6 @@ export class ListEmpAttributeVisibilityResponseBodyList extends $tea.Model {
   }
 }
 
-export class CreateManagementGroupRequestMembers extends $tea.Model {
-  memberType?: string;
-  memberId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      memberType: 'memberType',
-      memberId: 'memberId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      memberType: 'string',
-      memberId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class CreateManagementGroupRequestScope extends $tea.Model {
-  scopeType?: number;
-  deptIds?: number[];
-  static names(): { [key: string]: string } {
-    return {
-      scopeType: 'scopeType',
-      deptIds: 'deptIds',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      scopeType: 'number',
-      deptIds: { 'type': 'array', 'itemType': 'number' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class UpdateManagementGroupRequestMembers extends $tea.Model {
   memberType?: string;
   memberId?: string;
@@ -1993,6 +2255,72 @@ export class GetBranchAuthDataResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryResourceManagementMembersResponseBodyMembers extends $tea.Model {
+  memberType?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberType: 'memberType',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberType: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateManagementGroupRequestMembers extends $tea.Model {
+  memberType?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberType: 'memberType',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberType: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateManagementGroupRequestScope extends $tea.Model {
+  scopeType?: number;
+  deptIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      scopeType: 'scopeType',
+      deptIds: 'deptIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeType: 'number',
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -2005,28 +2333,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async queryResourceManagementMembers(resourceId: string): Promise<QueryResourceManagementMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryResourceManagementMembersHeaders({ });
-    return await this.queryResourceManagementMembersWithOptions(resourceId, headers, runtime);
-  }
-
-  async queryResourceManagementMembersWithOptions(resourceId: string, headers: QueryResourceManagementMembersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryResourceManagementMembersResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryResourceManagementMembersResponse>(await this.doROARequest("QueryResourceManagementMembers", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/resources/${resourceId}/managementMembers`, "json", req, runtime), new QueryResourceManagementMembersResponse({}));
-  }
 
   async sortUser(request: SortUserRequest): Promise<SortUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2230,59 +2536,6 @@ export default class Client extends OpenApi {
     return $tea.cast<ListManagementGroupsResponse>(await this.doROARequest("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new ListManagementGroupsResponse({}));
   }
 
-  async translateFile(request: TranslateFileRequest): Promise<TranslateFileResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TranslateFileHeaders({ });
-    return await this.translateFileWithOptions(request, headers, runtime);
-  }
-
-  async translateFileWithOptions(request: TranslateFileRequest, headers: TranslateFileHeaders, runtime: $Util.RuntimeOptions): Promise<TranslateFileResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.dingOrgId)) {
-      body["dingOrgId"] = request.dingOrgId;
-    }
-
-    if (!Util.isUnset(request.dingIsvOrgId)) {
-      body["dingIsvOrgId"] = request.dingIsvOrgId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    if (!Util.isUnset(request.mediaId)) {
-      body["mediaId"] = request.mediaId;
-    }
-
-    if (!Util.isUnset(request.outputFileName)) {
-      body["outputFileName"] = request.outputFileName;
-    }
-
-    if (!Util.isUnset(request.unionId)) {
-      body["unionId"] = request.unionId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<TranslateFileResponse>(await this.doROARequest("TranslateFile", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/files/translate`, "json", req, runtime), new TranslateFileResponse({}));
-  }
-
   async listEmpAttributeVisibility(request: ListEmpAttributeVisibilityRequest): Promise<ListEmpAttributeVisibilityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListEmpAttributeVisibilityHeaders({ });
@@ -2386,6 +2639,330 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTranslateFileJobResultResponse>(await this.doROARequest("GetTranslateFileJobResult", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/files/translateResults`, "json", req, runtime), new GetTranslateFileJobResultResponse({}));
   }
 
+  async queryUserManagementResources(userId: string): Promise<QueryUserManagementResourcesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserManagementResourcesHeaders({ });
+    return await this.queryUserManagementResourcesWithOptions(userId, headers, runtime);
+  }
+
+  async queryUserManagementResourcesWithOptions(userId: string, headers: QueryUserManagementResourcesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserManagementResourcesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryUserManagementResourcesResponse>(await this.doROARequest("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/users/${userId}/managemementResources`, "json", req, runtime), new QueryUserManagementResourcesResponse({}));
+  }
+
+  async updateUserOwnness(userId: string, request: UpdateUserOwnnessRequest): Promise<UpdateUserOwnnessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateUserOwnnessHeaders({ });
+    return await this.updateUserOwnnessWithOptions(userId, request, headers, runtime);
+  }
+
+  async updateUserOwnnessWithOptions(userId: string, request: UpdateUserOwnnessRequest, headers: UpdateUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserOwnnessResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ownenssType)) {
+      body["ownenssType"] = request.ownenssType;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.deletedFlag)) {
+      body["deletedFlag"] = request.deletedFlag;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateUserOwnnessResponse>(await this.doROARequest("UpdateUserOwnness", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/user/${userId}/ownness`, "json", req, runtime), new UpdateUserOwnnessResponse({}));
+  }
+
+  async getMigrationUnionIdByUnionId(request: GetMigrationUnionIdByUnionIdRequest): Promise<GetMigrationUnionIdByUnionIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMigrationUnionIdByUnionIdHeaders({ });
+    return await this.getMigrationUnionIdByUnionIdWithOptions(request, headers, runtime);
+  }
+
+  async getMigrationUnionIdByUnionIdWithOptions(request: GetMigrationUnionIdByUnionIdRequest, headers: GetMigrationUnionIdByUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetMigrationUnionIdByUnionIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetMigrationUnionIdByUnionIdResponse>(await this.doROARequest("GetMigrationUnionIdByUnionId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getMigrationUnionIdByUnionIds`, "json", req, runtime), new GetMigrationUnionIdByUnionIdResponse({}));
+  }
+
+  async getDingIdByMigrationDingId(request: GetDingIdByMigrationDingIdRequest): Promise<GetDingIdByMigrationDingIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDingIdByMigrationDingIdHeaders({ });
+    return await this.getDingIdByMigrationDingIdWithOptions(request, headers, runtime);
+  }
+
+  async getDingIdByMigrationDingIdWithOptions(request: GetDingIdByMigrationDingIdRequest, headers: GetDingIdByMigrationDingIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingIdByMigrationDingIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.migrationDingId)) {
+      query["migrationDingId"] = request.migrationDingId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetDingIdByMigrationDingIdResponse>(await this.doROARequest("GetDingIdByMigrationDingId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getDingIdByMigrationDingIds`, "json", req, runtime), new GetDingIdByMigrationDingIdResponse({}));
+  }
+
+  async getCooperateOrgInviteInfo(cooperateCorpId: string): Promise<GetCooperateOrgInviteInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCooperateOrgInviteInfoHeaders({ });
+    return await this.getCooperateOrgInviteInfoWithOptions(cooperateCorpId, headers, runtime);
+  }
+
+  async getCooperateOrgInviteInfoWithOptions(cooperateCorpId: string, headers: GetCooperateOrgInviteInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCooperateOrgInviteInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCooperateOrgInviteInfoResponse>(await this.doROARequest("GetCooperateOrgInviteInfo", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cooperateCorps/${cooperateCorpId}/inviteInfos`, "json", req, runtime), new GetCooperateOrgInviteInfoResponse({}));
+  }
+
+  async updateManagementGroup(groupId: string, request: UpdateManagementGroupRequest): Promise<UpdateManagementGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateManagementGroupHeaders({ });
+    return await this.updateManagementGroupWithOptions(groupId, request, headers, runtime);
+  }
+
+  async updateManagementGroupWithOptions(groupId: string, request: UpdateManagementGroupRequest, headers: UpdateManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateManagementGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.scope))) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.resourceIds)) {
+      body["resourceIds"] = request.resourceIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateManagementGroupResponse>(await this.doROARequest("UpdateManagementGroup", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/managementGroups/${groupId}`, "none", req, runtime), new UpdateManagementGroupResponse({}));
+  }
+
+  async getBranchAuthData(request: GetBranchAuthDataRequest): Promise<GetBranchAuthDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetBranchAuthDataHeaders({ });
+    return await this.getBranchAuthDataWithOptions(request, headers, runtime);
+  }
+
+  async getBranchAuthDataWithOptions(request: GetBranchAuthDataRequest, headers: GetBranchAuthDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetBranchAuthDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.branchCorpId)) {
+      query["branchCorpId"] = request.branchCorpId;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    let body : {[key: string ]: string} = { };
+    if (!Util.isUnset(request.body)) {
+      body = request.body;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetBranchAuthDataResponse>(await this.doROARequest("GetBranchAuthData", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/branchAuthDatas/search`, "json", req, runtime), new GetBranchAuthDataResponse({}));
+  }
+
+  async getUser(unionId: string): Promise<GetUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserHeaders({ });
+    return await this.getUserWithOptions(unionId, headers, runtime);
+  }
+
+  async getUserWithOptions(unionId: string, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetUserResponse>(await this.doROARequest("GetUser", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/users/${unionId}`, "json", req, runtime), new GetUserResponse({}));
+  }
+
+  async queryResourceManagementMembers(resourceId: string): Promise<QueryResourceManagementMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryResourceManagementMembersHeaders({ });
+    return await this.queryResourceManagementMembersWithOptions(resourceId, headers, runtime);
+  }
+
+  async queryResourceManagementMembersWithOptions(resourceId: string, headers: QueryResourceManagementMembersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryResourceManagementMembersResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<QueryResourceManagementMembersResponse>(await this.doROARequest("QueryResourceManagementMembers", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/resources/${resourceId}/managementMembers`, "json", req, runtime), new QueryResourceManagementMembersResponse({}));
+  }
+
+  async translateFile(request: TranslateFileRequest): Promise<TranslateFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TranslateFileHeaders({ });
+    return await this.translateFileWithOptions(request, headers, runtime);
+  }
+
+  async translateFileWithOptions(request: TranslateFileRequest, headers: TranslateFileHeaders, runtime: $Util.RuntimeOptions): Promise<TranslateFileResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.outputFileName)) {
+      body["outputFileName"] = request.outputFileName;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<TranslateFileResponse>(await this.doROARequest("TranslateFile", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/files/translate`, "json", req, runtime), new TranslateFileResponse({}));
+  }
+
   async getApplyInviteInfo(request: GetApplyInviteInfoRequest): Promise<GetApplyInviteInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetApplyInviteInfoHeaders({ });
@@ -2456,55 +3033,17 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCooperateOrgResponse>(await this.doROARequest("CreateCooperateOrg", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps`, "json", req, runtime), new CreateCooperateOrgResponse({}));
   }
 
-  async queryUserManagementResources(userId: string): Promise<QueryUserManagementResourcesResponse> {
+  async getMigrationDingIdByDingId(request: GetMigrationDingIdByDingIdRequest): Promise<GetMigrationDingIdByDingIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserManagementResourcesHeaders({ });
-    return await this.queryUserManagementResourcesWithOptions(userId, headers, runtime);
+    let headers = new GetMigrationDingIdByDingIdHeaders({ });
+    return await this.getMigrationDingIdByDingIdWithOptions(request, headers, runtime);
   }
 
-  async queryUserManagementResourcesWithOptions(userId: string, headers: QueryUserManagementResourcesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserManagementResourcesResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryUserManagementResourcesResponse>(await this.doROARequest("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/users/${userId}/managemementResources`, "json", req, runtime), new QueryUserManagementResourcesResponse({}));
-  }
-
-  async updateUserOwnness(userId: string, request: UpdateUserOwnnessRequest): Promise<UpdateUserOwnnessResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateUserOwnnessHeaders({ });
-    return await this.updateUserOwnnessWithOptions(userId, request, headers, runtime);
-  }
-
-  async updateUserOwnnessWithOptions(userId: string, request: UpdateUserOwnnessRequest, headers: UpdateUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserOwnnessResponse> {
+  async getMigrationDingIdByDingIdWithOptions(request: GetMigrationDingIdByDingIdRequest, headers: GetMigrationDingIdByDingIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetMigrationDingIdByDingIdResponse> {
     Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownenssType)) {
-      body["ownenssType"] = request.ownenssType;
-    }
-
-    if (!Util.isUnset(request.id)) {
-      body["id"] = request.id;
-    }
-
-    if (!Util.isUnset(request.startTime)) {
-      body["startTime"] = request.startTime;
-    }
-
-    if (!Util.isUnset(request.endTime)) {
-      body["endTime"] = request.endTime;
-    }
-
-    if (!Util.isUnset(request.deletedFlag)) {
-      body["deletedFlag"] = request.deletedFlag;
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingId)) {
+      query["dingId"] = request.dingId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2518,31 +3057,9 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UpdateUserOwnnessResponse>(await this.doROARequest("UpdateUserOwnness", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/user/${userId}/ownness`, "json", req, runtime), new UpdateUserOwnnessResponse({}));
-  }
-
-  async getCooperateOrgInviteInfo(cooperateCorpId: string): Promise<GetCooperateOrgInviteInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCooperateOrgInviteInfoHeaders({ });
-    return await this.getCooperateOrgInviteInfoWithOptions(cooperateCorpId, headers, runtime);
-  }
-
-  async getCooperateOrgInviteInfoWithOptions(cooperateCorpId: string, headers: GetCooperateOrgInviteInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCooperateOrgInviteInfoResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetCooperateOrgInviteInfoResponse>(await this.doROARequest("GetCooperateOrgInviteInfo", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cooperateCorps/${cooperateCorpId}/inviteInfos`, "json", req, runtime), new GetCooperateOrgInviteInfoResponse({}));
+    return $tea.cast<GetMigrationDingIdByDingIdResponse>(await this.doROARequest("GetMigrationDingIdByDingId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getMigrationDingIdByDingIds`, "json", req, runtime), new GetMigrationDingIdByDingIdResponse({}));
   }
 
   async createManagementGroup(request: CreateManagementGroupRequest): Promise<CreateManagementGroupResponse> {
@@ -2586,47 +3103,6 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateManagementGroupResponse>(await this.doROARequest("CreateManagementGroup", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new CreateManagementGroupResponse({}));
   }
 
-  async updateManagementGroup(groupId: string, request: UpdateManagementGroupRequest): Promise<UpdateManagementGroupResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateManagementGroupHeaders({ });
-    return await this.updateManagementGroupWithOptions(groupId, request, headers, runtime);
-  }
-
-  async updateManagementGroupWithOptions(groupId: string, request: UpdateManagementGroupRequest, headers: UpdateManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateManagementGroupResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.groupName)) {
-      body["groupName"] = request.groupName;
-    }
-
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
-    if (!Util.isUnset($tea.toMap(request.scope))) {
-      body["scope"] = request.scope;
-    }
-
-    if (!Util.isUnset(request.resourceIds)) {
-      body["resourceIds"] = request.resourceIds;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UpdateManagementGroupResponse>(await this.doROARequest("UpdateManagementGroup", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/managementGroups/${groupId}`, "none", req, runtime), new UpdateManagementGroupResponse({}));
-  }
-
   async deleteManagementGroup(groupId: string): Promise<DeleteManagementGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteManagementGroupHeaders({ });
@@ -2649,26 +3125,17 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteManagementGroupResponse>(await this.doROARequest("DeleteManagementGroup", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/managementGroups/${groupId}`, "none", req, runtime), new DeleteManagementGroupResponse({}));
   }
 
-  async getBranchAuthData(request: GetBranchAuthDataRequest): Promise<GetBranchAuthDataResponse> {
+  async getUnionIdByMigrationUnionId(request: GetUnionIdByMigrationUnionIdRequest): Promise<GetUnionIdByMigrationUnionIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetBranchAuthDataHeaders({ });
-    return await this.getBranchAuthDataWithOptions(request, headers, runtime);
+    let headers = new GetUnionIdByMigrationUnionIdHeaders({ });
+    return await this.getUnionIdByMigrationUnionIdWithOptions(request, headers, runtime);
   }
 
-  async getBranchAuthDataWithOptions(request: GetBranchAuthDataRequest, headers: GetBranchAuthDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetBranchAuthDataResponse> {
+  async getUnionIdByMigrationUnionIdWithOptions(request: GetUnionIdByMigrationUnionIdRequest, headers: GetUnionIdByMigrationUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetUnionIdByMigrationUnionIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.branchCorpId)) {
-      query["branchCorpId"] = request.branchCorpId;
-    }
-
-    if (!Util.isUnset(request.code)) {
-      query["code"] = request.code;
-    }
-
-    let body : {[key: string ]: string} = { };
-    if (!Util.isUnset(request.body)) {
-      body = request.body;
+    if (!Util.isUnset(request.migrationUnionId)) {
+      query["migrationUnionId"] = request.migrationUnionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2683,9 +3150,8 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetBranchAuthDataResponse>(await this.doROARequest("GetBranchAuthData", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/branchAuthDatas/search`, "json", req, runtime), new GetBranchAuthDataResponse({}));
+    return $tea.cast<GetUnionIdByMigrationUnionIdResponse>(await this.doROARequest("GetUnionIdByMigrationUnionId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getUnionIdByMigrationUnionIds`, "json", req, runtime), new GetUnionIdByMigrationUnionIdResponse({}));
   }
 
   async getLatestDingIndex(): Promise<GetLatestDingIndexResponse> {
@@ -2708,28 +3174,6 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetLatestDingIndexResponse>(await this.doROARequest("GetLatestDingIndex", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/dingIndexs`, "json", req, runtime), new GetLatestDingIndexResponse({}));
-  }
-
-  async getUser(unionId: string): Promise<GetUserResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserHeaders({ });
-    return await this.getUserWithOptions(unionId, headers, runtime);
-  }
-
-  async getUserWithOptions(unionId: string, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetUserResponse>(await this.doROARequest("GetUser", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/users/${unionId}`, "json", req, runtime), new GetUserResponse({}));
   }
 
 }
