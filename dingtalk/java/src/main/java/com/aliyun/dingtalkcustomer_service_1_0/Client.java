@@ -180,6 +180,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public PageListActionResponse pageListActionWithOptions(String ticketId, PageListActionRequest request, PageListActionHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        ticketId = com.aliyun.openapiutil.Client.getEncodeParam(ticketId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.openInstanceId)) {
             query.put("openInstanceId", request.openInstanceId);
@@ -221,6 +222,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ExecuteActivityResponse executeActivityWithOptions(String ticketId, ExecuteActivityRequest request, ExecuteActivityHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        ticketId = com.aliyun.openapiutil.Client.getEncodeParam(ticketId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.sourceId)) {
             body.put("sourceId", request.sourceId);

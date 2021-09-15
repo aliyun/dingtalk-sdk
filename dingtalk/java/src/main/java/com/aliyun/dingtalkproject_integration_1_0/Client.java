@@ -7,6 +7,7 @@ import com.aliyun.teautil.*;
 import com.aliyun.teautil.models.*;
 import com.aliyun.teaopenapi.*;
 import com.aliyun.teaopenapi.models.*;
+import com.aliyun.openapiutil.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
@@ -27,6 +28,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public SendInteractiveCardResponse sendInteractiveCardWithOptions(String userId, SendInteractiveCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -49,6 +51,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public UpdateInteractiveCardResponse updateInteractiveCardWithOptions(String userId, UpdateInteractiveCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -71,6 +74,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public SendSingleInteractiveCardResponse sendSingleInteractiveCardWithOptions(String userId, SendSingleInteractiveCardHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -93,6 +97,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public AddAttendeeToEventGroupResponse addAttendeeToEventGroupWithOptions(String userId, String groupId, AddAttendeeToEventGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        groupId = com.aliyun.openapiutil.Client.getEncodeParam(groupId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -115,6 +121,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public CreateEventGroupResponse createEventGroupWithOptions(String userId, CreateEventGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

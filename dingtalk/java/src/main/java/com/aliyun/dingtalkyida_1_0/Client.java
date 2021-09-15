@@ -188,6 +188,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetFormDataByIDResponse getFormDataByIDWithOptions(String id, GetFormDataByIDRequest request, GetFormDataByIDHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        id = com.aliyun.openapiutil.Client.getEncodeParam(id);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
             query.put("appType", request.appType);

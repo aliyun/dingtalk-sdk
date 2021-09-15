@@ -1,0 +1,36 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkresident_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class UpdateResidenceResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    @NameInMap("body")
+    @Validation(required = true)
+    public UpdateResidenceResponseBody body;
+
+    public static UpdateResidenceResponse build(java.util.Map<String, ?> map) throws Exception {
+        UpdateResidenceResponse self = new UpdateResidenceResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public UpdateResidenceResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    public UpdateResidenceResponse setBody(UpdateResidenceResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public UpdateResidenceResponseBody getBody() {
+        return this.body;
+    }
+
+}

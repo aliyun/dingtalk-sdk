@@ -26,6 +26,10 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
+    // 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+    @NameInMap("action")
+    public String action;
+
     public static UpdateCrmPersonalCustomerRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateCrmPersonalCustomerRequest self = new UpdateCrmPersonalCustomerRequest();
         return TeaModel.build(map, self);
@@ -85,6 +89,14 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     }
     public Boolean getSkipDuplicateCheck() {
         return this.skipDuplicateCheck;
+    }
+
+    public UpdateCrmPersonalCustomerRequest setAction(String action) {
+        this.action = action;
+        return this;
+    }
+    public String getAction() {
+        return this.action;
     }
 
     public static class UpdateCrmPersonalCustomerRequestPermission extends TeaModel {

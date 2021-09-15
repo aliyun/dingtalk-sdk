@@ -89,6 +89,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetSignDetailResponse getSignDetailWithOptions(String taskId, GetSignDetailHeaders headers, RuntimeOptions runtime) throws Exception {
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -115,6 +116,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetAttachsApprovalResponse getAttachsApprovalWithOptions(String instanceId, GetAttachsApprovalHeaders headers, RuntimeOptions runtime) throws Exception {
+        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -210,6 +212,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public ApprovalListResponse approvalListWithOptions(String taskId, ApprovalListHeaders headers, RuntimeOptions runtime) throws Exception {
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -299,6 +302,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetFileInfoResponse getFileInfoWithOptions(String fileId, GetFileInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -547,6 +551,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetFlowDocsResponse getFlowDocsWithOptions(String taskId, GetFlowDocsHeaders headers, RuntimeOptions runtime) throws Exception {
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -614,6 +619,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetFlowDetailResponse getFlowDetailWithOptions(String taskId, GetFlowDetailHeaders headers, RuntimeOptions runtime) throws Exception {
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -666,6 +672,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetUserInfoResponse getUserInfoWithOptions(String userId, GetUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

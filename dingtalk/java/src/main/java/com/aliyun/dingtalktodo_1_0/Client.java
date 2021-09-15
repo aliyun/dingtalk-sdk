@@ -28,6 +28,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetTodoTaskDetailResponse getTodoTaskDetailWithOptions(String taskId, String unionId, GetTodoTaskDetailHeaders headers, RuntimeOptions runtime) throws Exception {
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -50,6 +52,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetTodoTaskResponse getTodoTaskWithOptions(String unionId, String taskId, GetTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -72,6 +76,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetTodoTaskBySourceIdResponse getTodoTaskBySourceIdWithOptions(String unionId, String sourceId, GetTodoTaskBySourceIdHeaders headers, RuntimeOptions runtime) throws Exception {
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        sourceId = com.aliyun.openapiutil.Client.getEncodeParam(sourceId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -95,6 +101,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CountTodoTasksResponse countTodoTasksWithOptions(String unionId, CountTodoTasksRequest request, CountTodoTasksHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.isDone)) {
             body.put("isDone", request.isDone);
@@ -144,6 +151,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public QueryOrgTodoTasksResponse queryOrgTodoTasksWithOptions(String unionId, QueryOrgTodoTasksRequest request, QueryOrgTodoTasksHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             body.put("nextToken", request.nextToken);
@@ -177,6 +185,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CreateTodoTaskResponse createTodoTaskWithOptions(String unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
@@ -247,6 +256,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetTodoTypeConfigResponse getTodoTypeConfigWithOptions(String unionId, String cardTypeId, GetTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        cardTypeId = com.aliyun.openapiutil.Client.getEncodeParam(cardTypeId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -270,6 +281,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public QueryTodoTasksResponse queryTodoTasksWithOptions(String unionId, QueryTodoTasksRequest request, QueryTodoTasksHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             body.put("nextToken", request.nextToken);
@@ -331,6 +343,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateTodoTypeConfigResponse updateTodoTypeConfigWithOptions(String unionId, String cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        cardTypeId = com.aliyun.openapiutil.Client.getEncodeParam(cardTypeId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
@@ -386,6 +400,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteTodoTaskResponse deleteTodoTaskWithOptions(String unionId, String taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
@@ -415,6 +431,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateTodoTaskExecutorStatusResponse updateTodoTaskExecutorStatusWithOptions(String unionId, String taskId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
@@ -450,6 +468,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CreateTodoTypeConfigResponse createTodoTypeConfigWithOptions(String unionId, CreateTodoTypeConfigRequest request, CreateTodoTypeConfigHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
@@ -505,6 +524,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateTodoTaskResponse updateTodoTaskWithOptions(String unionId, String taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        unionId = com.aliyun.openapiutil.Client.getEncodeParam(unionId);
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);

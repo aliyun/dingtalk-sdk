@@ -114,6 +114,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetMachineResponse getMachineWithOptions(String devId, GetMachineHeaders headers, RuntimeOptions runtime) throws Exception {
+        devId = com.aliyun.openapiutil.Client.getEncodeParam(devId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -137,6 +138,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetMachineUserResponse getMachineUserWithOptions(String devId, GetMachineUserRequest request, GetMachineUserHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        devId = com.aliyun.openapiutil.Client.getEncodeParam(devId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             query.put("nextToken", request.nextToken);

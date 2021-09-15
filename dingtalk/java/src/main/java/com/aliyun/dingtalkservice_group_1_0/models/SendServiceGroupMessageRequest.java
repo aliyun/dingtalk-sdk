@@ -68,6 +68,10 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     @NameInMap("btns")
     public java.util.List<SendServiceGroupMessageRequestBtns> btns;
 
+    // 如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false
+    @NameInMap("hasContentLinks")
+    public Boolean hasContentLinks;
+
     public static SendServiceGroupMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         SendServiceGroupMessageRequest self = new SendServiceGroupMessageRequest();
         return TeaModel.build(map, self);
@@ -207,6 +211,14 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     }
     public java.util.List<SendServiceGroupMessageRequestBtns> getBtns() {
         return this.btns;
+    }
+
+    public SendServiceGroupMessageRequest setHasContentLinks(Boolean hasContentLinks) {
+        this.hasContentLinks = hasContentLinks;
+        return this;
+    }
+    public Boolean getHasContentLinks() {
+        return this.hasContentLinks;
     }
 
     public static class SendServiceGroupMessageRequestBtns extends TeaModel {
