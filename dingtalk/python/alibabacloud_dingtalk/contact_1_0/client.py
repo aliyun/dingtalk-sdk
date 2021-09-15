@@ -1611,6 +1611,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteManagementGroup', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/managementGroups/{group_id}', 'none', req, runtime)
         )
 
+    def transform_to_exclusive_account(
+        self,
+        request: dingtalkcontact__1__0_models.TransformToExclusiveAccountRequest,
+    ) -> dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TransformToExclusiveAccountHeaders()
+        return self.transform_to_exclusive_account_with_options(request, headers, runtime)
+
+    async def transform_to_exclusive_account_async(
+        self,
+        request: dingtalkcontact__1__0_models.TransformToExclusiveAccountRequest,
+    ) -> dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TransformToExclusiveAccountHeaders()
+        return await self.transform_to_exclusive_account_with_options_async(request, headers, runtime)
+
+    def transform_to_exclusive_account_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TransformToExclusiveAccountRequest,
+        headers: dingtalkcontact__1__0_models.TransformToExclusiveAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.transform_type):
+            body['transformType'] = request.transform_type
+        if not UtilClient.is_unset(request.idp_ding_talk):
+            body['idpDingTalk'] = request.idp_ding_talk
+        if not UtilClient.is_unset(request.login_id):
+            body['loginId'] = request.login_id
+        if not UtilClient.is_unset(request.init_password):
+            body['initPassword'] = request.init_password
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse(),
+            self.do_roarequest('TransformToExclusiveAccount', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccount/transformToExclusiveAccounts', 'none', req, runtime)
+        )
+
+    async def transform_to_exclusive_account_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TransformToExclusiveAccountRequest,
+        headers: dingtalkcontact__1__0_models.TransformToExclusiveAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.transform_type):
+            body['transformType'] = request.transform_type
+        if not UtilClient.is_unset(request.idp_ding_talk):
+            body['idpDingTalk'] = request.idp_ding_talk
+        if not UtilClient.is_unset(request.login_id):
+            body['loginId'] = request.login_id
+        if not UtilClient.is_unset(request.init_password):
+            body['initPassword'] = request.init_password
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse(),
+            await self.do_roarequest_async('TransformToExclusiveAccount', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccount/transformToExclusiveAccounts', 'none', req, runtime)
+        )
+
     def get_union_id_by_migration_union_id(
         self,
         request: dingtalkcontact__1__0_models.GetUnionIdByMigrationUnionIdRequest,

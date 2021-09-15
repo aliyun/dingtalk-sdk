@@ -1618,3 +1618,238 @@ class UpdateTheGroupRolesOfGroupMemberResponse(TeaModel):
         return self
 
 
+class SendTemplateInteractiveCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendTemplateInteractiveCardRequestSendOptions(TeaModel):
+    def __init__(
+        self,
+        at_user_list_json: str = None,
+        receiver_list_json: str = None,
+    ):
+        # 消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
+        self.at_user_list_json = at_user_list_json
+        # 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
+        self.receiver_list_json = receiver_list_json
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_list_json is not None:
+            result['atUserListJson'] = self.at_user_list_json
+        if self.receiver_list_json is not None:
+            result['receiverListJson'] = self.receiver_list_json
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserListJson') is not None:
+            self.at_user_list_json = m.get('atUserListJson')
+        if m.get('receiverListJson') is not None:
+            self.receiver_list_json = m.get('receiverListJson')
+        return self
+
+
+class SendTemplateInteractiveCardRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        card_template_id: str = None,
+        open_conversation_id: str = None,
+        ding_token_grant_type: int = None,
+        out_track_id: str = None,
+        ding_suite_key: str = None,
+        robot_code: str = None,
+        ding_org_id: int = None,
+        callback_url: str = None,
+        card_data: str = None,
+        ding_oauth_app_id: int = None,
+        send_options: SendTemplateInteractiveCardRequestSendOptions = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        # 卡片内容模板ID，响应模板目前有：TuWenCard01、TuWenCard02、TuWenCard03、TuWenCard04 4种
+        self.card_template_id = card_template_id
+        # 接收卡片的加密群ID
+        self.open_conversation_id = open_conversation_id
+        self.ding_token_grant_type = ding_token_grant_type
+        # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
+        self.out_track_id = out_track_id
+        self.ding_suite_key = ding_suite_key
+        # 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
+        self.robot_code = robot_code
+        self.ding_org_id = ding_org_id
+        # 可控制卡片回调的url【可空：不填写无需回调】
+        self.callback_url = callback_url
+        # 卡片模板-文本内容参数（卡片json结构体）
+        self.card_data = card_data
+        self.ding_oauth_app_id = ding_oauth_app_id
+        # 互动卡片发送选项
+        self.send_options = send_options
+
+    def validate(self):
+        if self.send_options:
+            self.send_options.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.card_template_id is not None:
+            result['cardTemplateId'] = self.card_template_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.out_track_id is not None:
+            result['outTrackId'] = self.out_track_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        if self.card_data is not None:
+            result['cardData'] = self.card_data
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.send_options is not None:
+            result['sendOptions'] = self.send_options.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('cardTemplateId') is not None:
+            self.card_template_id = m.get('cardTemplateId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('outTrackId') is not None:
+            self.out_track_id = m.get('outTrackId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        if m.get('cardData') is not None:
+            self.card_data = m.get('cardData')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('sendOptions') is not None:
+            temp_model = SendTemplateInteractiveCardRequestSendOptions()
+            self.send_options = temp_model.from_map(m['sendOptions'])
+        return self
+
+
+class SendTemplateInteractiveCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        process_query_key: str = None,
+    ):
+        # 用于业务方后续查看已读列表的查询key
+        self.process_query_key = process_query_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_query_key is not None:
+            result['processQueryKey'] = self.process_query_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processQueryKey') is not None:
+            self.process_query_key = m.get('processQueryKey')
+        return self
+
+
+class SendTemplateInteractiveCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendTemplateInteractiveCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendTemplateInteractiveCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
