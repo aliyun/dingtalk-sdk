@@ -61,6 +61,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
@@ -1146,6 +1149,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteManagementGroupResponse::fromMap($this->doROARequest('DeleteManagementGroup', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/managementGroups/' . $groupId . '', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param TransformToExclusiveAccountRequest $request
+     *
+     * @return TransformToExclusiveAccountResponse
+     */
+    public function transformToExclusiveAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TransformToExclusiveAccountHeaders([]);
+
+        return $this->transformToExclusiveAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TransformToExclusiveAccountRequest $request
+     * @param TransformToExclusiveAccountHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return TransformToExclusiveAccountResponse
+     */
+    public function transformToExclusiveAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->transformType)) {
+            @$body['transformType'] = $request->transformType;
+        }
+        if (!Utils::isUnset($request->idpDingTalk)) {
+            @$body['idpDingTalk'] = $request->idpDingTalk;
+        }
+        if (!Utils::isUnset($request->loginId)) {
+            @$body['loginId'] = $request->loginId;
+        }
+        if (!Utils::isUnset($request->initPassword)) {
+            @$body['initPassword'] = $request->initPassword;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return TransformToExclusiveAccountResponse::fromMap($this->doROARequest('TransformToExclusiveAccount', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccount/transformToExclusiveAccounts', 'none', $req, $runtime));
     }
 
     /**

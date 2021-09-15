@@ -55,7 +55,7 @@ class QueryAllCustomerRequest extends Model
     public $nextToken;
 
     /**
-     * @description 数据类型
+     * @description 数据类型（私海个人客户：crm_customer_personal，私海企业客户：crm_customer，公海个人客户：open_customer_personal，公海企业客户：open_customer_org）
      *
      * @var string
      */

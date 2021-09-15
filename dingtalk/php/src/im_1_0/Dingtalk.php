@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseResponse;
@@ -601,5 +604,80 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateTheGroupRolesOfGroupMemberResponse::fromMap($this->doROARequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupRoles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendTemplateInteractiveCardRequest $request
+     *
+     * @return SendTemplateInteractiveCardResponse
+     */
+    public function sendTemplateInteractiveCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendTemplateInteractiveCardHeaders([]);
+
+        return $this->sendTemplateInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendTemplateInteractiveCardRequest $request
+     * @param SendTemplateInteractiveCardHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return SendTemplateInteractiveCardResponse
+     */
+    public function sendTemplateInteractiveCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            @$body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            @$body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->callbackUrl)) {
+            @$body['callbackUrl'] = $request->callbackUrl;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->sendOptions)) {
+            @$body['sendOptions'] = $request->sendOptions;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendTemplateInteractiveCardResponse::fromMap($this->doROARequest('SendTemplateInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/templates/send', 'json', $req, $runtime));
     }
 }
