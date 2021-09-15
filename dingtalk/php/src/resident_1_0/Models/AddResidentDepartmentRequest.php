@@ -1,0 +1,77 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models;
+
+use AlibabaCloud\Tea\Model;
+
+class AddResidentDepartmentRequest extends Model
+{
+    /**
+     * @description 是否为组
+     *
+     * @var bool
+     */
+    public $isResidenceGroup;
+
+    /**
+     * @description 部门名字
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description 父部门id
+     *
+     * @var int
+     */
+    public $parentDepartmentId;
+    protected $_name = [
+        'isResidenceGroup'   => 'isResidenceGroup',
+        'name'               => 'name',
+        'parentDepartmentId' => 'parentDepartmentId',
+    ];
+
+    public function validate()
+    {
+    }
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->isResidenceGroup) {
+            $res['isResidenceGroup'] = $this->isResidenceGroup;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->parentDepartmentId) {
+            $res['parentDepartmentId'] = $this->parentDepartmentId;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return AddResidentDepartmentRequest
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['isResidenceGroup'])) {
+            $model->isResidenceGroup = $map['isResidenceGroup'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['parentDepartmentId'])) {
+            $model->parentDepartmentId = $map['parentDepartmentId'];
+        }
+
+        return $model;
+    }
+}

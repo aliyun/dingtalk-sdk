@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AbandonCustomerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AbandonCustomerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AbandonCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerResponse;
@@ -528,6 +531,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->skipDuplicateCheck)) {
             @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -678,6 +684,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param AbandonCustomerRequest $request
+     *
+     * @return AbandonCustomerResponse
+     */
+    public function abandonCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AbandonCustomerHeaders([]);
+
+        return $this->abandonCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AbandonCustomerRequest $request
+     * @param AbandonCustomerHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AbandonCustomerResponse
+     */
+    public function abandonCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->instanceIdList)) {
+            @$body['instanceIdList'] = $request->instanceIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AbandonCustomerResponse::fromMap($this->doROARequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers/abandon', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UpdateCrmPersonalCustomerRequest $request
      *
      * @return UpdateCrmPersonalCustomerResponse
@@ -721,6 +772,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->skipDuplicateCheck)) {
             @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        }
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

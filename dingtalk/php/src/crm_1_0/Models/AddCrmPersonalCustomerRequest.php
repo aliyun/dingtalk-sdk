@@ -50,6 +50,13 @@ class AddCrmPersonalCustomerRequest extends Model
      * @var bool
      */
     public $skipDuplicateCheck;
+
+    /**
+     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+     *
+     * @var string
+     */
+    public $action;
     protected $_name = [
         'creatorUserId'      => 'creatorUserId',
         'creatorNick'        => 'creatorNick',
@@ -57,6 +64,7 @@ class AddCrmPersonalCustomerRequest extends Model
         'extendData'         => 'extendData',
         'permission'         => 'permission',
         'skipDuplicateCheck' => 'skipDuplicateCheck',
+        'action'             => 'action',
     ];
 
     public function validate()
@@ -83,6 +91,9 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (null !== $this->skipDuplicateCheck) {
             $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
+        }
+        if (null !== $this->action) {
+            $res['action'] = $this->action;
         }
 
         return $res;
@@ -113,6 +124,9 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (isset($map['skipDuplicateCheck'])) {
             $model->skipDuplicateCheck = $map['skipDuplicateCheck'];
+        }
+        if (isset($map['action'])) {
+            $model->action = $map['action'];
         }
 
         return $model;

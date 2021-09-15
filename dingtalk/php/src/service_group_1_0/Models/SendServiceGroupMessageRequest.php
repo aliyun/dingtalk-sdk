@@ -119,6 +119,13 @@ class SendServiceGroupMessageRequest extends Model
      * @var btns[]
      */
     public $btns;
+
+    /**
+     * @description 如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false
+     *
+     * @var bool
+     */
+    public $hasContentLinks;
     protected $_name = [
         'dingIsvOrgId'             => 'dingIsvOrgId',
         'dingOrgId'                => 'dingOrgId',
@@ -137,6 +144,7 @@ class SendServiceGroupMessageRequest extends Model
         'messageType'              => 'messageType',
         'btnOrientation'           => 'btnOrientation',
         'btns'                     => 'btns',
+        'hasContentLinks'          => 'hasContentLinks',
     ];
 
     public function validate()
@@ -202,6 +210,9 @@ class SendServiceGroupMessageRequest extends Model
                     $res['btns'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->hasContentLinks) {
+            $res['hasContentLinks'] = $this->hasContentLinks;
         }
 
         return $res;
@@ -283,6 +294,9 @@ class SendServiceGroupMessageRequest extends Model
                     $model->btns[$n++] = null !== $item ? btns::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['hasContentLinks'])) {
+            $model->hasContentLinks = $map['hasContentLinks'];
         }
 
         return $model;

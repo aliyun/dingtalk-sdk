@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AssignTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionResponse;
@@ -55,6 +58,12 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ResubmitTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupResponse;
@@ -87,147 +96,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param DeleteKnowledgeRequest $request
-     *
-     * @return DeleteKnowledgeResponse
-     */
-    public function deleteKnowledge($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DeleteKnowledgeHeaders([]);
-
-        return $this->deleteKnowledgeWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param DeleteKnowledgeRequest $request
-     * @param DeleteKnowledgeHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return DeleteKnowledgeResponse
-     */
-    public function deleteKnowledgeWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$body['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->libraryKey)) {
-            @$body['libraryKey'] = $request->libraryKey;
-        }
-        if (!Utils::isUnset($request->source)) {
-            @$body['source'] = $request->source;
-        }
-        if (!Utils::isUnset($request->sourcePrimaryKey)) {
-            @$body['sourcePrimaryKey'] = $request->sourcePrimaryKey;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return DeleteKnowledgeResponse::fromMap($this->doROARequest('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/knowledges/batchDelete', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param CreateTicketRequest $request
-     *
-     * @return CreateTicketResponse
-     */
-    public function createTicket($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateTicketHeaders([]);
-
-        return $this->createTicketWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CreateTicketRequest $request
-     * @param CreateTicketHeaders $headers
-     * @param RuntimeOptions      $runtime
-     *
-     * @return CreateTicketResponse
-     */
-    public function createTicketWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$body['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->creatorUnionId)) {
-            @$body['creatorUnionId'] = $request->creatorUnionId;
-        }
-        if (!Utils::isUnset($request->processorUnionIds)) {
-            @$body['processorUnionIds'] = $request->processorUnionIds;
-        }
-        if (!Utils::isUnset($request->scene)) {
-            @$body['scene'] = $request->scene;
-        }
-        if (!Utils::isUnset($request->sceneContext)) {
-            @$body['sceneContext'] = $request->sceneContext;
-        }
-        if (!Utils::isUnset($request->openTemplateBizId)) {
-            @$body['openTemplateBizId'] = $request->openTemplateBizId;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
-        }
-        if (!Utils::isUnset($request->customFields)) {
-            @$body['customFields'] = $request->customFields;
-        }
-        if (!Utils::isUnset($request->notify)) {
-            @$body['notify'] = $request->notify;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateTicketResponse::fromMap($this->doROARequest('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets', 'json', $req, $runtime));
     }
 
     /**
@@ -300,141 +168,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param FinishTicketRequest $request
-     *
-     * @return FinishTicketResponse
-     */
-    public function finishTicket($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new FinishTicketHeaders([]);
-
-        return $this->finishTicketWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param FinishTicketRequest $request
-     * @param FinishTicketHeaders $headers
-     * @param RuntimeOptions      $runtime
-     *
-     * @return FinishTicketResponse
-     */
-    public function finishTicketWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$body['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->processorUnionId)) {
-            @$body['processorUnionId'] = $request->processorUnionId;
-        }
-        if (!Utils::isUnset($request->openTicketId)) {
-            @$body['openTicketId'] = $request->openTicketId;
-        }
-        if (!Utils::isUnset($request->ticketMemo)) {
-            @$body['ticketMemo'] = $request->ticketMemo;
-        }
-        if (!Utils::isUnset($request->notify)) {
-            @$body['notify'] = $request->notify;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return FinishTicketResponse::fromMap($this->doROARequest('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/finish', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param SearchGroupRequest $request
-     *
-     * @return SearchGroupResponse
-     */
-    public function searchGroup($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new SearchGroupHeaders([]);
-
-        return $this->searchGroupWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param SearchGroupRequest $request
-     * @param SearchGroupHeaders $headers
-     * @param RuntimeOptions     $runtime
-     *
-     * @return SearchGroupResponse
-     */
-    public function searchGroupWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->groupName)) {
-            @$body['groupName'] = $request->groupName;
-        }
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$body['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->openGroupSetId)) {
-            @$body['openGroupSetId'] = $request->openGroupSetId;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$body['maxResults'] = $request->maxResults;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return SearchGroupResponse::fromMap($this->doROARequest('SearchGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/search', 'json', $req, $runtime));
-    }
-
-    /**
      * @param UpdateTicketRequest $request
      *
      * @return UpdateTicketResponse
@@ -498,147 +231,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateTicketResponse::fromMap($this->doROARequest('UpdateTicket', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/tickets', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param CreateGroupRequest $request
-     *
-     * @return CreateGroupResponse
-     */
-    public function createGroup($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateGroupHeaders([]);
-
-        return $this->createGroupWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CreateGroupRequest $request
-     * @param CreateGroupHeaders $headers
-     * @param RuntimeOptions     $runtime
-     *
-     * @return CreateGroupResponse
-     */
-    public function createGroupWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->groupBizId)) {
-            @$body['groupBizId'] = $request->groupBizId;
-        }
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$body['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->openGroupSetId)) {
-            @$body['openGroupSetId'] = $request->openGroupSetId;
-        }
-        if (!Utils::isUnset($request->groupName)) {
-            @$body['groupName'] = $request->groupName;
-        }
-        if (!Utils::isUnset($request->ownerStaffId)) {
-            @$body['ownerStaffId'] = $request->ownerStaffId;
-        }
-        if (!Utils::isUnset($request->memberStaffIds)) {
-            @$body['memberStaffIds'] = $request->memberStaffIds;
-        }
-        if (!Utils::isUnset($request->groupTagNames)) {
-            @$body['groupTagNames'] = $request->groupTagNames;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return CreateGroupResponse::fromMap($this->doROARequest('CreateGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param TransferTicketRequest $request
-     *
-     * @return TransferTicketResponse
-     */
-    public function transferTicket($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new TransferTicketHeaders([]);
-
-        return $this->transferTicketWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param TransferTicketRequest $request
-     * @param TransferTicketHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return TransferTicketResponse
-     */
-    public function transferTicketWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->processorUnionId)) {
-            @$body['processorUnionId'] = $request->processorUnionId;
-        }
-        if (!Utils::isUnset($request->openTicketId)) {
-            @$body['openTicketId'] = $request->openTicketId;
-        }
-        if (!Utils::isUnset($request->processorUnionIds)) {
-            @$body['processorUnionIds'] = $request->processorUnionIds;
-        }
-        if (!Utils::isUnset($request->ticketMemo)) {
-            @$body['ticketMemo'] = $request->ticketMemo;
-        }
-        if (!Utils::isUnset($request->notify)) {
-            @$body['notify'] = $request->notify;
-        }
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$body['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return TransferTicketResponse::fromMap($this->doROARequest('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/transfer', 'none', $req, $runtime));
     }
 
     /**
@@ -822,6 +414,72 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListTicketOperateRecordResponse::fromMap($this->doROARequest('ListTicketOperateRecord', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/tickets/operateRecords', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RetractTicketRequest $request
+     *
+     * @return RetractTicketResponse
+     */
+    public function retractTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RetractTicketHeaders([]);
+
+        return $this->retractTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RetractTicketRequest $request
+     * @param RetractTicketHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return RetractTicketResponse
+     */
+    public function retractTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openTicketId)) {
+            @$body['openTicketId'] = $request->openTicketId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            @$body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        if (!Utils::isUnset($request->ticketMemo)) {
+            @$body['ticketMemo'] = $request->ticketMemo;
+        }
+        if (!Utils::isUnset($request->notify)) {
+            @$body['notify'] = $request->notify;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RetractTicketResponse::fromMap($this->doROARequest('RetractTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/retract', 'none', $req, $runtime));
     }
 
     /**
@@ -1191,57 +849,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOssTempUrlRequest $request
-     *
-     * @return GetOssTempUrlResponse
-     */
-    public function getOssTempUrl($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetOssTempUrlHeaders([]);
-
-        return $this->getOssTempUrlWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetOssTempUrlRequest $request
-     * @param GetOssTempUrlHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return GetOssTempUrlResponse
-     */
-    public function getOssTempUrlWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->openTeamId)) {
-            @$query['openTeamId'] = $request->openTeamId;
-        }
-        if (!Utils::isUnset($request->key)) {
-            @$query['key'] = $request->key;
-        }
-        if (!Utils::isUnset($request->fileName)) {
-            @$query['fileName'] = $request->fileName;
-        }
-        if (!Utils::isUnset($request->fetchMode)) {
-            @$query['fetchMode'] = $request->fetchMode;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetOssTempUrlResponse::fromMap($this->doROARequest('GetOssTempUrl', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/ossServices/tempUrls', 'json', $req, $runtime));
-    }
-
-    /**
      * @param TakeTicketRequest $request
      *
      * @return TakeTicketResponse
@@ -1376,6 +983,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->btns)) {
             @$body['btns'] = $request->btns;
         }
+        if (!Utils::isUnset($request->hasContentLinks)) {
+            @$body['hasContentLinks'] = $request->hasContentLinks;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1392,26 +1002,26 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStoragePolicyRequest $request
+     * @param ResubmitTicketRequest $request
      *
-     * @return GetStoragePolicyResponse
+     * @return ResubmitTicketResponse
      */
-    public function getStoragePolicy($request)
+    public function resubmitTicket($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetStoragePolicyHeaders([]);
+        $headers = new ResubmitTicketHeaders([]);
 
-        return $this->getStoragePolicyWithOptions($request, $headers, $runtime);
+        return $this->resubmitTicketWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param GetStoragePolicyRequest $request
-     * @param GetStoragePolicyHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param ResubmitTicketRequest $request
+     * @param ResubmitTicketHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return GetStoragePolicyResponse
+     * @return ResubmitTicketResponse
      */
-    public function getStoragePolicyWithOptions($request, $headers, $runtime)
+    public function resubmitTicketWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
@@ -1421,23 +1031,44 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingOrgId)) {
             @$body['dingOrgId'] = $request->dingOrgId;
         }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
         if (!Utils::isUnset($request->dingTokenGrantType)) {
             @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
         }
         if (!Utils::isUnset($request->openTeamId)) {
             @$body['openTeamId'] = $request->openTeamId;
         }
-        if (!Utils::isUnset($request->bizType)) {
-            @$body['bizType'] = $request->bizType;
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            @$body['creatorUnionId'] = $request->creatorUnionId;
         }
-        if (!Utils::isUnset($request->fileSize)) {
-            @$body['fileSize'] = $request->fileSize;
+        if (!Utils::isUnset($request->processorUnionIds)) {
+            @$body['processorUnionIds'] = $request->processorUnionIds;
         }
-        if (!Utils::isUnset($request->fileName)) {
-            @$body['fileName'] = $request->fileName;
+        if (!Utils::isUnset($request->scene)) {
+            @$body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->sceneContext)) {
+            @$body['sceneContext'] = $request->sceneContext;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->openTemplateBizId)) {
+            @$body['openTemplateBizId'] = $request->openTemplateBizId;
+        }
+        if (!Utils::isUnset($request->customFields)) {
+            @$body['customFields'] = $request->customFields;
+        }
+        if (!Utils::isUnset($request->notify)) {
+            @$body['notify'] = $request->notify;
+        }
+        if (!Utils::isUnset($request->openTicketId)) {
+            @$body['openTicketId'] = $request->openTicketId;
+        }
+        if (!Utils::isUnset($request->ticketMemo)) {
+            @$body['ticketMemo'] = $request->ticketMemo;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1451,7 +1082,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return GetStoragePolicyResponse::fromMap($this->doROARequest('GetStoragePolicy', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/ossServices/policies', 'json', $req, $runtime));
+        return ResubmitTicketResponse::fromMap($this->doROARequest('ResubmitTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/resubmit', 'none', $req, $runtime));
     }
 
     /**
@@ -1551,5 +1182,602 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddTicketMemoResponse::fromMap($this->doROARequest('AddTicketMemo', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/memos', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteKnowledgeRequest $request
+     *
+     * @return DeleteKnowledgeResponse
+     */
+    public function deleteKnowledge($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteKnowledgeHeaders([]);
+
+        return $this->deleteKnowledgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteKnowledgeRequest $request
+     * @param DeleteKnowledgeHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return DeleteKnowledgeResponse
+     */
+    public function deleteKnowledgeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->libraryKey)) {
+            @$body['libraryKey'] = $request->libraryKey;
+        }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->sourcePrimaryKey)) {
+            @$body['sourcePrimaryKey'] = $request->sourcePrimaryKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteKnowledgeResponse::fromMap($this->doROARequest('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/knowledges/batchDelete', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTicketRequest $request
+     *
+     * @return CreateTicketResponse
+     */
+    public function createTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTicketHeaders([]);
+
+        return $this->createTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTicketRequest $request
+     * @param CreateTicketHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return CreateTicketResponse
+     */
+    public function createTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            @$body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->processorUnionIds)) {
+            @$body['processorUnionIds'] = $request->processorUnionIds;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            @$body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->sceneContext)) {
+            @$body['sceneContext'] = $request->sceneContext;
+        }
+        if (!Utils::isUnset($request->openTemplateBizId)) {
+            @$body['openTemplateBizId'] = $request->openTemplateBizId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->customFields)) {
+            @$body['customFields'] = $request->customFields;
+        }
+        if (!Utils::isUnset($request->notify)) {
+            @$body['notify'] = $request->notify;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTicketResponse::fromMap($this->doROARequest('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param FinishTicketRequest $request
+     *
+     * @return FinishTicketResponse
+     */
+    public function finishTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FinishTicketHeaders([]);
+
+        return $this->finishTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FinishTicketRequest $request
+     * @param FinishTicketHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return FinishTicketResponse
+     */
+    public function finishTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->processorUnionId)) {
+            @$body['processorUnionId'] = $request->processorUnionId;
+        }
+        if (!Utils::isUnset($request->openTicketId)) {
+            @$body['openTicketId'] = $request->openTicketId;
+        }
+        if (!Utils::isUnset($request->ticketMemo)) {
+            @$body['ticketMemo'] = $request->ticketMemo;
+        }
+        if (!Utils::isUnset($request->notify)) {
+            @$body['notify'] = $request->notify;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return FinishTicketResponse::fromMap($this->doROARequest('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/finish', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param SearchGroupRequest $request
+     *
+     * @return SearchGroupResponse
+     */
+    public function searchGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchGroupHeaders([]);
+
+        return $this->searchGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchGroupRequest $request
+     * @param SearchGroupHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return SearchGroupResponse
+     */
+    public function searchGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchGroupResponse::fromMap($this->doROARequest('SearchGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups/search', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupHeaders([]);
+
+        return $this->createGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     * @param CreateGroupHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupBizId)) {
+            @$body['groupBizId'] = $request->groupBizId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            @$body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->ownerStaffId)) {
+            @$body['ownerStaffId'] = $request->ownerStaffId;
+        }
+        if (!Utils::isUnset($request->memberStaffIds)) {
+            @$body['memberStaffIds'] = $request->memberStaffIds;
+        }
+        if (!Utils::isUnset($request->groupTagNames)) {
+            @$body['groupTagNames'] = $request->groupTagNames;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateGroupResponse::fromMap($this->doROARequest('CreateGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param TransferTicketRequest $request
+     *
+     * @return TransferTicketResponse
+     */
+    public function transferTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TransferTicketHeaders([]);
+
+        return $this->transferTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TransferTicketRequest $request
+     * @param TransferTicketHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return TransferTicketResponse
+     */
+    public function transferTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processorUnionId)) {
+            @$body['processorUnionId'] = $request->processorUnionId;
+        }
+        if (!Utils::isUnset($request->openTicketId)) {
+            @$body['openTicketId'] = $request->openTicketId;
+        }
+        if (!Utils::isUnset($request->processorUnionIds)) {
+            @$body['processorUnionIds'] = $request->processorUnionIds;
+        }
+        if (!Utils::isUnset($request->ticketMemo)) {
+            @$body['ticketMemo'] = $request->ticketMemo;
+        }
+        if (!Utils::isUnset($request->notify)) {
+            @$body['notify'] = $request->notify;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return TransferTicketResponse::fromMap($this->doROARequest('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/transfer', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GetOssTempUrlRequest $request
+     *
+     * @return GetOssTempUrlResponse
+     */
+    public function getOssTempUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOssTempUrlHeaders([]);
+
+        return $this->getOssTempUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOssTempUrlRequest $request
+     * @param GetOssTempUrlHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetOssTempUrlResponse
+     */
+    public function getOssTempUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->key)) {
+            @$query['key'] = $request->key;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            @$query['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fetchMode)) {
+            @$query['fetchMode'] = $request->fetchMode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOssTempUrlResponse::fromMap($this->doROARequest('GetOssTempUrl', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/ossServices/tempUrls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CancelTicketRequest $request
+     *
+     * @return CancelTicketResponse
+     */
+    public function cancelTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelTicketHeaders([]);
+
+        return $this->cancelTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CancelTicketRequest $request
+     * @param CancelTicketHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return CancelTicketResponse
+     */
+    public function cancelTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openTicketId)) {
+            @$body['openTicketId'] = $request->openTicketId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            @$body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        if (!Utils::isUnset($request->ticketMemo)) {
+            @$body['ticketMemo'] = $request->ticketMemo;
+        }
+        if (!Utils::isUnset($request->notify)) {
+            @$body['notify'] = $request->notify;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CancelTicketResponse::fromMap($this->doROARequest('CancelTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/cancel', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GetStoragePolicyRequest $request
+     *
+     * @return GetStoragePolicyResponse
+     */
+    public function getStoragePolicy($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetStoragePolicyHeaders([]);
+
+        return $this->getStoragePolicyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetStoragePolicyRequest $request
+     * @param GetStoragePolicyHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetStoragePolicyResponse
+     */
+    public function getStoragePolicyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            @$body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            @$body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            @$body['fileName'] = $request->fileName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetStoragePolicyResponse::fromMap($this->doROARequest('GetStoragePolicy', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/ossServices/policies', 'json', $req, $runtime));
     }
 }
