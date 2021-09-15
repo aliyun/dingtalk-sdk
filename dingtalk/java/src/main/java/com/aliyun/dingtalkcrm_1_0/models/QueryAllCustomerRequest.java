@@ -31,7 +31,7 @@ public class QueryAllCustomerRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 数据类型
+    // 数据类型（私海个人客户：crm_customer_personal，私海企业客户：crm_customer，公海个人客户：open_customer_personal，公海企业客户：open_customer_org）
     @NameInMap("objectType")
     public String objectType;
 
