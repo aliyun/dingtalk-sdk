@@ -51,7 +51,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// 数据类型
+        /// 数据类型（私海个人客户：crm_customer_personal，私海企业客户：crm_customer，公海个人客户：open_customer_personal，公海企业客户：open_customer_org）
         /// </summary>
         [NameInMap("objectType")]
         [Validation(Required=false)]

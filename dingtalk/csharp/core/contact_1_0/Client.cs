@@ -1746,6 +1746,102 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<DeleteManagementGroupResponse>(await DoROARequestAsync("DeleteManagementGroup", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/managementGroups/" + groupId, "none", req, runtime));
         }
 
+        public TransformToExclusiveAccountResponse TransformToExclusiveAccount(TransformToExclusiveAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TransformToExclusiveAccountHeaders headers = new TransformToExclusiveAccountHeaders();
+            return TransformToExclusiveAccountWithOptions(request, headers, runtime);
+        }
+
+        public async Task<TransformToExclusiveAccountResponse> TransformToExclusiveAccountAsync(TransformToExclusiveAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TransformToExclusiveAccountHeaders headers = new TransformToExclusiveAccountHeaders();
+            return await TransformToExclusiveAccountWithOptionsAsync(request, headers, runtime);
+        }
+
+        public TransformToExclusiveAccountResponse TransformToExclusiveAccountWithOptions(TransformToExclusiveAccountRequest request, TransformToExclusiveAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TransformType))
+            {
+                body["transformType"] = request.TransformType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdpDingTalk))
+            {
+                body["idpDingTalk"] = request.IdpDingTalk;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginId))
+            {
+                body["loginId"] = request.LoginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InitPassword))
+            {
+                body["initPassword"] = request.InitPassword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<TransformToExclusiveAccountResponse>(DoROARequest("TransformToExclusiveAccount", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccount/transformToExclusiveAccounts", "none", req, runtime));
+        }
+
+        public async Task<TransformToExclusiveAccountResponse> TransformToExclusiveAccountWithOptionsAsync(TransformToExclusiveAccountRequest request, TransformToExclusiveAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TransformType))
+            {
+                body["transformType"] = request.TransformType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdpDingTalk))
+            {
+                body["idpDingTalk"] = request.IdpDingTalk;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginId))
+            {
+                body["loginId"] = request.LoginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InitPassword))
+            {
+                body["initPassword"] = request.InitPassword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<TransformToExclusiveAccountResponse>(await DoROARequestAsync("TransformToExclusiveAccount", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccount/transformToExclusiveAccounts", "none", req, runtime));
+        }
+
         public GetUnionIdByMigrationUnionIdResponse GetUnionIdByMigrationUnionId(GetUnionIdByMigrationUnionIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
