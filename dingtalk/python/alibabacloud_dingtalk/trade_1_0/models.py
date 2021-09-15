@@ -247,3 +247,279 @@ class QueryTradeOrderResponse(TeaModel):
         return self
 
 
+class CreateOpportunityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateOpportunityRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        belong_to_phone_num: str = None,
+        contact_phone_num: str = None,
+        dept_id: int = None,
+        market_code: str = None,
+        ding_isv_org_id: int = None,
+    ):
+        # 企业CorpId
+        self.corp_id = corp_id
+        # 归属人电话号码
+        self.belong_to_phone_num = belong_to_phone_num
+        # 联系人电话
+        self.contact_phone_num = contact_phone_num
+        # 部门Id
+        self.dept_id = dept_id
+        # 商品码
+        self.market_code = market_code
+        self.ding_isv_org_id = ding_isv_org_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.belong_to_phone_num is not None:
+            result['belongToPhoneNum'] = self.belong_to_phone_num
+        if self.contact_phone_num is not None:
+            result['contactPhoneNum'] = self.contact_phone_num
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.market_code is not None:
+            result['marketCode'] = self.market_code
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('belongToPhoneNum') is not None:
+            self.belong_to_phone_num = m.get('belongToPhoneNum')
+        if m.get('contactPhoneNum') is not None:
+            self.contact_phone_num = m.get('contactPhoneNum')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('marketCode') is not None:
+            self.market_code = m.get('marketCode')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        return self
+
+
+class CreateOpportunityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class CheckOpportunityResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CheckOpportunityResultRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        belong_to_phone_num: str = None,
+        contact_phone_num: str = None,
+        dept_id: int = None,
+        market_code: str = None,
+    ):
+        # corpId
+        self.corp_id = corp_id
+        # belongToPhoneNum
+        self.belong_to_phone_num = belong_to_phone_num
+        # contactPhoneNum
+        self.contact_phone_num = contact_phone_num
+        # deptId
+        self.dept_id = dept_id
+        # marketCode
+        self.market_code = market_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.belong_to_phone_num is not None:
+            result['belongToPhoneNum'] = self.belong_to_phone_num
+        if self.contact_phone_num is not None:
+            result['contactPhoneNum'] = self.contact_phone_num
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.market_code is not None:
+            result['marketCode'] = self.market_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('belongToPhoneNum') is not None:
+            self.belong_to_phone_num = m.get('belongToPhoneNum')
+        if m.get('contactPhoneNum') is not None:
+            self.contact_phone_num = m.get('contactPhoneNum')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('marketCode') is not None:
+            self.market_code = m.get('marketCode')
+        return self
+
+
+class CheckOpportunityResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_success: bool = None,
+    ):
+        # success
+        self.biz_success = biz_success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_success is not None:
+            result['bizSuccess'] = self.biz_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizSuccess') is not None:
+            self.biz_success = m.get('bizSuccess')
+        return self
+
+
+class CheckOpportunityResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CheckOpportunityResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CheckOpportunityResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

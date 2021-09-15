@@ -98,3 +98,167 @@ class Client(OpenApiClient):
             dingtalktrade__1__0_models.QueryTradeOrderResponse(),
             await self.do_roarequest_async('QueryTradeOrder', 'trade_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trade/orders/query', 'json', req, runtime)
         )
+
+    def create_opportunity(
+        self,
+        request: dingtalktrade__1__0_models.CreateOpportunityRequest,
+    ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.CreateOpportunityHeaders()
+        return self.create_opportunity_with_options(request, headers, runtime)
+
+    async def create_opportunity_async(
+        self,
+        request: dingtalktrade__1__0_models.CreateOpportunityRequest,
+    ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.CreateOpportunityHeaders()
+        return await self.create_opportunity_with_options_async(request, headers, runtime)
+
+    def create_opportunity_with_options(
+        self,
+        request: dingtalktrade__1__0_models.CreateOpportunityRequest,
+        headers: dingtalktrade__1__0_models.CreateOpportunityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.belong_to_phone_num):
+            body['belongToPhoneNum'] = request.belong_to_phone_num
+        if not UtilClient.is_unset(request.contact_phone_num):
+            body['contactPhoneNum'] = request.contact_phone_num
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.market_code):
+            body['marketCode'] = request.market_code
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.CreateOpportunityResponse(),
+            self.do_roarequest('CreateOpportunity', 'trade_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trade/opportunities', 'none', req, runtime)
+        )
+
+    async def create_opportunity_with_options_async(
+        self,
+        request: dingtalktrade__1__0_models.CreateOpportunityRequest,
+        headers: dingtalktrade__1__0_models.CreateOpportunityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.belong_to_phone_num):
+            body['belongToPhoneNum'] = request.belong_to_phone_num
+        if not UtilClient.is_unset(request.contact_phone_num):
+            body['contactPhoneNum'] = request.contact_phone_num
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.market_code):
+            body['marketCode'] = request.market_code
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.CreateOpportunityResponse(),
+            await self.do_roarequest_async('CreateOpportunity', 'trade_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trade/opportunities', 'none', req, runtime)
+        )
+
+    def check_opportunity_result(
+        self,
+        request: dingtalktrade__1__0_models.CheckOpportunityResultRequest,
+    ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.CheckOpportunityResultHeaders()
+        return self.check_opportunity_result_with_options(request, headers, runtime)
+
+    async def check_opportunity_result_async(
+        self,
+        request: dingtalktrade__1__0_models.CheckOpportunityResultRequest,
+    ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.CheckOpportunityResultHeaders()
+        return await self.check_opportunity_result_with_options_async(request, headers, runtime)
+
+    def check_opportunity_result_with_options(
+        self,
+        request: dingtalktrade__1__0_models.CheckOpportunityResultRequest,
+        headers: dingtalktrade__1__0_models.CheckOpportunityResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.belong_to_phone_num):
+            query['belongToPhoneNum'] = request.belong_to_phone_num
+        if not UtilClient.is_unset(request.contact_phone_num):
+            query['contactPhoneNum'] = request.contact_phone_num
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.market_code):
+            query['marketCode'] = request.market_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.CheckOpportunityResultResponse(),
+            self.do_roarequest('CheckOpportunityResult', 'trade_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trade/opportunity/check', 'json', req, runtime)
+        )
+
+    async def check_opportunity_result_with_options_async(
+        self,
+        request: dingtalktrade__1__0_models.CheckOpportunityResultRequest,
+        headers: dingtalktrade__1__0_models.CheckOpportunityResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.belong_to_phone_num):
+            query['belongToPhoneNum'] = request.belong_to_phone_num
+        if not UtilClient.is_unset(request.contact_phone_num):
+            query['contactPhoneNum'] = request.contact_phone_num
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.market_code):
+            query['marketCode'] = request.market_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.CheckOpportunityResultResponse(),
+            await self.do_roarequest_async('CheckOpportunityResult', 'trade_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trade/opportunity/check', 'json', req, runtime)
+        )
