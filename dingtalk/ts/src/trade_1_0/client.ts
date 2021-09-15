@@ -140,6 +140,175 @@ export class QueryTradeOrderResponse extends $tea.Model {
   }
 }
 
+export class CreateOpportunityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOpportunityRequest extends $tea.Model {
+  corpId?: string;
+  belongToPhoneNum?: string;
+  contactPhoneNum?: string;
+  deptId?: number;
+  marketCode?: string;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      belongToPhoneNum: 'belongToPhoneNum',
+      contactPhoneNum: 'contactPhoneNum',
+      deptId: 'deptId',
+      marketCode: 'marketCode',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      belongToPhoneNum: 'string',
+      contactPhoneNum: 'string',
+      deptId: 'number',
+      marketCode: 'string',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOpportunityResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckOpportunityResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckOpportunityResultRequest extends $tea.Model {
+  corpId?: string;
+  belongToPhoneNum?: string;
+  contactPhoneNum?: string;
+  deptId?: number;
+  marketCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      belongToPhoneNum: 'belongToPhoneNum',
+      contactPhoneNum: 'contactPhoneNum',
+      deptId: 'deptId',
+      marketCode: 'marketCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      belongToPhoneNum: 'string',
+      contactPhoneNum: 'string',
+      deptId: 'number',
+      marketCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckOpportunityResultResponseBody extends $tea.Model {
+  bizSuccess?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      bizSuccess: 'bizSuccess',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizSuccess: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CheckOpportunityResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CheckOpportunityResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CheckOpportunityResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -192,6 +361,100 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryTradeOrderResponse>(await this.doROARequest("QueryTradeOrder", "trade_1.0", "HTTP", "POST", "AK", `/v1.0/trade/orders/query`, "json", req, runtime), new QueryTradeOrderResponse({}));
+  }
+
+  async createOpportunity(request: CreateOpportunityRequest): Promise<CreateOpportunityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateOpportunityHeaders({ });
+    return await this.createOpportunityWithOptions(request, headers, runtime);
+  }
+
+  async createOpportunityWithOptions(request: CreateOpportunityRequest, headers: CreateOpportunityHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOpportunityResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.belongToPhoneNum)) {
+      body["belongToPhoneNum"] = request.belongToPhoneNum;
+    }
+
+    if (!Util.isUnset(request.contactPhoneNum)) {
+      body["contactPhoneNum"] = request.contactPhoneNum;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.marketCode)) {
+      body["marketCode"] = request.marketCode;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateOpportunityResponse>(await this.doROARequest("CreateOpportunity", "trade_1.0", "HTTP", "POST", "AK", `/v1.0/trade/opportunities`, "none", req, runtime), new CreateOpportunityResponse({}));
+  }
+
+  async checkOpportunityResult(request: CheckOpportunityResultRequest): Promise<CheckOpportunityResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckOpportunityResultHeaders({ });
+    return await this.checkOpportunityResultWithOptions(request, headers, runtime);
+  }
+
+  async checkOpportunityResultWithOptions(request: CheckOpportunityResultRequest, headers: CheckOpportunityResultHeaders, runtime: $Util.RuntimeOptions): Promise<CheckOpportunityResultResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.belongToPhoneNum)) {
+      query["belongToPhoneNum"] = request.belongToPhoneNum;
+    }
+
+    if (!Util.isUnset(request.contactPhoneNum)) {
+      query["contactPhoneNum"] = request.contactPhoneNum;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.marketCode)) {
+      query["marketCode"] = request.marketCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<CheckOpportunityResultResponse>(await this.doROARequest("CheckOpportunityResult", "trade_1.0", "HTTP", "GET", "AK", `/v1.0/trade/opportunity/check`, "json", req, runtime), new CheckOpportunityResultResponse({}));
   }
 
 }
