@@ -677,6 +677,8 @@ class Client(OpenApiClient):
             body['permission'] = request.permission
         if not UtilClient.is_unset(request.skip_duplicate_check):
             body['skipDuplicateCheck'] = request.skip_duplicate_check
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -711,6 +713,8 @@ class Client(OpenApiClient):
             body['permission'] = request.permission
         if not UtilClient.is_unset(request.skip_duplicate_check):
             body['skipDuplicateCheck'] = request.skip_duplicate_check
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -923,6 +927,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/personalCustomers/{data_id}', 'json', req, runtime)
         )
 
+    def abandon_customer(
+        self,
+        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
+        return self.abandon_customer_with_options(request, headers, runtime)
+
+    async def abandon_customer_async(
+        self,
+        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
+        return await self.abandon_customer_with_options_async(request, headers, runtime)
+
+    def abandon_customer_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
+        headers: dingtalkcrm__1__0_models.AbandonCustomerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.instance_id_list):
+            body['instanceIdList'] = request.instance_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AbandonCustomerResponse(),
+            self.do_roarequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers/abandon', 'json', req, runtime)
+        )
+
+    async def abandon_customer_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
+        headers: dingtalkcrm__1__0_models.AbandonCustomerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.instance_id_list):
+            body['instanceIdList'] = request.instance_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AbandonCustomerResponse(),
+            await self.do_roarequest_async('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers/abandon', 'json', req, runtime)
+        )
+
     def update_crm_personal_customer(
         self,
         request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
@@ -961,6 +1033,8 @@ class Client(OpenApiClient):
             body['permission'] = request.permission
         if not UtilClient.is_unset(request.skip_duplicate_check):
             body['skipDuplicateCheck'] = request.skip_duplicate_check
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -997,6 +1071,8 @@ class Client(OpenApiClient):
             body['permission'] = request.permission
         if not UtilClient.is_unset(request.skip_duplicate_check):
             body['skipDuplicateCheck'] = request.skip_duplicate_check
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

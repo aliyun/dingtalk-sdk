@@ -2793,6 +2793,7 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         extend_data: Dict[str, Any] = None,
         permission: AddCrmPersonalCustomerRequestPermission = None,
         skip_duplicate_check: bool = None,
+        action: str = None,
     ):
         # 记录创建人的用户ID
         self.creator_user_id = creator_user_id
@@ -2806,6 +2807,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
         self.permission = permission
         # 跳过uk查重
         self.skip_duplicate_check = skip_duplicate_check
+        # 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+        self.action = action
 
     def validate(self):
         if self.permission:
@@ -2829,6 +2832,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
             result['permission'] = self.permission.to_map()
         if self.skip_duplicate_check is not None:
             result['skipDuplicateCheck'] = self.skip_duplicate_check
+        if self.action is not None:
+            result['action'] = self.action
         return result
 
     def from_map(self, m: dict = None):
@@ -2846,6 +2851,8 @@ class AddCrmPersonalCustomerRequest(TeaModel):
             self.permission = temp_model.from_map(m['permission'])
         if m.get('skipDuplicateCheck') is not None:
             self.skip_duplicate_check = m.get('skipDuplicateCheck')
+        if m.get('action') is not None:
+            self.action = m.get('action')
         return self
 
 
@@ -3606,6 +3613,139 @@ class DeleteCrmPersonalCustomerResponse(TeaModel):
         return self
 
 
+class AbandonCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AbandonCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        instance_id_list: List[str] = None,
+    ):
+        # 操作人staffId，一般为企业员工
+        self.operator_user_id = operator_user_id
+        # 客户实例 id 数组
+        self.instance_id_list = instance_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.instance_id_list is not None:
+            result['instanceIdList'] = self.instance_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('instanceIdList') is not None:
+            self.instance_id_list = m.get('instanceIdList')
+        return self
+
+
+class AbandonCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        instance_id_list: List[str] = None,
+    ):
+        # 成功退回公海的客户实例 id 数组
+        self.instance_id_list = instance_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id_list is not None:
+            result['instanceIdList'] = self.instance_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceIdList') is not None:
+            self.instance_id_list = m.get('instanceIdList')
+        return self
+
+
+class AbandonCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AbandonCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AbandonCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateCrmPersonalCustomerHeaders(TeaModel):
     def __init__(
         self,
@@ -3682,6 +3822,7 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         extend_data: Dict[str, Any] = None,
         permission: UpdateCrmPersonalCustomerRequestPermission = None,
         skip_duplicate_check: bool = None,
+        action: str = None,
     ):
         self.instance_id = instance_id
         self.modifier_user_id = modifier_user_id
@@ -3691,6 +3832,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         self.permission = permission
         # 跳过uk查重
         self.skip_duplicate_check = skip_duplicate_check
+        # 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+        self.action = action
 
     def validate(self):
         if self.permission:
@@ -3716,6 +3859,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
             result['permission'] = self.permission.to_map()
         if self.skip_duplicate_check is not None:
             result['skipDuplicateCheck'] = self.skip_duplicate_check
+        if self.action is not None:
+            result['action'] = self.action
         return result
 
     def from_map(self, m: dict = None):
@@ -3735,6 +3880,8 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
             self.permission = temp_model.from_map(m['permission'])
         if m.get('skipDuplicateCheck') is not None:
             self.skip_duplicate_check = m.get('skipDuplicateCheck')
+        if m.get('action') is not None:
+            self.action = m.get('action')
         return self
 
 
