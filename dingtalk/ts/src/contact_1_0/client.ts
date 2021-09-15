@@ -1899,6 +1899,78 @@ export class DeleteManagementGroupResponse extends $tea.Model {
   }
 }
 
+export class TransformToExclusiveAccountHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransformToExclusiveAccountRequest extends $tea.Model {
+  transformType?: string;
+  idpDingTalk?: boolean;
+  loginId?: string;
+  initPassword?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      transformType: 'transformType',
+      idpDingTalk: 'idpDingTalk',
+      loginId: 'loginId',
+      initPassword: 'initPassword',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      transformType: 'string',
+      idpDingTalk: 'boolean',
+      loginId: 'string',
+      initPassword: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransformToExclusiveAccountResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUnionIdByMigrationUnionIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3123,6 +3195,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<DeleteManagementGroupResponse>(await this.doROARequest("DeleteManagementGroup", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/managementGroups/${groupId}`, "none", req, runtime), new DeleteManagementGroupResponse({}));
+  }
+
+  async transformToExclusiveAccount(request: TransformToExclusiveAccountRequest): Promise<TransformToExclusiveAccountResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TransformToExclusiveAccountHeaders({ });
+    return await this.transformToExclusiveAccountWithOptions(request, headers, runtime);
+  }
+
+  async transformToExclusiveAccountWithOptions(request: TransformToExclusiveAccountRequest, headers: TransformToExclusiveAccountHeaders, runtime: $Util.RuntimeOptions): Promise<TransformToExclusiveAccountResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.transformType)) {
+      body["transformType"] = request.transformType;
+    }
+
+    if (!Util.isUnset(request.idpDingTalk)) {
+      body["idpDingTalk"] = request.idpDingTalk;
+    }
+
+    if (!Util.isUnset(request.loginId)) {
+      body["loginId"] = request.loginId;
+    }
+
+    if (!Util.isUnset(request.initPassword)) {
+      body["initPassword"] = request.initPassword;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<TransformToExclusiveAccountResponse>(await this.doROARequest("TransformToExclusiveAccount", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccount/transformToExclusiveAccounts`, "none", req, runtime), new TransformToExclusiveAccountResponse({}));
   }
 
   async getUnionIdByMigrationUnionId(request: GetUnionIdByMigrationUnionIdRequest): Promise<GetUnionIdByMigrationUnionIdResponse> {
