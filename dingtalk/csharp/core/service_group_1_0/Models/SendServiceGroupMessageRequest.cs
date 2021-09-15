@@ -132,6 +132,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 
         }
 
+        /// <summary>
+        /// 如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false
+        /// </summary>
+        [NameInMap("hasContentLinks")]
+        [Validation(Required=false)]
+        public bool? HasContentLinks { get; set; }
+
     }
 
 }

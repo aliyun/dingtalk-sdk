@@ -59,6 +59,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public bool? SkipDuplicateCheck { get; set; }
 
+        /// <summary>
+        /// 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+        /// </summary>
+        [NameInMap("action")]
+        [Validation(Required=false)]
+        public string Action { get; set; }
+
     }
 
 }
