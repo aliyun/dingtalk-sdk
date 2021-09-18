@@ -49,6 +49,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -82,6 +83,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -205,6 +207,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -234,6 +237,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -345,6 +349,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopCloudRecordResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
@@ -370,6 +375,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopCloudRecordResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
@@ -409,6 +415,7 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse:
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -428,6 +435,7 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse:
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -467,6 +475,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CloseVideoConferenceResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -492,6 +501,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CloseVideoConferenceResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -535,6 +545,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopStreamOutResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.stream_id):
             body['streamId'] = request.stream_id
@@ -564,6 +575,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopStreamOutResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.stream_id):
             body['streamId'] = request.stream_id
@@ -611,6 +623,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartCloudRecordResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
@@ -640,6 +653,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartCloudRecordResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
@@ -687,6 +701,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartStreamOutResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
@@ -722,6 +737,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartStreamOutResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
@@ -775,6 +791,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -800,6 +817,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
         UtilClient.validate_model(request)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id

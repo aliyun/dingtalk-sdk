@@ -41,13 +41,13 @@ class UpdateResideceGroupRequest(TeaModel):
     def __init__(
         self,
         manager_user_id: str = None,
-        name: str = None,
+        department_name: str = None,
         department_id: int = None,
     ):
         # 组长userid
         self.manager_user_id = manager_user_id
         # 组名字
-        self.name = name
+        self.department_name = department_name
         # 组id
         self.department_id = department_id
 
@@ -62,8 +62,8 @@ class UpdateResideceGroupRequest(TeaModel):
         result = dict()
         if self.manager_user_id is not None:
             result['managerUserId'] = self.manager_user_id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
         if self.department_id is not None:
             result['departmentId'] = self.department_id
         return result
@@ -72,8 +72,8 @@ class UpdateResideceGroupRequest(TeaModel):
         m = m or dict()
         if m.get('managerUserId') is not None:
             self.manager_user_id = m.get('managerUserId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
         if m.get('departmentId') is not None:
             self.department_id = m.get('departmentId')
         return self
@@ -343,7 +343,7 @@ class AddResidentUsersRequest(TeaModel):
         self,
         address: str = None,
         is_leaseholder: bool = None,
-        name: str = None,
+        user_name: str = None,
         mobile: str = None,
         department_id: int = None,
         ext_field: List[AddResidentUsersRequestExtField] = None,
@@ -354,7 +354,7 @@ class AddResidentUsersRequest(TeaModel):
         # 是否是租客
         self.is_leaseholder = is_leaseholder
         # 居民名字
-        self.name = name
+        self.user_name = user_name
         # 手机号码
         self.mobile = mobile
         # 户/租户部门id
@@ -380,8 +380,8 @@ class AddResidentUsersRequest(TeaModel):
             result['address'] = self.address
         if self.is_leaseholder is not None:
             result['isLeaseholder'] = self.is_leaseholder
-        if self.name is not None:
-            result['name'] = self.name
+        if self.user_name is not None:
+            result['userName'] = self.user_name
         if self.mobile is not None:
             result['mobile'] = self.mobile
         if self.department_id is not None:
@@ -400,8 +400,8 @@ class AddResidentUsersRequest(TeaModel):
             self.address = m.get('address')
         if m.get('isLeaseholder') is not None:
             self.is_leaseholder = m.get('isLeaseholder')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         if m.get('departmentId') is not None:
@@ -518,13 +518,13 @@ class AddResidentDepartmentRequest(TeaModel):
     def __init__(
         self,
         is_residence_group: bool = None,
-        name: str = None,
+        department_name: str = None,
         parent_department_id: int = None,
     ):
         # 是否为组
         self.is_residence_group = is_residence_group
         # 部门名字
-        self.name = name
+        self.department_name = department_name
         # 父部门id
         self.parent_department_id = parent_department_id
 
@@ -539,8 +539,8 @@ class AddResidentDepartmentRequest(TeaModel):
         result = dict()
         if self.is_residence_group is not None:
             result['isResidenceGroup'] = self.is_residence_group
-        if self.name is not None:
-            result['name'] = self.name
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
         if self.parent_department_id is not None:
             result['parentDepartmentId'] = self.parent_department_id
         return result
@@ -549,8 +549,8 @@ class AddResidentDepartmentRequest(TeaModel):
         m = m or dict()
         if m.get('isResidenceGroup') is not None:
             self.is_residence_group = m.get('isResidenceGroup')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
         if m.get('parentDepartmentId') is not None:
             self.parent_department_id = m.get('parentDepartmentId')
         return self
@@ -791,7 +791,7 @@ class UpdateResidenceRequest(TeaModel):
     def __init__(
         self,
         manager_user_id: str = None,
-        name: str = None,
+        department_name: str = None,
         department_id: int = None,
         grid: str = None,
         home_tel: str = None,
@@ -801,7 +801,7 @@ class UpdateResidenceRequest(TeaModel):
         # 家庭管理员用户id
         self.manager_user_id = manager_user_id
         # 户名字
-        self.name = name
+        self.department_name = department_name
         # 组id
         self.department_id = department_id
         # 所属网格
@@ -824,8 +824,8 @@ class UpdateResidenceRequest(TeaModel):
         result = dict()
         if self.manager_user_id is not None:
             result['managerUserId'] = self.manager_user_id
-        if self.name is not None:
-            result['name'] = self.name
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
         if self.department_id is not None:
             result['departmentId'] = self.department_id
         if self.grid is not None:
@@ -842,8 +842,8 @@ class UpdateResidenceRequest(TeaModel):
         m = m or dict()
         if m.get('managerUserId') is not None:
             self.manager_user_id = m.get('managerUserId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
         if m.get('departmentId') is not None:
             self.department_id = m.get('departmentId')
         if m.get('grid') is not None:
@@ -995,7 +995,7 @@ class UpdateResidentUserRequest(TeaModel):
         self,
         address: str = None,
         is_retain_old_dept: bool = None,
-        name: str = None,
+        user_name: str = None,
         mobile: str = None,
         department_id: int = None,
         ext_field: List[UpdateResidentUserRequestExtField] = None,
@@ -1008,7 +1008,7 @@ class UpdateResidentUserRequest(TeaModel):
         # 是否保留原部门
         self.is_retain_old_dept = is_retain_old_dept
         # 居民名字
-        self.name = name
+        self.user_name = user_name
         # 手机号码
         self.mobile = mobile
         # 所在新的户/租户部门id
@@ -1038,8 +1038,8 @@ class UpdateResidentUserRequest(TeaModel):
             result['address'] = self.address
         if self.is_retain_old_dept is not None:
             result['isRetainOldDept'] = self.is_retain_old_dept
-        if self.name is not None:
-            result['name'] = self.name
+        if self.user_name is not None:
+            result['userName'] = self.user_name
         if self.mobile is not None:
             result['mobile'] = self.mobile
         if self.department_id is not None:
@@ -1062,8 +1062,8 @@ class UpdateResidentUserRequest(TeaModel):
             self.address = m.get('address')
         if m.get('isRetainOldDept') is not None:
             self.is_retain_old_dept = m.get('isRetainOldDept')
-        if m.get('name') is not None:
-            self.name = m.get('name')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         if m.get('departmentId') is not None:

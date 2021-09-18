@@ -55,6 +55,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RespondEventResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.response_status):
             body['responseStatus'] = request.response_status
@@ -82,6 +85,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RespondEventResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.response_status):
             body['responseStatus'] = request.response_status
@@ -125,6 +131,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GenerateCaldavAccountResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.device):
             body['device'] = request.device
@@ -152,6 +159,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GenerateCaldavAccountResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.device):
             body['device'] = request.device
@@ -197,6 +205,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -226,6 +235,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -273,6 +283,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.legacy_event_ids):
             body['legacyEventIds'] = request.legacy_event_ids
@@ -304,6 +315,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.legacy_event_ids):
             body['legacyEventIds'] = request.legacy_event_ids
@@ -359,6 +371,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RemoveAttendeeResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_remove):
             body['attendeesToRemove'] = request.attendees_to_remove
@@ -386,6 +401,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RemoveAttendeeResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_remove):
             body['attendeesToRemove'] = request.attendees_to_remove
@@ -435,6 +453,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.AddAttendeeResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_add):
             body['attendeesToAdd'] = request.attendees_to_add
@@ -462,6 +483,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.AddAttendeeResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_add):
             body['attendeesToAdd'] = request.attendees_to_add
@@ -508,6 +532,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateEventResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         body = {}
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
@@ -554,6 +580,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateEventResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         body = {}
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
@@ -613,6 +641,7 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListCalendarsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListCalendarsResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -632,6 +661,7 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListCalendarsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListCalendarsResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -677,6 +707,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListReceiversResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -708,6 +741,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListReceiversResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -757,6 +793,9 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -778,6 +817,9 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -820,6 +862,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         query = {}
         if not UtilClient.is_unset(request.time_min):
             query['timeMin'] = request.time_min
@@ -856,6 +900,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         query = {}
         if not UtilClient.is_unset(request.time_min):
             query['timeMin'] = request.time_min
@@ -912,6 +958,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsViewResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         query = {}
         if not UtilClient.is_unset(request.time_min):
             query['timeMin'] = request.time_min
@@ -944,6 +992,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsViewResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         query = {}
         if not UtilClient.is_unset(request.time_min):
             query['timeMin'] = request.time_min
@@ -995,6 +1045,9 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1016,6 +1069,9 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1061,6 +1117,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.PatchEventResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
@@ -1108,6 +1167,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.PatchEventResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
         body = {}
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary

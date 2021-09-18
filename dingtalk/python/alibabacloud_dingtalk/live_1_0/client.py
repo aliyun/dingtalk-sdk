@@ -49,6 +49,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.EditFeedReplayResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -78,6 +79,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.EditFeedReplayResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -125,6 +127,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryFeedWhiteListResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -150,6 +153,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryFeedWhiteListResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -277,6 +281,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.DeleteLiveFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -302,6 +307,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.DeleteLiveFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -345,6 +351,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StartCloudFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -370,6 +377,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StartCloudFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -413,6 +421,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StopCloudFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -438,6 +447,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StopCloudFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -481,6 +491,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.ModifyFeedWhiteListResponse:
         UtilClient.validate_model(tmp_req)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         request = dingtalklive__1__0_models.ModifyFeedWhiteListShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.modify_user_list):
@@ -514,6 +525,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.ModifyFeedWhiteListResponse:
         UtilClient.validate_model(tmp_req)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         request = dingtalklive__1__0_models.ModifyFeedWhiteListShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
         if not UtilClient.is_unset(tmp_req.modify_user_list):
@@ -565,6 +577,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.UpdateLiveFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -598,6 +611,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.UpdateLiveFeedResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -649,6 +663,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.AddShareCidListResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
@@ -678,6 +693,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.AddShareCidListResponse:
         UtilClient.validate_model(request)
+        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         body = {}
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id

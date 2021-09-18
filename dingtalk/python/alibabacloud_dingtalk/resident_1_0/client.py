@@ -49,8 +49,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.manager_user_id):
             query['managerUserId'] = request.manager_user_id
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
         if not UtilClient.is_unset(request.department_id):
             query['departmentId'] = request.department_id
         real_headers = {}
@@ -77,8 +77,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.manager_user_id):
             query['managerUserId'] = request.manager_user_id
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
         if not UtilClient.is_unset(request.department_id):
             query['departmentId'] = request.department_id
         real_headers = {}
@@ -187,8 +187,8 @@ class Client(OpenApiClient):
             query['address'] = request.address
         if not UtilClient.is_unset(request.is_leaseholder):
             query['isLeaseholder'] = request.is_leaseholder
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
         if not UtilClient.is_unset(request.mobile):
             query['mobile'] = request.mobile
         if not UtilClient.is_unset(request.department_id):
@@ -223,8 +223,8 @@ class Client(OpenApiClient):
             query['address'] = request.address
         if not UtilClient.is_unset(request.is_leaseholder):
             query['isLeaseholder'] = request.is_leaseholder
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
         if not UtilClient.is_unset(request.mobile):
             query['mobile'] = request.mobile
         if not UtilClient.is_unset(request.department_id):
@@ -273,8 +273,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.is_residence_group):
             query['isResidenceGroup'] = request.is_residence_group
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
         if not UtilClient.is_unset(request.parent_department_id):
             query['parentDepartmentId'] = request.parent_department_id
         real_headers = {}
@@ -301,8 +301,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.is_residence_group):
             query['isResidenceGroup'] = request.is_residence_group
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
         if not UtilClient.is_unset(request.parent_department_id):
             query['parentDepartmentId'] = request.parent_department_id
         real_headers = {}
@@ -413,8 +413,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.manager_user_id):
             query['managerUserId'] = request.manager_user_id
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
         if not UtilClient.is_unset(request.department_id):
             query['departmentId'] = request.department_id
         if not UtilClient.is_unset(request.grid):
@@ -449,8 +449,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.manager_user_id):
             query['managerUserId'] = request.manager_user_id
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
         if not UtilClient.is_unset(request.department_id):
             query['departmentId'] = request.department_id
         if not UtilClient.is_unset(request.grid):
@@ -503,8 +503,8 @@ class Client(OpenApiClient):
             query['address'] = request.address
         if not UtilClient.is_unset(request.is_retain_old_dept):
             query['isRetainOldDept'] = request.is_retain_old_dept
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
         if not UtilClient.is_unset(request.mobile):
             query['mobile'] = request.mobile
         if not UtilClient.is_unset(request.department_id):
@@ -543,8 +543,8 @@ class Client(OpenApiClient):
             query['address'] = request.address
         if not UtilClient.is_unset(request.is_retain_old_dept):
             query['isRetainOldDept'] = request.is_retain_old_dept
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
         if not UtilClient.is_unset(request.mobile):
             query['mobile'] = request.mobile
         if not UtilClient.is_unset(request.department_id):

@@ -323,6 +323,7 @@ class Client(OpenApiClient):
         headers: dingtalkesign__1__0_models.GetFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__1__0_models.GetFileResponse:
+        file_id = OpenApiUtilClient.get_encode_param(file_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -342,6 +343,7 @@ class Client(OpenApiClient):
         headers: dingtalkesign__1__0_models.GetFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__1__0_models.GetFileResponse:
+        file_id = OpenApiUtilClient.get_encode_param(file_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1051,6 +1053,7 @@ class Client(OpenApiClient):
         headers: dingtalkesign__1__0_models.GetUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__1__0_models.GetUserInfoResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1070,6 +1073,7 @@ class Client(OpenApiClient):
         headers: dingtalkesign__1__0_models.GetUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__1__0_models.GetUserInfoResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

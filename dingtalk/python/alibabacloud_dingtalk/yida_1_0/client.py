@@ -313,6 +313,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
         UtilClient.validate_model(request)
+        id = OpenApiUtilClient.get_encode_param(id)
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
@@ -344,6 +345,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
         UtilClient.validate_model(request)
+        id = OpenApiUtilClient.get_encode_param(id)
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type

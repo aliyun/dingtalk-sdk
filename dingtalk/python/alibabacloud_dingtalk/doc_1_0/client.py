@@ -49,6 +49,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -76,6 +77,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -124,6 +126,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceDocMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        node_id = OpenApiUtilClient.get_encode_param(node_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -152,6 +156,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceDocMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        node_id = OpenApiUtilClient.get_encode_param(node_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -197,6 +203,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -224,6 +231,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -272,6 +280,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        node_id = OpenApiUtilClient.get_encode_param(node_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -300,6 +310,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        node_id = OpenApiUtilClient.get_encode_param(node_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -345,6 +357,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceDocResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
@@ -374,6 +387,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceDocResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
@@ -421,6 +435,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -448,6 +463,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -580,6 +596,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        node_id = OpenApiUtilClient.get_encode_param(node_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id
@@ -608,6 +626,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse:
         UtilClient.validate_model(request)
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        node_id = OpenApiUtilClient.get_encode_param(node_id)
         body = {}
         if not UtilClient.is_unset(request.operator_id):
             body['operatorId'] = request.operator_id

@@ -45,6 +45,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetConferenceDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetConferenceDetailResponse:
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -64,6 +65,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetConferenceDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetConferenceDetailResponse:
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -103,6 +105,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -130,6 +133,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -174,6 +178,8 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.DeleteCommentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.DeleteCommentResponse:
+        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
+        comment_id = OpenApiUtilClient.get_encode_param(comment_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -194,6 +200,8 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.DeleteCommentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.DeleteCommentResponse:
+        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
+        comment_id = OpenApiUtilClient.get_encode_param(comment_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -279,6 +287,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -306,6 +315,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -351,6 +361,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -378,6 +389,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -419,6 +431,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -438,6 +451,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -549,6 +563,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -568,6 +583,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -603,6 +619,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdResponse:
+        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -622,6 +639,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdResponse:
+        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -729,6 +747,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetActiveUserSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetActiveUserSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -748,6 +767,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetActiveUserSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetActiveUserSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -871,6 +891,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDingReportDeptSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -898,6 +919,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDingReportDeptSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -1007,6 +1029,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -1034,6 +1057,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -1187,6 +1211,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1206,6 +1231,7 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
+        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1321,6 +1347,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetCommentListResponse:
         UtilClient.validate_model(request)
+        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
         query = {}
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
@@ -1348,6 +1375,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetCommentListResponse:
         UtilClient.validate_model(request)
+        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
         query = {}
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number

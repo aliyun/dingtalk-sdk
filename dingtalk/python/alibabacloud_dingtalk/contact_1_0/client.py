@@ -221,6 +221,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -240,6 +241,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -395,6 +397,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.ListManagementGroupsResponse(),
             await self.do_roarequest_async('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/managementGroups', 'json', req, runtime)
+        )
+
+    def list_senior_settings(
+        self,
+        request: dingtalkcontact__1__0_models.ListSeniorSettingsRequest,
+    ) -> dingtalkcontact__1__0_models.ListSeniorSettingsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListSeniorSettingsHeaders()
+        return self.list_senior_settings_with_options(request, headers, runtime)
+
+    async def list_senior_settings_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListSeniorSettingsRequest,
+    ) -> dingtalkcontact__1__0_models.ListSeniorSettingsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListSeniorSettingsHeaders()
+        return await self.list_senior_settings_with_options_async(request, headers, runtime)
+
+    def list_senior_settings_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ListSeniorSettingsRequest,
+        headers: dingtalkcontact__1__0_models.ListSeniorSettingsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListSeniorSettingsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.senior_staff_id):
+            query['seniorStaffId'] = request.senior_staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListSeniorSettingsResponse(),
+            self.do_roarequest('ListSeniorSettings', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/seniorSettings', 'json', req, runtime)
+        )
+
+    async def list_senior_settings_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListSeniorSettingsRequest,
+        headers: dingtalkcontact__1__0_models.ListSeniorSettingsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListSeniorSettingsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.senior_staff_id):
+            query['seniorStaffId'] = request.senior_staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListSeniorSettingsResponse(),
+            await self.do_roarequest_async('ListSeniorSettings', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/seniorSettings', 'json', req, runtime)
         )
 
     def list_emp_attribute_visibility(
@@ -627,6 +693,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryUserManagementResourcesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryUserManagementResourcesResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -646,6 +713,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryUserManagementResourcesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryUserManagementResourcesResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -685,6 +753,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.ownenss_type):
             body['ownenssType'] = request.ownenss_type
@@ -718,6 +787,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.ownenss_type):
             body['ownenssType'] = request.ownenss_type
@@ -893,6 +963,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
+        cooperate_corp_id = OpenApiUtilClient.get_encode_param(cooperate_corp_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -912,6 +983,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
+        cooperate_corp_id = OpenApiUtilClient.get_encode_param(cooperate_corp_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -951,6 +1023,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
         UtilClient.validate_model(request)
+        group_id = OpenApiUtilClient.get_encode_param(group_id)
         body = {}
         if not UtilClient.is_unset(request.group_name):
             body['groupName'] = request.group_name
@@ -982,6 +1055,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
         UtilClient.validate_model(request)
+        group_id = OpenApiUtilClient.get_encode_param(group_id)
         body = {}
         if not UtilClient.is_unset(request.group_name):
             body['groupName'] = request.group_name
@@ -1103,6 +1177,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetUserResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1122,6 +1197,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetUserResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1157,6 +1233,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryResourceManagementMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryResourceManagementMembersResponse:
+        resource_id = OpenApiUtilClient.get_encode_param(resource_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1176,6 +1253,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryResourceManagementMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryResourceManagementMembersResponse:
+        resource_id = OpenApiUtilClient.get_encode_param(resource_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1227,6 +1305,10 @@ class Client(OpenApiClient):
             body['outputFileName'] = request.output_file_name
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.request_id):
+            body['RequestId'] = request.request_id
+        if not UtilClient.is_unset(request.eagle_eye_trace_id):
+            body['eagleEyeTraceId'] = request.eagle_eye_trace_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1263,6 +1345,10 @@ class Client(OpenApiClient):
             body['outputFileName'] = request.output_file_name
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.request_id):
+            body['RequestId'] = request.request_id
+        if not UtilClient.is_unset(request.eagle_eye_trace_id):
+            body['eagleEyeTraceId'] = request.eagle_eye_trace_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1275,6 +1361,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.TranslateFileResponse(),
             await self.do_roarequest_async('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/files/translate', 'json', req, runtime)
+        )
+
+    def update_senior_setting(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateSeniorSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateSeniorSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateSeniorSettingHeaders()
+        return self.update_senior_setting_with_options(request, headers, runtime)
+
+    async def update_senior_setting_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateSeniorSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateSeniorSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateSeniorSettingHeaders()
+        return await self.update_senior_setting_with_options_async(request, headers, runtime)
+
+    def update_senior_setting_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateSeniorSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateSeniorSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateSeniorSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.senior_staff_id):
+            body['seniorStaffId'] = request.senior_staff_id
+        if not UtilClient.is_unset(request.open):
+            body['open'] = request.open
+        if not UtilClient.is_unset(request.permit_staff_ids):
+            body['permitStaffIds'] = request.permit_staff_ids
+        if not UtilClient.is_unset(request.permit_dept_ids):
+            body['permitDeptIds'] = request.permit_dept_ids
+        if not UtilClient.is_unset(request.permit_tag_ids):
+            body['permitTagIds'] = request.permit_tag_ids
+        if not UtilClient.is_unset(request.protect_scenes):
+            body['protectScenes'] = request.protect_scenes
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateSeniorSettingResponse(),
+            self.do_roarequest('UpdateSeniorSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/seniorSettings', 'none', req, runtime)
+        )
+
+    async def update_senior_setting_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateSeniorSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateSeniorSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateSeniorSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.senior_staff_id):
+            body['seniorStaffId'] = request.senior_staff_id
+        if not UtilClient.is_unset(request.open):
+            body['open'] = request.open
+        if not UtilClient.is_unset(request.permit_staff_ids):
+            body['permitStaffIds'] = request.permit_staff_ids
+        if not UtilClient.is_unset(request.permit_dept_ids):
+            body['permitDeptIds'] = request.permit_dept_ids
+        if not UtilClient.is_unset(request.permit_tag_ids):
+            body['permitTagIds'] = request.permit_tag_ids
+        if not UtilClient.is_unset(request.protect_scenes):
+            body['protectScenes'] = request.protect_scenes
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateSeniorSettingResponse(),
+            await self.do_roarequest_async('UpdateSeniorSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/seniorSettings', 'none', req, runtime)
         )
 
     def get_apply_invite_info(
@@ -1579,6 +1749,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteManagementGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteManagementGroupResponse:
+        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1598,6 +1769,7 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteManagementGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteManagementGroupResponse:
+        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -201,6 +201,7 @@ class Client(OpenApiClient):
         headers: dingtalkattendance__1__0_models.GetMachineHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -220,6 +221,7 @@ class Client(OpenApiClient):
         headers: dingtalkattendance__1__0_models.GetMachineHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -259,6 +261,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
         UtilClient.validate_model(request)
+        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -286,6 +289,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
         UtilClient.validate_model(request)
+        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token

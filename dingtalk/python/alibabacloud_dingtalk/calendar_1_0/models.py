@@ -2959,6 +2959,39 @@ class ListEventsResponseBodyEventsOnlineMeetingInfo(TeaModel):
         return self
 
 
+class ListEventsResponseBodyEventsReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: str = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
 class ListEventsResponseBodyEvents(TeaModel):
     def __init__(
         self,
@@ -2977,6 +3010,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         update_time: str = None,
         status: str = None,
         online_meeting_info: ListEventsResponseBodyEventsOnlineMeetingInfo = None,
+        reminders: List[ListEventsResponseBodyEventsReminders] = None,
     ):
         # 日程事件id
         self.id = id
@@ -3007,6 +3041,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         # 日程状态
         self.status = status
         self.online_meeting_info = online_meeting_info
+        self.reminders = reminders
 
     def validate(self):
         if self.start:
@@ -3025,6 +3060,10 @@ class ListEventsResponseBodyEvents(TeaModel):
             self.location.validate()
         if self.online_meeting_info:
             self.online_meeting_info.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3064,6 +3103,10 @@ class ListEventsResponseBodyEvents(TeaModel):
             result['status'] = self.status
         if self.online_meeting_info is not None:
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -3107,6 +3150,11 @@ class ListEventsResponseBodyEvents(TeaModel):
         if m.get('onlineMeetingInfo') is not None:
             temp_model = ListEventsResponseBodyEventsOnlineMeetingInfo()
             self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = ListEventsResponseBodyEventsReminders()
+                self.reminders.append(temp_model.from_map(k))
         return self
 
 
@@ -4263,6 +4311,39 @@ class GetEventResponseBodyLocation(TeaModel):
         return self
 
 
+class GetEventResponseBodyReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: str = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
 class GetEventResponseBodyOnlineMeetingInfo(TeaModel):
     def __init__(
         self,
@@ -4325,6 +4406,7 @@ class GetEventResponseBody(TeaModel):
         series_master_id: str = None,
         create_time: str = None,
         update_time: str = None,
+        reminders: List[GetEventResponseBodyReminders] = None,
         online_meeting_info: GetEventResponseBodyOnlineMeetingInfo = None,
     ):
         self.id = id
@@ -4350,6 +4432,7 @@ class GetEventResponseBody(TeaModel):
         self.create_time = create_time
         # 更新时间
         self.update_time = update_time
+        self.reminders = reminders
         self.online_meeting_info = online_meeting_info
 
     def validate(self):
@@ -4367,6 +4450,10 @@ class GetEventResponseBody(TeaModel):
             self.organizer.validate()
         if self.location:
             self.location.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
         if self.online_meeting_info:
             self.online_meeting_info.validate()
 
@@ -4406,6 +4493,10 @@ class GetEventResponseBody(TeaModel):
             result['createTime'] = self.create_time
         if self.update_time is not None:
             result['updateTime'] = self.update_time
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
         if self.online_meeting_info is not None:
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         return result
@@ -4448,6 +4539,11 @@ class GetEventResponseBody(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('updateTime') is not None:
             self.update_time = m.get('updateTime')
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = GetEventResponseBodyReminders()
+                self.reminders.append(temp_model.from_map(k))
         if m.get('onlineMeetingInfo') is not None:
             temp_model = GetEventResponseBodyOnlineMeetingInfo()
             self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
@@ -5266,6 +5362,39 @@ class PatchEventResponseBodyLocation(TeaModel):
         return self
 
 
+class PatchEventResponseBodyReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: str = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
 class PatchEventResponseBody(TeaModel):
     def __init__(
         self,
@@ -5279,6 +5408,7 @@ class PatchEventResponseBody(TeaModel):
         attendees: List[PatchEventResponseBodyAttendees] = None,
         organizer: PatchEventResponseBodyOrganizer = None,
         location: PatchEventResponseBodyLocation = None,
+        reminders: List[PatchEventResponseBodyReminders] = None,
         create_time: str = None,
         update_time: str = None,
     ):
@@ -5293,6 +5423,7 @@ class PatchEventResponseBody(TeaModel):
         self.attendees = attendees
         self.organizer = organizer
         self.location = location
+        self.reminders = reminders
         # 创建时间
         self.create_time = create_time
         # 更新时间
@@ -5313,6 +5444,10 @@ class PatchEventResponseBody(TeaModel):
             self.organizer.validate()
         if self.location:
             self.location.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5342,6 +5477,10 @@ class PatchEventResponseBody(TeaModel):
             result['organizer'] = self.organizer.to_map()
         if self.location is not None:
             result['location'] = self.location.to_map()
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.update_time is not None:
@@ -5378,6 +5517,11 @@ class PatchEventResponseBody(TeaModel):
         if m.get('location') is not None:
             temp_model = PatchEventResponseBodyLocation()
             self.location = temp_model.from_map(m['location'])
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = PatchEventResponseBodyReminders()
+                self.reminders.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('updateTime') is not None:

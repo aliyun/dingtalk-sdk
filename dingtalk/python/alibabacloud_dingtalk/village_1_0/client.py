@@ -117,6 +117,7 @@ class Client(OpenApiClient):
         headers: dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetVillageOrgInfoResponse:
+        sub_corp_id = OpenApiUtilClient.get_encode_param(sub_corp_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -136,6 +137,7 @@ class Client(OpenApiClient):
         headers: dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetVillageOrgInfoResponse:
+        sub_corp_id = OpenApiUtilClient.get_encode_param(sub_corp_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -175,6 +177,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -206,6 +209,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -255,6 +259,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
@@ -290,6 +295,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
@@ -415,6 +421,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetResidentDeptResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -440,6 +447,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetResidentDeptResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -486,6 +494,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -512,6 +522,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -555,6 +567,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetDeptResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -582,6 +595,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetDeptResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -695,6 +709,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -720,6 +735,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -839,6 +855,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -868,6 +885,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -983,6 +1001,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -1010,6 +1029,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -1055,6 +1075,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetUserResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -1082,6 +1103,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.GetUserResponse:
         UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -1127,6 +1149,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
@@ -1162,6 +1185,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
@@ -1291,6 +1315,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -1316,6 +1341,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
         UtilClient.validate_model(request)
+        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id

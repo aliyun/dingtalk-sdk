@@ -7,6 +7,7 @@ from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.project_integration_1_0 import models as dingtalkproject_integration__1__0_models
 from alibabacloud_tea_util import models as util_models
+from alibabacloud_openapi_util.client import Client as OpenApiUtilClient
 
 
 class Client(OpenApiClient):
@@ -44,6 +45,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendInteractiveCardResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -63,6 +65,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendInteractiveCardResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -98,6 +101,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.UpdateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -117,6 +121,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.UpdateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -152,6 +157,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendSingleInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -171,6 +177,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendSingleInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -209,6 +216,8 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -229,6 +238,8 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -264,6 +275,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.CreateEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.CreateEventGroupResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -283,6 +295,7 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.CreateEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.CreateEventGroupResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

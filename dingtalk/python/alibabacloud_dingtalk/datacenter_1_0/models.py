@@ -2446,8 +2446,8 @@ class QueryCompanyBasicInfoResponseBody(TeaModel):
         message: str = None,
         request_id: str = None,
         total: int = None,
-        data: str = None,
-        code: int = None,
+        data: List[Dict[str, str]] = None,
+        code: str = None,
     ):
         # message
         self.message = message

@@ -48,6 +48,8 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookResponse:
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
+        book_id = OpenApiUtilClient.get_encode_param(book_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -68,6 +70,8 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookResponse:
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
+        book_id = OpenApiUtilClient.get_encode_param(book_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -110,6 +114,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersResponse:
         UtilClient.validate_model(request)
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -136,6 +142,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersResponse:
         UtilClient.validate_model(request)
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -179,6 +187,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceResponse:
         UtilClient.validate_model(request)
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -204,6 +213,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceResponse:
         UtilClient.validate_model(request)
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -250,6 +260,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse:
         UtilClient.validate_model(request)
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
@@ -276,6 +288,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse:
         UtilClient.validate_model(request)
+        device_id = OpenApiUtilClient.get_encode_param(device_id)
+        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids

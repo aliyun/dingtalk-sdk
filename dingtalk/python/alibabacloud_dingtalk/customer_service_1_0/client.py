@@ -305,6 +305,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
         UtilClient.validate_model(request)
+        ticket_id = OpenApiUtilClient.get_encode_param(ticket_id)
         query = {}
         if not UtilClient.is_unset(request.open_instance_id):
             query['openInstanceId'] = request.open_instance_id
@@ -336,6 +337,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
         UtilClient.validate_model(request)
+        ticket_id = OpenApiUtilClient.get_encode_param(ticket_id)
         query = {}
         if not UtilClient.is_unset(request.open_instance_id):
             query['openInstanceId'] = request.open_instance_id
@@ -385,6 +387,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
         UtilClient.validate_model(request)
+        ticket_id = OpenApiUtilClient.get_encode_param(ticket_id)
         body = {}
         if not UtilClient.is_unset(request.source_id):
             body['sourceId'] = request.source_id
@@ -422,6 +425,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
         UtilClient.validate_model(request)
+        ticket_id = OpenApiUtilClient.get_encode_param(ticket_id)
         body = {}
         if not UtilClient.is_unset(request.source_id):
             body['sourceId'] = request.source_id

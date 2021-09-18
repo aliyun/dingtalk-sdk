@@ -848,6 +848,190 @@ class ListManagementGroupsResponse(TeaModel):
         return self
 
 
+class ListSeniorSettingsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListSeniorSettingsRequest(TeaModel):
+    def __init__(
+        self,
+        senior_staff_id: str = None,
+    ):
+        self.senior_staff_id = senior_staff_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.senior_staff_id is not None:
+            result['seniorStaffId'] = self.senior_staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('seniorStaffId') is not None:
+            self.senior_staff_id = m.get('seniorStaffId')
+        return self
+
+
+class ListSeniorSettingsResponseBodySeniorWhiteList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        type: int = None,
+        name: str = None,
+    ):
+        self.id = id
+        self.type = type
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class ListSeniorSettingsResponseBody(TeaModel):
+    def __init__(
+        self,
+        senior_staff_id: str = None,
+        protect_scenes: List[str] = None,
+        senior_white_list: List[ListSeniorSettingsResponseBodySeniorWhiteList] = None,
+    ):
+        # Id of the request
+        self.senior_staff_id = senior_staff_id
+        self.protect_scenes = protect_scenes
+        self.senior_white_list = senior_white_list
+
+    def validate(self):
+        if self.senior_white_list:
+            for k in self.senior_white_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.senior_staff_id is not None:
+            result['seniorStaffId'] = self.senior_staff_id
+        if self.protect_scenes is not None:
+            result['protectScenes'] = self.protect_scenes
+        result['seniorWhiteList'] = []
+        if self.senior_white_list is not None:
+            for k in self.senior_white_list:
+                result['seniorWhiteList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('seniorStaffId') is not None:
+            self.senior_staff_id = m.get('seniorStaffId')
+        if m.get('protectScenes') is not None:
+            self.protect_scenes = m.get('protectScenes')
+        self.senior_white_list = []
+        if m.get('seniorWhiteList') is not None:
+            for k in m.get('seniorWhiteList'):
+                temp_model = ListSeniorSettingsResponseBodySeniorWhiteList()
+                self.senior_white_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListSeniorSettingsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListSeniorSettingsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListSeniorSettingsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListEmpAttributeVisibilityHeaders(TeaModel):
     def __init__(
         self,
@@ -2708,6 +2892,8 @@ class TranslateFileRequest(TeaModel):
         media_id: str = None,
         output_file_name: str = None,
         union_id: str = None,
+        request_id: str = None,
+        eagle_eye_trace_id: str = None,
     ):
         self.ding_token_grant_type = ding_token_grant_type
         self.ding_org_id = ding_org_id
@@ -2719,6 +2905,8 @@ class TranslateFileRequest(TeaModel):
         self.output_file_name = output_file_name
         # unionId
         self.union_id = union_id
+        self.request_id = request_id
+        self.eagle_eye_trace_id = eagle_eye_trace_id
 
     def validate(self):
         pass
@@ -2743,6 +2931,10 @@ class TranslateFileRequest(TeaModel):
             result['outputFileName'] = self.output_file_name
         if self.union_id is not None:
             result['unionId'] = self.union_id
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.eagle_eye_trace_id is not None:
+            result['eagleEyeTraceId'] = self.eagle_eye_trace_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2761,6 +2953,10 @@ class TranslateFileRequest(TeaModel):
             self.output_file_name = m.get('outputFileName')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
+        if m.get('RequestId') is not None:
+            self.request_id = m.get('RequestId')
+        if m.get('eagleEyeTraceId') is not None:
+            self.eagle_eye_trace_id = m.get('eagleEyeTraceId')
         return self
 
 
@@ -2826,6 +3022,123 @@ class TranslateFileResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = TranslateFileResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateSeniorSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateSeniorSettingRequest(TeaModel):
+    def __init__(
+        self,
+        senior_staff_id: str = None,
+        open: bool = None,
+        permit_staff_ids: List[str] = None,
+        permit_dept_ids: List[int] = None,
+        permit_tag_ids: List[int] = None,
+        protect_scenes: List[str] = None,
+    ):
+        self.senior_staff_id = senior_staff_id
+        self.open = open
+        self.permit_staff_ids = permit_staff_ids
+        self.permit_dept_ids = permit_dept_ids
+        self.permit_tag_ids = permit_tag_ids
+        self.protect_scenes = protect_scenes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.senior_staff_id is not None:
+            result['seniorStaffId'] = self.senior_staff_id
+        if self.open is not None:
+            result['open'] = self.open
+        if self.permit_staff_ids is not None:
+            result['permitStaffIds'] = self.permit_staff_ids
+        if self.permit_dept_ids is not None:
+            result['permitDeptIds'] = self.permit_dept_ids
+        if self.permit_tag_ids is not None:
+            result['permitTagIds'] = self.permit_tag_ids
+        if self.protect_scenes is not None:
+            result['protectScenes'] = self.protect_scenes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('seniorStaffId') is not None:
+            self.senior_staff_id = m.get('seniorStaffId')
+        if m.get('open') is not None:
+            self.open = m.get('open')
+        if m.get('permitStaffIds') is not None:
+            self.permit_staff_ids = m.get('permitStaffIds')
+        if m.get('permitDeptIds') is not None:
+            self.permit_dept_ids = m.get('permitDeptIds')
+        if m.get('permitTagIds') is not None:
+            self.permit_tag_ids = m.get('permitTagIds')
+        if m.get('protectScenes') is not None:
+            self.protect_scenes = m.get('protectScenes')
+        return self
+
+
+class UpdateSeniorSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
         return self
 
 

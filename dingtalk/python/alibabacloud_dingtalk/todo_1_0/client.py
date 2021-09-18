@@ -48,6 +48,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskDetailResponse:
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -68,6 +70,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskDetailResponse:
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -106,6 +110,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -126,6 +132,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -164,6 +172,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskBySourceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskBySourceIdResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        source_id = OpenApiUtilClient.get_encode_param(source_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -184,6 +194,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskBySourceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskBySourceIdResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        source_id = OpenApiUtilClient.get_encode_param(source_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -223,6 +235,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
         if not UtilClient.is_unset(request.is_done):
             body['isDone'] = request.is_done
@@ -258,6 +271,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
         if not UtilClient.is_unset(request.is_done):
             body['isDone'] = request.is_done
@@ -311,6 +325,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoTasksResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
@@ -338,6 +353,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoTasksResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
@@ -383,6 +399,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTaskResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -430,6 +447,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTaskResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -494,6 +512,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        card_type_id = OpenApiUtilClient.get_encode_param(card_type_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -514,6 +534,8 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        card_type_id = OpenApiUtilClient.get_encode_param(card_type_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -553,6 +575,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
@@ -594,6 +617,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         body = {}
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
@@ -656,6 +680,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        card_type_id = OpenApiUtilClient.get_encode_param(card_type_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -696,6 +722,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        card_type_id = OpenApiUtilClient.get_encode_param(card_type_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -756,6 +784,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.DeleteTodoTaskResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -782,6 +812,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.DeleteTodoTaskResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -828,6 +860,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -858,6 +892,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -905,6 +941,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTypeConfigResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -944,6 +981,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTypeConfigResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -1004,6 +1042,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
@@ -1044,6 +1084,8 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskResponse:
         UtilClient.validate_model(request)
+        union_id = OpenApiUtilClient.get_encode_param(union_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
