@@ -51,7 +51,8 @@ class Dingtalk extends OpenApiClient
     public function industrializeManufactureJobBookWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
         if (!Utils::isUnset($request->scrappedQuantity)) {
             @$body['scrappedQuantity'] = $request->scrappedQuantity;
         }

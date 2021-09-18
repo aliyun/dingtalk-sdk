@@ -285,6 +285,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getFileWithOptions($fileId, $headers, $runtime)
     {
+        $fileId      = OpenApiUtilClient::getEncodeParam($fileId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -780,6 +781,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getUserInfoWithOptions($userId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

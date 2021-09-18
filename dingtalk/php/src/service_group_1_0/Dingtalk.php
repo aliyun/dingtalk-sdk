@@ -1107,6 +1107,7 @@ class Dingtalk extends OpenApiClient
      */
     public function listUserTeamsWithOptions($userId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

@@ -35,11 +35,19 @@ class ListFilesRequest extends Model
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 排序类型
+     *
+     * @var string
+     */
+    public $orderType;
     protected $_name = [
         'unionId'    => 'unionId',
         'parentId'   => 'parentId',
         'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'orderType'  => 'orderType',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class ListFilesRequest extends Model
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->orderType) {
+            $res['orderType'] = $this->orderType;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class ListFilesRequest extends Model
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['orderType'])) {
+            $model->orderType = $map['orderType'];
         }
 
         return $model;

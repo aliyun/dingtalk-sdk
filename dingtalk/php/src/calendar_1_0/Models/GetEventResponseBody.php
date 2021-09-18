@@ -10,6 +10,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\location
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\recurrence;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\start;
 use AlibabaCloud\Tea\Model;
 
@@ -104,6 +105,11 @@ class GetEventResponseBody extends Model
     public $updateTime;
 
     /**
+     * @var reminders[]
+     */
+    public $reminders;
+
+    /**
      * @var onlineMeetingInfo
      */
     public $onlineMeetingInfo;
@@ -122,6 +128,7 @@ class GetEventResponseBody extends Model
         'seriesMasterId'    => 'seriesMasterId',
         'createTime'        => 'createTime',
         'updateTime'        => 'updateTime',
+        'reminders'         => 'reminders',
         'onlineMeetingInfo' => 'onlineMeetingInfo',
     ];
 
@@ -179,6 +186,15 @@ class GetEventResponseBody extends Model
         }
         if (null !== $this->updateTime) {
             $res['updateTime'] = $this->updateTime;
+        }
+        if (null !== $this->reminders) {
+            $res['reminders'] = [];
+            if (null !== $this->reminders && \is_array($this->reminders)) {
+                $n = 0;
+                foreach ($this->reminders as $item) {
+                    $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->onlineMeetingInfo) {
             $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
@@ -242,6 +258,15 @@ class GetEventResponseBody extends Model
         }
         if (isset($map['updateTime'])) {
             $model->updateTime = $map['updateTime'];
+        }
+        if (isset($map['reminders'])) {
+            if (!empty($map['reminders'])) {
+                $model->reminders = [];
+                $n                = 0;
+                foreach ($map['reminders'] as $item) {
+                    $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['onlineMeetingInfo'])) {
             $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);

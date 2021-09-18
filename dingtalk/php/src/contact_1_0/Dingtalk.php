@@ -48,6 +48,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityResp
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesHeaders;
@@ -73,6 +76,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySet
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateSeniorSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateSeniorSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateSeniorSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessResponse;
@@ -234,6 +240,7 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteEmpAttributeVisibilityWithOptions($settingId, $headers, $runtime)
     {
+        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -342,6 +349,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListManagementGroupsResponse::fromMap($this->doROARequest('ListManagementGroups', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/managementGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListSeniorSettingsRequest $request
+     *
+     * @return ListSeniorSettingsResponse
+     */
+    public function listSeniorSettings($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSeniorSettingsHeaders([]);
+
+        return $this->listSeniorSettingsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListSeniorSettingsRequest $request
+     * @param ListSeniorSettingsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ListSeniorSettingsResponse
+     */
+    public function listSeniorSettingsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->seniorStaffId)) {
+            @$query['seniorStaffId'] = $request->seniorStaffId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListSeniorSettingsResponse::fromMap($this->doROARequest('ListSeniorSettings', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/seniorSettings', 'json', $req, $runtime));
     }
 
     /**
@@ -504,6 +553,7 @@ class Dingtalk extends OpenApiClient
      */
     public function queryUserManagementResourcesWithOptions($userId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -543,7 +593,8 @@ class Dingtalk extends OpenApiClient
     public function updateUserOwnnessWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
         if (!Utils::isUnset($request->ownenssType)) {
             @$body['ownenssType'] = $request->ownenssType;
         }
@@ -680,7 +731,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getCooperateOrgInviteInfoWithOptions($cooperateCorpId, $headers, $runtime)
     {
-        $realHeaders = [];
+        $cooperateCorpId = OpenApiUtilClient::getEncodeParam($cooperateCorpId);
+        $realHeaders     = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
@@ -719,7 +771,8 @@ class Dingtalk extends OpenApiClient
     public function updateManagementGroupWithOptions($groupId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $groupId = OpenApiUtilClient::getEncodeParam($groupId);
+        $body    = [];
         if (!Utils::isUnset($request->groupName)) {
             @$body['groupName'] = $request->groupName;
         }
@@ -819,6 +872,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getUserWithOptions($unionId, $headers, $runtime)
     {
+        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -855,6 +909,7 @@ class Dingtalk extends OpenApiClient
      */
     public function queryResourceManagementMembersWithOptions($resourceId, $headers, $runtime)
     {
+        $resourceId  = OpenApiUtilClient::getEncodeParam($resourceId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -914,6 +969,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->unionId)) {
             @$body['unionId'] = $request->unionId;
         }
+        if (!Utils::isUnset($request->requestId)) {
+            @$body['RequestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->eagleEyeTraceId)) {
+            @$body['eagleEyeTraceId'] = $request->eagleEyeTraceId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -927,6 +988,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TranslateFileResponse::fromMap($this->doROARequest('TranslateFile', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/files/translate', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateSeniorSettingRequest $request
+     *
+     * @return UpdateSeniorSettingResponse
+     */
+    public function updateSeniorSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSeniorSettingHeaders([]);
+
+        return $this->updateSeniorSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateSeniorSettingRequest $request
+     * @param UpdateSeniorSettingHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return UpdateSeniorSettingResponse
+     */
+    public function updateSeniorSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->seniorStaffId)) {
+            @$body['seniorStaffId'] = $request->seniorStaffId;
+        }
+        if (!Utils::isUnset($request->open)) {
+            @$body['open'] = $request->open;
+        }
+        if (!Utils::isUnset($request->permitStaffIds)) {
+            @$body['permitStaffIds'] = $request->permitStaffIds;
+        }
+        if (!Utils::isUnset($request->permitDeptIds)) {
+            @$body['permitDeptIds'] = $request->permitDeptIds;
+        }
+        if (!Utils::isUnset($request->permitTagIds)) {
+            @$body['permitTagIds'] = $request->permitTagIds;
+        }
+        if (!Utils::isUnset($request->protectScenes)) {
+            @$body['protectScenes'] = $request->protectScenes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateSeniorSettingResponse::fromMap($this->doROARequest('UpdateSeniorSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/seniorSettings', 'none', $req, $runtime));
     }
 
     /**
@@ -1137,6 +1255,7 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteManagementGroupWithOptions($groupId, $headers, $runtime)
     {
+        $groupId     = OpenApiUtilClient::getEncodeParam($groupId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

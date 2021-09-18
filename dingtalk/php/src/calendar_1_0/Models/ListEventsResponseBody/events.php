@@ -10,6 +10,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\recurrence;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\start;
 use AlibabaCloud\Tea\Model;
 
@@ -117,6 +118,11 @@ class events extends Model
      * @var onlineMeetingInfo
      */
     public $onlineMeetingInfo;
+
+    /**
+     * @var reminders[]
+     */
+    public $reminders;
     protected $_name = [
         'id'                => 'id',
         'summary'           => 'summary',
@@ -133,6 +139,7 @@ class events extends Model
         'updateTime'        => 'updateTime',
         'status'            => 'status',
         'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'reminders'         => 'reminders',
     ];
 
     public function validate()
@@ -192,6 +199,15 @@ class events extends Model
         }
         if (null !== $this->onlineMeetingInfo) {
             $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
+        }
+        if (null !== $this->reminders) {
+            $res['reminders'] = [];
+            if (null !== $this->reminders && \is_array($this->reminders)) {
+                $n = 0;
+                foreach ($this->reminders as $item) {
+                    $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -255,6 +271,15 @@ class events extends Model
         }
         if (isset($map['onlineMeetingInfo'])) {
             $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
+        }
+        if (isset($map['reminders'])) {
+            if (!empty($map['reminders'])) {
+                $model->reminders = [];
+                $n                = 0;
+                foreach ($map['reminders'] as $item) {
+                    $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

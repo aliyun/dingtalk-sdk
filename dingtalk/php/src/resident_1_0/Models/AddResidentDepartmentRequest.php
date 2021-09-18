@@ -20,7 +20,7 @@ class AddResidentDepartmentRequest extends Model
      *
      * @var string
      */
-    public $name;
+    public $departmentName;
 
     /**
      * @description 父部门id
@@ -30,7 +30,7 @@ class AddResidentDepartmentRequest extends Model
     public $parentDepartmentId;
     protected $_name = [
         'isResidenceGroup'   => 'isResidenceGroup',
-        'name'               => 'name',
+        'departmentName'     => 'departmentName',
         'parentDepartmentId' => 'parentDepartmentId',
     ];
 
@@ -44,8 +44,8 @@ class AddResidentDepartmentRequest extends Model
         if (null !== $this->isResidenceGroup) {
             $res['isResidenceGroup'] = $this->isResidenceGroup;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->departmentName) {
+            $res['departmentName'] = $this->departmentName;
         }
         if (null !== $this->parentDepartmentId) {
             $res['parentDepartmentId'] = $this->parentDepartmentId;
@@ -65,8 +65,8 @@ class AddResidentDepartmentRequest extends Model
         if (isset($map['isResidenceGroup'])) {
             $model->isResidenceGroup = $map['isResidenceGroup'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['departmentName'])) {
+            $model->departmentName = $map['departmentName'];
         }
         if (isset($map['parentDepartmentId'])) {
             $model->parentDepartmentId = $map['parentDepartmentId'];

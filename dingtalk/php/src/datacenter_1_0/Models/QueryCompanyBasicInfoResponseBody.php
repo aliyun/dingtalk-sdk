@@ -32,14 +32,14 @@ class QueryCompanyBasicInfoResponseBody extends Model
     /**
      * @description data
      *
-     * @var string
+     * @var string[][]
      */
     public $data;
 
     /**
      * @description code
      *
-     * @var int
+     * @var string
      */
     public $code;
     protected $_name = [
@@ -94,7 +94,9 @@ class QueryCompanyBasicInfoResponseBody extends Model
             $model->total = $map['total'];
         }
         if (isset($map['data'])) {
-            $model->data = $map['data'];
+            if (!empty($map['data'])) {
+                $model->data = $map['data'];
+            }
         }
         if (isset($map['code'])) {
             $model->code = $map['code'];

@@ -80,6 +80,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getTodoTaskDetailWithOptions($taskId, $unionId, $headers, $runtime)
     {
+        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
+        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -118,6 +120,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getTodoTaskWithOptions($unionId, $taskId, $headers, $runtime)
     {
+        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
+        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -156,6 +160,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getTodoTaskBySourceIdWithOptions($unionId, $sourceId, $headers, $runtime)
     {
+        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
+        $sourceId    = OpenApiUtilClient::getEncodeParam($sourceId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -195,7 +201,8 @@ class Dingtalk extends OpenApiClient
     public function countTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $body    = [];
         if (!Utils::isUnset($request->isDone)) {
             @$body['isDone'] = $request->isDone;
         }
@@ -254,7 +261,8 @@ class Dingtalk extends OpenApiClient
     public function queryOrgTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $body    = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$body['nextToken'] = $request->nextToken;
         }
@@ -301,7 +309,8 @@ class Dingtalk extends OpenApiClient
     public function createTodoTaskWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $query   = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
@@ -376,6 +385,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime)
     {
+        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
+        $cardTypeId  = OpenApiUtilClient::getEncodeParam($cardTypeId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -415,7 +426,8 @@ class Dingtalk extends OpenApiClient
     public function queryTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $body    = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$body['nextToken'] = $request->nextToken;
         }
@@ -485,7 +497,9 @@ class Dingtalk extends OpenApiClient
     public function updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $unionId    = OpenApiUtilClient::getEncodeParam($unionId);
+        $cardTypeId = OpenApiUtilClient::getEncodeParam($cardTypeId);
+        $query      = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
@@ -551,7 +565,9 @@ class Dingtalk extends OpenApiClient
     public function deleteTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $taskId  = OpenApiUtilClient::getEncodeParam($taskId);
+        $query   = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
@@ -597,7 +613,9 @@ class Dingtalk extends OpenApiClient
     public function updateTodoTaskExecutorStatusWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $taskId  = OpenApiUtilClient::getEncodeParam($taskId);
+        $query   = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
@@ -646,7 +664,8 @@ class Dingtalk extends OpenApiClient
     public function createTodoTypeConfigWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $query   = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
@@ -712,7 +731,9 @@ class Dingtalk extends OpenApiClient
     public function updateTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
+        $taskId  = OpenApiUtilClient::getEncodeParam($taskId);
+        $query   = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }

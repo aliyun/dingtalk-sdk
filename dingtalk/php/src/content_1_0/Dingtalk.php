@@ -121,7 +121,8 @@ class Dingtalk extends OpenApiClient
     public function getFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
+        $query  = [];
         if (!Utils::isUnset($request->mcnId)) {
             @$query['mcnId'] = $request->mcnId;
         }
@@ -262,6 +263,7 @@ class Dingtalk extends OpenApiClient
     public function listItemUserDataWithOptions($itemId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $itemId      = OpenApiUtilClient::getEncodeParam($itemId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

@@ -70,7 +70,8 @@ class Dingtalk extends OpenApiClient
     public function deleteWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $body        = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$body['operatorId'] = $request->operatorId;
         }
@@ -119,7 +120,9 @@ class Dingtalk extends OpenApiClient
     public function addWorkspaceDocMembersWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $nodeId      = OpenApiUtilClient::getEncodeParam($nodeId);
+        $body        = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$body['operatorId'] = $request->operatorId;
         }
@@ -166,7 +169,8 @@ class Dingtalk extends OpenApiClient
     public function updateWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $body        = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$body['operatorId'] = $request->operatorId;
         }
@@ -215,7 +219,9 @@ class Dingtalk extends OpenApiClient
     public function updateWorkspaceDocMembersWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $nodeId      = OpenApiUtilClient::getEncodeParam($nodeId);
+        $body        = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$body['operatorId'] = $request->operatorId;
         }
@@ -262,7 +268,8 @@ class Dingtalk extends OpenApiClient
     public function createWorkspaceDocWithOptions($workspaceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $body        = [];
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
@@ -312,7 +319,8 @@ class Dingtalk extends OpenApiClient
     public function addWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $body        = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$body['operatorId'] = $request->operatorId;
         }
@@ -418,7 +426,9 @@ class Dingtalk extends OpenApiClient
     public function deleteWorkspaceDocMembersWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $workspaceId = OpenApiUtilClient::getEncodeParam($workspaceId);
+        $nodeId      = OpenApiUtilClient::getEncodeParam($nodeId);
+        $body        = [];
         if (!Utils::isUnset($request->operatorId)) {
             @$body['operatorId'] = $request->operatorId;
         }

@@ -48,6 +48,16 @@ class TranslateFileRequest extends Model
      * @var string
      */
     public $unionId;
+
+    /**
+     * @var string
+     */
+    public $requestId;
+
+    /**
+     * @var string
+     */
+    public $eagleEyeTraceId;
     protected $_name = [
         'dingTokenGrantType' => 'dingTokenGrantType',
         'dingOrgId'          => 'dingOrgId',
@@ -56,6 +66,8 @@ class TranslateFileRequest extends Model
         'mediaId'            => 'mediaId',
         'outputFileName'     => 'outputFileName',
         'unionId'            => 'unionId',
+        'requestId'          => 'RequestId',
+        'eagleEyeTraceId'    => 'eagleEyeTraceId',
     ];
 
     public function validate()
@@ -85,6 +97,12 @@ class TranslateFileRequest extends Model
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->requestId) {
+            $res['RequestId'] = $this->requestId;
+        }
+        if (null !== $this->eagleEyeTraceId) {
+            $res['eagleEyeTraceId'] = $this->eagleEyeTraceId;
         }
 
         return $res;
@@ -118,6 +136,12 @@ class TranslateFileRequest extends Model
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['RequestId'])) {
+            $model->requestId = $map['RequestId'];
+        }
+        if (isset($map['eagleEyeTraceId'])) {
+            $model->eagleEyeTraceId = $map['eagleEyeTraceId'];
         }
 
         return $model;

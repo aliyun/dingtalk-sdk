@@ -44,6 +44,13 @@ class InfoSpaceResponseBody extends Model
     public $usedQuota;
 
     /**
+     * @description 授权模式
+     *
+     * @var string
+     */
+    public $permissionMode;
+
+    /**
      * @description 创建时间
      *
      * @var string
@@ -57,13 +64,14 @@ class InfoSpaceResponseBody extends Model
      */
     public $modifyTime;
     protected $_name = [
-        'spaceId'    => 'spaceId',
-        'spaceName'  => 'spaceName',
-        'spaceType'  => 'spaceType',
-        'quota'      => 'quota',
-        'usedQuota'  => 'usedQuota',
-        'createTime' => 'createTime',
-        'modifyTime' => 'modifyTime',
+        'spaceId'        => 'spaceId',
+        'spaceName'      => 'spaceName',
+        'spaceType'      => 'spaceType',
+        'quota'          => 'quota',
+        'usedQuota'      => 'usedQuota',
+        'permissionMode' => 'permissionMode',
+        'createTime'     => 'createTime',
+        'modifyTime'     => 'modifyTime',
     ];
 
     public function validate()
@@ -87,6 +95,9 @@ class InfoSpaceResponseBody extends Model
         }
         if (null !== $this->usedQuota) {
             $res['usedQuota'] = $this->usedQuota;
+        }
+        if (null !== $this->permissionMode) {
+            $res['permissionMode'] = $this->permissionMode;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -120,6 +131,9 @@ class InfoSpaceResponseBody extends Model
         }
         if (isset($map['usedQuota'])) {
             $model->usedQuota = $map['usedQuota'];
+        }
+        if (isset($map['permissionMode'])) {
+            $model->permissionMode = $map['permissionMode'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

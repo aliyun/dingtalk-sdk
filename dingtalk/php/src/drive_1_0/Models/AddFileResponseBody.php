@@ -16,6 +16,13 @@ class AddFileResponseBody extends Model
     public $spaceId;
 
     /**
+     * @description 父目录id
+     *
+     * @var string
+     */
+    public $parentId;
+
+    /**
      * @description 文件id
      *
      * @var string
@@ -58,6 +65,13 @@ class AddFileResponseBody extends Model
     public $fileExtension;
 
     /**
+     * @description 文件大小
+     *
+     * @var int
+     */
+    public $fileSize;
+
+    /**
      * @description 创建时间
      *
      * @var string
@@ -70,16 +84,34 @@ class AddFileResponseBody extends Model
      * @var string
      */
     public $modifyTime;
+
+    /**
+     * @description 创建者
+     *
+     * @var string
+     */
+    public $creator;
+
+    /**
+     * @description 修改者
+     *
+     * @var string
+     */
+    public $modifier;
     protected $_name = [
         'spaceId'       => 'spaceId',
+        'parentId'      => 'parentId',
         'fileId'        => 'fileId',
         'fileName'      => 'fileName',
         'filePath'      => 'filePath',
         'fileType'      => 'fileType',
         'contentType'   => 'contentType',
         'fileExtension' => 'fileExtension',
+        'fileSize'      => 'fileSize',
         'createTime'    => 'createTime',
         'modifyTime'    => 'modifyTime',
+        'creator'       => 'creator',
+        'modifier'      => 'modifier',
     ];
 
     public function validate()
@@ -91,6 +123,9 @@ class AddFileResponseBody extends Model
         $res = [];
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
+        }
+        if (null !== $this->parentId) {
+            $res['parentId'] = $this->parentId;
         }
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
@@ -110,11 +145,20 @@ class AddFileResponseBody extends Model
         if (null !== $this->fileExtension) {
             $res['fileExtension'] = $this->fileExtension;
         }
+        if (null !== $this->fileSize) {
+            $res['fileSize'] = $this->fileSize;
+        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
         if (null !== $this->modifyTime) {
             $res['modifyTime'] = $this->modifyTime;
+        }
+        if (null !== $this->creator) {
+            $res['creator'] = $this->creator;
+        }
+        if (null !== $this->modifier) {
+            $res['modifier'] = $this->modifier;
         }
 
         return $res;
@@ -130,6 +174,9 @@ class AddFileResponseBody extends Model
         $model = new self();
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
+        }
+        if (isset($map['parentId'])) {
+            $model->parentId = $map['parentId'];
         }
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
@@ -149,11 +196,20 @@ class AddFileResponseBody extends Model
         if (isset($map['fileExtension'])) {
             $model->fileExtension = $map['fileExtension'];
         }
+        if (isset($map['fileSize'])) {
+            $model->fileSize = $map['fileSize'];
+        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
         if (isset($map['modifyTime'])) {
             $model->modifyTime = $map['modifyTime'];
+        }
+        if (isset($map['creator'])) {
+            $model->creator = $map['creator'];
+        }
+        if (isset($map['modifier'])) {
+            $model->modifier = $map['modifier'];
         }
 
         return $model;

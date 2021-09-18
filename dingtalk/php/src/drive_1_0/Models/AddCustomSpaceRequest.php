@@ -16,14 +16,30 @@ class AddCustomSpaceRequest extends Model
     public $identifier;
 
     /**
+     * @description 业务类型
+     *
+     * @var string
+     */
+    public $bizType;
+
+    /**
+     * @description 授权模式
+     *
+     * @var string
+     */
+    public $permissionMode;
+
+    /**
      * @description 用户id
      *
      * @var string
      */
     public $unionId;
     protected $_name = [
-        'identifier' => 'identifier',
-        'unionId'    => 'unionId',
+        'identifier'     => 'identifier',
+        'bizType'        => 'bizType',
+        'permissionMode' => 'permissionMode',
+        'unionId'        => 'unionId',
     ];
 
     public function validate()
@@ -35,6 +51,12 @@ class AddCustomSpaceRequest extends Model
         $res = [];
         if (null !== $this->identifier) {
             $res['identifier'] = $this->identifier;
+        }
+        if (null !== $this->bizType) {
+            $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->permissionMode) {
+            $res['permissionMode'] = $this->permissionMode;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -53,6 +75,12 @@ class AddCustomSpaceRequest extends Model
         $model = new self();
         if (isset($map['identifier'])) {
             $model->identifier = $map['identifier'];
+        }
+        if (isset($map['bizType'])) {
+            $model->bizType = $map['bizType'];
+        }
+        if (isset($map['permissionMode'])) {
+            $model->permissionMode = $map['permissionMode'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

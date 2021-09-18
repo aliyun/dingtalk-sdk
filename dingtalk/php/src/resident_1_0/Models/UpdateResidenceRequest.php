@@ -20,7 +20,7 @@ class UpdateResidenceRequest extends Model
      *
      * @var string
      */
-    public $name;
+    public $departmentName;
 
     /**
      * @description 组id
@@ -58,7 +58,7 @@ class UpdateResidenceRequest extends Model
     public $parentDepartmentId;
     protected $_name = [
         'managerUserId'      => 'managerUserId',
-        'name'               => 'name',
+        'departmentName'     => 'departmentName',
         'departmentId'       => 'departmentId',
         'grid'               => 'grid',
         'homeTel'            => 'homeTel',
@@ -76,8 +76,8 @@ class UpdateResidenceRequest extends Model
         if (null !== $this->managerUserId) {
             $res['managerUserId'] = $this->managerUserId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->departmentName) {
+            $res['departmentName'] = $this->departmentName;
         }
         if (null !== $this->departmentId) {
             $res['departmentId'] = $this->departmentId;
@@ -109,8 +109,8 @@ class UpdateResidenceRequest extends Model
         if (isset($map['managerUserId'])) {
             $model->managerUserId = $map['managerUserId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['departmentName'])) {
+            $model->departmentName = $map['departmentName'];
         }
         if (isset($map['departmentId'])) {
             $model->departmentId = $map['departmentId'];

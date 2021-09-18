@@ -69,8 +69,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->managerUserId)) {
             @$query['managerUserId'] = $request->managerUserId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->departmentName)) {
+            @$query['departmentName'] = $request->departmentName;
         }
         if (!Utils::isUnset($request->departmentId)) {
             @$query['departmentId'] = $request->departmentId;
@@ -162,8 +162,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->isLeaseholder)) {
             @$query['isLeaseholder'] = $request->isLeaseholder;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->userName)) {
+            @$query['userName'] = $request->userName;
         }
         if (!Utils::isUnset($request->mobile)) {
             @$query['mobile'] = $request->mobile;
@@ -219,8 +219,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->isResidenceGroup)) {
             @$query['isResidenceGroup'] = $request->isResidenceGroup;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->departmentName)) {
+            @$query['departmentName'] = $request->departmentName;
         }
         if (!Utils::isUnset($request->parentDepartmentId)) {
             @$query['parentDepartmentId'] = $request->parentDepartmentId;
@@ -312,8 +312,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->managerUserId)) {
             @$query['managerUserId'] = $request->managerUserId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->departmentName)) {
+            @$query['departmentName'] = $request->departmentName;
         }
         if (!Utils::isUnset($request->departmentId)) {
             @$query['departmentId'] = $request->departmentId;
@@ -375,8 +375,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->isRetainOldDept)) {
             @$query['isRetainOldDept'] = $request->isRetainOldDept;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->userName)) {
+            @$query['userName'] = $request->userName;
         }
         if (!Utils::isUnset($request->mobile)) {
             @$query['mobile'] = $request->mobile;

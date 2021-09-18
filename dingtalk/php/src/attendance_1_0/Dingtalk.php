@@ -180,6 +180,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getMachineWithOptions($devId, $headers, $runtime)
     {
+        $devId       = OpenApiUtilClient::getEncodeParam($devId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -219,6 +220,7 @@ class Dingtalk extends OpenApiClient
     public function getMachineUserWithOptions($devId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $devId = OpenApiUtilClient::getEncodeParam($devId);
         $query = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;

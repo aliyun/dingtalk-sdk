@@ -95,7 +95,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getConferenceDetailWithOptions($conferenceId, $headers, $runtime)
     {
-        $realHeaders = [];
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $realHeaders  = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
@@ -134,7 +135,8 @@ class Dingtalk extends OpenApiClient
     public function getUserAppVersionSummaryWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
+        $query  = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -180,6 +182,8 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteCommentWithOptions($publisherId, $commentId, $headers, $runtime)
     {
+        $publisherId = OpenApiUtilClient::getEncodeParam($publisherId);
+        $commentId   = OpenApiUtilClient::getEncodeParam($commentId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -252,7 +256,8 @@ class Dingtalk extends OpenApiClient
     public function getPublisherSummaryWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
+        $query  = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -299,7 +304,8 @@ class Dingtalk extends OpenApiClient
     public function getDocCreatedDeptSummaryWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
+        $query  = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -343,6 +349,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getGeneralFormCreatedSummaryWithOptions($dataId, $headers, $runtime)
     {
+        $dataId      = OpenApiUtilClient::getEncodeParam($dataId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -430,6 +437,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getDocCreatedSummaryWithOptions($dataId, $headers, $runtime)
     {
+        $dataId      = OpenApiUtilClient::getEncodeParam($dataId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -466,6 +474,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime)
     {
+        $parentId    = OpenApiUtilClient::getEncodeParam($parentId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -550,6 +559,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getActiveUserSummaryWithOptions($dataId, $headers, $runtime)
     {
+        $dataId      = OpenApiUtilClient::getEncodeParam($dataId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -646,7 +656,8 @@ class Dingtalk extends OpenApiClient
     public function getDingReportDeptSummaryWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
+        $query  = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -735,7 +746,8 @@ class Dingtalk extends OpenApiClient
     public function getGeneralFormCreatedDeptSummaryWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
+        $query  = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -857,6 +869,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getCalenderSummaryWithOptions($dataId, $headers, $runtime)
     {
+        $dataId      = OpenApiUtilClient::getEncodeParam($dataId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -947,7 +960,8 @@ class Dingtalk extends OpenApiClient
     public function getCommentListWithOptions($publisherId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $publisherId = OpenApiUtilClient::getEncodeParam($publisherId);
+        $query       = [];
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }

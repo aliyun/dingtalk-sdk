@@ -59,6 +59,8 @@ class Dingtalk extends OpenApiClient
      */
     public function queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime)
     {
+        $deviceId    = OpenApiUtilClient::getEncodeParam($deviceId);
+        $bookId      = OpenApiUtilClient::getEncodeParam($bookId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -100,7 +102,9 @@ class Dingtalk extends OpenApiClient
     public function addDeviceVideoConferenceMembersWithOptions($deviceId, $conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $deviceId     = OpenApiUtilClient::getEncodeParam($deviceId);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
@@ -144,7 +148,8 @@ class Dingtalk extends OpenApiClient
     public function createDeviceVideoConferenceWithOptions($deviceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $deviceId = OpenApiUtilClient::getEncodeParam($deviceId);
+        $body     = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
@@ -190,7 +195,9 @@ class Dingtalk extends OpenApiClient
     public function kickDeviceVideoConferenceMembersWithOptions($deviceId, $conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $deviceId     = OpenApiUtilClient::getEncodeParam($deviceId);
+        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
+        $body         = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }

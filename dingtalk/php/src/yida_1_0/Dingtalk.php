@@ -241,6 +241,7 @@ class Dingtalk extends OpenApiClient
     public function getFormDataByIDWithOptions($id, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $id    = OpenApiUtilClient::getEncodeParam($id);
         $query = [];
         if (!Utils::isUnset($request->appType)) {
             @$query['appType'] = $request->appType;

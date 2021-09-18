@@ -28,7 +28,7 @@ class AddResidentUsersRequest extends Model
      *
      * @var string
      */
-    public $name;
+    public $userName;
 
     /**
      * @description 手机号码
@@ -60,7 +60,7 @@ class AddResidentUsersRequest extends Model
     protected $_name = [
         'address'       => 'address',
         'isLeaseholder' => 'isLeaseholder',
-        'name'          => 'name',
+        'userName'      => 'userName',
         'mobile'        => 'mobile',
         'departmentId'  => 'departmentId',
         'extField'      => 'extField',
@@ -80,8 +80,8 @@ class AddResidentUsersRequest extends Model
         if (null !== $this->isLeaseholder) {
             $res['isLeaseholder'] = $this->isLeaseholder;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
@@ -119,8 +119,8 @@ class AddResidentUsersRequest extends Model
         if (isset($map['isLeaseholder'])) {
             $model->isLeaseholder = $map['isLeaseholder'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];

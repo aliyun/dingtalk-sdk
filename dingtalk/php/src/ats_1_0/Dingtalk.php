@@ -349,7 +349,8 @@ class Dingtalk extends OpenApiClient
     public function finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $taskCode = OpenApiUtilClient::getEncodeParam($taskCode);
+        $query    = [];
         if (!Utils::isUnset($request->userId)) {
             @$query['userId'] = $request->userId;
         }
@@ -396,7 +397,8 @@ class Dingtalk extends OpenApiClient
     public function getApplicationRegFormByFlowIdWithOptions($flowId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $flowId = OpenApiUtilClient::getEncodeParam($flowId);
+        $query  = [];
         if (!Utils::isUnset($request->bizCode)) {
             @$query['bizCode'] = $request->bizCode;
         }
@@ -440,7 +442,8 @@ class Dingtalk extends OpenApiClient
     public function updateApplicationRegFormWithOptions($flowId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $flowId = OpenApiUtilClient::getEncodeParam($flowId);
+        $query  = [];
         if (!Utils::isUnset($request->bizCode)) {
             @$query['bizCode'] = $request->bizCode;
         }
@@ -537,7 +540,8 @@ class Dingtalk extends OpenApiClient
     public function updateInterviewSignInInfoWithOptions($interviewId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $interviewId = OpenApiUtilClient::getEncodeParam($interviewId);
+        $query       = [];
         if (!Utils::isUnset($request->bizCode)) {
             @$query['bizCode'] = $request->bizCode;
         }
@@ -586,6 +590,7 @@ class Dingtalk extends OpenApiClient
     public function getJobAuthWithOptions($jobId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $jobId = OpenApiUtilClient::getEncodeParam($jobId);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$query['opUserId'] = $request->opUserId;

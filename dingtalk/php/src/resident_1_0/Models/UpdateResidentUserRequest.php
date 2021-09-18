@@ -28,7 +28,7 @@ class UpdateResidentUserRequest extends Model
      *
      * @var string
      */
-    public $name;
+    public $userName;
 
     /**
      * @description 手机号码
@@ -74,7 +74,7 @@ class UpdateResidentUserRequest extends Model
     protected $_name = [
         'address'         => 'address',
         'isRetainOldDept' => 'isRetainOldDept',
-        'name'            => 'name',
+        'userName'        => 'userName',
         'mobile'          => 'mobile',
         'departmentId'    => 'departmentId',
         'extField'        => 'extField',
@@ -96,8 +96,8 @@ class UpdateResidentUserRequest extends Model
         if (null !== $this->isRetainOldDept) {
             $res['isRetainOldDept'] = $this->isRetainOldDept;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->userName) {
+            $res['userName'] = $this->userName;
         }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
@@ -141,8 +141,8 @@ class UpdateResidentUserRequest extends Model
         if (isset($map['isRetainOldDept'])) {
             $model->isRetainOldDept = $map['isRetainOldDept'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['userName'])) {
+            $model->userName = $map['userName'];
         }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];

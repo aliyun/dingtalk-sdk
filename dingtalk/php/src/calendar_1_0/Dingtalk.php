@@ -89,7 +89,10 @@ class Dingtalk extends OpenApiClient
     public function respondEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $body       = [];
         if (!Utils::isUnset($request->responseStatus)) {
             @$body['responseStatus'] = $request->responseStatus;
         }
@@ -133,7 +136,8 @@ class Dingtalk extends OpenApiClient
     public function generateCaldavAccountWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
         if (!Utils::isUnset($request->device)) {
             @$body['device'] = $request->device;
         }
@@ -180,7 +184,8 @@ class Dingtalk extends OpenApiClient
     public function getScheduleWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
@@ -230,7 +235,8 @@ class Dingtalk extends OpenApiClient
     public function convertLegacyEventIdWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $body   = [];
         if (!Utils::isUnset($request->legacyEventIds)) {
             @$body['legacyEventIds'] = $request->legacyEventIds;
         }
@@ -287,7 +293,10 @@ class Dingtalk extends OpenApiClient
     public function removeAttendeeWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $body       = [];
         if (!Utils::isUnset($request->attendeesToRemove)) {
             @$body['attendeesToRemove'] = $request->attendeesToRemove;
         }
@@ -335,7 +344,10 @@ class Dingtalk extends OpenApiClient
     public function addAttendeeWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $body       = [];
         if (!Utils::isUnset($request->attendeesToAdd)) {
             @$body['attendeesToAdd'] = $request->attendeesToAdd;
         }
@@ -381,7 +393,9 @@ class Dingtalk extends OpenApiClient
     public function createEventWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $body       = [];
         if (!Utils::isUnset($request->summary)) {
             @$body['summary'] = $request->summary;
         }
@@ -452,6 +466,7 @@ class Dingtalk extends OpenApiClient
      */
     public function listCalendarsWithOptions($userId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -495,7 +510,10 @@ class Dingtalk extends OpenApiClient
     public function listReceiversWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $query      = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -546,6 +564,9 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId  = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId     = OpenApiUtilClient::getEncodeParam($eventId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -587,7 +608,9 @@ class Dingtalk extends OpenApiClient
     public function listEventsWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $query      = [];
         if (!Utils::isUnset($request->timeMin)) {
             @$query['timeMin'] = $request->timeMin;
         }
@@ -648,7 +671,9 @@ class Dingtalk extends OpenApiClient
     public function listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $query      = [];
         if (!Utils::isUnset($request->timeMin)) {
             @$query['timeMin'] = $request->timeMin;
         }
@@ -702,6 +727,9 @@ class Dingtalk extends OpenApiClient
      */
     public function getEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
     {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId  = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId     = OpenApiUtilClient::getEncodeParam($eventId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -745,7 +773,10 @@ class Dingtalk extends OpenApiClient
     public function patchEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $userId     = OpenApiUtilClient::getEncodeParam($userId);
+        $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
+        $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
+        $body       = [];
         if (!Utils::isUnset($request->summary)) {
             @$body['summary'] = $request->summary;
         }

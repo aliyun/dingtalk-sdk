@@ -109,6 +109,7 @@ class Dingtalk extends OpenApiClient
      */
     public function queryComponentScopesWithOptions($componentId, $headers, $runtime)
     {
+        $componentId = OpenApiUtilClient::getEncodeParam($componentId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -145,6 +146,7 @@ class Dingtalk extends OpenApiClient
      */
     public function queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime)
     {
+        $shortcutKey = OpenApiUtilClient::getEncodeParam($shortcutKey);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -270,7 +272,9 @@ class Dingtalk extends OpenApiClient
     public function updateDingPortalPageScopeWithOptions($pageUuid, $appUuid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $pageUuid = OpenApiUtilClient::getEncodeParam($pageUuid);
+        $appUuid  = OpenApiUtilClient::getEncodeParam($appUuid);
+        $body     = [];
         if (!Utils::isUnset($request->userids)) {
             @$body['userids'] = $request->userids;
         }
@@ -320,6 +324,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getDingPortalDetailWithOptions($appUuid, $headers, $runtime)
     {
+        $appUuid     = OpenApiUtilClient::getEncodeParam($appUuid);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

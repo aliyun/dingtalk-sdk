@@ -396,6 +396,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getSettingByMiniAppIdWithOptions($miniAppId, $headers, $runtime)
     {
+        $miniAppId   = OpenApiUtilClient::getEncodeParam($miniAppId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

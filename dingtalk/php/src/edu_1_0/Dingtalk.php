@@ -460,7 +460,8 @@ class Dingtalk extends OpenApiClient
     public function initCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $classId = OpenApiUtilClient::getEncodeParam($classId);
+        $query   = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$query['opUserId'] = $request->opUserId;
         }
@@ -512,7 +513,8 @@ class Dingtalk extends OpenApiClient
     public function deleteDeptWithOptions($deptId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $deptId = OpenApiUtilClient::getEncodeParam($deptId);
+        $query  = [];
         if (!Utils::isUnset($request->operator)) {
             @$query['operator'] = $request->operator;
         }
@@ -558,7 +560,9 @@ class Dingtalk extends OpenApiClient
     public function deleteGuardianWithOptions($classId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $classId = OpenApiUtilClient::getEncodeParam($classId);
+        $userId  = OpenApiUtilClient::getEncodeParam($userId);
+        $query   = [];
         if (!Utils::isUnset($request->stuId)) {
             @$query['stuId'] = $request->stuId;
         }
@@ -663,7 +667,9 @@ class Dingtalk extends OpenApiClient
     public function deleteTeacherWithOptions($classId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $classId = OpenApiUtilClient::getEncodeParam($classId);
+        $userId  = OpenApiUtilClient::getEncodeParam($userId);
+        $query   = [];
         if (!Utils::isUnset($request->adviser)) {
             @$query['adviser'] = $request->adviser;
         }
@@ -872,6 +878,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getOpenCourseDetailWithOptions($courseId, $headers, $runtime)
     {
+        $courseId    = OpenApiUtilClient::getEncodeParam($courseId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -913,7 +920,9 @@ class Dingtalk extends OpenApiClient
     public function deleteStudentWithOptions($classId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $classId = OpenApiUtilClient::getEncodeParam($classId);
+        $userId  = OpenApiUtilClient::getEncodeParam($userId);
+        $query   = [];
         if (!Utils::isUnset($request->operator)) {
             @$query['operator'] = $request->operator;
         }
@@ -1005,7 +1014,8 @@ class Dingtalk extends OpenApiClient
     public function updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $classId = OpenApiUtilClient::getEncodeParam($classId);
+        $query   = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$query['opUserId'] = $request->opUserId;
         }
@@ -1380,7 +1390,8 @@ class Dingtalk extends OpenApiClient
      */
     public function getShareRoleMembersWithOptions($shareRoleCode, $headers, $runtime)
     {
-        $realHeaders = [];
+        $shareRoleCode = OpenApiUtilClient::getEncodeParam($shareRoleCode);
+        $realHeaders   = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
