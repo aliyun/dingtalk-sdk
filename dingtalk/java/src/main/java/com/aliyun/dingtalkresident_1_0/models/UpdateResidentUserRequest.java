@@ -13,8 +13,8 @@ public class UpdateResidentUserRequest extends TeaModel {
     public Boolean isRetainOldDept;
 
     // 居民名字
-    @NameInMap("name")
-    public String name;
+    @NameInMap("userName")
+    public String userName;
 
     // 手机号码
     @NameInMap("mobile")
@@ -61,12 +61,12 @@ public class UpdateResidentUserRequest extends TeaModel {
         return this.isRetainOldDept;
     }
 
-    public UpdateResidentUserRequest setName(String name) {
-        this.name = name;
+    public UpdateResidentUserRequest setUserName(String userName) {
+        this.userName = userName;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getUserName() {
+        return this.userName;
     }
 
     public UpdateResidentUserRequest setMobile(String mobile) {

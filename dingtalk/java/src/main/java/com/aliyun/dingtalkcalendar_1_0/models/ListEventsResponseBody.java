@@ -452,6 +452,36 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsResponseBodyEventsReminders extends TeaModel {
+        @NameInMap("method")
+        public String method;
+
+        @NameInMap("minutes")
+        public String minutes;
+
+        public static ListEventsResponseBodyEventsReminders build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsResponseBodyEventsReminders self = new ListEventsResponseBodyEventsReminders();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsResponseBodyEventsReminders setMethod(String method) {
+            this.method = method;
+            return this;
+        }
+        public String getMethod() {
+            return this.method;
+        }
+
+        public ListEventsResponseBodyEventsReminders setMinutes(String minutes) {
+            this.minutes = minutes;
+            return this;
+        }
+        public String getMinutes() {
+            return this.minutes;
+        }
+
+    }
+
     public static class ListEventsResponseBodyEvents extends TeaModel {
         // 日程事件id
         @NameInMap("id")
@@ -511,6 +541,9 @@ public class ListEventsResponseBody extends TeaModel {
 
         @NameInMap("onlineMeetingInfo")
         public ListEventsResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
+
+        @NameInMap("reminders")
+        public java.util.List<ListEventsResponseBodyEventsReminders> reminders;
 
         public static ListEventsResponseBodyEvents build(java.util.Map<String, ?> map) throws Exception {
             ListEventsResponseBodyEvents self = new ListEventsResponseBodyEvents();
@@ -635,6 +668,14 @@ public class ListEventsResponseBody extends TeaModel {
         }
         public ListEventsResponseBodyEventsOnlineMeetingInfo getOnlineMeetingInfo() {
             return this.onlineMeetingInfo;
+        }
+
+        public ListEventsResponseBodyEvents setReminders(java.util.List<ListEventsResponseBodyEventsReminders> reminders) {
+            this.reminders = reminders;
+            return this;
+        }
+        public java.util.List<ListEventsResponseBodyEventsReminders> getReminders() {
+            return this.reminders;
         }
 
     }

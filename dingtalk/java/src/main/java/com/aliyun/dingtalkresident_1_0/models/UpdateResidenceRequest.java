@@ -9,8 +9,8 @@ public class UpdateResidenceRequest extends TeaModel {
     public String managerUserId;
 
     // 户名字
-    @NameInMap("name")
-    public String name;
+    @NameInMap("departmentName")
+    public String departmentName;
 
     // 组id
     @NameInMap("departmentId")
@@ -45,12 +45,12 @@ public class UpdateResidenceRequest extends TeaModel {
         return this.managerUserId;
     }
 
-    public UpdateResidenceRequest setName(String name) {
-        this.name = name;
+    public UpdateResidenceRequest setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getDepartmentName() {
+        return this.departmentName;
     }
 
     public UpdateResidenceRequest setDepartmentId(Long departmentId) {

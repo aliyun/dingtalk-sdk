@@ -55,6 +55,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("updateTime")
     public String updateTime;
 
+    @NameInMap("reminders")
+    public java.util.List<GetEventResponseBodyReminders> reminders;
+
     @NameInMap("onlineMeetingInfo")
     public GetEventResponseBodyOnlineMeetingInfo onlineMeetingInfo;
 
@@ -173,6 +176,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public String getUpdateTime() {
         return this.updateTime;
+    }
+
+    public GetEventResponseBody setReminders(java.util.List<GetEventResponseBodyReminders> reminders) {
+        this.reminders = reminders;
+        return this;
+    }
+    public java.util.List<GetEventResponseBodyReminders> getReminders() {
+        return this.reminders;
     }
 
     public GetEventResponseBody setOnlineMeetingInfo(GetEventResponseBodyOnlineMeetingInfo onlineMeetingInfo) {
@@ -531,6 +542,36 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+    }
+
+    public static class GetEventResponseBodyReminders extends TeaModel {
+        @NameInMap("method")
+        public String method;
+
+        @NameInMap("minutes")
+        public String minutes;
+
+        public static GetEventResponseBodyReminders build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyReminders self = new GetEventResponseBodyReminders();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyReminders setMethod(String method) {
+            this.method = method;
+            return this;
+        }
+        public String getMethod() {
+            return this.method;
+        }
+
+        public GetEventResponseBodyReminders setMinutes(String minutes) {
+            this.minutes = minutes;
+            return this;
+        }
+        public String getMinutes() {
+            return this.minutes;
         }
 
     }

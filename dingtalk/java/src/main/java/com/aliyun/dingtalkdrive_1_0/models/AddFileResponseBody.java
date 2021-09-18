@@ -8,6 +8,10 @@ public class AddFileResponseBody extends TeaModel {
     @NameInMap("spaceId")
     public String spaceId;
 
+    // 父目录id
+    @NameInMap("parentId")
+    public String parentId;
+
     // 文件id
     @NameInMap("fileId")
     public String fileId;
@@ -32,6 +36,10 @@ public class AddFileResponseBody extends TeaModel {
     @NameInMap("fileExtension")
     public String fileExtension;
 
+    // 文件大小
+    @NameInMap("fileSize")
+    public Long fileSize;
+
     // 创建时间
     @NameInMap("createTime")
     public String createTime;
@@ -39,6 +47,14 @@ public class AddFileResponseBody extends TeaModel {
     // 修改时间
     @NameInMap("modifyTime")
     public String modifyTime;
+
+    // 创建者
+    @NameInMap("creator")
+    public String creator;
+
+    // 修改者
+    @NameInMap("modifier")
+    public String modifier;
 
     public static AddFileResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AddFileResponseBody self = new AddFileResponseBody();
@@ -51,6 +67,14 @@ public class AddFileResponseBody extends TeaModel {
     }
     public String getSpaceId() {
         return this.spaceId;
+    }
+
+    public AddFileResponseBody setParentId(String parentId) {
+        this.parentId = parentId;
+        return this;
+    }
+    public String getParentId() {
+        return this.parentId;
     }
 
     public AddFileResponseBody setFileId(String fileId) {
@@ -101,6 +125,14 @@ public class AddFileResponseBody extends TeaModel {
         return this.fileExtension;
     }
 
+    public AddFileResponseBody setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+        return this;
+    }
+    public Long getFileSize() {
+        return this.fileSize;
+    }
+
     public AddFileResponseBody setCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -115,6 +147,22 @@ public class AddFileResponseBody extends TeaModel {
     }
     public String getModifyTime() {
         return this.modifyTime;
+    }
+
+    public AddFileResponseBody setCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+    public String getCreator() {
+        return this.creator;
+    }
+
+    public AddFileResponseBody setModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+    public String getModifier() {
+        return this.modifier;
     }
 
 }

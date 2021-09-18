@@ -24,6 +24,10 @@ public class AddCustomSpaceResponseBody extends TeaModel {
     @NameInMap("usedQuota")
     public Long usedQuota;
 
+    // 授权模式
+    @NameInMap("permissionMode")
+    public String permissionMode;
+
     // 创建时间
     @NameInMap("createTime")
     public String createTime;
@@ -75,6 +79,14 @@ public class AddCustomSpaceResponseBody extends TeaModel {
     }
     public Long getUsedQuota() {
         return this.usedQuota;
+    }
+
+    public AddCustomSpaceResponseBody setPermissionMode(String permissionMode) {
+        this.permissionMode = permissionMode;
+        return this;
+    }
+    public String getPermissionMode() {
+        return this.permissionMode;
     }
 
     public AddCustomSpaceResponseBody setCreateTime(String createTime) {

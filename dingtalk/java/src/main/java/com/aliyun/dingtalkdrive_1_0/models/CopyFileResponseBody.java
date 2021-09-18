@@ -3,37 +3,37 @@ package com.aliyun.dingtalkdrive_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ListFilesResponseBody extends TeaModel {
-    // 文件列表
-    @NameInMap("files")
-    public java.util.List<ListFilesResponseBodyFiles> files;
+public class CopyFileResponseBody extends TeaModel {
+    // 文件信息
+    @NameInMap("file")
+    public CopyFileResponseBodyFile file;
 
-    // 分页加载锚点, nextToken不为空表示有更多数据
-    @NameInMap("nextToken")
-    public String nextToken;
+    // 异步任务id
+    @NameInMap("taskId")
+    public String taskId;
 
-    public static ListFilesResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        ListFilesResponseBody self = new ListFilesResponseBody();
+    public static CopyFileResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        CopyFileResponseBody self = new CopyFileResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public ListFilesResponseBody setFiles(java.util.List<ListFilesResponseBodyFiles> files) {
-        this.files = files;
+    public CopyFileResponseBody setFile(CopyFileResponseBodyFile file) {
+        this.file = file;
         return this;
     }
-    public java.util.List<ListFilesResponseBodyFiles> getFiles() {
-        return this.files;
+    public CopyFileResponseBodyFile getFile() {
+        return this.file;
     }
 
-    public ListFilesResponseBody setNextToken(String nextToken) {
-        this.nextToken = nextToken;
+    public CopyFileResponseBody setTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
-    public String getNextToken() {
-        return this.nextToken;
+    public String getTaskId() {
+        return this.taskId;
     }
 
-    public static class ListFilesResponseBodyFiles extends TeaModel {
+    public static class CopyFileResponseBodyFile extends TeaModel {
         // 空间id
         @NameInMap("spaceId")
         public String spaceId;
@@ -86,12 +86,12 @@ public class ListFilesResponseBody extends TeaModel {
         @NameInMap("modifier")
         public String modifier;
 
-        public static ListFilesResponseBodyFiles build(java.util.Map<String, ?> map) throws Exception {
-            ListFilesResponseBodyFiles self = new ListFilesResponseBodyFiles();
+        public static CopyFileResponseBodyFile build(java.util.Map<String, ?> map) throws Exception {
+            CopyFileResponseBodyFile self = new CopyFileResponseBodyFile();
             return TeaModel.build(map, self);
         }
 
-        public ListFilesResponseBodyFiles setSpaceId(String spaceId) {
+        public CopyFileResponseBodyFile setSpaceId(String spaceId) {
             this.spaceId = spaceId;
             return this;
         }
@@ -99,7 +99,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.spaceId;
         }
 
-        public ListFilesResponseBodyFiles setParentId(String parentId) {
+        public CopyFileResponseBodyFile setParentId(String parentId) {
             this.parentId = parentId;
             return this;
         }
@@ -107,7 +107,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.parentId;
         }
 
-        public ListFilesResponseBodyFiles setFileId(String fileId) {
+        public CopyFileResponseBodyFile setFileId(String fileId) {
             this.fileId = fileId;
             return this;
         }
@@ -115,7 +115,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.fileId;
         }
 
-        public ListFilesResponseBodyFiles setFileName(String fileName) {
+        public CopyFileResponseBodyFile setFileName(String fileName) {
             this.fileName = fileName;
             return this;
         }
@@ -123,7 +123,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.fileName;
         }
 
-        public ListFilesResponseBodyFiles setFilePath(String filePath) {
+        public CopyFileResponseBodyFile setFilePath(String filePath) {
             this.filePath = filePath;
             return this;
         }
@@ -131,7 +131,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.filePath;
         }
 
-        public ListFilesResponseBodyFiles setFileType(String fileType) {
+        public CopyFileResponseBodyFile setFileType(String fileType) {
             this.fileType = fileType;
             return this;
         }
@@ -139,7 +139,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.fileType;
         }
 
-        public ListFilesResponseBodyFiles setContentType(String contentType) {
+        public CopyFileResponseBodyFile setContentType(String contentType) {
             this.contentType = contentType;
             return this;
         }
@@ -147,7 +147,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.contentType;
         }
 
-        public ListFilesResponseBodyFiles setFileExtension(String fileExtension) {
+        public CopyFileResponseBodyFile setFileExtension(String fileExtension) {
             this.fileExtension = fileExtension;
             return this;
         }
@@ -155,7 +155,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.fileExtension;
         }
 
-        public ListFilesResponseBodyFiles setFileSize(Long fileSize) {
+        public CopyFileResponseBodyFile setFileSize(Long fileSize) {
             this.fileSize = fileSize;
             return this;
         }
@@ -163,7 +163,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.fileSize;
         }
 
-        public ListFilesResponseBodyFiles setCreateTime(String createTime) {
+        public CopyFileResponseBodyFile setCreateTime(String createTime) {
             this.createTime = createTime;
             return this;
         }
@@ -171,7 +171,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.createTime;
         }
 
-        public ListFilesResponseBodyFiles setModifyTime(String modifyTime) {
+        public CopyFileResponseBodyFile setModifyTime(String modifyTime) {
             this.modifyTime = modifyTime;
             return this;
         }
@@ -179,7 +179,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.modifyTime;
         }
 
-        public ListFilesResponseBodyFiles setCreator(String creator) {
+        public CopyFileResponseBodyFile setCreator(String creator) {
             this.creator = creator;
             return this;
         }
@@ -187,7 +187,7 @@ public class ListFilesResponseBody extends TeaModel {
             return this.creator;
         }
 
-        public ListFilesResponseBodyFiles setModifier(String modifier) {
+        public CopyFileResponseBodyFile setModifier(String modifier) {
             this.modifier = modifier;
             return this;
         }

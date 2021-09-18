@@ -358,6 +358,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("RenameFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename", "json", req, runtime), new RenameFileResponse());
     }
 
+    public GetAsyncTaskInfoResponse getAsyncTaskInfo(String taskId, GetAsyncTaskInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetAsyncTaskInfoHeaders headers = new GetAsyncTaskInfoHeaders();
+        return this.getAsyncTaskInfoWithOptions(taskId, request, headers, runtime);
+    }
+
+    public GetAsyncTaskInfoResponse getAsyncTaskInfoWithOptions(String taskId, GetAsyncTaskInfoRequest request, GetAsyncTaskInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAsyncTaskInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/tasks/" + taskId + "", "json", req, runtime), new GetAsyncTaskInfoResponse());
+    }
+
     public ListFilesResponse listFiles(String spaceId, ListFilesRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListFilesHeaders headers = new ListFilesHeaders();
@@ -382,6 +412,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderType)) {
+            query.put("orderType", request.orderType);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -734,6 +768,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("identifier", request.identifier);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionMode)) {
+            body.put("permissionMode", request.permissionMode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             body.put("unionId", request.unionId);
         }
@@ -752,6 +794,49 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("AddCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/customSpaces", "json", req, runtime), new AddCustomSpaceResponse());
+    }
+
+    public CopyFileResponse copyFile(String spaceId, String fileId, CopyFileRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CopyFileHeaders headers = new CopyFileHeaders();
+        return this.copyFileWithOptions(spaceId, fileId, request, headers, runtime);
+    }
+
+    public CopyFileResponse copyFileWithOptions(String spaceId, String fileId, CopyFileRequest request, CopyFileHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
+        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.targetSpaceId)) {
+            body.put("targetSpaceId", request.targetSpaceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetParentId)) {
+            body.put("targetParentId", request.targetParentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.addConflictPolicy)) {
+            body.put("addConflictPolicy", request.addConflictPolicy);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CopyFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy", "json", req, runtime), new CopyFileResponse());
     }
 
     public DeleteSpaceResponse deleteSpace(String spaceId, DeleteSpaceRequest request) throws Exception {

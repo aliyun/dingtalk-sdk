@@ -28,6 +28,12 @@ public class TranslateFileRequest extends TeaModel {
     @NameInMap("unionId")
     public String unionId;
 
+    @NameInMap("RequestId")
+    public String requestId;
+
+    @NameInMap("eagleEyeTraceId")
+    public String eagleEyeTraceId;
+
     public static TranslateFileRequest build(java.util.Map<String, ?> map) throws Exception {
         TranslateFileRequest self = new TranslateFileRequest();
         return TeaModel.build(map, self);
@@ -87,6 +93,22 @@ public class TranslateFileRequest extends TeaModel {
     }
     public String getUnionId() {
         return this.unionId;
+    }
+
+    public TranslateFileRequest setRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    public TranslateFileRequest setEagleEyeTraceId(String eagleEyeTraceId) {
+        this.eagleEyeTraceId = eagleEyeTraceId;
+        return this;
+    }
+    public String getEagleEyeTraceId() {
+        return this.eagleEyeTraceId;
     }
 
 }

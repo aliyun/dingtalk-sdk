@@ -34,8 +34,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("managerUserId", request.managerUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+        if (!com.aliyun.teautil.Common.isUnset(request.departmentName)) {
+            query.put("departmentName", request.departmentName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.departmentId)) {
@@ -104,8 +104,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("isLeaseholder", request.isLeaseholder);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+        if (!com.aliyun.teautil.Common.isUnset(request.userName)) {
+            query.put("userName", request.userName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
@@ -153,8 +153,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("isResidenceGroup", request.isResidenceGroup);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+        if (!com.aliyun.teautil.Common.isUnset(request.departmentName)) {
+            query.put("departmentName", request.departmentName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.parentDepartmentId)) {
@@ -223,8 +223,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("managerUserId", request.managerUserId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+        if (!com.aliyun.teautil.Common.isUnset(request.departmentName)) {
+            query.put("departmentName", request.departmentName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.departmentId)) {
@@ -280,8 +280,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("isRetainOldDept", request.isRetainOldDept);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+        if (!com.aliyun.teautil.Common.isUnset(request.userName)) {
+            query.put("userName", request.userName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {

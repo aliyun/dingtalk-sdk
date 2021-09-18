@@ -8,6 +8,10 @@ public class RenameFileResponseBody extends TeaModel {
     @NameInMap("spaceId")
     public String spaceId;
 
+    // 父目录id
+    @NameInMap("parentId")
+    public String parentId;
+
     // 文件id
     @NameInMap("fileId")
     public String fileId;
@@ -32,6 +36,10 @@ public class RenameFileResponseBody extends TeaModel {
     @NameInMap("fileExtension")
     public String fileExtension;
 
+    // 文件大小
+    @NameInMap("fileSize")
+    public Long fileSize;
+
     // 创建时间
     @NameInMap("createTime")
     public String createTime;
@@ -39,6 +47,14 @@ public class RenameFileResponseBody extends TeaModel {
     // 修改时间
     @NameInMap("modifyTime")
     public String modifyTime;
+
+    // 创建者
+    @NameInMap("creator")
+    public String creator;
+
+    // 修改者
+    @NameInMap("modifier")
+    public String modifier;
 
     public static RenameFileResponseBody build(java.util.Map<String, ?> map) throws Exception {
         RenameFileResponseBody self = new RenameFileResponseBody();
@@ -51,6 +67,14 @@ public class RenameFileResponseBody extends TeaModel {
     }
     public String getSpaceId() {
         return this.spaceId;
+    }
+
+    public RenameFileResponseBody setParentId(String parentId) {
+        this.parentId = parentId;
+        return this;
+    }
+    public String getParentId() {
+        return this.parentId;
     }
 
     public RenameFileResponseBody setFileId(String fileId) {
@@ -101,6 +125,14 @@ public class RenameFileResponseBody extends TeaModel {
         return this.fileExtension;
     }
 
+    public RenameFileResponseBody setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+        return this;
+    }
+    public Long getFileSize() {
+        return this.fileSize;
+    }
+
     public RenameFileResponseBody setCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -115,6 +147,22 @@ public class RenameFileResponseBody extends TeaModel {
     }
     public String getModifyTime() {
         return this.modifyTime;
+    }
+
+    public RenameFileResponseBody setCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+    public String getCreator() {
+        return this.creator;
+    }
+
+    public RenameFileResponseBody setModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+    public String getModifier() {
+        return this.modifier;
     }
 
 }

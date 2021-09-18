@@ -224,6 +224,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/managementGroups", "json", req, runtime), new ListManagementGroupsResponse());
     }
 
+    public ListSeniorSettingsResponse listSeniorSettings(ListSeniorSettingsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListSeniorSettingsHeaders headers = new ListSeniorSettingsHeaders();
+        return this.listSeniorSettingsWithOptions(request, headers, runtime);
+    }
+
+    public ListSeniorSettingsResponse listSeniorSettingsWithOptions(ListSeniorSettingsRequest request, ListSeniorSettingsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.seniorStaffId)) {
+            query.put("seniorStaffId", request.seniorStaffId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListSeniorSettings", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/seniorSettings", "json", req, runtime), new ListSeniorSettingsResponse());
+    }
+
     public ListEmpAttributeVisibilityResponse listEmpAttributeVisibility(ListEmpAttributeVisibilityRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListEmpAttributeVisibilityHeaders headers = new ListEmpAttributeVisibilityHeaders();
@@ -641,6 +670,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("unionId", request.unionId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("RequestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eagleEyeTraceId)) {
+            body.put("eagleEyeTraceId", request.eagleEyeTraceId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -655,6 +692,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("TranslateFile", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/files/translate", "json", req, runtime), new TranslateFileResponse());
+    }
+
+    public UpdateSeniorSettingResponse updateSeniorSetting(UpdateSeniorSettingRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateSeniorSettingHeaders headers = new UpdateSeniorSettingHeaders();
+        return this.updateSeniorSettingWithOptions(request, headers, runtime);
+    }
+
+    public UpdateSeniorSettingResponse updateSeniorSettingWithOptions(UpdateSeniorSettingRequest request, UpdateSeniorSettingHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.seniorStaffId)) {
+            body.put("seniorStaffId", request.seniorStaffId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.open)) {
+            body.put("open", request.open);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permitStaffIds)) {
+            body.put("permitStaffIds", request.permitStaffIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permitDeptIds)) {
+            body.put("permitDeptIds", request.permitDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permitTagIds)) {
+            body.put("permitTagIds", request.permitTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.protectScenes)) {
+            body.put("protectScenes", request.protectScenes);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateSeniorSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/seniorSettings", "none", req, runtime), new UpdateSeniorSettingResponse());
     }
 
     public GetApplyInviteInfoResponse getApplyInviteInfo(GetApplyInviteInfoRequest request) throws Exception {

@@ -20,6 +20,10 @@ public class ListFilesRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    // 排序类型
+    @NameInMap("orderType")
+    public String orderType;
+
     public static ListFilesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListFilesRequest self = new ListFilesRequest();
         return TeaModel.build(map, self);
@@ -55,6 +59,14 @@ public class ListFilesRequest extends TeaModel {
     }
     public Integer getMaxResults() {
         return this.maxResults;
+    }
+
+    public ListFilesRequest setOrderType(String orderType) {
+        this.orderType = orderType;
+        return this;
+    }
+    public String getOrderType() {
+        return this.orderType;
     }
 
 }

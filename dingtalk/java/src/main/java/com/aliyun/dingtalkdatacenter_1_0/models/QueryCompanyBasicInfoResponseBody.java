@@ -18,11 +18,11 @@ public class QueryCompanyBasicInfoResponseBody extends TeaModel {
 
     // data
     @NameInMap("data")
-    public String data;
+    public java.util.List<java.util.Map<String, String>> data;
 
     // code
     @NameInMap("code")
-    public Integer code;
+    public String code;
 
     public static QueryCompanyBasicInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCompanyBasicInfoResponseBody self = new QueryCompanyBasicInfoResponseBody();
@@ -53,19 +53,19 @@ public class QueryCompanyBasicInfoResponseBody extends TeaModel {
         return this.total;
     }
 
-    public QueryCompanyBasicInfoResponseBody setData(String data) {
+    public QueryCompanyBasicInfoResponseBody setData(java.util.List<java.util.Map<String, String>> data) {
         this.data = data;
         return this;
     }
-    public String getData() {
+    public java.util.List<java.util.Map<String, String>> getData() {
         return this.data;
     }
 
-    public QueryCompanyBasicInfoResponseBody setCode(Integer code) {
+    public QueryCompanyBasicInfoResponseBody setCode(String code) {
         this.code = code;
         return this;
     }
-    public Integer getCode() {
+    public String getCode() {
         return this.code;
     }
 

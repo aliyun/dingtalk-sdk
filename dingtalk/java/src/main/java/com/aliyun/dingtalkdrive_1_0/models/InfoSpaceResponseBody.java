@@ -24,6 +24,10 @@ public class InfoSpaceResponseBody extends TeaModel {
     @NameInMap("usedQuota")
     public Long usedQuota;
 
+    // 授权模式
+    @NameInMap("permissionMode")
+    public String permissionMode;
+
     // 创建时间
     @NameInMap("createTime")
     public String createTime;
@@ -75,6 +79,14 @@ public class InfoSpaceResponseBody extends TeaModel {
     }
     public Long getUsedQuota() {
         return this.usedQuota;
+    }
+
+    public InfoSpaceResponseBody setPermissionMode(String permissionMode) {
+        this.permissionMode = permissionMode;
+        return this;
+    }
+    public String getPermissionMode() {
+        return this.permissionMode;
     }
 
     public InfoSpaceResponseBody setCreateTime(String createTime) {

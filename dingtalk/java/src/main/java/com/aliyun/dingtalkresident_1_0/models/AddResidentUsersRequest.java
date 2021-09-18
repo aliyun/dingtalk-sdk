@@ -13,8 +13,8 @@ public class AddResidentUsersRequest extends TeaModel {
     public Boolean isLeaseholder;
 
     // 居民名字
-    @NameInMap("name")
-    public String name;
+    @NameInMap("userName")
+    public String userName;
 
     // 手机号码
     @NameInMap("mobile")
@@ -53,12 +53,12 @@ public class AddResidentUsersRequest extends TeaModel {
         return this.isLeaseholder;
     }
 
-    public AddResidentUsersRequest setName(String name) {
-        this.name = name;
+    public AddResidentUsersRequest setUserName(String userName) {
+        this.userName = userName;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getUserName() {
+        return this.userName;
     }
 
     public AddResidentUsersRequest setMobile(String mobile) {

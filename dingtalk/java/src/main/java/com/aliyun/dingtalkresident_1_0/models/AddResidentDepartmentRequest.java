@@ -9,8 +9,8 @@ public class AddResidentDepartmentRequest extends TeaModel {
     public Boolean isResidenceGroup;
 
     // 部门名字
-    @NameInMap("name")
-    public String name;
+    @NameInMap("departmentName")
+    public String departmentName;
 
     // 父部门id
     @NameInMap("parentDepartmentId")
@@ -29,12 +29,12 @@ public class AddResidentDepartmentRequest extends TeaModel {
         return this.isResidenceGroup;
     }
 
-    public AddResidentDepartmentRequest setName(String name) {
-        this.name = name;
+    public AddResidentDepartmentRequest setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getDepartmentName() {
+        return this.departmentName;
     }
 
     public AddResidentDepartmentRequest setParentDepartmentId(Long parentDepartmentId) {

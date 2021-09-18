@@ -53,6 +53,10 @@ public class ListSpacesResponseBody extends TeaModel {
         @NameInMap("usedQuota")
         public Long usedQuota;
 
+        // 授权模式
+        @NameInMap("permissionMode")
+        public String permissionMode;
+
         // 创建时间
         @NameInMap("createTime")
         public String createTime;
@@ -104,6 +108,14 @@ public class ListSpacesResponseBody extends TeaModel {
         }
         public Long getUsedQuota() {
             return this.usedQuota;
+        }
+
+        public ListSpacesResponseBodySpaces setPermissionMode(String permissionMode) {
+            this.permissionMode = permissionMode;
+            return this;
+        }
+        public String getPermissionMode() {
+            return this.permissionMode;
         }
 
         public ListSpacesResponseBodySpaces setCreateTime(String createTime) {
