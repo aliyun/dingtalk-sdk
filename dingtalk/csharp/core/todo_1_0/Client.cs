@@ -42,6 +42,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public GetTodoTaskDetailResponse GetTodoTaskDetailWithOptions(string taskId, string unionId, GetTodoTaskDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -60,6 +62,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public async Task<GetTodoTaskDetailResponse> GetTodoTaskDetailWithOptionsAsync(string taskId, string unionId, GetTodoTaskDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -92,6 +96,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public GetTodoTaskResponse GetTodoTaskWithOptions(string unionId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -110,6 +116,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public async Task<GetTodoTaskResponse> GetTodoTaskWithOptionsAsync(string unionId, string taskId, GetTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -142,6 +150,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public GetTodoTaskBySourceIdResponse GetTodoTaskBySourceIdWithOptions(string unionId, string sourceId, GetTodoTaskBySourceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            sourceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sourceId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -160,6 +170,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public async Task<GetTodoTaskBySourceIdResponse> GetTodoTaskBySourceIdWithOptionsAsync(string unionId, string sourceId, GetTodoTaskBySourceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            sourceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sourceId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -193,6 +205,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public CountTodoTasksResponse CountTodoTasksWithOptions(string unionId, CountTodoTasksRequest request, CountTodoTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
             {
@@ -238,6 +251,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<CountTodoTasksResponse> CountTodoTasksWithOptionsAsync(string unionId, CountTodoTasksRequest request, CountTodoTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsDone))
             {
@@ -297,6 +311,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public QueryOrgTodoTasksResponse QueryOrgTodoTasksWithOptions(string unionId, QueryOrgTodoTasksRequest request, QueryOrgTodoTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -326,6 +341,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<QueryOrgTodoTasksResponse> QueryOrgTodoTasksWithOptionsAsync(string unionId, QueryOrgTodoTasksRequest request, QueryOrgTodoTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -369,6 +385,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public CreateTodoTaskResponse CreateTodoTaskWithOptions(string unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -436,6 +453,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<CreateTodoTaskResponse> CreateTodoTaskWithOptionsAsync(string unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -516,6 +534,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public GetTodoTypeConfigResponse GetTodoTypeConfigWithOptions(string unionId, string cardTypeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -534,6 +554,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         public async Task<GetTodoTypeConfigResponse> GetTodoTypeConfigWithOptionsAsync(string unionId, string cardTypeId, GetTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -567,6 +589,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public QueryTodoTasksResponse QueryTodoTasksWithOptions(string unionId, QueryTodoTasksRequest request, QueryTodoTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -624,6 +647,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<QueryTodoTasksResponse> QueryTodoTasksWithOptionsAsync(string unionId, QueryTodoTasksRequest request, QueryTodoTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -695,6 +719,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public UpdateTodoTypeConfigResponse UpdateTodoTypeConfigWithOptions(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -746,6 +772,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<UpdateTodoTypeConfigResponse> UpdateTodoTypeConfigWithOptionsAsync(string unionId, string cardTypeId, UpdateTodoTypeConfigRequest request, UpdateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            cardTypeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardTypeId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -811,6 +839,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public DeleteTodoTaskResponse DeleteTodoTaskWithOptions(string unionId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -836,6 +866,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<DeleteTodoTaskResponse> DeleteTodoTaskWithOptionsAsync(string unionId, string taskId, DeleteTodoTaskRequest request, DeleteTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -875,6 +907,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatusWithOptions(string unionId, string taskId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -906,6 +940,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<UpdateTodoTaskExecutorStatusResponse> UpdateTodoTaskExecutorStatusWithOptionsAsync(string unionId, string taskId, UpdateTodoTaskExecutorStatusRequest request, UpdateTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -951,6 +987,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public CreateTodoTypeConfigResponse CreateTodoTypeConfigWithOptions(string unionId, CreateTodoTypeConfigRequest request, CreateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1002,6 +1039,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<CreateTodoTypeConfigResponse> CreateTodoTypeConfigWithOptionsAsync(string unionId, CreateTodoTypeConfigRequest request, CreateTodoTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1067,6 +1105,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public UpdateTodoTaskResponse UpdateTodoTaskWithOptions(string unionId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1118,6 +1158,8 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         public async Task<UpdateTodoTaskResponse> UpdateTodoTaskWithOptionsAsync(string unionId, string taskId, UpdateTodoTaskRequest request, UpdateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            unionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(unionId);
+            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {

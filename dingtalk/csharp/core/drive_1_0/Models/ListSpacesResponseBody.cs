@@ -49,6 +49,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public long? UsedQuota { get; set; }
 
             /// <summary>
+            /// 授权模式
+            /// </summary>
+            [NameInMap("permissionMode")]
+            [Validation(Required=false)]
+            public string PermissionMode { get; set; }
+
+            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("createTime")]

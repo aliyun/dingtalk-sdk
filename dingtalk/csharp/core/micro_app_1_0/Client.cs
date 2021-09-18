@@ -179,6 +179,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public GetInnerAppResponse GetInnerAppWithOptions(string agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -208,6 +209,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<GetInnerAppResponse> GetInnerAppWithOptionsAsync(string agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -251,6 +253,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public RegisterCustomAppRoleResponse RegisterCustomAppRoleWithOptions(string agentId, RegisterCustomAppRoleRequest request, RegisterCustomAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -284,6 +287,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<RegisterCustomAppRoleResponse> RegisterCustomAppRoleWithOptionsAsync(string agentId, RegisterCustomAppRoleRequest request, RegisterCustomAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -427,6 +431,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public AddAppRolesToMemberResponse AddAppRolesToMemberWithOptions(string agentId, AddAppRolesToMemberRequest request, AddAppRolesToMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -464,6 +469,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<AddAppRolesToMemberResponse> AddAppRolesToMemberWithOptionsAsync(string agentId, AddAppRolesToMemberRequest request, AddAppRolesToMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -514,6 +520,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         public GetAppRoleScopeByRoleIdResponse GetAppRoleScopeByRoleIdWithOptions(string agentId, string roleId, GetAppRoleScopeByRoleIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -532,6 +540,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         public async Task<GetAppRoleScopeByRoleIdResponse> GetAppRoleScopeByRoleIdWithOptionsAsync(string agentId, string roleId, GetAppRoleScopeByRoleIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -564,6 +574,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         public ListRoleInfoByUserResponse ListRoleInfoByUserWithOptions(string agentId, string userId, ListRoleInfoByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -582,6 +594,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         public async Task<ListRoleInfoByUserResponse> ListRoleInfoByUserWithOptionsAsync(string agentId, string userId, ListRoleInfoByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -679,6 +693,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public RemoveMemberForAppRoleResponse RemoveMemberForAppRoleWithOptions(string agentId, string roleId, RemoveMemberForAppRoleRequest request, RemoveMemberForAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -716,6 +732,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<RemoveMemberForAppRoleResponse> RemoveMemberForAppRoleWithOptionsAsync(string agentId, string roleId, RemoveMemberForAppRoleRequest request, RemoveMemberForAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -767,6 +785,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public UpdateInnerAppResponse UpdateInnerAppWithOptions(string agentId, UpdateInnerAppRequest request, UpdateInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -824,6 +843,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<UpdateInnerAppResponse> UpdateInnerAppWithOptionsAsync(string agentId, UpdateInnerAppRequest request, UpdateInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -895,6 +915,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public AddMemberToAppRoleResponse AddMemberToAppRoleWithOptions(string agentId, string roleId, AddMemberToAppRoleRequest request, AddMemberToAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -932,6 +954,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<AddMemberToAppRoleResponse> AddMemberToAppRoleWithOptionsAsync(string agentId, string roleId, AddMemberToAppRoleRequest request, AddMemberToAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -983,6 +1007,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public ListAppRoleScopesResponse ListAppRoleScopesWithOptions(string agentId, ListAppRoleScopesRequest request, ListAppRoleScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -1012,6 +1037,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<ListAppRoleScopesResponse> ListAppRoleScopesWithOptionsAsync(string agentId, ListAppRoleScopesRequest request, ListAppRoleScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -1055,6 +1081,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public AddAppToWorkBenchGroupResponse AddAppToWorkBenchGroupWithOptions(string agentId, AddAppToWorkBenchGroupRequest request, AddAppToWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -1088,6 +1115,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<AddAppToWorkBenchGroupResponse> AddAppToWorkBenchGroupWithOptionsAsync(string agentId, AddAppToWorkBenchGroupRequest request, AddAppToWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -1135,6 +1163,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public RebuildRoleScopeForAppRoleResponse RebuildRoleScopeForAppRoleWithOptions(string agentId, string roleId, RebuildRoleScopeForAppRoleRequest request, RebuildRoleScopeForAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -1176,6 +1206,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<RebuildRoleScopeForAppRoleResponse> RebuildRoleScopeForAppRoleWithOptionsAsync(string agentId, string roleId, RebuildRoleScopeForAppRoleRequest request, RebuildRoleScopeForAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -1303,6 +1335,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public DeleteAppRoleResponse DeleteAppRoleWithOptions(string agentId, string roleId, DeleteAppRoleRequest request, DeleteAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -1328,6 +1362,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<DeleteAppRoleResponse> DeleteAppRoleWithOptionsAsync(string agentId, string roleId, DeleteAppRoleRequest request, DeleteAppRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -1519,6 +1555,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public DeleteInnerAppResponse DeleteInnerAppWithOptions(string agentId, DeleteInnerAppRequest request, DeleteInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -1548,6 +1585,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<DeleteInnerAppResponse> DeleteInnerAppWithOptionsAsync(string agentId, DeleteInnerAppRequest request, DeleteInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
@@ -1591,6 +1629,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public UpdateAppRoleInfoResponse UpdateAppRoleInfoWithOptions(string agentId, string roleId, UpdateAppRoleInfoRequest request, UpdateAppRoleInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -1624,6 +1664,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         public async Task<UpdateAppRoleInfoResponse> UpdateAppRoleInfoWithOptionsAsync(string agentId, string roleId, UpdateAppRoleInfoRequest request, UpdateAppRoleInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            roleId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roleId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {

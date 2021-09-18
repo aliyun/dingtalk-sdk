@@ -8,27 +8,27 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
-    public class AddCustomSpaceRequest : TeaModel {
+    public class CopyFileRequest : TeaModel {
         /// <summary>
-        /// 空间标识
+        /// 目标空间id
         /// </summary>
-        [NameInMap("identifier")]
+        [NameInMap("targetSpaceId")]
         [Validation(Required=false)]
-        public string Identifier { get; set; }
+        public string TargetSpaceId { get; set; }
 
         /// <summary>
-        /// 业务类型
+        /// 目标父目录id
         /// </summary>
-        [NameInMap("bizType")]
+        [NameInMap("targetParentId")]
         [Validation(Required=false)]
-        public string BizType { get; set; }
+        public string TargetParentId { get; set; }
 
         /// <summary>
-        /// 授权模式
+        /// 文件名冲突策略
         /// </summary>
-        [NameInMap("permissionMode")]
+        [NameInMap("addConflictPolicy")]
         [Validation(Required=false)]
-        public string PermissionMode { get; set; }
+        public string AddConflictPolicy { get; set; }
 
         /// <summary>
         /// 用户id

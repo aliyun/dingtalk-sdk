@@ -19,9 +19,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         /// <summary>
         /// 户名字
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("departmentName")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public string DepartmentName { get; set; }
 
         /// <summary>
         /// 组id

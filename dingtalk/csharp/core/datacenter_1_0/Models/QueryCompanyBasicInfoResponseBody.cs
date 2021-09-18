@@ -35,14 +35,14 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
-        public string Data { get; set; }
+        public List<Dictionary<string, string>> Data { get; set; }
 
         /// <summary>
         /// code
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
-        public int? Code { get; set; }
+        public string Code { get; set; }
 
     }
 

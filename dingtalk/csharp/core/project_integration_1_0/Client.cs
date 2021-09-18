@@ -42,6 +42,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public SendInteractiveCardResponse SendInteractiveCardWithOptions(string userId, SendInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -60,6 +61,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public async Task<SendInteractiveCardResponse> SendInteractiveCardWithOptionsAsync(string userId, SendInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -92,6 +94,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public UpdateInteractiveCardResponse UpdateInteractiveCardWithOptions(string userId, UpdateInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -110,6 +113,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public async Task<UpdateInteractiveCardResponse> UpdateInteractiveCardWithOptionsAsync(string userId, UpdateInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -142,6 +146,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public SendSingleInteractiveCardResponse SendSingleInteractiveCardWithOptions(string userId, SendSingleInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -160,6 +165,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public async Task<SendSingleInteractiveCardResponse> SendSingleInteractiveCardWithOptionsAsync(string userId, SendSingleInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -192,6 +198,8 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public AddAttendeeToEventGroupResponse AddAttendeeToEventGroupWithOptions(string userId, string groupId, AddAttendeeToEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -210,6 +218,8 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public async Task<AddAttendeeToEventGroupResponse> AddAttendeeToEventGroupWithOptionsAsync(string userId, string groupId, AddAttendeeToEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -242,6 +252,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public CreateEventGroupResponse CreateEventGroupWithOptions(string userId, CreateEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -260,6 +271,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
 
         public async Task<CreateEventGroupResponse> CreateEventGroupWithOptionsAsync(string userId, CreateEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

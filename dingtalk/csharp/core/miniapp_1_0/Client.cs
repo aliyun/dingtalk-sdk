@@ -666,6 +666,7 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
 
         public GetSettingByMiniAppIdResponse GetSettingByMiniAppIdWithOptions(string miniAppId, GetSettingByMiniAppIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            miniAppId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(miniAppId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -684,6 +685,7 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
 
         public async Task<GetSettingByMiniAppIdResponse> GetSettingByMiniAppIdWithOptionsAsync(string miniAppId, GetSettingByMiniAppIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            miniAppId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(miniAppId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

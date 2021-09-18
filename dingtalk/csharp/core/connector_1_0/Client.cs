@@ -155,6 +155,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
         public PullDataByPkResponse PullDataByPkWithOptions(string dataModelId, PullDataByPkRequest request, PullDataByPkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            dataModelId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(dataModelId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrimaryKey))
             {
@@ -184,6 +185,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0
         public async Task<PullDataByPkResponse> PullDataByPkWithOptionsAsync(string dataModelId, PullDataByPkRequest request, PullDataByPkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            dataModelId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(dataModelId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrimaryKey))
             {

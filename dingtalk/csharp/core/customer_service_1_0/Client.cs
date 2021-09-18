@@ -363,6 +363,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
         public PageListActionResponse PageListActionWithOptions(string ticketId, PageListActionRequest request, PageListActionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            ticketId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(ticketId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
             {
@@ -400,6 +401,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
         public async Task<PageListActionResponse> PageListActionWithOptionsAsync(string ticketId, PageListActionRequest request, PageListActionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            ticketId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(ticketId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenInstanceId))
             {
@@ -451,6 +453,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
         public ExecuteActivityResponse ExecuteActivityWithOptions(string ticketId, ExecuteActivityRequest request, ExecuteActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            ticketId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(ticketId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceId))
             {
@@ -500,6 +503,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0
         public async Task<ExecuteActivityResponse> ExecuteActivityWithOptionsAsync(string ticketId, ExecuteActivityRequest request, ExecuteActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            ticketId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(ticketId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceId))
             {

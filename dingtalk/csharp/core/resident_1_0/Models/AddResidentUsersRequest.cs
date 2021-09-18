@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         /// <summary>
         /// 居民名字
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("userName")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public string UserName { get; set; }
 
         /// <summary>
         /// 手机号码

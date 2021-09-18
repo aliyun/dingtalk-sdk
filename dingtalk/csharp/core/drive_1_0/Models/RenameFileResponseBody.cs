@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string SpaceId { get; set; }
 
         /// <summary>
+        /// 父目录id
+        /// </summary>
+        [NameInMap("parentId")]
+        [Validation(Required=false)]
+        public string ParentId { get; set; }
+
+        /// <summary>
         /// 文件id
         /// </summary>
         [NameInMap("fileId")]
@@ -59,6 +66,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string FileExtension { get; set; }
 
         /// <summary>
+        /// 文件大小
+        /// </summary>
+        [NameInMap("fileSize")]
+        [Validation(Required=false)]
+        public long? FileSize { get; set; }
+
+        /// <summary>
         /// 创建时间
         /// </summary>
         [NameInMap("createTime")]
@@ -71,6 +85,20 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [NameInMap("modifyTime")]
         [Validation(Required=false)]
         public string ModifyTime { get; set; }
+
+        /// <summary>
+        /// 创建者
+        /// </summary>
+        [NameInMap("creator")]
+        [Validation(Required=false)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// 修改者
+        /// </summary>
+        [NameInMap("modifier")]
+        [Validation(Required=false)]
+        public string Modifier { get; set; }
 
     }
 

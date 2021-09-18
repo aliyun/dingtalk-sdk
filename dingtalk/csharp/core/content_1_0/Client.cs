@@ -155,6 +155,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         public GetFeedResponse GetFeedWithOptions(string feedId, GetFeedRequest request, GetFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.McnId))
             {
@@ -180,6 +181,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         public async Task<GetFeedResponse> GetFeedWithOptionsAsync(string feedId, GetFeedRequest request, GetFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.McnId))
             {
@@ -381,6 +383,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         public ListItemUserDataResponse ListItemUserDataWithOptions(string itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            itemId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(itemId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -401,6 +404,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         public async Task<ListItemUserDataResponse> ListItemUserDataWithOptionsAsync(string itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            itemId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(itemId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

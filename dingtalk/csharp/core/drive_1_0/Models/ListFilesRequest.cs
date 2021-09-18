@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// 排序类型
+        /// </summary>
+        [NameInMap("orderType")]
+        [Validation(Required=false)]
+        public string OrderType { get; set; }
+
     }
 
 }

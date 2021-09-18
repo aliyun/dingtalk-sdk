@@ -122,6 +122,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
 
         public GetVillageOrgInfoResponse GetVillageOrgInfoWithOptions(string subCorpId, GetVillageOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            subCorpId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(subCorpId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -140,6 +141,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
 
         public async Task<GetVillageOrgInfoResponse> GetVillageOrgInfoWithOptionsAsync(string subCorpId, GetVillageOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            subCorpId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(subCorpId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -173,6 +175,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListResidentDeptUsersResponse ListResidentDeptUsersWithOptions(string departmentId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -210,6 +213,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListResidentDeptUsersResponse> ListResidentDeptUsersWithOptionsAsync(string departmentId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -261,6 +265,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListDeptSimpleUsersResponse ListDeptSimpleUsersWithOptions(string departmentId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
             {
@@ -306,6 +311,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListDeptSimpleUsersResponse> ListDeptSimpleUsersWithOptionsAsync(string departmentId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
             {
@@ -445,6 +451,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public GetResidentDeptResponse GetResidentDeptWithOptions(string departmentId, GetResidentDeptRequest request, GetResidentDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -470,6 +477,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<GetResidentDeptResponse> GetResidentDeptWithOptionsAsync(string departmentId, GetResidentDeptRequest request, GetResidentDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -509,6 +517,8 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public GetResidentUserInfoResponse GetResidentUserInfoWithOptions(string departmentId, string userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -534,6 +544,8 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<GetResidentUserInfoResponse> GetResidentUserInfoWithOptionsAsync(string departmentId, string userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -573,6 +585,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public GetDeptResponse GetDeptWithOptions(string departmentId, GetDeptRequest request, GetDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -602,6 +615,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<GetDeptResponse> GetDeptWithOptionsAsync(string departmentId, GetDeptRequest request, GetDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -717,6 +731,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListDeptUserIdsResponse ListDeptUserIdsWithOptions(string departmentId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -742,6 +757,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListDeptUserIdsResponse> ListDeptUserIdsWithOptionsAsync(string departmentId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -869,6 +885,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListResidentSubDeptsResponse ListResidentSubDeptsWithOptions(string departmentId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -902,6 +919,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListResidentSubDeptsResponse> ListResidentSubDeptsWithOptionsAsync(string departmentId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -1021,6 +1039,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListSubDeptResponse ListSubDeptWithOptions(string departmentId, ListSubDeptRequest request, ListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -1050,6 +1069,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListSubDeptResponse> ListSubDeptWithOptionsAsync(string departmentId, ListSubDeptRequest request, ListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -1093,6 +1113,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public GetUserResponse GetUserWithOptions(string userId, GetUserRequest request, GetUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -1122,6 +1143,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<GetUserResponse> GetUserWithOptionsAsync(string userId, GetUserRequest request, GetUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -1165,6 +1187,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListDeptUsersResponse ListDeptUsersWithOptions(string departmentId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
             {
@@ -1210,6 +1233,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListDeptUsersResponse> ListDeptUsersWithOptionsAsync(string departmentId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
             {
@@ -1353,6 +1377,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public ListSubDeptIdsResponse ListSubDeptIdsWithOptions(string departmentId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {
@@ -1378,6 +1403,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0
         public async Task<ListSubDeptIdsResponse> ListSubDeptIdsWithOptionsAsync(string departmentId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            departmentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(departmentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubCorpId))
             {

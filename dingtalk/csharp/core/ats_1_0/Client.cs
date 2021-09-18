@@ -519,6 +519,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public FinishBeginnerTaskResponse FinishBeginnerTaskWithOptions(string taskCode, FinishBeginnerTaskRequest request, FinishBeginnerTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            taskCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskCode);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -548,6 +549,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<FinishBeginnerTaskResponse> FinishBeginnerTaskWithOptionsAsync(string taskCode, FinishBeginnerTaskRequest request, FinishBeginnerTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            taskCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskCode);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -591,6 +593,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public GetApplicationRegFormByFlowIdResponse GetApplicationRegFormByFlowIdWithOptions(string flowId, GetApplicationRegFormByFlowIdRequest request, GetApplicationRegFormByFlowIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            flowId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(flowId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -616,6 +619,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<GetApplicationRegFormByFlowIdResponse> GetApplicationRegFormByFlowIdWithOptionsAsync(string flowId, GetApplicationRegFormByFlowIdRequest request, GetApplicationRegFormByFlowIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            flowId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(flowId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -655,6 +659,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public UpdateApplicationRegFormResponse UpdateApplicationRegFormWithOptions(string flowId, UpdateApplicationRegFormRequest request, UpdateApplicationRegFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            flowId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(flowId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -690,6 +695,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<UpdateApplicationRegFormResponse> UpdateApplicationRegFormWithOptionsAsync(string flowId, UpdateApplicationRegFormRequest request, UpdateApplicationRegFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            flowId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(flowId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -811,6 +817,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public UpdateInterviewSignInInfoResponse UpdateInterviewSignInInfoWithOptions(string interviewId, UpdateInterviewSignInInfoRequest request, UpdateInterviewSignInInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            interviewId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(interviewId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -842,6 +849,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<UpdateInterviewSignInInfoResponse> UpdateInterviewSignInInfoWithOptionsAsync(string interviewId, UpdateInterviewSignInInfoRequest request, UpdateInterviewSignInInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            interviewId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(interviewId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
             {
@@ -887,6 +895,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public GetJobAuthResponse GetJobAuthWithOptions(string jobId, GetJobAuthRequest request, GetJobAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            jobId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(jobId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -912,6 +921,7 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         public async Task<GetJobAuthResponse> GetJobAuthWithOptionsAsync(string jobId, GetJobAuthRequest request, GetJobAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            jobId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(jobId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {

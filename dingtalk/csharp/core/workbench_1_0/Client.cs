@@ -122,6 +122,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 
         public QueryComponentScopesResponse QueryComponentScopesWithOptions(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            componentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(componentId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -140,6 +141,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 
         public async Task<QueryComponentScopesResponse> QueryComponentScopesWithOptionsAsync(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            componentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(componentId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -172,6 +174,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 
         public QueryShortcutScopesResponse QueryShortcutScopesWithOptions(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            shortcutKey = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shortcutKey);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -190,6 +193,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 
         public async Task<QueryShortcutScopesResponse> QueryShortcutScopesWithOptionsAsync(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            shortcutKey = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shortcutKey);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -351,6 +355,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
         public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeWithOptions(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            pageUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(pageUuid);
+            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userids))
             {
@@ -388,6 +394,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
         public async Task<UpdateDingPortalPageScopeResponse> UpdateDingPortalPageScopeWithOptionsAsync(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            pageUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(pageUuid);
+            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userids))
             {
@@ -438,6 +446,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 
         public GetDingPortalDetailResponse GetDingPortalDetailWithOptions(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -456,6 +465,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 
         public async Task<GetDingPortalDetailResponse> GetDingPortalDetailWithOptionsAsync(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

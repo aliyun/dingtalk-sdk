@@ -210,6 +210,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string UpdateTime { get; set; }
 
+        [NameInMap("reminders")]
+        [Validation(Required=false)]
+        public List<GetEventResponseBodyReminders> Reminders { get; set; }
+        public class GetEventResponseBodyReminders : TeaModel {
+            [NameInMap("method")]
+            [Validation(Required=false)]
+            public string Method { get; set; }
+
+            [NameInMap("minutes")]
+            [Validation(Required=false)]
+            public string Minutes { get; set; }
+
+        }
+
         [NameInMap("onlineMeetingInfo")]
         [Validation(Required=false)]
         public GetEventResponseBodyOnlineMeetingInfo OnlineMeetingInfo { get; set; }

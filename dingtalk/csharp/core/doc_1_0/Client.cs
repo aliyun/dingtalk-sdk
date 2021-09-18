@@ -43,6 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public DeleteWorkspaceMembersResponse DeleteWorkspaceMembersWithOptions(string workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -72,6 +73,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<DeleteWorkspaceMembersResponse> DeleteWorkspaceMembersWithOptionsAsync(string workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -115,6 +117,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public AddWorkspaceDocMembersResponse AddWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -144,6 +148,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<AddWorkspaceDocMembersResponse> AddWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -187,6 +193,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public UpdateWorkspaceMembersResponse UpdateWorkspaceMembersWithOptions(string workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -216,6 +223,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<UpdateWorkspaceMembersResponse> UpdateWorkspaceMembersWithOptionsAsync(string workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -259,6 +267,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -288,6 +298,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<UpdateWorkspaceDocMembersResponse> UpdateWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -331,6 +343,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public CreateWorkspaceDocResponse CreateWorkspaceDocWithOptions(string workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
@@ -364,6 +377,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<CreateWorkspaceDocResponse> CreateWorkspaceDocWithOptionsAsync(string workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
@@ -411,6 +425,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public AddWorkspaceMembersResponse AddWorkspaceMembersWithOptions(string workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -440,6 +455,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<AddWorkspaceMembersResponse> AddWorkspaceMembersWithOptionsAsync(string workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -587,6 +603,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public DeleteWorkspaceDocMembersResponse DeleteWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -616,6 +634,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
         public async Task<DeleteWorkspaceDocMembersResponse> DeleteWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {

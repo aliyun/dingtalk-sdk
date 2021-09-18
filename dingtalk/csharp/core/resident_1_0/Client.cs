@@ -48,9 +48,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["managerUserId"] = request.ManagerUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
-                query["name"] = request.Name;
+                query["departmentName"] = request.DepartmentName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
             {
@@ -81,9 +81,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["managerUserId"] = request.ManagerUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
-                query["name"] = request.Name;
+                query["departmentName"] = request.DepartmentName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
             {
@@ -196,9 +196,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["isLeaseholder"] = request.IsLeaseholder;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                query["name"] = request.Name;
+                query["userName"] = request.UserName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
             {
@@ -245,9 +245,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["isLeaseholder"] = request.IsLeaseholder;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                query["name"] = request.Name;
+                query["userName"] = request.UserName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
             {
@@ -304,9 +304,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["isResidenceGroup"] = request.IsResidenceGroup;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
-                query["name"] = request.Name;
+                query["departmentName"] = request.DepartmentName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentDepartmentId))
             {
@@ -337,9 +337,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["isResidenceGroup"] = request.IsResidenceGroup;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
-                query["name"] = request.Name;
+                query["departmentName"] = request.DepartmentName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentDepartmentId))
             {
@@ -456,9 +456,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["managerUserId"] = request.ManagerUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
-                query["name"] = request.Name;
+                query["departmentName"] = request.DepartmentName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
             {
@@ -505,9 +505,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["managerUserId"] = request.ManagerUserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
-                query["name"] = request.Name;
+                query["departmentName"] = request.DepartmentName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
             {
@@ -572,9 +572,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["isRetainOldDept"] = request.IsRetainOldDept;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                query["name"] = request.Name;
+                query["userName"] = request.UserName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
             {
@@ -629,9 +629,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             {
                 query["isRetainOldDept"] = request.IsRetainOldDept;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                query["name"] = request.Name;
+                query["userName"] = request.UserName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
             {

@@ -226,6 +226,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
 
         public GetMachineResponse GetMachineWithOptions(string devId, GetMachineHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            devId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(devId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -244,6 +245,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
 
         public async Task<GetMachineResponse> GetMachineWithOptionsAsync(string devId, GetMachineHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            devId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(devId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -277,6 +279,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
         public GetMachineUserResponse GetMachineUserWithOptions(string devId, GetMachineUserRequest request, GetMachineUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            devId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(devId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -306,6 +309,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
         public async Task<GetMachineUserResponse> GetMachineUserWithOptionsAsync(string devId, GetMachineUserRequest request, GetMachineUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            devId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(devId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {

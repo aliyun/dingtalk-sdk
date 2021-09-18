@@ -43,6 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public EditFeedReplayResponse EditFeedReplayWithOptions(string feedId, EditFeedReplayRequest request, EditFeedReplayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -76,6 +77,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<EditFeedReplayResponse> EditFeedReplayWithOptionsAsync(string feedId, EditFeedReplayRequest request, EditFeedReplayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -123,6 +125,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public QueryFeedWhiteListResponse QueryFeedWhiteListWithOptions(string feedId, QueryFeedWhiteListRequest request, QueryFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -148,6 +151,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<QueryFeedWhiteListResponse> QueryFeedWhiteListWithOptionsAsync(string feedId, QueryFeedWhiteListRequest request, QueryFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -291,6 +295,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public DeleteLiveFeedResponse DeleteLiveFeedWithOptions(string feedId, DeleteLiveFeedRequest request, DeleteLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -316,6 +321,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<DeleteLiveFeedResponse> DeleteLiveFeedWithOptionsAsync(string feedId, DeleteLiveFeedRequest request, DeleteLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -355,6 +361,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public StartCloudFeedResponse StartCloudFeedWithOptions(string feedId, StartCloudFeedRequest request, StartCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -380,6 +387,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<StartCloudFeedResponse> StartCloudFeedWithOptionsAsync(string feedId, StartCloudFeedRequest request, StartCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -419,6 +427,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public StopCloudFeedResponse StopCloudFeedWithOptions(string feedId, StopCloudFeedRequest request, StopCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -444,6 +453,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<StopCloudFeedResponse> StopCloudFeedWithOptionsAsync(string feedId, StopCloudFeedRequest request, StopCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -483,6 +493,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public ModifyFeedWhiteListResponse ModifyFeedWhiteListWithOptions(string feedId, ModifyFeedWhiteListRequest tmpReq, ModifyFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             ModifyFeedWhiteListShrinkRequest request = new ModifyFeedWhiteListShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.ModifyUserList))
@@ -522,6 +533,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<ModifyFeedWhiteListResponse> ModifyFeedWhiteListWithOptionsAsync(string feedId, ModifyFeedWhiteListRequest tmpReq, ModifyFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             ModifyFeedWhiteListShrinkRequest request = new ModifyFeedWhiteListShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.ModifyUserList))
@@ -575,6 +587,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public UpdateLiveFeedResponse UpdateLiveFeedWithOptions(string feedId, UpdateLiveFeedRequest request, UpdateLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -616,6 +629,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<UpdateLiveFeedResponse> UpdateLiveFeedWithOptionsAsync(string feedId, UpdateLiveFeedRequest request, UpdateLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -671,6 +685,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public AddShareCidListResponse AddShareCidListWithOptions(string feedId, AddShareCidListRequest request, AddShareCidListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -704,6 +719,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         public async Task<AddShareCidListResponse> AddShareCidListWithOptionsAsync(string feedId, AddShareCidListRequest request, AddShareCidListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            feedId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(feedId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {

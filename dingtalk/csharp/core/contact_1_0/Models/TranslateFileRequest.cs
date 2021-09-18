@@ -46,6 +46,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public string UnionId { get; set; }
 
+        [NameInMap("RequestId")]
+        [Validation(Required=false)]
+        public string RequestId { get; set; }
+
+        [NameInMap("eagleEyeTraceId")]
+        [Validation(Required=false)]
+        public string EagleEyeTraceId { get; set; }
+
     }
 
 }

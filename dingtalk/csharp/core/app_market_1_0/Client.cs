@@ -114,6 +114,7 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0
 
         public QueryMarketOrderResponse QueryMarketOrderWithOptions(string orderId, QueryMarketOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            orderId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(orderId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -132,6 +133,7 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0
 
         public async Task<QueryMarketOrderResponse> QueryMarketOrderWithOptionsAsync(string orderId, QueryMarketOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            orderId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(orderId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

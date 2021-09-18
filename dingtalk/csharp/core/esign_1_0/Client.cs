@@ -364,6 +364,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
 
         public GetFileResponse GetFileWithOptions(string fileId, GetFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -382,6 +383,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
 
         public async Task<GetFileResponse> GetFileWithOptionsAsync(string fileId, GetFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1188,6 +1190,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
 
         public GetUserInfoResponse GetUserInfoWithOptions(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1206,6 +1209,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0
 
         public async Task<GetUserInfoResponse> GetUserInfoWithOptionsAsync(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

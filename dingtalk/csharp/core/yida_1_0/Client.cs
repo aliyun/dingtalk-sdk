@@ -379,6 +379,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
         public GetFormDataByIDResponse GetFormDataByIDWithOptions(string id, GetFormDataByIDRequest request, GetFormDataByIDHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            id = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(id);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
@@ -416,6 +417,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
         public async Task<GetFormDataByIDResponse> GetFormDataByIDWithOptionsAsync(string id, GetFormDataByIDRequest request, GetFormDataByIDHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            id = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(id);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {

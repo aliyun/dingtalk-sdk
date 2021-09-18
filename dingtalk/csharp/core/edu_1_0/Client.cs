@@ -617,6 +617,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public InitCoursesOfClassResponse InitCoursesOfClassWithOptions(string classId, InitCoursesOfClassRequest request, InitCoursesOfClassHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -652,6 +653,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public async Task<InitCoursesOfClassResponse> InitCoursesOfClassWithOptionsAsync(string classId, InitCoursesOfClassRequest request, InitCoursesOfClassHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -701,6 +703,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public DeleteDeptResponse DeleteDeptWithOptions(string deptId, DeleteDeptRequest request, DeleteDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deptId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deptId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
@@ -726,6 +729,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public async Task<DeleteDeptResponse> DeleteDeptWithOptionsAsync(string deptId, DeleteDeptRequest request, DeleteDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deptId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deptId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
@@ -765,6 +769,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public DeleteGuardianResponse DeleteGuardianWithOptions(string classId, string userId, DeleteGuardianRequest request, DeleteGuardianHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StuId))
             {
@@ -794,6 +800,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public async Task<DeleteGuardianResponse> DeleteGuardianWithOptionsAsync(string classId, string userId, DeleteGuardianRequest request, DeleteGuardianHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StuId))
             {
@@ -937,6 +945,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public DeleteTeacherResponse DeleteTeacherWithOptions(string classId, string userId, DeleteTeacherRequest request, DeleteTeacherHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Adviser))
             {
@@ -966,6 +976,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public async Task<DeleteTeacherResponse> DeleteTeacherWithOptionsAsync(string classId, string userId, DeleteTeacherRequest request, DeleteTeacherHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Adviser))
             {
@@ -1352,6 +1364,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         public GetOpenCourseDetailResponse GetOpenCourseDetailWithOptions(string courseId, GetOpenCourseDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            courseId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(courseId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1370,6 +1383,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         public async Task<GetOpenCourseDetailResponse> GetOpenCourseDetailWithOptionsAsync(string courseId, GetOpenCourseDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            courseId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(courseId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1403,6 +1417,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public DeleteStudentResponse DeleteStudentWithOptions(string classId, string userId, DeleteStudentRequest request, DeleteStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
@@ -1428,6 +1444,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public async Task<DeleteStudentResponse> DeleteStudentWithOptionsAsync(string classId, string userId, DeleteStudentRequest request, DeleteStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
@@ -1547,6 +1565,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public UpdateCoursesOfClassResponse UpdateCoursesOfClassWithOptions(string classId, UpdateCoursesOfClassRequest request, UpdateCoursesOfClassHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -1582,6 +1601,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         public async Task<UpdateCoursesOfClassResponse> UpdateCoursesOfClassWithOptionsAsync(string classId, UpdateCoursesOfClassRequest request, UpdateCoursesOfClassHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            classId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(classId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
@@ -2182,6 +2202,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         public GetShareRoleMembersResponse GetShareRoleMembersWithOptions(string shareRoleCode, GetShareRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            shareRoleCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shareRoleCode);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2200,6 +2221,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         public async Task<GetShareRoleMembersResponse> GetShareRoleMembersWithOptionsAsync(string shareRoleCode, GetShareRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            shareRoleCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shareRoleCode);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {

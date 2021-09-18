@@ -42,6 +42,8 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
 
         public QueryDeviceVideoConferenceBookResponse QueryDeviceVideoConferenceBookWithOptions(string deviceId, string bookId, QueryDeviceVideoConferenceBookHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
+            bookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(bookId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -60,6 +62,8 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
 
         public async Task<QueryDeviceVideoConferenceBookResponse> QueryDeviceVideoConferenceBookWithOptionsAsync(string deviceId, string bookId, QueryDeviceVideoConferenceBookHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
+            bookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(bookId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -93,6 +97,8 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         public AddDeviceVideoConferenceMembersResponse AddDeviceVideoConferenceMembersWithOptions(string deviceId, string conferenceId, AddDeviceVideoConferenceMembersRequest request, AddDeviceVideoConferenceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
+            conferenceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(conferenceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
@@ -118,6 +124,8 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         public async Task<AddDeviceVideoConferenceMembersResponse> AddDeviceVideoConferenceMembersWithOptionsAsync(string deviceId, string conferenceId, AddDeviceVideoConferenceMembersRequest request, AddDeviceVideoConferenceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
+            conferenceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(conferenceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
@@ -157,6 +165,7 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         public CreateDeviceVideoConferenceResponse CreateDeviceVideoConferenceWithOptions(string deviceId, CreateDeviceVideoConferenceRequest request, CreateDeviceVideoConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
@@ -182,6 +191,7 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         public async Task<CreateDeviceVideoConferenceResponse> CreateDeviceVideoConferenceWithOptionsAsync(string deviceId, CreateDeviceVideoConferenceRequest request, CreateDeviceVideoConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
@@ -221,6 +231,8 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         public KickDeviceVideoConferenceMembersResponse KickDeviceVideoConferenceMembersWithOptions(string deviceId, string conferenceId, KickDeviceVideoConferenceMembersRequest request, KickDeviceVideoConferenceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
+            conferenceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(conferenceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
@@ -246,6 +258,8 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
         public async Task<KickDeviceVideoConferenceMembersResponse> KickDeviceVideoConferenceMembersWithOptionsAsync(string deviceId, string conferenceId, KickDeviceVideoConferenceMembersRequest request, KickDeviceVideoConferenceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            deviceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(deviceId);
+            conferenceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(conferenceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {

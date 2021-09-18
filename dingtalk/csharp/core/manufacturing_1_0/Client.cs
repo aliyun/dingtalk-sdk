@@ -43,6 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
         public IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBookWithOptions(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
             {
@@ -135,6 +136,7 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
         public async Task<IndustrializeManufactureJobBookResponse> IndustrializeManufactureJobBookWithOptionsAsync(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
             {
