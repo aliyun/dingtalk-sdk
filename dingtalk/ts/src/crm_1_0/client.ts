@@ -3086,6 +3086,7 @@ export default class Client extends OpenApi {
 
   async deleteCrmFormInstanceWithOptions(instanceId: string, request: DeleteCrmFormInstanceRequest, headers: DeleteCrmFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCrmFormInstanceResponse> {
     Util.validateModel(request);
+    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.currentOperatorUserId)) {
       query["currentOperatorUserId"] = request.currentOperatorUserId;
@@ -3171,6 +3172,7 @@ export default class Client extends OpenApi {
   }
 
   async getOfficialAccountContactInfoWithOptions(userId: string, headers: GetOfficialAccountContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountContactInfoResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3465,6 +3467,7 @@ export default class Client extends OpenApi {
 
   async deleteCrmPersonalCustomerWithOptions(dataId: string, request: DeleteCrmPersonalCustomerRequest, headers: DeleteCrmPersonalCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCrmPersonalCustomerResponse> {
     Util.validateModel(request);
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.currentOperatorUserId)) {
       query["currentOperatorUserId"] = request.currentOperatorUserId;

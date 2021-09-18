@@ -645,6 +645,7 @@ export default class Client extends OpenApi {
   }
 
   async queryComponentScopesWithOptions(componentId: string, headers: QueryComponentScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryComponentScopesResponse> {
+    componentId = OpenApiUtil.getEncodeParam(componentId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -667,6 +668,7 @@ export default class Client extends OpenApi {
   }
 
   async queryShortcutScopesWithOptions(shortcutKey: string, headers: QueryShortcutScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryShortcutScopesResponse> {
+    shortcutKey = OpenApiUtil.getEncodeParam(shortcutKey);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -748,6 +750,8 @@ export default class Client extends OpenApi {
 
   async updateDingPortalPageScopeWithOptions(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest, headers: UpdateDingPortalPageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDingPortalPageScopeResponse> {
     Util.validateModel(request);
+    pageUuid = OpenApiUtil.getEncodeParam(pageUuid);
+    appUuid = OpenApiUtil.getEncodeParam(appUuid);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userids)) {
       body["userids"] = request.userids;
@@ -788,6 +792,7 @@ export default class Client extends OpenApi {
   }
 
   async getDingPortalDetailWithOptions(appUuid: string, headers: GetDingPortalDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingPortalDetailResponse> {
+    appUuid = OpenApiUtil.getEncodeParam(appUuid);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

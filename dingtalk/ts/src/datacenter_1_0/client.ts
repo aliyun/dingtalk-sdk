@@ -1078,8 +1078,8 @@ export class QueryCompanyBasicInfoResponseBody extends $tea.Model {
   message?: string;
   requestId?: string;
   total?: number;
-  data?: string;
-  code?: number;
+  data?: { [key: string]: string }[];
+  code?: string;
   static names(): { [key: string]: string } {
     return {
       message: 'message',
@@ -1095,8 +1095,8 @@ export class QueryCompanyBasicInfoResponseBody extends $tea.Model {
       message: 'string',
       requestId: 'string',
       total: 'number',
-      data: 'string',
-      code: 'number',
+      data: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'string' } },
+      code: 'string',
     };
   }
 

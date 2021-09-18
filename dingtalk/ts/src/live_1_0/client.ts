@@ -839,6 +839,7 @@ export default class Client extends OpenApi {
 
   async editFeedReplayWithOptions(feedId: string, request: EditFeedReplayRequest, headers: EditFeedReplayHeaders, runtime: $Util.RuntimeOptions): Promise<EditFeedReplayResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
@@ -876,6 +877,7 @@ export default class Client extends OpenApi {
 
   async queryFeedWhiteListWithOptions(feedId: string, request: QueryFeedWhiteListRequest, headers: QueryFeedWhiteListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFeedWhiteListResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -954,6 +956,7 @@ export default class Client extends OpenApi {
 
   async deleteLiveFeedWithOptions(feedId: string, request: DeleteLiveFeedRequest, headers: DeleteLiveFeedHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLiveFeedResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -983,6 +986,7 @@ export default class Client extends OpenApi {
 
   async startCloudFeedWithOptions(feedId: string, request: StartCloudFeedRequest, headers: StartCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudFeedResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
@@ -1012,6 +1016,7 @@ export default class Client extends OpenApi {
 
   async stopCloudFeedWithOptions(feedId: string, request: StopCloudFeedRequest, headers: StopCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudFeedResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
@@ -1041,6 +1046,7 @@ export default class Client extends OpenApi {
 
   async modifyFeedWhiteListWithOptions(feedId: string, tmpReq: ModifyFeedWhiteListRequest, headers: ModifyFeedWhiteListHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyFeedWhiteListResponse> {
     Util.validateModel(tmpReq);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let request = new ModifyFeedWhiteListShrinkRequest({ });
     OpenApiUtil.convert(tmpReq, request);
     if (!Util.isUnset(tmpReq.modifyUserList)) {
@@ -1084,6 +1090,7 @@ export default class Client extends OpenApi {
 
   async updateLiveFeedWithOptions(feedId: string, request: UpdateLiveFeedRequest, headers: UpdateLiveFeedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLiveFeedResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -1129,6 +1136,7 @@ export default class Client extends OpenApi {
 
   async addShareCidListWithOptions(feedId: string, request: AddShareCidListRequest, headers: AddShareCidListHeaders, runtime: $Util.RuntimeOptions): Promise<AddShareCidListResponse> {
     Util.validateModel(request);
+    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;

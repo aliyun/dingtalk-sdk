@@ -383,6 +383,8 @@ export default class Client extends OpenApi {
   }
 
   async queryDeviceVideoConferenceBookWithOptions(deviceId: string, bookId: string, headers: QueryDeviceVideoConferenceBookHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceVideoConferenceBookResponse> {
+    deviceId = OpenApiUtil.getEncodeParam(deviceId);
+    bookId = OpenApiUtil.getEncodeParam(bookId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -406,6 +408,8 @@ export default class Client extends OpenApi {
 
   async addDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest, headers: AddDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddDeviceVideoConferenceMembersResponse> {
     Util.validateModel(request);
+    deviceId = OpenApiUtil.getEncodeParam(deviceId);
+    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -435,6 +439,7 @@ export default class Client extends OpenApi {
 
   async createDeviceVideoConferenceWithOptions(deviceId: string, request: CreateDeviceVideoConferenceRequest, headers: CreateDeviceVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceVideoConferenceResponse> {
     Util.validateModel(request);
+    deviceId = OpenApiUtil.getEncodeParam(deviceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -464,6 +469,8 @@ export default class Client extends OpenApi {
 
   async kickDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest, headers: KickDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<KickDeviceVideoConferenceMembersResponse> {
     Util.validateModel(request);
+    deviceId = OpenApiUtil.getEncodeParam(deviceId);
+    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;

@@ -2192,6 +2192,7 @@ export default class Client extends OpenApi {
   }
 
   async getVillageOrgInfoWithOptions(subCorpId: string, headers: GetVillageOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetVillageOrgInfoResponse> {
+    subCorpId = OpenApiUtil.getEncodeParam(subCorpId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2215,6 +2216,7 @@ export default class Client extends OpenApi {
 
   async listResidentDeptUsersWithOptions(departmentId: string, request: ListResidentDeptUsersRequest, headers: ListResidentDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentDeptUsersResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2256,6 +2258,7 @@ export default class Client extends OpenApi {
 
   async listDeptSimpleUsersWithOptions(departmentId: string, request: ListDeptSimpleUsersRequest, headers: ListDeptSimpleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptSimpleUsersResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.cursor)) {
       query["cursor"] = request.cursor;
@@ -2342,6 +2345,7 @@ export default class Client extends OpenApi {
 
   async getResidentDeptWithOptions(departmentId: string, request: GetResidentDeptRequest, headers: GetResidentDeptHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentDeptResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2371,6 +2375,8 @@ export default class Client extends OpenApi {
 
   async getResidentUserInfoWithOptions(departmentId: string, userId: string, request: GetResidentUserInfoRequest, headers: GetResidentUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentUserInfoResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2400,6 +2406,7 @@ export default class Client extends OpenApi {
 
   async getDeptWithOptions(departmentId: string, request: GetDeptRequest, headers: GetDeptHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeptResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2466,6 +2473,7 @@ export default class Client extends OpenApi {
 
   async listDeptUserIdsWithOptions(departmentId: string, request: ListDeptUserIdsRequest, headers: ListDeptUserIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUserIdsResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2536,6 +2544,7 @@ export default class Client extends OpenApi {
 
   async listResidentSubDeptsWithOptions(departmentId: string, request: ListResidentSubDeptsRequest, headers: ListResidentSubDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentSubDeptsResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2606,6 +2615,7 @@ export default class Client extends OpenApi {
 
   async listSubDeptWithOptions(departmentId: string, request: ListSubDeptRequest, headers: ListSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2639,6 +2649,7 @@ export default class Client extends OpenApi {
 
   async getUserWithOptions(userId: string, request: GetUserRequest, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;
@@ -2672,6 +2683,7 @@ export default class Client extends OpenApi {
 
   async listDeptUsersWithOptions(departmentId: string, request: ListDeptUsersRequest, headers: ListDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUsersResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.cursor)) {
       query["cursor"] = request.cursor;
@@ -2760,6 +2772,7 @@ export default class Client extends OpenApi {
 
   async listSubDeptIdsWithOptions(departmentId: string, request: ListSubDeptIdsRequest, headers: ListSubDeptIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptIdsResponse> {
     Util.validateModel(request);
+    departmentId = OpenApiUtil.getEncodeParam(departmentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.subCorpId)) {
       query["subCorpId"] = request.subCorpId;

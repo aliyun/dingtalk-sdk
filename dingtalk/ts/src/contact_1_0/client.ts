@@ -436,6 +436,94 @@ export class ListManagementGroupsResponse extends $tea.Model {
   }
 }
 
+export class ListSeniorSettingsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSeniorSettingsRequest extends $tea.Model {
+  seniorStaffId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      seniorStaffId: 'seniorStaffId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      seniorStaffId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSeniorSettingsResponseBody extends $tea.Model {
+  seniorStaffId?: string;
+  protectScenes?: string[];
+  seniorWhiteList?: ListSeniorSettingsResponseBodySeniorWhiteList[];
+  static names(): { [key: string]: string } {
+    return {
+      seniorStaffId: 'seniorStaffId',
+      protectScenes: 'protectScenes',
+      seniorWhiteList: 'seniorWhiteList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      seniorStaffId: 'string',
+      protectScenes: { 'type': 'array', 'itemType': 'string' },
+      seniorWhiteList: { 'type': 'array', 'itemType': ListSeniorSettingsResponseBodySeniorWhiteList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSeniorSettingsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListSeniorSettingsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListSeniorSettingsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEmpAttributeVisibilityHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1424,6 +1512,8 @@ export class TranslateFileRequest extends $tea.Model {
   mediaId?: string;
   outputFileName?: string;
   unionId?: string;
+  requestId?: string;
+  eagleEyeTraceId?: string;
   static names(): { [key: string]: string } {
     return {
       dingTokenGrantType: 'dingTokenGrantType',
@@ -1433,6 +1523,8 @@ export class TranslateFileRequest extends $tea.Model {
       mediaId: 'mediaId',
       outputFileName: 'outputFileName',
       unionId: 'unionId',
+      requestId: 'RequestId',
+      eagleEyeTraceId: 'eagleEyeTraceId',
     };
   }
 
@@ -1445,6 +1537,8 @@ export class TranslateFileRequest extends $tea.Model {
       mediaId: 'string',
       outputFileName: 'string',
       unionId: 'string',
+      requestId: 'string',
+      eagleEyeTraceId: 'string',
     };
   }
 
@@ -1486,6 +1580,81 @@ export class TranslateFileResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: TranslateFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSeniorSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSeniorSettingRequest extends $tea.Model {
+  seniorStaffId?: string;
+  open?: boolean;
+  permitStaffIds?: string[];
+  permitDeptIds?: number[];
+  permitTagIds?: number[];
+  protectScenes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      seniorStaffId: 'seniorStaffId',
+      open: 'open',
+      permitStaffIds: 'permitStaffIds',
+      permitDeptIds: 'permitDeptIds',
+      permitTagIds: 'permitTagIds',
+      protectScenes: 'protectScenes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      seniorStaffId: 'string',
+      open: 'boolean',
+      permitStaffIds: { 'type': 'array', 'itemType': 'string' },
+      permitDeptIds: { 'type': 'array', 'itemType': 'number' },
+      permitTagIds: { 'type': 'array', 'itemType': 'number' },
+      protectScenes: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateSeniorSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -2203,6 +2372,31 @@ export class ListManagementGroupsResponseBodyGroups extends $tea.Model {
   }
 }
 
+export class ListSeniorSettingsResponseBodySeniorWhiteList extends $tea.Model {
+  id?: string;
+  type?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      type: 'type',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      type: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEmpAttributeVisibilityResponseBodyList extends $tea.Model {
   id?: number;
   gmtCreate?: string;
@@ -2519,6 +2713,7 @@ export default class Client extends OpenApi {
   }
 
   async deleteEmpAttributeVisibilityWithOptions(settingId: string, headers: DeleteEmpAttributeVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEmpAttributeVisibilityResponse> {
+    settingId = OpenApiUtil.getEncodeParam(settingId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2606,6 +2801,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListManagementGroupsResponse>(await this.doROARequest("ListManagementGroups", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/managementGroups`, "json", req, runtime), new ListManagementGroupsResponse({}));
+  }
+
+  async listSeniorSettings(request: ListSeniorSettingsRequest): Promise<ListSeniorSettingsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListSeniorSettingsHeaders({ });
+    return await this.listSeniorSettingsWithOptions(request, headers, runtime);
+  }
+
+  async listSeniorSettingsWithOptions(request: ListSeniorSettingsRequest, headers: ListSeniorSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSeniorSettingsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.seniorStaffId)) {
+      query["seniorStaffId"] = request.seniorStaffId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListSeniorSettingsResponse>(await this.doROARequest("ListSeniorSettings", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/seniorSettings`, "json", req, runtime), new ListSeniorSettingsResponse({}));
   }
 
   async listEmpAttributeVisibility(request: ListEmpAttributeVisibilityRequest): Promise<ListEmpAttributeVisibilityResponse> {
@@ -2718,6 +2942,7 @@ export default class Client extends OpenApi {
   }
 
   async queryUserManagementResourcesWithOptions(userId: string, headers: QueryUserManagementResourcesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserManagementResourcesResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2741,6 +2966,7 @@ export default class Client extends OpenApi {
 
   async updateUserOwnnessWithOptions(userId: string, request: UpdateUserOwnnessRequest, headers: UpdateUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserOwnnessResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.ownenssType)) {
       body["ownenssType"] = request.ownenssType;
@@ -2843,6 +3069,7 @@ export default class Client extends OpenApi {
   }
 
   async getCooperateOrgInviteInfoWithOptions(cooperateCorpId: string, headers: GetCooperateOrgInviteInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCooperateOrgInviteInfoResponse> {
+    cooperateCorpId = OpenApiUtil.getEncodeParam(cooperateCorpId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2866,6 +3093,7 @@ export default class Client extends OpenApi {
 
   async updateManagementGroupWithOptions(groupId: string, request: UpdateManagementGroupRequest, headers: UpdateManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateManagementGroupResponse> {
     Util.validateModel(request);
+    groupId = OpenApiUtil.getEncodeParam(groupId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.groupName)) {
       body["groupName"] = request.groupName;
@@ -2945,6 +3173,7 @@ export default class Client extends OpenApi {
   }
 
   async getUserWithOptions(unionId: string, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
+    unionId = OpenApiUtil.getEncodeParam(unionId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2967,6 +3196,7 @@ export default class Client extends OpenApi {
   }
 
   async queryResourceManagementMembersWithOptions(resourceId: string, headers: QueryResourceManagementMembersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryResourceManagementMembersResponse> {
+    resourceId = OpenApiUtil.getEncodeParam(resourceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3019,6 +3249,14 @@ export default class Client extends OpenApi {
       body["unionId"] = request.unionId;
     }
 
+    if (!Util.isUnset(request.requestId)) {
+      body["RequestId"] = request.requestId;
+    }
+
+    if (!Util.isUnset(request.eagleEyeTraceId)) {
+      body["eagleEyeTraceId"] = request.eagleEyeTraceId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3033,6 +3271,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<TranslateFileResponse>(await this.doROARequest("TranslateFile", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/files/translate`, "json", req, runtime), new TranslateFileResponse({}));
+  }
+
+  async updateSeniorSetting(request: UpdateSeniorSettingRequest): Promise<UpdateSeniorSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateSeniorSettingHeaders({ });
+    return await this.updateSeniorSettingWithOptions(request, headers, runtime);
+  }
+
+  async updateSeniorSettingWithOptions(request: UpdateSeniorSettingRequest, headers: UpdateSeniorSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSeniorSettingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.seniorStaffId)) {
+      body["seniorStaffId"] = request.seniorStaffId;
+    }
+
+    if (!Util.isUnset(request.open)) {
+      body["open"] = request.open;
+    }
+
+    if (!Util.isUnset(request.permitStaffIds)) {
+      body["permitStaffIds"] = request.permitStaffIds;
+    }
+
+    if (!Util.isUnset(request.permitDeptIds)) {
+      body["permitDeptIds"] = request.permitDeptIds;
+    }
+
+    if (!Util.isUnset(request.permitTagIds)) {
+      body["permitTagIds"] = request.permitTagIds;
+    }
+
+    if (!Util.isUnset(request.protectScenes)) {
+      body["protectScenes"] = request.protectScenes;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateSeniorSettingResponse>(await this.doROARequest("UpdateSeniorSetting", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/seniorSettings`, "none", req, runtime), new UpdateSeniorSettingResponse({}));
   }
 
   async getApplyInviteInfo(request: GetApplyInviteInfoRequest): Promise<GetApplyInviteInfoResponse> {
@@ -3182,6 +3469,7 @@ export default class Client extends OpenApi {
   }
 
   async deleteManagementGroupWithOptions(groupId: string, headers: DeleteManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteManagementGroupResponse> {
+    groupId = OpenApiUtil.getEncodeParam(groupId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

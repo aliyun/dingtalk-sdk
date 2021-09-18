@@ -31,12 +31,12 @@ export class UpdateResideceGroupHeaders extends $tea.Model {
 
 export class UpdateResideceGroupRequest extends $tea.Model {
   managerUserId?: string;
-  name?: string;
+  departmentName?: string;
   departmentId?: number;
   static names(): { [key: string]: string } {
     return {
       managerUserId: 'managerUserId',
-      name: 'name',
+      departmentName: 'departmentName',
       departmentId: 'departmentId',
     };
   }
@@ -44,7 +44,7 @@ export class UpdateResideceGroupRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       managerUserId: 'string',
-      name: 'string',
+      departmentName: 'string',
       departmentId: 'number',
     };
   }
@@ -202,7 +202,7 @@ export class AddResidentUsersHeaders extends $tea.Model {
 export class AddResidentUsersRequest extends $tea.Model {
   address?: string;
   isLeaseholder?: boolean;
-  name?: string;
+  userName?: string;
   mobile?: string;
   departmentId?: number;
   extField?: AddResidentUsersRequestExtField[];
@@ -211,7 +211,7 @@ export class AddResidentUsersRequest extends $tea.Model {
     return {
       address: 'address',
       isLeaseholder: 'isLeaseholder',
-      name: 'name',
+      userName: 'userName',
       mobile: 'mobile',
       departmentId: 'departmentId',
       extField: 'extField',
@@ -223,7 +223,7 @@ export class AddResidentUsersRequest extends $tea.Model {
     return {
       address: 'string',
       isLeaseholder: 'boolean',
-      name: 'string',
+      userName: 'string',
       mobile: 'string',
       departmentId: 'number',
       extField: { 'type': 'array', 'itemType': AddResidentUsersRequestExtField },
@@ -301,12 +301,12 @@ export class AddResidentDepartmentHeaders extends $tea.Model {
 
 export class AddResidentDepartmentRequest extends $tea.Model {
   isResidenceGroup?: boolean;
-  name?: string;
+  departmentName?: string;
   parentDepartmentId?: number;
   static names(): { [key: string]: string } {
     return {
       isResidenceGroup: 'isResidenceGroup',
-      name: 'name',
+      departmentName: 'departmentName',
       parentDepartmentId: 'parentDepartmentId',
     };
   }
@@ -314,7 +314,7 @@ export class AddResidentDepartmentRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       isResidenceGroup: 'boolean',
-      name: 'string',
+      departmentName: 'string',
       parentDepartmentId: 'number',
     };
   }
@@ -474,7 +474,7 @@ export class UpdateResidenceHeaders extends $tea.Model {
 
 export class UpdateResidenceRequest extends $tea.Model {
   managerUserId?: string;
-  name?: string;
+  departmentName?: string;
   departmentId?: number;
   grid?: string;
   homeTel?: string;
@@ -483,7 +483,7 @@ export class UpdateResidenceRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       managerUserId: 'managerUserId',
-      name: 'name',
+      departmentName: 'departmentName',
       departmentId: 'departmentId',
       grid: 'grid',
       homeTel: 'homeTel',
@@ -495,7 +495,7 @@ export class UpdateResidenceRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       managerUserId: 'string',
-      name: 'string',
+      departmentName: 'string',
       departmentId: 'number',
       grid: 'string',
       homeTel: 'string',
@@ -575,7 +575,7 @@ export class UpdateResidentUserHeaders extends $tea.Model {
 export class UpdateResidentUserRequest extends $tea.Model {
   address?: string;
   isRetainOldDept?: boolean;
-  name?: string;
+  userName?: string;
   mobile?: string;
   departmentId?: number;
   extField?: UpdateResidentUserRequestExtField[];
@@ -586,7 +586,7 @@ export class UpdateResidentUserRequest extends $tea.Model {
     return {
       address: 'address',
       isRetainOldDept: 'isRetainOldDept',
-      name: 'name',
+      userName: 'userName',
       mobile: 'mobile',
       departmentId: 'departmentId',
       extField: 'extField',
@@ -600,7 +600,7 @@ export class UpdateResidentUserRequest extends $tea.Model {
     return {
       address: 'string',
       isRetainOldDept: 'boolean',
-      name: 'string',
+      userName: 'string',
       mobile: 'string',
       departmentId: 'number',
       extField: { 'type': 'array', 'itemType': UpdateResidentUserRequestExtField },
@@ -726,8 +726,8 @@ export default class Client extends OpenApi {
       query["managerUserId"] = request.managerUserId;
     }
 
-    if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+    if (!Util.isUnset(request.departmentName)) {
+      query["departmentName"] = request.departmentName;
     }
 
     if (!Util.isUnset(request.departmentId)) {
@@ -796,8 +796,8 @@ export default class Client extends OpenApi {
       query["isLeaseholder"] = request.isLeaseholder;
     }
 
-    if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+    if (!Util.isUnset(request.userName)) {
+      query["userName"] = request.userName;
     }
 
     if (!Util.isUnset(request.mobile)) {
@@ -845,8 +845,8 @@ export default class Client extends OpenApi {
       query["isResidenceGroup"] = request.isResidenceGroup;
     }
 
-    if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+    if (!Util.isUnset(request.departmentName)) {
+      query["departmentName"] = request.departmentName;
     }
 
     if (!Util.isUnset(request.parentDepartmentId)) {
@@ -915,8 +915,8 @@ export default class Client extends OpenApi {
       query["managerUserId"] = request.managerUserId;
     }
 
-    if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+    if (!Util.isUnset(request.departmentName)) {
+      query["departmentName"] = request.departmentName;
     }
 
     if (!Util.isUnset(request.departmentId)) {
@@ -972,8 +972,8 @@ export default class Client extends OpenApi {
       query["isRetainOldDept"] = request.isRetainOldDept;
     }
 
-    if (!Util.isUnset(request.name)) {
-      query["name"] = request.name;
+    if (!Util.isUnset(request.userName)) {
+      query["userName"] = request.userName;
     }
 
     if (!Util.isUnset(request.mobile)) {

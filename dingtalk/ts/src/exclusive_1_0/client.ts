@@ -2228,6 +2228,7 @@ export default class Client extends OpenApi {
   }
 
   async getConferenceDetailWithOptions(conferenceId: string, headers: GetConferenceDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetConferenceDetailResponse> {
+    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2251,6 +2252,7 @@ export default class Client extends OpenApi {
 
   async getUserAppVersionSummaryWithOptions(dataId: string, request: GetUserAppVersionSummaryRequest, headers: GetUserAppVersionSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAppVersionSummaryResponse> {
     Util.validateModel(request);
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2283,6 +2285,8 @@ export default class Client extends OpenApi {
   }
 
   async deleteCommentWithOptions(publisherId: string, commentId: string, headers: DeleteCommentHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCommentResponse> {
+    publisherId = OpenApiUtil.getEncodeParam(publisherId);
+    commentId = OpenApiUtil.getEncodeParam(commentId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2328,6 +2332,7 @@ export default class Client extends OpenApi {
 
   async getPublisherSummaryWithOptions(dataId: string, request: GetPublisherSummaryRequest, headers: GetPublisherSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPublisherSummaryResponse> {
     Util.validateModel(request);
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2361,6 +2366,7 @@ export default class Client extends OpenApi {
 
   async getDocCreatedDeptSummaryWithOptions(dataId: string, request: GetDocCreatedDeptSummaryRequest, headers: GetDocCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocCreatedDeptSummaryResponse> {
     Util.validateModel(request);
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2393,6 +2399,7 @@ export default class Client extends OpenApi {
   }
 
   async getGeneralFormCreatedSummaryWithOptions(dataId: string, headers: GetGeneralFormCreatedSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedSummaryResponse> {
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2456,6 +2463,7 @@ export default class Client extends OpenApi {
   }
 
   async getDocCreatedSummaryWithOptions(dataId: string, headers: GetDocCreatedSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocCreatedSummaryResponse> {
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2478,6 +2486,7 @@ export default class Client extends OpenApi {
   }
 
   async getPartnerTypeByParentIdWithOptions(parentId: string, headers: GetPartnerTypeByParentIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetPartnerTypeByParentIdResponse> {
+    parentId = OpenApiUtil.getEncodeParam(parentId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2537,6 +2546,7 @@ export default class Client extends OpenApi {
   }
 
   async getActiveUserSummaryWithOptions(dataId: string, headers: GetActiveUserSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetActiveUserSummaryResponse> {
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2609,6 +2619,7 @@ export default class Client extends OpenApi {
 
   async getDingReportDeptSummaryWithOptions(dataId: string, request: GetDingReportDeptSummaryRequest, headers: GetDingReportDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingReportDeptSummaryResponse> {
     Util.validateModel(request);
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2671,6 +2682,7 @@ export default class Client extends OpenApi {
 
   async getGeneralFormCreatedDeptSummaryWithOptions(dataId: string, request: GetGeneralFormCreatedDeptSummaryRequest, headers: GetGeneralFormCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedDeptSummaryResponse> {
     Util.validateModel(request);
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2780,6 +2792,7 @@ export default class Client extends OpenApi {
   }
 
   async getCalenderSummaryWithOptions(dataId: string, headers: GetCalenderSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCalenderSummaryResponse> {
+    dataId = OpenApiUtil.getEncodeParam(dataId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2844,6 +2857,7 @@ export default class Client extends OpenApi {
 
   async getCommentListWithOptions(publisherId: string, request: GetCommentListRequest, headers: GetCommentListHeaders, runtime: $Util.RuntimeOptions): Promise<GetCommentListResponse> {
     Util.validateModel(request);
+    publisherId = OpenApiUtil.getEncodeParam(publisherId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;

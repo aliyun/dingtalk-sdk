@@ -2600,6 +2600,7 @@ export default class Client extends OpenApi {
   }
 
   async getFileWithOptions(fileId: string, headers: GetFileHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileResponse> {
+    fileId = OpenApiUtil.getEncodeParam(fileId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2979,6 +2980,7 @@ export default class Client extends OpenApi {
   }
 
   async getUserInfoWithOptions(userId: string, headers: GetUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

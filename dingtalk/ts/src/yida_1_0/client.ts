@@ -922,6 +922,7 @@ export default class Client extends OpenApi {
 
   async getFormDataByIDWithOptions(id: string, request: GetFormDataByIDRequest, headers: GetFormDataByIDHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormDataByIDResponse> {
     Util.validateModel(request);
+    id = OpenApiUtil.getEncodeParam(id);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;

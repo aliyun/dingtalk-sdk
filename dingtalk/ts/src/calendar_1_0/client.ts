@@ -1037,6 +1037,7 @@ export class GetEventResponseBody extends $tea.Model {
   seriesMasterId?: string;
   createTime?: string;
   updateTime?: string;
+  reminders?: GetEventResponseBodyReminders[];
   onlineMeetingInfo?: GetEventResponseBodyOnlineMeetingInfo;
   static names(): { [key: string]: string } {
     return {
@@ -1054,6 +1055,7 @@ export class GetEventResponseBody extends $tea.Model {
       seriesMasterId: 'seriesMasterId',
       createTime: 'createTime',
       updateTime: 'updateTime',
+      reminders: 'reminders',
       onlineMeetingInfo: 'onlineMeetingInfo',
     };
   }
@@ -1074,6 +1076,7 @@ export class GetEventResponseBody extends $tea.Model {
       seriesMasterId: 'string',
       createTime: 'string',
       updateTime: 'string',
+      reminders: { 'type': 'array', 'itemType': GetEventResponseBodyReminders },
       onlineMeetingInfo: GetEventResponseBodyOnlineMeetingInfo,
     };
   }
@@ -1187,6 +1190,7 @@ export class PatchEventResponseBody extends $tea.Model {
   attendees?: PatchEventResponseBodyAttendees[];
   organizer?: PatchEventResponseBodyOrganizer;
   location?: PatchEventResponseBodyLocation;
+  reminders?: PatchEventResponseBodyReminders[];
   createTime?: string;
   updateTime?: string;
   static names(): { [key: string]: string } {
@@ -1201,6 +1205,7 @@ export class PatchEventResponseBody extends $tea.Model {
       attendees: 'attendees',
       organizer: 'organizer',
       location: 'location',
+      reminders: 'reminders',
       createTime: 'createTime',
       updateTime: 'updateTime',
     };
@@ -1218,6 +1223,7 @@ export class PatchEventResponseBody extends $tea.Model {
       attendees: { 'type': 'array', 'itemType': PatchEventResponseBodyAttendees },
       organizer: PatchEventResponseBodyOrganizer,
       location: PatchEventResponseBodyLocation,
+      reminders: { 'type': 'array', 'itemType': PatchEventResponseBodyReminders },
       createTime: 'string',
       updateTime: 'string',
     };
@@ -2163,6 +2169,28 @@ export class ListEventsResponseBodyEventsOnlineMeetingInfo extends $tea.Model {
   }
 }
 
+export class ListEventsResponseBodyEventsReminders extends $tea.Model {
+  method?: string;
+  minutes?: string;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsResponseBodyEvents extends $tea.Model {
   id?: string;
   summary?: string;
@@ -2179,6 +2207,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   updateTime?: string;
   status?: string;
   onlineMeetingInfo?: ListEventsResponseBodyEventsOnlineMeetingInfo;
+  reminders?: ListEventsResponseBodyEventsReminders[];
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -2196,6 +2225,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       updateTime: 'updateTime',
       status: 'status',
       onlineMeetingInfo: 'onlineMeetingInfo',
+      reminders: 'reminders',
     };
   }
 
@@ -2216,6 +2246,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       updateTime: 'string',
       status: 'string',
       onlineMeetingInfo: ListEventsResponseBodyEventsOnlineMeetingInfo,
+      reminders: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsReminders },
     };
   }
 
@@ -2719,6 +2750,28 @@ export class GetEventResponseBodyLocation extends $tea.Model {
   }
 }
 
+export class GetEventResponseBodyReminders extends $tea.Model {
+  method?: string;
+  minutes?: string;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBodyOnlineMeetingInfo extends $tea.Model {
   type?: string;
   conferenceId?: string;
@@ -3138,6 +3191,28 @@ export class PatchEventResponseBodyLocation extends $tea.Model {
   }
 }
 
+export class PatchEventResponseBodyReminders extends $tea.Model {
+  method?: string;
+  minutes?: string;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -3159,6 +3234,9 @@ export default class Client extends OpenApi {
 
   async respondEventWithOptions(userId: string, calendarId: string, eventId: string, request: RespondEventRequest, headers: RespondEventHeaders, runtime: $Util.RuntimeOptions): Promise<RespondEventResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.responseStatus)) {
       body["responseStatus"] = request.responseStatus;
@@ -3188,6 +3266,7 @@ export default class Client extends OpenApi {
 
   async generateCaldavAccountWithOptions(userId: string, request: GenerateCaldavAccountRequest, headers: GenerateCaldavAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GenerateCaldavAccountResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.device)) {
       body["device"] = request.device;
@@ -3221,6 +3300,7 @@ export default class Client extends OpenApi {
 
   async getScheduleWithOptions(userId: string, request: GetScheduleRequest, headers: GetScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -3258,6 +3338,7 @@ export default class Client extends OpenApi {
 
   async convertLegacyEventIdWithOptions(userId: string, request: ConvertLegacyEventIdRequest, headers: ConvertLegacyEventIdHeaders, runtime: $Util.RuntimeOptions): Promise<ConvertLegacyEventIdResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.legacyEventIds)) {
       body["legacyEventIds"] = request.legacyEventIds;
@@ -3299,6 +3380,9 @@ export default class Client extends OpenApi {
 
   async removeAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest, headers: RemoveAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveAttendeeResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendeesToRemove)) {
       body["attendeesToRemove"] = request.attendeesToRemove;
@@ -3328,6 +3412,9 @@ export default class Client extends OpenApi {
 
   async addAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest, headers: AddAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendeesToAdd)) {
       body["attendeesToAdd"] = request.attendeesToAdd;
@@ -3357,6 +3444,8 @@ export default class Client extends OpenApi {
 
   async createEventWithOptions(userId: string, calendarId: string, request: CreateEventRequest, headers: CreateEventHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.summary)) {
       body["summary"] = request.summary;
@@ -3425,6 +3514,7 @@ export default class Client extends OpenApi {
   }
 
   async listCalendarsWithOptions(userId: string, headers: ListCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<ListCalendarsResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3448,6 +3538,9 @@ export default class Client extends OpenApi {
 
   async listReceiversWithOptions(userId: string, calendarId: string, eventId: string, request: ListReceiversRequest, headers: ListReceiversHeaders, runtime: $Util.RuntimeOptions): Promise<ListReceiversResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -3484,6 +3577,9 @@ export default class Client extends OpenApi {
   }
 
   async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3507,6 +3603,8 @@ export default class Client extends OpenApi {
 
   async listEventsWithOptions(userId: string, calendarId: string, request: ListEventsRequest, headers: ListEventsHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.timeMin)) {
       query["timeMin"] = request.timeMin;
@@ -3556,6 +3654,8 @@ export default class Client extends OpenApi {
 
   async listEventsViewWithOptions(userId: string, calendarId: string, request: ListEventsViewRequest, headers: ListEventsViewHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.timeMin)) {
       query["timeMin"] = request.timeMin;
@@ -3596,6 +3696,9 @@ export default class Client extends OpenApi {
   }
 
   async getEventWithOptions(userId: string, calendarId: string, eventId: string, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3619,6 +3722,9 @@ export default class Client extends OpenApi {
 
   async patchEventWithOptions(userId: string, calendarId: string, eventId: string, request: PatchEventRequest, headers: PatchEventHeaders, runtime: $Util.RuntimeOptions): Promise<PatchEventResponse> {
     Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.summary)) {
       body["summary"] = request.summary;
