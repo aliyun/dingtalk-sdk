@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
-    public class ListReceiversResponseBody : TeaModel {
+    public class GetSignInListResponseBody : TeaModel {
         /// <summary>
         /// 翻页token
         /// </summary>
@@ -17,18 +17,15 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// 用户详情
+        /// 签到信息
         /// </summary>
         [NameInMap("users")]
         [Validation(Required=false)]
-        public List<ListReceiversResponseBodyUsers> Users { get; set; }
-        public class ListReceiversResponseBodyUsers : TeaModel {
-            /// <summary>
-            /// 用户id
-            /// </summary>
-            [NameInMap("id")]
+        public List<GetSignInListResponseBodyUsers> Users { get; set; }
+        public class GetSignInListResponseBodyUsers : TeaModel {
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public string Id { get; set; }
+            public string UserId { get; set; }
 
             /// <summary>
             /// 用户名
@@ -36,13 +33,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
-
-            /// <summary>
-            /// 签到状态
-            /// </summary>
-            [NameInMap("checkInStatus")]
-            [Validation(Required=false)]
-            public long? CheckInStatus { get; set; }
 
             /// <summary>
             /// 签到时间

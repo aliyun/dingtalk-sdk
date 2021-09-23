@@ -8,27 +8,24 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
-    public class ListReceiversRequest : TeaModel {
+    public class GetSignInListRequest : TeaModel {
         /// <summary>
-        /// 上次查询返回的翻页token
+        /// 查询返回结果数（上限200）
         /// </summary>
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public long? MaxResults { get; set; }
+
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
         /// <summary>
-        /// 签到类型
+        /// 签到信息类型（check_in，not_yet_check_in)
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public string Type { get; set; }
-
-        /// <summary>
-        /// 返回个数(最大2000)
-        /// </summary>
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public long? MaxResults { get; set; }
 
     }
 

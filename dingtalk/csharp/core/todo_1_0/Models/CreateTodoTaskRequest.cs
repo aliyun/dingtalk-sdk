@@ -88,6 +88,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public int? Priority { get; set; }
 
         /// <summary>
+        /// 通知提醒配置
+        /// </summary>
+        [NameInMap("notifyConfigs")]
+        [Validation(Required=false)]
+        public CreateTodoTaskRequestNotifyConfigs NotifyConfigs { get; set; }
+        public class CreateTodoTaskRequestNotifyConfigs : TeaModel {
+            [NameInMap("dingNotify")]
+            [Validation(Required=false)]
+            public string DingNotify { get; set; }
+        };
+
+        /// <summary>
         /// 当前操作者id，需传用户的unionId
         /// </summary>
         [NameInMap("operatorId")]

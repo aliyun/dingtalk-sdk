@@ -6,16 +6,12 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
-    public class ListReceiversResponse : TeaModel {
+    public class DeleteSequenceResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
-
-        [NameInMap("body")]
-        [Validation(Required=true)]
-        public ListReceiversResponseBody Body { get; set; }
 
     }
 
