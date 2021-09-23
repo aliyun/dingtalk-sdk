@@ -675,48 +675,48 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListCalendars', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars', 'json', req, runtime)
         )
 
-    def list_receivers(
+    def get_sign_in_list(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
-        request: dingtalkcalendar__1__0_models.ListReceiversRequest,
-    ) -> dingtalkcalendar__1__0_models.ListReceiversResponse:
+        request: dingtalkcalendar__1__0_models.GetSignInListRequest,
+    ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcalendar__1__0_models.ListReceiversHeaders()
-        return self.list_receivers_with_options(user_id, calendar_id, event_id, request, headers, runtime)
+        headers = dingtalkcalendar__1__0_models.GetSignInListHeaders()
+        return self.get_sign_in_list_with_options(user_id, calendar_id, event_id, request, headers, runtime)
 
-    async def list_receivers_async(
+    async def get_sign_in_list_async(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
-        request: dingtalkcalendar__1__0_models.ListReceiversRequest,
-    ) -> dingtalkcalendar__1__0_models.ListReceiversResponse:
+        request: dingtalkcalendar__1__0_models.GetSignInListRequest,
+    ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcalendar__1__0_models.ListReceiversHeaders()
-        return await self.list_receivers_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+        headers = dingtalkcalendar__1__0_models.GetSignInListHeaders()
+        return await self.get_sign_in_list_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
 
-    def list_receivers_with_options(
+    def get_sign_in_list_with_options(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
-        request: dingtalkcalendar__1__0_models.ListReceiversRequest,
-        headers: dingtalkcalendar__1__0_models.ListReceiversHeaders,
+        request: dingtalkcalendar__1__0_models.GetSignInListRequest,
+        headers: dingtalkcalendar__1__0_models.GetSignInListHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcalendar__1__0_models.ListReceiversResponse:
+    ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
         UtilClient.validate_model(request)
         user_id = OpenApiUtilClient.get_encode_param(user_id)
         calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         event_id = OpenApiUtilClient.get_encode_param(event_id)
         query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.type):
             query['type'] = request.type
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -727,30 +727,30 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkcalendar__1__0_models.ListReceiversResponse(),
-            self.do_roarequest('ListReceivers', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/receivers', 'json', req, runtime)
+            dingtalkcalendar__1__0_models.GetSignInListResponse(),
+            self.do_roarequest('GetSignInList', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signin', 'json', req, runtime)
         )
 
-    async def list_receivers_with_options_async(
+    async def get_sign_in_list_with_options_async(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
-        request: dingtalkcalendar__1__0_models.ListReceiversRequest,
-        headers: dingtalkcalendar__1__0_models.ListReceiversHeaders,
+        request: dingtalkcalendar__1__0_models.GetSignInListRequest,
+        headers: dingtalkcalendar__1__0_models.GetSignInListHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcalendar__1__0_models.ListReceiversResponse:
+    ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
         UtilClient.validate_model(request)
         user_id = OpenApiUtilClient.get_encode_param(user_id)
         calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
         event_id = OpenApiUtilClient.get_encode_param(event_id)
         query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.type):
             query['type'] = request.type
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -761,8 +761,8 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkcalendar__1__0_models.ListReceiversResponse(),
-            await self.do_roarequest_async('ListReceivers', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/receivers', 'json', req, runtime)
+            dingtalkcalendar__1__0_models.GetSignInListResponse(),
+            await self.do_roarequest_async('GetSignInList', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signin', 'json', req, runtime)
         )
 
     def delete_event(

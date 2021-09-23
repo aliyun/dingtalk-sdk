@@ -1472,6 +1472,34 @@ class CreateTodoTaskRequestDetailUrl(TeaModel):
         return self
 
 
+class CreateTodoTaskRequestNotifyConfigs(TeaModel):
+    def __init__(
+        self,
+        ding_notify: str = None,
+    ):
+        # ding通知配置：1钉弹框通知
+        self.ding_notify = ding_notify
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_notify is not None:
+            result['dingNotify'] = self.ding_notify
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingNotify') is not None:
+            self.ding_notify = m.get('dingNotify')
+        return self
+
+
 class CreateTodoTaskRequest(TeaModel):
     def __init__(
         self,
@@ -1485,6 +1513,7 @@ class CreateTodoTaskRequest(TeaModel):
         detail_url: CreateTodoTaskRequestDetailUrl = None,
         is_only_show_executor: bool = None,
         priority: int = None,
+        notify_configs: CreateTodoTaskRequestNotifyConfigs = None,
         operator_id: str = None,
     ):
         # 来源id，接入业务系统侧的唯一标识id
@@ -1507,12 +1536,16 @@ class CreateTodoTaskRequest(TeaModel):
         self.is_only_show_executor = is_only_show_executor
         # 优先级
         self.priority = priority
+        # 通知提醒配置
+        self.notify_configs = notify_configs
         # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
+        if self.notify_configs:
+            self.notify_configs.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1540,6 +1573,8 @@ class CreateTodoTaskRequest(TeaModel):
             result['isOnlyShowExecutor'] = self.is_only_show_executor
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.notify_configs is not None:
+            result['notifyConfigs'] = self.notify_configs.to_map()
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -1567,6 +1602,9 @@ class CreateTodoTaskRequest(TeaModel):
             self.is_only_show_executor = m.get('isOnlyShowExecutor')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('notifyConfigs') is not None:
+            temp_model = CreateTodoTaskRequestNotifyConfigs()
+            self.notify_configs = temp_model.from_map(m['notifyConfigs'])
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -1607,6 +1645,34 @@ class CreateTodoTaskResponseBodyDetailUrl(TeaModel):
         return self
 
 
+class CreateTodoTaskResponseBodyNotifyConfigs(TeaModel):
+    def __init__(
+        self,
+        ding_notify: str = None,
+    ):
+        # ding通知配置：value:"channel"（1钉弹框通知，2钉短信通知，3钉电话通知）
+        self.ding_notify = ding_notify
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_notify is not None:
+            result['dingNotify'] = self.ding_notify
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingNotify') is not None:
+            self.ding_notify = m.get('dingNotify')
+        return self
+
+
 class CreateTodoTaskResponseBody(TeaModel):
     def __init__(
         self,
@@ -1630,6 +1696,7 @@ class CreateTodoTaskResponseBody(TeaModel):
         request_id: str = None,
         is_only_show_executor: bool = None,
         priority: int = None,
+        notify_configs: CreateTodoTaskResponseBodyNotifyConfigs = None,
     ):
         # id
         self.id = id
@@ -1671,10 +1738,14 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.is_only_show_executor = is_only_show_executor
         # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
         self.priority = priority
+        # 待办通知配置
+        self.notify_configs = notify_configs
 
     def validate(self):
         if self.detail_url:
             self.detail_url.validate()
+        if self.notify_configs:
+            self.notify_configs.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1722,6 +1793,8 @@ class CreateTodoTaskResponseBody(TeaModel):
             result['isOnlyShowExecutor'] = self.is_only_show_executor
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.notify_configs is not None:
+            result['notifyConfigs'] = self.notify_configs.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -1767,6 +1840,9 @@ class CreateTodoTaskResponseBody(TeaModel):
             self.is_only_show_executor = m.get('isOnlyShowExecutor')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('notifyConfigs') is not None:
+            temp_model = CreateTodoTaskResponseBodyNotifyConfigs()
+            self.notify_configs = temp_model.from_map(m['notifyConfigs'])
         return self
 
 

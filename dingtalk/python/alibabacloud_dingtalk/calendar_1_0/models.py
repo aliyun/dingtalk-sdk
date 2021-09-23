@@ -2215,7 +2215,7 @@ class ListCalendarsResponse(TeaModel):
         return self
 
 
-class ListReceiversHeaders(TeaModel):
+class GetSignInListHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -2248,19 +2248,18 @@ class ListReceiversHeaders(TeaModel):
         return self
 
 
-class ListReceiversRequest(TeaModel):
+class GetSignInListRequest(TeaModel):
     def __init__(
         self,
+        max_results: int = None,
         next_token: str = None,
         type: str = None,
-        max_results: int = None,
     ):
-        # 上次查询返回的翻页token
-        self.next_token = next_token
-        # 签到类型
-        self.type = type
-        # 返回个数(最大2000)
+        # 查询返回结果数（上限200）
         self.max_results = max_results
+        self.next_token = next_token
+        # 签到信息类型（check_in，not_yet_check_in)
+        self.type = type
 
     def validate(self):
         pass
@@ -2271,39 +2270,35 @@ class ListReceiversRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         if self.type is not None:
             result['type'] = self.type
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         if m.get('type') is not None:
             self.type = m.get('type')
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
         return self
 
 
-class ListReceiversResponseBodyUsers(TeaModel):
+class GetSignInListResponseBodyUsers(TeaModel):
     def __init__(
         self,
-        id: str = None,
+        user_id: str = None,
         display_name: str = None,
-        check_in_status: int = None,
         check_in_time: int = None,
     ):
-        # 用户id
-        self.id = id
+        self.user_id = user_id
         # 用户名
         self.display_name = display_name
-        # 签到状态
-        self.check_in_status = check_in_status
         # 签到时间
         self.check_in_time = check_in_time
 
@@ -2316,38 +2311,34 @@ class ListReceiversResponseBodyUsers(TeaModel):
             return _map
 
         result = dict()
-        if self.id is not None:
-            result['id'] = self.id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.display_name is not None:
             result['displayName'] = self.display_name
-        if self.check_in_status is not None:
-            result['checkInStatus'] = self.check_in_status
         if self.check_in_time is not None:
             result['checkInTime'] = self.check_in_time
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('displayName') is not None:
             self.display_name = m.get('displayName')
-        if m.get('checkInStatus') is not None:
-            self.check_in_status = m.get('checkInStatus')
         if m.get('checkInTime') is not None:
             self.check_in_time = m.get('checkInTime')
         return self
 
 
-class ListReceiversResponseBody(TeaModel):
+class GetSignInListResponseBody(TeaModel):
     def __init__(
         self,
         next_token: str = None,
-        users: List[ListReceiversResponseBodyUsers] = None,
+        users: List[GetSignInListResponseBodyUsers] = None,
     ):
         # 翻页token
         self.next_token = next_token
-        # 用户详情
+        # 签到信息
         self.users = users
 
     def validate(self):
@@ -2377,16 +2368,16 @@ class ListReceiversResponseBody(TeaModel):
         self.users = []
         if m.get('users') is not None:
             for k in m.get('users'):
-                temp_model = ListReceiversResponseBodyUsers()
+                temp_model = GetSignInListResponseBodyUsers()
                 self.users.append(temp_model.from_map(k))
         return self
 
 
-class ListReceiversResponse(TeaModel):
+class GetSignInListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: ListReceiversResponseBody = None,
+        body: GetSignInListResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -2414,7 +2405,7 @@ class ListReceiversResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = ListReceiversResponseBody()
+            temp_model = GetSignInListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
