@@ -1,0 +1,34 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkyida_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class ExecuteTaskHeaders extends TeaModel {
+    @NameInMap("commonHeaders")
+    public java.util.Map<String, String> commonHeaders;
+
+    @NameInMap("x-acs-dingtalk-access-token")
+    public String xAcsDingtalkAccessToken;
+
+    public static ExecuteTaskHeaders build(java.util.Map<String, ?> map) throws Exception {
+        ExecuteTaskHeaders self = new ExecuteTaskHeaders();
+        return TeaModel.build(map, self);
+    }
+
+    public ExecuteTaskHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
+        this.commonHeaders = commonHeaders;
+        return this;
+    }
+    public java.util.Map<String, String> getCommonHeaders() {
+        return this.commonHeaders;
+    }
+
+    public ExecuteTaskHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
+        this.xAcsDingtalkAccessToken = xAcsDingtalkAccessToken;
+        return this;
+    }
+    public String getXAcsDingtalkAccessToken() {
+        return this.xAcsDingtalkAccessToken;
+    }
+
+}

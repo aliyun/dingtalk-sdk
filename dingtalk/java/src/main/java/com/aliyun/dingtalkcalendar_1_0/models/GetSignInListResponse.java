@@ -3,21 +3,21 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ListReceiversResponse extends TeaModel {
+public class GetSignInListResponse extends TeaModel {
     @NameInMap("headers")
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
     @NameInMap("body")
     @Validation(required = true)
-    public ListReceiversResponseBody body;
+    public GetSignInListResponseBody body;
 
-    public static ListReceiversResponse build(java.util.Map<String, ?> map) throws Exception {
-        ListReceiversResponse self = new ListReceiversResponse();
+    public static GetSignInListResponse build(java.util.Map<String, ?> map) throws Exception {
+        GetSignInListResponse self = new GetSignInListResponse();
         return TeaModel.build(map, self);
     }
 
-    public ListReceiversResponse setHeaders(java.util.Map<String, String> headers) {
+    public GetSignInListResponse setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
         return this;
     }
@@ -25,11 +25,11 @@ public class ListReceiversResponse extends TeaModel {
         return this.headers;
     }
 
-    public ListReceiversResponse setBody(ListReceiversResponseBody body) {
+    public GetSignInListResponse setBody(GetSignInListResponseBody body) {
         this.body = body;
         return this;
     }
-    public ListReceiversResponseBody getBody() {
+    public GetSignInListResponseBody getBody() {
         return this.body;
     }
 

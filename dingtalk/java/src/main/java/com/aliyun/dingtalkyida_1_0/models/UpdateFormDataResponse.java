@@ -1,0 +1,24 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkyida_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class UpdateFormDataResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    public static UpdateFormDataResponse build(java.util.Map<String, ?> map) throws Exception {
+        UpdateFormDataResponse self = new UpdateFormDataResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public UpdateFormDataResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+}

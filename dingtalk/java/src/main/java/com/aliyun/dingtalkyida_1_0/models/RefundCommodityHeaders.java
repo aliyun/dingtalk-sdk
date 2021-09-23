@@ -1,21 +1,21 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkcalendar_1_0.models;
+package com.aliyun.dingtalkyida_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ListReceiversHeaders extends TeaModel {
+public class RefundCommodityHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
-    public static ListReceiversHeaders build(java.util.Map<String, ?> map) throws Exception {
-        ListReceiversHeaders self = new ListReceiversHeaders();
+    public static RefundCommodityHeaders build(java.util.Map<String, ?> map) throws Exception {
+        RefundCommodityHeaders self = new RefundCommodityHeaders();
         return TeaModel.build(map, self);
     }
 
-    public ListReceiversHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
+    public RefundCommodityHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
         this.commonHeaders = commonHeaders;
         return this;
     }
@@ -23,7 +23,7 @@ public class ListReceiversHeaders extends TeaModel {
         return this.commonHeaders;
     }
 
-    public ListReceiversHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
+    public RefundCommodityHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
         this.xAcsDingtalkAccessToken = xAcsDingtalkAccessToken;
         return this;
     }

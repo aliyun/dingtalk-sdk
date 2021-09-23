@@ -325,28 +325,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListCalendars", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars", "json", req, runtime), new ListCalendarsResponse());
     }
 
-    public ListReceiversResponse listReceivers(String userId, String calendarId, String eventId, ListReceiversRequest request) throws Exception {
+    public GetSignInListResponse getSignInList(String userId, String calendarId, String eventId, GetSignInListRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
-        ListReceiversHeaders headers = new ListReceiversHeaders();
-        return this.listReceiversWithOptions(userId, calendarId, eventId, request, headers, runtime);
+        GetSignInListHeaders headers = new GetSignInListHeaders();
+        return this.getSignInListWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
-    public ListReceiversResponse listReceiversWithOptions(String userId, String calendarId, String eventId, ListReceiversRequest request, ListReceiversHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetSignInListResponse getSignInListWithOptions(String userId, String calendarId, String eventId, GetSignInListRequest request, GetSignInListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
         eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             query.put("nextToken", request.nextToken);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.type)) {
             query.put("type", request.type);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
-            query.put("maxResults", request.maxResults);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -362,7 +362,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListReceivers", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/receivers", "json", req, runtime), new ListReceiversResponse());
+        return TeaModel.toModel(this.doROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime), new GetSignInListResponse());
     }
 
     public DeleteEventResponse deleteEvent(String userId, String calendarId, String eventId) throws Exception {

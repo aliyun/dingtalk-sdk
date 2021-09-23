@@ -84,6 +84,10 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("priority")
     public Integer priority;
 
+    // 待办通知配置
+    @NameInMap("notifyConfigs")
+    public CreateTodoTaskResponseBodyNotifyConfigs notifyConfigs;
+
     public static CreateTodoTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateTodoTaskResponseBody self = new CreateTodoTaskResponseBody();
         return TeaModel.build(map, self);
@@ -249,6 +253,14 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         return this.priority;
     }
 
+    public CreateTodoTaskResponseBody setNotifyConfigs(CreateTodoTaskResponseBodyNotifyConfigs notifyConfigs) {
+        this.notifyConfigs = notifyConfigs;
+        return this;
+    }
+    public CreateTodoTaskResponseBodyNotifyConfigs getNotifyConfigs() {
+        return this.notifyConfigs;
+    }
+
     public static class CreateTodoTaskResponseBodyDetailUrl extends TeaModel {
         // pc端详情页地址
         @NameInMap("pcUrl")
@@ -277,6 +289,26 @@ public class CreateTodoTaskResponseBody extends TeaModel {
         }
         public String getAppUrl() {
             return this.appUrl;
+        }
+
+    }
+
+    public static class CreateTodoTaskResponseBodyNotifyConfigs extends TeaModel {
+        // ding通知配置：value:"channel"（1钉弹框通知，2钉短信通知，3钉电话通知）
+        @NameInMap("dingNotify")
+        public String dingNotify;
+
+        public static CreateTodoTaskResponseBodyNotifyConfigs build(java.util.Map<String, ?> map) throws Exception {
+            CreateTodoTaskResponseBodyNotifyConfigs self = new CreateTodoTaskResponseBodyNotifyConfigs();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTodoTaskResponseBodyNotifyConfigs setDingNotify(String dingNotify) {
+            this.dingNotify = dingNotify;
+            return this;
+        }
+        public String getDingNotify() {
+            return this.dingNotify;
         }
 
     }
