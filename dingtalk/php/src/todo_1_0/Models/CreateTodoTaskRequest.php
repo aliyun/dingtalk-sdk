@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\detailUrl;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\notifyConfigs;
 use AlibabaCloud\Tea\Model;
 
 class CreateTodoTaskRequest extends Model
@@ -80,6 +81,13 @@ class CreateTodoTaskRequest extends Model
     public $priority;
 
     /**
+     * @description 通知提醒配置
+     *
+     * @var notifyConfigs
+     */
+    public $notifyConfigs;
+
+    /**
      * @description 当前操作者id，需传用户的unionId
      *
      * @var string
@@ -96,6 +104,7 @@ class CreateTodoTaskRequest extends Model
         'detailUrl'          => 'detailUrl',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
         'priority'           => 'priority',
+        'notifyConfigs'      => 'notifyConfigs',
         'operatorId'         => 'operatorId',
     ];
 
@@ -135,6 +144,9 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
+        }
+        if (null !== $this->notifyConfigs) {
+            $res['notifyConfigs'] = null !== $this->notifyConfigs ? $this->notifyConfigs->toMap() : null;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -184,6 +196,9 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
+        }
+        if (isset($map['notifyConfigs'])) {
+            $model->notifyConfigs = notifyConfigs::fromMap($map['notifyConfigs']);
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

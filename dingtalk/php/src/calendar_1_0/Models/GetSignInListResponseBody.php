@@ -4,10 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversResponseBody\users;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListResponseBody\users;
 use AlibabaCloud\Tea\Model;
 
-class ListReceiversResponseBody extends Model
+class GetSignInListResponseBody extends Model
 {
     /**
      * @description 翻页token
@@ -17,7 +17,7 @@ class ListReceiversResponseBody extends Model
     public $nextToken;
 
     /**
-     * @description 用户详情
+     * @description 签到信息
      *
      * @var users[]
      */
@@ -53,7 +53,7 @@ class ListReceiversResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return ListReceiversResponseBody
+     * @return GetSignInListResponseBody
      */
     public static function fromMap($map = [])
     {

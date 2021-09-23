@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\detailUrl;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponseBody\notifyConfigs;
 use AlibabaCloud\Tea\Model;
 
 class CreateTodoTaskResponseBody extends Model
@@ -148,6 +149,13 @@ class CreateTodoTaskResponseBody extends Model
      * @var int
      */
     public $priority;
+
+    /**
+     * @description 待办通知配置
+     *
+     * @var notifyConfigs
+     */
+    public $notifyConfigs;
     protected $_name = [
         'id'                 => 'id',
         'subject'            => 'subject',
@@ -169,6 +177,7 @@ class CreateTodoTaskResponseBody extends Model
         'requestId'          => 'requestId',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
         'priority'           => 'priority',
+        'notifyConfigs'      => 'notifyConfigs',
     ];
 
     public function validate()
@@ -237,6 +246,9 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
+        }
+        if (null !== $this->notifyConfigs) {
+            $res['notifyConfigs'] = null !== $this->notifyConfigs ? $this->notifyConfigs->toMap() : null;
         }
 
         return $res;
@@ -313,6 +325,9 @@ class CreateTodoTaskResponseBody extends Model
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
+        }
+        if (isset($map['notifyConfigs'])) {
+            $model->notifyConfigs = notifyConfigs::fromMap($map['notifyConfigs']);
         }
 
         return $model;

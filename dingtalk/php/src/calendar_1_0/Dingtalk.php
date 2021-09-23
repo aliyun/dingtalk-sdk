@@ -24,6 +24,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
@@ -32,9 +35,6 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponse;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversRequest;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListReceiversResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponse;
@@ -485,43 +485,43 @@ class Dingtalk extends OpenApiClient
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param ListReceiversRequest $request
+     * @param GetSignInListRequest $request
      *
-     * @return ListReceiversResponse
+     * @return GetSignInListResponse
      */
-    public function listReceivers($userId, $calendarId, $eventId, $request)
+    public function getSignInList($userId, $calendarId, $eventId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ListReceiversHeaders([]);
+        $headers = new GetSignInListHeaders([]);
 
-        return $this->listReceiversWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+        return $this->getSignInListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
     }
 
     /**
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param ListReceiversRequest $request
-     * @param ListReceiversHeaders $headers
+     * @param GetSignInListRequest $request
+     * @param GetSignInListHeaders $headers
      * @param RuntimeOptions       $runtime
      *
-     * @return ListReceiversResponse
+     * @return GetSignInListResponse
      */
-    public function listReceiversWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    public function getSignInListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $userId     = OpenApiUtilClient::getEncodeParam($userId);
         $calendarId = OpenApiUtilClient::getEncodeParam($calendarId);
         $eventId    = OpenApiUtilClient::getEncodeParam($eventId);
         $query      = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->type)) {
             @$query['type'] = $request->type;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -535,7 +535,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListReceiversResponse::fromMap($this->doROARequest('ListReceivers', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/receivers', 'json', $req, $runtime));
+        return GetSignInListResponse::fromMap($this->doROARequest('GetSignInList', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin', 'json', $req, $runtime));
     }
 
     /**

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ListReceiversHeaders extends Model
+class GetActivityListHeaders extends Model
 {
     public $commonHeaders;
 
@@ -38,7 +38,7 @@ class ListReceiversHeaders extends Model
     /**
      * @param array $map
      *
-     * @return ListReceiversHeaders
+     * @return GetActivityListHeaders
      */
     public static function fromMap($map = [])
     {

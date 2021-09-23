@@ -31,6 +31,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vcrm_1_0\\": "src/crm_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcustomer_service_1_0\\": "src/customer_service_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vdatacenter_1_0\\": "src/datacenter_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vdevicemng_1_0\\": "src/devicemng_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vdingmi_1_0\\": "src/dingmi_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vdoc_1_0\\": "src/doc_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vdrive_1_0\\": "src/drive_1_0/",
