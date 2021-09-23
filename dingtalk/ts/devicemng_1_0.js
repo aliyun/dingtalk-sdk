@@ -1,0 +1,1 @@
+module.exports = require('./dist').devicemng_1_0;

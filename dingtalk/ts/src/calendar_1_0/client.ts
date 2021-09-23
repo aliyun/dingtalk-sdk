@@ -671,7 +671,7 @@ export class ListCalendarsResponse extends $tea.Model {
   }
 }
 
-export class ListReceiversHeaders extends $tea.Model {
+export class GetSignInListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -693,23 +693,23 @@ export class ListReceiversHeaders extends $tea.Model {
   }
 }
 
-export class ListReceiversRequest extends $tea.Model {
+export class GetSignInListRequest extends $tea.Model {
+  maxResults?: number;
   nextToken?: string;
   type?: string;
-  maxResults?: number;
   static names(): { [key: string]: string } {
     return {
+      maxResults: 'maxResults',
       nextToken: 'nextToken',
       type: 'type',
-      maxResults: 'maxResults',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      maxResults: 'number',
       nextToken: 'string',
       type: 'string',
-      maxResults: 'number',
     };
   }
 
@@ -718,9 +718,9 @@ export class ListReceiversRequest extends $tea.Model {
   }
 }
 
-export class ListReceiversResponseBody extends $tea.Model {
+export class GetSignInListResponseBody extends $tea.Model {
   nextToken?: string;
-  users?: ListReceiversResponseBodyUsers[];
+  users?: GetSignInListResponseBodyUsers[];
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
@@ -731,7 +731,7 @@ export class ListReceiversResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       nextToken: 'string',
-      users: { 'type': 'array', 'itemType': ListReceiversResponseBodyUsers },
+      users: { 'type': 'array', 'itemType': GetSignInListResponseBodyUsers },
     };
   }
 
@@ -740,9 +740,9 @@ export class ListReceiversResponseBody extends $tea.Model {
   }
 }
 
-export class ListReceiversResponse extends $tea.Model {
+export class GetSignInListResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: ListReceiversResponseBody;
+  body: GetSignInListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -753,7 +753,7 @@ export class ListReceiversResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: ListReceiversResponseBody,
+      body: GetSignInListResponseBody,
     };
   }
 
@@ -1910,25 +1910,22 @@ export class ListCalendarsResponseBodyResponse extends $tea.Model {
   }
 }
 
-export class ListReceiversResponseBodyUsers extends $tea.Model {
-  id?: string;
+export class GetSignInListResponseBodyUsers extends $tea.Model {
+  userId?: string;
   displayName?: string;
-  checkInStatus?: number;
   checkInTime?: number;
   static names(): { [key: string]: string } {
     return {
-      id: 'id',
+      userId: 'userId',
       displayName: 'displayName',
-      checkInStatus: 'checkInStatus',
       checkInTime: 'checkInTime',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      id: 'string',
+      userId: 'string',
       displayName: 'string',
-      checkInStatus: 'number',
       checkInTime: 'number',
     };
   }
@@ -3530,28 +3527,28 @@ export default class Client extends OpenApi {
     return $tea.cast<ListCalendarsResponse>(await this.doROARequest("ListCalendars", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars`, "json", req, runtime), new ListCalendarsResponse({}));
   }
 
-  async listReceivers(userId: string, calendarId: string, eventId: string, request: ListReceiversRequest): Promise<ListReceiversResponse> {
+  async getSignInList(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest): Promise<GetSignInListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListReceiversHeaders({ });
-    return await this.listReceiversWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    let headers = new GetSignInListHeaders({ });
+    return await this.getSignInListWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
-  async listReceiversWithOptions(userId: string, calendarId: string, eventId: string, request: ListReceiversRequest, headers: ListReceiversHeaders, runtime: $Util.RuntimeOptions): Promise<ListReceiversResponse> {
+  async getSignInListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest, headers: GetSignInListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInListResponse> {
     Util.validateModel(request);
     userId = OpenApiUtil.getEncodeParam(userId);
     calendarId = OpenApiUtil.getEncodeParam(calendarId);
     eventId = OpenApiUtil.getEncodeParam(eventId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
     }
 
     if (!Util.isUnset(request.type)) {
       query["type"] = request.type;
-    }
-
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3567,7 +3564,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListReceiversResponse>(await this.doROARequest("ListReceivers", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/receivers`, "json", req, runtime), new ListReceiversResponse({}));
+    return $tea.cast<GetSignInListResponse>(await this.doROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new GetSignInListResponse({}));
   }
 
   async deleteEvent(userId: string, calendarId: string, eventId: string): Promise<DeleteEventResponse> {

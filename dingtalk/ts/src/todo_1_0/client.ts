@@ -615,6 +615,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
   detailUrl?: CreateTodoTaskRequestDetailUrl;
   isOnlyShowExecutor?: boolean;
   priority?: number;
+  notifyConfigs?: CreateTodoTaskRequestNotifyConfigs;
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -628,6 +629,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
       detailUrl: 'detailUrl',
       isOnlyShowExecutor: 'isOnlyShowExecutor',
       priority: 'priority',
+      notifyConfigs: 'notifyConfigs',
       operatorId: 'operatorId',
     };
   }
@@ -644,6 +646,7 @@ export class CreateTodoTaskRequest extends $tea.Model {
       detailUrl: CreateTodoTaskRequestDetailUrl,
       isOnlyShowExecutor: 'boolean',
       priority: 'number',
+      notifyConfigs: CreateTodoTaskRequestNotifyConfigs,
       operatorId: 'string',
     };
   }
@@ -674,6 +677,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   requestId?: string;
   isOnlyShowExecutor?: boolean;
   priority?: number;
+  notifyConfigs?: CreateTodoTaskResponseBodyNotifyConfigs;
   static names(): { [key: string]: string } {
     return {
       id: 'id',
@@ -696,6 +700,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       requestId: 'requestId',
       isOnlyShowExecutor: 'isOnlyShowExecutor',
       priority: 'priority',
+      notifyConfigs: 'notifyConfigs',
     };
   }
 
@@ -721,6 +726,7 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
       requestId: 'string',
       isOnlyShowExecutor: 'boolean',
       priority: 'number',
+      notifyConfigs: CreateTodoTaskResponseBodyNotifyConfigs,
     };
   }
 
@@ -1671,6 +1677,25 @@ export class CreateTodoTaskRequestDetailUrl extends $tea.Model {
   }
 }
 
+export class CreateTodoTaskRequestNotifyConfigs extends $tea.Model {
+  dingNotify?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingNotify: 'dingNotify',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingNotify: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
   pcUrl?: string;
   appUrl?: string;
@@ -1685,6 +1710,25 @@ export class CreateTodoTaskResponseBodyDetailUrl extends $tea.Model {
     return {
       pcUrl: 'string',
       appUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTodoTaskResponseBodyNotifyConfigs extends $tea.Model {
+  dingNotify?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingNotify: 'dingNotify',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingNotify: 'string',
     };
   }
 
@@ -2347,6 +2391,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.priority)) {
       body["priority"] = request.priority;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.notifyConfigs))) {
+      body["notifyConfigs"] = request.notifyConfigs;
     }
 
     let realHeaders : {[key: string ]: string} = { };
