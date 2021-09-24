@@ -1160,6 +1160,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["openConversationId"] = request.OpenConversationId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SingleChatReceiver))
+            {
+                body["singleChatReceiver"] = request.SingleChatReceiver;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
             {
                 body["dingTokenGrantType"] = request.DingTokenGrantType;
@@ -1228,6 +1232,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SingleChatReceiver))
+            {
+                body["singleChatReceiver"] = request.SingleChatReceiver;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
             {

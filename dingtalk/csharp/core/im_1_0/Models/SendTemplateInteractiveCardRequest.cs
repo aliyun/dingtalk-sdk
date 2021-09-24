@@ -21,11 +21,18 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string CardTemplateId { get; set; }
 
         /// <summary>
-        /// 接收卡片的加密群ID
+        /// 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
+
+        /// <summary>
+        /// 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
+        /// </summary>
+        [NameInMap("singleChatReceiver")]
+        [Validation(Required=false)]
+        public string SingleChatReceiver { get; set; }
 
         [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
@@ -81,9 +88,15 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [NameInMap("atUserListJson")]
             [Validation(Required=false)]
             public string AtUserListJson { get; set; }
+            [NameInMap("atAll")]
+            [Validation(Required=false)]
+            public bool? AtAll { get; set; }
             [NameInMap("receiverListJson")]
             [Validation(Required=false)]
             public string ReceiverListJson { get; set; }
+            [NameInMap("cardPropertyJson")]
+            [Validation(Required=false)]
+            public string CardPropertyJson { get; set; }
         };
 
     }
