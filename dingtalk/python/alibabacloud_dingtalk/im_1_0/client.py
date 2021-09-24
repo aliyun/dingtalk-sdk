@@ -861,6 +861,8 @@ class Client(OpenApiClient):
             body['cardTemplateId'] = request.card_template_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.single_chat_receiver):
+            body['singleChatReceiver'] = request.single_chat_receiver
         if not UtilClient.is_unset(request.ding_token_grant_type):
             body['dingTokenGrantType'] = request.ding_token_grant_type
         if not UtilClient.is_unset(request.out_track_id):
@@ -907,6 +909,8 @@ class Client(OpenApiClient):
             body['cardTemplateId'] = request.card_template_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.single_chat_receiver):
+            body['singleChatReceiver'] = request.single_chat_receiver
         if not UtilClient.is_unset(request.ding_token_grant_type):
             body['dingTokenGrantType'] = request.ding_token_grant_type
         if not UtilClient.is_unset(request.out_track_id):

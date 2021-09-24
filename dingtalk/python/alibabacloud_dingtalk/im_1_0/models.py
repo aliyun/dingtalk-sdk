@@ -1655,12 +1655,18 @@ class SendTemplateInteractiveCardRequestSendOptions(TeaModel):
     def __init__(
         self,
         at_user_list_json: str = None,
+        at_all: bool = None,
         receiver_list_json: str = None,
+        card_property_json: str = None,
     ):
         # 消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
         self.at_user_list_json = at_user_list_json
+        # 是否@所有人
+        self.at_all = at_all
         # 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
         self.receiver_list_json = receiver_list_json
+        # 卡片特殊属性json串
+        self.card_property_json = card_property_json
 
     def validate(self):
         pass
@@ -1673,16 +1679,24 @@ class SendTemplateInteractiveCardRequestSendOptions(TeaModel):
         result = dict()
         if self.at_user_list_json is not None:
             result['atUserListJson'] = self.at_user_list_json
+        if self.at_all is not None:
+            result['atAll'] = self.at_all
         if self.receiver_list_json is not None:
             result['receiverListJson'] = self.receiver_list_json
+        if self.card_property_json is not None:
+            result['cardPropertyJson'] = self.card_property_json
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('atUserListJson') is not None:
             self.at_user_list_json = m.get('atUserListJson')
+        if m.get('atAll') is not None:
+            self.at_all = m.get('atAll')
         if m.get('receiverListJson') is not None:
             self.receiver_list_json = m.get('receiverListJson')
+        if m.get('cardPropertyJson') is not None:
+            self.card_property_json = m.get('cardPropertyJson')
         return self
 
 
@@ -1692,6 +1706,7 @@ class SendTemplateInteractiveCardRequest(TeaModel):
         ding_isv_org_id: int = None,
         card_template_id: str = None,
         open_conversation_id: str = None,
+        single_chat_receiver: str = None,
         ding_token_grant_type: int = None,
         out_track_id: str = None,
         ding_suite_key: str = None,
@@ -1705,8 +1720,10 @@ class SendTemplateInteractiveCardRequest(TeaModel):
         self.ding_isv_org_id = ding_isv_org_id
         # 卡片内容模板ID，响应模板目前有：TuWenCard01、TuWenCard02、TuWenCard03、TuWenCard04 4种
         self.card_template_id = card_template_id
-        # 接收卡片的加密群ID
+        # 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
         self.open_conversation_id = open_conversation_id
+        # 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
+        self.single_chat_receiver = single_chat_receiver
         self.ding_token_grant_type = ding_token_grant_type
         # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
         self.out_track_id = out_track_id
@@ -1738,6 +1755,8 @@ class SendTemplateInteractiveCardRequest(TeaModel):
             result['cardTemplateId'] = self.card_template_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.single_chat_receiver is not None:
+            result['singleChatReceiver'] = self.single_chat_receiver
         if self.ding_token_grant_type is not None:
             result['dingTokenGrantType'] = self.ding_token_grant_type
         if self.out_track_id is not None:
@@ -1766,6 +1785,8 @@ class SendTemplateInteractiveCardRequest(TeaModel):
             self.card_template_id = m.get('cardTemplateId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('singleChatReceiver') is not None:
+            self.single_chat_receiver = m.get('singleChatReceiver')
         if m.get('dingTokenGrantType') is not None:
             self.ding_token_grant_type = m.get('dingTokenGrantType')
         if m.get('outTrackId') is not None:
