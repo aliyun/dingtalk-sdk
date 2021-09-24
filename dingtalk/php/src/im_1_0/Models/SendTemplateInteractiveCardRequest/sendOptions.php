@@ -16,14 +16,30 @@ class sendOptions extends Model
     public $atUserListJson;
 
     /**
+     * @description 是否@所有人
+     *
+     * @var bool
+     */
+    public $atAll;
+
+    /**
      * @description 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
      *
      * @var string
      */
     public $receiverListJson;
+
+    /**
+     * @description 卡片特殊属性json串
+     *
+     * @var string
+     */
+    public $cardPropertyJson;
     protected $_name = [
         'atUserListJson'   => 'atUserListJson',
+        'atAll'            => 'atAll',
         'receiverListJson' => 'receiverListJson',
+        'cardPropertyJson' => 'cardPropertyJson',
     ];
 
     public function validate()
@@ -36,8 +52,14 @@ class sendOptions extends Model
         if (null !== $this->atUserListJson) {
             $res['atUserListJson'] = $this->atUserListJson;
         }
+        if (null !== $this->atAll) {
+            $res['atAll'] = $this->atAll;
+        }
         if (null !== $this->receiverListJson) {
             $res['receiverListJson'] = $this->receiverListJson;
+        }
+        if (null !== $this->cardPropertyJson) {
+            $res['cardPropertyJson'] = $this->cardPropertyJson;
         }
 
         return $res;
@@ -54,8 +76,14 @@ class sendOptions extends Model
         if (isset($map['atUserListJson'])) {
             $model->atUserListJson = $map['atUserListJson'];
         }
+        if (isset($map['atAll'])) {
+            $model->atAll = $map['atAll'];
+        }
         if (isset($map['receiverListJson'])) {
             $model->receiverListJson = $map['receiverListJson'];
+        }
+        if (isset($map['cardPropertyJson'])) {
+            $model->cardPropertyJson = $map['cardPropertyJson'];
         }
 
         return $model;

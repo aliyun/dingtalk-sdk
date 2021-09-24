@@ -639,6 +639,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->openConversationId)) {
             @$body['openConversationId'] = $request->openConversationId;
         }
+        if (!Utils::isUnset($request->singleChatReceiver)) {
+            @$body['singleChatReceiver'] = $request->singleChatReceiver;
+        }
         if (!Utils::isUnset($request->dingTokenGrantType)) {
             @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
         }

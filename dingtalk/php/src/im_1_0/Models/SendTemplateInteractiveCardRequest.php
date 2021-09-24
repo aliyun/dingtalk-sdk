@@ -22,11 +22,18 @@ class SendTemplateInteractiveCardRequest extends Model
     public $cardTemplateId;
 
     /**
-     * @description 接收卡片的加密群ID
+     * @description 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
      *
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @description 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
+     *
+     * @var string
+     */
+    public $singleChatReceiver;
 
     /**
      * @var int
@@ -86,6 +93,7 @@ class SendTemplateInteractiveCardRequest extends Model
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'cardTemplateId'     => 'cardTemplateId',
         'openConversationId' => 'openConversationId',
+        'singleChatReceiver' => 'singleChatReceiver',
         'dingTokenGrantType' => 'dingTokenGrantType',
         'outTrackId'         => 'outTrackId',
         'dingSuiteKey'       => 'dingSuiteKey',
@@ -112,6 +120,9 @@ class SendTemplateInteractiveCardRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->singleChatReceiver) {
+            $res['singleChatReceiver'] = $this->singleChatReceiver;
         }
         if (null !== $this->dingTokenGrantType) {
             $res['dingTokenGrantType'] = $this->dingTokenGrantType;
@@ -160,6 +171,9 @@ class SendTemplateInteractiveCardRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['singleChatReceiver'])) {
+            $model->singleChatReceiver = $map['singleChatReceiver'];
         }
         if (isset($map['dingTokenGrantType'])) {
             $model->dingTokenGrantType = $map['dingTokenGrantType'];
