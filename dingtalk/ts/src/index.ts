@@ -2,6 +2,7 @@ import * as alitrip_1_0 from './alitrip_1_0/client';
 import * as app_market_1_0 from './app_market_1_0/client';
 import * as ats_1_0 from './ats_1_0/client';
 import * as attendance_1_0 from './attendance_1_0/client';
+import * as badge_1_0 from './badge_1_0/client';
 import * as bizfinance_1_0 from './bizfinance_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
 import * as conference_1_0 from './conference_1_0/client';
@@ -51,6 +52,7 @@ export = {
   app_market_1_0,
   ats_1_0,
   attendance_1_0,
+  badge_1_0,
   bizfinance_1_0,
   calendar_1_0,
   conference_1_0,

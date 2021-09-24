@@ -870,6 +870,7 @@ export class SendTemplateInteractiveCardRequest extends $tea.Model {
   dingIsvOrgId?: number;
   cardTemplateId?: string;
   openConversationId?: string;
+  singleChatReceiver?: string;
   dingTokenGrantType?: number;
   outTrackId?: string;
   dingSuiteKey?: string;
@@ -884,6 +885,7 @@ export class SendTemplateInteractiveCardRequest extends $tea.Model {
       dingIsvOrgId: 'dingIsvOrgId',
       cardTemplateId: 'cardTemplateId',
       openConversationId: 'openConversationId',
+      singleChatReceiver: 'singleChatReceiver',
       dingTokenGrantType: 'dingTokenGrantType',
       outTrackId: 'outTrackId',
       dingSuiteKey: 'dingSuiteKey',
@@ -901,6 +903,7 @@ export class SendTemplateInteractiveCardRequest extends $tea.Model {
       dingIsvOrgId: 'number',
       cardTemplateId: 'string',
       openConversationId: 'string',
+      singleChatReceiver: 'string',
       dingTokenGrantType: 'number',
       outTrackId: 'string',
       dingSuiteKey: 'string',
@@ -1068,18 +1071,24 @@ export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
 
 export class SendTemplateInteractiveCardRequestSendOptions extends $tea.Model {
   atUserListJson?: string;
+  atAll?: boolean;
   receiverListJson?: string;
+  cardPropertyJson?: string;
   static names(): { [key: string]: string } {
     return {
       atUserListJson: 'atUserListJson',
+      atAll: 'atAll',
       receiverListJson: 'receiverListJson',
+      cardPropertyJson: 'cardPropertyJson',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       atUserListJson: 'string',
+      atAll: 'boolean',
       receiverListJson: 'string',
+      cardPropertyJson: 'string',
     };
   }
 
@@ -1648,6 +1657,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.singleChatReceiver)) {
+      body["singleChatReceiver"] = request.singleChatReceiver;
     }
 
     if (!Util.isUnset(request.dingTokenGrantType)) {
