@@ -11,9 +11,13 @@ public class SendTemplateInteractiveCardRequest extends TeaModel {
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
-    // 接收卡片的加密群ID
+    // 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
     @NameInMap("openConversationId")
     public String openConversationId;
+
+    // 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
+    @NameInMap("singleChatReceiver")
+    public String singleChatReceiver;
 
     @NameInMap("dingTokenGrantType")
     public Long dingTokenGrantType;
@@ -74,6 +78,14 @@ public class SendTemplateInteractiveCardRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public SendTemplateInteractiveCardRequest setSingleChatReceiver(String singleChatReceiver) {
+        this.singleChatReceiver = singleChatReceiver;
+        return this;
+    }
+    public String getSingleChatReceiver() {
+        return this.singleChatReceiver;
     }
 
     public SendTemplateInteractiveCardRequest setDingTokenGrantType(Long dingTokenGrantType) {
@@ -153,9 +165,17 @@ public class SendTemplateInteractiveCardRequest extends TeaModel {
         @NameInMap("atUserListJson")
         public String atUserListJson;
 
+        // 是否@所有人
+        @NameInMap("atAll")
+        public Boolean atAll;
+
         // 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
         @NameInMap("receiverListJson")
         public String receiverListJson;
+
+        // 卡片特殊属性json串
+        @NameInMap("cardPropertyJson")
+        public String cardPropertyJson;
 
         public static SendTemplateInteractiveCardRequestSendOptions build(java.util.Map<String, ?> map) throws Exception {
             SendTemplateInteractiveCardRequestSendOptions self = new SendTemplateInteractiveCardRequestSendOptions();
@@ -170,12 +190,28 @@ public class SendTemplateInteractiveCardRequest extends TeaModel {
             return this.atUserListJson;
         }
 
+        public SendTemplateInteractiveCardRequestSendOptions setAtAll(Boolean atAll) {
+            this.atAll = atAll;
+            return this;
+        }
+        public Boolean getAtAll() {
+            return this.atAll;
+        }
+
         public SendTemplateInteractiveCardRequestSendOptions setReceiverListJson(String receiverListJson) {
             this.receiverListJson = receiverListJson;
             return this;
         }
         public String getReceiverListJson() {
             return this.receiverListJson;
+        }
+
+        public SendTemplateInteractiveCardRequestSendOptions setCardPropertyJson(String cardPropertyJson) {
+            this.cardPropertyJson = cardPropertyJson;
+            return this;
+        }
+        public String getCardPropertyJson() {
+            return this.cardPropertyJson;
         }
 
     }

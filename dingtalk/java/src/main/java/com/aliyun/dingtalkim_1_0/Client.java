@@ -570,6 +570,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("openConversationId", request.openConversationId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.singleChatReceiver)) {
+            body.put("singleChatReceiver", request.singleChatReceiver);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
             body.put("dingTokenGrantType", request.dingTokenGrantType);
         }
