@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetScheduleResponseBody extends Model
 {
     /**
+     * @description 闲忙信息
+     *
      * @var scheduleInformation[]
      */
     public $scheduleInformation;

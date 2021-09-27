@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class scheduleInformation extends Model
 {
     /**
+     * @description 用户userId
+     *
      * @var string
      */
     public $userId;
 
     /**
+     * @description 异常描述
+     *
      * @var string
      */
     public $error;

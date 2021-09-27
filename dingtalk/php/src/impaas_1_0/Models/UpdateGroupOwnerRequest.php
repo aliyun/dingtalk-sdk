@@ -11,7 +11,7 @@ class UpdateGroupOwnerRequest extends Model
     /**
      * @var string
      */
-    public $ownerId;
+    public $ownerUid;
 
     /**
      * @var string
@@ -23,7 +23,7 @@ class UpdateGroupOwnerRequest extends Model
      */
     public $conversationId;
     protected $_name = [
-        'ownerId'        => 'ownerId',
+        'ownerUid'       => 'ownerUid',
         'operatorUid'    => 'operatorUid',
         'conversationId' => 'conversationId',
     ];
@@ -35,8 +35,8 @@ class UpdateGroupOwnerRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->ownerId) {
-            $res['ownerId'] = $this->ownerId;
+        if (null !== $this->ownerUid) {
+            $res['ownerUid'] = $this->ownerUid;
         }
         if (null !== $this->operatorUid) {
             $res['operatorUid'] = $this->operatorUid;
@@ -56,8 +56,8 @@ class UpdateGroupOwnerRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['ownerId'])) {
-            $model->ownerId = $map['ownerId'];
+        if (isset($map['ownerUid'])) {
+            $model->ownerUid = $map['ownerUid'];
         }
         if (isset($map['operatorUid'])) {
             $model->operatorUid = $map['operatorUid'];
