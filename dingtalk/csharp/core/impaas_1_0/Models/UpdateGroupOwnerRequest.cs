@@ -9,9 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class UpdateGroupOwnerRequest : TeaModel {
-        [NameInMap("ownerId")]
+        [NameInMap("ownerUid")]
         [Validation(Required=false)]
-        public string OwnerId { get; set; }
+        public string OwnerUid { get; set; }
 
         [NameInMap("operatorUid")]
         [Validation(Required=false)]

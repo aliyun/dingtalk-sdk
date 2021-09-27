@@ -404,9 +404,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerUid))
             {
-                body["ownerId"] = request.OwnerId;
+                body["ownerUid"] = request.OwnerUid;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUid))
             {
@@ -441,9 +441,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerUid))
             {
-                body["ownerId"] = request.OwnerId;
+                body["ownerUid"] = request.OwnerUid;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUid))
             {
