@@ -198,8 +198,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateGroupOwnerResponse updateGroupOwnerWithOptions(UpdateGroupOwnerRequest request, UpdateGroupOwnerHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ownerId)) {
-            body.put("ownerId", request.ownerId);
+        if (!com.aliyun.teautil.Common.isUnset(request.ownerUid)) {
+            body.put("ownerUid", request.ownerUid);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.operatorUid)) {

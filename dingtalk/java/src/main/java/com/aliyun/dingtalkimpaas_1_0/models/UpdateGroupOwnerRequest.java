@@ -4,8 +4,8 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupOwnerRequest extends TeaModel {
-    @NameInMap("ownerId")
-    public String ownerId;
+    @NameInMap("ownerUid")
+    public String ownerUid;
 
     @NameInMap("operatorUid")
     public String operatorUid;
@@ -18,12 +18,12 @@ public class UpdateGroupOwnerRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateGroupOwnerRequest setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
+    public UpdateGroupOwnerRequest setOwnerUid(String ownerUid) {
+        this.ownerUid = ownerUid;
         return this;
     }
-    public String getOwnerId() {
-        return this.ownerId;
+    public String getOwnerUid() {
+        return this.ownerUid;
     }
 
     public UpdateGroupOwnerRequest setOperatorUid(String operatorUid) {
