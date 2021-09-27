@@ -355,8 +355,8 @@ class Client(OpenApiClient):
     ) -> dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.owner_id):
-            body['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.owner_uid):
+            body['ownerUid'] = request.owner_uid
         if not UtilClient.is_unset(request.operator_uid):
             body['operatorUid'] = request.operator_uid
         if not UtilClient.is_unset(request.conversation_id):
@@ -385,8 +385,8 @@ class Client(OpenApiClient):
     ) -> dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.owner_id):
-            body['ownerId'] = request.owner_id
+        if not UtilClient.is_unset(request.owner_uid):
+            body['ownerUid'] = request.owner_uid
         if not UtilClient.is_unset(request.operator_uid):
             body['operatorUid'] = request.operator_uid
         if not UtilClient.is_unset(request.conversation_id):

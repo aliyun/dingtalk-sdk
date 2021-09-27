@@ -554,11 +554,11 @@ class UpdateGroupOwnerHeaders(TeaModel):
 class UpdateGroupOwnerRequest(TeaModel):
     def __init__(
         self,
-        owner_id: str = None,
+        owner_uid: str = None,
         operator_uid: str = None,
         conversation_id: str = None,
     ):
-        self.owner_id = owner_id
+        self.owner_uid = owner_uid
         self.operator_uid = operator_uid
         self.conversation_id = conversation_id
 
@@ -571,8 +571,8 @@ class UpdateGroupOwnerRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
+        if self.owner_uid is not None:
+            result['ownerUid'] = self.owner_uid
         if self.operator_uid is not None:
             result['operatorUid'] = self.operator_uid
         if self.conversation_id is not None:
@@ -581,8 +581,8 @@ class UpdateGroupOwnerRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
+        if m.get('ownerUid') is not None:
+            self.owner_uid = m.get('ownerUid')
         if m.get('operatorUid') is not None:
             self.operator_uid = m.get('operatorUid')
         if m.get('conversationId') is not None:

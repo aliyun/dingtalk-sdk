@@ -275,8 +275,11 @@ class GetScheduleRequest(TeaModel):
         start_time: str = None,
         end_time: str = None,
     ):
+        # 待查询的用户列表
         self.user_ids = user_ids
+        # 查询开始时间
         self.start_time = start_time
+        # 查询结束时间
         self.end_time = end_time
 
     def validate(self):
@@ -314,8 +317,11 @@ class GetScheduleResponseBodyScheduleInformationScheduleItemsStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
+        # 开始日期
         self.date = date
+        # 开始时间戳，按照ISO 8601格式
         self.date_time = date_time
+        # 所属时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -353,8 +359,11 @@ class GetScheduleResponseBodyScheduleInformationScheduleItemsEnd(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
+        # 结束日期
         self.date = date
+        # 结束时间戳，按照ISO 8601格式
         self.date_time = date_time
+        # 时间戳所属时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -392,8 +401,11 @@ class GetScheduleResponseBodyScheduleInformationScheduleItems(TeaModel):
         start: GetScheduleResponseBodyScheduleInformationScheduleItemsStart = None,
         end: GetScheduleResponseBodyScheduleInformationScheduleItemsEnd = None,
     ):
+        # 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
         self.status = status
+        # 开始时间，表示一个日期，或者一个带时区的时间戳
         self.start = start
+        # 结束时间，表示一个日期，或者一个带时区的时间戳
         self.end = end
 
     def validate(self):
@@ -436,7 +448,9 @@ class GetScheduleResponseBodyScheduleInformation(TeaModel):
         error: str = None,
         schedule_items: List[GetScheduleResponseBodyScheduleInformationScheduleItems] = None,
     ):
+        # 用户userId
         self.user_id = user_id
+        # 异常描述
         self.error = error
         self.schedule_items = schedule_items
 
@@ -481,6 +495,7 @@ class GetScheduleResponseBody(TeaModel):
         self,
         schedule_information: List[GetScheduleResponseBodyScheduleInformation] = None,
     ):
+        # 闲忙信息
         self.schedule_information = schedule_information
 
     def validate(self):
