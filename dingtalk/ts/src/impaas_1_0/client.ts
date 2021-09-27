@@ -359,12 +359,12 @@ export class UpdateGroupOwnerHeaders extends $tea.Model {
 }
 
 export class UpdateGroupOwnerRequest extends $tea.Model {
-  ownerId?: string;
+  ownerUid?: string;
   operatorUid?: string;
   conversationId?: string;
   static names(): { [key: string]: string } {
     return {
-      ownerId: 'ownerId',
+      ownerUid: 'ownerUid',
       operatorUid: 'operatorUid',
       conversationId: 'conversationId',
     };
@@ -372,7 +372,7 @@ export class UpdateGroupOwnerRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      ownerId: 'string',
+      ownerUid: 'string',
       operatorUid: 'string',
       conversationId: 'string',
     };
@@ -1358,8 +1358,8 @@ export default class Client extends OpenApi {
   async updateGroupOwnerWithOptions(request: UpdateGroupOwnerRequest, headers: UpdateGroupOwnerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupOwnerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.ownerId)) {
-      body["ownerId"] = request.ownerId;
+    if (!Util.isUnset(request.ownerUid)) {
+      body["ownerUid"] = request.ownerUid;
     }
 
     if (!Util.isUnset(request.operatorUid)) {

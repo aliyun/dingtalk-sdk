@@ -37,6 +37,7 @@ import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
 import * as resident_1_0 from './resident_1_0/client';
 import * as robot_1_0 from './robot_1_0/client';
+import * as search_1_0 from './search_1_0/client';
 import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
@@ -87,6 +88,7 @@ export = {
   project_integration_1_0,
   resident_1_0,
   robot_1_0,
+  search_1_0,
   service_group_1_0,
   smart_device_1_0,
   todo_1_0,
