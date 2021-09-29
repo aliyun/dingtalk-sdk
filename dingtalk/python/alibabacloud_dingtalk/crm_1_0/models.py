@@ -3651,11 +3651,17 @@ class AbandonCustomerRequest(TeaModel):
         self,
         operator_user_id: str = None,
         instance_id_list: List[str] = None,
+        custom_track_desc: str = None,
+        opt_type: str = None,
     ):
         # 操作人staffId，一般为企业员工
         self.operator_user_id = operator_user_id
         # 客户实例 id 数组
         self.instance_id_list = instance_id_list
+        # 自定义动态描述
+        self.custom_track_desc = custom_track_desc
+        # 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
+        self.opt_type = opt_type
 
     def validate(self):
         pass
@@ -3670,6 +3676,10 @@ class AbandonCustomerRequest(TeaModel):
             result['operatorUserId'] = self.operator_user_id
         if self.instance_id_list is not None:
             result['instanceIdList'] = self.instance_id_list
+        if self.custom_track_desc is not None:
+            result['customTrackDesc'] = self.custom_track_desc
+        if self.opt_type is not None:
+            result['optType'] = self.opt_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3678,6 +3688,10 @@ class AbandonCustomerRequest(TeaModel):
             self.operator_user_id = m.get('operatorUserId')
         if m.get('instanceIdList') is not None:
             self.instance_id_list = m.get('instanceIdList')
+        if m.get('customTrackDesc') is not None:
+            self.custom_track_desc = m.get('customTrackDesc')
+        if m.get('optType') is not None:
+            self.opt_type = m.get('optType')
         return self
 
 

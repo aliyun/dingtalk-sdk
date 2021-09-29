@@ -452,7 +452,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.AddWorkspaceMembersResponse(),
-            self.do_roarequest('AddWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members', 'none', req, runtime)
+            self.do_roarequest('AddWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members', 'json', req, runtime)
         )
 
     async def add_workspace_members_with_options_async(
@@ -480,7 +480,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.AddWorkspaceMembersResponse(),
-            await self.do_roarequest_async('AddWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members', 'none', req, runtime)
+            await self.do_roarequest_async('AddWorkspaceMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members', 'json', req, runtime)
         )
 
     def create_workspace(
@@ -519,6 +519,8 @@ class Client(OpenApiClient):
             body['dingUid'] = request.ding_uid
         if not UtilClient.is_unset(request.ding_access_token_type):
             body['dingAccessTokenType'] = request.ding_access_token_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -553,6 +555,8 @@ class Client(OpenApiClient):
             body['dingUid'] = request.ding_uid
         if not UtilClient.is_unset(request.ding_access_token_type):
             body['dingAccessTokenType'] = request.ding_access_token_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -645,4 +649,60 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse(),
             await self.do_roarequest_async('DeleteWorkspaceDocMembers', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs/{node_id}/members/remove', 'none', req, runtime)
+        )
+
+    def get_workspace(
+        self,
+        workspace_id: str,
+    ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetWorkspaceHeaders()
+        return self.get_workspace_with_options(workspace_id, headers, runtime)
+
+    async def get_workspace_async(
+        self,
+        workspace_id: str,
+    ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetWorkspaceHeaders()
+        return await self.get_workspace_with_options_async(workspace_id, headers, runtime)
+
+    def get_workspace_with_options(
+        self,
+        workspace_id: str,
+        headers: dingtalkdoc__1__0_models.GetWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetWorkspaceResponse(),
+            self.do_roarequest('GetWorkspace', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/{workspace_id}', 'json', req, runtime)
+        )
+
+    async def get_workspace_with_options_async(
+        self,
+        workspace_id: str,
+        headers: dingtalkdoc__1__0_models.GetWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        workspace_id = OpenApiUtilClient.get_encode_param(workspace_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetWorkspaceResponse(),
+            await self.do_roarequest_async('GetWorkspace', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/{workspace_id}', 'json', req, runtime)
         )

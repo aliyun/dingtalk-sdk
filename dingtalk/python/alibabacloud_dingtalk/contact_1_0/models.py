@@ -143,6 +143,439 @@ class SortUserResponse(TeaModel):
         return self
 
 
+class ListContactHideSettingsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListContactHideSettingsRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        self.next_token = next_token
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class ListContactHideSettingsResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        description: str = None,
+        object_staff_ids: List[str] = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        exclude_staff_ids: List[str] = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        active: bool = None,
+        id: int = None,
+    ):
+        # 设置名称
+        self.name = name
+        # 设置描述
+        self.description = description
+        # 要隐藏的员工列表
+        self.object_staff_ids = object_staff_ids
+        # 要隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 要影藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 白名单用户列表
+        self.exclude_staff_ids = exclude_staff_ids
+        # 白名单部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 白名单角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 规则是否生效
+        self.active = active
+        # settingId
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.description is not None:
+            result['description'] = self.description
+        if self.object_staff_ids is not None:
+            result['objectStaffIds'] = self.object_staff_ids
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.exclude_staff_ids is not None:
+            result['excludeStaffIds'] = self.exclude_staff_ids
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.active is not None:
+            result['active'] = self.active
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('objectStaffIds') is not None:
+            self.object_staff_ids = m.get('objectStaffIds')
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('excludeStaffIds') is not None:
+            self.exclude_staff_ids = m.get('excludeStaffIds')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class ListContactHideSettingsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: int = None,
+        list: List[ListContactHideSettingsResponseBodyList] = None,
+    ):
+        # 是否还有数据
+        self.has_more = has_more
+        # 下一次拉取数据时的offset
+        self.next_token = next_token
+        # 设置列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListContactHideSettingsResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class ListContactHideSettingsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListContactHideSettingsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListContactHideSettingsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateContactHideSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateContactHideSettingRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        description: str = None,
+        object_staff_ids: List[str] = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        exclude_staff_ids: List[str] = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        active: bool = None,
+        id: int = None,
+    ):
+        # 设置名称
+        self.name = name
+        # 设置描述信息
+        self.description = description
+        # 隐藏员工列表
+        self.object_staff_ids = object_staff_ids
+        # 影藏部门列表
+        self.object_dept_ids = object_dept_ids
+        # 影藏角色列表
+        self.object_tag_ids = object_tag_ids
+        # 白名单员工列表
+        self.exclude_staff_ids = exclude_staff_ids
+        # 白名单部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 白名单角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 是否激活
+        self.active = active
+        # settingId
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.description is not None:
+            result['description'] = self.description
+        if self.object_staff_ids is not None:
+            result['objectStaffIds'] = self.object_staff_ids
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.exclude_staff_ids is not None:
+            result['excludeStaffIds'] = self.exclude_staff_ids
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.active is not None:
+            result['active'] = self.active
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('objectStaffIds') is not None:
+            self.object_staff_ids = m.get('objectStaffIds')
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('excludeStaffIds') is not None:
+            self.exclude_staff_ids = m.get('excludeStaffIds')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class UpdateContactHideSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: int = None,
+    ):
+        # settingId
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateContactHideSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateContactHideSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateContactHideSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateEmpAttrbuteVisibilitySettingHeaders(TeaModel):
     def __init__(
         self,
@@ -1683,6 +2116,66 @@ class QueryUserManagementResourcesResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = QueryUserManagementResourcesResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteContactHideSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteContactHideSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
         return self
 
 

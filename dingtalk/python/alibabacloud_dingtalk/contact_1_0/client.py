@@ -95,6 +95,174 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/sort', 'json', req, runtime)
         )
 
+    def list_contact_hide_settings(
+        self,
+        request: dingtalkcontact__1__0_models.ListContactHideSettingsRequest,
+    ) -> dingtalkcontact__1__0_models.ListContactHideSettingsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListContactHideSettingsHeaders()
+        return self.list_contact_hide_settings_with_options(request, headers, runtime)
+
+    async def list_contact_hide_settings_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListContactHideSettingsRequest,
+    ) -> dingtalkcontact__1__0_models.ListContactHideSettingsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListContactHideSettingsHeaders()
+        return await self.list_contact_hide_settings_with_options_async(request, headers, runtime)
+
+    def list_contact_hide_settings_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ListContactHideSettingsRequest,
+        headers: dingtalkcontact__1__0_models.ListContactHideSettingsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListContactHideSettingsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListContactHideSettingsResponse(),
+            self.do_roarequest('ListContactHideSettings', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/contactHideSettings', 'json', req, runtime)
+        )
+
+    async def list_contact_hide_settings_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListContactHideSettingsRequest,
+        headers: dingtalkcontact__1__0_models.ListContactHideSettingsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListContactHideSettingsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListContactHideSettingsResponse(),
+            await self.do_roarequest_async('ListContactHideSettings', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/contactHideSettings', 'json', req, runtime)
+        )
+
+    def update_contact_hide_setting(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateContactHideSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateContactHideSettingHeaders()
+        return self.update_contact_hide_setting_with_options(request, headers, runtime)
+
+    async def update_contact_hide_setting_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateContactHideSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateContactHideSettingHeaders()
+        return await self.update_contact_hide_setting_with_options_async(request, headers, runtime)
+
+    def update_contact_hide_setting_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateContactHideSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateContactHideSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.object_staff_ids):
+            body['objectStaffIds'] = request.object_staff_ids
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.exclude_staff_ids):
+            body['excludeStaffIds'] = request.exclude_staff_ids
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.active):
+            body['active'] = request.active
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateContactHideSettingResponse(),
+            self.do_roarequest('UpdateContactHideSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/contactHideSettings', 'json', req, runtime)
+        )
+
+    async def update_contact_hide_setting_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateContactHideSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateContactHideSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.object_staff_ids):
+            body['objectStaffIds'] = request.object_staff_ids
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.exclude_staff_ids):
+            body['excludeStaffIds'] = request.exclude_staff_ids
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.active):
+            body['active'] = request.active
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateContactHideSettingResponse(),
+            await self.do_roarequest_async('UpdateContactHideSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/contactHideSettings', 'json', req, runtime)
+        )
+
     def update_emp_attrbute_visibility_setting(
         self,
         request: dingtalkcontact__1__0_models.UpdateEmpAttrbuteVisibilitySettingRequest,
@@ -725,6 +893,62 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.QueryUserManagementResourcesResponse(),
             await self.do_roarequest_async('QueryUserManagementResources', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/users/{user_id}/managemementResources', 'json', req, runtime)
+        )
+
+    def delete_contact_hide_setting(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteContactHideSettingHeaders()
+        return self.delete_contact_hide_setting_with_options(setting_id, headers, runtime)
+
+    async def delete_contact_hide_setting_async(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteContactHideSettingHeaders()
+        return await self.delete_contact_hide_setting_with_options_async(setting_id, headers, runtime)
+
+    def delete_contact_hide_setting_with_options(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.DeleteContactHideSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteContactHideSettingResponse(),
+            self.do_roarequest('DeleteContactHideSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/contactHideSettings/{setting_id}', 'none', req, runtime)
+        )
+
+    async def delete_contact_hide_setting_with_options_async(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.DeleteContactHideSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteContactHideSettingResponse(),
+            await self.do_roarequest_async('DeleteContactHideSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/contactHideSettings/{setting_id}', 'none', req, runtime)
         )
 
     def update_user_ownness(

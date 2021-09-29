@@ -961,6 +961,10 @@ class Client(OpenApiClient):
             body['operatorUserId'] = request.operator_user_id
         if not UtilClient.is_unset(request.instance_id_list):
             body['instanceIdList'] = request.instance_id_list
+        if not UtilClient.is_unset(request.custom_track_desc):
+            body['customTrackDesc'] = request.custom_track_desc
+        if not UtilClient.is_unset(request.opt_type):
+            body['optType'] = request.opt_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -987,6 +991,10 @@ class Client(OpenApiClient):
             body['operatorUserId'] = request.operator_user_id
         if not UtilClient.is_unset(request.instance_id_list):
             body['instanceIdList'] = request.instance_id_list
+        if not UtilClient.is_unset(request.custom_track_desc):
+            body['customTrackDesc'] = request.custom_track_desc
+        if not UtilClient.is_unset(request.opt_type):
+            body['optType'] = request.opt_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

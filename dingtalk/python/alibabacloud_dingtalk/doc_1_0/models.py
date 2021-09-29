@@ -856,15 +856,47 @@ class AddWorkspaceMembersRequest(TeaModel):
         return self
 
 
+class AddWorkspaceMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        not_in_org_list: List[str] = None,
+    ):
+        self.not_in_org_list = not_in_org_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.not_in_org_list is not None:
+            result['notInOrgList'] = self.not_in_org_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('notInOrgList') is not None:
+            self.not_in_org_list = m.get('notInOrgList')
+        return self
+
+
 class AddWorkspaceMembersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: AddWorkspaceMembersResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -874,12 +906,17 @@ class AddWorkspaceMembersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddWorkspaceMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -925,6 +962,7 @@ class CreateWorkspaceRequest(TeaModel):
         ding_org_id: int = None,
         ding_uid: int = None,
         ding_access_token_type: str = None,
+        ding_isv_org_id: int = None,
     ):
         # 团队空间名称
         self.name = name
@@ -935,6 +973,7 @@ class CreateWorkspaceRequest(TeaModel):
         self.ding_org_id = ding_org_id
         self.ding_uid = ding_uid
         self.ding_access_token_type = ding_access_token_type
+        self.ding_isv_org_id = ding_isv_org_id
 
     def validate(self):
         pass
@@ -957,6 +996,8 @@ class CreateWorkspaceRequest(TeaModel):
             result['dingUid'] = self.ding_uid
         if self.ding_access_token_type is not None:
             result['dingAccessTokenType'] = self.ding_access_token_type
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
         return result
 
     def from_map(self, m: dict = None):
@@ -973,6 +1014,8 @@ class CreateWorkspaceRequest(TeaModel):
             self.ding_uid = m.get('dingUid')
         if m.get('dingAccessTokenType') is not None:
             self.ding_access_token_type = m.get('dingAccessTokenType')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
         return self
 
 
@@ -1197,6 +1240,115 @@ class DeleteWorkspaceDocMembersResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class GetWorkspaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetWorkspaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+        is_deleted: bool = None,
+        owner: str = None,
+    ):
+        self.url = url
+        self.is_deleted = is_deleted
+        self.owner = owner
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.owner is not None:
+            result['owner'] = self.owner
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        return self
+
+
+class GetWorkspaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetWorkspaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetWorkspaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

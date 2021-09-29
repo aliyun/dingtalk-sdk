@@ -219,6 +219,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateTicket', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tickets', 'none', req, runtime)
         )
 
+    def upgrade_normal_group(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders()
+        return self.upgrade_normal_group_with_options(request, headers, runtime)
+
+    async def upgrade_normal_group_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders()
+        return await self.upgrade_normal_group_with_options_async(request, headers, runtime)
+
+    def upgrade_normal_group_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
+        headers: dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse(),
+            self.do_roarequest('UpgradeNormalGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/normalGroups/upgrade', 'none', req, runtime)
+        )
+
+    async def upgrade_normal_group_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
+        headers: dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse(),
+            await self.do_roarequest_async('UpgradeNormalGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/normalGroups/upgrade', 'none', req, runtime)
+        )
+
     def add_knowledge(
         self,
         request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
@@ -1339,6 +1431,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SendServiceGroupMessage', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/send', 'json', req, runtime)
         )
 
+    def upgrade_cloud_group(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders()
+        return self.upgrade_cloud_group_with_options(request, headers, runtime)
+
+    async def upgrade_cloud_group_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders()
+        return await self.upgrade_cloud_group_with_options_async(request, headers, runtime)
+
+    def upgrade_cloud_group_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
+        headers: dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.ccs_instance_id):
+            body['ccsInstanceId'] = request.ccs_instance_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse(),
+            self.do_roarequest('UpgradeCloudGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/cloudGroups/upgrade', 'none', req, runtime)
+        )
+
+    async def upgrade_cloud_group_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
+        headers: dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.ccs_instance_id):
+            body['ccsInstanceId'] = request.ccs_instance_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse(),
+            await self.do_roarequest_async('UpgradeCloudGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/cloudGroups/upgrade', 'none', req, runtime)
+        )
+
     def resubmit_ticket(
         self,
         request: dingtalkservice_group__1__0_models.ResubmitTicketRequest,
@@ -2209,6 +2397,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TransferTicketResponse(),
             await self.do_roarequest_async('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/transfer', 'none', req, runtime)
+        )
+
+    def query_active_users(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryActiveUsersHeaders()
+        return self.query_active_users_with_options(request, headers, runtime)
+
+    async def query_active_users_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryActiveUsersHeaders()
+        return await self.query_active_users_with_options_async(request, headers, runtime)
+
+    def query_active_users_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
+        headers: dingtalkservice_group__1__0_models.QueryActiveUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryActiveUsersResponse(),
+            self.do_roarequest('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
+        )
+
+    async def query_active_users_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
+        headers: dingtalkservice_group__1__0_models.QueryActiveUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_team_id):
+            query['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryActiveUsersResponse(),
+            await self.do_roarequest_async('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
         )
 
     def get_oss_temp_url(
