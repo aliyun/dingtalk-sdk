@@ -25,6 +25,9 @@ public class CreateWorkspaceRequest extends TeaModel {
     @NameInMap("dingAccessTokenType")
     public String dingAccessTokenType;
 
+    @NameInMap("dingIsvOrgId")
+    public Long dingIsvOrgId;
+
     public static CreateWorkspaceRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateWorkspaceRequest self = new CreateWorkspaceRequest();
         return TeaModel.build(map, self);
@@ -76,6 +79,14 @@ public class CreateWorkspaceRequest extends TeaModel {
     }
     public String getDingAccessTokenType() {
         return this.dingAccessTokenType;
+    }
+
+    public CreateWorkspaceRequest setDingIsvOrgId(Long dingIsvOrgId) {
+        this.dingIsvOrgId = dingIsvOrgId;
+        return this;
+    }
+    public Long getDingIsvOrgId() {
+        return this.dingIsvOrgId;
     }
 
 }

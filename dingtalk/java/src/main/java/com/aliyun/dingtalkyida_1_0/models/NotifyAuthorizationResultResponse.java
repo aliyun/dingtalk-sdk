@@ -1,0 +1,36 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkyida_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class NotifyAuthorizationResultResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    @NameInMap("body")
+    @Validation(required = true)
+    public NotifyAuthorizationResultResponseBody body;
+
+    public static NotifyAuthorizationResultResponse build(java.util.Map<String, ?> map) throws Exception {
+        NotifyAuthorizationResultResponse self = new NotifyAuthorizationResultResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public NotifyAuthorizationResultResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    public NotifyAuthorizationResultResponse setBody(NotifyAuthorizationResultResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public NotifyAuthorizationResultResponseBody getBody() {
+        return this.body;
+    }
+
+}

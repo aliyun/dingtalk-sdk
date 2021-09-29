@@ -17,8 +17,8 @@ public class ListCommodityRequest extends TeaModel {
     public String callerUid;
 
     // currentPage
-    @NameInMap("currentPage")
-    public Integer currentPage;
+    @NameInMap("pageNumber")
+    public Integer pageNumber;
 
     public static ListCommodityRequest build(java.util.Map<String, ?> map) throws Exception {
         ListCommodityRequest self = new ListCommodityRequest();
@@ -49,12 +49,12 @@ public class ListCommodityRequest extends TeaModel {
         return this.callerUid;
     }
 
-    public ListCommodityRequest setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public ListCommodityRequest setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
         return this;
     }
-    public Integer getCurrentPage() {
-        return this.currentPage;
+    public Integer getPageNumber() {
+        return this.pageNumber;
     }
 
 }

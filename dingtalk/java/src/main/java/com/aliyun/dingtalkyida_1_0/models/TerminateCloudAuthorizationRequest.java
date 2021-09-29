@@ -1,0 +1,48 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkyida_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class TerminateCloudAuthorizationRequest extends TeaModel {
+    // 实例id
+    @NameInMap("instanceId")
+    public String instanceId;
+
+    // 访问秘钥
+    @NameInMap("accessKey")
+    public String accessKey;
+
+    // 调用者unionId
+    @NameInMap("callerUnionId")
+    public String callerUnionId;
+
+    public static TerminateCloudAuthorizationRequest build(java.util.Map<String, ?> map) throws Exception {
+        TerminateCloudAuthorizationRequest self = new TerminateCloudAuthorizationRequest();
+        return TeaModel.build(map, self);
+    }
+
+    public TerminateCloudAuthorizationRequest setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    public TerminateCloudAuthorizationRequest setAccessKey(String accessKey) {
+        this.accessKey = accessKey;
+        return this;
+    }
+    public String getAccessKey() {
+        return this.accessKey;
+    }
+
+    public TerminateCloudAuthorizationRequest setCallerUnionId(String callerUnionId) {
+        this.callerUnionId = callerUnionId;
+        return this;
+    }
+    public String getCallerUnionId() {
+        return this.callerUnionId;
+    }
+
+}

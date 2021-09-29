@@ -12,6 +12,14 @@ public class AbandonCustomerRequest extends TeaModel {
     @NameInMap("instanceIdList")
     public java.util.List<String> instanceIdList;
 
+    // 自定义动态描述
+    @NameInMap("customTrackDesc")
+    public String customTrackDesc;
+
+    // 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
+    @NameInMap("optType")
+    public String optType;
+
     public static AbandonCustomerRequest build(java.util.Map<String, ?> map) throws Exception {
         AbandonCustomerRequest self = new AbandonCustomerRequest();
         return TeaModel.build(map, self);
@@ -31,6 +39,22 @@ public class AbandonCustomerRequest extends TeaModel {
     }
     public java.util.List<String> getInstanceIdList() {
         return this.instanceIdList;
+    }
+
+    public AbandonCustomerRequest setCustomTrackDesc(String customTrackDesc) {
+        this.customTrackDesc = customTrackDesc;
+        return this;
+    }
+    public String getCustomTrackDesc() {
+        return this.customTrackDesc;
+    }
+
+    public AbandonCustomerRequest setOptType(String optType) {
+        this.optType = optType;
+        return this;
+    }
+    public String getOptType() {
+        return this.optType;
     }
 
 }

@@ -13,8 +13,8 @@ public class ListCommodityResponseBody extends TeaModel {
     public java.util.List<ListCommodityResponseBodyCommodityVOList> commodityVOList;
 
     // 当前第几页
-    @NameInMap("currentPage")
-    public Integer currentPage;
+    @NameInMap("pageNumber")
+    public Integer pageNumber;
 
     // 总数量
     @NameInMap("totalCount")
@@ -41,12 +41,12 @@ public class ListCommodityResponseBody extends TeaModel {
         return this.commodityVOList;
     }
 
-    public ListCommodityResponseBody setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public ListCommodityResponseBody setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
         return this;
     }
-    public Integer getCurrentPage() {
-        return this.currentPage;
+    public Integer getPageNumber() {
+        return this.pageNumber;
     }
 
     public ListCommodityResponseBody setTotalCount(Integer totalCount) {
