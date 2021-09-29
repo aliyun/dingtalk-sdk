@@ -5,6 +5,15 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyAuthorizationOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyAuthorizationOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyAuthorizationOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyFreshOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyFreshOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BuyFreshOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CheckCloudAccountStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CheckCloudAccountStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\CheckCloudAccountStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\DeleteFormDataResponse;
@@ -26,45 +35,123 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExecuteTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExpireCommodityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExpireCommodityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ExpireCommodityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivationCodeByCallerUnionIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivationCodeByCallerUnionIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivationCodeByCallerUnionIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityButtonListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityButtonListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityButtonListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetApplicationAuthorizationServicePlatformResourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetApplicationAuthorizationServicePlatformResourceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetApplicationAuthorizationServicePlatformResourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpAccomplishmentTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpAccomplishmentTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpAccomplishmentTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpLevelByAccountIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpLevelByAccountIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpLevelByAccountIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormComponentDefinitionListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormComponentDefinitionListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormComponentDefinitionListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormDataByIDHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormDataByIDRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFormDataByIDResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceByIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceByIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceIdListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceIdListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstanceIdListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstancesByIdListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstancesByIdListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstancesByIdListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetMeCorpSubmissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetMeCorpSubmissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetMeCorpSubmissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetNotifyMeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetNotifyMeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetNotifyMeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOpenUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOpenUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOpenUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPlatformResourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPlatformResourceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPlatformResourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSaleUserInfoByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSaleUserInfoByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSaleUserInfoByUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetTaskCopiesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetTaskCopiesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetTaskCopiesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceApplicationInformationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceApplicationInformationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceApplicationInformationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceConnectorInformationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceConnectorInformationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationAuthorizationServiceConnectorInformationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationInformationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationInformationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListApplicationInformationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListCommodityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListConnectorInformationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListConnectorInformationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListConnectorInformationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListNavigationByFormTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListTableDataByFormInstanceIdTableIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListTableDataByFormInstanceIdTableIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ListTableDataByFormInstanceIdTableIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\LoginCodeGenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\LoginCodeGenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\LoginCodeGenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RedirectTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RedirectTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RedirectTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RefundCommodityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RefundCommodityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RefundCommodityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RegisterAccountsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RegisterAccountsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RegisterAccountsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ReleaseCommodityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ReleaseCommodityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ReleaseCommodityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RemoveTenantResourceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RemoveTenantResourceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RemoveTenantResourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenderBatchCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenderBatchCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenderBatchCallbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenewApplicationAuthorizationServiceOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenewApplicationAuthorizationServiceOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenewApplicationAuthorizationServiceOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenewTenantOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenewTenantOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\RenewTenantOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormDataResponse;
@@ -77,15 +164,24 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchActivationCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchEmployeeFieldValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchEmployeeFieldValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchEmployeeFieldValuesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataIdListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataIdListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDataIdListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchFormDatasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\StartInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\StartInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\StartInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\TerminateCloudAuthorizationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\TerminateCloudAuthorizationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\TerminateCloudAuthorizationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\TerminateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\TerminateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\TerminateInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateCloudAccountInformationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateCloudAccountInformationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateCloudAccountInformationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateFormDataResponse;
@@ -95,9 +191,24 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpdateStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpgradeTenantInformationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpgradeTenantInformationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\UpgradeTenantInformationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationAuthorizationOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationAuthorizationOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationAuthorizationOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationAuthorizationServiceOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationAuthorizationServiceOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationAuthorizationServiceOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationServiceOrderUpgradeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationServiceOrderUpgradeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateApplicationServiceOrderUpgradeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderBuyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderBuyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderBuyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderUpgradeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderUpgradeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\ValidateOrderUpgradeResponse;
@@ -115,96 +226,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param ValidateOrderUpgradeRequest $request
-     *
-     * @return ValidateOrderUpgradeResponse
-     */
-    public function validateOrderUpgrade($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ValidateOrderUpgradeHeaders([]);
-
-        return $this->validateOrderUpgradeWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ValidateOrderUpgradeRequest $request
-     * @param ValidateOrderUpgradeHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return ValidateOrderUpgradeResponse
-     */
-    public function validateOrderUpgradeWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->instanceId)) {
-            @$query['instanceId'] = $request->instanceId;
-        }
-        if (!Utils::isUnset($request->accessKey)) {
-            @$query['accessKey'] = $request->accessKey;
-        }
-        if (!Utils::isUnset($request->callerUid)) {
-            @$query['callerUid'] = $request->callerUid;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ValidateOrderUpgradeResponse::fromMap($this->doROARequest('ValidateOrderUpgrade', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/orderUpgrade/validate', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetCorpLevelByAccountIdRequest $request
-     *
-     * @return GetCorpLevelByAccountIdResponse
-     */
-    public function getCorpLevelByAccountId($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetCorpLevelByAccountIdHeaders([]);
-
-        return $this->getCorpLevelByAccountIdWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetCorpLevelByAccountIdRequest $request
-     * @param GetCorpLevelByAccountIdHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return GetCorpLevelByAccountIdResponse
-     */
-    public function getCorpLevelByAccountIdWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->accountId)) {
-            @$query['accountId'] = $request->accountId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetCorpLevelByAccountIdResponse::fromMap($this->doROARequest('GetCorpLevelByAccountId', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/corpLevel', 'json', $req, $runtime));
     }
 
     /**
@@ -265,6 +286,2087 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateStatusResponse::fromMap($this->doROARequest('UpdateStatus', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/forms/status', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GetInstancesByIdListRequest $request
+     *
+     * @return GetInstancesByIdListResponse
+     */
+    public function getInstancesByIdList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInstancesByIdListHeaders([]);
+
+        return $this->getInstancesByIdListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInstancesByIdListRequest $request
+     * @param GetInstancesByIdListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetInstancesByIdListResponse
+     */
+    public function getInstancesByIdListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->processInstanceIds)) {
+            @$query['processInstanceIds'] = $request->processInstanceIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetInstancesByIdListResponse::fromMap($this->doROARequest('GetInstancesByIdList', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/instances/searchWithIds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SaveFormRemarkRequest $request
+     *
+     * @return SaveFormRemarkResponse
+     */
+    public function saveFormRemark($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveFormRemarkHeaders([]);
+
+        return $this->saveFormRemarkWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveFormRemarkRequest $request
+     * @param SaveFormRemarkHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SaveFormRemarkResponse
+     */
+    public function saveFormRemarkWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->replyId)) {
+            @$body['replyId'] = $request->replyId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->formInstanceId)) {
+            @$body['formInstanceId'] = $request->formInstanceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->atUserId)) {
+            @$body['atUserId'] = $request->atUserId;
+        }
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SaveFormRemarkResponse::fromMap($this->doROARequest('SaveFormRemark', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/remarks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                      $formInstanceId
+     * @param ListTableDataByFormInstanceIdTableIdRequest $request
+     *
+     * @return ListTableDataByFormInstanceIdTableIdResponse
+     */
+    public function listTableDataByFormInstanceIdTableId($formInstanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListTableDataByFormInstanceIdTableIdHeaders([]);
+
+        return $this->listTableDataByFormInstanceIdTableIdWithOptions($formInstanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                      $formInstanceId
+     * @param ListTableDataByFormInstanceIdTableIdRequest $request
+     * @param ListTableDataByFormInstanceIdTableIdHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return ListTableDataByFormInstanceIdTableIdResponse
+     */
+    public function listTableDataByFormInstanceIdTableIdWithOptions($formInstanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $formInstanceId = OpenApiUtilClient::getEncodeParam($formInstanceId);
+        $query          = [];
+        if (!Utils::isUnset($request->formUuid)) {
+            @$query['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->tableFieldId)) {
+            @$query['tableFieldId'] = $request->tableFieldId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListTableDataByFormInstanceIdTableIdResponse::fromMap($this->doROARequest('ListTableDataByFormInstanceIdTableId', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/innerTables/' . $formInstanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetTaskCopiesRequest $request
+     *
+     * @return GetTaskCopiesResponse
+     */
+    public function getTaskCopies($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskCopiesHeaders([]);
+
+        return $this->getTaskCopiesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTaskCopiesRequest $request
+     * @param GetTaskCopiesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetTaskCopiesResponse
+     */
+    public function getTaskCopiesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->processCodes)) {
+            @$query['processCodes'] = $request->processCodes;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$query['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetTaskCopiesResponse::fromMap($this->doROARequest('GetTaskCopies', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/tasks/taskCopies', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetRunningTasksRequest $request
+     *
+     * @return GetRunningTasksResponse
+     */
+    public function getRunningTasks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRunningTasksHeaders([]);
+
+        return $this->getRunningTasksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetRunningTasksRequest $request
+     * @param GetRunningTasksHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetRunningTasksResponse
+     */
+    public function getRunningTasksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$query['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetRunningTasksResponse::fromMap($this->doROARequest('GetRunningTasks', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/tasks/getRunningTasks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListNavigationByFormTypeRequest $request
+     *
+     * @return ListNavigationByFormTypeResponse
+     */
+    public function listNavigationByFormType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListNavigationByFormTypeHeaders([]);
+
+        return $this->listNavigationByFormTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListNavigationByFormTypeRequest $request
+     * @param ListNavigationByFormTypeHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return ListNavigationByFormTypeResponse
+     */
+    public function listNavigationByFormTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->formType)) {
+            @$query['formType'] = $request->formType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListNavigationByFormTypeResponse::fromMap($this->doROARequest('ListNavigationByFormType', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/navigations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param TerminateInstanceRequest $request
+     *
+     * @return TerminateInstanceResponse
+     */
+    public function terminateInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TerminateInstanceHeaders([]);
+
+        return $this->terminateInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TerminateInstanceRequest $request
+     * @param TerminateInstanceHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return TerminateInstanceResponse
+     */
+    public function terminateInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$query['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return TerminateInstanceResponse::fromMap($this->doROARequest('TerminateInstance', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/processes/instances/terminate', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $callerUid
+     * @param CheckCloudAccountStatusRequest $request
+     *
+     * @return CheckCloudAccountStatusResponse
+     */
+    public function checkCloudAccountStatus($callerUid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckCloudAccountStatusHeaders([]);
+
+        return $this->checkCloudAccountStatusWithOptions($callerUid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $callerUid
+     * @param CheckCloudAccountStatusRequest $request
+     * @param CheckCloudAccountStatusHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CheckCloudAccountStatusResponse
+     */
+    public function checkCloudAccountStatusWithOptions($callerUid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
+        $query     = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return CheckCloudAccountStatusResponse::fromMap($this->doROARequest('CheckCloudAccountStatus', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/cloudAccountStatus/' . $callerUid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                            $corpId
+     * @param string                            $userId
+     * @param GetCorpAccomplishmentTasksRequest $request
+     *
+     * @return GetCorpAccomplishmentTasksResponse
+     */
+    public function getCorpAccomplishmentTasks($corpId, $userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCorpAccomplishmentTasksHeaders([]);
+
+        return $this->getCorpAccomplishmentTasksWithOptions($corpId, $userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                            $corpId
+     * @param string                            $userId
+     * @param GetCorpAccomplishmentTasksRequest $request
+     * @param GetCorpAccomplishmentTasksHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return GetCorpAccomplishmentTasksResponse
+     */
+    public function getCorpAccomplishmentTasksWithOptions($corpId, $userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $corpId = OpenApiUtilClient::getEncodeParam($corpId);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->appTypes)) {
+            @$query['appTypes'] = $request->appTypes;
+        }
+        if (!Utils::isUnset($request->processCodes)) {
+            @$query['processCodes'] = $request->processCodes;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$query['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$query['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCorpAccomplishmentTasksResponse::fromMap($this->doROARequest('GetCorpAccomplishmentTasks', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/tasks/completedTasks/' . $corpId . '/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetInstancesRequest $request
+     *
+     * @return GetInstancesResponse
+     */
+    public function getInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInstancesHeaders([]);
+
+        return $this->getInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInstancesRequest $request
+     * @param GetInstancesHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetInstancesResponse
+     */
+    public function getInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->searchFieldJson)) {
+            @$body['searchFieldJson'] = $request->searchFieldJson;
+        }
+        if (!Utils::isUnset($request->originatorId)) {
+            @$body['originatorId'] = $request->originatorId;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$body['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
+            @$body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->modifiedToTimeGMT)) {
+            @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            @$body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->instanceStatus)) {
+            @$body['instanceStatus'] = $request->instanceStatus;
+        }
+        if (!Utils::isUnset($request->approvedResult)) {
+            @$body['approvedResult'] = $request->approvedResult;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetInstancesResponse::fromMap($this->doROARequest('GetInstances', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/processes/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                                         $instanceId
+     * @param ListApplicationAuthorizationServiceConnectorInformationRequest $request
+     *
+     * @return ListApplicationAuthorizationServiceConnectorInformationResponse
+     */
+    public function listApplicationAuthorizationServiceConnectorInformation($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListApplicationAuthorizationServiceConnectorInformationHeaders([]);
+
+        return $this->listApplicationAuthorizationServiceConnectorInformationWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                                         $instanceId
+     * @param ListApplicationAuthorizationServiceConnectorInformationRequest $request
+     * @param ListApplicationAuthorizationServiceConnectorInformationHeaders $headers
+     * @param RuntimeOptions                                                 $runtime
+     *
+     * @return ListApplicationAuthorizationServiceConnectorInformationResponse
+     */
+    public function listApplicationAuthorizationServiceConnectorInformationWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListApplicationAuthorizationServiceConnectorInformationResponse::fromMap($this->doROARequest('ListApplicationAuthorizationServiceConnectorInformation', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/applicationAuthorizations/plugs/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ValidateOrderBuyRequest $request
+     *
+     * @return ValidateOrderBuyResponse
+     */
+    public function validateOrderBuy($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateOrderBuyHeaders([]);
+
+        return $this->validateOrderBuyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ValidateOrderBuyRequest $request
+     * @param ValidateOrderBuyHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ValidateOrderBuyResponse
+     */
+    public function validateOrderBuyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ValidateOrderBuyResponse::fromMap($this->doROARequest('ValidateOrderBuy', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/orderBuy/validate', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RenewTenantOrderRequest $request
+     *
+     * @return RenewTenantOrderResponse
+     */
+    public function renewTenantOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RenewTenantOrderHeaders([]);
+
+        return $this->renewTenantOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RenewTenantOrderRequest $request
+     * @param RenewTenantOrderHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return RenewTenantOrderResponse
+     */
+    public function renewTenantOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->endTimeGMT)) {
+            @$body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RenewTenantOrderResponse::fromMap($this->doROARequest('RenewTenantOrder', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/tenants/reorder', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInstanceRequest $request
+     *
+     * @return UpdateInstanceResponse
+     */
+    public function updateInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInstanceHeaders([]);
+
+        return $this->updateInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInstanceRequest $request
+     * @param UpdateInstanceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateInstanceResponse
+     */
+    public function updateInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->updateFormDataJson)) {
+            @$body['updateFormDataJson'] = $request->updateFormDataJson;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInstanceResponse::fromMap($this->doROARequest('UpdateInstance', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/processes/instances', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param BuyAuthorizationOrderRequest $request
+     *
+     * @return BuyAuthorizationOrderResponse
+     */
+    public function buyAuthorizationOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BuyAuthorizationOrderHeaders([]);
+
+        return $this->buyAuthorizationOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BuyAuthorizationOrderRequest $request
+     * @param BuyAuthorizationOrderHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return BuyAuthorizationOrderResponse
+     */
+    public function buyAuthorizationOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->produceCode)) {
+            @$body['produceCode'] = $request->produceCode;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->instanceName)) {
+            @$body['instanceName'] = $request->instanceName;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->chargeType)) {
+            @$body['chargeType'] = $request->chargeType;
+        }
+        if (!Utils::isUnset($request->endTimeGMT)) {
+            @$body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        if (!Utils::isUnset($request->beginTimeGMT)) {
+            @$body['beginTimeGMT'] = $request->beginTimeGMT;
+        }
+        if (!Utils::isUnset($request->accountNumber)) {
+            @$body['accountNumber'] = $request->accountNumber;
+        }
+        if (!Utils::isUnset($request->commerceType)) {
+            @$body['commerceType'] = $request->commerceType;
+        }
+        if (!Utils::isUnset($request->commodityType)) {
+            @$body['commodityType'] = $request->commodityType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BuyAuthorizationOrderResponse::fromMap($this->doROARequest('BuyAuthorizationOrder', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/appAuthorizations/order', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                        $callerUnionid
+     * @param ValidateApplicationServiceOrderUpgradeRequest $request
+     *
+     * @return ValidateApplicationServiceOrderUpgradeResponse
+     */
+    public function validateApplicationServiceOrderUpgrade($callerUnionid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateApplicationServiceOrderUpgradeHeaders([]);
+
+        return $this->validateApplicationServiceOrderUpgradeWithOptions($callerUnionid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                        $callerUnionid
+     * @param ValidateApplicationServiceOrderUpgradeRequest $request
+     * @param ValidateApplicationServiceOrderUpgradeHeaders $headers
+     * @param RuntimeOptions                                $runtime
+     *
+     * @return ValidateApplicationServiceOrderUpgradeResponse
+     */
+    public function validateApplicationServiceOrderUpgradeWithOptions($callerUnionid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $callerUnionid = OpenApiUtilClient::getEncodeParam($callerUnionid);
+        $query         = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ValidateApplicationServiceOrderUpgradeResponse::fromMap($this->doROARequest('ValidateApplicationServiceOrderUpgrade', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/applications/orderValidations/' . $callerUnionid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCorpTasksRequest $request
+     *
+     * @return GetCorpTasksResponse
+     */
+    public function getCorpTasks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCorpTasksHeaders([]);
+
+        return $this->getCorpTasksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCorpTasksRequest $request
+     * @param GetCorpTasksHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetCorpTasksResponse
+     */
+    public function getCorpTasksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->appTypes)) {
+            @$query['appTypes'] = $request->appTypes;
+        }
+        if (!Utils::isUnset($request->processCodes)) {
+            @$query['processCodes'] = $request->processCodes;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$query['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$query['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCorpTasksResponse::fromMap($this->doROARequest('GetCorpTasks', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/corpTasks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListCommodityRequest $request
+     *
+     * @return ListCommodityResponse
+     */
+    public function listCommodity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCommodityHeaders([]);
+
+        return $this->listCommodityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListCommodityRequest $request
+     * @param ListCommodityHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ListCommodityResponse
+     */
+    public function listCommodityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListCommodityResponse::fromMap($this->doROARequest('ListCommodity', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/appAuth/commodities', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param NotifyAuthorizationResultRequest $request
+     *
+     * @return NotifyAuthorizationResultResponse
+     */
+    public function notifyAuthorizationResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new NotifyAuthorizationResultHeaders([]);
+
+        return $this->notifyAuthorizationResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param NotifyAuthorizationResultRequest $request
+     * @param NotifyAuthorizationResultHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return NotifyAuthorizationResultResponse
+     */
+    public function notifyAuthorizationResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->accountNumber)) {
+            @$body['accountNumber'] = $request->accountNumber;
+        }
+        if (!Utils::isUnset($request->instanceName)) {
+            @$body['instanceName'] = $request->instanceName;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->chargeType)) {
+            @$body['chargeType'] = $request->chargeType;
+        }
+        if (!Utils::isUnset($request->endTimeGMT)) {
+            @$body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        if (!Utils::isUnset($request->beginTimeGMT)) {
+            @$body['beginTimeGMT'] = $request->beginTimeGMT;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$body['callerUid'] = $request->callerUid;
+        }
+        if (!Utils::isUnset($request->commerceType)) {
+            @$body['commerceType'] = $request->commerceType;
+        }
+        if (!Utils::isUnset($request->commodityType)) {
+            @$body['commodityType'] = $request->commodityType;
+        }
+        if (!Utils::isUnset($request->produceCode)) {
+            @$body['produceCode'] = $request->produceCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return NotifyAuthorizationResultResponse::fromMap($this->doROARequest('NotifyAuthorizationResult', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/authorizationResults/notify', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BuyFreshOrderRequest $request
+     *
+     * @return BuyFreshOrderResponse
+     */
+    public function buyFreshOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BuyFreshOrderHeaders([]);
+
+        return $this->buyFreshOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BuyFreshOrderRequest $request
+     * @param BuyFreshOrderHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return BuyFreshOrderResponse
+     */
+    public function buyFreshOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->produceCode)) {
+            @$body['produceCode'] = $request->produceCode;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->instanceName)) {
+            @$body['instanceName'] = $request->instanceName;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->chargeType)) {
+            @$body['chargeType'] = $request->chargeType;
+        }
+        if (!Utils::isUnset($request->endTimeGMT)) {
+            @$body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        if (!Utils::isUnset($request->beginTimeGMT)) {
+            @$body['beginTimeGMT'] = $request->beginTimeGMT;
+        }
+        if (!Utils::isUnset($request->accountNumber)) {
+            @$body['accountNumber'] = $request->accountNumber;
+        }
+        if (!Utils::isUnset($request->commerceType)) {
+            @$body['commerceType'] = $request->commerceType;
+        }
+        if (!Utils::isUnset($request->commodityType)) {
+            @$body['commodityType'] = $request->commodityType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BuyFreshOrderResponse::fromMap($this->doROARequest('BuyFreshOrder', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/freshOrders', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $callerUid
+     * @param RemoveTenantResourceRequest $request
+     *
+     * @return RemoveTenantResourceResponse
+     */
+    public function removeTenantResource($callerUid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveTenantResourceHeaders([]);
+
+        return $this->removeTenantResourceWithOptions($callerUid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $callerUid
+     * @param RemoveTenantResourceRequest $request
+     * @param RemoveTenantResourceHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return RemoveTenantResourceResponse
+     */
+    public function removeTenantResourceWithOptions($callerUid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
+        $query     = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return RemoveTenantResourceResponse::fromMap($this->doROARequest('RemoveTenantResource', 'yida_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/yida/applications/tenantRelatedResources/' . $callerUid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RenewApplicationAuthorizationServiceOrderRequest $request
+     *
+     * @return RenewApplicationAuthorizationServiceOrderResponse
+     */
+    public function renewApplicationAuthorizationServiceOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RenewApplicationAuthorizationServiceOrderHeaders([]);
+
+        return $this->renewApplicationAuthorizationServiceOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RenewApplicationAuthorizationServiceOrderRequest $request
+     * @param RenewApplicationAuthorizationServiceOrderHeaders $headers
+     * @param RuntimeOptions                                   $runtime
+     *
+     * @return RenewApplicationAuthorizationServiceOrderResponse
+     */
+    public function renewApplicationAuthorizationServiceOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->endTimeGMT)) {
+            @$body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RenewApplicationAuthorizationServiceOrderResponse::fromMap($this->doROARequest('RenewApplicationAuthorizationServiceOrder', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/applicationAuthorizations/orders/renew', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $processInstanceId
+     * @param GetProcessDefinitionRequest $request
+     *
+     * @return GetProcessDefinitionResponse
+     */
+    public function getProcessDefinition($processInstanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProcessDefinitionHeaders([]);
+
+        return $this->getProcessDefinitionWithOptions($processInstanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $processInstanceId
+     * @param GetProcessDefinitionRequest $request
+     * @param GetProcessDefinitionHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetProcessDefinitionResponse
+     */
+    public function getProcessDefinitionWithOptions($processInstanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $processInstanceId = OpenApiUtilClient::getEncodeParam($processInstanceId);
+        $query             = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            @$query['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->orderNumber)) {
+            @$query['orderNumber'] = $request->orderNumber;
+        }
+        if (!Utils::isUnset($request->systemType)) {
+            @$query['systemType'] = $request->systemType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->nameSpace_)) {
+            @$query['nameSpace_'] = $request->nameSpace_;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetProcessDefinitionResponse::fromMap($this->doROARequest('GetProcessDefinition', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/definitions/' . $processInstanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpgradeTenantInformationRequest $request
+     *
+     * @return UpgradeTenantInformationResponse
+     */
+    public function upgradeTenantInformation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpgradeTenantInformationHeaders([]);
+
+        return $this->upgradeTenantInformationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpgradeTenantInformationRequest $request
+     * @param UpgradeTenantInformationHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return UpgradeTenantInformationResponse
+     */
+    public function upgradeTenantInformationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->accountNumber)) {
+            @$body['accountNumber'] = $request->accountNumber;
+        }
+        if (!Utils::isUnset($request->commodityType)) {
+            @$body['commodityType'] = $request->commodityType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpgradeTenantInformationResponse::fromMap($this->doROARequest('UpgradeTenantInformation', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/apps/tenantInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetApplicationAuthorizationServicePlatformResourceRequest $request
+     *
+     * @return GetApplicationAuthorizationServicePlatformResourceResponse
+     */
+    public function getApplicationAuthorizationServicePlatformResource($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetApplicationAuthorizationServicePlatformResourceHeaders([]);
+
+        return $this->getApplicationAuthorizationServicePlatformResourceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetApplicationAuthorizationServicePlatformResourceRequest $request
+     * @param GetApplicationAuthorizationServicePlatformResourceHeaders $headers
+     * @param RuntimeOptions                                            $runtime
+     *
+     * @return GetApplicationAuthorizationServicePlatformResourceResponse
+     */
+    public function getApplicationAuthorizationServicePlatformResourceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetApplicationAuthorizationServicePlatformResourceResponse::fromMap($this->doROARequest('GetApplicationAuthorizationServicePlatformResource', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/authorization/platformResources', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                                           $instanceId
+     * @param ListApplicationAuthorizationServiceApplicationInformationRequest $request
+     *
+     * @return ListApplicationAuthorizationServiceApplicationInformationResponse
+     */
+    public function listApplicationAuthorizationServiceApplicationInformation($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListApplicationAuthorizationServiceApplicationInformationHeaders([]);
+
+        return $this->listApplicationAuthorizationServiceApplicationInformationWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                                           $instanceId
+     * @param ListApplicationAuthorizationServiceApplicationInformationRequest $request
+     * @param ListApplicationAuthorizationServiceApplicationInformationHeaders $headers
+     * @param RuntimeOptions                                                   $runtime
+     *
+     * @return ListApplicationAuthorizationServiceApplicationInformationResponse
+     */
+    public function listApplicationAuthorizationServiceApplicationInformationWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$query['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListApplicationAuthorizationServiceApplicationInformationResponse::fromMap($this->doROARequest('ListApplicationAuthorizationServiceApplicationInformation', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/authorizations/applicationInfos/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                              $callerUid
+     * @param ValidateApplicationAuthorizationServiceOrderRequest $request
+     *
+     * @return ValidateApplicationAuthorizationServiceOrderResponse
+     */
+    public function validateApplicationAuthorizationServiceOrder($callerUid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateApplicationAuthorizationServiceOrderHeaders([]);
+
+        return $this->validateApplicationAuthorizationServiceOrderWithOptions($callerUid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                              $callerUid
+     * @param ValidateApplicationAuthorizationServiceOrderRequest $request
+     * @param ValidateApplicationAuthorizationServiceOrderHeaders $headers
+     * @param RuntimeOptions                                      $runtime
+     *
+     * @return ValidateApplicationAuthorizationServiceOrderResponse
+     */
+    public function validateApplicationAuthorizationServiceOrderWithOptions($callerUid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
+        $query     = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ValidateApplicationAuthorizationServiceOrderResponse::fromMap($this->doROARequest('ValidateApplicationAuthorizationServiceOrder', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/appsAuthorizations/freshOrderInfoReviews/' . $callerUid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetActivityListRequest $request
+     *
+     * @return GetActivityListResponse
+     */
+    public function getActivityList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetActivityListHeaders([]);
+
+        return $this->getActivityListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetActivityListRequest $request
+     * @param GetActivityListHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetActivityListResponse
+     */
+    public function getActivityListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->processCode)) {
+            @$query['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetActivityListResponse::fromMap($this->doROARequest('GetActivityList', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/activities', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ExecuteCustomApiRequest $request
+     *
+     * @return ExecuteCustomApiResponse
+     */
+    public function executeCustomApi($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExecuteCustomApiHeaders([]);
+
+        return $this->executeCustomApiWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExecuteCustomApiRequest $request
+     * @param ExecuteCustomApiHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ExecuteCustomApiResponse
+     */
+    public function executeCustomApiWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->data)) {
+            @$query['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->serviceId)) {
+            @$query['serviceId'] = $request->serviceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ExecuteCustomApiResponse::fromMap($this->doROARequest('ExecuteCustomApi', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/customApi/execute', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param LoginCodeGenRequest $request
+     *
+     * @return LoginCodeGenResponse
+     */
+    public function loginCodeGen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new LoginCodeGenHeaders([]);
+
+        return $this->loginCodeGenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param LoginCodeGenRequest $request
+     * @param LoginCodeGenHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return LoginCodeGenResponse
+     */
+    public function loginCodeGenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return LoginCodeGenResponse::fromMap($this->doROARequest('LoginCodeGen', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/authorizations/loginCodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param TerminateCloudAuthorizationRequest $request
+     *
+     * @return TerminateCloudAuthorizationResponse
+     */
+    public function terminateCloudAuthorization($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TerminateCloudAuthorizationHeaders([]);
+
+        return $this->terminateCloudAuthorizationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TerminateCloudAuthorizationRequest $request
+     * @param TerminateCloudAuthorizationHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return TerminateCloudAuthorizationResponse
+     */
+    public function terminateCloudAuthorizationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return TerminateCloudAuthorizationResponse::fromMap($this->doROARequest('TerminateCloudAuthorization', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/cloudAuthorizations/terminate', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                       $appType
+     * @param string                       $processCode
+     * @param string                       $activityId
+     * @param GetActivityButtonListRequest $request
+     *
+     * @return GetActivityButtonListResponse
+     */
+    public function getActivityButtonList($appType, $processCode, $activityId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetActivityButtonListHeaders([]);
+
+        return $this->getActivityButtonListWithOptions($appType, $processCode, $activityId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                       $appType
+     * @param string                       $processCode
+     * @param string                       $activityId
+     * @param GetActivityButtonListRequest $request
+     * @param GetActivityButtonListHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetActivityButtonListResponse
+     */
+    public function getActivityButtonListWithOptions($appType, $processCode, $activityId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $appType     = OpenApiUtilClient::getEncodeParam($appType);
+        $processCode = OpenApiUtilClient::getEncodeParam($processCode);
+        $activityId  = OpenApiUtilClient::getEncodeParam($activityId);
+        $query       = [];
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetActivityButtonListResponse::fromMap($this->doROARequest('GetActivityButtonList', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processDefinitions/buttons/' . $appType . '/' . $processCode . '/' . $activityId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param StartInstanceRequest $request
+     *
+     * @return StartInstanceResponse
+     */
+    public function startInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StartInstanceHeaders([]);
+
+        return $this->startInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param StartInstanceRequest $request
+     * @param StartInstanceHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return StartInstanceResponse
+     */
+    public function startInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->formDataJson)) {
+            @$body['formDataJson'] = $request->formDataJson;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            @$body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->departmentId)) {
+            @$body['departmentId'] = $request->departmentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return StartInstanceResponse::fromMap($this->doROARequest('StartInstance', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/processes/instances/start', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                            $instanceId
+     * @param ListApplicationInformationRequest $request
+     *
+     * @return ListApplicationInformationResponse
+     */
+    public function listApplicationInformation($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListApplicationInformationHeaders([]);
+
+        return $this->listApplicationInformationWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                            $instanceId
+     * @param ListApplicationInformationRequest $request
+     * @param ListApplicationInformationHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return ListApplicationInformationResponse
+     */
+    public function listApplicationInformationWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListApplicationInformationResponse::fromMap($this->doROARequest('ListApplicationInformation', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/infos/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ValidateOrderUpgradeRequest $request
+     *
+     * @return ValidateOrderUpgradeResponse
+     */
+    public function validateOrderUpgrade($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateOrderUpgradeHeaders([]);
+
+        return $this->validateOrderUpgradeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ValidateOrderUpgradeRequest $request
+     * @param ValidateOrderUpgradeHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ValidateOrderUpgradeResponse
+     */
+    public function validateOrderUpgradeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            @$query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ValidateOrderUpgradeResponse::fromMap($this->doROARequest('ValidateOrderUpgrade', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/orderUpgrade/validate', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateCloudAccountInformationRequest $request
+     *
+     * @return UpdateCloudAccountInformationResponse
+     */
+    public function updateCloudAccountInformation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCloudAccountInformationHeaders([]);
+
+        return $this->updateCloudAccountInformationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateCloudAccountInformationRequest $request
+     * @param UpdateCloudAccountInformationHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return UpdateCloudAccountInformationResponse
+     */
+    public function updateCloudAccountInformationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$body['callerUnionId'] = $request->callerUnionId;
+        }
+        if (!Utils::isUnset($request->accountNumber)) {
+            @$body['accountNumber'] = $request->accountNumber;
+        }
+        if (!Utils::isUnset($request->commodityType)) {
+            @$body['commodityType'] = $request->commodityType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateCloudAccountInformationResponse::fromMap($this->doROARequest('UpdateCloudAccountInformation', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/apps/cloudAccountInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCorpLevelByAccountIdRequest $request
+     *
+     * @return GetCorpLevelByAccountIdResponse
+     */
+    public function getCorpLevelByAccountId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCorpLevelByAccountIdHeaders([]);
+
+        return $this->getCorpLevelByAccountIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCorpLevelByAccountIdRequest $request
+     * @param GetCorpLevelByAccountIdHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return GetCorpLevelByAccountIdResponse
+     */
+    public function getCorpLevelByAccountIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCorpLevelByAccountIdResponse::fromMap($this->doROARequest('GetCorpLevelByAccountId', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/corpLevel', 'json', $req, $runtime));
     }
 
     /**
@@ -331,69 +2433,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ExecutePlatformTaskResponse::fromMap($this->doROARequest('ExecutePlatformTask', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/tasks/platformTasks/execute', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param SaveFormRemarkRequest $request
-     *
-     * @return SaveFormRemarkResponse
-     */
-    public function saveFormRemark($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new SaveFormRemarkHeaders([]);
-
-        return $this->saveFormRemarkWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param SaveFormRemarkRequest $request
-     * @param SaveFormRemarkHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return SaveFormRemarkResponse
-     */
-    public function saveFormRemarkWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->appType)) {
-            @$body['appType'] = $request->appType;
-        }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$body['systemToken'] = $request->systemToken;
-        }
-        if (!Utils::isUnset($request->replyId)) {
-            @$body['replyId'] = $request->replyId;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$body['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->formInstanceId)) {
-            @$body['formInstanceId'] = $request->formInstanceId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->atUserId)) {
-            @$body['atUserId'] = $request->atUserId;
-        }
-        if (!Utils::isUnset($request->content)) {
-            @$body['content'] = $request->content;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return SaveFormRemarkResponse::fromMap($this->doROARequest('SaveFormRemark', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/remarks', 'json', $req, $runtime));
     }
 
     /**
@@ -658,6 +2697,95 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetInstanceIdListRequest $request
+     *
+     * @return GetInstanceIdListResponse
+     */
+    public function getInstanceIdList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInstanceIdListHeaders([]);
+
+        return $this->getInstanceIdListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInstanceIdListRequest $request
+     * @param GetInstanceIdListHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetInstanceIdListResponse
+     */
+    public function getInstanceIdListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->modifiedToTimeGMT)) {
+            @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
+            @$body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->searchFieldJson)) {
+            @$body['searchFieldJson'] = $request->searchFieldJson;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->instanceStatus)) {
+            @$body['instanceStatus'] = $request->instanceStatus;
+        }
+        if (!Utils::isUnset($request->approvedResult)) {
+            @$body['approvedResult'] = $request->approvedResult;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->originatorId)) {
+            @$body['originatorId'] = $request->originatorId;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            @$body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$body['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetInstanceIdListResponse::fromMap($this->doROARequest('GetInstanceIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/processes/instanceIds', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetOperationRecordsRequest $request
      *
      * @return GetOperationRecordsResponse
@@ -760,97 +2888,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRunningTasksRequest $request
+     * @param string                          $instanceId
+     * @param ListConnectorInformationRequest $request
      *
-     * @return GetRunningTasksResponse
+     * @return ListConnectorInformationResponse
      */
-    public function getRunningTasks($request)
+    public function listConnectorInformation($instanceId, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetRunningTasksHeaders([]);
+        $headers = new ListConnectorInformationHeaders([]);
 
-        return $this->getRunningTasksWithOptions($request, $headers, $runtime);
+        return $this->listConnectorInformationWithOptions($instanceId, $request, $headers, $runtime);
     }
 
     /**
-     * @param GetRunningTasksRequest $request
-     * @param GetRunningTasksHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return GetRunningTasksResponse
-     */
-    public function getRunningTasksWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$query['processInstanceId'] = $request->processInstanceId;
-        }
-        if (!Utils::isUnset($request->appType)) {
-            @$query['appType'] = $request->appType;
-        }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$query['systemToken'] = $request->systemToken;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetRunningTasksResponse::fromMap($this->doROARequest('GetRunningTasks', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/tasks/getRunningTasks', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param ListNavigationByFormTypeRequest $request
-     *
-     * @return ListNavigationByFormTypeResponse
-     */
-    public function listNavigationByFormType($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListNavigationByFormTypeHeaders([]);
-
-        return $this->listNavigationByFormTypeWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ListNavigationByFormTypeRequest $request
-     * @param ListNavigationByFormTypeHeaders $headers
+     * @param string                          $instanceId
+     * @param ListConnectorInformationRequest $request
+     * @param ListConnectorInformationHeaders $headers
      * @param RuntimeOptions                  $runtime
      *
-     * @return ListNavigationByFormTypeResponse
+     * @return ListConnectorInformationResponse
      */
-    public function listNavigationByFormTypeWithOptions($request, $headers, $runtime)
+    public function listConnectorInformationWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->appType)) {
-            @$query['appType'] = $request->appType;
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
         }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$query['systemToken'] = $request->systemToken;
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        if (!Utils::isUnset($request->callerUid)) {
+            @$query['callerUid'] = $request->callerUid;
         }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->formType)) {
-            @$query['formType'] = $request->formType;
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -864,47 +2938,119 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ListNavigationByFormTypeResponse::fromMap($this->doROARequest('ListNavigationByFormType', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/navigations', 'json', $req, $runtime));
+        return ListConnectorInformationResponse::fromMap($this->doROARequest('ListConnectorInformation', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/plugins/infos/' . $instanceId . '', 'json', $req, $runtime));
     }
 
     /**
-     * @param TerminateInstanceRequest $request
+     * @param RegisterAccountsRequest $request
      *
-     * @return TerminateInstanceResponse
+     * @return RegisterAccountsResponse
      */
-    public function terminateInstance($request)
+    public function registerAccounts($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new TerminateInstanceHeaders([]);
+        $headers = new RegisterAccountsHeaders([]);
 
-        return $this->terminateInstanceWithOptions($request, $headers, $runtime);
+        return $this->registerAccountsWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param TerminateInstanceRequest $request
-     * @param TerminateInstanceHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param RegisterAccountsRequest $request
+     * @param RegisterAccountsHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return TerminateInstanceResponse
+     * @return RegisterAccountsResponse
      */
-    public function terminateInstanceWithOptions($request, $headers, $runtime)
+    public function registerAccountsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->appType)) {
-            @$query['appType'] = $request->appType;
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
         }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$query['systemToken'] = $request->systemToken;
+        if (!Utils::isUnset($request->accessKey)) {
+            @$body['accessKey'] = $request->accessKey;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        if (!Utils::isUnset($request->activeCode)) {
+            @$body['activeCode'] = $request->activeCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RegisterAccountsResponse::fromMap($this->doROARequest('RegisterAccounts', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/applicationAuthorizations/accounts/register', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $userId
+     * @param GetNotifyMeRequest $request
+     *
+     * @return GetNotifyMeResponse
+     */
+    public function getNotifyMe($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetNotifyMeHeaders([]);
+
+        return $this->getNotifyMeWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $userId
+     * @param GetNotifyMeRequest $request
+     * @param GetNotifyMeHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetNotifyMeResponse
+     */
+    public function getNotifyMeWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
         }
         if (!Utils::isUnset($request->language)) {
             @$query['language'] = $request->language;
         }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$query['processInstanceId'] = $request->processInstanceId;
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->appTypes)) {
+            @$query['appTypes'] = $request->appTypes;
+        }
+        if (!Utils::isUnset($request->processCodes)) {
+            @$query['processCodes'] = $request->processCodes;
+        }
+        if (!Utils::isUnset($request->instanceCreateFromTimeGMT)) {
+            @$query['instanceCreateFromTimeGMT'] = $request->instanceCreateFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->instanceCreateToTimeGMT)) {
+            @$query['instanceCreateToTimeGMT'] = $request->instanceCreateToTimeGMT;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$query['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$query['createToTimeGMT'] = $request->createToTimeGMT;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -918,7 +3064,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return TerminateInstanceResponse::fromMap($this->doROARequest('TerminateInstance', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/processes/instances/terminate', 'none', $req, $runtime));
+        return GetNotifyMeResponse::fromMap($this->doROARequest('GetNotifyMe', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/corpNotifications/' . $userId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -970,29 +3116,152 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ValidateOrderBuyRequest $request
+     * @param string                 $id
+     * @param GetInstanceByIdRequest $request
      *
-     * @return ValidateOrderBuyResponse
+     * @return GetInstanceByIdResponse
      */
-    public function validateOrderBuy($request)
+    public function getInstanceById($id, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ValidateOrderBuyHeaders([]);
+        $headers = new GetInstanceByIdHeaders([]);
 
-        return $this->validateOrderBuyWithOptions($request, $headers, $runtime);
+        return $this->getInstanceByIdWithOptions($id, $request, $headers, $runtime);
     }
 
     /**
-     * @param ValidateOrderBuyRequest $request
-     * @param ValidateOrderBuyHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string                 $id
+     * @param GetInstanceByIdRequest $request
+     * @param GetInstanceByIdHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return ValidateOrderBuyResponse
+     * @return GetInstanceByIdResponse
      */
-    public function validateOrderBuyWithOptions($request, $headers, $runtime)
+    public function getInstanceByIdWithOptions($id, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $id    = OpenApiUtilClient::getEncodeParam($id);
         $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetInstanceByIdResponse::fromMap($this->doROARequest('GetInstanceById', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/instancesInfos/' . $id . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RedirectTaskRequest $request
+     *
+     * @return RedirectTaskResponse
+     */
+    public function redirectTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RedirectTaskHeaders([]);
+
+        return $this->redirectTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RedirectTaskRequest $request
+     * @param RedirectTaskHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return RedirectTaskResponse
+     */
+    public function redirectTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->byManager)) {
+            @$body['byManager'] = $request->byManager;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->nowActionExecutorId)) {
+            @$body['nowActionExecutorId'] = $request->nowActionExecutorId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            @$body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RedirectTaskResponse::fromMap($this->doROARequest('RedirectTask', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/tasks/redirect', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                     $instanceId
+     * @param ValidateOrderUpdateRequest $request
+     *
+     * @return ValidateOrderUpdateResponse
+     */
+    public function validateOrderUpdate($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateOrderUpdateHeaders([]);
+
+        return $this->validateOrderUpdateWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $instanceId
+     * @param ValidateOrderUpdateRequest $request
+     * @param ValidateOrderUpdateHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ValidateOrderUpdateResponse
+     */
+    public function validateOrderUpdateWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -1011,7 +3280,64 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ValidateOrderBuyResponse::fromMap($this->doROARequest('ValidateOrderBuy', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/orderBuy/validate', 'json', $req, $runtime));
+        return ValidateOrderUpdateResponse::fromMap($this->doROARequest('ValidateOrderUpdate', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/orders/renewalReviews/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                $appType
+     * @param string                                $formUuid
+     * @param GetFormComponentDefinitionListRequest $request
+     *
+     * @return GetFormComponentDefinitionListResponse
+     */
+    public function getFormComponentDefinitionList($appType, $formUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFormComponentDefinitionListHeaders([]);
+
+        return $this->getFormComponentDefinitionListWithOptions($appType, $formUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                $appType
+     * @param string                                $formUuid
+     * @param GetFormComponentDefinitionListRequest $request
+     * @param GetFormComponentDefinitionListHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return GetFormComponentDefinitionListResponse
+     */
+    public function getFormComponentDefinitionListWithOptions($appType, $formUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $appType  = OpenApiUtilClient::getEncodeParam($appType);
+        $formUuid = OpenApiUtilClient::getEncodeParam($formUuid);
+        $query    = [];
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->version)) {
+            @$query['version'] = $request->version;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFormComponentDefinitionListResponse::fromMap($this->doROARequest('GetFormComponentDefinitionList', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/definitions/' . $appType . '/' . $formUuid . '', 'json', $req, $runtime));
     }
 
     /**
@@ -1072,6 +3398,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                     $userId
+     * @param GetMeCorpSubmissionRequest $request
+     *
+     * @return GetMeCorpSubmissionResponse
+     */
+    public function getMeCorpSubmission($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMeCorpSubmissionHeaders([]);
+
+        return $this->getMeCorpSubmissionWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $userId
+     * @param GetMeCorpSubmissionRequest $request
+     * @param GetMeCorpSubmissionHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetMeCorpSubmissionResponse
+     */
+    public function getMeCorpSubmissionWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $query  = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            @$query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->appTypes)) {
+            @$query['appTypes'] = $request->appTypes;
+        }
+        if (!Utils::isUnset($request->processCodes)) {
+            @$query['processCodes'] = $request->processCodes;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$query['createFromTimeGMT'] = $request->createFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->token)) {
+            @$query['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetMeCorpSubmissionResponse::fromMap($this->doROARequest('GetMeCorpSubmission', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/tasks/myCorpSubmission/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DeleteFormDataRequest $request
      *
      * @return DeleteFormDataResponse
@@ -1126,97 +3524,68 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInstanceRequest $request
+     * @param string                      $appType
+     * @param string                      $formUuid
+     * @param SearchFormDataIdListRequest $request
      *
-     * @return UpdateInstanceResponse
+     * @return SearchFormDataIdListResponse
      */
-    public function updateInstance($request)
+    public function searchFormDataIdList($appType, $formUuid, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new UpdateInstanceHeaders([]);
+        $headers = new SearchFormDataIdListHeaders([]);
 
-        return $this->updateInstanceWithOptions($request, $headers, $runtime);
+        return $this->searchFormDataIdListWithOptions($appType, $formUuid, $request, $headers, $runtime);
     }
 
     /**
-     * @param UpdateInstanceRequest $request
-     * @param UpdateInstanceHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string                      $appType
+     * @param string                      $formUuid
+     * @param SearchFormDataIdListRequest $request
+     * @param SearchFormDataIdListHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return UpdateInstanceResponse
+     * @return SearchFormDataIdListResponse
      */
-    public function updateInstanceWithOptions($request, $headers, $runtime)
+    public function searchFormDataIdListWithOptions($appType, $formUuid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
-        }
-        if (!Utils::isUnset($request->appType)) {
-            @$body['appType'] = $request->appType;
-        }
-        if (!Utils::isUnset($request->updateFormDataJson)) {
-            @$body['updateFormDataJson'] = $request->updateFormDataJson;
-        }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$body['systemToken'] = $request->systemToken;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$body['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateInstanceResponse::fromMap($this->doROARequest('UpdateInstance', 'yida_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/yida/processes/instances', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param ListCommodityRequest $request
-     *
-     * @return ListCommodityResponse
-     */
-    public function listCommodity($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListCommodityHeaders([]);
-
-        return $this->listCommodityWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ListCommodityRequest $request
-     * @param ListCommodityHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return ListCommodityResponse
-     */
-    public function listCommodityWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->accessKey)) {
-            @$query['accessKey'] = $request->accessKey;
+        $appType  = OpenApiUtilClient::getEncodeParam($appType);
+        $formUuid = OpenApiUtilClient::getEncodeParam($formUuid);
+        $query    = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
         }
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
         }
-        if (!Utils::isUnset($request->callerUid)) {
-            @$query['callerUid'] = $request->callerUid;
+        $body = [];
+        if (!Utils::isUnset($request->modifiedToTimeGMT)) {
+            @$body['modifiedToTimeGMT'] = $request->modifiedToTimeGMT;
         }
-        if (!Utils::isUnset($request->currentPage)) {
-            @$query['currentPage'] = $request->currentPage;
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
+            @$body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->searchFieldJson)) {
+            @$body['searchFieldJson'] = $request->searchFieldJson;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->originatorId)) {
+            @$body['originatorId'] = $request->originatorId;
+        }
+        if (!Utils::isUnset($request->createToTimeGMT)) {
+            @$body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->createFromTimeGMT)) {
+            @$body['createFromTimeGMT'] = $request->createFromTimeGMT;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1228,44 +3597,42 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return ListCommodityResponse::fromMap($this->doROARequest('ListCommodity', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/appAuth/commodities', 'json', $req, $runtime));
+        return SearchFormDataIdListResponse::fromMap($this->doROARequest('SearchFormDataIdList', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/forms/instances/ids/' . $appType . '/' . $formUuid . '', 'json', $req, $runtime));
     }
 
     /**
-     * @param GetApplicationAuthorizationServicePlatformResourceRequest $request
+     * @param string                                  $callerUid
+     * @param GetActivationCodeByCallerUnionIdRequest $request
      *
-     * @return GetApplicationAuthorizationServicePlatformResourceResponse
+     * @return GetActivationCodeByCallerUnionIdResponse
      */
-    public function getApplicationAuthorizationServicePlatformResource($request)
+    public function getActivationCodeByCallerUnionId($callerUid, $request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetApplicationAuthorizationServicePlatformResourceHeaders([]);
+        $headers = new GetActivationCodeByCallerUnionIdHeaders([]);
 
-        return $this->getApplicationAuthorizationServicePlatformResourceWithOptions($request, $headers, $runtime);
+        return $this->getActivationCodeByCallerUnionIdWithOptions($callerUid, $request, $headers, $runtime);
     }
 
     /**
-     * @param GetApplicationAuthorizationServicePlatformResourceRequest $request
-     * @param GetApplicationAuthorizationServicePlatformResourceHeaders $headers
-     * @param RuntimeOptions                                            $runtime
+     * @param string                                  $callerUid
+     * @param GetActivationCodeByCallerUnionIdRequest $request
+     * @param GetActivationCodeByCallerUnionIdHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return GetApplicationAuthorizationServicePlatformResourceResponse
+     * @return GetActivationCodeByCallerUnionIdResponse
      */
-    public function getApplicationAuthorizationServicePlatformResourceWithOptions($request, $headers, $runtime)
+    public function getActivationCodeByCallerUnionIdWithOptions($callerUid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->instanceId)) {
-            @$query['instanceId'] = $request->instanceId;
-        }
+        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
+        $query     = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
-        if (!Utils::isUnset($request->callerUid)) {
-            @$query['callerUid'] = $request->callerUid;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1278,61 +3645,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetApplicationAuthorizationServicePlatformResourceResponse::fromMap($this->doROARequest('GetApplicationAuthorizationServicePlatformResource', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/authorization/platformResources', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param GetActivityListRequest $request
-     *
-     * @return GetActivityListResponse
-     */
-    public function getActivityList($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetActivityListHeaders([]);
-
-        return $this->getActivityListWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetActivityListRequest $request
-     * @param GetActivityListHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return GetActivityListResponse
-     */
-    public function getActivityListWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->processCode)) {
-            @$query['processCode'] = $request->processCode;
-        }
-        if (!Utils::isUnset($request->appType)) {
-            @$query['appType'] = $request->appType;
-        }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$query['systemToken'] = $request->systemToken;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetActivityListResponse::fromMap($this->doROARequest('GetActivityList', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/processes/activities', 'json', $req, $runtime));
+        return GetActivationCodeByCallerUnionIdResponse::fromMap($this->doROARequest('GetActivationCodeByCallerUnionId', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/applications/activationCodes/' . $callerUid . '', 'json', $req, $runtime));
     }
 
     /**
@@ -1387,63 +3700,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFormDataByIDResponse::fromMap($this->doROARequest('GetFormDataByID', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/instances/' . $id . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param ExecuteCustomApiRequest $request
-     *
-     * @return ExecuteCustomApiResponse
-     */
-    public function executeCustomApi($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ExecuteCustomApiHeaders([]);
-
-        return $this->executeCustomApiWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ExecuteCustomApiRequest $request
-     * @param ExecuteCustomApiHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return ExecuteCustomApiResponse
-     */
-    public function executeCustomApiWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->data)) {
-            @$query['data'] = $request->data;
-        }
-        if (!Utils::isUnset($request->appType)) {
-            @$query['appType'] = $request->appType;
-        }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$query['systemToken'] = $request->systemToken;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$query['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->serviceId)) {
-            @$query['serviceId'] = $request->serviceId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ExecuteCustomApiResponse::fromMap($this->doROARequest('ExecuteCustomApi', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/customApi/execute', 'json', $req, $runtime));
     }
 
     /**
@@ -1597,31 +3853,121 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoginCodeGenRequest $request
+     * @param RenderBatchCallbackRequest $request
      *
-     * @return LoginCodeGenResponse
+     * @return RenderBatchCallbackResponse
      */
-    public function loginCodeGen($request)
+    public function renderBatchCallback($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new LoginCodeGenHeaders([]);
+        $headers = new RenderBatchCallbackHeaders([]);
 
-        return $this->loginCodeGenWithOptions($request, $headers, $runtime);
+        return $this->renderBatchCallbackWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param LoginCodeGenRequest $request
-     * @param LoginCodeGenHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param RenderBatchCallbackRequest $request
+     * @param RenderBatchCallbackHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return LoginCodeGenResponse
+     * @return RenderBatchCallbackResponse
      */
-    public function loginCodeGenWithOptions($request, $headers, $runtime)
+    public function renderBatchCallbackWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
+        if (!Utils::isUnset($request->ossUrl)) {
+            @$body['ossUrl'] = $request->ossUrl;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            @$body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            @$body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            @$body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->namespace_)) {
+            @$body['namespace_'] = $request->namespace_;
+        }
+        if (!Utils::isUnset($request->timeZone)) {
+            @$body['timeZone'] = $request->timeZone;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->sequenceId)) {
+            @$body['sequenceId'] = $request->sequenceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RenderBatchCallbackResponse::fromMap($this->doROARequest('RenderBatchCallback', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/printings/callbacks/batch', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string            $appType
+     * @param GetOpenUrlRequest $request
+     *
+     * @return GetOpenUrlResponse
+     */
+    public function getOpenUrl($appType, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOpenUrlHeaders([]);
+
+        return $this->getOpenUrlWithOptions($appType, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $appType
+     * @param GetOpenUrlRequest $request
+     * @param GetOpenUrlHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetOpenUrlResponse
+     */
+    public function getOpenUrlWithOptions($appType, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $appType = OpenApiUtilClient::getEncodeParam($appType);
+        $query   = [];
+        if (!Utils::isUnset($request->systemToken)) {
+            @$query['systemToken'] = $request->systemToken;
+        }
         if (!Utils::isUnset($request->userId)) {
             @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            @$query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->fileUrl)) {
+            @$query['fileUrl'] = $request->fileUrl;
+        }
+        if (!Utils::isUnset($request->timeout)) {
+            @$query['timeout'] = $request->timeout;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1635,7 +3981,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return LoginCodeGenResponse::fromMap($this->doROARequest('LoginCodeGen', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/authorizations/loginCodes', 'json', $req, $runtime));
+        return GetOpenUrlResponse::fromMap($this->doROARequest('GetOpenUrl', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/temporaryUrls/' . $appType . '', 'json', $req, $runtime));
     }
 
     /**
@@ -1684,6 +4030,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSaleUserInfoByUserIdResponse::fromMap($this->doROARequest('GetSaleUserInfoByUserId', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/apps/saleUserInfo', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                       $instanceId
+     * @param ValidateApplicationAuthorizationOrderRequest $request
+     *
+     * @return ValidateApplicationAuthorizationOrderResponse
+     */
+    public function validateApplicationAuthorizationOrder($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateApplicationAuthorizationOrderHeaders([]);
+
+        return $this->validateApplicationAuthorizationOrderWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                       $instanceId
+     * @param ValidateApplicationAuthorizationOrderRequest $request
+     * @param ValidateApplicationAuthorizationOrderHeaders $headers
+     * @param RuntimeOptions                               $runtime
+     *
+     * @return ValidateApplicationAuthorizationOrderResponse
+     */
+    public function validateApplicationAuthorizationOrderWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
+        $query      = [];
+        if (!Utils::isUnset($request->accessKey)) {
+            @$query['accessKey'] = $request->accessKey;
+        }
+        if (!Utils::isUnset($request->callerUnionId)) {
+            @$query['callerUnionId'] = $request->callerUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ValidateApplicationAuthorizationOrderResponse::fromMap($this->doROARequest('ValidateApplicationAuthorizationOrder', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/applicationOrderUpdateAuthorizations/' . $instanceId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -1753,69 +4147,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ExecuteTaskResponse::fromMap($this->doROARequest('ExecuteTask', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/tasks/execute', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param StartInstanceRequest $request
-     *
-     * @return StartInstanceResponse
-     */
-    public function startInstance($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new StartInstanceHeaders([]);
-
-        return $this->startInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param StartInstanceRequest $request
-     * @param StartInstanceHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return StartInstanceResponse
-     */
-    public function startInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->appType)) {
-            @$body['appType'] = $request->appType;
-        }
-        if (!Utils::isUnset($request->systemToken)) {
-            @$body['systemToken'] = $request->systemToken;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->language)) {
-            @$body['language'] = $request->language;
-        }
-        if (!Utils::isUnset($request->formUuid)) {
-            @$body['formUuid'] = $request->formUuid;
-        }
-        if (!Utils::isUnset($request->formDataJson)) {
-            @$body['formDataJson'] = $request->formDataJson;
-        }
-        if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
-        }
-        if (!Utils::isUnset($request->departmentId)) {
-            @$body['departmentId'] = $request->departmentId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return StartInstanceResponse::fromMap($this->doROARequest('StartInstance', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/processes/instances/start', 'json', $req, $runtime));
     }
 
     /**

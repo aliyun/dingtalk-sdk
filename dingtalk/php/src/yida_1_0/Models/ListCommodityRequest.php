@@ -34,12 +34,12 @@ class ListCommodityRequest extends Model
      *
      * @var int
      */
-    public $currentPage;
+    public $pageNumber;
     protected $_name = [
-        'accessKey'   => 'accessKey',
-        'pageSize'    => 'pageSize',
-        'callerUid'   => 'callerUid',
-        'currentPage' => 'currentPage',
+        'accessKey'  => 'accessKey',
+        'pageSize'   => 'pageSize',
+        'callerUid'  => 'callerUid',
+        'pageNumber' => 'pageNumber',
     ];
 
     public function validate()
@@ -58,8 +58,8 @@ class ListCommodityRequest extends Model
         if (null !== $this->callerUid) {
             $res['callerUid'] = $this->callerUid;
         }
-        if (null !== $this->currentPage) {
-            $res['currentPage'] = $this->currentPage;
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
         }
 
         return $res;
@@ -82,8 +82,8 @@ class ListCommodityRequest extends Model
         if (isset($map['callerUid'])) {
             $model->callerUid = $map['callerUid'];
         }
-        if (isset($map['currentPage'])) {
-            $model->currentPage = $map['currentPage'];
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
         }
 
         return $model;

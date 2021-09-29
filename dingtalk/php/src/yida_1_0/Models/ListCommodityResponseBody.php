@@ -28,7 +28,7 @@ class ListCommodityResponseBody extends Model
      *
      * @var int
      */
-    public $currentPage;
+    public $pageNumber;
 
     /**
      * @description 总数量
@@ -39,7 +39,7 @@ class ListCommodityResponseBody extends Model
     protected $_name = [
         'pageSize'        => 'pageSize',
         'commodityVOList' => 'commodityVOList',
-        'currentPage'     => 'currentPage',
+        'pageNumber'      => 'pageNumber',
         'totalCount'      => 'totalCount',
     ];
 
@@ -62,8 +62,8 @@ class ListCommodityResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->currentPage) {
-            $res['currentPage'] = $this->currentPage;
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -92,8 +92,8 @@ class ListCommodityResponseBody extends Model
                 }
             }
         }
-        if (isset($map['currentPage'])) {
-            $model->currentPage = $map['currentPage'];
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

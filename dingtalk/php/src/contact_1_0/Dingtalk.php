@@ -11,6 +11,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupHeaders;
@@ -42,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdRe
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityResponse;
@@ -70,6 +75,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRes
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingResponse;
@@ -144,6 +152,120 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SortUserResponse::fromMap($this->doROARequest('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/users/sort', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListContactHideSettingsRequest $request
+     *
+     * @return ListContactHideSettingsResponse
+     */
+    public function listContactHideSettings($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListContactHideSettingsHeaders([]);
+
+        return $this->listContactHideSettingsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListContactHideSettingsRequest $request
+     * @param ListContactHideSettingsHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return ListContactHideSettingsResponse
+     */
+    public function listContactHideSettingsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListContactHideSettingsResponse::fromMap($this->doROARequest('ListContactHideSettings', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/contactHideSettings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateContactHideSettingRequest $request
+     *
+     * @return UpdateContactHideSettingResponse
+     */
+    public function updateContactHideSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateContactHideSettingHeaders([]);
+
+        return $this->updateContactHideSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateContactHideSettingRequest $request
+     * @param UpdateContactHideSettingHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return UpdateContactHideSettingResponse
+     */
+    public function updateContactHideSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->objectStaffIds)) {
+            @$body['objectStaffIds'] = $request->objectStaffIds;
+        }
+        if (!Utils::isUnset($request->objectDeptIds)) {
+            @$body['objectDeptIds'] = $request->objectDeptIds;
+        }
+        if (!Utils::isUnset($request->objectTagIds)) {
+            @$body['objectTagIds'] = $request->objectTagIds;
+        }
+        if (!Utils::isUnset($request->excludeStaffIds)) {
+            @$body['excludeStaffIds'] = $request->excludeStaffIds;
+        }
+        if (!Utils::isUnset($request->excludeDeptIds)) {
+            @$body['excludeDeptIds'] = $request->excludeDeptIds;
+        }
+        if (!Utils::isUnset($request->excludeTagIds)) {
+            @$body['excludeTagIds'] = $request->excludeTagIds;
+        }
+        if (!Utils::isUnset($request->active)) {
+            @$body['active'] = $request->active;
+        }
+        if (!Utils::isUnset($request->id)) {
+            @$body['id'] = $request->id;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateContactHideSettingResponse::fromMap($this->doROARequest('UpdateContactHideSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/contactHideSettings', 'json', $req, $runtime));
     }
 
     /**
@@ -566,6 +688,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserManagementResourcesResponse::fromMap($this->doROARequest('QueryUserManagementResources', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/users/' . $userId . '/managemementResources', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $settingId
+     *
+     * @return DeleteContactHideSettingResponse
+     */
+    public function deleteContactHideSetting($settingId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteContactHideSettingHeaders([]);
+
+        return $this->deleteContactHideSettingWithOptions($settingId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $settingId
+     * @param DeleteContactHideSettingHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return DeleteContactHideSettingResponse
+     */
+    public function deleteContactHideSettingWithOptions($settingId, $headers, $runtime)
+    {
+        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteContactHideSettingResponse::fromMap($this->doROARequest('DeleteContactHideSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/contactHideSettings/' . $settingId . '', 'none', $req, $runtime));
     }
 
     /**

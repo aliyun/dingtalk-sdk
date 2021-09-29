@@ -43,6 +43,11 @@ class CreateWorkspaceRequest extends Model
      * @var string
      */
     public $dingAccessTokenType;
+
+    /**
+     * @var int
+     */
+    public $dingIsvOrgId;
     protected $_name = [
         'name'                => 'name',
         'description'         => 'description',
@@ -50,6 +55,7 @@ class CreateWorkspaceRequest extends Model
         'dingOrgId'           => 'dingOrgId',
         'dingUid'             => 'dingUid',
         'dingAccessTokenType' => 'dingAccessTokenType',
+        'dingIsvOrgId'        => 'dingIsvOrgId',
     ];
 
     public function validate()
@@ -76,6 +82,9 @@ class CreateWorkspaceRequest extends Model
         }
         if (null !== $this->dingAccessTokenType) {
             $res['dingAccessTokenType'] = $this->dingAccessTokenType;
+        }
+        if (null !== $this->dingIsvOrgId) {
+            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
         }
 
         return $res;
@@ -106,6 +115,9 @@ class CreateWorkspaceRequest extends Model
         }
         if (isset($map['dingAccessTokenType'])) {
             $model->dingAccessTokenType = $map['dingAccessTokenType'];
+        }
+        if (isset($map['dingIsvOrgId'])) {
+            $model->dingIsvOrgId = $map['dingIsvOrgId'];
         }
 
         return $model;

@@ -52,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListTicketOperateRecordR
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListTicketOperateRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListUserTeamsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\ListUserTeamsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupResponse;
@@ -79,6 +82,12 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpgradeCloudGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpgradeCloudGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpgradeCloudGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpgradeNormalGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpgradeNormalGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpgradeNormalGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UrgeTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UrgeTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UrgeTicketResponse;
@@ -231,6 +240,69 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateTicketResponse::fromMap($this->doROARequest('UpdateTicket', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/tickets', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpgradeNormalGroupRequest $request
+     *
+     * @return UpgradeNormalGroupResponse
+     */
+    public function upgradeNormalGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpgradeNormalGroupHeaders([]);
+
+        return $this->upgradeNormalGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpgradeNormalGroupRequest $request
+     * @param UpgradeNormalGroupHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return UpgradeNormalGroupResponse
+     */
+    public function upgradeNormalGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpgradeNormalGroupResponse::fromMap($this->doROARequest('UpgradeNormalGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/normalGroups/upgrade', 'none', $req, $runtime));
     }
 
     /**
@@ -1002,6 +1074,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpgradeCloudGroupRequest $request
+     *
+     * @return UpgradeCloudGroupResponse
+     */
+    public function upgradeCloudGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpgradeCloudGroupHeaders([]);
+
+        return $this->upgradeCloudGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpgradeCloudGroupRequest $request
+     * @param UpgradeCloudGroupHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return UpgradeCloudGroupResponse
+     */
+    public function upgradeCloudGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->ccsInstanceId)) {
+            @$body['ccsInstanceId'] = $request->ccsInstanceId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpgradeCloudGroupResponse::fromMap($this->doROARequest('UpgradeCloudGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/cloudGroups/upgrade', 'none', $req, $runtime));
+    }
+
+    /**
      * @param ResubmitTicketRequest $request
      *
      * @return ResubmitTicketResponse
@@ -1600,6 +1738,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TransferTicketResponse::fromMap($this->doROARequest('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/transfer', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param QueryActiveUsersRequest $request
+     *
+     * @return QueryActiveUsersResponse
+     */
+    public function queryActiveUsers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryActiveUsersHeaders([]);
+
+        return $this->queryActiveUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryActiveUsersRequest $request
+     * @param QueryActiveUsersHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryActiveUsersResponse
+     */
+    public function queryActiveUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$query['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryActiveUsersResponse::fromMap($this->doROARequest('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/groups/queryActiveUsers', 'json', $req, $runtime));
     }
 
     /**

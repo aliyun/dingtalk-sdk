@@ -21,9 +21,25 @@ class AbandonCustomerRequest extends Model
      * @var string[]
      */
     public $instanceIdList;
+
+    /**
+     * @description 自定义动态描述
+     *
+     * @var string
+     */
+    public $customTrackDesc;
+
+    /**
+     * @description 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
+     *
+     * @var string
+     */
+    public $optType;
     protected $_name = [
-        'operatorUserId' => 'operatorUserId',
-        'instanceIdList' => 'instanceIdList',
+        'operatorUserId'  => 'operatorUserId',
+        'instanceIdList'  => 'instanceIdList',
+        'customTrackDesc' => 'customTrackDesc',
+        'optType'         => 'optType',
     ];
 
     public function validate()
@@ -38,6 +54,12 @@ class AbandonCustomerRequest extends Model
         }
         if (null !== $this->instanceIdList) {
             $res['instanceIdList'] = $this->instanceIdList;
+        }
+        if (null !== $this->customTrackDesc) {
+            $res['customTrackDesc'] = $this->customTrackDesc;
+        }
+        if (null !== $this->optType) {
+            $res['optType'] = $this->optType;
         }
 
         return $res;
@@ -58,6 +80,12 @@ class AbandonCustomerRequest extends Model
             if (!empty($map['instanceIdList'])) {
                 $model->instanceIdList = $map['instanceIdList'];
             }
+        }
+        if (isset($map['customTrackDesc'])) {
+            $model->customTrackDesc = $map['customTrackDesc'];
+        }
+        if (isset($map['optType'])) {
+            $model->optType = $map['optType'];
         }
 
         return $model;

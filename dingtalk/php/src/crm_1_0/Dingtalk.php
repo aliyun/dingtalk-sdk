@@ -716,6 +716,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->instanceIdList)) {
             @$body['instanceIdList'] = $request->instanceIdList;
         }
+        if (!Utils::isUnset($request->customTrackDesc)) {
+            @$body['customTrackDesc'] = $request->customTrackDesc;
+        }
+        if (!Utils::isUnset($request->optType)) {
+            @$body['optType'] = $request->optType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
