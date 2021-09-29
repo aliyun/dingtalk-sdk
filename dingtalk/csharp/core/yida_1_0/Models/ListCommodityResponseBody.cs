@@ -84,9 +84,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         /// <summary>
         /// 当前第几页
         /// </summary>
-        [NameInMap("currentPage")]
+        [NameInMap("pageNumber")]
         [Validation(Required=false)]
-        public int? CurrentPage { get; set; }
+        public int? PageNumber { get; set; }
 
         /// <summary>
         /// 总数量

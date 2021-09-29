@@ -33,9 +33,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         /// <summary>
         /// currentPage
         /// </summary>
-        [NameInMap("currentPage")]
+        [NameInMap("pageNumber")]
         [Validation(Required=false)]
-        public int? CurrentPage { get; set; }
+        public int? PageNumber { get; set; }
 
     }
 

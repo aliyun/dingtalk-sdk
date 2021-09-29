@@ -42,6 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string DingAccessTokenType { get; set; }
 
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public long? DingIsvOrgId { get; set; }
+
     }
 
 }

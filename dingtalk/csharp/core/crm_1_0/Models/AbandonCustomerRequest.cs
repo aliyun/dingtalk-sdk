@@ -23,6 +23,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<string> InstanceIdList { get; set; }
 
+        /// <summary>
+        /// 自定义动态描述
+        /// </summary>
+        [NameInMap("customTrackDesc")]
+        [Validation(Required=false)]
+        public string CustomTrackDesc { get; set; }
+
+        /// <summary>
+        /// 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
+        /// </summary>
+        [NameInMap("optType")]
+        [Validation(Required=false)]
+        public string OptType { get; set; }
+
     }
 
 }
