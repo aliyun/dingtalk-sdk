@@ -95,6 +95,206 @@ export class SortUserResponse extends $tea.Model {
   }
 }
 
+export class ListContactHideSettingsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListContactHideSettingsRequest extends $tea.Model {
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListContactHideSettingsResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: number;
+  list?: ListContactHideSettingsResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'number',
+      list: { 'type': 'array', 'itemType': ListContactHideSettingsResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListContactHideSettingsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListContactHideSettingsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListContactHideSettingsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideSettingRequest extends $tea.Model {
+  name?: string;
+  description?: string;
+  objectStaffIds?: string[];
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  excludeStaffIds?: string[];
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  active?: boolean;
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      description: 'description',
+      objectStaffIds: 'objectStaffIds',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      excludeStaffIds: 'excludeStaffIds',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      active: 'active',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      description: 'string',
+      objectStaffIds: { 'type': 'array', 'itemType': 'string' },
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeStaffIds: { 'type': 'array', 'itemType': 'string' },
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      active: 'boolean',
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideSettingResponseBody extends $tea.Model {
+  result?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateContactHideSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateContactHideSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateEmpAttrbuteVisibilitySettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -852,6 +1052,47 @@ export class QueryUserManagementResourcesResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryUserManagementResourcesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteContactHideSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteContactHideSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -2297,6 +2538,52 @@ export class GetLatestDingIndexResponse extends $tea.Model {
   }
 }
 
+export class ListContactHideSettingsResponseBodyList extends $tea.Model {
+  name?: string;
+  description?: string;
+  objectStaffIds?: string[];
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  excludeStaffIds?: string[];
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  active?: boolean;
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      description: 'description',
+      objectStaffIds: 'objectStaffIds',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      excludeStaffIds: 'excludeStaffIds',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      active: 'active',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      description: 'string',
+      objectStaffIds: { 'type': 'array', 'itemType': 'string' },
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeStaffIds: { 'type': 'array', 'itemType': 'string' },
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      active: 'boolean',
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListManagementGroupsResponseBodyGroupsMembers extends $tea.Model {
   memberType?: string;
   memberId?: string;
@@ -2637,6 +2924,104 @@ export default class Client extends OpenApi {
     return $tea.cast<SortUserResponse>(await this.doROARequest("SortUser", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/users/sort`, "json", req, runtime), new SortUserResponse({}));
   }
 
+  async listContactHideSettings(request: ListContactHideSettingsRequest): Promise<ListContactHideSettingsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListContactHideSettingsHeaders({ });
+    return await this.listContactHideSettingsWithOptions(request, headers, runtime);
+  }
+
+  async listContactHideSettingsWithOptions(request: ListContactHideSettingsRequest, headers: ListContactHideSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<ListContactHideSettingsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListContactHideSettingsResponse>(await this.doROARequest("ListContactHideSettings", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/contactHideSettings`, "json", req, runtime), new ListContactHideSettingsResponse({}));
+  }
+
+  async updateContactHideSetting(request: UpdateContactHideSettingRequest): Promise<UpdateContactHideSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateContactHideSettingHeaders({ });
+    return await this.updateContactHideSettingWithOptions(request, headers, runtime);
+  }
+
+  async updateContactHideSettingWithOptions(request: UpdateContactHideSettingRequest, headers: UpdateContactHideSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateContactHideSettingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.objectStaffIds)) {
+      body["objectStaffIds"] = request.objectStaffIds;
+    }
+
+    if (!Util.isUnset(request.objectDeptIds)) {
+      body["objectDeptIds"] = request.objectDeptIds;
+    }
+
+    if (!Util.isUnset(request.objectTagIds)) {
+      body["objectTagIds"] = request.objectTagIds;
+    }
+
+    if (!Util.isUnset(request.excludeStaffIds)) {
+      body["excludeStaffIds"] = request.excludeStaffIds;
+    }
+
+    if (!Util.isUnset(request.excludeDeptIds)) {
+      body["excludeDeptIds"] = request.excludeDeptIds;
+    }
+
+    if (!Util.isUnset(request.excludeTagIds)) {
+      body["excludeTagIds"] = request.excludeTagIds;
+    }
+
+    if (!Util.isUnset(request.active)) {
+      body["active"] = request.active;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateContactHideSettingResponse>(await this.doROARequest("UpdateContactHideSetting", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/contactHideSettings`, "json", req, runtime), new UpdateContactHideSettingResponse({}));
+  }
+
   async updateEmpAttrbuteVisibilitySetting(request: UpdateEmpAttrbuteVisibilitySettingRequest): Promise<UpdateEmpAttrbuteVisibilitySettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateEmpAttrbuteVisibilitySettingHeaders({ });
@@ -2956,6 +3341,29 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryUserManagementResourcesResponse>(await this.doROARequest("QueryUserManagementResources", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/users/${userId}/managemementResources`, "json", req, runtime), new QueryUserManagementResourcesResponse({}));
+  }
+
+  async deleteContactHideSetting(settingId: string): Promise<DeleteContactHideSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteContactHideSettingHeaders({ });
+    return await this.deleteContactHideSettingWithOptions(settingId, headers, runtime);
+  }
+
+  async deleteContactHideSettingWithOptions(settingId: string, headers: DeleteContactHideSettingHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteContactHideSettingResponse> {
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DeleteContactHideSettingResponse>(await this.doROARequest("DeleteContactHideSetting", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/contactHideSettings/${settingId}`, "none", req, runtime), new DeleteContactHideSettingResponse({}));
   }
 
   async updateUserOwnness(userId: string, request: UpdateUserOwnnessRequest): Promise<UpdateUserOwnnessResponse> {

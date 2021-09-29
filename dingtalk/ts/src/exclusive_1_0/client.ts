@@ -706,6 +706,69 @@ export class GetDocCreatedSummaryResponse extends $tea.Model {
   }
 }
 
+export class SendAppDingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendAppDingRequest extends $tea.Model {
+  userids?: string[];
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userids: 'userids',
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userids: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendAppDingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPartnerTypeByParentIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2477,6 +2540,39 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetDocCreatedSummaryResponse>(await this.doROARequest("GetDocCreatedSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/doc/org/${dataId}`, "json", req, runtime), new GetDocCreatedSummaryResponse({}));
+  }
+
+  async sendAppDing(request: SendAppDingRequest): Promise<SendAppDingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendAppDingHeaders({ });
+    return await this.sendAppDingWithOptions(request, headers, runtime);
+  }
+
+  async sendAppDingWithOptions(request: SendAppDingRequest, headers: SendAppDingHeaders, runtime: $Util.RuntimeOptions): Promise<SendAppDingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userids)) {
+      body["userids"] = request.userids;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendAppDingResponse>(await this.doROARequest("SendAppDing", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/appDings/send`, "none", req, runtime), new SendAppDingResponse({}));
   }
 
   async getPartnerTypeByParentId(parentId: string): Promise<GetPartnerTypeByParentIdResponse> {

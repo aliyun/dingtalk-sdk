@@ -178,6 +178,87 @@ export class UpdateTicketResponse extends $tea.Model {
   }
 }
 
+export class UpgradeNormalGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeNormalGroupRequest extends $tea.Model {
+  openGroupSetId?: string;
+  templateId?: string;
+  openConversationId?: string;
+  openTeamId?: string;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      openGroupSetId: 'openGroupSetId',
+      templateId: 'templateId',
+      openConversationId: 'openConversationId',
+      openTeamId: 'openTeamId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openGroupSetId: 'string',
+      templateId: 'string',
+      openConversationId: 'string',
+      openTeamId: 'string',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeNormalGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddKnowledgeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1426,6 +1507,90 @@ export class SendServiceGroupMessageResponse extends $tea.Model {
   }
 }
 
+export class UpgradeCloudGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeCloudGroupRequest extends $tea.Model {
+  openConversationId?: string;
+  templateId?: string;
+  openGroupSetId?: string;
+  ccsInstanceId?: string;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  dingIsvOrgId?: number;
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      templateId: 'templateId',
+      openGroupSetId: 'openGroupSetId',
+      ccsInstanceId: 'ccsInstanceId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingIsvOrgId: 'dingIsvOrgId',
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      templateId: 'string',
+      openGroupSetId: 'string',
+      ccsInstanceId: 'string',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      dingIsvOrgId: 'number',
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeCloudGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ResubmitTicketHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2289,6 +2454,91 @@ export class TransferTicketResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryActiveUsersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryActiveUsersRequest extends $tea.Model {
+  openTeamId?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryActiveUsersResponseBody extends $tea.Model {
+  activeUserInfos?: QueryActiveUsersResponseBodyActiveUserInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      activeUserInfos: 'activeUserInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activeUserInfos: { 'type': 'array', 'itemType': QueryActiveUsersResponseBodyActiveUserInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryActiveUsersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryActiveUsersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryActiveUsersResponseBody,
     };
   }
 
@@ -3508,6 +3758,43 @@ export class TransferTicketRequestNotify extends $tea.Model {
   }
 }
 
+export class QueryActiveUsersResponseBodyActiveUserInfos extends $tea.Model {
+  unionId?: string;
+  nickName?: string;
+  actionIndexL7d?: number;
+  actionIndexL14d?: number;
+  actionIndexL30d?: number;
+  activeScore?: number;
+  ranking?: number;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      nickName: 'nickName',
+      actionIndexL7d: 'actionIndexL7d',
+      actionIndexL14d: 'actionIndexL14d',
+      actionIndexL30d: 'actionIndexL30d',
+      activeScore: 'activeScore',
+      ranking: 'ranking',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      nickName: 'string',
+      actionIndexL7d: 'number',
+      actionIndexL14d: 'number',
+      actionIndexL30d: 'number',
+      activeScore: 'number',
+      ranking: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CancelTicketRequestTicketMemoAttachments extends $tea.Model {
   fileName?: string;
   key?: string;
@@ -3714,6 +4001,63 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateTicketResponse>(await this.doROARequest("UpdateTicket", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/tickets`, "none", req, runtime), new UpdateTicketResponse({}));
+  }
+
+  async upgradeNormalGroup(request: UpgradeNormalGroupRequest): Promise<UpgradeNormalGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpgradeNormalGroupHeaders({ });
+    return await this.upgradeNormalGroupWithOptions(request, headers, runtime);
+  }
+
+  async upgradeNormalGroupWithOptions(request: UpgradeNormalGroupRequest, headers: UpgradeNormalGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeNormalGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpgradeNormalGroupResponse>(await this.doROARequest("UpgradeNormalGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/normalGroups/upgrade`, "none", req, runtime), new UpgradeNormalGroupResponse({}));
   }
 
   async addKnowledge(request: AddKnowledgeRequest): Promise<AddKnowledgeResponse> {
@@ -4416,6 +4760,67 @@ export default class Client extends OpenApi {
     return $tea.cast<SendServiceGroupMessageResponse>(await this.doROARequest("SendServiceGroupMessage", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/messages/send`, "json", req, runtime), new SendServiceGroupMessageResponse({}));
   }
 
+  async upgradeCloudGroup(request: UpgradeCloudGroupRequest): Promise<UpgradeCloudGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpgradeCloudGroupHeaders({ });
+    return await this.upgradeCloudGroupWithOptions(request, headers, runtime);
+  }
+
+  async upgradeCloudGroupWithOptions(request: UpgradeCloudGroupRequest, headers: UpgradeCloudGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeCloudGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.openGroupSetId)) {
+      body["openGroupSetId"] = request.openGroupSetId;
+    }
+
+    if (!Util.isUnset(request.ccsInstanceId)) {
+      body["ccsInstanceId"] = request.ccsInstanceId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpgradeCloudGroupResponse>(await this.doROARequest("UpgradeCloudGroup", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/cloudGroups/upgrade`, "none", req, runtime), new UpgradeCloudGroupResponse({}));
+  }
+
   async resubmitTicket(request: ResubmitTicketRequest): Promise<ResubmitTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ResubmitTicketHeaders({ });
@@ -4973,6 +5378,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<TransferTicketResponse>(await this.doROARequest("TransferTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/transfer`, "none", req, runtime), new TransferTicketResponse({}));
+  }
+
+  async queryActiveUsers(request: QueryActiveUsersRequest): Promise<QueryActiveUsersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryActiveUsersHeaders({ });
+    return await this.queryActiveUsersWithOptions(request, headers, runtime);
+  }
+
+  async queryActiveUsersWithOptions(request: QueryActiveUsersRequest, headers: QueryActiveUsersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryActiveUsersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryActiveUsersResponse>(await this.doROARequest("QueryActiveUsers", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/groups/queryActiveUsers`, "json", req, runtime), new QueryActiveUsersResponse({}));
   }
 
   async getOssTempUrl(request: GetOssTempUrlRequest): Promise<GetOssTempUrlResponse> {

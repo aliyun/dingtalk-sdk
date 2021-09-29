@@ -400,17 +400,39 @@ export class AddWorkspaceMembersRequest extends $tea.Model {
   }
 }
 
+export class AddWorkspaceMembersResponseBody extends $tea.Model {
+  notInOrgList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      notInOrgList: 'notInOrgList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      notInOrgList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddWorkspaceMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: AddWorkspaceMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddWorkspaceMembersResponseBody,
     };
   }
 
@@ -448,6 +470,7 @@ export class CreateWorkspaceRequest extends $tea.Model {
   dingOrgId?: number;
   dingUid?: number;
   dingAccessTokenType?: string;
+  dingIsvOrgId?: number;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
@@ -456,6 +479,7 @@ export class CreateWorkspaceRequest extends $tea.Model {
       dingOrgId: 'dingOrgId',
       dingUid: 'dingUid',
       dingAccessTokenType: 'dingAccessTokenType',
+      dingIsvOrgId: 'dingIsvOrgId',
     };
   }
 
@@ -467,6 +491,7 @@ export class CreateWorkspaceRequest extends $tea.Model {
       dingOrgId: 'number',
       dingUid: 'number',
       dingAccessTokenType: 'string',
+      dingIsvOrgId: 'number',
     };
   }
 
@@ -580,6 +605,75 @@ export class DeleteWorkspaceDocMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceResponseBody extends $tea.Model {
+  url?: string;
+  isDeleted?: boolean;
+  owner?: string;
+  static names(): { [key: string]: string } {
+    return {
+      url: 'url',
+      isDeleted: 'isDeleted',
+      owner: 'owner',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      url: 'string',
+      isDeleted: 'boolean',
+      owner: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetWorkspaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetWorkspaceResponseBody,
     };
   }
 
@@ -952,7 +1046,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddWorkspaceMembersResponse>(await this.doROARequest("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "none", req, runtime), new AddWorkspaceMembersResponse({}));
+    return $tea.cast<AddWorkspaceMembersResponse>(await this.doROARequest("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "json", req, runtime), new AddWorkspaceMembersResponse({}));
   }
 
   async createWorkspace(request: CreateWorkspaceRequest): Promise<CreateWorkspaceResponse> {
@@ -986,6 +1080,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.dingAccessTokenType)) {
       body["dingAccessTokenType"] = request.dingAccessTokenType;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1037,6 +1135,29 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DeleteWorkspaceDocMembersResponse>(await this.doROARequest("DeleteWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members/remove`, "none", req, runtime), new DeleteWorkspaceDocMembersResponse({}));
+  }
+
+  async getWorkspace(workspaceId: string): Promise<GetWorkspaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetWorkspaceHeaders({ });
+    return await this.getWorkspaceWithOptions(workspaceId, headers, runtime);
+  }
+
+  async getWorkspaceWithOptions(workspaceId: string, headers: GetWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceResponse> {
+    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetWorkspaceResponse>(await this.doROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}`, "json", req, runtime), new GetWorkspaceResponse({}));
   }
 
 }

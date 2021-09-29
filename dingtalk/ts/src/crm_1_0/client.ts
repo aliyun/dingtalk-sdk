@@ -1134,10 +1134,14 @@ export class AbandonCustomerHeaders extends $tea.Model {
 export class AbandonCustomerRequest extends $tea.Model {
   operatorUserId?: string;
   instanceIdList?: string[];
+  customTrackDesc?: string;
+  optType?: string;
   static names(): { [key: string]: string } {
     return {
       operatorUserId: 'operatorUserId',
       instanceIdList: 'instanceIdList',
+      customTrackDesc: 'customTrackDesc',
+      optType: 'optType',
     };
   }
 
@@ -1145,6 +1149,8 @@ export class AbandonCustomerRequest extends $tea.Model {
     return {
       operatorUserId: 'string',
       instanceIdList: { 'type': 'array', 'itemType': 'string' },
+      customTrackDesc: 'string',
+      optType: 'string',
     };
   }
 
@@ -3504,6 +3510,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.instanceIdList)) {
       body["instanceIdList"] = request.instanceIdList;
+    }
+
+    if (!Util.isUnset(request.customTrackDesc)) {
+      body["customTrackDesc"] = request.customTrackDesc;
+    }
+
+    if (!Util.isUnset(request.optType)) {
+      body["optType"] = request.optType;
     }
 
     let realHeaders : {[key: string ]: string} = { };
