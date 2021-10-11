@@ -8,9 +8,11 @@ public class UpdateInteractiveCardRequest extends TeaModel {
     @NameInMap("outTrackId")
     public String outTrackId;
 
+    // 卡片公共主体部分数据
     @NameInMap("cardData")
     public UpdateInteractiveCardRequestCardData cardData;
 
+    // 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
@@ -29,9 +31,13 @@ public class UpdateInteractiveCardRequest extends TeaModel {
     @NameInMap("dingOauthAppId")
     public Long dingOauthAppId;
 
-    // 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+    // 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
     @NameInMap("userIdType")
     public Integer userIdType;
+
+    // 发送可交互卡片的一些功能选项
+    @NameInMap("cardOptions")
+    public UpdateInteractiveCardRequestCardOptions cardOptions;
 
     public static UpdateInteractiveCardRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInteractiveCardRequest self = new UpdateInteractiveCardRequest();
@@ -110,10 +116,20 @@ public class UpdateInteractiveCardRequest extends TeaModel {
         return this.userIdType;
     }
 
+    public UpdateInteractiveCardRequest setCardOptions(UpdateInteractiveCardRequestCardOptions cardOptions) {
+        this.cardOptions = cardOptions;
+        return this;
+    }
+    public UpdateInteractiveCardRequestCardOptions getCardOptions() {
+        return this.cardOptions;
+    }
+
     public static class UpdateInteractiveCardRequestCardData extends TeaModel {
+        // 卡片模板内容替换参数-普通文本类型
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 
+        // 卡片模板内容替换参数-多媒体类型
         @NameInMap("cardMediaIdParamMap")
         public java.util.Map<String, String> cardMediaIdParamMap;
 
@@ -136,6 +152,38 @@ public class UpdateInteractiveCardRequest extends TeaModel {
         }
         public java.util.Map<String, String> getCardMediaIdParamMap() {
             return this.cardMediaIdParamMap;
+        }
+
+    }
+
+    public static class UpdateInteractiveCardRequestCardOptions extends TeaModel {
+        // 按key更新cardData数据(不填默认覆盖更新)
+        @NameInMap("updateCardDataByKey")
+        public Boolean updateCardDataByKey;
+
+        // 按key更新privateData用户数据(不填默认覆盖更新)
+        @NameInMap("updatePrivateDataByKey")
+        public Boolean updatePrivateDataByKey;
+
+        public static UpdateInteractiveCardRequestCardOptions build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInteractiveCardRequestCardOptions self = new UpdateInteractiveCardRequestCardOptions();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateInteractiveCardRequestCardOptions setUpdateCardDataByKey(Boolean updateCardDataByKey) {
+            this.updateCardDataByKey = updateCardDataByKey;
+            return this;
+        }
+        public Boolean getUpdateCardDataByKey() {
+            return this.updateCardDataByKey;
+        }
+
+        public UpdateInteractiveCardRequestCardOptions setUpdatePrivateDataByKey(Boolean updatePrivateDataByKey) {
+            this.updatePrivateDataByKey = updatePrivateDataByKey;
+            return this;
+        }
+        public Boolean getUpdatePrivateDataByKey() {
+            return this.updatePrivateDataByKey;
         }
 
     }

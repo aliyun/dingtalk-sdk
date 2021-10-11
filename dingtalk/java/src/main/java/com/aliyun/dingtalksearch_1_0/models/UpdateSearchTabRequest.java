@@ -8,7 +8,7 @@ public class UpdateSearchTabRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
-    // 数据源优先级，数值越大优先级越高
+    // 数据源优先级，数值越小优先级越高
     @NameInMap("priority")
     public Integer priority;
 

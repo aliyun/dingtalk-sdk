@@ -86,6 +86,10 @@ public class QueryAllTracksResponseBody extends TeaModel {
         @NameInMap("bizId")
         public String bizId;
 
+        // 动态加密主键
+        @NameInMap("id")
+        public String id;
+
         public static QueryAllTracksResponseBodyValues build(java.util.Map<String, ?> map) throws Exception {
             QueryAllTracksResponseBodyValues self = new QueryAllTracksResponseBodyValues();
             return TeaModel.build(map, self);
@@ -145,6 +149,14 @@ public class QueryAllTracksResponseBody extends TeaModel {
         }
         public String getBizId() {
             return this.bizId;
+        }
+
+        public QueryAllTracksResponseBodyValues setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
         }
 
     }

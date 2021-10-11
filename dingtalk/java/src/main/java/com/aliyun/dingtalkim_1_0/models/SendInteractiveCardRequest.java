@@ -15,7 +15,7 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 接收人userId列表
+    // 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 
@@ -44,10 +44,11 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    // 卡片公共主体部分数据
     @NameInMap("cardData")
     public SendInteractiveCardRequestCardData cardData;
 
-    // 指定用户可见的按钮列表（key：用户userId；value：用户数据）
+    // 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
@@ -58,7 +59,7 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("chatBotId")
     public String chatBotId;
 
-    // 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+    // 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
     @NameInMap("userIdType")
     public Integer userIdType;
 
