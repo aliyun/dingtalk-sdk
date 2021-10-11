@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetMigrationUnionIdByUnionIdResponseBody : TeaModel {
         /// <summary>
-        /// migrationUnionId
+        /// migrationUnionIdList
         /// </summary>
-        [NameInMap("migrationUnionId")]
+        [NameInMap("migrationUnionIdList")]
         [Validation(Required=false)]
-        public string MigrationUnionId { get; set; }
+        public Dictionary<string, object> MigrationUnionIdList { get; set; }
 
     }
 

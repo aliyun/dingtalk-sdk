@@ -1652,9 +1652,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["dingSuiteKey"] = request.DingSuiteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Medias))
             {
-                body["mediaId"] = request.MediaId;
+                body["medias"] = request.Medias;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutputFileName))
             {
@@ -1709,9 +1709,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["dingSuiteKey"] = request.DingSuiteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Medias))
             {
-                body["mediaId"] = request.MediaId;
+                body["medias"] = request.Medias;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutputFileName))
             {
