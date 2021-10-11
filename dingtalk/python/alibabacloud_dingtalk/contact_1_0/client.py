@@ -1523,8 +1523,8 @@ class Client(OpenApiClient):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         if not UtilClient.is_unset(request.ding_suite_key):
             body['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.media_id):
-            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.medias):
+            body['medias'] = request.medias
         if not UtilClient.is_unset(request.output_file_name):
             body['outputFileName'] = request.output_file_name
         if not UtilClient.is_unset(request.union_id):
@@ -1563,8 +1563,8 @@ class Client(OpenApiClient):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         if not UtilClient.is_unset(request.ding_suite_key):
             body['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.media_id):
-            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.medias):
+            body['medias'] = request.medias
         if not UtilClient.is_unset(request.output_file_name):
             body['outputFileName'] = request.output_file_name
         if not UtilClient.is_unset(request.union_id):

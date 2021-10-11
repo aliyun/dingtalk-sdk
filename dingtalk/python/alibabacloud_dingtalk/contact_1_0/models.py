@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class SortUserHeaders(TeaModel):
@@ -2397,10 +2397,10 @@ class GetMigrationUnionIdByUnionIdRequest(TeaModel):
 class GetMigrationUnionIdByUnionIdResponseBody(TeaModel):
     def __init__(
         self,
-        migration_union_id: str = None,
+        migration_union_id_list: Dict[str, Any] = None,
     ):
-        # migrationUnionId
-        self.migration_union_id = migration_union_id
+        # migrationUnionIdList
+        self.migration_union_id_list = migration_union_id_list
 
     def validate(self):
         pass
@@ -2411,14 +2411,14 @@ class GetMigrationUnionIdByUnionIdResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.migration_union_id is not None:
-            result['migrationUnionId'] = self.migration_union_id
+        if self.migration_union_id_list is not None:
+            result['migrationUnionIdList'] = self.migration_union_id_list
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('migrationUnionId') is not None:
-            self.migration_union_id = m.get('migrationUnionId')
+        if m.get('migrationUnionIdList') is not None:
+            self.migration_union_id_list = m.get('migrationUnionIdList')
         return self
 
 
@@ -3382,7 +3382,7 @@ class TranslateFileRequest(TeaModel):
         ding_org_id: int = None,
         ding_isv_org_id: int = None,
         ding_suite_key: str = None,
-        media_id: str = None,
+        medias: Dict[str, str] = None,
         output_file_name: str = None,
         union_id: str = None,
         request_id: str = None,
@@ -3392,9 +3392,9 @@ class TranslateFileRequest(TeaModel):
         self.ding_org_id = ding_org_id
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_suite_key = ding_suite_key
-        # 钉盘mediaId，#号开头。可以通过单步上传api获取
-        self.media_id = media_id
-        # 转译后文件名（含扩展名）
+        # key为钉盘文件mediaId，#号开头。只支持xlsx，xls，csv，txt文件。 value为文件名，包含文件扩展名。 不超过20个文件，可以调用单步文件上传接口获取。
+        self.medias = medias
+        # 若medias中文件个数大于1，则该字段必填。 转译完打包的文件名，不需带后缀。钉钉后台会打包成zip压缩文件，并自动拼接上.zip后缀。
         self.output_file_name = output_file_name
         # unionId
         self.union_id = union_id
@@ -3418,8 +3418,8 @@ class TranslateFileRequest(TeaModel):
             result['dingIsvOrgId'] = self.ding_isv_org_id
         if self.ding_suite_key is not None:
             result['dingSuiteKey'] = self.ding_suite_key
-        if self.media_id is not None:
-            result['mediaId'] = self.media_id
+        if self.medias is not None:
+            result['medias'] = self.medias
         if self.output_file_name is not None:
             result['outputFileName'] = self.output_file_name
         if self.union_id is not None:
@@ -3440,8 +3440,8 @@ class TranslateFileRequest(TeaModel):
             self.ding_isv_org_id = m.get('dingIsvOrgId')
         if m.get('dingSuiteKey') is not None:
             self.ding_suite_key = m.get('dingSuiteKey')
-        if m.get('mediaId') is not None:
-            self.media_id = m.get('mediaId')
+        if m.get('medias') is not None:
+            self.medias = m.get('medias')
         if m.get('outputFileName') is not None:
             self.output_file_name = m.get('outputFileName')
         if m.get('unionId') is not None:
@@ -4014,10 +4014,10 @@ class GetMigrationDingIdByDingIdRequest(TeaModel):
 class GetMigrationDingIdByDingIdResponseBody(TeaModel):
     def __init__(
         self,
-        migration_ding_id: str = None,
+        migration_ding_id_list: Dict[str, Any] = None,
     ):
-        # migrationDingId
-        self.migration_ding_id = migration_ding_id
+        # migrationDingIdList
+        self.migration_ding_id_list = migration_ding_id_list
 
     def validate(self):
         pass
@@ -4028,14 +4028,14 @@ class GetMigrationDingIdByDingIdResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.migration_ding_id is not None:
-            result['migrationDingId'] = self.migration_ding_id
+        if self.migration_ding_id_list is not None:
+            result['migrationDingIdList'] = self.migration_ding_id_list
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('migrationDingId') is not None:
-            self.migration_ding_id = m.get('migrationDingId')
+        if m.get('migrationDingIdList') is not None:
+            self.migration_ding_id_list = m.get('migrationDingIdList')
         return self
 
 
