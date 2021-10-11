@@ -9,13 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetMigrationUnionIdByUnionIdResponseBody extends Model
 {
     /**
-     * @description migrationUnionId
+     * @description migrationUnionIdList
      *
-     * @var string
+     * @var mixed[]
      */
-    public $migrationUnionId;
+    public $migrationUnionIdList;
     protected $_name = [
-        'migrationUnionId' => 'migrationUnionId',
+        'migrationUnionIdList' => 'migrationUnionIdList',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class GetMigrationUnionIdByUnionIdResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->migrationUnionId) {
-            $res['migrationUnionId'] = $this->migrationUnionId;
+        if (null !== $this->migrationUnionIdList) {
+            $res['migrationUnionIdList'] = $this->migrationUnionIdList;
         }
 
         return $res;
@@ -40,8 +40,8 @@ class GetMigrationUnionIdByUnionIdResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['migrationUnionId'])) {
-            $model->migrationUnionId = $map['migrationUnionId'];
+        if (isset($map['migrationUnionIdList'])) {
+            $model->migrationUnionIdList = $map['migrationUnionIdList'];
         }
 
         return $model;

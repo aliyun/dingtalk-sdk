@@ -1119,8 +1119,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingSuiteKey)) {
             @$body['dingSuiteKey'] = $request->dingSuiteKey;
         }
-        if (!Utils::isUnset($request->mediaId)) {
-            @$body['mediaId'] = $request->mediaId;
+        if (!Utils::isUnset($request->medias)) {
+            @$body['medias'] = $request->medias;
         }
         if (!Utils::isUnset($request->outputFileName)) {
             @$body['outputFileName'] = $request->outputFileName;

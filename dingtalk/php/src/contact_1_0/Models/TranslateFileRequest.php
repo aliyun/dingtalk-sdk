@@ -29,14 +29,14 @@ class TranslateFileRequest extends Model
     public $dingSuiteKey;
 
     /**
-     * @description 钉盘mediaId，#号开头。可以通过单步上传api获取
+     * @description key为钉盘文件mediaId，#号开头。只支持xlsx，xls，csv，txt文件。 value为文件名，包含文件扩展名。 不超过20个文件，可以调用单步文件上传接口获取。
      *
-     * @var string
+     * @var string[]
      */
-    public $mediaId;
+    public $medias;
 
     /**
-     * @description 转译后文件名（含扩展名）
+     * @description 若medias中文件个数大于1，则该字段必填。 转译完打包的文件名，不需带后缀。钉钉后台会打包成zip压缩文件，并自动拼接上.zip后缀。
      *
      * @var string
      */
@@ -63,7 +63,7 @@ class TranslateFileRequest extends Model
         'dingOrgId'          => 'dingOrgId',
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingSuiteKey'       => 'dingSuiteKey',
-        'mediaId'            => 'mediaId',
+        'medias'             => 'medias',
         'outputFileName'     => 'outputFileName',
         'unionId'            => 'unionId',
         'requestId'          => 'RequestId',
@@ -89,8 +89,8 @@ class TranslateFileRequest extends Model
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
         }
-        if (null !== $this->mediaId) {
-            $res['mediaId'] = $this->mediaId;
+        if (null !== $this->medias) {
+            $res['medias'] = $this->medias;
         }
         if (null !== $this->outputFileName) {
             $res['outputFileName'] = $this->outputFileName;
@@ -128,8 +128,8 @@ class TranslateFileRequest extends Model
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
         }
-        if (isset($map['mediaId'])) {
-            $model->mediaId = $map['mediaId'];
+        if (isset($map['medias'])) {
+            $model->medias = $map['medias'];
         }
         if (isset($map['outputFileName'])) {
             $model->outputFileName = $map['outputFileName'];
