@@ -4,21 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMigrationUnionIdByUnionIdResponseBody extends TeaModel {
-    // migrationUnionId
-    @NameInMap("migrationUnionId")
-    public String migrationUnionId;
+    // migrationUnionIdList
+    @NameInMap("migrationUnionIdList")
+    public java.util.Map<String, ?> migrationUnionIdList;
 
     public static GetMigrationUnionIdByUnionIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetMigrationUnionIdByUnionIdResponseBody self = new GetMigrationUnionIdByUnionIdResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetMigrationUnionIdByUnionIdResponseBody setMigrationUnionId(String migrationUnionId) {
-        this.migrationUnionId = migrationUnionId;
+    public GetMigrationUnionIdByUnionIdResponseBody setMigrationUnionIdList(java.util.Map<String, ?> migrationUnionIdList) {
+        this.migrationUnionIdList = migrationUnionIdList;
         return this;
     }
-    public String getMigrationUnionId() {
-        return this.migrationUnionId;
+    public java.util.Map<String, ?> getMigrationUnionIdList() {
+        return this.migrationUnionIdList;
     }
 
 }

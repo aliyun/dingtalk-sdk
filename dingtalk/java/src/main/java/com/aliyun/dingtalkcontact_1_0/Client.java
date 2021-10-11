@@ -779,8 +779,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dingSuiteKey", request.dingSuiteKey);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
-            body.put("mediaId", request.mediaId);
+        if (!com.aliyun.teautil.Common.isUnset(request.medias)) {
+            body.put("medias", request.medias);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.outputFileName)) {
