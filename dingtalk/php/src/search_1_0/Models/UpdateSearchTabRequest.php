@@ -16,7 +16,7 @@ class UpdateSearchTabRequest extends Model
     public $name;
 
     /**
-     * @description 数据源优先级，数值越大优先级越高
+     * @description 数据源优先级，数值越小优先级越高
      *
      * @var int
      */

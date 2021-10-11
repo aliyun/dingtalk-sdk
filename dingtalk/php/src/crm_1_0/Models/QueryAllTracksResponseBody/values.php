@@ -56,6 +56,13 @@ class values extends Model
      * @var string
      */
     public $bizId;
+
+    /**
+     * @description 动态加密主键
+     *
+     * @var string
+     */
+    public $id;
     protected $_name = [
         'corpId'     => 'corpId',
         'customerId' => 'customerId',
@@ -64,6 +71,7 @@ class values extends Model
         'gmtCreate'  => 'gmtCreate',
         'creator'    => 'creator',
         'bizId'      => 'bizId',
+        'id'         => 'id',
     ];
 
     public function validate()
@@ -93,6 +101,9 @@ class values extends Model
         }
         if (null !== $this->bizId) {
             $res['bizId'] = $this->bizId;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
 
         return $res;
@@ -126,6 +137,9 @@ class values extends Model
         }
         if (isset($map['bizId'])) {
             $model->bizId = $map['bizId'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
 
         return $model;

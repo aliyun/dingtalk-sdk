@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateInteractiveCardRequest\cardData;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateInteractiveCardRequest\cardOptions;
 use AlibabaCloud\Tea\Model;
 
 class UpdateInteractiveCardRequest extends Model
@@ -17,11 +18,15 @@ class UpdateInteractiveCardRequest extends Model
     public $outTrackId;
 
     /**
+     * @description 卡片公共主体部分数据
+     *
      * @var cardData
      */
     public $cardData;
 
     /**
+     * @description 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
+     *
      * @var PrivateDataValue[]
      */
     public $privateData;
@@ -52,11 +57,18 @@ class UpdateInteractiveCardRequest extends Model
     public $dingOauthAppId;
 
     /**
-     * @description 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+     * @description 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
      *
      * @var int
      */
     public $userIdType;
+
+    /**
+     * @description 发送可交互卡片的一些功能选项
+     *
+     * @var cardOptions
+     */
+    public $cardOptions;
     protected $_name = [
         'outTrackId'         => 'outTrackId',
         'cardData'           => 'cardData',
@@ -67,6 +79,7 @@ class UpdateInteractiveCardRequest extends Model
         'dingSuiteKey'       => 'dingSuiteKey',
         'dingOauthAppId'     => 'dingOauthAppId',
         'userIdType'         => 'userIdType',
+        'cardOptions'        => 'cardOptions',
     ];
 
     public function validate()
@@ -108,6 +121,9 @@ class UpdateInteractiveCardRequest extends Model
         if (null !== $this->userIdType) {
             $res['userIdType'] = $this->userIdType;
         }
+        if (null !== $this->cardOptions) {
+            $res['cardOptions'] = null !== $this->cardOptions ? $this->cardOptions->toMap() : null;
+        }
 
         return $res;
     }
@@ -146,6 +162,9 @@ class UpdateInteractiveCardRequest extends Model
         }
         if (isset($map['userIdType'])) {
             $model->userIdType = $map['userIdType'];
+        }
+        if (isset($map['cardOptions'])) {
+            $model->cardOptions = cardOptions::fromMap($map['cardOptions']);
         }
 
         return $model;
