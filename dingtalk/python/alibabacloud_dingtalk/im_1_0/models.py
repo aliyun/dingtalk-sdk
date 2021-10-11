@@ -428,7 +428,7 @@ class SendInteractiveCardRequest(TeaModel):
         self.card_template_id = card_template_id
         # 接收卡片的群的openConversationId
         self.open_conversation_id = open_conversation_id
-        # 接收人userId列表
+        # 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
         self.receiver_user_id_list = receiver_user_id_list
         self.ding_token_grant_type = ding_token_grant_type
         # 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
@@ -441,13 +441,14 @@ class SendInteractiveCardRequest(TeaModel):
         self.conversation_type = conversation_type
         # 可控制卡片回调时的路由Key，用于指定特定的callbackUrl【可空：不填写默认用企业的回调地址】
         self.callback_route_key = callback_route_key
+        # 卡片公共主体部分数据
         self.card_data = card_data
-        # 指定用户可见的按钮列表（key：用户userId；value：用户数据）
+        # 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
         self.private_data = private_data
         self.ding_oauth_app_id = ding_oauth_app_id
         # 【robotCode & chatBotId二选一必填】机器人ID（企业机器人）
         self.chat_bot_id = chat_bot_id
-        # 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+        # 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
         self.user_id_type = user_id_type
         # 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
         self.at_open_ids = at_open_ids
@@ -688,7 +689,9 @@ class UpdateInteractiveCardRequestCardData(TeaModel):
         card_param_map: Dict[str, str] = None,
         card_media_id_param_map: Dict[str, str] = None,
     ):
+        # 卡片模板内容替换参数-普通文本类型
         self.card_param_map = card_param_map
+        # 卡片模板内容替换参数-多媒体类型
         self.card_media_id_param_map = card_media_id_param_map
 
     def validate(self):
@@ -715,6 +718,41 @@ class UpdateInteractiveCardRequestCardData(TeaModel):
         return self
 
 
+class UpdateInteractiveCardRequestCardOptions(TeaModel):
+    def __init__(
+        self,
+        update_card_data_by_key: bool = None,
+        update_private_data_by_key: bool = None,
+    ):
+        # 按key更新cardData数据(不填默认覆盖更新)
+        self.update_card_data_by_key = update_card_data_by_key
+        # 按key更新privateData用户数据(不填默认覆盖更新)
+        self.update_private_data_by_key = update_private_data_by_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.update_card_data_by_key is not None:
+            result['updateCardDataByKey'] = self.update_card_data_by_key
+        if self.update_private_data_by_key is not None:
+            result['updatePrivateDataByKey'] = self.update_private_data_by_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('updateCardDataByKey') is not None:
+            self.update_card_data_by_key = m.get('updateCardDataByKey')
+        if m.get('updatePrivateDataByKey') is not None:
+            self.update_private_data_by_key = m.get('updatePrivateDataByKey')
+        return self
+
+
 class UpdateInteractiveCardRequest(TeaModel):
     def __init__(
         self,
@@ -727,18 +765,23 @@ class UpdateInteractiveCardRequest(TeaModel):
         ding_suite_key: str = None,
         ding_oauth_app_id: int = None,
         user_id_type: int = None,
+        card_options: UpdateInteractiveCardRequestCardOptions = None,
     ):
         # 唯一标识一张卡片的外部ID
         self.out_track_id = out_track_id
+        # 卡片公共主体部分数据
         self.card_data = card_data
+        # 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
         self.private_data = private_data
         self.ding_token_grant_type = ding_token_grant_type
         self.ding_org_id = ding_org_id
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_suite_key = ding_suite_key
         self.ding_oauth_app_id = ding_oauth_app_id
-        # 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+        # 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
         self.user_id_type = user_id_type
+        # 发送可交互卡片的一些功能选项
+        self.card_options = card_options
 
     def validate(self):
         if self.card_data:
@@ -747,6 +790,8 @@ class UpdateInteractiveCardRequest(TeaModel):
             for v in self.private_data.values():
                 if v:
                     v.validate()
+        if self.card_options:
+            self.card_options.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -774,6 +819,8 @@ class UpdateInteractiveCardRequest(TeaModel):
             result['dingOauthAppId'] = self.ding_oauth_app_id
         if self.user_id_type is not None:
             result['userIdType'] = self.user_id_type
+        if self.card_options is not None:
+            result['cardOptions'] = self.card_options.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -800,6 +847,9 @@ class UpdateInteractiveCardRequest(TeaModel):
             self.ding_oauth_app_id = m.get('dingOauthAppId')
         if m.get('userIdType') is not None:
             self.user_id_type = m.get('userIdType')
+        if m.get('cardOptions') is not None:
+            temp_model = UpdateInteractiveCardRequestCardOptions()
+            self.card_options = temp_model.from_map(m['cardOptions'])
         return self
 
 

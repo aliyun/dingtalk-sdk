@@ -4994,6 +4994,7 @@ class QueryAllTracksResponseBodyValues(TeaModel):
         gmt_create: int = None,
         creator: str = None,
         biz_id: str = None,
+        id: str = None,
     ):
         # 企业id
         self.corp_id = corp_id
@@ -5009,6 +5010,8 @@ class QueryAllTracksResponseBodyValues(TeaModel):
         self.creator = creator
         # 动态外键
         self.biz_id = biz_id
+        # 动态加密主键
+        self.id = id
 
     def validate(self):
         pass
@@ -5033,6 +5036,8 @@ class QueryAllTracksResponseBodyValues(TeaModel):
             result['creator'] = self.creator
         if self.biz_id is not None:
             result['bizId'] = self.biz_id
+        if self.id is not None:
+            result['id'] = self.id
         return result
 
     def from_map(self, m: dict = None):
@@ -5051,6 +5056,8 @@ class QueryAllTracksResponseBodyValues(TeaModel):
             self.creator = m.get('creator')
         if m.get('bizId') is not None:
             self.biz_id = m.get('bizId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
         return self
 
 

@@ -373,6 +373,8 @@ class Client(OpenApiClient):
             body['dingOauthAppId'] = request.ding_oauth_app_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -413,6 +415,8 @@ class Client(OpenApiClient):
             body['dingOauthAppId'] = request.ding_oauth_app_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

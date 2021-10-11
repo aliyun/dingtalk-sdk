@@ -55,7 +55,7 @@ class GetSearchTabResponseBody(TeaModel):
         self.tab_id = tab_id
         # 数据源名称
         self.name = name
-        # 数据源优先级，数值越大优先级越高
+        # 数据源优先级，数值越小优先级越高
         self.priority = priority
         # 数据源状态，1表示上线，0表示下线
         self.status = status
@@ -509,7 +509,7 @@ class CreateSearchTabRequest(TeaModel):
     ):
         # 数据源名称
         self.name = name
-        # 数据源优先级，数值越大优先级越高
+        # 数据源优先级，数值越小优先级越高
         self.priority = priority
         # 数据源状态，1表示上线，0表示下线
         self.status = status
@@ -709,7 +709,7 @@ class UpdateSearchTabRequest(TeaModel):
     ):
         # 数据源名称
         self.name = name
-        # 数据源优先级，数值越大优先级越高
+        # 数据源优先级，数值越小优先级越高
         self.priority = priority
         # 数据源状态，1表示上线，0表示下线
         self.status = status
