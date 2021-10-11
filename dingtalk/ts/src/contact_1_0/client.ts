@@ -1237,16 +1237,16 @@ export class GetMigrationUnionIdByUnionIdRequest extends $tea.Model {
 }
 
 export class GetMigrationUnionIdByUnionIdResponseBody extends $tea.Model {
-  migrationUnionId?: string;
+  migrationUnionIdList?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
-      migrationUnionId: 'migrationUnionId',
+      migrationUnionIdList: 'migrationUnionIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      migrationUnionId: 'string',
+      migrationUnionIdList: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
@@ -1750,7 +1750,7 @@ export class TranslateFileRequest extends $tea.Model {
   dingOrgId?: number;
   dingIsvOrgId?: number;
   dingSuiteKey?: string;
-  mediaId?: string;
+  medias?: { [key: string]: string };
   outputFileName?: string;
   unionId?: string;
   requestId?: string;
@@ -1761,7 +1761,7 @@ export class TranslateFileRequest extends $tea.Model {
       dingOrgId: 'dingOrgId',
       dingIsvOrgId: 'dingIsvOrgId',
       dingSuiteKey: 'dingSuiteKey',
-      mediaId: 'mediaId',
+      medias: 'medias',
       outputFileName: 'outputFileName',
       unionId: 'unionId',
       requestId: 'RequestId',
@@ -1775,7 +1775,7 @@ export class TranslateFileRequest extends $tea.Model {
       dingOrgId: 'number',
       dingIsvOrgId: 'number',
       dingSuiteKey: 'string',
-      mediaId: 'string',
+      medias: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       outputFileName: 'string',
       unionId: 'string',
       requestId: 'string',
@@ -2137,16 +2137,16 @@ export class GetMigrationDingIdByDingIdRequest extends $tea.Model {
 }
 
 export class GetMigrationDingIdByDingIdResponseBody extends $tea.Model {
-  migrationDingId?: string;
+  migrationDingIdList?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
-      migrationDingId: 'migrationDingId',
+      migrationDingIdList: 'migrationDingIdList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      migrationDingId: 'string',
+      migrationDingIdList: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
@@ -3645,8 +3645,8 @@ export default class Client extends OpenApi {
       body["dingSuiteKey"] = request.dingSuiteKey;
     }
 
-    if (!Util.isUnset(request.mediaId)) {
-      body["mediaId"] = request.mediaId;
+    if (!Util.isUnset(request.medias)) {
+      body["medias"] = request.medias;
     }
 
     if (!Util.isUnset(request.outputFileName)) {
