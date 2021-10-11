@@ -353,6 +353,7 @@ export class UpdateInteractiveCardRequest extends $tea.Model {
   dingSuiteKey?: string;
   dingOauthAppId?: number;
   userIdType?: number;
+  cardOptions?: UpdateInteractiveCardRequestCardOptions;
   static names(): { [key: string]: string } {
     return {
       outTrackId: 'outTrackId',
@@ -364,6 +365,7 @@ export class UpdateInteractiveCardRequest extends $tea.Model {
       dingSuiteKey: 'dingSuiteKey',
       dingOauthAppId: 'dingOauthAppId',
       userIdType: 'userIdType',
+      cardOptions: 'cardOptions',
     };
   }
 
@@ -378,6 +380,7 @@ export class UpdateInteractiveCardRequest extends $tea.Model {
       dingSuiteKey: 'string',
       dingOauthAppId: 'number',
       userIdType: 'number',
+      cardOptions: UpdateInteractiveCardRequestCardOptions,
     };
   }
 
@@ -1047,6 +1050,28 @@ export class UpdateInteractiveCardRequestCardData extends $tea.Model {
   }
 }
 
+export class UpdateInteractiveCardRequestCardOptions extends $tea.Model {
+  updateCardDataByKey?: boolean;
+  updatePrivateDataByKey?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      updateCardDataByKey: 'updateCardDataByKey',
+      updatePrivateDataByKey: 'updatePrivateDataByKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      updateCardDataByKey: 'boolean',
+      updatePrivateDataByKey: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
   cardParamMap?: { [key: string]: string };
   cardMediaIdParamMap?: { [key: string]: string };
@@ -1356,6 +1381,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.userIdType)) {
       body["userIdType"] = request.userIdType;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.cardOptions))) {
+      body["cardOptions"] = request.cardOptions;
     }
 
     let realHeaders : {[key: string ]: string} = { };

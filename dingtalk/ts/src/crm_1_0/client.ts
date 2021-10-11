@@ -2960,6 +2960,7 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
   gmtCreate?: number;
   creator?: string;
   bizId?: string;
+  id?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
@@ -2969,6 +2970,7 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
       gmtCreate: 'gmtCreate',
       creator: 'creator',
       bizId: 'bizId',
+      id: 'id',
     };
   }
 
@@ -2981,6 +2983,7 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
       gmtCreate: 'number',
       creator: 'string',
       bizId: 'string',
+      id: 'string',
     };
   }
 
