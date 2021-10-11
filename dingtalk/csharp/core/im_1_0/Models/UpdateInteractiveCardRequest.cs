@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string OutTrackId { get; set; }
 
+        /// <summary>
+        /// 卡片公共主体部分数据
+        /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
         public UpdateInteractiveCardRequestCardData CardData { get; set; }
@@ -28,6 +31,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             public Dictionary<string, string> CardMediaIdParamMap { get; set; }
         };
 
+        /// <summary>
+        /// 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
+        /// </summary>
         [NameInMap("privateData")]
         [Validation(Required=false)]
         public Dictionary<string, PrivateDataValue> PrivateData { get; set; }
@@ -53,11 +59,26 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public long? DingOauthAppId { get; set; }
 
         /// <summary>
-        /// 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+        /// 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
         /// </summary>
         [NameInMap("userIdType")]
         [Validation(Required=false)]
         public int? UserIdType { get; set; }
+
+        /// <summary>
+        /// 发送可交互卡片的一些功能选项
+        /// </summary>
+        [NameInMap("cardOptions")]
+        [Validation(Required=false)]
+        public UpdateInteractiveCardRequestCardOptions CardOptions { get; set; }
+        public class UpdateInteractiveCardRequestCardOptions : TeaModel {
+            [NameInMap("updateCardDataByKey")]
+            [Validation(Required=false)]
+            public bool? UpdateCardDataByKey { get; set; }
+            [NameInMap("updatePrivateDataByKey")]
+            [Validation(Required=false)]
+            public bool? UpdatePrivateDataByKey { get; set; }
+        };
 
     }
 

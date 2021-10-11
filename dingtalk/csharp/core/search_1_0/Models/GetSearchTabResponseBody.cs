@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// 数据源优先级，数值越大优先级越高
+        /// 数据源优先级，数值越小优先级越高
         /// </summary>
         [NameInMap("priority")]
         [Validation(Required=false)]

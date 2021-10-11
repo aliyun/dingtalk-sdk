@@ -65,6 +65,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string BizId { get; set; }
 
+            /// <summary>
+            /// 动态加密主键
+            /// </summary>
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public string Id { get; set; }
+
         }
 
         /// <summary>
