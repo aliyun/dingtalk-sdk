@@ -13,6 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
+        [NameInMap("dingIsvAccessToken")]
+        [Validation(Required=false)]
+        public string DingIsvAccessToken { get; set; }
+
+        [NameInMap("dingSuiteKey")]
+        [Validation(Required=false)]
+        public string DingSuiteKey { get; set; }
+
         [NameInMap("itemCode")]
         [Validation(Required=false)]
         public string ItemCode { get; set; }
@@ -36,14 +44,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [NameInMap("quantity")]
         [Validation(Required=false)]
         public long? Quantity { get; set; }
-
-        [NameInMap("dingIsvAccessToken")]
-        [Validation(Required=false)]
-        public string DingIsvAccessToken { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
 
     }
 

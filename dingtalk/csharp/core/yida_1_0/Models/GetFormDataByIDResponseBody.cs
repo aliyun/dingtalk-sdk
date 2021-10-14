@@ -10,15 +10,46 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetFormDataByIDResponseBody : TeaModel {
         /// <summary>
+        /// 表单数据详情
+        /// </summary>
+        [NameInMap("formData")]
+        [Validation(Required=false)]
+        public Dictionary<string, object> FormData { get; set; }
+
+        /// <summary>
+        /// 表单实例ID
+        /// </summary>
+        [NameInMap("formInstId")]
+        [Validation(Required=false)]
+        public string FormInstId { get; set; }
+
+        /// <summary>
+        /// 表单ID
+        /// </summary>
+        [NameInMap("formUuid")]
+        [Validation(Required=false)]
+        public string FormUuid { get; set; }
+
+        /// <summary>
+        /// 最后修改时间
+        /// </summary>
+        [NameInMap("modifiedTimeGMT")]
+        [Validation(Required=false)]
+        public string ModifiedTimeGMT { get; set; }
+
+        /// <summary>
         /// 发起人详情
         /// </summary>
         [NameInMap("originator")]
         [Validation(Required=false)]
         public GetFormDataByIDResponseBodyOriginator Originator { get; set; }
         public class GetFormDataByIDResponseBodyOriginator : TeaModel {
-            [NameInMap("userId")]
+            [NameInMap("departmentName")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
+            public string DepartmentName { get; set; }
+            [NameInMap("email")]
+            [Validation(Required=false)]
+            public string Email { get; set; }
             [NameInMap("name")]
             [Validation(Required=false)]
             public GetFormDataByIDResponseBodyOriginatorName Name { get; set; }
@@ -45,41 +76,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 public string Type { get; set; }
 
             }
-            [NameInMap("departmentName")]
+            [NameInMap("userId")]
             [Validation(Required=false)]
-            public string DepartmentName { get; set; }
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
+            public string UserId { get; set; }
         };
-
-        /// <summary>
-        /// 最后修改时间
-        /// </summary>
-        [NameInMap("modifiedTimeGMT")]
-        [Validation(Required=false)]
-        public string ModifiedTimeGMT { get; set; }
-
-        /// <summary>
-        /// 表单ID
-        /// </summary>
-        [NameInMap("formUuid")]
-        [Validation(Required=false)]
-        public string FormUuid { get; set; }
-
-        /// <summary>
-        /// 表单实例ID
-        /// </summary>
-        [NameInMap("formInstId")]
-        [Validation(Required=false)]
-        public string FormInstId { get; set; }
-
-        /// <summary>
-        /// 表单数据详情
-        /// </summary>
-        [NameInMap("formData")]
-        [Validation(Required=false)]
-        public Dictionary<string, object> FormData { get; set; }
 
     }
 

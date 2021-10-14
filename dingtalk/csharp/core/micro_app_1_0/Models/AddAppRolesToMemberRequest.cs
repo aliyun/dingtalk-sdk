@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class AddAppRolesToMemberRequest : TeaModel {
         /// <summary>
-        /// 执行用户userId
-        /// </summary>
-        [NameInMap("opUserId")]
-        [Validation(Required=false)]
-        public string OpUserId { get; set; }
-
-        /// <summary>
         /// 人员id
         /// </summary>
         [NameInMap("memberId")]
@@ -29,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [NameInMap("memberType")]
         [Validation(Required=false)]
         public string MemberType { get; set; }
+
+        /// <summary>
+        /// 执行用户userId
+        /// </summary>
+        [NameInMap("opUserId")]
+        [Validation(Required=false)]
+        public string OpUserId { get; set; }
 
         /// <summary>
         /// 角色Id列表

@@ -17,27 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string Address { get; set; }
 
         /// <summary>
-        /// 是否是租客
-        /// </summary>
-        [NameInMap("isLeaseholder")]
-        [Validation(Required=false)]
-        public bool? IsLeaseholder { get; set; }
-
-        /// <summary>
-        /// 居民名字
-        /// </summary>
-        [NameInMap("userName")]
-        [Validation(Required=false)]
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// 手机号码
-        /// </summary>
-        [NameInMap("mobile")]
-        [Validation(Required=false)]
-        public string Mobile { get; set; }
-
-        /// <summary>
         /// 户/租户部门id
         /// </summary>
         [NameInMap("departmentId")]
@@ -68,11 +47,32 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         }
 
         /// <summary>
+        /// 是否是租客
+        /// </summary>
+        [NameInMap("isLeaseholder")]
+        [Validation(Required=false)]
+        public bool? IsLeaseholder { get; set; }
+
+        /// <summary>
+        /// 手机号码
+        /// </summary>
+        [NameInMap("mobile")]
+        [Validation(Required=false)]
+        public string Mobile { get; set; }
+
+        /// <summary>
         /// 与户主的关系
         /// </summary>
         [NameInMap("relateType")]
         [Validation(Required=false)]
         public string RelateType { get; set; }
+
+        /// <summary>
+        /// 居民名字
+        /// </summary>
+        [NameInMap("userName")]
+        [Validation(Required=false)]
+        public string UserName { get; set; }
 
     }
 

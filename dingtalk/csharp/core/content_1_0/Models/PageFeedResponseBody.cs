@@ -61,18 +61,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
         }
 
         /// <summary>
-        /// 分页参数：下一页的起始位置
-        /// </summary>
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public int? NextCursor { get; set; }
-
-        /// <summary>
         /// 分页参数：是否还有下一页，false表示没有下一页
         /// </summary>
         [NameInMap("hasNext")]
         [Validation(Required=false)]
         public bool? HasNext { get; set; }
+
+        /// <summary>
+        /// 分页参数：下一页的起始位置
+        /// </summary>
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public int? NextCursor { get; set; }
 
     }
 

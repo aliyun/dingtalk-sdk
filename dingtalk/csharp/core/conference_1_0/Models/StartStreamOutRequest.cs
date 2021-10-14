@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class StartStreamOutRequest : TeaModel {
         /// <summary>
-        /// 主持人UID
+        /// 布局
         /// </summary>
-        [NameInMap("unionId")]
+        [NameInMap("mode")]
         [Validation(Required=false)]
-        public string UnionId { get; set; }
+        public string Mode { get; set; }
 
         /// <summary>
         /// 是否需要主持人加入后才允许推流
@@ -24,29 +24,29 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public bool? NeedHostJoin { get; set; }
 
         /// <summary>
-        /// 推流地址列表, 最多10个，需要以RTMP开头
+        /// 小窗位置
         /// </summary>
-        [NameInMap("streamUrlList")]
+        [NameInMap("smallWindowPosition")]
         [Validation(Required=false)]
-        public List<string> StreamUrlList { get; set; }
+        public string SmallWindowPosition { get; set; }
 
         [NameInMap("streamName")]
         [Validation(Required=false)]
         public string StreamName { get; set; }
 
         /// <summary>
-        /// 布局
+        /// 推流地址列表, 最多10个，需要以RTMP开头
         /// </summary>
-        [NameInMap("mode")]
+        [NameInMap("streamUrlList")]
         [Validation(Required=false)]
-        public string Mode { get; set; }
+        public List<string> StreamUrlList { get; set; }
 
         /// <summary>
-        /// 小窗位置
+        /// 主持人UID
         /// </summary>
-        [NameInMap("smallWindowPosition")]
+        [NameInMap("unionId")]
         [Validation(Required=false)]
-        public string SmallWindowPosition { get; set; }
+        public string UnionId { get; set; }
 
     }
 

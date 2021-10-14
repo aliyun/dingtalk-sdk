@@ -10,53 +10,25 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetUserResponseBody : TeaModel {
         /// <summary>
-        /// 用户id
+        /// 是否激活
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("active")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public bool? Active { get; set; }
 
         /// <summary>
-        /// 员工在当前开发者企业账号范围内的唯一标识
+        /// 是否管理员
         /// </summary>
-        [NameInMap("unionId")]
+        [NameInMap("admin")]
         [Validation(Required=false)]
-        public string UnionId { get; set; }
+        public bool? Admin { get; set; }
 
         /// <summary>
-        /// 姓名
+        /// 是否老板
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("boss")]
         [Validation(Required=false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 员工工号
-        /// </summary>
-        [NameInMap("jobNumber")]
-        [Validation(Required=false)]
-        public string JobNumber { get; set; }
-
-        /// <summary>
-        /// 职位
-        /// </summary>
-        [NameInMap("title")]
-        [Validation(Required=false)]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// 办公地点
-        /// </summary>
-        [NameInMap("workPlace")]
-        [Validation(Required=false)]
-        public string WorkPlace { get; set; }
-
-        /// <summary>
-        /// 备注
-        /// </summary>
-        [NameInMap("remark")]
-        [Validation(Required=false)]
-        public string Remark { get; set; }
+        public bool? Boss { get; set; }
 
         /// <summary>
         /// 所属部门id列表
@@ -89,6 +61,20 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         }
 
         /// <summary>
+        /// 是否专属帐号
+        /// </summary>
+        [NameInMap("exclusiveAccount")]
+        [Validation(Required=false)]
+        public bool? ExclusiveAccount { get; set; }
+
+        /// <summary>
+        /// 专属帐号类型：{sso: 企业自定义idp;dingtalk: 钉钉idp}
+        /// </summary>
+        [NameInMap("exclusiveAccountType")]
+        [Validation(Required=false)]
+        public string ExclusiveAccountType { get; set; }
+
+        /// <summary>
         /// 扩展属性，长度最大2000个字符。可以设置多种属性（手机上最多显示10个扩展属性，具体显示哪些属性，请到OA管理后台->设置->通讯录信息设置和OA管理后台->设置->手机端显示信息设置）。 该字段的值支持链接类型填写，同时链接支持变量通配符自动替换，目前支持通配符有：userid，corpid。示例： [工位地址](http://www.dingtalk.com?userid=#userid#&corpid=#corpid#)
         /// </summary>
         [NameInMap("extension")]
@@ -103,53 +89,11 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public long? HiredDate { get; set; }
 
         /// <summary>
-        /// 是否激活
+        /// 员工工号
         /// </summary>
-        [NameInMap("active")]
+        [NameInMap("jobNumber")]
         [Validation(Required=false)]
-        public bool? Active { get; set; }
-
-        /// <summary>
-        /// 是否实名认证
-        /// </summary>
-        [NameInMap("realAuthed")]
-        [Validation(Required=false)]
-        public bool? RealAuthed { get; set; }
-
-        /// <summary>
-        /// 是否高管
-        /// </summary>
-        [NameInMap("senior")]
-        [Validation(Required=false)]
-        public bool? Senior { get; set; }
-
-        /// <summary>
-        /// 是否管理员
-        /// </summary>
-        [NameInMap("admin")]
-        [Validation(Required=false)]
-        public bool? Admin { get; set; }
-
-        /// <summary>
-        /// 是否老板
-        /// </summary>
-        [NameInMap("boss")]
-        [Validation(Required=false)]
-        public bool? Boss { get; set; }
-
-        /// <summary>
-        /// 是否专属帐号
-        /// </summary>
-        [NameInMap("exclusiveAccount")]
-        [Validation(Required=false)]
-        public bool? ExclusiveAccount { get; set; }
-
-        /// <summary>
-        /// 专属帐号类型：{sso: 企业自定义idp;dingtalk: 钉钉idp}
-        /// </summary>
-        [NameInMap("exclusiveAccountType")]
-        [Validation(Required=false)]
-        public string ExclusiveAccountType { get; set; }
+        public string JobNumber { get; set; }
 
         /// <summary>
         /// 员工在对应的部门中是否领导。
@@ -173,6 +117,34 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public bool? Leader { get; set; }
 
         }
+
+        /// <summary>
+        /// 主管的ID，仅限企业内部开发调用
+        /// </summary>
+        [NameInMap("managerUserId")]
+        [Validation(Required=false)]
+        public string ManagerUserId { get; set; }
+
+        /// <summary>
+        /// 姓名
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 是否实名认证
+        /// </summary>
+        [NameInMap("realAuthed")]
+        [Validation(Required=false)]
+        public bool? RealAuthed { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [NameInMap("remark")]
+        [Validation(Required=false)]
+        public string Remark { get; set; }
 
         /// <summary>
         /// 角色列表
@@ -205,6 +177,20 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         }
 
         /// <summary>
+        /// 是否高管
+        /// </summary>
+        [NameInMap("senior")]
+        [Validation(Required=false)]
+        public bool? Senior { get; set; }
+
+        /// <summary>
+        /// 职位
+        /// </summary>
+        [NameInMap("title")]
+        [Validation(Required=false)]
+        public string Title { get; set; }
+
+        /// <summary>
         /// 关联信息
         /// </summary>
         [NameInMap("unionEmpExt")]
@@ -227,11 +213,25 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         };
 
         /// <summary>
-        /// 主管的ID，仅限企业内部开发调用
+        /// 员工在当前开发者企业账号范围内的唯一标识
         /// </summary>
-        [NameInMap("managerUserId")]
+        [NameInMap("unionId")]
         [Validation(Required=false)]
-        public string ManagerUserId { get; set; }
+        public string UnionId { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// 办公地点
+        /// </summary>
+        [NameInMap("workPlace")]
+        [Validation(Required=false)]
+        public string WorkPlace { get; set; }
 
     }
 

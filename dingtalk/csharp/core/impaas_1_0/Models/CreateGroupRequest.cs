@@ -9,29 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class CreateGroupRequest : TeaModel {
-        [NameInMap("uuid")]
+        [NameInMap("channel")]
         [Validation(Required=false)]
-        public string Uuid { get; set; }
+        public string Channel { get; set; }
 
         [NameInMap("creatorUid")]
         [Validation(Required=false)]
         public string CreatorUid { get; set; }
 
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
-
         [NameInMap("iconMediaId")]
         [Validation(Required=false)]
         public string IconMediaId { get; set; }
 
-        [NameInMap("channel")]
+        [NameInMap("name")]
         [Validation(Required=false)]
-        public string Channel { get; set; }
+        public string Name { get; set; }
 
         [NameInMap("properties")]
         [Validation(Required=false)]
         public Dictionary<string, string> Properties { get; set; }
+
+        [NameInMap("uuid")]
+        [Validation(Required=false)]
+        public string Uuid { get; set; }
 
     }
 

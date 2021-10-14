@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DeleteWorkspaceDocMembersRequest : TeaModel {
         /// <summary>
-        /// 发起操作者unionId
-        /// </summary>
-        [NameInMap("operatorId")]
-        [Validation(Required=false)]
-        public string OperatorId { get; set; }
-
-        /// <summary>
         /// 被操作用户组
         /// </summary>
         [NameInMap("members")]
@@ -38,6 +31,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public string MemberType { get; set; }
 
         }
+
+        /// <summary>
+        /// 发起操作者unionId
+        /// </summary>
+        [NameInMap("operatorId")]
+        [Validation(Required=false)]
+        public string OperatorId { get; set; }
 
     }
 

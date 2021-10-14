@@ -10,18 +10,89 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class EditInvoiceRequest : TeaModel {
         /// <summary>
+        /// 编辑数据
+        /// </summary>
+        [NameInMap("data")]
+        [Validation(Required=false)]
+        public EditInvoiceRequestData Data { get; set; }
+        public class EditInvoiceRequestData : TeaModel {
+            [NameInMap("child_mx")]
+            [Validation(Required=false)]
+            public string ChildMx { get; set; }
+            [NameInMap("data_userid")]
+            [Validation(Required=false)]
+            public string DataUserid { get; set; }
+            [NameInMap("fh_address")]
+            [Validation(Required=false)]
+            public string FhAddress { get; set; }
+            [NameInMap("fh_customerid")]
+            [Validation(Required=false)]
+            public string FhCustomerid { get; set; }
+            [NameInMap("fh_date")]
+            [Validation(Required=false)]
+            public string FhDate { get; set; }
+            [NameInMap("fh_email")]
+            [Validation(Required=false)]
+            public string FhEmail { get; set; }
+            [NameInMap("fh_handset")]
+            [Validation(Required=false)]
+            public string FhHandset { get; set; }
+            [NameInMap("fh_htorder")]
+            [Validation(Required=false)]
+            public string FhHtorder { get; set; }
+            [NameInMap("fh_jianshu")]
+            [Validation(Required=false)]
+            public string FhJianshu { get; set; }
+            [NameInMap("fh_kg")]
+            [Validation(Required=false)]
+            public string FhKg { get; set; }
+            [NameInMap("fh_linkman")]
+            [Validation(Required=false)]
+            public string FhLinkman { get; set; }
+            [NameInMap("fh_lxrid")]
+            [Validation(Required=false)]
+            public string FhLxrid { get; set; }
+            [NameInMap("fh_mode")]
+            [Validation(Required=false)]
+            public string FhMode { get; set; }
+            [NameInMap("fh_msn")]
+            [Validation(Required=false)]
+            public string FhMsn { get; set; }
+            [NameInMap("fh_number")]
+            [Validation(Required=false)]
+            public string FhNumber { get; set; }
+            [NameInMap("fh_post")]
+            [Validation(Required=false)]
+            public string FhPost { get; set; }
+            [NameInMap("fh_preside")]
+            [Validation(Required=false)]
+            public string FhPreside { get; set; }
+            [NameInMap("fh_remark")]
+            [Validation(Required=false)]
+            public string FhRemark { get; set; }
+            [NameInMap("fh_shipper")]
+            [Validation(Required=false)]
+            public string FhShipper { get; set; }
+            [NameInMap("fh_state")]
+            [Validation(Required=false)]
+            public string FhState { get; set; }
+            [NameInMap("fh_tel")]
+            [Validation(Required=false)]
+            public string FhTel { get; set; }
+            [NameInMap("fh_title")]
+            [Validation(Required=false)]
+            public string FhTitle { get; set; }
+            [NameInMap("fh_yunfei")]
+            [Validation(Required=false)]
+            public string FhYunfei { get; set; }
+        };
+
+        /// <summary>
         /// 数据类型，固定填写169
         /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
-
-        /// <summary>
-        /// 时间戳
-        /// </summary>
-        [NameInMap("stamp")]
-        [Validation(Required=false)]
-        public long? Stamp { get; set; }
 
         /// <summary>
         /// 数据id，不填或者填0为新增数据
@@ -31,82 +102,11 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         public long? Msgid { get; set; }
 
         /// <summary>
-        /// 编辑数据
+        /// 时间戳
         /// </summary>
-        [NameInMap("data")]
+        [NameInMap("stamp")]
         [Validation(Required=false)]
-        public EditInvoiceRequestData Data { get; set; }
-        public class EditInvoiceRequestData : TeaModel {
-            [NameInMap("data_userid")]
-            [Validation(Required=false)]
-            public string DataUserid { get; set; }
-            [NameInMap("fh_customerid")]
-            [Validation(Required=false)]
-            public string FhCustomerid { get; set; }
-            [NameInMap("fh_date")]
-            [Validation(Required=false)]
-            public string FhDate { get; set; }
-            [NameInMap("fh_number")]
-            [Validation(Required=false)]
-            public string FhNumber { get; set; }
-            [NameInMap("fh_mode")]
-            [Validation(Required=false)]
-            public string FhMode { get; set; }
-            [NameInMap("fh_htorder")]
-            [Validation(Required=false)]
-            public string FhHtorder { get; set; }
-            [NameInMap("fh_title")]
-            [Validation(Required=false)]
-            public string FhTitle { get; set; }
-            [NameInMap("fh_yunfei")]
-            [Validation(Required=false)]
-            public string FhYunfei { get; set; }
-            [NameInMap("fh_jianshu")]
-            [Validation(Required=false)]
-            public string FhJianshu { get; set; }
-            [NameInMap("fh_kg")]
-            [Validation(Required=false)]
-            public string FhKg { get; set; }
-            [NameInMap("fh_shipper")]
-            [Validation(Required=false)]
-            public string FhShipper { get; set; }
-            [NameInMap("fh_preside")]
-            [Validation(Required=false)]
-            public string FhPreside { get; set; }
-            [NameInMap("fh_lxrid")]
-            [Validation(Required=false)]
-            public string FhLxrid { get; set; }
-            [NameInMap("fh_linkman")]
-            [Validation(Required=false)]
-            public string FhLinkman { get; set; }
-            [NameInMap("fh_tel")]
-            [Validation(Required=false)]
-            public string FhTel { get; set; }
-            [NameInMap("fh_handset")]
-            [Validation(Required=false)]
-            public string FhHandset { get; set; }
-            [NameInMap("fh_post")]
-            [Validation(Required=false)]
-            public string FhPost { get; set; }
-            [NameInMap("fh_address")]
-            [Validation(Required=false)]
-            public string FhAddress { get; set; }
-            [NameInMap("fh_email")]
-            [Validation(Required=false)]
-            public string FhEmail { get; set; }
-            [NameInMap("fh_msn")]
-            [Validation(Required=false)]
-            public string FhMsn { get; set; }
-            [NameInMap("fh_remark")]
-            [Validation(Required=false)]
-            public string FhRemark { get; set; }
-            [NameInMap("fh_state")]
-            [Validation(Required=false)]
-            public string FhState { get; set; }
-            [NameInMap("child_mx")]
-            [Validation(Required=false)]
-            public string ChildMx { get; set; }
-        };
+        public long? Stamp { get; set; }
 
     }
 

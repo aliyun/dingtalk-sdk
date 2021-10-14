@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DescribeCrmPersonalCustomerObjectMetaResponseBody : TeaModel {
         /// <summary>
-        /// 对象名称
-        /// </summary>
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// 是否自定义对象
         /// </summary>
         [NameInMap("customized")]
@@ -139,6 +132,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             }
 
         }
+
+        /// <summary>
+        /// 对象名称
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
 
     }
 

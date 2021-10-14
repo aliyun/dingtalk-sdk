@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class GetFlowDetailResponseBody : TeaModel {
+        [NameInMap("code")]
+        [Validation(Required=false)]
+        public int? Code { get; set; }
+
         [NameInMap("data")]
         [Validation(Required=false)]
         public GetFlowDetailResponseBodyData Data { get; set; }
@@ -35,10 +39,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
                 public long? OperateTime { get; set; }
             }
         };
-
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public int? Code { get; set; }
 
         [NameInMap("message")]
         [Validation(Required=false)]

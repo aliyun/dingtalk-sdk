@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetTaskCopiesResponseBody : TeaModel {
         /// <summary>
-        /// 当前第几页
-        /// </summary>
-        [NameInMap("pageNumber")]
-        [Validation(Required=false)]
-        public long? PageNumber { get; set; }
-
-        /// <summary>
-        /// 总数量
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
-        /// <summary>
         /// 数据
         /// </summary>
         [NameInMap("data")]
@@ -257,6 +243,20 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string OriginatorId { get; set; }
 
         }
+
+        /// <summary>
+        /// 当前第几页
+        /// </summary>
+        [NameInMap("pageNumber")]
+        [Validation(Required=false)]
+        public long? PageNumber { get; set; }
+
+        /// <summary>
+        /// 总数量
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

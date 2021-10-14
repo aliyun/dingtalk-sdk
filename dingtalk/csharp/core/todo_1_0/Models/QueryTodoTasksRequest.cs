@@ -10,6 +10,34 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class QueryTodoTasksRequest : TeaModel {
         /// <summary>
+        /// 所属分类
+        /// </summary>
+        [NameInMap("category")]
+        [Validation(Required=false)]
+        public string Category { get; set; }
+
+        /// <summary>
+        /// 查询从计划完成时间开始
+        /// </summary>
+        [NameInMap("fromDueTime")]
+        [Validation(Required=false)]
+        public long? FromDueTime { get; set; }
+
+        /// <summary>
+        /// 待办完成状态。
+        /// </summary>
+        [NameInMap("isDone")]
+        [Validation(Required=false)]
+        public bool? IsDone { get; set; }
+
+        /// <summary>
+        /// 待办回收状态
+        /// </summary>
+        [NameInMap("isRecycled")]
+        [Validation(Required=false)]
+        public bool? IsRecycled { get; set; }
+
+        /// <summary>
         /// 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
         /// </summary>
         [NameInMap("nextToken")]
@@ -31,13 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public string OrderDirection { get; set; }
 
         /// <summary>
-        /// 待办完成状态。
-        /// </summary>
-        [NameInMap("isDone")]
-        [Validation(Required=false)]
-        public bool? IsDone { get; set; }
-
-        /// <summary>
         /// 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
         /// </summary>
         [NameInMap("roleTypes")]
@@ -45,32 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public List<List<string>> RoleTypes { get; set; }
 
         /// <summary>
-        /// 查询从计划完成时间开始
-        /// </summary>
-        [NameInMap("fromDueTime")]
-        [Validation(Required=false)]
-        public long? FromDueTime { get; set; }
-
-        /// <summary>
         /// 查询到计划完成时间结束
         /// </summary>
         [NameInMap("toDueTime")]
         [Validation(Required=false)]
         public long? ToDueTime { get; set; }
-
-        /// <summary>
-        /// 所属分类
-        /// </summary>
-        [NameInMap("category")]
-        [Validation(Required=false)]
-        public string Category { get; set; }
-
-        /// <summary>
-        /// 待办回收状态
-        /// </summary>
-        [NameInMap("isRecycled")]
-        [Validation(Required=false)]
-        public bool? IsRecycled { get; set; }
 
     }
 

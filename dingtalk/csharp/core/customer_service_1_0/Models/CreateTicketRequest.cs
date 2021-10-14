@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class CreateTicketRequest : TeaModel {
         /// <summary>
-        /// 会员来源
-        /// </summary>
-        [NameInMap("sourceId")]
-        [Validation(Required=false)]
-        public string SourceId { get; set; }
-
-        /// <summary>
         /// 第三方会员ID
         /// </summary>
         [NameInMap("foreignId")]
@@ -45,20 +38,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public int? ProductionType { get; set; }
 
         /// <summary>
-        /// 工单模板ID
-        /// </summary>
-        [NameInMap("templateId")]
-        [Validation(Required=false)]
-        public string TemplateId { get; set; }
-
-        /// <summary>
-        /// 工单标题
-        /// </summary>
-        [NameInMap("title")]
-        [Validation(Required=false)]
-        public string Title { get; set; }
-
-        /// <summary>
         /// 工单表单
         /// </summary>
         [NameInMap("properties")]
@@ -74,6 +53,27 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public string Value { get; set; }
 
         }
+
+        /// <summary>
+        /// 会员来源
+        /// </summary>
+        [NameInMap("sourceId")]
+        [Validation(Required=false)]
+        public string SourceId { get; set; }
+
+        /// <summary>
+        /// 工单模板ID
+        /// </summary>
+        [NameInMap("templateId")]
+        [Validation(Required=false)]
+        public string TemplateId { get; set; }
+
+        /// <summary>
+        /// 工单标题
+        /// </summary>
+        [NameInMap("title")]
+        [Validation(Required=false)]
+        public string Title { get; set; }
 
     }
 

@@ -26,11 +26,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 工单催单操作人UnionId
+        /// 开放团队ID
         /// </summary>
-        [NameInMap("operatorUnionId")]
+        [NameInMap("openTeamId")]
         [Validation(Required=false)]
-        public string OperatorUnionId { get; set; }
+        public string OpenTeamId { get; set; }
 
         /// <summary>
         /// 工单开放id
@@ -40,15 +40,19 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string OpenTicketId { get; set; }
 
         /// <summary>
+        /// 工单催单操作人UnionId
+        /// </summary>
+        [NameInMap("operatorUnionId")]
+        [Validation(Required=false)]
+        public string OperatorUnionId { get; set; }
+
+        /// <summary>
         /// 备注
         /// </summary>
         [NameInMap("ticketMemo")]
         [Validation(Required=false)]
         public UrgeTicketRequestTicketMemo TicketMemo { get; set; }
         public class UrgeTicketRequestTicketMemo : TeaModel {
-            [NameInMap("memo")]
-            [Validation(Required=false)]
-            public string Memo { get; set; }
             [NameInMap("attachments")]
             [Validation(Required=false)]
             public List<UrgeTicketRequestTicketMemoAttachments> Attachments { get; set; }
@@ -56,14 +60,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 public string FileName { get; set; }
                 public string Key { get; set; }
             }
+            [NameInMap("memo")]
+            [Validation(Required=false)]
+            public string Memo { get; set; }
         };
-
-        /// <summary>
-        /// 开放团队ID
-        /// </summary>
-        [NameInMap("openTeamId")]
-        [Validation(Required=false)]
-        public string OpenTeamId { get; set; }
 
     }
 

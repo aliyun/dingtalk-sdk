@@ -9,6 +9,48 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class GetProcessStartUrlRequest : TeaModel {
+        [NameInMap("ccs")]
+        [Validation(Required=false)]
+        public List<GetProcessStartUrlRequestCcs> Ccs { get; set; }
+        public class GetProcessStartUrlRequestCcs : TeaModel {
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
+            [NameInMap("dingCorpId")]
+            [Validation(Required=false)]
+            public string DingCorpId { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+            [NameInMap("account")]
+            [Validation(Required=false)]
+            public string Account { get; set; }
+
+            [NameInMap("accountName")]
+            [Validation(Required=false)]
+            public string AccountName { get; set; }
+
+            [NameInMap("orgName")]
+            [Validation(Required=false)]
+            public string OrgName { get; set; }
+
+        }
+
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
+
+        [NameInMap("dingIsvAccessToken")]
+        [Validation(Required=false)]
+        public string DingIsvAccessToken { get; set; }
+
+        [NameInMap("dingSuiteKey")]
+        [Validation(Required=false)]
+        public string DingSuiteKey { get; set; }
+
         [NameInMap("files")]
         [Validation(Required=false)]
         public List<GetProcessStartUrlRequestFiles> Files { get; set; }
@@ -22,10 +64,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             public string FileName { get; set; }
 
         }
-
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
 
         [NameInMap("initiatorUserId")]
         [Validation(Required=false)]
@@ -87,44 +125,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [NameInMap("taskName")]
         [Validation(Required=false)]
         public string TaskName { get; set; }
-
-        [NameInMap("ccs")]
-        [Validation(Required=false)]
-        public List<GetProcessStartUrlRequestCcs> Ccs { get; set; }
-        public class GetProcessStartUrlRequestCcs : TeaModel {
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            [NameInMap("account")]
-            [Validation(Required=false)]
-            public string Account { get; set; }
-
-            [NameInMap("accountName")]
-            [Validation(Required=false)]
-            public string AccountName { get; set; }
-
-            [NameInMap("orgName")]
-            [Validation(Required=false)]
-            public string OrgName { get; set; }
-
-        }
-
-        [NameInMap("dingIsvAccessToken")]
-        [Validation(Required=false)]
-        public string DingIsvAccessToken { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
 
     }
 

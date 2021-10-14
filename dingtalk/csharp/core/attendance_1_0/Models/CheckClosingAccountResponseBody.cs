@@ -9,13 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class CheckClosingAccountResponseBody : TeaModel {
-        [NameInMap("mesage")]
-        [Validation(Required=false)]
-        public string Mesage { get; set; }
-
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
+
+        [NameInMap("mesage")]
+        [Validation(Required=false)]
+        public string Mesage { get; set; }
 
         [NameInMap("pass")]
         [Validation(Required=false)]

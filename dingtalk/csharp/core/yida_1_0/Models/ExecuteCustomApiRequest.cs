@@ -9,17 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ExecuteCustomApiRequest : TeaModel {
-        [NameInMap("data")]
-        [Validation(Required=false)]
-        public string Data { get; set; }
-
         [NameInMap("appType")]
         [Validation(Required=false)]
         public string AppType { get; set; }
 
-        [NameInMap("systemToken")]
+        [NameInMap("data")]
         [Validation(Required=false)]
-        public string SystemToken { get; set; }
+        public string Data { get; set; }
 
         [NameInMap("language")]
         [Validation(Required=false)]
@@ -28,6 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("serviceId")]
         [Validation(Required=false)]
         public string ServiceId { get; set; }
+
+        [NameInMap("systemToken")]
+        [Validation(Required=false)]
+        public string SystemToken { get; set; }
 
         [NameInMap("userId")]
         [Validation(Required=false)]

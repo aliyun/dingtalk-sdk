@@ -13,12 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public GetUploadInfoResponseBodyStsUploadInfo StsUploadInfo { get; set; }
         public class GetUploadInfoResponseBodyStsUploadInfo : TeaModel {
-            [NameInMap("bucket")]
-            [Validation(Required=false)]
-            public string Bucket { get; set; }
-            [NameInMap("endPoint")]
-            [Validation(Required=false)]
-            public string EndPoint { get; set; }
             [NameInMap("accessKeyId")]
             [Validation(Required=false)]
             public string AccessKeyId { get; set; }
@@ -31,6 +25,12 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [NameInMap("accessTokenExpirationMillis")]
             [Validation(Required=false)]
             public long? AccessTokenExpirationMillis { get; set; }
+            [NameInMap("bucket")]
+            [Validation(Required=false)]
+            public string Bucket { get; set; }
+            [NameInMap("endPoint")]
+            [Validation(Required=false)]
+            public string EndPoint { get; set; }
             [NameInMap("mediaId")]
             [Validation(Required=false)]
             public string MediaId { get; set; }

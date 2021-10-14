@@ -98,11 +98,25 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         };
 
         /// <summary>
+        /// 老师corpId
+        /// </summary>
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
+
+        /// <summary>
         /// 卡片幂等唯一键
         /// </summary>
         [NameInMap("identifier")]
         [Validation(Required=false)]
         public string Identifier { get; set; }
+
+        /// <summary>
+        /// 小程序版本号
+        /// </summary>
+        [NameInMap("jsVersion")]
+        [Validation(Required=false)]
+        public int? JsVersion { get; set; }
 
         /// <summary>
         /// isv业务类型
@@ -117,20 +131,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [NameInMap("userid")]
         [Validation(Required=false)]
         public string Userid { get; set; }
-
-        /// <summary>
-        /// 老师corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
-        /// 小程序版本号
-        /// </summary>
-        [NameInMap("jsVersion")]
-        [Validation(Required=false)]
-        public int? JsVersion { get; set; }
 
     }
 

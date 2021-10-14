@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class BatchSendOfficialAccountOTOMessageResponseBody : TeaModel {
         /// <summary>
+        /// 开放API
+        /// </summary>
+        [NameInMap("requestId")]
+        [Validation(Required=false)]
+        public string RequestId { get; set; }
+
+        /// <summary>
         /// result
         /// </summary>
         [NameInMap("result")]
@@ -20,13 +27,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string OpenPushId { get; set; }
         };
-
-        /// <summary>
-        /// 开放API
-        /// </summary>
-        [NameInMap("requestId")]
-        [Validation(Required=false)]
-        public string RequestId { get; set; }
 
     }
 

@@ -17,18 +17,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AppType { get; set; }
 
         /// <summary>
-        /// 验权token
+        /// 创建时间开始; 时间戳
         /// </summary>
-        [NameInMap("systemToken")]
+        [NameInMap("createFromTimeGMT")]
         [Validation(Required=false)]
-        public string SystemToken { get; set; }
+        public long? CreateFromTimeGMT { get; set; }
 
         /// <summary>
-        /// 每页记录数; 必须大于0 默认10 最大值：100
+        /// 创建时间结束; 时间戳
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("createToTimeGMT")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public long? CreateToTimeGMT { get; set; }
+
+        /// <summary>
+        /// 关键词
+        /// </summary>
+        [NameInMap("keyword")]
+        [Validation(Required=false)]
+        public string Keyword { get; set; }
 
         /// <summary>
         /// 语言环境; 可选值：zh_CN/en_US
@@ -45,18 +52,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public int? PageNumber { get; set; }
 
         /// <summary>
-        /// 关键词
+        /// 每页记录数; 必须大于0 默认10 最大值：100
         /// </summary>
-        [NameInMap("keyword")]
+        [NameInMap("pageSize")]
         [Validation(Required=false)]
-        public string Keyword { get; set; }
-
-        /// <summary>
-        /// 钉钉的userId
-        /// </summary>
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 流程code列表
@@ -66,18 +66,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string ProcessCodes { get; set; }
 
         /// <summary>
-        /// 创建时间开始; 时间戳
+        /// 验权token
         /// </summary>
-        [NameInMap("createFromTimeGMT")]
+        [NameInMap("systemToken")]
         [Validation(Required=false)]
-        public long? CreateFromTimeGMT { get; set; }
+        public string SystemToken { get; set; }
 
         /// <summary>
-        /// 创建时间结束; 时间戳
+        /// 钉钉的userId
         /// </summary>
-        [NameInMap("createToTimeGMT")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public long? CreateToTimeGMT { get; set; }
+        public string UserId { get; set; }
 
     }
 

@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public int? Code { get; set; }
 
-        [NameInMap("message")]
-        [Validation(Required=false)]
-        public string Message { get; set; }
-
         [NameInMap("data")]
         [Validation(Required=false)]
         public OrderResaleResponseBodyData Data { get; set; }
@@ -25,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             [Validation(Required=false)]
             public string EsignOrderId { get; set; }
         };
+
+        [NameInMap("message")]
+        [Validation(Required=false)]
+        public string Message { get; set; }
 
     }
 

@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetStoragePolicyResponseBody : TeaModel {
+        [NameInMap("accessKeyId")]
+        [Validation(Required=false)]
+        public string AccessKeyId { get; set; }
+
+        [NameInMap("endpoint")]
+        [Validation(Required=false)]
+        public string Endpoint { get; set; }
+
         /// <summary>
         /// Id of the request
         /// </summary>
@@ -19,14 +27,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [NameInMap("policy")]
         [Validation(Required=false)]
         public string Policy { get; set; }
-
-        [NameInMap("accessKeyId")]
-        [Validation(Required=false)]
-        public string AccessKeyId { get; set; }
-
-        [NameInMap("endpoint")]
-        [Validation(Required=false)]
-        public string Endpoint { get; set; }
 
         [NameInMap("signature")]
         [Validation(Required=false)]

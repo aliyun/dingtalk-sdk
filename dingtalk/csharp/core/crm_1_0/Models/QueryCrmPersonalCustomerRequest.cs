@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string CurrentOperatorUserId { get; set; }
 
         /// <summary>
-        /// 分页页码
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        /// <summary>
         /// 分页条数
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// 分页页码
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
         /// <summary>
         /// 查询条件

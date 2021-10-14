@@ -26,30 +26,30 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
         }
 
 
-        public RespondEventResponse RespondEvent(string userId, string calendarId, string eventId, RespondEventRequest request)
+        public AddAttendeeResponse AddAttendee(string calendarId, string eventId, string userId, AddAttendeeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RespondEventHeaders headers = new RespondEventHeaders();
-            return RespondEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
+            AddAttendeeHeaders headers = new AddAttendeeHeaders();
+            return AddAttendeeWithOptions(calendarId, eventId, userId, request, headers, runtime);
         }
 
-        public async Task<RespondEventResponse> RespondEventAsync(string userId, string calendarId, string eventId, RespondEventRequest request)
+        public async Task<AddAttendeeResponse> AddAttendeeAsync(string calendarId, string eventId, string userId, AddAttendeeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RespondEventHeaders headers = new RespondEventHeaders();
-            return await RespondEventWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
+            AddAttendeeHeaders headers = new AddAttendeeHeaders();
+            return await AddAttendeeWithOptionsAsync(calendarId, eventId, userId, request, headers, runtime);
         }
 
-        public RespondEventResponse RespondEventWithOptions(string userId, string calendarId, string eventId, RespondEventRequest request, RespondEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public AddAttendeeResponse AddAttendeeWithOptions(string calendarId, string eventId, string userId, AddAttendeeRequest request, AddAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResponseStatus))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToAdd))
             {
-                body["responseStatus"] = request.ResponseStatus;
+                body["attendeesToAdd"] = request.AttendeesToAdd;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -65,19 +65,19 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RespondEventResponse>(DoROARequest("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/respond", "none", req, runtime));
+            return TeaModel.ToObject<AddAttendeeResponse>(DoROARequest("AddAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees", "none", req, runtime));
         }
 
-        public async Task<RespondEventResponse> RespondEventWithOptionsAsync(string userId, string calendarId, string eventId, RespondEventRequest request, RespondEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<AddAttendeeResponse> AddAttendeeWithOptionsAsync(string calendarId, string eventId, string userId, AddAttendeeRequest request, AddAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResponseStatus))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToAdd))
             {
-                body["responseStatus"] = request.ResponseStatus;
+                body["attendeesToAdd"] = request.AttendeesToAdd;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -93,7 +93,301 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RespondEventResponse>(await DoROARequestAsync("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/respond", "none", req, runtime));
+            return TeaModel.ToObject<AddAttendeeResponse>(await DoROARequestAsync("AddAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees", "none", req, runtime));
+        }
+
+        public ConvertLegacyEventIdResponse ConvertLegacyEventId(string userId, ConvertLegacyEventIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ConvertLegacyEventIdHeaders headers = new ConvertLegacyEventIdHeaders();
+            return ConvertLegacyEventIdWithOptions(userId, request, headers, runtime);
+        }
+
+        public async Task<ConvertLegacyEventIdResponse> ConvertLegacyEventIdAsync(string userId, ConvertLegacyEventIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ConvertLegacyEventIdHeaders headers = new ConvertLegacyEventIdHeaders();
+            return await ConvertLegacyEventIdWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        public ConvertLegacyEventIdResponse ConvertLegacyEventIdWithOptions(string userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegacyEventIds))
+            {
+                body["legacyEventIds"] = request.LegacyEventIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
+            {
+                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
+            {
+                realHeaders["dingOrgId"] = headers.DingOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
+            {
+                realHeaders["dingUid"] = headers.DingUid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ConvertLegacyEventIdResponse>(DoROARequest("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/legacyEventIds/convert", "json", req, runtime));
+        }
+
+        public async Task<ConvertLegacyEventIdResponse> ConvertLegacyEventIdWithOptionsAsync(string userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegacyEventIds))
+            {
+                body["legacyEventIds"] = request.LegacyEventIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
+            {
+                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
+            {
+                realHeaders["dingOrgId"] = headers.DingOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
+            {
+                realHeaders["dingUid"] = headers.DingUid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ConvertLegacyEventIdResponse>(await DoROARequestAsync("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/legacyEventIds/convert", "json", req, runtime));
+        }
+
+        public CreateEventResponse CreateEvent(string calendarId, string userId, CreateEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateEventHeaders headers = new CreateEventHeaders();
+            return CreateEventWithOptions(calendarId, userId, request, headers, runtime);
+        }
+
+        public async Task<CreateEventResponse> CreateEventAsync(string calendarId, string userId, CreateEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateEventHeaders headers = new CreateEventHeaders();
+            return await CreateEventWithOptionsAsync(calendarId, userId, request, headers, runtime);
+        }
+
+        public CreateEventResponse CreateEventWithOptions(string calendarId, string userId, CreateEventRequest request, CreateEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
+            {
+                body["attendees"] = request.Attendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
+            {
+                body["end"] = request.End;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
+            {
+                body["isAllDay"] = request.IsAllDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
+            {
+                body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
+            {
+                body["recurrence"] = request.Recurrence;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
+            {
+                body["start"] = request.Start;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            {
+                body["summary"] = request.Summary;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateEventResponse>(DoROARequest("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
+        }
+
+        public async Task<CreateEventResponse> CreateEventWithOptionsAsync(string calendarId, string userId, CreateEventRequest request, CreateEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
+            {
+                body["attendees"] = request.Attendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
+            {
+                body["end"] = request.End;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
+            {
+                body["isAllDay"] = request.IsAllDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
+            {
+                body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
+            {
+                body["recurrence"] = request.Recurrence;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
+            {
+                body["start"] = request.Start;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            {
+                body["summary"] = request.Summary;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateEventResponse>(await DoROARequestAsync("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
+        }
+
+        public DeleteEventResponse DeleteEvent(string calendarId, string eventId, string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteEventHeaders headers = new DeleteEventHeaders();
+            return DeleteEventWithOptions(calendarId, eventId, userId, headers, runtime);
+        }
+
+        public async Task<DeleteEventResponse> DeleteEventAsync(string calendarId, string eventId, string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteEventHeaders headers = new DeleteEventHeaders();
+            return await DeleteEventWithOptionsAsync(calendarId, eventId, userId, headers, runtime);
+        }
+
+        public DeleteEventResponse DeleteEventWithOptions(string calendarId, string eventId, string userId, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteEventResponse>(DoROARequest("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "none", req, runtime));
+        }
+
+        public async Task<DeleteEventResponse> DeleteEventWithOptionsAsync(string calendarId, string eventId, string userId, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteEventResponse>(await DoROARequestAsync("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "none", req, runtime));
         }
 
         public GenerateCaldavAccountResponse GenerateCaldavAccount(string userId, GenerateCaldavAccountRequest request)
@@ -170,6 +464,62 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<GenerateCaldavAccountResponse>(await DoROARequestAsync("GenerateCaldavAccount", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/caldavAccounts", "json", req, runtime));
         }
 
+        public GetEventResponse GetEvent(string calendarId, string eventId, string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEventHeaders headers = new GetEventHeaders();
+            return GetEventWithOptions(calendarId, eventId, userId, headers, runtime);
+        }
+
+        public async Task<GetEventResponse> GetEventAsync(string calendarId, string eventId, string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEventHeaders headers = new GetEventHeaders();
+            return await GetEventWithOptionsAsync(calendarId, eventId, userId, headers, runtime);
+        }
+
+        public GetEventResponse GetEventWithOptions(string calendarId, string eventId, string userId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetEventResponse>(DoROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
+        }
+
+        public async Task<GetEventResponse> GetEventWithOptionsAsync(string calendarId, string eventId, string userId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetEventResponse>(await DoROARequestAsync("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
+        }
+
         public GetScheduleResponse GetSchedule(string userId, GetScheduleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -189,17 +539,17 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
-                body["userIds"] = request.UserIds;
+                body["endTime"] = request.EndTime;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
                 body["startTime"] = request.StartTime;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
-                body["endTime"] = request.EndTime;
+                body["userIds"] = request.UserIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -223,17 +573,17 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
-                body["userIds"] = request.UserIds;
+                body["endTime"] = request.EndTime;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
                 body["startTime"] = request.StartTime;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
-                body["endTime"] = request.EndTime;
+                body["userIds"] = request.UserIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -252,120 +602,38 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<GetScheduleResponse>(await DoROARequestAsync("GetSchedule", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/querySchedule", "json", req, runtime));
         }
 
-        public ConvertLegacyEventIdResponse ConvertLegacyEventId(string userId, ConvertLegacyEventIdRequest request)
+        public GetSignInListResponse GetSignInList(string calendarId, string eventId, string userId, GetSignInListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ConvertLegacyEventIdHeaders headers = new ConvertLegacyEventIdHeaders();
-            return ConvertLegacyEventIdWithOptions(userId, request, headers, runtime);
+            GetSignInListHeaders headers = new GetSignInListHeaders();
+            return GetSignInListWithOptions(calendarId, eventId, userId, request, headers, runtime);
         }
 
-        public async Task<ConvertLegacyEventIdResponse> ConvertLegacyEventIdAsync(string userId, ConvertLegacyEventIdRequest request)
+        public async Task<GetSignInListResponse> GetSignInListAsync(string calendarId, string eventId, string userId, GetSignInListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ConvertLegacyEventIdHeaders headers = new ConvertLegacyEventIdHeaders();
-            return await ConvertLegacyEventIdWithOptionsAsync(userId, request, headers, runtime);
+            GetSignInListHeaders headers = new GetSignInListHeaders();
+            return await GetSignInListWithOptionsAsync(calendarId, eventId, userId, request, headers, runtime);
         }
 
-        public ConvertLegacyEventIdResponse ConvertLegacyEventIdWithOptions(string userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetSignInListResponse GetSignInListWithOptions(string calendarId, string eventId, string userId, GetSignInListRequest request, GetSignInListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegacyEventIds))
-            {
-                body["legacyEventIds"] = request.LegacyEventIds;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<ConvertLegacyEventIdResponse>(DoROARequest("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/legacyEventIds/convert", "json", req, runtime));
-        }
-
-        public async Task<ConvertLegacyEventIdResponse> ConvertLegacyEventIdWithOptionsAsync(string userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegacyEventIds))
-            {
-                body["legacyEventIds"] = request.LegacyEventIds;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
-            {
-                realHeaders["dingOrgId"] = headers.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
-            {
-                realHeaders["dingUid"] = headers.DingUid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
-            {
-                realHeaders["dingAccessTokenType"] = headers.DingAccessTokenType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<ConvertLegacyEventIdResponse>(await DoROARequestAsync("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/legacyEventIds/convert", "json", req, runtime));
-        }
-
-        public RemoveAttendeeResponse RemoveAttendee(string userId, string calendarId, string eventId, RemoveAttendeeRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();
-            return RemoveAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
-        }
-
-        public async Task<RemoveAttendeeResponse> RemoveAttendeeAsync(string userId, string calendarId, string eventId, RemoveAttendeeRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();
-            return await RemoveAttendeeWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
-        }
-
-        public RemoveAttendeeResponse RemoveAttendeeWithOptions(string userId, string calendarId, string eventId, RemoveAttendeeRequest request, RemoveAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToRemove))
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                body["attendeesToRemove"] = request.AttendeesToRemove;
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                query["type"] = request.Type;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -379,63 +647,29 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<RemoveAttendeeResponse>(DoROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees/batchRemove", "none", req, runtime));
+            return TeaModel.ToObject<GetSignInListResponse>(DoROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime));
         }
 
-        public async Task<RemoveAttendeeResponse> RemoveAttendeeWithOptionsAsync(string userId, string calendarId, string eventId, RemoveAttendeeRequest request, RemoveAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetSignInListResponse> GetSignInListWithOptionsAsync(string calendarId, string eventId, string userId, GetSignInListRequest request, GetSignInListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToRemove))
-            {
-                body["attendeesToRemove"] = request.AttendeesToRemove;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RemoveAttendeeResponse>(await DoROARequestAsync("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees/batchRemove", "none", req, runtime));
-        }
-
-        public AddAttendeeResponse AddAttendee(string userId, string calendarId, string eventId, AddAttendeeRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddAttendeeHeaders headers = new AddAttendeeHeaders();
-            return AddAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
-        }
-
-        public async Task<AddAttendeeResponse> AddAttendeeAsync(string userId, string calendarId, string eventId, AddAttendeeRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddAttendeeHeaders headers = new AddAttendeeHeaders();
-            return await AddAttendeeWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
-        }
-
-        public AddAttendeeResponse AddAttendeeWithOptions(string userId, string calendarId, string eventId, AddAttendeeRequest request, AddAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToAdd))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                body["attendeesToAdd"] = request.AttendeesToAdd;
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                query["type"] = request.Type;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -449,185 +683,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<AddAttendeeResponse>(DoROARequest("AddAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees", "none", req, runtime));
-        }
-
-        public async Task<AddAttendeeResponse> AddAttendeeWithOptionsAsync(string userId, string calendarId, string eventId, AddAttendeeRequest request, AddAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToAdd))
-            {
-                body["attendeesToAdd"] = request.AttendeesToAdd;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<AddAttendeeResponse>(await DoROARequestAsync("AddAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees", "none", req, runtime));
-        }
-
-        public CreateEventResponse CreateEvent(string userId, string calendarId, CreateEventRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateEventHeaders headers = new CreateEventHeaders();
-            return CreateEventWithOptions(userId, calendarId, request, headers, runtime);
-        }
-
-        public async Task<CreateEventResponse> CreateEventAsync(string userId, string calendarId, CreateEventRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateEventHeaders headers = new CreateEventHeaders();
-            return await CreateEventWithOptionsAsync(userId, calendarId, request, headers, runtime);
-        }
-
-        public CreateEventResponse CreateEventWithOptions(string userId, string calendarId, CreateEventRequest request, CreateEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
-            {
-                body["summary"] = request.Summary;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
-            {
-                body["description"] = request.Description;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
-            {
-                body["start"] = request.Start;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
-            {
-                body["end"] = request.End;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
-            {
-                body["isAllDay"] = request.IsAllDay;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
-            {
-                body["attendees"] = request.Attendees;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
-            {
-                body["location"] = request.Location;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
-            {
-                body["reminders"] = request.Reminders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
-            {
-                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
-            {
-                body["extra"] = request.Extra;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<CreateEventResponse>(DoROARequest("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
-        }
-
-        public async Task<CreateEventResponse> CreateEventWithOptionsAsync(string userId, string calendarId, CreateEventRequest request, CreateEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
-            {
-                body["summary"] = request.Summary;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
-            {
-                body["description"] = request.Description;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
-            {
-                body["start"] = request.Start;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
-            {
-                body["end"] = request.End;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
-            {
-                body["isAllDay"] = request.IsAllDay;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
-            {
-                body["attendees"] = request.Attendees;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
-            {
-                body["location"] = request.Location;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
-            {
-                body["reminders"] = request.Reminders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo.ToMap()))
-            {
-                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
-            {
-                body["extra"] = request.Extra;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<CreateEventResponse>(await DoROARequestAsync("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
+            return TeaModel.ToObject<GetSignInListResponse>(await DoROARequestAsync("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime));
         }
 
         public ListCalendarsResponse ListCalendars(string userId)
@@ -682,26 +740,25 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<ListCalendarsResponse>(await DoROARequestAsync("ListCalendars", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars", "json", req, runtime));
         }
 
-        public GetSignInListResponse GetSignInList(string userId, string calendarId, string eventId, GetSignInListRequest request)
+        public ListEventsResponse ListEvents(string calendarId, string userId, ListEventsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetSignInListHeaders headers = new GetSignInListHeaders();
-            return GetSignInListWithOptions(userId, calendarId, eventId, request, headers, runtime);
+            ListEventsHeaders headers = new ListEventsHeaders();
+            return ListEventsWithOptions(calendarId, userId, request, headers, runtime);
         }
 
-        public async Task<GetSignInListResponse> GetSignInListAsync(string userId, string calendarId, string eventId, GetSignInListRequest request)
+        public async Task<ListEventsResponse> ListEventsAsync(string calendarId, string userId, ListEventsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetSignInListHeaders headers = new GetSignInListHeaders();
-            return await GetSignInListWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
+            ListEventsHeaders headers = new ListEventsHeaders();
+            return await ListEventsWithOptionsAsync(calendarId, userId, request, headers, runtime);
         }
 
-        public GetSignInListResponse GetSignInListWithOptions(string userId, string calendarId, string eventId, GetSignInListRequest request, GetSignInListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListEventsResponse ListEventsWithOptions(string calendarId, string userId, ListEventsRequest request, ListEventsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
@@ -710,163 +767,22 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
-            {
-                query["type"] = request.Type;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetSignInListResponse>(DoROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime));
-        }
-
-        public async Task<GetSignInListResponse> GetSignInListWithOptionsAsync(string userId, string calendarId, string eventId, GetSignInListRequest request, GetSignInListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
-            {
-                query["type"] = request.Type;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetSignInListResponse>(await DoROARequestAsync("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime));
-        }
-
-        public DeleteEventResponse DeleteEvent(string userId, string calendarId, string eventId)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteEventHeaders headers = new DeleteEventHeaders();
-            return DeleteEventWithOptions(userId, calendarId, eventId, headers, runtime);
-        }
-
-        public async Task<DeleteEventResponse> DeleteEventAsync(string userId, string calendarId, string eventId)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteEventHeaders headers = new DeleteEventHeaders();
-            return await DeleteEventWithOptionsAsync(userId, calendarId, eventId, headers, runtime);
-        }
-
-        public DeleteEventResponse DeleteEventWithOptions(string userId, string calendarId, string eventId, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<DeleteEventResponse>(DoROARequest("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "none", req, runtime));
-        }
-
-        public async Task<DeleteEventResponse> DeleteEventWithOptionsAsync(string userId, string calendarId, string eventId, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<DeleteEventResponse>(await DoROARequestAsync("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "none", req, runtime));
-        }
-
-        public ListEventsResponse ListEvents(string userId, string calendarId, ListEventsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListEventsHeaders headers = new ListEventsHeaders();
-            return ListEventsWithOptions(userId, calendarId, request, headers, runtime);
-        }
-
-        public async Task<ListEventsResponse> ListEventsAsync(string userId, string calendarId, ListEventsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListEventsHeaders headers = new ListEventsHeaders();
-            return await ListEventsWithOptionsAsync(userId, calendarId, request, headers, runtime);
-        }
-
-        public ListEventsResponse ListEventsWithOptions(string userId, string calendarId, ListEventsRequest request, ListEventsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
-            {
-                query["timeMin"] = request.TimeMin;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
-            {
-                query["timeMax"] = request.TimeMax;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowDeleted))
             {
                 query["showDeleted"] = request.ShowDeleted;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SyncToken))
             {
                 query["syncToken"] = request.SyncToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
+            {
+                query["timeMax"] = request.TimeMax;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -885,24 +801,12 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<ListEventsResponse>(DoROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
         }
 
-        public async Task<ListEventsResponse> ListEventsWithOptionsAsync(string userId, string calendarId, ListEventsRequest request, ListEventsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListEventsResponse> ListEventsWithOptionsAsync(string calendarId, string userId, ListEventsRequest request, ListEventsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
-            {
-                query["timeMin"] = request.TimeMin;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
-            {
-                query["timeMax"] = request.TimeMax;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowDeleted))
-            {
-                query["showDeleted"] = request.ShowDeleted;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -911,9 +815,21 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 query["nextToken"] = request.NextToken;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowDeleted))
+            {
+                query["showDeleted"] = request.ShowDeleted;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SyncToken))
             {
                 query["syncToken"] = request.SyncToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
+            {
+                query["timeMax"] = request.TimeMax;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -932,34 +848,26 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<ListEventsResponse>(await DoROARequestAsync("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events", "json", req, runtime));
         }
 
-        public ListEventsViewResponse ListEventsView(string userId, string calendarId, ListEventsViewRequest request)
+        public ListEventsViewResponse ListEventsView(string calendarId, string userId, ListEventsViewRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListEventsViewHeaders headers = new ListEventsViewHeaders();
-            return ListEventsViewWithOptions(userId, calendarId, request, headers, runtime);
+            return ListEventsViewWithOptions(calendarId, userId, request, headers, runtime);
         }
 
-        public async Task<ListEventsViewResponse> ListEventsViewAsync(string userId, string calendarId, ListEventsViewRequest request)
+        public async Task<ListEventsViewResponse> ListEventsViewAsync(string calendarId, string userId, ListEventsViewRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListEventsViewHeaders headers = new ListEventsViewHeaders();
-            return await ListEventsViewWithOptionsAsync(userId, calendarId, request, headers, runtime);
+            return await ListEventsViewWithOptionsAsync(calendarId, userId, request, headers, runtime);
         }
 
-        public ListEventsViewResponse ListEventsViewWithOptions(string userId, string calendarId, ListEventsViewRequest request, ListEventsViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListEventsViewResponse ListEventsViewWithOptions(string calendarId, string userId, ListEventsViewRequest request, ListEventsViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
-            {
-                query["timeMin"] = request.TimeMin;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
-            {
-                query["timeMax"] = request.TimeMax;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -967,6 +875,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
+            {
+                query["timeMax"] = request.TimeMax;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -985,20 +901,12 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<ListEventsViewResponse>(DoROARequest("ListEventsView", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/eventsview", "json", req, runtime));
         }
 
-        public async Task<ListEventsViewResponse> ListEventsViewWithOptionsAsync(string userId, string calendarId, ListEventsViewRequest request, ListEventsViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListEventsViewResponse> ListEventsViewWithOptionsAsync(string calendarId, string userId, ListEventsViewRequest request, ListEventsViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
-            {
-                query["timeMin"] = request.TimeMin;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
-            {
-                query["timeMax"] = request.TimeMax;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -1006,6 +914,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
+            {
+                query["timeMax"] = request.TimeMax;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1024,126 +940,70 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<ListEventsViewResponse>(await DoROARequestAsync("ListEventsView", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/eventsview", "json", req, runtime));
         }
 
-        public GetEventResponse GetEvent(string userId, string calendarId, string eventId)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetEventHeaders headers = new GetEventHeaders();
-            return GetEventWithOptions(userId, calendarId, eventId, headers, runtime);
-        }
-
-        public async Task<GetEventResponse> GetEventAsync(string userId, string calendarId, string eventId)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetEventHeaders headers = new GetEventHeaders();
-            return await GetEventWithOptionsAsync(userId, calendarId, eventId, headers, runtime);
-        }
-
-        public GetEventResponse GetEventWithOptions(string userId, string calendarId, string eventId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetEventResponse>(DoROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
-        }
-
-        public async Task<GetEventResponse> GetEventWithOptionsAsync(string userId, string calendarId, string eventId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
-            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetEventResponse>(await DoROARequestAsync("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
-        }
-
-        public PatchEventResponse PatchEvent(string userId, string calendarId, string eventId, PatchEventRequest request)
+        public PatchEventResponse PatchEvent(string calendarId, string eventId, string userId, PatchEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             PatchEventHeaders headers = new PatchEventHeaders();
-            return PatchEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
+            return PatchEventWithOptions(calendarId, eventId, userId, request, headers, runtime);
         }
 
-        public async Task<PatchEventResponse> PatchEventAsync(string userId, string calendarId, string eventId, PatchEventRequest request)
+        public async Task<PatchEventResponse> PatchEventAsync(string calendarId, string eventId, string userId, PatchEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             PatchEventHeaders headers = new PatchEventHeaders();
-            return await PatchEventWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
+            return await PatchEventWithOptionsAsync(calendarId, eventId, userId, request, headers, runtime);
         }
 
-        public PatchEventResponse PatchEventWithOptions(string userId, string calendarId, string eventId, PatchEventRequest request, PatchEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public PatchEventResponse PatchEventWithOptions(string calendarId, string eventId, string userId, PatchEventRequest request, PatchEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
             {
-                body["summary"] = request.Summary;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
-            {
-                body["id"] = request.Id;
+                body["attendees"] = request.Attendees;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
-            {
-                body["start"] = request.Start;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
             {
                 body["end"] = request.End;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
-            {
-                body["isAllDay"] = request.IsAllDay;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
-            {
-                body["attendees"] = request.Attendees;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
-            {
-                body["location"] = request.Location;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
+            {
+                body["isAllDay"] = request.IsAllDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
+            {
+                body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
+            {
+                body["recurrence"] = request.Recurrence;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
             {
                 body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
+            {
+                body["start"] = request.Start;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            {
+                body["summary"] = request.Summary;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1162,56 +1022,56 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<PatchEventResponse>(DoROARequest("PatchEvent", "calendar_1.0", "HTTP", "PUT", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
         }
 
-        public async Task<PatchEventResponse> PatchEventWithOptionsAsync(string userId, string calendarId, string eventId, PatchEventRequest request, PatchEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<PatchEventResponse> PatchEventWithOptionsAsync(string calendarId, string eventId, string userId, PatchEventRequest request, PatchEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
             {
-                body["summary"] = request.Summary;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
-            {
-                body["id"] = request.Id;
+                body["attendees"] = request.Attendees;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
-            {
-                body["start"] = request.Start;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End.ToMap()))
             {
                 body["end"] = request.End;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
-            {
-                body["isAllDay"] = request.IsAllDay;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
-            {
-                body["recurrence"] = request.Recurrence;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
-            {
-                body["attendees"] = request.Attendees;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
-            {
-                body["location"] = request.Location;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
+            {
+                body["isAllDay"] = request.IsAllDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location.ToMap()))
+            {
+                body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence.ToMap()))
+            {
+                body["recurrence"] = request.Recurrence;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
             {
                 body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start.ToMap()))
+            {
+                body["start"] = request.Start;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            {
+                body["summary"] = request.Summary;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1228,6 +1088,146 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<PatchEventResponse>(await DoROARequestAsync("PatchEvent", "calendar_1.0", "HTTP", "PUT", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
+        }
+
+        public RemoveAttendeeResponse RemoveAttendee(string calendarId, string eventId, string userId, RemoveAttendeeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();
+            return RemoveAttendeeWithOptions(calendarId, eventId, userId, request, headers, runtime);
+        }
+
+        public async Task<RemoveAttendeeResponse> RemoveAttendeeAsync(string calendarId, string eventId, string userId, RemoveAttendeeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();
+            return await RemoveAttendeeWithOptionsAsync(calendarId, eventId, userId, request, headers, runtime);
+        }
+
+        public RemoveAttendeeResponse RemoveAttendeeWithOptions(string calendarId, string eventId, string userId, RemoveAttendeeRequest request, RemoveAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToRemove))
+            {
+                body["attendeesToRemove"] = request.AttendeesToRemove;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RemoveAttendeeResponse>(DoROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees/batchRemove", "none", req, runtime));
+        }
+
+        public async Task<RemoveAttendeeResponse> RemoveAttendeeWithOptionsAsync(string calendarId, string eventId, string userId, RemoveAttendeeRequest request, RemoveAttendeeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToRemove))
+            {
+                body["attendeesToRemove"] = request.AttendeesToRemove;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RemoveAttendeeResponse>(await DoROARequestAsync("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/attendees/batchRemove", "none", req, runtime));
+        }
+
+        public RespondEventResponse RespondEvent(string calendarId, string eventId, string userId, RespondEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RespondEventHeaders headers = new RespondEventHeaders();
+            return RespondEventWithOptions(calendarId, eventId, userId, request, headers, runtime);
+        }
+
+        public async Task<RespondEventResponse> RespondEventAsync(string calendarId, string eventId, string userId, RespondEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RespondEventHeaders headers = new RespondEventHeaders();
+            return await RespondEventWithOptionsAsync(calendarId, eventId, userId, request, headers, runtime);
+        }
+
+        public RespondEventResponse RespondEventWithOptions(string calendarId, string eventId, string userId, RespondEventRequest request, RespondEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResponseStatus))
+            {
+                body["responseStatus"] = request.ResponseStatus;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RespondEventResponse>(DoROARequest("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/respond", "none", req, runtime));
+        }
+
+        public async Task<RespondEventResponse> RespondEventWithOptionsAsync(string calendarId, string eventId, string userId, RespondEventRequest request, RespondEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
+            eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResponseStatus))
+            {
+                body["responseStatus"] = request.ResponseStatus;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RespondEventResponse>(await DoROARequestAsync("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/respond", "none", req, runtime));
         }
 
     }

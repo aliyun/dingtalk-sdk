@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 {
     public class UpdateDingPortalPageScopeRequest : TeaModel {
         /// <summary>
-        /// 可见用户列表
+        /// 是否全员可见
         /// </summary>
-        [NameInMap("userids")]
+        [NameInMap("allVisible")]
         [Validation(Required=false)]
-        public List<string> Userids { get; set; }
+        public bool? AllVisible { get; set; }
 
         /// <summary>
         /// 可见部门列表
@@ -31,11 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         public List<long?> RoleIds { get; set; }
 
         /// <summary>
-        /// 是否全员可见
+        /// 可见用户列表
         /// </summary>
-        [NameInMap("allVisible")]
+        [NameInMap("userids")]
         [Validation(Required=false)]
-        public bool? AllVisible { get; set; }
+        public List<string> Userids { get; set; }
 
     }
 

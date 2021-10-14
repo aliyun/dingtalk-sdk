@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class RenderBatchCallbackRequest : TeaModel {
         /// <summary>
-        /// oss文件链接
+        /// appType
         /// </summary>
-        [NameInMap("ossUrl")]
+        [NameInMap("appType")]
         [Validation(Required=false)]
-        public string OssUrl { get; set; }
+        public string AppType { get; set; }
 
         /// <summary>
         /// 组织id
@@ -31,18 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// appType
+        /// language
         /// </summary>
-        [NameInMap("appType")]
+        [NameInMap("language")]
         [Validation(Required=false)]
-        public string AppType { get; set; }
-
-        /// <summary>
-        /// systemToken
-        /// </summary>
-        [NameInMap("systemToken")]
-        [Validation(Required=false)]
-        public string SystemToken { get; set; }
+        public string Language { get; set; }
 
         /// <summary>
         /// 名称空间
@@ -52,25 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 时间区域
+        /// oss文件链接
         /// </summary>
-        [NameInMap("timeZone")]
+        [NameInMap("ossUrl")]
         [Validation(Required=false)]
-        public string TimeZone { get; set; }
-
-        /// <summary>
-        /// language
-        /// </summary>
-        [NameInMap("language")]
-        [Validation(Required=false)]
-        public string Language { get; set; }
-
-        /// <summary>
-        /// 源
-        /// </summary>
-        [NameInMap("source")]
-        [Validation(Required=false)]
-        public string Source { get; set; }
+        public string OssUrl { get; set; }
 
         /// <summary>
         /// 流水号
@@ -80,11 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string SequenceId { get; set; }
 
         /// <summary>
-        /// userId
+        /// 源
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("source")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string Source { get; set; }
 
         /// <summary>
         /// 状态
@@ -92,6 +71,27 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// systemToken
+        /// </summary>
+        [NameInMap("systemToken")]
+        [Validation(Required=false)]
+        public string SystemToken { get; set; }
+
+        /// <summary>
+        /// 时间区域
+        /// </summary>
+        [NameInMap("timeZone")]
+        [Validation(Required=false)]
+        public string TimeZone { get; set; }
+
+        /// <summary>
+        /// userId
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

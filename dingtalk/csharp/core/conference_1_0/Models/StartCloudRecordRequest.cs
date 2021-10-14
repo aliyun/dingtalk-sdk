@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class StartCloudRecordRequest : TeaModel {
         /// <summary>
-        /// 会议发起人UID
+        /// 录制模版
         /// </summary>
-        [NameInMap("unionId")]
+        [NameInMap("mode")]
         [Validation(Required=false)]
-        public string UnionId { get; set; }
+        public string Mode { get; set; }
 
         /// <summary>
         /// 小窗位置
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public string SmallWindowPosition { get; set; }
 
         /// <summary>
-        /// 录制模版
+        /// 会议发起人UID
         /// </summary>
-        [NameInMap("mode")]
+        [NameInMap("unionId")]
         [Validation(Required=false)]
-        public string Mode { get; set; }
+        public string UnionId { get; set; }
 
     }
 

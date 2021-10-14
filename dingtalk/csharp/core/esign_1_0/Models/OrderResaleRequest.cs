@@ -13,13 +13,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
-        [NameInMap("serviceStartTime")]
+        [NameInMap("dingIsvAccessToken")]
         [Validation(Required=false)]
-        public long? ServiceStartTime { get; set; }
+        public string DingIsvAccessToken { get; set; }
 
-        [NameInMap("serviceStopTime")]
+        [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
-        public long? ServiceStopTime { get; set; }
+        public string DingSuiteKey { get; set; }
 
         [NameInMap("orderCreateTime")]
         [Validation(Required=false)]
@@ -33,13 +33,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public long? Quantity { get; set; }
 
-        [NameInMap("dingIsvAccessToken")]
+        [NameInMap("serviceStartTime")]
         [Validation(Required=false)]
-        public string DingIsvAccessToken { get; set; }
+        public long? ServiceStartTime { get; set; }
 
-        [NameInMap("dingSuiteKey")]
+        [NameInMap("serviceStopTime")]
         [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
+        public long? ServiceStopTime { get; set; }
 
     }
 

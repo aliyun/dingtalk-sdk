@@ -10,32 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
 {
     public class IndustrializeManufactureQueryJobsRequest : TeaModel {
         /// <summary>
-        /// 产品中文名称
+        /// 当前页序号(从1开始)
         /// </summary>
-        [NameInMap("productName")]
+        [NameInMap("currentPage")]
         [Validation(Required=false)]
-        public string ProductName { get; set; }
-
-        /// <summary>
-        /// 每页显示记录条数
-        /// </summary>
-        [NameInMap("pageSize")]
-        [Validation(Required=false)]
-        public int? PageSize { get; set; }
-
-        /// <summary>
-        /// 报工合格数量
-        /// </summary>
-        [NameInMap("qualifiedQuantity")]
-        [Validation(Required=false)]
-        public string QualifiedQuantity { get; set; }
-
-        /// <summary>
-        /// 生产日期
-        /// </summary>
-        [NameInMap("manufactureDay")]
-        [Validation(Required=false)]
-        public string ManufactureDay { get; set; }
+        public int? CurrentPage { get; set; }
 
         /// <summary>
         /// 工单编号
@@ -45,11 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         public string InstNo { get; set; }
 
         /// <summary>
-        /// 员工姓名
+        /// 生产日期
         /// </summary>
-        [NameInMap("userName")]
+        [NameInMap("manufactureDay")]
         [Validation(Required=false)]
-        public string UserName { get; set; }
+        public string ManufactureDay { get; set; }
+
+        /// <summary>
+        /// MES系统唯一标识
+        /// </summary>
+        [NameInMap("mesAppKey")]
+        [Validation(Required=false)]
+        public string MesAppKey { get; set; }
+
+        /// <summary>
+        /// 每页显示记录条数
+        /// </summary>
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 产品唯一标识
@@ -59,11 +52,25 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         public string ProductCode { get; set; }
 
         /// <summary>
+        /// 产品中文名称
+        /// </summary>
+        [NameInMap("productName")]
+        [Validation(Required=false)]
+        public string ProductName { get; set; }
+
+        /// <summary>
         /// 产品规格
         /// </summary>
         [NameInMap("productSpecification")]
         [Validation(Required=false)]
         public string ProductSpecification { get; set; }
+
+        /// <summary>
+        /// 报工合格数量
+        /// </summary>
+        [NameInMap("qualifiedQuantity")]
+        [Validation(Required=false)]
+        public string QualifiedQuantity { get; set; }
 
         /// <summary>
         /// 计件单价，单位：分
@@ -73,20 +80,6 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         public string UnitPrice { get; set; }
 
         /// <summary>
-        /// 报工记录的唯一标识
-        /// </summary>
-        [NameInMap("uuid")]
-        [Validation(Required=false)]
-        public string Uuid { get; set; }
-
-        /// <summary>
-        /// 当前页序号(从1开始)
-        /// </summary>
-        [NameInMap("currentPage")]
-        [Validation(Required=false)]
-        public int? CurrentPage { get; set; }
-
-        /// <summary>
         /// 员工钉钉userId
         /// </summary>
         [NameInMap("userId")]
@@ -94,11 +87,18 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         public string UserId { get; set; }
 
         /// <summary>
-        /// MES系统唯一标识
+        /// 员工姓名
         /// </summary>
-        [NameInMap("mesAppKey")]
+        [NameInMap("userName")]
         [Validation(Required=false)]
-        public string MesAppKey { get; set; }
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// 报工记录的唯一标识
+        /// </summary>
+        [NameInMap("uuid")]
+        [Validation(Required=false)]
+        public string Uuid { get; set; }
 
     }
 

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryDigitalDistrictOrgInfoRequest : TeaModel {
+        [NameInMap("corpIds")]
+        [Validation(Required=false)]
+        public List<string> CorpIds { get; set; }
+
         [NameInMap("kpiGroupId")]
         [Validation(Required=false)]
         public string KpiGroupId { get; set; }
@@ -16,10 +20,6 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [NameInMap("statDates")]
         [Validation(Required=false)]
         public List<string> StatDates { get; set; }
-
-        [NameInMap("corpIds")]
-        [Validation(Required=false)]
-        public List<string> CorpIds { get; set; }
 
     }
 

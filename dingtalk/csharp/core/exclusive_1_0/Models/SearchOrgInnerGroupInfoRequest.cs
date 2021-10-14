@@ -10,39 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SearchOrgInnerGroupInfoRequest : TeaModel {
         /// <summary>
-        /// groupMembersCntEnd
-        /// </summary>
-        [NameInMap("groupMembersCountEnd")]
-        [Validation(Required=false)]
-        public int? GroupMembersCountEnd { get; set; }
-
-        /// <summary>
-        /// syncToDingpan
-        /// </summary>
-        [NameInMap("syncToDingpan")]
-        [Validation(Required=false)]
-        public int? SyncToDingpan { get; set; }
-
-        /// <summary>
-        /// groupOwner
-        /// </summary>
-        [NameInMap("groupOwner")]
-        [Validation(Required=false)]
-        public string GroupOwner { get; set; }
-
-        /// <summary>
         /// createTimeEnd
         /// </summary>
         [NameInMap("createTimeEnd")]
         [Validation(Required=false)]
         public long? CreateTimeEnd { get; set; }
-
-        /// <summary>
-        /// pageSize
-        /// </summary>
-        [NameInMap("pageSize")]
-        [Validation(Required=false)]
-        public int? PageSize { get; set; }
 
         /// <summary>
         /// createTimeStart
@@ -52,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? CreateTimeStart { get; set; }
 
         /// <summary>
-        /// uuid
+        /// groupMembersCntEnd
         /// </summary>
-        [NameInMap("uuid")]
+        [NameInMap("groupMembersCountEnd")]
         [Validation(Required=false)]
-        public string Uuid { get; set; }
+        public int? GroupMembersCountEnd { get; set; }
 
         /// <summary>
         /// groupMembersCntStart
@@ -66,11 +38,32 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public int? GroupMembersCountStart { get; set; }
 
         /// <summary>
+        /// groupName
+        /// </summary>
+        [NameInMap("groupName")]
+        [Validation(Required=false)]
+        public string GroupName { get; set; }
+
+        /// <summary>
+        /// groupOwner
+        /// </summary>
+        [NameInMap("groupOwner")]
+        [Validation(Required=false)]
+        public string GroupOwner { get; set; }
+
+        /// <summary>
         /// lastActiveTimeEnd
         /// </summary>
         [NameInMap("lastActiveTimeEnd")]
         [Validation(Required=false)]
         public long? LastActiveTimeEnd { get; set; }
+
+        /// <summary>
+        /// lastActiveTimeStart
+        /// </summary>
+        [NameInMap("lastActiveTimeStart")]
+        [Validation(Required=false)]
+        public long? LastActiveTimeStart { get; set; }
 
         /// <summary>
         /// operatorUserId
@@ -80,11 +73,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string OperatorUserId { get; set; }
 
         /// <summary>
-        /// groupName
+        /// pageSize
         /// </summary>
-        [NameInMap("groupName")]
+        [NameInMap("pageSize")]
         [Validation(Required=false)]
-        public string GroupName { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// pageStart
@@ -94,11 +87,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public int? PageStart { get; set; }
 
         /// <summary>
-        /// lastActiveTimeStart
+        /// syncToDingpan
         /// </summary>
-        [NameInMap("lastActiveTimeStart")]
+        [NameInMap("syncToDingpan")]
         [Validation(Required=false)]
-        public long? LastActiveTimeStart { get; set; }
+        public int? SyncToDingpan { get; set; }
+
+        /// <summary>
+        /// uuid
+        /// </summary>
+        [NameInMap("uuid")]
+        [Validation(Required=false)]
+        public string Uuid { get; set; }
 
     }
 

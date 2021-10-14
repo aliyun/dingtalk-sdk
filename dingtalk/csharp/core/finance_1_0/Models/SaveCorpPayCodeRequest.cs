@@ -23,12 +23,20 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
-        /// <summary>
-        /// 状态，OPEN或CLOSED
-        /// </summary>
-        [NameInMap("status")]
+        [NameInMap("dingClientId")]
         [Validation(Required=false)]
-        public string Status { get; set; }
+        public string DingClientId { get; set; }
+
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public long? DingIsvOrgId { get; set; }
+
+        /// <summary>
+        /// 企业orgId
+        /// </summary>
+        [NameInMap("dingOrgId")]
+        [Validation(Required=false)]
+        public long? DingOrgId { get; set; }
 
         /// <summary>
         /// 扩展参数
@@ -38,19 +46,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public Dictionary<string, object> ExtInfo { get; set; }
 
         /// <summary>
-        /// 企业orgId
+        /// 状态，OPEN或CLOSED
         /// </summary>
-        [NameInMap("dingOrgId")]
+        [NameInMap("status")]
         [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
+        public string Status { get; set; }
 
     }
 

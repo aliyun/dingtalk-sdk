@@ -14,6 +14,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         public string DingCorpId { get; set; }
 
         /// <summary>
+        /// 下单时间
+        /// </summary>
+        [NameInMap("orderCreateTime")]
+        [Validation(Required=false)]
+        public float? OrderCreateTime { get; set; }
+
+        /// <summary>
         /// isv方的订单Id（用于幂等，请保证唯一性）
         /// </summary>
         [NameInMap("orderId")]
@@ -26,13 +33,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [NameInMap("quantity")]
         [Validation(Required=false)]
         public float? Quantity { get; set; }
-
-        /// <summary>
-        /// 下单时间
-        /// </summary>
-        [NameInMap("orderCreateTime")]
-        [Validation(Required=false)]
-        public float? OrderCreateTime { get; set; }
 
         /// <summary>
         /// 合同生效起始时间

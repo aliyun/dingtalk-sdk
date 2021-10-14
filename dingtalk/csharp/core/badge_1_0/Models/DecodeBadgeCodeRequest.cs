@@ -9,6 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class DecodeBadgeCodeRequest : TeaModel {
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public long? DingIsvOrgId { get; set; }
+
+        /// <summary>
+        /// 组织ID
+        /// </summary>
+        [NameInMap("dingOrgId")]
+        [Validation(Required=false)]
+        public long? DingOrgId { get; set; }
+
         /// <summary>
         /// 码值
         /// </summary>
@@ -22,17 +33,6 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }
-
-        /// <summary>
-        /// 组织ID
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
 
     }
 

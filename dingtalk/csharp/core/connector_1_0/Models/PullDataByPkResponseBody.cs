@@ -10,6 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class PullDataByPkResponseBody : TeaModel {
         /// <summary>
+        /// 创建数据的应用id。
+        /// </summary>
+        [NameInMap("dataCreateAppId")]
+        [Validation(Required=false)]
+        public string DataCreateAppId { get; set; }
+
+        /// <summary>
+        /// 创建数据的应用类型，isv应用为premium_microapp。
+        /// </summary>
+        [NameInMap("dataCreateAppType")]
+        [Validation(Required=false)]
+        public string DataCreateAppType { get; set; }
+
+        /// <summary>
         /// 数据创建时间。
         /// </summary>
         [NameInMap("dataGmtCreate")]
@@ -24,18 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         public long? DataGmtModified { get; set; }
 
         /// <summary>
-        /// 创建数据的应用类型，isv应用为premium_microapp。
+        /// 最后修改数据的应用id。
         /// </summary>
-        [NameInMap("dataCreateAppType")]
+        [NameInMap("dataModifiedAppId")]
         [Validation(Required=false)]
-        public string DataCreateAppType { get; set; }
-
-        /// <summary>
-        /// 创建数据的应用id。
-        /// </summary>
-        [NameInMap("dataCreateAppId")]
-        [Validation(Required=false)]
-        public string DataCreateAppId { get; set; }
+        public string DataModifiedAppId { get; set; }
 
         /// <summary>
         /// 最后修改数据的应用类型，取值同dataCreateAppType。
@@ -43,13 +50,6 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         [NameInMap("dataModifiedAppType")]
         [Validation(Required=false)]
         public string DataModifiedAppType { get; set; }
-
-        /// <summary>
-        /// 最后修改数据的应用id。
-        /// </summary>
-        [NameInMap("dataModifiedAppId")]
-        [Validation(Required=false)]
-        public string DataModifiedAppId { get; set; }
 
         /// <summary>
         /// 数据完整内容。

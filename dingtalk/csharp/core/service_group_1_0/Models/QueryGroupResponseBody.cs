@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class QueryGroupResponseBody : TeaModel {
         /// <summary>
-        /// 开放群ID
+        /// 群bizId
         /// </summary>
-        [NameInMap("openConversationId")]
+        [NameInMap("bizId")]
         [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
+        public string BizId { get; set; }
 
         /// <summary>
         /// 群名称
@@ -24,11 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 开放团队ID
+        /// 入群URL
         /// </summary>
-        [NameInMap("openTeamId")]
+        [NameInMap("groupUrl")]
         [Validation(Required=false)]
-        public string OpenTeamId { get; set; }
+        public string GroupUrl { get; set; }
+
+        /// <summary>
+        /// 开放群ID
+        /// </summary>
+        [NameInMap("openConversationId")]
+        [Validation(Required=false)]
+        public string OpenConversationId { get; set; }
 
         /// <summary>
         /// 开放群组ID
@@ -38,11 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string OpenGroupSetId { get; set; }
 
         /// <summary>
-        /// 入群URL
+        /// 开放团队ID
         /// </summary>
-        [NameInMap("groupUrl")]
+        [NameInMap("openTeamId")]
         [Validation(Required=false)]
-        public string GroupUrl { get; set; }
+        public string OpenTeamId { get; set; }
 
         /// <summary>
         /// 服务群机器人code
@@ -57,13 +64,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [NameInMap("robotName")]
         [Validation(Required=false)]
         public string RobotName { get; set; }
-
-        /// <summary>
-        /// 群bizId
-        /// </summary>
-        [NameInMap("bizId")]
-        [Validation(Required=false)]
-        public string BizId { get; set; }
 
     }
 

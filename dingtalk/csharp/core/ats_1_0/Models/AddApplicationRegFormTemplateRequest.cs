@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public string BizCode { get; set; }
 
         /// <summary>
-        /// 模板名称
-        /// </summary>
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// 模板内容
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
+
+        /// <summary>
+        /// 模板名称
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
 
         /// <summary>
         /// 外部唯一标识

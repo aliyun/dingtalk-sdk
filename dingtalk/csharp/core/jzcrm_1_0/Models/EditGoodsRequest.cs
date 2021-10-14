@@ -10,93 +10,75 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class EditGoodsRequest : TeaModel {
         /// <summary>
-        /// 数据类型，固定填写154
-        /// </summary>
-        [NameInMap("datatype")]
-        [Validation(Required=false)]
-        public long? Datatype { get; set; }
-
-        /// <summary>
-        /// 时间戳
-        /// </summary>
-        [NameInMap("stamp")]
-        [Validation(Required=false)]
-        public long? Stamp { get; set; }
-
-        /// <summary>
-        /// 数据id，不填或者填0为新增数据
-        /// </summary>
-        [NameInMap("msgid")]
-        [Validation(Required=false)]
-        public long? Msgid { get; set; }
-
-        /// <summary>
         /// 编辑数据
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public EditGoodsRequestData Data { get; set; }
         public class EditGoodsRequestData : TeaModel {
-            [NameInMap("data_userid")]
-            [Validation(Required=false)]
-            public string DataUserid { get; set; }
-            [NameInMap("cpname")]
-            [Validation(Required=false)]
-            public string Cpname { get; set; }
-            [NameInMap("cpunit")]
-            [Validation(Required=false)]
-            public string Cpunit { get; set; }
-            [NameInMap("unitrate")]
-            [Validation(Required=false)]
-            public string Unitrate { get; set; }
-            [NameInMap("cp_parentid")]
-            [Validation(Required=false)]
-            public string CpParentid { get; set; }
-            [NameInMap("cptype")]
-            [Validation(Required=false)]
-            public string Cptype { get; set; }
-            [NameInMap("cpguige")]
-            [Validation(Required=false)]
-            public string Cpguige { get; set; }
-            [NameInMap("typeid")]
-            [Validation(Required=false)]
-            public string Typeid { get; set; }
-            [NameInMap("cpno")]
-            [Validation(Required=false)]
-            public string Cpno { get; set; }
-            [NameInMap("isstop")]
-            [Validation(Required=false)]
-            public string Isstop { get; set; }
             [NameInMap("addedtime")]
             [Validation(Required=false)]
             public string Addedtime { get; set; }
-            [NameInMap("cparea")]
-            [Validation(Required=false)]
-            public string Cparea { get; set; }
-            [NameInMap("cpbrand")]
-            [Validation(Required=false)]
-            public string Cpbrand { get; set; }
             [NameInMap("cbprice")]
             [Validation(Required=false)]
             public string Cbprice { get; set; }
-            [NameInMap("issnmanage")]
+            [NameInMap("cp_parentid")]
             [Validation(Required=false)]
-            public string Issnmanage { get; set; }
-            [NameInMap("ispicimanage")]
+            public string CpParentid { get; set; }
+            [NameInMap("cparea")]
             [Validation(Required=false)]
-            public string Ispicimanage { get; set; }
-            [NameInMap("gysid")]
-            [Validation(Required=false)]
-            public string Gysid { get; set; }
-            [NameInMap("cpimg")]
-            [Validation(Required=false)]
-            public string Cpimg { get; set; }
+            public string Cparea { get; set; }
             [NameInMap("cpbarcode")]
             [Validation(Required=false)]
             public string Cpbarcode { get; set; }
+            [NameInMap("cpbrand")]
+            [Validation(Required=false)]
+            public string Cpbrand { get; set; }
+            [NameInMap("cpcontent")]
+            [Validation(Required=false)]
+            public string Cpcontent { get; set; }
+            [NameInMap("cpguige")]
+            [Validation(Required=false)]
+            public string Cpguige { get; set; }
+            [NameInMap("cpimg")]
+            [Validation(Required=false)]
+            public string Cpimg { get; set; }
+            [NameInMap("cpname")]
+            [Validation(Required=false)]
+            public string Cpname { get; set; }
+            [NameInMap("cpno")]
+            [Validation(Required=false)]
+            public string Cpno { get; set; }
+            [NameInMap("cpremark")]
+            [Validation(Required=false)]
+            public string Cpremark { get; set; }
+            [NameInMap("cptype")]
+            [Validation(Required=false)]
+            public string Cptype { get; set; }
+            [NameInMap("cpunit")]
+            [Validation(Required=false)]
+            public string Cpunit { get; set; }
             [NameInMap("cpweight")]
             [Validation(Required=false)]
             public string Cpweight { get; set; }
+            [NameInMap("data_userid")]
+            [Validation(Required=false)]
+            public string DataUserid { get; set; }
+            [NameInMap("gysid")]
+            [Validation(Required=false)]
+            public string Gysid { get; set; }
+            [NameInMap("ispicimanage")]
+            [Validation(Required=false)]
+            public string Ispicimanage { get; set; }
+            [NameInMap("issnmanage")]
+            [Validation(Required=false)]
+            public string Issnmanage { get; set; }
+            [NameInMap("isstock")]
+            [Validation(Required=false)]
+            public string Isstock { get; set; }
+            [NameInMap("isstop")]
+            [Validation(Required=false)]
+            public string Isstop { get; set; }
             [NameInMap("preprice1")]
             [Validation(Required=false)]
             public string Preprice1 { get; set; }
@@ -109,22 +91,40 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [NameInMap("preprice4")]
             [Validation(Required=false)]
             public string Preprice4 { get; set; }
-            [NameInMap("isstock")]
-            [Validation(Required=false)]
-            public string Isstock { get; set; }
-            [NameInMap("stockup")]
-            [Validation(Required=false)]
-            public string Stockup { get; set; }
             [NameInMap("stockdown")]
             [Validation(Required=false)]
             public string Stockdown { get; set; }
-            [NameInMap("cpcontent")]
+            [NameInMap("stockup")]
             [Validation(Required=false)]
-            public string Cpcontent { get; set; }
-            [NameInMap("cpremark")]
+            public string Stockup { get; set; }
+            [NameInMap("typeid")]
             [Validation(Required=false)]
-            public string Cpremark { get; set; }
+            public string Typeid { get; set; }
+            [NameInMap("unitrate")]
+            [Validation(Required=false)]
+            public string Unitrate { get; set; }
         };
+
+        /// <summary>
+        /// 数据类型，固定填写154
+        /// </summary>
+        [NameInMap("datatype")]
+        [Validation(Required=false)]
+        public long? Datatype { get; set; }
+
+        /// <summary>
+        /// 数据id，不填或者填0为新增数据
+        /// </summary>
+        [NameInMap("msgid")]
+        [Validation(Required=false)]
+        public long? Msgid { get; set; }
+
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        [NameInMap("stamp")]
+        [Validation(Required=false)]
+        public long? Stamp { get; set; }
 
     }
 

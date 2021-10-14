@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class GetScheduleRequest : TeaModel {
         /// <summary>
-        /// 待查询的用户列表
+        /// 查询结束时间
         /// </summary>
-        [NameInMap("userIds")]
+        [NameInMap("endTime")]
         [Validation(Required=false)]
-        public List<string> UserIds { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
         /// 查询开始时间
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询结束时间
+        /// 待查询的用户列表
         /// </summary>
-        [NameInMap("endTime")]
+        [NameInMap("userIds")]
         [Validation(Required=false)]
-        public string EndTime { get; set; }
+        public List<string> UserIds { get; set; }
 
     }
 

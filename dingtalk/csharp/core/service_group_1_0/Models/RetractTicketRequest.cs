@@ -17,13 +17,28 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public long? DingOrgId { get; set; }
 
+        [NameInMap("dingSuiteKey")]
+        [Validation(Required=false)]
+        public string DingSuiteKey { get; set; }
+
         [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
 
-        [NameInMap("dingSuiteKey")]
+        [NameInMap("notify")]
         [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
+        public RetractTicketRequestNotify Notify { get; set; }
+        public class RetractTicketRequestNotify : TeaModel {
+            [NameInMap("groupNoticeReceiverUnionIds")]
+            [Validation(Required=false)]
+            public List<string> GroupNoticeReceiverUnionIds { get; set; }
+            [NameInMap("noticeAllGroupMember")]
+            [Validation(Required=false)]
+            public bool? NoticeAllGroupMember { get; set; }
+            [NameInMap("workNoticeReceiverUnionIds")]
+            [Validation(Required=false)]
+            public List<string> WorkNoticeReceiverUnionIds { get; set; }
+        };
 
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
@@ -47,9 +62,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public RetractTicketRequestTicketMemo TicketMemo { get; set; }
         public class RetractTicketRequestTicketMemo : TeaModel {
-            [NameInMap("memo")]
-            [Validation(Required=false)]
-            public string Memo { get; set; }
             [NameInMap("attachments")]
             [Validation(Required=false)]
             public List<RetractTicketRequestTicketMemoAttachments> Attachments { get; set; }
@@ -57,21 +69,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 public string FileName { get; set; }
                 public string Key { get; set; }
             }
-        };
-
-        [NameInMap("notify")]
-        [Validation(Required=false)]
-        public RetractTicketRequestNotify Notify { get; set; }
-        public class RetractTicketRequestNotify : TeaModel {
-            [NameInMap("workNoticeReceiverUnionIds")]
+            [NameInMap("memo")]
             [Validation(Required=false)]
-            public List<string> WorkNoticeReceiverUnionIds { get; set; }
-            [NameInMap("groupNoticeReceiverUnionIds")]
-            [Validation(Required=false)]
-            public List<string> GroupNoticeReceiverUnionIds { get; set; }
-            [NameInMap("noticeAllGroupMember")]
-            [Validation(Required=false)]
-            public bool? NoticeAllGroupMember { get; set; }
+            public string Memo { get; set; }
         };
 
     }

@@ -44,18 +44,18 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         public long? PageSize { get; set; }
 
         /// <summary>
-        /// 总条数
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
-        /// <summary>
         /// 响应时间
         /// </summary>
         [NameInMap("time")]
         [Validation(Required=false)]
         public string Time { get; set; }
+
+        /// <summary>
+        /// 总条数
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetMeCorpSubmissionRequest : TeaModel {
         /// <summary>
+        /// 应用标识列表
+        /// </summary>
+        [NameInMap("appTypes")]
+        [Validation(Required=false)]
+        public string AppTypes { get; set; }
+
+        /// <summary>
         /// 企业ID
         /// </summary>
         [NameInMap("corpId")]
@@ -17,11 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// 每页记录数
+        /// 创建时间开始
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("createFromTimeGMT")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public long? CreateFromTimeGMT { get; set; }
+
+        /// <summary>
+        /// 创建时间结束
+        /// </summary>
+        [NameInMap("createToTimeGMT")]
+        [Validation(Required=false)]
+        public long? CreateToTimeGMT { get; set; }
+
+        /// <summary>
+        /// 关键词
+        /// </summary>
+        [NameInMap("keyword")]
+        [Validation(Required=false)]
+        public string Keyword { get; set; }
 
         /// <summary>
         /// 语言环境
@@ -38,18 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public int? PageNumber { get; set; }
 
         /// <summary>
-        /// 关键词
+        /// 每页记录数
         /// </summary>
-        [NameInMap("keyword")]
+        [NameInMap("pageSize")]
         [Validation(Required=false)]
-        public string Keyword { get; set; }
-
-        /// <summary>
-        /// 应用标识列表
-        /// </summary>
-        [NameInMap("appTypes")]
-        [Validation(Required=false)]
-        public string AppTypes { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 流程code列表
@@ -57,20 +71,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("processCodes")]
         [Validation(Required=false)]
         public string ProcessCodes { get; set; }
-
-        /// <summary>
-        /// 创建时间开始
-        /// </summary>
-        [NameInMap("createFromTimeGMT")]
-        [Validation(Required=false)]
-        public long? CreateFromTimeGMT { get; set; }
-
-        /// <summary>
-        /// 创建时间结束
-        /// </summary>
-        [NameInMap("createToTimeGMT")]
-        [Validation(Required=false)]
-        public long? CreateToTimeGMT { get; set; }
 
         /// <summary>
         /// 验权token

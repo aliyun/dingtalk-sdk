@@ -17,27 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string Address { get; set; }
 
         /// <summary>
-        /// 是否保留原部门
-        /// </summary>
-        [NameInMap("isRetainOldDept")]
-        [Validation(Required=false)]
-        public bool? IsRetainOldDept { get; set; }
-
-        /// <summary>
-        /// 居民名字
-        /// </summary>
-        [NameInMap("userName")]
-        [Validation(Required=false)]
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// 手机号码
-        /// </summary>
-        [NameInMap("mobile")]
-        [Validation(Required=false)]
-        public string Mobile { get; set; }
-
-        /// <summary>
         /// 所在新的户/租户部门id
         /// </summary>
         [NameInMap("departmentId")]
@@ -68,6 +47,27 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         }
 
         /// <summary>
+        /// 是否保留原部门
+        /// </summary>
+        [NameInMap("isRetainOldDept")]
+        [Validation(Required=false)]
+        public bool? IsRetainOldDept { get; set; }
+
+        /// <summary>
+        /// 手机号码
+        /// </summary>
+        [NameInMap("mobile")]
+        [Validation(Required=false)]
+        public string Mobile { get; set; }
+
+        /// <summary>
+        /// 原所在部门id
+        /// </summary>
+        [NameInMap("oldDepartmentId")]
+        [Validation(Required=false)]
+        public long? OldDepartmentId { get; set; }
+
+        /// <summary>
         /// 与户主的关系
         /// </summary>
         [NameInMap("relateType")]
@@ -82,11 +82,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string UserId { get; set; }
 
         /// <summary>
-        /// 原所在部门id
+        /// 居民名字
         /// </summary>
-        [NameInMap("oldDepartmentId")]
+        [NameInMap("userName")]
         [Validation(Required=false)]
-        public long? OldDepartmentId { get; set; }
+        public string UserName { get; set; }
 
     }
 

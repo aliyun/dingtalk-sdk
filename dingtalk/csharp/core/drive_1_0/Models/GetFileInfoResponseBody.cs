@@ -10,18 +10,32 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetFileInfoResponseBody : TeaModel {
         /// <summary>
-        /// 空间id
+        /// 文件内容类型
         /// </summary>
-        [NameInMap("spaceId")]
+        [NameInMap("contentType")]
         [Validation(Required=false)]
-        public string SpaceId { get; set; }
+        public string ContentType { get; set; }
 
         /// <summary>
-        /// 父目录id
+        /// 创建时间
         /// </summary>
-        [NameInMap("parentId")]
+        [NameInMap("createTime")]
         [Validation(Required=false)]
-        public string ParentId { get; set; }
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 创建者
+        /// </summary>
+        [NameInMap("creator")]
+        [Validation(Required=false)]
+        public string Creator { get; set; }
+
+        /// <summary>
+        /// 文件后缀
+        /// </summary>
+        [NameInMap("fileExtension")]
+        [Validation(Required=false)]
+        public string FileExtension { get; set; }
 
         /// <summary>
         /// 文件id
@@ -45,27 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string FilePath { get; set; }
 
         /// <summary>
-        /// 文件类型
-        /// </summary>
-        [NameInMap("fileType")]
-        [Validation(Required=false)]
-        public string FileType { get; set; }
-
-        /// <summary>
-        /// 文件内容类型
-        /// </summary>
-        [NameInMap("contentType")]
-        [Validation(Required=false)]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// 文件后缀
-        /// </summary>
-        [NameInMap("fileExtension")]
-        [Validation(Required=false)]
-        public string FileExtension { get; set; }
-
-        /// <summary>
         /// 文件大小
         /// </summary>
         [NameInMap("fileSize")]
@@ -73,11 +66,18 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// 文件类型
         /// </summary>
-        [NameInMap("createTime")]
+        [NameInMap("fileType")]
         [Validation(Required=false)]
-        public string CreateTime { get; set; }
+        public string FileType { get; set; }
+
+        /// <summary>
+        /// 修改者
+        /// </summary>
+        [NameInMap("modifier")]
+        [Validation(Required=false)]
+        public string Modifier { get; set; }
 
         /// <summary>
         /// 修改时间
@@ -87,18 +87,18 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string ModifyTime { get; set; }
 
         /// <summary>
-        /// 创建者
+        /// 父目录id
         /// </summary>
-        [NameInMap("creator")]
+        [NameInMap("parentId")]
         [Validation(Required=false)]
-        public string Creator { get; set; }
+        public string ParentId { get; set; }
 
         /// <summary>
-        /// 修改者
+        /// 空间id
         /// </summary>
-        [NameInMap("modifier")]
+        [NameInMap("spaceId")]
         [Validation(Required=false)]
-        public string Modifier { get; set; }
+        public string SpaceId { get; set; }
 
     }
 

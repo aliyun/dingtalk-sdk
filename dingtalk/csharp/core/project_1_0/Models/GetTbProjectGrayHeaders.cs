@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -20,9 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string DingAccessTokenType { get; set; }
 
-        [NameInMap("dingSuiteKey")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
+        public string DingCorpId { get; set; }
 
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
@@ -32,9 +29,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string DingOrgId { get; set; }
 
-        [NameInMap("dingCorpId")]
+        [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        public string DingSuiteKey { get; set; }
 
         [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]

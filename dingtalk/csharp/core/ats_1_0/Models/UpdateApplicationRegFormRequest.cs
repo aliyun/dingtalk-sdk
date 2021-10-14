@@ -30,9 +30,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public UpdateApplicationRegFormRequestDingPanFile DingPanFile { get; set; }
         public class UpdateApplicationRegFormRequestDingPanFile : TeaModel {
-            [NameInMap("spaceId")]
-            [Validation(Required=false)]
-            public long? SpaceId { get; set; }
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
@@ -45,6 +42,9 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
             [NameInMap("fileType")]
             [Validation(Required=false)]
             public string FileType { get; set; }
+            [NameInMap("spaceId")]
+            [Validation(Required=false)]
+            public long? SpaceId { get; set; }
         };
 
     }

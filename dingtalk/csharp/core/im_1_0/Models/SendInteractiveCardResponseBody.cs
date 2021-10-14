@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SendInteractiveCardResponseBody : TeaModel {
         /// <summary>
-        /// success
-        /// </summary>
-        [NameInMap("success")]
-        [Validation(Required=false)]
-        public bool? Success { get; set; }
-
-        /// <summary>
         /// 创建卡片结果
         /// </summary>
         [NameInMap("result")]
@@ -27,6 +20,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [Validation(Required=false)]
             public string ProcessQueryKey { get; set; }
         };
+
+        /// <summary>
+        /// success
+        /// </summary>
+        [NameInMap("success")]
+        [Validation(Required=false)]
+        public bool? Success { get; set; }
 
     }
 

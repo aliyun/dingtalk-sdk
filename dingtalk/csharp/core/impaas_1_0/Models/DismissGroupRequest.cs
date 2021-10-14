@@ -9,13 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class DismissGroupRequest : TeaModel {
-        [NameInMap("operatorUid")]
-        [Validation(Required=false)]
-        public string OperatorUid { get; set; }
-
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
+
+        [NameInMap("operatorUid")]
+        [Validation(Required=false)]
+        public string OperatorUid { get; set; }
 
     }
 

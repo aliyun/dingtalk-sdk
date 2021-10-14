@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class BatchSendOTOResponseBody : TeaModel {
         /// <summary>
-        /// 消息id
+        /// 推送频繁，被限流的用户userId列表
         /// </summary>
-        [NameInMap("processQueryKey")]
+        [NameInMap("flowControlledStaffIdList")]
         [Validation(Required=false)]
-        public string ProcessQueryKey { get; set; }
+        public List<string> FlowControlledStaffIdList { get; set; }
 
         /// <summary>
         /// 无效的用户userId列表
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         public List<string> InvalidStaffIdList { get; set; }
 
         /// <summary>
-        /// 推送频繁，被限流的用户userId列表
+        /// 消息id
         /// </summary>
-        [NameInMap("flowControlledStaffIdList")]
+        [NameInMap("processQueryKey")]
         [Validation(Required=false)]
-        public List<string> FlowControlledStaffIdList { get; set; }
+        public string ProcessQueryKey { get; set; }
 
     }
 

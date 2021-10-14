@@ -16,23 +16,29 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public QueryUserInfoResponseBodyContent Content { get; set; }
         public class QueryUserInfoResponseBodyContent : TeaModel {
-            [NameInMap("uid")]
+            [NameInMap("comments")]
             [Validation(Required=false)]
-            public string Uid { get; set; }
-            [NameInMap("userName")]
+            public string Comments { get; set; }
+            [NameInMap("dept")]
             [Validation(Required=false)]
-            public string UserName { get; set; }
+            public List<QueryUserInfoResponseBodyContentDept> Dept { get; set; }
+            public class QueryUserInfoResponseBodyContentDept : TeaModel {
+                public long? Id { get; set; }
+                public string Name { get; set; }
+            }
+            [NameInMap("group")]
+            [Validation(Required=false)]
+            public List<QueryUserInfoResponseBodyContentGroup> Group { get; set; }
+            public class QueryUserInfoResponseBodyContentGroup : TeaModel {
+                public long? Id { get; set; }
+                public string Name { get; set; }
+                public long? DeptId { get; set; }
+                public string DeptName { get; set; }
+            }
             [NameInMap("job")]
             [Validation(Required=false)]
             public QueryUserInfoResponseBodyContentJob Job { get; set; }
             public class QueryUserInfoResponseBodyContentJob : TeaModel {
-                /// <summary>
-                /// 标签Code
-                /// </summary>
-                [NameInMap("code")]
-                [Validation(Required=false)]
-                public string Code { get; set; }
-
                 /// <summary>
                 /// 标签类型
                 /// </summary>
@@ -46,6 +52,13 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [NameInMap("category")]
                 [Validation(Required=false)]
                 public string Category { get; set; }
+
+                /// <summary>
+                /// 标签Code
+                /// </summary>
+                [NameInMap("code")]
+                [Validation(Required=false)]
+                public string Code { get; set; }
 
                 /// <summary>
                 /// 展示名称
@@ -63,13 +76,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public QueryUserInfoResponseBodyContentJobStatus JobStatus { get; set; }
             public class QueryUserInfoResponseBodyContentJobStatus : TeaModel {
                 /// <summary>
-                /// 标签Code
-                /// </summary>
-                [NameInMap("code")]
-                [Validation(Required=false)]
-                public string Code { get; set; }
-
-                /// <summary>
                 /// 标签类型
                 /// </summary>
                 [NameInMap("bizType")]
@@ -84,18 +90,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public string Category { get; set; }
 
                 /// <summary>
-                /// 展示名称
-                /// </summary>
-                [NameInMap("displayName")]
-                [Validation(Required=false)]
-                public string DisplayName { get; set; }
-
-            }
-            [NameInMap("userProb")]
-            [Validation(Required=false)]
-            public QueryUserInfoResponseBodyContentUserProb UserProb { get; set; }
-            public class QueryUserInfoResponseBodyContentUserProb : TeaModel {
-                /// <summary>
                 /// 标签Code
                 /// </summary>
                 [NameInMap("code")]
@@ -103,20 +97,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public string Code { get; set; }
 
                 /// <summary>
-                /// 标签类型
-                /// </summary>
-                [NameInMap("bizType")]
-                [Validation(Required=false)]
-                public string BizType { get; set; }
-
-                /// <summary>
-                /// 分类
-                /// </summary>
-                [NameInMap("category")]
-                [Validation(Required=false)]
-                public string Category { get; set; }
-
-                /// <summary>
                 /// 展示名称
                 /// </summary>
                 [NameInMap("displayName")]
@@ -124,25 +104,6 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public string DisplayName { get; set; }
 
             }
-            [NameInMap("group")]
-            [Validation(Required=false)]
-            public List<QueryUserInfoResponseBodyContentGroup> Group { get; set; }
-            public class QueryUserInfoResponseBodyContentGroup : TeaModel {
-                public long? Id { get; set; }
-                public string Name { get; set; }
-                public long? DeptId { get; set; }
-                public string DeptName { get; set; }
-            }
-            [NameInMap("dept")]
-            [Validation(Required=false)]
-            public List<QueryUserInfoResponseBodyContentDept> Dept { get; set; }
-            public class QueryUserInfoResponseBodyContentDept : TeaModel {
-                public long? Id { get; set; }
-                public string Name { get; set; }
-            }
-            [NameInMap("comments")]
-            [Validation(Required=false)]
-            public string Comments { get; set; }
             [NameInMap("jobStatusList")]
             [Validation(Required=false)]
             public List<QueryUserInfoResponseBodyContentJobStatusList> JobStatusList { get; set; }
@@ -151,6 +112,45 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public string BizType { get; set; }
                 public string Category { get; set; }
                 public string DisplayName { get; set; }
+            }
+            [NameInMap("uid")]
+            [Validation(Required=false)]
+            public string Uid { get; set; }
+            [NameInMap("userName")]
+            [Validation(Required=false)]
+            public string UserName { get; set; }
+            [NameInMap("userProb")]
+            [Validation(Required=false)]
+            public QueryUserInfoResponseBodyContentUserProb UserProb { get; set; }
+            public class QueryUserInfoResponseBodyContentUserProb : TeaModel {
+                /// <summary>
+                /// 标签类型
+                /// </summary>
+                [NameInMap("bizType")]
+                [Validation(Required=false)]
+                public string BizType { get; set; }
+
+                /// <summary>
+                /// 分类
+                /// </summary>
+                [NameInMap("category")]
+                [Validation(Required=false)]
+                public string Category { get; set; }
+
+                /// <summary>
+                /// 标签Code
+                /// </summary>
+                [NameInMap("code")]
+                [Validation(Required=false)]
+                public string Code { get; set; }
+
+                /// <summary>
+                /// 展示名称
+                /// </summary>
+                [NameInMap("displayName")]
+                [Validation(Required=false)]
+                public string DisplayName { get; set; }
+
             }
         };
 

@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class ModifyFeedWhiteListShrinkRequest : TeaModel {
         /// <summary>
-        /// 用户id（操作者的组织内id）
-        /// </summary>
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
-
-        /// <summary>
         /// 操作类型（1 添加白名单 / 2 删除白名单）
         /// </summary>
         [NameInMap("action")]
@@ -29,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [NameInMap("modifyUserList")]
         [Validation(Required=false)]
         public string ModifyUserListShrink { get; set; }
+
+        /// <summary>
+        /// 用户id（操作者的组织内id）
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

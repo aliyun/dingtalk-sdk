@@ -47,11 +47,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         }
 
         /// <summary>
-        /// 历史截至当日服务窗数
+        /// 是否有更多数据
         /// </summary>
-        [NameInMap("publisherCntStd")]
+        [NameInMap("hasMore")]
         [Validation(Required=false)]
-        public string PublisherCntStd { get; set; }
+        public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 下一次请求的分页游标
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
 
         /// <summary>
         /// 历史截至当日服务窗文章数
@@ -84,18 +91,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         }
 
         /// <summary>
-        /// 下一次请求的分页游标
+        /// 历史截至当日服务窗数
         /// </summary>
-        [NameInMap("nextToken")]
+        [NameInMap("publisherCntStd")]
         [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
-        /// 是否有更多数据
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
+        public string PublisherCntStd { get; set; }
 
     }
 

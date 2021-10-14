@@ -10,41 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetApplyInviteInfoResponseBody : TeaModel {
         /// <summary>
-        /// 是否开启邀请
-        /// </summary>
-        [NameInMap("inviteSwitch")]
-        [Validation(Required=false)]
-        public bool? InviteSwitch { get; set; }
-
-        /// <summary>
-        /// 是否开启通过企业名称搜索申请
-        /// </summary>
-        [NameInMap("searchNameInvite")]
-        [Validation(Required=false)]
-        public bool? SearchNameInvite { get; set; }
-
-        /// <summary>
-        /// 是否开启通过团队号申请加入
-        /// </summary>
-        [NameInMap("orgApplyCodeInvite")]
-        [Validation(Required=false)]
-        public bool? OrgApplyCodeInvite { get; set; }
-
-        /// <summary>
-        /// 是否开启通过链接邀请加入
-        /// </summary>
-        [NameInMap("linkInvite")]
-        [Validation(Required=false)]
-        public bool? LinkInvite { get; set; }
-
-        /// <summary>
-        /// 邀请链接
-        /// </summary>
-        [NameInMap("inviteUrl")]
-        [Validation(Required=false)]
-        public string InviteUrl { get; set; }
-
-        /// <summary>
         /// 仅部门邀请有效： 0-无需审核 1-有权限的子管理员
         /// </summary>
         [NameInMap("auditType")]
@@ -57,6 +22,41 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [NameInMap("empApplyJoinDept")]
         [Validation(Required=false)]
         public bool? EmpApplyJoinDept { get; set; }
+
+        /// <summary>
+        /// 是否开启邀请
+        /// </summary>
+        [NameInMap("inviteSwitch")]
+        [Validation(Required=false)]
+        public bool? InviteSwitch { get; set; }
+
+        /// <summary>
+        /// 邀请链接
+        /// </summary>
+        [NameInMap("inviteUrl")]
+        [Validation(Required=false)]
+        public string InviteUrl { get; set; }
+
+        /// <summary>
+        /// 是否开启通过链接邀请加入
+        /// </summary>
+        [NameInMap("linkInvite")]
+        [Validation(Required=false)]
+        public bool? LinkInvite { get; set; }
+
+        /// <summary>
+        /// 是否开启通过团队号申请加入
+        /// </summary>
+        [NameInMap("orgApplyCodeInvite")]
+        [Validation(Required=false)]
+        public bool? OrgApplyCodeInvite { get; set; }
+
+        /// <summary>
+        /// 是否开启通过企业名称搜索申请
+        /// </summary>
+        [NameInMap("searchNameInvite")]
+        [Validation(Required=false)]
+        public bool? SearchNameInvite { get; set; }
 
     }
 

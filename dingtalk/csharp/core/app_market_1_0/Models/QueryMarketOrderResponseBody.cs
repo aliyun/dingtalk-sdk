@@ -24,18 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// 规格编码
+        /// 创建时间戳
         /// </summary>
-        [NameInMap("itemCode")]
+        [NameInMap("createTimestamp")]
         [Validation(Required=false)]
-        public string ItemCode { get; set; }
+        public long? CreateTimestamp { get; set; }
 
         /// <summary>
-        /// 规格名称
+        /// 生效结束时间
         /// </summary>
-        [NameInMap("itemName")]
+        [NameInMap("endTimestamp")]
         [Validation(Required=false)]
-        public string ItemName { get; set; }
+        public long? EndTimestamp { get; set; }
 
         /// <summary>
         /// 商品Code
@@ -52,25 +52,25 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         public string GoodsName { get; set; }
 
         /// <summary>
-        /// 订单实付金额(单位分)
+        /// 是否内购订单
         /// </summary>
-        [NameInMap("totalActualPayFee")]
+        [NameInMap("inAppOrder")]
         [Validation(Required=false)]
-        public long? TotalActualPayFee { get; set; }
+        public bool? InAppOrder { get; set; }
 
         /// <summary>
-        /// 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
+        /// 规格编码
         /// </summary>
-        [NameInMap("status")]
+        [NameInMap("itemCode")]
         [Validation(Required=false)]
-        public long? Status { get; set; }
+        public string ItemCode { get; set; }
 
         /// <summary>
-        /// 购买数量
+        /// 规格名称
         /// </summary>
-        [NameInMap("quantity")]
+        [NameInMap("itemName")]
         [Validation(Required=false)]
-        public long? Quantity { get; set; }
+        public string ItemName { get; set; }
 
         /// <summary>
         /// 支付时间戳
@@ -80,11 +80,11 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         public long? PaidTimestamp { get; set; }
 
         /// <summary>
-        /// 创建时间戳
+        /// 购买数量
         /// </summary>
-        [NameInMap("createTimestamp")]
+        [NameInMap("quantity")]
         [Validation(Required=false)]
-        public long? CreateTimestamp { get; set; }
+        public long? Quantity { get; set; }
 
         /// <summary>
         /// 开始生效时间
@@ -94,18 +94,18 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         public long? StartTimestamp { get; set; }
 
         /// <summary>
-        /// 生效结束时间
+        /// 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
         /// </summary>
-        [NameInMap("endTimestamp")]
+        [NameInMap("status")]
         [Validation(Required=false)]
-        public long? EndTimestamp { get; set; }
+        public long? Status { get; set; }
 
         /// <summary>
-        /// 是否内购订单
+        /// 订单实付金额(单位分)
         /// </summary>
-        [NameInMap("inAppOrder")]
+        [NameInMap("totalActualPayFee")]
         [Validation(Required=false)]
-        public bool? InAppOrder { get; set; }
+        public long? TotalActualPayFee { get; set; }
 
     }
 

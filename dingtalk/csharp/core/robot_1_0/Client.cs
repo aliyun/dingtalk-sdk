@@ -26,94 +26,6 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
         }
 
 
-        public BatchSendOTOResponse BatchSendOTO(BatchSendOTORequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchSendOTOHeaders headers = new BatchSendOTOHeaders();
-            return BatchSendOTOWithOptions(request, headers, runtime);
-        }
-
-        public async Task<BatchSendOTOResponse> BatchSendOTOAsync(BatchSendOTORequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchSendOTOHeaders headers = new BatchSendOTOHeaders();
-            return await BatchSendOTOWithOptionsAsync(request, headers, runtime);
-        }
-
-        public BatchSendOTOResponse BatchSendOTOWithOptions(BatchSendOTORequest request, BatchSendOTOHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
-            {
-                body["robotCode"] = request.RobotCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
-            {
-                body["userIds"] = request.UserIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgKey))
-            {
-                body["msgKey"] = request.MsgKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParam))
-            {
-                body["msgParam"] = request.MsgParam;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<BatchSendOTOResponse>(DoROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime));
-        }
-
-        public async Task<BatchSendOTOResponse> BatchSendOTOWithOptionsAsync(BatchSendOTORequest request, BatchSendOTOHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
-            {
-                body["robotCode"] = request.RobotCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
-            {
-                body["userIds"] = request.UserIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgKey))
-            {
-                body["msgKey"] = request.MsgKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParam))
-            {
-                body["msgParam"] = request.MsgParam;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<BatchSendOTOResponse>(await DoROARequestAsync("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime));
-        }
-
         public BatchOTOQueryResponse BatchOTOQuery(BatchOTOQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -132,13 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
-            {
-                query["robotCode"] = request.RobotCode;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessQueryKey))
             {
                 query["processQueryKey"] = request.ProcessQueryKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                query["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -161,13 +73,13 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
-            {
-                query["robotCode"] = request.RobotCode;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessQueryKey))
             {
                 query["processQueryKey"] = request.ProcessQueryKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                query["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -184,6 +96,94 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<BatchOTOQueryResponse>(await DoROARequestAsync("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", "/v1.0/robot/oToMessages/readStatus", "json", req, runtime));
+        }
+
+        public BatchSendOTOResponse BatchSendOTO(BatchSendOTORequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchSendOTOHeaders headers = new BatchSendOTOHeaders();
+            return BatchSendOTOWithOptions(request, headers, runtime);
+        }
+
+        public async Task<BatchSendOTOResponse> BatchSendOTOAsync(BatchSendOTORequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchSendOTOHeaders headers = new BatchSendOTOHeaders();
+            return await BatchSendOTOWithOptionsAsync(request, headers, runtime);
+        }
+
+        public BatchSendOTOResponse BatchSendOTOWithOptions(BatchSendOTORequest request, BatchSendOTOHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgKey))
+            {
+                body["msgKey"] = request.MsgKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParam))
+            {
+                body["msgParam"] = request.MsgParam;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<BatchSendOTOResponse>(DoROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime));
+        }
+
+        public async Task<BatchSendOTOResponse> BatchSendOTOWithOptionsAsync(BatchSendOTORequest request, BatchSendOTOHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgKey))
+            {
+                body["msgKey"] = request.MsgKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParam))
+            {
+                body["msgParam"] = request.MsgParam;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<BatchSendOTOResponse>(await DoROARequestAsync("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime));
         }
 
         public SendRobotDingMessageResponse SendRobotDingMessage(SendRobotDingMessageRequest request)
@@ -204,9 +204,13 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentParams))
             {
-                body["robotCode"] = request.RobotCode;
+                body["contentParams"] = request.ContentParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTemplateId))
+            {
+                body["dingTemplateId"] = request.DingTemplateId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
@@ -216,13 +220,9 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTemplateId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                body["dingTemplateId"] = request.DingTemplateId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentParams))
-            {
-                body["contentParams"] = request.ContentParams;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -245,9 +245,13 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentParams))
             {
-                body["robotCode"] = request.RobotCode;
+                body["contentParams"] = request.ContentParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTemplateId))
+            {
+                body["dingTemplateId"] = request.DingTemplateId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
@@ -257,13 +261,9 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
             {
                 body["receiverUserIdList"] = request.ReceiverUserIdList;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTemplateId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
-                body["dingTemplateId"] = request.DingTemplateId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentParams))
-            {
-                body["contentParams"] = request.ContentParams;
+                body["robotCode"] = request.RobotCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

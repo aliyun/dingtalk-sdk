@@ -9,33 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class UpgradeNormalGroupRequest : TeaModel {
-        /// <summary>
-        /// 升级的目标群组id
-        /// </summary>
-        [NameInMap("openGroupSetId")]
+        [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
-        public string OpenGroupSetId { get; set; }
-
-        /// <summary>
-        /// 升级的目标模板id
-        /// </summary>
-        [NameInMap("templateId")]
-        [Validation(Required=false)]
-        public string TemplateId { get; set; }
-
-        /// <summary>
-        /// 群id
-        /// </summary>
-        [NameInMap("openConversationId")]
-        [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
-
-        /// <summary>
-        /// 升级的目标团队id
-        /// </summary>
-        [NameInMap("openTeamId")]
-        [Validation(Required=false)]
-        public string OpenTeamId { get; set; }
+        public long? DingIsvOrgId { get; set; }
 
         [NameInMap("dingOrgId")]
         [Validation(Required=false)]
@@ -49,9 +25,33 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
 
-        [NameInMap("dingIsvOrgId")]
+        /// <summary>
+        /// 群id
+        /// </summary>
+        [NameInMap("openConversationId")]
         [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
+        public string OpenConversationId { get; set; }
+
+        /// <summary>
+        /// 升级的目标群组id
+        /// </summary>
+        [NameInMap("openGroupSetId")]
+        [Validation(Required=false)]
+        public string OpenGroupSetId { get; set; }
+
+        /// <summary>
+        /// 升级的目标团队id
+        /// </summary>
+        [NameInMap("openTeamId")]
+        [Validation(Required=false)]
+        public string OpenTeamId { get; set; }
+
+        /// <summary>
+        /// 升级的目标模板id
+        /// </summary>
+        [NameInMap("templateId")]
+        [Validation(Required=false)]
+        public string TemplateId { get; set; }
 
     }
 

@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string DeptId { get; set; }
 
         /// <summary>
-        /// 伙伴编码
-        /// </summary>
-        [NameInMap("partnerNum")]
-        [Validation(Required=false)]
-        public string PartnerNum { get; set; }
-
-        /// <summary>
         /// 伙伴类型id列表
         /// </summary>
         [NameInMap("labelIds")]
         [Validation(Required=false)]
         public List<string> LabelIds { get; set; }
+
+        /// <summary>
+        /// 伙伴编码
+        /// </summary>
+        [NameInMap("partnerNum")]
+        [Validation(Required=false)]
+        public string PartnerNum { get; set; }
 
     }
 

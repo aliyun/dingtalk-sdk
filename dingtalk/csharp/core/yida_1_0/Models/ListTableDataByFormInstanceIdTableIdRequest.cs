@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FormUuid { get; set; }
 
         /// <summary>
-        /// 需要查找的子表单组件的唯一标识
-        /// </summary>
-        [NameInMap("tableFieldId")]
-        [Validation(Required=false)]
-        public string TableFieldId { get; set; }
-
-        /// <summary>
         /// 当前页
         /// </summary>
         [NameInMap("pageNumber")]
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("systemToken")]
         [Validation(Required=false)]
         public string SystemToken { get; set; }
+
+        /// <summary>
+        /// 需要查找的子表单组件的唯一标识
+        /// </summary>
+        [NameInMap("tableFieldId")]
+        [Validation(Required=false)]
+        public string TableFieldId { get; set; }
 
         /// <summary>
         /// 钉钉的userId

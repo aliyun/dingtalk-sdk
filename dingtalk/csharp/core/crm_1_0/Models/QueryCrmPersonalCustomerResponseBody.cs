@@ -9,6 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryCrmPersonalCustomerResponseBody : TeaModel {
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
         [NameInMap("values")]
         [Validation(Required=false)]
         public List<QueryCrmPersonalCustomerResponseBodyValues> Values { get; set; }
@@ -99,18 +111,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public string GmtModified { get; set; }
 
         }
-
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
-
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
 
     }
 

@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
 {
     public class QueryCollectingTraceTaskRequest : TeaModel {
         /// <summary>
-        /// 员工用户ID列表
+        /// appKey
         /// </summary>
-        [NameInMap("userIds")]
+        [NameInMap("dingClientId")]
         [Validation(Required=false)]
-        public List<string> UserIds { get; set; }
+        public string DingClientId { get; set; }
 
         /// <summary>
         /// isvOrgId
@@ -24,18 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         public long? DingIsvOrgId { get; set; }
 
         /// <summary>
-        /// tokenGrantType
+        /// oauthAppId
         /// </summary>
-        [NameInMap("dingTokenGrantType")]
+        [NameInMap("dingOauthAppId")]
         [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        /// <summary>
-        /// appKey
-        /// </summary>
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
+        public long? DingOauthAppId { get; set; }
 
         /// <summary>
         /// orgId
@@ -45,11 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         public long? DingOrgId { get; set; }
 
         /// <summary>
-        /// oauthAppId
+        /// tokenGrantType
         /// </summary>
-        [NameInMap("dingOauthAppId")]
+        [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
-        public long? DingOauthAppId { get; set; }
+        public long? DingTokenGrantType { get; set; }
+
+        /// <summary>
+        /// 员工用户ID列表
+        /// </summary>
+        [NameInMap("userIds")]
+        [Validation(Required=false)]
+        public List<string> UserIds { get; set; }
 
     }
 

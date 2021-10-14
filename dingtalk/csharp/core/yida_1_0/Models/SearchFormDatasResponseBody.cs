@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public long? CurrentPage { get; set; }
 
         /// <summary>
-        /// 符合条件的实例总数
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
-        /// <summary>
         /// 实例详情列表
         /// </summary>
         [NameInMap("data")]
@@ -217,6 +210,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             public string Sequence { get; set; }
 
         }
+
+        /// <summary>
+        /// 符合条件的实例总数
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

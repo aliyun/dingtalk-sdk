@@ -21,31 +21,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string Name { get; set; }
         };
 
-        /// <summary>
-        /// 上级部门ID
-        /// </summary>
-        [NameInMap("superId")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public long? SuperId { get; set; }
-
-        /// <summary>
-        /// 钉钉企业管理员工ID
-        /// </summary>
-        [NameInMap("operator")]
-        [Validation(Required=false)]
-        public string Operator { get; set; }
+        public string DingCorpId { get; set; }
 
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         [NameInMap("dingOauthAppId")]
         [Validation(Required=false)]
         public long? DingOauthAppId { get; set; }
+
+        [NameInMap("dingOrgId")]
+        [Validation(Required=false)]
+        public long? DingOrgId { get; set; }
 
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
@@ -55,9 +45,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public int? DingTokenGrantType { get; set; }
 
-        [NameInMap("dingOrgId")]
+        /// <summary>
+        /// 钉钉企业管理员工ID
+        /// </summary>
+        [NameInMap("operator")]
         [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
+        public string Operator { get; set; }
+
+        /// <summary>
+        /// 上级部门ID
+        /// </summary>
+        [NameInMap("superId")]
+        [Validation(Required=false)]
+        public long? SuperId { get; set; }
 
     }
 

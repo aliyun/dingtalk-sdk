@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// 总数
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
-        /// <summary>
         /// 数据集合
         /// </summary>
         [NameInMap("list")]
@@ -80,6 +73,13 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }
+
+        /// <summary>
+        /// 总数
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class EditFeedReplayRequest : TeaModel {
         /// <summary>
-        /// 用户id(剪辑者的组织内id)
+        /// 剪辑的结束位置的时间戳（在原开始结束的时间戳之内）
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("editEndTime")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public long? EditEndTime { get; set; }
 
         /// <summary>
         /// 剪辑的起始位置的时间戳（在原开始结束的时间戳之内）
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public long? EditStartTime { get; set; }
 
         /// <summary>
-        /// 剪辑的结束位置的时间戳（在原开始结束的时间戳之内）
+        /// 用户id(剪辑者的组织内id)
         /// </summary>
-        [NameInMap("editEndTime")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public long? EditEndTime { get; set; }
+        public string UserId { get; set; }
 
     }
 

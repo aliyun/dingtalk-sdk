@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ExpireCommodityRequest : TeaModel {
-        [NameInMap("instanceId")]
-        [Validation(Required=false)]
-        public string InstanceId { get; set; }
-
         [NameInMap("accessKey")]
         [Validation(Required=false)]
         public string AccessKey { get; set; }
@@ -20,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("callerUid")]
         [Validation(Required=false)]
         public string CallerUid { get; set; }
+
+        [NameInMap("instanceId")]
+        [Validation(Required=false)]
+        public string InstanceId { get; set; }
 
     }
 

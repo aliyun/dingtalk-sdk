@@ -9,16 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListSeniorSettingsResponseBody : TeaModel {
+        [NameInMap("protectScenes")]
+        [Validation(Required=false)]
+        public List<string> ProtectScenes { get; set; }
+
         /// <summary>
         /// Id of the request
         /// </summary>
         [NameInMap("seniorStaffId")]
         [Validation(Required=false)]
         public string SeniorStaffId { get; set; }
-
-        [NameInMap("protectScenes")]
-        [Validation(Required=false)]
-        public List<string> ProtectScenes { get; set; }
 
         [NameInMap("seniorWhiteList")]
         [Validation(Required=false)]

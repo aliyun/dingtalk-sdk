@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public string DingCorpId { get; set; }
 
         /// <summary>
-        /// 用户id(在服务窗对应虚拟企业中的用户id)
-        /// </summary>
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
-
-        /// <summary>
         /// 消息类型
         /// </summary>
         [NameInMap("msgKey")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         [NameInMap("msgParam")]
         [Validation(Required=false)]
         public string MsgParam { get; set; }
+
+        /// <summary>
+        /// 用户id(在服务窗对应虚拟企业中的用户id)
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

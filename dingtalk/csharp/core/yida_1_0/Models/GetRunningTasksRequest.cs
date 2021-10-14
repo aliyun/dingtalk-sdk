@@ -9,21 +9,21 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetRunningTasksRequest : TeaModel {
-        [NameInMap("processInstanceId")]
-        [Validation(Required=false)]
-        public string ProcessInstanceId { get; set; }
-
         [NameInMap("appType")]
         [Validation(Required=false)]
         public string AppType { get; set; }
 
-        [NameInMap("systemToken")]
-        [Validation(Required=false)]
-        public string SystemToken { get; set; }
-
         [NameInMap("language")]
         [Validation(Required=false)]
         public string Language { get; set; }
+
+        [NameInMap("processInstanceId")]
+        [Validation(Required=false)]
+        public string ProcessInstanceId { get; set; }
+
+        [NameInMap("systemToken")]
+        [Validation(Required=false)]
+        public string SystemToken { get; set; }
 
         [NameInMap("userId")]
         [Validation(Required=false)]

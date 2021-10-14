@@ -24,18 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public string ConferencePassword { get; set; }
 
         /// <summary>
-        /// 主持人密码
-        /// </summary>
-        [NameInMap("hostPassword")]
-        [Validation(Required=false)]
-        public string HostPassword { get; set; }
-
-        /// <summary>
         /// 入会链接
         /// </summary>
         [NameInMap("externalLinkUrl")]
         [Validation(Required=false)]
         public string ExternalLinkUrl { get; set; }
+
+        /// <summary>
+        /// 主持人密码
+        /// </summary>
+        [NameInMap("hostPassword")]
+        [Validation(Required=false)]
+        public string HostPassword { get; set; }
 
         /// <summary>
         /// 电话入会号码

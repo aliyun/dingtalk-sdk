@@ -23,12 +23,12 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public GetOfficialAccountOTOMessageResultResponseBodyResult Result { get; set; }
         public class GetOfficialAccountOTOMessageResultResponseBodyResult : TeaModel {
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public long? Status { get; set; }
             [NameInMap("readUserIdList")]
             [Validation(Required=false)]
             public List<string> ReadUserIdList { get; set; }
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public long? Status { get; set; }
         };
 
     }

@@ -9,13 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class CloseVideoConferenceResponseBody : TeaModel {
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public long? Code { get; set; }
-
         [NameInMap("cause")]
         [Validation(Required=false)]
         public string Cause { get; set; }
+
+        [NameInMap("code")]
+        [Validation(Required=false)]
+        public long? Code { get; set; }
 
     }
 

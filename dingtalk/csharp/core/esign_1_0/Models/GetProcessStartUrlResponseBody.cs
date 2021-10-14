@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class GetProcessStartUrlResponseBody : TeaModel {
-        [NameInMap("message")]
-        [Validation(Required=false)]
-        public string Message { get; set; }
-
         [NameInMap("code")]
         [Validation(Required=false)]
         public int? Code { get; set; }
@@ -21,16 +17,20 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public GetProcessStartUrlResponseBodyData Data { get; set; }
         public class GetProcessStartUrlResponseBodyData : TeaModel {
-            [NameInMap("taskId")]
-            [Validation(Required=false)]
-            public string TaskId { get; set; }
-            [NameInMap("pcUrl")]
-            [Validation(Required=false)]
-            public string PcUrl { get; set; }
             [NameInMap("mobileUrl")]
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
+            [NameInMap("pcUrl")]
+            [Validation(Required=false)]
+            public string PcUrl { get; set; }
+            [NameInMap("taskId")]
+            [Validation(Required=false)]
+            public string TaskId { get; set; }
         };
+
+        [NameInMap("message")]
+        [Validation(Required=false)]
+        public string Message { get; set; }
 
     }
 

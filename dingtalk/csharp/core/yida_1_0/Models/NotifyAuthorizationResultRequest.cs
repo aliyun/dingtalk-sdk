@@ -9,29 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class NotifyAuthorizationResultRequest : TeaModel {
-        [NameInMap("instanceId")]
-        [Validation(Required=false)]
-        public string InstanceId { get; set; }
-
-        [NameInMap("accountNumber")]
-        [Validation(Required=false)]
-        public string AccountNumber { get; set; }
-
-        [NameInMap("instanceName")]
-        [Validation(Required=false)]
-        public string InstanceName { get; set; }
-
         [NameInMap("accessKey")]
         [Validation(Required=false)]
         public string AccessKey { get; set; }
 
-        [NameInMap("chargeType")]
+        [NameInMap("accountNumber")]
         [Validation(Required=false)]
-        public string ChargeType { get; set; }
-
-        [NameInMap("endTimeGMT")]
-        [Validation(Required=false)]
-        public long? EndTimeGMT { get; set; }
+        public string AccountNumber { get; set; }
 
         [NameInMap("beginTimeGMT")]
         [Validation(Required=false)]
@@ -41,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string CallerUid { get; set; }
 
+        [NameInMap("chargeType")]
+        [Validation(Required=false)]
+        public string ChargeType { get; set; }
+
         [NameInMap("commerceType")]
         [Validation(Required=false)]
         public string CommerceType { get; set; }
@@ -48,6 +36,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("commodityType")]
         [Validation(Required=false)]
         public string CommodityType { get; set; }
+
+        [NameInMap("endTimeGMT")]
+        [Validation(Required=false)]
+        public long? EndTimeGMT { get; set; }
+
+        [NameInMap("instanceId")]
+        [Validation(Required=false)]
+        public string InstanceId { get; set; }
+
+        [NameInMap("instanceName")]
+        [Validation(Required=false)]
+        public string InstanceName { get; set; }
 
         /// <summary>
         /// 阿里云产品code

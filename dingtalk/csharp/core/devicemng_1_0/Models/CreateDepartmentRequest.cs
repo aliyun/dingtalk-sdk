@@ -10,11 +10,25 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class CreateDepartmentRequest : TeaModel {
         /// <summary>
-        /// 组织id
+        /// 认证信息
         /// </summary>
-        [NameInMap("dingCorpId")]
+        [NameInMap("authInfo")]
         [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        public string AuthInfo { get; set; }
+
+        /// <summary>
+        /// 认证方式
+        /// </summary>
+        [NameInMap("authType")]
+        [Validation(Required=false)]
+        public string AuthType { get; set; }
+
+        /// <summary>
+        /// 业务扩展
+        /// </summary>
+        [NameInMap("bizExt")]
+        [Validation(Required=false)]
+        public string BizExt { get; set; }
 
         /// <summary>
         /// 部门名称
@@ -31,27 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public string DepartmentType { get; set; }
 
         /// <summary>
-        /// 业务系统地址
-        /// </summary>
-        [NameInMap("systemUrl")]
-        [Validation(Required=false)]
-        public string SystemUrl { get; set; }
-
-        /// <summary>
-        /// 认证方式
-        /// </summary>
-        [NameInMap("authType")]
-        [Validation(Required=false)]
-        public string AuthType { get; set; }
-
-        /// <summary>
-        /// 认证信息
-        /// </summary>
-        [NameInMap("authInfo")]
-        [Validation(Required=false)]
-        public string AuthInfo { get; set; }
-
-        /// <summary>
         /// 部门描述
         /// </summary>
         [NameInMap("description")]
@@ -59,11 +52,18 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// 业务扩展
+        /// 组织id
         /// </summary>
-        [NameInMap("bizExt")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public string BizExt { get; set; }
+        public string DingCorpId { get; set; }
+
+        /// <summary>
+        /// 业务系统地址
+        /// </summary>
+        [NameInMap("systemUrl")]
+        [Validation(Required=false)]
+        public string SystemUrl { get; set; }
 
         /// <summary>
         /// 创建人工号

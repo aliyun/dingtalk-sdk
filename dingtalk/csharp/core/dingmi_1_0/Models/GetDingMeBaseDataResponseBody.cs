@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public bool? FromCache { get; set; }
 
         /// <summary>
-        /// 运行时间
-        /// </summary>
-        [NameInMap("runtime")]
-        [Validation(Required=false)]
-        public long? Runtime { get; set; }
-
-        /// <summary>
         /// 结果集
         /// </summary>
         [NameInMap("rawset")]
         [Validation(Required=false)]
         public List<Dictionary<string, string>> Rawset { get; set; }
+
+        /// <summary>
+        /// 运行时间
+        /// </summary>
+        [NameInMap("runtime")]
+        [Validation(Required=false)]
+        public long? Runtime { get; set; }
 
         /// <summary>
         /// 字段解释

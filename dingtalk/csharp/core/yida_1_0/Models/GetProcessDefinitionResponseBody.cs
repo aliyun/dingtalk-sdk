@@ -10,27 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetProcessDefinitionResponseBody : TeaModel {
         /// <summary>
-        /// outResult
-        /// </summary>
-        [NameInMap("outResult")]
-        [Validation(Required=false)]
-        public string OutResult { get; set; }
-
-        /// <summary>
-        /// processInstanceId
-        /// </summary>
-        [NameInMap("processInstanceId")]
-        [Validation(Required=false)]
-        public string ProcessInstanceId { get; set; }
-
-        /// <summary>
-        /// variables
-        /// </summary>
-        [NameInMap("variables")]
-        [Validation(Required=false)]
-        public Dictionary<string, object> Variables { get; set; }
-
-        /// <summary>
         /// formUuid
         /// </summary>
         [NameInMap("formUuid")]
@@ -38,11 +17,60 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FormUuid { get; set; }
 
         /// <summary>
-        /// processId
+        /// originator
         /// </summary>
-        [NameInMap("processId")]
+        [NameInMap("originator")]
         [Validation(Required=false)]
-        public string ProcessId { get; set; }
+        public GetProcessDefinitionResponseBodyOriginator Originator { get; set; }
+        public class GetProcessDefinitionResponseBodyOriginator : TeaModel {
+            [NameInMap("departmentDescription")]
+            [Validation(Required=false)]
+            public string DepartmentDescription { get; set; }
+            [NameInMap("displayEnName")]
+            [Validation(Required=false)]
+            public string DisplayEnName { get; set; }
+            [NameInMap("displayName")]
+            [Validation(Required=false)]
+            public string DisplayName { get; set; }
+            [NameInMap("masterDataDepartments")]
+            [Validation(Required=false)]
+            public List<GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments> MasterDataDepartments { get; set; }
+            public class GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments : TeaModel {
+                public string HumanSourceGroupOrderNumber { get; set; }
+                public string DeptPath { get; set; }
+                public string DeptName { get; set; }
+                public string DeptNameInEnglish { get; set; }
+                public string HumanSourceGroupWorkNo { get; set; }
+                public long? Id { get; set; }
+                public string MasterWorkNo { get; set; }
+                public string DeptNo { get; set; }
+            }
+            [NameInMap("orderNumber")]
+            [Validation(Required=false)]
+            public string OrderNumber { get; set; }
+            [NameInMap("personalPhoto")]
+            [Validation(Required=false)]
+            public string PersonalPhoto { get; set; }
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public string Status { get; set; }
+            [NameInMap("tbWang")]
+            [Validation(Required=false)]
+            public string TbWang { get; set; }
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+            [NameInMap("userInfo")]
+            [Validation(Required=false)]
+            public string UserInfo { get; set; }
+        };
+
+        /// <summary>
+        /// outResult
+        /// </summary>
+        [NameInMap("outResult")]
+        [Validation(Required=false)]
+        public string OutResult { get; set; }
 
         /// <summary>
         /// owners
@@ -182,60 +210,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         }
 
         /// <summary>
-        /// originator
+        /// processId
         /// </summary>
-        [NameInMap("originator")]
+        [NameInMap("processId")]
         [Validation(Required=false)]
-        public GetProcessDefinitionResponseBodyOriginator Originator { get; set; }
-        public class GetProcessDefinitionResponseBodyOriginator : TeaModel {
-            [NameInMap("userInfo")]
-            [Validation(Required=false)]
-            public string UserInfo { get; set; }
-            [NameInMap("tbWang")]
-            [Validation(Required=false)]
-            public string TbWang { get; set; }
-            [NameInMap("orderNumber")]
-            [Validation(Required=false)]
-            public string OrderNumber { get; set; }
-            [NameInMap("departmentDescription")]
-            [Validation(Required=false)]
-            public string DepartmentDescription { get; set; }
-            [NameInMap("displayName")]
-            [Validation(Required=false)]
-            public string DisplayName { get; set; }
-            [NameInMap("masterDataDepartments")]
-            [Validation(Required=false)]
-            public List<GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments> MasterDataDepartments { get; set; }
-            public class GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments : TeaModel {
-                public string HumanSourceGroupOrderNumber { get; set; }
-                public string DeptPath { get; set; }
-                public string DeptName { get; set; }
-                public string DeptNameInEnglish { get; set; }
-                public string HumanSourceGroupWorkNo { get; set; }
-                public long? Id { get; set; }
-                public string MasterWorkNo { get; set; }
-                public string DeptNo { get; set; }
-            }
-            [NameInMap("displayEnName")]
-            [Validation(Required=false)]
-            public string DisplayEnName { get; set; }
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-            [NameInMap("personalPhoto")]
-            [Validation(Required=false)]
-            public string PersonalPhoto { get; set; }
-            [NameInMap("status")]
-            [Validation(Required=false)]
-            public string Status { get; set; }
-        };
+        public string ProcessId { get; set; }
 
         /// <summary>
-        /// title
+        /// processInstanceId
         /// </summary>
-        [NameInMap("title")]
+        [NameInMap("processInstanceId")]
         [Validation(Required=false)]
-        public string Title { get; set; }
+        public string ProcessInstanceId { get; set; }
+
+        /// <summary>
+        /// status
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public string Status { get; set; }
 
         /// <summary>
         /// tasks
@@ -292,11 +285,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         }
 
         /// <summary>
-        /// status
+        /// title
         /// </summary>
-        [NameInMap("status")]
+        [NameInMap("title")]
         [Validation(Required=false)]
-        public string Status { get; set; }
+        public string Title { get; set; }
+
+        /// <summary>
+        /// variables
+        /// </summary>
+        [NameInMap("variables")]
+        [Validation(Required=false)]
+        public Dictionary<string, object> Variables { get; set; }
 
     }
 

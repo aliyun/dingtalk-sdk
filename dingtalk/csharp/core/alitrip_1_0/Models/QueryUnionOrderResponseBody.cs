@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
 {
     public class QueryUnionOrderResponseBody : TeaModel {
         /// <summary>
+        /// 企业id
+        /// </summary>
+        [NameInMap("corpId")]
+        [Validation(Required=false)]
+        public string CorpId { get; set; }
+
+        /// <summary>
         /// 飞机订单信息
         /// </summary>
         [NameInMap("flightList")]
@@ -33,11 +40,27 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         }
 
         /// <summary>
-        /// 企业id
+        /// 酒店订单信息
         /// </summary>
-        [NameInMap("corpId")]
+        [NameInMap("hotelList")]
         [Validation(Required=false)]
-        public string CorpId { get; set; }
+        public List<QueryUnionOrderResponseBodyHotelList> HotelList { get; set; }
+        public class QueryUnionOrderResponseBodyHotelList : TeaModel {
+            /// <summary>
+            /// 酒店订单号
+            /// </summary>
+            [NameInMap("hotelOrderId")]
+            [Validation(Required=false)]
+            public long? HotelOrderId { get; set; }
+
+            /// <summary>
+            /// 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
+            /// </summary>
+            [NameInMap("hotelOrderStatus")]
+            [Validation(Required=false)]
+            public long? HotelOrderStatus { get; set; }
+
+        }
 
         /// <summary>
         /// 火车订单信息
@@ -59,29 +82,6 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
             [NameInMap("trainOrderstatus")]
             [Validation(Required=false)]
             public long? TrainOrderstatus { get; set; }
-
-        }
-
-        /// <summary>
-        /// 酒店订单信息
-        /// </summary>
-        [NameInMap("hotelList")]
-        [Validation(Required=false)]
-        public List<QueryUnionOrderResponseBodyHotelList> HotelList { get; set; }
-        public class QueryUnionOrderResponseBodyHotelList : TeaModel {
-            /// <summary>
-            /// 酒店订单号
-            /// </summary>
-            [NameInMap("hotelOrderId")]
-            [Validation(Required=false)]
-            public long? HotelOrderId { get; set; }
-
-            /// <summary>
-            /// 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
-            /// </summary>
-            [NameInMap("hotelOrderStatus")]
-            [Validation(Required=false)]
-            public long? HotelOrderStatus { get; set; }
 
         }
 

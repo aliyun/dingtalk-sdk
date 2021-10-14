@@ -45,9 +45,49 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
             {
-                body["scrappedQuantity"] = request.ScrappedQuantity;
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
+            {
+                body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
+            {
+                body["instNo"] = request.InstNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
+            {
+                body["isBatchJob"] = request.IsBatchJob;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
+            {
+                body["manufactureDate"] = request.ManufactureDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            {
+                body["mesAppKey"] = request.MesAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
+            {
+                body["processEnName"] = request.ProcessEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
+            {
+                body["processName"] = request.ProcessName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
+            {
+                body["productEnName"] = request.ProductEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
             {
@@ -61,69 +101,29 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             {
                 body["reworkableQuantity"] = request.ReworkableQuantity;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
             {
-                body["userName"] = request.UserName;
+                body["scrappedQuantity"] = request.ScrappedQuantity;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
             {
-                body["uuid"] = request.Uuid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
-            {
-                body["productName"] = request.ProductName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
-            {
-                body["productEnName"] = request.ProductEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
-            {
-                body["extend"] = request.Extend;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
-            {
-                body["productCode"] = request.ProductCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
-            {
-                body["processName"] = request.ProcessName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
-            {
-                body["processEnName"] = request.ProcessEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
-            {
-                body["mesAppKey"] = request.MesAppKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
-            {
-                body["instNo"] = request.InstNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
-            {
-                body["manufactureDate"] = request.ManufactureDate;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
-            {
-                body["isBatchJob"] = request.IsBatchJob;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
-            {
-                body["userNameList"] = request.UserNameList;
+                body["unitPrice"] = request.UnitPrice;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
             {
                 body["userIdList"] = request.UserIdList;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                body["unitPrice"] = request.UnitPrice;
+                body["userName"] = request.UserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
+            {
+                body["userNameList"] = request.UserNameList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -138,9 +138,49 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
             {
-                body["scrappedQuantity"] = request.ScrappedQuantity;
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
+            {
+                body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
+            {
+                body["instNo"] = request.InstNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
+            {
+                body["isBatchJob"] = request.IsBatchJob;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
+            {
+                body["manufactureDate"] = request.ManufactureDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            {
+                body["mesAppKey"] = request.MesAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
+            {
+                body["processEnName"] = request.ProcessEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
+            {
+                body["processName"] = request.ProcessName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
+            {
+                body["productEnName"] = request.ProductEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
             {
@@ -154,69 +194,29 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             {
                 body["reworkableQuantity"] = request.ReworkableQuantity;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
             {
-                body["userName"] = request.UserName;
+                body["scrappedQuantity"] = request.ScrappedQuantity;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
             {
-                body["uuid"] = request.Uuid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
-            {
-                body["productName"] = request.ProductName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
-            {
-                body["productEnName"] = request.ProductEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
-            {
-                body["extend"] = request.Extend;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
-            {
-                body["productCode"] = request.ProductCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
-            {
-                body["processName"] = request.ProcessName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
-            {
-                body["processEnName"] = request.ProcessEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
-            {
-                body["mesAppKey"] = request.MesAppKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
-            {
-                body["instNo"] = request.InstNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
-            {
-                body["manufactureDate"] = request.ManufactureDate;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
-            {
-                body["isBatchJob"] = request.IsBatchJob;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
-            {
-                body["userNameList"] = request.UserNameList;
+                body["unitPrice"] = request.UnitPrice;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
             {
                 body["userIdList"] = request.UserIdList;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                body["unitPrice"] = request.UnitPrice;
+                body["userName"] = request.UserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
+            {
+                body["userNameList"] = request.UserNameList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
             }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
@@ -244,57 +244,57 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CurrentPage))
             {
-                body["productName"] = request.ProductName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
-            {
-                body["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
-            {
-                body["qualifiedQuantity"] = request.QualifiedQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDay))
-            {
-                body["manufactureDay"] = request.ManufactureDay;
+                body["currentPage"] = request.CurrentPage;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
             {
                 body["instNo"] = request.InstNo;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDay))
             {
-                body["userName"] = request.UserName;
+                body["manufactureDay"] = request.ManufactureDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            {
+                body["mesAppKey"] = request.MesAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
             {
                 body["productCode"] = request.ProductCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
             {
                 body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
+            {
+                body["qualifiedQuantity"] = request.QualifiedQuantity;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
             {
                 body["unitPrice"] = request.UnitPrice;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
-            {
-                body["uuid"] = request.Uuid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CurrentPage))
-            {
-                body["currentPage"] = request.CurrentPage;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                body["mesAppKey"] = request.MesAppKey;
+                body["userName"] = request.UserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -317,57 +317,57 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CurrentPage))
             {
-                body["productName"] = request.ProductName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
-            {
-                body["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
-            {
-                body["qualifiedQuantity"] = request.QualifiedQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDay))
-            {
-                body["manufactureDay"] = request.ManufactureDay;
+                body["currentPage"] = request.CurrentPage;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
             {
                 body["instNo"] = request.InstNo;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDay))
             {
-                body["userName"] = request.UserName;
+                body["manufactureDay"] = request.ManufactureDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            {
+                body["mesAppKey"] = request.MesAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
             {
                 body["productCode"] = request.ProductCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
             {
                 body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
+            {
+                body["qualifiedQuantity"] = request.QualifiedQuantity;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
             {
                 body["unitPrice"] = request.UnitPrice;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
-            {
-                body["uuid"] = request.Uuid;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CurrentPage))
-            {
-                body["currentPage"] = request.CurrentPage;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
             {
-                body["mesAppKey"] = request.MesAppKey;
+                body["userName"] = request.UserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

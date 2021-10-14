@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class UpdateAppRoleInfoRequest : TeaModel {
         /// <summary>
-        /// 执行用户userId
+        /// 变更角色管理权限，可不传，不传则不变
         /// </summary>
-        [NameInMap("opUserId")]
+        [NameInMap("canManageRole")]
         [Validation(Required=false)]
-        public string OpUserId { get; set; }
+        public bool? CanManageRole { get; set; }
 
         /// <summary>
         /// 变更角色名称，可不传，不传则不变
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string NewRoleName { get; set; }
 
         /// <summary>
-        /// 变更角色管理权限，可不传，不传则不变
+        /// 执行用户userId
         /// </summary>
-        [NameInMap("canManageRole")]
+        [NameInMap("opUserId")]
         [Validation(Required=false)]
-        public bool? CanManageRole { get; set; }
+        public string OpUserId { get; set; }
 
     }
 

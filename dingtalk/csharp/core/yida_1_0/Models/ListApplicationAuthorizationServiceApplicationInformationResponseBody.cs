@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListApplicationAuthorizationServiceApplicationInformationResponseBody : TeaModel {
         /// <summary>
-        /// 分页大小
-        /// </summary>
-        [NameInMap("pageSize")]
-        [Validation(Required=false)]
-        public int? PageSize { get; set; }
-
-        /// <summary>
         /// applicationInformation
         /// </summary>
         [NameInMap("applicationInformation")]
@@ -82,6 +75,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
+
+        /// <summary>
+        /// 分页大小
+        /// </summary>
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 总数量

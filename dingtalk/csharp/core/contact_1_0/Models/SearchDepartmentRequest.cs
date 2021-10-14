@@ -14,18 +14,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public long? DingOrgId { get; set; }
 
         /// <summary>
-        /// 部门名称或者部门名称拼音
-        /// </summary>
-        [NameInMap("queryWord")]
-        [Validation(Required=false)]
-        public string QueryWord { get; set; }
-
-        /// <summary>
         /// 分页查询锚点
         /// </summary>
         [NameInMap("offset")]
         [Validation(Required=false)]
         public int? Offset { get; set; }
+
+        /// <summary>
+        /// 部门名称或者部门名称拼音
+        /// </summary>
+        [NameInMap("queryWord")]
+        [Validation(Required=false)]
+        public string QueryWord { get; set; }
 
         /// <summary>
         /// 分页长度

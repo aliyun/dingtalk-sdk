@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class UpdateUserExtendInfoRequest : TeaModel {
         /// <summary>
+        /// comments
+        /// </summary>
+        [NameInMap("comments")]
+        [Validation(Required=false)]
+        public string Comments { get; set; }
+
+        /// <summary>
         /// 职称code
         /// </summary>
         [NameInMap("jobCode")]
         [Validation(Required=false)]
         public string JobCode { get; set; }
-
-        /// <summary>
-        /// 用户属性code
-        /// </summary>
-        [NameInMap("userProbCode")]
-        [Validation(Required=false)]
-        public string UserProbCode { get; set; }
 
         /// <summary>
         /// 工作状态code
@@ -31,11 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<string> JobStatusCode { get; set; }
 
         /// <summary>
-        /// comments
+        /// 用户属性code
         /// </summary>
-        [NameInMap("comments")]
+        [NameInMap("userProbCode")]
         [Validation(Required=false)]
-        public string Comments { get; set; }
+        public string UserProbCode { get; set; }
 
     }
 

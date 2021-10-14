@@ -10,18 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class DecodeBadgeCodeResponseBody : TeaModel {
         /// <summary>
-        /// 企业id
+        /// 支付宝付款码
         /// </summary>
-        [NameInMap("corpId")]
+        [NameInMap("alipayCode")]
         [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
-        /// 员工id
-        /// </summary>
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string AlipayCode { get; set; }
 
         /// <summary>
         /// 码类型
@@ -31,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string CodeType { get; set; }
 
         /// <summary>
-        /// 支付宝付款码
+        /// 企业id
         /// </summary>
-        [NameInMap("alipayCode")]
+        [NameInMap("corpId")]
         [Validation(Required=false)]
-        public string AlipayCode { get; set; }
+        public string CorpId { get; set; }
 
         /// <summary>
         /// 用户和企业关系
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [NameInMap("userCorpRelationType")]
         [Validation(Required=false)]
         public string UserCorpRelationType { get; set; }
+
+        /// <summary>
+        /// 员工id
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

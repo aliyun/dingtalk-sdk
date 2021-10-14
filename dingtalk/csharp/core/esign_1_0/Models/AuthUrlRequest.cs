@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class AuthUrlRequest : TeaModel {
-        [NameInMap("redirectUrl")]
-        [Validation(Required=false)]
-        public string RedirectUrl { get; set; }
-
         [NameInMap("dingCorpId")]
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
@@ -24,6 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
+
+        [NameInMap("redirectUrl")]
+        [Validation(Required=false)]
+        public string RedirectUrl { get; set; }
 
     }
 

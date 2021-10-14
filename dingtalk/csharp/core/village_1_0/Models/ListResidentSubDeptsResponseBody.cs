@@ -40,18 +40,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         }
 
         /// <summary>
-        /// 游标
-        /// </summary>
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
-        /// <summary>
         /// 是否还有记录
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 游标
+        /// </summary>
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public long? NextCursor { get; set; }
 
         /// <summary>
         /// 总数

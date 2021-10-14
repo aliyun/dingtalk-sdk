@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryPositionsResponseBody : TeaModel {
         /// <summary>
-        /// 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
         /// 是否有更多数据
         /// </summary>
         [NameInMap("hasMore")]
@@ -80,6 +73,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             public int? Status { get; set; }
 
         }
+
+        /// <summary>
+        /// 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
 
     }
 

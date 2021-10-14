@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AccessKey { get; set; }
 
         /// <summary>
-        /// 调用者unionId
-        /// </summary>
-        [NameInMap("callerUnionId")]
-        [Validation(Required=false)]
-        public string CallerUnionId { get; set; }
-
-        /// <summary>
         /// 账户号
         /// </summary>
         [NameInMap("accountNumber")]
         [Validation(Required=false)]
         public string AccountNumber { get; set; }
+
+        /// <summary>
+        /// 调用者unionId
+        /// </summary>
+        [NameInMap("callerUnionId")]
+        [Validation(Required=false)]
+        public string CallerUnionId { get; set; }
 
         /// <summary>
         /// 商品类型

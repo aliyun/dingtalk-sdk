@@ -288,11 +288,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         }
 
         /// <summary>
-        /// 总页数
+        /// 当前页码
         /// </summary>
-        [NameInMap("totalPages")]
+        [NameInMap("currentPage")]
         [Validation(Required=false)]
-        public int? TotalPages { get; set; }
+        public int? CurrentPage { get; set; }
 
         /// <summary>
         /// 数据总量
@@ -302,11 +302,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public long? TotalCount { get; set; }
 
         /// <summary>
-        /// 当前页码
+        /// 总页数
         /// </summary>
-        [NameInMap("currentPage")]
+        [NameInMap("totalPages")]
         [Validation(Required=false)]
-        public int? CurrentPage { get; set; }
+        public int? TotalPages { get; set; }
 
     }
 

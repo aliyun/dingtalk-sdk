@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class CopyFileRequest : TeaModel {
         /// <summary>
-        /// 目标空间id
+        /// 文件名冲突策略
         /// </summary>
-        [NameInMap("targetSpaceId")]
+        [NameInMap("addConflictPolicy")]
         [Validation(Required=false)]
-        public string TargetSpaceId { get; set; }
+        public string AddConflictPolicy { get; set; }
 
         /// <summary>
         /// 目标父目录id
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string TargetParentId { get; set; }
 
         /// <summary>
-        /// 文件名冲突策略
+        /// 目标空间id
         /// </summary>
-        [NameInMap("addConflictPolicy")]
+        [NameInMap("targetSpaceId")]
         [Validation(Required=false)]
-        public string AddConflictPolicy { get; set; }
+        public string TargetSpaceId { get; set; }
 
         /// <summary>
         /// 用户id

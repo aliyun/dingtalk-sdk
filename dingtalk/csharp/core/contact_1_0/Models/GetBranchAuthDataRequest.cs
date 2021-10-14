@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetBranchAuthDataRequest : TeaModel {
         /// <summary>
+        /// 查询条件
+        /// </summary>
+        [NameInMap("body")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> Body { get; set; }
+
+        /// <summary>
         /// 分支组织corpId
         /// </summary>
         [NameInMap("branchCorpId")]
@@ -22,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
-
-        /// <summary>
-        /// 查询条件
-        /// </summary>
-        [NameInMap("body")]
-        [Validation(Required=false)]
-        public Dictionary<string, string> Body { get; set; }
 
     }
 

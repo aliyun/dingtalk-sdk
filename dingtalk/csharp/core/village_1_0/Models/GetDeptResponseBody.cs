@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetDeptResponseBody : TeaModel {
         /// <summary>
-        /// 在父部门中的次序值
-        /// </summary>
-        [NameInMap("order")]
-        [Validation(Required=false)]
-        public long? Order { get; set; }
-
-        /// <summary>
         /// 下属组织的部门ID
         /// </summary>
         [NameInMap("departmentId")]
@@ -31,18 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public string DepartmentName { get; set; }
 
         /// <summary>
-        /// 父部门id
-        /// </summary>
-        [NameInMap("parentDepartmentId")]
-        [Validation(Required=false)]
-        public long? ParentDepartmentId { get; set; }
-
-        /// <summary>
         /// 部门是否来自关联组织
         /// </summary>
         [NameInMap("fromUnionOrg")]
         [Validation(Required=false)]
         public bool? FromUnionOrg { get; set; }
+
+        /// <summary>
+        /// 在父部门中的次序值
+        /// </summary>
+        [NameInMap("order")]
+        [Validation(Required=false)]
+        public long? Order { get; set; }
+
+        /// <summary>
+        /// 父部门id
+        /// </summary>
+        [NameInMap("parentDepartmentId")]
+        [Validation(Required=false)]
+        public long? ParentDepartmentId { get; set; }
 
     }
 

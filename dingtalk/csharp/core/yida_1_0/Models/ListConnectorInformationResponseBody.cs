@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListConnectorInformationResponseBody : TeaModel {
         /// <summary>
-        /// 分页大小
-        /// </summary>
-        [NameInMap("pageSize")]
-        [Validation(Required=false)]
-        public int? PageSize { get; set; }
-
-        /// <summary>
         /// 当前第几页
         /// </summary>
         [NameInMap("pageNumber")]
@@ -24,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public int? PageNumber { get; set; }
 
         /// <summary>
-        /// 总数量
+        /// 分页大小
         /// </summary>
-        [NameInMap("totalCount")]
+        [NameInMap("pageSize")]
         [Validation(Required=false)]
-        public long? TotalCount { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// pluginInfos
@@ -103,6 +96,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             }
 
         }
+
+        /// <summary>
+        /// 总数量
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

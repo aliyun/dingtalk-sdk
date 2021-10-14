@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListResidentDeptUsersResponseBody : TeaModel {
         /// <summary>
-        /// 下一个游标
-        /// </summary>
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
-        /// <summary>
         /// 是否还有更多数据
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 下一个游标
+        /// </summary>
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public long? NextCursor { get; set; }
 
         /// <summary>
         /// 用户列表

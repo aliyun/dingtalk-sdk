@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedPositionInfo))
             {
                 query["needPositionInfo"] = request.NeedPositionInfo;
@@ -51,10 +55,6 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -77,6 +77,10 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedPositionInfo))
             {
                 query["needPositionInfo"] = request.NeedPositionInfo;
@@ -84,10 +88,6 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -124,29 +124,29 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
-                body["userIds"] = request.UserIds;
+                body["dingClientId"] = request.DingClientId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOauthAppId))
             {
-                body["dingTokenGrantType"] = request.DingTokenGrantType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                body["dingClientId"] = request.DingClientId;
+                body["dingOauthAppId"] = request.DingOauthAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
             {
                 body["dingOrgId"] = request.DingOrgId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOauthAppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
             {
-                body["dingOauthAppId"] = request.DingOauthAppId;
+                body["dingTokenGrantType"] = request.DingTokenGrantType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -169,29 +169,29 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
             {
-                body["userIds"] = request.UserIds;
+                body["dingClientId"] = request.DingClientId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOauthAppId))
             {
-                body["dingTokenGrantType"] = request.DingTokenGrantType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                body["dingClientId"] = request.DingClientId;
+                body["dingOauthAppId"] = request.DingOauthAppId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
             {
                 body["dingOrgId"] = request.DingOrgId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOauthAppId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
             {
-                body["dingOauthAppId"] = request.DingOauthAppId;
+                body["dingTokenGrantType"] = request.DingTokenGrantType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -228,29 +228,29 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TraceId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
-                query["traceId"] = request.TraceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
+                query["endTime"] = request.EndTime;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["startTime"] = request.StartTime;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
-            {
-                query["endTime"] = request.EndTime;
+                query["nextToken"] = request.NextToken;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
             {
                 query["staffId"] = request.StaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TraceId))
+            {
+                query["traceId"] = request.TraceId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -273,29 +273,29 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TraceId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
-                query["traceId"] = request.TraceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
+                query["endTime"] = request.EndTime;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                query["startTime"] = request.StartTime;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
-            {
-                query["endTime"] = request.EndTime;
+                query["nextToken"] = request.NextToken;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
             {
                 query["staffId"] = request.StaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TraceId))
+            {
+                query["traceId"] = request.TraceId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

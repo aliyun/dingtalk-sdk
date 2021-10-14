@@ -9,13 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class RecallMessageRequest : TeaModel {
-        [NameInMap("operatorUid")]
-        [Validation(Required=false)]
-        public string OperatorUid { get; set; }
-
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }
+
+        [NameInMap("operatorUid")]
+        [Validation(Required=false)]
+        public string OperatorUid { get; set; }
 
         [NameInMap("type")]
         [Validation(Required=false)]

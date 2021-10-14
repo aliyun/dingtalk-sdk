@@ -10,18 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListSpacesRequest : TeaModel {
         /// <summary>
-        /// 用户id
+        /// 分页大小
         /// </summary>
-        [NameInMap("unionId")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public string UnionId { get; set; }
-
-        /// <summary>
-        /// 空间类型
-        /// </summary>
-        [NameInMap("spaceType")]
-        [Validation(Required=false)]
-        public string SpaceType { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// 分页加载锚点
@@ -31,11 +24,18 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// 分页大小
+        /// 空间类型
         /// </summary>
-        [NameInMap("maxResults")]
+        [NameInMap("spaceType")]
         [Validation(Required=false)]
-        public int? MaxResults { get; set; }
+        public string SpaceType { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
 
     }
 

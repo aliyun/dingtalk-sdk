@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class PushCustomerGroupMessageRequest : TeaModel {
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 客户群会话id
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
+
+        /// <summary>
+        /// 企业corpId
+        /// </summary>
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
 
         /// <summary>
         /// 消息类型

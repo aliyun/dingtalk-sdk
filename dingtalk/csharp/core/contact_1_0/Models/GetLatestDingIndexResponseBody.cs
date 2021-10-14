@@ -10,18 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetLatestDingIndexResponseBody : TeaModel {
         /// <summary>
-        /// 日期
+        /// 绿色指数
         /// </summary>
-        [NameInMap("statDate")]
+        [NameInMap("idxCarbon")]
         [Validation(Required=false)]
-        public string StatDate { get; set; }
-
-        /// <summary>
-        /// 钉钉指数
-        /// </summary>
-        [NameInMap("idxTotal")]
-        [Validation(Required=false)]
-        public float? IdxTotal { get; set; }
+        public float? IdxCarbon { get; set; }
 
         /// <summary>
         /// 效率指数
@@ -31,18 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public float? IdxEfficiency { get; set; }
 
         /// <summary>
-        /// 绿色指数
-        /// </summary>
-        [NameInMap("idxCarbon")]
-        [Validation(Required=false)]
-        public float? IdxCarbon { get; set; }
-
-        /// <summary>
         /// 钉钉指数月均分
         /// </summary>
         [NameInMap("idxMonthlyAvg")]
         [Validation(Required=false)]
         public float? IdxMonthlyAvg { get; set; }
+
+        /// <summary>
+        /// 钉钉指数
+        /// </summary>
+        [NameInMap("idxTotal")]
+        [Validation(Required=false)]
+        public float? IdxTotal { get; set; }
+
+        /// <summary>
+        /// 日期
+        /// </summary>
+        [NameInMap("statDate")]
+        [Validation(Required=false)]
+        public string StatDate { get; set; }
 
     }
 

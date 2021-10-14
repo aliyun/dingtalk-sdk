@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public string JobName { get; set; }
 
         /// <summary>
-        /// 偏移量
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public int? NextToken { get; set; }
-
-        /// <summary>
         /// 最大值
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// 偏移量
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public int? NextToken { get; set; }
 
     }
 

@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -34,18 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
         public string Code { get; set; }
 
         /// <summary>
-        /// OAuth 2.0 刷新令牌
-        /// </summary>
-        [NameInMap("refreshToken")]
-        [Validation(Required=false)]
-        public string RefreshToken { get; set; }
-
-        /// <summary>
         /// 分为authorization_code和refresh_token。使用授权码换token，传authorization_code；使用刷新token换用户token，传refresh_token
         /// </summary>
         [NameInMap("grantType")]
         [Validation(Required=false)]
         public string GrantType { get; set; }
+
+        /// <summary>
+        /// OAuth 2.0 刷新令牌
+        /// </summary>
+        [NameInMap("refreshToken")]
+        [Validation(Required=false)]
+        public string RefreshToken { get; set; }
 
     }
 

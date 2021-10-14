@@ -10,11 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class UpdateLiveFeedRequest : TeaModel {
         /// <summary>
-        /// 操作者id（修改者的组织内id）
+        /// 封面图url
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("coverUrl")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string CoverUrl { get; set; }
+
+        /// <summary>
+        /// 课程简介
+        /// </summary>
+        [NameInMap("introduction")]
+        [Validation(Required=false)]
+        public string Introduction { get; set; }
 
         /// <summary>
         /// 预计开始时间（毫秒值）（课程必须预告状态才可以修改该项）
@@ -24,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 封面图url
-        /// </summary>
-        [NameInMap("coverUrl")]
-        [Validation(Required=false)]
-        public string CoverUrl { get; set; }
-
-        /// <summary>
         /// 课程标题
         /// </summary>
         [NameInMap("title")]
@@ -38,11 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public string Title { get; set; }
 
         /// <summary>
-        /// 课程简介
+        /// 操作者id（修改者的组织内id）
         /// </summary>
-        [NameInMap("introduction")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string Introduction { get; set; }
+        public string UserId { get; set; }
 
     }
 

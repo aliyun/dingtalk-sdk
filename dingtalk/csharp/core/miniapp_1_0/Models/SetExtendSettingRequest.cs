@@ -9,13 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class SetExtendSettingRequest : TeaModel {
-        [NameInMap("miniAppId")]
-        [Validation(Required=false)]
-        public string MiniAppId { get; set; }
-
         [NameInMap("buildH5Bundle")]
         [Validation(Required=false)]
         public bool? BuildH5Bundle { get; set; }
+
+        [NameInMap("dingClientId")]
+        [Validation(Required=false)]
+        public string DingClientId { get; set; }
+
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
 
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
@@ -29,17 +33,13 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
 
-        [NameInMap("dingClientId")]
+        [NameInMap("miniAppId")]
         [Validation(Required=false)]
-        public string DingClientId { get; set; }
+        public string MiniAppId { get; set; }
 
     }
 

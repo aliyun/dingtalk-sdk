@@ -10,18 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class AddFileRequest : TeaModel {
         /// <summary>
-        /// 父目录id
+        /// 文件名冲突策略
         /// </summary>
-        [NameInMap("parentId")]
+        [NameInMap("addConflictPolicy")]
         [Validation(Required=false)]
-        public string ParentId { get; set; }
-
-        /// <summary>
-        /// 文件类型
-        /// </summary>
-        [NameInMap("fileType")]
-        [Validation(Required=false)]
-        public string FileType { get; set; }
+        public string AddConflictPolicy { get; set; }
 
         /// <summary>
         /// 文件名
@@ -31,6 +24,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string FileName { get; set; }
 
         /// <summary>
+        /// 文件类型
+        /// </summary>
+        [NameInMap("fileType")]
+        [Validation(Required=false)]
+        public string FileType { get; set; }
+
+        /// <summary>
         /// mediaId
         /// </summary>
         [NameInMap("mediaId")]
@@ -38,11 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string MediaId { get; set; }
 
         /// <summary>
-        /// 文件名冲突策略
+        /// 父目录id
         /// </summary>
-        [NameInMap("addConflictPolicy")]
+        [NameInMap("parentId")]
         [Validation(Required=false)]
-        public string AddConflictPolicy { get; set; }
+        public string ParentId { get; set; }
 
         /// <summary>
         /// 用户id

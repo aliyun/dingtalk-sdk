@@ -17,6 +17,27 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
+        /// account
+        /// </summary>
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
+
+        /// <summary>
+        /// suiteKey
+        /// </summary>
+        [NameInMap("dingSuiteKey")]
+        [Validation(Required=false)]
+        public string DingSuiteKey { get; set; }
+
+        /// <summary>
+        /// tokenGrantType
+        /// </summary>
+        [NameInMap("dingTokenGrantType")]
+        [Validation(Required=false)]
+        public long? DingTokenGrantType { get; set; }
+
+        /// <summary>
         /// 审批时间
         /// </summary>
         [NameInMap("operateTime")]
@@ -50,27 +71,6 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
-
-        /// <summary>
-        /// suiteKey
-        /// </summary>
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        /// <summary>
-        /// account
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
-        /// tokenGrantType
-        /// </summary>
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
 
     }
 

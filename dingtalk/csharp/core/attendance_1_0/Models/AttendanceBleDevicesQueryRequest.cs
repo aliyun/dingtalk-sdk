@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class AttendanceBleDevicesQueryRequest : TeaModel {
         /// <summary>
-        /// 操作人Id
-        /// </summary>
-        [NameInMap("opUserId")]
-        [Validation(Required=false)]
-        public string OpUserId { get; set; }
-
-        /// <summary>
         /// 考勤组Id
         /// </summary>
         [NameInMap("groupKey")]
         [Validation(Required=false)]
         public string GroupKey { get; set; }
+
+        /// <summary>
+        /// 操作人Id
+        /// </summary>
+        [NameInMap("opUserId")]
+        [Validation(Required=false)]
+        public string OpUserId { get; set; }
 
     }
 

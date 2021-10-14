@@ -25,6 +25,21 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
 
+        [NameInMap("notify")]
+        [Validation(Required=false)]
+        public CancelTicketRequestNotify Notify { get; set; }
+        public class CancelTicketRequestNotify : TeaModel {
+            [NameInMap("groupNoticeReceiverUnionIds")]
+            [Validation(Required=false)]
+            public List<string> GroupNoticeReceiverUnionIds { get; set; }
+            [NameInMap("noticeAllGroupMember")]
+            [Validation(Required=false)]
+            public bool? NoticeAllGroupMember { get; set; }
+            [NameInMap("workNoticeReceiverUnionIds")]
+            [Validation(Required=false)]
+            public List<string> WorkNoticeReceiverUnionIds { get; set; }
+        };
+
         /// <summary>
         /// 开放团队ID
         /// </summary>
@@ -50,9 +65,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public CancelTicketRequestTicketMemo TicketMemo { get; set; }
         public class CancelTicketRequestTicketMemo : TeaModel {
-            [NameInMap("memo")]
-            [Validation(Required=false)]
-            public string Memo { get; set; }
             [NameInMap("attachments")]
             [Validation(Required=false)]
             public List<CancelTicketRequestTicketMemoAttachments> Attachments { get; set; }
@@ -60,21 +72,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 public string FileName { get; set; }
                 public string Key { get; set; }
             }
-        };
-
-        [NameInMap("notify")]
-        [Validation(Required=false)]
-        public CancelTicketRequestNotify Notify { get; set; }
-        public class CancelTicketRequestNotify : TeaModel {
-            [NameInMap("workNoticeReceiverUnionIds")]
+            [NameInMap("memo")]
             [Validation(Required=false)]
-            public List<string> WorkNoticeReceiverUnionIds { get; set; }
-            [NameInMap("groupNoticeReceiverUnionIds")]
-            [Validation(Required=false)]
-            public List<string> GroupNoticeReceiverUnionIds { get; set; }
-            [NameInMap("noticeAllGroupMember")]
-            [Validation(Required=false)]
-            public bool? NoticeAllGroupMember { get; set; }
+            public string Memo { get; set; }
         };
 
     }

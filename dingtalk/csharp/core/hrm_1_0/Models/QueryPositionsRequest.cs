@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryPositionsRequest : TeaModel {
         /// <summary>
-        /// 职位名称
-        /// </summary>
-        [NameInMap("positionName")]
-        [Validation(Required=false)]
-        public string PositionName { get; set; }
-
-        /// <summary>
         /// 职位类别列表
         /// </summary>
         [NameInMap("inCategoryIds")]
@@ -31,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public List<string> InPositionIds { get; set; }
 
         /// <summary>
-        /// 偏移量
+        /// 职位名称
         /// </summary>
-        [NameInMap("nextToken")]
+        [NameInMap("positionName")]
         [Validation(Required=false)]
-        public int? NextToken { get; set; }
+        public string PositionName { get; set; }
 
         /// <summary>
         /// 一次查询获取记录数
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// 偏移量
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public int? NextToken { get; set; }
 
     }
 

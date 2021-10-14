@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class PullDataByPageRequest : TeaModel {
         /// <summary>
+        /// 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+        /// </summary>
+        [NameInMap("appId")]
+        [Validation(Required=false)]
+        public string AppId { get; set; }
+
+        /// <summary>
         /// 要拉取的主数据模型id。
         /// </summary>
         [NameInMap("dataModelId")]
@@ -24,25 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         public string DatetimeFilterField { get; set; }
 
         /// <summary>
-        /// 当配置了datetimeFilterField字段后，数据的时间起点，如果不传则将最早一条数据作为起点。
-        /// </summary>
-        [NameInMap("minDatetime")]
-        [Validation(Required=false)]
-        public long? MinDatetime { get; set; }
-
-        /// <summary>
         /// 当配置了datetimeFilterField字段后，数据的时间终点，如果不传则按最新一条数据作为终点。
         /// </summary>
         [NameInMap("maxDatetime")]
         [Validation(Required=false)]
         public long? MaxDatetime { get; set; }
-
-        /// <summary>
-        /// 用于翻页的游标，如果为空则从第一条数据开始查询。
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
 
         /// <summary>
         /// 单次获取的最大记录条数，最大限制100条。
@@ -52,11 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         public long? MaxResults { get; set; }
 
         /// <summary>
-        /// 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+        /// 当配置了datetimeFilterField字段后，数据的时间起点，如果不传则将最早一条数据作为起点。
         /// </summary>
-        [NameInMap("appId")]
+        [NameInMap("minDatetime")]
         [Validation(Required=false)]
-        public string AppId { get; set; }
+        public long? MinDatetime { get; set; }
+
+        /// <summary>
+        /// 用于翻页的游标，如果为空则从第一条数据开始查询。
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
     }
 

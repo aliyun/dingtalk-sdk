@@ -9,21 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateSeniorSettingRequest : TeaModel {
-        [NameInMap("seniorStaffId")]
-        [Validation(Required=false)]
-        public string SeniorStaffId { get; set; }
-
         [NameInMap("open")]
         [Validation(Required=false)]
         public bool? Open { get; set; }
 
-        [NameInMap("permitStaffIds")]
-        [Validation(Required=false)]
-        public List<string> PermitStaffIds { get; set; }
-
         [NameInMap("permitDeptIds")]
         [Validation(Required=false)]
         public List<long?> PermitDeptIds { get; set; }
+
+        [NameInMap("permitStaffIds")]
+        [Validation(Required=false)]
+        public List<string> PermitStaffIds { get; set; }
 
         [NameInMap("permitTagIds")]
         [Validation(Required=false)]
@@ -32,6 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [NameInMap("protectScenes")]
         [Validation(Required=false)]
         public List<string> ProtectScenes { get; set; }
+
+        [NameInMap("seniorStaffId")]
+        [Validation(Required=false)]
+        public string SeniorStaffId { get; set; }
 
     }
 

@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetInstanceByIdResponseBody : TeaModel {
         /// <summary>
-        /// 创建时间
-        /// </summary>
-        [NameInMap("createTimeGMT")]
-        [Validation(Required=false)]
-        public string CreateTimeGMT { get; set; }
-
-        /// <summary>
-        /// processInstanceId
-        /// </summary>
-        [NameInMap("processInstanceId")]
-        [Validation(Required=false)]
-        public string ProcessInstanceId { get; set; }
-
-        /// <summary>
         /// actionExecutor
         /// </summary>
         [NameInMap("actionExecutor")]
@@ -79,11 +65,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string ApprovedResult { get; set; }
 
         /// <summary>
-        /// formUuid
+        /// 创建时间
         /// </summary>
-        [NameInMap("formUuid")]
+        [NameInMap("createTimeGMT")]
         [Validation(Required=false)]
-        public string FormUuid { get; set; }
+        public string CreateTimeGMT { get; set; }
 
         /// <summary>
         /// data
@@ -93,18 +79,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public Dictionary<string, object> Data { get; set; }
 
         /// <summary>
+        /// formUuid
+        /// </summary>
+        [NameInMap("formUuid")]
+        [Validation(Required=false)]
+        public string FormUuid { get; set; }
+
+        /// <summary>
+        /// instanceStatus
+        /// </summary>
+        [NameInMap("instanceStatus")]
+        [Validation(Required=false)]
+        public string InstanceStatus { get; set; }
+
+        /// <summary>
         /// 修改时间
         /// </summary>
         [NameInMap("modifiedTimeGMT")]
         [Validation(Required=false)]
         public string ModifiedTimeGMT { get; set; }
-
-        /// <summary>
-        /// processCode
-        /// </summary>
-        [NameInMap("processCode")]
-        [Validation(Required=false)]
-        public string ProcessCode { get; set; }
 
         /// <summary>
         /// originator
@@ -113,10 +106,23 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public GetInstanceByIdResponseBodyOriginator Originator { get; set; }
         public class GetInstanceByIdResponseBodyOriginator : TeaModel {
+            [NameInMap("deptName")]
+            [Validation(Required=false)]
+            public string DeptName { get; set; }
+            [NameInMap("email")]
+            [Validation(Required=false)]
+            public string Email { get; set; }
             [NameInMap("name")]
             [Validation(Required=false)]
             public GetInstanceByIdResponseBodyOriginatorName Name { get; set; }
             public class GetInstanceByIdResponseBodyOriginatorName : TeaModel {
+                /// <summary>
+                /// 中文名称
+                /// </summary>
+                [NameInMap("nameInChinese")]
+                [Validation(Required=false)]
+                public string NameInChinese { get; set; }
+
                 /// <summary>
                 /// 英文名称
                 /// </summary>
@@ -131,24 +137,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 [Validation(Required=false)]
                 public string Type { get; set; }
 
-                /// <summary>
-                /// 中文名称
-                /// </summary>
-                [NameInMap("nameInChinese")]
-                [Validation(Required=false)]
-                public string NameInChinese { get; set; }
-
             }
-            [NameInMap("deptName")]
-            [Validation(Required=false)]
-            public string DeptName { get; set; }
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-            [NameInMap("email")]
-            [Validation(Required=false)]
-            public string Email { get; set; }
         };
+
+        /// <summary>
+        /// processCode
+        /// </summary>
+        [NameInMap("processCode")]
+        [Validation(Required=false)]
+        public string ProcessCode { get; set; }
+
+        /// <summary>
+        /// processInstanceId
+        /// </summary>
+        [NameInMap("processInstanceId")]
+        [Validation(Required=false)]
+        public string ProcessInstanceId { get; set; }
 
         /// <summary>
         /// title
@@ -156,13 +163,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }
-
-        /// <summary>
-        /// instanceStatus
-        /// </summary>
-        [NameInMap("instanceStatus")]
-        [Validation(Required=false)]
-        public string InstanceStatus { get; set; }
 
         /// <summary>
         /// version

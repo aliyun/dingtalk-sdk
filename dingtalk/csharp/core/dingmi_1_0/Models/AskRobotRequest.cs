@@ -10,18 +10,29 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class AskRobotRequest : TeaModel {
         /// <summary>
-        /// 问题
-        /// </summary>
-        [NameInMap("question")]
-        [Validation(Required=false)]
-        public string Question { get; set; }
-
-        /// <summary>
         /// 企业corpId
         /// </summary>
         [NameInMap("dingCorpId")]
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
+
+        /// <summary>
+        /// suiteKey
+        /// </summary>
+        [NameInMap("dingSuiteKey")]
+        [Validation(Required=false)]
+        public string DingSuiteKey { get; set; }
+
+        [NameInMap("dingUserId")]
+        [Validation(Required=false)]
+        public string DingUserId { get; set; }
+
+        /// <summary>
+        /// 问题
+        /// </summary>
+        [NameInMap("question")]
+        [Validation(Required=false)]
+        public string Question { get; set; }
 
         /// <summary>
         /// 机器人id
@@ -36,13 +47,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         [NameInMap("sessionUuid")]
         [Validation(Required=false)]
         public string SessionUuid { get; set; }
-
-        /// <summary>
-        /// suiteKey
-        /// </summary>
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
 
     }
 

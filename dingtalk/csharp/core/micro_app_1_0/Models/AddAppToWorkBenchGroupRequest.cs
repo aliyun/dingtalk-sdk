@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class AddAppToWorkBenchGroupRequest : TeaModel {
         /// <summary>
-        /// 创建人unionId
+        /// 工作台分组id
         /// </summary>
-        [NameInMap("opUnionId")]
+        [NameInMap("componentId")]
         [Validation(Required=false)]
-        public string OpUnionId { get; set; }
+        public string ComponentId { get; set; }
 
         /// <summary>
         /// 关联组织corpId
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string EcologicalCorpId { get; set; }
 
         /// <summary>
-        /// 工作台分组id
+        /// 创建人unionId
         /// </summary>
-        [NameInMap("componentId")]
+        [NameInMap("opUnionId")]
         [Validation(Required=false)]
-        public string ComponentId { get; set; }
+        public string OpUnionId { get; set; }
 
     }
 

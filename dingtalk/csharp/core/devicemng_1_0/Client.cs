@@ -26,126 +26,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
         }
 
 
-        public RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
-            return RegisterDeviceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
-            return await RegisterDeviceWithOptionsAsync(request, headers, runtime);
-        }
-
-        public RegisterDeviceResponse RegisterDeviceWithOptions(RegisterDeviceRequest request, RegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceKey))
-            {
-                body["deviceKey"] = request.DeviceKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
-            {
-                body["deviceName"] = request.DeviceName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
-            {
-                body["departmentId"] = request.DepartmentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Managers))
-            {
-                body["managers"] = request.Managers;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Collaborators))
-            {
-                body["collaborators"] = request.Collaborators;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
-            {
-                body["description"] = request.Description;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RegisterDeviceResponse>(DoROARequest("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices", "json", req, runtime));
-        }
-
-        public async Task<RegisterDeviceResponse> RegisterDeviceWithOptionsAsync(RegisterDeviceRequest request, RegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
-            {
-                body["dingCorpId"] = request.DingCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceKey))
-            {
-                body["deviceKey"] = request.DeviceKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
-            {
-                body["deviceName"] = request.DeviceName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
-            {
-                body["departmentId"] = request.DepartmentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Managers))
-            {
-                body["managers"] = request.Managers;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Collaborators))
-            {
-                body["collaborators"] = request.Collaborators;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
-            {
-                body["description"] = request.Description;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RegisterDeviceResponse>(await DoROARequestAsync("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices", "json", req, runtime));
-        }
-
         public BatchRegisterDeviceResponse BatchRegisterDevice(BatchRegisterDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -244,9 +124,17 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthInfo))
             {
-                body["dingCorpId"] = request.DingCorpId;
+                body["authInfo"] = request.AuthInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthType))
+            {
+                body["authType"] = request.AuthType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizExt))
+            {
+                body["bizExt"] = request.BizExt;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
@@ -256,25 +144,17 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["departmentType"] = request.DepartmentType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemUrl))
-            {
-                body["systemUrl"] = request.SystemUrl;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthType))
-            {
-                body["authType"] = request.AuthType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthInfo))
-            {
-                body["authInfo"] = request.AuthInfo;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizExt))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
             {
-                body["bizExt"] = request.BizExt;
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemUrl))
+            {
+                body["systemUrl"] = request.SystemUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -301,9 +181,17 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthInfo))
             {
-                body["dingCorpId"] = request.DingCorpId;
+                body["authInfo"] = request.AuthInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthType))
+            {
+                body["authType"] = request.AuthType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizExt))
+            {
+                body["bizExt"] = request.BizExt;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentName))
             {
@@ -313,25 +201,17 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
             {
                 body["departmentType"] = request.DepartmentType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemUrl))
-            {
-                body["systemUrl"] = request.SystemUrl;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthType))
-            {
-                body["authType"] = request.AuthType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthInfo))
-            {
-                body["authInfo"] = request.AuthInfo;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizExt))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
             {
-                body["bizExt"] = request.BizExt;
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemUrl))
+            {
+                body["systemUrl"] = request.SystemUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -352,6 +232,126 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<CreateDepartmentResponse>(await DoROARequestAsync("CreateDepartment", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/departments", "json", req, runtime));
+        }
+
+        public RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
+            return RegisterDeviceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
+            return await RegisterDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RegisterDeviceResponse RegisterDeviceWithOptions(RegisterDeviceRequest request, RegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Collaborators))
+            {
+                body["collaborators"] = request.Collaborators;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
+            {
+                body["departmentId"] = request.DepartmentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceKey))
+            {
+                body["deviceKey"] = request.DeviceKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
+            {
+                body["deviceName"] = request.DeviceName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Managers))
+            {
+                body["managers"] = request.Managers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RegisterDeviceResponse>(DoROARequest("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices", "json", req, runtime));
+        }
+
+        public async Task<RegisterDeviceResponse> RegisterDeviceWithOptionsAsync(RegisterDeviceRequest request, RegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Collaborators))
+            {
+                body["collaborators"] = request.Collaborators;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepartmentId))
+            {
+                body["departmentId"] = request.DepartmentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceKey))
+            {
+                body["deviceKey"] = request.DeviceKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
+            {
+                body["deviceName"] = request.DeviceName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Managers))
+            {
+                body["managers"] = request.Managers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RegisterDeviceResponse>(await DoROARequestAsync("RegisterDevice", "devicemng_1.0", "HTTP", "POST", "AK", "/v1.0/devicemng/devices", "json", req, runtime));
         }
 
     }

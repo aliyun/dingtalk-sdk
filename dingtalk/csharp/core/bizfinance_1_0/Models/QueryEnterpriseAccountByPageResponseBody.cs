@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryEnterpriseAccountByPageResponseBody : TeaModel {
         /// <summary>
+        /// 是否还有更多数据
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
         /// resultList
         /// </summary>
         [NameInMap("list")]
@@ -73,13 +80,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public long? CreateTime { get; set; }
 
         }
-
-        /// <summary>
-        /// 是否还有更多数据
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
 
     }
 

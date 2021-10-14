@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class UpdateInnerAppRequest : TeaModel {
         /// <summary>
-        /// 创建人unionId
+        /// 应用描述
         /// </summary>
-        [NameInMap("opUnionId")]
+        [NameInMap("desc")]
         [Validation(Required=false)]
-        public string OpUnionId { get; set; }
+        public string Desc { get; set; }
 
         /// <summary>
         /// 关联组织corpId
@@ -24,18 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string EcologicalCorpId { get; set; }
 
         /// <summary>
-        /// 应用名称
+        /// 应用首页地址
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("homepageLink")]
         [Validation(Required=false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 应用描述
-        /// </summary>
-        [NameInMap("desc")]
-        [Validation(Required=false)]
-        public string Desc { get; set; }
+        public string HomepageLink { get; set; }
 
         /// <summary>
         /// 应用图标
@@ -45,18 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string Icon { get; set; }
 
         /// <summary>
-        /// 应用首页地址
+        /// 服务器出口ip白名单
         /// </summary>
-        [NameInMap("homepageLink")]
+        [NameInMap("ipWhiteList")]
         [Validation(Required=false)]
-        public string HomepageLink { get; set; }
+        public List<string> IpWhiteList { get; set; }
 
         /// <summary>
-        /// 应用PC端地址
+        /// 应用名称
         /// </summary>
-        [NameInMap("pcHomepageLink")]
+        [NameInMap("name")]
         [Validation(Required=false)]
-        public string PcHomepageLink { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// 应用管理后台地址
@@ -66,11 +59,18 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string OmpLink { get; set; }
 
         /// <summary>
-        /// 服务器出口ip白名单
+        /// 创建人unionId
         /// </summary>
-        [NameInMap("ipWhiteList")]
+        [NameInMap("opUnionId")]
         [Validation(Required=false)]
-        public List<string> IpWhiteList { get; set; }
+        public string OpUnionId { get; set; }
+
+        /// <summary>
+        /// 应用PC端地址
+        /// </summary>
+        [NameInMap("pcHomepageLink")]
+        [Validation(Required=false)]
+        public string PcHomepageLink { get; set; }
 
     }
 

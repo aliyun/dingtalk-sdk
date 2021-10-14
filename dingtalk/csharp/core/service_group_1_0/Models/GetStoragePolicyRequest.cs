@@ -9,6 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetStoragePolicyRequest : TeaModel {
+        /// <summary>
+        /// 业务类型
+        /// </summary>
+        [NameInMap("bizType")]
+        [Validation(Required=false)]
+        public string BizType { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
@@ -26,18 +33,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 团队ID
+        /// 文件名称
         /// </summary>
-        [NameInMap("openTeamId")]
+        [NameInMap("fileName")]
         [Validation(Required=false)]
-        public string OpenTeamId { get; set; }
-
-        /// <summary>
-        /// 业务类型
-        /// </summary>
-        [NameInMap("bizType")]
-        [Validation(Required=false)]
-        public string BizType { get; set; }
+        public string FileName { get; set; }
 
         /// <summary>
         /// 文件大小，单位字节
@@ -47,11 +47,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// 文件名称
+        /// 团队ID
         /// </summary>
-        [NameInMap("fileName")]
+        [NameInMap("openTeamId")]
         [Validation(Required=false)]
-        public string FileName { get; set; }
+        public string OpenTeamId { get; set; }
 
     }
 

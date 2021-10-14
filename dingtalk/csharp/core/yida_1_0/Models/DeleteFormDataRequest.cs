@@ -17,6 +17,20 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AppType { get; set; }
 
         /// <summary>
+        /// 要删除的表单数据ID
+        /// </summary>
+        [NameInMap("formInstanceId")]
+        [Validation(Required=false)]
+        public string FormInstanceId { get; set; }
+
+        /// <summary>
+        /// 语言
+        /// </summary>
+        [NameInMap("language")]
+        [Validation(Required=false)]
+        public string Language { get; set; }
+
+        /// <summary>
         /// 应用秘钥
         /// </summary>
         [NameInMap("systemToken")]
@@ -29,20 +43,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
-
-        /// <summary>
-        /// 语言
-        /// </summary>
-        [NameInMap("language")]
-        [Validation(Required=false)]
-        public string Language { get; set; }
-
-        /// <summary>
-        /// 要删除的表单数据ID
-        /// </summary>
-        [NameInMap("formInstanceId")]
-        [Validation(Required=false)]
-        public string FormInstanceId { get; set; }
 
     }
 

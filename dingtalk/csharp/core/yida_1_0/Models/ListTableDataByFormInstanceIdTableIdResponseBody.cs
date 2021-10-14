@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListTableDataByFormInstanceIdTableIdResponseBody : TeaModel {
         /// <summary>
-        /// 总数量
+        /// data
         /// </summary>
-        [NameInMap("totalCount")]
+        [NameInMap("data")]
         [Validation(Required=false)]
-        public long? TotalCount { get; set; }
+        public List<Dictionary<string, object>> Data { get; set; }
 
         /// <summary>
         /// 当前第几页
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// data
+        /// 总数量
         /// </summary>
-        [NameInMap("data")]
+        [NameInMap("totalCount")]
         [Validation(Required=false)]
-        public List<Dictionary<string, object>> Data { get; set; }
+        public long? TotalCount { get; set; }
 
     }
 

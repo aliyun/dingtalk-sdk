@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class BatchOTOQueryResponseBody : TeaModel {
         /// <summary>
-        /// 消息发送状态
-        /// </summary>
-        [NameInMap("sendStatus")]
-        [Validation(Required=false)]
-        public string SendStatus { get; set; }
-
-        /// <summary>
         /// 消息已读情况
         /// </summary>
         [NameInMap("messageReadInfoList")]
@@ -52,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
             public long? ReadTimestamp { get; set; }
 
         }
+
+        /// <summary>
+        /// 消息发送状态
+        /// </summary>
+        [NameInMap("sendStatus")]
+        [Validation(Required=false)]
+        public string SendStatus { get; set; }
 
     }
 

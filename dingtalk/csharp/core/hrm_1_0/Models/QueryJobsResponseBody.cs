@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryJobsResponseBody : TeaModel {
         /// <summary>
-        /// 下次获取数据的起始游标
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
         /// 是否有更多数据
         /// </summary>
         [NameInMap("hasMore")]
@@ -52,6 +45,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             public string JobDescription { get; set; }
 
         }
+
+        /// <summary>
+        /// 下次获取数据的起始游标
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
 
     }
 

@@ -13,13 +13,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
-
         [NameInMap("redirectUrl")]
         [Validation(Required=false)]
         public string RedirectUrl { get; set; }
+
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

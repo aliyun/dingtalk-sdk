@@ -9,17 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class CorpRealnameResponseBody : TeaModel {
-        [NameInMap("taskId")]
+        [NameInMap("mobileUrl")]
         [Validation(Required=false)]
-        public string TaskId { get; set; }
+        public string MobileUrl { get; set; }
 
         [NameInMap("pcUrl")]
         [Validation(Required=false)]
         public string PcUrl { get; set; }
 
-        [NameInMap("mobileUrl")]
+        [NameInMap("taskId")]
         [Validation(Required=false)]
-        public string MobileUrl { get; set; }
+        public string TaskId { get; set; }
 
     }
 

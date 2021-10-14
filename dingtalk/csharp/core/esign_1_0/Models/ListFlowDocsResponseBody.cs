@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class ListFlowDocsResponseBody : TeaModel {
+        [NameInMap("code")]
+        [Validation(Required=false)]
+        public int? Code { get; set; }
+
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<ListFlowDocsResponseBodyData> Data { get; set; }
@@ -26,10 +30,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
             public string FileUrl { get; set; }
 
         }
-
-        [NameInMap("code")]
-        [Validation(Required=false)]
-        public int? Code { get; set; }
 
         [NameInMap("message")]
         [Validation(Required=false)]

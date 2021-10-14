@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class AttendanceBleDevicesRemoveRequest : TeaModel {
         /// <summary>
-        /// 操作人id
+        /// 蓝牙设备Id列表
         /// </summary>
-        [NameInMap("opUserId")]
+        [NameInMap("deviceIdList")]
         [Validation(Required=false)]
-        public string OpUserId { get; set; }
+        public List<long?> DeviceIdList { get; set; }
 
         /// <summary>
         /// 考勤组Id
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public string GroupKey { get; set; }
 
         /// <summary>
-        /// 蓝牙设备Id列表
+        /// 操作人id
         /// </summary>
-        [NameInMap("deviceIdList")]
+        [NameInMap("opUserId")]
         [Validation(Required=false)]
-        public List<long?> DeviceIdList { get; set; }
+        public string OpUserId { get; set; }
 
     }
 

@@ -10,11 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class NotifyBadgeCodePayResultRequest : TeaModel {
         /// <summary>
-        /// 付款码值
+        /// 订单金额
         /// </summary>
-        [NameInMap("payCode")]
+        [NameInMap("amount")]
         [Validation(Required=false)]
-        public string PayCode { get; set; }
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// 收费金额
+        /// </summary>
+        [NameInMap("chargeAmount")]
+        [Validation(Required=false)]
+        public string ChargeAmount { get; set; }
 
         /// <summary>
         /// 企业id
@@ -24,11 +31,25 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// ISV组织ID
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public long? DingIsvOrgId { get; set; }
+
+        /// <summary>
+        /// 组织ID
+        /// </summary>
+        [NameInMap("dingOrgId")]
+        [Validation(Required=false)]
+        public long? DingOrgId { get; set; }
+
+        /// <summary>
+        /// 扩展信息
+        /// </summary>
+        [NameInMap("extInfo")]
+        [Validation(Required=false)]
+        public string ExtInfo { get; set; }
 
         /// <summary>
         /// 交易开始时间
@@ -45,53 +66,11 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string GmtTradeFinish { get; set; }
 
         /// <summary>
-        /// 交易号
+        /// merchantName
         /// </summary>
-        [NameInMap("tradeNo")]
+        [NameInMap("merchantName")]
         [Validation(Required=false)]
-        public string TradeNo { get; set; }
-
-        /// <summary>
-        /// 交易状态
-        /// </summary>
-        [NameInMap("tradeStatus")]
-        [Validation(Required=false)]
-        public string TradeStatus { get; set; }
-
-        /// <summary>
-        /// 订单标题
-        /// </summary>
-        [NameInMap("title")]
-        [Validation(Required=false)]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// 备注
-        /// </summary>
-        [NameInMap("remark")]
-        [Validation(Required=false)]
-        public string Remark { get; set; }
-
-        /// <summary>
-        /// 订单金额
-        /// </summary>
-        [NameInMap("amount")]
-        [Validation(Required=false)]
-        public string Amount { get; set; }
-
-        /// <summary>
-        /// 订单优惠金额
-        /// </summary>
-        [NameInMap("promotionAmount")]
-        [Validation(Required=false)]
-        public string PromotionAmount { get; set; }
-
-        /// <summary>
-        /// 收费金额
-        /// </summary>
-        [NameInMap("chargeAmount")]
-        [Validation(Required=false)]
-        public string ChargeAmount { get; set; }
+        public string MerchantName { get; set; }
 
         /// <summary>
         /// 支付渠道明细信息
@@ -203,6 +182,34 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         }
 
         /// <summary>
+        /// 付款码值
+        /// </summary>
+        [NameInMap("payCode")]
+        [Validation(Required=false)]
+        public string PayCode { get; set; }
+
+        /// <summary>
+        /// 订单优惠金额
+        /// </summary>
+        [NameInMap("promotionAmount")]
+        [Validation(Required=false)]
+        public string PromotionAmount { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [NameInMap("remark")]
+        [Validation(Required=false)]
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 订单标题
+        /// </summary>
+        [NameInMap("title")]
+        [Validation(Required=false)]
+        public string Title { get; set; }
+
+        /// <summary>
         /// 支付失败错误码
         /// </summary>
         [NameInMap("tradeErrorCode")]
@@ -217,32 +224,25 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string TradeErrorMsg { get; set; }
 
         /// <summary>
-        /// 扩展信息
+        /// 交易号
         /// </summary>
-        [NameInMap("extInfo")]
+        [NameInMap("tradeNo")]
         [Validation(Required=false)]
-        public string ExtInfo { get; set; }
+        public string TradeNo { get; set; }
 
         /// <summary>
-        /// ISV组织ID
+        /// 交易状态
         /// </summary>
-        [NameInMap("dingIsvOrgId")]
+        [NameInMap("tradeStatus")]
         [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
+        public string TradeStatus { get; set; }
 
         /// <summary>
-        /// 组织ID
+        /// 用户id
         /// </summary>
-        [NameInMap("dingOrgId")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
-        /// merchantName
-        /// </summary>
-        [NameInMap("merchantName")]
-        [Validation(Required=false)]
-        public string MerchantName { get; set; }
+        public string UserId { get; set; }
 
     }
 

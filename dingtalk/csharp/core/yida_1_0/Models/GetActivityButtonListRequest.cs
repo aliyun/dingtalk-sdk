@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetActivityButtonListRequest : TeaModel {
         /// <summary>
+        /// 语言环境
+        /// </summary>
+        [NameInMap("language")]
+        [Validation(Required=false)]
+        public string Language { get; set; }
+
+        /// <summary>
         /// 应用秘钥
         /// </summary>
         [NameInMap("systemToken")]
@@ -22,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
-
-        /// <summary>
-        /// 语言环境
-        /// </summary>
-        [NameInMap("language")]
-        [Validation(Required=false)]
-        public string Language { get; set; }
 
     }
 

@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetResidentDeptResponseBody : TeaModel {
         /// <summary>
+        /// 通讯录架构类型
+        /// </summary>
+        [NameInMap("contactType")]
+        [Validation(Required=false)]
+        public string ContactType { get; set; }
+
+        /// <summary>
         /// 下属组织的部门ID
         /// </summary>
         [NameInMap("departmentId")]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [NameInMap("deptType")]
         [Validation(Required=false)]
         public string DeptType { get; set; }
-
-        /// <summary>
-        /// 通讯录架构类型
-        /// </summary>
-        [NameInMap("contactType")]
-        [Validation(Required=false)]
-        public string ContactType { get; set; }
 
         /// <summary>
         /// 部门属性

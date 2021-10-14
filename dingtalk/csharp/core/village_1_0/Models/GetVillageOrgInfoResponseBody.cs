@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetVillageOrgInfoResponseBody : TeaModel {
         /// <summary>
-        /// 区域类型
-        /// </summary>
-        [NameInMap("regionType")]
-        [Validation(Required=false)]
-        public string RegionType { get; set; }
-
-        /// <summary>
         /// 行政区ID
         /// </summary>
         [NameInMap("regionId")]
@@ -29,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [NameInMap("regionLocation")]
         [Validation(Required=false)]
         public string RegionLocation { get; set; }
+
+        /// <summary>
+        /// 区域类型
+        /// </summary>
+        [NameInMap("regionType")]
+        [Validation(Required=false)]
+        public string RegionType { get; set; }
 
     }
 

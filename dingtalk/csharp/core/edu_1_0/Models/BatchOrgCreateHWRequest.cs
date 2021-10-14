@@ -10,81 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class BatchOrgCreateHWRequest : TeaModel {
         /// <summary>
-        /// 作业视频
-        /// </summary>
-        [NameInMap("hwMedia")]
-        [Validation(Required=false)]
-        public string HwMedia { get; set; }
-
-        /// <summary>
-        /// 作业内容
-        /// </summary>
-        [NameInMap("hwContent")]
-        [Validation(Required=false)]
-        public string HwContent { get; set; }
-
-        /// <summary>
-        /// 作业标题
-        /// </summary>
-        [NameInMap("hwTitle")]
-        [Validation(Required=false)]
-        public string HwTitle { get; set; }
-
-        /// <summary>
-        /// 作业课程名称
-        /// </summary>
-        [NameInMap("courseName")]
-        [Validation(Required=false)]
-        public string CourseName { get; set; }
-
-        /// <summary>
-        /// 作业图片
-        /// </summary>
-        [NameInMap("hwPhoto")]
-        [Validation(Required=false)]
-        public string HwPhoto { get; set; }
-
-        /// <summary>
-        /// 作业音视频
-        /// </summary>
-        [NameInMap("hwVideo")]
-        [Validation(Required=false)]
-        public string HwVideo { get; set; }
-
-        /// <summary>
-        /// 老师名称
-        /// </summary>
-        [NameInMap("teacherName")]
-        [Validation(Required=false)]
-        public string TeacherName { get; set; }
-
-        /// <summary>
-        /// 老师userid
-        /// </summary>
-        [NameInMap("teacherUserId")]
-        [Validation(Required=false)]
-        public string TeacherUserId { get; set; }
-
-        /// <summary>
-        /// 幂等ID字段
-        /// </summary>
-        [NameInMap("identifier")]
-        [Validation(Required=false)]
-        public string Identifier { get; set; }
-
-        /// <summary>
         /// 扩展属性
         /// </summary>
         [NameInMap("attributes")]
         [Validation(Required=false)]
         public string Attributes { get; set; }
-
-        /// <summary>
-        /// 发送对象
-        /// </summary>
-        [NameInMap("targetRole")]
-        [Validation(Required=false)]
-        public string TargetRole { get; set; }
 
         /// <summary>
         /// 业务编码
@@ -94,32 +24,25 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string BizCode { get; set; }
 
         /// <summary>
-        /// 状态
+        /// 作业课程名称
         /// </summary>
-        [NameInMap("status")]
+        [NameInMap("courseName")]
         [Validation(Required=false)]
-        public string Status { get; set; }
+        public string CourseName { get; set; }
 
         /// <summary>
-        /// 定时调度
+        /// 组织ID
         /// </summary>
-        [NameInMap("scheduledRelease")]
+        [NameInMap("dingOrgId")]
         [Validation(Required=false)]
-        public string ScheduledRelease { get; set; }
+        public long? DingOrgId { get; set; }
 
         /// <summary>
-        /// 定时调度时间
+        /// 作业内容
         /// </summary>
-        [NameInMap("scheduledTime")]
+        [NameInMap("hwContent")]
         [Validation(Required=false)]
-        public string ScheduledTime { get; set; }
-
-        /// <summary>
-        /// 截止时间开启
-        /// </summary>
-        [NameInMap("hwDeadlineOpen")]
-        [Validation(Required=false)]
-        public string HwDeadlineOpen { get; set; }
+        public string HwContent { get; set; }
 
         /// <summary>
         /// 截止时间
@@ -129,11 +52,53 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? HwDeadline { get; set; }
 
         /// <summary>
+        /// 截止时间开启
+        /// </summary>
+        [NameInMap("hwDeadlineOpen")]
+        [Validation(Required=false)]
+        public string HwDeadlineOpen { get; set; }
+
+        /// <summary>
+        /// 作业视频
+        /// </summary>
+        [NameInMap("hwMedia")]
+        [Validation(Required=false)]
+        public string HwMedia { get; set; }
+
+        /// <summary>
+        /// 作业图片
+        /// </summary>
+        [NameInMap("hwPhoto")]
+        [Validation(Required=false)]
+        public string HwPhoto { get; set; }
+
+        /// <summary>
+        /// 作业标题
+        /// </summary>
+        [NameInMap("hwTitle")]
+        [Validation(Required=false)]
+        public string HwTitle { get; set; }
+
+        /// <summary>
         /// 作业类型
         /// </summary>
         [NameInMap("hwType")]
         [Validation(Required=false)]
         public string HwType { get; set; }
+
+        /// <summary>
+        /// 作业音视频
+        /// </summary>
+        [NameInMap("hwVideo")]
+        [Validation(Required=false)]
+        public string HwVideo { get; set; }
+
+        /// <summary>
+        /// 幂等ID字段
+        /// </summary>
+        [NameInMap("identifier")]
+        [Validation(Required=false)]
+        public string Identifier { get; set; }
 
         /// <summary>
         /// 选择跨组织班级
@@ -219,11 +184,46 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
-        /// 组织ID
+        /// 定时调度
         /// </summary>
-        [NameInMap("dingOrgId")]
+        [NameInMap("scheduledRelease")]
         [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
+        public string ScheduledRelease { get; set; }
+
+        /// <summary>
+        /// 定时调度时间
+        /// </summary>
+        [NameInMap("scheduledTime")]
+        [Validation(Required=false)]
+        public string ScheduledTime { get; set; }
+
+        /// <summary>
+        /// 状态
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// 发送对象
+        /// </summary>
+        [NameInMap("targetRole")]
+        [Validation(Required=false)]
+        public string TargetRole { get; set; }
+
+        /// <summary>
+        /// 老师名称
+        /// </summary>
+        [NameInMap("teacherName")]
+        [Validation(Required=false)]
+        public string TeacherName { get; set; }
+
+        /// <summary>
+        /// 老师userid
+        /// </summary>
+        [NameInMap("teacherUserId")]
+        [Validation(Required=false)]
+        public string TeacherUserId { get; set; }
 
     }
 

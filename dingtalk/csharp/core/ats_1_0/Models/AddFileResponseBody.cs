@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class AddFileResponseBody : TeaModel {
         /// <summary>
-        /// 空间标识
-        /// </summary>
-        [NameInMap("spaceId")]
-        [Validation(Required=false)]
-        public long? SpaceId { get; set; }
-
-        /// <summary>
         /// 文件标识
         /// </summary>
         [NameInMap("fileId")]
@@ -29,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [NameInMap("fileName")]
         [Validation(Required=false)]
         public string FileName { get; set; }
+
+        /// <summary>
+        /// 空间标识
+        /// </summary>
+        [NameInMap("spaceId")]
+        [Validation(Required=false)]
+        public long? SpaceId { get; set; }
 
     }
 

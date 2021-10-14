@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListRecycleFilesResponseBody : TeaModel {
         /// <summary>
+        /// 加载更多锚点, nextToken不为空表示有更多数据
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
+        /// <summary>
         /// 回收站文件列表
         /// </summary>
         [NameInMap("recycleItems")]
@@ -73,13 +80,6 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string FilePath { get; set; }
 
         }
-
-        /// <summary>
-        /// 加载更多锚点, nextToken不为空表示有更多数据
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
 
     }
 

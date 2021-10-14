@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class AbandonCustomerRequest : TeaModel {
         /// <summary>
-        /// 操作人staffId，一般为企业员工
+        /// 自定义动态描述
         /// </summary>
-        [NameInMap("operatorUserId")]
+        [NameInMap("customTrackDesc")]
         [Validation(Required=false)]
-        public string OperatorUserId { get; set; }
+        public string CustomTrackDesc { get; set; }
 
         /// <summary>
         /// 客户实例 id 数组
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<string> InstanceIdList { get; set; }
 
         /// <summary>
-        /// 自定义动态描述
+        /// 操作人staffId，一般为企业员工
         /// </summary>
-        [NameInMap("customTrackDesc")]
+        [NameInMap("operatorUserId")]
         [Validation(Required=false)]
-        public string CustomTrackDesc { get; set; }
+        public string OperatorUserId { get; set; }
 
         /// <summary>
         /// 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人

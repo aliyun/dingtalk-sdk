@@ -9,13 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class AddPermissionRequest : TeaModel {
-        /// <summary>
-        /// 权限角色
-        /// </summary>
-        [NameInMap("role")]
-        [Validation(Required=false)]
-        public string Role { get; set; }
-
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<AddPermissionRequestMembers> Members { get; set; }
@@ -42,6 +35,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string MemberId { get; set; }
 
         }
+
+        /// <summary>
+        /// 权限角色
+        /// </summary>
+        [NameInMap("role")]
+        [Validation(Required=false)]
+        public string Role { get; set; }
 
         /// <summary>
         /// 用户id

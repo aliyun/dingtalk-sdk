@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListManagementGroupsResponseBody : TeaModel {
         /// <summary>
-        /// 下一次读取的位置
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
-        /// 是否有下一页
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
-
-        /// <summary>
         /// 管理组列表
         /// </summary>
         [NameInMap("groups")]
@@ -90,6 +76,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public List<string> ResourceIds { get; set; }
 
         }
+
+        /// <summary>
+        /// 是否有下一页
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 下一次读取的位置
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
 
     }
 

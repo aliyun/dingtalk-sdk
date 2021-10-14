@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class RegisterCustomAppRoleRequest : TeaModel {
         /// <summary>
+        /// 是否拥有管理角色的权限，可不传，默认false
+        /// </summary>
+        [NameInMap("canManageRole")]
+        [Validation(Required=false)]
+        public bool? CanManageRole { get; set; }
+
+        /// <summary>
         /// 执行用户userId
         /// </summary>
         [NameInMap("opUserId")]
@@ -22,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [NameInMap("roleName")]
         [Validation(Required=false)]
         public string RoleName { get; set; }
-
-        /// <summary>
-        /// 是否拥有管理角色的权限，可不传，默认false
-        /// </summary>
-        [NameInMap("canManageRole")]
-        [Validation(Required=false)]
-        public bool? CanManageRole { get; set; }
 
     }
 

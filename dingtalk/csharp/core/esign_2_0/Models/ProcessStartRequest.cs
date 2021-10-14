@@ -17,29 +17,56 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         public string AutoStart { get; set; }
 
         /// <summary>
-        /// 发起方userId
+        /// 抄送人列表
         /// </summary>
-        [NameInMap("initiatorUserId")]
+        [NameInMap("ccs")]
         [Validation(Required=false)]
-        public string InitiatorUserId { get; set; }
+        public List<ProcessStartRequestCcs> Ccs { get; set; }
+        public class ProcessStartRequestCcs : TeaModel {
+            /// <summary>
+            /// 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
+            /// </summary>
+            [NameInMap("accountType")]
+            [Validation(Required=false)]
+            public string AccountType { get; set; }
+
+            [NameInMap("dingCorpId")]
+            [Validation(Required=false)]
+            public string DingCorpId { get; set; }
+
+            /// <summary>
+            /// DING_USER必填
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+            /// <summary>
+            /// OUTER_USER必填
+            /// </summary>
+            [NameInMap("account")]
+            [Validation(Required=false)]
+            public string Account { get; set; }
+
+            /// <summary>
+            /// OUTER_USER必填
+            /// </summary>
+            [NameInMap("accountName")]
+            [Validation(Required=false)]
+            public string AccountName { get; set; }
+
+            /// <summary>
+            /// 发给企业方必填
+            /// </summary>
+            [NameInMap("orgName")]
+            [Validation(Required=false)]
+            public string OrgName { get; set; }
+
+        }
 
         [NameInMap("dingCorpId")]
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
-
-        /// <summary>
-        /// 任务名称（默认文件名）
-        /// </summary>
-        [NameInMap("taskName")]
-        [Validation(Required=false)]
-        public string TaskName { get; set; }
-
-        /// <summary>
-        /// 回跳地址
-        /// </summary>
-        [NameInMap("redirectUrl")]
-        [Validation(Required=false)]
-        public string RedirectUrl { get; set; }
 
         /// <summary>
         /// 文件列表
@@ -57,6 +84,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             public string FileName { get; set; }
 
         }
+
+        /// <summary>
+        /// 发起方userId
+        /// </summary>
+        [NameInMap("initiatorUserId")]
+        [Validation(Required=false)]
+        public string InitiatorUserId { get; set; }
 
         /// <summary>
         /// 参与方列表
@@ -114,52 +148,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         }
 
         /// <summary>
-        /// 抄送人列表
+        /// 回跳地址
         /// </summary>
-        [NameInMap("ccs")]
+        [NameInMap("redirectUrl")]
         [Validation(Required=false)]
-        public List<ProcessStartRequestCcs> Ccs { get; set; }
-        public class ProcessStartRequestCcs : TeaModel {
-            /// <summary>
-            /// 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
-            /// </summary>
-            [NameInMap("accountType")]
-            [Validation(Required=false)]
-            public string AccountType { get; set; }
-
-            [NameInMap("dingCorpId")]
-            [Validation(Required=false)]
-            public string DingCorpId { get; set; }
-
-            /// <summary>
-            /// DING_USER必填
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-            /// <summary>
-            /// OUTER_USER必填
-            /// </summary>
-            [NameInMap("account")]
-            [Validation(Required=false)]
-            public string Account { get; set; }
-
-            /// <summary>
-            /// OUTER_USER必填
-            /// </summary>
-            [NameInMap("accountName")]
-            [Validation(Required=false)]
-            public string AccountName { get; set; }
-
-            /// <summary>
-            /// 发给企业方必填
-            /// </summary>
-            [NameInMap("orgName")]
-            [Validation(Required=false)]
-            public string OrgName { get; set; }
-
-        }
+        public string RedirectUrl { get; set; }
 
         /// <summary>
         /// 来源信息(目前支持传入审批信息和跳转地址)
@@ -168,16 +161,23 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public ProcessStartRequestSourceInfo SourceInfo { get; set; }
         public class ProcessStartRequestSourceInfo : TeaModel {
-            [NameInMap("showText")]
-            [Validation(Required=false)]
-            public string ShowText { get; set; }
-            [NameInMap("pcUrl")]
-            [Validation(Required=false)]
-            public string PcUrl { get; set; }
             [NameInMap("mobileUrl")]
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
+            [NameInMap("pcUrl")]
+            [Validation(Required=false)]
+            public string PcUrl { get; set; }
+            [NameInMap("showText")]
+            [Validation(Required=false)]
+            public string ShowText { get; set; }
         };
+
+        /// <summary>
+        /// 任务名称（默认文件名）
+        /// </summary>
+        [NameInMap("taskName")]
+        [Validation(Required=false)]
+        public string TaskName { get; set; }
 
     }
 

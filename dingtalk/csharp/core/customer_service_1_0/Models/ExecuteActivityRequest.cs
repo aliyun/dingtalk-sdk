@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class ExecuteActivityRequest : TeaModel {
         /// <summary>
-        /// 来源ID
+        /// 动作编码
         /// </summary>
-        [NameInMap("sourceId")]
+        [NameInMap("activityCode")]
         [Validation(Required=false)]
-        public string SourceId { get; set; }
+        public string ActivityCode { get; set; }
 
         /// <summary>
         /// 会员ID
@@ -29,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [NameInMap("foreignName")]
         [Validation(Required=false)]
         public string ForeignName { get; set; }
-
-        /// <summary>
-        /// 动作编码
-        /// </summary>
-        [NameInMap("activityCode")]
-        [Validation(Required=false)]
-        public string ActivityCode { get; set; }
 
         /// <summary>
         /// 实例id
@@ -73,6 +66,13 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public string Value { get; set; }
 
         }
+
+        /// <summary>
+        /// 来源ID
+        /// </summary>
+        [NameInMap("sourceId")]
+        [Validation(Required=false)]
+        public string SourceId { get; set; }
 
     }
 

@@ -10,6 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryAllTracksResponseBody : TeaModel {
         /// <summary>
+        /// 是否还有数据
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 翻页size
+        /// </summary>
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// 下页翻页起始游标
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
+        /// <summary>
         /// 客户动态分页数据
         /// </summary>
         [NameInMap("values")]
@@ -73,27 +94,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public string Id { get; set; }
 
         }
-
-        /// <summary>
-        /// 是否还有数据
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
-
-        /// <summary>
-        /// 下页翻页起始游标
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        /// <summary>
-        /// 翻页size
-        /// </summary>
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
 
     }
 

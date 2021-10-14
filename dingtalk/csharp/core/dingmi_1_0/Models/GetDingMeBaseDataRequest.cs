@@ -17,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public string AppKey { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 是否按天分组
         /// </summary>
-        [NameInMap("startDay")]
+        [NameInMap("byDay")]
         [Validation(Required=false)]
-        public string StartDay { get; set; }
+        public bool? ByDay { get; set; }
 
         /// <summary>
         /// 结束时间
@@ -31,11 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public string EndDay { get; set; }
 
         /// <summary>
-        /// 是否按天分组
+        /// 开始时间
         /// </summary>
-        [NameInMap("byDay")]
+        [NameInMap("startDay")]
         [Validation(Required=false)]
-        public bool? ByDay { get; set; }
+        public string StartDay { get; set; }
 
     }
 

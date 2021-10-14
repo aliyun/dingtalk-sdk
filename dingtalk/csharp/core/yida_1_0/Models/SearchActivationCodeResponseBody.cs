@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class SearchActivationCodeResponseBody : TeaModel {
         /// <summary>
-        /// instanceId
-        /// </summary>
-        [NameInMap("instanceId")]
-        [Validation(Required=false)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
         /// activationCode
         /// </summary>
         [NameInMap("activationCode")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("expireTimeGMT")]
         [Validation(Required=false)]
         public string ExpireTimeGMT { get; set; }
+
+        /// <summary>
+        /// instanceId
+        /// </summary>
+        [NameInMap("instanceId")]
+        [Validation(Required=false)]
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// status

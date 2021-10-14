@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class UpdateGroupNameRequest : TeaModel {
-        [NameInMap("operatorUid")]
-        [Validation(Required=false)]
-        public string OperatorUid { get; set; }
-
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
@@ -20,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
+
+        [NameInMap("operatorUid")]
+        [Validation(Required=false)]
+        public string OperatorUid { get; set; }
 
     }
 

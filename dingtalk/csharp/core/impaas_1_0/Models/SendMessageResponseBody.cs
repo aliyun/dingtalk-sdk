@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class SendMessageResponseBody : TeaModel {
-        [NameInMap("msgId")]
-        [Validation(Required=false)]
-        public string MsgId { get; set; }
-
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public long? CreateTime { get; set; }
@@ -20,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }
+
+        [NameInMap("msgId")]
+        [Validation(Required=false)]
+        public string MsgId { get; set; }
 
     }
 

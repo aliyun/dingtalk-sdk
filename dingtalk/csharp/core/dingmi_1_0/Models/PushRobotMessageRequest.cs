@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class PushRobotMessageRequest : TeaModel {
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        /// <summary>
         /// 机器人id
         /// </summary>
         [NameInMap("chatbotId")]
@@ -24,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public string ChatbotId { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// 企业corpId
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string DingCorpId { get; set; }
 
         /// <summary>
         /// 消息类型
@@ -43,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         [NameInMap("msgParam")]
         [Validation(Required=false)]
         public string MsgParam { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

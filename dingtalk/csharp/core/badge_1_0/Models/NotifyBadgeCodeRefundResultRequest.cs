@@ -17,46 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// 用户id
+        /// ISV组织ID
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public long? DingIsvOrgId { get; set; }
 
         /// <summary>
-        /// 交易订单号
+        /// 组织ID
         /// </summary>
-        [NameInMap("tradeNo")]
+        [NameInMap("dingOrgId")]
         [Validation(Required=false)]
-        public string TradeNo { get; set; }
-
-        /// <summary>
-        /// 本次退款订单号
-        /// </summary>
-        [NameInMap("refundOrderNo")]
-        [Validation(Required=false)]
-        public string RefundOrderNo { get; set; }
-
-        /// <summary>
-        /// 备注
-        /// </summary>
-        [NameInMap("remark")]
-        [Validation(Required=false)]
-        public string Remark { get; set; }
-
-        /// <summary>
-        /// 退款金额
-        /// </summary>
-        [NameInMap("refundAmount")]
-        [Validation(Required=false)]
-        public string RefundAmount { get; set; }
-
-        /// <summary>
-        /// 退款的优惠金额
-        /// </summary>
-        [NameInMap("refundPromotionAmount")]
-        [Validation(Required=false)]
-        public string RefundPromotionAmount { get; set; }
+        public long? DingOrgId { get; set; }
 
         /// <summary>
         /// 退款时间
@@ -168,25 +140,53 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         }
 
         /// <summary>
-        /// ISV组织ID
-        /// </summary>
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        /// <summary>
-        /// 组织ID
-        /// </summary>
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        /// <summary>
         /// 支付时使用的付款码
         /// </summary>
         [NameInMap("payCode")]
         [Validation(Required=false)]
         public string PayCode { get; set; }
+
+        /// <summary>
+        /// 退款金额
+        /// </summary>
+        [NameInMap("refundAmount")]
+        [Validation(Required=false)]
+        public string RefundAmount { get; set; }
+
+        /// <summary>
+        /// 本次退款订单号
+        /// </summary>
+        [NameInMap("refundOrderNo")]
+        [Validation(Required=false)]
+        public string RefundOrderNo { get; set; }
+
+        /// <summary>
+        /// 退款的优惠金额
+        /// </summary>
+        [NameInMap("refundPromotionAmount")]
+        [Validation(Required=false)]
+        public string RefundPromotionAmount { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [NameInMap("remark")]
+        [Validation(Required=false)]
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 交易订单号
+        /// </summary>
+        [NameInMap("tradeNo")]
+        [Validation(Required=false)]
+        public string TradeNo { get; set; }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

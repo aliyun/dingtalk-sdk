@@ -16,12 +16,18 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public CopyFileResponseBodyFile File { get; set; }
         public class CopyFileResponseBodyFile : TeaModel {
-            [NameInMap("spaceId")]
+            [NameInMap("contentType")]
             [Validation(Required=false)]
-            public string SpaceId { get; set; }
-            [NameInMap("parentId")]
+            public string ContentType { get; set; }
+            [NameInMap("createTime")]
             [Validation(Required=false)]
-            public string ParentId { get; set; }
+            public string CreateTime { get; set; }
+            [NameInMap("creator")]
+            [Validation(Required=false)]
+            public string Creator { get; set; }
+            [NameInMap("fileExtension")]
+            [Validation(Required=false)]
+            public string FileExtension { get; set; }
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
@@ -31,30 +37,24 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [NameInMap("filePath")]
             [Validation(Required=false)]
             public string FilePath { get; set; }
-            [NameInMap("fileType")]
-            [Validation(Required=false)]
-            public string FileType { get; set; }
-            [NameInMap("contentType")]
-            [Validation(Required=false)]
-            public string ContentType { get; set; }
-            [NameInMap("fileExtension")]
-            [Validation(Required=false)]
-            public string FileExtension { get; set; }
             [NameInMap("fileSize")]
             [Validation(Required=false)]
             public long? FileSize { get; set; }
-            [NameInMap("createTime")]
+            [NameInMap("fileType")]
             [Validation(Required=false)]
-            public string CreateTime { get; set; }
-            [NameInMap("modifyTime")]
-            [Validation(Required=false)]
-            public string ModifyTime { get; set; }
-            [NameInMap("creator")]
-            [Validation(Required=false)]
-            public string Creator { get; set; }
+            public string FileType { get; set; }
             [NameInMap("modifier")]
             [Validation(Required=false)]
             public string Modifier { get; set; }
+            [NameInMap("modifyTime")]
+            [Validation(Required=false)]
+            public string ModifyTime { get; set; }
+            [NameInMap("parentId")]
+            [Validation(Required=false)]
+            public string ParentId { get; set; }
+            [NameInMap("spaceId")]
+            [Validation(Required=false)]
+            public string SpaceId { get; set; }
         };
 
         /// <summary>

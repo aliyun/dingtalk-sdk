@@ -44,6 +44,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataId))
+            {
+                body["dataId"] = request.DataId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EtlTime))
+            {
+                body["etlTime"] = request.EtlTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjectId))
             {
                 body["projectId"] = request.ProjectId;
@@ -51,18 +63,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchemaId))
             {
                 body["schemaId"] = request.SchemaId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataId))
-            {
-                body["dataId"] = request.DataId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
-            {
-                body["content"] = request.Content;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EtlTime))
-            {
-                body["etlTime"] = request.EtlTime;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -85,6 +85,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataId))
+            {
+                body["dataId"] = request.DataId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EtlTime))
+            {
+                body["etlTime"] = request.EtlTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjectId))
             {
                 body["projectId"] = request.ProjectId;
@@ -92,18 +104,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchemaId))
             {
                 body["schemaId"] = request.SchemaId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataId))
-            {
-                body["dataId"] = request.DataId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
-            {
-                body["content"] = request.Content;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EtlTime))
-            {
-                body["etlTime"] = request.EtlTime;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

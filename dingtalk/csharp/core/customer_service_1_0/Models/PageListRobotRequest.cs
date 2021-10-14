@@ -17,6 +17,20 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
+        /// 本次读取的最大数据记录数量
+        /// </summary>
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// 用来标记当前开始读取的位置，置空表示从头开始
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
+
+        /// <summary>
         /// 多实例ID
         /// </summary>
         [NameInMap("openInstanceId")]
@@ -29,20 +43,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [NameInMap("productionType")]
         [Validation(Required=false)]
         public int? ProductionType { get; set; }
-
-        /// <summary>
-        /// 用来标记当前开始读取的位置，置空表示从头开始
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
-        /// 本次读取的最大数据记录数量
-        /// </summary>
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
 
     }
 

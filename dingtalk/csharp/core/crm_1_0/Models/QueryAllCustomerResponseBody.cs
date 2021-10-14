@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public QueryAllCustomerResponseBodyResult Result { get; set; }
         public class QueryAllCustomerResponseBodyResult : TeaModel {
+            [NameInMap("maxResults")]
+            [Validation(Required=false)]
+            public long? MaxResults { get; set; }
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
@@ -52,9 +55,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string ProcessOutResult { get; set; }
                 public string ProcessInstanceStatus { get; set; }
             }
-            [NameInMap("maxResults")]
-            [Validation(Required=false)]
-            public long? MaxResults { get; set; }
         };
 
     }

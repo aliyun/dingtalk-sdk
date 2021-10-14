@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class CheckClosingAccountRequest : TeaModel {
         /// <summary>
+        /// 情景
+        /// </summary>
+        [NameInMap("bizCode")]
+        [Validation(Required=false)]
+        public string BizCode { get; set; }
+
+        /// <summary>
         /// 员工列表
         /// </summary>
         [NameInMap("userIds")]
@@ -32,13 +39,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public long? EndTime { get; set; }
 
         }
-
-        /// <summary>
-        /// 情景
-        /// </summary>
-        [NameInMap("bizCode")]
-        [Validation(Required=false)]
-        public string BizCode { get; set; }
 
     }
 

@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class GetFileUploadInfoResponseBody : TeaModel {
         /// <summary>
-        /// OSS上传所需信息：bucket
-        /// </summary>
-        [NameInMap("bucket")]
-        [Validation(Required=false)]
-        public string Bucket { get; set; }
-
-        /// <summary>
-        /// OSS上传所需信息：endPoint
-        /// </summary>
-        [NameInMap("endPoint")]
-        [Validation(Required=false)]
-        public string EndPoint { get; set; }
-
-        /// <summary>
         /// OSS上传所需信息：accessKeyId
         /// </summary>
         [NameInMap("accessKeyId")]
@@ -50,6 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [NameInMap("accessTokenExpirationMillis")]
         [Validation(Required=false)]
         public long? AccessTokenExpirationMillis { get; set; }
+
+        /// <summary>
+        /// OSS上传所需信息：bucket
+        /// </summary>
+        [NameInMap("bucket")]
+        [Validation(Required=false)]
+        public string Bucket { get; set; }
+
+        /// <summary>
+        /// OSS上传所需信息：endPoint
+        /// </summary>
+        [NameInMap("endPoint")]
+        [Validation(Required=false)]
+        public string EndPoint { get; set; }
 
         /// <summary>
         /// 文件mediaId

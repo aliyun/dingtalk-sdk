@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListCommodityResponseBody : TeaModel {
         /// <summary>
-        /// 分页大小
-        /// </summary>
-        [NameInMap("pageSize")]
-        [Validation(Required=false)]
-        public int? PageSize { get; set; }
-
-        /// <summary>
         /// commodityVOList
         /// </summary>
         [NameInMap("commodityVOList")]
@@ -87,6 +80,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
+
+        /// <summary>
+        /// 分页大小
+        /// </summary>
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 总数量

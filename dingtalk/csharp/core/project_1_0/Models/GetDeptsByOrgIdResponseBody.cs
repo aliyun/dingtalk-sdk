@@ -46,16 +46,16 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
         /// <summary>
         /// nextCursor
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }
-
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
 
     }
 

@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetWorkspaceResponseBody : TeaModel {
-        [NameInMap("url")]
-        [Validation(Required=false)]
-        public string Url { get; set; }
-
         [NameInMap("isDeleted")]
         [Validation(Required=false)]
         public bool? IsDeleted { get; set; }
@@ -20,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [NameInMap("owner")]
         [Validation(Required=false)]
         public string Owner { get; set; }
+
+        [NameInMap("url")]
+        [Validation(Required=false)]
+        public string Url { get; set; }
 
     }
 

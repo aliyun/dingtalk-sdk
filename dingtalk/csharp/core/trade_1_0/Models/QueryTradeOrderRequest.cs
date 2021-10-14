@@ -9,12 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
     public class QueryTradeOrderRequest : TeaModel {
-        /// <summary>
-        /// 外部订单号
-        /// </summary>
-        [NameInMap("outerOrderId")]
+        [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
-        public string OuterOrderId { get; set; }
+        public long? DingIsvOrgId { get; set; }
+
+        [NameInMap("dingSuiteKey")]
+        [Validation(Required=false)]
+        public string DingSuiteKey { get; set; }
 
         /// <summary>
         /// 内部订单号
@@ -23,13 +24,12 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         [Validation(Required=false)]
         public long? OrderId { get; set; }
 
-        [NameInMap("dingIsvOrgId")]
+        /// <summary>
+        /// 外部订单号
+        /// </summary>
+        [NameInMap("outerOrderId")]
         [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
+        public string OuterOrderId { get; set; }
 
     }
 

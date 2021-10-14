@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetExecuteUrlResponseBody : TeaModel {
+        [NameInMap("longUrl")]
+        [Validation(Required=false)]
+        public string LongUrl { get; set; }
+
         [NameInMap("mobileUrl")]
         [Validation(Required=false)]
         public string MobileUrl { get; set; }
@@ -16,10 +20,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [NameInMap("pcUrl")]
         [Validation(Required=false)]
         public string PcUrl { get; set; }
-
-        [NameInMap("longUrl")]
-        [Validation(Required=false)]
-        public string LongUrl { get; set; }
 
         [NameInMap("shortUrl")]
         [Validation(Required=false)]

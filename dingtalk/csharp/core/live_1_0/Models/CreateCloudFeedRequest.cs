@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class CreateCloudFeedRequest : TeaModel {
         /// <summary>
-        /// 课程标题
+        /// 课程封面Url
         /// </summary>
-        [NameInMap("title")]
+        [NameInMap("coverUrl")]
         [Validation(Required=false)]
-        public string Title { get; set; }
+        public string CoverUrl { get; set; }
 
         /// <summary>
         /// 课程简介
@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public string Intro { get; set; }
 
         /// <summary>
-        /// 创建课程的主播id（staffId）
-        /// </summary>
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
-
-        /// <summary>
         /// 预计开始的时间戳(未来的时间点)
         /// </summary>
         [NameInMap("startTime")]
@@ -38,11 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 课程封面Url
+        /// 课程标题
         /// </summary>
-        [NameInMap("coverUrl")]
+        [NameInMap("title")]
         [Validation(Required=false)]
-        public string CoverUrl { get; set; }
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 创建课程的主播id（staffId）
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
         /// <summary>
         /// 云导播课程资源的url

@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetGroupActiveInfoRequest : TeaModel {
         /// <summary>
-        /// 统计日期
-        /// </summary>
-        [NameInMap("statDate")]
-        [Validation(Required=false)]
-        public string StatDate { get; set; }
-
-        /// <summary>
         /// 钉钉群组id
         /// </summary>
         [NameInMap("dingGroupId")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
+
+        /// <summary>
+        /// 统计日期
+        /// </summary>
+        [NameInMap("statDate")]
+        [Validation(Required=false)]
+        public string StatDate { get; set; }
 
     }
 

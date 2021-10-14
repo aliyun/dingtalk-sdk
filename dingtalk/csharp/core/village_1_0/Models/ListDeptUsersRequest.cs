@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListDeptUsersRequest : TeaModel {
         /// <summary>
-        /// cursor
-        /// </summary>
-        [NameInMap("cursor")]
-        [Validation(Required=false)]
-        public long? Cursor { get; set; }
-
-        /// <summary>
-        /// size
-        /// </summary>
-        [NameInMap("size")]
-        [Validation(Required=false)]
-        public int? Size { get; set; }
-
-        /// <summary>
         /// containAccessLimit
         /// </summary>
         [NameInMap("containAccessLimit")]
@@ -31,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public bool? ContainAccessLimit { get; set; }
 
         /// <summary>
-        /// 下属组织的组织ID，比如下属镇、村的corpId
+        /// cursor
         /// </summary>
-        [NameInMap("subCorpId")]
+        [NameInMap("cursor")]
         [Validation(Required=false)]
-        public string SubCorpId { get; set; }
+        public long? Cursor { get; set; }
 
         /// <summary>
         /// language
@@ -50,6 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [NameInMap("orderField")]
         [Validation(Required=false)]
         public string OrderField { get; set; }
+
+        /// <summary>
+        /// size
+        /// </summary>
+        [NameInMap("size")]
+        [Validation(Required=false)]
+        public int? Size { get; set; }
+
+        /// <summary>
+        /// 下属组织的组织ID，比如下属镇、村的corpId
+        /// </summary>
+        [NameInMap("subCorpId")]
+        [Validation(Required=false)]
+        public string SubCorpId { get; set; }
 
     }
 

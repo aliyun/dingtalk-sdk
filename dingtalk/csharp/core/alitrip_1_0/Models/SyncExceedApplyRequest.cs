@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
 {
     public class SyncExceedApplyRequest : TeaModel {
         /// <summary>
-        /// 审批意见
-        /// </summary>
-        [NameInMap("remark")]
-        [Validation(Required=false)]
-        public string Remark { get; set; }
-
-        /// <summary>
         /// 商旅超标审批单id
         /// </summary>
         [NameInMap("applyId")]
@@ -31,6 +24,20 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
+        /// 审批意见
+        /// </summary>
+        [NameInMap("remark")]
+        [Validation(Required=false)]
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 审批单状态 1同意2拒绝
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public int? Status { get; set; }
+
+        /// <summary>
         /// 第三方流程实例id
         /// </summary>
         [NameInMap("thirdpartyFlowId")]
@@ -43,13 +50,6 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
-
-        /// <summary>
-        /// 审批单状态 1同意2拒绝
-        /// </summary>
-        [NameInMap("status")]
-        [Validation(Required=false)]
-        public int? Status { get; set; }
 
     }
 

@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
 {
     public class CreateDeviceVideoConferenceResponseBody : TeaModel {
         /// <summary>
-        /// 会议id
-        /// </summary>
-        [NameInMap("conferenceId")]
-        [Validation(Required=false)]
-        public string ConferenceId { get; set; }
-
-        /// <summary>
         /// 入会口令
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
+
+        /// <summary>
+        /// 会议id
+        /// </summary>
+        [NameInMap("conferenceId")]
+        [Validation(Required=false)]
+        public string ConferenceId { get; set; }
 
     }
 

@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class GetOfficialAccountContactsResponseBody : TeaModel {
         /// <summary>
-        /// 下一页的游标，为null则表示无数据
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        /// <summary>
         /// 分页大小
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }
+
+        /// <summary>
+        /// 下一页的游标，为null则表示无数据
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
         /// <summary>
         /// 客户数据节点

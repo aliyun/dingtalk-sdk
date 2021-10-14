@@ -10,41 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetConferenceDetailResponseBody : TeaModel {
         /// <summary>
-        /// 会议ID
-        /// </summary>
-        [NameInMap("conferenceId")]
-        [Validation(Required=false)]
-        public string ConferenceId { get; set; }
-
-        /// <summary>
-        /// 会议标题
-        /// </summary>
-        [NameInMap("title")]
-        [Validation(Required=false)]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// 开始时间
-        /// </summary>
-        [NameInMap("confStartTime")]
-        [Validation(Required=false)]
-        public float? ConfStartTime { get; set; }
-
-        /// <summary>
-        /// 持续时间
-        /// </summary>
-        [NameInMap("duration")]
-        [Validation(Required=false)]
-        public float? Duration { get; set; }
-
-        /// <summary>
-        /// 会议人数
-        /// </summary>
-        [NameInMap("totalNum")]
-        [Validation(Required=false)]
-        public long? TotalNum { get; set; }
-
-        /// <summary>
         /// 出席会议人数
         /// </summary>
         [NameInMap("attendeeNum")]
@@ -71,6 +36,27 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [NameInMap("callerName")]
         [Validation(Required=false)]
         public string CallerName { get; set; }
+
+        /// <summary>
+        /// 开始时间
+        /// </summary>
+        [NameInMap("confStartTime")]
+        [Validation(Required=false)]
+        public float? ConfStartTime { get; set; }
+
+        /// <summary>
+        /// 会议ID
+        /// </summary>
+        [NameInMap("conferenceId")]
+        [Validation(Required=false)]
+        public string ConferenceId { get; set; }
+
+        /// <summary>
+        /// 持续时间
+        /// </summary>
+        [NameInMap("duration")]
+        [Validation(Required=false)]
+        public float? Duration { get; set; }
 
         /// <summary>
         /// 参会人员列表
@@ -108,6 +94,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string StaffId { get; set; }
 
         }
+
+        /// <summary>
+        /// 会议标题
+        /// </summary>
+        [NameInMap("title")]
+        [Validation(Required=false)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 会议人数
+        /// </summary>
+        [NameInMap("totalNum")]
+        [Validation(Required=false)]
+        public long? TotalNum { get; set; }
 
     }
 

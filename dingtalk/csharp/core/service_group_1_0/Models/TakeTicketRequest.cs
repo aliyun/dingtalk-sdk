@@ -29,13 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
-        [NameInMap("takerUnionId")]
-        [Validation(Required=false)]
-        public string TakerUnionId { get; set; }
-
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
         public string OpenTicketId { get; set; }
+
+        [NameInMap("takerUnionId")]
+        [Validation(Required=false)]
+        public string TakerUnionId { get; set; }
 
     }
 

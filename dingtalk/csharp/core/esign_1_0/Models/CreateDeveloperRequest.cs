@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
-        [NameInMap("redirectUrl")]
-        [Validation(Required=false)]
-        public string RedirectUrl { get; set; }
-
         [NameInMap("dingIsvAccessToken")]
         [Validation(Required=false)]
         public string DingIsvAccessToken { get; set; }
@@ -24,6 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
+
+        [NameInMap("redirectUrl")]
+        [Validation(Required=false)]
+        public string RedirectUrl { get; set; }
 
     }
 

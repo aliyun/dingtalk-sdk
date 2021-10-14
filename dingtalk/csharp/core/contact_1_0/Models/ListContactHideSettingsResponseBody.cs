@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// 下一次拉取数据时的offset
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
         /// 设置列表
         /// </summary>
         [NameInMap("list")]
@@ -101,6 +94,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public long? Id { get; set; }
 
         }
+
+        /// <summary>
+        /// 下一次拉取数据时的offset
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
 
     }
 

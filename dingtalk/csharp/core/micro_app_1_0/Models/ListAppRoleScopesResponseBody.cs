@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class ListAppRoleScopesResponseBody : TeaModel {
         /// <summary>
-        /// 是否还有数据，true: 还有；false: 已经全部拉取完成
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
-
-        /// <summary>
-        /// 下一次请求的起始点
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
-
-        /// <summary>
         /// 数据列表
         /// </summary>
         [NameInMap("dataList")]
@@ -80,6 +66,20 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public bool? CanManageRole { get; set; }
 
         }
+
+        /// <summary>
+        /// 是否还有数据，true: 还有；false: 已经全部拉取完成
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 下一次请求的起始点
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
 
     }
 

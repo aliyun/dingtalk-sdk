@@ -9,18 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class AddHrmPreentryRequest : TeaModel {
-        [NameInMap("preEntryTime")]
-        [Validation(Required=false)]
-        public long? PreEntryTime { get; set; }
-
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
-
-        [NameInMap("mobile")]
-        [Validation(Required=false)]
-        public string Mobile { get; set; }
-
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
@@ -58,6 +46,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             }
 
         }
+
+        [NameInMap("mobile")]
+        [Validation(Required=false)]
+        public string Mobile { get; set; }
+
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
+        [NameInMap("preEntryTime")]
+        [Validation(Required=false)]
+        public long? PreEntryTime { get; set; }
 
     }
 

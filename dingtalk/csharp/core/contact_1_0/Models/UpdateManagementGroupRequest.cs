@@ -39,24 +39,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 
         }
 
-        [NameInMap("scope")]
-        [Validation(Required=false)]
-        public UpdateManagementGroupRequestScope Scope { get; set; }
-        public class UpdateManagementGroupRequestScope : TeaModel {
-            [NameInMap("scopeType")]
-            [Validation(Required=false)]
-            public int? ScopeType { get; set; }
-            [NameInMap("deptIds")]
-            [Validation(Required=false)]
-            public List<string> DeptIds { get; set; }
-        };
-
         /// <summary>
         /// 资源列表
         /// </summary>
         [NameInMap("resourceIds")]
         [Validation(Required=false)]
         public List<string> ResourceIds { get; set; }
+
+        [NameInMap("scope")]
+        [Validation(Required=false)]
+        public UpdateManagementGroupRequestScope Scope { get; set; }
+        public class UpdateManagementGroupRequestScope : TeaModel {
+            [NameInMap("deptIds")]
+            [Validation(Required=false)]
+            public List<string> DeptIds { get; set; }
+            [NameInMap("scopeType")]
+            [Validation(Required=false)]
+            public int? ScopeType { get; set; }
+        };
 
     }
 

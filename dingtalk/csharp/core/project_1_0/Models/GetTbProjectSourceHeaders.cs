@@ -13,25 +13,25 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
 
-        [NameInMap("dingOrgId")]
+        [NameInMap("dingAccessTokenType")]
         [Validation(Required=false)]
-        public string DingOrgId { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public string DingIsvOrgId { get; set; }
+        public string DingAccessTokenType { get; set; }
 
         [NameInMap("dingCorpId")]
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public string DingIsvOrgId { get; set; }
+
+        [NameInMap("dingOrgId")]
+        [Validation(Required=false)]
+        public string DingOrgId { get; set; }
+
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingAccessTokenType")]
-        [Validation(Required=false)]
-        public string DingAccessTokenType { get; set; }
 
         [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]

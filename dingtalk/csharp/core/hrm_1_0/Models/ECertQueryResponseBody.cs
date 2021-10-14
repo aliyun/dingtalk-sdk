@@ -10,32 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class ECertQueryResponseBody : TeaModel {
         /// <summary>
-        /// 身份证姓名
-        /// </summary>
-        [NameInMap("realName")]
-        [Validation(Required=false)]
-        public string RealName { get; set; }
-
-        /// <summary>
         /// 身份证号码
         /// </summary>
         [NameInMap("certNO")]
         [Validation(Required=false)]
         public string CertNO { get; set; }
-
-        /// <summary>
-        /// 主部门ID
-        /// </summary>
-        [NameInMap("mainDeptId")]
-        [Validation(Required=false)]
-        public long? MainDeptId { get; set; }
-
-        /// <summary>
-        /// 主部门
-        /// </summary>
-        [NameInMap("mainDeptName")]
-        [Validation(Required=false)]
-        public string MainDeptName { get; set; }
 
         /// <summary>
         /// 职务ID
@@ -94,11 +73,32 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public string LastWorkDay { get; set; }
 
         /// <summary>
-        /// 主动离职原因
+        /// 主部门ID
         /// </summary>
-        [NameInMap("terminationReasonVoluntary")]
+        [NameInMap("mainDeptId")]
         [Validation(Required=false)]
-        public List<string> TerminationReasonVoluntary { get; set; }
+        public long? MainDeptId { get; set; }
+
+        /// <summary>
+        /// 主部门
+        /// </summary>
+        [NameInMap("mainDeptName")]
+        [Validation(Required=false)]
+        public string MainDeptName { get; set; }
+
+        /// <summary>
+        /// 姓名
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 身份证姓名
+        /// </summary>
+        [NameInMap("realName")]
+        [Validation(Required=false)]
+        public string RealName { get; set; }
 
         /// <summary>
         /// 被动离职原因
@@ -108,11 +108,11 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public List<string> TerminationReasonPassive { get; set; }
 
         /// <summary>
-        /// 姓名
+        /// 主动离职原因
         /// </summary>
-        [NameInMap("name")]
+        [NameInMap("terminationReasonVoluntary")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public List<string> TerminationReasonVoluntary { get; set; }
 
     }
 

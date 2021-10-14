@@ -9,25 +9,25 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class GetUserSourceListRequest : TeaModel {
-        [NameInMap("openInstanceId")]
+        [NameInMap("corpId")]
         [Validation(Required=false)]
-        public string OpenInstanceId { get; set; }
+        public string CorpId { get; set; }
 
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
-        [NameInMap("orgName")]
+        [NameInMap("openInstanceId")]
         [Validation(Required=false)]
-        public string OrgName { get; set; }
+        public string OpenInstanceId { get; set; }
 
         [NameInMap("orgId")]
         [Validation(Required=false)]
         public long? OrgId { get; set; }
 
-        [NameInMap("corpId")]
+        [NameInMap("orgName")]
         [Validation(Required=false)]
-        public string CorpId { get; set; }
+        public string OrgName { get; set; }
 
         [NameInMap("productionType")]
         [Validation(Required=false)]

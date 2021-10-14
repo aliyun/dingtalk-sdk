@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class PageListRobotResponseBody : TeaModel {
         /// <summary>
-        /// 查询结果总数
-        /// </summary>
-        [NameInMap("total")]
-        [Validation(Required=false)]
-        public long? Total { get; set; }
-
-        /// <summary>
-        /// 下一次查询起始游标
-        /// </summary>
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
-        /// <summary>
         /// 是否有更多结果
         /// </summary>
         [NameInMap("hasMore")]
@@ -73,6 +59,20 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public int? Status { get; set; }
 
         }
+
+        /// <summary>
+        /// 下一次查询起始游标
+        /// </summary>
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public long? NextCursor { get; set; }
+
+        /// <summary>
+        /// 查询结果总数
+        /// </summary>
+        [NameInMap("total")]
+        [Validation(Required=false)]
+        public long? Total { get; set; }
 
     }
 

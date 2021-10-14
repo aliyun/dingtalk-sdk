@@ -9,6 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class GetUploadUrlRequest : TeaModel {
+        [NameInMap("contentMd5")]
+        [Validation(Required=false)]
+        public string ContentMd5 { get; set; }
+
+        [NameInMap("contentType")]
+        [Validation(Required=false)]
+        public string ContentType { get; set; }
+
+        [NameInMap("convert2Pdf")]
+        [Validation(Required=false)]
+        public bool? Convert2Pdf { get; set; }
+
         [NameInMap("dingCorpId")]
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
@@ -20,18 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
-
-        [NameInMap("contentType")]
-        [Validation(Required=false)]
-        public string ContentType { get; set; }
-
-        [NameInMap("contentMd5")]
-        [Validation(Required=false)]
-        public string ContentMd5 { get; set; }
-
-        [NameInMap("convert2Pdf")]
-        [Validation(Required=false)]
-        public bool? Convert2Pdf { get; set; }
 
         [NameInMap("fileName")]
         [Validation(Required=false)]

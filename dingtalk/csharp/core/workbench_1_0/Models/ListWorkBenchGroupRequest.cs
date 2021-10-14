@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 {
     public class ListWorkBenchGroupRequest : TeaModel {
         /// <summary>
-        /// 操作人unionId
-        /// </summary>
-        [NameInMap("opUnionId")]
-        [Validation(Required=false)]
-        public string OpUnionId { get; set; }
-
-        /// <summary>
         /// 合作空间corpId
         /// </summary>
         [NameInMap("ecologicalCorpId")]
@@ -29,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         [NameInMap("groupType")]
         [Validation(Required=false)]
         public string GroupType { get; set; }
+
+        /// <summary>
+        /// 操作人unionId
+        /// </summary>
+        [NameInMap("opUnionId")]
+        [Validation(Required=false)]
+        public string OpUnionId { get; set; }
 
     }
 

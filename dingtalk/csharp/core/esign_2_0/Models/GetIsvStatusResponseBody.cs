@@ -9,13 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetIsvStatusResponseBody : TeaModel {
-        [NameInMap("installStatus")]
-        [Validation(Required=false)]
-        public string InstallStatus { get; set; }
-
         [NameInMap("authStatus")]
         [Validation(Required=false)]
         public string AuthStatus { get; set; }
+
+        [NameInMap("installStatus")]
+        [Validation(Required=false)]
+        public string InstallStatus { get; set; }
 
     }
 

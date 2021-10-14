@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public string BizCode { get; set; }
 
         /// <summary>
+        /// 候选人标识
+        /// </summary>
+        [NameInMap("candidateId")]
+        [Validation(Required=false)]
+        public string CandidateId { get; set; }
+
+        /// <summary>
         /// 面试开始时间的查询起始时间（单位：毫秒）
         /// </summary>
         [NameInMap("startTimeBeginMillis")]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [NameInMap("startTimeEndMillis")]
         [Validation(Required=false)]
         public long? StartTimeEndMillis { get; set; }
-
-        /// <summary>
-        /// 候选人标识
-        /// </summary>
-        [NameInMap("candidateId")]
-        [Validation(Required=false)]
-        public string CandidateId { get; set; }
 
         /// <summary>
         /// 分页游标，首次调用传空

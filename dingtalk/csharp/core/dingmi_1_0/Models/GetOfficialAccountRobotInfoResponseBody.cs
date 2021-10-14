@@ -17,20 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         public long? AppId { get; set; }
 
         /// <summary>
-        /// 机器人名称
-        /// </summary>
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 机器人icon
-        /// </summary>
-        [NameInMap("icon")]
-        [Validation(Required=false)]
-        public string Icon { get; set; }
-
-        /// <summary>
         /// 机器人简介
         /// </summary>
         [NameInMap("brief")]
@@ -43,6 +29,20 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// 机器人icon
+        /// </summary>
+        [NameInMap("icon")]
+        [Validation(Required=false)]
+        public string Icon { get; set; }
+
+        /// <summary>
+        /// 机器人名称
+        /// </summary>
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
 
         /// <summary>
         /// 机器人预览图

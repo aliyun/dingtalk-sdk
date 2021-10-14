@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class UpdateResidenceRequest : TeaModel {
         /// <summary>
-        /// 家庭管理员用户id
+        /// 组id
         /// </summary>
-        [NameInMap("managerUserId")]
+        [NameInMap("departmentId")]
         [Validation(Required=false)]
-        public string ManagerUserId { get; set; }
+        public long? DepartmentId { get; set; }
 
         /// <summary>
         /// 户名字
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string DepartmentName { get; set; }
 
         /// <summary>
-        /// 组id
+        /// 是否是贫困户
         /// </summary>
-        [NameInMap("departmentId")]
+        [NameInMap("destitute")]
         [Validation(Required=false)]
-        public long? DepartmentId { get; set; }
+        public bool? Destitute { get; set; }
 
         /// <summary>
         /// 所属网格
@@ -45,11 +45,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string HomeTel { get; set; }
 
         /// <summary>
-        /// 是否是贫困户
+        /// 家庭管理员用户id
         /// </summary>
-        [NameInMap("destitute")]
+        [NameInMap("managerUserId")]
         [Validation(Required=false)]
-        public bool? Destitute { get; set; }
+        public string ManagerUserId { get; set; }
 
         /// <summary>
         /// 组id

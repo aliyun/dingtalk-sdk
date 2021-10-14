@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ExecuteTaskRequest : TeaModel {
         /// <summary>
-        /// 审批结果
-        /// </summary>
-        [NameInMap("outResult")]
-        [Validation(Required=false)]
-        public string OutResult { get; set; }
-
-        /// <summary>
-        /// 是否不执行校验&关联操作
-        /// </summary>
-        [NameInMap("noExecuteExpressions")]
-        [Validation(Required=false)]
-        public string NoExecuteExpressions { get; set; }
-
-        /// <summary>
         /// 应用ID
         /// </summary>
         [NameInMap("appType")]
@@ -38,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FormDataJson { get; set; }
 
         /// <summary>
-        /// 应用秘钥
-        /// </summary>
-        [NameInMap("systemToken")]
-        [Validation(Required=false)]
-        public string SystemToken { get; set; }
-
-        /// <summary>
         /// 语言
         /// </summary>
         [NameInMap("language")]
@@ -52,11 +31,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string Language { get; set; }
 
         /// <summary>
-        /// 审批意见
+        /// 是否不执行校验&关联操作
         /// </summary>
-        [NameInMap("remark")]
+        [NameInMap("noExecuteExpressions")]
         [Validation(Required=false)]
-        public string Remark { get; set; }
+        public string NoExecuteExpressions { get; set; }
+
+        /// <summary>
+        /// 审批结果
+        /// </summary>
+        [NameInMap("outResult")]
+        [Validation(Required=false)]
+        public string OutResult { get; set; }
 
         /// <summary>
         /// 实例ID
@@ -66,11 +52,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string ProcessInstanceId { get; set; }
 
         /// <summary>
-        /// 钉钉的userId
+        /// 审批意见
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("remark")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 应用秘钥
+        /// </summary>
+        [NameInMap("systemToken")]
+        [Validation(Required=false)]
+        public string SystemToken { get; set; }
 
         /// <summary>
         /// 任务ID
@@ -78,6 +71,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public long? TaskId { get; set; }
+
+        /// <summary>
+        /// 钉钉的userId
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

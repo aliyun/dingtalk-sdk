@@ -86,6 +86,32 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public InitCoursesOfClassRequestSectionConfig SectionConfig { get; set; }
         public class InitCoursesOfClassRequestSectionConfig : TeaModel {
+            [NameInMap("end")]
+            [Validation(Required=false)]
+            public InitCoursesOfClassRequestSectionConfigEnd End { get; set; }
+            public class InitCoursesOfClassRequestSectionConfigEnd : TeaModel {
+                /// <summary>
+                /// 每个月的第几天。
+                /// </summary>
+                [NameInMap("dayOfMonth")]
+                [Validation(Required=false)]
+                public int? DayOfMonth { get; set; }
+
+                /// <summary>
+                /// 月份。
+                /// </summary>
+                [NameInMap("month")]
+                [Validation(Required=false)]
+                public int? Month { get; set; }
+
+                /// <summary>
+                /// 年份。
+                /// </summary>
+                [NameInMap("year")]
+                [Validation(Required=false)]
+                public int? Year { get; set; }
+
+            }
             [NameInMap("sectionModels")]
             [Validation(Required=false)]
             public List<InitCoursesOfClassRequestSectionConfigSectionModels> SectionModels { get; set; }
@@ -132,31 +158,12 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public InitCoursesOfClassRequestSectionConfigStart Start { get; set; }
             public class InitCoursesOfClassRequestSectionConfigStart : TeaModel {
                 /// <summary>
-                /// 月份。
-                /// </summary>
-                [NameInMap("month")]
-                [Validation(Required=false)]
-                public int? Month { get; set; }
-
-                /// <summary>
-                /// 年份。
-                /// </summary>
-                [NameInMap("year")]
-                [Validation(Required=false)]
-                public int? Year { get; set; }
-
-                /// <summary>
                 /// 每个月的第几天。
                 /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public int? DayOfMonth { get; set; }
 
-            }
-            [NameInMap("end")]
-            [Validation(Required=false)]
-            public InitCoursesOfClassRequestSectionConfigEnd End { get; set; }
-            public class InitCoursesOfClassRequestSectionConfigEnd : TeaModel {
                 /// <summary>
                 /// 月份。
                 /// </summary>
@@ -170,13 +177,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public int? Year { get; set; }
-
-                /// <summary>
-                /// 每个月的第几天。
-                /// </summary>
-                [NameInMap("dayOfMonth")]
-                [Validation(Required=false)]
-                public int? DayOfMonth { get; set; }
 
             }
         };

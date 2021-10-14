@@ -24,18 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string CorpId { get; set; }
 
         /// <summary>
-        /// 状态，OPEN或CLOSED
+        /// ISV组织ID
         /// </summary>
-        [NameInMap("status")]
+        [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
-        public string Status { get; set; }
-
-        /// <summary>
-        /// 扩展参数
-        /// </summary>
-        [NameInMap("extInfo")]
-        [Validation(Required=false)]
-        public Dictionary<string, object> ExtInfo { get; set; }
+        public long? DingIsvOrgId { get; set; }
 
         /// <summary>
         /// 组织ID
@@ -45,11 +38,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public long? DingOrgId { get; set; }
 
         /// <summary>
-        /// ISV组织ID
+        /// 扩展参数
         /// </summary>
-        [NameInMap("dingIsvOrgId")]
+        [NameInMap("extInfo")]
         [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
+        public Dictionary<string, object> ExtInfo { get; set; }
+
+        /// <summary>
+        /// 状态，OPEN或CLOSED
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public string Status { get; set; }
 
     }
 

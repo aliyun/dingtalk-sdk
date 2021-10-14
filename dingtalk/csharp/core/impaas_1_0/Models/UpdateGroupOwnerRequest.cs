@@ -9,17 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class UpdateGroupOwnerRequest : TeaModel {
-        [NameInMap("ownerUid")]
+        [NameInMap("conversationId")]
         [Validation(Required=false)]
-        public string OwnerUid { get; set; }
+        public string ConversationId { get; set; }
 
         [NameInMap("operatorUid")]
         [Validation(Required=false)]
         public string OperatorUid { get; set; }
 
-        [NameInMap("conversationId")]
+        [NameInMap("ownerUid")]
         [Validation(Required=false)]
-        public string ConversationId { get; set; }
+        public string OwnerUid { get; set; }
 
     }
 

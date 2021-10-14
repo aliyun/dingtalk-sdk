@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetFileInfoResponseBody : TeaModel {
+        [NameInMap("downloadUrl")]
+        [Validation(Required=false)]
+        public string DownloadUrl { get; set; }
+
         [NameInMap("fileId")]
         [Validation(Required=false)]
         public string FileId { get; set; }
@@ -17,9 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public string Name { get; set; }
 
-        [NameInMap("downloadUrl")]
+        [NameInMap("pdfTotalPages")]
         [Validation(Required=false)]
-        public string DownloadUrl { get; set; }
+        public long? PdfTotalPages { get; set; }
 
         [NameInMap("size")]
         [Validation(Required=false)]
@@ -28,10 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [NameInMap("status")]
         [Validation(Required=false)]
         public long? Status { get; set; }
-
-        [NameInMap("pdfTotalPages")]
-        [Validation(Required=false)]
-        public long? PdfTotalPages { get; set; }
 
     }
 

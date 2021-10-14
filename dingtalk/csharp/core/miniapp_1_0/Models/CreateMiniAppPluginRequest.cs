@@ -9,25 +9,25 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class CreateMiniAppPluginRequest : TeaModel {
-        [NameInMap("bizType")]
-        [Validation(Required=false)]
-        public int? BizType { get; set; }
-
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
-        [NameInMap("name")]
+        [NameInMap("bizType")]
         [Validation(Required=false)]
-        public string Name { get; set; }
-
-        [NameInMap("icon")]
-        [Validation(Required=false)]
-        public string Icon { get; set; }
+        public int? BizType { get; set; }
 
         [NameInMap("desc")]
         [Validation(Required=false)]
         public string Desc { get; set; }
+
+        [NameInMap("dingClientId")]
+        [Validation(Required=false)]
+        public string DingClientId { get; set; }
+
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
 
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
@@ -41,17 +41,17 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
 
-        [NameInMap("dingClientId")]
+        [NameInMap("icon")]
         [Validation(Required=false)]
-        public string DingClientId { get; set; }
+        public string Icon { get; set; }
+
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
 
     }
 

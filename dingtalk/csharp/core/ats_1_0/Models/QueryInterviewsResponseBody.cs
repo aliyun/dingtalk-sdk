@@ -10,25 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class QueryInterviewsResponseBody : TeaModel {
         /// <summary>
-        /// 总数量
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
-        /// <summary>
         /// 是否有更多数据
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
-
-        /// <summary>
-        /// 下次查询的分页游标
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
 
         /// <summary>
         /// 数据列表
@@ -96,6 +82,20 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
             }
 
         }
+
+        /// <summary>
+        /// 下次查询的分页游标
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// 总数量
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

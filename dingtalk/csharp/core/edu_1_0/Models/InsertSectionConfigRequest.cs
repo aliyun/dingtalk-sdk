@@ -10,6 +10,31 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class InsertSectionConfigRequest : TeaModel {
         /// <summary>
+        /// 结束日期
+        /// </summary>
+        [NameInMap("end")]
+        [Validation(Required=false)]
+        public InsertSectionConfigRequestEnd End { get; set; }
+        public class InsertSectionConfigRequestEnd : TeaModel {
+            [NameInMap("dayOfMonth")]
+            [Validation(Required=false)]
+            public int? DayOfMonth { get; set; }
+            [NameInMap("month")]
+            [Validation(Required=false)]
+            public int? Month { get; set; }
+            [NameInMap("year")]
+            [Validation(Required=false)]
+            public int? Year { get; set; }
+        };
+
+        /// <summary>
+        /// 课程表名称
+        /// </summary>
+        [NameInMap("scheduleName")]
+        [Validation(Required=false)]
+        public string ScheduleName { get; set; }
+
+        /// <summary>
         /// 节次模型
         /// </summary>
         [NameInMap("sectionModels")]
@@ -76,41 +101,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public InsertSectionConfigRequestStart Start { get; set; }
         public class InsertSectionConfigRequestStart : TeaModel {
+            [NameInMap("dayOfMonth")]
+            [Validation(Required=false)]
+            public int? DayOfMonth { get; set; }
             [NameInMap("month")]
             [Validation(Required=false)]
             public int? Month { get; set; }
             [NameInMap("year")]
             [Validation(Required=false)]
             public int? Year { get; set; }
-            [NameInMap("dayOfMonth")]
-            [Validation(Required=false)]
-            public int? DayOfMonth { get; set; }
         };
-
-        /// <summary>
-        /// 结束日期
-        /// </summary>
-        [NameInMap("end")]
-        [Validation(Required=false)]
-        public InsertSectionConfigRequestEnd End { get; set; }
-        public class InsertSectionConfigRequestEnd : TeaModel {
-            [NameInMap("month")]
-            [Validation(Required=false)]
-            public int? Month { get; set; }
-            [NameInMap("year")]
-            [Validation(Required=false)]
-            public int? Year { get; set; }
-            [NameInMap("dayOfMonth")]
-            [Validation(Required=false)]
-            public int? DayOfMonth { get; set; }
-        };
-
-        /// <summary>
-        /// 课程表名称
-        /// </summary>
-        [NameInMap("scheduleName")]
-        [Validation(Required=false)]
-        public string ScheduleName { get; set; }
 
         /// <summary>
         /// 操作人的userid。

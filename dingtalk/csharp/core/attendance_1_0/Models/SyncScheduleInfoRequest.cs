@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class SyncScheduleInfoRequest : TeaModel {
+        [NameInMap("opUserId")]
+        [Validation(Required=false)]
+        public string OpUserId { get; set; }
+
         [NameInMap("scheduleInfos")]
         [Validation(Required=false)]
         public List<SyncScheduleInfoRequestScheduleInfos> ScheduleInfos { get; set; }
@@ -26,10 +30,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public List<string> PositionKeys { get; set; }
 
         }
-
-        [NameInMap("opUserId")]
-        [Validation(Required=false)]
-        public string OpUserId { get; set; }
 
     }
 

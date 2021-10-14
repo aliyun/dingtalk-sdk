@@ -13,6 +13,12 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public GetMachineUserResponseBodyResult Result { get; set; }
         public class GetMachineUserResponseBodyResult : TeaModel {
+            [NameInMap("hasMore")]
+            [Validation(Required=false)]
+            public bool? HasMore { get; set; }
+            [NameInMap("nextToken")]
+            [Validation(Required=false)]
+            public string NextToken { get; set; }
             [NameInMap("userList")]
             [Validation(Required=false)]
             public List<GetMachineUserResponseBodyResultUserList> UserList { get; set; }
@@ -21,12 +27,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 public string Name { get; set; }
                 public bool? HasFace { get; set; }
             }
-            [NameInMap("hasMore")]
-            [Validation(Required=false)]
-            public bool? HasMore { get; set; }
-            [NameInMap("nextToken")]
-            [Validation(Required=false)]
-            public string NextToken { get; set; }
         };
 
     }

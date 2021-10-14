@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class UpdateInstanceRequest : TeaModel {
         /// <summary>
-        /// 实例ID
-        /// </summary>
-        [NameInMap("processInstanceId")]
-        [Validation(Required=false)]
-        public string ProcessInstanceId { get; set; }
-
-        /// <summary>
         /// 应用ID
         /// </summary>
         [NameInMap("appType")]
@@ -24,11 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AppType { get; set; }
 
         /// <summary>
-        /// 更新的表单数据
+        /// 语言环境
         /// </summary>
-        [NameInMap("updateFormDataJson")]
+        [NameInMap("language")]
         [Validation(Required=false)]
-        public string UpdateFormDataJson { get; set; }
+        public string Language { get; set; }
+
+        /// <summary>
+        /// 实例ID
+        /// </summary>
+        [NameInMap("processInstanceId")]
+        [Validation(Required=false)]
+        public string ProcessInstanceId { get; set; }
 
         /// <summary>
         /// 应用秘钥
@@ -38,11 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string SystemToken { get; set; }
 
         /// <summary>
-        /// 语言环境
+        /// 更新的表单数据
         /// </summary>
-        [NameInMap("language")]
+        [NameInMap("updateFormDataJson")]
         [Validation(Required=false)]
-        public string Language { get; set; }
+        public string UpdateFormDataJson { get; set; }
 
         /// <summary>
         /// 钉钉的userId

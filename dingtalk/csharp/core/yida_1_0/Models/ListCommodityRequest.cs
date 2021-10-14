@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string AccessKey { get; set; }
 
         /// <summary>
-        /// pageSize
-        /// </summary>
-        [NameInMap("pageSize")]
-        [Validation(Required=false)]
-        public int? PageSize { get; set; }
-
-        /// <summary>
         /// callerUid
         /// </summary>
         [NameInMap("callerUid")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
+
+        /// <summary>
+        /// pageSize
+        /// </summary>
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public int? PageSize { get; set; }
 
     }
 

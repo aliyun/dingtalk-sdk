@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateCustomDeptResponseBody : TeaModel {
         /// <summary>
-        /// success
-        /// </summary>
-        [NameInMap("success")]
-        [Validation(Required=false)]
-        public bool? Success { get; set; }
-
-        /// <summary>
         /// result
         /// </summary>
         [NameInMap("result")]
@@ -27,6 +20,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public long? DeptId { get; set; }
         };
+
+        /// <summary>
+        /// success
+        /// </summary>
+        [NameInMap("success")]
+        [Validation(Required=false)]
+        public bool? Success { get; set; }
 
     }
 

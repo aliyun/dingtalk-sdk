@@ -9,17 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class UsersRealnameRequest : TeaModel {
-        [NameInMap("userId")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string DingCorpId { get; set; }
 
         [NameInMap("redirectUrl")]
         [Validation(Required=false)]
         public string RedirectUrl { get; set; }
 
-        [NameInMap("dingCorpId")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string DingCorpId { get; set; }
+        public string UserId { get; set; }
 
     }
 

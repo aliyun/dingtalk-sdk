@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class RegisterAccountsRequest : TeaModel {
         /// <summary>
-        /// 组织id
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
         /// 访问秘钥
         /// </summary>
         [NameInMap("accessKey")]
@@ -29,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("activeCode")]
         [Validation(Required=false)]
         public string ActiveCode { get; set; }
+
+        /// <summary>
+        /// 组织id
+        /// </summary>
+        [NameInMap("corpId")]
+        [Validation(Required=false)]
+        public string CorpId { get; set; }
 
     }
 

@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class AddCrmPersonalCustomerRequest : TeaModel {
         /// <summary>
-        /// 记录创建人的用户ID
+        /// 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
         /// </summary>
-        [NameInMap("creatorUserId")]
+        [NameInMap("action")]
         [Validation(Required=false)]
-        public string CreatorUserId { get; set; }
+        public string Action { get; set; }
 
         /// <summary>
         /// 记录创建人的昵称
@@ -22,6 +22,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [NameInMap("creatorNick")]
         [Validation(Required=false)]
         public string CreatorNick { get; set; }
+
+        /// <summary>
+        /// 记录创建人的用户ID
+        /// </summary>
+        [NameInMap("creatorUserId")]
+        [Validation(Required=false)]
+        public string CreatorUserId { get; set; }
 
         /// <summary>
         /// 数据内容
@@ -58,13 +65,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [NameInMap("skipDuplicateCheck")]
         [Validation(Required=false)]
         public bool? SkipDuplicateCheck { get; set; }
-
-        /// <summary>
-        /// 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-        /// </summary>
-        [NameInMap("action")]
-        [Validation(Required=false)]
-        public string Action { get; set; }
 
     }
 

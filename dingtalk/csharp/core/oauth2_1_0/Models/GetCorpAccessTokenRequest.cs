@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class GetCorpAccessTokenRequest : TeaModel {
         /// <summary>
+        /// OAuth 2.0 临时授权码
+        /// </summary>
+        [NameInMap("authCorpId")]
+        [Validation(Required=false)]
+        public string AuthCorpId { get; set; }
+
+        /// <summary>
         /// 应用id
         /// </summary>
         [NameInMap("suiteKey")]
@@ -22,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
         [NameInMap("suiteSecret")]
         [Validation(Required=false)]
         public string SuiteSecret { get; set; }
-
-        /// <summary>
-        /// OAuth 2.0 临时授权码
-        /// </summary>
-        [NameInMap("authCorpId")]
-        [Validation(Required=false)]
-        public string AuthCorpId { get; set; }
 
         /// <summary>
         /// suiteTicket

@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class QueryServiceGroupMessageReadStatusResponseBody : TeaModel {
         /// <summary>
-        /// 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+        /// 本次请求所返回的最大记录条数。
         /// </summary>
-        [NameInMap("totalCount")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public int? TotalCount { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// 表示当前调用返回读取到的位置，空代表数据已经读取完毕
@@ -22,13 +22,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
-
-        /// <summary>
-        /// 本次请求所返回的最大记录条数。
-        /// </summary>
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
 
         /// <summary>
         /// 已读未读信息列表
@@ -73,6 +66,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string ReceiverDingTalkId { get; set; }
 
         }
+
+        /// <summary>
+        /// 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public int? TotalCount { get; set; }
 
     }
 

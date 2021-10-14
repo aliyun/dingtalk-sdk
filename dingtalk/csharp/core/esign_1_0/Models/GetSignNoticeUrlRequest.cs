@@ -13,17 +13,17 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
-        [NameInMap("taskId")]
+        [NameInMap("dingIsvAccessToken")]
         [Validation(Required=false)]
-        public string TaskId { get; set; }
+        public string DingIsvAccessToken { get; set; }
 
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
 
-        [NameInMap("dingIsvAccessToken")]
+        [NameInMap("taskId")]
         [Validation(Required=false)]
-        public string DingIsvAccessToken { get; set; }
+        public string TaskId { get; set; }
 
     }
 

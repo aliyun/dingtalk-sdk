@@ -68,18 +68,18 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         }
 
         /// <summary>
-        /// 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        /// <summary>
         /// 单次获取的最大记录条数。
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }
+
+        /// <summary>
+        /// 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
     }
 

@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class UpdateResideceGroupRequest : TeaModel {
         /// <summary>
-        /// 组长userid
+        /// 组id
         /// </summary>
-        [NameInMap("managerUserId")]
+        [NameInMap("departmentId")]
         [Validation(Required=false)]
-        public string ManagerUserId { get; set; }
+        public long? DepartmentId { get; set; }
 
         /// <summary>
         /// 组名字
@@ -24,11 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string DepartmentName { get; set; }
 
         /// <summary>
-        /// 组id
+        /// 组长userid
         /// </summary>
-        [NameInMap("departmentId")]
+        [NameInMap("managerUserId")]
         [Validation(Required=false)]
-        public long? DepartmentId { get; set; }
+        public string ManagerUserId { get; set; }
 
     }
 

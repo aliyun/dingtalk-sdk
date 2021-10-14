@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class RemoveMemberForAppRoleRequest : TeaModel {
         /// <summary>
+        /// 部门id列表
+        /// </summary>
+        [NameInMap("deptIdList")]
+        [Validation(Required=false)]
+        public List<long?> DeptIdList { get; set; }
+
+        /// <summary>
         /// 执行用户userId
         /// </summary>
         [NameInMap("opUserId")]
@@ -22,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [NameInMap("scopeVersion")]
         [Validation(Required=false)]
         public long? ScopeVersion { get; set; }
-
-        /// <summary>
-        /// 部门id列表
-        /// </summary>
-        [NameInMap("deptIdList")]
-        [Validation(Required=false)]
-        public List<long?> DeptIdList { get; set; }
 
         /// <summary>
         /// 员工userId列表

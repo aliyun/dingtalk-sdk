@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetProcessDefinitionRequest : TeaModel {
+        [NameInMap("appType")]
+        [Validation(Required=false)]
+        public string AppType { get; set; }
+
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
@@ -17,29 +21,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string GroupId { get; set; }
 
-        [NameInMap("appType")]
+        [NameInMap("language")]
         [Validation(Required=false)]
-        public string AppType { get; set; }
-
-        [NameInMap("orderNumber")]
-        [Validation(Required=false)]
-        public string OrderNumber { get; set; }
-
-        [NameInMap("systemType")]
-        [Validation(Required=false)]
-        public string SystemType { get; set; }
-
-        [NameInMap("systemToken")]
-        [Validation(Required=false)]
-        public string SystemToken { get; set; }
+        public string Language { get; set; }
 
         [NameInMap("nameSpace")]
         [Validation(Required=false)]
         public string NameSpace { get; set; }
 
-        [NameInMap("language")]
+        [NameInMap("orderNumber")]
         [Validation(Required=false)]
-        public string Language { get; set; }
+        public string OrderNumber { get; set; }
+
+        [NameInMap("systemToken")]
+        [Validation(Required=false)]
+        public string SystemToken { get; set; }
+
+        [NameInMap("systemType")]
+        [Validation(Required=false)]
+        public string SystemType { get; set; }
 
         [NameInMap("userId")]
         [Validation(Required=false)]

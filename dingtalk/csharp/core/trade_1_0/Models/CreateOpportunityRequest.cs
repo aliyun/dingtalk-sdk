@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
     public class CreateOpportunityRequest : TeaModel {
         /// <summary>
-        /// 企业CorpId
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
         /// 归属人电话号码
         /// </summary>
         [NameInMap("belongToPhoneNum")]
@@ -31,11 +24,22 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public string ContactPhoneNum { get; set; }
 
         /// <summary>
+        /// 企业CorpId
+        /// </summary>
+        [NameInMap("corpId")]
+        [Validation(Required=false)]
+        public string CorpId { get; set; }
+
+        /// <summary>
         /// 部门Id
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public long? DeptId { get; set; }
+
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public long? DingIsvOrgId { get; set; }
 
         /// <summary>
         /// 商品码
@@ -43,10 +47,6 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         [NameInMap("marketCode")]
         [Validation(Required=false)]
         public string MarketCode { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
 
     }
 

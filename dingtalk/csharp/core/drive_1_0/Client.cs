@@ -26,6 +26,94 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
         }
 
 
+        public AddCustomSpaceResponse AddCustomSpace(AddCustomSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
+            return AddCustomSpaceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddCustomSpaceResponse> AddCustomSpaceAsync(AddCustomSpaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
+            return await AddCustomSpaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddCustomSpaceResponse AddCustomSpaceWithOptions(AddCustomSpaceRequest request, AddCustomSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
+            {
+                body["identifier"] = request.Identifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionMode))
+            {
+                body["permissionMode"] = request.PermissionMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddCustomSpaceResponse>(DoROARequest("AddCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/customSpaces", "json", req, runtime));
+        }
+
+        public async Task<AddCustomSpaceResponse> AddCustomSpaceWithOptionsAsync(AddCustomSpaceRequest request, AddCustomSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
+            {
+                body["identifier"] = request.Identifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionMode))
+            {
+                body["permissionMode"] = request.PermissionMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddCustomSpaceResponse>(await DoROARequestAsync("AddCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/customSpaces", "json", req, runtime));
+        }
+
         public AddFileResponse AddFile(string spaceId, AddFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -45,25 +133,25 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
             {
-                body["parentId"] = request.ParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileType))
-            {
-                body["fileType"] = request.FileType;
+                body["addConflictPolicy"] = request.AddConflictPolicy;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
             {
                 body["fileName"] = request.FileName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileType))
+            {
+                body["fileType"] = request.FileType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
             {
                 body["mediaId"] = request.MediaId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
             {
-                body["addConflictPolicy"] = request.AddConflictPolicy;
+                body["parentId"] = request.ParentId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -91,25 +179,25 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
             {
-                body["parentId"] = request.ParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileType))
-            {
-                body["fileType"] = request.FileType;
+                body["addConflictPolicy"] = request.AddConflictPolicy;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
             {
                 body["fileName"] = request.FileName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileType))
+            {
+                body["fileType"] = request.FileType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
             {
                 body["mediaId"] = request.MediaId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
             {
-                body["addConflictPolicy"] = request.AddConflictPolicy;
+                body["parentId"] = request.ParentId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -132,31 +220,33 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             return TeaModel.ToObject<AddFileResponse>(await DoROARequestAsync("AddFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime));
         }
 
-        public RecoverRecycleFilesResponse RecoverRecycleFiles(RecoverRecycleFilesRequest request)
+        public AddPermissionResponse AddPermission(string fileId, string spaceId, AddPermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
-            return RecoverRecycleFilesWithOptions(request, headers, runtime);
+            AddPermissionHeaders headers = new AddPermissionHeaders();
+            return AddPermissionWithOptions(fileId, spaceId, request, headers, runtime);
         }
 
-        public async Task<RecoverRecycleFilesResponse> RecoverRecycleFilesAsync(RecoverRecycleFilesRequest request)
+        public async Task<AddPermissionResponse> AddPermissionAsync(string fileId, string spaceId, AddPermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
-            return await RecoverRecycleFilesWithOptionsAsync(request, headers, runtime);
+            AddPermissionHeaders headers = new AddPermissionHeaders();
+            return await AddPermissionWithOptionsAsync(fileId, spaceId, request, headers, runtime);
         }
 
-        public RecoverRecycleFilesResponse RecoverRecycleFilesWithOptions(RecoverRecycleFilesRequest request, RecoverRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public AddPermissionResponse AddPermissionWithOptions(string fileId, string spaceId, AddPermissionRequest request, AddPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleItemIdList))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
-                body["recycleItemIdList"] = request.RecycleItemIdList;
+                body["members"] = request.Members;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
             {
-                body["recycleType"] = request.RecycleType;
+                body["role"] = request.Role;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -176,20 +266,22 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RecoverRecycleFilesResponse>(DoROARequest("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/recover", "none", req, runtime));
+            return TeaModel.ToObject<AddPermissionResponse>(DoROARequest("AddPermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
         }
 
-        public async Task<RecoverRecycleFilesResponse> RecoverRecycleFilesWithOptionsAsync(RecoverRecycleFilesRequest request, RecoverRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<AddPermissionResponse> AddPermissionWithOptionsAsync(string fileId, string spaceId, AddPermissionRequest request, AddPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleItemIdList))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
-                body["recycleItemIdList"] = request.RecycleItemIdList;
+                body["members"] = request.Members;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
             {
-                body["recycleType"] = request.RecycleType;
+                body["role"] = request.Role;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -209,7 +301,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RecoverRecycleFilesResponse>(await DoROARequestAsync("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/recover", "none", req, runtime));
+            return TeaModel.ToObject<AddPermissionResponse>(await DoROARequestAsync("AddPermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
         }
 
         public AddSpaceResponse AddSpace(AddSpaceRequest request)
@@ -282,6 +374,330 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<AddSpaceResponse>(await DoROARequestAsync("AddSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces", "json", req, runtime));
+        }
+
+        public ClearRecycleFilesResponse ClearRecycleFiles(ClearRecycleFilesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
+            return ClearRecycleFilesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ClearRecycleFilesResponse> ClearRecycleFilesAsync(ClearRecycleFilesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
+            return await ClearRecycleFilesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ClearRecycleFilesResponse ClearRecycleFilesWithOptions(ClearRecycleFilesRequest request, ClearRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
+            {
+                body["recycleType"] = request.RecycleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ClearRecycleFilesResponse>(DoROARequest("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/clear", "none", req, runtime));
+        }
+
+        public async Task<ClearRecycleFilesResponse> ClearRecycleFilesWithOptionsAsync(ClearRecycleFilesRequest request, ClearRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
+            {
+                body["recycleType"] = request.RecycleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ClearRecycleFilesResponse>(await DoROARequestAsync("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/clear", "none", req, runtime));
+        }
+
+        public CopyFileResponse CopyFile(string fileId, string spaceId, CopyFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyFileHeaders headers = new CopyFileHeaders();
+            return CopyFileWithOptions(fileId, spaceId, request, headers, runtime);
+        }
+
+        public async Task<CopyFileResponse> CopyFileAsync(string fileId, string spaceId, CopyFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyFileHeaders headers = new CopyFileHeaders();
+            return await CopyFileWithOptionsAsync(fileId, spaceId, request, headers, runtime);
+        }
+
+        public CopyFileResponse CopyFileWithOptions(string fileId, string spaceId, CopyFileRequest request, CopyFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            {
+                body["addConflictPolicy"] = request.AddConflictPolicy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentId))
+            {
+                body["targetParentId"] = request.TargetParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
+            {
+                body["targetSpaceId"] = request.TargetSpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CopyFileResponse>(DoROARequest("CopyFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy", "json", req, runtime));
+        }
+
+        public async Task<CopyFileResponse> CopyFileWithOptionsAsync(string fileId, string spaceId, CopyFileRequest request, CopyFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            {
+                body["addConflictPolicy"] = request.AddConflictPolicy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentId))
+            {
+                body["targetParentId"] = request.TargetParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
+            {
+                body["targetSpaceId"] = request.TargetSpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CopyFileResponse>(await DoROARequestAsync("CopyFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy", "json", req, runtime));
+        }
+
+        public DeleteFileResponse DeleteFile(string fileId, string spaceId, DeleteFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFileHeaders headers = new DeleteFileHeaders();
+            return DeleteFileWithOptions(fileId, spaceId, request, headers, runtime);
+        }
+
+        public async Task<DeleteFileResponse> DeleteFileAsync(string fileId, string spaceId, DeleteFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFileHeaders headers = new DeleteFileHeaders();
+            return await DeleteFileWithOptionsAsync(fileId, spaceId, request, headers, runtime);
+        }
+
+        public DeleteFileResponse DeleteFileWithOptions(string fileId, string spaceId, DeleteFileRequest request, DeleteFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeletePolicy))
+            {
+                query["deletePolicy"] = request.DeletePolicy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DeleteFileResponse>(DoROARequest("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
+        }
+
+        public async Task<DeleteFileResponse> DeleteFileWithOptionsAsync(string fileId, string spaceId, DeleteFileRequest request, DeleteFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeletePolicy))
+            {
+                query["deletePolicy"] = request.DeletePolicy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<DeleteFileResponse>(await DoROARequestAsync("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
+        }
+
+        public DeletePermissionResponse DeletePermission(string fileId, string spaceId, DeletePermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeletePermissionHeaders headers = new DeletePermissionHeaders();
+            return DeletePermissionWithOptions(fileId, spaceId, request, headers, runtime);
+        }
+
+        public async Task<DeletePermissionResponse> DeletePermissionAsync(string fileId, string spaceId, DeletePermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeletePermissionHeaders headers = new DeletePermissionHeaders();
+            return await DeletePermissionWithOptionsAsync(fileId, spaceId, request, headers, runtime);
+        }
+
+        public DeletePermissionResponse DeletePermissionWithOptions(string fileId, string spaceId, DeletePermissionRequest request, DeletePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
+            {
+                body["role"] = request.Role;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeletePermissionResponse>(DoROARequest("DeletePermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions/delete", "none", req, runtime));
+        }
+
+        public async Task<DeletePermissionResponse> DeletePermissionWithOptionsAsync(string fileId, string spaceId, DeletePermissionRequest request, DeletePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
+            {
+                body["role"] = request.Role;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeletePermissionResponse>(await DoROARequestAsync("DeletePermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions/delete", "none", req, runtime));
         }
 
         public DeleteRecycleFilesResponse DeleteRecycleFiles(DeleteRecycleFilesRequest request)
@@ -364,173 +780,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             return TeaModel.ToObject<DeleteRecycleFilesResponse>(await DoROARequestAsync("DeleteRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/delete", "none", req, runtime));
         }
 
-        public AddPermissionResponse AddPermission(string spaceId, string fileId, AddPermissionRequest request)
+        public DeleteSpaceResponse DeleteSpace(string spaceId, DeleteSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddPermissionHeaders headers = new AddPermissionHeaders();
-            return AddPermissionWithOptions(spaceId, fileId, request, headers, runtime);
+            DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
+            return DeleteSpaceWithOptions(spaceId, request, headers, runtime);
         }
 
-        public async Task<AddPermissionResponse> AddPermissionAsync(string spaceId, string fileId, AddPermissionRequest request)
+        public async Task<DeleteSpaceResponse> DeleteSpaceAsync(string spaceId, DeleteSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddPermissionHeaders headers = new AddPermissionHeaders();
-            return await AddPermissionWithOptionsAsync(spaceId, fileId, request, headers, runtime);
+            DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
+            return await DeleteSpaceWithOptionsAsync(spaceId, request, headers, runtime);
         }
 
-        public AddPermissionResponse AddPermissionWithOptions(string spaceId, string fileId, AddPermissionRequest request, AddPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
-            {
-                body["role"] = request.Role;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<AddPermissionResponse>(DoROARequest("AddPermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
-        }
-
-        public async Task<AddPermissionResponse> AddPermissionWithOptionsAsync(string spaceId, string fileId, AddPermissionRequest request, AddPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
-            {
-                body["role"] = request.Role;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<AddPermissionResponse>(await DoROARequestAsync("AddPermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
-        }
-
-        public GetFileInfoResponse GetFileInfo(string spaceId, string fileId, GetFileInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFileInfoHeaders headers = new GetFileInfoHeaders();
-            return GetFileInfoWithOptions(spaceId, fileId, request, headers, runtime);
-        }
-
-        public async Task<GetFileInfoResponse> GetFileInfoAsync(string spaceId, string fileId, GetFileInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFileInfoHeaders headers = new GetFileInfoHeaders();
-            return await GetFileInfoWithOptionsAsync(spaceId, fileId, request, headers, runtime);
-        }
-
-        public GetFileInfoResponse GetFileInfoWithOptions(string spaceId, string fileId, GetFileInfoRequest request, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetFileInfoResponse>(DoROARequest("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
-        }
-
-        public async Task<GetFileInfoResponse> GetFileInfoWithOptionsAsync(string spaceId, string fileId, GetFileInfoRequest request, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetFileInfoResponse>(await DoROARequestAsync("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
-        }
-
-        public InfoSpaceResponse InfoSpace(string spaceId, InfoSpaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            InfoSpaceHeaders headers = new InfoSpaceHeaders();
-            return InfoSpaceWithOptions(spaceId, request, headers, runtime);
-        }
-
-        public async Task<InfoSpaceResponse> InfoSpaceAsync(string spaceId, InfoSpaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            InfoSpaceHeaders headers = new InfoSpaceHeaders();
-            return await InfoSpaceWithOptionsAsync(spaceId, request, headers, runtime);
-        }
-
-        public InfoSpaceResponse InfoSpaceWithOptions(string spaceId, InfoSpaceRequest request, InfoSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteSpaceResponse DeleteSpaceWithOptions(string spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
@@ -553,10 +817,10 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<InfoSpaceResponse>(DoROARequest("InfoSpace", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId, "json", req, runtime));
+            return TeaModel.ToObject<DeleteSpaceResponse>(DoROARequest("DeleteSpace", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId, "none", req, runtime));
         }
 
-        public async Task<InfoSpaceResponse> InfoSpaceWithOptionsAsync(string spaceId, InfoSpaceRequest request, InfoSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteSpaceResponse> DeleteSpaceWithOptionsAsync(string spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
@@ -579,179 +843,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<InfoSpaceResponse>(await DoROARequestAsync("InfoSpace", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId, "json", req, runtime));
-        }
-
-        public ListRecycleFilesResponse ListRecycleFiles(ListRecycleFilesRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
-            return ListRecycleFilesWithOptions(request, headers, runtime);
-        }
-
-        public async Task<ListRecycleFilesResponse> ListRecycleFilesAsync(ListRecycleFilesRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
-            return await ListRecycleFilesWithOptionsAsync(request, headers, runtime);
-        }
-
-        public ListRecycleFilesResponse ListRecycleFilesWithOptions(ListRecycleFilesRequest request, ListRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
-            {
-                query["recycleType"] = request.RecycleType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
-            {
-                query["orderType"] = request.OrderType;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<ListRecycleFilesResponse>(DoROARequest("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/recycleItems", "json", req, runtime));
-        }
-
-        public async Task<ListRecycleFilesResponse> ListRecycleFilesWithOptionsAsync(ListRecycleFilesRequest request, ListRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
-            {
-                query["recycleType"] = request.RecycleType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
-            {
-                query["orderType"] = request.OrderType;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<ListRecycleFilesResponse>(await DoROARequestAsync("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/recycleItems", "json", req, runtime));
-        }
-
-        public RenameFileResponse RenameFile(string spaceId, string fileId, RenameFileRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RenameFileHeaders headers = new RenameFileHeaders();
-            return RenameFileWithOptions(spaceId, fileId, request, headers, runtime);
-        }
-
-        public async Task<RenameFileResponse> RenameFileAsync(string spaceId, string fileId, RenameFileRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RenameFileHeaders headers = new RenameFileHeaders();
-            return await RenameFileWithOptionsAsync(spaceId, fileId, request, headers, runtime);
-        }
-
-        public RenameFileResponse RenameFileWithOptions(string spaceId, string fileId, RenameFileRequest request, RenameFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewFileName))
-            {
-                body["newFileName"] = request.NewFileName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RenameFileResponse>(DoROARequest("RenameFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename", "json", req, runtime));
-        }
-
-        public async Task<RenameFileResponse> RenameFileWithOptionsAsync(string spaceId, string fileId, RenameFileRequest request, RenameFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewFileName))
-            {
-                body["newFileName"] = request.NewFileName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RenameFileResponse>(await DoROARequestAsync("RenameFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename", "json", req, runtime));
+            return TeaModel.ToObject<DeleteSpaceResponse>(await DoROARequestAsync("DeleteSpace", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId, "none", req, runtime));
         }
 
         public GetAsyncTaskInfoResponse GetAsyncTaskInfo(string taskId, GetAsyncTaskInfoRequest request)
@@ -820,207 +912,25 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             return TeaModel.ToObject<GetAsyncTaskInfoResponse>(await DoROARequestAsync("GetAsyncTaskInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/tasks/" + taskId, "json", req, runtime));
         }
 
-        public ListFilesResponse ListFiles(string spaceId, ListFilesRequest request)
+        public GetDownloadInfoResponse GetDownloadInfo(string fileId, string spaceId, GetDownloadInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListFilesHeaders headers = new ListFilesHeaders();
-            return ListFilesWithOptions(spaceId, request, headers, runtime);
+            GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
+            return GetDownloadInfoWithOptions(fileId, spaceId, request, headers, runtime);
         }
 
-        public async Task<ListFilesResponse> ListFilesAsync(string spaceId, ListFilesRequest request)
+        public async Task<GetDownloadInfoResponse> GetDownloadInfoAsync(string fileId, string spaceId, GetDownloadInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListFilesHeaders headers = new ListFilesHeaders();
-            return await ListFilesWithOptionsAsync(spaceId, request, headers, runtime);
+            GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
+            return await GetDownloadInfoWithOptionsAsync(fileId, spaceId, request, headers, runtime);
         }
 
-        public ListFilesResponse ListFilesWithOptions(string spaceId, ListFilesRequest request, ListFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetDownloadInfoResponse GetDownloadInfoWithOptions(string fileId, string spaceId, GetDownloadInfoRequest request, GetDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
-            {
-                query["parentId"] = request.ParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
-            {
-                query["orderType"] = request.OrderType;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<ListFilesResponse>(DoROARequest("ListFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime));
-        }
-
-        public async Task<ListFilesResponse> ListFilesWithOptionsAsync(string spaceId, ListFilesRequest request, ListFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
-            {
-                query["parentId"] = request.ParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
-            {
-                query["orderType"] = request.OrderType;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<ListFilesResponse>(await DoROARequestAsync("ListFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime));
-        }
-
-        public ModifyPermissionResponse ModifyPermission(string spaceId, string fileId, ModifyPermissionRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
-            return ModifyPermissionWithOptions(spaceId, fileId, request, headers, runtime);
-        }
-
-        public async Task<ModifyPermissionResponse> ModifyPermissionAsync(string spaceId, string fileId, ModifyPermissionRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
-            return await ModifyPermissionWithOptionsAsync(spaceId, fileId, request, headers, runtime);
-        }
-
-        public ModifyPermissionResponse ModifyPermissionWithOptions(string spaceId, string fileId, ModifyPermissionRequest request, ModifyPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
-            {
-                body["role"] = request.Role;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<ModifyPermissionResponse>(DoROARequest("ModifyPermission", "drive_1.0", "HTTP", "PUT", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
-        }
-
-        public async Task<ModifyPermissionResponse> ModifyPermissionWithOptionsAsync(string spaceId, string fileId, ModifyPermissionRequest request, ModifyPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
-            {
-                body["role"] = request.Role;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<ModifyPermissionResponse>(await DoROARequestAsync("ModifyPermission", "drive_1.0", "HTTP", "PUT", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
-        }
-
-        public ListPermissionsResponse ListPermissions(string spaceId, string fileId, ListPermissionsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListPermissionsHeaders headers = new ListPermissionsHeaders();
-            return ListPermissionsWithOptions(spaceId, fileId, request, headers, runtime);
-        }
-
-        public async Task<ListPermissionsResponse> ListPermissionsAsync(string spaceId, string fileId, ListPermissionsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListPermissionsHeaders headers = new ListPermissionsHeaders();
-            return await ListPermissionsWithOptionsAsync(spaceId, fileId, request, headers, runtime);
-        }
-
-        public ListPermissionsResponse ListPermissionsWithOptions(string spaceId, string fileId, ListPermissionsRequest request, ListPermissionsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1040,14 +950,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListPermissionsResponse>(DoROARequest("ListPermissions", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "json", req, runtime));
+            return TeaModel.ToObject<GetDownloadInfoResponse>(DoROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos", "json", req, runtime));
         }
 
-        public async Task<ListPermissionsResponse> ListPermissionsWithOptionsAsync(string spaceId, string fileId, ListPermissionsRequest request, ListPermissionsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetDownloadInfoResponse> GetDownloadInfoWithOptionsAsync(string fileId, string spaceId, GetDownloadInfoRequest request, GetDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1067,7 +977,183 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListPermissionsResponse>(await DoROARequestAsync("ListPermissions", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "json", req, runtime));
+            return TeaModel.ToObject<GetDownloadInfoResponse>(await DoROARequestAsync("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos", "json", req, runtime));
+        }
+
+        public GetFileInfoResponse GetFileInfo(string fileId, string spaceId, GetFileInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileInfoHeaders headers = new GetFileInfoHeaders();
+            return GetFileInfoWithOptions(fileId, spaceId, request, headers, runtime);
+        }
+
+        public async Task<GetFileInfoResponse> GetFileInfoAsync(string fileId, string spaceId, GetFileInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileInfoHeaders headers = new GetFileInfoHeaders();
+            return await GetFileInfoWithOptionsAsync(fileId, spaceId, request, headers, runtime);
+        }
+
+        public GetFileInfoResponse GetFileInfoWithOptions(string fileId, string spaceId, GetFileInfoRequest request, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetFileInfoResponse>(DoROARequest("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
+        }
+
+        public async Task<GetFileInfoResponse> GetFileInfoWithOptionsAsync(string fileId, string spaceId, GetFileInfoRequest request, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetFileInfoResponse>(await DoROARequestAsync("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
+        }
+
+        public GetUploadInfoResponse GetUploadInfo(string parentId, string spaceId, GetUploadInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
+            return GetUploadInfoWithOptions(parentId, spaceId, request, headers, runtime);
+        }
+
+        public async Task<GetUploadInfoResponse> GetUploadInfoAsync(string parentId, string spaceId, GetUploadInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
+            return await GetUploadInfoWithOptionsAsync(parentId, spaceId, request, headers, runtime);
+        }
+
+        public GetUploadInfoResponse GetUploadInfoWithOptions(string parentId, string spaceId, GetUploadInfoRequest request, GetUploadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            parentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(parentId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            {
+                query["addConflictPolicy"] = request.AddConflictPolicy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
+            {
+                query["fileName"] = request.FileName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
+            {
+                query["fileSize"] = request.FileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Md5))
+            {
+                query["md5"] = request.Md5;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                query["mediaId"] = request.MediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetUploadInfoResponse>(DoROARequest("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + parentId + "/uploadInfos", "json", req, runtime));
+        }
+
+        public async Task<GetUploadInfoResponse> GetUploadInfoWithOptionsAsync(string parentId, string spaceId, GetUploadInfoRequest request, GetUploadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            parentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(parentId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            {
+                query["addConflictPolicy"] = request.AddConflictPolicy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
+            {
+                query["fileName"] = request.FileName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
+            {
+                query["fileSize"] = request.FileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Md5))
+            {
+                query["md5"] = request.Md5;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                query["mediaId"] = request.MediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetUploadInfoResponse>(await DoROARequestAsync("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + parentId + "/uploadInfos", "json", req, runtime));
         }
 
         public GrantPrivilegeOfCustomSpaceResponse GrantPrivilegeOfCustomSpace(string spaceId, GrantPrivilegeOfCustomSpaceRequest request)
@@ -1089,25 +1175,25 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
             {
-                body["type"] = request.Type;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
+                body["duration"] = request.Duration;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileIds))
             {
                 body["fileIds"] = request.FileIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
             {
-                body["duration"] = request.Duration;
+                body["type"] = request.Type;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 body["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1131,25 +1217,25 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
             {
-                body["type"] = request.Type;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
+                body["duration"] = request.Duration;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileIds))
             {
                 body["fileIds"] = request.FileIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
             {
-                body["duration"] = request.Duration;
+                body["type"] = request.Type;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 body["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1168,117 +1254,24 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             return TeaModel.ToObject<GrantPrivilegeOfCustomSpaceResponse>(await DoROARequestAsync("GrantPrivilegeOfCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/customSpacePrivileges", "none", req, runtime));
         }
 
-        public MoveFileResponse MoveFile(string spaceId, string fileId, MoveFileRequest request)
+        public InfoSpaceResponse InfoSpace(string spaceId, InfoSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MoveFileHeaders headers = new MoveFileHeaders();
-            return MoveFileWithOptions(spaceId, fileId, request, headers, runtime);
+            InfoSpaceHeaders headers = new InfoSpaceHeaders();
+            return InfoSpaceWithOptions(spaceId, request, headers, runtime);
         }
 
-        public async Task<MoveFileResponse> MoveFileAsync(string spaceId, string fileId, MoveFileRequest request)
+        public async Task<InfoSpaceResponse> InfoSpaceAsync(string spaceId, InfoSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MoveFileHeaders headers = new MoveFileHeaders();
-            return await MoveFileWithOptionsAsync(spaceId, fileId, request, headers, runtime);
+            InfoSpaceHeaders headers = new InfoSpaceHeaders();
+            return await InfoSpaceWithOptionsAsync(spaceId, request, headers, runtime);
         }
 
-        public MoveFileResponse MoveFileWithOptions(string spaceId, string fileId, MoveFileRequest request, MoveFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public InfoSpaceResponse InfoSpaceWithOptions(string spaceId, InfoSpaceRequest request, InfoSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
-            {
-                body["targetSpaceId"] = request.TargetSpaceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentId))
-            {
-                body["targetParentId"] = request.TargetParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
-            {
-                body["addConflictPolicy"] = request.AddConflictPolicy;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<MoveFileResponse>(DoROARequest("MoveFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/move", "json", req, runtime));
-        }
-
-        public async Task<MoveFileResponse> MoveFileWithOptionsAsync(string spaceId, string fileId, MoveFileRequest request, MoveFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
-            {
-                body["targetSpaceId"] = request.TargetSpaceId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentId))
-            {
-                body["targetParentId"] = request.TargetParentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
-            {
-                body["addConflictPolicy"] = request.AddConflictPolicy;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<MoveFileResponse>(await DoROARequestAsync("MoveFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/move", "json", req, runtime));
-        }
-
-        public GetDownloadInfoResponse GetDownloadInfo(string spaceId, string fileId, GetDownloadInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
-            return GetDownloadInfoWithOptions(spaceId, fileId, request, headers, runtime);
-        }
-
-        public async Task<GetDownloadInfoResponse> GetDownloadInfoAsync(string spaceId, string fileId, GetDownloadInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
-            return await GetDownloadInfoWithOptionsAsync(spaceId, fileId, request, headers, runtime);
-        }
-
-        public GetDownloadInfoResponse GetDownloadInfoWithOptions(string spaceId, string fileId, GetDownloadInfoRequest request, GetDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1298,14 +1291,152 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDownloadInfoResponse>(DoROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos", "json", req, runtime));
+            return TeaModel.ToObject<InfoSpaceResponse>(DoROARequest("InfoSpace", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId, "json", req, runtime));
         }
 
-        public async Task<GetDownloadInfoResponse> GetDownloadInfoWithOptionsAsync(string spaceId, string fileId, GetDownloadInfoRequest request, GetDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<InfoSpaceResponse> InfoSpaceWithOptionsAsync(string spaceId, InfoSpaceRequest request, InfoSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<InfoSpaceResponse>(await DoROARequestAsync("InfoSpace", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId, "json", req, runtime));
+        }
+
+        public ListFilesResponse ListFiles(string spaceId, ListFilesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListFilesHeaders headers = new ListFilesHeaders();
+            return ListFilesWithOptions(spaceId, request, headers, runtime);
+        }
+
+        public async Task<ListFilesResponse> ListFilesAsync(string spaceId, ListFilesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListFilesHeaders headers = new ListFilesHeaders();
+            return await ListFilesWithOptionsAsync(spaceId, request, headers, runtime);
+        }
+
+        public ListFilesResponse ListFilesWithOptions(string spaceId, ListFilesRequest request, ListFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
+            {
+                query["orderType"] = request.OrderType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            {
+                query["parentId"] = request.ParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListFilesResponse>(DoROARequest("ListFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime));
+        }
+
+        public async Task<ListFilesResponse> ListFilesWithOptionsAsync(string spaceId, ListFilesRequest request, ListFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
+            {
+                query["orderType"] = request.OrderType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            {
+                query["parentId"] = request.ParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListFilesResponse>(await DoROARequestAsync("ListFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime));
+        }
+
+        public ListPermissionsResponse ListPermissions(string fileId, string spaceId, ListPermissionsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListPermissionsHeaders headers = new ListPermissionsHeaders();
+            return ListPermissionsWithOptions(fileId, spaceId, request, headers, runtime);
+        }
+
+        public async Task<ListPermissionsResponse> ListPermissionsAsync(string fileId, string spaceId, ListPermissionsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListPermissionsHeaders headers = new ListPermissionsHeaders();
+            return await ListPermissionsWithOptionsAsync(fileId, spaceId, request, headers, runtime);
+        }
+
+        public ListPermissionsResponse ListPermissionsWithOptions(string fileId, string spaceId, ListPermissionsRequest request, ListPermissionsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1325,52 +1456,18 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDownloadInfoResponse>(await DoROARequestAsync("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos", "json", req, runtime));
+            return TeaModel.ToObject<ListPermissionsResponse>(DoROARequest("ListPermissions", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "json", req, runtime));
         }
 
-        public GetUploadInfoResponse GetUploadInfo(string spaceId, string parentId, GetUploadInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
-            return GetUploadInfoWithOptions(spaceId, parentId, request, headers, runtime);
-        }
-
-        public async Task<GetUploadInfoResponse> GetUploadInfoAsync(string spaceId, string parentId, GetUploadInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
-            return await GetUploadInfoWithOptionsAsync(spaceId, parentId, request, headers, runtime);
-        }
-
-        public GetUploadInfoResponse GetUploadInfoWithOptions(string spaceId, string parentId, GetUploadInfoRequest request, GetUploadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ListPermissionsResponse> ListPermissionsWithOptionsAsync(string fileId, string spaceId, ListPermissionsRequest request, ListPermissionsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
             spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            parentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(parentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
-            {
-                query["fileName"] = request.FileName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
-            {
-                query["fileSize"] = request.FileSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Md5))
-            {
-                query["md5"] = request.Md5;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
-            {
-                query["addConflictPolicy"] = request.AddConflictPolicy;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
-            {
-                query["mediaId"] = request.MediaId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1386,38 +1483,46 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetUploadInfoResponse>(DoROARequest("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + parentId + "/uploadInfos", "json", req, runtime));
+            return TeaModel.ToObject<ListPermissionsResponse>(await DoROARequestAsync("ListPermissions", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "json", req, runtime));
         }
 
-        public async Task<GetUploadInfoResponse> GetUploadInfoWithOptionsAsync(string spaceId, string parentId, GetUploadInfoRequest request, GetUploadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ListRecycleFilesResponse ListRecycleFiles(ListRecycleFilesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
+            return ListRecycleFilesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListRecycleFilesResponse> ListRecycleFilesAsync(ListRecycleFilesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
+            return await ListRecycleFilesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListRecycleFilesResponse ListRecycleFilesWithOptions(ListRecycleFilesRequest request, ListRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            parentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(parentId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
+            {
+                query["orderType"] = request.OrderType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
+            {
+                query["recycleType"] = request.RecycleType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
-            {
-                query["fileName"] = request.FileName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
-            {
-                query["fileSize"] = request.FileSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Md5))
-            {
-                query["md5"] = request.Md5;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
-            {
-                query["addConflictPolicy"] = request.AddConflictPolicy;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
-            {
-                query["mediaId"] = request.MediaId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1433,7 +1538,48 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetUploadInfoResponse>(await DoROARequestAsync("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + parentId + "/uploadInfos", "json", req, runtime));
+            return TeaModel.ToObject<ListRecycleFilesResponse>(DoROARequest("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/recycleItems", "json", req, runtime));
+        }
+
+        public async Task<ListRecycleFilesResponse> ListRecycleFilesWithOptionsAsync(ListRecycleFilesRequest request, ListRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
+            {
+                query["orderType"] = request.OrderType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
+            {
+                query["recycleType"] = request.RecycleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<ListRecycleFilesResponse>(await DoROARequestAsync("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/recycleItems", "json", req, runtime));
         }
 
         public ListSpacesResponse ListSpaces(ListSpacesRequest request)
@@ -1454,21 +1600,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceType))
-            {
-                query["spaceType"] = request.SpaceType;
+                query["maxResults"] = request.MaxResults;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceType))
             {
-                query["maxResults"] = request.MaxResults;
+                query["spaceType"] = request.SpaceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1491,21 +1637,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceType))
-            {
-                query["spaceType"] = request.SpaceType;
+                query["maxResults"] = request.MaxResults;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceType))
             {
-                query["maxResults"] = request.MaxResults;
+                query["spaceType"] = request.SpaceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1524,119 +1670,68 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             return TeaModel.ToObject<ListSpacesResponse>(await DoROARequestAsync("ListSpaces", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces", "json", req, runtime));
         }
 
-        public DeletePermissionResponse DeletePermission(string spaceId, string fileId, DeletePermissionRequest request)
+        public ModifyPermissionResponse ModifyPermission(string fileId, string spaceId, ModifyPermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeletePermissionHeaders headers = new DeletePermissionHeaders();
-            return DeletePermissionWithOptions(spaceId, fileId, request, headers, runtime);
+            ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
+            return ModifyPermissionWithOptions(fileId, spaceId, request, headers, runtime);
         }
 
-        public async Task<DeletePermissionResponse> DeletePermissionAsync(string spaceId, string fileId, DeletePermissionRequest request)
+        public async Task<ModifyPermissionResponse> ModifyPermissionAsync(string fileId, string spaceId, ModifyPermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeletePermissionHeaders headers = new DeletePermissionHeaders();
-            return await DeletePermissionWithOptionsAsync(spaceId, fileId, request, headers, runtime);
+            ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
+            return await ModifyPermissionWithOptionsAsync(fileId, spaceId, request, headers, runtime);
         }
 
-        public DeletePermissionResponse DeletePermissionWithOptions(string spaceId, string fileId, DeletePermissionRequest request, DeletePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ModifyPermissionResponse ModifyPermissionWithOptions(string fileId, string spaceId, ModifyPermissionRequest request, ModifyPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
-            {
-                body["role"] = request.Role;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
                 body["members"] = request.Members;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<DeletePermissionResponse>(DoROARequest("DeletePermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions/delete", "none", req, runtime));
-        }
-
-        public async Task<DeletePermissionResponse> DeletePermissionWithOptionsAsync(string spaceId, string fileId, DeletePermissionRequest request, DeletePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
             {
                 body["role"] = request.Role;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ModifyPermissionResponse>(DoROARequest("ModifyPermission", "drive_1.0", "HTTP", "PUT", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
+        }
+
+        public async Task<ModifyPermissionResponse> ModifyPermissionWithOptionsAsync(string fileId, string spaceId, ModifyPermissionRequest request, ModifyPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
                 body["members"] = request.Members;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Role))
             {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<DeletePermissionResponse>(await DoROARequestAsync("DeletePermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions/delete", "none", req, runtime));
-        }
-
-        public AddCustomSpaceResponse AddCustomSpace(AddCustomSpaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
-            return AddCustomSpaceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<AddCustomSpaceResponse> AddCustomSpaceAsync(AddCustomSpaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
-            return await AddCustomSpaceWithOptionsAsync(request, headers, runtime);
-        }
-
-        public AddCustomSpaceResponse AddCustomSpaceWithOptions(AddCustomSpaceRequest request, AddCustomSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
-            {
-                body["identifier"] = request.Identifier;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
-            {
-                body["bizType"] = request.BizType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionMode))
-            {
-                body["permissionMode"] = request.PermissionMode;
+                body["role"] = request.Role;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1656,77 +1751,40 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddCustomSpaceResponse>(DoROARequest("AddCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/customSpaces", "json", req, runtime));
+            return TeaModel.ToObject<ModifyPermissionResponse>(await DoROARequestAsync("ModifyPermission", "drive_1.0", "HTTP", "PUT", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime));
         }
 
-        public async Task<AddCustomSpaceResponse> AddCustomSpaceWithOptionsAsync(AddCustomSpaceRequest request, AddCustomSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
-            {
-                body["identifier"] = request.Identifier;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
-            {
-                body["bizType"] = request.BizType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionMode))
-            {
-                body["permissionMode"] = request.PermissionMode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                body["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<AddCustomSpaceResponse>(await DoROARequestAsync("AddCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/customSpaces", "json", req, runtime));
-        }
-
-        public CopyFileResponse CopyFile(string spaceId, string fileId, CopyFileRequest request)
+        public MoveFileResponse MoveFile(string fileId, string spaceId, MoveFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CopyFileHeaders headers = new CopyFileHeaders();
-            return CopyFileWithOptions(spaceId, fileId, request, headers, runtime);
+            MoveFileHeaders headers = new MoveFileHeaders();
+            return MoveFileWithOptions(fileId, spaceId, request, headers, runtime);
         }
 
-        public async Task<CopyFileResponse> CopyFileAsync(string spaceId, string fileId, CopyFileRequest request)
+        public async Task<MoveFileResponse> MoveFileAsync(string fileId, string spaceId, MoveFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CopyFileHeaders headers = new CopyFileHeaders();
-            return await CopyFileWithOptionsAsync(spaceId, fileId, request, headers, runtime);
+            MoveFileHeaders headers = new MoveFileHeaders();
+            return await MoveFileWithOptionsAsync(fileId, spaceId, request, headers, runtime);
         }
 
-        public CopyFileResponse CopyFileWithOptions(string spaceId, string fileId, CopyFileRequest request, CopyFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public MoveFileResponse MoveFileWithOptions(string fileId, string spaceId, MoveFileRequest request, MoveFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
             {
-                body["targetSpaceId"] = request.TargetSpaceId;
+                body["addConflictPolicy"] = request.AddConflictPolicy;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentId))
             {
                 body["targetParentId"] = request.TargetParentId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
             {
-                body["addConflictPolicy"] = request.AddConflictPolicy;
+                body["targetSpaceId"] = request.TargetSpaceId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1746,26 +1804,26 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CopyFileResponse>(DoROARequest("CopyFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy", "json", req, runtime));
+            return TeaModel.ToObject<MoveFileResponse>(DoROARequest("MoveFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/move", "json", req, runtime));
         }
 
-        public async Task<CopyFileResponse> CopyFileWithOptionsAsync(string spaceId, string fileId, CopyFileRequest request, CopyFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<MoveFileResponse> MoveFileWithOptionsAsync(string fileId, string spaceId, MoveFileRequest request, MoveFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
             {
-                body["targetSpaceId"] = request.TargetSpaceId;
+                body["addConflictPolicy"] = request.AddConflictPolicy;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentId))
             {
                 body["targetParentId"] = request.TargetParentId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AddConflictPolicy))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetSpaceId))
             {
-                body["addConflictPolicy"] = request.AddConflictPolicy;
+                body["targetSpaceId"] = request.TargetSpaceId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -1785,93 +1843,31 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CopyFileResponse>(await DoROARequestAsync("CopyFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy", "json", req, runtime));
+            return TeaModel.ToObject<MoveFileResponse>(await DoROARequestAsync("MoveFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/move", "json", req, runtime));
         }
 
-        public DeleteSpaceResponse DeleteSpace(string spaceId, DeleteSpaceRequest request)
+        public RecoverRecycleFilesResponse RecoverRecycleFiles(RecoverRecycleFilesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
-            return DeleteSpaceWithOptions(spaceId, request, headers, runtime);
+            RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
+            return RecoverRecycleFilesWithOptions(request, headers, runtime);
         }
 
-        public async Task<DeleteSpaceResponse> DeleteSpaceAsync(string spaceId, DeleteSpaceRequest request)
+        public async Task<RecoverRecycleFilesResponse> RecoverRecycleFilesAsync(RecoverRecycleFilesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
-            return await DeleteSpaceWithOptionsAsync(spaceId, request, headers, runtime);
+            RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
+            return await RecoverRecycleFilesWithOptionsAsync(request, headers, runtime);
         }
 
-        public DeleteSpaceResponse DeleteSpaceWithOptions(string spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<DeleteSpaceResponse>(DoROARequest("DeleteSpace", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId, "none", req, runtime));
-        }
-
-        public async Task<DeleteSpaceResponse> DeleteSpaceWithOptionsAsync(string spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<DeleteSpaceResponse>(await DoROARequestAsync("DeleteSpace", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId, "none", req, runtime));
-        }
-
-        public ClearRecycleFilesResponse ClearRecycleFiles(ClearRecycleFilesRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
-            return ClearRecycleFilesWithOptions(request, headers, runtime);
-        }
-
-        public async Task<ClearRecycleFilesResponse> ClearRecycleFilesAsync(ClearRecycleFilesRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
-            return await ClearRecycleFilesWithOptionsAsync(request, headers, runtime);
-        }
-
-        public ClearRecycleFilesResponse ClearRecycleFilesWithOptions(ClearRecycleFilesRequest request, ClearRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public RecoverRecycleFilesResponse RecoverRecycleFilesWithOptions(RecoverRecycleFilesRequest request, RecoverRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleItemIdList))
+            {
+                body["recycleItemIdList"] = request.RecycleItemIdList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
             {
                 body["recycleType"] = request.RecycleType;
@@ -1894,13 +1890,17 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ClearRecycleFilesResponse>(DoROARequest("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/clear", "none", req, runtime));
+            return TeaModel.ToObject<RecoverRecycleFilesResponse>(DoROARequest("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/recover", "none", req, runtime));
         }
 
-        public async Task<ClearRecycleFilesResponse> ClearRecycleFilesWithOptionsAsync(ClearRecycleFilesRequest request, ClearRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<RecoverRecycleFilesResponse> RecoverRecycleFilesWithOptionsAsync(RecoverRecycleFilesRequest request, RecoverRecycleFilesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleItemIdList))
+            {
+                body["recycleItemIdList"] = request.RecycleItemIdList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecycleType))
             {
                 body["recycleType"] = request.RecycleType;
@@ -1923,36 +1923,36 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ClearRecycleFilesResponse>(await DoROARequestAsync("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/clear", "none", req, runtime));
+            return TeaModel.ToObject<RecoverRecycleFilesResponse>(await DoROARequestAsync("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/recover", "none", req, runtime));
         }
 
-        public DeleteFileResponse DeleteFile(string spaceId, string fileId, DeleteFileRequest request)
+        public RenameFileResponse RenameFile(string fileId, string spaceId, RenameFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteFileHeaders headers = new DeleteFileHeaders();
-            return DeleteFileWithOptions(spaceId, fileId, request, headers, runtime);
+            RenameFileHeaders headers = new RenameFileHeaders();
+            return RenameFileWithOptions(fileId, spaceId, request, headers, runtime);
         }
 
-        public async Task<DeleteFileResponse> DeleteFileAsync(string spaceId, string fileId, DeleteFileRequest request)
+        public async Task<RenameFileResponse> RenameFileAsync(string fileId, string spaceId, RenameFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteFileHeaders headers = new DeleteFileHeaders();
-            return await DeleteFileWithOptionsAsync(spaceId, fileId, request, headers, runtime);
+            RenameFileHeaders headers = new RenameFileHeaders();
+            return await RenameFileWithOptionsAsync(fileId, spaceId, request, headers, runtime);
         }
 
-        public DeleteFileResponse DeleteFileWithOptions(string spaceId, string fileId, DeleteFileRequest request, DeleteFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public RenameFileResponse RenameFileWithOptions(string fileId, string spaceId, RenameFileRequest request, RenameFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewFileName))
+            {
+                body["newFileName"] = request.NewFileName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeletePolicy))
-            {
-                query["deletePolicy"] = request.DeletePolicy;
+                body["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1966,24 +1966,24 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteFileResponse>(DoROARequest("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
+            return TeaModel.ToObject<RenameFileResponse>(DoROARequest("RenameFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename", "json", req, runtime));
         }
 
-        public async Task<DeleteFileResponse> DeleteFileWithOptionsAsync(string spaceId, string fileId, DeleteFileRequest request, DeleteFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<RenameFileResponse> RenameFileWithOptionsAsync(string fileId, string spaceId, RenameFileRequest request, RenameFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
             fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            spaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(spaceId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewFileName))
+            {
+                body["newFileName"] = request.NewFileName;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
-                query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeletePolicy))
-            {
-                query["deletePolicy"] = request.DeletePolicy;
+                body["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1997,9 +1997,9 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteFileResponse>(await DoROARequestAsync("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId, "json", req, runtime));
+            return TeaModel.ToObject<RenameFileResponse>(await DoROARequestAsync("RenameFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename", "json", req, runtime));
         }
 
     }

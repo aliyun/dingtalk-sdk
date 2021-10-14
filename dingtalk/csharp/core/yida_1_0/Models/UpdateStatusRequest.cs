@@ -9,33 +9,33 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class UpdateStatusRequest : TeaModel {
-        [NameInMap("importSequence")]
+        [NameInMap("appType")]
         [Validation(Required=false)]
-        public string ImportSequence { get; set; }
+        public string AppType { get; set; }
 
         [NameInMap("errorLines")]
         [Validation(Required=false)]
         public List<int?> ErrorLines { get; set; }
 
-        [NameInMap("appType")]
+        [NameInMap("importSequence")]
         [Validation(Required=false)]
-        public string AppType { get; set; }
-
-        [NameInMap("systemToken")]
-        [Validation(Required=false)]
-        public string SystemToken { get; set; }
+        public string ImportSequence { get; set; }
 
         [NameInMap("language")]
         [Validation(Required=false)]
         public string Language { get; set; }
 
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
-
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }
+
+        [NameInMap("systemToken")]
+        [Validation(Required=false)]
+        public string SystemToken { get; set; }
+
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
 
     }
 

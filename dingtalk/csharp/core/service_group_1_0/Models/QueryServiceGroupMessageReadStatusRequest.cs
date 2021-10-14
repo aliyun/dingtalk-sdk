@@ -17,20 +17,27 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public long? DingOrgId { get; set; }
 
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
 
-        /// <summary>
-        /// 开放团队ID
-        /// </summary>
-        [NameInMap("openTeamId")]
+        [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
-        public string OpenTeamId { get; set; }
+        public long? DingTokenGrantType { get; set; }
+
+        /// <summary>
+        /// 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+        /// </summary>
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// 用来标记当前开始读取的位置，置空表示从头开始。
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
         /// <summary>
         /// 开放群ID
@@ -47,18 +54,11 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string OpenMsgTaskId { get; set; }
 
         /// <summary>
-        /// 用来标记当前开始读取的位置，置空表示从头开始。
+        /// 开放团队ID
         /// </summary>
-        [NameInMap("nextToken")]
+        [NameInMap("openTeamId")]
         [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        /// <summary>
-        /// 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
-        /// </summary>
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
+        public string OpenTeamId { get; set; }
 
     }
 

@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class RenewApplicationAuthorizationServiceOrderRequest : TeaModel {
         /// <summary>
-        /// 实例id
-        /// </summary>
-        [NameInMap("instanceId")]
-        [Validation(Required=false)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
         /// 访问秘钥
         /// </summary>
         [NameInMap("accessKey")]
@@ -36,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("endTimeGMT")]
         [Validation(Required=false)]
         public long? EndTimeGMT { get; set; }
+
+        /// <summary>
+        /// 实例id
+        /// </summary>
+        [NameInMap("instanceId")]
+        [Validation(Required=false)]
+        public string InstanceId { get; set; }
 
     }
 

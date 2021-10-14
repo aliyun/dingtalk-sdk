@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
 {
     public class QueryPageTraceDataResponseBody : TeaModel {
         /// <summary>
+        /// 是否结束
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
         /// 轨迹点列表
         /// </summary>
         [NameInMap("list")]
@@ -46,13 +53,6 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
             public long? GmtUpload { get; set; }
 
         }
-
-        /// <summary>
-        /// 是否结束
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
 
         /// <summary>
         /// 下一个开始位置

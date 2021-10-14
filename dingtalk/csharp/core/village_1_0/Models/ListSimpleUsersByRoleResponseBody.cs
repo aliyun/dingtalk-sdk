@@ -10,6 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListSimpleUsersByRoleResponseBody : TeaModel {
         /// <summary>
+        /// 是否还有记录
+        /// </summary>
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
+        /// 下一条记录
+        /// </summary>
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public long? NextCursor { get; set; }
+
+        /// <summary>
         /// 用户列表
         /// </summary>
         [NameInMap("userList")]
@@ -45,20 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public string Name { get; set; }
 
         }
-
-        /// <summary>
-        /// 下一条记录
-        /// </summary>
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
-        /// <summary>
-        /// 是否还有记录
-        /// </summary>
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
 
     }
 

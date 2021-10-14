@@ -10,11 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class CheckWritePermissionRequest : TeaModel {
         /// <summary>
-        /// corpId
+        /// category
         /// </summary>
-        [NameInMap("corpId")]
+        [NameInMap("category")]
         [Validation(Required=false)]
-        public string CorpId { get; set; }
+        public string Category { get; set; }
+
+        /// <summary>
+        /// entityIds
+        /// </summary>
+        [NameInMap("entityIds")]
+        [Validation(Required=false)]
+        public List<long?> EntityIds { get; set; }
 
         /// <summary>
         /// opUserId
@@ -24,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// category
-        /// </summary>
-        [NameInMap("category")]
-        [Validation(Required=false)]
-        public string Category { get; set; }
-
-        /// <summary>
         /// resourceKey
         /// </summary>
         [NameInMap("resourceKey")]
@@ -38,11 +38,11 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public string ResourceKey { get; set; }
 
         /// <summary>
-        /// entityIds
+        /// corpId
         /// </summary>
-        [NameInMap("entityIds")]
+        [NameInMap("corpId")]
         [Validation(Required=false)]
-        public List<long?> EntityIds { get; set; }
+        public string CorpId { get; set; }
 
     }
 

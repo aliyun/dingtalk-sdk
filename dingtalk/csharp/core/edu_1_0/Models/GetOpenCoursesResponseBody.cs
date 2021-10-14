@@ -9,13 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetOpenCoursesResponseBody : TeaModel {
-        /// <summary>
-        /// 总记录数
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
         [NameInMap("courseList")]
         [Validation(Required=false)]
         public List<GetOpenCoursesResponseBodyCourseList> CourseList { get; set; }
@@ -77,6 +70,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string TeacherId { get; set; }
 
         }
+
+        /// <summary>
+        /// 总记录数
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

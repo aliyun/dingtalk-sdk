@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListDeptUsersResponseBody : TeaModel {
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public long? NextCursor { get; set; }
+
         /// <summary>
         /// 用户列表
         /// </summary>
@@ -50,14 +58,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             public bool? Active { get; set; }
 
         }
-
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
-        [NameInMap("hasMore")]
-        [Validation(Required=false)]
-        public bool? HasMore { get; set; }
 
     }
 

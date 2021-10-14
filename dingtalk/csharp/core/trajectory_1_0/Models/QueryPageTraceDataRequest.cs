@@ -10,18 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
 {
     public class QueryPageTraceDataRequest : TeaModel {
         /// <summary>
-        /// traceId
+        /// 终止时间
         /// </summary>
-        [NameInMap("traceId")]
+        [NameInMap("endTime")]
         [Validation(Required=false)]
-        public string TraceId { get; set; }
-
-        /// <summary>
-        /// 起始位置
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public long? NextToken { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// 查询数量
@@ -31,18 +24,11 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         public long? MaxResults { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 起始位置
         /// </summary>
-        [NameInMap("startTime")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public long? StartTime { get; set; }
-
-        /// <summary>
-        /// 终止时间
-        /// </summary>
-        [NameInMap("endTime")]
-        [Validation(Required=false)]
-        public long? EndTime { get; set; }
+        public long? NextToken { get; set; }
 
         /// <summary>
         /// 员工ID
@@ -50,6 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         [NameInMap("staffId")]
         [Validation(Required=false)]
         public string StaffId { get; set; }
+
+        /// <summary>
+        /// 开始时间
+        /// </summary>
+        [NameInMap("startTime")]
+        [Validation(Required=false)]
+        public long? StartTime { get; set; }
+
+        /// <summary>
+        /// traceId
+        /// </summary>
+        [NameInMap("traceId")]
+        [Validation(Required=false)]
+        public string TraceId { get; set; }
 
     }
 

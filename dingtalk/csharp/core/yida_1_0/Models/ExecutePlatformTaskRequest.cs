@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ExecutePlatformTaskRequest : TeaModel {
         /// <summary>
-        /// 审批结果
-        /// </summary>
-        [NameInMap("outResult")]
-        [Validation(Required=false)]
-        public string OutResult { get; set; }
-
-        /// <summary>
-        /// 是否不执行校验&关联操作
-        /// </summary>
-        [NameInMap("noExecuteExpressions")]
-        [Validation(Required=false)]
-        public string NoExecuteExpressions { get; set; }
-
-        /// <summary>
         /// 应用ID
         /// </summary>
         [NameInMap("appType")]
@@ -38,18 +24,32 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FormDataJson { get; set; }
 
         /// <summary>
-        /// 应用秘钥
-        /// </summary>
-        [NameInMap("systemToken")]
-        [Validation(Required=false)]
-        public string SystemToken { get; set; }
-
-        /// <summary>
         /// 语言
         /// </summary>
         [NameInMap("language")]
         [Validation(Required=false)]
         public string Language { get; set; }
+
+        /// <summary>
+        /// 是否不执行校验&关联操作
+        /// </summary>
+        [NameInMap("noExecuteExpressions")]
+        [Validation(Required=false)]
+        public string NoExecuteExpressions { get; set; }
+
+        /// <summary>
+        /// 审批结果
+        /// </summary>
+        [NameInMap("outResult")]
+        [Validation(Required=false)]
+        public string OutResult { get; set; }
+
+        /// <summary>
+        /// 流程实例ID
+        /// </summary>
+        [NameInMap("processInstanceId")]
+        [Validation(Required=false)]
+        public string ProcessInstanceId { get; set; }
 
         /// <summary>
         /// 审批意见
@@ -59,11 +59,11 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string Remark { get; set; }
 
         /// <summary>
-        /// 流程实例ID
+        /// 应用秘钥
         /// </summary>
-        [NameInMap("processInstanceId")]
+        [NameInMap("systemToken")]
         [Validation(Required=false)]
-        public string ProcessInstanceId { get; set; }
+        public string SystemToken { get; set; }
 
         /// <summary>
         /// 钉钉的userId

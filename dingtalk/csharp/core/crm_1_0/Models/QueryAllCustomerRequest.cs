@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryAllCustomerRequest : TeaModel {
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
+
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
         public long? DingIsvOrgId { get; set; }
@@ -17,24 +21,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public long? DingOrgId { get; set; }
 
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public long? DingTokenGrantType { get; set; }
-
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
         [NameInMap("dingSuiteKey")]
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
 
-        /// <summary>
-        /// 用户ID
-        /// </summary>
-        [NameInMap("operatorUserId")]
+        [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
-        public string OperatorUserId { get; set; }
+        public long? DingTokenGrantType { get; set; }
 
         /// <summary>
         /// 翻页size
@@ -56,6 +49,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [NameInMap("objectType")]
         [Validation(Required=false)]
         public string ObjectType { get; set; }
+
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        [NameInMap("operatorUserId")]
+        [Validation(Required=false)]
+        public string OperatorUserId { get; set; }
 
     }
 

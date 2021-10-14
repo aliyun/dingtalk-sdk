@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetResidentUserInfoResponseBody : TeaModel {
         /// <summary>
-        /// 员工id
+        /// 员工特征
         /// </summary>
-        [NameInMap("userid")]
+        [NameInMap("feature")]
         [Validation(Required=false)]
-        public string Userid { get; set; }
+        public string Feature { get; set; }
 
         /// <summary>
         /// 员工名字
@@ -54,18 +54,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         }
 
         /// <summary>
-        /// 员工特征
-        /// </summary>
-        [NameInMap("feature")]
-        [Validation(Required=false)]
-        public string Feature { get; set; }
-
-        /// <summary>
         /// 钉钉唯一标识
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }
+
+        /// <summary>
+        /// 员工id
+        /// </summary>
+        [NameInMap("userid")]
+        [Validation(Required=false)]
+        public string Userid { get; set; }
 
     }
 

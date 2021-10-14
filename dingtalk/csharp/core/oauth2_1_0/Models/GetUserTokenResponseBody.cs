@@ -17,11 +17,11 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
         public string AccessToken { get; set; }
 
         /// <summary>
-        /// refreshToken
+        /// 所选企业corpId
         /// </summary>
-        [NameInMap("refreshToken")]
+        [NameInMap("corpId")]
         [Validation(Required=false)]
-        public string RefreshToken { get; set; }
+        public string CorpId { get; set; }
 
         /// <summary>
         /// 超时时间
@@ -31,11 +31,11 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
         public long? ExpireIn { get; set; }
 
         /// <summary>
-        /// 所选企业corpId
+        /// refreshToken
         /// </summary>
-        [NameInMap("corpId")]
+        [NameInMap("refreshToken")]
         [Validation(Required=false)]
-        public string CorpId { get; set; }
+        public string RefreshToken { get; set; }
 
     }
 

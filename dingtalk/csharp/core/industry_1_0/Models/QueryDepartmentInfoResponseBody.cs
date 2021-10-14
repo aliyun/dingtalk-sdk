@@ -19,34 +19,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
             [NameInMap("leader")]
             [Validation(Required=false)]
             public QueryDepartmentInfoResponseBodyContentLeader Leader { get; set; }
             public class QueryDepartmentInfoResponseBodyContentLeader : TeaModel {
-                /// <summary>
-                /// 姓名
-                /// </summary>
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public string Name { get; set; }
-
-                /// <summary>
-                /// 人员Id
-                /// </summary>
-                [NameInMap("userId")]
-                [Validation(Required=false)]
-                public string UserId { get; set; }
-
-                /// <summary>
-                /// 工号
-                /// </summary>
-                [NameInMap("jobNumber")]
-                [Validation(Required=false)]
-                public string JobNumber { get; set; }
-
                 /// <summary>
                 /// 工作标签
                 /// </summary>
@@ -54,25 +30,27 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public QueryDepartmentInfoResponseBodyContentLeaderJob Job { get; set; }
                 public class QueryDepartmentInfoResponseBodyContentLeaderJob : TeaModel {
-                    [NameInMap("code")]
-                    [Validation(Required=false)]
-                    public string Code { get; set; }
                     [NameInMap("bizType")]
                     [Validation(Required=false)]
                     public string BizType { get; set; }
                     [NameInMap("category")]
                     [Validation(Required=false)]
                     public string Category { get; set; }
+                    [NameInMap("code")]
+                    [Validation(Required=false)]
+                    public string Code { get; set; }
                     [NameInMap("displayName")]
                     [Validation(Required=false)]
                     public string DisplayName { get; set; }
                 };
 
-            }
-            [NameInMap("residentLeader")]
-            [Validation(Required=false)]
-            public QueryDepartmentInfoResponseBodyContentResidentLeader ResidentLeader { get; set; }
-            public class QueryDepartmentInfoResponseBodyContentResidentLeader : TeaModel {
+                /// <summary>
+                /// 工号
+                /// </summary>
+                [NameInMap("jobNumber")]
+                [Validation(Required=false)]
+                public string JobNumber { get; set; }
+
                 /// <summary>
                 /// 姓名
                 /// </summary>
@@ -87,6 +65,35 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
+            }
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+            [NameInMap("residentLeader")]
+            [Validation(Required=false)]
+            public QueryDepartmentInfoResponseBodyContentResidentLeader ResidentLeader { get; set; }
+            public class QueryDepartmentInfoResponseBodyContentResidentLeader : TeaModel {
+                /// <summary>
+                /// 工作标签
+                /// </summary>
+                [NameInMap("job")]
+                [Validation(Required=false)]
+                public QueryDepartmentInfoResponseBodyContentResidentLeaderJob Job { get; set; }
+                public class QueryDepartmentInfoResponseBodyContentResidentLeaderJob : TeaModel {
+                    [NameInMap("bizType")]
+                    [Validation(Required=false)]
+                    public string BizType { get; set; }
+                    [NameInMap("category")]
+                    [Validation(Required=false)]
+                    public string Category { get; set; }
+                    [NameInMap("code")]
+                    [Validation(Required=false)]
+                    public string Code { get; set; }
+                    [NameInMap("displayName")]
+                    [Validation(Required=false)]
+                    public string DisplayName { get; set; }
+                };
+
                 /// <summary>
                 /// 工号
                 /// </summary>
@@ -95,25 +102,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public string JobNumber { get; set; }
 
                 /// <summary>
-                /// 工作标签
+                /// 姓名
                 /// </summary>
-                [NameInMap("job")]
+                [NameInMap("name")]
                 [Validation(Required=false)]
-                public QueryDepartmentInfoResponseBodyContentResidentLeaderJob Job { get; set; }
-                public class QueryDepartmentInfoResponseBodyContentResidentLeaderJob : TeaModel {
-                    [NameInMap("code")]
-                    [Validation(Required=false)]
-                    public string Code { get; set; }
-                    [NameInMap("bizType")]
-                    [Validation(Required=false)]
-                    public string BizType { get; set; }
-                    [NameInMap("category")]
-                    [Validation(Required=false)]
-                    public string Category { get; set; }
-                    [NameInMap("displayName")]
-                    [Validation(Required=false)]
-                    public string DisplayName { get; set; }
-                };
+                public string Name { get; set; }
+
+                /// <summary>
+                /// 人员Id
+                /// </summary>
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
 
             }
         };

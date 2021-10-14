@@ -33,18 +33,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string OpenTeamId { get; set; }
 
         /// <summary>
-        /// 当前工单处理人
-        /// </summary>
-        [NameInMap("processorUnionId")]
-        [Validation(Required=false)]
-        public string ProcessorUnionId { get; set; }
-
-        /// <summary>
         /// 工单开放ID
         /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
         public string OpenTicketId { get; set; }
+
+        /// <summary>
+        /// 当前工单处理人
+        /// </summary>
+        [NameInMap("processorUnionId")]
+        [Validation(Required=false)]
+        public string ProcessorUnionId { get; set; }
 
         /// <summary>
         /// 备注
@@ -53,9 +53,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public AddTicketMemoRequestTicketMemo TicketMemo { get; set; }
         public class AddTicketMemoRequestTicketMemo : TeaModel {
-            [NameInMap("memo")]
-            [Validation(Required=false)]
-            public string Memo { get; set; }
             [NameInMap("attachments")]
             [Validation(Required=false)]
             public List<AddTicketMemoRequestTicketMemoAttachments> Attachments { get; set; }
@@ -63,6 +60,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
                 public string FileName { get; set; }
                 public string Key { get; set; }
             }
+            [NameInMap("memo")]
+            [Validation(Required=false)]
+            public string Memo { get; set; }
         };
 
     }

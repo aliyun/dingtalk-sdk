@@ -10,20 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class PageListTicketResponseBody : TeaModel {
         /// <summary>
-        /// nextCursor
-        /// </summary>
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
-        /// <summary>
-        /// total
-        /// </summary>
-        [NameInMap("total")]
-        [Validation(Required=false)]
-        public long? Total { get; set; }
-
-        /// <summary>
         /// list
         /// </summary>
         [NameInMap("list")]
@@ -115,6 +101,20 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
             public Dictionary<string, object> BizDataMap { get; set; }
 
         }
+
+        /// <summary>
+        /// nextCursor
+        /// </summary>
+        [NameInMap("nextCursor")]
+        [Validation(Required=false)]
+        public long? NextCursor { get; set; }
+
+        /// <summary>
+        /// total
+        /// </summary>
+        [NameInMap("total")]
+        [Validation(Required=false)]
+        public long? Total { get; set; }
 
     }
 

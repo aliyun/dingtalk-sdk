@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SearchOrgInnerGroupInfoResponseBody : TeaModel {
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
-
         [NameInMap("itemCount")]
         [Validation(Required=false)]
         public int? ItemCount { get; set; }
@@ -78,6 +74,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string TemplateName { get; set; }
 
         }
+
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public long? TotalCount { get; set; }
 
     }
 

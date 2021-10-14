@@ -9,25 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class ListAvaiableVersionRequest : TeaModel {
-        [NameInMap("miniAppId")]
-        [Validation(Required=false)]
-        public string MiniAppId { get; set; }
-
-        [NameInMap("versionTypeSet")]
-        [Validation(Required=false)]
-        public List<int?> VersionTypeSet { get; set; }
-
         [NameInMap("bundleId")]
         [Validation(Required=false)]
         public string BundleId { get; set; }
 
-        [NameInMap("pageSize")]
+        [NameInMap("dingClientId")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public string DingClientId { get; set; }
 
-        [NameInMap("pageNum")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public int? PageNum { get; set; }
+        public string DingCorpId { get; set; }
 
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
@@ -41,17 +33,25 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         [Validation(Required=false)]
         public string DingSuiteKey { get; set; }
 
-        [NameInMap("dingCorpId")]
-        [Validation(Required=false)]
-        public string DingCorpId { get; set; }
-
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
         [NameInMap("dingTokenGrantType")]
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
+
+        [NameInMap("miniAppId")]
+        [Validation(Required=false)]
+        public string MiniAppId { get; set; }
+
+        [NameInMap("pageNum")]
+        [Validation(Required=false)]
+        public int? PageNum { get; set; }
+
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public int? PageSize { get; set; }
+
+        [NameInMap("versionTypeSet")]
+        [Validation(Required=false)]
+        public List<int?> VersionTypeSet { get; set; }
 
     }
 

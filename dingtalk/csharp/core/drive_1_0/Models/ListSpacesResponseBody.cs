@@ -9,6 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListSpacesResponseBody : TeaModel {
+        /// <summary>
+        /// 分页加载更多锚点, nextToken不为空表示有更多数据
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
         [NameInMap("spaces")]
         [Validation(Required=false)]
         public List<ListSpacesResponseBodySpaces> Spaces { get; set; }
@@ -70,13 +77,6 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string ModifyTime { get; set; }
 
         }
-
-        /// <summary>
-        /// 分页加载更多锚点, nextToken不为空表示有更多数据
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
 
     }
 

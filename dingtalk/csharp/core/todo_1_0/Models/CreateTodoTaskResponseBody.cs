@@ -10,18 +10,25 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class CreateTodoTaskResponseBody : TeaModel {
         /// <summary>
-        /// id
+        /// 接入应用标识
         /// </summary>
-        [NameInMap("id")]
+        [NameInMap("bizTag")]
         [Validation(Required=false)]
-        public string Id { get; set; }
+        public string BizTag { get; set; }
 
         /// <summary>
-        /// 标题
+        /// 创建时间
         /// </summary>
-        [NameInMap("subject")]
+        [NameInMap("createdTime")]
         [Validation(Required=false)]
-        public string Subject { get; set; }
+        public long? CreatedTime { get; set; }
+
+        /// <summary>
+        /// 创建者（用户的unionId）
+        /// </summary>
+        [NameInMap("creatorId")]
+        [Validation(Required=false)]
+        public string CreatorId { get; set; }
 
         /// <summary>
         /// 描述
@@ -31,25 +38,19 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 自定义详情页跳转配置
         /// </summary>
-        [NameInMap("startTime")]
+        [NameInMap("detailUrl")]
         [Validation(Required=false)]
-        public long? StartTime { get; set; }
-
-        /// <summary>
-        /// 截止时间
-        /// </summary>
-        [NameInMap("dueTime")]
-        [Validation(Required=false)]
-        public long? DueTime { get; set; }
-
-        /// <summary>
-        /// 完成时间
-        /// </summary>
-        [NameInMap("finishTime")]
-        [Validation(Required=false)]
-        public long? FinishTime { get; set; }
+        public CreateTodoTaskResponseBodyDetailUrl DetailUrl { get; set; }
+        public class CreateTodoTaskResponseBodyDetailUrl : TeaModel {
+            [NameInMap("appUrl")]
+            [Validation(Required=false)]
+            public string AppUrl { get; set; }
+            [NameInMap("pcUrl")]
+            [Validation(Required=false)]
+            public string PcUrl { get; set; }
+        };
 
         /// <summary>
         /// 完成状态
@@ -59,11 +60,65 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public bool? Done { get; set; }
 
         /// <summary>
+        /// 截止时间
+        /// </summary>
+        [NameInMap("dueTime")]
+        [Validation(Required=false)]
+        public long? DueTime { get; set; }
+
+        /// <summary>
         /// 执行者列表（用户的unionId）
         /// </summary>
         [NameInMap("executorIds")]
         [Validation(Required=false)]
         public List<string> ExecutorIds { get; set; }
+
+        /// <summary>
+        /// 完成时间
+        /// </summary>
+        [NameInMap("finishTime")]
+        [Validation(Required=false)]
+        public long? FinishTime { get; set; }
+
+        /// <summary>
+        /// id
+        /// </summary>
+        [NameInMap("id")]
+        [Validation(Required=false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 生成的待办是否仅展示在执行者的待办列表中
+        /// </summary>
+        [NameInMap("isOnlyShowExecutor")]
+        [Validation(Required=false)]
+        public bool? IsOnlyShowExecutor { get; set; }
+
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        [NameInMap("modifiedTime")]
+        [Validation(Required=false)]
+        public long? ModifiedTime { get; set; }
+
+        /// <summary>
+        /// 更新者（用户的unionId）
+        /// </summary>
+        [NameInMap("modifierId")]
+        [Validation(Required=false)]
+        public string ModifierId { get; set; }
+
+        /// <summary>
+        /// 待办通知配置
+        /// </summary>
+        [NameInMap("notifyConfigs")]
+        [Validation(Required=false)]
+        public CreateTodoTaskResponseBodyNotifyConfigs NotifyConfigs { get; set; }
+        public class CreateTodoTaskResponseBodyNotifyConfigs : TeaModel {
+            [NameInMap("dingNotify")]
+            [Validation(Required=false)]
+            public string DingNotify { get; set; }
+        };
 
         /// <summary>
         /// 参与者列表（用户的unionId）
@@ -73,19 +128,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public List<string> ParticipantIds { get; set; }
 
         /// <summary>
-        /// 自定义详情页跳转配置
+        /// 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
         /// </summary>
-        [NameInMap("detailUrl")]
+        [NameInMap("priority")]
         [Validation(Required=false)]
-        public CreateTodoTaskResponseBodyDetailUrl DetailUrl { get; set; }
-        public class CreateTodoTaskResponseBodyDetailUrl : TeaModel {
-            [NameInMap("pcUrl")]
-            [Validation(Required=false)]
-            public string PcUrl { get; set; }
-            [NameInMap("appUrl")]
-            [Validation(Required=false)]
-            public string AppUrl { get; set; }
-        };
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// requestId
+        /// </summary>
+        [NameInMap("requestId")]
+        [Validation(Required=false)]
+        public string RequestId { get; set; }
 
         /// <summary>
         /// 业务来源
@@ -102,72 +156,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public string SourceId { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// 开始时间
         /// </summary>
-        [NameInMap("createdTime")]
+        [NameInMap("startTime")]
         [Validation(Required=false)]
-        public long? CreatedTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// 标题
         /// </summary>
-        [NameInMap("modifiedTime")]
+        [NameInMap("subject")]
         [Validation(Required=false)]
-        public long? ModifiedTime { get; set; }
-
-        /// <summary>
-        /// 创建者（用户的unionId）
-        /// </summary>
-        [NameInMap("creatorId")]
-        [Validation(Required=false)]
-        public string CreatorId { get; set; }
-
-        /// <summary>
-        /// 更新者（用户的unionId）
-        /// </summary>
-        [NameInMap("modifierId")]
-        [Validation(Required=false)]
-        public string ModifierId { get; set; }
-
-        /// <summary>
-        /// 接入应用标识
-        /// </summary>
-        [NameInMap("bizTag")]
-        [Validation(Required=false)]
-        public string BizTag { get; set; }
-
-        /// <summary>
-        /// requestId
-        /// </summary>
-        [NameInMap("requestId")]
-        [Validation(Required=false)]
-        public string RequestId { get; set; }
-
-        /// <summary>
-        /// 生成的待办是否仅展示在执行者的待办列表中
-        /// </summary>
-        [NameInMap("isOnlyShowExecutor")]
-        [Validation(Required=false)]
-        public bool? IsOnlyShowExecutor { get; set; }
-
-        /// <summary>
-        /// 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-        /// </summary>
-        [NameInMap("priority")]
-        [Validation(Required=false)]
-        public int? Priority { get; set; }
-
-        /// <summary>
-        /// 待办通知配置
-        /// </summary>
-        [NameInMap("notifyConfigs")]
-        [Validation(Required=false)]
-        public CreateTodoTaskResponseBodyNotifyConfigs NotifyConfigs { get; set; }
-        public class CreateTodoTaskResponseBodyNotifyConfigs : TeaModel {
-            [NameInMap("dingNotify")]
-            [Validation(Required=false)]
-            public string DingNotify { get; set; }
-        };
+        public string Subject { get; set; }
 
     }
 

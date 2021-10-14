@@ -16,16 +16,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public QueryClassScheduleResponseBodyConfig Config { get; set; }
         public class QueryClassScheduleResponseBodyConfig : TeaModel {
-            [NameInMap("start")]
+            [NameInMap("end")]
             [Validation(Required=false)]
-            public QueryClassScheduleResponseBodyConfigStart Start { get; set; }
-            public class QueryClassScheduleResponseBodyConfigStart : TeaModel {
+            public QueryClassScheduleResponseBodyConfigEnd End { get; set; }
+            public class QueryClassScheduleResponseBodyConfigEnd : TeaModel {
                 /// <summary>
-                /// 年份。
+                /// 一个月中第几天
                 /// </summary>
-                [NameInMap("year")]
+                [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
-                public long? Year { get; set; }
+                public long? DayOfMonth { get; set; }
 
                 /// <summary>
                 /// 月份。
@@ -35,11 +35,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public long? Month { get; set; }
 
                 /// <summary>
-                /// 一个月中第几天
+                /// 年份。
                 /// </summary>
-                [NameInMap("dayOfMonth")]
+                [NameInMap("year")]
                 [Validation(Required=false)]
-                public long? DayOfMonth { get; set; }
+                public long? Year { get; set; }
 
             }
             [NameInMap("sectionModels")]
@@ -84,16 +84,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
                 }
             }
-            [NameInMap("end")]
+            [NameInMap("start")]
             [Validation(Required=false)]
-            public QueryClassScheduleResponseBodyConfigEnd End { get; set; }
-            public class QueryClassScheduleResponseBodyConfigEnd : TeaModel {
+            public QueryClassScheduleResponseBodyConfigStart Start { get; set; }
+            public class QueryClassScheduleResponseBodyConfigStart : TeaModel {
                 /// <summary>
-                /// 年份。
+                /// 一个月中第几天
                 /// </summary>
-                [NameInMap("year")]
+                [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
-                public long? Year { get; set; }
+                public long? DayOfMonth { get; set; }
 
                 /// <summary>
                 /// 月份。
@@ -103,11 +103,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public long? Month { get; set; }
 
                 /// <summary>
-                /// 一个月中第几天
+                /// 年份。
                 /// </summary>
-                [NameInMap("dayOfMonth")]
+                [NameInMap("year")]
                 [Validation(Required=false)]
-                public long? DayOfMonth { get; set; }
+                public long? Year { get; set; }
 
             }
         };

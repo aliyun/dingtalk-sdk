@@ -9,17 +9,12 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class UpdateCrmPersonalCustomerRequest : TeaModel {
-        [NameInMap("instanceId")]
+        /// <summary>
+        /// 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+        /// </summary>
+        [NameInMap("action")]
         [Validation(Required=false)]
-        public string InstanceId { get; set; }
-
-        [NameInMap("modifierUserId")]
-        [Validation(Required=false)]
-        public string ModifierUserId { get; set; }
-
-        [NameInMap("modifierNick")]
-        [Validation(Required=false)]
-        public string ModifierNick { get; set; }
+        public string Action { get; set; }
 
         [NameInMap("data")]
         [Validation(Required=false)]
@@ -28,6 +23,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [NameInMap("extendData")]
         [Validation(Required=false)]
         public Dictionary<string, object> ExtendData { get; set; }
+
+        [NameInMap("instanceId")]
+        [Validation(Required=false)]
+        public string InstanceId { get; set; }
+
+        [NameInMap("modifierNick")]
+        [Validation(Required=false)]
+        public string ModifierNick { get; set; }
+
+        [NameInMap("modifierUserId")]
+        [Validation(Required=false)]
+        public string ModifierUserId { get; set; }
 
         [NameInMap("permission")]
         [Validation(Required=false)]
@@ -47,13 +54,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [NameInMap("skipDuplicateCheck")]
         [Validation(Required=false)]
         public bool? SkipDuplicateCheck { get; set; }
-
-        /// <summary>
-        /// 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-        /// </summary>
-        [NameInMap("action")]
-        [Validation(Required=false)]
-        public string Action { get; set; }
 
     }
 

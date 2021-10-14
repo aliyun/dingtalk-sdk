@@ -10,25 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class CreateWorkspaceRequest : TeaModel {
         /// <summary>
-        /// 团队空间名称
-        /// </summary>
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// 团队空间描述
         /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
-        /// <summary>
-        /// 用户id
-        /// </summary>
-        [NameInMap("operatorId")]
+        [NameInMap("dingAccessTokenType")]
         [Validation(Required=false)]
-        public string OperatorId { get; set; }
+        public string DingAccessTokenType { get; set; }
+
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public long? DingIsvOrgId { get; set; }
 
         [NameInMap("dingOrgId")]
         [Validation(Required=false)]
@@ -38,13 +32,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public long? DingUid { get; set; }
 
-        [NameInMap("dingAccessTokenType")]
+        /// <summary>
+        /// 团队空间名称
+        /// </summary>
+        [NameInMap("name")]
         [Validation(Required=false)]
-        public string DingAccessTokenType { get; set; }
+        public string Name { get; set; }
 
-        [NameInMap("dingIsvOrgId")]
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        [NameInMap("operatorId")]
         [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
+        public string OperatorId { get; set; }
 
     }
 

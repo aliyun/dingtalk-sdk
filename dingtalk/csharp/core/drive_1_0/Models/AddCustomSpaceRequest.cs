@@ -10,18 +10,18 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class AddCustomSpaceRequest : TeaModel {
         /// <summary>
-        /// 空间标识
-        /// </summary>
-        [NameInMap("identifier")]
-        [Validation(Required=false)]
-        public string Identifier { get; set; }
-
-        /// <summary>
         /// 业务类型
         /// </summary>
         [NameInMap("bizType")]
         [Validation(Required=false)]
         public string BizType { get; set; }
+
+        /// <summary>
+        /// 空间标识
+        /// </summary>
+        [NameInMap("identifier")]
+        [Validation(Required=false)]
+        public string Identifier { get; set; }
 
         /// <summary>
         /// 授权模式

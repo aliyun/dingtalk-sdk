@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class ListEventsViewResponseBody : TeaModel {
         /// <summary>
-        /// 翻页token
-        /// </summary>
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
-        /// <summary>
         /// 日程
         /// </summary>
         [NameInMap("events")]
@@ -261,6 +254,13 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             };
 
         }
+
+        /// <summary>
+        /// 翻页token
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
     }
 

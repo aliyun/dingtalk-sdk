@@ -17,18 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         public long? Offset { get; set; }
 
         /// <summary>
-        /// 查询数量
-        /// </summary>
-        [NameInMap("size")]
-        [Validation(Required=false)]
-        public int? Size { get; set; }
-
-        /// <summary>
         /// 角色ID
         /// </summary>
         [NameInMap("roleId")]
         [Validation(Required=false)]
         public long? RoleId { get; set; }
+
+        /// <summary>
+        /// 查询数量
+        /// </summary>
+        [NameInMap("size")]
+        [Validation(Required=false)]
+        public int? Size { get; set; }
 
         /// <summary>
         /// 下属组织的组织ID，比如下属镇、村的corpId
