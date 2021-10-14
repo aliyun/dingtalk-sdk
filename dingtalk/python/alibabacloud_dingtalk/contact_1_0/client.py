@@ -389,7 +389,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityResponse:
-        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -409,7 +408,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeVisibilityResponse:
-        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -861,7 +859,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryUserManagementResourcesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryUserManagementResourcesResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -881,7 +878,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryUserManagementResourcesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryUserManagementResourcesResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -917,7 +913,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteContactHideSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteContactHideSettingResponse:
-        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -937,7 +932,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteContactHideSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteContactHideSettingResponse:
-        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -977,7 +971,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.ownenss_type):
             body['ownenssType'] = request.ownenss_type
@@ -1011,7 +1004,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateUserOwnnessResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.ownenss_type):
             body['ownenssType'] = request.ownenss_type
@@ -1187,7 +1179,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
-        cooperate_corp_id = OpenApiUtilClient.get_encode_param(cooperate_corp_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1207,7 +1198,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetCooperateOrgInviteInfoResponse:
-        cooperate_corp_id = OpenApiUtilClient.get_encode_param(cooperate_corp_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1247,7 +1237,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
         UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         body = {}
         if not UtilClient.is_unset(request.group_name):
             body['groupName'] = request.group_name
@@ -1279,7 +1268,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.UpdateManagementGroupResponse:
         UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         body = {}
         if not UtilClient.is_unset(request.group_name):
             body['groupName'] = request.group_name
@@ -1401,7 +1389,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetUserResponse:
-        union_id = OpenApiUtilClient.get_encode_param(union_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1421,7 +1408,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.GetUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.GetUserResponse:
-        union_id = OpenApiUtilClient.get_encode_param(union_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1457,7 +1443,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryResourceManagementMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryResourceManagementMembersResponse:
-        resource_id = OpenApiUtilClient.get_encode_param(resource_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1477,7 +1462,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.QueryResourceManagementMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.QueryResourceManagementMembersResponse:
-        resource_id = OpenApiUtilClient.get_encode_param(resource_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1973,7 +1957,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteManagementGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteManagementGroupResponse:
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1993,7 +1976,6 @@ class Client(OpenApiClient):
         headers: dingtalkcontact__1__0_models.DeleteManagementGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.DeleteManagementGroupResponse:
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

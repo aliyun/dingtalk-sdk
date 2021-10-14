@@ -137,7 +137,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
         UtilClient.validate_model(request)
-        data_model_id = OpenApiUtilClient.get_encode_param(data_model_id)
         query = {}
         if not UtilClient.is_unset(request.primary_key):
             query['primaryKey'] = request.primary_key
@@ -165,7 +164,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
         UtilClient.validate_model(request)
-        data_model_id = OpenApiUtilClient.get_encode_param(data_model_id)
         query = {}
         if not UtilClient.is_unset(request.primary_key):
             query['primaryKey'] = request.primary_key

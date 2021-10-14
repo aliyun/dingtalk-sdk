@@ -453,7 +453,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
         UtilClient.validate_model(request)
-        task_code = OpenApiUtilClient.get_encode_param(task_code)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -481,7 +480,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
         UtilClient.validate_model(request)
-        task_code = OpenApiUtilClient.get_encode_param(task_code)
         query = {}
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
@@ -527,7 +525,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse:
         UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
@@ -553,7 +550,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse:
         UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
@@ -597,7 +593,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.UpdateApplicationRegFormResponse:
         UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
@@ -629,7 +624,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.UpdateApplicationRegFormResponse:
         UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
@@ -747,7 +741,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse:
         UtilClient.validate_model(request)
-        interview_id = OpenApiUtilClient.get_encode_param(interview_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
@@ -777,7 +770,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse:
         UtilClient.validate_model(request)
-        interview_id = OpenApiUtilClient.get_encode_param(interview_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
@@ -825,7 +817,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.GetJobAuthResponse:
         UtilClient.validate_model(request)
-        job_id = OpenApiUtilClient.get_encode_param(job_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -851,7 +842,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkats__1__0_models.GetJobAuthResponse:
         UtilClient.validate_model(request)
-        job_id = OpenApiUtilClient.get_encode_param(job_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id

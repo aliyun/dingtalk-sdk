@@ -201,7 +201,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
@@ -229,7 +228,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
@@ -359,7 +357,6 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -379,7 +376,6 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -889,7 +885,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
@@ -915,7 +910,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id

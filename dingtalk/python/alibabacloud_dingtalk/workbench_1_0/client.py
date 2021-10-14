@@ -117,7 +117,6 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryComponentScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryComponentScopesResponse:
-        component_id = OpenApiUtilClient.get_encode_param(component_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -137,7 +136,6 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryComponentScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryComponentScopesResponse:
-        component_id = OpenApiUtilClient.get_encode_param(component_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -173,7 +171,6 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
-        shortcut_key = OpenApiUtilClient.get_encode_param(shortcut_key)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -193,7 +190,6 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
-        shortcut_key = OpenApiUtilClient.get_encode_param(shortcut_key)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -364,8 +360,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse:
         UtilClient.validate_model(request)
-        page_uuid = OpenApiUtilClient.get_encode_param(page_uuid)
-        app_uuid = OpenApiUtilClient.get_encode_param(app_uuid)
         body = {}
         if not UtilClient.is_unset(request.userids):
             body['userids'] = request.userids
@@ -398,8 +392,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse:
         UtilClient.validate_model(request)
-        page_uuid = OpenApiUtilClient.get_encode_param(page_uuid)
-        app_uuid = OpenApiUtilClient.get_encode_param(app_uuid)
         body = {}
         if not UtilClient.is_unset(request.userids):
             body['userids'] = request.userids
@@ -445,7 +437,6 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetDingPortalDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetDingPortalDetailResponse:
-        app_uuid = OpenApiUtilClient.get_encode_param(app_uuid)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -465,7 +456,6 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetDingPortalDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetDingPortalDetailResponse:
-        app_uuid = OpenApiUtilClient.get_encode_param(app_uuid)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

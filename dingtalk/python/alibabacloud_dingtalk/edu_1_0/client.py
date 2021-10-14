@@ -555,7 +555,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.InitCoursesOfClassResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -587,7 +586,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.InitCoursesOfClassResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -637,7 +635,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
@@ -663,7 +660,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
@@ -710,8 +706,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteGuardianResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.stu_id):
             query['stuId'] = request.stu_id
@@ -740,8 +734,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteGuardianResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.stu_id):
             query['stuId'] = request.stu_id
@@ -874,8 +866,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteTeacherResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.adviser):
             query['adviser'] = request.adviser
@@ -904,8 +894,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteTeacherResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.adviser):
             query['adviser'] = request.adviser
@@ -1183,7 +1171,6 @@ class Client(OpenApiClient):
         headers: dingtalkedu__1__0_models.GetOpenCourseDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetOpenCourseDetailResponse:
-        course_id = OpenApiUtilClient.get_encode_param(course_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1203,7 +1190,6 @@ class Client(OpenApiClient):
         headers: dingtalkedu__1__0_models.GetOpenCourseDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetOpenCourseDetailResponse:
-        course_id = OpenApiUtilClient.get_encode_param(course_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1246,8 +1232,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteStudentResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
@@ -1274,8 +1258,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.DeleteStudentResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
@@ -1391,7 +1373,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.UpdateCoursesOfClassResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -1423,7 +1404,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.UpdateCoursesOfClassResponse:
         UtilClient.validate_model(request)
-        class_id = OpenApiUtilClient.get_encode_param(class_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -1949,7 +1929,6 @@ class Client(OpenApiClient):
         headers: dingtalkedu__1__0_models.GetShareRoleMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetShareRoleMembersResponse:
-        share_role_code = OpenApiUtilClient.get_encode_param(share_role_code)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1969,7 +1948,6 @@ class Client(OpenApiClient):
         headers: dingtalkedu__1__0_models.GetShareRoleMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetShareRoleMembersResponse:
-        share_role_code = OpenApiUtilClient.get_encode_param(share_role_code)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

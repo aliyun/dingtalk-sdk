@@ -45,7 +45,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchTabResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -65,7 +64,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchTabResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -104,8 +102,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchItemResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
-        item_id = OpenApiUtilClient.get_encode_param(item_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -126,8 +122,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchItemResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
-        item_id = OpenApiUtilClient.get_encode_param(item_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -166,8 +160,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchItemResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
-        item_id = OpenApiUtilClient.get_encode_param(item_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -188,8 +180,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchItemResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
-        item_id = OpenApiUtilClient.get_encode_param(item_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -229,7 +219,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.InsertSearchItemResponse:
         UtilClient.validate_model(request)
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         body = {}
         if not UtilClient.is_unset(request.item_id):
             body['itemId'] = request.item_id
@@ -265,7 +254,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.InsertSearchItemResponse:
         UtilClient.validate_model(request)
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         body = {}
         if not UtilClient.is_unset(request.item_id):
             body['itemId'] = request.item_id
@@ -387,7 +375,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchTabResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -407,7 +394,6 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchTabResponse:
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -447,7 +433,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.UpdateSearchTabResponse:
         UtilClient.validate_model(request)
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         body = {}
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
@@ -477,7 +462,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.UpdateSearchTabResponse:
         UtilClient.validate_model(request)
-        tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         body = {}
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name

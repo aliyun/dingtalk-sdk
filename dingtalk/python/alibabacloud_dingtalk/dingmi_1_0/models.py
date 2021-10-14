@@ -4,6 +4,895 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class PushCustomerGroupMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushCustomerGroupMessageRequest(TeaModel):
+    def __init__(
+        self,
+        ding_corp_id: str = None,
+        conversation_id: str = None,
+        msg_key: str = None,
+        msg_param: str = None,
+    ):
+        # 企业corpId
+        self.ding_corp_id = ding_corp_id
+        # 客户群会话id
+        self.conversation_id = conversation_id
+        # 消息类型
+        self.msg_key = msg_key
+        # 消息模板替换参数
+        self.msg_param = msg_param
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.msg_key is not None:
+            result['msgKey'] = self.msg_key
+        if self.msg_param is not None:
+            result['msgParam'] = self.msg_param
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('msgKey') is not None:
+            self.msg_key = m.get('msgKey')
+        if m.get('msgParam') is not None:
+            self.msg_param = m.get('msgParam')
+        return self
+
+
+class PushCustomerGroupMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 推送queryKey
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class PushCustomerGroupMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PushCustomerGroupMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PushCustomerGroupMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetDingMeBaseDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDingMeBaseDataRequest(TeaModel):
+    def __init__(
+        self,
+        app_key: str = None,
+        start_day: str = None,
+        end_day: str = None,
+        by_day: bool = None,
+    ):
+        # 机器人ID
+        self.app_key = app_key
+        # 开始时间
+        self.start_day = start_day
+        # 结束时间
+        self.end_day = end_day
+        # 是否按天分组
+        self.by_day = by_day
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.start_day is not None:
+            result['startDay'] = self.start_day
+        if self.end_day is not None:
+            result['endDay'] = self.end_day
+        if self.by_day is not None:
+            result['byDay'] = self.by_day
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('startDay') is not None:
+            self.start_day = m.get('startDay')
+        if m.get('endDay') is not None:
+            self.end_day = m.get('endDay')
+        if m.get('byDay') is not None:
+            self.by_day = m.get('byDay')
+        return self
+
+
+class GetDingMeBaseDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        from_cache: bool = None,
+        runtime: int = None,
+        rawset: List[Dict[str, str]] = None,
+        tips: Dict[str, Any] = None,
+    ):
+        # 是否缓存
+        self.from_cache = from_cache
+        # 运行时间
+        self.runtime = runtime
+        # 结果集
+        self.rawset = rawset
+        # 字段解释
+        self.tips = tips
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.from_cache is not None:
+            result['fromCache'] = self.from_cache
+        if self.runtime is not None:
+            result['runtime'] = self.runtime
+        if self.rawset is not None:
+            result['rawset'] = self.rawset
+        if self.tips is not None:
+            result['tips'] = self.tips
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fromCache') is not None:
+            self.from_cache = m.get('fromCache')
+        if m.get('runtime') is not None:
+            self.runtime = m.get('runtime')
+        if m.get('rawset') is not None:
+            self.rawset = m.get('rawset')
+        if m.get('tips') is not None:
+            self.tips = m.get('tips')
+        return self
+
+
+class GetDingMeBaseDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDingMeBaseDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDingMeBaseDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PushRobotMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushRobotMessageRequest(TeaModel):
+    def __init__(
+        self,
+        ding_corp_id: str = None,
+        chatbot_id: str = None,
+        user_id: str = None,
+        msg_key: str = None,
+        msg_param: str = None,
+    ):
+        # 企业corpId
+        self.ding_corp_id = ding_corp_id
+        # 机器人id
+        self.chatbot_id = chatbot_id
+        # 用户id
+        self.user_id = user_id
+        # 消息类型
+        self.msg_key = msg_key
+        # 消息模板替换参数
+        self.msg_param = msg_param
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.chatbot_id is not None:
+            result['chatbotId'] = self.chatbot_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.msg_key is not None:
+            result['msgKey'] = self.msg_key
+        if self.msg_param is not None:
+            result['msgParam'] = self.msg_param
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('chatbotId') is not None:
+            self.chatbot_id = m.get('chatbotId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('msgKey') is not None:
+            self.msg_key = m.get('msgKey')
+        if m.get('msgParam') is not None:
+            self.msg_param = m.get('msgParam')
+        return self
+
+
+class PushRobotMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 推送queryKey
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class PushRobotMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PushRobotMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PushRobotMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PushOfficialAccountMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushOfficialAccountMessageRequest(TeaModel):
+    def __init__(
+        self,
+        ding_corp_id: str = None,
+        user_id: str = None,
+        msg_key: str = None,
+        msg_param: str = None,
+    ):
+        # 企业corpId
+        self.ding_corp_id = ding_corp_id
+        # 用户id(在服务窗对应虚拟企业中的用户id)
+        self.user_id = user_id
+        # 消息类型
+        self.msg_key = msg_key
+        # 消息模板替换参数
+        self.msg_param = msg_param
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.msg_key is not None:
+            result['msgKey'] = self.msg_key
+        if self.msg_param is not None:
+            result['msgParam'] = self.msg_param
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('msgKey') is not None:
+            self.msg_key = m.get('msgKey')
+        if m.get('msgParam') is not None:
+            self.msg_param = m.get('msgParam')
+        return self
+
+
+class PushOfficialAccountMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 推送queryKey
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class PushOfficialAccountMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PushOfficialAccountMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PushOfficialAccountMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetWebChannelUserTokenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetWebChannelUserTokenRequest(TeaModel):
+    def __init__(
+        self,
+        source: int = None,
+        nick: str = None,
+        ding_corp_id: str = None,
+        foreign_id: str = None,
+    ):
+        # 调用方在小蜜客服平台申请的业务账号体系的id
+        self.source = source
+        # 登录用户在业务账号体系内的昵称
+        self.nick = nick
+        # 企业corpId
+        self.ding_corp_id = ding_corp_id
+        # 登录用户在业务账号体系内的用户id
+        self.foreign_id = foreign_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.source is not None:
+            result['source'] = self.source
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.foreign_id is not None:
+            result['foreignId'] = self.foreign_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('foreignId') is not None:
+            self.foreign_id = m.get('foreignId')
+        return self
+
+
+class GetWebChannelUserTokenResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 返回结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class GetWebChannelUserTokenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetWebChannelUserTokenResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetWebChannelUserTokenResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetIntelligentRobotInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetIntelligentRobotInfoRequest(TeaModel):
+    def __init__(
+        self,
+        robot_app_key: str = None,
+    ):
+        # 机器人业务标识
+        self.robot_app_key = robot_app_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_app_key is not None:
+            result['robotAppKey'] = self.robot_app_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotAppKey') is not None:
+            self.robot_app_key = m.get('robotAppKey')
+        return self
+
+
+class GetIntelligentRobotInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 机器人id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class GetIntelligentRobotInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetIntelligentRobotInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetIntelligentRobotInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetOfficialAccountRobotInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -326,7 +1215,7 @@ class UpdateOfficialAccountRobotInfoResponse(TeaModel):
         return self
 
 
-class PushCustomerGroupMessageHeaders(TeaModel):
+class PushIntelligentRobotMessageHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -359,18 +1248,21 @@ class PushCustomerGroupMessageHeaders(TeaModel):
         return self
 
 
-class PushCustomerGroupMessageRequest(TeaModel):
+class PushIntelligentRobotMessageRequest(TeaModel):
     def __init__(
         self,
         ding_corp_id: str = None,
-        conversation_id: str = None,
+        chatbot_id: str = None,
+        user_id: str = None,
         msg_key: str = None,
         msg_param: str = None,
     ):
         # 企业corpId
         self.ding_corp_id = ding_corp_id
-        # 客户群会话id
-        self.conversation_id = conversation_id
+        # 机器人id
+        self.chatbot_id = chatbot_id
+        # 用户id
+        self.user_id = user_id
         # 消息类型
         self.msg_key = msg_key
         # 消息模板替换参数
@@ -387,8 +1279,10 @@ class PushCustomerGroupMessageRequest(TeaModel):
         result = dict()
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
-        if self.conversation_id is not None:
-            result['conversationId'] = self.conversation_id
+        if self.chatbot_id is not None:
+            result['chatbotId'] = self.chatbot_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.msg_key is not None:
             result['msgKey'] = self.msg_key
         if self.msg_param is not None:
@@ -399,8 +1293,10 @@ class PushCustomerGroupMessageRequest(TeaModel):
         m = m or dict()
         if m.get('dingCorpId') is not None:
             self.ding_corp_id = m.get('dingCorpId')
-        if m.get('conversationId') is not None:
-            self.conversation_id = m.get('conversationId')
+        if m.get('chatbotId') is not None:
+            self.chatbot_id = m.get('chatbotId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('msgKey') is not None:
             self.msg_key = m.get('msgKey')
         if m.get('msgParam') is not None:
@@ -408,7 +1304,7 @@ class PushCustomerGroupMessageRequest(TeaModel):
         return self
 
 
-class PushCustomerGroupMessageResponseBody(TeaModel):
+class PushIntelligentRobotMessageResponseBody(TeaModel):
     def __init__(
         self,
         result: str = None,
@@ -436,11 +1332,11 @@ class PushCustomerGroupMessageResponseBody(TeaModel):
         return self
 
 
-class PushCustomerGroupMessageResponse(TeaModel):
+class PushIntelligentRobotMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: PushCustomerGroupMessageResponseBody = None,
+        body: PushIntelligentRobotMessageResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -468,19 +1364,24 @@ class PushCustomerGroupMessageResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = PushCustomerGroupMessageResponseBody()
+            temp_model = PushIntelligentRobotMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
 
-class GetDingMeBaseDataHeaders(TeaModel):
+class AddRobotInstanceToGroupRequest(TeaModel):
     def __init__(
         self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
+        ding_corp_id: str = None,
+        chatbot_id: str = None,
+        open_conversation_id: str = None,
     ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+        # 企业id
+        self.ding_corp_id = ding_corp_id
+        # 机器人id
+        self.chatbot_id = chatbot_id
+        # 对话id
+        self.open_conversation_id = open_conversation_id
 
     def validate(self):
         pass
@@ -491,37 +1392,32 @@ class GetDingMeBaseDataHeaders(TeaModel):
             return _map
 
         result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.chatbot_id is not None:
+            result['chatbotId'] = self.chatbot_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('chatbotId') is not None:
+            self.chatbot_id = m.get('chatbotId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
         return self
 
 
-class GetDingMeBaseDataRequest(TeaModel):
+class AddRobotInstanceToGroupResponseBody(TeaModel):
     def __init__(
         self,
-        app_key: str = None,
-        start_day: str = None,
-        end_day: str = None,
-        by_day: bool = None,
+        result: bool = None,
     ):
-        # 机器人ID
-        self.app_key = app_key
-        # 开始时间
-        self.start_day = start_day
-        # 结束时间
-        self.end_day = end_day
-        # 是否按天分组
-        self.by_day = by_day
+        # 是否成功拉入群
+        self.result = result
 
     def validate(self):
         pass
@@ -532,83 +1428,22 @@ class GetDingMeBaseDataRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.app_key is not None:
-            result['appKey'] = self.app_key
-        if self.start_day is not None:
-            result['startDay'] = self.start_day
-        if self.end_day is not None:
-            result['endDay'] = self.end_day
-        if self.by_day is not None:
-            result['byDay'] = self.by_day
+        if self.result is not None:
+            result['result'] = self.result
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appKey') is not None:
-            self.app_key = m.get('appKey')
-        if m.get('startDay') is not None:
-            self.start_day = m.get('startDay')
-        if m.get('endDay') is not None:
-            self.end_day = m.get('endDay')
-        if m.get('byDay') is not None:
-            self.by_day = m.get('byDay')
+        if m.get('result') is not None:
+            self.result = m.get('result')
         return self
 
 
-class GetDingMeBaseDataResponseBody(TeaModel):
-    def __init__(
-        self,
-        from_cache: bool = None,
-        runtime: int = None,
-        rawset: List[Dict[str, str]] = None,
-        tips: Dict[str, Any] = None,
-    ):
-        # 是否缓存
-        self.from_cache = from_cache
-        # 运行时间
-        self.runtime = runtime
-        # 结果集
-        self.rawset = rawset
-        # 字段解释
-        self.tips = tips
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.from_cache is not None:
-            result['fromCache'] = self.from_cache
-        if self.runtime is not None:
-            result['runtime'] = self.runtime
-        if self.rawset is not None:
-            result['rawset'] = self.rawset
-        if self.tips is not None:
-            result['tips'] = self.tips
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fromCache') is not None:
-            self.from_cache = m.get('fromCache')
-        if m.get('runtime') is not None:
-            self.runtime = m.get('runtime')
-        if m.get('rawset') is not None:
-            self.rawset = m.get('rawset')
-        if m.get('tips') is not None:
-            self.tips = m.get('tips')
-        return self
-
-
-class GetDingMeBaseDataResponse(TeaModel):
+class AddRobotInstanceToGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: GetDingMeBaseDataResponseBody = None,
+        body: AddRobotInstanceToGroupResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -636,7 +1471,7 @@ class GetDingMeBaseDataResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = GetDingMeBaseDataResponseBody()
+            temp_model = AddRobotInstanceToGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -682,6 +1517,7 @@ class AskRobotRequest(TeaModel):
         robot_app_key: str = None,
         session_uuid: str = None,
         ding_suite_key: str = None,
+        ding_user_id: str = None,
     ):
         # 问题
         self.question = question
@@ -693,6 +1529,7 @@ class AskRobotRequest(TeaModel):
         self.session_uuid = session_uuid
         # suiteKey
         self.ding_suite_key = ding_suite_key
+        self.ding_user_id = ding_user_id
 
     def validate(self):
         pass
@@ -713,6 +1550,8 @@ class AskRobotRequest(TeaModel):
             result['sessionUuid'] = self.session_uuid
         if self.ding_suite_key is not None:
             result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -727,6 +1566,8 @@ class AskRobotRequest(TeaModel):
             self.session_uuid = m.get('sessionUuid')
         if m.get('dingSuiteKey') is not None:
             self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
         return self
 
 
@@ -791,307 +1632,6 @@ class AskRobotResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AskRobotResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class PushRobotMessageHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class PushRobotMessageRequest(TeaModel):
-    def __init__(
-        self,
-        ding_corp_id: str = None,
-        chatbot_id: str = None,
-        user_id: str = None,
-        msg_key: str = None,
-        msg_param: str = None,
-    ):
-        # 企业corpId
-        self.ding_corp_id = ding_corp_id
-        # 机器人id
-        self.chatbot_id = chatbot_id
-        # 用户id
-        self.user_id = user_id
-        # 消息类型
-        self.msg_key = msg_key
-        # 消息模板替换参数
-        self.msg_param = msg_param
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.ding_corp_id is not None:
-            result['dingCorpId'] = self.ding_corp_id
-        if self.chatbot_id is not None:
-            result['chatbotId'] = self.chatbot_id
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.msg_key is not None:
-            result['msgKey'] = self.msg_key
-        if self.msg_param is not None:
-            result['msgParam'] = self.msg_param
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('dingCorpId') is not None:
-            self.ding_corp_id = m.get('dingCorpId')
-        if m.get('chatbotId') is not None:
-            self.chatbot_id = m.get('chatbotId')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('msgKey') is not None:
-            self.msg_key = m.get('msgKey')
-        if m.get('msgParam') is not None:
-            self.msg_param = m.get('msgParam')
-        return self
-
-
-class PushRobotMessageResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: str = None,
-    ):
-        # 推送queryKey
-        self.result = result
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
-        return self
-
-
-class PushRobotMessageResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: PushRobotMessageResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = PushRobotMessageResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class PushOfficialAccountMessageHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class PushOfficialAccountMessageRequest(TeaModel):
-    def __init__(
-        self,
-        ding_corp_id: str = None,
-        user_id: str = None,
-        msg_key: str = None,
-        msg_param: str = None,
-    ):
-        # 企业corpId
-        self.ding_corp_id = ding_corp_id
-        # 用户id(在服务窗对应虚拟企业中的用户id)
-        self.user_id = user_id
-        # 消息类型
-        self.msg_key = msg_key
-        # 消息模板替换参数
-        self.msg_param = msg_param
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.ding_corp_id is not None:
-            result['dingCorpId'] = self.ding_corp_id
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.msg_key is not None:
-            result['msgKey'] = self.msg_key
-        if self.msg_param is not None:
-            result['msgParam'] = self.msg_param
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('dingCorpId') is not None:
-            self.ding_corp_id = m.get('dingCorpId')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('msgKey') is not None:
-            self.msg_key = m.get('msgKey')
-        if m.get('msgParam') is not None:
-            self.msg_param = m.get('msgParam')
-        return self
-
-
-class PushOfficialAccountMessageResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: str = None,
-    ):
-        # 推送queryKey
-        self.result = result
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
-        return self
-
-
-class PushOfficialAccountMessageResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: PushOfficialAccountMessageResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = PushOfficialAccountMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1229,7 +1769,7 @@ class ReplyRobotResponse(TeaModel):
         return self
 
 
-class GetWebChannelUserTokenHeaders(TeaModel):
+class PushIntelligentRobotGroupMessageHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -1262,22 +1802,25 @@ class GetWebChannelUserTokenHeaders(TeaModel):
         return self
 
 
-class GetWebChannelUserTokenRequest(TeaModel):
+class PushIntelligentRobotGroupMessageRequest(TeaModel):
     def __init__(
         self,
-        source: int = None,
-        nick: str = None,
         ding_corp_id: str = None,
-        foreign_id: str = None,
+        chatbot_id: str = None,
+        open_conversation_id: str = None,
+        msg_key: str = None,
+        msg_param: str = None,
     ):
-        # 调用方在小蜜客服平台申请的业务账号体系的id
-        self.source = source
-        # 登录用户在业务账号体系内的昵称
-        self.nick = nick
         # 企业corpId
         self.ding_corp_id = ding_corp_id
-        # 登录用户在业务账号体系内的用户id
-        self.foreign_id = foreign_id
+        # 机器人id
+        self.chatbot_id = chatbot_id
+        # 群对话id
+        self.open_conversation_id = open_conversation_id
+        # 消息类型
+        self.msg_key = msg_key
+        # 消息模板替换参数
+        self.msg_param = msg_param
 
     def validate(self):
         pass
@@ -1288,35 +1831,39 @@ class GetWebChannelUserTokenRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.source is not None:
-            result['source'] = self.source
-        if self.nick is not None:
-            result['nick'] = self.nick
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
-        if self.foreign_id is not None:
-            result['foreignId'] = self.foreign_id
+        if self.chatbot_id is not None:
+            result['chatbotId'] = self.chatbot_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.msg_key is not None:
+            result['msgKey'] = self.msg_key
+        if self.msg_param is not None:
+            result['msgParam'] = self.msg_param
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('source') is not None:
-            self.source = m.get('source')
-        if m.get('nick') is not None:
-            self.nick = m.get('nick')
         if m.get('dingCorpId') is not None:
             self.ding_corp_id = m.get('dingCorpId')
-        if m.get('foreignId') is not None:
-            self.foreign_id = m.get('foreignId')
+        if m.get('chatbotId') is not None:
+            self.chatbot_id = m.get('chatbotId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('msgKey') is not None:
+            self.msg_key = m.get('msgKey')
+        if m.get('msgParam') is not None:
+            self.msg_param = m.get('msgParam')
         return self
 
 
-class GetWebChannelUserTokenResponseBody(TeaModel):
+class PushIntelligentRobotGroupMessageResponseBody(TeaModel):
     def __init__(
         self,
         result: str = None,
     ):
-        # 返回结果
+        # 推送queryKey
         self.result = result
 
     def validate(self):
@@ -1339,11 +1886,11 @@ class GetWebChannelUserTokenResponseBody(TeaModel):
         return self
 
 
-class GetWebChannelUserTokenResponse(TeaModel):
+class PushIntelligentRobotGroupMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: GetWebChannelUserTokenResponseBody = None,
+        body: PushIntelligentRobotGroupMessageResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -1371,7 +1918,7 @@ class GetWebChannelUserTokenResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = GetWebChannelUserTokenResponseBody()
+            temp_model = PushIntelligentRobotGroupMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

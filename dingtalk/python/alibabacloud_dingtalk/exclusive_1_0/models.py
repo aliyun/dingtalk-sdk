@@ -500,6 +500,1610 @@ class DeleteCommentResponse(TeaModel):
         return self
 
 
+class ListMiniAppHistoryVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListMiniAppHistoryVersionRequest(TeaModel):
+    def __init__(
+        self,
+        page_size: int = None,
+        page_number: int = None,
+        mini_app_id: str = None,
+    ):
+        # 分页大小
+        self.page_size = page_size
+        # 分页码
+        self.page_number = page_number
+        # 小程序id
+        self.mini_app_id = mini_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        return self
+
+
+class ListMiniAppHistoryVersionResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        package_url: str = None,
+        package_size: str = None,
+        build_status: int = None,
+        version: str = None,
+        h_5bundle: str = None,
+    ):
+        # 包url
+        self.package_url = package_url
+        # 包大小
+        self.package_size = package_size
+        # 构建状态
+        self.build_status = build_status
+        # 版本
+        self.version = version
+        # h5Bundle地址
+        self.h_5bundle = h_5bundle
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.package_url is not None:
+            result['packageUrl'] = self.package_url
+        if self.package_size is not None:
+            result['packageSize'] = self.package_size
+        if self.build_status is not None:
+            result['buildStatus'] = self.build_status
+        if self.version is not None:
+            result['version'] = self.version
+        if self.h_5bundle is not None:
+            result['h5Bundle'] = self.h_5bundle
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('packageUrl') is not None:
+            self.package_url = m.get('packageUrl')
+        if m.get('packageSize') is not None:
+            self.package_size = m.get('packageSize')
+        if m.get('buildStatus') is not None:
+            self.build_status = m.get('buildStatus')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('h5Bundle') is not None:
+            self.h_5bundle = m.get('h5Bundle')
+        return self
+
+
+class ListMiniAppHistoryVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[ListMiniAppHistoryVersionResponseBodyList] = None,
+    ):
+        # result
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListMiniAppHistoryVersionResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class ListMiniAppHistoryVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListMiniAppHistoryVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListMiniAppHistoryVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetDocCreatedDeptSummaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDocCreatedDeptSummaryRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 启始数据游标
+        self.next_token = next_token
+        # 每页包含的数据条数
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        dept_id: str = None,
+        dept_name: str = None,
+        doc_created_cnt: str = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 部门名称
+        self.dept_name = dept_name
+        # 最近1天累计钉钉文档创建数
+        self.doc_created_cnt = doc_created_cnt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.doc_created_cnt is not None:
+            result['docCreatedCnt'] = self.doc_created_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('docCreatedCnt') is not None:
+            self.doc_created_cnt = m.get('docCreatedCnt')
+        return self
+
+
+class GetDocCreatedDeptSummaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetDocCreatedDeptSummaryResponseBodyData] = None,
+        next_token: int = None,
+        has_more: bool = None,
+    ):
+        # 部门维度用户创建文档数
+        self.data = data
+        # 下一次请求的分页游标
+        self.next_token = next_token
+        # 是否有更多数据
+        self.has_more = has_more
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetDocCreatedDeptSummaryResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class GetDocCreatedDeptSummaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDocCreatedDeptSummaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDocCreatedDeptSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateTrustedDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTrustedDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        platform: str = None,
+        mac_address: str = None,
+        status: int = None,
+    ):
+        # 员工userId
+        self.user_id = user_id
+        # 平台类型
+        self.platform = platform
+        # mac地址
+        self.mac_address = mac_address
+        # 设备状态
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.mac_address is not None:
+            result['macAddress'] = self.mac_address
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('macAddress') is not None:
+            self.mac_address = m.get('macAddress')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class CreateTrustedDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateTrustedDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateTrustedDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateTrustedDeviceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPartnerTypeByParentIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPartnerTypeByParentIdResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        type_id: float = None,
+        type_name: str = None,
+    ):
+        # 自标签id
+        self.type_id = type_id
+        # 子标签名
+        self.type_name = type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type_id is not None:
+            result['typeId'] = self.type_id
+        if self.type_name is not None:
+            result['typeName'] = self.type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('typeId') is not None:
+            self.type_id = m.get('typeId')
+        if m.get('typeName') is not None:
+            self.type_name = m.get('typeName')
+        return self
+
+
+class GetPartnerTypeByParentIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetPartnerTypeByParentIdResponseBodyData] = None,
+    ):
+        # 子标签列表
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetPartnerTypeByParentIdResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        return self
+
+
+class GetPartnerTypeByParentIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPartnerTypeByParentIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPartnerTypeByParentIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetDeptPartnerTypeAndNumHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetDeptPartnerTypeAndNumRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: str = None,
+        partner_num: str = None,
+        label_ids: List[str] = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 伙伴编码
+        self.partner_num = partner_num
+        # 伙伴类型id列表
+        self.label_ids = label_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.partner_num is not None:
+            result['partnerNum'] = self.partner_num
+        if self.label_ids is not None:
+            result['labelIds'] = self.label_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('partnerNum') is not None:
+            self.partner_num = m.get('partnerNum')
+        if m.get('labelIds') is not None:
+            self.label_ids = m.get('labelIds')
+        return self
+
+
+class SetDeptPartnerTypeAndNumResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class GetActiveUserSummaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetActiveUserSummaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        act_usr_cnt_1m: str = None,
+    ):
+        # 月活跃人数
+        self.act_usr_cnt_1m = act_usr_cnt_1m
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.act_usr_cnt_1m is not None:
+            result['actUsrCnt1m'] = self.act_usr_cnt_1m
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actUsrCnt1m') is not None:
+            self.act_usr_cnt_1m = m.get('actUsrCnt1m')
+        return self
+
+
+class GetActiveUserSummaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetActiveUserSummaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetActiveUserSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetOaOperatorLogListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOaOperatorLogListRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        start_time: int = None,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        category_list: List[str] = None,
+    ):
+        # 操作员userId
+        self.op_user_id = op_user_id
+        # 起始时间
+        self.start_time = start_time
+        # 结束时间
+        self.end_time = end_time
+        # 分页起始页
+        self.page_number = page_number
+        # 分页大小
+        self.page_size = page_size
+        # 操作分类（一级目录）
+        self.category_list = category_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.category_list is not None:
+            result['categoryList'] = self.category_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('categoryList') is not None:
+            self.category_list = m.get('categoryList')
+        return self
+
+
+class GetOaOperatorLogListResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        op_name: str = None,
+        op_time: int = None,
+        category_1name: str = None,
+        category_2name: str = None,
+        content: str = None,
+    ):
+        # 操作员userId
+        self.op_user_id = op_user_id
+        # 操作员名字
+        self.op_name = op_name
+        # 操作时间
+        self.op_time = op_time
+        # 操作分类（一级）
+        self.category_1name = category_1name
+        # 操作分类（二级）
+        self.category_2name = category_2name
+        # 操作详情
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.op_name is not None:
+            result['opName'] = self.op_name
+        if self.op_time is not None:
+            result['opTime'] = self.op_time
+        if self.category_1name is not None:
+            result['category1Name'] = self.category_1name
+        if self.category_2name is not None:
+            result['category2Name'] = self.category_2name
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('opName') is not None:
+            self.op_name = m.get('opName')
+        if m.get('opTime') is not None:
+            self.op_time = m.get('opTime')
+        if m.get('category1Name') is not None:
+            self.category_1name = m.get('category1Name')
+        if m.get('category2Name') is not None:
+            self.category_2name = m.get('category2Name')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class GetOaOperatorLogListResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetOaOperatorLogListResponseBodyData] = None,
+        item_count: int = None,
+    ):
+        self.data = data
+        # 当前获取记录数
+        self.item_count = item_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.item_count is not None:
+            result['itemCount'] = self.item_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetOaOperatorLogListResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('itemCount') is not None:
+            self.item_count = m.get('itemCount')
+        return self
+
+
+class GetOaOperatorLogListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOaOperatorLogListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOaOperatorLogListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RollbackMiniAppVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RollbackMiniAppVersionRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_corp_id: str = None,
+        ding_client_id: str = None,
+        ding_token_grant_type: int = None,
+        rollback_version: str = None,
+        target_version: str = None,
+        mini_app_id: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_corp_id = ding_corp_id
+        self.ding_client_id = ding_client_id
+        self.ding_token_grant_type = ding_token_grant_type
+        # 被回滚版本
+        self.rollback_version = rollback_version
+        # 回滚到的版本
+        self.target_version = target_version
+        # 小程序id
+        self.mini_app_id = mini_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.rollback_version is not None:
+            result['rollbackVersion'] = self.rollback_version
+        if self.target_version is not None:
+            result['targetVersion'] = self.target_version
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('rollbackVersion') is not None:
+            self.rollback_version = m.get('rollbackVersion')
+        if m.get('targetVersion') is not None:
+            self.target_version = m.get('targetVersion')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        return self
+
+
+class RollbackMiniAppVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        cause: str = None,
+    ):
+        # 结果码
+        self.code = code
+        # 失败原因
+        self.cause = cause
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.cause is not None:
+            result['cause'] = self.cause
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('cause') is not None:
+            self.cause = m.get('cause')
+        return self
+
+
+class RollbackMiniAppVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RollbackMiniAppVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RollbackMiniAppVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetGeneralFormCreatedDeptSummaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGeneralFormCreatedDeptSummaryRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 启始数据游标
+        self.next_token = next_token
+        # 每页包含的数据条数
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        dept_id: str = None,
+        dept_name: str = None,
+        general_form_create_cnt_1d: str = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+        # 部门名称
+        self.dept_name = dept_name
+        # 最近1天累计发布智能填表数
+        self.general_form_create_cnt_1d = general_form_create_cnt_1d
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.general_form_create_cnt_1d is not None:
+            result['generalFormCreateCnt1d'] = self.general_form_create_cnt_1d
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('generalFormCreateCnt1d') is not None:
+            self.general_form_create_cnt_1d = m.get('generalFormCreateCnt1d')
+        return self
+
+
+class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetGeneralFormCreatedDeptSummaryResponseBodyData] = None,
+        next_token: int = None,
+        has_more: bool = None,
+    ):
+        # 用户版本分布情况列表
+        self.data = data
+        # 下一次请 求的分页游标
+        self.next_token = next_token
+        # 是否有更多数据
+        self.has_more = has_more
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetGeneralFormCreatedDeptSummaryResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class GetGeneralFormCreatedDeptSummaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetGeneralFormCreatedDeptSummaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetGeneralFormCreatedDeptSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCalenderSummaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCalenderSummaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        calendar_create_user_cnt: str = None,
+    ):
+        # 最近1天累计创建日程人数
+        self.calendar_create_user_cnt = calendar_create_user_cnt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.calendar_create_user_cnt is not None:
+            result['calendarCreateUserCnt'] = self.calendar_create_user_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('calendarCreateUserCnt') is not None:
+            self.calendar_create_user_cnt = m.get('calendarCreateUserCnt')
+        return self
+
+
+class GetCalenderSummaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCalenderSummaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCalenderSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAllLabelableDeptsHeaders(TeaModel):
     def __init__(
         self,
@@ -1190,7 +2794,7 @@ class GetPublisherSummaryResponse(TeaModel):
         return self
 
 
-class GetDocCreatedDeptSummaryHeaders(TeaModel):
+class UpdateMiniAppVersionStatusHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -1223,16 +2827,31 @@ class GetDocCreatedDeptSummaryHeaders(TeaModel):
         return self
 
 
-class GetDocCreatedDeptSummaryRequest(TeaModel):
+class UpdateMiniAppVersionStatusRequest(TeaModel):
     def __init__(
         self,
-        next_token: int = None,
-        max_results: int = None,
+        version_type: int = None,
+        version: str = None,
+        mini_app_id: str = None,
+        ding_client_id: str = None,
+        ding_token_grant_type: int = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_corp_id: str = None,
     ):
-        # 启始数据游标
-        self.next_token = next_token
-        # 每页包含的数据条数
-        self.max_results = max_results
+        # 版本类型
+        self.version_type = version_type
+        # 版本
+        self.version = version
+        # 小程序id
+        self.mini_app_id = mini_app_id
+        self.ding_client_id = ding_client_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_corp_id = ding_corp_id
 
     def validate(self):
         pass
@@ -1243,34 +2862,59 @@ class GetDocCreatedDeptSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
+        if self.version_type is not None:
+            result['versionType'] = self.version_type
+        if self.version is not None:
+            result['version'] = self.version
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
+        if m.get('versionType') is not None:
+            self.version_type = m.get('versionType')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
         return self
 
 
-class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
+class UpdateMiniAppVersionStatusResponseBody(TeaModel):
     def __init__(
         self,
-        dept_id: str = None,
-        dept_name: str = None,
-        doc_created_cnt: str = None,
+        code: str = None,
+        cause: str = None,
     ):
-        # 部门id
-        self.dept_id = dept_id
-        # 部门名称
-        self.dept_name = dept_name
-        # 最近1天累计钉钉文档创建数
-        self.doc_created_cnt = doc_created_cnt
+        # 返回码
+        self.code = code
+        # 原因
+        self.cause = cause
 
     def validate(self):
         pass
@@ -1281,80 +2925,26 @@ class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.dept_name is not None:
-            result['deptName'] = self.dept_name
-        if self.doc_created_cnt is not None:
-            result['docCreatedCnt'] = self.doc_created_cnt
+        if self.code is not None:
+            result['code'] = self.code
+        if self.cause is not None:
+            result['cause'] = self.cause
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('deptName') is not None:
-            self.dept_name = m.get('deptName')
-        if m.get('docCreatedCnt') is not None:
-            self.doc_created_cnt = m.get('docCreatedCnt')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('cause') is not None:
+            self.cause = m.get('cause')
         return self
 
 
-class GetDocCreatedDeptSummaryResponseBody(TeaModel):
-    def __init__(
-        self,
-        data: List[GetDocCreatedDeptSummaryResponseBodyData] = None,
-        next_token: int = None,
-        has_more: bool = None,
-    ):
-        # 部门维度用户创建文档数
-        self.data = data
-        # 下一次请求的分页游标
-        self.next_token = next_token
-        # 是否有更多数据
-        self.has_more = has_more
-
-    def validate(self):
-        if self.data:
-            for k in self.data:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['data'] = []
-        if self.data is not None:
-            for k in self.data:
-                result['data'].append(k.to_map() if k else None)
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.has_more is not None:
-            result['hasMore'] = self.has_more
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.data = []
-        if m.get('data') is not None:
-            for k in m.get('data'):
-                temp_model = GetDocCreatedDeptSummaryResponseBodyData()
-                self.data.append(temp_model.from_map(k))
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('hasMore') is not None:
-            self.has_more = m.get('hasMore')
-        return self
-
-
-class GetDocCreatedDeptSummaryResponse(TeaModel):
+class UpdateMiniAppVersionStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: GetDocCreatedDeptSummaryResponseBody = None,
+        body: UpdateMiniAppVersionStatusResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -1382,7 +2972,7 @@ class GetDocCreatedDeptSummaryResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = GetDocCreatedDeptSummaryResponseBody()
+            temp_model = UpdateMiniAppVersionStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1481,152 +3071,6 @@ class GetGeneralFormCreatedSummaryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetGeneralFormCreatedSummaryResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class CreateTrustedDeviceHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class CreateTrustedDeviceRequest(TeaModel):
-    def __init__(
-        self,
-        user_id: str = None,
-        platform: str = None,
-        mac_address: str = None,
-        status: int = None,
-    ):
-        # 员工userId
-        self.user_id = user_id
-        # 平台类型
-        self.platform = platform
-        # mac地址
-        self.mac_address = mac_address
-        # 设备状态
-        self.status = status
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.platform is not None:
-            result['platform'] = self.platform
-        if self.mac_address is not None:
-            result['macAddress'] = self.mac_address
-        if self.status is not None:
-            result['status'] = self.status
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('platform') is not None:
-            self.platform = m.get('platform')
-        if m.get('macAddress') is not None:
-            self.mac_address = m.get('macAddress')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        return self
-
-
-class CreateTrustedDeviceResponseBody(TeaModel):
-    def __init__(
-        self,
-        success: bool = None,
-    ):
-        self.success = success
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.success is not None:
-            result['success'] = self.success
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('success') is not None:
-            self.success = m.get('success')
-        return self
-
-
-class CreateTrustedDeviceResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: CreateTrustedDeviceResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = CreateTrustedDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1821,585 +3265,6 @@ class SendAppDingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
-        return self
-
-
-class GetPartnerTypeByParentIdHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetPartnerTypeByParentIdResponseBodyData(TeaModel):
-    def __init__(
-        self,
-        type_id: float = None,
-        type_name: str = None,
-    ):
-        # 自标签id
-        self.type_id = type_id
-        # 子标签名
-        self.type_name = type_name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.type_id is not None:
-            result['typeId'] = self.type_id
-        if self.type_name is not None:
-            result['typeName'] = self.type_name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('typeId') is not None:
-            self.type_id = m.get('typeId')
-        if m.get('typeName') is not None:
-            self.type_name = m.get('typeName')
-        return self
-
-
-class GetPartnerTypeByParentIdResponseBody(TeaModel):
-    def __init__(
-        self,
-        data: List[GetPartnerTypeByParentIdResponseBodyData] = None,
-    ):
-        # 子标签列表
-        self.data = data
-
-    def validate(self):
-        if self.data:
-            for k in self.data:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['data'] = []
-        if self.data is not None:
-            for k in self.data:
-                result['data'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.data = []
-        if m.get('data') is not None:
-            for k in m.get('data'):
-                temp_model = GetPartnerTypeByParentIdResponseBodyData()
-                self.data.append(temp_model.from_map(k))
-        return self
-
-
-class GetPartnerTypeByParentIdResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetPartnerTypeByParentIdResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetPartnerTypeByParentIdResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class SetDeptPartnerTypeAndNumHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class SetDeptPartnerTypeAndNumRequest(TeaModel):
-    def __init__(
-        self,
-        dept_id: str = None,
-        partner_num: str = None,
-        label_ids: List[str] = None,
-    ):
-        # 部门id
-        self.dept_id = dept_id
-        # 伙伴编码
-        self.partner_num = partner_num
-        # 伙伴类型id列表
-        self.label_ids = label_ids
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.partner_num is not None:
-            result['partnerNum'] = self.partner_num
-        if self.label_ids is not None:
-            result['labelIds'] = self.label_ids
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('partnerNum') is not None:
-            self.partner_num = m.get('partnerNum')
-        if m.get('labelIds') is not None:
-            self.label_ids = m.get('labelIds')
-        return self
-
-
-class SetDeptPartnerTypeAndNumResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-    ):
-        self.headers = headers
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        return self
-
-
-class GetActiveUserSummaryHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetActiveUserSummaryResponseBody(TeaModel):
-    def __init__(
-        self,
-        act_usr_cnt_1m: str = None,
-    ):
-        # 月活跃人数
-        self.act_usr_cnt_1m = act_usr_cnt_1m
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.act_usr_cnt_1m is not None:
-            result['actUsrCnt1m'] = self.act_usr_cnt_1m
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('actUsrCnt1m') is not None:
-            self.act_usr_cnt_1m = m.get('actUsrCnt1m')
-        return self
-
-
-class GetActiveUserSummaryResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetActiveUserSummaryResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetActiveUserSummaryResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class GetOaOperatorLogListHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetOaOperatorLogListRequest(TeaModel):
-    def __init__(
-        self,
-        op_user_id: str = None,
-        start_time: int = None,
-        end_time: int = None,
-        page_number: int = None,
-        page_size: int = None,
-        category_list: List[str] = None,
-    ):
-        # 操作员userId
-        self.op_user_id = op_user_id
-        # 起始时间
-        self.start_time = start_time
-        # 结束时间
-        self.end_time = end_time
-        # 分页起始页
-        self.page_number = page_number
-        # 分页大小
-        self.page_size = page_size
-        # 操作分类（一级目录）
-        self.category_list = category_list
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.op_user_id is not None:
-            result['opUserId'] = self.op_user_id
-        if self.start_time is not None:
-            result['startTime'] = self.start_time
-        if self.end_time is not None:
-            result['endTime'] = self.end_time
-        if self.page_number is not None:
-            result['pageNumber'] = self.page_number
-        if self.page_size is not None:
-            result['pageSize'] = self.page_size
-        if self.category_list is not None:
-            result['categoryList'] = self.category_list
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('opUserId') is not None:
-            self.op_user_id = m.get('opUserId')
-        if m.get('startTime') is not None:
-            self.start_time = m.get('startTime')
-        if m.get('endTime') is not None:
-            self.end_time = m.get('endTime')
-        if m.get('pageNumber') is not None:
-            self.page_number = m.get('pageNumber')
-        if m.get('pageSize') is not None:
-            self.page_size = m.get('pageSize')
-        if m.get('categoryList') is not None:
-            self.category_list = m.get('categoryList')
-        return self
-
-
-class GetOaOperatorLogListResponseBodyData(TeaModel):
-    def __init__(
-        self,
-        op_user_id: str = None,
-        op_name: str = None,
-        op_time: int = None,
-        category_1name: str = None,
-        category_2name: str = None,
-        content: str = None,
-    ):
-        # 操作员userId
-        self.op_user_id = op_user_id
-        # 操作员名字
-        self.op_name = op_name
-        # 操作时间
-        self.op_time = op_time
-        # 操作分类（一级）
-        self.category_1name = category_1name
-        # 操作分类（二级）
-        self.category_2name = category_2name
-        # 操作详情
-        self.content = content
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.op_user_id is not None:
-            result['opUserId'] = self.op_user_id
-        if self.op_name is not None:
-            result['opName'] = self.op_name
-        if self.op_time is not None:
-            result['opTime'] = self.op_time
-        if self.category_1name is not None:
-            result['category1Name'] = self.category_1name
-        if self.category_2name is not None:
-            result['category2Name'] = self.category_2name
-        if self.content is not None:
-            result['content'] = self.content
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('opUserId') is not None:
-            self.op_user_id = m.get('opUserId')
-        if m.get('opName') is not None:
-            self.op_name = m.get('opName')
-        if m.get('opTime') is not None:
-            self.op_time = m.get('opTime')
-        if m.get('category1Name') is not None:
-            self.category_1name = m.get('category1Name')
-        if m.get('category2Name') is not None:
-            self.category_2name = m.get('category2Name')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        return self
-
-
-class GetOaOperatorLogListResponseBody(TeaModel):
-    def __init__(
-        self,
-        data: List[GetOaOperatorLogListResponseBodyData] = None,
-        item_count: int = None,
-    ):
-        self.data = data
-        # 当前获取记录数
-        self.item_count = item_count
-
-    def validate(self):
-        if self.data:
-            for k in self.data:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['data'] = []
-        if self.data is not None:
-            for k in self.data:
-                result['data'].append(k.to_map() if k else None)
-        if self.item_count is not None:
-            result['itemCount'] = self.item_count
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.data = []
-        if m.get('data') is not None:
-            for k in m.get('data'):
-                temp_model = GetOaOperatorLogListResponseBodyData()
-                self.data.append(temp_model.from_map(k))
-        if m.get('itemCount') is not None:
-            self.item_count = m.get('itemCount')
-        return self
-
-
-class GetOaOperatorLogListResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetOaOperatorLogListResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetOaOperatorLogListResponseBody()
-            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -2795,7 +3660,7 @@ class GetTrustDeviceListResponse(TeaModel):
         return self
 
 
-class GetGeneralFormCreatedDeptSummaryHeaders(TeaModel):
+class ListMiniAppAvailableVersionHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -2828,16 +3693,34 @@ class GetGeneralFormCreatedDeptSummaryHeaders(TeaModel):
         return self
 
 
-class GetGeneralFormCreatedDeptSummaryRequest(TeaModel):
+class ListMiniAppAvailableVersionRequest(TeaModel):
     def __init__(
         self,
-        next_token: int = None,
-        max_results: int = None,
+        version_type_set: List[int] = None,
+        page_size: int = None,
+        page_number: int = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_corp_id: str = None,
+        ding_client_id: str = None,
+        ding_token_grant_type: int = None,
+        mini_app_id: str = None,
     ):
-        # 启始数据游标
-        self.next_token = next_token
-        # 每页包含的数据条数
-        self.max_results = max_results
+        # 版本类型列表，0-开发版，1-灰度版，2-发布版，3-体验版
+        self.version_type_set = version_type_set
+        # 分页大小
+        self.page_size = page_size
+        # 分页数1
+        self.page_number = page_number
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_corp_id = ding_corp_id
+        self.ding_client_id = ding_client_id
+        self.ding_token_grant_type = ding_token_grant_type
+        # 小程序id
+        self.mini_app_id = mini_app_id
 
     def validate(self):
         pass
@@ -2848,34 +3731,63 @@ class GetGeneralFormCreatedDeptSummaryRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
+        if self.version_type_set is not None:
+            result['versionTypeSet'] = self.version_type_set
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
+        if m.get('versionTypeSet') is not None:
+            self.version_type_set = m.get('versionTypeSet')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
         return self
 
 
-class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
+class ListMiniAppAvailableVersionResponseBodyList(TeaModel):
     def __init__(
         self,
-        dept_id: str = None,
-        dept_name: str = None,
-        general_form_create_cnt_1d: str = None,
+        build_status: int = None,
+        version: str = None,
     ):
-        # 部门id
-        self.dept_id = dept_id
-        # 部门名称
-        self.dept_name = dept_name
-        # 最近1天累计发布智能填表数
-        self.general_form_create_cnt_1d = general_form_create_cnt_1d
+        # 打包状态，0-打包中，1-成功，2-失败
+        self.build_status = build_status
+        # 版本
+        self.version = version
 
     def validate(self):
         pass
@@ -2886,42 +3798,32 @@ class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
             return _map
 
         result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.dept_name is not None:
-            result['deptName'] = self.dept_name
-        if self.general_form_create_cnt_1d is not None:
-            result['generalFormCreateCnt1d'] = self.general_form_create_cnt_1d
+        if self.build_status is not None:
+            result['buildStatus'] = self.build_status
+        if self.version is not None:
+            result['version'] = self.version
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('deptName') is not None:
-            self.dept_name = m.get('deptName')
-        if m.get('generalFormCreateCnt1d') is not None:
-            self.general_form_create_cnt_1d = m.get('generalFormCreateCnt1d')
+        if m.get('buildStatus') is not None:
+            self.build_status = m.get('buildStatus')
+        if m.get('version') is not None:
+            self.version = m.get('version')
         return self
 
 
-class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
+class ListMiniAppAvailableVersionResponseBody(TeaModel):
     def __init__(
         self,
-        data: List[GetGeneralFormCreatedDeptSummaryResponseBodyData] = None,
-        next_token: int = None,
-        has_more: bool = None,
+        list: List[ListMiniAppAvailableVersionResponseBodyList] = None,
     ):
-        # 用户版本分布情况列表
-        self.data = data
-        # 下一次请 求的分页游标
-        self.next_token = next_token
-        # 是否有更多数据
-        self.has_more = has_more
+        # result
+        self.list = list
 
     def validate(self):
-        if self.data:
-            for k in self.data:
+        if self.list:
+            for k in self.list:
                 if k:
                     k.validate()
 
@@ -2931,35 +3833,27 @@ class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['data'] = []
-        if self.data is not None:
-            for k in self.data:
-                result['data'].append(k.to_map() if k else None)
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.has_more is not None:
-            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.data = []
-        if m.get('data') is not None:
-            for k in m.get('data'):
-                temp_model = GetGeneralFormCreatedDeptSummaryResponseBodyData()
-                self.data.append(temp_model.from_map(k))
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('hasMore') is not None:
-            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListMiniAppAvailableVersionResponseBodyList()
+                self.list.append(temp_model.from_map(k))
         return self
 
 
-class GetGeneralFormCreatedDeptSummaryResponse(TeaModel):
+class ListMiniAppAvailableVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: GetGeneralFormCreatedDeptSummaryResponseBody = None,
+        body: ListMiniAppAvailableVersionResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -2987,7 +3881,7 @@ class GetGeneralFormCreatedDeptSummaryResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = GetGeneralFormCreatedDeptSummaryResponseBody()
+            temp_model = ListMiniAppAvailableVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3322,104 +4216,6 @@ class SearchOrgInnerGroupInfoResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchOrgInnerGroupInfoResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class GetCalenderSummaryHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetCalenderSummaryResponseBody(TeaModel):
-    def __init__(
-        self,
-        calendar_create_user_cnt: str = None,
-    ):
-        # 最近1天累计创建日程人数
-        self.calendar_create_user_cnt = calendar_create_user_cnt
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.calendar_create_user_cnt is not None:
-            result['calendarCreateUserCnt'] = self.calendar_create_user_cnt
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('calendarCreateUserCnt') is not None:
-            self.calendar_create_user_cnt = m.get('calendarCreateUserCnt')
-        return self
-
-
-class GetCalenderSummaryResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetCalenderSummaryResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetCalenderSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

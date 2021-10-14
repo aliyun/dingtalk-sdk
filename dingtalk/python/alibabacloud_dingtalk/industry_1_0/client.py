@@ -45,7 +45,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -65,7 +64,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -105,7 +103,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -133,7 +130,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -179,7 +175,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse:
         UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -207,7 +202,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse:
         UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -249,7 +243,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -269,7 +262,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -377,7 +369,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -405,7 +396,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -607,7 +597,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -627,7 +616,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -667,7 +655,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.job_code):
             body['jobCode'] = request.job_code
@@ -699,7 +686,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.job_code):
             body['jobCode'] = request.job_code
@@ -813,7 +799,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryUserExtInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserExtInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -833,7 +818,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryUserExtInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryUserExtInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -983,7 +967,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryGroupInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryGroupInfoResponse:
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1003,7 +986,6 @@ class Client(OpenApiClient):
         headers: dingtalkindustry__1__0_models.QueryGroupInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.QueryGroupInfoResponse:
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

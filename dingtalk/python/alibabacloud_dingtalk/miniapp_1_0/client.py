@@ -517,7 +517,6 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetSettingByMiniAppIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetSettingByMiniAppIdResponse:
-        mini_app_id = OpenApiUtilClient.get_encode_param(mini_app_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -537,7 +536,6 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetSettingByMiniAppIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetSettingByMiniAppIdResponse:
-        mini_app_id = OpenApiUtilClient.get_encode_param(mini_app_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

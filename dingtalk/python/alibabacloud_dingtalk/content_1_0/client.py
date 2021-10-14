@@ -137,7 +137,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.GetFeedResponse:
         UtilClient.validate_model(request)
-        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.mcn_id):
             query['mcnId'] = request.mcn_id
@@ -163,7 +162,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.GetFeedResponse:
         UtilClient.validate_model(request)
-        feed_id = OpenApiUtilClient.get_encode_param(feed_id)
         query = {}
         if not UtilClient.is_unset(request.mcn_id):
             query['mcnId'] = request.mcn_id
@@ -353,7 +351,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.ListItemUserDataResponse:
         UtilClient.validate_model(request)
-        item_id = OpenApiUtilClient.get_encode_param(item_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -376,7 +373,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.ListItemUserDataResponse:
         UtilClient.validate_model(request)
-        item_id = OpenApiUtilClient.get_encode_param(item_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

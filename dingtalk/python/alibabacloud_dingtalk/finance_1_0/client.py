@@ -263,6 +263,174 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpateUserCodeInstance', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
         )
 
+    def apply_batch_pay(
+        self,
+        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
+    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
+        return self.apply_batch_pay_with_options(request, headers, runtime)
+
+    async def apply_batch_pay_async(
+        self,
+        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
+    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
+        return await self.apply_batch_pay_with_options_async(request, headers, runtime)
+
+    def apply_batch_pay_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
+        headers: dingtalkfinance__1__0_models.ApplyBatchPayHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.trans_amount):
+            body['transAmount'] = request.trans_amount
+        if not UtilClient.is_unset(request.return_url):
+            body['returnUrl'] = request.return_url
+        if not UtilClient.is_unset(request.pass_back_params):
+            body['passBackParams'] = request.pass_back_params
+        if not UtilClient.is_unset(request.pay_terminal):
+            body['payTerminal'] = request.pay_terminal
+        if not UtilClient.is_unset(request.trans_expire_time):
+            body['transExpireTime'] = request.trans_expire_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.ApplyBatchPayResponse(),
+            self.do_roarequest('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/pay', 'json', req, runtime)
+        )
+
+    async def apply_batch_pay_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
+        headers: dingtalkfinance__1__0_models.ApplyBatchPayHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.order_no):
+            body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.trans_amount):
+            body['transAmount'] = request.trans_amount
+        if not UtilClient.is_unset(request.return_url):
+            body['returnUrl'] = request.return_url
+        if not UtilClient.is_unset(request.pass_back_params):
+            body['passBackParams'] = request.pass_back_params
+        if not UtilClient.is_unset(request.pay_terminal):
+            body['payTerminal'] = request.pay_terminal
+        if not UtilClient.is_unset(request.trans_expire_time):
+            body['transExpireTime'] = request.trans_expire_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.ApplyBatchPayResponse(),
+            await self.do_roarequest_async('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/pay', 'json', req, runtime)
+        )
+
+    def query_batch_trade_order(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
+        return self.query_batch_trade_order_with_options(request, headers, runtime)
+
+    async def query_batch_trade_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
+        return await self.query_batch_trade_order_with_options_async(request, headers, runtime)
+
+    def query_batch_trade_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_id):
+            body['suiteId'] = request.suite_id
+        if not UtilClient.is_unset(request.isv_corp_id):
+            body['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.out_batch_nos):
+            body['outBatchNos'] = request.out_batch_nos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
+            self.do_roarequest('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+        )
+
+    async def query_batch_trade_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_id):
+            body['suiteId'] = request.suite_id
+        if not UtilClient.is_unset(request.isv_corp_id):
+            body['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.out_batch_nos):
+            body['outBatchNos'] = request.out_batch_nos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
+            await self.do_roarequest_async('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+        )
+
     def decode_pay_code(
         self,
         request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
@@ -515,6 +683,114 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
         )
 
+    def create_batch_trade_order(
+        self,
+        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
+        return self.create_batch_trade_order_with_options(request, headers, runtime)
+
+    async def create_batch_trade_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
+        return await self.create_batch_trade_order_with_options_async(request, headers, runtime)
+
+    def create_batch_trade_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
+        headers: dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_id):
+            body['suiteId'] = request.suite_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.account_no):
+            body['accountNo'] = request.account_no
+        if not UtilClient.is_unset(request.trade_title):
+            body['tradeTitle'] = request.trade_title
+        if not UtilClient.is_unset(request.out_batch_no):
+            body['outBatchNo'] = request.out_batch_no
+        if not UtilClient.is_unset(request.batch_remark):
+            body['batchRemark'] = request.batch_remark
+        if not UtilClient.is_unset(request.total_count):
+            body['totalCount'] = request.total_count
+        if not UtilClient.is_unset(request.total_amount):
+            body['totalAmount'] = request.total_amount
+        if not UtilClient.is_unset(request.batch_trade_details):
+            body['batchTradeDetails'] = request.batch_trade_details
+        if not UtilClient.is_unset(request.isv_corp_id):
+            body['isvCorpId'] = request.isv_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse(),
+            self.do_roarequest('CreateBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders', 'json', req, runtime)
+        )
+
+    async def create_batch_trade_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
+        headers: dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.suite_id):
+            body['suiteId'] = request.suite_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.account_no):
+            body['accountNo'] = request.account_no
+        if not UtilClient.is_unset(request.trade_title):
+            body['tradeTitle'] = request.trade_title
+        if not UtilClient.is_unset(request.out_batch_no):
+            body['outBatchNo'] = request.out_batch_no
+        if not UtilClient.is_unset(request.batch_remark):
+            body['batchRemark'] = request.batch_remark
+        if not UtilClient.is_unset(request.total_count):
+            body['totalCount'] = request.total_count
+        if not UtilClient.is_unset(request.total_amount):
+            body['totalAmount'] = request.total_amount
+        if not UtilClient.is_unset(request.batch_trade_details):
+            body['batchTradeDetails'] = request.batch_trade_details
+        if not UtilClient.is_unset(request.isv_corp_id):
+            body['isvCorpId'] = request.isv_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse(),
+            await self.do_roarequest_async('CreateBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders', 'json', req, runtime)
+        )
+
     def notify_pay_code_refund_result(
         self,
         request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
@@ -617,6 +893,158 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse(),
             await self.do_roarequest_async('NotifyPayCodeRefundResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/refundResults/notify', 'json', req, runtime)
+        )
+
+    def query_batch_trade_detail_list(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
+        return self.query_batch_trade_detail_list_with_options(request, headers, runtime)
+
+    async def query_batch_trade_detail_list_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
+        return await self.query_batch_trade_detail_list_with_options_async(request, headers, runtime)
+
+    def query_batch_trade_detail_list_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
+        headers: dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_corp_id):
+            query['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.out_batch_no):
+            query['outBatchNo'] = request.out_batch_no
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse(),
+            self.do_roarequest('QueryBatchTradeDetailList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/batchTrades/details', 'json', req, runtime)
+        )
+
+    async def query_batch_trade_detail_list_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
+        headers: dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_corp_id):
+            query['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.out_batch_no):
+            query['outBatchNo'] = request.out_batch_no
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse(),
+            await self.do_roarequest_async('QueryBatchTradeDetailList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/batchTrades/details', 'json', req, runtime)
+        )
+
+    def query_pay_account_list(
+        self,
+        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return self.query_pay_account_list_with_options(request, headers, runtime)
+
+    async def query_pay_account_list_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return await self.query_pay_account_list_with_options_async(request, headers, runtime)
+
+    def query_pay_account_list_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
+        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_corp_id):
+            query['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
+            self.do_roarequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
+        )
+
+    async def query_pay_account_list_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
+        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_corp_id):
+            query['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
+            await self.do_roarequest_async('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
         )
 
     def create_user_code_instance(

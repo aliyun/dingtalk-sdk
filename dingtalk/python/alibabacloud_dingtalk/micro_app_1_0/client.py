@@ -149,7 +149,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         query = {}
         if not UtilClient.is_unset(request.op_union_id):
             query['opUnionId'] = request.op_union_id
@@ -177,7 +176,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         query = {}
         if not UtilClient.is_unset(request.op_union_id):
             query['opUnionId'] = request.op_union_id
@@ -223,7 +221,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.RegisterCustomAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -253,7 +250,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.RegisterCustomAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -381,7 +377,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.AddAppRolesToMemberResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -413,7 +408,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.AddAppRolesToMemberResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -462,8 +456,6 @@ class Client(OpenApiClient):
         headers: dingtalkmicro_app__1__0_models.GetAppRoleScopeByRoleIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetAppRoleScopeByRoleIdResponse:
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -484,8 +476,6 @@ class Client(OpenApiClient):
         headers: dingtalkmicro_app__1__0_models.GetAppRoleScopeByRoleIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetAppRoleScopeByRoleIdResponse:
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -524,8 +514,6 @@ class Client(OpenApiClient):
         headers: dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -546,8 +534,6 @@ class Client(OpenApiClient):
         headers: dingtalkmicro_app__1__0_models.ListRoleInfoByUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.ListRoleInfoByUserResponse:
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -654,8 +640,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.RemoveMemberForAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -688,8 +672,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.RemoveMemberForAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -739,7 +721,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
@@ -781,7 +762,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.UpdateInnerAppResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
@@ -844,8 +824,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -878,8 +856,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.AddMemberToAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -929,7 +905,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.ListAppRoleScopesResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -957,7 +932,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.ListAppRoleScopesResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -1003,7 +977,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.AddAppToWorkBenchGroupResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
@@ -1033,7 +1006,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.AddAppToWorkBenchGroupResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
@@ -1084,8 +1056,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.RebuildRoleScopeForAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -1120,8 +1090,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.RebuildRoleScopeForAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -1244,8 +1212,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.DeleteAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -1272,8 +1238,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.DeleteAppRoleResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
@@ -1425,7 +1389,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.DeleteInnerAppResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         query = {}
         if not UtilClient.is_unset(request.op_union_id):
             query['opUnionId'] = request.op_union_id
@@ -1453,7 +1416,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.DeleteInnerAppResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         query = {}
         if not UtilClient.is_unset(request.op_union_id):
             query['opUnionId'] = request.op_union_id
@@ -1502,8 +1464,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id
@@ -1534,8 +1494,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.UpdateAppRoleInfoResponse:
         UtilClient.validate_model(request)
-        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
-        role_id = OpenApiUtilClient.get_encode_param(role_id)
         body = {}
         if not UtilClient.is_unset(request.op_user_id):
             body['opUserId'] = request.op_user_id

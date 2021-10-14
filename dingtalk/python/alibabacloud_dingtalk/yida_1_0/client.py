@@ -309,7 +309,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdResponse:
         UtilClient.validate_model(request)
-        form_instance_id = OpenApiUtilClient.get_encode_param(form_instance_id)
         query = {}
         if not UtilClient.is_unset(request.form_uuid):
             query['formUuid'] = request.form_uuid
@@ -345,7 +344,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdResponse:
         UtilClient.validate_model(request)
-        form_instance_id = OpenApiUtilClient.get_encode_param(form_instance_id)
         query = {}
         if not UtilClient.is_unset(request.form_uuid):
             query['formUuid'] = request.form_uuid
@@ -739,7 +737,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.CheckCloudAccountStatusResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -765,7 +762,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.CheckCloudAccountStatusResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -812,8 +808,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpAccomplishmentTasksResponse:
         UtilClient.validate_model(request)
-        corp_id = OpenApiUtilClient.get_encode_param(corp_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -856,8 +850,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpAccomplishmentTasksResponse:
         UtilClient.validate_model(request)
-        corp_id = OpenApiUtilClient.get_encode_param(corp_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
@@ -1045,7 +1037,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -1077,7 +1068,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -1455,7 +1445,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeResponse:
         UtilClient.validate_model(request)
-        caller_unionid = OpenApiUtilClient.get_encode_param(caller_unionid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -1481,7 +1470,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeResponse:
         UtilClient.validate_model(request)
-        caller_unionid = OpenApiUtilClient.get_encode_param(caller_unionid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -1913,7 +1901,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RemoveTenantResourceResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -1939,7 +1926,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RemoveTenantResourceResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -2059,7 +2045,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetProcessDefinitionResponse:
         UtilClient.validate_model(request)
-        process_instance_id = OpenApiUtilClient.get_encode_param(process_instance_id)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
@@ -2101,7 +2086,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetProcessDefinitionResponse:
         UtilClient.validate_model(request)
-        process_instance_id = OpenApiUtilClient.get_encode_param(process_instance_id)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
@@ -2309,7 +2293,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -2341,7 +2324,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -2391,7 +2373,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -2417,7 +2398,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -2767,9 +2747,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivityButtonListResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
-        process_code = OpenApiUtilClient.get_encode_param(process_code)
-        activity_id = OpenApiUtilClient.get_encode_param(activity_id)
         query = {}
         if not UtilClient.is_unset(request.system_token):
             query['systemToken'] = request.system_token
@@ -2801,9 +2778,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivityButtonListResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
-        process_code = OpenApiUtilClient.get_encode_param(process_code)
-        activity_id = OpenApiUtilClient.get_encode_param(activity_id)
         query = {}
         if not UtilClient.is_unset(request.system_token):
             query['systemToken'] = request.system_token
@@ -2943,7 +2917,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -2975,7 +2948,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -3993,7 +3965,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListConnectorInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -4025,7 +3996,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListConnectorInformationResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -4147,7 +4117,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetNotifyMeResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
@@ -4195,7 +4164,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetNotifyMeResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
@@ -4333,7 +4301,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstanceByIdResponse:
         UtilClient.validate_model(request)
-        id = OpenApiUtilClient.get_encode_param(id)
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
@@ -4365,7 +4332,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstanceByIdResponse:
         UtilClient.validate_model(request)
-        id = OpenApiUtilClient.get_encode_param(id)
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
@@ -4511,7 +4477,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpdateResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -4539,7 +4504,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpdateResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -4588,8 +4552,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
-        form_uuid = OpenApiUtilClient.get_encode_param(form_uuid)
         query = {}
         if not UtilClient.is_unset(request.system_token):
             query['systemToken'] = request.system_token
@@ -4622,8 +4584,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
-        form_uuid = OpenApiUtilClient.get_encode_param(form_uuid)
         query = {}
         if not UtilClient.is_unset(request.system_token):
             query['systemToken'] = request.system_token
@@ -4757,7 +4717,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetMeCorpSubmissionResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
@@ -4801,7 +4760,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetMeCorpSubmissionResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
@@ -4946,8 +4904,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataIdListResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
-        form_uuid = OpenApiUtilClient.get_encode_param(form_uuid)
         query = {}
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
@@ -4996,8 +4952,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataIdListResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
-        form_uuid = OpenApiUtilClient.get_encode_param(form_uuid)
         query = {}
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
@@ -5063,7 +5017,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -5089,7 +5042,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdResponse:
         UtilClient.validate_model(request)
-        caller_uid = OpenApiUtilClient.get_encode_param(caller_uid)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -5133,7 +5085,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
         UtilClient.validate_model(request)
-        id = OpenApiUtilClient.get_encode_param(id)
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
@@ -5165,7 +5116,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
         UtilClient.validate_model(request)
-        id = OpenApiUtilClient.get_encode_param(id)
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
@@ -5547,7 +5497,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetOpenUrlResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
         query = {}
         if not UtilClient.is_unset(request.system_token):
             query['systemToken'] = request.system_token
@@ -5581,7 +5530,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetOpenUrlResponse:
         UtilClient.validate_model(request)
-        app_type = OpenApiUtilClient.get_encode_param(app_type)
         query = {}
         if not UtilClient.is_unset(request.system_token):
             query['systemToken'] = request.system_token
@@ -5705,7 +5653,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key
@@ -5733,7 +5680,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.access_key):
             query['accessKey'] = request.access_key

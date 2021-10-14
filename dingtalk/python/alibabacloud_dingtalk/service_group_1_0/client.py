@@ -1669,7 +1669,6 @@ class Client(OpenApiClient):
         headers: dingtalkservice_group__1__0_models.ListUserTeamsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkservice_group__1__0_models.ListUserTeamsResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1689,7 +1688,6 @@ class Client(OpenApiClient):
         headers: dingtalkservice_group__1__0_models.ListUserTeamsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkservice_group__1__0_models.ListUserTeamsResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

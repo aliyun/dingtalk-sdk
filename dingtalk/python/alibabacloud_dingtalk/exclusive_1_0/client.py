@@ -45,7 +45,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetConferenceDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetConferenceDetailResponse:
-        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -65,7 +64,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetConferenceDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetConferenceDetailResponse:
-        conference_id = OpenApiUtilClient.get_encode_param(conference_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -105,7 +103,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -133,7 +130,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetUserAppVersionSummaryResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -178,8 +174,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.DeleteCommentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.DeleteCommentResponse:
-        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
-        comment_id = OpenApiUtilClient.get_encode_param(comment_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -200,8 +194,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.DeleteCommentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.DeleteCommentResponse:
-        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
-        comment_id = OpenApiUtilClient.get_encode_param(comment_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -215,84 +207,36 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteComment', 'exclusive_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/exclusive/publishers/{publisher_id}/comments/{comment_id}', 'boolean', req, runtime)
         )
 
-    def get_all_labelable_depts(self) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders()
-        return self.get_all_labelable_depts_with_options(headers, runtime)
-
-    async def get_all_labelable_depts_async(self) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders()
-        return await self.get_all_labelable_depts_with_options_async(headers, runtime)
-
-    def get_all_labelable_depts_with_options(
+    def list_mini_app_history_version(
         self,
-        headers: dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders,
+        request: dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionRequest,
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionHeaders()
+        return self.list_mini_app_history_version_with_options(request, headers, runtime)
+
+    async def list_mini_app_history_version_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionRequest,
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionHeaders()
+        return await self.list_mini_app_history_version_with_options_async(request, headers, runtime)
+
+    def list_mini_app_history_version_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionRequest,
+        headers: dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse(),
-            self.do_roarequest('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partnerDepartments', 'json', req, runtime)
-        )
-
-    async def get_all_labelable_depts_with_options_async(
-        self,
-        headers: dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse(),
-            await self.do_roarequest_async('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partnerDepartments', 'json', req, runtime)
-        )
-
-    def get_publisher_summary(
-        self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
-    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders()
-        return self.get_publisher_summary_with_options(data_id, request, headers, runtime)
-
-    async def get_publisher_summary_async(
-        self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
-    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders()
-        return await self.get_publisher_summary_with_options_async(data_id, request, headers, runtime)
-
-    def get_publisher_summary_with_options(
-        self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
-        headers: dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.mini_app_id):
+            query['miniAppId'] = request.mini_app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -303,24 +247,24 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetPublisherSummaryResponse(),
-            self.do_roarequest('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/publisher/{data_id}', 'json', req, runtime)
+            dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionResponse(),
+            self.do_roarequest('ListMiniAppHistoryVersion', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/miniApps/versions/historyLists', 'json', req, runtime)
         )
 
-    async def get_publisher_summary_with_options_async(
+    async def list_mini_app_history_version_with_options_async(
         self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
-        headers: dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders,
+        request: dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionRequest,
+        headers: dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.mini_app_id):
+            query['miniAppId'] = request.mini_app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -331,8 +275,8 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetPublisherSummaryResponse(),
-            await self.do_roarequest_async('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/publisher/{data_id}', 'json', req, runtime)
+            dingtalkexclusive__1__0_models.ListMiniAppHistoryVersionResponse(),
+            await self.do_roarequest_async('ListMiniAppHistoryVersion', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/miniApps/versions/historyLists', 'json', req, runtime)
         )
 
     def get_doc_created_dept_summary(
@@ -361,7 +305,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -389,7 +332,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -407,62 +349,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.GetDocCreatedDeptSummaryResponse(),
             await self.do_roarequest_async('GetDocCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/doc/dept/{data_id}', 'json', req, runtime)
-        )
-
-    def get_general_form_created_summary(
-        self,
-        data_id: str,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders()
-        return self.get_general_form_created_summary_with_options(data_id, headers, runtime)
-
-    async def get_general_form_created_summary_async(
-        self,
-        data_id: str,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders()
-        return await self.get_general_form_created_summary_with_options_async(data_id, headers, runtime)
-
-    def get_general_form_created_summary_with_options(
-        self,
-        data_id: str,
-        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse(),
-            self.do_roarequest('GetGeneralFormCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/org/{data_id}', 'json', req, runtime)
-        )
-
-    async def get_general_form_created_summary_with_options_async(
-        self,
-        data_id: str,
-        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse(),
-            await self.do_roarequest_async('GetGeneralFormCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/org/{data_id}', 'json', req, runtime)
         )
 
     def create_trusted_device(
@@ -541,130 +427,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateTrustedDevice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trustedDevices', 'json', req, runtime)
         )
 
-    def get_doc_created_summary(
-        self,
-        data_id: str,
-    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders()
-        return self.get_doc_created_summary_with_options(data_id, headers, runtime)
-
-    async def get_doc_created_summary_async(
-        self,
-        data_id: str,
-    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders()
-        return await self.get_doc_created_summary_with_options_async(data_id, headers, runtime)
-
-    def get_doc_created_summary_with_options(
-        self,
-        data_id: str,
-        headers: dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse(),
-            self.do_roarequest('GetDocCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/doc/org/{data_id}', 'json', req, runtime)
-        )
-
-    async def get_doc_created_summary_with_options_async(
-        self,
-        data_id: str,
-        headers: dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse(),
-            await self.do_roarequest_async('GetDocCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/doc/org/{data_id}', 'json', req, runtime)
-        )
-
-    def send_app_ding(
-        self,
-        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
-    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.SendAppDingHeaders()
-        return self.send_app_ding_with_options(request, headers, runtime)
-
-    async def send_app_ding_async(
-        self,
-        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
-    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.SendAppDingHeaders()
-        return await self.send_app_ding_with_options_async(request, headers, runtime)
-
-    def send_app_ding_with_options(
-        self,
-        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
-        headers: dingtalkexclusive__1__0_models.SendAppDingHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.userids):
-            body['userids'] = request.userids
-        if not UtilClient.is_unset(request.content):
-            body['content'] = request.content
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.SendAppDingResponse(),
-            self.do_roarequest('SendAppDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/appDings/send', 'none', req, runtime)
-        )
-
-    async def send_app_ding_with_options_async(
-        self,
-        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
-        headers: dingtalkexclusive__1__0_models.SendAppDingHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.userids):
-            body['userids'] = request.userids
-        if not UtilClient.is_unset(request.content):
-            body['content'] = request.content
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.SendAppDingResponse(),
-            await self.do_roarequest_async('SendAppDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/appDings/send', 'none', req, runtime)
-        )
-
     def get_partner_type_by_parent_id(
         self,
         parent_id: str,
@@ -687,7 +449,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdResponse:
-        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -707,7 +468,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdResponse:
-        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -815,7 +575,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetActiveUserSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetActiveUserSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -835,7 +594,6 @@ class Client(OpenApiClient):
         headers: dingtalkexclusive__1__0_models.GetActiveUserSummaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetActiveUserSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -933,6 +691,618 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/oaOperatorLogs/query', 'json', req, runtime)
         )
 
+    def rollback_mini_app_version(
+        self,
+        request: dingtalkexclusive__1__0_models.RollbackMiniAppVersionRequest,
+    ) -> dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.RollbackMiniAppVersionHeaders()
+        return self.rollback_mini_app_version_with_options(request, headers, runtime)
+
+    async def rollback_mini_app_version_async(
+        self,
+        request: dingtalkexclusive__1__0_models.RollbackMiniAppVersionRequest,
+    ) -> dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.RollbackMiniAppVersionHeaders()
+        return await self.rollback_mini_app_version_with_options_async(request, headers, runtime)
+
+    def rollback_mini_app_version_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.RollbackMiniAppVersionRequest,
+        headers: dingtalkexclusive__1__0_models.RollbackMiniAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.rollback_version):
+            body['rollbackVersion'] = request.rollback_version
+        if not UtilClient.is_unset(request.target_version):
+            body['targetVersion'] = request.target_version
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse(),
+            self.do_roarequest('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/rollback', 'json', req, runtime)
+        )
+
+    async def rollback_mini_app_version_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.RollbackMiniAppVersionRequest,
+        headers: dingtalkexclusive__1__0_models.RollbackMiniAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.rollback_version):
+            body['rollbackVersion'] = request.rollback_version
+        if not UtilClient.is_unset(request.target_version):
+            body['targetVersion'] = request.target_version
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.RollbackMiniAppVersionResponse(),
+            await self.do_roarequest_async('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/rollback', 'json', req, runtime)
+        )
+
+    def get_general_form_created_dept_summary(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders()
+        return self.get_general_form_created_dept_summary_with_options(data_id, request, headers, runtime)
+
+    async def get_general_form_created_dept_summary_async(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders()
+        return await self.get_general_form_created_dept_summary_with_options_async(data_id, request, headers, runtime)
+
+    def get_general_form_created_dept_summary_with_options(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
+        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse(),
+            self.do_roarequest('GetGeneralFormCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/dept/{data_id}', 'json', req, runtime)
+        )
+
+    async def get_general_form_created_dept_summary_with_options_async(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
+        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse(),
+            await self.do_roarequest_async('GetGeneralFormCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/dept/{data_id}', 'json', req, runtime)
+        )
+
+    def get_calender_summary(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders()
+        return self.get_calender_summary_with_options(data_id, headers, runtime)
+
+    async def get_calender_summary_async(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders()
+        return await self.get_calender_summary_with_options_async(data_id, headers, runtime)
+
+    def get_calender_summary_with_options(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetCalenderSummaryResponse(),
+            self.do_roarequest('GetCalenderSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/calendar/org/{data_id}', 'json', req, runtime)
+        )
+
+    async def get_calender_summary_with_options_async(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetCalenderSummaryResponse(),
+            await self.do_roarequest_async('GetCalenderSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/calendar/org/{data_id}', 'json', req, runtime)
+        )
+
+    def get_all_labelable_depts(self) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders()
+        return self.get_all_labelable_depts_with_options(headers, runtime)
+
+    async def get_all_labelable_depts_async(self) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders()
+        return await self.get_all_labelable_depts_with_options_async(headers, runtime)
+
+    def get_all_labelable_depts_with_options(
+        self,
+        headers: dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse(),
+            self.do_roarequest('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partnerDepartments', 'json', req, runtime)
+        )
+
+    async def get_all_labelable_depts_with_options_async(
+        self,
+        headers: dingtalkexclusive__1__0_models.GetAllLabelableDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetAllLabelableDeptsResponse(),
+            await self.do_roarequest_async('GetAllLabelableDepts', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partnerDepartments', 'json', req, runtime)
+        )
+
+    def get_publisher_summary(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders()
+        return self.get_publisher_summary_with_options(data_id, request, headers, runtime)
+
+    async def get_publisher_summary_async(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders()
+        return await self.get_publisher_summary_with_options_async(data_id, request, headers, runtime)
+
+    def get_publisher_summary_with_options(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
+        headers: dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPublisherSummaryResponse(),
+            self.do_roarequest('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/publisher/{data_id}', 'json', req, runtime)
+        )
+
+    async def get_publisher_summary_with_options_async(
+        self,
+        data_id: str,
+        request: dingtalkexclusive__1__0_models.GetPublisherSummaryRequest,
+        headers: dingtalkexclusive__1__0_models.GetPublisherSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPublisherSummaryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPublisherSummaryResponse(),
+            await self.do_roarequest_async('GetPublisherSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/publisher/{data_id}', 'json', req, runtime)
+        )
+
+    def update_mini_app_version_status(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusHeaders()
+        return self.update_mini_app_version_status_with_options(request, headers, runtime)
+
+    async def update_mini_app_version_status_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusHeaders()
+        return await self.update_mini_app_version_status_with_options_async(request, headers, runtime)
+
+    def update_mini_app_version_status_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.version_type):
+            body['versionType'] = request.version_type
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusResponse(),
+            self.do_roarequest('UpdateMiniAppVersionStatus', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/versionStatus', 'json', req, runtime)
+        )
+
+    async def update_mini_app_version_status_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.version_type):
+            body['versionType'] = request.version_type
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateMiniAppVersionStatusResponse(),
+            await self.do_roarequest_async('UpdateMiniAppVersionStatus', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/versionStatus', 'json', req, runtime)
+        )
+
+    def get_general_form_created_summary(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders()
+        return self.get_general_form_created_summary_with_options(data_id, headers, runtime)
+
+    async def get_general_form_created_summary_async(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders()
+        return await self.get_general_form_created_summary_with_options_async(data_id, headers, runtime)
+
+    def get_general_form_created_summary_with_options(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse(),
+            self.do_roarequest('GetGeneralFormCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/org/{data_id}', 'json', req, runtime)
+        )
+
+    async def get_general_form_created_summary_with_options_async(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGeneralFormCreatedSummaryResponse(),
+            await self.do_roarequest_async('GetGeneralFormCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/org/{data_id}', 'json', req, runtime)
+        )
+
+    def get_doc_created_summary(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders()
+        return self.get_doc_created_summary_with_options(data_id, headers, runtime)
+
+    async def get_doc_created_summary_async(
+        self,
+        data_id: str,
+    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders()
+        return await self.get_doc_created_summary_with_options_async(data_id, headers, runtime)
+
+    def get_doc_created_summary_with_options(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse(),
+            self.do_roarequest('GetDocCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/doc/org/{data_id}', 'json', req, runtime)
+        )
+
+    async def get_doc_created_summary_with_options_async(
+        self,
+        data_id: str,
+        headers: dingtalkexclusive__1__0_models.GetDocCreatedSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetDocCreatedSummaryResponse(),
+            await self.do_roarequest_async('GetDocCreatedSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/doc/org/{data_id}', 'json', req, runtime)
+        )
+
+    def send_app_ding(
+        self,
+        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
+    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendAppDingHeaders()
+        return self.send_app_ding_with_options(request, headers, runtime)
+
+    async def send_app_ding_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
+    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendAppDingHeaders()
+        return await self.send_app_ding_with_options_async(request, headers, runtime)
+
+    def send_app_ding_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
+        headers: dingtalkexclusive__1__0_models.SendAppDingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.userids):
+            body['userids'] = request.userids
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendAppDingResponse(),
+            self.do_roarequest('SendAppDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/appDings/send', 'none', req, runtime)
+        )
+
+    async def send_app_ding_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendAppDingRequest,
+        headers: dingtalkexclusive__1__0_models.SendAppDingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendAppDingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.userids):
+            body['userids'] = request.userids
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendAppDingResponse(),
+            await self.do_roarequest_async('SendAppDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/appDings/send', 'none', req, runtime)
+        )
+
     def get_ding_report_dept_summary(
         self,
         data_id: str,
@@ -959,7 +1329,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDingReportDeptSummaryResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -987,7 +1356,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetDingReportDeptSummaryResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
         query = {}
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
@@ -1071,38 +1439,50 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTrustDeviceList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/trustedDevices/query', 'json', req, runtime)
         )
 
-    def get_general_form_created_dept_summary(
+    def list_mini_app_available_version(
         self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+        request: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionRequest,
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders()
-        return self.get_general_form_created_dept_summary_with_options(data_id, request, headers, runtime)
+        headers = dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionHeaders()
+        return self.list_mini_app_available_version_with_options(request, headers, runtime)
 
-    async def get_general_form_created_dept_summary_async(
+    async def list_mini_app_available_version_async(
         self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+        request: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionRequest,
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders()
-        return await self.get_general_form_created_dept_summary_with_options_async(data_id, request, headers, runtime)
+        headers = dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionHeaders()
+        return await self.list_mini_app_available_version_with_options_async(request, headers, runtime)
 
-    def get_general_form_created_dept_summary_with_options(
+    def list_mini_app_available_version_with_options(
         self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
-        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders,
+        request: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionRequest,
+        headers: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        query = {}
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
+        body = {}
+        if not UtilClient.is_unset(request.version_type_set):
+            body['versionTypeSet'] = request.version_type_set
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1110,27 +1490,41 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse(),
-            self.do_roarequest('GetGeneralFormCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/dept/{data_id}', 'json', req, runtime)
+            dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionResponse(),
+            self.do_roarequest('ListMiniAppAvailableVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/availableLists', 'json', req, runtime)
         )
 
-    async def get_general_form_created_dept_summary_with_options_async(
+    async def list_mini_app_available_version_with_options_async(
         self,
-        data_id: str,
-        request: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryRequest,
-        headers: dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryHeaders,
+        request: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionRequest,
+        headers: dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse:
+    ) -> dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionResponse:
         UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        query = {}
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
+        body = {}
+        if not UtilClient.is_unset(request.version_type_set):
+            body['versionTypeSet'] = request.version_type_set
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1138,11 +1532,11 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetGeneralFormCreatedDeptSummaryResponse(),
-            await self.do_roarequest_async('GetGeneralFormCreatedDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/generalForm/dept/{data_id}', 'json', req, runtime)
+            dingtalkexclusive__1__0_models.ListMiniAppAvailableVersionResponse(),
+            await self.do_roarequest_async('ListMiniAppAvailableVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/availableLists', 'json', req, runtime)
         )
 
     def search_org_inner_group_info(
@@ -1257,62 +1651,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SearchOrgInnerGroupInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/securities/orgGroupInfos', 'json', req, runtime)
         )
 
-    def get_calender_summary(
-        self,
-        data_id: str,
-    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders()
-        return self.get_calender_summary_with_options(data_id, headers, runtime)
-
-    async def get_calender_summary_async(
-        self,
-        data_id: str,
-    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders()
-        return await self.get_calender_summary_with_options_async(data_id, headers, runtime)
-
-    def get_calender_summary_with_options(
-        self,
-        data_id: str,
-        headers: dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetCalenderSummaryResponse(),
-            self.do_roarequest('GetCalenderSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/calendar/org/{data_id}', 'json', req, runtime)
-        )
-
-    async def get_calender_summary_with_options_async(
-        self,
-        data_id: str,
-        headers: dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkexclusive__1__0_models.GetCalenderSummaryResponse:
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkexclusive__1__0_models.GetCalenderSummaryResponse(),
-            await self.do_roarequest_async('GetCalenderSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/calendar/org/{data_id}', 'json', req, runtime)
-        )
-
     def get_group_active_info(
         self,
         request: dingtalkexclusive__1__0_models.GetGroupActiveInfoRequest,
@@ -1415,7 +1753,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetCommentListResponse:
         UtilClient.validate_model(request)
-        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
         query = {}
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
@@ -1443,7 +1780,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetCommentListResponse:
         UtilClient.validate_model(request)
-        publisher_id = OpenApiUtilClient.get_encode_param(publisher_id)
         query = {}
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number

@@ -50,7 +50,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.scrapped_quantity):
             body['scrappedQuantity'] = request.scrapped_quantity
@@ -109,7 +108,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
         UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         body = {}
         if not UtilClient.is_unset(request.scrapped_quantity):
             body['scrappedQuantity'] = request.scrapped_quantity

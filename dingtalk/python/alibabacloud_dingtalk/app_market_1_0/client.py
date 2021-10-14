@@ -113,7 +113,6 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.QueryMarketOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.QueryMarketOrderResponse:
-        order_id = OpenApiUtilClient.get_encode_param(order_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -133,7 +132,6 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.QueryMarketOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.QueryMarketOrderResponse:
-        order_id = OpenApiUtilClient.get_encode_param(order_id)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

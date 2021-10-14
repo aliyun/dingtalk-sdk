@@ -49,7 +49,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         body = {}
         if not UtilClient.is_unset(request.parent_id):
             body['parentId'] = request.parent_id
@@ -85,7 +84,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         body = {}
         if not UtilClient.is_unset(request.parent_id):
             body['parentId'] = request.parent_id
@@ -354,8 +352,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddPermissionResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
@@ -386,8 +382,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddPermissionResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
@@ -438,8 +432,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetFileInfoResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -466,8 +458,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetFileInfoResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -511,7 +501,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -537,7 +526,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -664,8 +652,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.RenameFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.new_file_name):
             body['newFileName'] = request.new_file_name
@@ -694,8 +680,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.RenameFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.new_file_name):
             body['newFileName'] = request.new_file_name
@@ -741,7 +725,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetAsyncTaskInfoResponse:
         UtilClient.validate_model(request)
-        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -767,7 +750,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetAsyncTaskInfoResponse:
         UtilClient.validate_model(request)
-        task_id = OpenApiUtilClient.get_encode_param(task_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -811,7 +793,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListFilesResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -845,7 +826,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListFilesResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -900,8 +880,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ModifyPermissionResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
@@ -932,8 +910,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ModifyPermissionResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
@@ -984,8 +960,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListPermissionsResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1012,8 +986,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListPermissionsResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1057,7 +1029,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         body = {}
         if not UtilClient.is_unset(request.type):
             body['type'] = request.type
@@ -1091,7 +1062,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         body = {}
         if not UtilClient.is_unset(request.type):
             body['type'] = request.type
@@ -1146,8 +1116,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.MoveFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.target_space_id):
             body['targetSpaceId'] = request.target_space_id
@@ -1180,8 +1148,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.MoveFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.target_space_id):
             body['targetSpaceId'] = request.target_space_id
@@ -1234,8 +1200,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1262,8 +1226,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1310,8 +1272,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetUploadInfoResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1348,8 +1308,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetUploadInfoResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        parent_id = OpenApiUtilClient.get_encode_param(parent_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1482,8 +1440,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeletePermissionResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
@@ -1514,8 +1470,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeletePermissionResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
@@ -1642,8 +1596,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.CopyFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.target_space_id):
             body['targetSpaceId'] = request.target_space_id
@@ -1676,8 +1628,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.CopyFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         body = {}
         if not UtilClient.is_unset(request.target_space_id):
             body['targetSpaceId'] = request.target_space_id
@@ -1727,7 +1677,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteSpaceResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1753,7 +1702,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteSpaceResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1868,8 +1816,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -1898,8 +1844,6 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteFileResponse:
         UtilClient.validate_model(request)
-        space_id = OpenApiUtilClient.get_encode_param(space_id)
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
