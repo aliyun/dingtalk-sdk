@@ -61,7 +61,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public QueryMarketOrderResponse queryMarketOrderWithOptions(String orderId, QueryMarketOrderHeaders headers, RuntimeOptions runtime) throws Exception {
-        orderId = com.aliyun.openapiutil.Client.getEncodeParam(orderId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

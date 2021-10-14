@@ -94,7 +94,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetInnerAppResponse getInnerAppWithOptions(String agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
             query.put("opUnionId", request.opUnionId);
@@ -128,7 +127,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RegisterCustomAppRoleResponse registerCustomAppRoleWithOptions(String agentId, RegisterCustomAppRoleRequest request, RegisterCustomAppRoleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             body.put("opUserId", request.opUserId);
@@ -211,7 +209,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddAppRolesToMemberResponse addAppRolesToMemberWithOptions(String agentId, AddAppRolesToMemberRequest request, AddAppRolesToMemberHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             body.put("opUserId", request.opUserId);
@@ -252,8 +249,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetAppRoleScopeByRoleIdResponse getAppRoleScopeByRoleIdWithOptions(String agentId, String roleId, GetAppRoleScopeByRoleIdHeaders headers, RuntimeOptions runtime) throws Exception {
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        roleId = com.aliyun.openapiutil.Client.getEncodeParam(roleId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -276,8 +271,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public ListRoleInfoByUserResponse listRoleInfoByUserWithOptions(String agentId, String userId, ListRoleInfoByUserHeaders headers, RuntimeOptions runtime) throws Exception {
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -330,8 +323,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RemoveMemberForAppRoleResponse removeMemberForAppRoleWithOptions(String agentId, String roleId, RemoveMemberForAppRoleRequest request, RemoveMemberForAppRoleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        roleId = com.aliyun.openapiutil.Client.getEncodeParam(roleId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             body.put("opUserId", request.opUserId);
@@ -373,7 +364,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateInnerAppResponse updateInnerAppWithOptions(String agentId, UpdateInnerAppRequest request, UpdateInnerAppHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
             body.put("opUnionId", request.opUnionId);
@@ -435,8 +425,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddMemberToAppRoleResponse addMemberToAppRoleWithOptions(String agentId, String roleId, AddMemberToAppRoleRequest request, AddMemberToAppRoleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        roleId = com.aliyun.openapiutil.Client.getEncodeParam(roleId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             body.put("opUserId", request.opUserId);
@@ -478,7 +466,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListAppRoleScopesResponse listAppRoleScopesWithOptions(String agentId, ListAppRoleScopesRequest request, ListAppRoleScopesHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             query.put("nextToken", request.nextToken);
@@ -512,7 +499,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddAppToWorkBenchGroupResponse addAppToWorkBenchGroupWithOptions(String agentId, AddAppToWorkBenchGroupRequest request, AddAppToWorkBenchGroupHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
             body.put("opUnionId", request.opUnionId);
@@ -550,8 +536,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RebuildRoleScopeForAppRoleResponse rebuildRoleScopeForAppRoleWithOptions(String agentId, String roleId, RebuildRoleScopeForAppRoleRequest request, RebuildRoleScopeForAppRoleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        roleId = com.aliyun.openapiutil.Client.getEncodeParam(roleId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             body.put("opUserId", request.opUserId);
@@ -630,8 +614,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteAppRoleResponse deleteAppRoleWithOptions(String agentId, String roleId, DeleteAppRoleRequest request, DeleteAppRoleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        roleId = com.aliyun.openapiutil.Client.getEncodeParam(roleId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             query.put("opUserId", request.opUserId);
@@ -734,7 +716,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteInnerAppResponse deleteInnerAppWithOptions(String agentId, DeleteInnerAppRequest request, DeleteInnerAppHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
             query.put("opUnionId", request.opUnionId);
@@ -768,8 +749,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateAppRoleInfoResponse updateAppRoleInfoWithOptions(String agentId, String roleId, UpdateAppRoleInfoRequest request, UpdateAppRoleInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        agentId = com.aliyun.openapiutil.Client.getEncodeParam(agentId);
-        roleId = com.aliyun.openapiutil.Client.getEncodeParam(roleId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             body.put("opUserId", request.opUserId);

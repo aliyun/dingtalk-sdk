@@ -24,6 +24,9 @@ public class AskRobotRequest extends TeaModel {
     @NameInMap("dingSuiteKey")
     public String dingSuiteKey;
 
+    @NameInMap("dingUserId")
+    public String dingUserId;
+
     public static AskRobotRequest build(java.util.Map<String, ?> map) throws Exception {
         AskRobotRequest self = new AskRobotRequest();
         return TeaModel.build(map, self);
@@ -67,6 +70,14 @@ public class AskRobotRequest extends TeaModel {
     }
     public String getDingSuiteKey() {
         return this.dingSuiteKey;
+    }
+
+    public AskRobotRequest setDingUserId(String dingUserId) {
+        this.dingUserId = dingUserId;
+        return this;
+    }
+    public String getDingUserId() {
+        return this.dingUserId;
     }
 
 }

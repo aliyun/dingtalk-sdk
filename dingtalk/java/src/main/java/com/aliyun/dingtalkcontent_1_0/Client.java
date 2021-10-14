@@ -82,7 +82,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetFeedResponse getFeedWithOptions(String feedId, GetFeedRequest request, GetFeedHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.mcnId)) {
             query.put("mcnId", request.mcnId);
@@ -187,7 +186,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListItemUserDataResponse listItemUserDataWithOptions(String itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        itemId = com.aliyun.openapiutil.Client.getEncodeParam(itemId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

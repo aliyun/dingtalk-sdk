@@ -184,7 +184,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListTableDataByFormInstanceIdTableIdResponse listTableDataByFormInstanceIdTableIdWithOptions(String formInstanceId, ListTableDataByFormInstanceIdTableIdRequest request, ListTableDataByFormInstanceIdTableIdHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        formInstanceId = com.aliyun.openapiutil.Client.getEncodeParam(formInstanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
             query.put("formUuid", request.formUuid);
@@ -434,7 +433,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CheckCloudAccountStatusResponse checkCloudAccountStatusWithOptions(String callerUid, CheckCloudAccountStatusRequest request, CheckCloudAccountStatusHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        callerUid = com.aliyun.openapiutil.Client.getEncodeParam(callerUid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -464,8 +462,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetCorpAccomplishmentTasksResponse getCorpAccomplishmentTasksWithOptions(String corpId, String userId, GetCorpAccomplishmentTasksRequest request, GetCorpAccomplishmentTasksHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        corpId = com.aliyun.openapiutil.Client.getEncodeParam(corpId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
             query.put("pageSize", request.pageSize);
@@ -618,7 +614,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListApplicationAuthorizationServiceConnectorInformationResponse listApplicationAuthorizationServiceConnectorInformationWithOptions(String instanceId, ListApplicationAuthorizationServiceConnectorInformationRequest request, ListApplicationAuthorizationServiceConnectorInformationHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -848,7 +843,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ValidateApplicationServiceOrderUpgradeResponse validateApplicationServiceOrderUpgradeWithOptions(String callerUnionid, ValidateApplicationServiceOrderUpgradeRequest request, ValidateApplicationServiceOrderUpgradeHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        callerUnionid = com.aliyun.openapiutil.Client.getEncodeParam(callerUnionid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -1126,7 +1120,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RemoveTenantResourceResponse removeTenantResourceWithOptions(String callerUid, RemoveTenantResourceRequest request, RemoveTenantResourceHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        callerUid = com.aliyun.openapiutil.Client.getEncodeParam(callerUid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -1197,7 +1190,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetProcessDefinitionResponse getProcessDefinitionWithOptions(String processInstanceId, GetProcessDefinitionRequest request, GetProcessDefinitionHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        processInstanceId = com.aliyun.openapiutil.Client.getEncodeParam(processInstanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
             query.put("corpId", request.corpId);
@@ -1337,7 +1329,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListApplicationAuthorizationServiceApplicationInformationResponse listApplicationAuthorizationServiceApplicationInformationWithOptions(String instanceId, ListApplicationAuthorizationServiceApplicationInformationRequest request, ListApplicationAuthorizationServiceApplicationInformationHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -1379,7 +1370,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ValidateApplicationAuthorizationServiceOrderResponse validateApplicationAuthorizationServiceOrderWithOptions(String callerUid, ValidateApplicationAuthorizationServiceOrderRequest request, ValidateApplicationAuthorizationServiceOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        callerUid = com.aliyun.openapiutil.Client.getEncodeParam(callerUid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -1569,9 +1559,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetActivityButtonListResponse getActivityButtonListWithOptions(String appType, String processCode, String activityId, GetActivityButtonListRequest request, GetActivityButtonListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        appType = com.aliyun.openapiutil.Client.getEncodeParam(appType);
-        processCode = com.aliyun.openapiutil.Client.getEncodeParam(processCode);
-        activityId = com.aliyun.openapiutil.Client.getEncodeParam(activityId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
             query.put("systemToken", request.systemToken);
@@ -1666,7 +1653,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListApplicationInformationResponse listApplicationInformationWithOptions(String instanceId, ListApplicationInformationRequest request, ListApplicationInformationHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -2289,7 +2275,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListConnectorInformationResponse listConnectorInformationWithOptions(String instanceId, ListConnectorInformationRequest request, ListConnectorInformationHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -2368,7 +2353,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetNotifyMeResponse getNotifyMeWithOptions(String userId, GetNotifyMeRequest request, GetNotifyMeHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
             query.put("corpId", request.corpId);
@@ -2479,7 +2463,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetInstanceByIdResponse getInstanceByIdWithOptions(String id, GetInstanceByIdRequest request, GetInstanceByIdHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        id = com.aliyun.openapiutil.Client.getEncodeParam(id);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
             query.put("appType", request.appType);
@@ -2582,7 +2565,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ValidateOrderUpdateResponse validateOrderUpdateWithOptions(String instanceId, ValidateOrderUpdateRequest request, ValidateOrderUpdateHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -2616,8 +2598,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetFormComponentDefinitionListResponse getFormComponentDefinitionListWithOptions(String appType, String formUuid, GetFormComponentDefinitionListRequest request, GetFormComponentDefinitionListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        appType = com.aliyun.openapiutil.Client.getEncodeParam(appType);
-        formUuid = com.aliyun.openapiutil.Client.getEncodeParam(formUuid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
             query.put("systemToken", request.systemToken);
@@ -2708,7 +2688,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetMeCorpSubmissionResponse getMeCorpSubmissionWithOptions(String userId, GetMeCorpSubmissionRequest request, GetMeCorpSubmissionHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
             query.put("corpId", request.corpId);
@@ -2819,8 +2798,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public SearchFormDataIdListResponse searchFormDataIdListWithOptions(String appType, String formUuid, SearchFormDataIdListRequest request, SearchFormDataIdListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        appType = com.aliyun.openapiutil.Client.getEncodeParam(appType);
-        formUuid = com.aliyun.openapiutil.Client.getEncodeParam(formUuid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
@@ -2892,7 +2869,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetActivationCodeByCallerUnionIdResponse getActivationCodeByCallerUnionIdWithOptions(String callerUid, GetActivationCodeByCallerUnionIdRequest request, GetActivationCodeByCallerUnionIdHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        callerUid = com.aliyun.openapiutil.Client.getEncodeParam(callerUid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);
@@ -2922,7 +2898,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetFormDataByIDResponse getFormDataByIDWithOptions(String id, GetFormDataByIDRequest request, GetFormDataByIDHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        id = com.aliyun.openapiutil.Client.getEncodeParam(id);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
             query.put("appType", request.appType);
@@ -3156,7 +3131,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetOpenUrlResponse getOpenUrlWithOptions(String appType, GetOpenUrlRequest request, GetOpenUrlHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        appType = com.aliyun.openapiutil.Client.getEncodeParam(appType);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
             query.put("systemToken", request.systemToken);
@@ -3239,7 +3213,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ValidateApplicationAuthorizationOrderResponse validateApplicationAuthorizationOrderWithOptions(String instanceId, ValidateApplicationAuthorizationOrderRequest request, ValidateApplicationAuthorizationOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        instanceId = com.aliyun.openapiutil.Client.getEncodeParam(instanceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.accessKey)) {
             query.put("accessKey", request.accessKey);

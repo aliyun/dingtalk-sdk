@@ -295,7 +295,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public InitCoursesOfClassResponse initCoursesOfClassWithOptions(String classId, InitCoursesOfClassRequest request, InitCoursesOfClassHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        classId = com.aliyun.openapiutil.Client.getEncodeParam(classId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             query.put("opUserId", request.opUserId);
@@ -335,7 +334,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteDeptResponse deleteDeptWithOptions(String deptId, DeleteDeptRequest request, DeleteDeptHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        deptId = com.aliyun.openapiutil.Client.getEncodeParam(deptId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
             query.put("operator", request.operator);
@@ -365,8 +363,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteGuardianResponse deleteGuardianWithOptions(String classId, String userId, DeleteGuardianRequest request, DeleteGuardianHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        classId = com.aliyun.openapiutil.Client.getEncodeParam(classId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.stuId)) {
             query.put("stuId", request.stuId);
@@ -447,8 +443,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteTeacherResponse deleteTeacherWithOptions(String classId, String userId, DeleteTeacherRequest request, DeleteTeacherHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        classId = com.aliyun.openapiutil.Client.getEncodeParam(classId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.adviser)) {
             query.put("adviser", request.adviser);
@@ -647,7 +641,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetOpenCourseDetailResponse getOpenCourseDetailWithOptions(String courseId, GetOpenCourseDetailHeaders headers, RuntimeOptions runtime) throws Exception {
-        courseId = com.aliyun.openapiutil.Client.getEncodeParam(courseId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -671,8 +664,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteStudentResponse deleteStudentWithOptions(String classId, String userId, DeleteStudentRequest request, DeleteStudentHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        classId = com.aliyun.openapiutil.Client.getEncodeParam(classId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
             query.put("operator", request.operator);
@@ -739,7 +730,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateCoursesOfClassResponse updateCoursesOfClassWithOptions(String classId, UpdateCoursesOfClassRequest request, UpdateCoursesOfClassHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        classId = com.aliyun.openapiutil.Client.getEncodeParam(classId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             query.put("opUserId", request.opUserId);
@@ -1033,7 +1023,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetShareRoleMembersResponse getShareRoleMembersWithOptions(String shareRoleCode, GetShareRoleMembersHeaders headers, RuntimeOptions runtime) throws Exception {
-        shareRoleCode = com.aliyun.openapiutil.Client.getEncodeParam(shareRoleCode);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

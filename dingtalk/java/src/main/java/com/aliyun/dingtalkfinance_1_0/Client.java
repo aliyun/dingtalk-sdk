@@ -191,6 +191,104 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/payCodes/userInstances", "json", req, runtime), new UpateUserCodeInstanceResponse());
     }
 
+    public ApplyBatchPayResponse applyBatchPay(ApplyBatchPayRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ApplyBatchPayHeaders headers = new ApplyBatchPayHeaders();
+        return this.applyBatchPayWithOptions(request, headers, runtime);
+    }
+
+    public ApplyBatchPayResponse applyBatchPayWithOptions(ApplyBatchPayRequest request, ApplyBatchPayHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
+            body.put("staffId", request.staffId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accountId)) {
+            body.put("accountId", request.accountId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderNo)) {
+            body.put("orderNo", request.orderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.transAmount)) {
+            body.put("transAmount", request.transAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.returnUrl)) {
+            body.put("returnUrl", request.returnUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.passBackParams)) {
+            body.put("passBackParams", request.passBackParams);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.payTerminal)) {
+            body.put("payTerminal", request.payTerminal);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.transExpireTime)) {
+            body.put("transExpireTime", request.transExpireTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ApplyBatchPay", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders/pay", "json", req, runtime), new ApplyBatchPayResponse());
+    }
+
+    public QueryBatchTradeOrderResponse queryBatchTradeOrder(QueryBatchTradeOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryBatchTradeOrderHeaders headers = new QueryBatchTradeOrderHeaders();
+        return this.queryBatchTradeOrderWithOptions(request, headers, runtime);
+    }
+
+    public QueryBatchTradeOrderResponse queryBatchTradeOrderWithOptions(QueryBatchTradeOrderRequest request, QueryBatchTradeOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
+            body.put("suiteId", request.suiteId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
+            body.put("isvCorpId", request.isvCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outBatchNos)) {
+            body.put("outBatchNos", request.outBatchNos);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders/query", "json", req, runtime), new QueryBatchTradeOrderResponse());
+    }
+
     public DecodePayCodeResponse decodePayCode(DecodePayCodeRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DecodePayCodeHeaders headers = new DecodePayCodeHeaders();
@@ -338,6 +436,79 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/verifyResults/notify", "json", req, runtime), new NotifyVerifyResultResponse());
     }
 
+    public CreateBatchTradeOrderResponse createBatchTradeOrder(CreateBatchTradeOrderRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateBatchTradeOrderHeaders headers = new CreateBatchTradeOrderHeaders();
+        return this.createBatchTradeOrderWithOptions(request, headers, runtime);
+    }
+
+    public CreateBatchTradeOrderResponse createBatchTradeOrderWithOptions(CreateBatchTradeOrderRequest request, CreateBatchTradeOrderHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
+            body.put("suiteId", request.suiteId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
+            body.put("staffId", request.staffId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accountId)) {
+            body.put("accountId", request.accountId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accountNo)) {
+            body.put("accountNo", request.accountNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tradeTitle)) {
+            body.put("tradeTitle", request.tradeTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outBatchNo)) {
+            body.put("outBatchNo", request.outBatchNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.batchRemark)) {
+            body.put("batchRemark", request.batchRemark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.totalCount)) {
+            body.put("totalCount", request.totalCount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.totalAmount)) {
+            body.put("totalAmount", request.totalAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.batchTradeDetails)) {
+            body.put("batchTradeDetails", request.batchTradeDetails);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
+            body.put("isvCorpId", request.isvCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders", "json", req, runtime), new CreateBatchTradeOrderResponse());
+    }
+
     public NotifyPayCodeRefundResultResponse notifyPayCodeRefundResult(NotifyPayCodeRefundResultRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         NotifyPayCodeRefundResultHeaders headers = new NotifyPayCodeRefundResultHeaders();
@@ -405,6 +576,88 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("NotifyPayCodeRefundResult", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/refundResults/notify", "json", req, runtime), new NotifyPayCodeRefundResultResponse());
+    }
+
+    public QueryBatchTradeDetailListResponse queryBatchTradeDetailList(QueryBatchTradeDetailListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryBatchTradeDetailListHeaders headers = new QueryBatchTradeDetailListHeaders();
+        return this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
+    }
+
+    public QueryBatchTradeDetailListResponse queryBatchTradeDetailListWithOptions(QueryBatchTradeDetailListRequest request, QueryBatchTradeDetailListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
+            query.put("isvCorpId", request.isvCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outBatchNo)) {
+            query.put("outBatchNo", request.outBatchNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
+            query.put("suiteId", request.suiteId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/batchTrades/details", "json", req, runtime), new QueryBatchTradeDetailListResponse());
+    }
+
+    public QueryPayAccountListResponse queryPayAccountList(QueryPayAccountListRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryPayAccountListHeaders headers = new QueryPayAccountListHeaders();
+        return this.queryPayAccountListWithOptions(request, headers, runtime);
+    }
+
+    public QueryPayAccountListResponse queryPayAccountListWithOptions(QueryPayAccountListRequest request, QueryPayAccountListHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
+            query.put("isvCorpId", request.isvCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
+            query.put("suiteId", request.suiteId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/payAccounts", "json", req, runtime), new QueryPayAccountListResponse());
     }
 
     public CreateUserCodeInstanceResponse createUserCodeInstance(CreateUserCodeInstanceRequest request) throws Exception {

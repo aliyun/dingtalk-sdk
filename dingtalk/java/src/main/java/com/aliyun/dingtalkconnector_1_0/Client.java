@@ -82,7 +82,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public PullDataByPkResponse pullDataByPkWithOptions(String dataModelId, PullDataByPkRequest request, PullDataByPkHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        dataModelId = com.aliyun.openapiutil.Client.getEncodeParam(dataModelId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.primaryKey)) {
             query.put("primaryKey", request.primaryKey);

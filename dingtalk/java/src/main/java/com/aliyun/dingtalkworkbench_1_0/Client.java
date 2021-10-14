@@ -65,7 +65,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public QueryComponentScopesResponse queryComponentScopesWithOptions(String componentId, QueryComponentScopesHeaders headers, RuntimeOptions runtime) throws Exception {
-        componentId = com.aliyun.openapiutil.Client.getEncodeParam(componentId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -88,7 +87,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public QueryShortcutScopesResponse queryShortcutScopesWithOptions(String shortcutKey, QueryShortcutScopesHeaders headers, RuntimeOptions runtime) throws Exception {
-        shortcutKey = com.aliyun.openapiutil.Client.getEncodeParam(shortcutKey);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -170,8 +168,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateDingPortalPageScopeResponse updateDingPortalPageScopeWithOptions(String pageUuid, String appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        pageUuid = com.aliyun.openapiutil.Client.getEncodeParam(pageUuid);
-        appUuid = com.aliyun.openapiutil.Client.getEncodeParam(appUuid);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userids)) {
             body.put("userids", request.userids);
@@ -212,7 +208,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetDingPortalDetailResponse getDingPortalDetailWithOptions(String appUuid, GetDingPortalDetailHeaders headers, RuntimeOptions runtime) throws Exception {
-        appUuid = com.aliyun.openapiutil.Client.getEncodeParam(appUuid);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

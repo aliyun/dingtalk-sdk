@@ -29,9 +29,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RespondEventResponse respondEventWithOptions(String userId, String calendarId, String eventId, RespondEventRequest request, RespondEventHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.responseStatus)) {
             body.put("responseStatus", request.responseStatus);
@@ -61,7 +58,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GenerateCaldavAccountResponse generateCaldavAccountWithOptions(String userId, GenerateCaldavAccountRequest request, GenerateCaldavAccountHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.device)) {
             body.put("device", request.device);
@@ -95,7 +91,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetScheduleResponse getScheduleWithOptions(String userId, GetScheduleRequest request, GetScheduleHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
             body.put("userIds", request.userIds);
@@ -133,7 +128,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ConvertLegacyEventIdResponse convertLegacyEventIdWithOptions(String userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.legacyEventIds)) {
             body.put("legacyEventIds", request.legacyEventIds);
@@ -175,9 +169,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public RemoveAttendeeResponse removeAttendeeWithOptions(String userId, String calendarId, String eventId, RemoveAttendeeRequest request, RemoveAttendeeHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.attendeesToRemove)) {
             body.put("attendeesToRemove", request.attendeesToRemove);
@@ -207,9 +198,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddAttendeeResponse addAttendeeWithOptions(String userId, String calendarId, String eventId, AddAttendeeRequest request, AddAttendeeHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.attendeesToAdd)) {
             body.put("attendeesToAdd", request.attendeesToAdd);
@@ -239,8 +227,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CreateEventResponse createEventWithOptions(String userId, String calendarId, CreateEventRequest request, CreateEventHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.summary)) {
             body.put("summary", request.summary);
@@ -309,7 +295,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public ListCalendarsResponse listCalendarsWithOptions(String userId, ListCalendarsHeaders headers, RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -333,9 +318,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetSignInListResponse getSignInListWithOptions(String userId, String calendarId, String eventId, GetSignInListRequest request, GetSignInListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -372,9 +354,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteEventResponse deleteEventWithOptions(String userId, String calendarId, String eventId, DeleteEventHeaders headers, RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -398,8 +377,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListEventsResponse listEventsWithOptions(String userId, String calendarId, ListEventsRequest request, ListEventsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.timeMin)) {
             query.put("timeMin", request.timeMin);
@@ -449,8 +426,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListEventsViewResponse listEventsViewWithOptions(String userId, String calendarId, ListEventsViewRequest request, ListEventsViewHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.timeMin)) {
             query.put("timeMin", request.timeMin);
@@ -491,9 +466,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetEventResponse getEventWithOptions(String userId, String calendarId, String eventId, GetEventHeaders headers, RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -517,9 +489,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public PatchEventResponse patchEventWithOptions(String userId, String calendarId, String eventId, PatchEventRequest request, PatchEventHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        calendarId = com.aliyun.openapiutil.Client.getEncodeParam(calendarId);
-        eventId = com.aliyun.openapiutil.Client.getEncodeParam(eventId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.summary)) {
             body.put("summary", request.summary);

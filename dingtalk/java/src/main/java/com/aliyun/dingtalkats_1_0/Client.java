@@ -252,7 +252,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public FinishBeginnerTaskResponse finishBeginnerTaskWithOptions(String taskCode, FinishBeginnerTaskRequest request, FinishBeginnerTaskHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskCode = com.aliyun.openapiutil.Client.getEncodeParam(taskCode);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             query.put("userId", request.userId);
@@ -286,7 +285,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetApplicationRegFormByFlowIdResponse getApplicationRegFormByFlowIdWithOptions(String flowId, GetApplicationRegFormByFlowIdRequest request, GetApplicationRegFormByFlowIdHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        flowId = com.aliyun.openapiutil.Client.getEncodeParam(flowId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
             query.put("bizCode", request.bizCode);
@@ -316,7 +314,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateApplicationRegFormResponse updateApplicationRegFormWithOptions(String flowId, UpdateApplicationRegFormRequest request, UpdateApplicationRegFormHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        flowId = com.aliyun.openapiutil.Client.getEncodeParam(flowId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
             query.put("bizCode", request.bizCode);
@@ -389,7 +386,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateInterviewSignInInfoResponse updateInterviewSignInInfoWithOptions(String interviewId, UpdateInterviewSignInInfoRequest request, UpdateInterviewSignInInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        interviewId = com.aliyun.openapiutil.Client.getEncodeParam(interviewId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
             query.put("bizCode", request.bizCode);
@@ -425,7 +421,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetJobAuthResponse getJobAuthWithOptions(String jobId, GetJobAuthRequest request, GetJobAuthHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        jobId = com.aliyun.openapiutil.Client.getEncodeParam(jobId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
             query.put("opUserId", request.opUserId);

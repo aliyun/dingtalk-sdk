@@ -177,7 +177,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetFileResponse getFileWithOptions(String fileId, GetFileHeaders headers, RuntimeOptions runtime) throws Exception {
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -557,7 +556,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetUserInfoResponse getUserInfoWithOptions(String userId, GetUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

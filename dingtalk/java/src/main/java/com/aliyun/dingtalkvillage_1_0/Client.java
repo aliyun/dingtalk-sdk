@@ -65,7 +65,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetVillageOrgInfoResponse getVillageOrgInfoWithOptions(String subCorpId, GetVillageOrgInfoHeaders headers, RuntimeOptions runtime) throws Exception {
-        subCorpId = com.aliyun.openapiutil.Client.getEncodeParam(subCorpId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -89,7 +88,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListResidentDeptUsersResponse listResidentDeptUsersWithOptions(String departmentId, ListResidentDeptUsersRequest request, ListResidentDeptUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -131,7 +129,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListDeptSimpleUsersResponse listDeptSimpleUsersWithOptions(String departmentId, ListDeptSimpleUsersRequest request, ListDeptSimpleUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
             query.put("cursor", request.cursor);
@@ -218,7 +215,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetResidentDeptResponse getResidentDeptWithOptions(String departmentId, GetResidentDeptRequest request, GetResidentDeptHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -248,8 +244,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetResidentUserInfoResponse getResidentUserInfoWithOptions(String departmentId, String userId, GetResidentUserInfoRequest request, GetResidentUserInfoHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -279,7 +273,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetDeptResponse getDeptWithOptions(String departmentId, GetDeptRequest request, GetDeptHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -346,7 +339,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListDeptUserIdsResponse listDeptUserIdsWithOptions(String departmentId, ListDeptUserIdsRequest request, ListDeptUserIdsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -417,7 +409,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListResidentSubDeptsResponse listResidentSubDeptsWithOptions(String departmentId, ListResidentSubDeptsRequest request, ListResidentSubDeptsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -488,7 +479,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListSubDeptResponse listSubDeptWithOptions(String departmentId, ListSubDeptRequest request, ListSubDeptHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -522,7 +512,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public GetUserResponse getUserWithOptions(String userId, GetUserRequest request, GetUserHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);
@@ -556,7 +545,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListDeptUsersResponse listDeptUsersWithOptions(String departmentId, ListDeptUsersRequest request, ListDeptUsersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
             query.put("cursor", request.cursor);
@@ -645,7 +633,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ListSubDeptIdsResponse listSubDeptIdsWithOptions(String departmentId, ListSubDeptIdsRequest request, ListSubDeptIdsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        departmentId = com.aliyun.openapiutil.Client.getEncodeParam(departmentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.subCorpId)) {
             query.put("subCorpId", request.subCorpId);

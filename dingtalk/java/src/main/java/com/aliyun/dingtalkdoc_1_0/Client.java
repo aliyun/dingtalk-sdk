@@ -29,7 +29,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteWorkspaceMembersResponse deleteWorkspaceMembersWithOptions(String workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             body.put("operatorId", request.operatorId);
@@ -63,8 +62,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddWorkspaceDocMembersResponse addWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
-        nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             body.put("operatorId", request.operatorId);
@@ -98,7 +95,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateWorkspaceMembersResponse updateWorkspaceMembersWithOptions(String workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             body.put("operatorId", request.operatorId);
@@ -132,8 +128,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateWorkspaceDocMembersResponse updateWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
-        nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             body.put("operatorId", request.operatorId);
@@ -167,7 +161,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public CreateWorkspaceDocResponse createWorkspaceDocWithOptions(String workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
@@ -205,7 +198,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddWorkspaceMembersResponse addWorkspaceMembersWithOptions(String workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             body.put("operatorId", request.operatorId);
@@ -292,8 +284,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteWorkspaceDocMembersResponse deleteWorkspaceDocMembersWithOptions(String workspaceId, String nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
-        nodeId = com.aliyun.openapiutil.Client.getEncodeParam(nodeId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             body.put("operatorId", request.operatorId);
@@ -326,7 +316,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetWorkspaceResponse getWorkspaceWithOptions(String workspaceId, GetWorkspaceHeaders headers, RuntimeOptions runtime) throws Exception {
-        workspaceId = com.aliyun.openapiutil.Client.getEncodeParam(workspaceId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

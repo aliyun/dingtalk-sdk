@@ -29,7 +29,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public EditFeedReplayResponse editFeedReplayWithOptions(String feedId, EditFeedReplayRequest request, EditFeedReplayHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
@@ -67,7 +66,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public QueryFeedWhiteListResponse queryFeedWhiteListWithOptions(String feedId, QueryFeedWhiteListRequest request, QueryFeedWhiteListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             query.put("userId", request.userId);
@@ -146,7 +144,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public DeleteLiveFeedResponse deleteLiveFeedWithOptions(String feedId, DeleteLiveFeedRequest request, DeleteLiveFeedHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             query.put("userId", request.userId);
@@ -176,7 +173,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public StartCloudFeedResponse startCloudFeedWithOptions(String feedId, StartCloudFeedRequest request, StartCloudFeedHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
@@ -206,7 +202,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public StopCloudFeedResponse stopCloudFeedWithOptions(String feedId, StopCloudFeedRequest request, StopCloudFeedHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
@@ -236,7 +231,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public ModifyFeedWhiteListResponse modifyFeedWhiteListWithOptions(String feedId, ModifyFeedWhiteListRequest tmpReq, ModifyFeedWhiteListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         ModifyFeedWhiteListShrinkRequest request = new ModifyFeedWhiteListShrinkRequest();
         com.aliyun.openapiutil.Client.convert(tmpReq, request);
         if (!com.aliyun.teautil.Common.isUnset(tmpReq.modifyUserList)) {
@@ -280,7 +274,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateLiveFeedResponse updateLiveFeedWithOptions(String feedId, UpdateLiveFeedRequest request, UpdateLiveFeedHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             query.put("userId", request.userId);
@@ -326,7 +319,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public AddShareCidListResponse addShareCidListWithOptions(String feedId, AddShareCidListRequest request, AddShareCidListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);

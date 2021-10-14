@@ -28,7 +28,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetSearchTabResponse getSearchTabWithOptions(String tabId, GetSearchTabHeaders headers, RuntimeOptions runtime) throws Exception {
-        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -51,8 +50,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public GetSearchItemResponse getSearchItemWithOptions(String tabId, String itemId, GetSearchItemHeaders headers, RuntimeOptions runtime) throws Exception {
-        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
-        itemId = com.aliyun.openapiutil.Client.getEncodeParam(itemId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -75,8 +72,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteSearchItemResponse deleteSearchItemWithOptions(String tabId, String itemId, DeleteSearchItemHeaders headers, RuntimeOptions runtime) throws Exception {
-        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
-        itemId = com.aliyun.openapiutil.Client.getEncodeParam(itemId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -100,7 +95,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public InsertSearchItemResponse insertSearchItemWithOptions(String tabId, InsertSearchItemRequest request, InsertSearchItemHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.itemId)) {
             body.put("itemId", request.itemId);
@@ -186,7 +180,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     public DeleteSearchTabResponse deleteSearchTabWithOptions(String tabId, DeleteSearchTabHeaders headers, RuntimeOptions runtime) throws Exception {
-        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -210,7 +203,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public UpdateSearchTabResponse updateSearchTabWithOptions(String tabId, UpdateSearchTabRequest request, UpdateSearchTabHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        tabId = com.aliyun.openapiutil.Client.getEncodeParam(tabId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
