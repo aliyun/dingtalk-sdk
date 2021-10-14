@@ -232,7 +232,7 @@ export class DeleteCommentResponse extends $tea.Model {
   }
 }
 
-export class GetAllLabelableDeptsHeaders extends $tea.Model {
+export class ListMiniAppHistoryVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -254,17 +254,23 @@ export class GetAllLabelableDeptsHeaders extends $tea.Model {
   }
 }
 
-export class GetAllLabelableDeptsResponseBody extends $tea.Model {
-  data?: GetAllLabelableDeptsResponseBodyData[];
+export class ListMiniAppHistoryVersionRequest extends $tea.Model {
+  pageSize?: number;
+  pageNumber?: number;
+  miniAppId?: string;
   static names(): { [key: string]: string } {
     return {
-      data: 'data',
+      pageSize: 'pageSize',
+      pageNumber: 'pageNumber',
+      miniAppId: 'miniAppId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      data: { 'type': 'array', 'itemType': GetAllLabelableDeptsResponseBodyData },
+      pageSize: 'number',
+      pageNumber: 'number',
+      miniAppId: 'string',
     };
   }
 
@@ -273,9 +279,28 @@ export class GetAllLabelableDeptsResponseBody extends $tea.Model {
   }
 }
 
-export class GetAllLabelableDeptsResponse extends $tea.Model {
+export class ListMiniAppHistoryVersionResponseBody extends $tea.Model {
+  list?: ListMiniAppHistoryVersionResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': ListMiniAppHistoryVersionResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMiniAppHistoryVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetAllLabelableDeptsResponseBody;
+  body: ListMiniAppHistoryVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -286,110 +311,7 @@ export class GetAllLabelableDeptsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetAllLabelableDeptsResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetPublisherSummaryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetPublisherSummaryRequest extends $tea.Model {
-  nextToken?: number;
-  maxResults?: number;
-  static names(): { [key: string]: string } {
-    return {
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      nextToken: 'number',
-      maxResults: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetPublisherSummaryResponseBody extends $tea.Model {
-  data?: GetPublisherSummaryResponseBodyData[];
-  publisherCntStd?: string;
-  publisherArticleCntStd?: string;
-  publisherArticlePvCntStd?: string;
-  publisherArticlePvTop5?: GetPublisherSummaryResponseBodyPublisherArticlePvTop5[];
-  nextToken?: number;
-  hasMore?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      data: 'data',
-      publisherCntStd: 'publisherCntStd',
-      publisherArticleCntStd: 'publisherArticleCntStd',
-      publisherArticlePvCntStd: 'publisherArticlePvCntStd',
-      publisherArticlePvTop5: 'publisherArticlePvTop5',
-      nextToken: 'nextToken',
-      hasMore: 'hasMore',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      data: { 'type': 'array', 'itemType': GetPublisherSummaryResponseBodyData },
-      publisherCntStd: 'string',
-      publisherArticleCntStd: 'string',
-      publisherArticlePvCntStd: 'string',
-      publisherArticlePvTop5: { 'type': 'array', 'itemType': GetPublisherSummaryResponseBodyPublisherArticlePvTop5 },
-      nextToken: 'number',
-      hasMore: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetPublisherSummaryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetPublisherSummaryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetPublisherSummaryResponseBody,
+      body: ListMiniAppHistoryVersionResponseBody,
     };
   }
 
@@ -489,69 +411,6 @@ export class GetDocCreatedDeptSummaryResponse extends $tea.Model {
   }
 }
 
-export class GetGeneralFormCreatedSummaryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetGeneralFormCreatedSummaryResponseBody extends $tea.Model {
-  generalFormCreatedCnt?: string;
-  static names(): { [key: string]: string } {
-    return {
-      generalFormCreatedCnt: 'generalFormCreatedCnt',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      generalFormCreatedCnt: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetGeneralFormCreatedSummaryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetGeneralFormCreatedSummaryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetGeneralFormCreatedSummaryResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateTrustedDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -635,132 +494,6 @@ export class CreateTrustedDeviceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateTrustedDeviceResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDocCreatedSummaryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDocCreatedSummaryResponseBody extends $tea.Model {
-  docCreatedCnt?: string;
-  static names(): { [key: string]: string } {
-    return {
-      docCreatedCnt: 'docCreatedCnt',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      docCreatedCnt: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDocCreatedSummaryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetDocCreatedSummaryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetDocCreatedSummaryResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SendAppDingHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SendAppDingRequest extends $tea.Model {
-  userids?: string[];
-  content?: string;
-  static names(): { [key: string]: string } {
-    return {
-      userids: 'userids',
-      content: 'content',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      userids: { 'type': 'array', 'itemType': 'string' },
-      content: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SendAppDingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -1061,6 +794,733 @@ export class GetOaOperatorLogListResponse extends $tea.Model {
   }
 }
 
+export class RollbackMiniAppVersionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackMiniAppVersionRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingCorpId?: string;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  rollbackVersion?: string;
+  targetVersion?: string;
+  miniAppId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingCorpId: 'dingCorpId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      rollbackVersion: 'rollbackVersion',
+      targetVersion: 'targetVersion',
+      miniAppId: 'miniAppId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingCorpId: 'string',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+      rollbackVersion: 'string',
+      targetVersion: 'string',
+      miniAppId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackMiniAppVersionResponseBody extends $tea.Model {
+  code?: number;
+  cause?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      cause: 'cause',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      cause: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackMiniAppVersionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RollbackMiniAppVersionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RollbackMiniAppVersionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedDeptSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedDeptSummaryRequest extends $tea.Model {
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedDeptSummaryResponseBody extends $tea.Model {
+  data?: GetGeneralFormCreatedDeptSummaryResponseBodyData[];
+  nextToken?: number;
+  hasMore?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetGeneralFormCreatedDeptSummaryResponseBodyData },
+      nextToken: 'number',
+      hasMore: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedDeptSummaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetGeneralFormCreatedDeptSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetGeneralFormCreatedDeptSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCalenderSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCalenderSummaryResponseBody extends $tea.Model {
+  calendarCreateUserCnt?: string;
+  static names(): { [key: string]: string } {
+    return {
+      calendarCreateUserCnt: 'calendarCreateUserCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      calendarCreateUserCnt: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCalenderSummaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCalenderSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCalenderSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponseBody extends $tea.Model {
+  data?: GetAllLabelableDeptsResponseBodyData[];
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetAllLabelableDeptsResponseBodyData },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllLabelableDeptsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAllLabelableDeptsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAllLabelableDeptsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublisherSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublisherSummaryRequest extends $tea.Model {
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublisherSummaryResponseBody extends $tea.Model {
+  data?: GetPublisherSummaryResponseBodyData[];
+  publisherCntStd?: string;
+  publisherArticleCntStd?: string;
+  publisherArticlePvCntStd?: string;
+  publisherArticlePvTop5?: GetPublisherSummaryResponseBodyPublisherArticlePvTop5[];
+  nextToken?: number;
+  hasMore?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      publisherCntStd: 'publisherCntStd',
+      publisherArticleCntStd: 'publisherArticleCntStd',
+      publisherArticlePvCntStd: 'publisherArticlePvCntStd',
+      publisherArticlePvTop5: 'publisherArticlePvTop5',
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetPublisherSummaryResponseBodyData },
+      publisherCntStd: 'string',
+      publisherArticleCntStd: 'string',
+      publisherArticlePvCntStd: 'string',
+      publisherArticlePvTop5: { 'type': 'array', 'itemType': GetPublisherSummaryResponseBodyPublisherArticlePvTop5 },
+      nextToken: 'number',
+      hasMore: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublisherSummaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPublisherSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPublisherSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMiniAppVersionStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMiniAppVersionStatusRequest extends $tea.Model {
+  versionType?: number;
+  version?: string;
+  miniAppId?: string;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingSuiteKey?: string;
+  dingCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      versionType: 'versionType',
+      version: 'version',
+      miniAppId: 'miniAppId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingCorpId: 'dingCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      versionType: 'number',
+      version: 'string',
+      miniAppId: 'string',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMiniAppVersionStatusResponseBody extends $tea.Model {
+  code?: string;
+  cause?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      cause: 'cause',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      cause: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMiniAppVersionStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateMiniAppVersionStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateMiniAppVersionStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedSummaryResponseBody extends $tea.Model {
+  generalFormCreatedCnt?: string;
+  static names(): { [key: string]: string } {
+    return {
+      generalFormCreatedCnt: 'generalFormCreatedCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      generalFormCreatedCnt: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedSummaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetGeneralFormCreatedSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetGeneralFormCreatedSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocCreatedSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocCreatedSummaryResponseBody extends $tea.Model {
+  docCreatedCnt?: string;
+  static names(): { [key: string]: string } {
+    return {
+      docCreatedCnt: 'docCreatedCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      docCreatedCnt: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocCreatedSummaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDocCreatedSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDocCreatedSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendAppDingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendAppDingRequest extends $tea.Model {
+  userids?: string[];
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userids: 'userids',
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userids: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendAppDingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDingReportDeptSummaryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1234,7 +1694,7 @@ export class GetTrustDeviceListResponse extends $tea.Model {
   }
 }
 
-export class GetGeneralFormCreatedDeptSummaryHeaders extends $tea.Model {
+export class ListMiniAppAvailableVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -1256,20 +1716,44 @@ export class GetGeneralFormCreatedDeptSummaryHeaders extends $tea.Model {
   }
 }
 
-export class GetGeneralFormCreatedDeptSummaryRequest extends $tea.Model {
-  nextToken?: number;
-  maxResults?: number;
+export class ListMiniAppAvailableVersionRequest extends $tea.Model {
+  versionTypeSet?: number[];
+  pageSize?: number;
+  pageNumber?: number;
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingCorpId?: string;
+  dingClientId?: string;
+  dingTokenGrantType?: number;
+  miniAppId?: string;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
+      versionTypeSet: 'versionTypeSet',
+      pageSize: 'pageSize',
+      pageNumber: 'pageNumber',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingCorpId: 'dingCorpId',
+      dingClientId: 'dingClientId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      miniAppId: 'miniAppId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'number',
-      maxResults: 'number',
+      versionTypeSet: { 'type': 'array', 'itemType': 'number' },
+      pageSize: 'number',
+      pageNumber: 'number',
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingCorpId: 'string',
+      dingClientId: 'string',
+      dingTokenGrantType: 'number',
+      miniAppId: 'string',
     };
   }
 
@@ -1278,23 +1762,17 @@ export class GetGeneralFormCreatedDeptSummaryRequest extends $tea.Model {
   }
 }
 
-export class GetGeneralFormCreatedDeptSummaryResponseBody extends $tea.Model {
-  data?: GetGeneralFormCreatedDeptSummaryResponseBodyData[];
-  nextToken?: number;
-  hasMore?: boolean;
+export class ListMiniAppAvailableVersionResponseBody extends $tea.Model {
+  list?: ListMiniAppAvailableVersionResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
-      data: 'data',
-      nextToken: 'nextToken',
-      hasMore: 'hasMore',
+      list: 'list',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      data: { 'type': 'array', 'itemType': GetGeneralFormCreatedDeptSummaryResponseBodyData },
-      nextToken: 'number',
-      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': ListMiniAppAvailableVersionResponseBodyList },
     };
   }
 
@@ -1303,9 +1781,9 @@ export class GetGeneralFormCreatedDeptSummaryResponseBody extends $tea.Model {
   }
 }
 
-export class GetGeneralFormCreatedDeptSummaryResponse extends $tea.Model {
+export class ListMiniAppAvailableVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetGeneralFormCreatedDeptSummaryResponseBody;
+  body: ListMiniAppAvailableVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1316,7 +1794,7 @@ export class GetGeneralFormCreatedDeptSummaryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetGeneralFormCreatedDeptSummaryResponseBody,
+      body: ListMiniAppAvailableVersionResponseBody,
     };
   }
 
@@ -1441,69 +1919,6 @@ export class SearchOrgInnerGroupInfoResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SearchOrgInnerGroupInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCalenderSummaryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCalenderSummaryResponseBody extends $tea.Model {
-  calendarCreateUserCnt?: string;
-  static names(): { [key: string]: string } {
-    return {
-      calendarCreateUserCnt: 'calendarCreateUserCnt',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      calendarCreateUserCnt: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetCalenderSummaryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: GetCalenderSummaryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetCalenderSummaryResponseBody,
     };
   }
 
@@ -1753,6 +2168,143 @@ export class GetUserAppVersionSummaryResponseBodyData extends $tea.Model {
   }
 }
 
+export class ListMiniAppHistoryVersionResponseBodyList extends $tea.Model {
+  packageUrl?: string;
+  packageSize?: string;
+  buildStatus?: number;
+  version?: string;
+  h5Bundle?: string;
+  static names(): { [key: string]: string } {
+    return {
+      packageUrl: 'packageUrl',
+      packageSize: 'packageSize',
+      buildStatus: 'buildStatus',
+      version: 'version',
+      h5Bundle: 'h5Bundle',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      packageUrl: 'string',
+      packageSize: 'string',
+      buildStatus: 'number',
+      version: 'string',
+      h5Bundle: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocCreatedDeptSummaryResponseBodyData extends $tea.Model {
+  deptId?: string;
+  deptName?: string;
+  docCreatedCnt?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+      docCreatedCnt: 'docCreatedCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+      deptName: 'string',
+      docCreatedCnt: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
+  typeId?: number;
+  typeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      typeId: 'typeId',
+      typeName: 'typeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      typeId: 'number',
+      typeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
+  opUserId?: string;
+  opName?: string;
+  opTime?: number;
+  category1Name?: string;
+  category2Name?: string;
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      opName: 'opName',
+      opTime: 'opTime',
+      category1Name: 'category1Name',
+      category2Name: 'category2Name',
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      opName: 'string',
+      opTime: 'number',
+      category1Name: 'string',
+      category2Name: 'string',
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetGeneralFormCreatedDeptSummaryResponseBodyData extends $tea.Model {
+  deptId?: string;
+  deptName?: string;
+  generalFormCreateCnt1d?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+      generalFormCreateCnt1d: 'generalFormCreateCnt1d',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+      deptName: 'string',
+      generalFormCreateCnt1d: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends $tea.Model {
   labelId?: number;
   labelName?: string;
@@ -1971,87 +2523,6 @@ export class GetPublisherSummaryResponseBodyPublisherArticlePvTop5 extends $tea.
   }
 }
 
-export class GetDocCreatedDeptSummaryResponseBodyData extends $tea.Model {
-  deptId?: string;
-  deptName?: string;
-  docCreatedCnt?: string;
-  static names(): { [key: string]: string } {
-    return {
-      deptId: 'deptId',
-      deptName: 'deptName',
-      docCreatedCnt: 'docCreatedCnt',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      deptId: 'string',
-      deptName: 'string',
-      docCreatedCnt: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
-  typeId?: number;
-  typeName?: string;
-  static names(): { [key: string]: string } {
-    return {
-      typeId: 'typeId',
-      typeName: 'typeName',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      typeId: 'number',
-      typeName: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
-  opUserId?: string;
-  opName?: string;
-  opTime?: number;
-  category1Name?: string;
-  category2Name?: string;
-  content?: string;
-  static names(): { [key: string]: string } {
-    return {
-      opUserId: 'opUserId',
-      opName: 'opName',
-      opTime: 'opTime',
-      category1Name: 'category1Name',
-      category2Name: 'category2Name',
-      content: 'content',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      opUserId: 'string',
-      opName: 'string',
-      opTime: 'number',
-      category1Name: 'string',
-      category2Name: 'string',
-      content: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetDingReportDeptSummaryResponseBodyData extends $tea.Model {
   deptId?: string;
   deptName?: string;
@@ -2111,23 +2582,20 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   }
 }
 
-export class GetGeneralFormCreatedDeptSummaryResponseBodyData extends $tea.Model {
-  deptId?: string;
-  deptName?: string;
-  generalFormCreateCnt1d?: string;
+export class ListMiniAppAvailableVersionResponseBodyList extends $tea.Model {
+  buildStatus?: number;
+  version?: string;
   static names(): { [key: string]: string } {
     return {
-      deptId: 'deptId',
-      deptName: 'deptName',
-      generalFormCreateCnt1d: 'generalFormCreateCnt1d',
+      buildStatus: 'buildStatus',
+      version: 'version',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      deptId: 'string',
-      deptName: 'string',
-      generalFormCreateCnt1d: 'string',
+      buildStatus: 'number',
+      version: 'string',
     };
   }
 
@@ -2291,7 +2759,6 @@ export default class Client extends OpenApi {
   }
 
   async getConferenceDetailWithOptions(conferenceId: string, headers: GetConferenceDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetConferenceDetailResponse> {
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2315,7 +2782,6 @@ export default class Client extends OpenApi {
 
   async getUserAppVersionSummaryWithOptions(dataId: string, request: GetUserAppVersionSummaryRequest, headers: GetUserAppVersionSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAppVersionSummaryResponse> {
     Util.validateModel(request);
-    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2348,8 +2814,6 @@ export default class Client extends OpenApi {
   }
 
   async deleteCommentWithOptions(publisherId: string, commentId: string, headers: DeleteCommentHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCommentResponse> {
-    publisherId = OpenApiUtil.getEncodeParam(publisherId);
-    commentId = OpenApiUtil.getEncodeParam(commentId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2365,44 +2829,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteCommentResponse>(await this.doROARequest("DeleteComment", "exclusive_1.0", "HTTP", "DELETE", "AK", `/v1.0/exclusive/publishers/${publisherId}/comments/${commentId}`, "boolean", req, runtime), new DeleteCommentResponse({}));
   }
 
-  async getAllLabelableDepts(): Promise<GetAllLabelableDeptsResponse> {
+  async listMiniAppHistoryVersion(request: ListMiniAppHistoryVersionRequest): Promise<ListMiniAppHistoryVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAllLabelableDeptsHeaders({ });
-    return await this.getAllLabelableDeptsWithOptions(headers, runtime);
+    let headers = new ListMiniAppHistoryVersionHeaders({ });
+    return await this.listMiniAppHistoryVersionWithOptions(request, headers, runtime);
   }
 
-  async getAllLabelableDeptsWithOptions(headers: GetAllLabelableDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllLabelableDeptsResponse> {
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetAllLabelableDeptsResponse>(await this.doROARequest("GetAllLabelableDepts", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partnerDepartments`, "json", req, runtime), new GetAllLabelableDeptsResponse({}));
-  }
-
-  async getPublisherSummary(dataId: string, request: GetPublisherSummaryRequest): Promise<GetPublisherSummaryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPublisherSummaryHeaders({ });
-    return await this.getPublisherSummaryWithOptions(dataId, request, headers, runtime);
-  }
-
-  async getPublisherSummaryWithOptions(dataId: string, request: GetPublisherSummaryRequest, headers: GetPublisherSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPublisherSummaryResponse> {
+  async listMiniAppHistoryVersionWithOptions(request: ListMiniAppHistoryVersionRequest, headers: ListMiniAppHistoryVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListMiniAppHistoryVersionResponse> {
     Util.validateModel(request);
-    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
     }
 
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.miniAppId)) {
+      query["miniAppId"] = request.miniAppId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2418,7 +2863,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPublisherSummaryResponse>(await this.doROARequest("GetPublisherSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/publisher/${dataId}`, "json", req, runtime), new GetPublisherSummaryResponse({}));
+    return $tea.cast<ListMiniAppHistoryVersionResponse>(await this.doROARequest("ListMiniAppHistoryVersion", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/miniApps/versions/historyLists`, "json", req, runtime), new ListMiniAppHistoryVersionResponse({}));
   }
 
   async getDocCreatedDeptSummary(dataId: string, request: GetDocCreatedDeptSummaryRequest): Promise<GetDocCreatedDeptSummaryResponse> {
@@ -2429,7 +2874,6 @@ export default class Client extends OpenApi {
 
   async getDocCreatedDeptSummaryWithOptions(dataId: string, request: GetDocCreatedDeptSummaryRequest, headers: GetDocCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocCreatedDeptSummaryResponse> {
     Util.validateModel(request);
-    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2453,29 +2897,6 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDocCreatedDeptSummaryResponse>(await this.doROARequest("GetDocCreatedDeptSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/doc/dept/${dataId}`, "json", req, runtime), new GetDocCreatedDeptSummaryResponse({}));
-  }
-
-  async getGeneralFormCreatedSummary(dataId: string): Promise<GetGeneralFormCreatedSummaryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetGeneralFormCreatedSummaryHeaders({ });
-    return await this.getGeneralFormCreatedSummaryWithOptions(dataId, headers, runtime);
-  }
-
-  async getGeneralFormCreatedSummaryWithOptions(dataId: string, headers: GetGeneralFormCreatedSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedSummaryResponse> {
-    dataId = OpenApiUtil.getEncodeParam(dataId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetGeneralFormCreatedSummaryResponse>(await this.doROARequest("GetGeneralFormCreatedSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/generalForm/org/${dataId}`, "json", req, runtime), new GetGeneralFormCreatedSummaryResponse({}));
   }
 
   async createTrustedDevice(request: CreateTrustedDeviceRequest): Promise<CreateTrustedDeviceResponse> {
@@ -2519,62 +2940,6 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTrustedDeviceResponse>(await this.doROARequest("CreateTrustedDevice", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trustedDevices`, "json", req, runtime), new CreateTrustedDeviceResponse({}));
   }
 
-  async getDocCreatedSummary(dataId: string): Promise<GetDocCreatedSummaryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDocCreatedSummaryHeaders({ });
-    return await this.getDocCreatedSummaryWithOptions(dataId, headers, runtime);
-  }
-
-  async getDocCreatedSummaryWithOptions(dataId: string, headers: GetDocCreatedSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocCreatedSummaryResponse> {
-    dataId = OpenApiUtil.getEncodeParam(dataId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetDocCreatedSummaryResponse>(await this.doROARequest("GetDocCreatedSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/doc/org/${dataId}`, "json", req, runtime), new GetDocCreatedSummaryResponse({}));
-  }
-
-  async sendAppDing(request: SendAppDingRequest): Promise<SendAppDingResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendAppDingHeaders({ });
-    return await this.sendAppDingWithOptions(request, headers, runtime);
-  }
-
-  async sendAppDingWithOptions(request: SendAppDingRequest, headers: SendAppDingHeaders, runtime: $Util.RuntimeOptions): Promise<SendAppDingResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userids)) {
-      body["userids"] = request.userids;
-    }
-
-    if (!Util.isUnset(request.content)) {
-      body["content"] = request.content;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<SendAppDingResponse>(await this.doROARequest("SendAppDing", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/appDings/send`, "none", req, runtime), new SendAppDingResponse({}));
-  }
-
   async getPartnerTypeByParentId(parentId: string): Promise<GetPartnerTypeByParentIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPartnerTypeByParentIdHeaders({ });
@@ -2582,7 +2947,6 @@ export default class Client extends OpenApi {
   }
 
   async getPartnerTypeByParentIdWithOptions(parentId: string, headers: GetPartnerTypeByParentIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetPartnerTypeByParentIdResponse> {
-    parentId = OpenApiUtil.getEncodeParam(parentId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2642,7 +3006,6 @@ export default class Client extends OpenApi {
   }
 
   async getActiveUserSummaryWithOptions(dataId: string, headers: GetActiveUserSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetActiveUserSummaryResponse> {
-    dataId = OpenApiUtil.getEncodeParam(dataId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2707,6 +3070,315 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOaOperatorLogListResponse>(await this.doROARequest("GetOaOperatorLogList", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/oaOperatorLogs/query`, "json", req, runtime), new GetOaOperatorLogListResponse({}));
   }
 
+  async rollbackMiniAppVersion(request: RollbackMiniAppVersionRequest): Promise<RollbackMiniAppVersionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RollbackMiniAppVersionHeaders({ });
+    return await this.rollbackMiniAppVersionWithOptions(request, headers, runtime);
+  }
+
+  async rollbackMiniAppVersionWithOptions(request: RollbackMiniAppVersionRequest, headers: RollbackMiniAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<RollbackMiniAppVersionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.rollbackVersion)) {
+      body["rollbackVersion"] = request.rollbackVersion;
+    }
+
+    if (!Util.isUnset(request.targetVersion)) {
+      body["targetVersion"] = request.targetVersion;
+    }
+
+    if (!Util.isUnset(request.miniAppId)) {
+      body["miniAppId"] = request.miniAppId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RollbackMiniAppVersionResponse>(await this.doROARequest("RollbackMiniAppVersion", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/miniApps/versions/rollback`, "json", req, runtime), new RollbackMiniAppVersionResponse({}));
+  }
+
+  async getGeneralFormCreatedDeptSummary(dataId: string, request: GetGeneralFormCreatedDeptSummaryRequest): Promise<GetGeneralFormCreatedDeptSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetGeneralFormCreatedDeptSummaryHeaders({ });
+    return await this.getGeneralFormCreatedDeptSummaryWithOptions(dataId, request, headers, runtime);
+  }
+
+  async getGeneralFormCreatedDeptSummaryWithOptions(dataId: string, request: GetGeneralFormCreatedDeptSummaryRequest, headers: GetGeneralFormCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedDeptSummaryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetGeneralFormCreatedDeptSummaryResponse>(await this.doROARequest("GetGeneralFormCreatedDeptSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/generalForm/dept/${dataId}`, "json", req, runtime), new GetGeneralFormCreatedDeptSummaryResponse({}));
+  }
+
+  async getCalenderSummary(dataId: string): Promise<GetCalenderSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCalenderSummaryHeaders({ });
+    return await this.getCalenderSummaryWithOptions(dataId, headers, runtime);
+  }
+
+  async getCalenderSummaryWithOptions(dataId: string, headers: GetCalenderSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCalenderSummaryResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCalenderSummaryResponse>(await this.doROARequest("GetCalenderSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/calendar/org/${dataId}`, "json", req, runtime), new GetCalenderSummaryResponse({}));
+  }
+
+  async getAllLabelableDepts(): Promise<GetAllLabelableDeptsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAllLabelableDeptsHeaders({ });
+    return await this.getAllLabelableDeptsWithOptions(headers, runtime);
+  }
+
+  async getAllLabelableDeptsWithOptions(headers: GetAllLabelableDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllLabelableDeptsResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetAllLabelableDeptsResponse>(await this.doROARequest("GetAllLabelableDepts", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partnerDepartments`, "json", req, runtime), new GetAllLabelableDeptsResponse({}));
+  }
+
+  async getPublisherSummary(dataId: string, request: GetPublisherSummaryRequest): Promise<GetPublisherSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPublisherSummaryHeaders({ });
+    return await this.getPublisherSummaryWithOptions(dataId, request, headers, runtime);
+  }
+
+  async getPublisherSummaryWithOptions(dataId: string, request: GetPublisherSummaryRequest, headers: GetPublisherSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPublisherSummaryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetPublisherSummaryResponse>(await this.doROARequest("GetPublisherSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/publisher/${dataId}`, "json", req, runtime), new GetPublisherSummaryResponse({}));
+  }
+
+  async updateMiniAppVersionStatus(request: UpdateMiniAppVersionStatusRequest): Promise<UpdateMiniAppVersionStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateMiniAppVersionStatusHeaders({ });
+    return await this.updateMiniAppVersionStatusWithOptions(request, headers, runtime);
+  }
+
+  async updateMiniAppVersionStatusWithOptions(request: UpdateMiniAppVersionStatusRequest, headers: UpdateMiniAppVersionStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMiniAppVersionStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.versionType)) {
+      body["versionType"] = request.versionType;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      body["version"] = request.version;
+    }
+
+    if (!Util.isUnset(request.miniAppId)) {
+      body["miniAppId"] = request.miniAppId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateMiniAppVersionStatusResponse>(await this.doROARequest("UpdateMiniAppVersionStatus", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/miniApps/versions/versionStatus`, "json", req, runtime), new UpdateMiniAppVersionStatusResponse({}));
+  }
+
+  async getGeneralFormCreatedSummary(dataId: string): Promise<GetGeneralFormCreatedSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetGeneralFormCreatedSummaryHeaders({ });
+    return await this.getGeneralFormCreatedSummaryWithOptions(dataId, headers, runtime);
+  }
+
+  async getGeneralFormCreatedSummaryWithOptions(dataId: string, headers: GetGeneralFormCreatedSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedSummaryResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetGeneralFormCreatedSummaryResponse>(await this.doROARequest("GetGeneralFormCreatedSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/generalForm/org/${dataId}`, "json", req, runtime), new GetGeneralFormCreatedSummaryResponse({}));
+  }
+
+  async getDocCreatedSummary(dataId: string): Promise<GetDocCreatedSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDocCreatedSummaryHeaders({ });
+    return await this.getDocCreatedSummaryWithOptions(dataId, headers, runtime);
+  }
+
+  async getDocCreatedSummaryWithOptions(dataId: string, headers: GetDocCreatedSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocCreatedSummaryResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetDocCreatedSummaryResponse>(await this.doROARequest("GetDocCreatedSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/doc/org/${dataId}`, "json", req, runtime), new GetDocCreatedSummaryResponse({}));
+  }
+
+  async sendAppDing(request: SendAppDingRequest): Promise<SendAppDingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendAppDingHeaders({ });
+    return await this.sendAppDingWithOptions(request, headers, runtime);
+  }
+
+  async sendAppDingWithOptions(request: SendAppDingRequest, headers: SendAppDingHeaders, runtime: $Util.RuntimeOptions): Promise<SendAppDingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userids)) {
+      body["userids"] = request.userids;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendAppDingResponse>(await this.doROARequest("SendAppDing", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/appDings/send`, "none", req, runtime), new SendAppDingResponse({}));
+  }
+
   async getDingReportDeptSummary(dataId: string, request: GetDingReportDeptSummaryRequest): Promise<GetDingReportDeptSummaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDingReportDeptSummaryHeaders({ });
@@ -2715,7 +3387,6 @@ export default class Client extends OpenApi {
 
   async getDingReportDeptSummaryWithOptions(dataId: string, request: GetDingReportDeptSummaryRequest, headers: GetDingReportDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingReportDeptSummaryResponse> {
     Util.validateModel(request);
-    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2770,22 +3441,53 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTrustDeviceListResponse>(await this.doROARequest("GetTrustDeviceList", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/trustedDevices/query`, "json", req, runtime), new GetTrustDeviceListResponse({}));
   }
 
-  async getGeneralFormCreatedDeptSummary(dataId: string, request: GetGeneralFormCreatedDeptSummaryRequest): Promise<GetGeneralFormCreatedDeptSummaryResponse> {
+  async listMiniAppAvailableVersion(request: ListMiniAppAvailableVersionRequest): Promise<ListMiniAppAvailableVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetGeneralFormCreatedDeptSummaryHeaders({ });
-    return await this.getGeneralFormCreatedDeptSummaryWithOptions(dataId, request, headers, runtime);
+    let headers = new ListMiniAppAvailableVersionHeaders({ });
+    return await this.listMiniAppAvailableVersionWithOptions(request, headers, runtime);
   }
 
-  async getGeneralFormCreatedDeptSummaryWithOptions(dataId: string, request: GetGeneralFormCreatedDeptSummaryRequest, headers: GetGeneralFormCreatedDeptSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetGeneralFormCreatedDeptSummaryResponse> {
+  async listMiniAppAvailableVersionWithOptions(request: ListMiniAppAvailableVersionRequest, headers: ListMiniAppAvailableVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListMiniAppAvailableVersionResponse> {
     Util.validateModel(request);
-    dataId = OpenApiUtil.getEncodeParam(dataId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.versionTypeSet)) {
+      body["versionTypeSet"] = request.versionTypeSet;
     }
 
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.miniAppId)) {
+      body["miniAppId"] = request.miniAppId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2799,9 +3501,9 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetGeneralFormCreatedDeptSummaryResponse>(await this.doROARequest("GetGeneralFormCreatedDeptSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/generalForm/dept/${dataId}`, "json", req, runtime), new GetGeneralFormCreatedDeptSummaryResponse({}));
+    return $tea.cast<ListMiniAppAvailableVersionResponse>(await this.doROARequest("ListMiniAppAvailableVersion", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/miniApps/versions/availableLists`, "json", req, runtime), new ListMiniAppAvailableVersionResponse({}));
   }
 
   async searchOrgInnerGroupInfo(request: SearchOrgInnerGroupInfoRequest): Promise<SearchOrgInnerGroupInfoResponse> {
@@ -2881,29 +3583,6 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchOrgInnerGroupInfoResponse>(await this.doROARequest("SearchOrgInnerGroupInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/securities/orgGroupInfos`, "json", req, runtime), new SearchOrgInnerGroupInfoResponse({}));
   }
 
-  async getCalenderSummary(dataId: string): Promise<GetCalenderSummaryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCalenderSummaryHeaders({ });
-    return await this.getCalenderSummaryWithOptions(dataId, headers, runtime);
-  }
-
-  async getCalenderSummaryWithOptions(dataId: string, headers: GetCalenderSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCalenderSummaryResponse> {
-    dataId = OpenApiUtil.getEncodeParam(dataId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetCalenderSummaryResponse>(await this.doROARequest("GetCalenderSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/calendar/org/${dataId}`, "json", req, runtime), new GetCalenderSummaryResponse({}));
-  }
-
   async getGroupActiveInfo(request: GetGroupActiveInfoRequest): Promise<GetGroupActiveInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetGroupActiveInfoHeaders({ });
@@ -2953,7 +3632,6 @@ export default class Client extends OpenApi {
 
   async getCommentListWithOptions(publisherId: string, request: GetCommentListRequest, headers: GetCommentListHeaders, runtime: $Util.RuntimeOptions): Promise<GetCommentListResponse> {
     Util.validateModel(request);
-    publisherId = OpenApiUtil.getEncodeParam(publisherId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;

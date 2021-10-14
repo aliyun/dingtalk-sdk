@@ -7,6 +7,555 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class PushCustomerGroupMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushCustomerGroupMessageRequest extends $tea.Model {
+  dingCorpId?: string;
+  conversationId?: string;
+  msgKey?: string;
+  msgParam?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingCorpId: 'dingCorpId',
+      conversationId: 'conversationId',
+      msgKey: 'msgKey',
+      msgParam: 'msgParam',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingCorpId: 'string',
+      conversationId: 'string',
+      msgKey: 'string',
+      msgParam: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushCustomerGroupMessageResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushCustomerGroupMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PushCustomerGroupMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PushCustomerGroupMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingMeBaseDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingMeBaseDataRequest extends $tea.Model {
+  appKey?: string;
+  startDay?: string;
+  endDay?: string;
+  byDay?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      appKey: 'appKey',
+      startDay: 'startDay',
+      endDay: 'endDay',
+      byDay: 'byDay',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appKey: 'string',
+      startDay: 'string',
+      endDay: 'string',
+      byDay: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingMeBaseDataResponseBody extends $tea.Model {
+  fromCache?: boolean;
+  runtime?: number;
+  rawset?: { [key: string]: string }[];
+  tips?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      fromCache: 'fromCache',
+      runtime: 'runtime',
+      rawset: 'rawset',
+      tips: 'tips',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fromCache: 'boolean',
+      runtime: 'number',
+      rawset: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'string' } },
+      tips: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDingMeBaseDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDingMeBaseDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDingMeBaseDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushRobotMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushRobotMessageRequest extends $tea.Model {
+  dingCorpId?: string;
+  chatbotId?: string;
+  userId?: string;
+  msgKey?: string;
+  msgParam?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingCorpId: 'dingCorpId',
+      chatbotId: 'chatbotId',
+      userId: 'userId',
+      msgKey: 'msgKey',
+      msgParam: 'msgParam',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingCorpId: 'string',
+      chatbotId: 'string',
+      userId: 'string',
+      msgKey: 'string',
+      msgParam: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushRobotMessageResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushRobotMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PushRobotMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PushRobotMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushOfficialAccountMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushOfficialAccountMessageRequest extends $tea.Model {
+  dingCorpId?: string;
+  userId?: string;
+  msgKey?: string;
+  msgParam?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingCorpId: 'dingCorpId',
+      userId: 'userId',
+      msgKey: 'msgKey',
+      msgParam: 'msgParam',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingCorpId: 'string',
+      userId: 'string',
+      msgKey: 'string',
+      msgParam: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushOfficialAccountMessageResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushOfficialAccountMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PushOfficialAccountMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PushOfficialAccountMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebChannelUserTokenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebChannelUserTokenRequest extends $tea.Model {
+  source?: number;
+  nick?: string;
+  dingCorpId?: string;
+  foreignId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      source: 'source',
+      nick: 'nick',
+      dingCorpId: 'dingCorpId',
+      foreignId: 'foreignId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      source: 'number',
+      nick: 'string',
+      dingCorpId: 'string',
+      foreignId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebChannelUserTokenResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebChannelUserTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetWebChannelUserTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetWebChannelUserTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetIntelligentRobotInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetIntelligentRobotInfoRequest extends $tea.Model {
+  robotAppKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      robotAppKey: 'robotAppKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotAppKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetIntelligentRobotInfoResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetIntelligentRobotInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetIntelligentRobotInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetIntelligentRobotInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOfficialAccountRobotInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -201,7 +750,7 @@ export class UpdateOfficialAccountRobotInfoResponse extends $tea.Model {
   }
 }
 
-export class PushCustomerGroupMessageHeaders extends $tea.Model {
+export class PushIntelligentRobotMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -223,15 +772,17 @@ export class PushCustomerGroupMessageHeaders extends $tea.Model {
   }
 }
 
-export class PushCustomerGroupMessageRequest extends $tea.Model {
+export class PushIntelligentRobotMessageRequest extends $tea.Model {
   dingCorpId?: string;
-  conversationId?: string;
+  chatbotId?: string;
+  userId?: string;
   msgKey?: string;
   msgParam?: string;
   static names(): { [key: string]: string } {
     return {
       dingCorpId: 'dingCorpId',
-      conversationId: 'conversationId',
+      chatbotId: 'chatbotId',
+      userId: 'userId',
       msgKey: 'msgKey',
       msgParam: 'msgParam',
     };
@@ -240,7 +791,8 @@ export class PushCustomerGroupMessageRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dingCorpId: 'string',
-      conversationId: 'string',
+      chatbotId: 'string',
+      userId: 'string',
       msgKey: 'string',
       msgParam: 'string',
     };
@@ -251,7 +803,7 @@ export class PushCustomerGroupMessageRequest extends $tea.Model {
   }
 }
 
-export class PushCustomerGroupMessageResponseBody extends $tea.Model {
+export class PushIntelligentRobotMessageResponseBody extends $tea.Model {
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -270,9 +822,9 @@ export class PushCustomerGroupMessageResponseBody extends $tea.Model {
   }
 }
 
-export class PushCustomerGroupMessageResponse extends $tea.Model {
+export class PushIntelligentRobotMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: PushCustomerGroupMessageResponseBody;
+  body: PushIntelligentRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -283,7 +835,7 @@ export class PushCustomerGroupMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: PushCustomerGroupMessageResponseBody,
+      body: PushIntelligentRobotMessageResponseBody,
     };
   }
 
@@ -292,20 +844,23 @@ export class PushCustomerGroupMessageResponse extends $tea.Model {
   }
 }
 
-export class GetDingMeBaseDataHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
+export class AddRobotInstanceToGroupRequest extends $tea.Model {
+  dingCorpId?: string;
+  chatbotId?: string;
+  openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+      dingCorpId: 'dingCorpId',
+      chatbotId: 'chatbotId',
+      openConversationId: 'openConversationId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
+      dingCorpId: 'string',
+      chatbotId: 'string',
+      openConversationId: 'string',
     };
   }
 
@@ -314,26 +869,17 @@ export class GetDingMeBaseDataHeaders extends $tea.Model {
   }
 }
 
-export class GetDingMeBaseDataRequest extends $tea.Model {
-  appKey?: string;
-  startDay?: string;
-  endDay?: string;
-  byDay?: boolean;
+export class AddRobotInstanceToGroupResponseBody extends $tea.Model {
+  result?: boolean;
   static names(): { [key: string]: string } {
     return {
-      appKey: 'appKey',
-      startDay: 'startDay',
-      endDay: 'endDay',
-      byDay: 'byDay',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      appKey: 'string',
-      startDay: 'string',
-      endDay: 'string',
-      byDay: 'boolean',
+      result: 'boolean',
     };
   }
 
@@ -342,37 +888,9 @@ export class GetDingMeBaseDataRequest extends $tea.Model {
   }
 }
 
-export class GetDingMeBaseDataResponseBody extends $tea.Model {
-  fromCache?: boolean;
-  runtime?: number;
-  rawset?: { [key: string]: string }[];
-  tips?: { [key: string]: any };
-  static names(): { [key: string]: string } {
-    return {
-      fromCache: 'fromCache',
-      runtime: 'runtime',
-      rawset: 'rawset',
-      tips: 'tips',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fromCache: 'boolean',
-      runtime: 'number',
-      rawset: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'string' } },
-      tips: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetDingMeBaseDataResponse extends $tea.Model {
+export class AddRobotInstanceToGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetDingMeBaseDataResponseBody;
+  body: AddRobotInstanceToGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -383,7 +901,7 @@ export class GetDingMeBaseDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetDingMeBaseDataResponseBody,
+      body: AddRobotInstanceToGroupResponseBody,
     };
   }
 
@@ -420,6 +938,7 @@ export class AskRobotRequest extends $tea.Model {
   robotAppKey?: string;
   sessionUuid?: string;
   dingSuiteKey?: string;
+  dingUserId?: string;
   static names(): { [key: string]: string } {
     return {
       question: 'question',
@@ -427,6 +946,7 @@ export class AskRobotRequest extends $tea.Model {
       robotAppKey: 'robotAppKey',
       sessionUuid: 'sessionUuid',
       dingSuiteKey: 'dingSuiteKey',
+      dingUserId: 'dingUserId',
     };
   }
 
@@ -437,6 +957,7 @@ export class AskRobotRequest extends $tea.Model {
       robotAppKey: 'string',
       sessionUuid: 'string',
       dingSuiteKey: 'string',
+      dingUserId: 'string',
     };
   }
 
@@ -478,191 +999,6 @@ export class AskRobotResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: AskRobotResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushRobotMessageHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushRobotMessageRequest extends $tea.Model {
-  dingCorpId?: string;
-  chatbotId?: string;
-  userId?: string;
-  msgKey?: string;
-  msgParam?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dingCorpId: 'dingCorpId',
-      chatbotId: 'chatbotId',
-      userId: 'userId',
-      msgKey: 'msgKey',
-      msgParam: 'msgParam',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dingCorpId: 'string',
-      chatbotId: 'string',
-      userId: 'string',
-      msgKey: 'string',
-      msgParam: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushRobotMessageResponseBody extends $tea.Model {
-  result?: string;
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushRobotMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: PushRobotMessageResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: PushRobotMessageResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushOfficialAccountMessageHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushOfficialAccountMessageRequest extends $tea.Model {
-  dingCorpId?: string;
-  userId?: string;
-  msgKey?: string;
-  msgParam?: string;
-  static names(): { [key: string]: string } {
-    return {
-      dingCorpId: 'dingCorpId',
-      userId: 'userId',
-      msgKey: 'msgKey',
-      msgParam: 'msgParam',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      dingCorpId: 'string',
-      userId: 'string',
-      msgKey: 'string',
-      msgParam: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushOfficialAccountMessageResponseBody extends $tea.Model {
-  result?: string;
-  static names(): { [key: string]: string } {
-    return {
-      result: 'result',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      result: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PushOfficialAccountMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: PushOfficialAccountMessageResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: PushOfficialAccountMessageResponseBody,
     };
   }
 
@@ -756,7 +1092,7 @@ export class ReplyRobotResponse extends $tea.Model {
   }
 }
 
-export class GetWebChannelUserTokenHeaders extends $tea.Model {
+export class PushIntelligentRobotGroupMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -778,26 +1114,29 @@ export class GetWebChannelUserTokenHeaders extends $tea.Model {
   }
 }
 
-export class GetWebChannelUserTokenRequest extends $tea.Model {
-  source?: number;
-  nick?: string;
+export class PushIntelligentRobotGroupMessageRequest extends $tea.Model {
   dingCorpId?: string;
-  foreignId?: string;
+  chatbotId?: string;
+  openConversationId?: string;
+  msgKey?: string;
+  msgParam?: string;
   static names(): { [key: string]: string } {
     return {
-      source: 'source',
-      nick: 'nick',
       dingCorpId: 'dingCorpId',
-      foreignId: 'foreignId',
+      chatbotId: 'chatbotId',
+      openConversationId: 'openConversationId',
+      msgKey: 'msgKey',
+      msgParam: 'msgParam',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      source: 'number',
-      nick: 'string',
       dingCorpId: 'string',
-      foreignId: 'string',
+      chatbotId: 'string',
+      openConversationId: 'string',
+      msgKey: 'string',
+      msgParam: 'string',
     };
   }
 
@@ -806,7 +1145,7 @@ export class GetWebChannelUserTokenRequest extends $tea.Model {
   }
 }
 
-export class GetWebChannelUserTokenResponseBody extends $tea.Model {
+export class PushIntelligentRobotGroupMessageResponseBody extends $tea.Model {
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -825,9 +1164,9 @@ export class GetWebChannelUserTokenResponseBody extends $tea.Model {
   }
 }
 
-export class GetWebChannelUserTokenResponse extends $tea.Model {
+export class PushIntelligentRobotGroupMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: GetWebChannelUserTokenResponseBody;
+  body: PushIntelligentRobotGroupMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -838,7 +1177,7 @@ export class GetWebChannelUserTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: GetWebChannelUserTokenResponseBody,
+      body: PushIntelligentRobotGroupMessageResponseBody,
     };
   }
 
@@ -859,86 +1198,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getOfficialAccountRobotInfo(request: GetOfficialAccountRobotInfoRequest): Promise<GetOfficialAccountRobotInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOfficialAccountRobotInfoHeaders({ });
-    return await this.getOfficialAccountRobotInfoWithOptions(request, headers, runtime);
-  }
-
-  async getOfficialAccountRobotInfoWithOptions(request: GetOfficialAccountRobotInfoRequest, headers: GetOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountRobotInfoResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.type)) {
-      query["type"] = request.type;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetOfficialAccountRobotInfoResponse>(await this.doROARequest("GetOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/officialAccounts/robots`, "json", req, runtime), new GetOfficialAccountRobotInfoResponse({}));
-  }
-
-  async updateOfficialAccountRobotInfo(request: UpdateOfficialAccountRobotInfoRequest): Promise<UpdateOfficialAccountRobotInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOfficialAccountRobotInfoHeaders({ });
-    return await this.updateOfficialAccountRobotInfoWithOptions(request, headers, runtime);
-  }
-
-  async updateOfficialAccountRobotInfoWithOptions(request: UpdateOfficialAccountRobotInfoRequest, headers: UpdateOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOfficialAccountRobotInfoResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.type)) {
-      query["type"] = request.type;
-    }
-
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.name)) {
-      body["name"] = request.name;
-    }
-
-    if (!Util.isUnset(request.avatar)) {
-      body["avatar"] = request.avatar;
-    }
-
-    if (!Util.isUnset(request.brief)) {
-      body["brief"] = request.brief;
-    }
-
-    if (!Util.isUnset(request.description)) {
-      body["description"] = request.description;
-    }
-
-    if (!Util.isUnset(request.previewMediaUrl)) {
-      body["previewMediaUrl"] = request.previewMediaUrl;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UpdateOfficialAccountRobotInfoResponse>(await this.doROARequest("UpdateOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "PUT", "AK", `/v1.0/dingmi/officialAccounts/robots`, "json", req, runtime), new UpdateOfficialAccountRobotInfoResponse({}));
-  }
 
   async pushCustomerGroupMessage(request: PushCustomerGroupMessageRequest): Promise<PushCustomerGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1020,51 +1279,6 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDingMeBaseDataResponse>(await this.doROARequest("GetDingMeBaseData", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/robots/data`, "json", req, runtime), new GetDingMeBaseDataResponse({}));
-  }
-
-  async askRobot(request: AskRobotRequest): Promise<AskRobotResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AskRobotHeaders({ });
-    return await this.askRobotWithOptions(request, headers, runtime);
-  }
-
-  async askRobotWithOptions(request: AskRobotRequest, headers: AskRobotHeaders, runtime: $Util.RuntimeOptions): Promise<AskRobotResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.question)) {
-      body["question"] = request.question;
-    }
-
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.robotAppKey)) {
-      body["robotAppKey"] = request.robotAppKey;
-    }
-
-    if (!Util.isUnset(request.sessionUuid)) {
-      body["sessionUuid"] = request.sessionUuid;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AskRobotResponse>(await this.doROARequest("AskRobot", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/ask`, "json", req, runtime), new AskRobotResponse({}));
   }
 
   async pushRobotMessage(request: PushRobotMessageRequest): Promise<PushRobotMessageResponse> {
@@ -1153,39 +1367,6 @@ export default class Client extends OpenApi {
     return $tea.cast<PushOfficialAccountMessageResponse>(await this.doROARequest("PushOfficialAccountMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/officialAccounts/robots/oToMessages/send`, "json", req, runtime), new PushOfficialAccountMessageResponse({}));
   }
 
-  async replyRobot(request: ReplyRobotRequest): Promise<ReplyRobotResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReplyRobotHeaders({ });
-    return await this.replyRobotWithOptions(request, headers, runtime);
-  }
-
-  async replyRobotWithOptions(request: ReplyRobotRequest, headers: ReplyRobotHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyRobotResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingCorpId)) {
-      body["dingCorpId"] = request.dingCorpId;
-    }
-
-    if (!Util.isUnset(request.proxyMessageStr)) {
-      body["proxyMessageStr"] = request.proxyMessageStr;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<ReplyRobotResponse>(await this.doROARequest("ReplyRobot", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/reply`, "json", req, runtime), new ReplyRobotResponse({}));
-  }
-
   async getWebChannelUserToken(request: GetWebChannelUserTokenRequest): Promise<GetWebChannelUserTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWebChannelUserTokenHeaders({ });
@@ -1225,6 +1406,315 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetWebChannelUserTokenResponse>(await this.doROARequest("GetWebChannelUserToken", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/webChannels/userTokens`, "json", req, runtime), new GetWebChannelUserTokenResponse({}));
+  }
+
+  async getIntelligentRobotInfo(request: GetIntelligentRobotInfoRequest): Promise<GetIntelligentRobotInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetIntelligentRobotInfoHeaders({ });
+    return await this.getIntelligentRobotInfoWithOptions(request, headers, runtime);
+  }
+
+  async getIntelligentRobotInfoWithOptions(request: GetIntelligentRobotInfoRequest, headers: GetIntelligentRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntelligentRobotInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotAppKey)) {
+      query["robotAppKey"] = request.robotAppKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetIntelligentRobotInfoResponse>(await this.doROARequest("GetIntelligentRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/intelligentRobots/infos`, "json", req, runtime), new GetIntelligentRobotInfoResponse({}));
+  }
+
+  async getOfficialAccountRobotInfo(request: GetOfficialAccountRobotInfoRequest): Promise<GetOfficialAccountRobotInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOfficialAccountRobotInfoHeaders({ });
+    return await this.getOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+  }
+
+  async getOfficialAccountRobotInfoWithOptions(request: GetOfficialAccountRobotInfoRequest, headers: GetOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountRobotInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOfficialAccountRobotInfoResponse>(await this.doROARequest("GetOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/officialAccounts/robots`, "json", req, runtime), new GetOfficialAccountRobotInfoResponse({}));
+  }
+
+  async updateOfficialAccountRobotInfo(request: UpdateOfficialAccountRobotInfoRequest): Promise<UpdateOfficialAccountRobotInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOfficialAccountRobotInfoHeaders({ });
+    return await this.updateOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+  }
+
+  async updateOfficialAccountRobotInfoWithOptions(request: UpdateOfficialAccountRobotInfoRequest, headers: UpdateOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOfficialAccountRobotInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.avatar)) {
+      body["avatar"] = request.avatar;
+    }
+
+    if (!Util.isUnset(request.brief)) {
+      body["brief"] = request.brief;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.previewMediaUrl)) {
+      body["previewMediaUrl"] = request.previewMediaUrl;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateOfficialAccountRobotInfoResponse>(await this.doROARequest("UpdateOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "PUT", "AK", `/v1.0/dingmi/officialAccounts/robots`, "json", req, runtime), new UpdateOfficialAccountRobotInfoResponse({}));
+  }
+
+  async pushIntelligentRobotMessage(request: PushIntelligentRobotMessageRequest): Promise<PushIntelligentRobotMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushIntelligentRobotMessageHeaders({ });
+    return await this.pushIntelligentRobotMessageWithOptions(request, headers, runtime);
+  }
+
+  async pushIntelligentRobotMessageWithOptions(request: PushIntelligentRobotMessageRequest, headers: PushIntelligentRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.chatbotId)) {
+      body["chatbotId"] = request.chatbotId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.msgKey)) {
+      body["msgKey"] = request.msgKey;
+    }
+
+    if (!Util.isUnset(request.msgParam)) {
+      body["msgParam"] = request.msgParam;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PushIntelligentRobotMessageResponse>(await this.doROARequest("PushIntelligentRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/oToMessages/send`, "json", req, runtime), new PushIntelligentRobotMessageResponse({}));
+  }
+
+  async addRobotInstanceToGroup(request: AddRobotInstanceToGroupRequest): Promise<AddRobotInstanceToGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.addRobotInstanceToGroupWithOptions(request, headers, runtime);
+  }
+
+  async addRobotInstanceToGroupWithOptions(request: AddRobotInstanceToGroupRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AddRobotInstanceToGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.chatbotId)) {
+      body["chatbotId"] = request.chatbotId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddRobotInstanceToGroupResponse>(await this.doROARequest("AddRobotInstanceToGroup", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/groups`, "json", req, runtime), new AddRobotInstanceToGroupResponse({}));
+  }
+
+  async askRobot(request: AskRobotRequest): Promise<AskRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AskRobotHeaders({ });
+    return await this.askRobotWithOptions(request, headers, runtime);
+  }
+
+  async askRobotWithOptions(request: AskRobotRequest, headers: AskRobotHeaders, runtime: $Util.RuntimeOptions): Promise<AskRobotResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.question)) {
+      body["question"] = request.question;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.robotAppKey)) {
+      body["robotAppKey"] = request.robotAppKey;
+    }
+
+    if (!Util.isUnset(request.sessionUuid)) {
+      body["sessionUuid"] = request.sessionUuid;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingUserId)) {
+      body["dingUserId"] = request.dingUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AskRobotResponse>(await this.doROARequest("AskRobot", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/ask`, "json", req, runtime), new AskRobotResponse({}));
+  }
+
+  async replyRobot(request: ReplyRobotRequest): Promise<ReplyRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReplyRobotHeaders({ });
+    return await this.replyRobotWithOptions(request, headers, runtime);
+  }
+
+  async replyRobotWithOptions(request: ReplyRobotRequest, headers: ReplyRobotHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyRobotResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.proxyMessageStr)) {
+      body["proxyMessageStr"] = request.proxyMessageStr;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ReplyRobotResponse>(await this.doROARequest("ReplyRobot", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/reply`, "json", req, runtime), new ReplyRobotResponse({}));
+  }
+
+  async pushIntelligentRobotGroupMessage(request: PushIntelligentRobotGroupMessageRequest): Promise<PushIntelligentRobotGroupMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushIntelligentRobotGroupMessageHeaders({ });
+    return await this.pushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
+  }
+
+  async pushIntelligentRobotGroupMessageWithOptions(request: PushIntelligentRobotGroupMessageRequest, headers: PushIntelligentRobotGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotGroupMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.chatbotId)) {
+      body["chatbotId"] = request.chatbotId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.msgKey)) {
+      body["msgKey"] = request.msgKey;
+    }
+
+    if (!Util.isUnset(request.msgParam)) {
+      body["msgParam"] = request.msgParam;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PushIntelligentRobotGroupMessageResponse>(await this.doROARequest("PushIntelligentRobotGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/groupMessages/send`, "json", req, runtime), new PushIntelligentRobotGroupMessageResponse({}));
   }
 
 }

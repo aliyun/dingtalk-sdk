@@ -4481,7 +4481,6 @@ export default class Client extends OpenApi {
 
   async initCoursesOfClassWithOptions(classId: string, request: InitCoursesOfClassRequest, headers: InitCoursesOfClassHeaders, runtime: $Util.RuntimeOptions): Promise<InitCoursesOfClassResponse> {
     Util.validateModel(request);
-    classId = OpenApiUtil.getEncodeParam(classId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       query["opUserId"] = request.opUserId;
@@ -4521,7 +4520,6 @@ export default class Client extends OpenApi {
 
   async deleteDeptWithOptions(deptId: string, request: DeleteDeptRequest, headers: DeleteDeptHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDeptResponse> {
     Util.validateModel(request);
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operator)) {
       query["operator"] = request.operator;
@@ -4551,8 +4549,6 @@ export default class Client extends OpenApi {
 
   async deleteGuardianWithOptions(classId: string, userId: string, request: DeleteGuardianRequest, headers: DeleteGuardianHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteGuardianResponse> {
     Util.validateModel(request);
-    classId = OpenApiUtil.getEncodeParam(classId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.stuId)) {
       query["stuId"] = request.stuId;
@@ -4633,8 +4629,6 @@ export default class Client extends OpenApi {
 
   async deleteTeacherWithOptions(classId: string, userId: string, request: DeleteTeacherRequest, headers: DeleteTeacherHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeacherResponse> {
     Util.validateModel(request);
-    classId = OpenApiUtil.getEncodeParam(classId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.adviser)) {
       query["adviser"] = request.adviser;
@@ -4833,7 +4827,6 @@ export default class Client extends OpenApi {
   }
 
   async getOpenCourseDetailWithOptions(courseId: string, headers: GetOpenCourseDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetOpenCourseDetailResponse> {
-    courseId = OpenApiUtil.getEncodeParam(courseId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -4857,8 +4850,6 @@ export default class Client extends OpenApi {
 
   async deleteStudentWithOptions(classId: string, userId: string, request: DeleteStudentRequest, headers: DeleteStudentHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteStudentResponse> {
     Util.validateModel(request);
-    classId = OpenApiUtil.getEncodeParam(classId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operator)) {
       query["operator"] = request.operator;
@@ -4925,7 +4916,6 @@ export default class Client extends OpenApi {
 
   async updateCoursesOfClassWithOptions(classId: string, request: UpdateCoursesOfClassRequest, headers: UpdateCoursesOfClassHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCoursesOfClassResponse> {
     Util.validateModel(request);
-    classId = OpenApiUtil.getEncodeParam(classId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       query["opUserId"] = request.opUserId;
@@ -5219,7 +5209,6 @@ export default class Client extends OpenApi {
   }
 
   async getShareRoleMembersWithOptions(shareRoleCode: string, headers: GetShareRoleMembersHeaders, runtime: $Util.RuntimeOptions): Promise<GetShareRoleMembersResponse> {
-    shareRoleCode = OpenApiUtil.getEncodeParam(shareRoleCode);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

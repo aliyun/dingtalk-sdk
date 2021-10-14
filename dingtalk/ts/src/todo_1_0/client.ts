@@ -2189,8 +2189,6 @@ export default class Client extends OpenApi {
   }
 
   async getTodoTaskDetailWithOptions(taskId: string, unionId: string, headers: GetTodoTaskDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskDetailResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2213,8 +2211,6 @@ export default class Client extends OpenApi {
   }
 
   async getTodoTaskWithOptions(unionId: string, taskId: string, headers: GetTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2237,8 +2233,6 @@ export default class Client extends OpenApi {
   }
 
   async getTodoTaskBySourceIdWithOptions(unionId: string, sourceId: string, headers: GetTodoTaskBySourceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskBySourceIdResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    sourceId = OpenApiUtil.getEncodeParam(sourceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2262,7 +2256,6 @@ export default class Client extends OpenApi {
 
   async countTodoTasksWithOptions(unionId: string, request: CountTodoTasksRequest, headers: CountTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<CountTodoTasksResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.isDone)) {
       body["isDone"] = request.isDone;
@@ -2312,7 +2305,6 @@ export default class Client extends OpenApi {
 
   async queryOrgTodoTasksWithOptions(unionId: string, request: QueryOrgTodoTasksRequest, headers: QueryOrgTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoTasksResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       body["nextToken"] = request.nextToken;
@@ -2346,7 +2338,6 @@ export default class Client extends OpenApi {
 
   async createTodoTaskWithOptions(unionId: string, request: CreateTodoTaskRequest, headers: CreateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTaskResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2421,8 +2412,6 @@ export default class Client extends OpenApi {
   }
 
   async getTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    cardTypeId = OpenApiUtil.getEncodeParam(cardTypeId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2446,7 +2435,6 @@ export default class Client extends OpenApi {
 
   async queryTodoTasksWithOptions(unionId: string, request: QueryTodoTasksRequest, headers: QueryTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoTasksResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       body["nextToken"] = request.nextToken;
@@ -2508,8 +2496,6 @@ export default class Client extends OpenApi {
 
   async updateTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest, headers: UpdateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTypeConfigResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    cardTypeId = OpenApiUtil.getEncodeParam(cardTypeId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2565,8 +2551,6 @@ export default class Client extends OpenApi {
 
   async deleteTodoTaskWithOptions(unionId: string, taskId: string, request: DeleteTodoTaskRequest, headers: DeleteTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTodoTaskResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2596,8 +2580,6 @@ export default class Client extends OpenApi {
 
   async updateTodoTaskExecutorStatusWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest, headers: UpdateTodoTaskExecutorStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskExecutorStatusResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2633,7 +2615,6 @@ export default class Client extends OpenApi {
 
   async createTodoTypeConfigWithOptions(unionId: string, request: CreateTodoTypeConfigRequest, headers: CreateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTypeConfigResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2689,8 +2670,6 @@ export default class Client extends OpenApi {
 
   async updateTodoTaskWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskRequest, headers: UpdateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;

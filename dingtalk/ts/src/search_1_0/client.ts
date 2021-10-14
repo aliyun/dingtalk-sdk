@@ -500,7 +500,6 @@ export default class Client extends OpenApi {
   }
 
   async getSearchTabWithOptions(tabId: string, headers: GetSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchTabResponse> {
-    tabId = OpenApiUtil.getEncodeParam(tabId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -523,8 +522,6 @@ export default class Client extends OpenApi {
   }
 
   async getSearchItemWithOptions(tabId: string, itemId: string, headers: GetSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchItemResponse> {
-    tabId = OpenApiUtil.getEncodeParam(tabId);
-    itemId = OpenApiUtil.getEncodeParam(itemId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -547,8 +544,6 @@ export default class Client extends OpenApi {
   }
 
   async deleteSearchItemWithOptions(tabId: string, itemId: string, headers: DeleteSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSearchItemResponse> {
-    tabId = OpenApiUtil.getEncodeParam(tabId);
-    itemId = OpenApiUtil.getEncodeParam(itemId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -572,7 +567,6 @@ export default class Client extends OpenApi {
 
   async insertSearchItemWithOptions(tabId: string, request: InsertSearchItemRequest, headers: InsertSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<InsertSearchItemResponse> {
     Util.validateModel(request);
-    tabId = OpenApiUtil.getEncodeParam(tabId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.itemId)) {
       body["itemId"] = request.itemId;
@@ -658,7 +652,6 @@ export default class Client extends OpenApi {
   }
 
   async deleteSearchTabWithOptions(tabId: string, headers: DeleteSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSearchTabResponse> {
-    tabId = OpenApiUtil.getEncodeParam(tabId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -682,7 +675,6 @@ export default class Client extends OpenApi {
 
   async updateSearchTabWithOptions(tabId: string, request: UpdateSearchTabRequest, headers: UpdateSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSearchTabResponse> {
     Util.validateModel(request);
-    tabId = OpenApiUtil.getEncodeParam(tabId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;

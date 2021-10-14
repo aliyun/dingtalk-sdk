@@ -1220,7 +1220,6 @@ export default class Client extends OpenApi {
 
   async queryCloudRecordTextWithOptions(conferenceId: string, request: QueryCloudRecordTextRequest, headers: QueryCloudRecordTextHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordTextResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -1303,7 +1302,6 @@ export default class Client extends OpenApi {
 
   async queryCloudRecordVideoPlayInfoWithOptions(conferenceId: string, request: QueryCloudRecordVideoPlayInfoRequest, headers: QueryCloudRecordVideoPlayInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordVideoPlayInfoResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -1370,7 +1368,6 @@ export default class Client extends OpenApi {
 
   async stopCloudRecordWithOptions(conferenceId: string, request: StopCloudRecordRequest, headers: StopCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudRecordResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       body["unionId"] = request.unionId;
@@ -1399,7 +1396,6 @@ export default class Client extends OpenApi {
   }
 
   async updateVideoConferenceExtInfoWithOptions(conferenceId: string, headers: UpdateVideoConferenceExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceExtInfoResponse> {
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1423,7 +1419,6 @@ export default class Client extends OpenApi {
 
   async closeVideoConferenceWithOptions(conferenceId: string, request: CloseVideoConferenceRequest, headers: CloseVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseVideoConferenceResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -1453,7 +1448,6 @@ export default class Client extends OpenApi {
 
   async stopStreamOutWithOptions(conferenceId: string, request: StopStreamOutRequest, headers: StopStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StopStreamOutResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.streamId)) {
       body["streamId"] = request.streamId;
@@ -1491,7 +1485,6 @@ export default class Client extends OpenApi {
 
   async startCloudRecordWithOptions(conferenceId: string, request: StartCloudRecordRequest, headers: StartCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudRecordResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       body["unionId"] = request.unionId;
@@ -1529,7 +1522,6 @@ export default class Client extends OpenApi {
 
   async startStreamOutWithOptions(conferenceId: string, request: StartStreamOutRequest, headers: StartStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StartStreamOutResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       body["unionId"] = request.unionId;
@@ -1579,7 +1571,6 @@ export default class Client extends OpenApi {
 
   async queryCloudRecordVideoWithOptions(conferenceId: string, request: QueryCloudRecordVideoRequest, headers: QueryCloudRecordVideoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordVideoResponse> {
     Util.validateModel(request);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;

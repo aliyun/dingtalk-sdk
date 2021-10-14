@@ -4,7 +4,6 @@
  */
 import Util, * as $Util from '@alicloud/tea-util';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
-import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class SendInteractiveCardHeaders extends $tea.Model {
@@ -247,7 +246,6 @@ export default class Client extends OpenApi {
   }
 
   async sendInteractiveCardWithOptions(userId: string, headers: SendInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveCardResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -270,7 +268,6 @@ export default class Client extends OpenApi {
   }
 
   async updateInteractiveCardWithOptions(userId: string, headers: UpdateInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveCardResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -293,7 +290,6 @@ export default class Client extends OpenApi {
   }
 
   async sendSingleInteractiveCardWithOptions(userId: string, headers: SendSingleInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendSingleInteractiveCardResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -316,8 +312,6 @@ export default class Client extends OpenApi {
   }
 
   async addAttendeeToEventGroupWithOptions(userId: string, groupId: string, headers: AddAttendeeToEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeToEventGroupResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -340,7 +334,6 @@ export default class Client extends OpenApi {
   }
 
   async createEventGroupWithOptions(userId: string, headers: CreateEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventGroupResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

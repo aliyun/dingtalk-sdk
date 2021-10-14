@@ -477,7 +477,6 @@ export default class Client extends OpenApi {
 
   async pullDataByPkWithOptions(dataModelId: string, request: PullDataByPkRequest, headers: PullDataByPkHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPkResponse> {
     Util.validateModel(request);
-    dataModelId = OpenApiUtil.getEncodeParam(dataModelId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.primaryKey)) {
       query["primaryKey"] = request.primaryKey;

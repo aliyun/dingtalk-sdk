@@ -1396,7 +1396,6 @@ export default class Client extends OpenApi {
 
   async finishBeginnerTaskWithOptions(taskCode: string, request: FinishBeginnerTaskRequest, headers: FinishBeginnerTaskHeaders, runtime: $Util.RuntimeOptions): Promise<FinishBeginnerTaskResponse> {
     Util.validateModel(request);
-    taskCode = OpenApiUtil.getEncodeParam(taskCode);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -1430,7 +1429,6 @@ export default class Client extends OpenApi {
 
   async getApplicationRegFormByFlowIdWithOptions(flowId: string, request: GetApplicationRegFormByFlowIdRequest, headers: GetApplicationRegFormByFlowIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplicationRegFormByFlowIdResponse> {
     Util.validateModel(request);
-    flowId = OpenApiUtil.getEncodeParam(flowId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -1460,7 +1458,6 @@ export default class Client extends OpenApi {
 
   async updateApplicationRegFormWithOptions(flowId: string, request: UpdateApplicationRegFormRequest, headers: UpdateApplicationRegFormHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApplicationRegFormResponse> {
     Util.validateModel(request);
-    flowId = OpenApiUtil.getEncodeParam(flowId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -1533,7 +1530,6 @@ export default class Client extends OpenApi {
 
   async updateInterviewSignInInfoWithOptions(interviewId: string, request: UpdateInterviewSignInInfoRequest, headers: UpdateInterviewSignInInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInterviewSignInInfoResponse> {
     Util.validateModel(request);
-    interviewId = OpenApiUtil.getEncodeParam(interviewId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -1569,7 +1565,6 @@ export default class Client extends OpenApi {
 
   async getJobAuthWithOptions(jobId: string, request: GetJobAuthRequest, headers: GetJobAuthHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobAuthResponse> {
     Util.validateModel(request);
-    jobId = OpenApiUtil.getEncodeParam(jobId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       query["opUserId"] = request.opUserId;

@@ -1360,7 +1360,6 @@ export default class Client extends OpenApi {
   }
 
   async getSettingByMiniAppIdWithOptions(miniAppId: string, headers: GetSettingByMiniAppIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSettingByMiniAppIdResponse> {
-    miniAppId = OpenApiUtil.getEncodeParam(miniAppId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

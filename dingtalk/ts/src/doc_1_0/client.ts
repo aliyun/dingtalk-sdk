@@ -847,7 +847,6 @@ export default class Client extends OpenApi {
 
   async deleteWorkspaceMembersWithOptions(workspaceId: string, request: DeleteWorkspaceMembersRequest, headers: DeleteWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -881,8 +880,6 @@ export default class Client extends OpenApi {
 
   async addWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest, headers: AddWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceDocMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -916,7 +913,6 @@ export default class Client extends OpenApi {
 
   async updateWorkspaceMembersWithOptions(workspaceId: string, request: UpdateWorkspaceMembersRequest, headers: UpdateWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -950,8 +946,6 @@ export default class Client extends OpenApi {
 
   async updateWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest, headers: UpdateWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceDocMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -985,7 +979,6 @@ export default class Client extends OpenApi {
 
   async createWorkspaceDocWithOptions(workspaceId: string, request: CreateWorkspaceDocRequest, headers: CreateWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkspaceDocResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
@@ -1023,7 +1016,6 @@ export default class Client extends OpenApi {
 
   async addWorkspaceMembersWithOptions(workspaceId: string, request: AddWorkspaceMembersRequest, headers: AddWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -1110,8 +1102,6 @@ export default class Client extends OpenApi {
 
   async deleteWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest, headers: DeleteWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -1144,7 +1134,6 @@ export default class Client extends OpenApi {
   }
 
   async getWorkspaceWithOptions(workspaceId: string, headers: GetWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceResponse> {
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

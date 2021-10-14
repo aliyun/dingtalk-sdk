@@ -2637,7 +2637,6 @@ export default class Client extends OpenApi {
 
   async addFileWithOptions(spaceId: string, request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.parentId)) {
       body["parentId"] = request.parentId;
@@ -2794,8 +2793,6 @@ export default class Client extends OpenApi {
 
   async addPermissionWithOptions(spaceId: string, fileId: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.role)) {
       body["role"] = request.role;
@@ -2833,8 +2830,6 @@ export default class Client extends OpenApi {
 
   async getFileInfoWithOptions(spaceId: string, fileId: string, request: GetFileInfoRequest, headers: GetFileInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -2864,7 +2859,6 @@ export default class Client extends OpenApi {
 
   async infoSpaceWithOptions(spaceId: string, request: InfoSpaceRequest, headers: InfoSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<InfoSpaceResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -2939,8 +2933,6 @@ export default class Client extends OpenApi {
 
   async renameFileWithOptions(spaceId: string, fileId: string, request: RenameFileRequest, headers: RenameFileHeaders, runtime: $Util.RuntimeOptions): Promise<RenameFileResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.newFileName)) {
       body["newFileName"] = request.newFileName;
@@ -2974,7 +2966,6 @@ export default class Client extends OpenApi {
 
   async getAsyncTaskInfoWithOptions(taskId: string, request: GetAsyncTaskInfoRequest, headers: GetAsyncTaskInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAsyncTaskInfoResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -3004,7 +2995,6 @@ export default class Client extends OpenApi {
 
   async listFilesWithOptions(spaceId: string, request: ListFilesRequest, headers: ListFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFilesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -3050,8 +3040,6 @@ export default class Client extends OpenApi {
 
   async modifyPermissionWithOptions(spaceId: string, fileId: string, request: ModifyPermissionRequest, headers: ModifyPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyPermissionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.role)) {
       body["role"] = request.role;
@@ -3089,8 +3077,6 @@ export default class Client extends OpenApi {
 
   async listPermissionsWithOptions(spaceId: string, fileId: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -3120,7 +3106,6 @@ export default class Client extends OpenApi {
 
   async grantPrivilegeOfCustomSpaceWithOptions(spaceId: string, request: GrantPrivilegeOfCustomSpaceRequest, headers: GrantPrivilegeOfCustomSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GrantPrivilegeOfCustomSpaceResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.type)) {
       body["type"] = request.type;
@@ -3166,8 +3151,6 @@ export default class Client extends OpenApi {
 
   async moveFileWithOptions(spaceId: string, fileId: string, request: MoveFileRequest, headers: MoveFileHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFileResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.targetSpaceId)) {
       body["targetSpaceId"] = request.targetSpaceId;
@@ -3209,8 +3192,6 @@ export default class Client extends OpenApi {
 
   async getDownloadInfoWithOptions(spaceId: string, fileId: string, request: GetDownloadInfoRequest, headers: GetDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDownloadInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -3240,8 +3221,6 @@ export default class Client extends OpenApi {
 
   async getUploadInfoWithOptions(spaceId: string, parentId: string, request: GetUploadInfoRequest, headers: GetUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    parentId = OpenApiUtil.getEncodeParam(parentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -3332,8 +3311,6 @@ export default class Client extends OpenApi {
 
   async deletePermissionWithOptions(spaceId: string, fileId: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.role)) {
       body["role"] = request.role;
@@ -3412,8 +3389,6 @@ export default class Client extends OpenApi {
 
   async copyFileWithOptions(spaceId: string, fileId: string, request: CopyFileRequest, headers: CopyFileHeaders, runtime: $Util.RuntimeOptions): Promise<CopyFileResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.targetSpaceId)) {
       body["targetSpaceId"] = request.targetSpaceId;
@@ -3455,7 +3430,6 @@ export default class Client extends OpenApi {
 
   async deleteSpaceWithOptions(spaceId: string, request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -3518,8 +3492,6 @@ export default class Client extends OpenApi {
 
   async deleteFileWithOptions(spaceId: string, fileId: string, request: DeleteFileRequest, headers: DeleteFileHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFileResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;

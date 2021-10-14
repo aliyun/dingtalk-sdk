@@ -2309,7 +2309,6 @@ export default class Client extends OpenApi {
   }
 
   async queryUserInfoWithOptions(userId: string, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2333,7 +2332,6 @@ export default class Client extends OpenApi {
 
   async queryAllMemberByDeptWithOptions(deptId: string, request: QueryAllMemberByDeptRequest, headers: QueryAllMemberByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByDeptResponse> {
     Util.validateModel(request);
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
@@ -2367,7 +2365,6 @@ export default class Client extends OpenApi {
 
   async queryAllMemberByGroupWithOptions(groupId: string, request: QueryAllMemberByGroupRequest, headers: QueryAllMemberByGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByGroupResponse> {
     Util.validateModel(request);
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
@@ -2400,7 +2397,6 @@ export default class Client extends OpenApi {
   }
 
   async queryUserRolesWithOptions(userId: string, headers: QueryUserRolesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRolesResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2457,7 +2453,6 @@ export default class Client extends OpenApi {
 
   async queryAllGroupsInDeptWithOptions(deptId: string, request: QueryAllGroupsInDeptRequest, headers: QueryAllGroupsInDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupsInDeptResponse> {
     Util.validateModel(request);
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
@@ -2567,7 +2562,6 @@ export default class Client extends OpenApi {
   }
 
   async queryDepartmentInfoWithOptions(deptId: string, headers: QueryDepartmentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDepartmentInfoResponse> {
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2591,7 +2585,6 @@ export default class Client extends OpenApi {
 
   async updateUserExtendInfoWithOptions(userId: string, request: UpdateUserExtendInfoRequest, headers: UpdateUserExtendInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserExtendInfoResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.jobCode)) {
       body["jobCode"] = request.jobCode;
@@ -2665,7 +2658,6 @@ export default class Client extends OpenApi {
   }
 
   async queryUserExtInfoWithOptions(userId: string, headers: QueryUserExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtInfoResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2743,7 +2735,6 @@ export default class Client extends OpenApi {
   }
 
   async queryGroupInfoWithOptions(groupId: string, headers: QueryGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupInfoResponse> {
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

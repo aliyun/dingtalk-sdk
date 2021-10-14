@@ -871,7 +871,6 @@ export default class Client extends OpenApi {
 
   async getFeedWithOptions(feedId: string, request: GetFeedRequest, headers: GetFeedHeaders, runtime: $Util.RuntimeOptions): Promise<GetFeedResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.mcnId)) {
       query["mcnId"] = request.mcnId;
@@ -976,7 +975,6 @@ export default class Client extends OpenApi {
 
   async listItemUserDataWithOptions(itemId: string, request: ListItemUserDataRequest, headers: ListItemUserDataHeaders, runtime: $Util.RuntimeOptions): Promise<ListItemUserDataResponse> {
     Util.validateModel(request);
-    itemId = OpenApiUtil.getEncodeParam(itemId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

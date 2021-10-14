@@ -1522,7 +1522,6 @@ export default class Client extends OpenApi {
   }
 
   async getMachineWithOptions(devId: string, headers: GetMachineHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineResponse> {
-    devId = OpenApiUtil.getEncodeParam(devId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1546,7 +1545,6 @@ export default class Client extends OpenApi {
 
   async getMachineUserWithOptions(devId: string, request: GetMachineUserRequest, headers: GetMachineUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineUserResponse> {
     Util.validateModel(request);
-    devId = OpenApiUtil.getEncodeParam(devId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;

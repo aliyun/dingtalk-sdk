@@ -1996,7 +1996,6 @@ export default class Client extends OpenApi {
 
   async getInnerAppWithOptions(agentId: string, request: GetInnerAppRequest, headers: GetInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetInnerAppResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       query["opUnionId"] = request.opUnionId;
@@ -2030,7 +2029,6 @@ export default class Client extends OpenApi {
 
   async registerCustomAppRoleWithOptions(agentId: string, request: RegisterCustomAppRoleRequest, headers: RegisterCustomAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCustomAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;
@@ -2113,7 +2111,6 @@ export default class Client extends OpenApi {
 
   async addAppRolesToMemberWithOptions(agentId: string, request: AddAppRolesToMemberRequest, headers: AddAppRolesToMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddAppRolesToMemberResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;
@@ -2154,8 +2151,6 @@ export default class Client extends OpenApi {
   }
 
   async getAppRoleScopeByRoleIdWithOptions(agentId: string, roleId: string, headers: GetAppRoleScopeByRoleIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppRoleScopeByRoleIdResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2178,8 +2173,6 @@ export default class Client extends OpenApi {
   }
 
   async listRoleInfoByUserWithOptions(agentId: string, userId: string, headers: ListRoleInfoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListRoleInfoByUserResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2232,8 +2225,6 @@ export default class Client extends OpenApi {
 
   async removeMemberForAppRoleWithOptions(agentId: string, roleId: string, request: RemoveMemberForAppRoleRequest, headers: RemoveMemberForAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMemberForAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;
@@ -2275,7 +2266,6 @@ export default class Client extends OpenApi {
 
   async updateInnerAppWithOptions(agentId: string, request: UpdateInnerAppRequest, headers: UpdateInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInnerAppResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       body["opUnionId"] = request.opUnionId;
@@ -2337,8 +2327,6 @@ export default class Client extends OpenApi {
 
   async addMemberToAppRoleWithOptions(agentId: string, roleId: string, request: AddMemberToAppRoleRequest, headers: AddMemberToAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<AddMemberToAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;
@@ -2380,7 +2368,6 @@ export default class Client extends OpenApi {
 
   async listAppRoleScopesWithOptions(agentId: string, request: ListAppRoleScopesRequest, headers: ListAppRoleScopesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAppRoleScopesResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -2414,7 +2401,6 @@ export default class Client extends OpenApi {
 
   async addAppToWorkBenchGroupWithOptions(agentId: string, request: AddAppToWorkBenchGroupRequest, headers: AddAppToWorkBenchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddAppToWorkBenchGroupResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       body["opUnionId"] = request.opUnionId;
@@ -2452,8 +2438,6 @@ export default class Client extends OpenApi {
 
   async rebuildRoleScopeForAppRoleWithOptions(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest, headers: RebuildRoleScopeForAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RebuildRoleScopeForAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;
@@ -2532,8 +2516,6 @@ export default class Client extends OpenApi {
 
   async deleteAppRoleWithOptions(agentId: string, roleId: string, request: DeleteAppRoleRequest, headers: DeleteAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       query["opUserId"] = request.opUserId;
@@ -2636,7 +2618,6 @@ export default class Client extends OpenApi {
 
   async deleteInnerAppWithOptions(agentId: string, request: DeleteInnerAppRequest, headers: DeleteInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInnerAppResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       query["opUnionId"] = request.opUnionId;
@@ -2670,8 +2651,6 @@ export default class Client extends OpenApi {
 
   async updateAppRoleInfoWithOptions(agentId: string, roleId: string, request: UpdateAppRoleInfoRequest, headers: UpdateAppRoleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateAppRoleInfoResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       body["opUserId"] = request.opUserId;

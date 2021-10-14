@@ -426,7 +426,6 @@ export default class Client extends OpenApi {
   }
 
   async queryMarketOrderWithOptions(orderId: string, headers: QueryMarketOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMarketOrderResponse> {
-    orderId = OpenApiUtil.getEncodeParam(orderId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

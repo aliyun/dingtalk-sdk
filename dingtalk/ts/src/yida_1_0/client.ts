@@ -8810,7 +8810,6 @@ export default class Client extends OpenApi {
 
   async listTableDataByFormInstanceIdTableIdWithOptions(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest, headers: ListTableDataByFormInstanceIdTableIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
     Util.validateModel(request);
-    formInstanceId = OpenApiUtil.getEncodeParam(formInstanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.formUuid)) {
       query["formUuid"] = request.formUuid;
@@ -9060,7 +9059,6 @@ export default class Client extends OpenApi {
 
   async checkCloudAccountStatusWithOptions(callerUid: string, request: CheckCloudAccountStatusRequest, headers: CheckCloudAccountStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckCloudAccountStatusResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -9090,8 +9088,6 @@ export default class Client extends OpenApi {
 
   async getCorpAccomplishmentTasksWithOptions(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest, headers: GetCorpAccomplishmentTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpAccomplishmentTasksResponse> {
     Util.validateModel(request);
-    corpId = OpenApiUtil.getEncodeParam(corpId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
@@ -9244,7 +9240,6 @@ export default class Client extends OpenApi {
 
   async listApplicationAuthorizationServiceConnectorInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceConnectorInformationRequest, headers: ListApplicationAuthorizationServiceConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceConnectorInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -9474,7 +9469,6 @@ export default class Client extends OpenApi {
 
   async validateApplicationServiceOrderUpgradeWithOptions(callerUnionid: string, request: ValidateApplicationServiceOrderUpgradeRequest, headers: ValidateApplicationServiceOrderUpgradeHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationServiceOrderUpgradeResponse> {
     Util.validateModel(request);
-    callerUnionid = OpenApiUtil.getEncodeParam(callerUnionid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -9752,7 +9746,6 @@ export default class Client extends OpenApi {
 
   async removeTenantResourceWithOptions(callerUid: string, request: RemoveTenantResourceRequest, headers: RemoveTenantResourceHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveTenantResourceResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -9823,7 +9816,6 @@ export default class Client extends OpenApi {
 
   async getProcessDefinitionWithOptions(processInstanceId: string, request: GetProcessDefinitionRequest, headers: GetProcessDefinitionHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessDefinitionResponse> {
     Util.validateModel(request);
-    processInstanceId = OpenApiUtil.getEncodeParam(processInstanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
       query["corpId"] = request.corpId;
@@ -9963,7 +9955,6 @@ export default class Client extends OpenApi {
 
   async listApplicationAuthorizationServiceApplicationInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest, headers: ListApplicationAuthorizationServiceApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -10005,7 +9996,6 @@ export default class Client extends OpenApi {
 
   async validateApplicationAuthorizationServiceOrderWithOptions(callerUid: string, request: ValidateApplicationAuthorizationServiceOrderRequest, headers: ValidateApplicationAuthorizationServiceOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationServiceOrderResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -10195,9 +10185,6 @@ export default class Client extends OpenApi {
 
   async getActivityButtonListWithOptions(appType: string, processCode: string, activityId: string, request: GetActivityButtonListRequest, headers: GetActivityButtonListHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivityButtonListResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
-    processCode = OpenApiUtil.getEncodeParam(processCode);
-    activityId = OpenApiUtil.getEncodeParam(activityId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.systemToken)) {
       query["systemToken"] = request.systemToken;
@@ -10292,7 +10279,6 @@ export default class Client extends OpenApi {
 
   async listApplicationInformationWithOptions(instanceId: string, request: ListApplicationInformationRequest, headers: ListApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -10915,7 +10901,6 @@ export default class Client extends OpenApi {
 
   async listConnectorInformationWithOptions(instanceId: string, request: ListConnectorInformationRequest, headers: ListConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListConnectorInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -10994,7 +10979,6 @@ export default class Client extends OpenApi {
 
   async getNotifyMeWithOptions(userId: string, request: GetNotifyMeRequest, headers: GetNotifyMeHeaders, runtime: $Util.RuntimeOptions): Promise<GetNotifyMeResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
       query["corpId"] = request.corpId;
@@ -11105,7 +11089,6 @@ export default class Client extends OpenApi {
 
   async getInstanceByIdWithOptions(id: string, request: GetInstanceByIdRequest, headers: GetInstanceByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstanceByIdResponse> {
     Util.validateModel(request);
-    id = OpenApiUtil.getEncodeParam(id);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;
@@ -11208,7 +11191,6 @@ export default class Client extends OpenApi {
 
   async validateOrderUpdateWithOptions(instanceId: string, request: ValidateOrderUpdateRequest, headers: ValidateOrderUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderUpdateResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -11242,8 +11224,6 @@ export default class Client extends OpenApi {
 
   async getFormComponentDefinitionListWithOptions(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest, headers: GetFormComponentDefinitionListHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormComponentDefinitionListResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
-    formUuid = OpenApiUtil.getEncodeParam(formUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.systemToken)) {
       query["systemToken"] = request.systemToken;
@@ -11334,7 +11314,6 @@ export default class Client extends OpenApi {
 
   async getMeCorpSubmissionWithOptions(userId: string, request: GetMeCorpSubmissionRequest, headers: GetMeCorpSubmissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeCorpSubmissionResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
       query["corpId"] = request.corpId;
@@ -11445,8 +11424,6 @@ export default class Client extends OpenApi {
 
   async searchFormDataIdListWithOptions(appType: string, formUuid: string, request: SearchFormDataIdListRequest, headers: SearchFormDataIdListHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataIdListResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
-    formUuid = OpenApiUtil.getEncodeParam(formUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
@@ -11518,7 +11495,6 @@ export default class Client extends OpenApi {
 
   async getActivationCodeByCallerUnionIdWithOptions(callerUid: string, request: GetActivationCodeByCallerUnionIdRequest, headers: GetActivationCodeByCallerUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivationCodeByCallerUnionIdResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -11548,7 +11524,6 @@ export default class Client extends OpenApi {
 
   async getFormDataByIDWithOptions(id: string, request: GetFormDataByIDRequest, headers: GetFormDataByIDHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormDataByIDResponse> {
     Util.validateModel(request);
-    id = OpenApiUtil.getEncodeParam(id);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;
@@ -11782,7 +11757,6 @@ export default class Client extends OpenApi {
 
   async getOpenUrlWithOptions(appType: string, request: GetOpenUrlRequest, headers: GetOpenUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetOpenUrlResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.systemToken)) {
       query["systemToken"] = request.systemToken;
@@ -11865,7 +11839,6 @@ export default class Client extends OpenApi {
 
   async validateApplicationAuthorizationOrderWithOptions(instanceId: string, request: ValidateApplicationAuthorizationOrderRequest, headers: ValidateApplicationAuthorizationOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationOrderResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;

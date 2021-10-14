@@ -3098,7 +3098,6 @@ export default class Client extends OpenApi {
   }
 
   async deleteEmpAttributeVisibilityWithOptions(settingId: string, headers: DeleteEmpAttributeVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEmpAttributeVisibilityResponse> {
-    settingId = OpenApiUtil.getEncodeParam(settingId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3327,7 +3326,6 @@ export default class Client extends OpenApi {
   }
 
   async queryUserManagementResourcesWithOptions(userId: string, headers: QueryUserManagementResourcesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserManagementResourcesResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3350,7 +3348,6 @@ export default class Client extends OpenApi {
   }
 
   async deleteContactHideSettingWithOptions(settingId: string, headers: DeleteContactHideSettingHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteContactHideSettingResponse> {
-    settingId = OpenApiUtil.getEncodeParam(settingId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3374,7 +3371,6 @@ export default class Client extends OpenApi {
 
   async updateUserOwnnessWithOptions(userId: string, request: UpdateUserOwnnessRequest, headers: UpdateUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserOwnnessResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.ownenssType)) {
       body["ownenssType"] = request.ownenssType;
@@ -3477,7 +3473,6 @@ export default class Client extends OpenApi {
   }
 
   async getCooperateOrgInviteInfoWithOptions(cooperateCorpId: string, headers: GetCooperateOrgInviteInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCooperateOrgInviteInfoResponse> {
-    cooperateCorpId = OpenApiUtil.getEncodeParam(cooperateCorpId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3501,7 +3496,6 @@ export default class Client extends OpenApi {
 
   async updateManagementGroupWithOptions(groupId: string, request: UpdateManagementGroupRequest, headers: UpdateManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateManagementGroupResponse> {
     Util.validateModel(request);
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.groupName)) {
       body["groupName"] = request.groupName;
@@ -3581,7 +3575,6 @@ export default class Client extends OpenApi {
   }
 
   async getUserWithOptions(unionId: string, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3604,7 +3597,6 @@ export default class Client extends OpenApi {
   }
 
   async queryResourceManagementMembersWithOptions(resourceId: string, headers: QueryResourceManagementMembersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryResourceManagementMembersResponse> {
-    resourceId = OpenApiUtil.getEncodeParam(resourceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3877,7 +3869,6 @@ export default class Client extends OpenApi {
   }
 
   async deleteManagementGroupWithOptions(groupId: string, headers: DeleteManagementGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteManagementGroupResponse> {
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;

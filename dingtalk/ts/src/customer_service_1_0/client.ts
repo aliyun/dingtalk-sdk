@@ -1020,7 +1020,6 @@ export default class Client extends OpenApi {
 
   async pageListActionWithOptions(ticketId: string, request: PageListActionRequest, headers: PageListActionHeaders, runtime: $Util.RuntimeOptions): Promise<PageListActionResponse> {
     Util.validateModel(request);
-    ticketId = OpenApiUtil.getEncodeParam(ticketId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.openInstanceId)) {
       query["openInstanceId"] = request.openInstanceId;
@@ -1062,7 +1061,6 @@ export default class Client extends OpenApi {
 
   async executeActivityWithOptions(ticketId: string, request: ExecuteActivityRequest, headers: ExecuteActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteActivityResponse> {
     Util.validateModel(request);
-    ticketId = OpenApiUtil.getEncodeParam(ticketId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.sourceId)) {
       body["sourceId"] = request.sourceId;

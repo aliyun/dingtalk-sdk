@@ -255,6 +255,203 @@ export class UpateUserCodeInstanceResponse extends $tea.Model {
   }
 }
 
+export class ApplyBatchPayHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApplyBatchPayRequest extends $tea.Model {
+  corpId?: string;
+  staffId?: string;
+  accountId?: string;
+  orderNo?: string;
+  transAmount?: string;
+  returnUrl?: string;
+  passBackParams?: { [key: string]: any };
+  payTerminal?: string;
+  transExpireTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      staffId: 'staffId',
+      accountId: 'accountId',
+      orderNo: 'orderNo',
+      transAmount: 'transAmount',
+      returnUrl: 'returnUrl',
+      passBackParams: 'passBackParams',
+      payTerminal: 'payTerminal',
+      transExpireTime: 'transExpireTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      staffId: 'string',
+      accountId: 'string',
+      orderNo: 'string',
+      transAmount: 'string',
+      returnUrl: 'string',
+      passBackParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      payTerminal: 'string',
+      transExpireTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApplyBatchPayResponseBody extends $tea.Model {
+  payData?: string;
+  orderNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      payData: 'payData',
+      orderNo: 'orderNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      payData: 'string',
+      orderNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApplyBatchPayResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ApplyBatchPayResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ApplyBatchPayResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeOrderRequest extends $tea.Model {
+  suiteId?: string;
+  isvCorpId?: string;
+  outBatchNos?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      suiteId: 'suiteId',
+      isvCorpId: 'isvCorpId',
+      outBatchNos: 'outBatchNos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      suiteId: 'string',
+      isvCorpId: 'string',
+      outBatchNos: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeOrderResponseBody extends $tea.Model {
+  batchTradeOrderVOs?: QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs[];
+  static names(): { [key: string]: string } {
+    return {
+      batchTradeOrderVOs: 'batchTradeOrderVOs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      batchTradeOrderVOs: { 'type': 'array', 'itemType': QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryBatchTradeOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryBatchTradeOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DecodePayCodeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -570,6 +767,127 @@ export class NotifyVerifyResultResponse extends $tea.Model {
   }
 }
 
+export class CreateBatchTradeOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBatchTradeOrderRequest extends $tea.Model {
+  suiteId?: string;
+  corpId?: string;
+  staffId?: string;
+  accountId?: string;
+  accountNo?: string;
+  tradeTitle?: string;
+  outBatchNo?: string;
+  batchRemark?: string;
+  totalCount?: number;
+  totalAmount?: string;
+  batchTradeDetails?: CreateBatchTradeOrderRequestBatchTradeDetails[];
+  isvCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      suiteId: 'suiteId',
+      corpId: 'corpId',
+      staffId: 'staffId',
+      accountId: 'accountId',
+      accountNo: 'accountNo',
+      tradeTitle: 'tradeTitle',
+      outBatchNo: 'outBatchNo',
+      batchRemark: 'batchRemark',
+      totalCount: 'totalCount',
+      totalAmount: 'totalAmount',
+      batchTradeDetails: 'batchTradeDetails',
+      isvCorpId: 'isvCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      suiteId: 'string',
+      corpId: 'string',
+      staffId: 'string',
+      accountId: 'string',
+      accountNo: 'string',
+      tradeTitle: 'string',
+      outBatchNo: 'string',
+      batchRemark: 'string',
+      totalCount: 'number',
+      totalAmount: 'string',
+      batchTradeDetails: { 'type': 'array', 'itemType': CreateBatchTradeOrderRequestBatchTradeDetails },
+      isvCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBatchTradeOrderResponseBody extends $tea.Model {
+  orderNo?: string;
+  outBatchNo?: string;
+  orderStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderNo: 'orderNo',
+      outBatchNo: 'outBatchNo',
+      orderStatus: 'orderStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderNo: 'string',
+      outBatchNo: 'string',
+      orderStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBatchTradeOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateBatchTradeOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateBatchTradeOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class NotifyPayCodeRefundResultHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -674,6 +992,200 @@ export class NotifyPayCodeRefundResultResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: NotifyPayCodeRefundResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeDetailListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeDetailListRequest extends $tea.Model {
+  isvCorpId?: string;
+  outBatchNo?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  suiteId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      isvCorpId: 'isvCorpId',
+      outBatchNo: 'outBatchNo',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      suiteId: 'suiteId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isvCorpId: 'string',
+      outBatchNo: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      suiteId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeDetailListResponseBody extends $tea.Model {
+  total?: number;
+  pageSize?: number;
+  totalPageNumber?: number;
+  pageNumber?: number;
+  batchTradeDetailList?: QueryBatchTradeDetailListResponseBodyBatchTradeDetailList[];
+  static names(): { [key: string]: string } {
+    return {
+      total: 'total',
+      pageSize: 'pageSize',
+      totalPageNumber: 'totalPageNumber',
+      pageNumber: 'pageNumber',
+      batchTradeDetailList: 'batchTradeDetailList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      total: 'number',
+      pageSize: 'number',
+      totalPageNumber: 'number',
+      pageNumber: 'number',
+      batchTradeDetailList: { 'type': 'array', 'itemType': QueryBatchTradeDetailListResponseBodyBatchTradeDetailList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeDetailListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryBatchTradeDetailListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryBatchTradeDetailListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPayAccountListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPayAccountListRequest extends $tea.Model {
+  isvCorpId?: string;
+  suiteId?: string;
+  corpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      isvCorpId: 'isvCorpId',
+      suiteId: 'suiteId',
+      corpId: 'corpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isvCorpId: 'string',
+      suiteId: 'string',
+      corpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPayAccountListResponseBody extends $tea.Model {
+  payAccountVOList?: QueryPayAccountListResponseBodyPayAccountVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      payAccountVOList: 'payAccountVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      payAccountVOList: { 'type': 'array', 'itemType': QueryPayAccountListResponseBodyPayAccountVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPayAccountListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryPayAccountListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryPayAccountListResponseBody,
     };
   }
 
@@ -893,6 +1405,98 @@ export class UpateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
   }
 }
 
+export class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs extends $tea.Model {
+  outBatchNo?: string;
+  alipayTransId?: string;
+  status?: string;
+  successCount?: number;
+  successAmount?: string;
+  failCount?: number;
+  failAmount?: string;
+  totalAmount?: string;
+  gmtFinish?: string;
+  gmtSubmit?: string;
+  failReason?: string;
+  paymentAmount?: string;
+  paymentCurrency?: string;
+  payerStaffId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outBatchNo: 'outBatchNo',
+      alipayTransId: 'alipayTransId',
+      status: 'status',
+      successCount: 'successCount',
+      successAmount: 'successAmount',
+      failCount: 'failCount',
+      failAmount: 'failAmount',
+      totalAmount: 'totalAmount',
+      gmtFinish: 'gmtFinish',
+      gmtSubmit: 'gmtSubmit',
+      failReason: 'failReason',
+      paymentAmount: 'paymentAmount',
+      paymentCurrency: 'paymentCurrency',
+      payerStaffId: 'payerStaffId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outBatchNo: 'string',
+      alipayTransId: 'string',
+      status: 'string',
+      successCount: 'number',
+      successAmount: 'string',
+      failCount: 'number',
+      failAmount: 'string',
+      totalAmount: 'string',
+      gmtFinish: 'string',
+      gmtSubmit: 'string',
+      failReason: 'string',
+      paymentAmount: 'string',
+      paymentCurrency: 'string',
+      payerStaffId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBatchTradeOrderRequestBatchTradeDetails extends $tea.Model {
+  serialNo?: number;
+  amount?: string;
+  payeeAccountName?: string;
+  payeeAccountNo?: string;
+  payeeAccountType?: string;
+  memo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      serialNo: 'serialNo',
+      amount: 'amount',
+      payeeAccountName: 'payeeAccountName',
+      payeeAccountNo: 'payeeAccountNo',
+      payeeAccountType: 'payeeAccountType',
+      memo: 'memo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      serialNo: 'number',
+      amount: 'string',
+      payeeAccountName: 'string',
+      payeeAccountNo: 'string',
+      payeeAccountType: 'string',
+      memo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList extends $tea.Model {
   fundToolName?: string;
   amount?: string;
@@ -956,6 +1560,86 @@ export class NotifyPayCodeRefundResultRequestPayChannelDetailList extends $tea.M
       payChannelRefundOrderNo: 'string',
       promotionAmount: 'string',
       fundToolDetailList: { 'type': 'array', 'itemType': NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList extends $tea.Model {
+  serialNo?: number;
+  detailNo?: string;
+  payeeAccountNo?: string;
+  payeeAccountType?: string;
+  status?: string;
+  payeeAccountName?: string;
+  amount?: string;
+  memo?: string;
+  gmtCreate?: string;
+  gmtFinish?: string;
+  static names(): { [key: string]: string } {
+    return {
+      serialNo: 'serialNo',
+      detailNo: 'detailNo',
+      payeeAccountNo: 'payeeAccountNo',
+      payeeAccountType: 'payeeAccountType',
+      status: 'status',
+      payeeAccountName: 'payeeAccountName',
+      amount: 'amount',
+      memo: 'memo',
+      gmtCreate: 'gmtCreate',
+      gmtFinish: 'gmtFinish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      serialNo: 'number',
+      detailNo: 'string',
+      payeeAccountNo: 'string',
+      payeeAccountType: 'string',
+      status: 'string',
+      payeeAccountName: 'string',
+      amount: 'string',
+      memo: 'string',
+      gmtCreate: 'string',
+      gmtFinish: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPayAccountListResponseBodyPayAccountVOList extends $tea.Model {
+  accountNo?: string;
+  accountName?: string;
+  accountType?: string;
+  accountRemark?: string;
+  accountId?: string;
+  accountClass?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountNo: 'accountNo',
+      accountName: 'accountName',
+      accountType: 'accountType',
+      accountRemark: 'accountRemark',
+      accountId: 'accountId',
+      accountClass: 'accountClass',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountNo: 'string',
+      accountName: 'string',
+      accountType: 'string',
+      accountRemark: 'string',
+      accountId: 'string',
+      accountClass: 'string',
     };
   }
 
@@ -1169,6 +1853,104 @@ export default class Client extends OpenApi {
     return $tea.cast<UpateUserCodeInstanceResponse>(await this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new UpateUserCodeInstanceResponse({}));
   }
 
+  async applyBatchPay(request: ApplyBatchPayRequest): Promise<ApplyBatchPayResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ApplyBatchPayHeaders({ });
+    return await this.applyBatchPayWithOptions(request, headers, runtime);
+  }
+
+  async applyBatchPayWithOptions(request: ApplyBatchPayRequest, headers: ApplyBatchPayHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyBatchPayResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.staffId)) {
+      body["staffId"] = request.staffId;
+    }
+
+    if (!Util.isUnset(request.accountId)) {
+      body["accountId"] = request.accountId;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      body["orderNo"] = request.orderNo;
+    }
+
+    if (!Util.isUnset(request.transAmount)) {
+      body["transAmount"] = request.transAmount;
+    }
+
+    if (!Util.isUnset(request.returnUrl)) {
+      body["returnUrl"] = request.returnUrl;
+    }
+
+    if (!Util.isUnset(request.passBackParams)) {
+      body["passBackParams"] = request.passBackParams;
+    }
+
+    if (!Util.isUnset(request.payTerminal)) {
+      body["payTerminal"] = request.payTerminal;
+    }
+
+    if (!Util.isUnset(request.transExpireTime)) {
+      body["transExpireTime"] = request.transExpireTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ApplyBatchPayResponse>(await this.doROARequest("ApplyBatchPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/pay`, "json", req, runtime), new ApplyBatchPayResponse({}));
+  }
+
+  async queryBatchTradeOrder(request: QueryBatchTradeOrderRequest): Promise<QueryBatchTradeOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBatchTradeOrderHeaders({ });
+    return await this.queryBatchTradeOrderWithOptions(request, headers, runtime);
+  }
+
+  async queryBatchTradeOrderWithOptions(request: QueryBatchTradeOrderRequest, headers: QueryBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.suiteId)) {
+      body["suiteId"] = request.suiteId;
+    }
+
+    if (!Util.isUnset(request.isvCorpId)) {
+      body["isvCorpId"] = request.isvCorpId;
+    }
+
+    if (!Util.isUnset(request.outBatchNos)) {
+      body["outBatchNos"] = request.outBatchNos;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryBatchTradeOrderResponse>(await this.doROARequest("QueryBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/query`, "json", req, runtime), new QueryBatchTradeOrderResponse({}));
+  }
+
   async decodePayCode(request: DecodePayCodeRequest): Promise<DecodePayCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DecodePayCodeHeaders({ });
@@ -1316,6 +2098,79 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyVerifyResultResponse>(await this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/verifyResults/notify`, "json", req, runtime), new NotifyVerifyResultResponse({}));
   }
 
+  async createBatchTradeOrder(request: CreateBatchTradeOrderRequest): Promise<CreateBatchTradeOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateBatchTradeOrderHeaders({ });
+    return await this.createBatchTradeOrderWithOptions(request, headers, runtime);
+  }
+
+  async createBatchTradeOrderWithOptions(request: CreateBatchTradeOrderRequest, headers: CreateBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBatchTradeOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.suiteId)) {
+      body["suiteId"] = request.suiteId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.staffId)) {
+      body["staffId"] = request.staffId;
+    }
+
+    if (!Util.isUnset(request.accountId)) {
+      body["accountId"] = request.accountId;
+    }
+
+    if (!Util.isUnset(request.accountNo)) {
+      body["accountNo"] = request.accountNo;
+    }
+
+    if (!Util.isUnset(request.tradeTitle)) {
+      body["tradeTitle"] = request.tradeTitle;
+    }
+
+    if (!Util.isUnset(request.outBatchNo)) {
+      body["outBatchNo"] = request.outBatchNo;
+    }
+
+    if (!Util.isUnset(request.batchRemark)) {
+      body["batchRemark"] = request.batchRemark;
+    }
+
+    if (!Util.isUnset(request.totalCount)) {
+      body["totalCount"] = request.totalCount;
+    }
+
+    if (!Util.isUnset(request.totalAmount)) {
+      body["totalAmount"] = request.totalAmount;
+    }
+
+    if (!Util.isUnset(request.batchTradeDetails)) {
+      body["batchTradeDetails"] = request.batchTradeDetails;
+    }
+
+    if (!Util.isUnset(request.isvCorpId)) {
+      body["isvCorpId"] = request.isvCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateBatchTradeOrderResponse>(await this.doROARequest("CreateBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders`, "json", req, runtime), new CreateBatchTradeOrderResponse({}));
+  }
+
   async notifyPayCodeRefundResult(request: NotifyPayCodeRefundResultRequest): Promise<NotifyPayCodeRefundResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyPayCodeRefundResultHeaders({ });
@@ -1383,6 +2238,88 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<NotifyPayCodeRefundResultResponse>(await this.doROARequest("NotifyPayCodeRefundResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/refundResults/notify`, "json", req, runtime), new NotifyPayCodeRefundResultResponse({}));
+  }
+
+  async queryBatchTradeDetailList(request: QueryBatchTradeDetailListRequest): Promise<QueryBatchTradeDetailListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBatchTradeDetailListHeaders({ });
+    return await this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
+  }
+
+  async queryBatchTradeDetailListWithOptions(request: QueryBatchTradeDetailListRequest, headers: QueryBatchTradeDetailListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeDetailListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isvCorpId)) {
+      query["isvCorpId"] = request.isvCorpId;
+    }
+
+    if (!Util.isUnset(request.outBatchNo)) {
+      query["outBatchNo"] = request.outBatchNo;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.suiteId)) {
+      query["suiteId"] = request.suiteId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryBatchTradeDetailListResponse>(await this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/batchTrades/details`, "json", req, runtime), new QueryBatchTradeDetailListResponse({}));
+  }
+
+  async queryPayAccountList(request: QueryPayAccountListRequest): Promise<QueryPayAccountListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPayAccountListHeaders({ });
+    return await this.queryPayAccountListWithOptions(request, headers, runtime);
+  }
+
+  async queryPayAccountListWithOptions(request: QueryPayAccountListRequest, headers: QueryPayAccountListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPayAccountListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isvCorpId)) {
+      query["isvCorpId"] = request.isvCorpId;
+    }
+
+    if (!Util.isUnset(request.suiteId)) {
+      query["suiteId"] = request.suiteId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryPayAccountListResponse>(await this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/payAccounts`, "json", req, runtime), new QueryPayAccountListResponse({}));
   }
 
   async createUserCodeInstance(request: CreateUserCodeInstanceRequest): Promise<CreateUserCodeInstanceResponse> {
