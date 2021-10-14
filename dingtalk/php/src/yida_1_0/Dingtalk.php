@@ -430,8 +430,7 @@ class Dingtalk extends OpenApiClient
     public function listTableDataByFormInstanceIdTableIdWithOptions($formInstanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $formInstanceId = OpenApiUtilClient::getEncodeParam($formInstanceId);
-        $query          = [];
+        $query = [];
         if (!Utils::isUnset($request->formUuid)) {
             @$query['formUuid'] = $request->formUuid;
         }
@@ -721,8 +720,7 @@ class Dingtalk extends OpenApiClient
     public function checkCloudAccountStatusWithOptions($callerUid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
-        $query     = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -768,9 +766,7 @@ class Dingtalk extends OpenApiClient
     public function getCorpAccomplishmentTasksWithOptions($corpId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $corpId = OpenApiUtilClient::getEncodeParam($corpId);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
         }
@@ -927,8 +923,7 @@ class Dingtalk extends OpenApiClient
     public function listApplicationAuthorizationServiceConnectorInformationWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -1203,8 +1198,7 @@ class Dingtalk extends OpenApiClient
     public function validateApplicationServiceOrderUpgradeWithOptions($callerUnionid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $callerUnionid = OpenApiUtilClient::getEncodeParam($callerUnionid);
-        $query         = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -1515,8 +1509,7 @@ class Dingtalk extends OpenApiClient
     public function removeTenantResourceWithOptions($callerUid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
-        $query     = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -1611,8 +1604,7 @@ class Dingtalk extends OpenApiClient
     public function getProcessDefinitionWithOptions($processInstanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $processInstanceId = OpenApiUtilClient::getEncodeParam($processInstanceId);
-        $query             = [];
+        $query = [];
         if (!Utils::isUnset($request->corpId)) {
             @$query['corpId'] = $request->corpId;
         }
@@ -1779,8 +1771,7 @@ class Dingtalk extends OpenApiClient
     public function listApplicationAuthorizationServiceApplicationInformationWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -1833,8 +1824,7 @@ class Dingtalk extends OpenApiClient
     public function validateApplicationAuthorizationServiceOrderWithOptions($callerUid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
-        $query     = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -2083,10 +2073,7 @@ class Dingtalk extends OpenApiClient
     public function getActivityButtonListWithOptions($appType, $processCode, $activityId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $appType     = OpenApiUtilClient::getEncodeParam($appType);
-        $processCode = OpenApiUtilClient::getEncodeParam($processCode);
-        $activityId  = OpenApiUtilClient::getEncodeParam($activityId);
-        $query       = [];
+        $query = [];
         if (!Utils::isUnset($request->systemToken)) {
             @$query['systemToken'] = $request->systemToken;
         }
@@ -2199,8 +2186,7 @@ class Dingtalk extends OpenApiClient
     public function listApplicationInformationWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -2912,8 +2898,7 @@ class Dingtalk extends OpenApiClient
     public function listConnectorInformationWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -3014,8 +2999,7 @@ class Dingtalk extends OpenApiClient
     public function getNotifyMeWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->corpId)) {
             @$query['corpId'] = $request->corpId;
         }
@@ -3140,7 +3124,6 @@ class Dingtalk extends OpenApiClient
     public function getInstanceByIdWithOptions($id, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $id    = OpenApiUtilClient::getEncodeParam($id);
         $query = [];
         if (!Utils::isUnset($request->appType)) {
             @$query['appType'] = $request->appType;
@@ -3260,8 +3243,7 @@ class Dingtalk extends OpenApiClient
     public function validateOrderUpdateWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -3310,9 +3292,7 @@ class Dingtalk extends OpenApiClient
     public function getFormComponentDefinitionListWithOptions($appType, $formUuid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $appType  = OpenApiUtilClient::getEncodeParam($appType);
-        $formUuid = OpenApiUtilClient::getEncodeParam($formUuid);
-        $query    = [];
+        $query = [];
         if (!Utils::isUnset($request->systemToken)) {
             @$query['systemToken'] = $request->systemToken;
         }
@@ -3422,8 +3402,7 @@ class Dingtalk extends OpenApiClient
     public function getMeCorpSubmissionWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->corpId)) {
             @$query['corpId'] = $request->corpId;
         }
@@ -3550,9 +3529,7 @@ class Dingtalk extends OpenApiClient
     public function searchFormDataIdListWithOptions($appType, $formUuid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $appType  = OpenApiUtilClient::getEncodeParam($appType);
-        $formUuid = OpenApiUtilClient::getEncodeParam($formUuid);
-        $query    = [];
+        $query = [];
         if (!Utils::isUnset($request->pageNumber)) {
             @$query['pageNumber'] = $request->pageNumber;
         }
@@ -3628,8 +3605,7 @@ class Dingtalk extends OpenApiClient
     public function getActivationCodeByCallerUnionIdWithOptions($callerUid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $callerUid = OpenApiUtilClient::getEncodeParam($callerUid);
-        $query     = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }
@@ -3673,7 +3649,6 @@ class Dingtalk extends OpenApiClient
     public function getFormDataByIDWithOptions($id, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $id    = OpenApiUtilClient::getEncodeParam($id);
         $query = [];
         if (!Utils::isUnset($request->appType)) {
             @$query['appType'] = $request->appType;
@@ -3952,8 +3927,7 @@ class Dingtalk extends OpenApiClient
     public function getOpenUrlWithOptions($appType, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $appType = OpenApiUtilClient::getEncodeParam($appType);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->systemToken)) {
             @$query['systemToken'] = $request->systemToken;
         }
@@ -4057,8 +4031,7 @@ class Dingtalk extends OpenApiClient
     public function validateApplicationAuthorizationOrderWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->accessKey)) {
             @$query['accessKey'] = $request->accessKey;
         }

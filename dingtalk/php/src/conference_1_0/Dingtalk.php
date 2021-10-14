@@ -78,8 +78,7 @@ class Dingtalk extends OpenApiClient
     public function queryCloudRecordTextWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
@@ -183,8 +182,7 @@ class Dingtalk extends OpenApiClient
     public function queryCloudRecordVideoPlayInfoWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
@@ -276,8 +274,7 @@ class Dingtalk extends OpenApiClient
     public function stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $body         = [];
+        $body = [];
         if (!Utils::isUnset($request->unionId)) {
             @$body['unionId'] = $request->unionId;
         }
@@ -318,8 +315,7 @@ class Dingtalk extends OpenApiClient
      */
     public function updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime)
     {
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $realHeaders  = [];
+        $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
@@ -358,8 +354,7 @@ class Dingtalk extends OpenApiClient
     public function closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
@@ -403,8 +398,7 @@ class Dingtalk extends OpenApiClient
     public function stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $body         = [];
+        $body = [];
         if (!Utils::isUnset($request->streamId)) {
             @$body['streamId'] = $request->streamId;
         }
@@ -454,8 +448,7 @@ class Dingtalk extends OpenApiClient
     public function startCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $body         = [];
+        $body = [];
         if (!Utils::isUnset($request->unionId)) {
             @$body['unionId'] = $request->unionId;
         }
@@ -505,8 +498,7 @@ class Dingtalk extends OpenApiClient
     public function startStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $body         = [];
+        $body = [];
         if (!Utils::isUnset($request->unionId)) {
             @$body['unionId'] = $request->unionId;
         }
@@ -565,8 +557,7 @@ class Dingtalk extends OpenApiClient
     public function queryCloudRecordVideoWithOptions($conferenceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $conferenceId = OpenApiUtilClient::getEncodeParam($conferenceId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }

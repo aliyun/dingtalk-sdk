@@ -238,8 +238,7 @@ class Dingtalk extends OpenApiClient
     public function pageListActionWithOptions($ticketId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $ticketId = OpenApiUtilClient::getEncodeParam($ticketId);
-        $query    = [];
+        $query = [];
         if (!Utils::isUnset($request->openInstanceId)) {
             @$query['openInstanceId'] = $request->openInstanceId;
         }
@@ -292,8 +291,7 @@ class Dingtalk extends OpenApiClient
     public function executeActivityWithOptions($ticketId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $ticketId = OpenApiUtilClient::getEncodeParam($ticketId);
-        $body     = [];
+        $body = [];
         if (!Utils::isUnset($request->sourceId)) {
             @$body['sourceId'] = $request->sourceId;
         }

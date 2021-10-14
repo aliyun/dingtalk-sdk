@@ -60,7 +60,6 @@ class Dingtalk extends OpenApiClient
      */
     public function getSearchTabWithOptions($tabId, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -99,8 +98,6 @@ class Dingtalk extends OpenApiClient
      */
     public function getSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
-        $itemId      = OpenApiUtilClient::getEncodeParam($itemId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -139,8 +136,6 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
-        $itemId      = OpenApiUtilClient::getEncodeParam($itemId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -180,8 +175,7 @@ class Dingtalk extends OpenApiClient
     public function insertSearchItemWithOptions($tabId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $tabId = OpenApiUtilClient::getEncodeParam($tabId);
-        $body  = [];
+        $body = [];
         if (!Utils::isUnset($request->itemId)) {
             @$body['itemId'] = $request->itemId;
         }
@@ -285,7 +279,6 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteSearchTabWithOptions($tabId, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -325,8 +318,7 @@ class Dingtalk extends OpenApiClient
     public function updateSearchTabWithOptions($tabId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $tabId = OpenApiUtilClient::getEncodeParam($tabId);
-        $body  = [];
+        $body = [];
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }

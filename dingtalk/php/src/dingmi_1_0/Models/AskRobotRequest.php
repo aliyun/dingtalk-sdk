@@ -42,12 +42,18 @@ class AskRobotRequest extends Model
      * @var string
      */
     public $dingSuiteKey;
+
+    /**
+     * @var string
+     */
+    public $dingUserId;
     protected $_name = [
         'question'     => 'question',
         'dingCorpId'   => 'dingCorpId',
         'robotAppKey'  => 'robotAppKey',
         'sessionUuid'  => 'sessionUuid',
         'dingSuiteKey' => 'dingSuiteKey',
+        'dingUserId'   => 'dingUserId',
     ];
 
     public function validate()
@@ -71,6 +77,9 @@ class AskRobotRequest extends Model
         }
         if (null !== $this->dingSuiteKey) {
             $res['dingSuiteKey'] = $this->dingSuiteKey;
+        }
+        if (null !== $this->dingUserId) {
+            $res['dingUserId'] = $this->dingUserId;
         }
 
         return $res;
@@ -98,6 +107,9 @@ class AskRobotRequest extends Model
         }
         if (isset($map['dingSuiteKey'])) {
             $model->dingSuiteKey = $map['dingSuiteKey'];
+        }
+        if (isset($map['dingUserId'])) {
+            $model->dingUserId = $map['dingUserId'];
         }
 
         return $model;

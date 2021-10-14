@@ -362,7 +362,6 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteEmpAttributeVisibilityWithOptions($settingId, $headers, $runtime)
     {
-        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -675,7 +674,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryUserManagementResourcesWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -712,7 +710,6 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteContactHideSettingWithOptions($settingId, $headers, $runtime)
     {
-        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -752,8 +749,7 @@ class Dingtalk extends OpenApiClient
     public function updateUserOwnnessWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->ownenssType)) {
             @$body['ownenssType'] = $request->ownenssType;
         }
@@ -890,8 +886,7 @@ class Dingtalk extends OpenApiClient
      */
     public function getCooperateOrgInviteInfoWithOptions($cooperateCorpId, $headers, $runtime)
     {
-        $cooperateCorpId = OpenApiUtilClient::getEncodeParam($cooperateCorpId);
-        $realHeaders     = [];
+        $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
@@ -930,8 +925,7 @@ class Dingtalk extends OpenApiClient
     public function updateManagementGroupWithOptions($groupId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $groupId = OpenApiUtilClient::getEncodeParam($groupId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->groupName)) {
             @$body['groupName'] = $request->groupName;
         }
@@ -1031,7 +1025,6 @@ class Dingtalk extends OpenApiClient
      */
     public function getUserWithOptions($unionId, $headers, $runtime)
     {
-        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1068,7 +1061,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryResourceManagementMembersWithOptions($resourceId, $headers, $runtime)
     {
-        $resourceId  = OpenApiUtilClient::getEncodeParam($resourceId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1414,7 +1406,6 @@ class Dingtalk extends OpenApiClient
      */
     public function deleteManagementGroupWithOptions($groupId, $headers, $runtime)
     {
-        $groupId     = OpenApiUtilClient::getEncodeParam($groupId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

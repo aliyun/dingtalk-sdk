@@ -4,7 +4,6 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0;
 
-use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\AddAttendeeToEventGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\AddAttendeeToEventGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\CreateEventGroupHeaders;
@@ -53,7 +52,6 @@ class Dingtalk extends OpenApiClient
      */
     public function sendInteractiveCardWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -90,7 +88,6 @@ class Dingtalk extends OpenApiClient
      */
     public function updateInteractiveCardWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -127,7 +124,6 @@ class Dingtalk extends OpenApiClient
      */
     public function sendSingleInteractiveCardWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -166,8 +162,6 @@ class Dingtalk extends OpenApiClient
      */
     public function addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
-        $groupId     = OpenApiUtilClient::getEncodeParam($groupId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -204,7 +198,6 @@ class Dingtalk extends OpenApiClient
      */
     public function createEventGroupWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

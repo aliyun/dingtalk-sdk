@@ -200,8 +200,7 @@ class Dingtalk extends OpenApiClient
     public function deleteCrmFormInstanceWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->currentOperatorUserId)) {
             @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
         }
@@ -305,7 +304,6 @@ class Dingtalk extends OpenApiClient
      */
     public function getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -666,8 +664,7 @@ class Dingtalk extends OpenApiClient
     public function deleteCrmPersonalCustomerWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->currentOperatorUserId)) {
             @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
         }

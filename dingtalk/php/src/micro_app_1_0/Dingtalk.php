@@ -170,8 +170,7 @@ class Dingtalk extends OpenApiClient
     public function getInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->opUnionId)) {
             @$query['opUnionId'] = $request->opUnionId;
         }
@@ -218,8 +217,7 @@ class Dingtalk extends OpenApiClient
     public function registerCustomAppRoleWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$body['opUserId'] = $request->opUserId;
         }
@@ -323,8 +321,7 @@ class Dingtalk extends OpenApiClient
     public function addAppRolesToMemberWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$body['opUserId'] = $request->opUserId;
         }
@@ -376,8 +373,6 @@ class Dingtalk extends OpenApiClient
      */
     public function getAppRoleScopeByRoleIdWithOptions($agentId, $roleId, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId      = OpenApiUtilClient::getEncodeParam($roleId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -416,8 +411,6 @@ class Dingtalk extends OpenApiClient
      */
     public function listRoleInfoByUserWithOptions($agentId, $userId, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -501,9 +494,7 @@ class Dingtalk extends OpenApiClient
     public function removeMemberForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$body['opUserId'] = $request->opUserId;
         }
@@ -556,8 +547,7 @@ class Dingtalk extends OpenApiClient
     public function updateInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUnionId)) {
             @$body['opUnionId'] = $request->opUnionId;
         }
@@ -627,9 +617,7 @@ class Dingtalk extends OpenApiClient
     public function addMemberToAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$body['opUserId'] = $request->opUserId;
         }
@@ -682,8 +670,7 @@ class Dingtalk extends OpenApiClient
     public function listAppRoleScopesWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
@@ -730,8 +717,7 @@ class Dingtalk extends OpenApiClient
     public function addAppToWorkBenchGroupWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUnionId)) {
             @$body['opUnionId'] = $request->opUnionId;
         }
@@ -783,9 +769,7 @@ class Dingtalk extends OpenApiClient
     public function rebuildRoleScopeForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$body['opUserId'] = $request->opUserId;
         }
@@ -888,9 +872,7 @@ class Dingtalk extends OpenApiClient
     public function deleteAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$query['opUserId'] = $request->opUserId;
         }
@@ -1009,8 +991,7 @@ class Dingtalk extends OpenApiClient
     public function deleteInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->opUnionId)) {
             @$query['opUnionId'] = $request->opUnionId;
         }
@@ -1059,9 +1040,7 @@ class Dingtalk extends OpenApiClient
     public function updateAppRoleInfoWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
+        $body = [];
         if (!Utils::isUnset($request->opUserId)) {
             @$body['opUserId'] = $request->opUserId;
         }

@@ -145,7 +145,6 @@ class Dingtalk extends OpenApiClient
      */
     public function getVillageOrgInfoWithOptions($subCorpId, $headers, $runtime)
     {
-        $subCorpId   = OpenApiUtilClient::getEncodeParam($subCorpId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -185,8 +184,7 @@ class Dingtalk extends OpenApiClient
     public function listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -239,8 +237,7 @@ class Dingtalk extends OpenApiClient
     public function listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->cursor)) {
             @$query['cursor'] = $request->cursor;
         }
@@ -347,8 +344,7 @@ class Dingtalk extends OpenApiClient
     public function getResidentDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -394,9 +390,7 @@ class Dingtalk extends OpenApiClient
     public function getResidentUserInfoWithOptions($departmentId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $userId       = OpenApiUtilClient::getEncodeParam($userId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -440,8 +434,7 @@ class Dingtalk extends OpenApiClient
     public function getDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -533,8 +526,7 @@ class Dingtalk extends OpenApiClient
     public function listDeptUserIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -629,8 +621,7 @@ class Dingtalk extends OpenApiClient
     public function listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -725,8 +716,7 @@ class Dingtalk extends OpenApiClient
     public function listSubDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -773,8 +763,7 @@ class Dingtalk extends OpenApiClient
     public function getUserWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }
@@ -821,8 +810,7 @@ class Dingtalk extends OpenApiClient
     public function listDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->cursor)) {
             @$query['cursor'] = $request->cursor;
         }
@@ -931,8 +919,7 @@ class Dingtalk extends OpenApiClient
     public function listSubDeptIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $departmentId = OpenApiUtilClient::getEncodeParam($departmentId);
-        $query        = [];
+        $query = [];
         if (!Utils::isUnset($request->subCorpId)) {
             @$query['subCorpId'] = $request->subCorpId;
         }

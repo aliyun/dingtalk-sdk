@@ -99,7 +99,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryMarketOrderWithOptions($orderId, $headers, $runtime)
     {
-        $orderId     = OpenApiUtilClient::getEncodeParam($orderId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

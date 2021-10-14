@@ -115,8 +115,7 @@ class Dingtalk extends OpenApiClient
     public function pullDataByPkWithOptions($dataModelId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $dataModelId = OpenApiUtilClient::getEncodeParam($dataModelId);
-        $query       = [];
+        $query = [];
         if (!Utils::isUnset($request->primaryKey)) {
             @$query['primaryKey'] = $request->primaryKey;
         }

@@ -83,7 +83,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryUserInfoWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -123,8 +122,7 @@ class Dingtalk extends OpenApiClient
     public function queryAllMemberByDeptWithOptions($deptId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $deptId = OpenApiUtilClient::getEncodeParam($deptId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
         }
@@ -171,8 +169,7 @@ class Dingtalk extends OpenApiClient
     public function queryAllMemberByGroupWithOptions($groupId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $groupId = OpenApiUtilClient::getEncodeParam($groupId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
         }
@@ -216,7 +213,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryUserRolesWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -301,8 +297,7 @@ class Dingtalk extends OpenApiClient
     public function queryAllGroupsInDeptWithOptions($deptId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $deptId = OpenApiUtilClient::getEncodeParam($deptId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
         }
@@ -457,7 +452,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryDepartmentInfoWithOptions($deptId, $headers, $runtime)
     {
-        $deptId      = OpenApiUtilClient::getEncodeParam($deptId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -497,8 +491,7 @@ class Dingtalk extends OpenApiClient
     public function updateUserExtendInfoWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->jobCode)) {
             @$body['jobCode'] = $request->jobCode;
         }
@@ -593,7 +586,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryUserExtInfoWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -708,7 +700,6 @@ class Dingtalk extends OpenApiClient
      */
     public function queryGroupInfoWithOptions($groupId, $headers, $runtime)
     {
-        $groupId     = OpenApiUtilClient::getEncodeParam($groupId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

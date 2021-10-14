@@ -74,8 +74,7 @@ class Dingtalk extends OpenApiClient
     public function editFeedReplayWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
         }
@@ -125,8 +124,7 @@ class Dingtalk extends OpenApiClient
     public function queryFeedWhiteListWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->userId)) {
             @$query['userId'] = $request->userId;
         }
@@ -227,8 +225,7 @@ class Dingtalk extends OpenApiClient
     public function deleteLiveFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->userId)) {
             @$query['userId'] = $request->userId;
         }
@@ -272,8 +269,7 @@ class Dingtalk extends OpenApiClient
     public function startCloudFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
         }
@@ -317,8 +313,7 @@ class Dingtalk extends OpenApiClient
     public function stopCloudFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
         }
@@ -362,7 +357,6 @@ class Dingtalk extends OpenApiClient
     public function modifyFeedWhiteListWithOptions($feedId, $tmpReq, $headers, $runtime)
     {
         Utils::validateModel($tmpReq);
-        $feedId  = OpenApiUtilClient::getEncodeParam($feedId);
         $request = new ModifyFeedWhiteListShrinkRequest([]);
         OpenApiUtilClient::convert($tmpReq, $request);
         if (!Utils::isUnset($tmpReq->modifyUserList)) {
@@ -418,8 +412,7 @@ class Dingtalk extends OpenApiClient
     public function updateLiveFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->userId)) {
             @$query['userId'] = $request->userId;
         }
@@ -475,8 +468,7 @@ class Dingtalk extends OpenApiClient
     public function addShareCidListWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->userId)) {
             @$body['userId'] = $request->userId;
         }
