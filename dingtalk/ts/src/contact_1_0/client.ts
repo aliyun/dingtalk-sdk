@@ -295,6 +295,66 @@ export class UpdateContactHideSettingResponse extends $tea.Model {
   }
 }
 
+export class UpdateDeptSettngTailFirstHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDeptSettngTailFirstRequest extends $tea.Model {
+  enable?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      enable: 'enable',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enable: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDeptSettngTailFirstResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateEmpAttrbuteVisibilitySettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -842,12 +902,14 @@ export class SearchUserRequest extends $tea.Model {
   queryWord?: string;
   offset?: number;
   size?: number;
+  fullMatchField?: number;
   static names(): { [key: string]: string } {
     return {
       dingOrgId: 'dingOrgId',
       queryWord: 'queryWord',
       offset: 'offset',
       size: 'size',
+      fullMatchField: 'fullMatchField',
     };
   }
 
@@ -857,6 +919,7 @@ export class SearchUserRequest extends $tea.Model {
       queryWord: 'string',
       offset: 'number',
       size: 'number',
+      fullMatchField: 'number',
     };
   }
 
@@ -3022,6 +3085,35 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateContactHideSettingResponse>(await this.doROARequest("UpdateContactHideSetting", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/contactHideSettings`, "json", req, runtime), new UpdateContactHideSettingResponse({}));
   }
 
+  async updateDeptSettngTailFirst(request: UpdateDeptSettngTailFirstRequest): Promise<UpdateDeptSettngTailFirstResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateDeptSettngTailFirstHeaders({ });
+    return await this.updateDeptSettngTailFirstWithOptions(request, headers, runtime);
+  }
+
+  async updateDeptSettngTailFirstWithOptions(request: UpdateDeptSettngTailFirstRequest, headers: UpdateDeptSettngTailFirstHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDeptSettngTailFirstResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.enable)) {
+      body["enable"] = request.enable;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateDeptSettngTailFirstResponse>(await this.doROARequest("UpdateDeptSettngTailFirst", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/depts/settings/priorities`, "none", req, runtime), new UpdateDeptSettngTailFirstResponse({}));
+  }
+
   async updateEmpAttrbuteVisibilitySetting(request: UpdateEmpAttrbuteVisibilitySettingRequest): Promise<UpdateEmpAttrbuteVisibilitySettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateEmpAttrbuteVisibilitySettingHeaders({ });
@@ -3272,6 +3364,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.size)) {
       body["size"] = request.size;
+    }
+
+    if (!Util.isUnset(request.fullMatchField)) {
+      body["fullMatchField"] = request.fullMatchField;
     }
 
     let realHeaders : {[key: string ]: string} = { };
