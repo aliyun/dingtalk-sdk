@@ -78,6 +78,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateDeptSettngTailFirstHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateDeptSettngTailFirstRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateDeptSettngTailFirstResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingResponse;
@@ -266,6 +269,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateContactHideSettingResponse::fromMap($this->doROARequest('UpdateContactHideSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/contactHideSettings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateDeptSettngTailFirstRequest $request
+     *
+     * @return UpdateDeptSettngTailFirstResponse
+     */
+    public function updateDeptSettngTailFirst($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateDeptSettngTailFirstHeaders([]);
+
+        return $this->updateDeptSettngTailFirstWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateDeptSettngTailFirstRequest $request
+     * @param UpdateDeptSettngTailFirstHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return UpdateDeptSettngTailFirstResponse
+     */
+    public function updateDeptSettngTailFirstWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->enable)) {
+            @$body['enable'] = $request->enable;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateDeptSettngTailFirstResponse::fromMap($this->doROARequest('UpdateDeptSettngTailFirst', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/depts/settings/priorities', 'none', $req, $runtime));
     }
 
     /**
@@ -594,6 +639,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->size)) {
             @$body['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->fullMatchField)) {
+            @$body['fullMatchField'] = $request->fullMatchField;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

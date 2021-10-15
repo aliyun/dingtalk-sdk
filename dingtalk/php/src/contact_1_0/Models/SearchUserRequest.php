@@ -33,11 +33,19 @@ class SearchUserRequest extends Model
      * @var int
      */
     public $size;
+
+    /**
+     * @description 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
+     *
+     * @var int
+     */
+    public $fullMatchField;
     protected $_name = [
-        'dingOrgId' => 'dingOrgId',
-        'queryWord' => 'queryWord',
-        'offset'    => 'offset',
-        'size'      => 'size',
+        'dingOrgId'      => 'dingOrgId',
+        'queryWord'      => 'queryWord',
+        'offset'         => 'offset',
+        'size'           => 'size',
+        'fullMatchField' => 'fullMatchField',
     ];
 
     public function validate()
@@ -58,6 +66,9 @@ class SearchUserRequest extends Model
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
+        }
+        if (null !== $this->fullMatchField) {
+            $res['fullMatchField'] = $this->fullMatchField;
         }
 
         return $res;
@@ -82,6 +93,9 @@ class SearchUserRequest extends Model
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];
+        }
+        if (isset($map['fullMatchField'])) {
+            $model->fullMatchField = $map['fullMatchField'];
         }
 
         return $model;
