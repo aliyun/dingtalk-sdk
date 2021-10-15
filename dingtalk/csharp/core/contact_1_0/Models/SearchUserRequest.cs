@@ -14,6 +14,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public long? DingOrgId { get; set; }
 
         /// <summary>
+        /// 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
+        /// </summary>
+        [NameInMap("fullMatchField")]
+        [Validation(Required=false)]
+        public int? FullMatchField { get; set; }
+
+        /// <summary>
         /// 分页查询锚点
         /// </summary>
         [NameInMap("offset")]
