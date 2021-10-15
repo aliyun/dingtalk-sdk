@@ -19,6 +19,10 @@ public class SearchUserRequest extends TeaModel {
     @NameInMap("size")
     public Integer size;
 
+    // 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
+    @NameInMap("fullMatchField")
+    public Integer fullMatchField;
+
     public static SearchUserRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchUserRequest self = new SearchUserRequest();
         return TeaModel.build(map, self);
@@ -54,6 +58,14 @@ public class SearchUserRequest extends TeaModel {
     }
     public Integer getSize() {
         return this.size;
+    }
+
+    public SearchUserRequest setFullMatchField(Integer fullMatchField) {
+        this.fullMatchField = fullMatchField;
+        return this;
+    }
+    public Integer getFullMatchField() {
+        return this.fullMatchField;
     }
 
 }
