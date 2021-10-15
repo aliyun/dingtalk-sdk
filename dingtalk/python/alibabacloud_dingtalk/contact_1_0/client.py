@@ -263,6 +263,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateContactHideSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/contactHideSettings', 'json', req, runtime)
         )
 
+    def update_dept_settng_tail_first(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstHeaders()
+        return self.update_dept_settng_tail_first_with_options(request, headers, runtime)
+
+    async def update_dept_settng_tail_first_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstHeaders()
+        return await self.update_dept_settng_tail_first_with_options_async(request, headers, runtime)
+
+    def update_dept_settng_tail_first_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstRequest,
+        headers: dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstResponse(),
+            self.do_roarequest('UpdateDeptSettngTailFirst', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/depts/settings/priorities', 'none', req, runtime)
+        )
+
+    async def update_dept_settng_tail_first_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstRequest,
+        headers: dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateDeptSettngTailFirstResponse(),
+            await self.do_roarequest_async('UpdateDeptSettngTailFirst', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/depts/settings/priorities', 'none', req, runtime)
+        )
+
     def update_emp_attrbute_visibility_setting(
         self,
         request: dingtalkcontact__1__0_models.UpdateEmpAttrbuteVisibilitySettingRequest,
@@ -729,6 +793,8 @@ class Client(OpenApiClient):
             body['offset'] = request.offset
         if not UtilClient.is_unset(request.size):
             body['size'] = request.size
+        if not UtilClient.is_unset(request.full_match_field):
+            body['fullMatchField'] = request.full_match_field
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -759,6 +825,8 @@ class Client(OpenApiClient):
             body['offset'] = request.offset
         if not UtilClient.is_unset(request.size):
             body['size'] = request.size
+        if not UtilClient.is_unset(request.full_match_field):
+            body['fullMatchField'] = request.full_match_field
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

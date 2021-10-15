@@ -576,6 +576,93 @@ class UpdateContactHideSettingResponse(TeaModel):
         return self
 
 
+class UpdateDeptSettngTailFirstHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateDeptSettngTailFirstRequest(TeaModel):
+    def __init__(
+        self,
+        enable: bool = None,
+    ):
+        self.enable = enable
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable is not None:
+            result['enable'] = self.enable
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        return self
+
+
+class UpdateDeptSettngTailFirstResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class UpdateEmpAttrbuteVisibilitySettingHeaders(TeaModel):
     def __init__(
         self,
@@ -1770,6 +1857,7 @@ class SearchUserRequest(TeaModel):
         query_word: str = None,
         offset: int = None,
         size: int = None,
+        full_match_field: int = None,
     ):
         self.ding_org_id = ding_org_id
         # 用户名称、名称拼音或英文名称
@@ -1778,6 +1866,8 @@ class SearchUserRequest(TeaModel):
         self.offset = offset
         # 分页长度
         self.size = size
+        # 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
+        self.full_match_field = full_match_field
 
     def validate(self):
         pass
@@ -1796,6 +1886,8 @@ class SearchUserRequest(TeaModel):
             result['offset'] = self.offset
         if self.size is not None:
             result['size'] = self.size
+        if self.full_match_field is not None:
+            result['fullMatchField'] = self.full_match_field
         return result
 
     def from_map(self, m: dict = None):
@@ -1808,6 +1900,8 @@ class SearchUserRequest(TeaModel):
             self.offset = m.get('offset')
         if m.get('size') is not None:
             self.size = m.get('size')
+        if m.get('fullMatchField') is not None:
+            self.full_match_field = m.get('fullMatchField')
         return self
 
 
