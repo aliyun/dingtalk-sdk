@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class ProcessStartRequest : TeaModel {
         /// <summary>
-        /// 是否跳过发起签署页直接发起
+        /// 是否自动发起
         /// </summary>
         [NameInMap("autoStart")]
         [Validation(Required=false)]
