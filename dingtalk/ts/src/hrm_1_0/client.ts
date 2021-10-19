@@ -419,100 +419,6 @@ export class QueryCustomEntryProcessesResponse extends $tea.Model {
   }
 }
 
-export class AddHrmPreentryHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddHrmPreentryRequest extends $tea.Model {
-  preEntryTime?: number;
-  name?: string;
-  mobile?: string;
-  agentId?: number;
-  groups?: AddHrmPreentryRequestGroups[];
-  static names(): { [key: string]: string } {
-    return {
-      preEntryTime: 'preEntryTime',
-      name: 'name',
-      mobile: 'mobile',
-      agentId: 'agentId',
-      groups: 'groups',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      preEntryTime: 'number',
-      name: 'string',
-      mobile: 'string',
-      agentId: 'number',
-      groups: { 'type': 'array', 'itemType': AddHrmPreentryRequestGroups },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddHrmPreentryResponseBody extends $tea.Model {
-  tmpUserId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      tmpUserId: 'tmpUserId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      tmpUserId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddHrmPreentryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: AddHrmPreentryResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AddHrmPreentryResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryPositionsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -613,6 +519,213 @@ export class QueryPositionsResponse extends $tea.Model {
   }
 }
 
+export class MasterDataQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryRequest extends $tea.Model {
+  body?: MasterDataQueryRequestBody;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: MasterDataQueryRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryShrinkRequest extends $tea.Model {
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bodyShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBody extends $tea.Model {
+  total?: number;
+  hasMore?: boolean;
+  nextToken?: number;
+  success?: boolean;
+  result?: MasterDataQueryResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      total: 'total',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      success: 'success',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      total: 'number',
+      hasMore: 'boolean',
+      nextToken: 'number',
+      success: 'boolean',
+      result: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: MasterDataQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: MasterDataQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmPreentryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmPreentryRequest extends $tea.Model {
+  preEntryTime?: number;
+  name?: string;
+  mobile?: string;
+  agentId?: number;
+  groups?: AddHrmPreentryRequestGroups[];
+  static names(): { [key: string]: string } {
+    return {
+      preEntryTime: 'preEntryTime',
+      name: 'name',
+      mobile: 'mobile',
+      agentId: 'agentId',
+      groups: 'groups',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      preEntryTime: 'number',
+      name: 'string',
+      mobile: 'string',
+      agentId: 'number',
+      groups: { 'type': 'array', 'itemType': AddHrmPreentryRequestGroups },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmPreentryResponseBody extends $tea.Model {
+  tmpUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tmpUserId: 'tmpUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tmpUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmPreentryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddHrmPreentryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddHrmPreentryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryJobRanksResponseBodyList extends $tea.Model {
   rankId?: string;
   rankCategoryId?: string;
@@ -703,6 +816,273 @@ export class QueryCustomEntryProcessesResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryPositionsResponseBodyList extends $tea.Model {
+  positionId?: string;
+  positionName?: string;
+  positionCategoryId?: string;
+  jobId?: string;
+  positionDes?: string;
+  rankIdList?: string[];
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      positionId: 'positionId',
+      positionName: 'positionName',
+      positionCategoryId: 'positionCategoryId',
+      jobId: 'jobId',
+      positionDes: 'positionDes',
+      rankIdList: 'rankIdList',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      positionId: 'string',
+      positionName: 'string',
+      positionCategoryId: 'string',
+      jobId: 'string',
+      positionDes: 'string',
+      rankIdList: { 'type': 'array', 'itemType': 'string' },
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryRequestBody extends $tea.Model {
+  scopeCode?: string;
+  viewEntityCode?: string;
+  tenantId?: number;
+  bizUK?: string;
+  relationIds?: string[];
+  optUserId?: string;
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      scopeCode: 'scopeCode',
+      viewEntityCode: 'viewEntityCode',
+      tenantId: 'tenantId',
+      bizUK: 'bizUK',
+      relationIds: 'relationIds',
+      optUserId: 'optUserId',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeCode: 'string',
+      viewEntityCode: 'string',
+      tenantId: 'number',
+      bizUK: 'string',
+      relationIds: { 'type': 'array', 'itemType': 'string' },
+      optUserId: 'string',
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends $tea.Model {
+  fieldCode?: string;
+  fieldDataVO?: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO;
+  fieldName?: string;
+  fieldType?: string;
+  attrs?: { [key: string]: {[key: string]: any} };
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldDataVO: 'fieldDataVO',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      attrs: 'attrs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldDataVO: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO,
+      fieldName: 'string',
+      fieldType: 'string',
+      attrs: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList extends $tea.Model {
+  fieldCode?: string;
+  fieldName?: string;
+  fieldDataVO?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO;
+  fieldType?: string;
+  attrs?: { [key: string]: {[key: string]: any} };
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldDataVO: 'fieldDataVO',
+      fieldType: 'fieldType',
+      attrs: 'attrs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldDataVO: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO,
+      fieldType: 'string',
+      attrs: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields extends $tea.Model {
+  fieldCode?: string;
+  fieldName?: string;
+  viewEntityFieldList?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList[];
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      viewEntityFieldList: 'viewEntityFieldList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      viewEntityFieldList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList extends $tea.Model {
+  fieldCode?: string;
+  fieldName?: string;
+  fieldType?: string;
+  rowFields?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields[];
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      rowFields: 'rowFields',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      rowFields: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryResponseBodyResult extends $tea.Model {
+  outerId?: string;
+  scopeCode?: string;
+  viewEntityCode?: string;
+  viewEntityFieldVOList?: MasterDataQueryResponseBodyResultViewEntityFieldVOList[];
+  viewEntityMultiFieldVOList?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      outerId: 'outerId',
+      scopeCode: 'scopeCode',
+      viewEntityCode: 'viewEntityCode',
+      viewEntityFieldVOList: 'viewEntityFieldVOList',
+      viewEntityMultiFieldVOList: 'viewEntityMultiFieldVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outerId: 'string',
+      scopeCode: 'string',
+      viewEntityCode: 'string',
+      viewEntityFieldVOList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityFieldVOList },
+      viewEntityMultiFieldVOList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList extends $tea.Model {
   value?: string;
   fieldCode?: string;
@@ -761,43 +1141,6 @@ export class AddHrmPreentryRequestGroups extends $tea.Model {
     return {
       groupId: 'string',
       sections: { 'type': 'array', 'itemType': AddHrmPreentryRequestGroupsSections },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryPositionsResponseBodyList extends $tea.Model {
-  positionId?: string;
-  positionName?: string;
-  positionCategoryId?: string;
-  jobId?: string;
-  positionDes?: string;
-  rankIdList?: string[];
-  status?: number;
-  static names(): { [key: string]: string } {
-    return {
-      positionId: 'positionId',
-      positionName: 'positionName',
-      positionCategoryId: 'positionCategoryId',
-      jobId: 'jobId',
-      positionDes: 'positionDes',
-      rankIdList: 'rankIdList',
-      status: 'status',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      positionId: 'string',
-      positionName: 'string',
-      positionCategoryId: 'string',
-      jobId: 'string',
-      positionDes: 'string',
-      rankIdList: { 'type': 'array', 'itemType': 'string' },
-      status: 'number',
     };
   }
 
@@ -967,51 +1310,6 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCustomEntryProcessesResponse>(await this.doROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/customEntryProcesses`, "json", req, runtime), new QueryCustomEntryProcessesResponse({}));
   }
 
-  async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddHrmPreentryHeaders({ });
-    return await this.addHrmPreentryWithOptions(request, headers, runtime);
-  }
-
-  async addHrmPreentryWithOptions(request: AddHrmPreentryRequest, headers: AddHrmPreentryHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmPreentryResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.preEntryTime)) {
-      body["preEntryTime"] = request.preEntryTime;
-    }
-
-    if (!Util.isUnset(request.name)) {
-      body["name"] = request.name;
-    }
-
-    if (!Util.isUnset(request.mobile)) {
-      body["mobile"] = request.mobile;
-    }
-
-    if (!Util.isUnset(request.agentId)) {
-      body["agentId"] = request.agentId;
-    }
-
-    if (!Util.isUnset(request.groups)) {
-      body["groups"] = request.groups;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AddHrmPreentryResponse>(await this.doROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/preentries`, "json", req, runtime), new AddHrmPreentryResponse({}));
-  }
-
   async queryPositions(request: QueryPositionsRequest): Promise<QueryPositionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPositionsHeaders({ });
@@ -1057,6 +1355,86 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryPositionsResponse>(await this.doROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/positions/query`, "json", req, runtime), new QueryPositionsResponse({}));
+  }
+
+  async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MasterDataQueryHeaders({ });
+    return await this.masterDataQueryWithOptions(request, headers, runtime);
+  }
+
+  async masterDataQueryWithOptions(tmpReq: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
+    Util.validateModel(tmpReq);
+    let request = new MasterDataQueryShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset($tea.toMap(tmpReq.body))) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.body), "body", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<MasterDataQueryResponse>(await this.doROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/masters/datas/query`, "json", req, runtime), new MasterDataQueryResponse({}));
+  }
+
+  async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddHrmPreentryHeaders({ });
+    return await this.addHrmPreentryWithOptions(request, headers, runtime);
+  }
+
+  async addHrmPreentryWithOptions(request: AddHrmPreentryRequest, headers: AddHrmPreentryHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmPreentryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.preEntryTime)) {
+      body["preEntryTime"] = request.preEntryTime;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.agentId)) {
+      body["agentId"] = request.agentId;
+    }
+
+    if (!Util.isUnset(request.groups)) {
+      body["groups"] = request.groups;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddHrmPreentryResponse>(await this.doROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/preentries`, "json", req, runtime), new AddHrmPreentryResponse({}));
   }
 
 }

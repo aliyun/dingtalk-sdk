@@ -280,7 +280,6 @@ export class ProcessStartHeaders extends $tea.Model {
 }
 
 export class ProcessStartRequest extends $tea.Model {
-  autoStart?: string;
   initiatorUserId?: string;
   dingCorpId?: string;
   taskName?: string;
@@ -289,9 +288,9 @@ export class ProcessStartRequest extends $tea.Model {
   participants?: ProcessStartRequestParticipants[];
   ccs?: ProcessStartRequestCcs[];
   sourceInfo?: ProcessStartRequestSourceInfo;
+  autoStart?: string;
   static names(): { [key: string]: string } {
     return {
-      autoStart: 'autoStart',
       initiatorUserId: 'initiatorUserId',
       dingCorpId: 'dingCorpId',
       taskName: 'taskName',
@@ -300,12 +299,12 @@ export class ProcessStartRequest extends $tea.Model {
       participants: 'participants',
       ccs: 'ccs',
       sourceInfo: 'sourceInfo',
+      autoStart: 'autoStart',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      autoStart: 'string',
       initiatorUserId: 'string',
       dingCorpId: 'string',
       taskName: 'string',
@@ -314,6 +313,7 @@ export class ProcessStartRequest extends $tea.Model {
       participants: { 'type': 'array', 'itemType': ProcessStartRequestParticipants },
       ccs: { 'type': 'array', 'itemType': ProcessStartRequestCcs },
       sourceInfo: ProcessStartRequestSourceInfo,
+      autoStart: 'string',
     };
   }
 
@@ -2505,10 +2505,6 @@ export default class Client extends OpenApi {
   async processStartWithOptions(request: ProcessStartRequest, headers: ProcessStartHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessStartResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.autoStart)) {
-      body["autoStart"] = request.autoStart;
-    }
-
     if (!Util.isUnset(request.initiatorUserId)) {
       body["initiatorUserId"] = request.initiatorUserId;
     }
@@ -2539,6 +2535,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset($tea.toMap(request.sourceInfo))) {
       body["sourceInfo"] = request.sourceInfo;
+    }
+
+    if (!Util.isUnset(request.autoStart)) {
+      body["autoStart"] = request.autoStart;
     }
 
     let realHeaders : {[key: string ]: string} = { };

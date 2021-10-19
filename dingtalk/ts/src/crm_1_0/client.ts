@@ -283,6 +283,91 @@ export class DeleteCrmFormInstanceResponse extends $tea.Model {
   }
 }
 
+export class GetCrmRolePermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionRequest extends $tea.Model {
+  formCode?: string;
+  bizType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      bizType: 'bizType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      bizType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponseBody extends $tea.Model {
+  permissions?: GetCrmRolePermissionResponseBodyPermissions[];
+  static names(): { [key: string]: string } {
+    return {
+      permissions: 'permissions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      permissions: { 'type': 'array', 'itemType': GetCrmRolePermissionResponseBodyPermissions },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCrmRolePermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCrmRolePermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchSendOfficialAccountOTOMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1984,6 +2069,165 @@ export class ServiceWindowMessageBatchPushResponseBodyResult extends $tea.Model 
   }
 }
 
+export class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends $tea.Model {
+  name?: string;
+  staffId?: string;
+  type?: string;
+  memberId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      staffId: 'staffId',
+      type: 'type',
+      memberId: 'memberId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      staffId: 'string',
+      type: 'string',
+      memberId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt extends $tea.Model {
+  staffIdList?: string[];
+  deptIdList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      staffIdList: 'staffIdList',
+      deptIdList: 'deptIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      staffIdList: { 'type': 'array', 'itemType': 'string' },
+      deptIdList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponseBodyPermissionsManagingScopeList extends $tea.Model {
+  type?: string;
+  manager?: boolean;
+  ext?: GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      manager: 'manager',
+      ext: 'ext',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      manager: 'boolean',
+      ext: GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponseBodyPermissionsOperateScopes extends $tea.Model {
+  type?: string;
+  hasAuth?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      hasAuth: 'hasAuth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      hasAuth: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponseBodyPermissionsFieldScopes extends $tea.Model {
+  fieldId?: string;
+  fieldActions?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      fieldActions: 'fieldActions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      fieldActions: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCrmRolePermissionResponseBodyPermissions extends $tea.Model {
+  roleMemberList?: GetCrmRolePermissionResponseBodyPermissionsRoleMemberList[];
+  managingScopeList?: GetCrmRolePermissionResponseBodyPermissionsManagingScopeList[];
+  defaultRole?: boolean;
+  resourceId?: string;
+  roleName?: string;
+  roleId?: number;
+  operateScopes?: GetCrmRolePermissionResponseBodyPermissionsOperateScopes[];
+  fieldScopes?: GetCrmRolePermissionResponseBodyPermissionsFieldScopes[];
+  static names(): { [key: string]: string } {
+    return {
+      roleMemberList: 'roleMemberList',
+      managingScopeList: 'managingScopeList',
+      defaultRole: 'defaultRole',
+      resourceId: 'resourceId',
+      roleName: 'roleName',
+      roleId: 'roleId',
+      operateScopes: 'operateScopes',
+      fieldScopes: 'fieldScopes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleMemberList: { 'type': 'array', 'itemType': GetCrmRolePermissionResponseBodyPermissionsRoleMemberList },
+      managingScopeList: { 'type': 'array', 'itemType': GetCrmRolePermissionResponseBodyPermissionsManagingScopeList },
+      defaultRole: 'boolean',
+      resourceId: 'string',
+      roleName: 'string',
+      roleId: 'number',
+      operateScopes: { 'type': 'array', 'itemType': GetCrmRolePermissionResponseBodyPermissionsOperateScopes },
+      fieldScopes: { 'type': 'array', 'itemType': GetCrmRolePermissionResponseBodyPermissionsFieldScopes },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText extends $tea.Model {
   content?: string;
   static names(): { [key: string]: string } {
@@ -3118,6 +3362,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteCrmFormInstanceResponse>(await this.doROARequest("DeleteCrmFormInstance", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/formInstances/${instanceId}`, "json", req, runtime), new DeleteCrmFormInstanceResponse({}));
+  }
+
+  async getCrmRolePermission(request: GetCrmRolePermissionRequest): Promise<GetCrmRolePermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCrmRolePermissionHeaders({ });
+    return await this.getCrmRolePermissionWithOptions(request, headers, runtime);
+  }
+
+  async getCrmRolePermissionWithOptions(request: GetCrmRolePermissionRequest, headers: GetCrmRolePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmRolePermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      query["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.bizType)) {
+      query["bizType"] = request.bizType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetCrmRolePermissionResponse>(await this.doROARequest("GetCrmRolePermission", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/permissions`, "json", req, runtime), new GetCrmRolePermissionResponse({}));
   }
 
   async batchSendOfficialAccountOTOMessage(request: BatchSendOfficialAccountOTOMessageRequest): Promise<BatchSendOfficialAccountOTOMessageResponse> {
