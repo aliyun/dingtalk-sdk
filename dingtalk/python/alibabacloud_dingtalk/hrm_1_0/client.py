@@ -311,86 +311,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryCustomEntryProcesses', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/customEntryProcesses', 'json', req, runtime)
         )
 
-    def add_hrm_preentry(
-        self,
-        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
-    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
-        return self.add_hrm_preentry_with_options(request, headers, runtime)
-
-    async def add_hrm_preentry_async(
-        self,
-        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
-    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
-        return await self.add_hrm_preentry_with_options_async(request, headers, runtime)
-
-    def add_hrm_preentry_with_options(
-        self,
-        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
-        headers: dingtalkhrm__1__0_models.AddHrmPreentryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.pre_entry_time):
-            body['preEntryTime'] = request.pre_entry_time
-        if not UtilClient.is_unset(request.name):
-            body['name'] = request.name
-        if not UtilClient.is_unset(request.mobile):
-            body['mobile'] = request.mobile
-        if not UtilClient.is_unset(request.agent_id):
-            body['agentId'] = request.agent_id
-        if not UtilClient.is_unset(request.groups):
-            body['groups'] = request.groups
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkhrm__1__0_models.AddHrmPreentryResponse(),
-            self.do_roarequest('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/preentries', 'json', req, runtime)
-        )
-
-    async def add_hrm_preentry_with_options_async(
-        self,
-        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
-        headers: dingtalkhrm__1__0_models.AddHrmPreentryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.pre_entry_time):
-            body['preEntryTime'] = request.pre_entry_time
-        if not UtilClient.is_unset(request.name):
-            body['name'] = request.name
-        if not UtilClient.is_unset(request.mobile):
-            body['mobile'] = request.mobile
-        if not UtilClient.is_unset(request.agent_id):
-            body['agentId'] = request.agent_id
-        if not UtilClient.is_unset(request.groups):
-            body['groups'] = request.groups
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkhrm__1__0_models.AddHrmPreentryResponse(),
-            await self.do_roarequest_async('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/preentries', 'json', req, runtime)
-        )
-
     def query_positions(
         self,
         request: dingtalkhrm__1__0_models.QueryPositionsRequest,
@@ -473,4 +393,156 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryPositionsResponse(),
             await self.do_roarequest_async('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/positions/query', 'json', req, runtime)
+        )
+
+    def master_data_query(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataQueryHeaders()
+        return self.master_data_query_with_options(request, headers, runtime)
+
+    async def master_data_query_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataQueryHeaders()
+        return await self.master_data_query_with_options_async(request, headers, runtime)
+
+    def master_data_query_with_options(
+        self,
+        tmp_req: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkhrm__1__0_models.MasterDataQueryShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataQueryResponse(),
+            self.do_roarequest('MasterDataQuery', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/query', 'json', req, runtime)
+        )
+
+    async def master_data_query_with_options_async(
+        self,
+        tmp_req: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkhrm__1__0_models.MasterDataQueryShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataQueryResponse(),
+            await self.do_roarequest_async('MasterDataQuery', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/query', 'json', req, runtime)
+        )
+
+    def add_hrm_preentry(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
+    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
+        return self.add_hrm_preentry_with_options(request, headers, runtime)
+
+    async def add_hrm_preentry_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
+    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
+        return await self.add_hrm_preentry_with_options_async(request, headers, runtime)
+
+    def add_hrm_preentry_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
+        headers: dingtalkhrm__1__0_models.AddHrmPreentryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.pre_entry_time):
+            body['preEntryTime'] = request.pre_entry_time
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.groups):
+            body['groups'] = request.groups
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddHrmPreentryResponse(),
+            self.do_roarequest('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/preentries', 'json', req, runtime)
+        )
+
+    async def add_hrm_preentry_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
+        headers: dingtalkhrm__1__0_models.AddHrmPreentryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.pre_entry_time):
+            body['preEntryTime'] = request.pre_entry_time
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.groups):
+            body['groups'] = request.groups
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddHrmPreentryResponse(),
+            await self.do_roarequest_async('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/preentries', 'json', req, runtime)
         )

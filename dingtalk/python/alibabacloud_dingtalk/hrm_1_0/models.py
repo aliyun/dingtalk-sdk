@@ -885,6 +885,846 @@ class QueryCustomEntryProcessesResponse(TeaModel):
         return self
 
 
+class QueryPositionsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPositionsRequest(TeaModel):
+    def __init__(
+        self,
+        position_name: str = None,
+        in_category_ids: List[str] = None,
+        in_position_ids: List[str] = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 职位名称
+        self.position_name = position_name
+        # 职位类别列表
+        self.in_category_ids = in_category_ids
+        # 职位id列表
+        self.in_position_ids = in_position_ids
+        # 偏移量
+        self.next_token = next_token
+        # 一次查询获取记录数
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_name is not None:
+            result['positionName'] = self.position_name
+        if self.in_category_ids is not None:
+            result['inCategoryIds'] = self.in_category_ids
+        if self.in_position_ids is not None:
+            result['inPositionIds'] = self.in_position_ids
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionName') is not None:
+            self.position_name = m.get('positionName')
+        if m.get('inCategoryIds') is not None:
+            self.in_category_ids = m.get('inCategoryIds')
+        if m.get('inPositionIds') is not None:
+            self.in_position_ids = m.get('inPositionIds')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryPositionsResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        position_id: str = None,
+        position_name: str = None,
+        position_category_id: str = None,
+        job_id: str = None,
+        position_des: str = None,
+        rank_id_list: List[str] = None,
+        status: int = None,
+    ):
+        # 职位ID
+        self.position_id = position_id
+        # 职位名称
+        self.position_name = position_name
+        # 职位类别ID
+        self.position_category_id = position_category_id
+        # 所属职务ID
+        self.job_id = job_id
+        # 职位描述
+        self.position_des = position_des
+        # 职位对应职级列表
+        self.rank_id_list = rank_id_list
+        # 职位状态-0，启用；1，停用
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_id is not None:
+            result['positionId'] = self.position_id
+        if self.position_name is not None:
+            result['positionName'] = self.position_name
+        if self.position_category_id is not None:
+            result['positionCategoryId'] = self.position_category_id
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
+        if self.position_des is not None:
+            result['positionDes'] = self.position_des
+        if self.rank_id_list is not None:
+            result['rankIdList'] = self.rank_id_list
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionId') is not None:
+            self.position_id = m.get('positionId')
+        if m.get('positionName') is not None:
+            self.position_name = m.get('positionName')
+        if m.get('positionCategoryId') is not None:
+            self.position_category_id = m.get('positionCategoryId')
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
+        if m.get('positionDes') is not None:
+            self.position_des = m.get('positionDes')
+        if m.get('rankIdList') is not None:
+            self.rank_id_list = m.get('rankIdList')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryPositionsResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        has_more: bool = None,
+        list: List[QueryPositionsResponseBodyList] = None,
+    ):
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 是否有更多数据
+        self.has_more = has_more
+        # 职位列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryPositionsResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryPositionsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPositionsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPositionsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MasterDataQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MasterDataQueryRequestBody(TeaModel):
+    def __init__(
+        self,
+        scope_code: str = None,
+        view_entity_code: str = None,
+        tenant_id: int = None,
+        biz_uk: str = None,
+        relation_ids: List[str] = None,
+        opt_user_id: str = None,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        self.scope_code = scope_code
+        self.view_entity_code = view_entity_code
+        self.tenant_id = tenant_id
+        self.biz_uk = biz_uk
+        self.relation_ids = relation_ids
+        self.opt_user_id = opt_user_id
+        self.next_token = next_token
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scope_code is not None:
+            result['scopeCode'] = self.scope_code
+        if self.view_entity_code is not None:
+            result['viewEntityCode'] = self.view_entity_code
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        if self.biz_uk is not None:
+            result['bizUK'] = self.biz_uk
+        if self.relation_ids is not None:
+            result['relationIds'] = self.relation_ids
+        if self.opt_user_id is not None:
+            result['optUserId'] = self.opt_user_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scopeCode') is not None:
+            self.scope_code = m.get('scopeCode')
+        if m.get('viewEntityCode') is not None:
+            self.view_entity_code = m.get('viewEntityCode')
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        if m.get('bizUK') is not None:
+            self.biz_uk = m.get('bizUK')
+        if m.get('relationIds') is not None:
+            self.relation_ids = m.get('relationIds')
+        if m.get('optUserId') is not None:
+            self.opt_user_id = m.get('optUserId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class MasterDataQueryRequest(TeaModel):
+    def __init__(
+        self,
+        body: MasterDataQueryRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = MasterDataQueryRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MasterDataQueryShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class MasterDataQueryResponseBodyResultViewEntityFieldVOList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_data_vo: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO = None,
+        field_name: str = None,
+        field_type: str = None,
+        attrs: Dict[str, dict] = None,
+    ):
+        self.field_code = field_code
+        self.field_data_vo = field_data_vo
+        self.field_name = field_name
+        self.field_type = field_type
+        self.attrs = attrs
+
+    def validate(self):
+        if self.field_data_vo:
+            self.field_data_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_data_vo is not None:
+            result['fieldDataVO'] = self.field_data_vo.to_map()
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.attrs is not None:
+            result['attrs'] = self.attrs
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldDataVO') is not None:
+            temp_model = MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO()
+            self.field_data_vo = temp_model.from_map(m['fieldDataVO'])
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('attrs') is not None:
+            self.attrs = m.get('attrs')
+        return self
+
+
+class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        field_data_vo: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO = None,
+        field_type: str = None,
+        attrs: Dict[str, dict] = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_data_vo = field_data_vo
+        self.field_type = field_type
+        self.attrs = attrs
+
+    def validate(self):
+        if self.field_data_vo:
+            self.field_data_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_data_vo is not None:
+            result['fieldDataVO'] = self.field_data_vo.to_map()
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.attrs is not None:
+            result['attrs'] = self.attrs
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldDataVO') is not None:
+            temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO()
+            self.field_data_vo = temp_model.from_map(m['fieldDataVO'])
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('attrs') is not None:
+            self.attrs = m.get('attrs')
+        return self
+
+
+class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        view_entity_field_list: List[MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList] = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.view_entity_field_list = view_entity_field_list
+
+    def validate(self):
+        if self.view_entity_field_list:
+            for k in self.view_entity_field_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        result['viewEntityFieldList'] = []
+        if self.view_entity_field_list is not None:
+            for k in self.view_entity_field_list:
+                result['viewEntityFieldList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        self.view_entity_field_list = []
+        if m.get('viewEntityFieldList') is not None:
+            for k in m.get('viewEntityFieldList'):
+                temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList()
+                self.view_entity_field_list.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        row_fields: List[MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields] = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.row_fields = row_fields
+
+    def validate(self):
+        if self.row_fields:
+            for k in self.row_fields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        result['rowFields'] = []
+        if self.row_fields is not None:
+            for k in self.row_fields:
+                result['rowFields'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        self.row_fields = []
+        if m.get('rowFields') is not None:
+            for k in m.get('rowFields'):
+                temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields()
+                self.row_fields.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataQueryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        outer_id: str = None,
+        scope_code: str = None,
+        view_entity_code: str = None,
+        view_entity_field_volist: List[MasterDataQueryResponseBodyResultViewEntityFieldVOList] = None,
+        view_entity_multi_field_volist: List[MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList] = None,
+    ):
+        self.outer_id = outer_id
+        self.scope_code = scope_code
+        self.view_entity_code = view_entity_code
+        self.view_entity_field_volist = view_entity_field_volist
+        self.view_entity_multi_field_volist = view_entity_multi_field_volist
+
+    def validate(self):
+        if self.view_entity_field_volist:
+            for k in self.view_entity_field_volist:
+                if k:
+                    k.validate()
+        if self.view_entity_multi_field_volist:
+            for k in self.view_entity_multi_field_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
+        if self.scope_code is not None:
+            result['scopeCode'] = self.scope_code
+        if self.view_entity_code is not None:
+            result['viewEntityCode'] = self.view_entity_code
+        result['viewEntityFieldVOList'] = []
+        if self.view_entity_field_volist is not None:
+            for k in self.view_entity_field_volist:
+                result['viewEntityFieldVOList'].append(k.to_map() if k else None)
+        result['viewEntityMultiFieldVOList'] = []
+        if self.view_entity_multi_field_volist is not None:
+            for k in self.view_entity_multi_field_volist:
+                result['viewEntityMultiFieldVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
+        if m.get('scopeCode') is not None:
+            self.scope_code = m.get('scopeCode')
+        if m.get('viewEntityCode') is not None:
+            self.view_entity_code = m.get('viewEntityCode')
+        self.view_entity_field_volist = []
+        if m.get('viewEntityFieldVOList') is not None:
+            for k in m.get('viewEntityFieldVOList'):
+                temp_model = MasterDataQueryResponseBodyResultViewEntityFieldVOList()
+                self.view_entity_field_volist.append(temp_model.from_map(k))
+        self.view_entity_multi_field_volist = []
+        if m.get('viewEntityMultiFieldVOList') is not None:
+            for k in m.get('viewEntityMultiFieldVOList'):
+                temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList()
+                self.view_entity_multi_field_volist.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        total: int = None,
+        has_more: bool = None,
+        next_token: int = None,
+        success: bool = None,
+        result: List[MasterDataQueryResponseBodyResult] = None,
+    ):
+        self.total = total
+        self.has_more = has_more
+        self.next_token = next_token
+        self.success = success
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total is not None:
+            result['total'] = self.total
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.success is not None:
+            result['success'] = self.success
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = MasterDataQueryResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: MasterDataQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = MasterDataQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddHrmPreentryHeaders(TeaModel):
     def __init__(
         self,
@@ -1153,252 +1993,6 @@ class AddHrmPreentryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AddHrmPreentryResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class QueryPositionsHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class QueryPositionsRequest(TeaModel):
-    def __init__(
-        self,
-        position_name: str = None,
-        in_category_ids: List[str] = None,
-        in_position_ids: List[str] = None,
-        next_token: int = None,
-        max_results: int = None,
-    ):
-        # 职位名称
-        self.position_name = position_name
-        # 职位类别列表
-        self.in_category_ids = in_category_ids
-        # 职位id列表
-        self.in_position_ids = in_position_ids
-        # 偏移量
-        self.next_token = next_token
-        # 一次查询获取记录数
-        self.max_results = max_results
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.position_name is not None:
-            result['positionName'] = self.position_name
-        if self.in_category_ids is not None:
-            result['inCategoryIds'] = self.in_category_ids
-        if self.in_position_ids is not None:
-            result['inPositionIds'] = self.in_position_ids
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('positionName') is not None:
-            self.position_name = m.get('positionName')
-        if m.get('inCategoryIds') is not None:
-            self.in_category_ids = m.get('inCategoryIds')
-        if m.get('inPositionIds') is not None:
-            self.in_position_ids = m.get('inPositionIds')
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
-        return self
-
-
-class QueryPositionsResponseBodyList(TeaModel):
-    def __init__(
-        self,
-        position_id: str = None,
-        position_name: str = None,
-        position_category_id: str = None,
-        job_id: str = None,
-        position_des: str = None,
-        rank_id_list: List[str] = None,
-        status: int = None,
-    ):
-        # 职位ID
-        self.position_id = position_id
-        # 职位名称
-        self.position_name = position_name
-        # 职位类别ID
-        self.position_category_id = position_category_id
-        # 所属职务ID
-        self.job_id = job_id
-        # 职位描述
-        self.position_des = position_des
-        # 职位对应职级列表
-        self.rank_id_list = rank_id_list
-        # 职位状态-0，启用；1，停用
-        self.status = status
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.position_id is not None:
-            result['positionId'] = self.position_id
-        if self.position_name is not None:
-            result['positionName'] = self.position_name
-        if self.position_category_id is not None:
-            result['positionCategoryId'] = self.position_category_id
-        if self.job_id is not None:
-            result['jobId'] = self.job_id
-        if self.position_des is not None:
-            result['positionDes'] = self.position_des
-        if self.rank_id_list is not None:
-            result['rankIdList'] = self.rank_id_list
-        if self.status is not None:
-            result['status'] = self.status
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('positionId') is not None:
-            self.position_id = m.get('positionId')
-        if m.get('positionName') is not None:
-            self.position_name = m.get('positionName')
-        if m.get('positionCategoryId') is not None:
-            self.position_category_id = m.get('positionCategoryId')
-        if m.get('jobId') is not None:
-            self.job_id = m.get('jobId')
-        if m.get('positionDes') is not None:
-            self.position_des = m.get('positionDes')
-        if m.get('rankIdList') is not None:
-            self.rank_id_list = m.get('rankIdList')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        return self
-
-
-class QueryPositionsResponseBody(TeaModel):
-    def __init__(
-        self,
-        next_token: int = None,
-        has_more: bool = None,
-        list: List[QueryPositionsResponseBodyList] = None,
-    ):
-        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-        self.next_token = next_token
-        # 是否有更多数据
-        self.has_more = has_more
-        # 职位列表
-        self.list = list
-
-    def validate(self):
-        if self.list:
-            for k in self.list:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.has_more is not None:
-            result['hasMore'] = self.has_more
-        result['list'] = []
-        if self.list is not None:
-            for k in self.list:
-                result['list'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('hasMore') is not None:
-            self.has_more = m.get('hasMore')
-        self.list = []
-        if m.get('list') is not None:
-            for k in m.get('list'):
-                temp_model = QueryPositionsResponseBodyList()
-                self.list.append(temp_model.from_map(k))
-        return self
-
-
-class QueryPositionsResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: QueryPositionsResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = QueryPositionsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -959,6 +959,457 @@ class DeleteCrmFormInstanceResponse(TeaModel):
         return self
 
 
+class GetCrmRolePermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCrmRolePermissionRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        biz_type: str = None,
+    ):
+        # 表单标识（formCode & bizType二选一）
+        self.form_code = form_code
+        # 表单业务标识（formCode & bizType二选一）
+        self.biz_type = biz_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        return self
+
+
+class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        staff_id: str = None,
+        type: str = None,
+        member_id: str = None,
+    ):
+        # 角色名
+        self.name = name
+        # 角色的userId
+        self.staff_id = staff_id
+        # 角色类型
+        self.type = type
+        # 角色值
+        self.member_id = member_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        return self
+
+
+class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
+    def __init__(
+        self,
+        staff_id_list: List[str] = None,
+        dept_id_list: List[float] = None,
+    ):
+        # 管理员工列表
+        self.staff_id_list = staff_id_list
+        # 管理部门列表
+        self.dept_id_list = dept_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.staff_id_list is not None:
+            result['staffIdList'] = self.staff_id_list
+        if self.dept_id_list is not None:
+            result['deptIdList'] = self.dept_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('staffIdList') is not None:
+            self.staff_id_list = m.get('staffIdList')
+        if m.get('deptIdList') is not None:
+            self.dept_id_list = m.get('deptIdList')
+        return self
+
+
+class GetCrmRolePermissionResponseBodyPermissionsManagingScopeList(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        manager: bool = None,
+        ext: GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt = None,
+    ):
+        # 管理范围类型
+        self.type = type
+        # 是否是主管
+        self.manager = manager
+        # 扩展信息
+        self.ext = ext
+
+    def validate(self):
+        if self.ext:
+            self.ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.manager is not None:
+            result['manager'] = self.manager
+        if self.ext is not None:
+            result['ext'] = self.ext.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('manager') is not None:
+            self.manager = m.get('manager')
+        if m.get('ext') is not None:
+            temp_model = GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt()
+            self.ext = temp_model.from_map(m['ext'])
+        return self
+
+
+class GetCrmRolePermissionResponseBodyPermissionsOperateScopes(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        has_auth: bool = None,
+    ):
+        # 操作范围类型
+        self.type = type
+        # 是否有权限
+        self.has_auth = has_auth
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.has_auth is not None:
+            result['hasAuth'] = self.has_auth
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('hasAuth') is not None:
+            self.has_auth = m.get('hasAuth')
+        return self
+
+
+class GetCrmRolePermissionResponseBodyPermissionsFieldScopes(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        field_actions: List[str] = None,
+    ):
+        # 字段id
+        self.field_id = field_id
+        # 字段权限点
+        self.field_actions = field_actions
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.field_actions is not None:
+            result['fieldActions'] = self.field_actions
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('fieldActions') is not None:
+            self.field_actions = m.get('fieldActions')
+        return self
+
+
+class GetCrmRolePermissionResponseBodyPermissions(TeaModel):
+    def __init__(
+        self,
+        role_member_list: List[GetCrmRolePermissionResponseBodyPermissionsRoleMemberList] = None,
+        managing_scope_list: List[GetCrmRolePermissionResponseBodyPermissionsManagingScopeList] = None,
+        default_role: bool = None,
+        resource_id: str = None,
+        role_name: str = None,
+        role_id: float = None,
+        operate_scopes: List[GetCrmRolePermissionResponseBodyPermissionsOperateScopes] = None,
+        field_scopes: List[GetCrmRolePermissionResponseBodyPermissionsFieldScopes] = None,
+    ):
+        # 权限组配置
+        self.role_member_list = role_member_list
+        # 权限组适用范围配置
+        self.managing_scope_list = managing_scope_list
+        # 是否是默认权限
+        self.default_role = default_role
+        # 资源id
+        self.resource_id = resource_id
+        # 权限组名称
+        self.role_name = role_name
+        # 权限组id
+        self.role_id = role_id
+        # 操作范围
+        self.operate_scopes = operate_scopes
+        # 字段权限
+        self.field_scopes = field_scopes
+
+    def validate(self):
+        if self.role_member_list:
+            for k in self.role_member_list:
+                if k:
+                    k.validate()
+        if self.managing_scope_list:
+            for k in self.managing_scope_list:
+                if k:
+                    k.validate()
+        if self.operate_scopes:
+            for k in self.operate_scopes:
+                if k:
+                    k.validate()
+        if self.field_scopes:
+            for k in self.field_scopes:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['roleMemberList'] = []
+        if self.role_member_list is not None:
+            for k in self.role_member_list:
+                result['roleMemberList'].append(k.to_map() if k else None)
+        result['managingScopeList'] = []
+        if self.managing_scope_list is not None:
+            for k in self.managing_scope_list:
+                result['managingScopeList'].append(k.to_map() if k else None)
+        if self.default_role is not None:
+            result['defaultRole'] = self.default_role
+        if self.resource_id is not None:
+            result['resourceId'] = self.resource_id
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        result['operateScopes'] = []
+        if self.operate_scopes is not None:
+            for k in self.operate_scopes:
+                result['operateScopes'].append(k.to_map() if k else None)
+        result['fieldScopes'] = []
+        if self.field_scopes is not None:
+            for k in self.field_scopes:
+                result['fieldScopes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.role_member_list = []
+        if m.get('roleMemberList') is not None:
+            for k in m.get('roleMemberList'):
+                temp_model = GetCrmRolePermissionResponseBodyPermissionsRoleMemberList()
+                self.role_member_list.append(temp_model.from_map(k))
+        self.managing_scope_list = []
+        if m.get('managingScopeList') is not None:
+            for k in m.get('managingScopeList'):
+                temp_model = GetCrmRolePermissionResponseBodyPermissionsManagingScopeList()
+                self.managing_scope_list.append(temp_model.from_map(k))
+        if m.get('defaultRole') is not None:
+            self.default_role = m.get('defaultRole')
+        if m.get('resourceId') is not None:
+            self.resource_id = m.get('resourceId')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        self.operate_scopes = []
+        if m.get('operateScopes') is not None:
+            for k in m.get('operateScopes'):
+                temp_model = GetCrmRolePermissionResponseBodyPermissionsOperateScopes()
+                self.operate_scopes.append(temp_model.from_map(k))
+        self.field_scopes = []
+        if m.get('fieldScopes') is not None:
+            for k in m.get('fieldScopes'):
+                temp_model = GetCrmRolePermissionResponseBodyPermissionsFieldScopes()
+                self.field_scopes.append(temp_model.from_map(k))
+        return self
+
+
+class GetCrmRolePermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        permissions: List[GetCrmRolePermissionResponseBodyPermissions] = None,
+    ):
+        # CRM表单权限配置
+        self.permissions = permissions
+
+    def validate(self):
+        if self.permissions:
+            for k in self.permissions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['permissions'] = []
+        if self.permissions is not None:
+            for k in self.permissions:
+                result['permissions'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.permissions = []
+        if m.get('permissions') is not None:
+            for k in m.get('permissions'):
+                temp_model = GetCrmRolePermissionResponseBodyPermissions()
+                self.permissions.append(temp_model.from_map(k))
+        return self
+
+
+class GetCrmRolePermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCrmRolePermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCrmRolePermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchSendOfficialAccountOTOMessageHeaders(TeaModel):
     def __init__(
         self,

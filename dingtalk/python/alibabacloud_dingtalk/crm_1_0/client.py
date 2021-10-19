@@ -247,6 +247,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/formInstances/{instance_id}', 'json', req, runtime)
         )
 
+    def get_crm_role_permission(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
+        return self.get_crm_role_permission_with_options(request, headers, runtime)
+
+    async def get_crm_role_permission_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
+        return await self.get_crm_role_permission_with_options_async(request, headers, runtime)
+
+    def get_crm_role_permission_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
+        headers: dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmRolePermissionResponse(),
+            self.do_roarequest('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/permissions', 'json', req, runtime)
+        )
+
+    async def get_crm_role_permission_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
+        headers: dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmRolePermissionResponse(),
+            await self.do_roarequest_async('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/permissions', 'json', req, runtime)
+        )
+
     def batch_send_official_account_otomessage(
         self,
         request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,

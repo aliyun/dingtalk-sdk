@@ -263,8 +263,6 @@ class Client(OpenApiClient):
     ) -> dingtalkesign__2__0_models.ProcessStartResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.auto_start):
-            body['autoStart'] = request.auto_start
         if not UtilClient.is_unset(request.initiator_user_id):
             body['initiatorUserId'] = request.initiator_user_id
         if not UtilClient.is_unset(request.ding_corp_id):
@@ -281,6 +279,8 @@ class Client(OpenApiClient):
             body['ccs'] = request.ccs
         if not UtilClient.is_unset(request.source_info):
             body['sourceInfo'] = request.source_info
+        if not UtilClient.is_unset(request.auto_start):
+            body['autoStart'] = request.auto_start
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -305,8 +305,6 @@ class Client(OpenApiClient):
     ) -> dingtalkesign__2__0_models.ProcessStartResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.auto_start):
-            body['autoStart'] = request.auto_start
         if not UtilClient.is_unset(request.initiator_user_id):
             body['initiatorUserId'] = request.initiator_user_id
         if not UtilClient.is_unset(request.ding_corp_id):
@@ -323,6 +321,8 @@ class Client(OpenApiClient):
             body['ccs'] = request.ccs
         if not UtilClient.is_unset(request.source_info):
             body['sourceInfo'] = request.source_info
+        if not UtilClient.is_unset(request.auto_start):
+            body['autoStart'] = request.auto_start
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

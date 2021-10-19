@@ -1138,7 +1138,6 @@ class ProcessStartRequestSourceInfo(TeaModel):
 class ProcessStartRequest(TeaModel):
     def __init__(
         self,
-        auto_start: str = None,
         initiator_user_id: str = None,
         ding_corp_id: str = None,
         task_name: str = None,
@@ -1147,9 +1146,8 @@ class ProcessStartRequest(TeaModel):
         participants: List[ProcessStartRequestParticipants] = None,
         ccs: List[ProcessStartRequestCcs] = None,
         source_info: ProcessStartRequestSourceInfo = None,
+        auto_start: str = None,
     ):
-        # 是否跳过发起签署页直接发起
-        self.auto_start = auto_start
         # 发起方userId
         self.initiator_user_id = initiator_user_id
         self.ding_corp_id = ding_corp_id
@@ -1165,6 +1163,8 @@ class ProcessStartRequest(TeaModel):
         self.ccs = ccs
         # 来源信息(目前支持传入审批信息和跳转地址)
         self.source_info = source_info
+        # 是否自动发起
+        self.auto_start = auto_start
 
     def validate(self):
         if self.files:
@@ -1188,8 +1188,6 @@ class ProcessStartRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.auto_start is not None:
-            result['autoStart'] = self.auto_start
         if self.initiator_user_id is not None:
             result['initiatorUserId'] = self.initiator_user_id
         if self.ding_corp_id is not None:
@@ -1212,12 +1210,12 @@ class ProcessStartRequest(TeaModel):
                 result['ccs'].append(k.to_map() if k else None)
         if self.source_info is not None:
             result['sourceInfo'] = self.source_info.to_map()
+        if self.auto_start is not None:
+            result['autoStart'] = self.auto_start
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('autoStart') is not None:
-            self.auto_start = m.get('autoStart')
         if m.get('initiatorUserId') is not None:
             self.initiator_user_id = m.get('initiatorUserId')
         if m.get('dingCorpId') is not None:
@@ -1244,6 +1242,8 @@ class ProcessStartRequest(TeaModel):
         if m.get('sourceInfo') is not None:
             temp_model = ProcessStartRequestSourceInfo()
             self.source_info = temp_model.from_map(m['sourceInfo'])
+        if m.get('autoStart') is not None:
+            self.auto_start = m.get('autoStart')
         return self
 
 
