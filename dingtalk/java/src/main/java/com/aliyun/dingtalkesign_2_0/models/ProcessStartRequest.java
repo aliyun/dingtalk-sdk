@@ -4,10 +4,6 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessStartRequest extends TeaModel {
-    // 是否跳过发起签署页直接发起
-    @NameInMap("autoStart")
-    public String autoStart;
-
     // 发起方userId
     @NameInMap("initiatorUserId")
     public String initiatorUserId;
@@ -39,17 +35,13 @@ public class ProcessStartRequest extends TeaModel {
     @NameInMap("sourceInfo")
     public ProcessStartRequestSourceInfo sourceInfo;
 
+    // 是否自动发起
+    @NameInMap("autoStart")
+    public String autoStart;
+
     public static ProcessStartRequest build(java.util.Map<String, ?> map) throws Exception {
         ProcessStartRequest self = new ProcessStartRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ProcessStartRequest setAutoStart(String autoStart) {
-        this.autoStart = autoStart;
-        return this;
-    }
-    public String getAutoStart() {
-        return this.autoStart;
     }
 
     public ProcessStartRequest setInitiatorUserId(String initiatorUserId) {
@@ -114,6 +106,14 @@ public class ProcessStartRequest extends TeaModel {
     }
     public ProcessStartRequestSourceInfo getSourceInfo() {
         return this.sourceInfo;
+    }
+
+    public ProcessStartRequest setAutoStart(String autoStart) {
+        this.autoStart = autoStart;
+        return this;
+    }
+    public String getAutoStart() {
+        return this.autoStart;
     }
 
     public static class ProcessStartRequestFiles extends TeaModel {

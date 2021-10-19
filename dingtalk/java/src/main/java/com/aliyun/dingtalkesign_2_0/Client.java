@@ -147,10 +147,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public ProcessStartResponse processStartWithOptions(ProcessStartRequest request, ProcessStartHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.autoStart)) {
-            body.put("autoStart", request.autoStart);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.initiatorUserId)) {
             body.put("initiatorUserId", request.initiatorUserId);
         }
@@ -181,6 +177,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.sourceInfo))) {
             body.put("sourceInfo", request.sourceInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.autoStart)) {
+            body.put("autoStart", request.autoStart);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
