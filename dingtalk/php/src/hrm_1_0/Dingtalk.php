@@ -11,6 +11,10 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
@@ -23,6 +27,7 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
+use AlibabaCloud\Tea\Tea;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -232,60 +237,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddHrmPreentryRequest $request
-     *
-     * @return AddHrmPreentryResponse
-     */
-    public function addHrmPreentry($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AddHrmPreentryHeaders([]);
-
-        return $this->addHrmPreentryWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param AddHrmPreentryRequest $request
-     * @param AddHrmPreentryHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return AddHrmPreentryResponse
-     */
-    public function addHrmPreentryWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->preEntryTime)) {
-            @$body['preEntryTime'] = $request->preEntryTime;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->mobile)) {
-            @$body['mobile'] = $request->mobile;
-        }
-        if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
-        }
-        if (!Utils::isUnset($request->groups)) {
-            @$body['groups'] = $request->groups;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AddHrmPreentryResponse::fromMap($this->doROARequest('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/preentries', 'json', $req, $runtime));
-    }
-
-    /**
      * @param QueryPositionsRequest $request
      *
      * @return QueryPositionsResponse
@@ -339,5 +290,106 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPositionsResponse::fromMap($this->doROARequest('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/positions/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MasterDataQueryRequest $request
+     *
+     * @return MasterDataQueryResponse
+     */
+    public function masterDataQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MasterDataQueryHeaders([]);
+
+        return $this->masterDataQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MasterDataQueryRequest $tmpReq
+     * @param MasterDataQueryHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return MasterDataQueryResponse
+     */
+    public function masterDataQueryWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new MasterDataQueryShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->body), 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            @$query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return MasterDataQueryResponse::fromMap($this->doROARequest('MasterDataQuery', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/masters/datas/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddHrmPreentryRequest $request
+     *
+     * @return AddHrmPreentryResponse
+     */
+    public function addHrmPreentry($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddHrmPreentryHeaders([]);
+
+        return $this->addHrmPreentryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddHrmPreentryRequest $request
+     * @param AddHrmPreentryHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return AddHrmPreentryResponse
+     */
+    public function addHrmPreentryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->preEntryTime)) {
+            @$body['preEntryTime'] = $request->preEntryTime;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            @$body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->agentId)) {
+            @$body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->groups)) {
+            @$body['groups'] = $request->groups;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddHrmPreentryResponse::fromMap($this->doROARequest('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/preentries', 'json', $req, $runtime));
     }
 }

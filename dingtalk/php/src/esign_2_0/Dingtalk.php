@@ -247,9 +247,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->autoStart)) {
-            @$body['autoStart'] = $request->autoStart;
-        }
         if (!Utils::isUnset($request->initiatorUserId)) {
             @$body['initiatorUserId'] = $request->initiatorUserId;
         }
@@ -273,6 +270,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->sourceInfo)) {
             @$body['sourceInfo'] = $request->sourceInfo;
+        }
+        if (!Utils::isUnset($request->autoStart)) {
+            @$body['autoStart'] = $request->autoStart;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

@@ -25,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsHeaders;
@@ -220,6 +223,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteCrmFormInstanceResponse::fromMap($this->doROARequest('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/formInstances/' . $instanceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCrmRolePermissionRequest $request
+     *
+     * @return GetCrmRolePermissionResponse
+     */
+    public function getCrmRolePermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCrmRolePermissionHeaders([]);
+
+        return $this->getCrmRolePermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCrmRolePermissionRequest $request
+     * @param GetCrmRolePermissionHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetCrmRolePermissionResponse
+     */
+    public function getCrmRolePermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->formCode)) {
+            @$query['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            @$query['bizType'] = $request->bizType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCrmRolePermissionResponse::fromMap($this->doROARequest('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/permissions', 'json', $req, $runtime));
     }
 
     /**

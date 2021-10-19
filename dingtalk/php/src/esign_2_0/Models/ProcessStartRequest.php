@@ -13,13 +13,6 @@ use AlibabaCloud\Tea\Model;
 class ProcessStartRequest extends Model
 {
     /**
-     * @description 是否跳过发起签署页直接发起
-     *
-     * @var string
-     */
-    public $autoStart;
-
-    /**
      * @description 发起方userId
      *
      * @var string
@@ -72,8 +65,14 @@ class ProcessStartRequest extends Model
      * @var sourceInfo
      */
     public $sourceInfo;
+
+    /**
+     * @description 是否自动发起
+     *
+     * @var string
+     */
+    public $autoStart;
     protected $_name = [
-        'autoStart'       => 'autoStart',
         'initiatorUserId' => 'initiatorUserId',
         'dingCorpId'      => 'dingCorpId',
         'taskName'        => 'taskName',
@@ -82,6 +81,7 @@ class ProcessStartRequest extends Model
         'participants'    => 'participants',
         'ccs'             => 'ccs',
         'sourceInfo'      => 'sourceInfo',
+        'autoStart'       => 'autoStart',
     ];
 
     public function validate()
@@ -91,9 +91,6 @@ class ProcessStartRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->autoStart) {
-            $res['autoStart'] = $this->autoStart;
-        }
         if (null !== $this->initiatorUserId) {
             $res['initiatorUserId'] = $this->initiatorUserId;
         }
@@ -136,6 +133,9 @@ class ProcessStartRequest extends Model
         if (null !== $this->sourceInfo) {
             $res['sourceInfo'] = null !== $this->sourceInfo ? $this->sourceInfo->toMap() : null;
         }
+        if (null !== $this->autoStart) {
+            $res['autoStart'] = $this->autoStart;
+        }
 
         return $res;
     }
@@ -148,9 +148,6 @@ class ProcessStartRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['autoStart'])) {
-            $model->autoStart = $map['autoStart'];
-        }
         if (isset($map['initiatorUserId'])) {
             $model->initiatorUserId = $map['initiatorUserId'];
         }
@@ -192,6 +189,9 @@ class ProcessStartRequest extends Model
         }
         if (isset($map['sourceInfo'])) {
             $model->sourceInfo = sourceInfo::fromMap($map['sourceInfo']);
+        }
+        if (isset($map['autoStart'])) {
+            $model->autoStart = $map['autoStart'];
         }
 
         return $model;
