@@ -844,6 +844,28 @@ export class PushIntelligentRobotMessageResponse extends $tea.Model {
   }
 }
 
+export class AddRobotInstanceToGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddRobotInstanceToGroupRequest extends $tea.Model {
   dingCorpId?: string;
   chatbotId?: string;
@@ -1564,11 +1586,11 @@ export default class Client extends OpenApi {
 
   async addRobotInstanceToGroup(request: AddRobotInstanceToGroupRequest): Promise<AddRobotInstanceToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
+    let headers = new AddRobotInstanceToGroupHeaders({ });
     return await this.addRobotInstanceToGroupWithOptions(request, headers, runtime);
   }
 
-  async addRobotInstanceToGroupWithOptions(request: AddRobotInstanceToGroupRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AddRobotInstanceToGroupResponse> {
+  async addRobotInstanceToGroupWithOptions(request: AddRobotInstanceToGroupRequest, headers: AddRobotInstanceToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotInstanceToGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.dingCorpId)) {
@@ -1583,8 +1605,17 @@ export default class Client extends OpenApi {
       body["openConversationId"] = request.openConversationId;
     }
 
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
     let req = new $OpenApi.OpenApiRequest({
-      headers: headers,
+      headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddRobotInstanceToGroupResponse>(await this.doROARequest("AddRobotInstanceToGroup", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/groups`, "json", req, runtime), new AddRobotInstanceToGroupResponse({}));
