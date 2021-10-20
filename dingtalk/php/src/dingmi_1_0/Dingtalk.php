@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0\Models\AddRobotInstanceToGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0\Models\AddRobotInstanceToGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0\Models\AddRobotInstanceToGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0\Models\AskRobotHeaders;
@@ -522,14 +523,14 @@ class Dingtalk extends OpenApiClient
     public function addRobotInstanceToGroup($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = [];
+        $headers = new AddRobotInstanceToGroupHeaders([]);
 
         return $this->addRobotInstanceToGroupWithOptions($request, $headers, $runtime);
     }
 
     /**
      * @param AddRobotInstanceToGroupRequest $request
-     * @param string[]                       $headers
+     * @param AddRobotInstanceToGroupHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
      * @return AddRobotInstanceToGroupResponse
@@ -547,8 +548,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->openConversationId)) {
             @$body['openConversationId'] = $request->openConversationId;
         }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
         $req = new OpenApiRequest([
-            'headers' => $headers,
+            'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
