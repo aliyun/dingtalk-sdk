@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
-from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -709,7 +708,7 @@ class Client(OpenApiClient):
         request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
         return self.add_robot_instance_to_group_with_options(request, headers, runtime)
 
     async def add_robot_instance_to_group_async(
@@ -717,13 +716,13 @@ class Client(OpenApiClient):
         request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
         return await self.add_robot_instance_to_group_with_options_async(request, headers, runtime)
 
     def add_robot_instance_to_group_with_options(
         self,
         request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
-        headers: Dict[str, str],
+        headers: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
         UtilClient.validate_model(request)
@@ -734,8 +733,13 @@ class Client(OpenApiClient):
             body['chatbotId'] = request.chatbot_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
@@ -746,7 +750,7 @@ class Client(OpenApiClient):
     async def add_robot_instance_to_group_with_options_async(
         self,
         request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
-        headers: Dict[str, str],
+        headers: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
         UtilClient.validate_model(request)
@@ -757,8 +761,13 @@ class Client(OpenApiClient):
             body['chatbotId'] = request.chatbot_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
