@@ -67,6 +67,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
+        /// <summary>
+        /// 搜索类型
+        /// </summary>
+        [NameInMap("searchType")]
+        [Validation(Required=false)]
+        public string SearchType { get; set; }
+
     }
 
 }

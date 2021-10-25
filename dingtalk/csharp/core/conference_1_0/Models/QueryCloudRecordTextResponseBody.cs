@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// MP4格式下载链接
+        /// 段落列表
         /// </summary>
         [NameInMap("paragraphList")]
         [Validation(Required=false)]

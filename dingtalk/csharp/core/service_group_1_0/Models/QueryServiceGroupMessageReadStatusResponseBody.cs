@@ -65,6 +65,20 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public string ReceiverDingTalkId { get; set; }
 
+            /// <summary>
+            /// 发送时间
+            /// </summary>
+            [NameInMap("sendTimeStr")]
+            [Validation(Required=false)]
+            public string SendTimeStr { get; set; }
+
+            /// <summary>
+            /// 已读时间
+            /// </summary>
+            [NameInMap("readTimeStr")]
+            [Validation(Required=false)]
+            public string ReadTimeStr { get; set; }
+
         }
 
         /// <summary>
