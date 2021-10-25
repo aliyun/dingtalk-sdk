@@ -78,6 +78,14 @@ public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
         @NameInMap("receiverDingTalkId")
         public String receiverDingTalkId;
 
+        // 发送时间
+        @NameInMap("sendTimeStr")
+        public String sendTimeStr;
+
+        // 已读时间
+        @NameInMap("readTimeStr")
+        public String readTimeStr;
+
         public static QueryServiceGroupMessageReadStatusResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             QueryServiceGroupMessageReadStatusResponseBodyRecords self = new QueryServiceGroupMessageReadStatusResponseBodyRecords();
             return TeaModel.build(map, self);
@@ -121,6 +129,22 @@ public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
         }
         public String getReceiverDingTalkId() {
             return this.receiverDingTalkId;
+        }
+
+        public QueryServiceGroupMessageReadStatusResponseBodyRecords setSendTimeStr(String sendTimeStr) {
+            this.sendTimeStr = sendTimeStr;
+            return this;
+        }
+        public String getSendTimeStr() {
+            return this.sendTimeStr;
+        }
+
+        public QueryServiceGroupMessageReadStatusResponseBodyRecords setReadTimeStr(String readTimeStr) {
+            this.readTimeStr = readTimeStr;
+            return this;
+        }
+        public String getReadTimeStr() {
+            return this.readTimeStr;
         }
 
     }

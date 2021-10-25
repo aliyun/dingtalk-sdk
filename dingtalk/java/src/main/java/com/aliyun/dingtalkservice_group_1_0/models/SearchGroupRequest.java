@@ -40,6 +40,10 @@ public class SearchGroupRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    // 搜索类型
+    @NameInMap("searchType")
+    public String searchType;
+
     public static SearchGroupRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchGroupRequest self = new SearchGroupRequest();
         return TeaModel.build(map, self);
@@ -123,6 +127,14 @@ public class SearchGroupRequest extends TeaModel {
     }
     public Integer getMaxResults() {
         return this.maxResults;
+    }
+
+    public SearchGroupRequest setSearchType(String searchType) {
+        this.searchType = searchType;
+        return this;
+    }
+    public String getSearchType() {
+        return this.searchType;
     }
 
 }

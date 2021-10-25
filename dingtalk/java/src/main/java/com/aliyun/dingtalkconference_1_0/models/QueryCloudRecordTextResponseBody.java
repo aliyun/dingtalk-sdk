@@ -8,7 +8,7 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // MP4格式下载链接
+    // 段落列表
     @NameInMap("paragraphList")
     public java.util.List<QueryCloudRecordTextResponseBodyParagraphList> paragraphList;
 

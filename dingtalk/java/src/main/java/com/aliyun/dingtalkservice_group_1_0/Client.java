@@ -1373,6 +1373,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("maxResults", request.maxResults);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.searchType)) {
+            body.put("searchType", request.searchType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -1656,6 +1660,59 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("CancelTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", "/v1.0/serviceGroup/tickets/cancel", "none", req, runtime), new CancelTicketResponse());
+    }
+
+    public UpdateGroupTagResponse updateGroupTag(UpdateGroupTagRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateGroupTagHeaders headers = new UpdateGroupTagHeaders();
+        return this.updateGroupTagWithOptions(request, headers, runtime);
+    }
+
+    public UpdateGroupTagResponse updateGroupTagWithOptions(UpdateGroupTagRequest request, UpdateGroupTagHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
+            body.put("dingIsvOrgId", request.dingIsvOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
+            body.put("dingOrgId", request.dingOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingSuiteKey)) {
+            body.put("dingSuiteKey", request.dingSuiteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
+            body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationIds)) {
+            body.put("openConversationIds", request.openConversationIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagNames)) {
+            body.put("tagNames", request.tagNames);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.updateType)) {
+            body.put("updateType", request.updateType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateGroupTag", "serviceGroup_1.0", "HTTP", "PUT", "AK", "/v1.0/serviceGroup/tags", "none", req, runtime), new UpdateGroupTagResponse());
     }
 
     public GetStoragePolicyResponse getStoragePolicy(GetStoragePolicyRequest request) throws Exception {
