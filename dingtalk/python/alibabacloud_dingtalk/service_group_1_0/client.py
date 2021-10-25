@@ -2137,6 +2137,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.search_type):
+            body['searchType'] = request.search_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2179,6 +2181,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.search_type):
+            body['searchType'] = request.search_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2635,6 +2639,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CancelTicketResponse(),
             await self.do_roarequest_async('CancelTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/cancel', 'none', req, runtime)
+        )
+
+    def update_group_tag(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpdateGroupTagHeaders()
+        return self.update_group_tag_with_options(request, headers, runtime)
+
+    async def update_group_tag_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UpdateGroupTagHeaders()
+        return await self.update_group_tag_with_options_async(request, headers, runtime)
+
+    def update_group_tag_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
+        headers: dingtalkservice_group__1__0_models.UpdateGroupTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.tag_names):
+            body['tagNames'] = request.tag_names
+        if not UtilClient.is_unset(request.update_type):
+            body['updateType'] = request.update_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpdateGroupTagResponse(),
+            self.do_roarequest('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tags', 'none', req, runtime)
+        )
+
+    async def update_group_tag_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
+        headers: dingtalkservice_group__1__0_models.UpdateGroupTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
+        if not UtilClient.is_unset(request.tag_names):
+            body['tagNames'] = request.tag_names
+        if not UtilClient.is_unset(request.update_type):
+            body['updateType'] = request.update_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.UpdateGroupTagResponse(),
+            await self.do_roarequest_async('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tags', 'none', req, runtime)
         )
 
     def get_storage_policy(

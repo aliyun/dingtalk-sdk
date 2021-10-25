@@ -306,7 +306,7 @@ class QueryCloudRecordTextResponseBody(TeaModel):
     ):
         # 是否有更多
         self.has_more = has_more
-        # MP4格式下载链接
+        # 段落列表
         self.paragraph_list = paragraph_list
 
     def validate(self):
