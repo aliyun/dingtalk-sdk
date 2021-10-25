@@ -79,6 +79,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TakeTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\TransferTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateGroupTagResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\UpdateTicketResponse;
@@ -1583,6 +1586,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->maxResults)) {
             @$body['maxResults'] = $request->maxResults;
         }
+        if (!Utils::isUnset($request->searchType)) {
+            @$body['searchType'] = $request->searchType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1899,6 +1905,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CancelTicketResponse::fromMap($this->doROARequest('CancelTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/tickets/cancel', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupTagRequest $request
+     *
+     * @return UpdateGroupTagResponse
+     */
+    public function updateGroupTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupTagHeaders([]);
+
+        return $this->updateGroupTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupTagRequest $request
+     * @param UpdateGroupTagHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateGroupTagResponse
+     */
+    public function updateGroupTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$body['openConversationIds'] = $request->openConversationIds;
+        }
+        if (!Utils::isUnset($request->tagNames)) {
+            @$body['tagNames'] = $request->tagNames;
+        }
+        if (!Utils::isUnset($request->updateType)) {
+            @$body['updateType'] = $request->updateType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupTagResponse::fromMap($this->doROARequest('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/tags', 'none', $req, $runtime));
     }
 
     /**

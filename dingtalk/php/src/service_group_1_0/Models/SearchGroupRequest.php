@@ -69,6 +69,13 @@ class SearchGroupRequest extends Model
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 搜索类型
+     *
+     * @var string
+     */
+    public $searchType;
     protected $_name = [
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
@@ -80,6 +87,7 @@ class SearchGroupRequest extends Model
         'openGroupSetId'     => 'openGroupSetId',
         'nextToken'          => 'nextToken',
         'maxResults'         => 'maxResults',
+        'searchType'         => 'searchType',
     ];
 
     public function validate()
@@ -118,6 +126,9 @@ class SearchGroupRequest extends Model
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->searchType) {
+            $res['searchType'] = $this->searchType;
         }
 
         return $res;
@@ -160,6 +171,9 @@ class SearchGroupRequest extends Model
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['searchType'])) {
+            $model->searchType = $map['searchType'];
         }
 
         return $model;

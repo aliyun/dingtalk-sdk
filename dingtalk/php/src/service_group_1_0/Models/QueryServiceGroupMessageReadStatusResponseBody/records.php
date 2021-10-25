@@ -42,12 +42,28 @@ class records extends Model
      * @var string
      */
     public $receiverDingTalkId;
+
+    /**
+     * @description 发送时间
+     *
+     * @var string
+     */
+    public $sendTimeStr;
+
+    /**
+     * @description 已读时间
+     *
+     * @var string
+     */
+    public $readTimeStr;
     protected $_name = [
         'receiverUserId'     => 'receiverUserId',
         'receiverUnionId'    => 'receiverUnionId',
         'readStatus'         => 'readStatus',
         'receiverName'       => 'receiverName',
         'receiverDingTalkId' => 'receiverDingTalkId',
+        'sendTimeStr'        => 'sendTimeStr',
+        'readTimeStr'        => 'readTimeStr',
     ];
 
     public function validate()
@@ -71,6 +87,12 @@ class records extends Model
         }
         if (null !== $this->receiverDingTalkId) {
             $res['receiverDingTalkId'] = $this->receiverDingTalkId;
+        }
+        if (null !== $this->sendTimeStr) {
+            $res['sendTimeStr'] = $this->sendTimeStr;
+        }
+        if (null !== $this->readTimeStr) {
+            $res['readTimeStr'] = $this->readTimeStr;
         }
 
         return $res;
@@ -98,6 +120,12 @@ class records extends Model
         }
         if (isset($map['receiverDingTalkId'])) {
             $model->receiverDingTalkId = $map['receiverDingTalkId'];
+        }
+        if (isset($map['sendTimeStr'])) {
+            $model->sendTimeStr = $map['sendTimeStr'];
+        }
+        if (isset($map['readTimeStr'])) {
+            $model->readTimeStr = $map['readTimeStr'];
         }
 
         return $model;

@@ -17,7 +17,7 @@ class QueryCloudRecordTextResponseBody extends Model
     public $hasMore;
 
     /**
-     * @description MP4格式下载链接
+     * @description 段落列表
      *
      * @var paragraphList[]
      */
