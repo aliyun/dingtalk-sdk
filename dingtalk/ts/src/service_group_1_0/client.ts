@@ -2175,6 +2175,7 @@ export class SearchGroupRequest extends $tea.Model {
   openGroupSetId?: string;
   nextToken?: string;
   maxResults?: number;
+  searchType?: string;
   static names(): { [key: string]: string } {
     return {
       dingIsvOrgId: 'dingIsvOrgId',
@@ -2187,6 +2188,7 @@ export class SearchGroupRequest extends $tea.Model {
       openGroupSetId: 'openGroupSetId',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
+      searchType: 'searchType',
     };
   }
 
@@ -2202,6 +2204,7 @@ export class SearchGroupRequest extends $tea.Model {
       openGroupSetId: 'string',
       nextToken: 'string',
       maxResults: 'number',
+      searchType: 'string',
     };
   }
 
@@ -2722,6 +2725,84 @@ export class CancelTicketResponse extends $tea.Model {
   }
 }
 
+export class UpdateGroupTagHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupTagRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  openConversationIds?: string[];
+  tagNames?: string[];
+  updateType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      openConversationIds: 'openConversationIds',
+      tagNames: 'tagNames',
+      updateType: 'updateType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+      tagNames: { 'type': 'array', 'itemType': 'string' },
+      updateType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupTagResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetStoragePolicyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3150,6 +3231,8 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
   readStatus?: number;
   receiverName?: string;
   receiverDingTalkId?: string;
+  sendTimeStr?: string;
+  readTimeStr?: string;
   static names(): { [key: string]: string } {
     return {
       receiverUserId: 'receiverUserId',
@@ -3157,6 +3240,8 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
       readStatus: 'readStatus',
       receiverName: 'receiverName',
       receiverDingTalkId: 'receiverDingTalkId',
+      sendTimeStr: 'sendTimeStr',
+      readTimeStr: 'readTimeStr',
     };
   }
 
@@ -3167,6 +3252,8 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
       readStatus: 'number',
       receiverName: 'string',
       receiverDingTalkId: 'string',
+      sendTimeStr: 'string',
+      readTimeStr: 'string',
     };
   }
 
@@ -5229,6 +5316,10 @@ export default class Client extends OpenApi {
       body["maxResults"] = request.maxResults;
     }
 
+    if (!Util.isUnset(request.searchType)) {
+      body["searchType"] = request.searchType;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -5512,6 +5603,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CancelTicketResponse>(await this.doROARequest("CancelTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/cancel`, "none", req, runtime), new CancelTicketResponse({}));
+  }
+
+  async updateGroupTag(request: UpdateGroupTagRequest): Promise<UpdateGroupTagResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateGroupTagHeaders({ });
+    return await this.updateGroupTagWithOptions(request, headers, runtime);
+  }
+
+  async updateGroupTagWithOptions(request: UpdateGroupTagRequest, headers: UpdateGroupTagHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupTagResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      body["openConversationIds"] = request.openConversationIds;
+    }
+
+    if (!Util.isUnset(request.tagNames)) {
+      body["tagNames"] = request.tagNames;
+    }
+
+    if (!Util.isUnset(request.updateType)) {
+      body["updateType"] = request.updateType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateGroupTagResponse>(await this.doROARequest("UpdateGroupTag", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/tags`, "none", req, runtime), new UpdateGroupTagResponse({}));
   }
 
   async getStoragePolicy(request: GetStoragePolicyRequest): Promise<GetStoragePolicyResponse> {
