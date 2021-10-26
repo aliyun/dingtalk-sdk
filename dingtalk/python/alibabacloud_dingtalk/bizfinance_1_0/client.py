@@ -91,6 +91,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryProjectByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/list', 'json', req, runtime)
         )
 
+    def get_customer(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetCustomerHeaders()
+        return self.get_customer_with_options(request, headers, runtime)
+
+    async def get_customer_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetCustomerHeaders()
+        return await self.get_customer_with_options_async(request, headers, runtime)
+
+    def get_customer_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
+        headers: dingtalkbizfinance__1__0_models.GetCustomerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetCustomerResponse(),
+            self.do_roarequest('GetCustomer', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers/details', 'json', req, runtime)
+        )
+
+    async def get_customer_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
+        headers: dingtalkbizfinance__1__0_models.GetCustomerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetCustomerResponse(),
+            await self.do_roarequest_async('GetCustomer', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers/details', 'json', req, runtime)
+        )
+
     def query_category_by_page(
         self,
         request: dingtalkbizfinance__1__0_models.QueryCategoryByPageRequest,
@@ -227,6 +291,138 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetCategory', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/categories/get', 'json', req, runtime)
         )
 
+    def get_finance_account(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
+        return self.get_finance_account_with_options(request, headers, runtime)
+
+    async def get_finance_account_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
+        return await self.get_finance_account_with_options_async(request, headers, runtime)
+
+    def get_finance_account_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
+        headers: dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_code):
+            query['accountCode'] = request.account_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetFinanceAccountResponse(),
+            self.do_roarequest('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/get', 'json', req, runtime)
+        )
+
+    async def get_finance_account_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
+        headers: dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_code):
+            query['accountCode'] = request.account_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetFinanceAccountResponse(),
+            await self.do_roarequest_async('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/get', 'json', req, runtime)
+        )
+
+    def query_supplier_by_page(
+        self,
+        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders()
+        return self.query_supplier_by_page_with_options(request, headers, runtime)
+
+    async def query_supplier_by_page_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders()
+        return await self.query_supplier_by_page_with_options_async(request, headers, runtime)
+
+    def query_supplier_by_page_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
+        headers: dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse(),
+            self.do_roarequest('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers', 'json', req, runtime)
+        )
+
+    async def query_supplier_by_page_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
+        headers: dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse(),
+            await self.do_roarequest_async('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers', 'json', req, runtime)
+        )
+
     def query_enterprise_account_by_page(
         self,
         request: dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageRequest,
@@ -295,6 +491,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryEnterpriseAccountByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/list', 'json', req, runtime)
         )
 
+    def query_customer_by_page(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders()
+        return self.query_customer_by_page_with_options(request, headers, runtime)
+
+    async def query_customer_by_page_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders()
+        return await self.query_customer_by_page_with_options_async(request, headers, runtime)
+
+    def query_customer_by_page_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse(),
+            self.do_roarequest('QueryCustomerByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers', 'json', req, runtime)
+        )
+
+    async def query_customer_by_page_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse(),
+            await self.do_roarequest_async('QueryCustomerByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers', 'json', req, runtime)
+        )
+
     def get_project(
         self,
         request: dingtalkbizfinance__1__0_models.GetProjectRequest,
@@ -359,32 +623,32 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetProject', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/get', 'json', req, runtime)
         )
 
-    def get_finance_account(
+    def get_supplier(
         self,
-        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
-        return self.get_finance_account_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
+        return self.get_supplier_with_options(request, headers, runtime)
 
-    async def get_finance_account_async(
+    async def get_supplier_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
-        return await self.get_finance_account_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
+        return await self.get_supplier_with_options_async(request, headers, runtime)
 
-    def get_finance_account_with_options(
+    def get_supplier_with_options(
         self,
-        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
-        headers: dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders,
+        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
+        headers: dingtalkbizfinance__1__0_models.GetSupplierHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.account_code):
-            query['accountCode'] = request.account_code
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -395,20 +659,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkbizfinance__1__0_models.GetFinanceAccountResponse(),
-            self.do_roarequest('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/get', 'json', req, runtime)
+            dingtalkbizfinance__1__0_models.GetSupplierResponse(),
+            self.do_roarequest('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers/details', 'json', req, runtime)
         )
 
-    async def get_finance_account_with_options_async(
+    async def get_supplier_with_options_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
-        headers: dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders,
+        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
+        headers: dingtalkbizfinance__1__0_models.GetSupplierHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.account_code):
-            query['accountCode'] = request.account_code
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -419,6 +683,6 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
-            dingtalkbizfinance__1__0_models.GetFinanceAccountResponse(),
-            await self.do_roarequest_async('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/get', 'json', req, runtime)
+            dingtalkbizfinance__1__0_models.GetSupplierResponse(),
+            await self.do_roarequest_async('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers/details', 'json', req, runtime)
         )
