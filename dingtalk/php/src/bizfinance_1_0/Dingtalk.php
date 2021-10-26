@@ -8,21 +8,33 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCustomerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCustomerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -82,6 +94,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryProjectByPageResponse::fromMap($this->doROARequest('QueryProjectByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/projects/list', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetCustomerRequest $request
+     *
+     * @return GetCustomerResponse
+     */
+    public function getCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCustomerHeaders([]);
+
+        return $this->getCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetCustomerRequest $request
+     * @param GetCustomerHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetCustomerResponse
+     */
+    public function getCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetCustomerResponse::fromMap($this->doROARequest('GetCustomer', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/customers/details', 'json', $req, $runtime));
     }
 
     /**
@@ -175,6 +229,93 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetFinanceAccountRequest $request
+     *
+     * @return GetFinanceAccountResponse
+     */
+    public function getFinanceAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFinanceAccountHeaders([]);
+
+        return $this->getFinanceAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFinanceAccountRequest $request
+     * @param GetFinanceAccountHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetFinanceAccountResponse
+     */
+    public function getFinanceAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            @$query['accountCode'] = $request->accountCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetFinanceAccountResponse::fromMap($this->doROARequest('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/financeAccounts/get', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySupplierByPageRequest $request
+     *
+     * @return QuerySupplierByPageResponse
+     */
+    public function querySupplierByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySupplierByPageHeaders([]);
+
+        return $this->querySupplierByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySupplierByPageRequest $request
+     * @param QuerySupplierByPageHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QuerySupplierByPageResponse
+     */
+    public function querySupplierByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySupplierByPageResponse::fromMap($this->doROARequest('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/suppliers', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryEnterpriseAccountByPageRequest $request
      *
      * @return QueryEnterpriseAccountByPageResponse
@@ -220,6 +361,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryCustomerByPageRequest $request
+     *
+     * @return QueryCustomerByPageResponse
+     */
+    public function queryCustomerByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCustomerByPageHeaders([]);
+
+        return $this->queryCustomerByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCustomerByPageRequest $request
+     * @param QueryCustomerByPageHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryCustomerByPageResponse
+     */
+    public function queryCustomerByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryCustomerByPageResponse::fromMap($this->doROARequest('QueryCustomerByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/customers', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetProjectRequest $request
      *
      * @return GetProjectResponse
@@ -262,31 +448,31 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFinanceAccountRequest $request
+     * @param GetSupplierRequest $request
      *
-     * @return GetFinanceAccountResponse
+     * @return GetSupplierResponse
      */
-    public function getFinanceAccount($request)
+    public function getSupplier($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetFinanceAccountHeaders([]);
+        $headers = new GetSupplierHeaders([]);
 
-        return $this->getFinanceAccountWithOptions($request, $headers, $runtime);
+        return $this->getSupplierWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param GetFinanceAccountRequest $request
-     * @param GetFinanceAccountHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetSupplierRequest $request
+     * @param GetSupplierHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetFinanceAccountResponse
+     * @return GetSupplierResponse
      */
-    public function getFinanceAccountWithOptions($request, $headers, $runtime)
+    public function getSupplierWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->accountCode)) {
-            @$query['accountCode'] = $request->accountCode;
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -300,6 +486,6 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return GetFinanceAccountResponse::fromMap($this->doROARequest('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/financeAccounts/get', 'json', $req, $runtime));
+        return GetSupplierResponse::fromMap($this->doROARequest('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/suppliers/details', 'json', $req, $runtime));
     }
 }
