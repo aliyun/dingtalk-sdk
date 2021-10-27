@@ -11,6 +11,15 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddLibraryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenKnowledgeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenKnowledgeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenKnowledgeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenLibraryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenLibraryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenLibraryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddTicketMemoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddTicketMemoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddTicketMemoResponse;
@@ -364,6 +373,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->content)) {
             @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->extTitle)) {
+            @$body['extTitle'] = $request->extTitle;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            @$body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->attachmentList)) {
+            @$body['attachmentList'] = $request->attachmentList;
         }
         if (!Utils::isUnset($request->linkUrl)) {
             @$body['linkUrl'] = $request->linkUrl;
@@ -1746,6 +1764,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param AddOpenLibraryRequest $request
+     *
+     * @return AddOpenLibraryResponse
+     */
+    public function addOpenLibrary($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOpenLibraryHeaders([]);
+
+        return $this->addOpenLibraryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddOpenLibraryRequest $request
+     * @param AddOpenLibraryHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return AddOpenLibraryResponse
+     */
+    public function addOpenLibraryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            @$body['userName'] = $request->userName;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddOpenLibraryResponse::fromMap($this->doROARequest('AddOpenLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/openLibraries', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryActiveUsersRequest $request
      *
      * @return QueryActiveUsersResponse
@@ -1788,6 +1878,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryActiveUsersResponse::fromMap($this->doROARequest('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/groups/queryActiveUsers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddOpenCategoryRequest $request
+     *
+     * @return AddOpenCategoryResponse
+     */
+    public function addOpenCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOpenCategoryHeaders([]);
+
+        return $this->addOpenCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddOpenCategoryRequest $request
+     * @param AddOpenCategoryHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AddOpenCategoryResponse
+     */
+    public function addOpenCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            @$body['userName'] = $request->userName;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->parentId)) {
+            @$body['parentId'] = $request->parentId;
+        }
+        if (!Utils::isUnset($request->libraryId)) {
+            @$body['libraryId'] = $request->libraryId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddOpenCategoryResponse::fromMap($this->doROARequest('AddOpenCategory', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/openCategories', 'json', $req, $runtime));
     }
 
     /**
@@ -1965,6 +2124,102 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateGroupTagResponse::fromMap($this->doROARequest('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/serviceGroup/tags', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param AddOpenKnowledgeRequest $request
+     *
+     * @return AddOpenKnowledgeResponse
+     */
+    public function addOpenKnowledge($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOpenKnowledgeHeaders([]);
+
+        return $this->addOpenKnowledgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddOpenKnowledgeRequest $request
+     * @param AddOpenKnowledgeHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return AddOpenKnowledgeResponse
+     */
+    public function addOpenKnowledgeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            @$body['userName'] = $request->userName;
+        }
+        if (!Utils::isUnset($request->attachments)) {
+            @$body['attachments'] = $request->attachments;
+        }
+        if (!Utils::isUnset($request->libraryId)) {
+            @$body['libraryId'] = $request->libraryId;
+        }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->extTitle)) {
+            @$body['extTitle'] = $request->extTitle;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            @$body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->tags)) {
+            @$body['tags'] = $request->tags;
+        }
+        if (!Utils::isUnset($request->effectTimestart)) {
+            @$body['effectTimestart'] = $request->effectTimestart;
+        }
+        if (!Utils::isUnset($request->effectTimeend)) {
+            @$body['effectTimeend'] = $request->effectTimeend;
+        }
+        if (!Utils::isUnset($request->categoryId)) {
+            @$body['categoryId'] = $request->categoryId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddOpenKnowledgeResponse::fromMap($this->doROARequest('AddOpenKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/openKnowledges', 'json', $req, $runtime));
     }
 
     /**

@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddKnowledgeRequest\attachmentList;
 use AlibabaCloud\Tea\Model;
 
 class AddKnowledgeRequest extends Model
@@ -78,6 +79,27 @@ class AddKnowledgeRequest extends Model
     public $content;
 
     /**
+     * @description 知识点扩展问(多个用英文逗号隔开)
+     *
+     * @var string
+     */
+    public $extTitle;
+
+    /**
+     * @description 关键字(多个用英文逗号隔开)
+     *
+     * @var string
+     */
+    public $keyword;
+
+    /**
+     * @description 附件列表
+     *
+     * @var attachmentList[]
+     */
+    public $attachmentList;
+
+    /**
      * @description CCM的知识点外链
      *
      * @var string
@@ -102,6 +124,9 @@ class AddKnowledgeRequest extends Model
         'type'               => 'type',
         'title'              => 'title',
         'content'            => 'content',
+        'extTitle'           => 'extTitle',
+        'keyword'            => 'keyword',
+        'attachmentList'     => 'attachmentList',
         'linkUrl'            => 'linkUrl',
         'version'            => 'version',
     ];
@@ -145,6 +170,21 @@ class AddKnowledgeRequest extends Model
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->extTitle) {
+            $res['extTitle'] = $this->extTitle;
+        }
+        if (null !== $this->keyword) {
+            $res['keyword'] = $this->keyword;
+        }
+        if (null !== $this->attachmentList) {
+            $res['attachmentList'] = [];
+            if (null !== $this->attachmentList && \is_array($this->attachmentList)) {
+                $n = 0;
+                foreach ($this->attachmentList as $item) {
+                    $res['attachmentList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->linkUrl) {
             $res['linkUrl'] = $this->linkUrl;
@@ -196,6 +236,21 @@ class AddKnowledgeRequest extends Model
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['extTitle'])) {
+            $model->extTitle = $map['extTitle'];
+        }
+        if (isset($map['keyword'])) {
+            $model->keyword = $map['keyword'];
+        }
+        if (isset($map['attachmentList'])) {
+            if (!empty($map['attachmentList'])) {
+                $model->attachmentList = [];
+                $n                     = 0;
+                foreach ($map['attachmentList'] as $item) {
+                    $model->attachmentList[$n++] = null !== $item ? attachmentList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['linkUrl'])) {
             $model->linkUrl = $map['linkUrl'];

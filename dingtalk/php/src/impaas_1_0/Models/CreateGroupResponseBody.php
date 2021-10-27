@@ -17,9 +17,15 @@ class CreateGroupResponseBody extends Model
      * @var int
      */
     public $createTime;
+
+    /**
+     * @var string
+     */
+    public $chatId;
     protected $_name = [
         'conversationId' => 'conversationId',
         'createTime'     => 'createTime',
+        'chatId'         => 'chatId',
     ];
 
     public function validate()
@@ -34,6 +40,9 @@ class CreateGroupResponseBody extends Model
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->chatId) {
+            $res['chatId'] = $this->chatId;
         }
 
         return $res;
@@ -52,6 +61,9 @@ class CreateGroupResponseBody extends Model
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
+        }
+        if (isset($map['chatId'])) {
+            $model->chatId = $map['chatId'];
         }
 
         return $model;
