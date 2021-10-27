@@ -357,6 +357,12 @@ class Client(OpenApiClient):
             body['title'] = request.title
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.ext_title):
+            body['extTitle'] = request.ext_title
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.attachment_list):
+            body['attachmentList'] = request.attachment_list
         if not UtilClient.is_unset(request.link_url):
             body['linkUrl'] = request.link_url
         if not UtilClient.is_unset(request.version):
@@ -405,6 +411,12 @@ class Client(OpenApiClient):
             body['title'] = request.title
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.ext_title):
+            body['extTitle'] = request.ext_title
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.attachment_list):
+            body['attachmentList'] = request.attachment_list
         if not UtilClient.is_unset(request.link_url):
             body['linkUrl'] = request.link_url
         if not UtilClient.is_unset(request.version):
@@ -2401,6 +2413,110 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/transfer', 'none', req, runtime)
         )
 
+    def add_open_library(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddOpenLibraryHeaders()
+        return self.add_open_library_with_options(request, headers, runtime)
+
+    async def add_open_library_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddOpenLibraryHeaders()
+        return await self.add_open_library_with_options_async(request, headers, runtime)
+
+    def add_open_library_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
+        headers: dingtalkservice_group__1__0_models.AddOpenLibraryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddOpenLibraryResponse(),
+            self.do_roarequest('AddOpenLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openLibraries', 'json', req, runtime)
+        )
+
+    async def add_open_library_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
+        headers: dingtalkservice_group__1__0_models.AddOpenLibraryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddOpenLibraryResponse(),
+            await self.do_roarequest_async('AddOpenLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openLibraries', 'json', req, runtime)
+        )
+
     def query_active_users(
         self,
         request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
@@ -2467,6 +2583,106 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryActiveUsersResponse(),
             await self.do_roarequest_async('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
+        )
+
+    def add_open_category(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddOpenCategoryHeaders()
+        return self.add_open_category_with_options(request, headers, runtime)
+
+    async def add_open_category_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddOpenCategoryHeaders()
+        return await self.add_open_category_with_options_async(request, headers, runtime)
+
+    def add_open_category_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
+        headers: dingtalkservice_group__1__0_models.AddOpenCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.library_id):
+            body['libraryId'] = request.library_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddOpenCategoryResponse(),
+            self.do_roarequest('AddOpenCategory', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openCategories', 'json', req, runtime)
+        )
+
+    async def add_open_category_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
+        headers: dingtalkservice_group__1__0_models.AddOpenCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.library_id):
+            body['libraryId'] = request.library_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddOpenCategoryResponse(),
+            await self.do_roarequest_async('AddOpenCategory', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openCategories', 'json', req, runtime)
         )
 
     def get_oss_temp_url(
@@ -2727,6 +2943,142 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateGroupTagResponse(),
             await self.do_roarequest_async('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tags', 'none', req, runtime)
+        )
+
+    def add_open_knowledge(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders()
+        return self.add_open_knowledge_with_options(request, headers, runtime)
+
+    async def add_open_knowledge_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders()
+        return await self.add_open_knowledge_with_options_async(request, headers, runtime)
+
+    def add_open_knowledge_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
+        headers: dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.attachments):
+            body['attachments'] = request.attachments
+        if not UtilClient.is_unset(request.library_id):
+            body['libraryId'] = request.library_id
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.ext_title):
+            body['extTitle'] = request.ext_title
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.tags):
+            body['tags'] = request.tags
+        if not UtilClient.is_unset(request.effect_timestart):
+            body['effectTimestart'] = request.effect_timestart
+        if not UtilClient.is_unset(request.effect_timeend):
+            body['effectTimeend'] = request.effect_timeend
+        if not UtilClient.is_unset(request.category_id):
+            body['categoryId'] = request.category_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse(),
+            self.do_roarequest('AddOpenKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openKnowledges', 'json', req, runtime)
+        )
+
+    async def add_open_knowledge_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
+        headers: dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        if not UtilClient.is_unset(request.attachments):
+            body['attachments'] = request.attachments
+        if not UtilClient.is_unset(request.library_id):
+            body['libraryId'] = request.library_id
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.ext_title):
+            body['extTitle'] = request.ext_title
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.tags):
+            body['tags'] = request.tags
+        if not UtilClient.is_unset(request.effect_timestart):
+            body['effectTimestart'] = request.effect_timestart
+        if not UtilClient.is_unset(request.effect_timeend):
+            body['effectTimeend'] = request.effect_timeend
+        if not UtilClient.is_unset(request.category_id):
+            body['categoryId'] = request.category_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse(),
+            await self.do_roarequest_async('AddOpenKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openKnowledges', 'json', req, runtime)
         )
 
     def get_storage_policy(

@@ -447,9 +447,11 @@ class CreateGroupResponseBody(TeaModel):
         self,
         conversation_id: str = None,
         create_time: int = None,
+        chat_id: str = None,
     ):
         self.conversation_id = conversation_id
         self.create_time = create_time
+        self.chat_id = chat_id
 
     def validate(self):
         pass
@@ -464,6 +466,8 @@ class CreateGroupResponseBody(TeaModel):
             result['conversationId'] = self.conversation_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.chat_id is not None:
+            result['chatId'] = self.chat_id
         return result
 
     def from_map(self, m: dict = None):
@@ -472,6 +476,8 @@ class CreateGroupResponseBody(TeaModel):
             self.conversation_id = m.get('conversationId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('chatId') is not None:
+            self.chat_id = m.get('chatId')
         return self
 
 

@@ -658,6 +658,62 @@ class AddKnowledgeHeaders(TeaModel):
         return self
 
 
+class AddKnowledgeRequestAttachmentList(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        path: str = None,
+        size: int = None,
+        suffix: str = None,
+        mime_type: str = None,
+    ):
+        # 附件名称
+        self.title = title
+        # 附件URL
+        self.path = path
+        # 附件大小
+        self.size = size
+        # 附件扩展名
+        self.suffix = suffix
+        # 多媒体类型
+        self.mime_type = mime_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.path is not None:
+            result['path'] = self.path
+        if self.size is not None:
+            result['size'] = self.size
+        if self.suffix is not None:
+            result['suffix'] = self.suffix
+        if self.mime_type is not None:
+            result['mime_type'] = self.mime_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('path') is not None:
+            self.path = m.get('path')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('suffix') is not None:
+            self.suffix = m.get('suffix')
+        if m.get('mime_type') is not None:
+            self.mime_type = m.get('mime_type')
+        return self
+
+
 class AddKnowledgeRequest(TeaModel):
     def __init__(
         self,
@@ -672,6 +728,9 @@ class AddKnowledgeRequest(TeaModel):
         type: str = None,
         title: str = None,
         content: str = None,
+        ext_title: str = None,
+        keyword: str = None,
+        attachment_list: List[AddKnowledgeRequestAttachmentList] = None,
         link_url: str = None,
         version: str = None,
     ):
@@ -693,13 +752,22 @@ class AddKnowledgeRequest(TeaModel):
         self.title = title
         # 知识点内容
         self.content = content
+        # 知识点扩展问(多个用英文逗号隔开)
+        self.ext_title = ext_title
+        # 关键字(多个用英文逗号隔开)
+        self.keyword = keyword
+        # 附件列表
+        self.attachment_list = attachment_list
         # CCM的知识点外链
         self.link_url = link_url
         # 知识点版本号
         self.version = version
 
     def validate(self):
-        pass
+        if self.attachment_list:
+            for k in self.attachment_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -729,6 +797,14 @@ class AddKnowledgeRequest(TeaModel):
             result['title'] = self.title
         if self.content is not None:
             result['content'] = self.content
+        if self.ext_title is not None:
+            result['extTitle'] = self.ext_title
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        result['attachmentList'] = []
+        if self.attachment_list is not None:
+            for k in self.attachment_list:
+                result['attachmentList'].append(k.to_map() if k else None)
         if self.link_url is not None:
             result['linkUrl'] = self.link_url
         if self.version is not None:
@@ -759,6 +835,15 @@ class AddKnowledgeRequest(TeaModel):
             self.title = m.get('title')
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('extTitle') is not None:
+            self.ext_title = m.get('extTitle')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        self.attachment_list = []
+        if m.get('attachmentList') is not None:
+            for k in m.get('attachmentList'):
+                temp_model = AddKnowledgeRequestAttachmentList()
+                self.attachment_list.append(temp_model.from_map(k))
         if m.get('linkUrl') is not None:
             self.link_url = m.get('linkUrl')
         if m.get('version') is not None:
@@ -5851,6 +5936,249 @@ class TransferTicketResponse(TeaModel):
         return self
 
 
+class AddOpenLibraryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddOpenLibraryRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_suite_key: str = None,
+        ding_org_id: int = None,
+        open_team_id: str = None,
+        user_id: str = None,
+        user_name: str = None,
+        title: str = None,
+        description: str = None,
+        type: str = None,
+        source: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_suite_key = ding_suite_key
+        self.ding_org_id = ding_org_id
+        # 团队ID
+        self.open_team_id = open_team_id
+        # 用户ID
+        self.user_id = user_id
+        # 用户昵称或姓名
+        self.user_name = user_name
+        # 知识库名称
+        self.title = title
+        # 知识库描述
+        self.description = description
+        # 知识库类型
+        self.type = type
+        # 知识库来源
+        self.source = source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.title is not None:
+            result['title'] = self.title
+        if self.description is not None:
+            result['description'] = self.description
+        if self.type is not None:
+            result['type'] = self.type
+        if self.source is not None:
+            result['source'] = self.source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        return self
+
+
+class AddOpenLibraryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        id: int = None,
+        message: str = None,
+    ):
+        # success
+        self.success = success
+        # 知识库ID
+        self.id = id
+        # 失败时错误消息
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.id is not None:
+            result['id'] = self.id
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class AddOpenLibraryResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        result: AddOpenLibraryResponseBodyResult = None,
+    ):
+        # success
+        self.success = success
+        # 返回结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('result') is not None:
+            temp_model = AddOpenLibraryResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AddOpenLibraryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddOpenLibraryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddOpenLibraryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryActiveUsersHeaders(TeaModel):
     def __init__(
         self,
@@ -6058,6 +6386,242 @@ class QueryActiveUsersResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryActiveUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddOpenCategoryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddOpenCategoryRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_suite_key: str = None,
+        ding_org_id: int = None,
+        open_team_id: str = None,
+        user_id: str = None,
+        user_name: str = None,
+        title: str = None,
+        parent_id: int = None,
+        library_id: int = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_suite_key = ding_suite_key
+        self.ding_org_id = ding_org_id
+        # 团队ID
+        self.open_team_id = open_team_id
+        # 用户ID
+        self.user_id = user_id
+        # 用户昵称或姓名
+        self.user_name = user_name
+        # 类目标题
+        self.title = title
+        # 父类目ID
+        self.parent_id = parent_id
+        # 所属知识库ID
+        self.library_id = library_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.title is not None:
+            result['title'] = self.title
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.library_id is not None:
+            result['libraryId'] = self.library_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('libraryId') is not None:
+            self.library_id = m.get('libraryId')
+        return self
+
+
+class AddOpenCategoryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        id: int = None,
+        message: str = None,
+    ):
+        # success
+        self.success = success
+        # 添加成类目ID
+        self.id = id
+        # 失败时的错误消息
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.id is not None:
+            result['id'] = self.id
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class AddOpenCategoryResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        result: AddOpenCategoryResponseBodyResult = None,
+    ):
+        # success
+        self.success = success
+        # 返回结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('result') is not None:
+            temp_model = AddOpenCategoryResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AddOpenCategoryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddOpenCategoryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddOpenCategoryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6591,6 +7155,369 @@ class UpdateGroupTagResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class AddOpenKnowledgeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddOpenKnowledgeRequestAttachments(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        path: str = None,
+        size: float = None,
+        suffix: str = None,
+        mime_type: str = None,
+    ):
+        # 附件名称
+        self.title = title
+        # 这个是附件URL
+        self.path = path
+        # 附件大小
+        self.size = size
+        # 附件扩展名
+        self.suffix = suffix
+        # 媒体类型
+        self.mime_type = mime_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.path is not None:
+            result['path'] = self.path
+        if self.size is not None:
+            result['size'] = self.size
+        if self.suffix is not None:
+            result['suffix'] = self.suffix
+        if self.mime_type is not None:
+            result['mimeType'] = self.mime_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('path') is not None:
+            self.path = m.get('path')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('suffix') is not None:
+            self.suffix = m.get('suffix')
+        if m.get('mimeType') is not None:
+            self.mime_type = m.get('mimeType')
+        return self
+
+
+class AddOpenKnowledgeRequest(TeaModel):
+    def __init__(
+        self,
+        ding_token_grant_type: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_org_id: int = None,
+        open_team_id: str = None,
+        user_id: str = None,
+        user_name: str = None,
+        attachments: List[AddOpenKnowledgeRequestAttachments] = None,
+        library_id: int = None,
+        source: str = None,
+        title: str = None,
+        type: str = None,
+        content: str = None,
+        ext_title: str = None,
+        keyword: str = None,
+        tags: str = None,
+        effect_timestart: str = None,
+        effect_timeend: str = None,
+        category_id: int = None,
+    ):
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_org_id = ding_org_id
+        # 所属团队ID
+        self.open_team_id = open_team_id
+        # 用户ID
+        self.user_id = user_id
+        # 用户昵称或姓名
+        self.user_name = user_name
+        # 附件列表
+        self.attachments = attachments
+        # 所属知识库唯一标识id
+        self.library_id = library_id
+        # 知识点来源
+        self.source = source
+        # 知识点标准问
+        self.title = title
+        # 知识点类型()
+        self.type = type
+        # 知识点正文
+        self.content = content
+        # 扩展问法(多个英文逗号隔开)
+        self.ext_title = ext_title
+        # 关键词(多个逗号隔开)
+        self.keyword = keyword
+        # 标签(多个可逗号隔开)
+        self.tags = tags
+        # 生效开始时间(默认1980-01-01 00:00:00)
+        self.effect_timestart = effect_timestart
+        # 生效结束时间(默认2100-01-01 23:59:59)
+        self.effect_timeend = effect_timeend
+        # 知识点所属类目ID
+        self.category_id = category_id
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.library_id is not None:
+            result['libraryId'] = self.library_id
+        if self.source is not None:
+            result['source'] = self.source
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.content is not None:
+            result['content'] = self.content
+        if self.ext_title is not None:
+            result['extTitle'] = self.ext_title
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.tags is not None:
+            result['tags'] = self.tags
+        if self.effect_timestart is not None:
+            result['effectTimestart'] = self.effect_timestart
+        if self.effect_timeend is not None:
+            result['effectTimeend'] = self.effect_timeend
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = AddOpenKnowledgeRequestAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('libraryId') is not None:
+            self.library_id = m.get('libraryId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('extTitle') is not None:
+            self.ext_title = m.get('extTitle')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('tags') is not None:
+            self.tags = m.get('tags')
+        if m.get('effectTimestart') is not None:
+            self.effect_timestart = m.get('effectTimestart')
+        if m.get('effectTimeend') is not None:
+            self.effect_timeend = m.get('effectTimeend')
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        return self
+
+
+class AddOpenKnowledgeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        id: int = None,
+        message: str = None,
+    ):
+        # 操作标识
+        self.success = success
+        # 知识点ID
+        self.id = id
+        # 失败错误消息
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.id is not None:
+            result['id'] = self.id
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class AddOpenKnowledgeResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        result: AddOpenKnowledgeResponseBodyResult = None,
+    ):
+        # success
+        self.success = success
+        # 返回结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('result') is not None:
+            temp_model = AddOpenKnowledgeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AddOpenKnowledgeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddOpenKnowledgeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddOpenKnowledgeResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
