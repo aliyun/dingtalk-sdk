@@ -10,6 +10,9 @@ public class CreateGroupResponseBody extends TeaModel {
     @NameInMap("createTime")
     public Long createTime;
 
+    @NameInMap("chatId")
+    public String chatId;
+
     public static CreateGroupResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateGroupResponseBody self = new CreateGroupResponseBody();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class CreateGroupResponseBody extends TeaModel {
     }
     public Long getCreateTime() {
         return this.createTime;
+    }
+
+    public CreateGroupResponseBody setChatId(String chatId) {
+        this.chatId = chatId;
+        return this;
+    }
+    public String getChatId() {
+        return this.chatId;
     }
 
 }
