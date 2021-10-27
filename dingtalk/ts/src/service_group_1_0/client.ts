@@ -293,6 +293,9 @@ export class AddKnowledgeRequest extends $tea.Model {
   type?: string;
   title?: string;
   content?: string;
+  extTitle?: string;
+  keyword?: string;
+  attachmentList?: AddKnowledgeRequestAttachmentList[];
   linkUrl?: string;
   version?: string;
   static names(): { [key: string]: string } {
@@ -308,6 +311,9 @@ export class AddKnowledgeRequest extends $tea.Model {
       type: 'type',
       title: 'title',
       content: 'content',
+      extTitle: 'extTitle',
+      keyword: 'keyword',
+      attachmentList: 'attachmentList',
       linkUrl: 'linkUrl',
       version: 'version',
     };
@@ -326,6 +332,9 @@ export class AddKnowledgeRequest extends $tea.Model {
       type: 'string',
       title: 'string',
       content: 'string',
+      extTitle: 'string',
+      keyword: 'string',
+      attachmentList: { 'type': 'array', 'itemType': AddKnowledgeRequestAttachmentList },
       linkUrl: 'string',
       version: 'string',
     };
@@ -2465,6 +2474,121 @@ export class TransferTicketResponse extends $tea.Model {
   }
 }
 
+export class AddOpenLibraryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenLibraryRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  dingOrgId?: number;
+  openTeamId?: string;
+  userId?: string;
+  userName?: string;
+  title?: string;
+  description?: string;
+  type?: string;
+  source?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+      dingOrgId: 'dingOrgId',
+      openTeamId: 'openTeamId',
+      userId: 'userId',
+      userName: 'userName',
+      title: 'title',
+      description: 'description',
+      type: 'type',
+      source: 'source',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+      dingOrgId: 'number',
+      openTeamId: 'string',
+      userId: 'string',
+      userName: 'string',
+      title: 'string',
+      description: 'string',
+      type: 'string',
+      source: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenLibraryResponseBody extends $tea.Model {
+  success?: boolean;
+  result?: AddOpenLibraryResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      result: AddOpenLibraryResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenLibraryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddOpenLibraryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddOpenLibraryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryActiveUsersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2542,6 +2666,118 @@ export class QueryActiveUsersResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryActiveUsersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenCategoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenCategoryRequest extends $tea.Model {
+  dingIsvOrgId?: number;
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  dingOrgId?: number;
+  openTeamId?: string;
+  userId?: string;
+  userName?: string;
+  title?: string;
+  parentId?: number;
+  libraryId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+      dingOrgId: 'dingOrgId',
+      openTeamId: 'openTeamId',
+      userId: 'userId',
+      userName: 'userName',
+      title: 'title',
+      parentId: 'parentId',
+      libraryId: 'libraryId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingIsvOrgId: 'number',
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+      dingOrgId: 'number',
+      openTeamId: 'string',
+      userId: 'string',
+      userName: 'string',
+      title: 'string',
+      parentId: 'number',
+      libraryId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenCategoryResponseBody extends $tea.Model {
+  success?: boolean;
+  result?: AddOpenCategoryResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      result: AddOpenCategoryResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenCategoryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddOpenCategoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddOpenCategoryResponseBody,
     };
   }
 
@@ -2803,6 +3039,145 @@ export class UpdateGroupTagResponse extends $tea.Model {
   }
 }
 
+export class AddOpenKnowledgeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenKnowledgeRequest extends $tea.Model {
+  dingTokenGrantType?: number;
+  dingIsvOrgId?: number;
+  dingSuiteKey?: string;
+  dingOrgId?: number;
+  openTeamId?: string;
+  userId?: string;
+  userName?: string;
+  attachments?: AddOpenKnowledgeRequestAttachments[];
+  libraryId?: number;
+  source?: string;
+  title?: string;
+  type?: string;
+  content?: string;
+  extTitle?: string;
+  keyword?: string;
+  tags?: string;
+  effectTimestart?: string;
+  effectTimeend?: string;
+  categoryId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingOrgId: 'dingOrgId',
+      openTeamId: 'openTeamId',
+      userId: 'userId',
+      userName: 'userName',
+      attachments: 'attachments',
+      libraryId: 'libraryId',
+      source: 'source',
+      title: 'title',
+      type: 'type',
+      content: 'content',
+      extTitle: 'extTitle',
+      keyword: 'keyword',
+      tags: 'tags',
+      effectTimestart: 'effectTimestart',
+      effectTimeend: 'effectTimeend',
+      categoryId: 'categoryId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingTokenGrantType: 'number',
+      dingIsvOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingOrgId: 'number',
+      openTeamId: 'string',
+      userId: 'string',
+      userName: 'string',
+      attachments: { 'type': 'array', 'itemType': AddOpenKnowledgeRequestAttachments },
+      libraryId: 'number',
+      source: 'string',
+      title: 'string',
+      type: 'string',
+      content: 'string',
+      extTitle: 'string',
+      keyword: 'string',
+      tags: 'string',
+      effectTimestart: 'string',
+      effectTimeend: 'string',
+      categoryId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenKnowledgeResponseBody extends $tea.Model {
+  success?: boolean;
+  result?: AddOpenKnowledgeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      result: AddOpenKnowledgeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenKnowledgeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddOpenKnowledgeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddOpenKnowledgeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetStoragePolicyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3023,6 +3398,37 @@ export class UpdateTicketRequestTicketMemo extends $tea.Model {
     return {
       memo: 'string',
       attachments: { 'type': 'array', 'itemType': UpdateTicketRequestTicketMemoAttachments },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddKnowledgeRequestAttachmentList extends $tea.Model {
+  title?: string;
+  path?: string;
+  size?: number;
+  suffix?: string;
+  mimeType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      path: 'path',
+      size: 'size',
+      suffix: 'suffix',
+      mimeType: 'mime_type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      path: 'string',
+      size: 'number',
+      suffix: 'string',
+      mimeType: 'string',
     };
   }
 
@@ -3845,6 +4251,31 @@ export class TransferTicketRequestNotify extends $tea.Model {
   }
 }
 
+export class AddOpenLibraryResponseBodyResult extends $tea.Model {
+  success?: boolean;
+  id?: number;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      id: 'id',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      id: 'number',
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryActiveUsersResponseBodyActiveUserInfos extends $tea.Model {
   unionId?: string;
   nickName?: string;
@@ -3874,6 +4305,31 @@ export class QueryActiveUsersResponseBodyActiveUserInfos extends $tea.Model {
       actionIndexL30d: 'number',
       activeScore: 'number',
       ranking: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenCategoryResponseBodyResult extends $tea.Model {
+  success?: boolean;
+  id?: number;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      id: 'id',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      id: 'number',
+      message: 'string',
     };
   }
 
@@ -3943,6 +4399,62 @@ export class CancelTicketRequestNotify extends $tea.Model {
       workNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
       groupNoticeReceiverUnionIds: { 'type': 'array', 'itemType': 'string' },
       noticeAllGroupMember: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenKnowledgeRequestAttachments extends $tea.Model {
+  title?: string;
+  path?: string;
+  size?: number;
+  suffix?: string;
+  mimeType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      path: 'path',
+      size: 'size',
+      suffix: 'suffix',
+      mimeType: 'mimeType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      path: 'string',
+      size: 'number',
+      suffix: 'string',
+      mimeType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOpenKnowledgeResponseBodyResult extends $tea.Model {
+  success?: boolean;
+  id?: number;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      id: 'id',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      id: 'number',
+      message: 'string',
     };
   }
 
@@ -4198,6 +4710,18 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.extTitle)) {
+      body["extTitle"] = request.extTitle;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      body["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.attachmentList)) {
+      body["attachmentList"] = request.attachmentList;
     }
 
     if (!Util.isUnset(request.linkUrl)) {
@@ -5470,6 +5994,75 @@ export default class Client extends OpenApi {
     return $tea.cast<TransferTicketResponse>(await this.doROARequest("TransferTicket", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/transfer`, "none", req, runtime), new TransferTicketResponse({}));
   }
 
+  async addOpenLibrary(request: AddOpenLibraryRequest): Promise<AddOpenLibraryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddOpenLibraryHeaders({ });
+    return await this.addOpenLibraryWithOptions(request, headers, runtime);
+  }
+
+  async addOpenLibraryWithOptions(request: AddOpenLibraryRequest, headers: AddOpenLibraryHeaders, runtime: $Util.RuntimeOptions): Promise<AddOpenLibraryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userName)) {
+      body["userName"] = request.userName;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddOpenLibraryResponse>(await this.doROARequest("AddOpenLibrary", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/openLibraries`, "json", req, runtime), new AddOpenLibraryResponse({}));
+  }
+
   async queryActiveUsers(request: QueryActiveUsersRequest): Promise<QueryActiveUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryActiveUsersHeaders({ });
@@ -5501,6 +6094,71 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryActiveUsersResponse>(await this.doROARequest("QueryActiveUsers", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/groups/queryActiveUsers`, "json", req, runtime), new QueryActiveUsersResponse({}));
+  }
+
+  async addOpenCategory(request: AddOpenCategoryRequest): Promise<AddOpenCategoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddOpenCategoryHeaders({ });
+    return await this.addOpenCategoryWithOptions(request, headers, runtime);
+  }
+
+  async addOpenCategoryWithOptions(request: AddOpenCategoryRequest, headers: AddOpenCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<AddOpenCategoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userName)) {
+      body["userName"] = request.userName;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.parentId)) {
+      body["parentId"] = request.parentId;
+    }
+
+    if (!Util.isUnset(request.libraryId)) {
+      body["libraryId"] = request.libraryId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddOpenCategoryResponse>(await this.doROARequest("AddOpenCategory", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/openCategories`, "json", req, runtime), new AddOpenCategoryResponse({}));
   }
 
   async getOssTempUrl(request: GetOssTempUrlRequest): Promise<GetOssTempUrlResponse> {
@@ -5656,6 +6314,107 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateGroupTagResponse>(await this.doROARequest("UpdateGroupTag", "serviceGroup_1.0", "HTTP", "PUT", "AK", `/v1.0/serviceGroup/tags`, "none", req, runtime), new UpdateGroupTagResponse({}));
+  }
+
+  async addOpenKnowledge(request: AddOpenKnowledgeRequest): Promise<AddOpenKnowledgeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddOpenKnowledgeHeaders({ });
+    return await this.addOpenKnowledgeWithOptions(request, headers, runtime);
+  }
+
+  async addOpenKnowledgeWithOptions(request: AddOpenKnowledgeRequest, headers: AddOpenKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<AddOpenKnowledgeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userName)) {
+      body["userName"] = request.userName;
+    }
+
+    if (!Util.isUnset(request.attachments)) {
+      body["attachments"] = request.attachments;
+    }
+
+    if (!Util.isUnset(request.libraryId)) {
+      body["libraryId"] = request.libraryId;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.extTitle)) {
+      body["extTitle"] = request.extTitle;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      body["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.tags)) {
+      body["tags"] = request.tags;
+    }
+
+    if (!Util.isUnset(request.effectTimestart)) {
+      body["effectTimestart"] = request.effectTimestart;
+    }
+
+    if (!Util.isUnset(request.effectTimeend)) {
+      body["effectTimeend"] = request.effectTimeend;
+    }
+
+    if (!Util.isUnset(request.categoryId)) {
+      body["categoryId"] = request.categoryId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddOpenKnowledgeResponse>(await this.doROARequest("AddOpenKnowledge", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/openKnowledges`, "json", req, runtime), new AddOpenKnowledgeResponse({}));
   }
 
   async getStoragePolicy(request: GetStoragePolicyRequest): Promise<GetStoragePolicyResponse> {

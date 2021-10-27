@@ -1,0 +1,1 @@
+module.exports = require('./dist').workflow_1_0;

@@ -292,10 +292,12 @@ export class CreateGroupRequest extends $tea.Model {
 export class CreateGroupResponseBody extends $tea.Model {
   conversationId?: string;
   createTime?: number;
+  chatId?: string;
   static names(): { [key: string]: string } {
     return {
       conversationId: 'conversationId',
       createTime: 'createTime',
+      chatId: 'chatId',
     };
   }
 
@@ -303,6 +305,7 @@ export class CreateGroupResponseBody extends $tea.Model {
     return {
       conversationId: 'string',
       createTime: 'number',
+      chatId: 'string',
     };
   }
 
