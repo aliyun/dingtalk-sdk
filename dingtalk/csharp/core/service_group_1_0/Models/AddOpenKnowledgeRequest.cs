@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
-    public class AddKnowledgeRequest : TeaModel {
+    public class AddOpenKnowledgeRequest : TeaModel {
         /// <summary>
         /// 附件列表
         /// </summary>
-        [NameInMap("attachmentList")]
+        [NameInMap("attachments")]
         [Validation(Required=false)]
-        public List<AddKnowledgeRequestAttachmentList> AttachmentList { get; set; }
-        public class AddKnowledgeRequestAttachmentList : TeaModel {
+        public List<AddOpenKnowledgeRequestAttachments> Attachments { get; set; }
+        public class AddOpenKnowledgeRequestAttachments : TeaModel {
             /// <summary>
             /// 附件名称
             /// </summary>
@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Title { get; set; }
 
             /// <summary>
-            /// 附件URL
+            /// 这个是附件URL
             /// </summary>
             [NameInMap("path")]
             [Validation(Required=false)]
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             /// </summary>
             [NameInMap("size")]
             [Validation(Required=false)]
-            public long? Size { get; set; }
+            public double? Size { get; set; }
 
             /// <summary>
             /// 附件扩展名
@@ -45,16 +45,23 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Suffix { get; set; }
 
             /// <summary>
-            /// 多媒体类型
+            /// 媒体类型
             /// </summary>
-            [NameInMap("mime_type")]
+            [NameInMap("mimeType")]
             [Validation(Required=false)]
             public string MimeType { get; set; }
 
         }
 
         /// <summary>
-        /// 知识点内容
+        /// 知识点所属类目ID
+        /// </summary>
+        [NameInMap("categoryId")]
+        [Validation(Required=false)]
+        public long? CategoryId { get; set; }
+
+        /// <summary>
+        /// 知识点正文
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
@@ -77,35 +84,42 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 知识点扩展问(多个用英文逗号隔开)
+        /// 生效结束时间(默认2100-01-01 23:59:59)
+        /// </summary>
+        [NameInMap("effectTimeend")]
+        [Validation(Required=false)]
+        public string EffectTimeend { get; set; }
+
+        /// <summary>
+        /// 生效开始时间(默认1980-01-01 00:00:00)
+        /// </summary>
+        [NameInMap("effectTimestart")]
+        [Validation(Required=false)]
+        public string EffectTimestart { get; set; }
+
+        /// <summary>
+        /// 扩展问法(多个英文逗号隔开)
         /// </summary>
         [NameInMap("extTitle")]
         [Validation(Required=false)]
         public string ExtTitle { get; set; }
 
         /// <summary>
-        /// 关键字(多个用英文逗号隔开)
+        /// 关键词(多个逗号隔开)
         /// </summary>
         [NameInMap("keyword")]
         [Validation(Required=false)]
         public string Keyword { get; set; }
 
         /// <summary>
-        /// 知识库的唯一标识
+        /// 所属知识库唯一标识id
         /// </summary>
-        [NameInMap("libraryKey")]
+        [NameInMap("libraryId")]
         [Validation(Required=false)]
-        public string LibraryKey { get; set; }
+        public long? LibraryId { get; set; }
 
         /// <summary>
-        /// CCM的知识点外链
-        /// </summary>
-        [NameInMap("linkUrl")]
-        [Validation(Required=false)]
-        public string LinkUrl { get; set; }
-
-        /// <summary>
-        /// 开放团队ID
+        /// 所属团队ID
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
@@ -119,32 +133,39 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string Source { get; set; }
 
         /// <summary>
-        /// 知识点唯一标识
+        /// 标签(多个可逗号隔开)
         /// </summary>
-        [NameInMap("sourcePrimaryKey")]
+        [NameInMap("tags")]
         [Validation(Required=false)]
-        public string SourcePrimaryKey { get; set; }
+        public string Tags { get; set; }
 
         /// <summary>
-        /// 知识点名称
+        /// 知识点标准问
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }
 
         /// <summary>
-        /// 知识点类型 NORMAL：普通型 CARD：卡片 CONDITION：条件
+        /// 知识点类型()
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 知识点版本号
+        /// 用户ID
         /// </summary>
-        [NameInMap("version")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string Version { get; set; }
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// 用户昵称或姓名
+        /// </summary>
+        [NameInMap("userName")]
+        [Validation(Required=false)]
+        public string UserName { get; set; }
 
     }
 

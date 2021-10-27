@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class CreateGroupResponseBody : TeaModel {
+        [NameInMap("chatId")]
+        [Validation(Required=false)]
+        public string ChatId { get; set; }
+
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
