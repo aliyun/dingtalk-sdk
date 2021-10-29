@@ -287,8 +287,6 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.staff_id):
             body['staffId'] = request.staff_id
         if not UtilClient.is_unset(request.account_id):
@@ -327,8 +325,6 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.staff_id):
             body['staffId'] = request.staff_id
         if not UtilClient.is_unset(request.account_id):
@@ -383,10 +379,6 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.suite_id):
-            body['suiteId'] = request.suite_id
-        if not UtilClient.is_unset(request.isv_corp_id):
-            body['isvCorpId'] = request.isv_corp_id
         if not UtilClient.is_unset(request.out_batch_nos):
             body['outBatchNos'] = request.out_batch_nos
         real_headers = {}
@@ -411,10 +403,6 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.suite_id):
-            body['suiteId'] = request.suite_id
-        if not UtilClient.is_unset(request.isv_corp_id):
-            body['isvCorpId'] = request.isv_corp_id
         if not UtilClient.is_unset(request.out_batch_nos):
             body['outBatchNos'] = request.out_batch_nos
         real_headers = {}
@@ -919,16 +907,12 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.isv_corp_id):
-            query['isvCorpId'] = request.isv_corp_id
         if not UtilClient.is_unset(request.out_batch_no):
             query['outBatchNo'] = request.out_batch_no
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.suite_id):
-            query['suiteId'] = request.suite_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -951,16 +935,12 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.isv_corp_id):
-            query['isvCorpId'] = request.isv_corp_id
         if not UtilClient.is_unset(request.out_batch_no):
             query['outBatchNo'] = request.out_batch_no
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
-        if not UtilClient.is_unset(request.suite_id):
-            query['suiteId'] = request.suite_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -975,44 +955,28 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryBatchTradeDetailList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/batchTrades/details', 'json', req, runtime)
         )
 
-    def query_pay_account_list(
-        self,
-        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
-    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return self.query_pay_account_list_with_options(request, headers, runtime)
+        return self.query_pay_account_list_with_options(headers, runtime)
 
-    async def query_pay_account_list_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
-    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return await self.query_pay_account_list_with_options_async(request, headers, runtime)
+        return await self.query_pay_account_list_with_options_async(headers, runtime)
 
     def query_pay_account_list_with_options(
         self,
-        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
         headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.isv_corp_id):
-            query['isvCorpId'] = request.isv_corp_id
-        if not UtilClient.is_unset(request.suite_id):
-            query['suiteId'] = request.suite_id
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
@@ -1021,26 +985,16 @@ class Client(OpenApiClient):
 
     async def query_pay_account_list_with_options_async(
         self,
-        request: dingtalkfinance__1__0_models.QueryPayAccountListRequest,
         headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.isv_corp_id):
-            query['isvCorpId'] = request.isv_corp_id
-        if not UtilClient.is_unset(request.suite_id):
-            query['suiteId'] = request.suite_id
-        if not UtilClient.is_unset(request.corp_id):
-            query['corpId'] = request.corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryPayAccountListResponse(),

@@ -685,7 +685,6 @@ class ApplyBatchPayHeaders(TeaModel):
 class ApplyBatchPayRequest(TeaModel):
     def __init__(
         self,
-        corp_id: str = None,
         staff_id: str = None,
         account_id: str = None,
         order_no: str = None,
@@ -695,8 +694,6 @@ class ApplyBatchPayRequest(TeaModel):
         pay_terminal: str = None,
         trans_expire_time: str = None,
     ):
-        # 企业corpId
-        self.corp_id = corp_id
         # 支付发起人staffId
         self.staff_id = staff_id
         # 支付账号唯一id
@@ -723,8 +720,6 @@ class ApplyBatchPayRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.staff_id is not None:
             result['staffId'] = self.staff_id
         if self.account_id is not None:
@@ -745,8 +740,6 @@ class ApplyBatchPayRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('staffId') is not None:
             self.staff_id = m.get('staffId')
         if m.get('accountId') is not None:
@@ -874,14 +867,8 @@ class QueryBatchTradeOrderHeaders(TeaModel):
 class QueryBatchTradeOrderRequest(TeaModel):
     def __init__(
         self,
-        suite_id: str = None,
-        isv_corp_id: str = None,
         out_batch_nos: List[str] = None,
     ):
-        # ISV/企业自建应用suiteId
-        self.suite_id = suite_id
-        # ISV的cropId
-        self.isv_corp_id = isv_corp_id
         # 外部商户批次号列表
         self.out_batch_nos = out_batch_nos
 
@@ -894,20 +881,12 @@ class QueryBatchTradeOrderRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.suite_id is not None:
-            result['suiteId'] = self.suite_id
-        if self.isv_corp_id is not None:
-            result['isvCorpId'] = self.isv_corp_id
         if self.out_batch_nos is not None:
             result['outBatchNos'] = self.out_batch_nos
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('suiteId') is not None:
-            self.suite_id = m.get('suiteId')
-        if m.get('isvCorpId') is not None:
-            self.isv_corp_id = m.get('isvCorpId')
         if m.get('outBatchNos') is not None:
             self.out_batch_nos = m.get('outBatchNos')
         return self
@@ -2309,22 +2288,16 @@ class QueryBatchTradeDetailListHeaders(TeaModel):
 class QueryBatchTradeDetailListRequest(TeaModel):
     def __init__(
         self,
-        isv_corp_id: str = None,
         out_batch_no: str = None,
         page_number: int = None,
         page_size: int = None,
-        suite_id: str = None,
     ):
-        # isv corpId
-        self.isv_corp_id = isv_corp_id
         # 外部商户批次号
         self.out_batch_no = out_batch_no
         # 当前页数
         self.page_number = page_number
         # 每页记录数
         self.page_size = page_size
-        # ISV/企业自建应用suiteId
-        self.suite_id = suite_id
 
     def validate(self):
         pass
@@ -2335,30 +2308,22 @@ class QueryBatchTradeDetailListRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.isv_corp_id is not None:
-            result['isvCorpId'] = self.isv_corp_id
         if self.out_batch_no is not None:
             result['outBatchNo'] = self.out_batch_no
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
-        if self.suite_id is not None:
-            result['suiteId'] = self.suite_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('isvCorpId') is not None:
-            self.isv_corp_id = m.get('isvCorpId')
         if m.get('outBatchNo') is not None:
             self.out_batch_no = m.get('outBatchNo')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
-        if m.get('suiteId') is not None:
-            self.suite_id = m.get('suiteId')
         return self
 
 
@@ -2584,48 +2549,6 @@ class QueryPayAccountListHeaders(TeaModel):
             self.common_headers = m.get('commonHeaders')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class QueryPayAccountListRequest(TeaModel):
-    def __init__(
-        self,
-        isv_corp_id: str = None,
-        suite_id: str = None,
-        corp_id: str = None,
-    ):
-        # Isv coprId
-        self.isv_corp_id = isv_corp_id
-        # 应用suiteId
-        self.suite_id = suite_id
-        # 组织corpId
-        self.corp_id = corp_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.isv_corp_id is not None:
-            result['isvCorpId'] = self.isv_corp_id
-        if self.suite_id is not None:
-            result['suiteId'] = self.suite_id
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('isvCorpId') is not None:
-            self.isv_corp_id = m.get('isvCorpId')
-        if m.get('suiteId') is not None:
-            self.suite_id = m.get('suiteId')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         return self
 
 
