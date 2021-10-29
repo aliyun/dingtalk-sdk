@@ -4,10 +4,6 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyBatchPayRequest extends TeaModel {
-    // 企业corpId
-    @NameInMap("corpId")
-    public String corpId;
-
     // 支付发起人staffId
     @NameInMap("staffId")
     public String staffId;
@@ -43,14 +39,6 @@ public class ApplyBatchPayRequest extends TeaModel {
     public static ApplyBatchPayRequest build(java.util.Map<String, ?> map) throws Exception {
         ApplyBatchPayRequest self = new ApplyBatchPayRequest();
         return TeaModel.build(map, self);
-    }
-
-    public ApplyBatchPayRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public ApplyBatchPayRequest setStaffId(String staffId) {

@@ -200,10 +200,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public ApplyBatchPayResponse applyBatchPayWithOptions(ApplyBatchPayRequest request, ApplyBatchPayHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
-            body.put("corpId", request.corpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
             body.put("staffId", request.staffId);
         }
@@ -261,14 +257,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryBatchTradeOrderResponse queryBatchTradeOrderWithOptions(QueryBatchTradeOrderRequest request, QueryBatchTradeOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
-            body.put("suiteId", request.suiteId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
-            body.put("isvCorpId", request.isvCorpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.outBatchNos)) {
             body.put("outBatchNos", request.outBatchNos);
         }
@@ -587,10 +575,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryBatchTradeDetailListResponse queryBatchTradeDetailListWithOptions(QueryBatchTradeDetailListRequest request, QueryBatchTradeDetailListHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
-            query.put("isvCorpId", request.isvCorpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.outBatchNo)) {
             query.put("outBatchNo", request.outBatchNo);
         }
@@ -601,10 +585,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
             query.put("pageSize", request.pageSize);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
-            query.put("suiteId", request.suiteId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -623,27 +603,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/batchTrades/details", "json", req, runtime), new QueryBatchTradeDetailListResponse());
     }
 
-    public QueryPayAccountListResponse queryPayAccountList(QueryPayAccountListRequest request) throws Exception {
+    public QueryPayAccountListResponse queryPayAccountList() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryPayAccountListHeaders headers = new QueryPayAccountListHeaders();
-        return this.queryPayAccountListWithOptions(request, headers, runtime);
+        return this.queryPayAccountListWithOptions(headers, runtime);
     }
 
-    public QueryPayAccountListResponse queryPayAccountListWithOptions(QueryPayAccountListRequest request, QueryPayAccountListHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
-            query.put("isvCorpId", request.isvCorpId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
-            query.put("suiteId", request.suiteId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
-            query.put("corpId", request.corpId);
-        }
-
+    public QueryPayAccountListResponse queryPayAccountListWithOptions(QueryPayAccountListHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -654,8 +620,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/payAccounts", "json", req, runtime), new QueryPayAccountListResponse());
     }
