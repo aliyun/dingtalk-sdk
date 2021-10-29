@@ -20,12 +20,27 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteOrgRelationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteOrgRelationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteOrgRelationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteRemoteClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteRemoteClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteStudentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteStudentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteStudentResponse;
@@ -39,6 +54,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesHeaders;
@@ -63,8 +81,17 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleConfigShrinkRequ
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataResponse;
@@ -80,6 +107,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -94,6 +124,50 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                      $courseCode
+     * @param GetRemoteClassCourseRequest $request
+     *
+     * @return GetRemoteClassCourseResponse
+     */
+    public function getRemoteClassCourse($courseCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRemoteClassCourseHeaders([]);
+
+        return $this->getRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $courseCode
+     * @param GetRemoteClassCourseRequest $request
+     * @param GetRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetRemoteClassCourseResponse
+     */
+    public function getRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            @$query['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetRemoteClassCourseResponse::fromMap($this->doROARequest('GetRemoteClassCourse', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/courses/' . $courseCode . '', 'json', $req, $runtime));
     }
 
     /**
@@ -488,6 +562,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateInviteUrlRequest $request
+     *
+     * @return CreateInviteUrlResponse
+     */
+    public function createInviteUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateInviteUrlHeaders([]);
+
+        return $this->createInviteUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateInviteUrlRequest $request
+     * @param CreateInviteUrlHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CreateInviteUrlResponse
+     */
+    public function createInviteUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$body['authCode'] = $request->authCode;
+        }
+        if (!Utils::isUnset($request->targetOperator)) {
+            @$body['targetOperator'] = $request->targetOperator;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateInviteUrlResponse::fromMap($this->doROARequest('CreateInviteUrl', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/remoteClasses/orgRelations/inviteUrls', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string            $deptId
      * @param DeleteDeptRequest $request
      *
@@ -686,6 +823,99 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryDeviceListByCorpIdRequest $request
+     *
+     * @return QueryDeviceListByCorpIdResponse
+     */
+    public function queryDeviceListByCorpId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDeviceListByCorpIdHeaders([]);
+
+        return $this->queryDeviceListByCorpIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryDeviceListByCorpIdRequest $request
+     * @param QueryDeviceListByCorpIdHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return QueryDeviceListByCorpIdResponse
+     */
+    public function queryDeviceListByCorpIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            @$query['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryDeviceListByCorpIdResponse::fromMap($this->doROARequest('QueryDeviceListByCorpId', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/devices', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteDeviceOrgRequest $request
+     *
+     * @return DeleteDeviceOrgResponse
+     */
+    public function deleteDeviceOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteDeviceOrgHeaders([]);
+
+        return $this->deleteDeviceOrgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteDeviceOrgRequest $request
+     * @param DeleteDeviceOrgHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return DeleteDeviceOrgResponse
+     */
+    public function deleteDeviceOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deviceCode)) {
+            @$query['deviceCode'] = $request->deviceCode;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$query['authCode'] = $request->authCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteDeviceOrgResponse::fromMap($this->doROARequest('DeleteDeviceOrg', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/deviceOrgs', 'json', $req, $runtime));
+    }
+
+    /**
      * @param BatchOrgCreateHWRequest $request
      *
      * @return BatchOrgCreateHWResponse
@@ -782,6 +1012,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchOrgCreateHWResponse::fromMap($this->doROARequest('BatchOrgCreateHW', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/homeworks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $courseCode
+     * @param DeleteRemoteClassCourseRequest $request
+     *
+     * @return DeleteRemoteClassCourseResponse
+     */
+    public function deleteRemoteClassCourse($courseCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRemoteClassCourseHeaders([]);
+
+        return $this->deleteRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $courseCode
+     * @param DeleteRemoteClassCourseRequest $request
+     * @param DeleteRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return DeleteRemoteClassCourseResponse
+     */
+    public function deleteRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->authCode)) {
+            @$query['authCode'] = $request->authCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteRemoteClassCourseResponse::fromMap($this->doROARequest('DeleteRemoteClassCourse', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/courses/' . $courseCode . '', 'json', $req, $runtime));
     }
 
     /**
@@ -1159,6 +1433,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryRemoteClassCourseRequest $request
+     *
+     * @return QueryRemoteClassCourseResponse
+     */
+    public function queryRemoteClassCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRemoteClassCourseHeaders([]);
+
+        return $this->queryRemoteClassCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryRemoteClassCourseRequest $request
+     * @param QueryRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return QueryRemoteClassCourseResponse
+     */
+    public function queryRemoteClassCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            @$query['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryRemoteClassCourseResponse::fromMap($this->doROARequest('QueryRemoteClassCourse', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryClassScheduleRequest $request
      *
      * @return QueryClassScheduleResponse
@@ -1215,6 +1537,126 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryClassScheduleResponse::fromMap($this->doROARequest('QueryClassSchedule', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/classes/schedules/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteOrgRelationRequest $request
+     *
+     * @return DeleteOrgRelationResponse
+     */
+    public function deleteOrgRelation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteOrgRelationHeaders([]);
+
+        return $this->deleteOrgRelationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteOrgRelationRequest $request
+     * @param DeleteOrgRelationHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return DeleteOrgRelationResponse
+     */
+    public function deleteOrgRelationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetCorpId)) {
+            @$query['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$query['authCode'] = $request->authCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteOrgRelationResponse::fromMap($this->doROARequest('DeleteOrgRelation', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/orgRelations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateRemoteClassCourseRequest $request
+     *
+     * @return CreateRemoteClassCourseResponse
+     */
+    public function createRemoteClassCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateRemoteClassCourseHeaders([]);
+
+        return $this->createRemoteClassCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateRemoteClassCourseRequest $request
+     * @param CreateRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CreateRemoteClassCourseResponse
+     */
+    public function createRemoteClassCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->courseName)) {
+            @$body['courseName'] = $request->courseName;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->teachingParticipant)) {
+            @$body['teachingParticipant'] = $request->teachingParticipant;
+        }
+        if (!Utils::isUnset($request->attendParticipants)) {
+            @$body['attendParticipants'] = $request->attendParticipants;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$body['authCode'] = $request->authCode;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateRemoteClassCourseResponse::fromMap($this->doROARequest('CreateRemoteClassCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
     }
 
     /**
@@ -1284,6 +1726,84 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpdateRemoteClassCourseRequest $request
+     *
+     * @return UpdateRemoteClassCourseResponse
+     */
+    public function updateRemoteClassCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRemoteClassCourseHeaders([]);
+
+        return $this->updateRemoteClassCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateRemoteClassCourseRequest $request
+     * @param UpdateRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return UpdateRemoteClassCourseResponse
+     */
+    public function updateRemoteClassCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->courseName)) {
+            @$body['courseName'] = $request->courseName;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->teachingParticipant)) {
+            @$body['teachingParticipant'] = $request->teachingParticipant;
+        }
+        if (!Utils::isUnset($request->attendParticipants)) {
+            @$body['attendParticipants'] = $request->attendParticipants;
+        }
+        if (!Utils::isUnset($request->courseCode)) {
+            @$body['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->authCode)) {
+            @$body['authCode'] = $request->authCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateRemoteClassCourseResponse::fromMap($this->doROARequest('UpdateRemoteClassCourse', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
+    }
+
+    /**
      * @param SearchTeachersRequest $request
      *
      * @return SearchTeachersResponse
@@ -1323,6 +1843,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchTeachersResponse::fromMap($this->doROARequest('SearchTeachers', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/teachers/search', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryOrgRelationListRequest $request
+     *
+     * @return QueryOrgRelationListResponse
+     */
+    public function queryOrgRelationList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgRelationListHeaders([]);
+
+        return $this->queryOrgRelationListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOrgRelationListRequest $request
+     * @param QueryOrgRelationListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return QueryOrgRelationListResponse
+     */
+    public function queryOrgRelationListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            @$query['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryOrgRelationListResponse::fromMap($this->doROARequest('QueryOrgRelationList', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/orgRelations', 'json', $req, $runtime));
     }
 
     /**

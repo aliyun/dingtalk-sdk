@@ -2,34 +2,28 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryBatchTradeDetailListRequest extends Model
+class QueryDeviceListByCorpIdRequest extends Model
 {
     /**
-     * @description 外部商户批次号
-     *
      * @var string
      */
-    public $outBatchNo;
+    public $operator;
 
     /**
-     * @description 当前页数
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页记录数
-     *
      * @var int
      */
     public $pageSize;
     protected $_name = [
-        'outBatchNo' => 'outBatchNo',
+        'operator'   => 'operator',
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
     ];
@@ -41,8 +35,8 @@ class QueryBatchTradeDetailListRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->outBatchNo) {
-            $res['outBatchNo'] = $this->outBatchNo;
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -57,13 +51,13 @@ class QueryBatchTradeDetailListRequest extends Model
     /**
      * @param array $map
      *
-     * @return QueryBatchTradeDetailListRequest
+     * @return QueryDeviceListByCorpIdRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['outBatchNo'])) {
-            $model->outBatchNo = $map['outBatchNo'];
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

@@ -33,7 +33,6 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryBatchTradeOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryBatchTradeOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryBatchTradeOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryPayAccountListHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryPayAccountListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryPayAccountListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\SaveCorpPayCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\SaveCorpPayCodeRequest;
@@ -249,9 +248,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
         if (!Utils::isUnset($request->staffId)) {
             @$body['staffId'] = $request->staffId;
         }
@@ -315,12 +311,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->suiteId)) {
-            @$body['suiteId'] = $request->suiteId;
-        }
-        if (!Utils::isUnset($request->isvCorpId)) {
-            @$body['isvCorpId'] = $request->isvCorpId;
-        }
         if (!Utils::isUnset($request->outBatchNos)) {
             @$body['outBatchNos'] = $request->outBatchNos;
         }
@@ -681,9 +671,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->isvCorpId)) {
-            @$query['isvCorpId'] = $request->isvCorpId;
-        }
         if (!Utils::isUnset($request->outBatchNo)) {
             @$query['outBatchNo'] = $request->outBatchNo;
         }
@@ -692,9 +679,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->pageSize)) {
             @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->suiteId)) {
-            @$query['suiteId'] = $request->suiteId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -712,38 +696,24 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPayAccountListRequest $request
-     *
      * @return QueryPayAccountListResponse
      */
-    public function queryPayAccountList($request)
+    public function queryPayAccountList()
     {
         $runtime = new RuntimeOptions([]);
         $headers = new QueryPayAccountListHeaders([]);
 
-        return $this->queryPayAccountListWithOptions($request, $headers, $runtime);
+        return $this->queryPayAccountListWithOptions($headers, $runtime);
     }
 
     /**
-     * @param QueryPayAccountListRequest $request
      * @param QueryPayAccountListHeaders $headers
      * @param RuntimeOptions             $runtime
      *
      * @return QueryPayAccountListResponse
      */
-    public function queryPayAccountListWithOptions($request, $headers, $runtime)
+    public function queryPayAccountListWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->isvCorpId)) {
-            @$query['isvCorpId'] = $request->isvCorpId;
-        }
-        if (!Utils::isUnset($request->suiteId)) {
-            @$query['suiteId'] = $request->suiteId;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$query['corpId'] = $request->corpId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -753,7 +723,6 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
         ]);
 
         return QueryPayAccountListResponse::fromMap($this->doROARequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/finance/payAccounts', 'json', $req, $runtime));

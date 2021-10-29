@@ -9,13 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ApplyBatchPayRequest extends Model
 {
     /**
-     * @description 企业corpId
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 支付发起人staffId
      *
      * @var string
@@ -71,7 +64,6 @@ class ApplyBatchPayRequest extends Model
      */
     public $transExpireTime;
     protected $_name = [
-        'corpId'          => 'corpId',
         'staffId'         => 'staffId',
         'accountId'       => 'accountId',
         'orderNo'         => 'orderNo',
@@ -89,9 +81,6 @@ class ApplyBatchPayRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->staffId) {
             $res['staffId'] = $this->staffId;
         }
@@ -128,9 +117,6 @@ class ApplyBatchPayRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['staffId'])) {
             $model->staffId = $map['staffId'];
         }
