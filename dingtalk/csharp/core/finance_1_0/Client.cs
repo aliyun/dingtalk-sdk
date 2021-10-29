@@ -48,10 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["accountId"] = request.AccountId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
             {
                 body["orderNo"] = request.OrderNo;
@@ -104,10 +100,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountId))
             {
                 body["accountId"] = request.AccountId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
             {
@@ -1020,10 +1012,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                query["isvCorpId"] = request.IsvCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutBatchNo))
             {
                 query["outBatchNo"] = request.OutBatchNo;
@@ -1035,10 +1023,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                query["suiteId"] = request.SuiteId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1061,10 +1045,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                query["isvCorpId"] = request.IsvCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutBatchNo))
             {
                 query["outBatchNo"] = request.OutBatchNo;
@@ -1076,10 +1056,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                query["suiteId"] = request.SuiteId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1116,17 +1092,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                body["isvCorpId"] = request.IsvCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutBatchNos))
             {
                 body["outBatchNos"] = request.OutBatchNos;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                body["suiteId"] = request.SuiteId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1149,17 +1117,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                body["isvCorpId"] = request.IsvCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutBatchNos))
             {
                 body["outBatchNos"] = request.OutBatchNos;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                body["suiteId"] = request.SuiteId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1178,36 +1138,22 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryBatchTradeOrderResponse>(await DoROARequestAsync("QueryBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders/query", "json", req, runtime));
         }
 
-        public QueryPayAccountListResponse QueryPayAccountList(QueryPayAccountListRequest request)
+        public QueryPayAccountListResponse QueryPayAccountList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryPayAccountListHeaders headers = new QueryPayAccountListHeaders();
-            return QueryPayAccountListWithOptions(request, headers, runtime);
+            return QueryPayAccountListWithOptions(headers, runtime);
         }
 
-        public async Task<QueryPayAccountListResponse> QueryPayAccountListAsync(QueryPayAccountListRequest request)
+        public async Task<QueryPayAccountListResponse> QueryPayAccountListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryPayAccountListHeaders headers = new QueryPayAccountListHeaders();
-            return await QueryPayAccountListWithOptionsAsync(request, headers, runtime);
+            return await QueryPayAccountListWithOptionsAsync(headers, runtime);
         }
 
-        public QueryPayAccountListResponse QueryPayAccountListWithOptions(QueryPayAccountListRequest request, QueryPayAccountListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryPayAccountListResponse QueryPayAccountListWithOptions(QueryPayAccountListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                query["isvCorpId"] = request.IsvCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                query["suiteId"] = request.SuiteId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1220,27 +1166,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryPayAccountListResponse>(DoROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/payAccounts", "json", req, runtime));
         }
 
-        public async Task<QueryPayAccountListResponse> QueryPayAccountListWithOptionsAsync(QueryPayAccountListRequest request, QueryPayAccountListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryPayAccountListResponse> QueryPayAccountListWithOptionsAsync(QueryPayAccountListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                query["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                query["isvCorpId"] = request.IsvCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                query["suiteId"] = request.SuiteId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1253,7 +1184,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<QueryPayAccountListResponse>(await DoROARequestAsync("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/payAccounts", "json", req, runtime));
         }

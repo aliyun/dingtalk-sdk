@@ -10,13 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class QueryBatchTradeDetailListRequest : TeaModel {
         /// <summary>
-        /// isv corpId
-        /// </summary>
-        [NameInMap("isvCorpId")]
-        [Validation(Required=false)]
-        public string IsvCorpId { get; set; }
-
-        /// <summary>
         /// 外部商户批次号
         /// </summary>
         [NameInMap("outBatchNo")]
@@ -36,13 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
-
-        /// <summary>
-        /// ISV/企业自建应用suiteId
-        /// </summary>
-        [NameInMap("suiteId")]
-        [Validation(Required=false)]
-        public string SuiteId { get; set; }
 
     }
 

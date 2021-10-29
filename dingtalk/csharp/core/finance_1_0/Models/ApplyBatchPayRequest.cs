@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string AccountId { get; set; }
 
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
         /// 钉钉订单号(和商户批次号一一对应)
         /// </summary>
         [NameInMap("orderNo")]
