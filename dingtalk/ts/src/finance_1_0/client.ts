@@ -278,7 +278,6 @@ export class ApplyBatchPayHeaders extends $tea.Model {
 }
 
 export class ApplyBatchPayRequest extends $tea.Model {
-  corpId?: string;
   staffId?: string;
   accountId?: string;
   orderNo?: string;
@@ -289,7 +288,6 @@ export class ApplyBatchPayRequest extends $tea.Model {
   transExpireTime?: string;
   static names(): { [key: string]: string } {
     return {
-      corpId: 'corpId',
       staffId: 'staffId',
       accountId: 'accountId',
       orderNo: 'orderNo',
@@ -303,7 +301,6 @@ export class ApplyBatchPayRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      corpId: 'string',
       staffId: 'string',
       accountId: 'string',
       orderNo: 'string',
@@ -387,21 +384,15 @@ export class QueryBatchTradeOrderHeaders extends $tea.Model {
 }
 
 export class QueryBatchTradeOrderRequest extends $tea.Model {
-  suiteId?: string;
-  isvCorpId?: string;
   outBatchNos?: string[];
   static names(): { [key: string]: string } {
     return {
-      suiteId: 'suiteId',
-      isvCorpId: 'isvCorpId',
       outBatchNos: 'outBatchNos',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      suiteId: 'string',
-      isvCorpId: 'string',
       outBatchNos: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -1023,28 +1014,22 @@ export class QueryBatchTradeDetailListHeaders extends $tea.Model {
 }
 
 export class QueryBatchTradeDetailListRequest extends $tea.Model {
-  isvCorpId?: string;
   outBatchNo?: string;
   pageNumber?: number;
   pageSize?: number;
-  suiteId?: string;
   static names(): { [key: string]: string } {
     return {
-      isvCorpId: 'isvCorpId',
       outBatchNo: 'outBatchNo',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
-      suiteId: 'suiteId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      isvCorpId: 'string',
       outBatchNo: 'string',
       pageNumber: 'number',
       pageSize: 'number',
-      suiteId: 'string',
     };
   }
 
@@ -1120,31 +1105,6 @@ export class QueryPayAccountListHeaders extends $tea.Model {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryPayAccountListRequest extends $tea.Model {
-  isvCorpId?: string;
-  suiteId?: string;
-  corpId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      isvCorpId: 'isvCorpId',
-      suiteId: 'suiteId',
-      corpId: 'corpId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      isvCorpId: 'string',
-      suiteId: 'string',
-      corpId: 'string',
     };
   }
 
@@ -1862,10 +1822,6 @@ export default class Client extends OpenApi {
   async applyBatchPayWithOptions(request: ApplyBatchPayRequest, headers: ApplyBatchPayHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyBatchPayResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.staffId)) {
       body["staffId"] = request.staffId;
     }
@@ -1923,14 +1879,6 @@ export default class Client extends OpenApi {
   async queryBatchTradeOrderWithOptions(request: QueryBatchTradeOrderRequest, headers: QueryBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.suiteId)) {
-      body["suiteId"] = request.suiteId;
-    }
-
-    if (!Util.isUnset(request.isvCorpId)) {
-      body["isvCorpId"] = request.isvCorpId;
-    }
-
     if (!Util.isUnset(request.outBatchNos)) {
       body["outBatchNos"] = request.outBatchNos;
     }
@@ -2249,10 +2197,6 @@ export default class Client extends OpenApi {
   async queryBatchTradeDetailListWithOptions(request: QueryBatchTradeDetailListRequest, headers: QueryBatchTradeDetailListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeDetailListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.isvCorpId)) {
-      query["isvCorpId"] = request.isvCorpId;
-    }
-
     if (!Util.isUnset(request.outBatchNo)) {
       query["outBatchNo"] = request.outBatchNo;
     }
@@ -2263,10 +2207,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
-    }
-
-    if (!Util.isUnset(request.suiteId)) {
-      query["suiteId"] = request.suiteId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2285,27 +2225,13 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBatchTradeDetailListResponse>(await this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/batchTrades/details`, "json", req, runtime), new QueryBatchTradeDetailListResponse({}));
   }
 
-  async queryPayAccountList(request: QueryPayAccountListRequest): Promise<QueryPayAccountListResponse> {
+  async queryPayAccountList(): Promise<QueryPayAccountListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPayAccountListHeaders({ });
-    return await this.queryPayAccountListWithOptions(request, headers, runtime);
+    return await this.queryPayAccountListWithOptions(headers, runtime);
   }
 
-  async queryPayAccountListWithOptions(request: QueryPayAccountListRequest, headers: QueryPayAccountListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPayAccountListResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.isvCorpId)) {
-      query["isvCorpId"] = request.isvCorpId;
-    }
-
-    if (!Util.isUnset(request.suiteId)) {
-      query["suiteId"] = request.suiteId;
-    }
-
-    if (!Util.isUnset(request.corpId)) {
-      query["corpId"] = request.corpId;
-    }
-
+  async queryPayAccountListWithOptions(headers: QueryPayAccountListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPayAccountListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2317,7 +2243,6 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryPayAccountListResponse>(await this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/payAccounts`, "json", req, runtime), new QueryPayAccountListResponse({}));
   }
