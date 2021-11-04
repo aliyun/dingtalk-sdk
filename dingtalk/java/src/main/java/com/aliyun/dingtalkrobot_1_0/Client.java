@@ -62,6 +62,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime), new BatchSendOTOResponse());
     }
 
+    public BatchRecallOTOResponse batchRecallOTO(BatchRecallOTORequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchRecallOTOHeaders headers = new BatchRecallOTOHeaders();
+        return this.batchRecallOTOWithOptions(request, headers, runtime);
+    }
+
+    public BatchRecallOTOResponse batchRecallOTOWithOptions(BatchRecallOTORequest request, BatchRecallOTOHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processQueryKeys)) {
+            body.put("processQueryKeys", request.processQueryKeys);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/otoMessages/batchRecall", "json", req, runtime), new BatchRecallOTOResponse());
+    }
+
+    public BatchRecallGroupResponse batchRecallGroup(BatchRecallGroupRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        BatchRecallGroupHeaders headers = new BatchRecallGroupHeaders();
+        return this.batchRecallGroupWithOptions(request, headers, runtime);
+    }
+
+    public BatchRecallGroupResponse batchRecallGroupWithOptions(BatchRecallGroupRequest request, BatchRecallGroupHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.chatbotId)) {
+            body.put("chatbotId", request.chatbotId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processQueryKeys)) {
+            body.put("processQueryKeys", request.processQueryKeys);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("BatchRecallGroup", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/batchRecall", "json", req, runtime), new BatchRecallGroupResponse());
+    }
+
     public BatchOTOQueryResponse batchOTOQuery(BatchOTOQueryRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         BatchOTOQueryHeaders headers = new BatchOTOQueryHeaders();

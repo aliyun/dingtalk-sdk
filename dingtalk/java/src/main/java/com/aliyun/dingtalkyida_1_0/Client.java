@@ -717,6 +717,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("RenewTenantOrder", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/apps/tenants/reorder", "json", req, runtime), new RenewTenantOrderResponse());
     }
 
+    public GetPrintDictionaryResponse getPrintDictionary(GetPrintDictionaryRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetPrintDictionaryHeaders headers = new GetPrintDictionaryHeaders();
+        return this.getPrintDictionaryWithOptions(request, headers, runtime);
+    }
+
+    public GetPrintDictionaryResponse getPrintDictionaryWithOptions(GetPrintDictionaryRequest request, GetPrintDictionaryHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
+            query.put("formUuid", request.formUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            query.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.version)) {
+            query.put("version", request.version);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetPrintDictionary", "yida_1.0", "HTTP", "GET", "AK", "/v1.0/yida/printTemplates/printDictionaries", "json", req, runtime), new GetPrintDictionaryResponse());
+    }
+
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateInstanceHeaders headers = new UpdateInstanceHeaders();
@@ -1968,6 +2009,71 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SearchActivationCode", "yida_1.0", "HTTP", "GET", "AK", "/v1.0/yida/apps/activationCode/information", "json", req, runtime), new SearchActivationCodeResponse());
     }
 
+    public SavePrintTplDetailInfoResponse savePrintTplDetailInfo(SavePrintTplDetailInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SavePrintTplDetailInfoHeaders headers = new SavePrintTplDetailInfoHeaders();
+        return this.savePrintTplDetailInfoWithOptions(request, headers, runtime);
+    }
+
+    public SavePrintTplDetailInfoResponse savePrintTplDetailInfoWithOptions(SavePrintTplDetailInfoRequest request, SavePrintTplDetailInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
+            body.put("formUuid", request.formUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.vm)) {
+            body.put("vm", request.vm);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formVersion)) {
+            body.put("formVersion", request.formVersion);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.setting)) {
+            body.put("setting", request.setting);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileNameConfig)) {
+            body.put("fileNameConfig", request.fileNameConfig);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SavePrintTplDetailInfo", "yida_1.0", "HTTP", "POST", "AK", "/v1.0/yida/printTemplates/printTplDetailInfos", "json", req, runtime), new SavePrintTplDetailInfoResponse());
+    }
+
     public SearchEmployeeFieldValuesResponse searchEmployeeFieldValues(SearchEmployeeFieldValuesRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SearchEmployeeFieldValuesHeaders headers = new SearchEmployeeFieldValuesHeaders();
@@ -2629,6 +2735,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetFormComponentDefinitionList", "yida_1.0", "HTTP", "GET", "AK", "/v1.0/yida/forms/definitions/" + appType + "/" + formUuid + "", "json", req, runtime), new GetFormComponentDefinitionListResponse());
+    }
+
+    public GetPrintAppInfoResponse getPrintAppInfo(GetPrintAppInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetPrintAppInfoHeaders headers = new GetPrintAppInfoHeaders();
+        return this.getPrintAppInfoWithOptions(request, headers, runtime);
+    }
+
+    public GetPrintAppInfoResponse getPrintAppInfoWithOptions(GetPrintAppInfoRequest request, GetPrintAppInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nameLike)) {
+            query.put("nameLike", request.nameLike);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetPrintAppInfo", "yida_1.0", "HTTP", "GET", "AK", "/v1.0/yida/printTemplates/printAppInfos", "json", req, runtime), new GetPrintAppInfoResponse());
     }
 
     public SaveFormDataResponse saveFormData(SaveFormDataRequest request) throws Exception {
