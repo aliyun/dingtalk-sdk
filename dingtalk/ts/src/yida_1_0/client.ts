@@ -1363,6 +1363,97 @@ export class RenewTenantOrderResponse extends $tea.Model {
   }
 }
 
+export class GetPrintDictionaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintDictionaryRequest extends $tea.Model {
+  formUuid?: string;
+  appType?: string;
+  version?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formUuid: 'formUuid',
+      appType: 'appType',
+      version: 'version',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formUuid: 'string',
+      appType: 'string',
+      version: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintDictionaryResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintDictionaryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPrintDictionaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPrintDictionaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3995,6 +4086,115 @@ export class SearchActivationCodeResponse extends $tea.Model {
   }
 }
 
+export class SavePrintTplDetailInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SavePrintTplDetailInfoRequest extends $tea.Model {
+  formUuid?: string;
+  appType?: string;
+  vm?: string;
+  formVersion?: number;
+  templateId?: number;
+  userId?: string;
+  setting?: string;
+  title?: string;
+  description?: string;
+  fileNameConfig?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formUuid: 'formUuid',
+      appType: 'appType',
+      vm: 'vm',
+      formVersion: 'formVersion',
+      templateId: 'templateId',
+      userId: 'userId',
+      setting: 'setting',
+      title: 'title',
+      description: 'description',
+      fileNameConfig: 'fileNameConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formUuid: 'string',
+      appType: 'string',
+      vm: 'string',
+      formVersion: 'number',
+      templateId: 'number',
+      userId: 'string',
+      setting: 'string',
+      title: 'string',
+      description: 'string',
+      fileNameConfig: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SavePrintTplDetailInfoResponseBody extends $tea.Model {
+  result?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SavePrintTplDetailInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SavePrintTplDetailInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SavePrintTplDetailInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchEmployeeFieldValuesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5303,6 +5503,91 @@ export class GetFormComponentDefinitionListResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetFormComponentDefinitionListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintAppInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintAppInfoRequest extends $tea.Model {
+  userId?: string;
+  nameLike?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      nameLike: 'nameLike',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      nameLike: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintAppInfoResponseBody extends $tea.Model {
+  result?: GetPrintAppInfoResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetPrintAppInfoResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintAppInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPrintAppInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPrintAppInfoResponseBody,
     };
   }
 
@@ -8361,6 +8646,56 @@ export class GetFormComponentDefinitionListResponseBodyResult extends $tea.Model
   }
 }
 
+export class GetPrintAppInfoResponseBodyResultFormInfoList extends $tea.Model {
+  formUuid?: string;
+  formName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formUuid: 'formUuid',
+      formName: 'formName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formUuid: 'string',
+      formName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPrintAppInfoResponseBodyResult extends $tea.Model {
+  formInfoList?: GetPrintAppInfoResponseBodyResultFormInfoList[];
+  appType?: string;
+  appName?: string;
+  iconUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formInfoList: 'formInfoList',
+      appType: 'appType',
+      appName: 'appName',
+      iconUrl: 'iconUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formInfoList: { 'type': 'array', 'itemType': GetPrintAppInfoResponseBodyResultFormInfoList },
+      appType: 'string',
+      appName: 'string',
+      iconUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMeCorpSubmissionResponseBodyDataActioner extends $tea.Model {
   employeeTypeInformation?: string;
   employeeType?: string;
@@ -9341,6 +9676,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RenewTenantOrderResponse>(await this.doROARequest("RenewTenantOrder", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/tenants/reorder`, "json", req, runtime), new RenewTenantOrderResponse({}));
+  }
+
+  async getPrintDictionary(request: GetPrintDictionaryRequest): Promise<GetPrintDictionaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPrintDictionaryHeaders({ });
+    return await this.getPrintDictionaryWithOptions(request, headers, runtime);
+  }
+
+  async getPrintDictionaryWithOptions(request: GetPrintDictionaryRequest, headers: GetPrintDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrintDictionaryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formUuid)) {
+      query["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.version)) {
+      query["version"] = request.version;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetPrintDictionaryResponse>(await this.doROARequest("GetPrintDictionary", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/printTemplates/printDictionaries`, "json", req, runtime), new GetPrintDictionaryResponse({}));
   }
 
   async updateInstance(request: UpdateInstanceRequest): Promise<UpdateInstanceResponse> {
@@ -10594,6 +10970,71 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchActivationCodeResponse>(await this.doROARequest("SearchActivationCode", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/activationCode/information`, "json", req, runtime), new SearchActivationCodeResponse({}));
   }
 
+  async savePrintTplDetailInfo(request: SavePrintTplDetailInfoRequest): Promise<SavePrintTplDetailInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SavePrintTplDetailInfoHeaders({ });
+    return await this.savePrintTplDetailInfoWithOptions(request, headers, runtime);
+  }
+
+  async savePrintTplDetailInfoWithOptions(request: SavePrintTplDetailInfoRequest, headers: SavePrintTplDetailInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SavePrintTplDetailInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.vm)) {
+      body["vm"] = request.vm;
+    }
+
+    if (!Util.isUnset(request.formVersion)) {
+      body["formVersion"] = request.formVersion;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.setting)) {
+      body["setting"] = request.setting;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.fileNameConfig)) {
+      body["fileNameConfig"] = request.fileNameConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SavePrintTplDetailInfoResponse>(await this.doROARequest("SavePrintTplDetailInfo", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/printTemplates/printTplDetailInfos`, "json", req, runtime), new SavePrintTplDetailInfoResponse({}));
+  }
+
   async searchEmployeeFieldValues(request: SearchEmployeeFieldValuesRequest): Promise<SearchEmployeeFieldValuesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchEmployeeFieldValuesHeaders({ });
@@ -11255,6 +11696,39 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetFormComponentDefinitionListResponse>(await this.doROARequest("GetFormComponentDefinitionList", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/definitions/${appType}/${formUuid}`, "json", req, runtime), new GetFormComponentDefinitionListResponse({}));
+  }
+
+  async getPrintAppInfo(request: GetPrintAppInfoRequest): Promise<GetPrintAppInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPrintAppInfoHeaders({ });
+    return await this.getPrintAppInfoWithOptions(request, headers, runtime);
+  }
+
+  async getPrintAppInfoWithOptions(request: GetPrintAppInfoRequest, headers: GetPrintAppInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrintAppInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.nameLike)) {
+      query["nameLike"] = request.nameLike;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetPrintAppInfoResponse>(await this.doROARequest("GetPrintAppInfo", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/printTemplates/printAppInfos`, "json", req, runtime), new GetPrintAppInfoResponse({}));
   }
 
   async saveFormData(request: SaveFormDataRequest): Promise<SaveFormDataResponse> {

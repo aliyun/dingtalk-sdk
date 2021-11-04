@@ -104,6 +104,185 @@ export class BatchSendOTOResponse extends $tea.Model {
   }
 }
 
+export class BatchRecallOTOHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTORequest extends $tea.Model {
+  robotCode?: string;
+  processQueryKeys?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      robotCode: 'robotCode',
+      processQueryKeys: 'processQueryKeys',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotCode: 'string',
+      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTOResponseBody extends $tea.Model {
+  successResult?: string[];
+  failedResult?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      successResult: 'successResult',
+      failedResult: 'failedResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      successResult: { 'type': 'array', 'itemType': 'string' },
+      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallOTOResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchRecallOTOResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchRecallOTOResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupRequest extends $tea.Model {
+  openConversationId?: string;
+  chatbotId?: string;
+  processQueryKeys?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      chatbotId: 'chatbotId',
+      processQueryKeys: 'processQueryKeys',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      chatbotId: 'string',
+      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupResponseBody extends $tea.Model {
+  successResult?: string[];
+  failedResult?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      successResult: 'successResult',
+      failedResult: 'failedResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      successResult: { 'type': 'array', 'itemType': 'string' },
+      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchRecallGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchRecallGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchOTOQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -366,6 +545,76 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchSendOTOResponse>(await this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/oToMessages/batchSend`, "json", req, runtime), new BatchSendOTOResponse({}));
+  }
+
+  async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRecallOTOHeaders({ });
+    return await this.batchRecallOTOWithOptions(request, headers, runtime);
+  }
+
+  async batchRecallOTOWithOptions(request: BatchRecallOTORequest, headers: BatchRecallOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallOTOResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.processQueryKeys)) {
+      body["processQueryKeys"] = request.processQueryKeys;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRecallOTOResponse>(await this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/otoMessages/batchRecall`, "json", req, runtime), new BatchRecallOTOResponse({}));
+  }
+
+  async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRecallGroupHeaders({ });
+    return await this.batchRecallGroupWithOptions(request, headers, runtime);
+  }
+
+  async batchRecallGroupWithOptions(request: BatchRecallGroupRequest, headers: BatchRecallGroupHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.chatbotId)) {
+      body["chatbotId"] = request.chatbotId;
+    }
+
+    if (!Util.isUnset(request.processQueryKeys)) {
+      body["processQueryKeys"] = request.processQueryKeys;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRecallGroupResponse>(await this.doROARequest("BatchRecallGroup", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/batchRecall`, "json", req, runtime), new BatchRecallGroupResponse({}));
   }
 
   async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
