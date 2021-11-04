@@ -1231,6 +1231,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RenewTenantOrder', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/apps/tenants/reorder', 'json', req, runtime)
         )
 
+    def get_print_dictionary(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintDictionaryRequest,
+    ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetPrintDictionaryHeaders()
+        return self.get_print_dictionary_with_options(request, headers, runtime)
+
+    async def get_print_dictionary_async(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintDictionaryRequest,
+    ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetPrintDictionaryHeaders()
+        return await self.get_print_dictionary_with_options_async(request, headers, runtime)
+
+    def get_print_dictionary_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintDictionaryRequest,
+        headers: dingtalkyida__1__0_models.GetPrintDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.version):
+            query['version'] = request.version
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetPrintDictionaryResponse(),
+            self.do_roarequest('GetPrintDictionary', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/printTemplates/printDictionaries', 'json', req, runtime)
+        )
+
+    async def get_print_dictionary_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintDictionaryRequest,
+        headers: dingtalkyida__1__0_models.GetPrintDictionaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.version):
+            query['version'] = request.version
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetPrintDictionaryResponse(),
+            await self.do_roarequest_async('GetPrintDictionary', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/printTemplates/printDictionaries', 'json', req, runtime)
+        )
+
     def update_instance(
         self,
         request: dingtalkyida__1__0_models.UpdateInstanceRequest,
@@ -3463,6 +3539,106 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SearchActivationCode', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/apps/activationCode/information', 'json', req, runtime)
         )
 
+    def save_print_tpl_detail_info(
+        self,
+        request: dingtalkyida__1__0_models.SavePrintTplDetailInfoRequest,
+    ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders()
+        return self.save_print_tpl_detail_info_with_options(request, headers, runtime)
+
+    async def save_print_tpl_detail_info_async(
+        self,
+        request: dingtalkyida__1__0_models.SavePrintTplDetailInfoRequest,
+    ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders()
+        return await self.save_print_tpl_detail_info_with_options_async(request, headers, runtime)
+
+    def save_print_tpl_detail_info_with_options(
+        self,
+        request: dingtalkyida__1__0_models.SavePrintTplDetailInfoRequest,
+        headers: dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.vm):
+            body['vm'] = request.vm
+        if not UtilClient.is_unset(request.form_version):
+            body['formVersion'] = request.form_version
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.setting):
+            body['setting'] = request.setting
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.file_name_config):
+            body['fileNameConfig'] = request.file_name_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse(),
+            self.do_roarequest('SavePrintTplDetailInfo', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/printTemplates/printTplDetailInfos', 'json', req, runtime)
+        )
+
+    async def save_print_tpl_detail_info_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.SavePrintTplDetailInfoRequest,
+        headers: dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.vm):
+            body['vm'] = request.vm
+        if not UtilClient.is_unset(request.form_version):
+            body['formVersion'] = request.form_version
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.setting):
+            body['setting'] = request.setting
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.file_name_config):
+            body['fileNameConfig'] = request.file_name_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse(),
+            await self.do_roarequest_async('SavePrintTplDetailInfo', 'yida_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/yida/printTemplates/printTplDetailInfos', 'json', req, runtime)
+        )
+
     def search_employee_field_values(
         self,
         request: dingtalkyida__1__0_models.SearchEmployeeFieldValuesRequest,
@@ -4605,6 +4781,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse(),
             await self.do_roarequest_async('GetFormComponentDefinitionList', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/forms/definitions/{app_type}/{form_uuid}', 'json', req, runtime)
+        )
+
+    def get_print_app_info(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintAppInfoRequest,
+    ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetPrintAppInfoHeaders()
+        return self.get_print_app_info_with_options(request, headers, runtime)
+
+    async def get_print_app_info_async(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintAppInfoRequest,
+    ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetPrintAppInfoHeaders()
+        return await self.get_print_app_info_with_options_async(request, headers, runtime)
+
+    def get_print_app_info_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintAppInfoRequest,
+        headers: dingtalkyida__1__0_models.GetPrintAppInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.name_like):
+            query['nameLike'] = request.name_like
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetPrintAppInfoResponse(),
+            self.do_roarequest('GetPrintAppInfo', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/printTemplates/printAppInfos', 'json', req, runtime)
+        )
+
+    async def get_print_app_info_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetPrintAppInfoRequest,
+        headers: dingtalkyida__1__0_models.GetPrintAppInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.name_like):
+            query['nameLike'] = request.name_like
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetPrintAppInfoResponse(),
+            await self.do_roarequest_async('GetPrintAppInfo', 'yida_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/yida/printTemplates/printAppInfos', 'json', req, runtime)
         )
 
     def save_form_data(

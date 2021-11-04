@@ -165,6 +165,293 @@ class BatchSendOTOResponse(TeaModel):
         return self
 
 
+class BatchRecallOTOHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchRecallOTORequest(TeaModel):
+    def __init__(
+        self,
+        robot_code: str = None,
+        process_query_keys: List[str] = None,
+    ):
+        # 机器人的robotCode
+        self.robot_code = robot_code
+        # 消息id
+        self.process_query_keys = process_query_keys
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.process_query_keys is not None:
+            result['processQueryKeys'] = self.process_query_keys
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('processQueryKeys') is not None:
+            self.process_query_keys = m.get('processQueryKeys')
+        return self
+
+
+class BatchRecallOTOResponseBody(TeaModel):
+    def __init__(
+        self,
+        success_result: List[str] = None,
+        failed_result: Dict[str, str] = None,
+    ):
+        # 撤回成功的消息id
+        self.success_result = success_result
+        # 撤回失败的消息id及对应的失败原因
+        self.failed_result = failed_result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success_result is not None:
+            result['successResult'] = self.success_result
+        if self.failed_result is not None:
+            result['failedResult'] = self.failed_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('successResult') is not None:
+            self.success_result = m.get('successResult')
+        if m.get('failedResult') is not None:
+            self.failed_result = m.get('failedResult')
+        return self
+
+
+class BatchRecallOTOResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchRecallOTOResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchRecallOTOResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchRecallGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchRecallGroupRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        chatbot_id: str = None,
+        process_query_keys: List[str] = None,
+    ):
+        # 开放的群id
+        self.open_conversation_id = open_conversation_id
+        # 机器人的robotCode
+        self.chatbot_id = chatbot_id
+        # 消息id
+        self.process_query_keys = process_query_keys
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.chatbot_id is not None:
+            result['chatbotId'] = self.chatbot_id
+        if self.process_query_keys is not None:
+            result['processQueryKeys'] = self.process_query_keys
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('chatbotId') is not None:
+            self.chatbot_id = m.get('chatbotId')
+        if m.get('processQueryKeys') is not None:
+            self.process_query_keys = m.get('processQueryKeys')
+        return self
+
+
+class BatchRecallGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        success_result: List[str] = None,
+        failed_result: Dict[str, str] = None,
+    ):
+        # 撤回成功的消息id
+        self.success_result = success_result
+        # 撤回失败的消息id及原因
+        self.failed_result = failed_result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success_result is not None:
+            result['successResult'] = self.success_result
+        if self.failed_result is not None:
+            result['failedResult'] = self.failed_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('successResult') is not None:
+            self.success_result = m.get('successResult')
+        if m.get('failedResult') is not None:
+            self.failed_result = m.get('failedResult')
+        return self
+
+
+class BatchRecallGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchRecallGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchRecallGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchOTOQueryHeaders(TeaModel):
     def __init__(
         self,

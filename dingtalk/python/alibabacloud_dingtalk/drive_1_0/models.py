@@ -4,251 +4,6 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
-class AddFileHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class AddFileRequest(TeaModel):
-    def __init__(
-        self,
-        parent_id: str = None,
-        file_type: str = None,
-        file_name: str = None,
-        media_id: str = None,
-        add_conflict_policy: str = None,
-        union_id: str = None,
-    ):
-        # 父目录id
-        self.parent_id = parent_id
-        # 文件类型
-        self.file_type = file_type
-        # 文件名
-        self.file_name = file_name
-        # mediaId
-        self.media_id = media_id
-        # 文件名冲突策略
-        self.add_conflict_policy = add_conflict_policy
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.parent_id is not None:
-            result['parentId'] = self.parent_id
-        if self.file_type is not None:
-            result['fileType'] = self.file_type
-        if self.file_name is not None:
-            result['fileName'] = self.file_name
-        if self.media_id is not None:
-            result['mediaId'] = self.media_id
-        if self.add_conflict_policy is not None:
-            result['addConflictPolicy'] = self.add_conflict_policy
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('parentId') is not None:
-            self.parent_id = m.get('parentId')
-        if m.get('fileType') is not None:
-            self.file_type = m.get('fileType')
-        if m.get('fileName') is not None:
-            self.file_name = m.get('fileName')
-        if m.get('mediaId') is not None:
-            self.media_id = m.get('mediaId')
-        if m.get('addConflictPolicy') is not None:
-            self.add_conflict_policy = m.get('addConflictPolicy')
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class AddFileResponseBody(TeaModel):
-    def __init__(
-        self,
-        space_id: str = None,
-        parent_id: str = None,
-        file_id: str = None,
-        file_name: str = None,
-        file_path: str = None,
-        file_type: str = None,
-        content_type: str = None,
-        file_extension: str = None,
-        file_size: int = None,
-        create_time: str = None,
-        modify_time: str = None,
-        creator: str = None,
-        modifier: str = None,
-    ):
-        # 空间id
-        self.space_id = space_id
-        # 父目录id
-        self.parent_id = parent_id
-        # 文件id
-        self.file_id = file_id
-        # 文件名称
-        self.file_name = file_name
-        # 文件路径
-        self.file_path = file_path
-        # 文件类型
-        self.file_type = file_type
-        # 文件内容类型
-        self.content_type = content_type
-        # 文件后缀
-        self.file_extension = file_extension
-        # 文件大小
-        self.file_size = file_size
-        # 创建时间
-        self.create_time = create_time
-        # 修改时间
-        self.modify_time = modify_time
-        # 创建者
-        self.creator = creator
-        # 修改者
-        self.modifier = modifier
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.space_id is not None:
-            result['spaceId'] = self.space_id
-        if self.parent_id is not None:
-            result['parentId'] = self.parent_id
-        if self.file_id is not None:
-            result['fileId'] = self.file_id
-        if self.file_name is not None:
-            result['fileName'] = self.file_name
-        if self.file_path is not None:
-            result['filePath'] = self.file_path
-        if self.file_type is not None:
-            result['fileType'] = self.file_type
-        if self.content_type is not None:
-            result['contentType'] = self.content_type
-        if self.file_extension is not None:
-            result['fileExtension'] = self.file_extension
-        if self.file_size is not None:
-            result['fileSize'] = self.file_size
-        if self.create_time is not None:
-            result['createTime'] = self.create_time
-        if self.modify_time is not None:
-            result['modifyTime'] = self.modify_time
-        if self.creator is not None:
-            result['creator'] = self.creator
-        if self.modifier is not None:
-            result['modifier'] = self.modifier
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('spaceId') is not None:
-            self.space_id = m.get('spaceId')
-        if m.get('parentId') is not None:
-            self.parent_id = m.get('parentId')
-        if m.get('fileId') is not None:
-            self.file_id = m.get('fileId')
-        if m.get('fileName') is not None:
-            self.file_name = m.get('fileName')
-        if m.get('filePath') is not None:
-            self.file_path = m.get('filePath')
-        if m.get('fileType') is not None:
-            self.file_type = m.get('fileType')
-        if m.get('contentType') is not None:
-            self.content_type = m.get('contentType')
-        if m.get('fileExtension') is not None:
-            self.file_extension = m.get('fileExtension')
-        if m.get('fileSize') is not None:
-            self.file_size = m.get('fileSize')
-        if m.get('createTime') is not None:
-            self.create_time = m.get('createTime')
-        if m.get('modifyTime') is not None:
-            self.modify_time = m.get('modifyTime')
-        if m.get('creator') is not None:
-            self.creator = m.get('creator')
-        if m.get('modifier') is not None:
-            self.modifier = m.get('modifier')
-        return self
-
-
-class AddFileResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: AddFileResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = AddFileResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
 class RecoverRecycleFilesHeaders(TeaModel):
     def __init__(
         self,
@@ -786,6 +541,203 @@ class AddPermissionResponse(TeaModel):
         return self
 
 
+class GetQuotaInfosHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetQuotaInfosRequest(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        identifiers: List[str] = None,
+        union_id: str = None,
+    ):
+        # 容量类型
+        self.type = type
+        # 容量标识符列表
+        self.identifiers = identifiers
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.identifiers is not None:
+            result['identifiers'] = self.identifiers
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('identifiers') is not None:
+            self.identifiers = m.get('identifiers')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetQuotaInfosResponseBodyQuotas(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        identifier: str = None,
+        quota: int = None,
+        used_quota: int = None,
+    ):
+        # 容量类型
+        self.type = type
+        # 容量标识符
+        self.identifier = identifier
+        # 总容量
+        self.quota = quota
+        # 已使用容量
+        self.used_quota = used_quota
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.identifier is not None:
+            result['identifier'] = self.identifier
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('identifier') is not None:
+            self.identifier = m.get('identifier')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        return self
+
+
+class GetQuotaInfosResponseBody(TeaModel):
+    def __init__(
+        self,
+        quotas: List[GetQuotaInfosResponseBodyQuotas] = None,
+    ):
+        # 容量信息列表
+        self.quotas = quotas
+
+    def validate(self):
+        if self.quotas:
+            for k in self.quotas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['quotas'] = []
+        if self.quotas is not None:
+            for k in self.quotas:
+                result['quotas'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.quotas = []
+        if m.get('quotas') is not None:
+            for k in m.get('quotas'):
+                temp_model = GetQuotaInfosResponseBodyQuotas()
+                self.quotas.append(temp_model.from_map(k))
+        return self
+
+
+class GetQuotaInfosResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetQuotaInfosResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetQuotaInfosResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFileInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -992,181 +944,6 @@ class GetFileInfoResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetFileInfoResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class InfoSpaceHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class InfoSpaceRequest(TeaModel):
-    def __init__(
-        self,
-        union_id: str = None,
-    ):
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class InfoSpaceResponseBody(TeaModel):
-    def __init__(
-        self,
-        space_id: str = None,
-        space_name: str = None,
-        space_type: str = None,
-        quota: int = None,
-        used_quota: int = None,
-        permission_mode: str = None,
-        create_time: str = None,
-        modify_time: str = None,
-    ):
-        # 空间id
-        self.space_id = space_id
-        # 空间名称
-        self.space_name = space_name
-        # 空间类型
-        self.space_type = space_type
-        # 容量
-        self.quota = quota
-        # 已使用容量
-        self.used_quota = used_quota
-        # 授权模式
-        self.permission_mode = permission_mode
-        # 创建时间
-        self.create_time = create_time
-        # 修改时间
-        self.modify_time = modify_time
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.space_id is not None:
-            result['spaceId'] = self.space_id
-        if self.space_name is not None:
-            result['spaceName'] = self.space_name
-        if self.space_type is not None:
-            result['spaceType'] = self.space_type
-        if self.quota is not None:
-            result['quota'] = self.quota
-        if self.used_quota is not None:
-            result['usedQuota'] = self.used_quota
-        if self.permission_mode is not None:
-            result['permissionMode'] = self.permission_mode
-        if self.create_time is not None:
-            result['createTime'] = self.create_time
-        if self.modify_time is not None:
-            result['modifyTime'] = self.modify_time
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('spaceId') is not None:
-            self.space_id = m.get('spaceId')
-        if m.get('spaceName') is not None:
-            self.space_name = m.get('spaceName')
-        if m.get('spaceType') is not None:
-            self.space_type = m.get('spaceType')
-        if m.get('quota') is not None:
-            self.quota = m.get('quota')
-        if m.get('usedQuota') is not None:
-            self.used_quota = m.get('usedQuota')
-        if m.get('permissionMode') is not None:
-            self.permission_mode = m.get('permissionMode')
-        if m.get('createTime') is not None:
-            self.create_time = m.get('createTime')
-        if m.get('modifyTime') is not None:
-            self.modify_time = m.get('modifyTime')
-        return self
-
-
-class InfoSpaceResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: InfoSpaceResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = InfoSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1414,6 +1191,320 @@ class ListRecycleFilesResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = ListRecycleFilesResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteFilesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteFilesRequest(TeaModel):
+    def __init__(
+        self,
+        file_ids: List[str] = None,
+        delete_policy: str = None,
+        union_id: str = None,
+    ):
+        # 文件id列表
+        self.file_ids = file_ids
+        # 删除策略
+        self.delete_policy = delete_policy
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_ids is not None:
+            result['fileIds'] = self.file_ids
+        if self.delete_policy is not None:
+            result['deletePolicy'] = self.delete_policy
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileIds') is not None:
+            self.file_ids = m.get('fileIds')
+        if m.get('deletePolicy') is not None:
+            self.delete_policy = m.get('deletePolicy')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DeleteFilesResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        task_id: str = None,
+    ):
+        # 是否成功
+        self.success = success
+        # 异步任务id
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class DeleteFilesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteFilesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteFilesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ManagementBuyQuotaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ManagementBuyQuotaRequestOrder(TeaModel):
+    def __init__(
+        self,
+        order_id: int = None,
+        biz_type: str = None,
+        capacity_type: str = None,
+        capacity: int = None,
+        day: int = None,
+        money: int = None,
+    ):
+        # 订单id
+        self.order_id = order_id
+        # 业务类型
+        self.biz_type = biz_type
+        # 容量类型
+        self.capacity_type = capacity_type
+        # 待扩容的容量
+        self.capacity = capacity
+        # 时长
+        self.day = day
+        # 金额
+        self.money = money
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.capacity_type is not None:
+            result['capacityType'] = self.capacity_type
+        if self.capacity is not None:
+            result['capacity'] = self.capacity
+        if self.day is not None:
+            result['day'] = self.day
+        if self.money is not None:
+            result['money'] = self.money
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('capacityType') is not None:
+            self.capacity_type = m.get('capacityType')
+        if m.get('capacity') is not None:
+            self.capacity = m.get('capacity')
+        if m.get('day') is not None:
+            self.day = m.get('day')
+        if m.get('money') is not None:
+            self.money = m.get('money')
+        return self
+
+
+class ManagementBuyQuotaRequest(TeaModel):
+    def __init__(
+        self,
+        token: str = None,
+        union_id: str = None,
+        order: ManagementBuyQuotaRequestOrder = None,
+    ):
+        # token
+        self.token = token
+        # 用户id
+        self.union_id = union_id
+        # 订单
+        self.order = order
+
+    def validate(self):
+        if self.order:
+            self.order.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.token is not None:
+            result['token'] = self.token
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.order is not None:
+            result['order'] = self.order.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('order') is not None:
+            temp_model = ManagementBuyQuotaRequestOrder()
+            self.order = temp_model.from_map(m['order'])
+        return self
+
+
+class ManagementBuyQuotaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
         return self
 
 
@@ -2083,157 +2174,6 @@ class ListFilesResponse(TeaModel):
         return self
 
 
-class ModifyPermissionHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class ModifyPermissionRequestMembers(TeaModel):
-    def __init__(
-        self,
-        corp_id: str = None,
-        member_type: str = None,
-        member_id: str = None,
-    ):
-        # 企业corpId
-        self.corp_id = corp_id
-        # 成员类型
-        self.member_type = member_type
-        # 成员id
-        self.member_id = member_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.member_type is not None:
-            result['memberType'] = self.member_type
-        if self.member_id is not None:
-            result['memberId'] = self.member_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('memberType') is not None:
-            self.member_type = m.get('memberType')
-        if m.get('memberId') is not None:
-            self.member_id = m.get('memberId')
-        return self
-
-
-class ModifyPermissionRequest(TeaModel):
-    def __init__(
-        self,
-        role: str = None,
-        members: List[ModifyPermissionRequestMembers] = None,
-        union_id: str = None,
-    ):
-        # 权限角色
-        self.role = role
-        self.members = members
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        if self.members:
-            for k in self.members:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.role is not None:
-            result['role'] = self.role
-        result['members'] = []
-        if self.members is not None:
-            for k in self.members:
-                result['members'].append(k.to_map() if k else None)
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('role') is not None:
-            self.role = m.get('role')
-        self.members = []
-        if m.get('members') is not None:
-            for k in m.get('members'):
-                temp_model = ModifyPermissionRequestMembers()
-                self.members.append(temp_model.from_map(k))
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class ModifyPermissionResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-    ):
-        self.headers = headers
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        return self
-
-
 class ListPermissionsHeaders(TeaModel):
     def __init__(
         self,
@@ -2570,122 +2510,6 @@ class ListPermissionsResponse(TeaModel):
         return self
 
 
-class GrantPrivilegeOfCustomSpaceHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GrantPrivilegeOfCustomSpaceRequest(TeaModel):
-    def __init__(
-        self,
-        type: str = None,
-        user_id: str = None,
-        file_ids: List[str] = None,
-        duration: int = None,
-        union_id: str = None,
-    ):
-        # 权限类型
-        self.type = type
-        # 被授予权限的员工id
-        self.user_id = user_id
-        # 授权访问的文件id列表
-        self.file_ids = file_ids
-        # 权限有效时间
-        self.duration = duration
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.type is not None:
-            result['type'] = self.type
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        if self.file_ids is not None:
-            result['fileIds'] = self.file_ids
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        if m.get('fileIds') is not None:
-            self.file_ids = m.get('fileIds')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class GrantPrivilegeOfCustomSpaceResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-    ):
-        self.headers = headers
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        return self
-
-
 class MoveFileHeaders(TeaModel):
     def __init__(
         self,
@@ -2913,408 +2737,6 @@ class MoveFileResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = MoveFileResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class GetDownloadInfoHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetDownloadInfoRequest(TeaModel):
-    def __init__(
-        self,
-        union_id: str = None,
-    ):
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class GetDownloadInfoResponseBodyDownloadInfo(TeaModel):
-    def __init__(
-        self,
-        resource_url: str = None,
-        expiration_seconds: int = None,
-        headers: Dict[str, Any] = None,
-    ):
-        # 加签url
-        self.resource_url = resource_url
-        # 加签url过期时间
-        self.expiration_seconds = expiration_seconds
-        # headers
-        self.headers = headers
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.resource_url is not None:
-            result['resourceUrl'] = self.resource_url
-        if self.expiration_seconds is not None:
-            result['expirationSeconds'] = self.expiration_seconds
-        if self.headers is not None:
-            result['headers'] = self.headers
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('resourceUrl') is not None:
-            self.resource_url = m.get('resourceUrl')
-        if m.get('expirationSeconds') is not None:
-            self.expiration_seconds = m.get('expirationSeconds')
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        return self
-
-
-class GetDownloadInfoResponseBody(TeaModel):
-    def __init__(
-        self,
-        download_info: GetDownloadInfoResponseBodyDownloadInfo = None,
-    ):
-        # 下载加签url信息
-        self.download_info = download_info
-
-    def validate(self):
-        if self.download_info:
-            self.download_info.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.download_info is not None:
-            result['downloadInfo'] = self.download_info.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('downloadInfo') is not None:
-            temp_model = GetDownloadInfoResponseBodyDownloadInfo()
-            self.download_info = temp_model.from_map(m['downloadInfo'])
-        return self
-
-
-class GetDownloadInfoResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetDownloadInfoResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetDownloadInfoResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class GetUploadInfoHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class GetUploadInfoRequest(TeaModel):
-    def __init__(
-        self,
-        union_id: str = None,
-        file_name: str = None,
-        file_size: int = None,
-        md_5: str = None,
-        add_conflict_policy: str = None,
-        media_id: str = None,
-    ):
-        # 用户id
-        self.union_id = union_id
-        # 文件名
-        self.file_name = file_name
-        # 文件大小
-        self.file_size = file_size
-        # 文件md5
-        self.md_5 = md_5
-        # 文件名称冲突策略
-        self.add_conflict_policy = add_conflict_policy
-        # mediaId
-        self.media_id = media_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        if self.file_name is not None:
-            result['fileName'] = self.file_name
-        if self.file_size is not None:
-            result['fileSize'] = self.file_size
-        if self.md_5 is not None:
-            result['md5'] = self.md_5
-        if self.add_conflict_policy is not None:
-            result['addConflictPolicy'] = self.add_conflict_policy
-        if self.media_id is not None:
-            result['mediaId'] = self.media_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        if m.get('fileName') is not None:
-            self.file_name = m.get('fileName')
-        if m.get('fileSize') is not None:
-            self.file_size = m.get('fileSize')
-        if m.get('md5') is not None:
-            self.md_5 = m.get('md5')
-        if m.get('addConflictPolicy') is not None:
-            self.add_conflict_policy = m.get('addConflictPolicy')
-        if m.get('mediaId') is not None:
-            self.media_id = m.get('mediaId')
-        return self
-
-
-class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
-    def __init__(
-        self,
-        bucket: str = None,
-        end_point: str = None,
-        access_key_id: str = None,
-        access_key_secret: str = None,
-        access_token: str = None,
-        access_token_expiration_millis: int = None,
-        media_id: str = None,
-    ):
-        # bucket
-        self.bucket = bucket
-        # endPoint
-        self.end_point = end_point
-        # accessKeyId
-        self.access_key_id = access_key_id
-        # accessKeySecret
-        self.access_key_secret = access_key_secret
-        # accessToken
-        self.access_token = access_token
-        # accessTokenExpiration
-        self.access_token_expiration_millis = access_token_expiration_millis
-        # mediaId
-        self.media_id = media_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.bucket is not None:
-            result['bucket'] = self.bucket
-        if self.end_point is not None:
-            result['endPoint'] = self.end_point
-        if self.access_key_id is not None:
-            result['accessKeyId'] = self.access_key_id
-        if self.access_key_secret is not None:
-            result['accessKeySecret'] = self.access_key_secret
-        if self.access_token is not None:
-            result['accessToken'] = self.access_token
-        if self.access_token_expiration_millis is not None:
-            result['accessTokenExpirationMillis'] = self.access_token_expiration_millis
-        if self.media_id is not None:
-            result['mediaId'] = self.media_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('bucket') is not None:
-            self.bucket = m.get('bucket')
-        if m.get('endPoint') is not None:
-            self.end_point = m.get('endPoint')
-        if m.get('accessKeyId') is not None:
-            self.access_key_id = m.get('accessKeyId')
-        if m.get('accessKeySecret') is not None:
-            self.access_key_secret = m.get('accessKeySecret')
-        if m.get('accessToken') is not None:
-            self.access_token = m.get('accessToken')
-        if m.get('accessTokenExpirationMillis') is not None:
-            self.access_token_expiration_millis = m.get('accessTokenExpirationMillis')
-        if m.get('mediaId') is not None:
-            self.media_id = m.get('mediaId')
-        return self
-
-
-class GetUploadInfoResponseBody(TeaModel):
-    def __init__(
-        self,
-        sts_upload_info: GetUploadInfoResponseBodyStsUploadInfo = None,
-    ):
-        self.sts_upload_info = sts_upload_info
-
-    def validate(self):
-        if self.sts_upload_info:
-            self.sts_upload_info.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.sts_upload_info is not None:
-            result['stsUploadInfo'] = self.sts_upload_info.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('stsUploadInfo') is not None:
-            temp_model = GetUploadInfoResponseBodyStsUploadInfo()
-            self.sts_upload_info = temp_model.from_map(m['stsUploadInfo'])
-        return self
-
-
-class GetUploadInfoResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: GetUploadInfoResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetUploadInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3553,353 +2975,6 @@ class ListSpacesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListSpacesResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class DeletePermissionHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class DeletePermissionRequestMembers(TeaModel):
-    def __init__(
-        self,
-        corp_id: str = None,
-        member_type: str = None,
-        member_id: str = None,
-    ):
-        # 企业corpId
-        self.corp_id = corp_id
-        # 成员类型
-        self.member_type = member_type
-        # 成员id
-        self.member_id = member_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.member_type is not None:
-            result['memberType'] = self.member_type
-        if self.member_id is not None:
-            result['memberId'] = self.member_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('memberType') is not None:
-            self.member_type = m.get('memberType')
-        if m.get('memberId') is not None:
-            self.member_id = m.get('memberId')
-        return self
-
-
-class DeletePermissionRequest(TeaModel):
-    def __init__(
-        self,
-        role: str = None,
-        members: List[DeletePermissionRequestMembers] = None,
-        union_id: str = None,
-    ):
-        # 权限角色
-        self.role = role
-        self.members = members
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        if self.members:
-            for k in self.members:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.role is not None:
-            result['role'] = self.role
-        result['members'] = []
-        if self.members is not None:
-            for k in self.members:
-                result['members'].append(k.to_map() if k else None)
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('role') is not None:
-            self.role = m.get('role')
-        self.members = []
-        if m.get('members') is not None:
-            for k in m.get('members'):
-                temp_model = DeletePermissionRequestMembers()
-                self.members.append(temp_model.from_map(k))
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class DeletePermissionResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-    ):
-        self.headers = headers
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        return self
-
-
-class AddCustomSpaceHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class AddCustomSpaceRequest(TeaModel):
-    def __init__(
-        self,
-        identifier: str = None,
-        biz_type: str = None,
-        permission_mode: str = None,
-        union_id: str = None,
-    ):
-        # 空间标识
-        self.identifier = identifier
-        # 业务类型
-        self.biz_type = biz_type
-        # 授权模式
-        self.permission_mode = permission_mode
-        # 用户id
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.identifier is not None:
-            result['identifier'] = self.identifier
-        if self.biz_type is not None:
-            result['bizType'] = self.biz_type
-        if self.permission_mode is not None:
-            result['permissionMode'] = self.permission_mode
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('identifier') is not None:
-            self.identifier = m.get('identifier')
-        if m.get('bizType') is not None:
-            self.biz_type = m.get('bizType')
-        if m.get('permissionMode') is not None:
-            self.permission_mode = m.get('permissionMode')
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class AddCustomSpaceResponseBody(TeaModel):
-    def __init__(
-        self,
-        space_id: str = None,
-        space_name: str = None,
-        space_type: str = None,
-        quota: int = None,
-        used_quota: int = None,
-        permission_mode: str = None,
-        create_time: str = None,
-        modify_time: str = None,
-    ):
-        # 空间id
-        self.space_id = space_id
-        # 空间名称
-        self.space_name = space_name
-        # 空间类型
-        self.space_type = space_type
-        # 空间总额度
-        self.quota = quota
-        # 空间已使用额度
-        self.used_quota = used_quota
-        # 授权模式
-        self.permission_mode = permission_mode
-        # 创建时间
-        self.create_time = create_time
-        # 修改时间
-        self.modify_time = modify_time
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.space_id is not None:
-            result['spaceId'] = self.space_id
-        if self.space_name is not None:
-            result['spaceName'] = self.space_name
-        if self.space_type is not None:
-            result['spaceType'] = self.space_type
-        if self.quota is not None:
-            result['quota'] = self.quota
-        if self.used_quota is not None:
-            result['usedQuota'] = self.used_quota
-        if self.permission_mode is not None:
-            result['permissionMode'] = self.permission_mode
-        if self.create_time is not None:
-            result['createTime'] = self.create_time
-        if self.modify_time is not None:
-            result['modifyTime'] = self.modify_time
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('spaceId') is not None:
-            self.space_id = m.get('spaceId')
-        if m.get('spaceName') is not None:
-            self.space_name = m.get('spaceName')
-        if m.get('spaceType') is not None:
-            self.space_type = m.get('spaceType')
-        if m.get('quota') is not None:
-            self.quota = m.get('quota')
-        if m.get('usedQuota') is not None:
-            self.used_quota = m.get('usedQuota')
-        if m.get('permissionMode') is not None:
-            self.permission_mode = m.get('permissionMode')
-        if m.get('createTime') is not None:
-            self.create_time = m.get('createTime')
-        if m.get('modifyTime') is not None:
-            self.modify_time = m.get('modifyTime')
-        return self
-
-
-class AddCustomSpaceResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: AddCustomSpaceResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = AddCustomSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4355,6 +3430,223 @@ class ClearRecycleFilesResponse(TeaModel):
         return self
 
 
+class ManagementListSpacesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ManagementListSpacesRequest(TeaModel):
+    def __init__(
+        self,
+        space_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        # 空间id列表
+        self.space_ids = space_ids
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_ids is not None:
+            result['spaceIds'] = self.space_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceIds') is not None:
+            self.space_ids = m.get('spaceIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ManagementListSpacesResponseBodySpaces(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        permission_mode: str = None,
+        create_time: str = None,
+        modify_time: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 空间总额度
+        self.quota = quota
+        # 空间已使用额度
+        self.used_quota = used_quota
+        # 授权模式
+        self.permission_mode = permission_mode
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class ManagementListSpacesResponseBody(TeaModel):
+    def __init__(
+        self,
+        spaces: List[ManagementListSpacesResponseBodySpaces] = None,
+    ):
+        self.spaces = spaces
+
+    def validate(self):
+        if self.spaces:
+            for k in self.spaces:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['spaces'] = []
+        if self.spaces is not None:
+            for k in self.spaces:
+                result['spaces'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.spaces = []
+        if m.get('spaces') is not None:
+            for k in m.get('spaces'):
+                temp_model = ManagementListSpacesResponseBodySpaces()
+                self.spaces.append(temp_model.from_map(k))
+        return self
+
+
+class ManagementListSpacesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ManagementListSpacesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ManagementListSpacesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteFileHeaders(TeaModel):
     def __init__(
         self,
@@ -4484,6 +3776,2074 @@ class DeleteFileResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteFileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddFileHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddFileRequest(TeaModel):
+    def __init__(
+        self,
+        parent_id: str = None,
+        file_type: str = None,
+        file_name: str = None,
+        media_id: str = None,
+        add_conflict_policy: str = None,
+        union_id: str = None,
+    ):
+        # 父目录id
+        self.parent_id = parent_id
+        # 文件类型
+        self.file_type = file_type
+        # 文件名
+        self.file_name = file_name
+        # mediaId
+        self.media_id = media_id
+        # 文件名冲突策略
+        self.add_conflict_policy = add_conflict_policy
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.add_conflict_policy is not None:
+            result['addConflictPolicy'] = self.add_conflict_policy
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('addConflictPolicy') is not None:
+            self.add_conflict_policy = m.get('addConflictPolicy')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddFileResponseBody(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        parent_id: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_path: str = None,
+        file_type: str = None,
+        content_type: str = None,
+        file_extension: str = None,
+        file_size: int = None,
+        create_time: str = None,
+        modify_time: str = None,
+        creator: str = None,
+        modifier: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 父目录id
+        self.parent_id = parent_id
+        # 文件id
+        self.file_id = file_id
+        # 文件名称
+        self.file_name = file_name
+        # 文件路径
+        self.file_path = file_path
+        # 文件类型
+        self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
+        # 文件后缀
+        self.file_extension = file_extension
+        # 文件大小
+        self.file_size = file_size
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+        # 创建者
+        self.creator = creator
+        # 修改者
+        self.modifier = modifier
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_path is not None:
+            result['filePath'] = self.file_path
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.file_extension is not None:
+            result['fileExtension'] = self.file_extension
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('filePath') is not None:
+            self.file_path = m.get('filePath')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('fileExtension') is not None:
+            self.file_extension = m.get('fileExtension')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        return self
+
+
+class AddFileResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddFileResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddFileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InfoSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InfoSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class InfoSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        permission_mode: str = None,
+        create_time: str = None,
+        modify_time: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 容量
+        self.quota = quota
+        # 已使用容量
+        self.used_quota = used_quota
+        # 授权模式
+        self.permission_mode = permission_mode
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class InfoSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InfoSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InfoSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ManagementModifySpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ManagementModifySpaceRequest(TeaModel):
+    def __init__(
+        self,
+        space_ids: List[str] = None,
+        quota: int = None,
+        union_id: str = None,
+    ):
+        # 空间id列表
+        self.space_ids = space_ids
+        # 容量
+        self.quota = quota
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_ids is not None:
+            result['spaceIds'] = self.space_ids
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceIds') is not None:
+            self.space_ids = m.get('spaceIds')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ManagementModifySpaceResponseBodySpaces(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        permission_mode: str = None,
+        create_time: str = None,
+        modify_time: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 空间总额度
+        self.quota = quota
+        # 空间已使用额度
+        self.used_quota = used_quota
+        # 授权模式
+        self.permission_mode = permission_mode
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class ManagementModifySpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        spaces: List[ManagementModifySpaceResponseBodySpaces] = None,
+    ):
+        # 空间列表
+        self.spaces = spaces
+
+    def validate(self):
+        if self.spaces:
+            for k in self.spaces:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['spaces'] = []
+        if self.spaces is not None:
+            for k in self.spaces:
+                result['spaces'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.spaces = []
+        if m.get('spaces') is not None:
+            for k in m.get('spaces'):
+                temp_model = ManagementModifySpaceResponseBodySpaces()
+                self.spaces.append(temp_model.from_map(k))
+        return self
+
+
+class ManagementModifySpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ManagementModifySpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ManagementModifySpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ModifyPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ModifyPermissionRequestMembers(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        member_type: str = None,
+        member_id: str = None,
+    ):
+        # 企业corpId
+        self.corp_id = corp_id
+        # 成员类型
+        self.member_type = member_type
+        # 成员id
+        self.member_id = member_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        return self
+
+
+class ModifyPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        role: str = None,
+        members: List[ModifyPermissionRequestMembers] = None,
+        union_id: str = None,
+    ):
+        # 权限角色
+        self.role = role
+        self.members = members
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role is not None:
+            result['role'] = self.role
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = ModifyPermissionRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ModifyPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class GrantPrivilegeOfCustomSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GrantPrivilegeOfCustomSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        user_id: str = None,
+        file_ids: List[str] = None,
+        duration: int = None,
+        union_id: str = None,
+    ):
+        # 权限类型
+        self.type = type
+        # 被授予权限的员工id
+        self.user_id = user_id
+        # 授权访问的文件id列表
+        self.file_ids = file_ids
+        # 权限有效时间
+        self.duration = duration
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.file_ids is not None:
+            result['fileIds'] = self.file_ids
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('fileIds') is not None:
+            self.file_ids = m.get('fileIds')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GrantPrivilegeOfCustomSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class GetDownloadInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDownloadInfoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetDownloadInfoResponseBodyDownloadInfo(TeaModel):
+    def __init__(
+        self,
+        resource_url: str = None,
+        expiration_seconds: int = None,
+        headers: Dict[str, Any] = None,
+    ):
+        # 加签url
+        self.resource_url = resource_url
+        # 加签url过期时间
+        self.expiration_seconds = expiration_seconds
+        # headers
+        self.headers = headers
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.resource_url is not None:
+            result['resourceUrl'] = self.resource_url
+        if self.expiration_seconds is not None:
+            result['expirationSeconds'] = self.expiration_seconds
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resourceUrl') is not None:
+            self.resource_url = m.get('resourceUrl')
+        if m.get('expirationSeconds') is not None:
+            self.expiration_seconds = m.get('expirationSeconds')
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class GetDownloadInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        download_info: GetDownloadInfoResponseBodyDownloadInfo = None,
+    ):
+        # 下载加签url信息
+        self.download_info = download_info
+
+    def validate(self):
+        if self.download_info:
+            self.download_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_info is not None:
+            result['downloadInfo'] = self.download_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadInfo') is not None:
+            temp_model = GetDownloadInfoResponseBodyDownloadInfo()
+            self.download_info = temp_model.from_map(m['downloadInfo'])
+        return self
+
+
+class GetDownloadInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDownloadInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDownloadInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUploadInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUploadInfoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        md_5: str = None,
+        add_conflict_policy: str = None,
+        media_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+        # 文件名
+        self.file_name = file_name
+        # 文件大小
+        self.file_size = file_size
+        # 文件md5
+        self.md_5 = md_5
+        # 文件名称冲突策略
+        self.add_conflict_policy = add_conflict_policy
+        # mediaId
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.md_5 is not None:
+            result['md5'] = self.md_5
+        if self.add_conflict_policy is not None:
+            result['addConflictPolicy'] = self.add_conflict_policy
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('md5') is not None:
+            self.md_5 = m.get('md5')
+        if m.get('addConflictPolicy') is not None:
+            self.add_conflict_policy = m.get('addConflictPolicy')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
+    def __init__(
+        self,
+        bucket: str = None,
+        end_point: str = None,
+        access_key_id: str = None,
+        access_key_secret: str = None,
+        access_token: str = None,
+        access_token_expiration_millis: int = None,
+        media_id: str = None,
+    ):
+        # bucket
+        self.bucket = bucket
+        # endPoint
+        self.end_point = end_point
+        # accessKeyId
+        self.access_key_id = access_key_id
+        # accessKeySecret
+        self.access_key_secret = access_key_secret
+        # accessToken
+        self.access_token = access_token
+        # accessTokenExpiration
+        self.access_token_expiration_millis = access_token_expiration_millis
+        # mediaId
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bucket is not None:
+            result['bucket'] = self.bucket
+        if self.end_point is not None:
+            result['endPoint'] = self.end_point
+        if self.access_key_id is not None:
+            result['accessKeyId'] = self.access_key_id
+        if self.access_key_secret is not None:
+            result['accessKeySecret'] = self.access_key_secret
+        if self.access_token is not None:
+            result['accessToken'] = self.access_token
+        if self.access_token_expiration_millis is not None:
+            result['accessTokenExpirationMillis'] = self.access_token_expiration_millis
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bucket') is not None:
+            self.bucket = m.get('bucket')
+        if m.get('endPoint') is not None:
+            self.end_point = m.get('endPoint')
+        if m.get('accessKeyId') is not None:
+            self.access_key_id = m.get('accessKeyId')
+        if m.get('accessKeySecret') is not None:
+            self.access_key_secret = m.get('accessKeySecret')
+        if m.get('accessToken') is not None:
+            self.access_token = m.get('accessToken')
+        if m.get('accessTokenExpirationMillis') is not None:
+            self.access_token_expiration_millis = m.get('accessTokenExpirationMillis')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class GetUploadInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        sts_upload_info: GetUploadInfoResponseBodyStsUploadInfo = None,
+    ):
+        self.sts_upload_info = sts_upload_info
+
+    def validate(self):
+        if self.sts_upload_info:
+            self.sts_upload_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sts_upload_info is not None:
+            result['stsUploadInfo'] = self.sts_upload_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('stsUploadInfo') is not None:
+            temp_model = GetUploadInfoResponseBodyStsUploadInfo()
+            self.sts_upload_info = temp_model.from_map(m['stsUploadInfo'])
+        return self
+
+
+class GetUploadInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUploadInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUploadInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeletePermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeletePermissionRequestMembers(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        member_type: str = None,
+        member_id: str = None,
+    ):
+        # 企业corpId
+        self.corp_id = corp_id
+        # 成员类型
+        self.member_type = member_type
+        # 成员id
+        self.member_id = member_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        return self
+
+
+class DeletePermissionRequest(TeaModel):
+    def __init__(
+        self,
+        role: str = None,
+        members: List[DeletePermissionRequestMembers] = None,
+        union_id: str = None,
+    ):
+        # 权限角色
+        self.role = role
+        self.members = members
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role is not None:
+            result['role'] = self.role
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = DeletePermissionRequestMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DeletePermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
+class AddCustomSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCustomSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        identifier: str = None,
+        biz_type: str = None,
+        permission_mode: str = None,
+        union_id: str = None,
+    ):
+        # 空间标识
+        self.identifier = identifier
+        # 业务类型
+        self.biz_type = biz_type
+        # 授权模式
+        self.permission_mode = permission_mode
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.identifier is not None:
+            result['identifier'] = self.identifier
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('identifier') is not None:
+            self.identifier = m.get('identifier')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddCustomSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        permission_mode: str = None,
+        create_time: str = None,
+        modify_time: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 空间总额度
+        self.quota = quota
+        # 空间已使用额度
+        self.used_quota = used_quota
+        # 授权模式
+        self.permission_mode = permission_mode
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class AddCustomSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddCustomSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddCustomSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MoveFilesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MoveFilesRequest(TeaModel):
+    def __init__(
+        self,
+        file_ids: List[str] = None,
+        target_space_id: str = None,
+        target_parent_id: str = None,
+        add_conflict_policy: str = None,
+        union_id: str = None,
+    ):
+        # 文件id列表
+        self.file_ids = file_ids
+        # 目标空间id
+        self.target_space_id = target_space_id
+        # 目标父目录id
+        self.target_parent_id = target_parent_id
+        # 文件名冲突策略
+        self.add_conflict_policy = add_conflict_policy
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_ids is not None:
+            result['fileIds'] = self.file_ids
+        if self.target_space_id is not None:
+            result['targetSpaceId'] = self.target_space_id
+        if self.target_parent_id is not None:
+            result['targetParentId'] = self.target_parent_id
+        if self.add_conflict_policy is not None:
+            result['addConflictPolicy'] = self.add_conflict_policy
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileIds') is not None:
+            self.file_ids = m.get('fileIds')
+        if m.get('targetSpaceId') is not None:
+            self.target_space_id = m.get('targetSpaceId')
+        if m.get('targetParentId') is not None:
+            self.target_parent_id = m.get('targetParentId')
+        if m.get('addConflictPolicy') is not None:
+            self.add_conflict_policy = m.get('addConflictPolicy')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class MoveFilesResponseBodyFiles(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        parent_id: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_path: str = None,
+        file_type: str = None,
+        content_type: str = None,
+        file_extension: str = None,
+        file_size: int = None,
+        create_time: str = None,
+        modify_time: str = None,
+        creator: str = None,
+        modifier: str = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 父目录id
+        self.parent_id = parent_id
+        # 文件id
+        self.file_id = file_id
+        # 文件名称
+        self.file_name = file_name
+        # 文件路径
+        self.file_path = file_path
+        # 文件类型
+        self.file_type = file_type
+        # 文件内容类型
+        self.content_type = content_type
+        # 文件后缀
+        self.file_extension = file_extension
+        # 文件大小
+        self.file_size = file_size
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modify_time = modify_time
+        # 创建者
+        self.creator = creator
+        # 修改者
+        self.modifier = modifier
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_path is not None:
+            result['filePath'] = self.file_path
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.file_extension is not None:
+            result['fileExtension'] = self.file_extension
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('filePath') is not None:
+            self.file_path = m.get('filePath')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('fileExtension') is not None:
+            self.file_extension = m.get('fileExtension')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        return self
+
+
+class MoveFilesResponseBody(TeaModel):
+    def __init__(
+        self,
+        files: List[MoveFilesResponseBodyFiles] = None,
+        task_id: str = None,
+    ):
+        # 文件信息列表
+        self.files = files
+        # 异步任务id
+        self.task_id = task_id
+
+    def validate(self):
+        if self.files:
+            for k in self.files:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['files'] = []
+        if self.files is not None:
+            for k in self.files:
+                result['files'].append(k.to_map() if k else None)
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.files = []
+        if m.get('files') is not None:
+            for k in m.get('files'):
+                temp_model = MoveFilesResponseBodyFiles()
+                self.files.append(temp_model.from_map(k))
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class MoveFilesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: MoveFilesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = MoveFilesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPrivilegeInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrivilegeInfoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetPrivilegeInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        types: List[str] = None,
+    ):
+        # 类型列表
+        self.types = types
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.types is not None:
+            result['types'] = self.types
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('types') is not None:
+            self.types = m.get('types')
+        return self
+
+
+class GetPrivilegeInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPrivilegeInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPrivilegeInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

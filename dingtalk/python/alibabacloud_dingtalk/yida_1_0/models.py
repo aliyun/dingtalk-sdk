@@ -3633,6 +3633,153 @@ class RenewTenantOrderResponse(TeaModel):
         return self
 
 
+class GetPrintDictionaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrintDictionaryRequest(TeaModel):
+    def __init__(
+        self,
+        form_uuid: str = None,
+        app_type: str = None,
+        version: int = None,
+        user_id: str = None,
+    ):
+        # 表单id
+        self.form_uuid = form_uuid
+        # 应用代码
+        self.app_type = app_type
+        # 版本
+        self.version = version
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.version is not None:
+            result['version'] = self.version
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetPrintDictionaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class GetPrintDictionaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPrintDictionaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPrintDictionaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateInstanceHeaders(TeaModel):
     def __init__(
         self,
@@ -9352,6 +9499,195 @@ class SearchActivationCodeResponse(TeaModel):
         return self
 
 
+class SavePrintTplDetailInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SavePrintTplDetailInfoRequest(TeaModel):
+    def __init__(
+        self,
+        form_uuid: str = None,
+        app_type: str = None,
+        vm: str = None,
+        form_version: int = None,
+        template_id: int = None,
+        user_id: str = None,
+        setting: str = None,
+        title: str = None,
+        description: str = None,
+        file_name_config: str = None,
+    ):
+        # 表单id
+        self.form_uuid = form_uuid
+        # 应用代码
+        self.app_type = app_type
+        # 模板的VM
+        self.vm = vm
+        # 表单版本
+        self.form_version = form_version
+        # 打印模板id
+        self.template_id = template_id
+        # 用户id
+        self.user_id = user_id
+        # 模板的其他配置信息
+        self.setting = setting
+        # 模板标题
+        self.title = title
+        # 模板描述
+        self.description = description
+        # 文件名配置
+        self.file_name_config = file_name_config
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.vm is not None:
+            result['vm'] = self.vm
+        if self.form_version is not None:
+            result['formVersion'] = self.form_version
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.setting is not None:
+            result['setting'] = self.setting
+        if self.title is not None:
+            result['title'] = self.title
+        if self.description is not None:
+            result['description'] = self.description
+        if self.file_name_config is not None:
+            result['fileNameConfig'] = self.file_name_config
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('vm') is not None:
+            self.vm = m.get('vm')
+        if m.get('formVersion') is not None:
+            self.form_version = m.get('formVersion')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('setting') is not None:
+            self.setting = m.get('setting')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('fileNameConfig') is not None:
+            self.file_name_config = m.get('fileNameConfig')
+        return self
+
+
+class SavePrintTplDetailInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: int = None,
+    ):
+        # 模板id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class SavePrintTplDetailInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SavePrintTplDetailInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SavePrintTplDetailInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchEmployeeFieldValuesHeaders(TeaModel):
     def __init__(
         self,
@@ -12267,6 +12603,238 @@ class GetFormComponentDefinitionListResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetFormComponentDefinitionListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPrintAppInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrintAppInfoRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        name_like: str = None,
+    ):
+        # 用户id
+        self.user_id = user_id
+        # 搜索关键字
+        self.name_like = name_like
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.name_like is not None:
+            result['nameLike'] = self.name_like
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('nameLike') is not None:
+            self.name_like = m.get('nameLike')
+        return self
+
+
+class GetPrintAppInfoResponseBodyResultFormInfoList(TeaModel):
+    def __init__(
+        self,
+        form_uuid: str = None,
+        form_name: str = None,
+    ):
+        # formUuid
+        self.form_uuid = form_uuid
+        # formName
+        self.form_name = form_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.form_name is not None:
+            result['formName'] = self.form_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('formName') is not None:
+            self.form_name = m.get('formName')
+        return self
+
+
+class GetPrintAppInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        form_info_list: List[GetPrintAppInfoResponseBodyResultFormInfoList] = None,
+        app_type: str = None,
+        app_name: str = None,
+        icon_url: str = None,
+    ):
+        # formInfoList
+        self.form_info_list = form_info_list
+        # appType
+        self.app_type = app_type
+        # 应用名称
+        self.app_name = app_name
+        # 图标链接
+        self.icon_url = icon_url
+
+    def validate(self):
+        if self.form_info_list:
+            for k in self.form_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['formInfoList'] = []
+        if self.form_info_list is not None:
+            for k in self.form_info_list:
+                result['formInfoList'].append(k.to_map() if k else None)
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.form_info_list = []
+        if m.get('formInfoList') is not None:
+            for k in m.get('formInfoList'):
+                temp_model = GetPrintAppInfoResponseBodyResultFormInfoList()
+                self.form_info_list.append(temp_model.from_map(k))
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        return self
+
+
+class GetPrintAppInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetPrintAppInfoResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetPrintAppInfoResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetPrintAppInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPrintAppInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPrintAppInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
