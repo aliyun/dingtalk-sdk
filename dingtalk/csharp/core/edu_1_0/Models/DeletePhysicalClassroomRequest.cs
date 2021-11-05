@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeletePhysicalClassroomRequest : TeaModel {
         /// <summary>
-        /// 教室id
+        /// 教室主键
         /// </summary>
         [NameInMap("classroomId")]
         [Validation(Required=false)]

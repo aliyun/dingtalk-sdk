@@ -45,12 +45,12 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public int? ClassPeriodType { get; set; }
 
             /// <summary>
-            /// 开始时间
+            /// 课程组详细开始时间
             /// </summary>
-            [NameInMap("start")]
+            [NameInMap("courserGroupItemStartDate")]
             [Validation(Required=false)]
-            public CreateUniversityCourseGroupRequestCourserGroupItemModelsStart Start { get; set; }
-            public class CreateUniversityCourseGroupRequestCourserGroupItemModelsStart : TeaModel {
+            public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
+            public class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
@@ -70,12 +70,12 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public List<int?> SectionIndex { get; set; }
 
             /// <summary>
-            /// 结束时间
+            /// 课程组详细结束时间
             /// </summary>
-            [NameInMap("end")]
+            [NameInMap("courserGroupItemEndDate")]
             [Validation(Required=false)]
-            public CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd End { get; set; }
-            public class CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd : TeaModel {
+            public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
+            public class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }

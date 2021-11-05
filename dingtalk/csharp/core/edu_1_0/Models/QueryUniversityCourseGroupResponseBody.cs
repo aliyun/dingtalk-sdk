@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 public int? ClassPeriodType { get; set; }
                 public int? DayOfWeek { get; set; }
                 public List<string> SectionIndex { get; set; }
-                public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart Start { get; set; }
-                public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart : TeaModel {
+                public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
+                public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
                     /// <summary>
                     /// 年
                     /// </summary>
@@ -57,8 +57,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                     public int? DayOfMonth { get; set; }
 
                 }
-                public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd End { get; set; }
-                public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd : TeaModel {
+                public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
+                public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
                     /// <summary>
                     /// 年
                     /// </summary>

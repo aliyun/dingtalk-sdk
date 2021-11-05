@@ -54,10 +54,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             /// <summary>
             /// 开始时间
             /// </summary>
-            [NameInMap("start")]
+            [NameInMap("courserGroupItemStartDate")]
             [Validation(Required=false)]
-            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart Start { get; set; }
-            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart : TeaModel {
+            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
+            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             /// <summary>
             /// 结束时间
             /// </summary>
-            [NameInMap("end")]
+            [NameInMap("courserGroupItemEndDate")]
             [Validation(Required=false)]
-            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd End { get; set; }
-            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd : TeaModel {
+            public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
+            public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }

@@ -1606,14 +1606,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassroomId))
+            {
+                query["classroomId"] = request.ClassroomId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
                 query["opUserId"] = request.OpUserId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassroomId))
-            {
-                body["classroomId"] = request.ClassroomId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1628,7 +1627,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<DeletePhysicalClassroomResponse>(DoROARequest("DeletePhysicalClassroom", "edu_1.0", "HTTP", "DELETE", "AK", "/v1.0/edu/physicalClassrooms", "json", req, runtime));
         }
@@ -1637,14 +1635,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassroomId))
+            {
+                query["classroomId"] = request.ClassroomId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
                 query["opUserId"] = request.OpUserId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassroomId))
-            {
-                body["classroomId"] = request.ClassroomId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1659,7 +1656,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<DeletePhysicalClassroomResponse>(await DoROARequestAsync("DeletePhysicalClassroom", "edu_1.0", "HTTP", "DELETE", "AK", "/v1.0/edu/physicalClassrooms", "json", req, runtime));
         }

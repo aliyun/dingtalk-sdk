@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             /// <summary>
             /// 开始时间（精确到日）
             /// </summary>
-            [NameInMap("start")]
+            [NameInMap("sectionStartDate")]
             [Validation(Required=false)]
-            public CreateSectionConfigRequestSectionConfigsStart Start { get; set; }
-            public class CreateSectionConfigRequestSectionConfigsStart : TeaModel {
+            public CreateSectionConfigRequestSectionConfigsSectionStartDate SectionStartDate { get; set; }
+            public class CreateSectionConfigRequestSectionConfigsSectionStartDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 /// <summary>
                 /// 开始时间
                 /// </summary>
-                [NameInMap("start")]
+                [NameInMap("sectionStartTime")]
                 [Validation(Required=false)]
-                public CreateSectionConfigRequestSectionConfigsSectionModelsStart Start { get; set; }
-                public class CreateSectionConfigRequestSectionConfigsSectionModelsStart : TeaModel {
+                public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime SectionStartTime { get; set; }
+                public class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime : TeaModel {
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public int? Min { get; set; }
@@ -101,10 +101,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 /// <summary>
                 /// 结束时间
                 /// </summary>
-                [NameInMap("end")]
+                [NameInMap("sectionEndTime")]
                 [Validation(Required=false)]
-                public CreateSectionConfigRequestSectionConfigsSectionModelsEnd End { get; set; }
-                public class CreateSectionConfigRequestSectionConfigsSectionModelsEnd : TeaModel {
+                public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime SectionEndTime { get; set; }
+                public class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime : TeaModel {
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public int? Min { get; set; }
@@ -125,10 +125,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             /// <summary>
             /// 结束时间
             /// </summary>
-            [NameInMap("end")]
+            [NameInMap("sectionEndDate")]
             [Validation(Required=false)]
-            public CreateSectionConfigRequestSectionConfigsEnd End { get; set; }
-            public class CreateSectionConfigRequestSectionConfigsEnd : TeaModel {
+            public CreateSectionConfigRequestSectionConfigsSectionEndDate SectionEndDate { get; set; }
+            public class CreateSectionConfigRequestSectionConfigsSectionEndDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
@@ -143,10 +143,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             /// <summary>
             /// 学期开始时间
             /// </summary>
-            [NameInMap("semesterStart")]
+            [NameInMap("semesterStartDate")]
             [Validation(Required=false)]
-            public CreateSectionConfigRequestSectionConfigsSemesterStart SemesterStart { get; set; }
-            public class CreateSectionConfigRequestSectionConfigsSemesterStart : TeaModel {
+            public CreateSectionConfigRequestSectionConfigsSemesterStartDate SemesterStartDate { get; set; }
+            public class CreateSectionConfigRequestSectionConfigsSemesterStartDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
@@ -161,10 +161,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             /// <summary>
             /// 学期结束时间
             /// </summary>
-            [NameInMap("semesterEnd")]
+            [NameInMap("semesterEndDate")]
             [Validation(Required=false)]
-            public CreateSectionConfigRequestSectionConfigsSemesterEnd SemesterEnd { get; set; }
-            public class CreateSectionConfigRequestSectionConfigsSemesterEnd : TeaModel {
+            public CreateSectionConfigRequestSectionConfigsSemesterEndDate SemesterEndDate { get; set; }
+            public class CreateSectionConfigRequestSectionConfigsSemesterEndDate : TeaModel {
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
