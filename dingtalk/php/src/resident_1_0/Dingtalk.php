@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vresident_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddPointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddPointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddPointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentDepartmentResponse;
@@ -14,6 +17,12 @@ use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\AddResidentUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\DeleteResidentDepartmentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\ListPointRulesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\PagePointHistoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vresident_1_0\Models\RemoveResidentUserResponse;
@@ -88,6 +97,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateResideceGroupResponse::fromMap($this->doROARequest('UpdateResideceGroup', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/departments/updateResideceGroup', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddPointRequest $request
+     *
+     * @return AddPointResponse
+     */
+    public function addPoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddPointHeaders([]);
+
+        return $this->addPointWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddPointRequest $request
+     * @param AddPointHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return AddPointResponse
+     */
+    public function addPointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isCircle)) {
+            @$query['isCircle'] = $request->isCircle;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            @$query['uuid'] = $request->uuid;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->ruleCode)) {
+            @$query['ruleCode'] = $request->ruleCode;
+        }
+        if (!Utils::isUnset($request->ruleName)) {
+            @$query['ruleName'] = $request->ruleName;
+        }
+        if (!Utils::isUnset($request->actionTime)) {
+            @$query['actionTime'] = $request->actionTime;
+        }
+        if (!Utils::isUnset($request->score)) {
+            @$query['score'] = $request->score;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return AddPointResponse::fromMap($this->doROARequest('AddPoint', 'resident_1.0', 'HTTP', 'POST', 'AK', '/v1.0/resident/points', 'none', $req, $runtime));
     }
 
     /**
@@ -241,6 +310,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param PagePointHistoryRequest $request
+     *
+     * @return PagePointHistoryResponse
+     */
+    public function pagePointHistory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PagePointHistoryHeaders([]);
+
+        return $this->pagePointHistoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PagePointHistoryRequest $request
+     * @param PagePointHistoryHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return PagePointHistoryResponse
+     */
+    public function pagePointHistoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isCircle)) {
+            @$query['isCircle'] = $request->isCircle;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return PagePointHistoryResponse::fromMap($this->doROARequest('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/points/records', 'json', $req, $runtime));
+    }
+
+    /**
      * @param RemoveResidentUserRequest $request
      *
      * @return RemoveResidentUserResponse
@@ -343,6 +469,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateResidenceResponse::fromMap($this->doROARequest('UpdateResidence', 'resident_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/resident/departments/updateResidece', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListPointRulesRequest $request
+     *
+     * @return ListPointRulesResponse
+     */
+    public function listPointRules($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListPointRulesHeaders([]);
+
+        return $this->listPointRulesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListPointRulesRequest $request
+     * @param ListPointRulesHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return ListPointRulesResponse
+     */
+    public function listPointRulesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isCircle)) {
+            @$query['isCircle'] = $request->isCircle;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListPointRulesResponse::fromMap($this->doROARequest('ListPointRules', 'resident_1.0', 'HTTP', 'GET', 'AK', '/v1.0/resident/points/rules', 'json', $req, $runtime));
     }
 
     /**

@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\CopyFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeleteFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeleteFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeleteFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeleteFilesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeleteFilesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeleteFilesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeletePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeletePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\DeletePermissionResponse;
@@ -44,6 +47,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetDownloadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPrivilegeInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPrivilegeInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPrivilegeInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetQuotaInfosHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetQuotaInfosRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetQuotaInfosResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoResponse;
@@ -65,12 +74,24 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListRecycleFilesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListSpacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListSpacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ListSpacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementBuyQuotaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementBuyQuotaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementBuyQuotaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementListSpacesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementListSpacesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementListSpacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementModifySpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementModifySpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ManagementModifySpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ModifyPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ModifyPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\ModifyPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\MoveFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\MoveFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\MoveFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\MoveFilesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\MoveFilesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\MoveFilesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\RecoverRecycleFilesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\RecoverRecycleFilesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\RecoverRecycleFilesResponse;
@@ -91,65 +112,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param string         $spaceId
-     * @param AddFileRequest $request
-     *
-     * @return AddFileResponse
-     */
-    public function addFile($spaceId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AddFileHeaders([]);
-
-        return $this->addFileWithOptions($spaceId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string         $spaceId
-     * @param AddFileRequest $request
-     * @param AddFileHeaders $headers
-     * @param RuntimeOptions $runtime
-     *
-     * @return AddFileResponse
-     */
-    public function addFileWithOptions($spaceId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->parentId)) {
-            @$body['parentId'] = $request->parentId;
-        }
-        if (!Utils::isUnset($request->fileType)) {
-            @$body['fileType'] = $request->fileType;
-        }
-        if (!Utils::isUnset($request->fileName)) {
-            @$body['fileName'] = $request->fileName;
-        }
-        if (!Utils::isUnset($request->mediaId)) {
-            @$body['mediaId'] = $request->mediaId;
-        }
-        if (!Utils::isUnset($request->addConflictPolicy)) {
-            @$body['addConflictPolicy'] = $request->addConflictPolicy;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AddFileResponse::fromMap($this->doROARequest('AddFile', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files', 'json', $req, $runtime));
     }
 
     /**
@@ -346,6 +308,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetQuotaInfosRequest $request
+     *
+     * @return GetQuotaInfosResponse
+     */
+    public function getQuotaInfos($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetQuotaInfosHeaders([]);
+
+        return $this->getQuotaInfosWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetQuotaInfosRequest $request
+     * @param GetQuotaInfosHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetQuotaInfosResponse
+     */
+    public function getQuotaInfosWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->identifiers)) {
+            @$body['identifiers'] = $request->identifiers;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetQuotaInfosResponse::fromMap($this->doROARequest('GetQuotaInfos', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/quotaInfos/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string             $spaceId
      * @param string             $fileId
      * @param GetFileInfoRequest $request
@@ -389,50 +399,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFileInfoResponse::fromMap($this->doROARequest('GetFileInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string           $spaceId
-     * @param InfoSpaceRequest $request
-     *
-     * @return InfoSpaceResponse
-     */
-    public function infoSpace($spaceId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new InfoSpaceHeaders([]);
-
-        return $this->infoSpaceWithOptions($spaceId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string           $spaceId
-     * @param InfoSpaceRequest $request
-     * @param InfoSpaceHeaders $headers
-     * @param RuntimeOptions   $runtime
-     *
-     * @return InfoSpaceResponse
-     */
-    public function infoSpaceWithOptions($spaceId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return InfoSpaceResponse::fromMap($this->doROARequest('InfoSpace', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -487,6 +453,104 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListRecycleFilesResponse::fromMap($this->doROARequest('ListRecycleFiles', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/recycleItems', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $spaceId
+     * @param DeleteFilesRequest $request
+     *
+     * @return DeleteFilesResponse
+     */
+    public function deleteFiles($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteFilesHeaders([]);
+
+        return $this->deleteFilesWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $spaceId
+     * @param DeleteFilesRequest $request
+     * @param DeleteFilesHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return DeleteFilesResponse
+     */
+    public function deleteFilesWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileIds)) {
+            @$body['fileIds'] = $request->fileIds;
+        }
+        if (!Utils::isUnset($request->deletePolicy)) {
+            @$body['deletePolicy'] = $request->deletePolicy;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteFilesResponse::fromMap($this->doROARequest('DeleteFiles', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/batchDelete', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ManagementBuyQuotaRequest $request
+     *
+     * @return ManagementBuyQuotaResponse
+     */
+    public function managementBuyQuota($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManagementBuyQuotaHeaders([]);
+
+        return $this->managementBuyQuotaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ManagementBuyQuotaRequest $request
+     * @param ManagementBuyQuotaHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ManagementBuyQuotaResponse
+     */
+    public function managementBuyQuotaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->token)) {
+            @$body['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->order)) {
+            @$body['order'] = $request->order;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ManagementBuyQuotaResponse::fromMap($this->doROARequest('ManagementBuyQuota', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/managements/quotas/buy', 'none', $req, $runtime));
     }
 
     /**
@@ -639,58 +703,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $spaceId
-     * @param string                  $fileId
-     * @param ModifyPermissionRequest $request
-     *
-     * @return ModifyPermissionResponse
-     */
-    public function modifyPermission($spaceId, $fileId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ModifyPermissionHeaders([]);
-
-        return $this->modifyPermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                  $spaceId
-     * @param string                  $fileId
-     * @param ModifyPermissionRequest $request
-     * @param ModifyPermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return ModifyPermissionResponse
-     */
-    public function modifyPermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->role)) {
-            @$body['role'] = $request->role;
-        }
-        if (!Utils::isUnset($request->members)) {
-            @$body['members'] = $request->members;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return ModifyPermissionResponse::fromMap($this->doROARequest('ModifyPermission', 'drive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions', 'none', $req, $runtime));
-    }
-
-    /**
      * @param string                 $spaceId
      * @param string                 $fileId
      * @param ListPermissionsRequest $request
@@ -734,62 +746,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListPermissionsResponse::fromMap($this->doROARequest('ListPermissions', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                             $spaceId
-     * @param GrantPrivilegeOfCustomSpaceRequest $request
-     *
-     * @return GrantPrivilegeOfCustomSpaceResponse
-     */
-    public function grantPrivilegeOfCustomSpace($spaceId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GrantPrivilegeOfCustomSpaceHeaders([]);
-
-        return $this->grantPrivilegeOfCustomSpaceWithOptions($spaceId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                             $spaceId
-     * @param GrantPrivilegeOfCustomSpaceRequest $request
-     * @param GrantPrivilegeOfCustomSpaceHeaders $headers
-     * @param RuntimeOptions                     $runtime
-     *
-     * @return GrantPrivilegeOfCustomSpaceResponse
-     */
-    public function grantPrivilegeOfCustomSpaceWithOptions($spaceId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->fileIds)) {
-            @$body['fileIds'] = $request->fileIds;
-        }
-        if (!Utils::isUnset($request->duration)) {
-            @$body['duration'] = $request->duration;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GrantPrivilegeOfCustomSpaceResponse::fromMap($this->doROARequest('GrantPrivilegeOfCustomSpace', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/customSpacePrivileges', 'none', $req, $runtime));
     }
 
     /**
@@ -848,113 +804,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                 $spaceId
-     * @param string                 $fileId
-     * @param GetDownloadInfoRequest $request
-     *
-     * @return GetDownloadInfoResponse
-     */
-    public function getDownloadInfo($spaceId, $fileId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetDownloadInfoHeaders([]);
-
-        return $this->getDownloadInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                 $spaceId
-     * @param string                 $fileId
-     * @param GetDownloadInfoRequest $request
-     * @param GetDownloadInfoHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return GetDownloadInfoResponse
-     */
-    public function getDownloadInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetDownloadInfoResponse::fromMap($this->doROARequest('GetDownloadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/downloadInfos', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string               $spaceId
-     * @param string               $parentId
-     * @param GetUploadInfoRequest $request
-     *
-     * @return GetUploadInfoResponse
-     */
-    public function getUploadInfo($spaceId, $parentId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetUploadInfoHeaders([]);
-
-        return $this->getUploadInfoWithOptions($spaceId, $parentId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string               $spaceId
-     * @param string               $parentId
-     * @param GetUploadInfoRequest $request
-     * @param GetUploadInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return GetUploadInfoResponse
-     */
-    public function getUploadInfoWithOptions($spaceId, $parentId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        if (!Utils::isUnset($request->fileName)) {
-            @$query['fileName'] = $request->fileName;
-        }
-        if (!Utils::isUnset($request->fileSize)) {
-            @$query['fileSize'] = $request->fileSize;
-        }
-        if (!Utils::isUnset($request->md5)) {
-            @$query['md5'] = $request->md5;
-        }
-        if (!Utils::isUnset($request->addConflictPolicy)) {
-            @$query['addConflictPolicy'] = $request->addConflictPolicy;
-        }
-        if (!Utils::isUnset($request->mediaId)) {
-            @$query['mediaId'] = $request->mediaId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetUploadInfoResponse::fromMap($this->doROARequest('GetUploadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $parentId . '/uploadInfos', 'json', $req, $runtime));
-    }
-
-    /**
      * @param ListSpacesRequest $request
      *
      * @return ListSpacesResponse
@@ -1003,109 +852,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListSpacesResponse::fromMap($this->doROARequest('ListSpaces', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param string                  $spaceId
-     * @param string                  $fileId
-     * @param DeletePermissionRequest $request
-     *
-     * @return DeletePermissionResponse
-     */
-    public function deletePermission($spaceId, $fileId, $request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DeletePermissionHeaders([]);
-
-        return $this->deletePermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                  $spaceId
-     * @param string                  $fileId
-     * @param DeletePermissionRequest $request
-     * @param DeletePermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return DeletePermissionResponse
-     */
-    public function deletePermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->role)) {
-            @$body['role'] = $request->role;
-        }
-        if (!Utils::isUnset($request->members)) {
-            @$body['members'] = $request->members;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return DeletePermissionResponse::fromMap($this->doROARequest('DeletePermission', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions/delete', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param AddCustomSpaceRequest $request
-     *
-     * @return AddCustomSpaceResponse
-     */
-    public function addCustomSpace($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AddCustomSpaceHeaders([]);
-
-        return $this->addCustomSpaceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param AddCustomSpaceRequest $request
-     * @param AddCustomSpaceHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return AddCustomSpaceResponse
-     */
-    public function addCustomSpaceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->identifier)) {
-            @$body['identifier'] = $request->identifier;
-        }
-        if (!Utils::isUnset($request->bizType)) {
-            @$body['bizType'] = $request->bizType;
-        }
-        if (!Utils::isUnset($request->permissionMode)) {
-            @$body['permissionMode'] = $request->permissionMode;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AddCustomSpaceResponse::fromMap($this->doROARequest('AddCustomSpace', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/customSpaces', 'json', $req, $runtime));
     }
 
     /**
@@ -1253,6 +999,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ManagementListSpacesRequest $request
+     *
+     * @return ManagementListSpacesResponse
+     */
+    public function managementListSpaces($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManagementListSpacesHeaders([]);
+
+        return $this->managementListSpacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ManagementListSpacesRequest $request
+     * @param ManagementListSpacesHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ManagementListSpacesResponse
+     */
+    public function managementListSpacesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->spaceIds)) {
+            @$body['spaceIds'] = $request->spaceIds;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ManagementListSpacesResponse::fromMap($this->doROARequest('ManagementListSpaces', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/managements/spaces/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string            $spaceId
      * @param string            $fileId
      * @param DeleteFileRequest $request
@@ -1299,5 +1090,576 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteFileResponse::fromMap($this->doROARequest('DeleteFile', 'drive_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string         $spaceId
+     * @param AddFileRequest $request
+     *
+     * @return AddFileResponse
+     */
+    public function addFile($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddFileHeaders([]);
+
+        return $this->addFileWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $spaceId
+     * @param AddFileRequest $request
+     * @param AddFileHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AddFileResponse
+     */
+    public function addFileWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->parentId)) {
+            @$body['parentId'] = $request->parentId;
+        }
+        if (!Utils::isUnset($request->fileType)) {
+            @$body['fileType'] = $request->fileType;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            @$body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$body['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->addConflictPolicy)) {
+            @$body['addConflictPolicy'] = $request->addConflictPolicy;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddFileResponse::fromMap($this->doROARequest('AddFile', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string           $spaceId
+     * @param InfoSpaceRequest $request
+     *
+     * @return InfoSpaceResponse
+     */
+    public function infoSpace($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InfoSpaceHeaders([]);
+
+        return $this->infoSpaceWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $spaceId
+     * @param InfoSpaceRequest $request
+     * @param InfoSpaceHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return InfoSpaceResponse
+     */
+    public function infoSpaceWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return InfoSpaceResponse::fromMap($this->doROARequest('InfoSpace', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ManagementModifySpaceRequest $request
+     *
+     * @return ManagementModifySpaceResponse
+     */
+    public function managementModifySpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManagementModifySpaceHeaders([]);
+
+        return $this->managementModifySpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ManagementModifySpaceRequest $request
+     * @param ManagementModifySpaceHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ManagementModifySpaceResponse
+     */
+    public function managementModifySpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->spaceIds)) {
+            @$body['spaceIds'] = $request->spaceIds;
+        }
+        if (!Utils::isUnset($request->quota)) {
+            @$body['quota'] = $request->quota;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ManagementModifySpaceResponse::fromMap($this->doROARequest('ManagementModifySpace', 'drive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/drive/managements/spaces', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $fileId
+     * @param ModifyPermissionRequest $request
+     *
+     * @return ModifyPermissionResponse
+     */
+    public function modifyPermission($spaceId, $fileId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ModifyPermissionHeaders([]);
+
+        return $this->modifyPermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $fileId
+     * @param ModifyPermissionRequest $request
+     * @param ModifyPermissionHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ModifyPermissionResponse
+     */
+    public function modifyPermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->role)) {
+            @$body['role'] = $request->role;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ModifyPermissionResponse::fromMap($this->doROARequest('ModifyPermission', 'drive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                             $spaceId
+     * @param GrantPrivilegeOfCustomSpaceRequest $request
+     *
+     * @return GrantPrivilegeOfCustomSpaceResponse
+     */
+    public function grantPrivilegeOfCustomSpace($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GrantPrivilegeOfCustomSpaceHeaders([]);
+
+        return $this->grantPrivilegeOfCustomSpaceWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                             $spaceId
+     * @param GrantPrivilegeOfCustomSpaceRequest $request
+     * @param GrantPrivilegeOfCustomSpaceHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return GrantPrivilegeOfCustomSpaceResponse
+     */
+    public function grantPrivilegeOfCustomSpaceWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->fileIds)) {
+            @$body['fileIds'] = $request->fileIds;
+        }
+        if (!Utils::isUnset($request->duration)) {
+            @$body['duration'] = $request->duration;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GrantPrivilegeOfCustomSpaceResponse::fromMap($this->doROARequest('GrantPrivilegeOfCustomSpace', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/customSpacePrivileges', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string                 $spaceId
+     * @param string                 $fileId
+     * @param GetDownloadInfoRequest $request
+     *
+     * @return GetDownloadInfoResponse
+     */
+    public function getDownloadInfo($spaceId, $fileId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDownloadInfoHeaders([]);
+
+        return $this->getDownloadInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $spaceId
+     * @param string                 $fileId
+     * @param GetDownloadInfoRequest $request
+     * @param GetDownloadInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetDownloadInfoResponse
+     */
+    public function getDownloadInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetDownloadInfoResponse::fromMap($this->doROARequest('GetDownloadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/downloadInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $spaceId
+     * @param string               $parentId
+     * @param GetUploadInfoRequest $request
+     *
+     * @return GetUploadInfoResponse
+     */
+    public function getUploadInfo($spaceId, $parentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUploadInfoHeaders([]);
+
+        return $this->getUploadInfoWithOptions($spaceId, $parentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $spaceId
+     * @param string               $parentId
+     * @param GetUploadInfoRequest $request
+     * @param GetUploadInfoHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetUploadInfoResponse
+     */
+    public function getUploadInfoWithOptions($spaceId, $parentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            @$query['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            @$query['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->md5)) {
+            @$query['md5'] = $request->md5;
+        }
+        if (!Utils::isUnset($request->addConflictPolicy)) {
+            @$query['addConflictPolicy'] = $request->addConflictPolicy;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$query['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUploadInfoResponse::fromMap($this->doROARequest('GetUploadInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $parentId . '/uploadInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $fileId
+     * @param DeletePermissionRequest $request
+     *
+     * @return DeletePermissionResponse
+     */
+    public function deletePermission($spaceId, $fileId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeletePermissionHeaders([]);
+
+        return $this->deletePermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $fileId
+     * @param DeletePermissionRequest $request
+     * @param DeletePermissionHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return DeletePermissionResponse
+     */
+    public function deletePermissionWithOptions($spaceId, $fileId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->role)) {
+            @$body['role'] = $request->role;
+        }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeletePermissionResponse::fromMap($this->doROARequest('DeletePermission', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions/delete', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param AddCustomSpaceRequest $request
+     *
+     * @return AddCustomSpaceResponse
+     */
+    public function addCustomSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCustomSpaceHeaders([]);
+
+        return $this->addCustomSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddCustomSpaceRequest $request
+     * @param AddCustomSpaceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return AddCustomSpaceResponse
+     */
+    public function addCustomSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->identifier)) {
+            @$body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            @$body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->permissionMode)) {
+            @$body['permissionMode'] = $request->permissionMode;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddCustomSpaceResponse::fromMap($this->doROARequest('AddCustomSpace', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/customSpaces', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string           $spaceId
+     * @param MoveFilesRequest $request
+     *
+     * @return MoveFilesResponse
+     */
+    public function moveFiles($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MoveFilesHeaders([]);
+
+        return $this->moveFilesWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $spaceId
+     * @param MoveFilesRequest $request
+     * @param MoveFilesHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return MoveFilesResponse
+     */
+    public function moveFilesWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileIds)) {
+            @$body['fileIds'] = $request->fileIds;
+        }
+        if (!Utils::isUnset($request->targetSpaceId)) {
+            @$body['targetSpaceId'] = $request->targetSpaceId;
+        }
+        if (!Utils::isUnset($request->targetParentId)) {
+            @$body['targetParentId'] = $request->targetParentId;
+        }
+        if (!Utils::isUnset($request->addConflictPolicy)) {
+            @$body['addConflictPolicy'] = $request->addConflictPolicy;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MoveFilesResponse::fromMap($this->doROARequest('MoveFiles', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/batchMove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $fileId
+     * @param GetPrivilegeInfoRequest $request
+     *
+     * @return GetPrivilegeInfoResponse
+     */
+    public function getPrivilegeInfo($spaceId, $fileId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrivilegeInfoHeaders([]);
+
+        return $this->getPrivilegeInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $spaceId
+     * @param string                  $fileId
+     * @param GetPrivilegeInfoRequest $request
+     * @param GetPrivilegeInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetPrivilegeInfoResponse
+     */
+    public function getPrivilegeInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPrivilegeInfoResponse::fromMap($this->doROARequest('GetPrivilegeInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/privileges', 'json', $req, $runtime));
     }
 }

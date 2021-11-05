@@ -89,6 +89,12 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPlatformResourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPlatformResourceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPlatformResourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintAppInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintAppInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintAppInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintDictionaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintDictionaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionResponse;
@@ -158,6 +164,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormRemarkHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormRemarkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SaveFormRemarkResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SavePrintTplDetailInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SavePrintTplDetailInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SavePrintTplDetailInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchActivationCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchActivationCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\SearchActivationCodeResponse;
@@ -1042,6 +1051,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RenewTenantOrderResponse::fromMap($this->doROARequest('RenewTenantOrder', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/apps/tenants/reorder', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetPrintDictionaryRequest $request
+     *
+     * @return GetPrintDictionaryResponse
+     */
+    public function getPrintDictionary($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrintDictionaryHeaders([]);
+
+        return $this->getPrintDictionaryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPrintDictionaryRequest $request
+     * @param GetPrintDictionaryHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetPrintDictionaryResponse
+     */
+    public function getPrintDictionaryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->formUuid)) {
+            @$query['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->version)) {
+            @$query['version'] = $request->version;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPrintDictionaryResponse::fromMap($this->doROARequest('GetPrintDictionary', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/printTemplates/printDictionaries', 'json', $req, $runtime));
     }
 
     /**
@@ -2548,6 +2608,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SavePrintTplDetailInfoRequest $request
+     *
+     * @return SavePrintTplDetailInfoResponse
+     */
+    public function savePrintTplDetailInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SavePrintTplDetailInfoHeaders([]);
+
+        return $this->savePrintTplDetailInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SavePrintTplDetailInfoRequest $request
+     * @param SavePrintTplDetailInfoHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return SavePrintTplDetailInfoResponse
+     */
+    public function savePrintTplDetailInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formUuid)) {
+            @$body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->appType)) {
+            @$body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->vm)) {
+            @$body['vm'] = $request->vm;
+        }
+        if (!Utils::isUnset($request->formVersion)) {
+            @$body['formVersion'] = $request->formVersion;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->setting)) {
+            @$body['setting'] = $request->setting;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->fileNameConfig)) {
+            @$body['fileNameConfig'] = $request->fileNameConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SavePrintTplDetailInfoResponse::fromMap($this->doROARequest('SavePrintTplDetailInfo', 'yida_1.0', 'HTTP', 'POST', 'AK', '/v1.0/yida/printTemplates/printTplDetailInfos', 'json', $req, $runtime));
+    }
+
+    /**
      * @param SearchEmployeeFieldValuesRequest $request
      *
      * @return SearchEmployeeFieldValuesResponse
@@ -3318,6 +3447,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFormComponentDefinitionListResponse::fromMap($this->doROARequest('GetFormComponentDefinitionList', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/forms/definitions/' . $appType . '/' . $formUuid . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetPrintAppInfoRequest $request
+     *
+     * @return GetPrintAppInfoResponse
+     */
+    public function getPrintAppInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrintAppInfoHeaders([]);
+
+        return $this->getPrintAppInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPrintAppInfoRequest $request
+     * @param GetPrintAppInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetPrintAppInfoResponse
+     */
+    public function getPrintAppInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->nameLike)) {
+            @$query['nameLike'] = $request->nameLike;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPrintAppInfoResponse::fromMap($this->doROARequest('GetPrintAppInfo', 'yida_1.0', 'HTTP', 'GET', 'AK', '/v1.0/yida/printTemplates/printAppInfos', 'json', $req, $runtime));
     }
 
     /**

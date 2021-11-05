@@ -8,6 +8,12 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallOTOHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallOTORequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchRecallOTOResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTORequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOResponse;
@@ -79,6 +85,99 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchSendOTOResponse::fromMap($this->doROARequest('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/oToMessages/batchSend', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchRecallOTORequest $request
+     *
+     * @return BatchRecallOTOResponse
+     */
+    public function batchRecallOTO($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchRecallOTOHeaders([]);
+
+        return $this->batchRecallOTOWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchRecallOTORequest $request
+     * @param BatchRecallOTOHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return BatchRecallOTOResponse
+     */
+    public function batchRecallOTOWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->processQueryKeys)) {
+            @$body['processQueryKeys'] = $request->processQueryKeys;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchRecallOTOResponse::fromMap($this->doROARequest('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/otoMessages/batchRecall', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchRecallGroupRequest $request
+     *
+     * @return BatchRecallGroupResponse
+     */
+    public function batchRecallGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchRecallGroupHeaders([]);
+
+        return $this->batchRecallGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchRecallGroupRequest $request
+     * @param BatchRecallGroupHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return BatchRecallGroupResponse
+     */
+    public function batchRecallGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->chatbotId)) {
+            @$body['chatbotId'] = $request->chatbotId;
+        }
+        if (!Utils::isUnset($request->processQueryKeys)) {
+            @$body['processQueryKeys'] = $request->processQueryKeys;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchRecallGroupResponse::fromMap($this->doROARequest('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/groupMessages/batchRecall', 'json', $req, $runtime));
     }
 
     /**
