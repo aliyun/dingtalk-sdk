@@ -1189,6 +1189,182 @@ class InteractiveCardCreateInstanceResponse(TeaModel):
         return self
 
 
+class UpdateGroupSubAdminHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateGroupSubAdminRequest(TeaModel):
+    def __init__(
+        self,
+        ding_token_grant_type: int = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_oauth_app_id: int = None,
+        ding_client_id: str = None,
+        open_conversation_id: str = None,
+        user_ids: List[str] = None,
+        role: int = None,
+    ):
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_client_id = ding_client_id
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 用户ID清单
+        self.user_ids = user_ids
+        # 2-群管理员 3-普通群成员
+        self.role = role
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        if self.role is not None:
+            result['role'] = self.role
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        return self
+
+
+class UpdateGroupSubAdminResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # success
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateGroupSubAdminResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateGroupSubAdminResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateGroupSubAdminResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryMembersOfGroupRoleHeaders(TeaModel):
     def __init__(
         self,
@@ -1664,6 +1840,182 @@ class UpdateTheGroupRolesOfGroupMemberResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateTheGroupRolesOfGroupMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateMemberGroupNickHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateMemberGroupNickRequest(TeaModel):
+    def __init__(
+        self,
+        ding_token_grant_type: int = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_oauth_app_id: int = None,
+        ding_client_id: str = None,
+        open_conversation_id: str = None,
+        user_id: str = None,
+        group_nick: str = None,
+    ):
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_client_id = ding_client_id
+        # 开放群ID
+        self.open_conversation_id = open_conversation_id
+        # 用户ID
+        self.user_id = user_id
+        # 群昵称
+        self.group_nick = group_nick
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.group_nick is not None:
+            result['groupNick'] = self.group_nick
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('groupNick') is not None:
+            self.group_nick = m.get('groupNick')
+        return self
+
+
+class UpdateMemberGroupNickResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateMemberGroupNickResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateMemberGroupNickResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateMemberGroupNickResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

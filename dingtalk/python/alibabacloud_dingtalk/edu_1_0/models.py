@@ -399,7 +399,7 @@ class QueryUniversityCourseGroupRequest(TeaModel):
         return self
 
 
-class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart(TeaModel):
+class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate(TeaModel):
     def __init__(
         self,
         year: int = None,
@@ -441,7 +441,7 @@ class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGrou
         return self
 
 
-class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd(TeaModel):
+class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate(TeaModel):
     def __init__(
         self,
         year: int = None,
@@ -490,8 +490,8 @@ class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGrou
         class_period_type: int = None,
         day_of_week: int = None,
         section_index: List[int] = None,
-        start: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart = None,
-        end: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd = None,
+        courser_group_item_start_date: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate = None,
+        courser_group_item_end_date: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate = None,
         course_type: int = None,
     ):
         # 教室主键
@@ -503,17 +503,17 @@ class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGrou
         # 课节
         self.section_index = section_index
         # 开始时间
-        self.start = start
+        self.courser_group_item_start_date = courser_group_item_start_date
         # 结束时间
-        self.end = end
+        self.courser_group_item_end_date = courser_group_item_end_date
         # 课程类型
         self.course_type = course_type
 
     def validate(self):
-        if self.start:
-            self.start.validate()
-        if self.end:
-            self.end.validate()
+        if self.courser_group_item_start_date:
+            self.courser_group_item_start_date.validate()
+        if self.courser_group_item_end_date:
+            self.courser_group_item_end_date.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -529,10 +529,10 @@ class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGrou
             result['dayOfWeek'] = self.day_of_week
         if self.section_index is not None:
             result['sectionIndex'] = self.section_index
-        if self.start is not None:
-            result['start'] = self.start.to_map()
-        if self.end is not None:
-            result['end'] = self.end.to_map()
+        if self.courser_group_item_start_date is not None:
+            result['courserGroupItemStartDate'] = self.courser_group_item_start_date.to_map()
+        if self.courser_group_item_end_date is not None:
+            result['courserGroupItemEndDate'] = self.courser_group_item_end_date.to_map()
         if self.course_type is not None:
             result['courseType'] = self.course_type
         return result
@@ -547,12 +547,12 @@ class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGrou
             self.day_of_week = m.get('dayOfWeek')
         if m.get('sectionIndex') is not None:
             self.section_index = m.get('sectionIndex')
-        if m.get('start') is not None:
-            temp_model = QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart()
-            self.start = temp_model.from_map(m['start'])
-        if m.get('end') is not None:
-            temp_model = QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd()
-            self.end = temp_model.from_map(m['end'])
+        if m.get('courserGroupItemStartDate') is not None:
+            temp_model = QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate()
+            self.courser_group_item_start_date = temp_model.from_map(m['courserGroupItemStartDate'])
+        if m.get('courserGroupItemEndDate') is not None:
+            temp_model = QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate()
+            self.courser_group_item_end_date = temp_model.from_map(m['courserGroupItemEndDate'])
         if m.get('courseType') is not None:
             self.course_type = m.get('courseType')
         return self
@@ -4895,7 +4895,7 @@ class UpdateUniversityCourseGroupHeaders(TeaModel):
         return self
 
 
-class UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart(TeaModel):
+class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -4937,7 +4937,7 @@ class UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart(TeaModel):
         return self
 
 
-class UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd(TeaModel):
+class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -4984,9 +4984,9 @@ class UpdateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
         self,
         day_of_week: int = None,
         class_period_type: int = None,
-        start: UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart = None,
+        courser_group_item_start_date: UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate = None,
         section_index: List[int] = None,
-        end: UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd = None,
+        courser_group_item_end_date: UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate = None,
         course_type: int = None,
         classroom_id: int = None,
     ):
@@ -4995,21 +4995,21 @@ class UpdateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
         # 上课周期
         self.class_period_type = class_period_type
         # 开始时间
-        self.start = start
+        self.courser_group_item_start_date = courser_group_item_start_date
         # 课节
         self.section_index = section_index
         # 结束时间
-        self.end = end
+        self.courser_group_item_end_date = courser_group_item_end_date
         # 课程类型
         self.course_type = course_type
         # classroomId
         self.classroom_id = classroom_id
 
     def validate(self):
-        if self.start:
-            self.start.validate()
-        if self.end:
-            self.end.validate()
+        if self.courser_group_item_start_date:
+            self.courser_group_item_start_date.validate()
+        if self.courser_group_item_end_date:
+            self.courser_group_item_end_date.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5021,12 +5021,12 @@ class UpdateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
             result['dayOfWeek'] = self.day_of_week
         if self.class_period_type is not None:
             result['classPeriodType'] = self.class_period_type
-        if self.start is not None:
-            result['start'] = self.start.to_map()
+        if self.courser_group_item_start_date is not None:
+            result['courserGroupItemStartDate'] = self.courser_group_item_start_date.to_map()
         if self.section_index is not None:
             result['sectionIndex'] = self.section_index
-        if self.end is not None:
-            result['end'] = self.end.to_map()
+        if self.courser_group_item_end_date is not None:
+            result['courserGroupItemEndDate'] = self.courser_group_item_end_date.to_map()
         if self.course_type is not None:
             result['courseType'] = self.course_type
         if self.classroom_id is not None:
@@ -5039,14 +5039,14 @@ class UpdateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
             self.day_of_week = m.get('dayOfWeek')
         if m.get('classPeriodType') is not None:
             self.class_period_type = m.get('classPeriodType')
-        if m.get('start') is not None:
-            temp_model = UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart()
-            self.start = temp_model.from_map(m['start'])
+        if m.get('courserGroupItemStartDate') is not None:
+            temp_model = UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate()
+            self.courser_group_item_start_date = temp_model.from_map(m['courserGroupItemStartDate'])
         if m.get('sectionIndex') is not None:
             self.section_index = m.get('sectionIndex')
-        if m.get('end') is not None:
-            temp_model = UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd()
-            self.end = temp_model.from_map(m['end'])
+        if m.get('courserGroupItemEndDate') is not None:
+            temp_model = UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate()
+            self.courser_group_item_end_date = temp_model.from_map(m['courserGroupItemEndDate'])
         if m.get('courseType') is not None:
             self.course_type = m.get('courseType')
         if m.get('classroomId') is not None:
@@ -7509,7 +7509,7 @@ class CreateSectionConfigHeaders(TeaModel):
         return self
 
 
-class CreateSectionConfigRequestSectionConfigsStart(TeaModel):
+class CreateSectionConfigRequestSectionConfigsSectionStartDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -7551,7 +7551,7 @@ class CreateSectionConfigRequestSectionConfigsStart(TeaModel):
         return self
 
 
-class CreateSectionConfigRequestSectionConfigsSectionModelsStart(TeaModel):
+class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime(TeaModel):
     def __init__(
         self,
         min: int = None,
@@ -7586,7 +7586,7 @@ class CreateSectionConfigRequestSectionConfigsSectionModelsStart(TeaModel):
         return self
 
 
-class CreateSectionConfigRequestSectionConfigsSectionModelsEnd(TeaModel):
+class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime(TeaModel):
     def __init__(
         self,
         min: int = None,
@@ -7625,27 +7625,27 @@ class CreateSectionConfigRequestSectionConfigsSectionModels(TeaModel):
     def __init__(
         self,
         section_type: str = None,
-        start: CreateSectionConfigRequestSectionConfigsSectionModelsStart = None,
+        section_start_time: CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime = None,
         section_index: int = None,
-        end: CreateSectionConfigRequestSectionConfigsSectionModelsEnd = None,
+        section_end_time: CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime = None,
         section_name: str = None,
     ):
         # 节次类型枚举：COURSE/REST
         self.section_type = section_type
         # 开始时间
-        self.start = start
+        self.section_start_time = section_start_time
         # 第几节。
         self.section_index = section_index
         # 结束时间
-        self.end = end
+        self.section_end_time = section_end_time
         # 节次名称
         self.section_name = section_name
 
     def validate(self):
-        if self.start:
-            self.start.validate()
-        if self.end:
-            self.end.validate()
+        if self.section_start_time:
+            self.section_start_time.validate()
+        if self.section_end_time:
+            self.section_end_time.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7655,12 +7655,12 @@ class CreateSectionConfigRequestSectionConfigsSectionModels(TeaModel):
         result = dict()
         if self.section_type is not None:
             result['sectionType'] = self.section_type
-        if self.start is not None:
-            result['start'] = self.start.to_map()
+        if self.section_start_time is not None:
+            result['sectionStartTime'] = self.section_start_time.to_map()
         if self.section_index is not None:
             result['sectionIndex'] = self.section_index
-        if self.end is not None:
-            result['end'] = self.end.to_map()
+        if self.section_end_time is not None:
+            result['sectionEndTime'] = self.section_end_time.to_map()
         if self.section_name is not None:
             result['sectionName'] = self.section_name
         return result
@@ -7669,20 +7669,20 @@ class CreateSectionConfigRequestSectionConfigsSectionModels(TeaModel):
         m = m or dict()
         if m.get('sectionType') is not None:
             self.section_type = m.get('sectionType')
-        if m.get('start') is not None:
-            temp_model = CreateSectionConfigRequestSectionConfigsSectionModelsStart()
-            self.start = temp_model.from_map(m['start'])
+        if m.get('sectionStartTime') is not None:
+            temp_model = CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime()
+            self.section_start_time = temp_model.from_map(m['sectionStartTime'])
         if m.get('sectionIndex') is not None:
             self.section_index = m.get('sectionIndex')
-        if m.get('end') is not None:
-            temp_model = CreateSectionConfigRequestSectionConfigsSectionModelsEnd()
-            self.end = temp_model.from_map(m['end'])
+        if m.get('sectionEndTime') is not None:
+            temp_model = CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime()
+            self.section_end_time = temp_model.from_map(m['sectionEndTime'])
         if m.get('sectionName') is not None:
             self.section_name = m.get('sectionName')
         return self
 
 
-class CreateSectionConfigRequestSectionConfigsEnd(TeaModel):
+class CreateSectionConfigRequestSectionConfigsSectionEndDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -7724,7 +7724,7 @@ class CreateSectionConfigRequestSectionConfigsEnd(TeaModel):
         return self
 
 
-class CreateSectionConfigRequestSectionConfigsSemesterStart(TeaModel):
+class CreateSectionConfigRequestSectionConfigsSemesterStartDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -7766,7 +7766,7 @@ class CreateSectionConfigRequestSectionConfigsSemesterStart(TeaModel):
         return self
 
 
-class CreateSectionConfigRequestSectionConfigsSemesterEnd(TeaModel):
+class CreateSectionConfigRequestSectionConfigsSemesterEndDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -7812,18 +7812,18 @@ class CreateSectionConfigRequestSectionConfigs(TeaModel):
     def __init__(
         self,
         semester: int = None,
-        start: CreateSectionConfigRequestSectionConfigsStart = None,
+        section_start_date: CreateSectionConfigRequestSectionConfigsSectionStartDate = None,
         school_year: str = None,
         schedule_name: str = None,
         section_models: List[CreateSectionConfigRequestSectionConfigsSectionModels] = None,
-        end: CreateSectionConfigRequestSectionConfigsEnd = None,
-        semester_start: CreateSectionConfigRequestSectionConfigsSemesterStart = None,
-        semester_end: CreateSectionConfigRequestSectionConfigsSemesterEnd = None,
+        section_end_date: CreateSectionConfigRequestSectionConfigsSectionEndDate = None,
+        semester_start_date: CreateSectionConfigRequestSectionConfigsSemesterStartDate = None,
+        semester_end_date: CreateSectionConfigRequestSectionConfigsSemesterEndDate = None,
     ):
         # 学期
         self.semester = semester
         # 开始时间（精确到日）
-        self.start = start
+        self.section_start_date = section_start_date
         # 学年
         self.school_year = school_year
         # 课表名称
@@ -7831,25 +7831,25 @@ class CreateSectionConfigRequestSectionConfigs(TeaModel):
         # 节次模型
         self.section_models = section_models
         # 结束时间
-        self.end = end
+        self.section_end_date = section_end_date
         # 学期开始时间
-        self.semester_start = semester_start
+        self.semester_start_date = semester_start_date
         # 学期结束时间
-        self.semester_end = semester_end
+        self.semester_end_date = semester_end_date
 
     def validate(self):
-        if self.start:
-            self.start.validate()
+        if self.section_start_date:
+            self.section_start_date.validate()
         if self.section_models:
             for k in self.section_models:
                 if k:
                     k.validate()
-        if self.end:
-            self.end.validate()
-        if self.semester_start:
-            self.semester_start.validate()
-        if self.semester_end:
-            self.semester_end.validate()
+        if self.section_end_date:
+            self.section_end_date.validate()
+        if self.semester_start_date:
+            self.semester_start_date.validate()
+        if self.semester_end_date:
+            self.semester_end_date.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7859,8 +7859,8 @@ class CreateSectionConfigRequestSectionConfigs(TeaModel):
         result = dict()
         if self.semester is not None:
             result['semester'] = self.semester
-        if self.start is not None:
-            result['start'] = self.start.to_map()
+        if self.section_start_date is not None:
+            result['sectionStartDate'] = self.section_start_date.to_map()
         if self.school_year is not None:
             result['schoolYear'] = self.school_year
         if self.schedule_name is not None:
@@ -7869,21 +7869,21 @@ class CreateSectionConfigRequestSectionConfigs(TeaModel):
         if self.section_models is not None:
             for k in self.section_models:
                 result['sectionModels'].append(k.to_map() if k else None)
-        if self.end is not None:
-            result['end'] = self.end.to_map()
-        if self.semester_start is not None:
-            result['semesterStart'] = self.semester_start.to_map()
-        if self.semester_end is not None:
-            result['semesterEnd'] = self.semester_end.to_map()
+        if self.section_end_date is not None:
+            result['sectionEndDate'] = self.section_end_date.to_map()
+        if self.semester_start_date is not None:
+            result['semesterStartDate'] = self.semester_start_date.to_map()
+        if self.semester_end_date is not None:
+            result['semesterEndDate'] = self.semester_end_date.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('semester') is not None:
             self.semester = m.get('semester')
-        if m.get('start') is not None:
-            temp_model = CreateSectionConfigRequestSectionConfigsStart()
-            self.start = temp_model.from_map(m['start'])
+        if m.get('sectionStartDate') is not None:
+            temp_model = CreateSectionConfigRequestSectionConfigsSectionStartDate()
+            self.section_start_date = temp_model.from_map(m['sectionStartDate'])
         if m.get('schoolYear') is not None:
             self.school_year = m.get('schoolYear')
         if m.get('scheduleName') is not None:
@@ -7893,15 +7893,15 @@ class CreateSectionConfigRequestSectionConfigs(TeaModel):
             for k in m.get('sectionModels'):
                 temp_model = CreateSectionConfigRequestSectionConfigsSectionModels()
                 self.section_models.append(temp_model.from_map(k))
-        if m.get('end') is not None:
-            temp_model = CreateSectionConfigRequestSectionConfigsEnd()
-            self.end = temp_model.from_map(m['end'])
-        if m.get('semesterStart') is not None:
-            temp_model = CreateSectionConfigRequestSectionConfigsSemesterStart()
-            self.semester_start = temp_model.from_map(m['semesterStart'])
-        if m.get('semesterEnd') is not None:
-            temp_model = CreateSectionConfigRequestSectionConfigsSemesterEnd()
-            self.semester_end = temp_model.from_map(m['semesterEnd'])
+        if m.get('sectionEndDate') is not None:
+            temp_model = CreateSectionConfigRequestSectionConfigsSectionEndDate()
+            self.section_end_date = temp_model.from_map(m['sectionEndDate'])
+        if m.get('semesterStartDate') is not None:
+            temp_model = CreateSectionConfigRequestSectionConfigsSemesterStartDate()
+            self.semester_start_date = temp_model.from_map(m['semesterStartDate'])
+        if m.get('semesterEndDate') is not None:
+            temp_model = CreateSectionConfigRequestSectionConfigsSemesterEndDate()
+            self.semester_end_date = temp_model.from_map(m['semesterEndDate'])
         return self
 
 
@@ -11360,7 +11360,7 @@ class DeletePhysicalClassroomRequest(TeaModel):
     ):
         # 操作人id
         self.op_user_id = op_user_id
-        # 教室id
+        # 教室主键
         self.classroom_id = classroom_id
 
     def validate(self):
@@ -11796,7 +11796,7 @@ class CreateUniversityCourseGroupRequestTeacherInfos(TeaModel):
         return self
 
 
-class CreateUniversityCourseGroupRequestCourserGroupItemModelsStart(TeaModel):
+class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -11838,7 +11838,7 @@ class CreateUniversityCourseGroupRequestCourserGroupItemModelsStart(TeaModel):
         return self
 
 
-class CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd(TeaModel):
+class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate(TeaModel):
     def __init__(
         self,
         month: int = None,
@@ -11885,9 +11885,9 @@ class CreateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
         self,
         day_of_week: int = None,
         class_period_type: int = None,
-        start: CreateUniversityCourseGroupRequestCourserGroupItemModelsStart = None,
+        courser_group_item_start_date: CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate = None,
         section_index: List[int] = None,
-        end: CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd = None,
+        courser_group_item_end_date: CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate = None,
         course_type: int = None,
         classroom_id: int = None,
     ):
@@ -11895,22 +11895,22 @@ class CreateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
         self.day_of_week = day_of_week
         # 上课周期
         self.class_period_type = class_period_type
-        # 开始时间
-        self.start = start
+        # 课程组详细开始时间
+        self.courser_group_item_start_date = courser_group_item_start_date
         # 课节
         self.section_index = section_index
-        # 结束时间
-        self.end = end
+        # 课程组详细结束时间
+        self.courser_group_item_end_date = courser_group_item_end_date
         # 课程类型
         self.course_type = course_type
         # 教室id
         self.classroom_id = classroom_id
 
     def validate(self):
-        if self.start:
-            self.start.validate()
-        if self.end:
-            self.end.validate()
+        if self.courser_group_item_start_date:
+            self.courser_group_item_start_date.validate()
+        if self.courser_group_item_end_date:
+            self.courser_group_item_end_date.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -11922,12 +11922,12 @@ class CreateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
             result['dayOfWeek'] = self.day_of_week
         if self.class_period_type is not None:
             result['classPeriodType'] = self.class_period_type
-        if self.start is not None:
-            result['start'] = self.start.to_map()
+        if self.courser_group_item_start_date is not None:
+            result['courserGroupItemStartDate'] = self.courser_group_item_start_date.to_map()
         if self.section_index is not None:
             result['sectionIndex'] = self.section_index
-        if self.end is not None:
-            result['end'] = self.end.to_map()
+        if self.courser_group_item_end_date is not None:
+            result['courserGroupItemEndDate'] = self.courser_group_item_end_date.to_map()
         if self.course_type is not None:
             result['courseType'] = self.course_type
         if self.classroom_id is not None:
@@ -11940,14 +11940,14 @@ class CreateUniversityCourseGroupRequestCourserGroupItemModels(TeaModel):
             self.day_of_week = m.get('dayOfWeek')
         if m.get('classPeriodType') is not None:
             self.class_period_type = m.get('classPeriodType')
-        if m.get('start') is not None:
-            temp_model = CreateUniversityCourseGroupRequestCourserGroupItemModelsStart()
-            self.start = temp_model.from_map(m['start'])
+        if m.get('courserGroupItemStartDate') is not None:
+            temp_model = CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate()
+            self.courser_group_item_start_date = temp_model.from_map(m['courserGroupItemStartDate'])
         if m.get('sectionIndex') is not None:
             self.section_index = m.get('sectionIndex')
-        if m.get('end') is not None:
-            temp_model = CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd()
-            self.end = temp_model.from_map(m['end'])
+        if m.get('courserGroupItemEndDate') is not None:
+            temp_model = CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate()
+            self.courser_group_item_end_date = temp_model.from_map(m['courserGroupItemEndDate'])
         if m.get('courseType') is not None:
             self.course_type = m.get('courseType')
         if m.get('classroomId') is not None:

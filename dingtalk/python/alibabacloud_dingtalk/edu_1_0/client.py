@@ -3247,9 +3247,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
-        body = {}
         if not UtilClient.is_unset(request.classroom_id):
-            body['classroomId'] = request.classroom_id
+            query['classroomId'] = request.classroom_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3257,8 +3256,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.DeletePhysicalClassroomResponse(),
@@ -3275,9 +3273,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.op_user_id):
             query['opUserId'] = request.op_user_id
-        body = {}
         if not UtilClient.is_unset(request.classroom_id):
-            body['classroomId'] = request.classroom_id
+            query['classroomId'] = request.classroom_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3285,8 +3282,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.DeletePhysicalClassroomResponse(),
