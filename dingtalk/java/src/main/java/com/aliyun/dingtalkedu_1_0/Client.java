@@ -1756,9 +1756,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("opUserId", request.opUserId);
         }
 
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.classroomId)) {
-            body.put("classroomId", request.classroomId);
+            query.put("classroomId", request.classroomId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1772,8 +1771,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("DeletePhysicalClassroom", "edu_1.0", "HTTP", "DELETE", "AK", "/v1.0/edu/physicalClassrooms", "json", req, runtime), new DeletePhysicalClassroomResponse());
     }

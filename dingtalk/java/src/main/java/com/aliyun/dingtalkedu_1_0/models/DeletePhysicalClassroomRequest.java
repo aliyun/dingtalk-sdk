@@ -8,7 +8,7 @@ public class DeletePhysicalClassroomRequest extends TeaModel {
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 教室id
+    // 教室主键
     @NameInMap("classroomId")
     public Long classroomId;
 

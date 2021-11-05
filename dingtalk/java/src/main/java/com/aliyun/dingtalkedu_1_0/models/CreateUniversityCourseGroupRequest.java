@@ -173,7 +173,7 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
 
     }
 
-    public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsStart extends TeaModel {
+    public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
         // 月
         @NameInMap("month")
         public Integer month;
@@ -186,12 +186,12 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        public static CreateUniversityCourseGroupRequestCourserGroupItemModelsStart build(java.util.Map<String, ?> map) throws Exception {
-            CreateUniversityCourseGroupRequestCourserGroupItemModelsStart self = new CreateUniversityCourseGroupRequestCourserGroupItemModelsStart();
+        public static CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate self = new CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate();
             return TeaModel.build(map, self);
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsStart setMonth(Integer month) {
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate setMonth(Integer month) {
             this.month = month;
             return this;
         }
@@ -199,7 +199,7 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
             return this.month;
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsStart setYear(Integer year) {
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate setYear(Integer year) {
             this.year = year;
             return this;
         }
@@ -207,7 +207,7 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
             return this.year;
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsStart setDayOfMonth(Integer dayOfMonth) {
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -217,7 +217,7 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
 
     }
 
-    public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd extends TeaModel {
+    public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
         // 月
         @NameInMap("month")
         public Integer month;
@@ -230,12 +230,12 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        public static CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd build(java.util.Map<String, ?> map) throws Exception {
-            CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd self = new CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd();
+        public static CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate self = new CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate();
             return TeaModel.build(map, self);
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd setMonth(Integer month) {
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate setMonth(Integer month) {
             this.month = month;
             return this;
         }
@@ -243,7 +243,7 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
             return this.month;
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd setYear(Integer year) {
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate setYear(Integer year) {
             this.year = year;
             return this;
         }
@@ -251,7 +251,7 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
             return this.year;
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd setDayOfMonth(Integer dayOfMonth) {
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -270,17 +270,17 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
-        // 开始时间
-        @NameInMap("start")
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsStart start;
+        // 课程组详细开始时间
+        @NameInMap("courserGroupItemStartDate")
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
         // 课节
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 
-        // 结束时间
-        @NameInMap("end")
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd end;
+        // 课程组详细结束时间
+        @NameInMap("courserGroupItemEndDate")
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
         // 课程类型
         @NameInMap("courseType")
@@ -311,12 +311,12 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
             return this.classPeriodType;
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModels setStart(CreateUniversityCourseGroupRequestCourserGroupItemModelsStart start) {
-            this.start = start;
+        public CreateUniversityCourseGroupRequestCourserGroupItemModels setCourserGroupItemStartDate(CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate) {
+            this.courserGroupItemStartDate = courserGroupItemStartDate;
             return this;
         }
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsStart getStart() {
-            return this.start;
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate getCourserGroupItemStartDate() {
+            return this.courserGroupItemStartDate;
         }
 
         public CreateUniversityCourseGroupRequestCourserGroupItemModels setSectionIndex(java.util.List<Integer> sectionIndex) {
@@ -327,12 +327,12 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
             return this.sectionIndex;
         }
 
-        public CreateUniversityCourseGroupRequestCourserGroupItemModels setEnd(CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd end) {
-            this.end = end;
+        public CreateUniversityCourseGroupRequestCourserGroupItemModels setCourserGroupItemEndDate(CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate) {
+            this.courserGroupItemEndDate = courserGroupItemEndDate;
             return this;
         }
-        public CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd getEnd() {
-            return this.end;
+        public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate getCourserGroupItemEndDate() {
+            return this.courserGroupItemEndDate;
         }
 
         public CreateUniversityCourseGroupRequestCourserGroupItemModels setCourseType(Integer courseType) {

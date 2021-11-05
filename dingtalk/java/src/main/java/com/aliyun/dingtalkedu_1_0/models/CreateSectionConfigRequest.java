@@ -45,7 +45,7 @@ public class CreateSectionConfigRequest extends TeaModel {
         return this.opUserId;
     }
 
-    public static class CreateSectionConfigRequestSectionConfigsStart extends TeaModel {
+    public static class CreateSectionConfigRequestSectionConfigsSectionStartDate extends TeaModel {
         // 月份。
         @NameInMap("month")
         public Integer month;
@@ -58,12 +58,12 @@ public class CreateSectionConfigRequest extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        public static CreateSectionConfigRequestSectionConfigsStart build(java.util.Map<String, ?> map) throws Exception {
-            CreateSectionConfigRequestSectionConfigsStart self = new CreateSectionConfigRequestSectionConfigsStart();
+        public static CreateSectionConfigRequestSectionConfigsSectionStartDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateSectionConfigRequestSectionConfigsSectionStartDate self = new CreateSectionConfigRequestSectionConfigsSectionStartDate();
             return TeaModel.build(map, self);
         }
 
-        public CreateSectionConfigRequestSectionConfigsStart setMonth(Integer month) {
+        public CreateSectionConfigRequestSectionConfigsSectionStartDate setMonth(Integer month) {
             this.month = month;
             return this;
         }
@@ -71,7 +71,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.month;
         }
 
-        public CreateSectionConfigRequestSectionConfigsStart setYear(Integer year) {
+        public CreateSectionConfigRequestSectionConfigsSectionStartDate setYear(Integer year) {
             this.year = year;
             return this;
         }
@@ -79,7 +79,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.year;
         }
 
-        public CreateSectionConfigRequestSectionConfigsStart setDayOfMonth(Integer dayOfMonth) {
+        public CreateSectionConfigRequestSectionConfigsSectionStartDate setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -89,7 +89,7 @@ public class CreateSectionConfigRequest extends TeaModel {
 
     }
 
-    public static class CreateSectionConfigRequestSectionConfigsSectionModelsStart extends TeaModel {
+    public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime extends TeaModel {
         // 分
         @NameInMap("min")
         public Integer min;
@@ -98,12 +98,12 @@ public class CreateSectionConfigRequest extends TeaModel {
         @NameInMap("hour")
         public Integer hour;
 
-        public static CreateSectionConfigRequestSectionConfigsSectionModelsStart build(java.util.Map<String, ?> map) throws Exception {
-            CreateSectionConfigRequestSectionConfigsSectionModelsStart self = new CreateSectionConfigRequestSectionConfigsSectionModelsStart();
+        public static CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime build(java.util.Map<String, ?> map) throws Exception {
+            CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime self = new CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime();
             return TeaModel.build(map, self);
         }
 
-        public CreateSectionConfigRequestSectionConfigsSectionModelsStart setMin(Integer min) {
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime setMin(Integer min) {
             this.min = min;
             return this;
         }
@@ -111,7 +111,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.min;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSectionModelsStart setHour(Integer hour) {
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime setHour(Integer hour) {
             this.hour = hour;
             return this;
         }
@@ -121,7 +121,7 @@ public class CreateSectionConfigRequest extends TeaModel {
 
     }
 
-    public static class CreateSectionConfigRequestSectionConfigsSectionModelsEnd extends TeaModel {
+    public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime extends TeaModel {
         // 分
         @NameInMap("min")
         public Integer min;
@@ -130,12 +130,12 @@ public class CreateSectionConfigRequest extends TeaModel {
         @NameInMap("hour")
         public Integer hour;
 
-        public static CreateSectionConfigRequestSectionConfigsSectionModelsEnd build(java.util.Map<String, ?> map) throws Exception {
-            CreateSectionConfigRequestSectionConfigsSectionModelsEnd self = new CreateSectionConfigRequestSectionConfigsSectionModelsEnd();
+        public static CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime build(java.util.Map<String, ?> map) throws Exception {
+            CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime self = new CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime();
             return TeaModel.build(map, self);
         }
 
-        public CreateSectionConfigRequestSectionConfigsSectionModelsEnd setMin(Integer min) {
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime setMin(Integer min) {
             this.min = min;
             return this;
         }
@@ -143,7 +143,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.min;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSectionModelsEnd setHour(Integer hour) {
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime setHour(Integer hour) {
             this.hour = hour;
             return this;
         }
@@ -159,16 +159,16 @@ public class CreateSectionConfigRequest extends TeaModel {
         public String sectionType;
 
         // 开始时间
-        @NameInMap("start")
-        public CreateSectionConfigRequestSectionConfigsSectionModelsStart start;
+        @NameInMap("sectionStartTime")
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime sectionStartTime;
 
         // 第几节。
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
         // 结束时间
-        @NameInMap("end")
-        public CreateSectionConfigRequestSectionConfigsSectionModelsEnd end;
+        @NameInMap("sectionEndTime")
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime sectionEndTime;
 
         // 节次名称
         @NameInMap("sectionName")
@@ -187,12 +187,12 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.sectionType;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSectionModels setStart(CreateSectionConfigRequestSectionConfigsSectionModelsStart start) {
-            this.start = start;
+        public CreateSectionConfigRequestSectionConfigsSectionModels setSectionStartTime(CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime sectionStartTime) {
+            this.sectionStartTime = sectionStartTime;
             return this;
         }
-        public CreateSectionConfigRequestSectionConfigsSectionModelsStart getStart() {
-            return this.start;
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime getSectionStartTime() {
+            return this.sectionStartTime;
         }
 
         public CreateSectionConfigRequestSectionConfigsSectionModels setSectionIndex(Integer sectionIndex) {
@@ -203,12 +203,12 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.sectionIndex;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSectionModels setEnd(CreateSectionConfigRequestSectionConfigsSectionModelsEnd end) {
-            this.end = end;
+        public CreateSectionConfigRequestSectionConfigsSectionModels setSectionEndTime(CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime sectionEndTime) {
+            this.sectionEndTime = sectionEndTime;
             return this;
         }
-        public CreateSectionConfigRequestSectionConfigsSectionModelsEnd getEnd() {
-            return this.end;
+        public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime getSectionEndTime() {
+            return this.sectionEndTime;
         }
 
         public CreateSectionConfigRequestSectionConfigsSectionModels setSectionName(String sectionName) {
@@ -221,7 +221,7 @@ public class CreateSectionConfigRequest extends TeaModel {
 
     }
 
-    public static class CreateSectionConfigRequestSectionConfigsEnd extends TeaModel {
+    public static class CreateSectionConfigRequestSectionConfigsSectionEndDate extends TeaModel {
         // 月
         @NameInMap("month")
         public Integer month;
@@ -234,12 +234,12 @@ public class CreateSectionConfigRequest extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        public static CreateSectionConfigRequestSectionConfigsEnd build(java.util.Map<String, ?> map) throws Exception {
-            CreateSectionConfigRequestSectionConfigsEnd self = new CreateSectionConfigRequestSectionConfigsEnd();
+        public static CreateSectionConfigRequestSectionConfigsSectionEndDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateSectionConfigRequestSectionConfigsSectionEndDate self = new CreateSectionConfigRequestSectionConfigsSectionEndDate();
             return TeaModel.build(map, self);
         }
 
-        public CreateSectionConfigRequestSectionConfigsEnd setMonth(Integer month) {
+        public CreateSectionConfigRequestSectionConfigsSectionEndDate setMonth(Integer month) {
             this.month = month;
             return this;
         }
@@ -247,7 +247,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.month;
         }
 
-        public CreateSectionConfigRequestSectionConfigsEnd setYear(Integer year) {
+        public CreateSectionConfigRequestSectionConfigsSectionEndDate setYear(Integer year) {
             this.year = year;
             return this;
         }
@@ -255,7 +255,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.year;
         }
 
-        public CreateSectionConfigRequestSectionConfigsEnd setDayOfMonth(Integer dayOfMonth) {
+        public CreateSectionConfigRequestSectionConfigsSectionEndDate setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -265,7 +265,7 @@ public class CreateSectionConfigRequest extends TeaModel {
 
     }
 
-    public static class CreateSectionConfigRequestSectionConfigsSemesterStart extends TeaModel {
+    public static class CreateSectionConfigRequestSectionConfigsSemesterStartDate extends TeaModel {
         // 月
         @NameInMap("month")
         public Integer month;
@@ -278,12 +278,12 @@ public class CreateSectionConfigRequest extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        public static CreateSectionConfigRequestSectionConfigsSemesterStart build(java.util.Map<String, ?> map) throws Exception {
-            CreateSectionConfigRequestSectionConfigsSemesterStart self = new CreateSectionConfigRequestSectionConfigsSemesterStart();
+        public static CreateSectionConfigRequestSectionConfigsSemesterStartDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateSectionConfigRequestSectionConfigsSemesterStartDate self = new CreateSectionConfigRequestSectionConfigsSemesterStartDate();
             return TeaModel.build(map, self);
         }
 
-        public CreateSectionConfigRequestSectionConfigsSemesterStart setMonth(Integer month) {
+        public CreateSectionConfigRequestSectionConfigsSemesterStartDate setMonth(Integer month) {
             this.month = month;
             return this;
         }
@@ -291,7 +291,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.month;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSemesterStart setYear(Integer year) {
+        public CreateSectionConfigRequestSectionConfigsSemesterStartDate setYear(Integer year) {
             this.year = year;
             return this;
         }
@@ -299,7 +299,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.year;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSemesterStart setDayOfMonth(Integer dayOfMonth) {
+        public CreateSectionConfigRequestSectionConfigsSemesterStartDate setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -309,7 +309,7 @@ public class CreateSectionConfigRequest extends TeaModel {
 
     }
 
-    public static class CreateSectionConfigRequestSectionConfigsSemesterEnd extends TeaModel {
+    public static class CreateSectionConfigRequestSectionConfigsSemesterEndDate extends TeaModel {
         // 月
         @NameInMap("month")
         public Integer month;
@@ -322,12 +322,12 @@ public class CreateSectionConfigRequest extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        public static CreateSectionConfigRequestSectionConfigsSemesterEnd build(java.util.Map<String, ?> map) throws Exception {
-            CreateSectionConfigRequestSectionConfigsSemesterEnd self = new CreateSectionConfigRequestSectionConfigsSemesterEnd();
+        public static CreateSectionConfigRequestSectionConfigsSemesterEndDate build(java.util.Map<String, ?> map) throws Exception {
+            CreateSectionConfigRequestSectionConfigsSemesterEndDate self = new CreateSectionConfigRequestSectionConfigsSemesterEndDate();
             return TeaModel.build(map, self);
         }
 
-        public CreateSectionConfigRequestSectionConfigsSemesterEnd setMonth(Integer month) {
+        public CreateSectionConfigRequestSectionConfigsSemesterEndDate setMonth(Integer month) {
             this.month = month;
             return this;
         }
@@ -335,7 +335,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.month;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSemesterEnd setYear(Integer year) {
+        public CreateSectionConfigRequestSectionConfigsSemesterEndDate setYear(Integer year) {
             this.year = year;
             return this;
         }
@@ -343,7 +343,7 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.year;
         }
 
-        public CreateSectionConfigRequestSectionConfigsSemesterEnd setDayOfMonth(Integer dayOfMonth) {
+        public CreateSectionConfigRequestSectionConfigsSemesterEndDate setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -359,8 +359,8 @@ public class CreateSectionConfigRequest extends TeaModel {
         public Integer semester;
 
         // 开始时间（精确到日）
-        @NameInMap("start")
-        public CreateSectionConfigRequestSectionConfigsStart start;
+        @NameInMap("sectionStartDate")
+        public CreateSectionConfigRequestSectionConfigsSectionStartDate sectionStartDate;
 
         // 学年
         @NameInMap("schoolYear")
@@ -375,16 +375,16 @@ public class CreateSectionConfigRequest extends TeaModel {
         public java.util.List<CreateSectionConfigRequestSectionConfigsSectionModels> sectionModels;
 
         // 结束时间
-        @NameInMap("end")
-        public CreateSectionConfigRequestSectionConfigsEnd end;
+        @NameInMap("sectionEndDate")
+        public CreateSectionConfigRequestSectionConfigsSectionEndDate sectionEndDate;
 
         // 学期开始时间
-        @NameInMap("semesterStart")
-        public CreateSectionConfigRequestSectionConfigsSemesterStart semesterStart;
+        @NameInMap("semesterStartDate")
+        public CreateSectionConfigRequestSectionConfigsSemesterStartDate semesterStartDate;
 
         // 学期结束时间
-        @NameInMap("semesterEnd")
-        public CreateSectionConfigRequestSectionConfigsSemesterEnd semesterEnd;
+        @NameInMap("semesterEndDate")
+        public CreateSectionConfigRequestSectionConfigsSemesterEndDate semesterEndDate;
 
         public static CreateSectionConfigRequestSectionConfigs build(java.util.Map<String, ?> map) throws Exception {
             CreateSectionConfigRequestSectionConfigs self = new CreateSectionConfigRequestSectionConfigs();
@@ -399,12 +399,12 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.semester;
         }
 
-        public CreateSectionConfigRequestSectionConfigs setStart(CreateSectionConfigRequestSectionConfigsStart start) {
-            this.start = start;
+        public CreateSectionConfigRequestSectionConfigs setSectionStartDate(CreateSectionConfigRequestSectionConfigsSectionStartDate sectionStartDate) {
+            this.sectionStartDate = sectionStartDate;
             return this;
         }
-        public CreateSectionConfigRequestSectionConfigsStart getStart() {
-            return this.start;
+        public CreateSectionConfigRequestSectionConfigsSectionStartDate getSectionStartDate() {
+            return this.sectionStartDate;
         }
 
         public CreateSectionConfigRequestSectionConfigs setSchoolYear(String schoolYear) {
@@ -431,28 +431,28 @@ public class CreateSectionConfigRequest extends TeaModel {
             return this.sectionModels;
         }
 
-        public CreateSectionConfigRequestSectionConfigs setEnd(CreateSectionConfigRequestSectionConfigsEnd end) {
-            this.end = end;
+        public CreateSectionConfigRequestSectionConfigs setSectionEndDate(CreateSectionConfigRequestSectionConfigsSectionEndDate sectionEndDate) {
+            this.sectionEndDate = sectionEndDate;
             return this;
         }
-        public CreateSectionConfigRequestSectionConfigsEnd getEnd() {
-            return this.end;
+        public CreateSectionConfigRequestSectionConfigsSectionEndDate getSectionEndDate() {
+            return this.sectionEndDate;
         }
 
-        public CreateSectionConfigRequestSectionConfigs setSemesterStart(CreateSectionConfigRequestSectionConfigsSemesterStart semesterStart) {
-            this.semesterStart = semesterStart;
+        public CreateSectionConfigRequestSectionConfigs setSemesterStartDate(CreateSectionConfigRequestSectionConfigsSemesterStartDate semesterStartDate) {
+            this.semesterStartDate = semesterStartDate;
             return this;
         }
-        public CreateSectionConfigRequestSectionConfigsSemesterStart getSemesterStart() {
-            return this.semesterStart;
+        public CreateSectionConfigRequestSectionConfigsSemesterStartDate getSemesterStartDate() {
+            return this.semesterStartDate;
         }
 
-        public CreateSectionConfigRequestSectionConfigs setSemesterEnd(CreateSectionConfigRequestSectionConfigsSemesterEnd semesterEnd) {
-            this.semesterEnd = semesterEnd;
+        public CreateSectionConfigRequestSectionConfigs setSemesterEndDate(CreateSectionConfigRequestSectionConfigsSemesterEndDate semesterEndDate) {
+            this.semesterEndDate = semesterEndDate;
             return this;
         }
-        public CreateSectionConfigRequestSectionConfigsSemesterEnd getSemesterEnd() {
-            return this.semesterEnd;
+        public CreateSectionConfigRequestSectionConfigsSemesterEndDate getSemesterEndDate() {
+            return this.semesterEndDate;
         }
 
     }

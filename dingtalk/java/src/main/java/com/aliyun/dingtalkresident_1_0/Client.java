@@ -58,6 +58,59 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpdateResideceGroup", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/departments/updateResideceGroup", "json", req, runtime), new UpdateResideceGroupResponse());
     }
 
+    public AddPointResponse addPoint(AddPointRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        AddPointHeaders headers = new AddPointHeaders();
+        return this.addPointWithOptions(request, headers, runtime);
+    }
+
+    public AddPointResponse addPointWithOptions(AddPointRequest request, AddPointHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isCircle)) {
+            query.put("isCircle", request.isCircle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            query.put("uuid", request.uuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleCode)) {
+            query.put("ruleCode", request.ruleCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleName)) {
+            query.put("ruleName", request.ruleName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.actionTime)) {
+            query.put("actionTime", request.actionTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.score)) {
+            query.put("score", request.score);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddPoint", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/points", "none", req, runtime), new AddPointResponse());
+    }
+
     public DeleteResidentDepartmentResponse deleteResidentDepartment(DeleteResidentDepartmentRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         DeleteResidentDepartmentHeaders headers = new DeleteResidentDepartmentHeaders();
@@ -177,6 +230,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddResidentDepartment", "resident_1.0", "HTTP", "POST", "AK", "/v1.0/resident/departments", "json", req, runtime), new AddResidentDepartmentResponse());
     }
 
+    public PagePointHistoryResponse pagePointHistory(PagePointHistoryRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        PagePointHistoryHeaders headers = new PagePointHistoryHeaders();
+        return this.pagePointHistoryWithOptions(request, headers, runtime);
+    }
+
+    public PagePointHistoryResponse pagePointHistoryWithOptions(PagePointHistoryRequest request, PagePointHistoryHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isCircle)) {
+            query.put("isCircle", request.isCircle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("PagePointHistory", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/points/records", "json", req, runtime), new PagePointHistoryResponse());
+    }
+
     public RemoveResidentUserResponse removeResidentUser(RemoveResidentUserRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RemoveResidentUserHeaders headers = new RemoveResidentUserHeaders();
@@ -261,6 +363,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateResidence", "resident_1.0", "HTTP", "PUT", "AK", "/v1.0/resident/departments/updateResidece", "json", req, runtime), new UpdateResidenceResponse());
+    }
+
+    public ListPointRulesResponse listPointRules(ListPointRulesRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListPointRulesHeaders headers = new ListPointRulesHeaders();
+        return this.listPointRulesWithOptions(request, headers, runtime);
+    }
+
+    public ListPointRulesResponse listPointRulesWithOptions(ListPointRulesRequest request, ListPointRulesHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isCircle)) {
+            query.put("isCircle", request.isCircle);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("ListPointRules", "resident_1.0", "HTTP", "GET", "AK", "/v1.0/resident/points/rules", "json", req, runtime), new ListPointRulesResponse());
     }
 
     public UpdateResidentUserResponse updateResidentUser(UpdateResidentUserRequest request) throws Exception {
