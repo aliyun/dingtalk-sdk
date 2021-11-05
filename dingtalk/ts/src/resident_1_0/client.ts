@@ -95,6 +95,84 @@ export class UpdateResideceGroupResponse extends $tea.Model {
   }
 }
 
+export class AddPointHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPointRequest extends $tea.Model {
+  isCircle?: boolean;
+  uuid?: string;
+  userId?: string;
+  ruleCode?: string;
+  ruleName?: string;
+  actionTime?: number;
+  score?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isCircle: 'isCircle',
+      uuid: 'uuid',
+      userId: 'userId',
+      ruleCode: 'ruleCode',
+      ruleName: 'ruleName',
+      actionTime: 'actionTime',
+      score: 'score',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isCircle: 'boolean',
+      uuid: 'string',
+      userId: 'string',
+      ruleCode: 'string',
+      ruleName: 'string',
+      actionTime: 'number',
+      score: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPointResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteResidentDepartmentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -365,6 +443,112 @@ export class AddResidentDepartmentResponse extends $tea.Model {
   }
 }
 
+export class PagePointHistoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagePointHistoryRequest extends $tea.Model {
+  isCircle?: boolean;
+  userId?: string;
+  nextToken?: number;
+  maxResults?: number;
+  startTime?: number;
+  endTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isCircle: 'isCircle',
+      userId: 'userId',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+      startTime: 'startTime',
+      endTime: 'endTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isCircle: 'boolean',
+      userId: 'string',
+      nextToken: 'number',
+      maxResults: 'number',
+      startTime: 'number',
+      endTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagePointHistoryResponseBody extends $tea.Model {
+  pointRecordList?: PagePointHistoryResponseBodyPointRecordList[];
+  hasMore?: boolean;
+  nextToken?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pointRecordList: 'pointRecordList',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pointRecordList: { 'type': 'array', 'itemType': PagePointHistoryResponseBodyPointRecordList },
+      hasMore: 'boolean',
+      nextToken: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagePointHistoryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PagePointHistoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PagePointHistoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveResidentUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -550,6 +734,88 @@ export class UpdateResidenceResponse extends $tea.Model {
   }
 }
 
+export class ListPointRulesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPointRulesRequest extends $tea.Model {
+  isCircle?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isCircle: 'isCircle',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isCircle: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPointRulesResponseBody extends $tea.Model {
+  pointRuleList?: ListPointRulesResponseBodyPointRuleList[];
+  static names(): { [key: string]: string } {
+    return {
+      pointRuleList: 'pointRuleList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pointRuleList: { 'type': 'array', 'itemType': ListPointRulesResponseBodyPointRuleList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPointRulesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListPointRulesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListPointRulesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateResidentUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -678,6 +944,86 @@ export class AddResidentUsersRequestExtField extends $tea.Model {
   }
 }
 
+export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
+  corpId?: string;
+  userId?: string;
+  score?: number;
+  createAt?: number;
+  uuid?: string;
+  ruleCode?: string;
+  ruleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      userId: 'userId',
+      score: 'score',
+      createAt: 'createAt',
+      uuid: 'uuid',
+      ruleCode: 'ruleCode',
+      ruleName: 'ruleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      userId: 'string',
+      score: 'number',
+      createAt: 'number',
+      uuid: 'string',
+      ruleCode: 'string',
+      ruleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListPointRulesResponseBodyPointRuleList extends $tea.Model {
+  corpId?: string;
+  score?: number;
+  dayLimitTimes?: number;
+  status?: number;
+  ruleCode?: string;
+  ruleName?: string;
+  extension?: string;
+  groupId?: number;
+  orderId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      score: 'score',
+      dayLimitTimes: 'dayLimitTimes',
+      status: 'status',
+      ruleCode: 'ruleCode',
+      ruleName: 'ruleName',
+      extension: 'extension',
+      groupId: 'groupId',
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      score: 'number',
+      dayLimitTimes: 'number',
+      status: 'number',
+      ruleCode: 'string',
+      ruleName: 'string',
+      extension: 'string',
+      groupId: 'number',
+      orderId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateResidentUserRequestExtField extends $tea.Model {
   itemValue?: string;
   itemName?: string;
@@ -748,6 +1094,59 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<UpdateResideceGroupResponse>(await this.doROARequest("UpdateResideceGroup", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/departments/updateResideceGroup`, "json", req, runtime), new UpdateResideceGroupResponse({}));
+  }
+
+  async addPoint(request: AddPointRequest): Promise<AddPointResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddPointHeaders({ });
+    return await this.addPointWithOptions(request, headers, runtime);
+  }
+
+  async addPointWithOptions(request: AddPointRequest, headers: AddPointHeaders, runtime: $Util.RuntimeOptions): Promise<AddPointResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isCircle)) {
+      query["isCircle"] = request.isCircle;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      query["uuid"] = request.uuid;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.ruleCode)) {
+      query["ruleCode"] = request.ruleCode;
+    }
+
+    if (!Util.isUnset(request.ruleName)) {
+      query["ruleName"] = request.ruleName;
+    }
+
+    if (!Util.isUnset(request.actionTime)) {
+      query["actionTime"] = request.actionTime;
+    }
+
+    if (!Util.isUnset(request.score)) {
+      query["score"] = request.score;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<AddPointResponse>(await this.doROARequest("AddPoint", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/points`, "none", req, runtime), new AddPointResponse({}));
   }
 
   async deleteResidentDepartment(request: DeleteResidentDepartmentRequest): Promise<DeleteResidentDepartmentResponse> {
@@ -869,6 +1268,55 @@ export default class Client extends OpenApi {
     return $tea.cast<AddResidentDepartmentResponse>(await this.doROARequest("AddResidentDepartment", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/departments`, "json", req, runtime), new AddResidentDepartmentResponse({}));
   }
 
+  async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PagePointHistoryHeaders({ });
+    return await this.pagePointHistoryWithOptions(request, headers, runtime);
+  }
+
+  async pagePointHistoryWithOptions(request: PagePointHistoryRequest, headers: PagePointHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<PagePointHistoryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isCircle)) {
+      query["isCircle"] = request.isCircle;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PagePointHistoryResponse>(await this.doROARequest("PagePointHistory", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/points/records`, "json", req, runtime), new PagePointHistoryResponse({}));
+  }
+
   async removeResidentUser(request: RemoveResidentUserRequest): Promise<RemoveResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveResidentUserHeaders({ });
@@ -953,6 +1401,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<UpdateResidenceResponse>(await this.doROARequest("UpdateResidence", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/departments/updateResidece`, "json", req, runtime), new UpdateResidenceResponse({}));
+  }
+
+  async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListPointRulesHeaders({ });
+    return await this.listPointRulesWithOptions(request, headers, runtime);
+  }
+
+  async listPointRulesWithOptions(request: ListPointRulesRequest, headers: ListPointRulesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPointRulesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isCircle)) {
+      query["isCircle"] = request.isCircle;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListPointRulesResponse>(await this.doROARequest("ListPointRules", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/points/rules`, "json", req, runtime), new ListPointRulesResponse({}));
   }
 
   async updateResidentUser(request: UpdateResidentUserRequest): Promise<UpdateResidentUserResponse> {

@@ -4334,7 +4334,7 @@ export class GetRemoteClassCourseResponseBodyResult extends $tea.Model {
   }
 }
 
-export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart extends $tea.Model {
+export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate extends $tea.Model {
   year?: number;
   month?: number;
   dayOfMonth?: number;
@@ -4359,7 +4359,7 @@ export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCour
   }
 }
 
-export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd extends $tea.Model {
+export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate extends $tea.Model {
   year?: number;
   month?: number;
   dayOfMonth?: number;
@@ -4389,8 +4389,8 @@ export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCour
   classPeriodType?: number;
   dayOfWeek?: number;
   sectionIndex?: number[];
-  start?: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart;
-  end?: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd;
+  courserGroupItemStartDate?: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate;
+  courserGroupItemEndDate?: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate;
   courseType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4398,8 +4398,8 @@ export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCour
       classPeriodType: 'classPeriodType',
       dayOfWeek: 'dayOfWeek',
       sectionIndex: 'sectionIndex',
-      start: 'start',
-      end: 'end',
+      courserGroupItemStartDate: 'courserGroupItemStartDate',
+      courserGroupItemEndDate: 'courserGroupItemEndDate',
       courseType: 'courseType',
     };
   }
@@ -4410,8 +4410,8 @@ export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCour
       classPeriodType: 'number',
       dayOfWeek: 'number',
       sectionIndex: { 'type': 'array', 'itemType': 'number' },
-      start: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsStart,
-      end: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsEnd,
+      courserGroupItemStartDate: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate,
+      courserGroupItemEndDate: QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate,
       courseType: 'number',
     };
   }
@@ -5417,7 +5417,7 @@ export class QueryDeviceListByCorpIdResponseBodyResult extends $tea.Model {
   }
 }
 
-export class UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart extends $tea.Model {
+export class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -5442,7 +5442,7 @@ export class UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart exten
   }
 }
 
-export class UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd extends $tea.Model {
+export class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -5470,18 +5470,18 @@ export class UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd extends
 export class UpdateUniversityCourseGroupRequestCourserGroupItemModels extends $tea.Model {
   dayOfWeek?: number;
   classPeriodType?: number;
-  start?: UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart;
+  courserGroupItemStartDate?: UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate;
   sectionIndex?: number[];
-  end?: UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd;
+  courserGroupItemEndDate?: UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate;
   courseType?: number;
   classroomId?: number;
   static names(): { [key: string]: string } {
     return {
       dayOfWeek: 'dayOfWeek',
       classPeriodType: 'classPeriodType',
-      start: 'start',
+      courserGroupItemStartDate: 'courserGroupItemStartDate',
       sectionIndex: 'sectionIndex',
-      end: 'end',
+      courserGroupItemEndDate: 'courserGroupItemEndDate',
       courseType: 'courseType',
       classroomId: 'classroomId',
     };
@@ -5491,9 +5491,9 @@ export class UpdateUniversityCourseGroupRequestCourserGroupItemModels extends $t
     return {
       dayOfWeek: 'number',
       classPeriodType: 'number',
-      start: UpdateUniversityCourseGroupRequestCourserGroupItemModelsStart,
+      courserGroupItemStartDate: UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate,
       sectionIndex: { 'type': 'array', 'itemType': 'number' },
-      end: UpdateUniversityCourseGroupRequestCourserGroupItemModelsEnd,
+      courserGroupItemEndDate: UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate,
       courseType: 'number',
       classroomId: 'number',
     };
@@ -6036,7 +6036,7 @@ export class QueryTeachSubjectsResponseBodyResult extends $tea.Model {
   }
 }
 
-export class CreateSectionConfigRequestSectionConfigsStart extends $tea.Model {
+export class CreateSectionConfigRequestSectionConfigsSectionStartDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -6061,7 +6061,7 @@ export class CreateSectionConfigRequestSectionConfigsStart extends $tea.Model {
   }
 }
 
-export class CreateSectionConfigRequestSectionConfigsSectionModelsStart extends $tea.Model {
+export class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime extends $tea.Model {
   min?: number;
   hour?: number;
   static names(): { [key: string]: string } {
@@ -6083,7 +6083,7 @@ export class CreateSectionConfigRequestSectionConfigsSectionModelsStart extends 
   }
 }
 
-export class CreateSectionConfigRequestSectionConfigsSectionModelsEnd extends $tea.Model {
+export class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime extends $tea.Model {
   min?: number;
   hour?: number;
   static names(): { [key: string]: string } {
@@ -6107,16 +6107,16 @@ export class CreateSectionConfigRequestSectionConfigsSectionModelsEnd extends $t
 
 export class CreateSectionConfigRequestSectionConfigsSectionModels extends $tea.Model {
   sectionType?: string;
-  start?: CreateSectionConfigRequestSectionConfigsSectionModelsStart;
+  sectionStartTime?: CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime;
   sectionIndex?: number;
-  end?: CreateSectionConfigRequestSectionConfigsSectionModelsEnd;
+  sectionEndTime?: CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime;
   sectionName?: string;
   static names(): { [key: string]: string } {
     return {
       sectionType: 'sectionType',
-      start: 'start',
+      sectionStartTime: 'sectionStartTime',
       sectionIndex: 'sectionIndex',
-      end: 'end',
+      sectionEndTime: 'sectionEndTime',
       sectionName: 'sectionName',
     };
   }
@@ -6124,9 +6124,9 @@ export class CreateSectionConfigRequestSectionConfigsSectionModels extends $tea.
   static types(): { [key: string]: any } {
     return {
       sectionType: 'string',
-      start: CreateSectionConfigRequestSectionConfigsSectionModelsStart,
+      sectionStartTime: CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime,
       sectionIndex: 'number',
-      end: CreateSectionConfigRequestSectionConfigsSectionModelsEnd,
+      sectionEndTime: CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime,
       sectionName: 'string',
     };
   }
@@ -6136,7 +6136,7 @@ export class CreateSectionConfigRequestSectionConfigsSectionModels extends $tea.
   }
 }
 
-export class CreateSectionConfigRequestSectionConfigsEnd extends $tea.Model {
+export class CreateSectionConfigRequestSectionConfigsSectionEndDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -6161,7 +6161,7 @@ export class CreateSectionConfigRequestSectionConfigsEnd extends $tea.Model {
   }
 }
 
-export class CreateSectionConfigRequestSectionConfigsSemesterStart extends $tea.Model {
+export class CreateSectionConfigRequestSectionConfigsSemesterStartDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -6186,7 +6186,7 @@ export class CreateSectionConfigRequestSectionConfigsSemesterStart extends $tea.
   }
 }
 
-export class CreateSectionConfigRequestSectionConfigsSemesterEnd extends $tea.Model {
+export class CreateSectionConfigRequestSectionConfigsSemesterEndDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -6213,36 +6213,36 @@ export class CreateSectionConfigRequestSectionConfigsSemesterEnd extends $tea.Mo
 
 export class CreateSectionConfigRequestSectionConfigs extends $tea.Model {
   semester?: number;
-  start?: CreateSectionConfigRequestSectionConfigsStart;
+  sectionStartDate?: CreateSectionConfigRequestSectionConfigsSectionStartDate;
   schoolYear?: string;
   scheduleName?: string;
   sectionModels?: CreateSectionConfigRequestSectionConfigsSectionModels[];
-  end?: CreateSectionConfigRequestSectionConfigsEnd;
-  semesterStart?: CreateSectionConfigRequestSectionConfigsSemesterStart;
-  semesterEnd?: CreateSectionConfigRequestSectionConfigsSemesterEnd;
+  sectionEndDate?: CreateSectionConfigRequestSectionConfigsSectionEndDate;
+  semesterStartDate?: CreateSectionConfigRequestSectionConfigsSemesterStartDate;
+  semesterEndDate?: CreateSectionConfigRequestSectionConfigsSemesterEndDate;
   static names(): { [key: string]: string } {
     return {
       semester: 'semester',
-      start: 'start',
+      sectionStartDate: 'sectionStartDate',
       schoolYear: 'schoolYear',
       scheduleName: 'scheduleName',
       sectionModels: 'sectionModels',
-      end: 'end',
-      semesterStart: 'semesterStart',
-      semesterEnd: 'semesterEnd',
+      sectionEndDate: 'sectionEndDate',
+      semesterStartDate: 'semesterStartDate',
+      semesterEndDate: 'semesterEndDate',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       semester: 'number',
-      start: CreateSectionConfigRequestSectionConfigsStart,
+      sectionStartDate: CreateSectionConfigRequestSectionConfigsSectionStartDate,
       schoolYear: 'string',
       scheduleName: 'string',
       sectionModels: { 'type': 'array', 'itemType': CreateSectionConfigRequestSectionConfigsSectionModels },
-      end: CreateSectionConfigRequestSectionConfigsEnd,
-      semesterStart: CreateSectionConfigRequestSectionConfigsSemesterStart,
-      semesterEnd: CreateSectionConfigRequestSectionConfigsSemesterEnd,
+      sectionEndDate: CreateSectionConfigRequestSectionConfigsSectionEndDate,
+      semesterStartDate: CreateSectionConfigRequestSectionConfigsSemesterStartDate,
+      semesterEndDate: CreateSectionConfigRequestSectionConfigsSemesterEndDate,
     };
   }
 
@@ -6958,7 +6958,7 @@ export class CreateUniversityCourseGroupRequestTeacherInfos extends $tea.Model {
   }
 }
 
-export class CreateUniversityCourseGroupRequestCourserGroupItemModelsStart extends $tea.Model {
+export class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -6983,7 +6983,7 @@ export class CreateUniversityCourseGroupRequestCourserGroupItemModelsStart exten
   }
 }
 
-export class CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd extends $tea.Model {
+export class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends $tea.Model {
   month?: number;
   year?: number;
   dayOfMonth?: number;
@@ -7011,18 +7011,18 @@ export class CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd extends
 export class CreateUniversityCourseGroupRequestCourserGroupItemModels extends $tea.Model {
   dayOfWeek?: number;
   classPeriodType?: number;
-  start?: CreateUniversityCourseGroupRequestCourserGroupItemModelsStart;
+  courserGroupItemStartDate?: CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate;
   sectionIndex?: number[];
-  end?: CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd;
+  courserGroupItemEndDate?: CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate;
   courseType?: number;
   classroomId?: number;
   static names(): { [key: string]: string } {
     return {
       dayOfWeek: 'dayOfWeek',
       classPeriodType: 'classPeriodType',
-      start: 'start',
+      courserGroupItemStartDate: 'courserGroupItemStartDate',
       sectionIndex: 'sectionIndex',
-      end: 'end',
+      courserGroupItemEndDate: 'courserGroupItemEndDate',
       courseType: 'courseType',
       classroomId: 'classroomId',
     };
@@ -7032,9 +7032,9 @@ export class CreateUniversityCourseGroupRequestCourserGroupItemModels extends $t
     return {
       dayOfWeek: 'number',
       classPeriodType: 'number',
-      start: CreateUniversityCourseGroupRequestCourserGroupItemModelsStart,
+      courserGroupItemStartDate: CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate,
       sectionIndex: { 'type': 'array', 'itemType': 'number' },
-      end: CreateUniversityCourseGroupRequestCourserGroupItemModelsEnd,
+      courserGroupItemEndDate: CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate,
       courseType: 'number',
       classroomId: 'number',
     };
@@ -8834,9 +8834,8 @@ export default class Client extends OpenApi {
       query["opUserId"] = request.opUserId;
     }
 
-    let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.classroomId)) {
-      body["classroomId"] = request.classroomId;
+      query["classroomId"] = request.classroomId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -8851,7 +8850,6 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<DeletePhysicalClassroomResponse>(await this.doROARequest("DeletePhysicalClassroom", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/physicalClassrooms`, "json", req, runtime), new DeletePhysicalClassroomResponse({}));
   }

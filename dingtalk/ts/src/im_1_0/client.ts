@@ -557,6 +557,112 @@ export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   }
 }
 
+export class UpdateGroupSubAdminHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSubAdminRequest extends $tea.Model {
+  dingTokenGrantType?: number;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingSuiteKey?: string;
+  dingOauthAppId?: number;
+  dingClientId?: string;
+  openConversationId?: string;
+  userIds?: string[];
+  role?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingOauthAppId: 'dingOauthAppId',
+      dingClientId: 'dingClientId',
+      openConversationId: 'openConversationId',
+      userIds: 'userIds',
+      role: 'role',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingTokenGrantType: 'number',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingOauthAppId: 'number',
+      dingClientId: 'string',
+      openConversationId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      role: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSubAdminResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateGroupSubAdminResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateGroupSubAdminResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateGroupSubAdminResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMembersOfGroupRoleHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -839,6 +945,112 @@ export class UpdateTheGroupRolesOfGroupMemberResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateTheGroupRolesOfGroupMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMemberGroupNickHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMemberGroupNickRequest extends $tea.Model {
+  dingTokenGrantType?: number;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingSuiteKey?: string;
+  dingOauthAppId?: number;
+  dingClientId?: string;
+  openConversationId?: string;
+  userId?: string;
+  groupNick?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingOauthAppId: 'dingOauthAppId',
+      dingClientId: 'dingClientId',
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+      groupNick: 'groupNick',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingTokenGrantType: 'number',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingOauthAppId: 'number',
+      dingClientId: 'string',
+      openConversationId: 'string',
+      userId: 'string',
+      groupNick: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMemberGroupNickResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMemberGroupNickResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateMemberGroupNickResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateMemberGroupNickResponseBody,
     };
   }
 
@@ -1492,6 +1704,67 @@ export default class Client extends OpenApi {
     return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.doROARequest("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/instances`, "json", req, runtime), new InteractiveCardCreateInstanceResponse({}));
   }
 
+  async updateGroupSubAdmin(request: UpdateGroupSubAdminRequest): Promise<UpdateGroupSubAdminResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateGroupSubAdminHeaders({ });
+    return await this.updateGroupSubAdminWithOptions(request, headers, runtime);
+  }
+
+  async updateGroupSubAdminWithOptions(request: UpdateGroupSubAdminRequest, headers: UpdateGroupSubAdminHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupSubAdminResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingOauthAppId)) {
+      body["dingOauthAppId"] = request.dingOauthAppId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    if (!Util.isUnset(request.role)) {
+      body["role"] = request.role;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateGroupSubAdminResponse>(await this.doROARequest("UpdateGroupSubAdmin", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/subAdmins`, "json", req, runtime), new UpdateGroupSubAdminResponse({}));
+  }
+
   async queryMembersOfGroupRole(request: QueryMembersOfGroupRoleRequest): Promise<QueryMembersOfGroupRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMembersOfGroupRoleHeaders({ });
@@ -1665,6 +1938,67 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateTheGroupRolesOfGroupMemberResponse>(await this.doROARequest("UpdateTheGroupRolesOfGroupMember", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupRoles`, "json", req, runtime), new UpdateTheGroupRolesOfGroupMemberResponse({}));
+  }
+
+  async updateMemberGroupNick(request: UpdateMemberGroupNickRequest): Promise<UpdateMemberGroupNickResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateMemberGroupNickHeaders({ });
+    return await this.updateMemberGroupNickWithOptions(request, headers, runtime);
+  }
+
+  async updateMemberGroupNickWithOptions(request: UpdateMemberGroupNickRequest, headers: UpdateMemberGroupNickHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMemberGroupNickResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingOauthAppId)) {
+      body["dingOauthAppId"] = request.dingOauthAppId;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.groupNick)) {
+      body["groupNick"] = request.groupNick;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateMemberGroupNickResponse>(await this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupNicks`, "json", req, runtime), new UpdateMemberGroupNickResponse({}));
   }
 
   async sendTemplateInteractiveCard(request: SendTemplateInteractiveCardRequest): Promise<SendTemplateInteractiveCardResponse> {
