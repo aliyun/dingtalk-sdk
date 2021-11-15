@@ -1776,6 +1776,71 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("DeletePhysicalClassroom", "edu_1.0", "HTTP", "DELETE", "AK", "/v1.0/edu/physicalClassrooms", "json", req, runtime), new DeletePhysicalClassroomResponse());
     }
 
+    public MoveStudentResponse moveStudent(MoveStudentRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        MoveStudentHeaders headers = new MoveStudentHeaders();
+        return this.moveStudentWithOptions(request, headers, runtime);
+    }
+
+    public MoveStudentResponse moveStudentWithOptions(MoveStudentRequest request, MoveStudentHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
+            body.put("dingIsvOrgId", request.dingIsvOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
+            body.put("dingCorpId", request.dingCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOauthAppId)) {
+            body.put("dingOauthAppId", request.dingOauthAppId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingSuiteKey)) {
+            body.put("dingSuiteKey", request.dingSuiteKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
+            body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
+            body.put("dingOrgId", request.dingOrgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.originClassId)) {
+            body.put("originClassId", request.originClassId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetClassId)) {
+            body.put("targetClassId", request.targetClassId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("MoveStudent", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/students/move", "json", req, runtime), new MoveStudentResponse());
+    }
+
     public QueryOrgRelationListResponse queryOrgRelationList(QueryOrgRelationListRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryOrgRelationListHeaders headers = new QueryOrgRelationListHeaders();
