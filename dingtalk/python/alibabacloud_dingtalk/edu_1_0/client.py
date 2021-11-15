@@ -3289,6 +3289,106 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeletePhysicalClassroom', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/physicalClassrooms', 'json', req, runtime)
         )
 
+    def move_student(
+        self,
+        request: dingtalkedu__1__0_models.MoveStudentRequest,
+    ) -> dingtalkedu__1__0_models.MoveStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.MoveStudentHeaders()
+        return self.move_student_with_options(request, headers, runtime)
+
+    async def move_student_async(
+        self,
+        request: dingtalkedu__1__0_models.MoveStudentRequest,
+    ) -> dingtalkedu__1__0_models.MoveStudentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.MoveStudentHeaders()
+        return await self.move_student_with_options_async(request, headers, runtime)
+
+    def move_student_with_options(
+        self,
+        request: dingtalkedu__1__0_models.MoveStudentRequest,
+        headers: dingtalkedu__1__0_models.MoveStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.MoveStudentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.origin_class_id):
+            body['originClassId'] = request.origin_class_id
+        if not UtilClient.is_unset(request.target_class_id):
+            body['targetClassId'] = request.target_class_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.MoveStudentResponse(),
+            self.do_roarequest('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/students/move', 'json', req, runtime)
+        )
+
+    async def move_student_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.MoveStudentRequest,
+        headers: dingtalkedu__1__0_models.MoveStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.MoveStudentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.origin_class_id):
+            body['originClassId'] = request.origin_class_id
+        if not UtilClient.is_unset(request.target_class_id):
+            body['targetClassId'] = request.target_class_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.MoveStudentResponse(),
+            await self.do_roarequest_async('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/students/move', 'json', req, runtime)
+        )
+
     def query_org_relation_list(
         self,
         request: dingtalkedu__1__0_models.QueryOrgRelationListRequest,
