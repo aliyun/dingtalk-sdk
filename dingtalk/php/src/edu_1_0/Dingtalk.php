@@ -82,6 +82,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
@@ -2340,6 +2343,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeletePhysicalClassroomResponse::fromMap($this->doROARequest('DeletePhysicalClassroom', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/physicalClassrooms', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MoveStudentRequest $request
+     *
+     * @return MoveStudentResponse
+     */
+    public function moveStudent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MoveStudentHeaders([]);
+
+        return $this->moveStudentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MoveStudentRequest $request
+     * @param MoveStudentHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return MoveStudentResponse
+     */
+    public function moveStudentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->originClassId)) {
+            @$body['originClassId'] = $request->originClassId;
+        }
+        if (!Utils::isUnset($request->targetClassId)) {
+            @$body['targetClassId'] = $request->targetClassId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MoveStudentResponse::fromMap($this->doROARequest('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/students/move', 'json', $req, $runtime));
     }
 
     /**
