@@ -695,10 +695,6 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.suite_id):
-            body['suiteId'] = request.suite_id
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.staff_id):
             body['staffId'] = request.staff_id
         if not UtilClient.is_unset(request.account_id):
@@ -717,8 +713,6 @@ class Client(OpenApiClient):
             body['totalAmount'] = request.total_amount
         if not UtilClient.is_unset(request.batch_trade_details):
             body['batchTradeDetails'] = request.batch_trade_details
-        if not UtilClient.is_unset(request.isv_corp_id):
-            body['isvCorpId'] = request.isv_corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -741,10 +735,6 @@ class Client(OpenApiClient):
     ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.suite_id):
-            body['suiteId'] = request.suite_id
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.staff_id):
             body['staffId'] = request.staff_id
         if not UtilClient.is_unset(request.account_id):
@@ -763,8 +753,6 @@ class Client(OpenApiClient):
             body['totalAmount'] = request.total_amount
         if not UtilClient.is_unset(request.batch_trade_details):
             body['batchTradeDetails'] = request.batch_trade_details
-        if not UtilClient.is_unset(request.isv_corp_id):
-            body['isvCorpId'] = request.isv_corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

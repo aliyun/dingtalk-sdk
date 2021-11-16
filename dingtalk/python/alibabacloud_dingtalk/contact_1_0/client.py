@@ -95,6 +95,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/users/sort', 'json', req, runtime)
         )
 
+    def sign_out(
+        self,
+        request: dingtalkcontact__1__0_models.SignOutRequest,
+    ) -> dingtalkcontact__1__0_models.SignOutResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SignOutHeaders()
+        return self.sign_out_with_options(request, headers, runtime)
+
+    async def sign_out_async(
+        self,
+        request: dingtalkcontact__1__0_models.SignOutRequest,
+    ) -> dingtalkcontact__1__0_models.SignOutResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SignOutHeaders()
+        return await self.sign_out_with_options_async(request, headers, runtime)
+
+    def sign_out_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SignOutRequest,
+        headers: dingtalkcontact__1__0_models.SignOutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SignOutResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SignOutResponse(),
+            self.do_roarequest('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/signOut', 'none', req, runtime)
+        )
+
+    async def sign_out_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SignOutRequest,
+        headers: dingtalkcontact__1__0_models.SignOutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SignOutResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SignOutResponse(),
+            await self.do_roarequest_async('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/signOut', 'none', req, runtime)
+        )
+
     def list_contact_hide_settings(
         self,
         request: dingtalkcontact__1__0_models.ListContactHideSettingsRequest,
@@ -903,6 +971,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.GetTranslateFileJobResultResponse(),
             await self.do_roarequest_async('GetTranslateFileJobResult', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/files/translateResults', 'json', req, runtime)
+        )
+
+    def query_status(
+        self,
+        request: dingtalkcontact__1__0_models.QueryStatusRequest,
+    ) -> dingtalkcontact__1__0_models.QueryStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryStatusHeaders()
+        return self.query_status_with_options(request, headers, runtime)
+
+    async def query_status_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryStatusRequest,
+    ) -> dingtalkcontact__1__0_models.QueryStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryStatusHeaders()
+        return await self.query_status_with_options_async(request, headers, runtime)
+
+    def query_status_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.QueryStatusRequest,
+        headers: dingtalkcontact__1__0_models.QueryStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryStatusResponse(),
+            self.do_roarequest('QueryStatus', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccounts/status', 'json', req, runtime)
+        )
+
+    async def query_status_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryStatusRequest,
+        headers: dingtalkcontact__1__0_models.QueryStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryStatusResponse(),
+            await self.do_roarequest_async('QueryStatus', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccounts/status', 'json', req, runtime)
         )
 
     def query_user_management_resources(
@@ -1723,6 +1855,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateSeniorSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/seniorSettings', 'none', req, runtime)
         )
 
+    def set_disable(
+        self,
+        request: dingtalkcontact__1__0_models.SetDisableRequest,
+    ) -> dingtalkcontact__1__0_models.SetDisableResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SetDisableHeaders()
+        return self.set_disable_with_options(request, headers, runtime)
+
+    async def set_disable_async(
+        self,
+        request: dingtalkcontact__1__0_models.SetDisableRequest,
+    ) -> dingtalkcontact__1__0_models.SetDisableResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SetDisableHeaders()
+        return await self.set_disable_with_options_async(request, headers, runtime)
+
+    def set_disable_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SetDisableRequest,
+        headers: dingtalkcontact__1__0_models.SetDisableHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SetDisableResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SetDisableResponse(),
+            self.do_roarequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/disable', 'none', req, runtime)
+        )
+
+    async def set_disable_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SetDisableRequest,
+        headers: dingtalkcontact__1__0_models.SetDisableHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SetDisableResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SetDisableResponse(),
+            await self.do_roarequest_async('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/disable', 'none', req, runtime)
+        )
+
     def get_apply_invite_info(
         self,
         request: dingtalkcontact__1__0_models.GetApplyInviteInfoRequest,
@@ -1925,6 +2125,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.GetMigrationDingIdByDingIdResponse(),
             await self.do_roarequest_async('GetMigrationDingIdByDingId', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccount/getMigrationDingIdByDingIds', 'json', req, runtime)
+        )
+
+    def set_enable(
+        self,
+        request: dingtalkcontact__1__0_models.SetEnableRequest,
+    ) -> dingtalkcontact__1__0_models.SetEnableResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SetEnableHeaders()
+        return self.set_enable_with_options(request, headers, runtime)
+
+    async def set_enable_async(
+        self,
+        request: dingtalkcontact__1__0_models.SetEnableRequest,
+    ) -> dingtalkcontact__1__0_models.SetEnableResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SetEnableHeaders()
+        return await self.set_enable_with_options_async(request, headers, runtime)
+
+    def set_enable_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SetEnableRequest,
+        headers: dingtalkcontact__1__0_models.SetEnableHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SetEnableResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SetEnableResponse(),
+            self.do_roarequest('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/enable', 'none', req, runtime)
+        )
+
+    async def set_enable_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SetEnableRequest,
+        headers: dingtalkcontact__1__0_models.SetEnableHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SetEnableResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SetEnableResponse(),
+            await self.do_roarequest_async('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/enable', 'none', req, runtime)
         )
 
     def create_management_group(

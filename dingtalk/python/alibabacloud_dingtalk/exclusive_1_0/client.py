@@ -1375,6 +1375,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetDingReportDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/data/report/dept/{data_id}', 'json', req, runtime)
         )
 
+    def get_in_active_user_list(
+        self,
+        request: dingtalkexclusive__1__0_models.GetInActiveUserListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetInActiveUserListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetInActiveUserListHeaders()
+        return self.get_in_active_user_list_with_options(request, headers, runtime)
+
+    async def get_in_active_user_list_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetInActiveUserListRequest,
+    ) -> dingtalkexclusive__1__0_models.GetInActiveUserListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetInActiveUserListHeaders()
+        return await self.get_in_active_user_list_with_options_async(request, headers, runtime)
+
+    def get_in_active_user_list_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetInActiveUserListRequest,
+        headers: dingtalkexclusive__1__0_models.GetInActiveUserListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetInActiveUserListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stat_date):
+            body['statDate'] = request.stat_date
+        if not UtilClient.is_unset(request.service_id):
+            body['serviceId'] = request.service_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetInActiveUserListResponse(),
+            self.do_roarequest('GetInActiveUserList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/inactives/users/query', 'json', req, runtime)
+        )
+
+    async def get_in_active_user_list_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetInActiveUserListRequest,
+        headers: dingtalkexclusive__1__0_models.GetInActiveUserListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetInActiveUserListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stat_date):
+            body['statDate'] = request.stat_date
+        if not UtilClient.is_unset(request.service_id):
+            body['serviceId'] = request.service_id
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetInActiveUserListResponse(),
+            await self.do_roarequest_async('GetInActiveUserList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/inactives/users/query', 'json', req, runtime)
+        )
+
     def get_trust_device_list(
         self,
         request: dingtalkexclusive__1__0_models.GetTrustDeviceListRequest,

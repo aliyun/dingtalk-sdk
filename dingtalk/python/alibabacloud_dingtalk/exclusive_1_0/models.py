@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class GetConferenceDetailHeaders(TeaModel):
@@ -3468,6 +3468,238 @@ class GetDingReportDeptSummaryResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetDingReportDeptSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetInActiveUserListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetInActiveUserListRequest(TeaModel):
+    def __init__(
+        self,
+        stat_date: str = None,
+        service_id: int = None,
+        ding_oauth_app_id: int = None,
+        ding_org_id: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        dept_ids: List[str] = None,
+    ):
+        self.stat_date = stat_date
+        self.service_id = service_id
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_org_id = ding_org_id
+        self.page_number = page_number
+        self.page_size = page_size
+        self.dept_ids = dept_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stat_date is not None:
+            result['statDate'] = self.stat_date
+        if self.service_id is not None:
+            result['serviceId'] = self.service_id
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('statDate') is not None:
+            self.stat_date = m.get('statDate')
+        if m.get('serviceId') is not None:
+            self.service_id = m.get('serviceId')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        return self
+
+
+class GetInActiveUserListResponseBodyMetaList(TeaModel):
+    def __init__(
+        self,
+        kpi_id: str = None,
+        kpi_name: str = None,
+        unit: str = None,
+        kpi_caliber: str = None,
+        period: str = None,
+    ):
+        # 指标ID
+        self.kpi_id = kpi_id
+        # 指标名称
+        self.kpi_name = kpi_name
+        # 指标单位
+        self.unit = unit
+        # 指标口径
+        self.kpi_caliber = kpi_caliber
+        # 指标周期
+        self.period = period
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.kpi_id is not None:
+            result['kpiId'] = self.kpi_id
+        if self.kpi_name is not None:
+            result['kpiName'] = self.kpi_name
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.kpi_caliber is not None:
+            result['kpiCaliber'] = self.kpi_caliber
+        if self.period is not None:
+            result['period'] = self.period
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('kpiId') is not None:
+            self.kpi_id = m.get('kpiId')
+        if m.get('kpiName') is not None:
+            self.kpi_name = m.get('kpiName')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('kpiCaliber') is not None:
+            self.kpi_caliber = m.get('kpiCaliber')
+        if m.get('period') is not None:
+            self.period = m.get('period')
+        return self
+
+
+class GetInActiveUserListResponseBody(TeaModel):
+    def __init__(
+        self,
+        data_list: List[Dict[str, Any]] = None,
+        meta_list: List[GetInActiveUserListResponseBodyMetaList] = None,
+    ):
+        # 指标数据
+        self.data_list = data_list
+        # 指标元数据
+        self.meta_list = meta_list
+
+    def validate(self):
+        if self.meta_list:
+            for k in self.meta_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data_list is not None:
+            result['dataList'] = self.data_list
+        result['metaList'] = []
+        if self.meta_list is not None:
+            for k in self.meta_list:
+                result['metaList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dataList') is not None:
+            self.data_list = m.get('dataList')
+        self.meta_list = []
+        if m.get('metaList') is not None:
+            for k in m.get('metaList'):
+                temp_model = GetInActiveUserListResponseBodyMetaList()
+                self.meta_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetInActiveUserListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetInActiveUserListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetInActiveUserListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

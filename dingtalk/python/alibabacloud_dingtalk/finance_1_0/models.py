@@ -1718,8 +1718,6 @@ class CreateBatchTradeOrderRequestBatchTradeDetails(TeaModel):
 class CreateBatchTradeOrderRequest(TeaModel):
     def __init__(
         self,
-        suite_id: str = None,
-        corp_id: str = None,
         staff_id: str = None,
         account_id: str = None,
         account_no: str = None,
@@ -1729,12 +1727,7 @@ class CreateBatchTradeOrderRequest(TeaModel):
         total_count: int = None,
         total_amount: str = None,
         batch_trade_details: List[CreateBatchTradeOrderRequestBatchTradeDetails] = None,
-        isv_corp_id: str = None,
     ):
-        # ISV/企业自建应用suiteId
-        self.suite_id = suite_id
-        # 企业corpId
-        self.corp_id = corp_id
         # 员工staffId
         self.staff_id = staff_id
         # 付款账号唯一id
@@ -1753,8 +1746,6 @@ class CreateBatchTradeOrderRequest(TeaModel):
         self.total_amount = total_amount
         # 交易明细列表
         self.batch_trade_details = batch_trade_details
-        # Isv corpId
-        self.isv_corp_id = isv_corp_id
 
     def validate(self):
         if self.batch_trade_details:
@@ -1768,10 +1759,6 @@ class CreateBatchTradeOrderRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.suite_id is not None:
-            result['suiteId'] = self.suite_id
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.staff_id is not None:
             result['staffId'] = self.staff_id
         if self.account_id is not None:
@@ -1792,16 +1779,10 @@ class CreateBatchTradeOrderRequest(TeaModel):
         if self.batch_trade_details is not None:
             for k in self.batch_trade_details:
                 result['batchTradeDetails'].append(k.to_map() if k else None)
-        if self.isv_corp_id is not None:
-            result['isvCorpId'] = self.isv_corp_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('suiteId') is not None:
-            self.suite_id = m.get('suiteId')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('staffId') is not None:
             self.staff_id = m.get('staffId')
         if m.get('accountId') is not None:
@@ -1823,8 +1804,6 @@ class CreateBatchTradeOrderRequest(TeaModel):
             for k in m.get('batchTradeDetails'):
                 temp_model = CreateBatchTradeOrderRequestBatchTradeDetails()
                 self.batch_trade_details.append(temp_model.from_map(k))
-        if m.get('isvCorpId') is not None:
-            self.isv_corp_id = m.get('isvCorpId')
         return self
 
 
