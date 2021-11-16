@@ -7,7 +7,7 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
-export class DeleteWorkspaceMembersHeaders extends $tea.Model {
+export class BatchGetWorkspaceDocsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
@@ -29,20 +29,32 @@ export class DeleteWorkspaceMembersHeaders extends $tea.Model {
   }
 }
 
-export class DeleteWorkspaceMembersRequest extends $tea.Model {
+export class BatchGetWorkspaceDocsRequest extends $tea.Model {
   operatorId?: string;
-  members?: DeleteWorkspaceMembersRequestMembers[];
+  nodeIds?: string[];
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingAccessTokenType?: string;
+  dingUid?: number;
   static names(): { [key: string]: string } {
     return {
       operatorId: 'operatorId',
-      members: 'members',
+      nodeIds: 'nodeIds',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingAccessTokenType: 'dingAccessTokenType',
+      dingUid: 'dingUid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       operatorId: 'string',
-      members: { 'type': 'array', 'itemType': DeleteWorkspaceMembersRequestMembers },
+      nodeIds: { 'type': 'array', 'itemType': 'string' },
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingAccessTokenType: 'string',
+      dingUid: 'number',
     };
   }
 
@@ -51,143 +63,39 @@ export class DeleteWorkspaceMembersRequest extends $tea.Model {
   }
 }
 
-export class DeleteWorkspaceMembersResponse extends $tea.Model {
+export class BatchGetWorkspaceDocsResponseBody extends $tea.Model {
+  result?: BatchGetWorkspaceDocsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': BatchGetWorkspaceDocsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspaceDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: BatchGetWorkspaceDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceDocMembersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceDocMembersRequest extends $tea.Model {
-  operatorId?: string;
-  members?: AddWorkspaceDocMembersRequestMembers[];
-  static names(): { [key: string]: string } {
-    return {
-      operatorId: 'operatorId',
-      members: 'members',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      operatorId: 'string',
-      members: { 'type': 'array', 'itemType': AddWorkspaceDocMembersRequestMembers },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceDocMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateWorkspaceMembersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateWorkspaceMembersRequest extends $tea.Model {
-  operatorId?: string;
-  members?: UpdateWorkspaceMembersRequestMembers[];
-  static names(): { [key: string]: string } {
-    return {
-      operatorId: 'operatorId',
-      members: 'members',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      operatorId: 'string',
-      members: { 'type': 'array', 'itemType': UpdateWorkspaceMembersRequestMembers },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateWorkspaceMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchGetWorkspaceDocsResponseBody,
     };
   }
 
@@ -348,91 +256,6 @@ export class CreateWorkspaceDocResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateWorkspaceDocResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceMembersHeaders extends $tea.Model {
-  commonHeaders?: { [key: string]: string };
-  xAcsDingtalkAccessToken?: string;
-  static names(): { [key: string]: string } {
-    return {
-      commonHeaders: 'commonHeaders',
-      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      xAcsDingtalkAccessToken: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceMembersRequest extends $tea.Model {
-  operatorId?: string;
-  members?: AddWorkspaceMembersRequestMembers[];
-  static names(): { [key: string]: string } {
-    return {
-      operatorId: 'operatorId',
-      members: 'members',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      operatorId: 'string',
-      members: { 'type': 'array', 'itemType': AddWorkspaceMembersRequestMembers },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceMembersResponseBody extends $tea.Model {
-  notInOrgList?: string[];
-  static names(): { [key: string]: string } {
-    return {
-      notInOrgList: 'notInOrgList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      notInOrgList: { 'type': 'array', 'itemType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class AddWorkspaceMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  body: AddWorkspaceMembersResponseBody;
-  static names(): { [key: string]: string } {
-    return {
-      headers: 'headers',
-      body: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AddWorkspaceMembersResponseBody,
     };
   }
 
@@ -682,6 +505,1013 @@ export class GetWorkspaceResponse extends $tea.Model {
   }
 }
 
+export class SearchWorkspaceDocsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchWorkspaceDocsRequest extends $tea.Model {
+  operatorId?: string;
+  keyword?: string;
+  size?: number;
+  loadMoreId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      keyword: 'keyword',
+      size: 'size',
+      loadMoreId: 'loadMoreId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      keyword: 'string',
+      size: 'number',
+      loadMoreId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchWorkspaceDocsResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  loadMoreId?: string;
+  docs?: SearchWorkspaceDocsResponseBodyDocs[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      loadMoreId: 'loadMoreId',
+      docs: 'docs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      loadMoreId: 'string',
+      docs: { 'type': 'array', 'itemType': SearchWorkspaceDocsResponseBodyDocs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchWorkspaceDocsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchWorkspaceDocsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchWorkspaceDocsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesRequest extends $tea.Model {
+  operatorId?: string;
+  includeRecent?: boolean;
+  workspaceIds?: string[];
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  dingUid?: number;
+  dingAccessTokenType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      includeRecent: 'includeRecent',
+      workspaceIds: 'workspaceIds',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingUid: 'dingUid',
+      dingAccessTokenType: 'dingAccessTokenType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      includeRecent: 'boolean',
+      workspaceIds: { 'type': 'array', 'itemType': 'string' },
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+      dingUid: 'number',
+      dingAccessTokenType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesResponseBody extends $tea.Model {
+  workspaces?: BatchGetWorkspacesResponseBodyWorkspaces[];
+  static names(): { [key: string]: string } {
+    return {
+      workspaces: 'workspaces',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaces: { 'type': 'array', 'itemType': BatchGetWorkspacesResponseBodyWorkspaces },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchGetWorkspacesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchGetWorkspacesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWorkspaceMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWorkspaceMembersRequest extends $tea.Model {
+  operatorId?: string;
+  members?: DeleteWorkspaceMembersRequestMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      members: 'members',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      members: { 'type': 'array', 'itemType': DeleteWorkspaceMembersRequestMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWorkspaceMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceDocMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceDocMembersRequest extends $tea.Model {
+  operatorId?: string;
+  members?: AddWorkspaceDocMembersRequestMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      members: 'members',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      members: { 'type': 'array', 'itemType': AddWorkspaceDocMembersRequestMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceDocMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkspaceMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkspaceMembersRequest extends $tea.Model {
+  operatorId?: string;
+  members?: UpdateWorkspaceMembersRequestMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      members: 'members',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      members: { 'type': 'array', 'itemType': UpdateWorkspaceMembersRequestMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkspaceMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedWorkspacesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedWorkspacesRequest extends $tea.Model {
+  operatorId?: string;
+  includeRecent?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      includeRecent: 'includeRecent',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      includeRecent: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedWorkspacesResponseBody extends $tea.Model {
+  workspaces?: GetRelatedWorkspacesResponseBodyWorkspaces[];
+  static names(): { [key: string]: string } {
+    return {
+      workspaces: 'workspaces',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaces: { 'type': 'array', 'itemType': GetRelatedWorkspacesResponseBodyWorkspaces },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedWorkspacesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetRelatedWorkspacesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetRelatedWorkspacesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsRequest extends $tea.Model {
+  operatorId?: string;
+  size?: number;
+  loadMoreId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      size: 'size',
+      loadMoreId: 'loadMoreId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      size: 'number',
+      loadMoreId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsResponseBody extends $tea.Model {
+  recentList?: GetRecentEditDocsResponseBodyRecentList[];
+  loadMoreId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      recentList: 'recentList',
+      loadMoreId: 'loadMoreId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      recentList: { 'type': 'array', 'itemType': GetRecentEditDocsResponseBodyRecentList },
+      loadMoreId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetRecentEditDocsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetRecentEditDocsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceMembersRequest extends $tea.Model {
+  operatorId?: string;
+  members?: AddWorkspaceMembersRequestMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      members: 'members',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      members: { 'type': 'array', 'itemType': AddWorkspaceMembersRequestMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceMembersResponseBody extends $tea.Model {
+  notInOrgList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      notInOrgList: 'notInOrgList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      notInOrgList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddWorkspaceMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddWorkspaceMembersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddWorkspaceMembersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceNodeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceNodeRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceNodeResponseBody extends $tea.Model {
+  nodeBO?: { [key: string]: any };
+  workspaceBO?: { [key: string]: any };
+  hasPermission?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      nodeBO: 'nodeBO',
+      workspaceBO: 'workspaceBO',
+      hasPermission: 'hasPermission',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeBO: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      workspaceBO: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      hasPermission: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceNodeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetWorkspaceNodeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetWorkspaceNodeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspaceDocsResponseBodyResultNodeBO extends $tea.Model {
+  name?: string;
+  nodeId?: string;
+  url?: string;
+  deleted?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      nodeId: 'nodeId',
+      url: 'url',
+      deleted: 'deleted',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      nodeId: 'string',
+      url: 'string',
+      deleted: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO extends $tea.Model {
+  workspaceId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspaceDocsResponseBodyResult extends $tea.Model {
+  nodeBO?: BatchGetWorkspaceDocsResponseBodyResultNodeBO;
+  workspaceBO?: BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO;
+  hasPermission?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      nodeBO: 'nodeBO',
+      workspaceBO: 'workspaceBO',
+      hasPermission: 'hasPermission',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeBO: BatchGetWorkspaceDocsResponseBodyResultNodeBO,
+      workspaceBO: BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO,
+      hasPermission: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkspaceDocMembersRequestMembers extends $tea.Model {
+  memberId?: string;
+  memberType?: string;
+  roleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberId: 'memberId',
+      memberType: 'memberType',
+      roleType: 'roleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberId: 'string',
+      memberType: 'string',
+      roleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteWorkspaceDocMembersRequestMembers extends $tea.Model {
+  memberId?: string;
+  memberType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberId: 'memberId',
+      memberType: 'memberType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberId: 'string',
+      memberType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
+  name?: string;
+  nodeId?: string;
+  url?: string;
+  lastEditTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      nodeId: 'nodeId',
+      url: 'url',
+      lastEditTime: 'lastEditTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      nodeId: 'string',
+      url: 'string',
+      lastEditTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO extends $tea.Model {
+  workspaceId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchWorkspaceDocsResponseBodyDocs extends $tea.Model {
+  nodeBO?: SearchWorkspaceDocsResponseBodyDocsNodeBO;
+  workspaceBO?: SearchWorkspaceDocsResponseBodyDocsWorkspaceBO;
+  static names(): { [key: string]: string } {
+    return {
+      nodeBO: 'nodeBO',
+      workspaceBO: 'workspaceBO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeBO: SearchWorkspaceDocsResponseBodyDocsNodeBO,
+      workspaceBO: SearchWorkspaceDocsResponseBodyDocsWorkspaceBO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList extends $tea.Model {
+  nodeId?: string;
+  name?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nodeId: 'nodeId',
+      name: 'name',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeId: 'string',
+      name: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends $tea.Model {
+  workspaceId?: string;
+  name?: string;
+  url?: string;
+  recentList?: BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList[];
+  orgPublished?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      name: 'name',
+      url: 'url',
+      recentList: 'recentList',
+      orgPublished: 'orgPublished',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      name: 'string',
+      url: 'string',
+      recentList: { 'type': 'array', 'itemType': BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList },
+      orgPublished: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetWorkspacesResponseBodyWorkspaces extends $tea.Model {
+  hasPermission?: boolean;
+  workspace?: BatchGetWorkspacesResponseBodyWorkspacesWorkspace;
+  static names(): { [key: string]: string } {
+    return {
+      hasPermission: 'hasPermission',
+      workspace: 'workspace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasPermission: 'boolean',
+      workspace: BatchGetWorkspacesResponseBodyWorkspacesWorkspace,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteWorkspaceMembersRequestMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -754,23 +1584,129 @@ export class UpdateWorkspaceMembersRequestMembers extends $tea.Model {
   }
 }
 
-export class UpdateWorkspaceDocMembersRequestMembers extends $tea.Model {
-  memberId?: string;
-  memberType?: string;
-  roleType?: string;
+export class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends $tea.Model {
+  nodeId?: string;
+  name?: string;
+  url?: string;
   static names(): { [key: string]: string } {
     return {
-      memberId: 'memberId',
-      memberType: 'memberType',
-      roleType: 'roleType',
+      nodeId: 'nodeId',
+      name: 'name',
+      url: 'url',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      memberId: 'string',
-      memberType: 'string',
-      roleType: 'string',
+      nodeId: 'string',
+      name: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
+  workspaceId?: string;
+  url?: string;
+  deleted?: boolean;
+  owner?: string;
+  name?: string;
+  recentList?: GetRelatedWorkspacesResponseBodyWorkspacesRecentList[];
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      url: 'url',
+      deleted: 'deleted',
+      owner: 'owner',
+      name: 'name',
+      recentList: 'recentList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      url: 'string',
+      deleted: 'boolean',
+      owner: 'string',
+      name: 'string',
+      recentList: { 'type': 'array', 'itemType': GetRelatedWorkspacesResponseBodyWorkspacesRecentList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
+  nodeId?: string;
+  nodeName?: string;
+  url?: string;
+  lastEditTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nodeId: 'nodeId',
+      nodeName: 'nodeName',
+      url: 'url',
+      lastEditTime: 'lastEditTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeId: 'string',
+      nodeName: 'string',
+      url: 'string',
+      lastEditTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends $tea.Model {
+  workspaceId?: string;
+  workspaceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      workspaceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecentEditDocsResponseBodyRecentList extends $tea.Model {
+  nodeBO?: GetRecentEditDocsResponseBodyRecentListNodeBO;
+  workspaceBO?: GetRecentEditDocsResponseBodyRecentListWorkspaceBO;
+  static names(): { [key: string]: string } {
+    return {
+      nodeBO: 'nodeBO',
+      workspaceBO: 'workspaceBO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nodeBO: GetRecentEditDocsResponseBodyRecentListNodeBO,
+      workspaceBO: GetRecentEditDocsResponseBodyRecentListWorkspaceBO,
     };
   }
 
@@ -804,28 +1740,6 @@ export class AddWorkspaceMembersRequestMembers extends $tea.Model {
   }
 }
 
-export class DeleteWorkspaceDocMembersRequestMembers extends $tea.Model {
-  memberId?: string;
-  memberType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      memberId: 'memberId',
-      memberType: 'memberType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      memberId: 'string',
-      memberType: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 
 export default class Client extends OpenApi {
 
@@ -839,21 +1753,37 @@ export default class Client extends OpenApi {
   }
 
 
-  async deleteWorkspaceMembers(workspaceId: string, request: DeleteWorkspaceMembersRequest): Promise<DeleteWorkspaceMembersResponse> {
+  async batchGetWorkspaceDocs(request: BatchGetWorkspaceDocsRequest): Promise<BatchGetWorkspaceDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteWorkspaceMembersHeaders({ });
-    return await this.deleteWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
+    let headers = new BatchGetWorkspaceDocsHeaders({ });
+    return await this.batchGetWorkspaceDocsWithOptions(request, headers, runtime);
   }
 
-  async deleteWorkspaceMembersWithOptions(workspaceId: string, request: DeleteWorkspaceMembersRequest, headers: DeleteWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceMembersResponse> {
+  async batchGetWorkspaceDocsWithOptions(request: BatchGetWorkspaceDocsRequest, headers: BatchGetWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetWorkspaceDocsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
     }
 
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
+    if (!Util.isUnset(request.nodeIds)) {
+      body["nodeIds"] = request.nodeIds;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingAccessTokenType)) {
+      body["dingAccessTokenType"] = request.dingAccessTokenType;
+    }
+
+    if (!Util.isUnset(request.dingUid)) {
+      body["dingUid"] = request.dingUid;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -869,73 +1799,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteWorkspaceMembersResponse>(await this.doROARequest("DeleteWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members/remove`, "none", req, runtime), new DeleteWorkspaceMembersResponse({}));
-  }
-
-  async addWorkspaceDocMembers(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest): Promise<AddWorkspaceDocMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddWorkspaceDocMembersHeaders({ });
-    return await this.addWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
-  }
-
-  async addWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest, headers: AddWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceDocMembersResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      body["operatorId"] = request.operatorId;
-    }
-
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AddWorkspaceDocMembersResponse>(await this.doROARequest("AddWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members`, "none", req, runtime), new AddWorkspaceDocMembersResponse({}));
-  }
-
-  async updateWorkspaceMembers(workspaceId: string, request: UpdateWorkspaceMembersRequest): Promise<UpdateWorkspaceMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateWorkspaceMembersHeaders({ });
-    return await this.updateWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
-  }
-
-  async updateWorkspaceMembersWithOptions(workspaceId: string, request: UpdateWorkspaceMembersRequest, headers: UpdateWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceMembersResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      body["operatorId"] = request.operatorId;
-    }
-
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UpdateWorkspaceMembersResponse>(await this.doROARequest("UpdateWorkspaceMembers", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "none", req, runtime), new UpdateWorkspaceMembersResponse({}));
+    return $tea.cast<BatchGetWorkspaceDocsResponse>(await this.doROARequest("BatchGetWorkspaceDocs", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/docs/infos/query`, "json", req, runtime), new BatchGetWorkspaceDocsResponse({}));
   }
 
   async updateWorkspaceDocMembers(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest): Promise<UpdateWorkspaceDocMembersResponse> {
@@ -1006,39 +1870,6 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateWorkspaceDocResponse>(await this.doROARequest("CreateWorkspaceDoc", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs`, "json", req, runtime), new CreateWorkspaceDocResponse({}));
-  }
-
-  async addWorkspaceMembers(workspaceId: string, request: AddWorkspaceMembersRequest): Promise<AddWorkspaceMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddWorkspaceMembersHeaders({ });
-    return await this.addWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
-  }
-
-  async addWorkspaceMembersWithOptions(workspaceId: string, request: AddWorkspaceMembersRequest, headers: AddWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceMembersResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      body["operatorId"] = request.operatorId;
-    }
-
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AddWorkspaceMembersResponse>(await this.doROARequest("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "json", req, runtime), new AddWorkspaceMembersResponse({}));
   }
 
   async createWorkspace(request: CreateWorkspaceRequest): Promise<CreateWorkspaceResponse> {
@@ -1147,6 +1978,331 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetWorkspaceResponse>(await this.doROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}`, "json", req, runtime), new GetWorkspaceResponse({}));
+  }
+
+  async searchWorkspaceDocs(workspaceId: string, request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchWorkspaceDocsHeaders({ });
+    return await this.searchWorkspaceDocsWithOptions(workspaceId, request, headers, runtime);
+  }
+
+  async searchWorkspaceDocsWithOptions(workspaceId: string, request: SearchWorkspaceDocsRequest, headers: SearchWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspaceDocsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.size)) {
+      query["size"] = request.size;
+    }
+
+    if (!Util.isUnset(request.loadMoreId)) {
+      query["loadMoreId"] = request.loadMoreId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SearchWorkspaceDocsResponse>(await this.doROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs`, "json", req, runtime), new SearchWorkspaceDocsResponse({}));
+  }
+
+  async batchGetWorkspaces(request: BatchGetWorkspacesRequest): Promise<BatchGetWorkspacesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchGetWorkspacesHeaders({ });
+    return await this.batchGetWorkspacesWithOptions(request, headers, runtime);
+  }
+
+  async batchGetWorkspacesWithOptions(request: BatchGetWorkspacesRequest, headers: BatchGetWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetWorkspacesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.includeRecent)) {
+      body["includeRecent"] = request.includeRecent;
+    }
+
+    if (!Util.isUnset(request.workspaceIds)) {
+      body["workspaceIds"] = request.workspaceIds;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingUid)) {
+      body["dingUid"] = request.dingUid;
+    }
+
+    if (!Util.isUnset(request.dingAccessTokenType)) {
+      body["dingAccessTokenType"] = request.dingAccessTokenType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchGetWorkspacesResponse>(await this.doROARequest("BatchGetWorkspaces", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/infos/query`, "json", req, runtime), new BatchGetWorkspacesResponse({}));
+  }
+
+  async deleteWorkspaceMembers(workspaceId: string, request: DeleteWorkspaceMembersRequest): Promise<DeleteWorkspaceMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteWorkspaceMembersHeaders({ });
+    return await this.deleteWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
+  }
+
+  async deleteWorkspaceMembersWithOptions(workspaceId: string, request: DeleteWorkspaceMembersRequest, headers: DeleteWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeleteWorkspaceMembersResponse>(await this.doROARequest("DeleteWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members/remove`, "none", req, runtime), new DeleteWorkspaceMembersResponse({}));
+  }
+
+  async addWorkspaceDocMembers(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest): Promise<AddWorkspaceDocMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddWorkspaceDocMembersHeaders({ });
+    return await this.addWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
+  }
+
+  async addWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest, headers: AddWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceDocMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddWorkspaceDocMembersResponse>(await this.doROARequest("AddWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members`, "none", req, runtime), new AddWorkspaceDocMembersResponse({}));
+  }
+
+  async updateWorkspaceMembers(workspaceId: string, request: UpdateWorkspaceMembersRequest): Promise<UpdateWorkspaceMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateWorkspaceMembersHeaders({ });
+    return await this.updateWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
+  }
+
+  async updateWorkspaceMembersWithOptions(workspaceId: string, request: UpdateWorkspaceMembersRequest, headers: UpdateWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateWorkspaceMembersResponse>(await this.doROARequest("UpdateWorkspaceMembers", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "none", req, runtime), new UpdateWorkspaceMembersResponse({}));
+  }
+
+  async getRelatedWorkspaces(request: GetRelatedWorkspacesRequest): Promise<GetRelatedWorkspacesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRelatedWorkspacesHeaders({ });
+    return await this.getRelatedWorkspacesWithOptions(request, headers, runtime);
+  }
+
+  async getRelatedWorkspacesWithOptions(request: GetRelatedWorkspacesRequest, headers: GetRelatedWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelatedWorkspacesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.includeRecent)) {
+      query["includeRecent"] = request.includeRecent;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetRelatedWorkspacesResponse>(await this.doROARequest("GetRelatedWorkspaces", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces`, "json", req, runtime), new GetRelatedWorkspacesResponse({}));
+  }
+
+  async getRecentEditDocs(request: GetRecentEditDocsRequest): Promise<GetRecentEditDocsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRecentEditDocsHeaders({ });
+    return await this.getRecentEditDocsWithOptions(request, headers, runtime);
+  }
+
+  async getRecentEditDocsWithOptions(request: GetRecentEditDocsRequest, headers: GetRecentEditDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecentEditDocsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.size)) {
+      query["size"] = request.size;
+    }
+
+    if (!Util.isUnset(request.loadMoreId)) {
+      query["loadMoreId"] = request.loadMoreId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetRecentEditDocsResponse>(await this.doROARequest("GetRecentEditDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/docs/recentEditDocs`, "json", req, runtime), new GetRecentEditDocsResponse({}));
+  }
+
+  async addWorkspaceMembers(workspaceId: string, request: AddWorkspaceMembersRequest): Promise<AddWorkspaceMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddWorkspaceMembersHeaders({ });
+    return await this.addWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
+  }
+
+  async addWorkspaceMembersWithOptions(workspaceId: string, request: AddWorkspaceMembersRequest, headers: AddWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddWorkspaceMembersResponse>(await this.doROARequest("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "json", req, runtime), new AddWorkspaceMembersResponse({}));
+  }
+
+  async getWorkspaceNode(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest): Promise<GetWorkspaceNodeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetWorkspaceNodeHeaders({ });
+    return await this.getWorkspaceNodeWithOptions(workspaceId, nodeId, request, headers, runtime);
+  }
+
+  async getWorkspaceNodeWithOptions(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest, headers: GetWorkspaceNodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceNodeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetWorkspaceNodeResponse>(await this.doROARequest("GetWorkspaceNode", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`, "json", req, runtime), new GetWorkspaceNodeResponse({}));
   }
 
 }

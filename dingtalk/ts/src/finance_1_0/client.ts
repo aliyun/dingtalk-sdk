@@ -781,8 +781,6 @@ export class CreateBatchTradeOrderHeaders extends $tea.Model {
 }
 
 export class CreateBatchTradeOrderRequest extends $tea.Model {
-  suiteId?: string;
-  corpId?: string;
   staffId?: string;
   accountId?: string;
   accountNo?: string;
@@ -792,11 +790,8 @@ export class CreateBatchTradeOrderRequest extends $tea.Model {
   totalCount?: number;
   totalAmount?: string;
   batchTradeDetails?: CreateBatchTradeOrderRequestBatchTradeDetails[];
-  isvCorpId?: string;
   static names(): { [key: string]: string } {
     return {
-      suiteId: 'suiteId',
-      corpId: 'corpId',
       staffId: 'staffId',
       accountId: 'accountId',
       accountNo: 'accountNo',
@@ -806,14 +801,11 @@ export class CreateBatchTradeOrderRequest extends $tea.Model {
       totalCount: 'totalCount',
       totalAmount: 'totalAmount',
       batchTradeDetails: 'batchTradeDetails',
-      isvCorpId: 'isvCorpId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      suiteId: 'string',
-      corpId: 'string',
       staffId: 'string',
       accountId: 'string',
       accountNo: 'string',
@@ -823,7 +815,6 @@ export class CreateBatchTradeOrderRequest extends $tea.Model {
       totalCount: 'number',
       totalAmount: 'string',
       batchTradeDetails: { 'type': 'array', 'itemType': CreateBatchTradeOrderRequestBatchTradeDetails },
-      isvCorpId: 'string',
     };
   }
 
@@ -2055,14 +2046,6 @@ export default class Client extends OpenApi {
   async createBatchTradeOrderWithOptions(request: CreateBatchTradeOrderRequest, headers: CreateBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBatchTradeOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.suiteId)) {
-      body["suiteId"] = request.suiteId;
-    }
-
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.staffId)) {
       body["staffId"] = request.staffId;
     }
@@ -2097,10 +2080,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.batchTradeDetails)) {
       body["batchTradeDetails"] = request.batchTradeDetails;
-    }
-
-    if (!Util.isUnset(request.isvCorpId)) {
-      body["isvCorpId"] = request.isvCorpId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

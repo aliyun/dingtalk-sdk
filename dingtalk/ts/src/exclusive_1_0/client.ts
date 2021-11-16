@@ -1612,6 +1612,109 @@ export class GetDingReportDeptSummaryResponse extends $tea.Model {
   }
 }
 
+export class GetInActiveUserListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInActiveUserListRequest extends $tea.Model {
+  statDate?: string;
+  serviceId?: number;
+  dingOauthAppId?: number;
+  dingOrgId?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  deptIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      statDate: 'statDate',
+      serviceId: 'serviceId',
+      dingOauthAppId: 'dingOauthAppId',
+      dingOrgId: 'dingOrgId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      deptIds: 'deptIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      statDate: 'string',
+      serviceId: 'number',
+      dingOauthAppId: 'number',
+      dingOrgId: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      deptIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInActiveUserListResponseBody extends $tea.Model {
+  dataList?: { [key: string]: any }[];
+  metaList?: GetInActiveUserListResponseBodyMetaList[];
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      metaList: 'metaList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+      metaList: { 'type': 'array', 'itemType': GetInActiveUserListResponseBodyMetaList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInActiveUserListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetInActiveUserListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetInActiveUserListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTrustDeviceListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2551,6 +2654,37 @@ export class GetDingReportDeptSummaryResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetInActiveUserListResponseBodyMetaList extends $tea.Model {
+  kpiId?: string;
+  kpiName?: string;
+  unit?: string;
+  kpiCaliber?: string;
+  period?: string;
+  static names(): { [key: string]: string } {
+    return {
+      kpiId: 'kpiId',
+      kpiName: 'kpiName',
+      unit: 'unit',
+      kpiCaliber: 'kpiCaliber',
+      period: 'period',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      kpiId: 'string',
+      kpiName: 'string',
+      unit: 'string',
+      kpiCaliber: 'string',
+      period: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   userId?: string;
   platform?: string;
@@ -3410,6 +3544,59 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDingReportDeptSummaryResponse>(await this.doROARequest("GetDingReportDeptSummary", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/data/report/dept/${dataId}`, "json", req, runtime), new GetDingReportDeptSummaryResponse({}));
+  }
+
+  async getInActiveUserList(request: GetInActiveUserListRequest): Promise<GetInActiveUserListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetInActiveUserListHeaders({ });
+    return await this.getInActiveUserListWithOptions(request, headers, runtime);
+  }
+
+  async getInActiveUserListWithOptions(request: GetInActiveUserListRequest, headers: GetInActiveUserListHeaders, runtime: $Util.RuntimeOptions): Promise<GetInActiveUserListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.statDate)) {
+      body["statDate"] = request.statDate;
+    }
+
+    if (!Util.isUnset(request.serviceId)) {
+      body["serviceId"] = request.serviceId;
+    }
+
+    if (!Util.isUnset(request.dingOauthAppId)) {
+      body["dingOauthAppId"] = request.dingOauthAppId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetInActiveUserListResponse>(await this.doROARequest("GetInActiveUserList", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/inactives/users/query`, "json", req, runtime), new GetInActiveUserListResponse({}));
   }
 
   async getTrustDeviceList(request: GetTrustDeviceListRequest): Promise<GetTrustDeviceListResponse> {

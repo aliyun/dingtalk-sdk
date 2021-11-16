@@ -95,6 +95,69 @@ export class SortUserResponse extends $tea.Model {
   }
 }
 
+export class SignOutHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignOutRequest extends $tea.Model {
+  userId?: string;
+  reason?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      reason: 'reason',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      reason: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignOutResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListContactHideSettingsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1060,6 +1123,88 @@ export class GetTranslateFileJobResultResponse extends $tea.Model {
   }
 }
 
+export class QueryStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryStatusRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryStatusResponseBody extends $tea.Model {
+  disable?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      disable: 'disable',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      disable: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryUserManagementResourcesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1967,6 +2112,69 @@ export class UpdateSeniorSettingResponse extends $tea.Model {
   }
 }
 
+export class SetDisableHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDisableRequest extends $tea.Model {
+  userId?: string;
+  reason?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      reason: 'reason',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      reason: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDisableResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetApplyInviteInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2232,6 +2440,66 @@ export class GetMigrationDingIdByDingIdResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetMigrationDingIdByDingIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetEnableHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetEnableRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetEnableResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -2987,6 +3255,39 @@ export default class Client extends OpenApi {
     return $tea.cast<SortUserResponse>(await this.doROARequest("SortUser", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/users/sort`, "json", req, runtime), new SortUserResponse({}));
   }
 
+  async signOut(request: SignOutRequest): Promise<SignOutResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SignOutHeaders({ });
+    return await this.signOutWithOptions(request, headers, runtime);
+  }
+
+  async signOutWithOptions(request: SignOutRequest, headers: SignOutHeaders, runtime: $Util.RuntimeOptions): Promise<SignOutResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.reason)) {
+      body["reason"] = request.reason;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SignOutResponse>(await this.doROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/signOut`, "none", req, runtime), new SignOutResponse({}));
+  }
+
   async listContactHideSettings(request: ListContactHideSettingsRequest): Promise<ListContactHideSettingsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListContactHideSettingsHeaders({ });
@@ -3415,6 +3716,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTranslateFileJobResultResponse>(await this.doROARequest("GetTranslateFileJobResult", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/files/translateResults`, "json", req, runtime), new GetTranslateFileJobResultResponse({}));
   }
 
+  async queryStatus(request: QueryStatusRequest): Promise<QueryStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryStatusHeaders({ });
+    return await this.queryStatusWithOptions(request, headers, runtime);
+  }
+
+  async queryStatusWithOptions(request: QueryStatusRequest, headers: QueryStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryStatusResponse>(await this.doROARequest("QueryStatus", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccounts/status`, "json", req, runtime), new QueryStatusResponse({}));
+  }
+
   async queryUserManagementResources(userId: string): Promise<QueryUserManagementResourcesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserManagementResourcesHeaders({ });
@@ -3818,6 +4148,39 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateSeniorSettingResponse>(await this.doROARequest("UpdateSeniorSetting", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/seniorSettings`, "none", req, runtime), new UpdateSeniorSettingResponse({}));
   }
 
+  async setDisable(request: SetDisableRequest): Promise<SetDisableResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetDisableHeaders({ });
+    return await this.setDisableWithOptions(request, headers, runtime);
+  }
+
+  async setDisableWithOptions(request: SetDisableRequest, headers: SetDisableHeaders, runtime: $Util.RuntimeOptions): Promise<SetDisableResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.reason)) {
+      body["reason"] = request.reason;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SetDisableResponse>(await this.doROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/disable`, "none", req, runtime), new SetDisableResponse({}));
+  }
+
   async getApplyInviteInfo(request: GetApplyInviteInfoRequest): Promise<GetApplyInviteInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetApplyInviteInfoHeaders({ });
@@ -3915,6 +4278,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetMigrationDingIdByDingIdResponse>(await this.doROARequest("GetMigrationDingIdByDingId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getMigrationDingIdByDingIds`, "json", req, runtime), new GetMigrationDingIdByDingIdResponse({}));
+  }
+
+  async setEnable(request: SetEnableRequest): Promise<SetEnableResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetEnableHeaders({ });
+    return await this.setEnableWithOptions(request, headers, runtime);
+  }
+
+  async setEnableWithOptions(request: SetEnableRequest, headers: SetEnableHeaders, runtime: $Util.RuntimeOptions): Promise<SetEnableResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SetEnableResponse>(await this.doROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/enable`, "none", req, runtime), new SetEnableResponse({}));
   }
 
   async createManagementGroup(request: CreateManagementGroupRequest): Promise<CreateManagementGroupResponse> {
