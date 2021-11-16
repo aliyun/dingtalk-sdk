@@ -58,6 +58,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SortUser", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/users/sort", "json", req, runtime), new SortUserResponse());
     }
 
+    public SignOutResponse signOut(SignOutRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SignOutHeaders headers = new SignOutHeaders();
+        return this.signOutWithOptions(request, headers, runtime);
+    }
+
+    public SignOutResponse signOutWithOptions(SignOutRequest request, SignOutHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reason)) {
+            body.put("reason", request.reason);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "none", req, runtime), new SignOutResponse());
+    }
+
     public ListContactHideSettingsResponse listContactHideSettings(ListContactHideSettingsRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         ListContactHideSettingsHeaders headers = new ListContactHideSettingsHeaders();
@@ -486,6 +519,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetTranslateFileJobResult", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/files/translateResults", "json", req, runtime), new GetTranslateFileJobResultResponse());
     }
 
+    public QueryStatusResponse queryStatus(QueryStatusRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        QueryStatusHeaders headers = new QueryStatusHeaders();
+        return this.queryStatusWithOptions(request, headers, runtime);
+    }
+
+    public QueryStatusResponse queryStatusWithOptions(QueryStatusRequest request, QueryStatusHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryStatus", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccounts/status", "json", req, runtime), new QueryStatusResponse());
+    }
+
     public QueryUserManagementResourcesResponse queryUserManagementResources(String userId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         QueryUserManagementResourcesHeaders headers = new QueryUserManagementResourcesHeaders();
@@ -889,6 +951,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpdateSeniorSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/seniorSettings", "none", req, runtime), new UpdateSeniorSettingResponse());
     }
 
+    public SetDisableResponse setDisable(SetDisableRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SetDisableHeaders headers = new SetDisableHeaders();
+        return this.setDisableWithOptions(request, headers, runtime);
+    }
+
+    public SetDisableResponse setDisableWithOptions(SetDisableRequest request, SetDisableHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reason)) {
+            body.put("reason", request.reason);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "none", req, runtime), new SetDisableResponse());
+    }
+
     public GetApplyInviteInfoResponse getApplyInviteInfo(GetApplyInviteInfoRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetApplyInviteInfoHeaders headers = new GetApplyInviteInfoHeaders();
@@ -986,6 +1081,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetMigrationDingIdByDingId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccount/getMigrationDingIdByDingIds", "json", req, runtime), new GetMigrationDingIdByDingIdResponse());
+    }
+
+    public SetEnableResponse setEnable(SetEnableRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SetEnableHeaders headers = new SetEnableHeaders();
+        return this.setEnableWithOptions(request, headers, runtime);
+    }
+
+    public SetEnableResponse setEnableWithOptions(SetEnableRequest request, SetEnableHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "none", req, runtime), new SetEnableResponse());
     }
 
     public CreateManagementGroupResponse createManagementGroup(CreateManagementGroupRequest request) throws Exception {

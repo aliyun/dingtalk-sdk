@@ -4,14 +4,6 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBatchTradeOrderRequest extends TeaModel {
-    // ISV/企业自建应用suiteId
-    @NameInMap("suiteId")
-    public String suiteId;
-
-    // 企业corpId
-    @NameInMap("corpId")
-    public String corpId;
-
     // 员工staffId
     @NameInMap("staffId")
     public String staffId;
@@ -48,29 +40,9 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
     @NameInMap("batchTradeDetails")
     public java.util.List<CreateBatchTradeOrderRequestBatchTradeDetails> batchTradeDetails;
 
-    // Isv corpId
-    @NameInMap("isvCorpId")
-    public String isvCorpId;
-
     public static CreateBatchTradeOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateBatchTradeOrderRequest self = new CreateBatchTradeOrderRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateBatchTradeOrderRequest setSuiteId(String suiteId) {
-        this.suiteId = suiteId;
-        return this;
-    }
-    public String getSuiteId() {
-        return this.suiteId;
-    }
-
-    public CreateBatchTradeOrderRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
     }
 
     public CreateBatchTradeOrderRequest setStaffId(String staffId) {
@@ -143,14 +115,6 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
     }
     public java.util.List<CreateBatchTradeOrderRequestBatchTradeDetails> getBatchTradeDetails() {
         return this.batchTradeDetails;
-    }
-
-    public CreateBatchTradeOrderRequest setIsvCorpId(String isvCorpId) {
-        this.isvCorpId = isvCorpId;
-        return this;
-    }
-    public String getIsvCorpId() {
-        return this.isvCorpId;
     }
 
     public static class CreateBatchTradeOrderRequestBatchTradeDetails extends TeaModel {

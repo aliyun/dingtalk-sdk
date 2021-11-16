@@ -433,14 +433,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateBatchTradeOrderResponse createBatchTradeOrderWithOptions(CreateBatchTradeOrderRequest request, CreateBatchTradeOrderHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.suiteId)) {
-            body.put("suiteId", request.suiteId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
-            body.put("corpId", request.corpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
             body.put("staffId", request.staffId);
         }
@@ -475,10 +467,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.batchTradeDetails)) {
             body.put("batchTradeDetails", request.batchTradeDetails);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.isvCorpId)) {
-            body.put("isvCorpId", request.isvCorpId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
