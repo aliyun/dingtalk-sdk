@@ -180,14 +180,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["batchTradeDetails"] = request.BatchTradeDetails;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                body["isvCorpId"] = request.IsvCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutBatchNo))
             {
                 body["outBatchNo"] = request.OutBatchNo;
@@ -195,10 +187,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
             {
                 body["staffId"] = request.StaffId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                body["suiteId"] = request.SuiteId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TotalAmount))
             {
@@ -249,14 +237,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["batchTradeDetails"] = request.BatchTradeDetails;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
-            {
-                body["isvCorpId"] = request.IsvCorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutBatchNo))
             {
                 body["outBatchNo"] = request.OutBatchNo;
@@ -264,10 +244,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
             {
                 body["staffId"] = request.StaffId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
-            {
-                body["suiteId"] = request.SuiteId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TotalAmount))
             {

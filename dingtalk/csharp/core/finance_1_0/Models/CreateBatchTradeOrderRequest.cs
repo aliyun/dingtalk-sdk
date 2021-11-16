@@ -82,20 +82,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         }
 
         /// <summary>
-        /// 企业corpId
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
-        /// <summary>
-        /// Isv corpId
-        /// </summary>
-        [NameInMap("isvCorpId")]
-        [Validation(Required=false)]
-        public string IsvCorpId { get; set; }
-
-        /// <summary>
         /// 外部商户批次号
         /// </summary>
         [NameInMap("outBatchNo")]
@@ -108,13 +94,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [NameInMap("staffId")]
         [Validation(Required=false)]
         public string StaffId { get; set; }
-
-        /// <summary>
-        /// ISV/企业自建应用suiteId
-        /// </summary>
-        [NameInMap("suiteId")]
-        [Validation(Required=false)]
-        public string SuiteId { get; set; }
 
         /// <summary>
         /// 总金额（必填，单位：元）
