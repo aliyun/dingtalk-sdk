@@ -524,12 +524,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->suiteId)) {
-            @$body['suiteId'] = $request->suiteId;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
         if (!Utils::isUnset($request->staffId)) {
             @$body['staffId'] = $request->staffId;
         }
@@ -556,9 +550,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->batchTradeDetails)) {
             @$body['batchTradeDetails'] = $request->batchTradeDetails;
-        }
-        if (!Utils::isUnset($request->isvCorpId)) {
-            @$body['isvCorpId'] = $request->isvCorpId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

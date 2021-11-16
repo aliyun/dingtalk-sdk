@@ -58,6 +58,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentHeaders;
@@ -66,6 +69,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetDisableHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetDisableRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetDisableResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetEnableHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetEnableRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SetEnableResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SignOutHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SignOutRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SignOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserResponse;
@@ -155,6 +167,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SortUserResponse::fromMap($this->doROARequest('SortUser', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/users/sort', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SignOutRequest $request
+     *
+     * @return SignOutResponse
+     */
+    public function signOut($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SignOutHeaders([]);
+
+        return $this->signOutWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SignOutRequest $request
+     * @param SignOutHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return SignOutResponse
+     */
+    public function signOutWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->reason)) {
+            @$body['reason'] = $request->reason;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SignOutResponse::fromMap($this->doROARequest('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/signOut', 'none', $req, $runtime));
     }
 
     /**
@@ -698,6 +755,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetTranslateFileJobResultResponse::fromMap($this->doROARequest('GetTranslateFileJobResult', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/files/translateResults', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryStatusRequest $request
+     *
+     * @return QueryStatusResponse
+     */
+    public function queryStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryStatusHeaders([]);
+
+        return $this->queryStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryStatusRequest $request
+     * @param QueryStatusHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return QueryStatusResponse
+     */
+    public function queryStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryStatusResponse::fromMap($this->doROARequest('QueryStatus', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccounts/status', 'json', $req, $runtime));
     }
 
     /**
@@ -1247,6 +1346,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SetDisableRequest $request
+     *
+     * @return SetDisableResponse
+     */
+    public function setDisable($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetDisableHeaders([]);
+
+        return $this->setDisableWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetDisableRequest $request
+     * @param SetDisableHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return SetDisableResponse
+     */
+    public function setDisableWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->reason)) {
+            @$body['reason'] = $request->reason;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetDisableResponse::fromMap($this->doROARequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/disable', 'none', $req, $runtime));
+    }
+
+    /**
      * @param GetApplyInviteInfoRequest $request
      *
      * @return GetApplyInviteInfoResponse
@@ -1379,6 +1523,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetMigrationDingIdByDingIdResponse::fromMap($this->doROARequest('GetMigrationDingIdByDingId', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccount/getMigrationDingIdByDingIds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SetEnableRequest $request
+     *
+     * @return SetEnableResponse
+     */
+    public function setEnable($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetEnableHeaders([]);
+
+        return $this->setEnableWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetEnableRequest $request
+     * @param SetEnableHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return SetEnableResponse
+     */
+    public function setEnableWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetEnableResponse::fromMap($this->doROARequest('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/enable', 'none', $req, $runtime));
     }
 
     /**

@@ -37,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedSummary
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
@@ -989,6 +992,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDingReportDeptSummaryResponse::fromMap($this->doROARequest('GetDingReportDeptSummary', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/data/report/dept/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetInActiveUserListRequest $request
+     *
+     * @return GetInActiveUserListResponse
+     */
+    public function getInActiveUserList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInActiveUserListHeaders([]);
+
+        return $this->getInActiveUserListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInActiveUserListRequest $request
+     * @param GetInActiveUserListHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetInActiveUserListResponse
+     */
+    public function getInActiveUserListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->statDate)) {
+            @$body['statDate'] = $request->statDate;
+        }
+        if (!Utils::isUnset($request->serviceId)) {
+            @$body['serviceId'] = $request->serviceId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            @$body['deptIds'] = $request->deptIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetInActiveUserListResponse::fromMap($this->doROARequest('GetInActiveUserList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/inactives/users/query', 'json', $req, $runtime));
     }
 
     /**

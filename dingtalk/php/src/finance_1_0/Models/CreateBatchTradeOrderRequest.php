@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateBatchTradeOrderRequest extends Model
 {
     /**
-     * @description ISV/企业自建应用suiteId
-     *
-     * @var string
-     */
-    public $suiteId;
-
-    /**
-     * @description 企业corpId
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @description 员工staffId
      *
      * @var string
@@ -85,16 +71,7 @@ class CreateBatchTradeOrderRequest extends Model
      * @var batchTradeDetails[]
      */
     public $batchTradeDetails;
-
-    /**
-     * @description Isv corpId
-     *
-     * @var string
-     */
-    public $isvCorpId;
     protected $_name = [
-        'suiteId'           => 'suiteId',
-        'corpId'            => 'corpId',
         'staffId'           => 'staffId',
         'accountId'         => 'accountId',
         'accountNo'         => 'accountNo',
@@ -104,7 +81,6 @@ class CreateBatchTradeOrderRequest extends Model
         'totalCount'        => 'totalCount',
         'totalAmount'       => 'totalAmount',
         'batchTradeDetails' => 'batchTradeDetails',
-        'isvCorpId'         => 'isvCorpId',
     ];
 
     public function validate()
@@ -114,12 +90,6 @@ class CreateBatchTradeOrderRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->suiteId) {
-            $res['suiteId'] = $this->suiteId;
-        }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->staffId) {
             $res['staffId'] = $this->staffId;
         }
@@ -153,9 +123,6 @@ class CreateBatchTradeOrderRequest extends Model
                 }
             }
         }
-        if (null !== $this->isvCorpId) {
-            $res['isvCorpId'] = $this->isvCorpId;
-        }
 
         return $res;
     }
@@ -168,12 +135,6 @@ class CreateBatchTradeOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['suiteId'])) {
-            $model->suiteId = $map['suiteId'];
-        }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['staffId'])) {
             $model->staffId = $map['staffId'];
         }
@@ -206,9 +167,6 @@ class CreateBatchTradeOrderRequest extends Model
                     $model->batchTradeDetails[$n++] = null !== $item ? batchTradeDetails::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['isvCorpId'])) {
-            $model->isvCorpId = $map['isvCorpId'];
         }
 
         return $model;
