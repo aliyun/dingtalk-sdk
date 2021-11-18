@@ -957,8 +957,6 @@ class QueryAllFormInstancesRequest(TeaModel):
         self,
         next_token: str = None,
         max_results: int = None,
-        start_time_in_mills: int = None,
-        end_time_in_mills: int = None,
         app_uuid: str = None,
         form_code: str = None,
     ):
@@ -966,10 +964,6 @@ class QueryAllFormInstancesRequest(TeaModel):
         self.next_token = next_token
         # 翻页size
         self.max_results = max_results
-        # 开始时间戳
-        self.start_time_in_mills = start_time_in_mills
-        # 结束时间戳
-        self.end_time_in_mills = end_time_in_mills
         # 应用搭建id
         self.app_uuid = app_uuid
         # 表单模板id
@@ -988,10 +982,6 @@ class QueryAllFormInstancesRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.max_results is not None:
             result['maxResults'] = self.max_results
-        if self.start_time_in_mills is not None:
-            result['startTimeInMills'] = self.start_time_in_mills
-        if self.end_time_in_mills is not None:
-            result['endTimeInMills'] = self.end_time_in_mills
         if self.app_uuid is not None:
             result['appUuid'] = self.app_uuid
         if self.form_code is not None:
@@ -1004,10 +994,6 @@ class QueryAllFormInstancesRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
-        if m.get('startTimeInMills') is not None:
-            self.start_time_in_mills = m.get('startTimeInMills')
-        if m.get('endTimeInMills') is not None:
-            self.end_time_in_mills = m.get('endTimeInMills')
         if m.get('appUuid') is not None:
             self.app_uuid = m.get('appUuid')
         if m.get('formCode') is not None:

@@ -2405,6 +2405,252 @@ class CreateInviteUrlResponse(TeaModel):
         return self
 
 
+class PollingConfirmStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PollingConfirmStatusRequest(TeaModel):
+    def __init__(
+        self,
+        ext: str = None,
+        isv_code: str = None,
+        course_code: str = None,
+        op_user_id: str = None,
+    ):
+        # ext
+        self.ext = ext
+        # isvCode
+        self.isv_code = isv_code
+        # courseCode
+        self.course_code = course_code
+        # opUserId
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.isv_code is not None:
+            result['isvCode'] = self.isv_code
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('isvCode') is not None:
+            self.isv_code = m.get('isvCode')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList(TeaModel):
+    def __init__(
+        self,
+        live_input_url: str = None,
+        live_output_url: str = None,
+        live_type: int = None,
+        replay_url: str = None,
+    ):
+        # 推流地址
+        self.live_input_url = live_input_url
+        # 直播拉流地址
+        self.live_output_url = live_output_url
+        # 视频流类型
+        self.live_type = live_type
+        # 视频回放地址
+        self.replay_url = replay_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_input_url is not None:
+            result['liveInputUrl'] = self.live_input_url
+        if self.live_output_url is not None:
+            result['liveOutputUrl'] = self.live_output_url
+        if self.live_type is not None:
+            result['liveType'] = self.live_type
+        if self.replay_url is not None:
+            result['replayUrl'] = self.replay_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveInputUrl') is not None:
+            self.live_input_url = m.get('liveInputUrl')
+        if m.get('liveOutputUrl') is not None:
+            self.live_output_url = m.get('liveOutputUrl')
+        if m.get('liveType') is not None:
+            self.live_type = m.get('liveType')
+        if m.get('replayUrl') is not None:
+            self.replay_url = m.get('replayUrl')
+        return self
+
+
+class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse(TeaModel):
+    def __init__(
+        self,
+        confirm_status: bool = None,
+        course_code: str = None,
+        live_play_info_list: List[PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList] = None,
+    ):
+        # 确认状态
+        self.confirm_status = confirm_status
+        # 课程编码
+        self.course_code = course_code
+        self.live_play_info_list = live_play_info_list
+
+    def validate(self):
+        if self.live_play_info_list:
+            for k in self.live_play_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.confirm_status is not None:
+            result['confirmStatus'] = self.confirm_status
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        result['livePlayInfoList'] = []
+        if self.live_play_info_list is not None:
+            for k in self.live_play_info_list:
+                result['livePlayInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('confirmStatus') is not None:
+            self.confirm_status = m.get('confirmStatus')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        self.live_play_info_list = []
+        if m.get('livePlayInfoList') is not None:
+            for k in m.get('livePlayInfoList'):
+                temp_model = PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList()
+                self.live_play_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class PollingConfirmStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        university_polling_course_status_response: PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse = None,
+    ):
+        self.university_polling_course_status_response = university_polling_course_status_response
+
+    def validate(self):
+        if self.university_polling_course_status_response:
+            self.university_polling_course_status_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.university_polling_course_status_response is not None:
+            result['universityPollingCourseStatusResponse'] = self.university_polling_course_status_response.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('universityPollingCourseStatusResponse') is not None:
+            temp_model = PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse()
+            self.university_polling_course_status_response = temp_model.from_map(m['universityPollingCourseStatusResponse'])
+        return self
+
+
+class PollingConfirmStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PollingConfirmStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PollingConfirmStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteTeacherHeaders(TeaModel):
     def __init__(
         self,
@@ -10196,6 +10442,217 @@ class CreateCustomDeptResponse(TeaModel):
         return self
 
 
+class StartCoursePrepareHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class StartCoursePrepareRequest(TeaModel):
+    def __init__(
+        self,
+        ext: str = None,
+        course_group_code: str = None,
+        section_index: List[int] = None,
+        device_id: str = None,
+        live_cover_image: str = None,
+        course_date: str = None,
+        isv_code: str = None,
+        op_user_id: str = None,
+    ):
+        # 拓展信息
+        self.ext = ext
+        # 课程组编号
+        self.course_group_code = course_group_code
+        # 课节信息
+        self.section_index = section_index
+        # 设备id
+        self.device_id = device_id
+        # 封面url
+        self.live_cover_image = live_cover_image
+        # 上课日期
+        self.course_date = course_date
+        # isv编号
+        self.isv_code = isv_code
+        # 操作人
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.course_group_code is not None:
+            result['courseGroupCode'] = self.course_group_code
+        if self.section_index is not None:
+            result['sectionIndex'] = self.section_index
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.live_cover_image is not None:
+            result['liveCoverImage'] = self.live_cover_image
+        if self.course_date is not None:
+            result['courseDate'] = self.course_date
+        if self.isv_code is not None:
+            result['isvCode'] = self.isv_code
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('courseGroupCode') is not None:
+            self.course_group_code = m.get('courseGroupCode')
+        if m.get('sectionIndex') is not None:
+            self.section_index = m.get('sectionIndex')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('liveCoverImage') is not None:
+            self.live_cover_image = m.get('liveCoverImage')
+        if m.get('courseDate') is not None:
+            self.course_date = m.get('courseDate')
+        if m.get('isvCode') is not None:
+            self.isv_code = m.get('isvCode')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class StartCoursePrepareResponseBodyUniversityCourseCommonResponse(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        course_code: str = None,
+    ):
+        # 调用是否成功
+        self.success = success
+        # 课程编码
+        self.course_code = course_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        return self
+
+
+class StartCoursePrepareResponseBody(TeaModel):
+    def __init__(
+        self,
+        university_course_common_response: StartCoursePrepareResponseBodyUniversityCourseCommonResponse = None,
+    ):
+        self.university_course_common_response = university_course_common_response
+
+    def validate(self):
+        if self.university_course_common_response:
+            self.university_course_common_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.university_course_common_response is not None:
+            result['universityCourseCommonResponse'] = self.university_course_common_response.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('universityCourseCommonResponse') is not None:
+            temp_model = StartCoursePrepareResponseBodyUniversityCourseCommonResponse()
+            self.university_course_common_response = temp_model.from_map(m['universityCourseCommonResponse'])
+        return self
+
+
+class StartCoursePrepareResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: StartCoursePrepareResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = StartCoursePrepareResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryClassScheduleByTimeSchoolHeaders(TeaModel):
     def __init__(
         self,
@@ -11228,6 +11685,220 @@ class DeleteOrgRelationResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteOrgRelationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class StartCourseRequestLivePlayInfoList(TeaModel):
+    def __init__(
+        self,
+        live_output_url: str = None,
+        live_type: int = None,
+        live_input_url: str = None,
+        replay_url: str = None,
+    ):
+        # 直播拉流地址
+        self.live_output_url = live_output_url
+        # 直播流类型
+        self.live_type = live_type
+        # 直播推流地址
+        self.live_input_url = live_input_url
+        # 视频回放地址
+        self.replay_url = replay_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_output_url is not None:
+            result['liveOutputUrl'] = self.live_output_url
+        if self.live_type is not None:
+            result['liveType'] = self.live_type
+        if self.live_input_url is not None:
+            result['liveInputUrl'] = self.live_input_url
+        if self.replay_url is not None:
+            result['replayUrl'] = self.replay_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveOutputUrl') is not None:
+            self.live_output_url = m.get('liveOutputUrl')
+        if m.get('liveType') is not None:
+            self.live_type = m.get('liveType')
+        if m.get('liveInputUrl') is not None:
+            self.live_input_url = m.get('liveInputUrl')
+        if m.get('replayUrl') is not None:
+            self.replay_url = m.get('replayUrl')
+        return self
+
+
+class StartCourseRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        ext: str = None,
+        course_code: str = None,
+        live_play_info_list: List[StartCourseRequestLivePlayInfoList] = None,
+        isv_code: str = None,
+    ):
+        # opUserId
+        self.op_user_id = op_user_id
+        # 拓展字段
+        self.ext = ext
+        # 课程编码
+        self.course_code = course_code
+        # livePlayInfoList
+        self.live_play_info_list = live_play_info_list
+        # isvCode
+        self.isv_code = isv_code
+
+    def validate(self):
+        if self.live_play_info_list:
+            for k in self.live_play_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        result['livePlayInfoList'] = []
+        if self.live_play_info_list is not None:
+            for k in self.live_play_info_list:
+                result['livePlayInfoList'].append(k.to_map() if k else None)
+        if self.isv_code is not None:
+            result['isvCode'] = self.isv_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        self.live_play_info_list = []
+        if m.get('livePlayInfoList') is not None:
+            for k in m.get('livePlayInfoList'):
+                temp_model = StartCourseRequestLivePlayInfoList()
+                self.live_play_info_list.append(temp_model.from_map(k))
+        if m.get('isvCode') is not None:
+            self.isv_code = m.get('isvCode')
+        return self
+
+
+class StartCourseResponseBodyUniversityCourseCommonResponse(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        course_code: str = None,
+    ):
+        # 调用是否成功
+        self.success = success
+        # 课程编码
+        self.course_code = course_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        return self
+
+
+class StartCourseResponseBody(TeaModel):
+    def __init__(
+        self,
+        university_course_common_response: StartCourseResponseBodyUniversityCourseCommonResponse = None,
+    ):
+        self.university_course_common_response = university_course_common_response
+
+    def validate(self):
+        if self.university_course_common_response:
+            self.university_course_common_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.university_course_common_response is not None:
+            result['universityCourseCommonResponse'] = self.university_course_common_response.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('universityCourseCommonResponse') is not None:
+            temp_model = StartCourseResponseBodyUniversityCourseCommonResponse()
+            self.university_course_common_response = temp_model.from_map(m['universityCourseCommonResponse'])
+        return self
+
+
+class StartCourseResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: StartCourseResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = StartCourseResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -12624,6 +13295,253 @@ class QueryOrgTypeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryOrgTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EndCourseHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EndCourseRequestLivePlayInfoList(TeaModel):
+    def __init__(
+        self,
+        live_output_url: str = None,
+        live_type: int = None,
+        live_input_url: str = None,
+        replay_url: str = None,
+    ):
+        # 直播拉流地址
+        self.live_output_url = live_output_url
+        # 直播流类型
+        self.live_type = live_type
+        # 直播推流地址
+        self.live_input_url = live_input_url
+        # 回放视频地址
+        self.replay_url = replay_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_output_url is not None:
+            result['liveOutputUrl'] = self.live_output_url
+        if self.live_type is not None:
+            result['liveType'] = self.live_type
+        if self.live_input_url is not None:
+            result['liveInputUrl'] = self.live_input_url
+        if self.replay_url is not None:
+            result['replayUrl'] = self.replay_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveOutputUrl') is not None:
+            self.live_output_url = m.get('liveOutputUrl')
+        if m.get('liveType') is not None:
+            self.live_type = m.get('liveType')
+        if m.get('liveInputUrl') is not None:
+            self.live_input_url = m.get('liveInputUrl')
+        if m.get('replayUrl') is not None:
+            self.replay_url = m.get('replayUrl')
+        return self
+
+
+class EndCourseRequest(TeaModel):
+    def __init__(
+        self,
+        op_user_id: str = None,
+        ext: str = None,
+        course_code: str = None,
+        live_play_info_list: List[EndCourseRequestLivePlayInfoList] = None,
+        isv_code: str = None,
+    ):
+        # 用户id
+        self.op_user_id = op_user_id
+        # 拓展字段
+        self.ext = ext
+        # 课程编码
+        self.course_code = course_code
+        # 直播流信息
+        self.live_play_info_list = live_play_info_list
+        # isv编码
+        self.isv_code = isv_code
+
+    def validate(self):
+        if self.live_play_info_list:
+            for k in self.live_play_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        result['livePlayInfoList'] = []
+        if self.live_play_info_list is not None:
+            for k in self.live_play_info_list:
+                result['livePlayInfoList'].append(k.to_map() if k else None)
+        if self.isv_code is not None:
+            result['isvCode'] = self.isv_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        self.live_play_info_list = []
+        if m.get('livePlayInfoList') is not None:
+            for k in m.get('livePlayInfoList'):
+                temp_model = EndCourseRequestLivePlayInfoList()
+                self.live_play_info_list.append(temp_model.from_map(k))
+        if m.get('isvCode') is not None:
+            self.isv_code = m.get('isvCode')
+        return self
+
+
+class EndCourseResponseBodyUniversityCourseCommonResponse(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        course_code: str = None,
+    ):
+        # 调用是否成功
+        self.success = success
+        # 课程编码
+        self.course_code = course_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.course_code is not None:
+            result['courseCode'] = self.course_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('courseCode') is not None:
+            self.course_code = m.get('courseCode')
+        return self
+
+
+class EndCourseResponseBody(TeaModel):
+    def __init__(
+        self,
+        university_course_common_response: EndCourseResponseBodyUniversityCourseCommonResponse = None,
+    ):
+        self.university_course_common_response = university_course_common_response
+
+    def validate(self):
+        if self.university_course_common_response:
+            self.university_course_common_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.university_course_common_response is not None:
+            result['universityCourseCommonResponse'] = self.university_course_common_response.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('universityCourseCommonResponse') is not None:
+            temp_model = EndCourseResponseBodyUniversityCourseCommonResponse()
+            self.university_course_common_response = temp_model.from_map(m['universityCourseCommonResponse'])
+        return self
+
+
+class EndCourseResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: EndCourseResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = EndCourseResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

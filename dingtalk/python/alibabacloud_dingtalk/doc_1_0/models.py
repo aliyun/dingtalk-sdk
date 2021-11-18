@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List, Any
+from typing import Dict, List
 
 
 class BatchGetWorkspaceDocsHeaders(TeaModel):
@@ -1066,17 +1066,17 @@ class SearchWorkspaceDocsRequest(TeaModel):
         self,
         operator_id: str = None,
         keyword: str = None,
-        size: int = None,
-        load_more_id: str = None,
+        max_results: int = None,
+        next_token: str = None,
     ):
         # 发起操作用户unionId
         self.operator_id = operator_id
         # 搜索关键字
         self.keyword = keyword
         # 搜索数量
-        self.size = size
+        self.max_results = max_results
         # 翻页Id
-        self.load_more_id = load_more_id
+        self.next_token = next_token
 
     def validate(self):
         pass
@@ -1091,10 +1091,10 @@ class SearchWorkspaceDocsRequest(TeaModel):
             result['operatorId'] = self.operator_id
         if self.keyword is not None:
             result['keyword'] = self.keyword
-        if self.size is not None:
-            result['size'] = self.size
-        if self.load_more_id is not None:
-            result['loadMoreId'] = self.load_more_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         return result
 
     def from_map(self, m: dict = None):
@@ -1103,10 +1103,10 @@ class SearchWorkspaceDocsRequest(TeaModel):
             self.operator_id = m.get('operatorId')
         if m.get('keyword') is not None:
             self.keyword = m.get('keyword')
-        if m.get('size') is not None:
-            self.size = m.get('size')
-        if m.get('loadMoreId') is not None:
-            self.load_more_id = m.get('loadMoreId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         return self
 
 
@@ -1236,12 +1236,12 @@ class SearchWorkspaceDocsResponseBody(TeaModel):
     def __init__(
         self,
         has_more: bool = None,
-        load_more_id: str = None,
+        next_token: str = None,
         docs: List[SearchWorkspaceDocsResponseBodyDocs] = None,
     ):
         # 是否还有可搜索内容
         self.has_more = has_more
-        self.load_more_id = load_more_id
+        self.next_token = next_token
         self.docs = docs
 
     def validate(self):
@@ -1258,8 +1258,8 @@ class SearchWorkspaceDocsResponseBody(TeaModel):
         result = dict()
         if self.has_more is not None:
             result['hasMore'] = self.has_more
-        if self.load_more_id is not None:
-            result['loadMoreId'] = self.load_more_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         result['docs'] = []
         if self.docs is not None:
             for k in self.docs:
@@ -1270,8 +1270,8 @@ class SearchWorkspaceDocsResponseBody(TeaModel):
         m = m or dict()
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
-        if m.get('loadMoreId') is not None:
-            self.load_more_id = m.get('loadMoreId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         self.docs = []
         if m.get('docs') is not None:
             for k in m.get('docs'):
@@ -2350,14 +2350,14 @@ class GetRecentEditDocsRequest(TeaModel):
     def __init__(
         self,
         operator_id: str = None,
-        size: int = None,
-        load_more_id: str = None,
+        max_results: int = None,
+        next_token: str = None,
     ):
         # 发起操作用户unionId
         self.operator_id = operator_id
         # 查询size
-        self.size = size
-        self.load_more_id = load_more_id
+        self.max_results = max_results
+        self.next_token = next_token
 
     def validate(self):
         pass
@@ -2370,20 +2370,20 @@ class GetRecentEditDocsRequest(TeaModel):
         result = dict()
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
-        if self.size is not None:
-            result['size'] = self.size
-        if self.load_more_id is not None:
-            result['loadMoreId'] = self.load_more_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
-        if m.get('size') is not None:
-            self.size = m.get('size')
-        if m.get('loadMoreId') is not None:
-            self.load_more_id = m.get('loadMoreId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         return self
 
 
@@ -2515,11 +2515,11 @@ class GetRecentEditDocsResponseBody(TeaModel):
     def __init__(
         self,
         recent_list: List[GetRecentEditDocsResponseBodyRecentList] = None,
-        load_more_id: str = None,
+        next_token: str = None,
     ):
         # 查询结果
         self.recent_list = recent_list
-        self.load_more_id = load_more_id
+        self.next_token = next_token
 
     def validate(self):
         if self.recent_list:
@@ -2537,8 +2537,8 @@ class GetRecentEditDocsResponseBody(TeaModel):
         if self.recent_list is not None:
             for k in self.recent_list:
                 result['recentList'].append(k.to_map() if k else None)
-        if self.load_more_id is not None:
-            result['loadMoreId'] = self.load_more_id
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         return result
 
     def from_map(self, m: dict = None):
@@ -2548,8 +2548,8 @@ class GetRecentEditDocsResponseBody(TeaModel):
             for k in m.get('recentList'):
                 temp_model = GetRecentEditDocsResponseBodyRecentList()
                 self.recent_list.append(temp_model.from_map(k))
-        if m.get('loadMoreId') is not None:
-            self.load_more_id = m.get('loadMoreId')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         return self
 
 
@@ -2833,19 +2833,19 @@ class GetWorkspaceNodeRequest(TeaModel):
         return self
 
 
-class GetWorkspaceNodeResponseBody(TeaModel):
+class GetWorkspaceNodeResponseBodyNodeBO(TeaModel):
     def __init__(
         self,
-        node_bo: Dict[str, Any] = None,
-        workspace_bo: Dict[str, Any] = None,
-        has_permission: bool = None,
+        name: str = None,
+        node_id: str = None,
+        url: str = None,
     ):
-        # 节点信息
-        self.node_bo = node_bo
-        # 节点所属团队空间信息
-        self.workspace_bo = workspace_bo
-        # 是否有权限
-        self.has_permission = has_permission
+        # 节点名称
+        self.name = name
+        # 节点Id
+        self.node_id = node_id
+        # 节点打开url
+        self.url = url
 
     def validate(self):
         pass
@@ -2856,10 +2856,90 @@ class GetWorkspaceNodeResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.node_id is not None:
+            result['nodeId'] = self.node_id
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nodeId') is not None:
+            self.node_id = m.get('nodeId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetWorkspaceNodeResponseBodyWorkspaceBO(TeaModel):
+    def __init__(
+        self,
+        workspace_id: str = None,
+        name: str = None,
+    ):
+        # 团队空间Id
+        self.workspace_id = workspace_id
+        # 团队空间名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetWorkspaceNodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        node_bo: GetWorkspaceNodeResponseBodyNodeBO = None,
+        workspace_bo: GetWorkspaceNodeResponseBodyWorkspaceBO = None,
+        has_permission: bool = None,
+    ):
+        # 节点信息
+        self.node_bo = node_bo
+        # 节点所属团队空间信息
+        self.workspace_bo = workspace_bo
+        # 是否有权限
+        self.has_permission = has_permission
+
+    def validate(self):
+        if self.node_bo:
+            self.node_bo.validate()
+        if self.workspace_bo:
+            self.workspace_bo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.node_bo is not None:
-            result['nodeBO'] = self.node_bo
+            result['nodeBO'] = self.node_bo.to_map()
         if self.workspace_bo is not None:
-            result['workspaceBO'] = self.workspace_bo
+            result['workspaceBO'] = self.workspace_bo.to_map()
         if self.has_permission is not None:
             result['hasPermission'] = self.has_permission
         return result
@@ -2867,9 +2947,11 @@ class GetWorkspaceNodeResponseBody(TeaModel):
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('nodeBO') is not None:
-            self.node_bo = m.get('nodeBO')
+            temp_model = GetWorkspaceNodeResponseBodyNodeBO()
+            self.node_bo = temp_model.from_map(m['nodeBO'])
         if m.get('workspaceBO') is not None:
-            self.workspace_bo = m.get('workspaceBO')
+            temp_model = GetWorkspaceNodeResponseBodyWorkspaceBO()
+            self.workspace_bo = temp_model.from_map(m['workspaceBO'])
         if m.get('hasPermission') is not None:
             self.has_permission = m.get('hasPermission')
         return self

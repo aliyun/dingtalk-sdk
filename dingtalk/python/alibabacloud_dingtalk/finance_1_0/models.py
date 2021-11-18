@@ -1291,9 +1291,8 @@ class SaveCorpPayCodeRequest(TeaModel):
         code_identity: str = None,
         corp_id: str = None,
         status: str = None,
-        ext_info: Dict[str, Any] = None,
+        ext_info: Dict[str, str] = None,
         ding_org_id: int = None,
-        ding_client_id: str = None,
         ding_isv_org_id: int = None,
     ):
         # 码标识，由钉钉颁发
@@ -1306,7 +1305,6 @@ class SaveCorpPayCodeRequest(TeaModel):
         self.ext_info = ext_info
         # 企业orgId
         self.ding_org_id = ding_org_id
-        self.ding_client_id = ding_client_id
         self.ding_isv_org_id = ding_isv_org_id
 
     def validate(self):
@@ -1328,8 +1326,6 @@ class SaveCorpPayCodeRequest(TeaModel):
             result['extInfo'] = self.ext_info
         if self.ding_org_id is not None:
             result['dingOrgId'] = self.ding_org_id
-        if self.ding_client_id is not None:
-            result['dingClientId'] = self.ding_client_id
         if self.ding_isv_org_id is not None:
             result['dingIsvOrgId'] = self.ding_isv_org_id
         return result
@@ -1346,8 +1342,6 @@ class SaveCorpPayCodeRequest(TeaModel):
             self.ext_info = m.get('extInfo')
         if m.get('dingOrgId') is not None:
             self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingClientId') is not None:
-            self.ding_client_id = m.get('dingClientId')
         if m.get('dingIsvOrgId') is not None:
             self.ding_isv_org_id = m.get('dingIsvOrgId')
         return self
@@ -1359,7 +1353,7 @@ class SaveCorpPayCodeResponseBody(TeaModel):
         code_identity: str = None,
         corp_id: str = None,
         status: str = None,
-        ext_info: Dict[str, Any] = None,
+        ext_info: Dict[str, str] = None,
     ):
         # 码标识
         self.code_identity = code_identity

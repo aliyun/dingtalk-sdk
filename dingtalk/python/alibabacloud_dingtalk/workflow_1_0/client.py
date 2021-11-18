@@ -275,10 +275,6 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.start_time_in_mills):
-            query['startTimeInMills'] = request.start_time_in_mills
-        if not UtilClient.is_unset(request.end_time_in_mills):
-            query['endTimeInMills'] = request.end_time_in_mills
         if not UtilClient.is_unset(request.app_uuid):
             query['appUuid'] = request.app_uuid
         if not UtilClient.is_unset(request.form_code):
@@ -309,10 +305,6 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.start_time_in_mills):
-            query['startTimeInMills'] = request.start_time_in_mills
-        if not UtilClient.is_unset(request.end_time_in_mills):
-            query['endTimeInMills'] = request.end_time_in_mills
         if not UtilClient.is_unset(request.app_uuid):
             query['appUuid'] = request.app_uuid
         if not UtilClient.is_unset(request.form_code):

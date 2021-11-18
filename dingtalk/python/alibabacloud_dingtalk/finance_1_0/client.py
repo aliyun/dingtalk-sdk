@@ -521,8 +521,6 @@ class Client(OpenApiClient):
             body['extInfo'] = request.ext_info
         if not UtilClient.is_unset(request.ding_org_id):
             body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         real_headers = {}
@@ -557,8 +555,6 @@ class Client(OpenApiClient):
             body['extInfo'] = request.ext_info
         if not UtilClient.is_unset(request.ding_org_id):
             body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            body['dingClientId'] = request.ding_client_id
         if not UtilClient.is_unset(request.ding_isv_org_id):
             body['dingIsvOrgId'] = request.ding_isv_org_id
         real_headers = {}

@@ -508,10 +508,10 @@ class Client(OpenApiClient):
             query['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.keyword):
             query['keyword'] = request.keyword
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.load_more_id):
-            query['loadMoreId'] = request.load_more_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -539,10 +539,10 @@ class Client(OpenApiClient):
             query['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.keyword):
             query['keyword'] = request.keyword
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.load_more_id):
-            query['loadMoreId'] = request.load_more_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -959,10 +959,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.load_more_id):
-            query['loadMoreId'] = request.load_more_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -987,10 +987,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.load_more_id):
-            query['loadMoreId'] = request.load_more_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

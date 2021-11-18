@@ -535,6 +535,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SaveBadgeCodeCorpInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/corpInstances', 'json', req, runtime)
         )
 
+    def create_badge_notify(
+        self,
+        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
+        return self.create_badge_notify_with_options(request, headers, runtime)
+
+    async def create_badge_notify_async(
+        self,
+        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
+        return await self.create_badge_notify_with_options_async(request, headers, runtime)
+
+    def create_badge_notify_with_options(
+        self,
+        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
+        headers: dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.msg_id):
+            body['msgId'] = request.msg_id
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbadge__1__0_models.CreateBadgeNotifyResponse(),
+            self.do_roarequest('CreateBadgeNotify', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/notices', 'json', req, runtime)
+        )
+
+    async def create_badge_notify_with_options_async(
+        self,
+        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
+        headers: dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.msg_id):
+            body['msgId'] = request.msg_id
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbadge__1__0_models.CreateBadgeNotifyResponse(),
+            await self.do_roarequest_async('CreateBadgeNotify', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/notices', 'json', req, runtime)
+        )
+
     def notify_badge_code_refund_result(
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
