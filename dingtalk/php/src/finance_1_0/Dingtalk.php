@@ -413,9 +413,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingOrgId)) {
             @$body['dingOrgId'] = $request->dingOrgId;
         }
-        if (!Utils::isUnset($request->dingClientId)) {
-            @$body['dingClientId'] = $request->dingClientId;
-        }
         if (!Utils::isUnset($request->dingIsvOrgId)) {
             @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
         }

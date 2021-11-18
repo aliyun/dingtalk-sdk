@@ -213,12 +213,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->maxResults)) {
             @$query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->startTimeInMills)) {
-            @$query['startTimeInMills'] = $request->startTimeInMills;
-        }
-        if (!Utils::isUnset($request->endTimeInMills)) {
-            @$query['endTimeInMills'] = $request->endTimeInMills;
-        }
         if (!Utils::isUnset($request->appUuid)) {
             @$query['appUuid'] = $request->appUuid;
         }

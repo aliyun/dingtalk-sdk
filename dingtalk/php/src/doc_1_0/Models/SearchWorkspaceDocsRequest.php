@@ -27,19 +27,19 @@ class SearchWorkspaceDocsRequest extends Model
      *
      * @var int
      */
-    public $size;
+    public $maxResults;
 
     /**
      * @description 翻页Id
      *
      * @var string
      */
-    public $loadMoreId;
+    public $nextToken;
     protected $_name = [
         'operatorId' => 'operatorId',
         'keyword'    => 'keyword',
-        'size'       => 'size',
-        'loadMoreId' => 'loadMoreId',
+        'maxResults' => 'maxResults',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -55,11 +55,11 @@ class SearchWorkspaceDocsRequest extends Model
         if (null !== $this->keyword) {
             $res['keyword'] = $this->keyword;
         }
-        if (null !== $this->size) {
-            $res['size'] = $this->size;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
-        if (null !== $this->loadMoreId) {
-            $res['loadMoreId'] = $this->loadMoreId;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -79,11 +79,11 @@ class SearchWorkspaceDocsRequest extends Model
         if (isset($map['keyword'])) {
             $model->keyword = $map['keyword'];
         }
-        if (isset($map['size'])) {
-            $model->size = $map['size'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
-        if (isset($map['loadMoreId'])) {
-            $model->loadMoreId = $map['loadMoreId'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

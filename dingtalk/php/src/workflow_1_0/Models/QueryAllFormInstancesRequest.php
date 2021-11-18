@@ -23,20 +23,6 @@ class QueryAllFormInstancesRequest extends Model
     public $maxResults;
 
     /**
-     * @description 开始时间戳
-     *
-     * @var int
-     */
-    public $startTimeInMills;
-
-    /**
-     * @description 结束时间戳
-     *
-     * @var int
-     */
-    public $endTimeInMills;
-
-    /**
      * @description 应用搭建id
      *
      * @var string
@@ -50,12 +36,10 @@ class QueryAllFormInstancesRequest extends Model
      */
     public $formCode;
     protected $_name = [
-        'nextToken'        => 'nextToken',
-        'maxResults'       => 'maxResults',
-        'startTimeInMills' => 'startTimeInMills',
-        'endTimeInMills'   => 'endTimeInMills',
-        'appUuid'          => 'appUuid',
-        'formCode'         => 'formCode',
+        'nextToken'  => 'nextToken',
+        'maxResults' => 'maxResults',
+        'appUuid'    => 'appUuid',
+        'formCode'   => 'formCode',
     ];
 
     public function validate()
@@ -70,12 +54,6 @@ class QueryAllFormInstancesRequest extends Model
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
-        }
-        if (null !== $this->startTimeInMills) {
-            $res['startTimeInMills'] = $this->startTimeInMills;
-        }
-        if (null !== $this->endTimeInMills) {
-            $res['endTimeInMills'] = $this->endTimeInMills;
         }
         if (null !== $this->appUuid) {
             $res['appUuid'] = $this->appUuid;
@@ -100,12 +78,6 @@ class QueryAllFormInstancesRequest extends Model
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
-        }
-        if (isset($map['startTimeInMills'])) {
-            $model->startTimeInMills = $map['startTimeInMills'];
-        }
-        if (isset($map['endTimeInMills'])) {
-            $model->endTimeInMills = $map['endTimeInMills'];
         }
         if (isset($map['appUuid'])) {
             $model->appUuid = $map['appUuid'];

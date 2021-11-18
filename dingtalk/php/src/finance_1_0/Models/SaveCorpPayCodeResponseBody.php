@@ -32,7 +32,7 @@ class SaveCorpPayCodeResponseBody extends Model
     /**
      * @description 扩展参数
      *
-     * @var mixed[]
+     * @var string[]
      */
     public $extInfo;
     protected $_name = [

@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\CreateBadgeCodeUserInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\CreateBadgeCodeUserInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\CreateBadgeCodeUserInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\CreateBadgeNotifyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\CreateBadgeNotifyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\CreateBadgeNotifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\DecodeBadgeCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\DecodeBadgeCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\DecodeBadgeCodeResponse;
@@ -394,6 +397,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SaveBadgeCodeCorpInstanceResponse::fromMap($this->doROARequest('SaveBadgeCodeCorpInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/corpInstances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateBadgeNotifyRequest $request
+     *
+     * @return CreateBadgeNotifyResponse
+     */
+    public function createBadgeNotify($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateBadgeNotifyHeaders([]);
+
+        return $this->createBadgeNotifyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateBadgeNotifyRequest $request
+     * @param CreateBadgeNotifyHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CreateBadgeNotifyResponse
+     */
+    public function createBadgeNotifyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->msgId)) {
+            @$body['msgId'] = $request->msgId;
+        }
+        if (!Utils::isUnset($request->msgType)) {
+            @$body['msgType'] = $request->msgType;
+        }
+        if (!Utils::isUnset($request->content)) {
+            @$body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateBadgeNotifyResponse::fromMap($this->doROARequest('CreateBadgeNotify', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/notices', 'json', $req, $runtime));
     }
 
     /**

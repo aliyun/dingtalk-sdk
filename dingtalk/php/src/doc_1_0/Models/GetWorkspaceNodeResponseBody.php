@@ -4,6 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeResponseBody\nodeBO;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeResponseBody\workspaceBO;
 use AlibabaCloud\Tea\Model;
 
 class GetWorkspaceNodeResponseBody extends Model
@@ -11,14 +13,14 @@ class GetWorkspaceNodeResponseBody extends Model
     /**
      * @description 节点信息
      *
-     * @var mixed[]
+     * @var nodeBO
      */
     public $nodeBO;
 
     /**
      * @description 节点所属团队空间信息
      *
-     * @var mixed[]
+     * @var workspaceBO
      */
     public $workspaceBO;
 
@@ -42,10 +44,10 @@ class GetWorkspaceNodeResponseBody extends Model
     {
         $res = [];
         if (null !== $this->nodeBO) {
-            $res['nodeBO'] = $this->nodeBO;
+            $res['nodeBO'] = null !== $this->nodeBO ? $this->nodeBO->toMap() : null;
         }
         if (null !== $this->workspaceBO) {
-            $res['workspaceBO'] = $this->workspaceBO;
+            $res['workspaceBO'] = null !== $this->workspaceBO ? $this->workspaceBO->toMap() : null;
         }
         if (null !== $this->hasPermission) {
             $res['hasPermission'] = $this->hasPermission;
@@ -63,10 +65,10 @@ class GetWorkspaceNodeResponseBody extends Model
     {
         $model = new self();
         if (isset($map['nodeBO'])) {
-            $model->nodeBO = $map['nodeBO'];
+            $model->nodeBO = nodeBO::fromMap($map['nodeBO']);
         }
         if (isset($map['workspaceBO'])) {
-            $model->workspaceBO = $map['workspaceBO'];
+            $model->workspaceBO = workspaceBO::fromMap($map['workspaceBO']);
         }
         if (isset($map['hasPermission'])) {
             $model->hasPermission = $map['hasPermission'];

@@ -19,16 +19,16 @@ class SearchWorkspaceDocsResponseBody extends Model
     /**
      * @var string
      */
-    public $loadMoreId;
+    public $nextToken;
 
     /**
      * @var docs[]
      */
     public $docs;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'loadMoreId' => 'loadMoreId',
-        'docs'       => 'docs',
+        'hasMore'   => 'hasMore',
+        'nextToken' => 'nextToken',
+        'docs'      => 'docs',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class SearchWorkspaceDocsResponseBody extends Model
         if (null !== $this->hasMore) {
             $res['hasMore'] = $this->hasMore;
         }
-        if (null !== $this->loadMoreId) {
-            $res['loadMoreId'] = $this->loadMoreId;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->docs) {
             $res['docs'] = [];
@@ -68,8 +68,8 @@ class SearchWorkspaceDocsResponseBody extends Model
         if (isset($map['hasMore'])) {
             $model->hasMore = $map['hasMore'];
         }
-        if (isset($map['loadMoreId'])) {
-            $model->loadMoreId = $map['loadMoreId'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['docs'])) {
             if (!empty($map['docs'])) {

@@ -6,54 +6,50 @@ namespace AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SaveBadgeCodeCorpInstanceRequest extends Model
+class CreateBadgeNotifyRequest extends Model
 {
     /**
-     * @description 码标识，由钉钉颁发
+     * @description 员工ID
      *
      * @var string
      */
-    public $codeIdentity;
+    public $userId;
 
     /**
-     * @description 开通的企业ID
+     * @description 消息ID
      *
      * @var string
      */
-    public $corpId;
+    public $msgId;
 
     /**
-     * @description 状态，OPEN或CLOSED
+     * @description 消息类型
      *
      * @var string
      */
-    public $status;
+    public $msgType;
 
     /**
-     * @description 扩展参数
+     * @description 通知内容
      *
-     * @var string[]
+     * @var string
      */
-    public $extInfo;
+    public $content;
 
     /**
-     * @description 组织ID
-     *
      * @var int
      */
     public $dingOrgId;
 
     /**
-     * @description ISV组织ID
-     *
      * @var int
      */
     public $dingIsvOrgId;
     protected $_name = [
-        'codeIdentity' => 'codeIdentity',
-        'corpId'       => 'corpId',
-        'status'       => 'status',
-        'extInfo'      => 'extInfo',
+        'userId'       => 'userId',
+        'msgId'        => 'msgId',
+        'msgType'      => 'msgType',
+        'content'      => 'content',
         'dingOrgId'    => 'dingOrgId',
         'dingIsvOrgId' => 'dingIsvOrgId',
     ];
@@ -65,17 +61,17 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->codeIdentity) {
-            $res['codeIdentity'] = $this->codeIdentity;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
+        if (null !== $this->msgId) {
+            $res['msgId'] = $this->msgId;
         }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
+        if (null !== $this->msgType) {
+            $res['msgType'] = $this->msgType;
         }
-        if (null !== $this->extInfo) {
-            $res['extInfo'] = $this->extInfo;
+        if (null !== $this->content) {
+            $res['content'] = $this->content;
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
@@ -90,22 +86,22 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
     /**
      * @param array $map
      *
-     * @return SaveBadgeCodeCorpInstanceRequest
+     * @return CreateBadgeNotifyRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['codeIdentity'])) {
-            $model->codeIdentity = $map['codeIdentity'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
+        if (isset($map['msgId'])) {
+            $model->msgId = $map['msgId'];
         }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
+        if (isset($map['msgType'])) {
+            $model->msgType = $map['msgType'];
         }
-        if (isset($map['extInfo'])) {
-            $model->extInfo = $map['extInfo'];
+        if (isset($map['content'])) {
+            $model->content = $map['content'];
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];

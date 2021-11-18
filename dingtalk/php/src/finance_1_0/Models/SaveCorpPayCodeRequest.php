@@ -32,7 +32,7 @@ class SaveCorpPayCodeRequest extends Model
     /**
      * @description 扩展参数
      *
-     * @var mixed[]
+     * @var string[]
      */
     public $extInfo;
 
@@ -44,11 +44,6 @@ class SaveCorpPayCodeRequest extends Model
     public $dingOrgId;
 
     /**
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
      * @var int
      */
     public $dingIsvOrgId;
@@ -58,7 +53,6 @@ class SaveCorpPayCodeRequest extends Model
         'status'       => 'status',
         'extInfo'      => 'extInfo',
         'dingOrgId'    => 'dingOrgId',
-        'dingClientId' => 'dingClientId',
         'dingIsvOrgId' => 'dingIsvOrgId',
     ];
 
@@ -83,9 +77,6 @@ class SaveCorpPayCodeRequest extends Model
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
         }
         if (null !== $this->dingIsvOrgId) {
             $res['dingIsvOrgId'] = $this->dingIsvOrgId;
@@ -116,9 +107,6 @@ class SaveCorpPayCodeRequest extends Model
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
         }
         if (isset($map['dingIsvOrgId'])) {
             $model->dingIsvOrgId = $map['dingIsvOrgId'];

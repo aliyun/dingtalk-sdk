@@ -19,10 +19,10 @@ class GetRecentEditDocsResponseBody extends Model
     /**
      * @var string
      */
-    public $loadMoreId;
+    public $nextToken;
     protected $_name = [
         'recentList' => 'recentList',
-        'loadMoreId' => 'loadMoreId',
+        'nextToken'  => 'nextToken',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class GetRecentEditDocsResponseBody extends Model
                 }
             }
         }
-        if (null !== $this->loadMoreId) {
-            $res['loadMoreId'] = $this->loadMoreId;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
 
         return $res;
@@ -65,8 +65,8 @@ class GetRecentEditDocsResponseBody extends Model
                 }
             }
         }
-        if (isset($map['loadMoreId'])) {
-            $model->loadMoreId = $map['loadMoreId'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
 
         return $model;

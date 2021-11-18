@@ -62,6 +62,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailHeaders;
@@ -85,6 +88,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PollingConfirmStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PollingConfirmStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PollingConfirmStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
@@ -131,6 +137,11 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupResponse
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupResponse;
@@ -522,6 +533,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateInviteUrlResponse::fromMap($this->doROARequest('CreateInviteUrl', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/remoteClasses/orgRelations/inviteUrls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PollingConfirmStatusRequest $request
+     *
+     * @return PollingConfirmStatusResponse
+     */
+    public function pollingConfirmStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PollingConfirmStatusHeaders([]);
+
+        return $this->pollingConfirmStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PollingConfirmStatusRequest $request
+     * @param PollingConfirmStatusHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return PollingConfirmStatusResponse
+     */
+    public function pollingConfirmStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->ext)) {
+            @$query['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            @$query['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->courseCode)) {
+            @$query['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return PollingConfirmStatusResponse::fromMap($this->doROARequest('PollingConfirmStatus', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/universities/courses/pollingConfirmStatus', 'json', $req, $runtime));
     }
 
     /**
@@ -2069,6 +2131,71 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param StartCoursePrepareRequest $request
+     *
+     * @return StartCoursePrepareResponse
+     */
+    public function startCoursePrepare($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StartCoursePrepareHeaders([]);
+
+        return $this->startCoursePrepareWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param StartCoursePrepareRequest $request
+     * @param StartCoursePrepareHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return StartCoursePrepareResponse
+     */
+    public function startCoursePrepareWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->ext)) {
+            @$body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->courseGroupCode)) {
+            @$body['courseGroupCode'] = $request->courseGroupCode;
+        }
+        if (!Utils::isUnset($request->sectionIndex)) {
+            @$body['sectionIndex'] = $request->sectionIndex;
+        }
+        if (!Utils::isUnset($request->deviceId)) {
+            @$body['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->liveCoverImage)) {
+            @$body['liveCoverImage'] = $request->liveCoverImage;
+        }
+        if (!Utils::isUnset($request->courseDate)) {
+            @$body['courseDate'] = $request->courseDate;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            @$body['isvCode'] = $request->isvCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return StartCoursePrepareResponse::fromMap($this->doROARequest('StartCoursePrepare', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/prepare', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryClassScheduleByTimeSchoolRequest $request
      *
      * @return QueryClassScheduleByTimeSchoolResponse
@@ -2287,6 +2414,55 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteOrgRelationResponse::fromMap($this->doROARequest('DeleteOrgRelation', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/orgRelations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param StartCourseRequest $request
+     *
+     * @return StartCourseResponse
+     */
+    public function startCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->startCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param StartCourseRequest $request
+     * @param string[]           $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return StartCourseResponse
+     */
+    public function startCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->ext)) {
+            @$body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->courseCode)) {
+            @$body['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->livePlayInfoList)) {
+            @$body['livePlayInfoList'] = $request->livePlayInfoList;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            @$body['isvCode'] = $request->isvCode;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return StartCourseResponse::fromMap($this->doROARequest('StartCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/start', 'json', $req, $runtime));
     }
 
     /**
@@ -2667,6 +2843,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryOrgTypeResponse::fromMap($this->doROARequest('QueryOrgType', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/orgTypes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param EndCourseRequest $request
+     *
+     * @return EndCourseResponse
+     */
+    public function endCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EndCourseHeaders([]);
+
+        return $this->endCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EndCourseRequest $request
+     * @param EndCourseHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return EndCourseResponse
+     */
+    public function endCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            @$query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->ext)) {
+            @$body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->courseCode)) {
+            @$body['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->livePlayInfoList)) {
+            @$body['livePlayInfoList'] = $request->livePlayInfoList;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            @$body['isvCode'] = $request->isvCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return EndCourseResponse::fromMap($this->doROARequest('EndCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/end', 'json', $req, $runtime));
     }
 
     /**

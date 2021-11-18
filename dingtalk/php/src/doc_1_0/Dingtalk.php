@@ -398,11 +398,11 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->keyword)) {
             @$query['keyword'] = $request->keyword;
         }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->loadMoreId)) {
-            @$query['loadMoreId'] = $request->loadMoreId;
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -694,11 +694,11 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->loadMoreId)) {
-            @$query['loadMoreId'] = $request->loadMoreId;
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
