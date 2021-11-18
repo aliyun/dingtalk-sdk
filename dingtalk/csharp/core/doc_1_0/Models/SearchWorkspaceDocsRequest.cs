@@ -17,11 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public string Keyword { get; set; }
 
         /// <summary>
+        /// 搜索数量
+        /// </summary>
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
         /// 翻页Id
         /// </summary>
-        [NameInMap("loadMoreId")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public string LoadMoreId { get; set; }
+        public string NextToken { get; set; }
 
         /// <summary>
         /// 发起操作用户unionId
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
-
-        /// <summary>
-        /// 搜索数量
-        /// </summary>
-        [NameInMap("size")]
-        [Validation(Required=false)]
-        public int? Size { get; set; }
 
     }
 

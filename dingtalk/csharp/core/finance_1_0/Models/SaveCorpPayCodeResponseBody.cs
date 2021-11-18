@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         /// </summary>
         [NameInMap("extInfo")]
         [Validation(Required=false)]
-        public Dictionary<string, object> ExtInfo { get; set; }
+        public Dictionary<string, string> ExtInfo { get; set; }
 
         /// <summary>
         /// 状态

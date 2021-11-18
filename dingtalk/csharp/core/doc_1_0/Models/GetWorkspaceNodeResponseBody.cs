@@ -21,14 +21,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         /// </summary>
         [NameInMap("nodeBO")]
         [Validation(Required=false)]
-        public Dictionary<string, object> NodeBO { get; set; }
+        public GetWorkspaceNodeResponseBodyNodeBO NodeBO { get; set; }
+        public class GetWorkspaceNodeResponseBodyNodeBO : TeaModel {
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+            [NameInMap("nodeId")]
+            [Validation(Required=false)]
+            public string NodeId { get; set; }
+            [NameInMap("url")]
+            [Validation(Required=false)]
+            public string Url { get; set; }
+        };
 
         /// <summary>
         /// 节点所属团队空间信息
         /// </summary>
         [NameInMap("workspaceBO")]
         [Validation(Required=false)]
-        public Dictionary<string, object> WorkspaceBO { get; set; }
+        public GetWorkspaceNodeResponseBodyWorkspaceBO WorkspaceBO { get; set; }
+        public class GetWorkspaceNodeResponseBodyWorkspaceBO : TeaModel {
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+            [NameInMap("workspaceId")]
+            [Validation(Required=false)]
+            public string WorkspaceId { get; set; }
+        };
 
     }
 

@@ -52,9 +52,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
-        [NameInMap("loadMoreId")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public string LoadMoreId { get; set; }
+        public string NextToken { get; set; }
 
     }
 

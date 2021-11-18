@@ -9,9 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetRecentEditDocsResponseBody : TeaModel {
-        [NameInMap("loadMoreId")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public string LoadMoreId { get; set; }
+        public string NextToken { get; set; }
 
         /// <summary>
         /// 查询结果

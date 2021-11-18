@@ -48,10 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 query["appUuid"] = request.AppUuid;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTimeInMills))
-            {
-                query["endTimeInMills"] = request.EndTimeInMills;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
             {
                 query["formCode"] = request.FormCode;
@@ -63,10 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTimeInMills))
-            {
-                query["startTimeInMills"] = request.StartTimeInMills;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -93,10 +85,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 query["appUuid"] = request.AppUuid;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTimeInMills))
-            {
-                query["endTimeInMills"] = request.EndTimeInMills;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
             {
                 query["formCode"] = request.FormCode;
@@ -108,10 +96,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTimeInMills))
-            {
-                query["startTimeInMills"] = request.StartTimeInMills;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -1190,10 +1190,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             {
                 body["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                body["dingClientId"] = request.DingClientId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
                 body["dingIsvOrgId"] = request.DingIsvOrgId;
@@ -1238,10 +1234,6 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
                 body["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                body["dingClientId"] = request.DingClientId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {

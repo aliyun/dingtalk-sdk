@@ -9,9 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetRecentEditDocsRequest : TeaModel {
-        [NameInMap("loadMoreId")]
+        /// <summary>
+        /// 查询size
+        /// </summary>
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public string LoadMoreId { get; set; }
+        public int? MaxResults { get; set; }
+
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
         /// <summary>
         /// 发起操作用户unionId
@@ -19,13 +26,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
-
-        /// <summary>
-        /// 查询size
-        /// </summary>
-        [NameInMap("size")]
-        [Validation(Required=false)]
-        public int? Size { get; set; }
 
     }
 

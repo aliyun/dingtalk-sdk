@@ -178,6 +178,110 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(await DoROARequestAsync("CreateBadgeCodeUserInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime));
         }
 
+        public CreateBadgeNotifyResponse CreateBadgeNotify(CreateBadgeNotifyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
+            return CreateBadgeNotifyWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyAsync(CreateBadgeNotifyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
+            return await CreateBadgeNotifyWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CreateBadgeNotifyResponse CreateBadgeNotifyWithOptions(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
+            {
+                body["dingIsvOrgId"] = request.DingIsvOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
+            {
+                body["dingOrgId"] = request.DingOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgId))
+            {
+                body["msgId"] = request.MsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgType))
+            {
+                body["msgType"] = request.MsgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateBadgeNotifyResponse>(DoROARequest("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/notices", "json", req, runtime));
+        }
+
+        public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyWithOptionsAsync(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
+            {
+                body["dingIsvOrgId"] = request.DingIsvOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
+            {
+                body["dingOrgId"] = request.DingOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgId))
+            {
+                body["msgId"] = request.MsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgType))
+            {
+                body["msgType"] = request.MsgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CreateBadgeNotifyResponse>(await DoROARequestAsync("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/notices", "json", req, runtime));
+        }
+
         public DecodeBadgeCodeResponse DecodeBadgeCode(DecodeBadgeCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
