@@ -502,7 +502,7 @@ export class SaveBadgeCodeCorpInstanceRequest extends $tea.Model {
   codeIdentity?: string;
   corpId?: string;
   status?: string;
-  extInfo?: { [key: string]: any };
+  extInfo?: { [key: string]: string };
   dingOrgId?: number;
   dingIsvOrgId?: number;
   static names(): { [key: string]: string } {
@@ -521,7 +521,7 @@ export class SaveBadgeCodeCorpInstanceRequest extends $tea.Model {
       codeIdentity: 'string',
       corpId: 'string',
       status: 'string',
-      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       dingOrgId: 'number',
       dingIsvOrgId: 'number',
     };
@@ -536,7 +536,7 @@ export class SaveBadgeCodeCorpInstanceResponseBody extends $tea.Model {
   codeIdentity?: string;
   corpId?: string;
   status?: string;
-  extInfo?: { [key: string]: any };
+  extInfo?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
       codeIdentity: 'codeIdentity',
@@ -551,7 +551,7 @@ export class SaveBadgeCodeCorpInstanceResponseBody extends $tea.Model {
       codeIdentity: 'string',
       corpId: 'string',
       status: 'string',
-      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -574,6 +574,103 @@ export class SaveBadgeCodeCorpInstanceResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SaveBadgeCodeCorpInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBadgeNotifyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBadgeNotifyRequest extends $tea.Model {
+  userId?: string;
+  msgId?: string;
+  msgType?: string;
+  content?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      msgId: 'msgId',
+      msgType: 'msgType',
+      content: 'content',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      msgId: 'string',
+      msgType: 'string',
+      content: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBadgeNotifyResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateBadgeNotifyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateBadgeNotifyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateBadgeNotifyResponseBody,
     };
   }
 
@@ -1340,6 +1437,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SaveBadgeCodeCorpInstanceResponse>(await this.doROARequest("SaveBadgeCodeCorpInstance", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/corpInstances`, "json", req, runtime), new SaveBadgeCodeCorpInstanceResponse({}));
+  }
+
+  async createBadgeNotify(request: CreateBadgeNotifyRequest): Promise<CreateBadgeNotifyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateBadgeNotifyHeaders({ });
+    return await this.createBadgeNotifyWithOptions(request, headers, runtime);
+  }
+
+  async createBadgeNotifyWithOptions(request: CreateBadgeNotifyRequest, headers: CreateBadgeNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeNotifyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.msgId)) {
+      body["msgId"] = request.msgId;
+    }
+
+    if (!Util.isUnset(request.msgType)) {
+      body["msgType"] = request.msgType;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateBadgeNotifyResponse>(await this.doROARequest("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/notices`, "json", req, runtime), new CreateBadgeNotifyResponse({}));
   }
 
   async notifyBadgeCodeRefundResult(request: NotifyBadgeCodeRefundResultRequest): Promise<NotifyBadgeCodeRefundResultResponse> {

@@ -569,9 +569,8 @@ export class SaveCorpPayCodeRequest extends $tea.Model {
   codeIdentity?: string;
   corpId?: string;
   status?: string;
-  extInfo?: { [key: string]: any };
+  extInfo?: { [key: string]: string };
   dingOrgId?: number;
-  dingClientId?: string;
   dingIsvOrgId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -580,7 +579,6 @@ export class SaveCorpPayCodeRequest extends $tea.Model {
       status: 'status',
       extInfo: 'extInfo',
       dingOrgId: 'dingOrgId',
-      dingClientId: 'dingClientId',
       dingIsvOrgId: 'dingIsvOrgId',
     };
   }
@@ -590,9 +588,8 @@ export class SaveCorpPayCodeRequest extends $tea.Model {
       codeIdentity: 'string',
       corpId: 'string',
       status: 'string',
-      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       dingOrgId: 'number',
-      dingClientId: 'string',
       dingIsvOrgId: 'number',
     };
   }
@@ -606,7 +603,7 @@ export class SaveCorpPayCodeResponseBody extends $tea.Model {
   codeIdentity?: string;
   corpId?: string;
   status?: string;
-  extInfo?: { [key: string]: any };
+  extInfo?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
       codeIdentity: 'codeIdentity',
@@ -621,7 +618,7 @@ export class SaveCorpPayCodeResponseBody extends $tea.Model {
       codeIdentity: 'string',
       corpId: 'string',
       status: 'string',
-      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -1950,10 +1947,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.dingOrgId)) {
       body["dingOrgId"] = request.dingOrgId;
-    }
-
-    if (!Util.isUnset(request.dingClientId)) {
-      body["dingClientId"] = request.dingClientId;
     }
 
     if (!Util.isUnset(request.dingIsvOrgId)) {

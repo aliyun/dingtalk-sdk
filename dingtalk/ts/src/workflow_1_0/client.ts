@@ -335,16 +335,12 @@ export class QueryAllFormInstancesHeaders extends $tea.Model {
 export class QueryAllFormInstancesRequest extends $tea.Model {
   nextToken?: string;
   maxResults?: number;
-  startTimeInMills?: number;
-  endTimeInMills?: number;
   appUuid?: string;
   formCode?: string;
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
       maxResults: 'maxResults',
-      startTimeInMills: 'startTimeInMills',
-      endTimeInMills: 'endTimeInMills',
       appUuid: 'appUuid',
       formCode: 'formCode',
     };
@@ -354,8 +350,6 @@ export class QueryAllFormInstancesRequest extends $tea.Model {
     return {
       nextToken: 'string',
       maxResults: 'number',
-      startTimeInMills: 'number',
-      endTimeInMills: 'number',
       appUuid: 'string',
       formCode: 'string',
     };
@@ -865,14 +859,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
-    }
-
-    if (!Util.isUnset(request.startTimeInMills)) {
-      query["startTimeInMills"] = request.startTimeInMills;
-    }
-
-    if (!Util.isUnset(request.endTimeInMills)) {
-      query["endTimeInMills"] = request.endTimeInMills;
     }
 
     if (!Util.isUnset(request.appUuid)) {

@@ -530,14 +530,14 @@ export class SearchWorkspaceDocsHeaders extends $tea.Model {
 export class SearchWorkspaceDocsRequest extends $tea.Model {
   operatorId?: string;
   keyword?: string;
-  size?: number;
-  loadMoreId?: string;
+  maxResults?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       operatorId: 'operatorId',
       keyword: 'keyword',
-      size: 'size',
-      loadMoreId: 'loadMoreId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
@@ -545,8 +545,8 @@ export class SearchWorkspaceDocsRequest extends $tea.Model {
     return {
       operatorId: 'string',
       keyword: 'string',
-      size: 'number',
-      loadMoreId: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -557,12 +557,12 @@ export class SearchWorkspaceDocsRequest extends $tea.Model {
 
 export class SearchWorkspaceDocsResponseBody extends $tea.Model {
   hasMore?: boolean;
-  loadMoreId?: string;
+  nextToken?: string;
   docs?: SearchWorkspaceDocsResponseBodyDocs[];
   static names(): { [key: string]: string } {
     return {
       hasMore: 'hasMore',
-      loadMoreId: 'loadMoreId',
+      nextToken: 'nextToken',
       docs: 'docs',
     };
   }
@@ -570,7 +570,7 @@ export class SearchWorkspaceDocsResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       hasMore: 'boolean',
-      loadMoreId: 'string',
+      nextToken: 'string',
       docs: { 'type': 'array', 'itemType': SearchWorkspaceDocsResponseBodyDocs },
     };
   }
@@ -1000,21 +1000,21 @@ export class GetRecentEditDocsHeaders extends $tea.Model {
 
 export class GetRecentEditDocsRequest extends $tea.Model {
   operatorId?: string;
-  size?: number;
-  loadMoreId?: string;
+  maxResults?: number;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       operatorId: 'operatorId',
-      size: 'size',
-      loadMoreId: 'loadMoreId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       operatorId: 'string',
-      size: 'number',
-      loadMoreId: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -1025,18 +1025,18 @@ export class GetRecentEditDocsRequest extends $tea.Model {
 
 export class GetRecentEditDocsResponseBody extends $tea.Model {
   recentList?: GetRecentEditDocsResponseBodyRecentList[];
-  loadMoreId?: string;
+  nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       recentList: 'recentList',
-      loadMoreId: 'loadMoreId',
+      nextToken: 'nextToken',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       recentList: { 'type': 'array', 'itemType': GetRecentEditDocsResponseBodyRecentList },
-      loadMoreId: 'string',
+      nextToken: 'string',
     };
   }
 
@@ -1194,8 +1194,8 @@ export class GetWorkspaceNodeRequest extends $tea.Model {
 }
 
 export class GetWorkspaceNodeResponseBody extends $tea.Model {
-  nodeBO?: { [key: string]: any };
-  workspaceBO?: { [key: string]: any };
+  nodeBO?: GetWorkspaceNodeResponseBodyNodeBO;
+  workspaceBO?: GetWorkspaceNodeResponseBodyWorkspaceBO;
   hasPermission?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1207,8 +1207,8 @@ export class GetWorkspaceNodeResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      nodeBO: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      workspaceBO: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      nodeBO: GetWorkspaceNodeResponseBodyNodeBO,
+      workspaceBO: GetWorkspaceNodeResponseBodyWorkspaceBO,
       hasPermission: 'boolean',
     };
   }
@@ -1740,6 +1740,53 @@ export class AddWorkspaceMembersRequestMembers extends $tea.Model {
   }
 }
 
+export class GetWorkspaceNodeResponseBodyNodeBO extends $tea.Model {
+  name?: string;
+  nodeId?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      nodeId: 'nodeId',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      nodeId: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWorkspaceNodeResponseBodyWorkspaceBO extends $tea.Model {
+  workspaceId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      workspaceId: 'workspaceId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workspaceId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1997,12 +2044,12 @@ export default class Client extends OpenApi {
       query["keyword"] = request.keyword;
     }
 
-    if (!Util.isUnset(request.size)) {
-      query["size"] = request.size;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
-    if (!Util.isUnset(request.loadMoreId)) {
-      query["loadMoreId"] = request.loadMoreId;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2219,12 +2266,12 @@ export default class Client extends OpenApi {
       query["operatorId"] = request.operatorId;
     }
 
-    if (!Util.isUnset(request.size)) {
-      query["size"] = request.size;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
-    if (!Util.isUnset(request.loadMoreId)) {
-      query["loadMoreId"] = request.loadMoreId;
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
     }
 
     let realHeaders : {[key: string ]: string} = { };

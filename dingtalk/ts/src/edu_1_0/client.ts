@@ -671,6 +671,97 @@ export class CreateInviteUrlResponse extends $tea.Model {
   }
 }
 
+export class PollingConfirmStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PollingConfirmStatusRequest extends $tea.Model {
+  ext?: string;
+  isvCode?: string;
+  courseCode?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ext: 'ext',
+      isvCode: 'isvCode',
+      courseCode: 'courseCode',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ext: 'string',
+      isvCode: 'string',
+      courseCode: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PollingConfirmStatusResponseBody extends $tea.Model {
+  universityPollingCourseStatusResponse?: PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse;
+  static names(): { [key: string]: string } {
+    return {
+      universityPollingCourseStatusResponse: 'universityPollingCourseStatusResponse',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      universityPollingCourseStatusResponse: PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PollingConfirmStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PollingConfirmStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PollingConfirmStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteTeacherHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3351,6 +3442,109 @@ export class CreateCustomDeptResponse extends $tea.Model {
   }
 }
 
+export class StartCoursePrepareHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCoursePrepareRequest extends $tea.Model {
+  ext?: string;
+  courseGroupCode?: string;
+  sectionIndex?: number[];
+  deviceId?: string;
+  liveCoverImage?: string;
+  courseDate?: string;
+  isvCode?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ext: 'ext',
+      courseGroupCode: 'courseGroupCode',
+      sectionIndex: 'sectionIndex',
+      deviceId: 'deviceId',
+      liveCoverImage: 'liveCoverImage',
+      courseDate: 'courseDate',
+      isvCode: 'isvCode',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ext: 'string',
+      courseGroupCode: 'string',
+      sectionIndex: { 'type': 'array', 'itemType': 'number' },
+      deviceId: 'string',
+      liveCoverImage: 'string',
+      courseDate: 'string',
+      isvCode: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCoursePrepareResponseBody extends $tea.Model {
+  universityCourseCommonResponse?: StartCoursePrepareResponseBodyUniversityCourseCommonResponse;
+  static names(): { [key: string]: string } {
+    return {
+      universityCourseCommonResponse: 'universityCourseCommonResponse',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      universityCourseCommonResponse: StartCoursePrepareResponseBodyUniversityCourseCommonResponse,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCoursePrepareResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: StartCoursePrepareResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: StartCoursePrepareResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryClassScheduleByTimeSchoolHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3752,6 +3946,78 @@ export class DeleteOrgRelationResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteOrgRelationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCourseRequest extends $tea.Model {
+  opUserId?: string;
+  ext?: string;
+  courseCode?: string;
+  livePlayInfoList?: StartCourseRequestLivePlayInfoList[];
+  isvCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      ext: 'ext',
+      courseCode: 'courseCode',
+      livePlayInfoList: 'livePlayInfoList',
+      isvCode: 'isvCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      ext: 'string',
+      courseCode: 'string',
+      livePlayInfoList: { 'type': 'array', 'itemType': StartCourseRequestLivePlayInfoList },
+      isvCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCourseResponseBody extends $tea.Model {
+  universityCourseCommonResponse?: StartCourseResponseBodyUniversityCourseCommonResponse;
+  static names(): { [key: string]: string } {
+    return {
+      universityCourseCommonResponse: 'universityCourseCommonResponse',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      universityCourseCommonResponse: StartCourseResponseBodyUniversityCourseCommonResponse,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCourseResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: StartCourseResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: StartCourseResponseBody,
     };
   }
 
@@ -4449,6 +4715,100 @@ export class QueryOrgTypeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryOrgTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EndCourseHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EndCourseRequest extends $tea.Model {
+  opUserId?: string;
+  ext?: string;
+  courseCode?: string;
+  livePlayInfoList?: EndCourseRequestLivePlayInfoList[];
+  isvCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      ext: 'ext',
+      courseCode: 'courseCode',
+      livePlayInfoList: 'livePlayInfoList',
+      isvCode: 'isvCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      ext: 'string',
+      courseCode: 'string',
+      livePlayInfoList: { 'type': 'array', 'itemType': EndCourseRequestLivePlayInfoList },
+      isvCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EndCourseResponseBody extends $tea.Model {
+  universityCourseCommonResponse?: EndCourseResponseBodyUniversityCourseCommonResponse;
+  static names(): { [key: string]: string } {
+    return {
+      universityCourseCommonResponse: 'universityCourseCommonResponse',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      universityCourseCommonResponse: EndCourseResponseBodyUniversityCourseCommonResponse,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EndCourseResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: EndCourseResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: EndCourseResponseBody,
     };
   }
 
@@ -5206,6 +5566,59 @@ export class CreateInviteUrlResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       inviteUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList extends $tea.Model {
+  liveInputUrl?: string;
+  liveOutputUrl?: string;
+  liveType?: number;
+  replayUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveInputUrl: 'liveInputUrl',
+      liveOutputUrl: 'liveOutputUrl',
+      liveType: 'liveType',
+      replayUrl: 'replayUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveInputUrl: 'string',
+      liveOutputUrl: 'string',
+      liveType: 'number',
+      replayUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse extends $tea.Model {
+  confirmStatus?: boolean;
+  courseCode?: string;
+  livePlayInfoList?: PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      confirmStatus: 'confirmStatus',
+      courseCode: 'courseCode',
+      livePlayInfoList: 'livePlayInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      confirmStatus: 'boolean',
+      courseCode: 'string',
+      livePlayInfoList: { 'type': 'array', 'itemType': PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList },
     };
   }
 
@@ -7008,6 +7421,28 @@ export class CreateCustomDeptResponseBodyResult extends $tea.Model {
   }
 }
 
+export class StartCoursePrepareResponseBodyUniversityCourseCommonResponse extends $tea.Model {
+  success?: boolean;
+  courseCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      courseCode: 'courseCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      courseCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms extends $tea.Model {
   targetId?: string;
   interactInfo?: string;
@@ -7196,6 +7631,56 @@ export class GetShareRolesResponseBodyResult extends $tea.Model {
   }
 }
 
+export class StartCourseRequestLivePlayInfoList extends $tea.Model {
+  liveOutputUrl?: string;
+  liveType?: number;
+  liveInputUrl?: string;
+  replayUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveOutputUrl: 'liveOutputUrl',
+      liveType: 'liveType',
+      liveInputUrl: 'liveInputUrl',
+      replayUrl: 'replayUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveOutputUrl: 'string',
+      liveType: 'number',
+      liveInputUrl: 'string',
+      replayUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartCourseResponseBodyUniversityCourseCommonResponse extends $tea.Model {
+  success?: boolean;
+  courseCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      courseCode: 'courseCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      courseCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryPhysicalClassroomResponseBodyResult extends $tea.Model {
   classroomId?: number;
   classroomName?: string;
@@ -7341,6 +7826,56 @@ export class QueryOrgRelationListResponseBodyResult extends $tea.Model {
       corpId: 'string',
       name: 'string',
       deviceCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EndCourseRequestLivePlayInfoList extends $tea.Model {
+  liveOutputUrl?: string;
+  liveType?: number;
+  liveInputUrl?: string;
+  replayUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveOutputUrl: 'liveOutputUrl',
+      liveType: 'liveType',
+      liveInputUrl: 'liveInputUrl',
+      replayUrl: 'replayUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveOutputUrl: 'string',
+      liveType: 'number',
+      liveInputUrl: 'string',
+      replayUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EndCourseResponseBodyUniversityCourseCommonResponse extends $tea.Model {
+  success?: boolean;
+  courseCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      courseCode: 'courseCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      courseCode: 'string',
     };
   }
 
@@ -7672,6 +8207,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateInviteUrlResponse>(await this.doROARequest("CreateInviteUrl", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/remoteClasses/orgRelations/inviteUrls`, "json", req, runtime), new CreateInviteUrlResponse({}));
+  }
+
+  async pollingConfirmStatus(request: PollingConfirmStatusRequest): Promise<PollingConfirmStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PollingConfirmStatusHeaders({ });
+    return await this.pollingConfirmStatusWithOptions(request, headers, runtime);
+  }
+
+  async pollingConfirmStatusWithOptions(request: PollingConfirmStatusRequest, headers: PollingConfirmStatusHeaders, runtime: $Util.RuntimeOptions): Promise<PollingConfirmStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ext)) {
+      query["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.isvCode)) {
+      query["isvCode"] = request.isvCode;
+    }
+
+    if (!Util.isUnset(request.courseCode)) {
+      query["courseCode"] = request.courseCode;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PollingConfirmStatusResponse>(await this.doROARequest("PollingConfirmStatus", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/universities/courses/pollingConfirmStatus`, "json", req, runtime), new PollingConfirmStatusResponse({}));
   }
 
   async deleteTeacher(classId: string, userId: string, request: DeleteTeacherRequest): Promise<DeleteTeacherResponse> {
@@ -8945,6 +9521,65 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCustomDeptResponse>(await this.doROARequest("CreateCustomDept", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/customDepts`, "json", req, runtime), new CreateCustomDeptResponse({}));
   }
 
+  async startCoursePrepare(request: StartCoursePrepareRequest): Promise<StartCoursePrepareResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StartCoursePrepareHeaders({ });
+    return await this.startCoursePrepareWithOptions(request, headers, runtime);
+  }
+
+  async startCoursePrepareWithOptions(request: StartCoursePrepareRequest, headers: StartCoursePrepareHeaders, runtime: $Util.RuntimeOptions): Promise<StartCoursePrepareResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ext)) {
+      body["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.courseGroupCode)) {
+      body["courseGroupCode"] = request.courseGroupCode;
+    }
+
+    if (!Util.isUnset(request.sectionIndex)) {
+      body["sectionIndex"] = request.sectionIndex;
+    }
+
+    if (!Util.isUnset(request.deviceId)) {
+      body["deviceId"] = request.deviceId;
+    }
+
+    if (!Util.isUnset(request.liveCoverImage)) {
+      body["liveCoverImage"] = request.liveCoverImage;
+    }
+
+    if (!Util.isUnset(request.courseDate)) {
+      body["courseDate"] = request.courseDate;
+    }
+
+    if (!Util.isUnset(request.isvCode)) {
+      body["isvCode"] = request.isvCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<StartCoursePrepareResponse>(await this.doROARequest("StartCoursePrepare", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/courses/prepare`, "json", req, runtime), new StartCoursePrepareResponse({}));
+  }
+
   async queryClassScheduleByTimeSchool(request: QueryClassScheduleByTimeSchoolRequest): Promise<QueryClassScheduleByTimeSchoolResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryClassScheduleByTimeSchoolHeaders({ });
@@ -9107,6 +9742,44 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteOrgRelationResponse>(await this.doROARequest("DeleteOrgRelation", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/remoteClasses/orgRelations`, "json", req, runtime), new DeleteOrgRelationResponse({}));
+  }
+
+  async startCourse(request: StartCourseRequest): Promise<StartCourseResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.startCourseWithOptions(request, headers, runtime);
+  }
+
+  async startCourseWithOptions(request: StartCourseRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<StartCourseResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ext)) {
+      body["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.courseCode)) {
+      body["courseCode"] = request.courseCode;
+    }
+
+    if (!Util.isUnset(request.livePlayInfoList)) {
+      body["livePlayInfoList"] = request.livePlayInfoList;
+    }
+
+    if (!Util.isUnset(request.isvCode)) {
+      body["isvCode"] = request.isvCode;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<StartCourseResponse>(await this.doROARequest("StartCourse", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/courses/start`, "json", req, runtime), new StartCourseResponse({}));
   }
 
   async queryPhysicalClassroom(request: QueryPhysicalClassroomRequest): Promise<QueryPhysicalClassroomResponse> {
@@ -9402,6 +10075,53 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryOrgTypeResponse>(await this.doROARequest("QueryOrgType", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/orgTypes`, "json", req, runtime), new QueryOrgTypeResponse({}));
+  }
+
+  async endCourse(request: EndCourseRequest): Promise<EndCourseResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EndCourseHeaders({ });
+    return await this.endCourseWithOptions(request, headers, runtime);
+  }
+
+  async endCourseWithOptions(request: EndCourseRequest, headers: EndCourseHeaders, runtime: $Util.RuntimeOptions): Promise<EndCourseResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ext)) {
+      body["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.courseCode)) {
+      body["courseCode"] = request.courseCode;
+    }
+
+    if (!Util.isUnset(request.livePlayInfoList)) {
+      body["livePlayInfoList"] = request.livePlayInfoList;
+    }
+
+    if (!Util.isUnset(request.isvCode)) {
+      body["isvCode"] = request.isvCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<EndCourseResponse>(await this.doROARequest("EndCourse", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/universities/courses/end`, "json", req, runtime), new EndCourseResponse({}));
   }
 
   async getShareRoleMembers(shareRoleCode: string): Promise<GetShareRoleMembersResponse> {
