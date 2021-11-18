@@ -18,7 +18,7 @@ public class SaveBadgeCodeCorpInstanceResponseBody extends TeaModel {
 
     // 扩展参数
     @NameInMap("extInfo")
-    public java.util.Map<String, ?> extInfo;
+    public java.util.Map<String, String> extInfo;
 
     public static SaveBadgeCodeCorpInstanceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SaveBadgeCodeCorpInstanceResponseBody self = new SaveBadgeCodeCorpInstanceResponseBody();
@@ -49,11 +49,11 @@ public class SaveBadgeCodeCorpInstanceResponseBody extends TeaModel {
         return this.status;
     }
 
-    public SaveBadgeCodeCorpInstanceResponseBody setExtInfo(java.util.Map<String, ?> extInfo) {
+    public SaveBadgeCodeCorpInstanceResponseBody setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
     }
-    public java.util.Map<String, ?> getExtInfo() {
+    public java.util.Map<String, String> getExtInfo() {
         return this.extInfo;
     }
 

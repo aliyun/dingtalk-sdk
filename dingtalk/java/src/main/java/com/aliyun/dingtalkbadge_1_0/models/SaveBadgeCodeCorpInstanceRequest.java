@@ -18,7 +18,7 @@ public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
 
     // 扩展参数
     @NameInMap("extInfo")
-    public java.util.Map<String, ?> extInfo;
+    public java.util.Map<String, String> extInfo;
 
     // 组织ID
     @NameInMap("dingOrgId")
@@ -57,11 +57,11 @@ public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
         return this.status;
     }
 
-    public SaveBadgeCodeCorpInstanceRequest setExtInfo(java.util.Map<String, ?> extInfo) {
+    public SaveBadgeCodeCorpInstanceRequest setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
     }
-    public java.util.Map<String, ?> getExtInfo() {
+    public java.util.Map<String, String> getExtInfo() {
         return this.extInfo;
     }
 

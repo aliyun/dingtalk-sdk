@@ -339,10 +339,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dingOrgId", request.dingOrgId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
-            body.put("dingClientId", request.dingClientId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
             body.put("dingIsvOrgId", request.dingIsvOrgId);
         }

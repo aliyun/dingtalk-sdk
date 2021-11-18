@@ -157,14 +157,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("maxResults", request.maxResults);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.startTimeInMills)) {
-            query.put("startTimeInMills", request.startTimeInMills);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.endTimeInMills)) {
-            query.put("endTimeInMills", request.endTimeInMills);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.appUuid)) {
             query.put("appUuid", request.appUuid);
         }

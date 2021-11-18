@@ -8,8 +8,8 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     @NameInMap("recentList")
     public java.util.List<GetRecentEditDocsResponseBodyRecentList> recentList;
 
-    @NameInMap("loadMoreId")
-    public String loadMoreId;
+    @NameInMap("nextToken")
+    public String nextToken;
 
     public static GetRecentEditDocsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetRecentEditDocsResponseBody self = new GetRecentEditDocsResponseBody();
@@ -24,12 +24,12 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         return this.recentList;
     }
 
-    public GetRecentEditDocsResponseBody setLoadMoreId(String loadMoreId) {
-        this.loadMoreId = loadMoreId;
+    public GetRecentEditDocsResponseBody setNextToken(String nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public String getLoadMoreId() {
-        return this.loadMoreId;
+    public String getNextToken() {
+        return this.nextToken;
     }
 
     public static class GetRecentEditDocsResponseBodyRecentListNodeBO extends TeaModel {

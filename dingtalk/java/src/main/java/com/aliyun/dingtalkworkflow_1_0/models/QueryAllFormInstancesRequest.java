@@ -12,14 +12,6 @@ public class QueryAllFormInstancesRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 开始时间戳
-    @NameInMap("startTimeInMills")
-    public Long startTimeInMills;
-
-    // 结束时间戳
-    @NameInMap("endTimeInMills")
-    public Long endTimeInMills;
-
     // 应用搭建id
     @NameInMap("appUuid")
     public String appUuid;
@@ -47,22 +39,6 @@ public class QueryAllFormInstancesRequest extends TeaModel {
     }
     public Integer getMaxResults() {
         return this.maxResults;
-    }
-
-    public QueryAllFormInstancesRequest setStartTimeInMills(Long startTimeInMills) {
-        this.startTimeInMills = startTimeInMills;
-        return this;
-    }
-    public Long getStartTimeInMills() {
-        return this.startTimeInMills;
-    }
-
-    public QueryAllFormInstancesRequest setEndTimeInMills(Long endTimeInMills) {
-        this.endTimeInMills = endTimeInMills;
-        return this;
-    }
-    public Long getEndTimeInMills() {
-        return this.endTimeInMills;
     }
 
     public QueryAllFormInstancesRequest setAppUuid(String appUuid) {

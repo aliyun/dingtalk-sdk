@@ -9,11 +9,11 @@ public class GetRecentEditDocsRequest extends TeaModel {
     public String operatorId;
 
     // 查询size
-    @NameInMap("size")
-    public Integer size;
+    @NameInMap("maxResults")
+    public Integer maxResults;
 
-    @NameInMap("loadMoreId")
-    public String loadMoreId;
+    @NameInMap("nextToken")
+    public String nextToken;
 
     public static GetRecentEditDocsRequest build(java.util.Map<String, ?> map) throws Exception {
         GetRecentEditDocsRequest self = new GetRecentEditDocsRequest();
@@ -28,20 +28,20 @@ public class GetRecentEditDocsRequest extends TeaModel {
         return this.operatorId;
     }
 
-    public GetRecentEditDocsRequest setSize(Integer size) {
-        this.size = size;
+    public GetRecentEditDocsRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public Integer getSize() {
-        return this.size;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
-    public GetRecentEditDocsRequest setLoadMoreId(String loadMoreId) {
-        this.loadMoreId = loadMoreId;
+    public GetRecentEditDocsRequest setNextToken(String nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public String getLoadMoreId() {
-        return this.loadMoreId;
+    public String getNextToken() {
+        return this.nextToken;
     }
 
 }

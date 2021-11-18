@@ -13,12 +13,12 @@ public class SearchWorkspaceDocsRequest extends TeaModel {
     public String keyword;
 
     // 搜索数量
-    @NameInMap("size")
-    public Integer size;
+    @NameInMap("maxResults")
+    public Integer maxResults;
 
     // 翻页Id
-    @NameInMap("loadMoreId")
-    public String loadMoreId;
+    @NameInMap("nextToken")
+    public String nextToken;
 
     public static SearchWorkspaceDocsRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchWorkspaceDocsRequest self = new SearchWorkspaceDocsRequest();
@@ -41,20 +41,20 @@ public class SearchWorkspaceDocsRequest extends TeaModel {
         return this.keyword;
     }
 
-    public SearchWorkspaceDocsRequest setSize(Integer size) {
-        this.size = size;
+    public SearchWorkspaceDocsRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public Integer getSize() {
-        return this.size;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
-    public SearchWorkspaceDocsRequest setLoadMoreId(String loadMoreId) {
-        this.loadMoreId = loadMoreId;
+    public SearchWorkspaceDocsRequest setNextToken(String nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public String getLoadMoreId() {
-        return this.loadMoreId;
+    public String getNextToken() {
+        return this.nextToken;
     }
 
 }

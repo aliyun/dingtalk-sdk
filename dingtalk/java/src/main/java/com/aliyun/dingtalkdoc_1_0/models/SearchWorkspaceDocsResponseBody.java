@@ -8,8 +8,8 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    @NameInMap("loadMoreId")
-    public String loadMoreId;
+    @NameInMap("nextToken")
+    public String nextToken;
 
     @NameInMap("docs")
     public java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs;
@@ -27,12 +27,12 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         return this.hasMore;
     }
 
-    public SearchWorkspaceDocsResponseBody setLoadMoreId(String loadMoreId) {
-        this.loadMoreId = loadMoreId;
+    public SearchWorkspaceDocsResponseBody setNextToken(String nextToken) {
+        this.nextToken = nextToken;
         return this;
     }
-    public String getLoadMoreId() {
-        return this.loadMoreId;
+    public String getNextToken() {
+        return this.nextToken;
     }
 
     public SearchWorkspaceDocsResponseBody setDocs(java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs) {

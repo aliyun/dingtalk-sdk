@@ -18,7 +18,7 @@ public class SaveCorpPayCodeResponseBody extends TeaModel {
 
     // 扩展参数
     @NameInMap("extInfo")
-    public java.util.Map<String, ?> extInfo;
+    public java.util.Map<String, String> extInfo;
 
     public static SaveCorpPayCodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SaveCorpPayCodeResponseBody self = new SaveCorpPayCodeResponseBody();
@@ -49,11 +49,11 @@ public class SaveCorpPayCodeResponseBody extends TeaModel {
         return this.status;
     }
 
-    public SaveCorpPayCodeResponseBody setExtInfo(java.util.Map<String, ?> extInfo) {
+    public SaveCorpPayCodeResponseBody setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
     }
-    public java.util.Map<String, ?> getExtInfo() {
+    public java.util.Map<String, String> getExtInfo() {
         return this.extInfo;
     }
 

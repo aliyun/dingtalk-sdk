@@ -18,14 +18,11 @@ public class SaveCorpPayCodeRequest extends TeaModel {
 
     // 扩展参数
     @NameInMap("extInfo")
-    public java.util.Map<String, ?> extInfo;
+    public java.util.Map<String, String> extInfo;
 
     // 企业orgId
     @NameInMap("dingOrgId")
     public Long dingOrgId;
-
-    @NameInMap("dingClientId")
-    public String dingClientId;
 
     @NameInMap("dingIsvOrgId")
     public Long dingIsvOrgId;
@@ -59,11 +56,11 @@ public class SaveCorpPayCodeRequest extends TeaModel {
         return this.status;
     }
 
-    public SaveCorpPayCodeRequest setExtInfo(java.util.Map<String, ?> extInfo) {
+    public SaveCorpPayCodeRequest setExtInfo(java.util.Map<String, String> extInfo) {
         this.extInfo = extInfo;
         return this;
     }
-    public java.util.Map<String, ?> getExtInfo() {
+    public java.util.Map<String, String> getExtInfo() {
         return this.extInfo;
     }
 
@@ -73,14 +70,6 @@ public class SaveCorpPayCodeRequest extends TeaModel {
     }
     public Long getDingOrgId() {
         return this.dingOrgId;
-    }
-
-    public SaveCorpPayCodeRequest setDingClientId(String dingClientId) {
-        this.dingClientId = dingClientId;
-        return this;
-    }
-    public String getDingClientId() {
-        return this.dingClientId;
     }
 
     public SaveCorpPayCodeRequest setDingIsvOrgId(Long dingIsvOrgId) {

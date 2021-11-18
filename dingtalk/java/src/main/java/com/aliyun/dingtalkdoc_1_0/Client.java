@@ -265,12 +265,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("keyword", request.keyword);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.size)) {
-            query.put("size", request.size);
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.loadMoreId)) {
-            query.put("loadMoreId", request.loadMoreId);
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -487,12 +487,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("operatorId", request.operatorId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.size)) {
-            query.put("size", request.size);
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.loadMoreId)) {
-            query.put("loadMoreId", request.loadMoreId);
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
