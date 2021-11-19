@@ -11,9 +11,14 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateAclsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateAclsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateAclsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteAclHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteAclResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountHeaders;
@@ -27,6 +32,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
@@ -58,6 +65,96 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string            $userId
+     * @param string            $calendarId
+     * @param CreateAclsRequest $request
+     *
+     * @return CreateAclsResponse
+     */
+    public function createAcls($userId, $calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAclsHeaders([]);
+
+        return $this->createAclsWithOptions($userId, $calendarId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $userId
+     * @param string            $calendarId
+     * @param CreateAclsRequest $request
+     * @param CreateAclsHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return CreateAclsResponse
+     */
+    public function createAclsWithOptions($userId, $calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->privilege)) {
+            @$body['privilege'] = $request->privilege;
+        }
+        if (!Utils::isUnset($request->sendMsg)) {
+            @$body['sendMsg'] = $request->sendMsg;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            @$body['scope'] = $request->scope;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateAclsResponse::fromMap($this->doROARequest('CreateAcls', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     *
+     * @return ListAclsResponse
+     */
+    public function listAcls($userId, $calendarId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAclsHeaders([]);
+
+        return $this->listAclsWithOptions($userId, $calendarId, $headers, $runtime);
+    }
+
+    /**
+     * @param string          $userId
+     * @param string          $calendarId
+     * @param ListAclsHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return ListAclsResponse
+     */
+    public function listAclsWithOptions($userId, $calendarId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListAclsResponse::fromMap($this->doROARequest('ListAcls', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls', 'json', $req, $runtime));
     }
 
     /**
@@ -518,6 +615,46 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSignInListResponse::fromMap($this->doROARequest('GetSignInList', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     * @param string $aclId
+     *
+     * @return DeleteAclResponse
+     */
+    public function deleteAcl($userId, $calendarId, $aclId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteAclHeaders([]);
+
+        return $this->deleteAclWithOptions($userId, $calendarId, $aclId, $headers, $runtime);
+    }
+
+    /**
+     * @param string           $userId
+     * @param string           $calendarId
+     * @param string           $aclId
+     * @param DeleteAclHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return DeleteAclResponse
+     */
+    public function deleteAclWithOptions($userId, $calendarId, $aclId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteAclResponse::fromMap($this->doROARequest('DeleteAcl', 'calendar_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls/' . $aclId . '', 'none', $req, $runtime));
     }
 
     /**

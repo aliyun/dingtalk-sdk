@@ -35,11 +35,19 @@ class records extends Model
      * @var string
      */
     public $openGroupSetId;
+
+    /**
+     * @description 入群链接
+     *
+     * @var string
+     */
+    public $groupUrl;
     protected $_name = [
         'openConversationId' => 'openConversationId',
         'groupName'          => 'groupName',
         'openTeamId'         => 'openTeamId',
         'openGroupSetId'     => 'openGroupSetId',
+        'groupUrl'           => 'groupUrl',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class records extends Model
         }
         if (null !== $this->openGroupSetId) {
             $res['openGroupSetId'] = $this->openGroupSetId;
+        }
+        if (null !== $this->groupUrl) {
+            $res['groupUrl'] = $this->groupUrl;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class records extends Model
         }
         if (isset($map['openGroupSetId'])) {
             $model->openGroupSetId = $map['openGroupSetId'];
+        }
+        if (isset($map['groupUrl'])) {
+            $model->groupUrl = $map['groupUrl'];
         }
 
         return $model;

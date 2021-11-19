@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AssignTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BoundTemplateToTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CancelTicketResponse;
@@ -38,6 +41,12 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CloseHumanSessionRespons
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketResponse;
@@ -67,6 +76,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryActiveUsersResponse
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryServiceGroupMessageReadStatusResponse;
@@ -1344,6 +1356,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryGroupSetRequest $request
+     *
+     * @return QueryGroupSetResponse
+     */
+    public function queryGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupSetHeaders([]);
+
+        return $this->queryGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGroupSetRequest $request
+     * @param QueryGroupSetHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return QueryGroupSetResponse
+     */
+    public function queryGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$query['openTeamId'] = $request->openTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryGroupSetResponse::fromMap($this->doROARequest('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', '/v1.0/serviceGroup/groupSets', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DeleteKnowledgeRequest $request
      *
      * @return DeleteKnowledgeResponse
@@ -1950,6 +2004,135 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateGroupSetRequest $request
+     *
+     * @return CreateGroupSetResponse
+     */
+    public function createGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupSetHeaders([]);
+
+        return $this->createGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateGroupSetRequest $request
+     * @param CreateGroupSetHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateGroupSetResponse
+     */
+    public function createGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->groupSetName)) {
+            @$body['groupSetName'] = $request->groupSetName;
+        }
+        if (!Utils::isUnset($request->groupTemplateId)) {
+            @$body['groupTemplateId'] = $request->groupTemplateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateGroupSetResponse::fromMap($this->doROARequest('CreateGroupSet', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/groupSets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BoundTemplateToTeamRequest $request
+     *
+     * @return BoundTemplateToTeamResponse
+     */
+    public function boundTemplateToTeam($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BoundTemplateToTeamHeaders([]);
+
+        return $this->boundTemplateToTeamWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BoundTemplateToTeamRequest $request
+     * @param BoundTemplateToTeamHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BoundTemplateToTeamResponse
+     */
+    public function boundTemplateToTeamWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            @$body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->templateName)) {
+            @$body['templateName'] = $request->templateName;
+        }
+        if (!Utils::isUnset($request->templateType)) {
+            @$body['templateType'] = $request->templateType;
+        }
+        if (!Utils::isUnset($request->templateDesc)) {
+            @$body['templateDesc'] = $request->templateDesc;
+        }
+        if (!Utils::isUnset($request->robotConfig)) {
+            @$body['robotConfig'] = $request->robotConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BoundTemplateToTeamResponse::fromMap($this->doROARequest('BoundTemplateToTeam', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/teams/templates/bound', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetOssTempUrlRequest $request
      *
      * @return GetOssTempUrlResponse
@@ -2220,6 +2403,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddOpenKnowledgeResponse::fromMap($this->doROARequest('AddOpenKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/openKnowledges', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateTeamRequest $request
+     *
+     * @return CreateTeamResponse
+     */
+    public function createTeam($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTeamHeaders([]);
+
+        return $this->createTeamWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateTeamRequest $request
+     * @param CreateTeamHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return CreateTeamResponse
+     */
+    public function createTeamWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creatorDingUid)) {
+            @$body['creatorDingUid'] = $request->creatorDingUid;
+        }
+        if (!Utils::isUnset($request->teamName)) {
+            @$body['teamName'] = $request->teamName;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateTeamResponse::fromMap($this->doROARequest('CreateTeam', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', '/v1.0/serviceGroup/teams', 'json', $req, $runtime));
     }
 
     /**
