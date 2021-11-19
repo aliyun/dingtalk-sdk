@@ -4,6 +4,419 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class CreateAclsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAclsRequestScope(TeaModel):
+    def __init__(
+        self,
+        scope_type: str = None,
+        user_id: str = None,
+    ):
+        # 权限类型
+        self.scope_type = scope_type
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scope_type is not None:
+            result['scopeType'] = self.scope_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scopeType') is not None:
+            self.scope_type = m.get('scopeType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateAclsRequest(TeaModel):
+    def __init__(
+        self,
+        privilege: str = None,
+        send_msg: bool = None,
+        scope: CreateAclsRequestScope = None,
+    ):
+        # 对日历的访问权限
+        self.privilege = privilege
+        # 是否向授权人发消息
+        self.send_msg = send_msg
+        # 权限范围
+        self.scope = scope
+
+    def validate(self):
+        if self.scope:
+            self.scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.privilege is not None:
+            result['privilege'] = self.privilege
+        if self.send_msg is not None:
+            result['sendMsg'] = self.send_msg
+        if self.scope is not None:
+            result['scope'] = self.scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('privilege') is not None:
+            self.privilege = m.get('privilege')
+        if m.get('sendMsg') is not None:
+            self.send_msg = m.get('sendMsg')
+        if m.get('scope') is not None:
+            temp_model = CreateAclsRequestScope()
+            self.scope = temp_model.from_map(m['scope'])
+        return self
+
+
+class CreateAclsResponseBodyScope(TeaModel):
+    def __init__(
+        self,
+        scope_type: str = None,
+        user_id: str = None,
+    ):
+        # 权限类型
+        self.scope_type = scope_type
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scope_type is not None:
+            result['scopeType'] = self.scope_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scopeType') is not None:
+            self.scope_type = m.get('scopeType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateAclsResponseBody(TeaModel):
+    def __init__(
+        self,
+        privilege: str = None,
+        acl_id: str = None,
+        scope: CreateAclsResponseBodyScope = None,
+    ):
+        # 对日历的访问权限
+        self.privilege = privilege
+        # acl资源ID
+        self.acl_id = acl_id
+        # 权限范围
+        self.scope = scope
+
+    def validate(self):
+        if self.scope:
+            self.scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.privilege is not None:
+            result['privilege'] = self.privilege
+        if self.acl_id is not None:
+            result['aclId'] = self.acl_id
+        if self.scope is not None:
+            result['scope'] = self.scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('privilege') is not None:
+            self.privilege = m.get('privilege')
+        if m.get('aclId') is not None:
+            self.acl_id = m.get('aclId')
+        if m.get('scope') is not None:
+            temp_model = CreateAclsResponseBodyScope()
+            self.scope = temp_model.from_map(m['scope'])
+        return self
+
+
+class CreateAclsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateAclsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateAclsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListAclsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListAclsResponseBodyAclsScope(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        scope_type: str = None,
+    ):
+        # 用户id
+        self.user_id = user_id
+        # 权限类型
+        self.scope_type = scope_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.scope_type is not None:
+            result['scopeType'] = self.scope_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('scopeType') is not None:
+            self.scope_type = m.get('scopeType')
+        return self
+
+
+class ListAclsResponseBodyAcls(TeaModel):
+    def __init__(
+        self,
+        privilege: str = None,
+        acl_id: str = None,
+        scope: ListAclsResponseBodyAclsScope = None,
+    ):
+        # 权限信息
+        self.privilege = privilege
+        # acl资源ID
+        self.acl_id = acl_id
+        # 权限范围
+        self.scope = scope
+
+    def validate(self):
+        if self.scope:
+            self.scope.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.privilege is not None:
+            result['privilege'] = self.privilege
+        if self.acl_id is not None:
+            result['aclId'] = self.acl_id
+        if self.scope is not None:
+            result['scope'] = self.scope.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('privilege') is not None:
+            self.privilege = m.get('privilege')
+        if m.get('aclId') is not None:
+            self.acl_id = m.get('aclId')
+        if m.get('scope') is not None:
+            temp_model = ListAclsResponseBodyAclsScope()
+            self.scope = temp_model.from_map(m['scope'])
+        return self
+
+
+class ListAclsResponseBody(TeaModel):
+    def __init__(
+        self,
+        acls: List[ListAclsResponseBodyAcls] = None,
+    ):
+        # 访问控制列表
+        self.acls = acls
+
+    def validate(self):
+        if self.acls:
+            for k in self.acls:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['acls'] = []
+        if self.acls is not None:
+            for k in self.acls:
+                result['acls'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.acls = []
+        if m.get('acls') is not None:
+            for k in m.get('acls'):
+                temp_model = ListAclsResponseBodyAcls()
+                self.acls.append(temp_model.from_map(k))
+        return self
+
+
+class ListAclsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListAclsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListAclsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RespondEventHeaders(TeaModel):
     def __init__(
         self,
@@ -2422,6 +2835,66 @@ class GetSignInListResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = GetSignInListResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteAclHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteAclResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
         return self
 
 
