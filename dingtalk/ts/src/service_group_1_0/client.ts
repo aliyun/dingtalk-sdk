@@ -1846,6 +1846,88 @@ export class AddTicketMemoResponse extends $tea.Model {
   }
 }
 
+export class QueryGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupSetRequest extends $tea.Model {
+  openTeamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupSetResponseBody extends $tea.Model {
+  records?: QueryGroupSetResponseBodyRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      records: 'records',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      records: { 'type': 'array', 'itemType': QueryGroupSetResponseBodyRecords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryGroupSetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteKnowledgeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2786,6 +2868,215 @@ export class AddOpenCategoryResponse extends $tea.Model {
   }
 }
 
+export class CreateGroupSetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetRequest extends $tea.Model {
+  openTeamId?: string;
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  groupSetName?: string;
+  groupTemplateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTeamId: 'openTeamId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      groupSetName: 'groupSetName',
+      groupTemplateId: 'groupTemplateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTeamId: 'string',
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      groupSetName: 'string',
+      groupTemplateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupSetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateGroupSetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateGroupSetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BoundTemplateToTeamHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BoundTemplateToTeamRequest extends $tea.Model {
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  dingIsvOrgId?: number;
+  openTeamId?: string;
+  templateId?: string;
+  templateName?: string;
+  templateType?: string;
+  templateDesc?: string;
+  robotConfig?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingIsvOrgId: 'dingIsvOrgId',
+      openTeamId: 'openTeamId',
+      templateId: 'templateId',
+      templateName: 'templateName',
+      templateType: 'templateType',
+      templateDesc: 'templateDesc',
+      robotConfig: 'robotConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+      dingIsvOrgId: 'number',
+      openTeamId: 'string',
+      templateId: 'string',
+      templateName: 'string',
+      templateType: 'string',
+      templateDesc: 'string',
+      robotConfig: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BoundTemplateToTeamResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BoundTemplateToTeamResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BoundTemplateToTeamResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BoundTemplateToTeamResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOssTempUrlHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3170,6 +3461,103 @@ export class AddOpenKnowledgeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: AddOpenKnowledgeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTeamHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTeamRequest extends $tea.Model {
+  creatorDingUid?: number;
+  teamName?: string;
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
+  dingSuiteKey?: string;
+  dingTokenGrantType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      creatorDingUid: 'creatorDingUid',
+      teamName: 'teamName',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingTokenGrantType: 'dingTokenGrantType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorDingUid: 'number',
+      teamName: 'string',
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingTokenGrantType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTeamResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTeamResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateTeamResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateTeamResponseBody,
     };
   }
 
@@ -4010,6 +4398,37 @@ export class AddTicketMemoRequestTicketMemo extends $tea.Model {
   }
 }
 
+export class QueryGroupSetResponseBodyRecords extends $tea.Model {
+  openGroupSetId?: string;
+  groupSetName?: string;
+  templateId?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openGroupSetId: 'openGroupSetId',
+      groupSetName: 'groupSetName',
+      templateId: 'templateId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openGroupSetId: 'string',
+      groupSetName: 'string',
+      templateId: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTicketRequestSceneContextGroupMsgs extends $tea.Model {
   openMsgId?: string;
   anchor?: boolean;
@@ -4159,12 +4578,14 @@ export class SearchGroupResponseBodyRecords extends $tea.Model {
   groupName?: string;
   openTeamId?: string;
   openGroupSetId?: string;
+  groupUrl?: string;
   static names(): { [key: string]: string } {
     return {
       openConversationId: 'openConversationId',
       groupName: 'groupName',
       openTeamId: 'openTeamId',
       openGroupSetId: 'openGroupSetId',
+      groupUrl: 'groupUrl',
     };
   }
 
@@ -4174,6 +4595,7 @@ export class SearchGroupResponseBodyRecords extends $tea.Model {
       groupName: 'string',
       openTeamId: 'string',
       openGroupSetId: 'string',
+      groupUrl: 'string',
     };
   }
 
@@ -5596,6 +6018,35 @@ export default class Client extends OpenApi {
     return $tea.cast<AddTicketMemoResponse>(await this.doROARequest("AddTicketMemo", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/tickets/memos`, "none", req, runtime), new AddTicketMemoResponse({}));
   }
 
+  async queryGroupSet(request: QueryGroupSetRequest): Promise<QueryGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGroupSetHeaders({ });
+    return await this.queryGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async queryGroupSetWithOptions(request: QueryGroupSetRequest, headers: QueryGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupSetResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      query["openTeamId"] = request.openTeamId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryGroupSetResponse>(await this.doROARequest("QueryGroupSet", "serviceGroup_1.0", "HTTP", "GET", "AK", `/v1.0/serviceGroup/groupSets`, "json", req, runtime), new QueryGroupSetResponse({}));
+  }
+
   async deleteKnowledge(request: DeleteKnowledgeRequest): Promise<DeleteKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteKnowledgeHeaders({ });
@@ -6161,6 +6612,124 @@ export default class Client extends OpenApi {
     return $tea.cast<AddOpenCategoryResponse>(await this.doROARequest("AddOpenCategory", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/openCategories`, "json", req, runtime), new AddOpenCategoryResponse({}));
   }
 
+  async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupSetHeaders({ });
+    return await this.createGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async createGroupSetWithOptions(request: CreateGroupSetRequest, headers: CreateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupSetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.groupSetName)) {
+      body["groupSetName"] = request.groupSetName;
+    }
+
+    if (!Util.isUnset(request.groupTemplateId)) {
+      body["groupTemplateId"] = request.groupTemplateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateGroupSetResponse>(await this.doROARequest("CreateGroupSet", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/groupSets`, "json", req, runtime), new CreateGroupSetResponse({}));
+  }
+
+  async boundTemplateToTeam(request: BoundTemplateToTeamRequest): Promise<BoundTemplateToTeamResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BoundTemplateToTeamHeaders({ });
+    return await this.boundTemplateToTeamWithOptions(request, headers, runtime);
+  }
+
+  async boundTemplateToTeamWithOptions(request: BoundTemplateToTeamRequest, headers: BoundTemplateToTeamHeaders, runtime: $Util.RuntimeOptions): Promise<BoundTemplateToTeamResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.templateName)) {
+      body["templateName"] = request.templateName;
+    }
+
+    if (!Util.isUnset(request.templateType)) {
+      body["templateType"] = request.templateType;
+    }
+
+    if (!Util.isUnset(request.templateDesc)) {
+      body["templateDesc"] = request.templateDesc;
+    }
+
+    if (!Util.isUnset(request.robotConfig)) {
+      body["robotConfig"] = request.robotConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BoundTemplateToTeamResponse>(await this.doROARequest("BoundTemplateToTeam", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/teams/templates/bound`, "json", req, runtime), new BoundTemplateToTeamResponse({}));
+  }
+
   async getOssTempUrl(request: GetOssTempUrlRequest): Promise<GetOssTempUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOssTempUrlHeaders({ });
@@ -6415,6 +6984,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddOpenKnowledgeResponse>(await this.doROARequest("AddOpenKnowledge", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/openKnowledges`, "json", req, runtime), new AddOpenKnowledgeResponse({}));
+  }
+
+  async createTeam(request: CreateTeamRequest): Promise<CreateTeamResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTeamHeaders({ });
+    return await this.createTeamWithOptions(request, headers, runtime);
+  }
+
+  async createTeamWithOptions(request: CreateTeamRequest, headers: CreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTeamResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorDingUid)) {
+      body["creatorDingUid"] = request.creatorDingUid;
+    }
+
+    if (!Util.isUnset(request.teamName)) {
+      body["teamName"] = request.teamName;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateTeamResponse>(await this.doROARequest("CreateTeam", "serviceGroup_1.0", "HTTP", "POST", "AK", `/v1.0/serviceGroup/teams`, "json", req, runtime), new CreateTeamResponse({}));
   }
 
   async getStoragePolicy(request: GetStoragePolicyRequest): Promise<GetStoragePolicyResponse> {

@@ -7,6 +7,163 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CreateAclsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAclsRequest extends $tea.Model {
+  privilege?: string;
+  sendMsg?: boolean;
+  scope?: CreateAclsRequestScope;
+  static names(): { [key: string]: string } {
+    return {
+      privilege: 'privilege',
+      sendMsg: 'sendMsg',
+      scope: 'scope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      privilege: 'string',
+      sendMsg: 'boolean',
+      scope: CreateAclsRequestScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAclsResponseBody extends $tea.Model {
+  privilege?: string;
+  aclId?: string;
+  scope?: CreateAclsResponseBodyScope;
+  static names(): { [key: string]: string } {
+    return {
+      privilege: 'privilege',
+      aclId: 'aclId',
+      scope: 'scope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      privilege: 'string',
+      aclId: 'string',
+      scope: CreateAclsResponseBodyScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAclsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateAclsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateAclsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAclsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAclsResponseBody extends $tea.Model {
+  acls?: ListAclsResponseBodyAcls[];
+  static names(): { [key: string]: string } {
+    return {
+      acls: 'acls',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      acls: { 'type': 'array', 'itemType': ListAclsResponseBodyAcls },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAclsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListAclsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListAclsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RespondEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -762,6 +919,47 @@ export class GetSignInListResponse extends $tea.Model {
   }
 }
 
+export class DeleteAclHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAclResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1248,6 +1446,97 @@ export class PatchEventResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: PatchEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAclsRequestScope extends $tea.Model {
+  scopeType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scopeType: 'scopeType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAclsResponseBodyScope extends $tea.Model {
+  scopeType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scopeType: 'scopeType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAclsResponseBodyAclsScope extends $tea.Model {
+  userId?: string;
+  scopeType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      scopeType: 'scopeType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      scopeType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAclsResponseBodyAcls extends $tea.Model {
+  privilege?: string;
+  aclId?: string;
+  scope?: ListAclsResponseBodyAclsScope;
+  static names(): { [key: string]: string } {
+    return {
+      privilege: 'privilege',
+      aclId: 'aclId',
+      scope: 'scope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      privilege: 'string',
+      aclId: 'string',
+      scope: ListAclsResponseBodyAclsScope,
     };
   }
 
@@ -3223,6 +3512,65 @@ export default class Client extends OpenApi {
   }
 
 
+  async createAcls(userId: string, calendarId: string, request: CreateAclsRequest): Promise<CreateAclsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAclsHeaders({ });
+    return await this.createAclsWithOptions(userId, calendarId, request, headers, runtime);
+  }
+
+  async createAclsWithOptions(userId: string, calendarId: string, request: CreateAclsRequest, headers: CreateAclsHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAclsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.privilege)) {
+      body["privilege"] = request.privilege;
+    }
+
+    if (!Util.isUnset(request.sendMsg)) {
+      body["sendMsg"] = request.sendMsg;
+    }
+
+    if (!Util.isUnset($tea.toMap(request.scope))) {
+      body["scope"] = request.scope;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateAclsResponse>(await this.doROARequest("CreateAcls", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls`, "json", req, runtime), new CreateAclsResponse({}));
+  }
+
+  async listAcls(userId: string, calendarId: string): Promise<ListAclsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAclsHeaders({ });
+    return await this.listAclsWithOptions(userId, calendarId, headers, runtime);
+  }
+
+  async listAclsWithOptions(userId: string, calendarId: string, headers: ListAclsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAclsResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListAclsResponse>(await this.doROARequest("ListAcls", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls`, "json", req, runtime), new ListAclsResponse({}));
+  }
+
   async respondEvent(userId: string, calendarId: string, eventId: string, request: RespondEventRequest): Promise<RespondEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RespondEventHeaders({ });
@@ -3547,6 +3895,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSignInListResponse>(await this.doROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new GetSignInListResponse({}));
+  }
+
+  async deleteAcl(userId: string, calendarId: string, aclId: string): Promise<DeleteAclResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteAclHeaders({ });
+    return await this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
+  }
+
+  async deleteAclWithOptions(userId: string, calendarId: string, aclId: string, headers: DeleteAclHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAclResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DeleteAclResponse>(await this.doROARequest("DeleteAcl", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls/${aclId}`, "none", req, runtime), new DeleteAclResponse({}));
   }
 
   async deleteEvent(userId: string, calendarId: string, eventId: string): Promise<DeleteEventResponse> {
