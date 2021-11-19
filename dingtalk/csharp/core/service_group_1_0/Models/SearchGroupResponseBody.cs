@@ -58,6 +58,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public string OpenGroupSetId { get; set; }
 
+            /// <summary>
+            /// 入群链接
+            /// </summary>
+            [NameInMap("groupUrl")]
+            [Validation(Required=false)]
+            public string GroupUrl { get; set; }
+
         }
 
         /// <summary>
