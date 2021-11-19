@@ -74,6 +74,10 @@ public class SearchGroupResponseBody extends TeaModel {
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        // 入群链接
+        @NameInMap("groupUrl")
+        public String groupUrl;
+
         public static SearchGroupResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             SearchGroupResponseBodyRecords self = new SearchGroupResponseBodyRecords();
             return TeaModel.build(map, self);
@@ -109,6 +113,14 @@ public class SearchGroupResponseBody extends TeaModel {
         }
         public String getOpenGroupSetId() {
             return this.openGroupSetId;
+        }
+
+        public SearchGroupResponseBodyRecords setGroupUrl(String groupUrl) {
+            this.groupUrl = groupUrl;
+            return this;
+        }
+        public String getGroupUrl() {
+            return this.groupUrl;
         }
 
     }

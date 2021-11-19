@@ -21,6 +21,65 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CreateAclsResponse createAcls(String userId, String calendarId, CreateAclsRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CreateAclsHeaders headers = new CreateAclsHeaders();
+        return this.createAclsWithOptions(userId, calendarId, request, headers, runtime);
+    }
+
+    public CreateAclsResponse createAclsWithOptions(String userId, String calendarId, CreateAclsRequest request, CreateAclsHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.privilege)) {
+            body.put("privilege", request.privilege);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendMsg)) {
+            body.put("sendMsg", request.sendMsg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.scope))) {
+            body.put("scope", request.scope);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateAcls", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/acls", "json", req, runtime), new CreateAclsResponse());
+    }
+
+    public ListAclsResponse listAcls(String userId, String calendarId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListAclsHeaders headers = new ListAclsHeaders();
+        return this.listAclsWithOptions(userId, calendarId, headers, runtime);
+    }
+
+    public ListAclsResponse listAclsWithOptions(String userId, String calendarId, ListAclsHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ListAcls", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/acls", "json", req, runtime), new ListAclsResponse());
+    }
+
     public RespondEventResponse respondEvent(String userId, String calendarId, String eventId, RespondEventRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         RespondEventHeaders headers = new RespondEventHeaders();
@@ -345,6 +404,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signin", "json", req, runtime), new GetSignInListResponse());
+    }
+
+    public DeleteAclResponse deleteAcl(String userId, String calendarId, String aclId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        DeleteAclHeaders headers = new DeleteAclHeaders();
+        return this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
+    }
+
+    public DeleteAclResponse deleteAclWithOptions(String userId, String calendarId, String aclId, DeleteAclHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteAcl", "calendar_1.0", "HTTP", "DELETE", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/acls/" + aclId + "", "none", req, runtime), new DeleteAclResponse());
     }
 
     public DeleteEventResponse deleteEvent(String userId, String calendarId, String eventId) throws Exception {
