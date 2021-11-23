@@ -7,6 +7,9 @@ public class GetUploadInfoResponseBody extends TeaModel {
     @NameInMap("stsUploadInfo")
     public GetUploadInfoResponseBodyStsUploadInfo stsUploadInfo;
 
+    @NameInMap("headerSignatureUploadInfo")
+    public GetUploadInfoResponseBodyHeaderSignatureUploadInfo headerSignatureUploadInfo;
+
     public static GetUploadInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUploadInfoResponseBody self = new GetUploadInfoResponseBody();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
     public GetUploadInfoResponseBodyStsUploadInfo getStsUploadInfo() {
         return this.stsUploadInfo;
+    }
+
+    public GetUploadInfoResponseBody setHeaderSignatureUploadInfo(GetUploadInfoResponseBodyHeaderSignatureUploadInfo headerSignatureUploadInfo) {
+        this.headerSignatureUploadInfo = headerSignatureUploadInfo;
+        return this;
+    }
+    public GetUploadInfoResponseBodyHeaderSignatureUploadInfo getHeaderSignatureUploadInfo() {
+        return this.headerSignatureUploadInfo;
     }
 
     public static class GetUploadInfoResponseBodyStsUploadInfo extends TeaModel {
@@ -108,6 +119,50 @@ public class GetUploadInfoResponseBody extends TeaModel {
         }
         public String getMediaId() {
             return this.mediaId;
+        }
+
+    }
+
+    public static class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends TeaModel {
+        // 上传地址
+        @NameInMap("resourceUrl")
+        public String resourceUrl;
+
+        // 过期秒数
+        @NameInMap("expirationSeconds")
+        public Integer expirationSeconds;
+
+        // header加签信息
+        @NameInMap("headers")
+        public java.util.Map<String, ?> headers;
+
+        public static GetUploadInfoResponseBodyHeaderSignatureUploadInfo build(java.util.Map<String, ?> map) throws Exception {
+            GetUploadInfoResponseBodyHeaderSignatureUploadInfo self = new GetUploadInfoResponseBodyHeaderSignatureUploadInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setResourceUrl(String resourceUrl) {
+            this.resourceUrl = resourceUrl;
+            return this;
+        }
+        public String getResourceUrl() {
+            return this.resourceUrl;
+        }
+
+        public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setExpirationSeconds(Integer expirationSeconds) {
+            this.expirationSeconds = expirationSeconds;
+            return this;
+        }
+        public Integer getExpirationSeconds() {
+            return this.expirationSeconds;
+        }
+
+        public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setHeaders(java.util.Map<String, ?> headers) {
+            this.headers = headers;
+            return this;
+        }
+        public java.util.Map<String, ?> getHeaders() {
+            return this.headers;
         }
 
     }

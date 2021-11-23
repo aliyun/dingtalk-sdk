@@ -144,6 +144,50 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
 
     }
 
+    public static class GetRemoteClassCourseResponseBodyResultRecordInfos extends TeaModel {
+        // 录制文件地址（文件有效期7天）
+        @NameInMap("url")
+        public String url;
+
+        // 录制开始时间（UTC/GMT格式）
+        @NameInMap("startTime")
+        public String startTime;
+
+        // 录制结束时间（UTC/GMT格式）
+        @NameInMap("stopTime")
+        public String stopTime;
+
+        public static GetRemoteClassCourseResponseBodyResultRecordInfos build(java.util.Map<String, ?> map) throws Exception {
+            GetRemoteClassCourseResponseBodyResultRecordInfos self = new GetRemoteClassCourseResponseBodyResultRecordInfos();
+            return TeaModel.build(map, self);
+        }
+
+        public GetRemoteClassCourseResponseBodyResultRecordInfos setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public GetRemoteClassCourseResponseBodyResultRecordInfos setStartTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public String getStartTime() {
+            return this.startTime;
+        }
+
+        public GetRemoteClassCourseResponseBodyResultRecordInfos setStopTime(String stopTime) {
+            this.stopTime = stopTime;
+            return this;
+        }
+        public String getStopTime() {
+            return this.stopTime;
+        }
+
+    }
+
     public static class GetRemoteClassCourseResponseBodyResult extends TeaModel {
         // 课程code
         @NameInMap("courseCode")
@@ -180,6 +224,14 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
         // 听课设备列表
         @NameInMap("attendParticipants")
         public java.util.List<GetRemoteClassCourseResponseBodyResultAttendParticipants> attendParticipants;
+
+        // 直播观看URL（如果有）
+        @NameInMap("liveUrl")
+        public String liveUrl;
+
+        // 录制信息列表（如果有）。根据录制端的不同，有不同时长的延迟
+        @NameInMap("recordInfos")
+        public java.util.List<GetRemoteClassCourseResponseBodyResultRecordInfos> recordInfos;
 
         public static GetRemoteClassCourseResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetRemoteClassCourseResponseBodyResult self = new GetRemoteClassCourseResponseBodyResult();
@@ -256,6 +308,22 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
         }
         public java.util.List<GetRemoteClassCourseResponseBodyResultAttendParticipants> getAttendParticipants() {
             return this.attendParticipants;
+        }
+
+        public GetRemoteClassCourseResponseBodyResult setLiveUrl(String liveUrl) {
+            this.liveUrl = liveUrl;
+            return this;
+        }
+        public String getLiveUrl() {
+            return this.liveUrl;
+        }
+
+        public GetRemoteClassCourseResponseBodyResult setRecordInfos(java.util.List<GetRemoteClassCourseResponseBodyResultRecordInfos> recordInfos) {
+            this.recordInfos = recordInfos;
+            return this;
+        }
+        public java.util.List<GetRemoteClassCourseResponseBodyResultRecordInfos> getRecordInfos() {
+            return this.recordInfos;
         }
 
     }

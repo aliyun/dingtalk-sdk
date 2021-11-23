@@ -16,6 +16,14 @@ public class DescribeCrmPersonalCustomerObjectMetaResponseBody extends TeaModel 
     @NameInMap("fields")
     public java.util.List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFields> fields;
 
+    // 表单状态
+    @NameInMap("status")
+    public String status;
+
+    // 表单code
+    @NameInMap("code")
+    public String code;
+
     public static DescribeCrmPersonalCustomerObjectMetaResponseBody build(java.util.Map<String, ?> map) throws Exception {
         DescribeCrmPersonalCustomerObjectMetaResponseBody self = new DescribeCrmPersonalCustomerObjectMetaResponseBody();
         return TeaModel.build(map, self);
@@ -43,6 +51,22 @@ public class DescribeCrmPersonalCustomerObjectMetaResponseBody extends TeaModel 
     }
     public java.util.List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFields> getFields() {
         return this.fields;
+    }
+
+    public DescribeCrmPersonalCustomerObjectMetaResponseBody setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
+    }
+
+    public DescribeCrmPersonalCustomerObjectMetaResponseBody setCode(String code) {
+        this.code = code;
+        return this;
+    }
+    public String getCode() {
+        return this.code;
     }
 
     public static class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions extends TeaModel {

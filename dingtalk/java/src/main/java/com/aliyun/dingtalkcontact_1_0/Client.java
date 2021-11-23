@@ -1249,6 +1249,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetUnionIdByMigrationUnionId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccount/getUnionIdByMigrationUnionIds", "json", req, runtime), new GetUnionIdByMigrationUnionIdResponse());
     }
 
+    public MultiOrgPermissionGrantResponse multiOrgPermissionGrant(MultiOrgPermissionGrantRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        MultiOrgPermissionGrantHeaders headers = new MultiOrgPermissionGrantHeaders();
+        return this.multiOrgPermissionGrantWithOptions(request, headers, runtime);
+    }
+
+    public MultiOrgPermissionGrantResponse multiOrgPermissionGrantWithOptions(MultiOrgPermissionGrantRequest request, MultiOrgPermissionGrantHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.joinCorpId)) {
+            body.put("joinCorpId", request.joinCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("MultiOrgPermissionGrant", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/multiOrgPermissions/auth", "none", req, runtime), new MultiOrgPermissionGrantResponse());
+    }
+
     public GetLatestDingIndexResponse getLatestDingIndex() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetLatestDingIndexHeaders headers = new GetLatestDingIndexHeaders();

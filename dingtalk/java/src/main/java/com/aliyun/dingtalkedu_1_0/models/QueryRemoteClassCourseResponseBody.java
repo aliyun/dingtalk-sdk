@@ -177,6 +177,10 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
         @NameInMap("attendParticipants")
         public java.util.List<QueryRemoteClassCourseResponseBodyResultAttendParticipants> attendParticipants;
 
+        // 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
+        @NameInMap("courseWays")
+        public java.util.List<String> courseWays;
+
         public static QueryRemoteClassCourseResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryRemoteClassCourseResponseBodyResult self = new QueryRemoteClassCourseResponseBodyResult();
             return TeaModel.build(map, self);
@@ -244,6 +248,14 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
         }
         public java.util.List<QueryRemoteClassCourseResponseBodyResultAttendParticipants> getAttendParticipants() {
             return this.attendParticipants;
+        }
+
+        public QueryRemoteClassCourseResponseBodyResult setCourseWays(java.util.List<String> courseWays) {
+            this.courseWays = courseWays;
+            return this;
+        }
+        public java.util.List<String> getCourseWays() {
+            return this.courseWays;
         }
 
     }
