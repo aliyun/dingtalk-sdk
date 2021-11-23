@@ -113,6 +113,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
+            /// <summary>
+            /// 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
+            /// </summary>
+            [NameInMap("courseWays")]
+            [Validation(Required=false)]
+            public List<string> CourseWays { get; set; }
+
         }
 
         /// <summary>

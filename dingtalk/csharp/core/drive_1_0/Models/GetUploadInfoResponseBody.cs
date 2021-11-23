@@ -9,6 +9,21 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetUploadInfoResponseBody : TeaModel {
+        [NameInMap("headerSignatureUploadInfo")]
+        [Validation(Required=false)]
+        public GetUploadInfoResponseBodyHeaderSignatureUploadInfo HeaderSignatureUploadInfo { get; set; }
+        public class GetUploadInfoResponseBodyHeaderSignatureUploadInfo : TeaModel {
+            [NameInMap("expirationSeconds")]
+            [Validation(Required=false)]
+            public int? ExpirationSeconds { get; set; }
+            [NameInMap("headers")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Headers { get; set; }
+            [NameInMap("resourceUrl")]
+            [Validation(Required=false)]
+            public string ResourceUrl { get; set; }
+        };
+
         [NameInMap("stsUploadInfo")]
         [Validation(Required=false)]
         public GetUploadInfoResponseBodyStsUploadInfo StsUploadInfo { get; set; }

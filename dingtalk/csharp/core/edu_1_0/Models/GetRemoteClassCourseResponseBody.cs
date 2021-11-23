@@ -34,6 +34,17 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [NameInMap("endTime")]
             [Validation(Required=false)]
             public long? EndTime { get; set; }
+            [NameInMap("liveUrl")]
+            [Validation(Required=false)]
+            public string LiveUrl { get; set; }
+            [NameInMap("recordInfos")]
+            [Validation(Required=false)]
+            public List<GetRemoteClassCourseResponseBodyResultRecordInfos> RecordInfos { get; set; }
+            public class GetRemoteClassCourseResponseBodyResultRecordInfos : TeaModel {
+                public string Url { get; set; }
+                public string StartTime { get; set; }
+                public string StopTime { get; set; }
+            }
             [NameInMap("roomStatus")]
             [Validation(Required=false)]
             public int? RoomStatus { get; set; }
