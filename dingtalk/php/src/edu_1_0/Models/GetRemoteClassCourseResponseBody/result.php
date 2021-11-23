@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseResponseBody\result\attendParticipants;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseResponseBody\result\recordInfos;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseResponseBody\result\teachingParticipant;
 use AlibabaCloud\Tea\Model;
 
@@ -72,6 +73,20 @@ class result extends Model
      * @var attendParticipants[]
      */
     public $attendParticipants;
+
+    /**
+     * @description 直播观看URL（如果有）
+     *
+     * @var string
+     */
+    public $liveUrl;
+
+    /**
+     * @description 录制信息列表（如果有）。根据录制端的不同，有不同时长的延迟
+     *
+     * @var recordInfos[]
+     */
+    public $recordInfos;
     protected $_name = [
         'courseCode'          => 'courseCode',
         'courseName'          => 'courseName',
@@ -82,6 +97,8 @@ class result extends Model
         'canEdit'             => 'canEdit',
         'teachingParticipant' => 'teachingParticipant',
         'attendParticipants'  => 'attendParticipants',
+        'liveUrl'             => 'liveUrl',
+        'recordInfos'         => 'recordInfos',
     ];
 
     public function validate()
@@ -121,6 +138,18 @@ class result extends Model
                 $n = 0;
                 foreach ($this->attendParticipants as $item) {
                     $res['attendParticipants'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->liveUrl) {
+            $res['liveUrl'] = $this->liveUrl;
+        }
+        if (null !== $this->recordInfos) {
+            $res['recordInfos'] = [];
+            if (null !== $this->recordInfos && \is_array($this->recordInfos)) {
+                $n = 0;
+                foreach ($this->recordInfos as $item) {
+                    $res['recordInfos'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -166,6 +195,18 @@ class result extends Model
                 $n                         = 0;
                 foreach ($map['attendParticipants'] as $item) {
                     $model->attendParticipants[$n++] = null !== $item ? attendParticipants::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['liveUrl'])) {
+            $model->liveUrl = $map['liveUrl'];
+        }
+        if (isset($map['recordInfos'])) {
+            if (!empty($map['recordInfos'])) {
+                $model->recordInfos = [];
+                $n                  = 0;
+                foreach ($map['recordInfos'] as $item) {
+                    $model->recordInfos[$n++] = null !== $item ? recordInfos::fromMap($item) : $item;
                 }
             }
         }

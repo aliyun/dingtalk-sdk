@@ -56,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusHeaders;
@@ -1748,6 +1751,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetUnionIdByMigrationUnionIdResponse::fromMap($this->doROARequest('GetUnionIdByMigrationUnionId', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccount/getUnionIdByMigrationUnionIds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MultiOrgPermissionGrantRequest $request
+     *
+     * @return MultiOrgPermissionGrantResponse
+     */
+    public function multiOrgPermissionGrant($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MultiOrgPermissionGrantHeaders([]);
+
+        return $this->multiOrgPermissionGrantWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MultiOrgPermissionGrantRequest $request
+     * @param MultiOrgPermissionGrantHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return MultiOrgPermissionGrantResponse
+     */
+    public function multiOrgPermissionGrantWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->joinCorpId)) {
+            @$body['joinCorpId'] = $request->joinCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MultiOrgPermissionGrantResponse::fromMap($this->doROARequest('MultiOrgPermissionGrant', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/multiOrgPermissions/auth', 'none', $req, $runtime));
     }
 
     /**

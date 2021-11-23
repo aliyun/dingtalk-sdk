@@ -65,6 +65,13 @@ class result extends Model
      * @var attendParticipants[]
      */
     public $attendParticipants;
+
+    /**
+     * @description 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
+     *
+     * @var string[]
+     */
+    public $courseWays;
     protected $_name = [
         'courseCode'          => 'courseCode',
         'courseName'          => 'courseName',
@@ -74,6 +81,7 @@ class result extends Model
         'canEdit'             => 'canEdit',
         'teachingParticipant' => 'teachingParticipant',
         'attendParticipants'  => 'attendParticipants',
+        'courseWays'          => 'courseWays',
     ];
 
     public function validate()
@@ -112,6 +120,9 @@ class result extends Model
                     $res['attendParticipants'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->courseWays) {
+            $res['courseWays'] = $this->courseWays;
         }
 
         return $res;
@@ -153,6 +164,11 @@ class result extends Model
                 foreach ($map['attendParticipants'] as $item) {
                     $model->attendParticipants[$n++] = null !== $item ? attendParticipants::fromMap($item) : $item;
                 }
+            }
+        }
+        if (isset($map['courseWays'])) {
+            if (!empty($map['courseWays'])) {
+                $model->courseWays = $map['courseWays'];
             }
         }
 

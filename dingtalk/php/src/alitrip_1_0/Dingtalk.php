@@ -11,6 +11,18 @@ use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\AddCityCarApplyResponse;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\ApproveCityCarApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementBtripTrainHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementBtripTrainRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementBtripTrainResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementCarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementCarRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementCarResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementFlightHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementFlightRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementFlightResponse;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementHotelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementHotelRequest;
+use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\BillSettementHotelResponse;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetFlightExceedApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetFlightExceedApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Valitrip_1_0\Models\GetFlightExceedApplyResponse;
@@ -112,6 +124,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param BillSettementHotelRequest $request
+     *
+     * @return BillSettementHotelResponse
+     */
+    public function billSettementHotel($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BillSettementHotelHeaders([]);
+
+        return $this->billSettementHotelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BillSettementHotelRequest $request
+     * @param BillSettementHotelHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return BillSettementHotelResponse
+     */
+    public function billSettementHotelWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$query['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->periodStart)) {
+            @$query['periodStart'] = $request->periodStart;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->periodEnd)) {
+            @$query['periodEnd'] = $request->periodEnd;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return BillSettementHotelResponse::fromMap($this->doROARequest('BillSettementHotel', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/billSettlements/hotels', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetFlightExceedApplyRequest $request
      *
      * @return GetFlightExceedApplyResponse
@@ -154,6 +223,120 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetFlightExceedApplyResponse::fromMap($this->doROARequest('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/exceedapply/getFlight', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BillSettementCarRequest $request
+     *
+     * @return BillSettementCarResponse
+     */
+    public function billSettementCar($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BillSettementCarHeaders([]);
+
+        return $this->billSettementCarWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BillSettementCarRequest $request
+     * @param BillSettementCarHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return BillSettementCarResponse
+     */
+    public function billSettementCarWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$query['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->periodStart)) {
+            @$query['periodStart'] = $request->periodStart;
+        }
+        if (!Utils::isUnset($request->periodEnd)) {
+            @$query['periodEnd'] = $request->periodEnd;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return BillSettementCarResponse::fromMap($this->doROARequest('BillSettementCar', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/billSettlements/cars', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BillSettementBtripTrainRequest $request
+     *
+     * @return BillSettementBtripTrainResponse
+     */
+    public function billSettementBtripTrain($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BillSettementBtripTrainHeaders([]);
+
+        return $this->billSettementBtripTrainWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BillSettementBtripTrainRequest $request
+     * @param BillSettementBtripTrainHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return BillSettementBtripTrainResponse
+     */
+    public function billSettementBtripTrainWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$query['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->periodStart)) {
+            @$query['periodStart'] = $request->periodStart;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->periodEnd)) {
+            @$query['periodEnd'] = $request->periodEnd;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return BillSettementBtripTrainResponse::fromMap($this->doROARequest('BillSettementBtripTrain', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/billSettlements/btripTrains', 'json', $req, $runtime));
     }
 
     /**
@@ -307,6 +490,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddCityCarApplyResponse::fromMap($this->doROARequest('AddCityCarApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', '/v1.0/alitrip/cityCarApprovals', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BillSettementFlightRequest $request
+     *
+     * @return BillSettementFlightResponse
+     */
+    public function billSettementFlight($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BillSettementFlightHeaders([]);
+
+        return $this->billSettementFlightWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BillSettementFlightRequest $request
+     * @param BillSettementFlightHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BillSettementFlightResponse
+     */
+    public function billSettementFlightWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            @$query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->category)) {
+            @$query['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->periodStart)) {
+            @$query['periodStart'] = $request->periodStart;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->periodEnd)) {
+            @$query['periodEnd'] = $request->periodEnd;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return BillSettementFlightResponse::fromMap($this->doROARequest('BillSettementFlight', 'alitrip_1.0', 'HTTP', 'GET', 'AK', '/v1.0/alitrip/billSettlements/flights', 'json', $req, $runtime));
     }
 
     /**

@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoResponseBody\headerSignatureUploadInfo;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetUploadInfoResponseBody\stsUploadInfo;
 use AlibabaCloud\Tea\Model;
 
@@ -13,8 +14,14 @@ class GetUploadInfoResponseBody extends Model
      * @var stsUploadInfo
      */
     public $stsUploadInfo;
+
+    /**
+     * @var headerSignatureUploadInfo
+     */
+    public $headerSignatureUploadInfo;
     protected $_name = [
-        'stsUploadInfo' => 'stsUploadInfo',
+        'stsUploadInfo'             => 'stsUploadInfo',
+        'headerSignatureUploadInfo' => 'headerSignatureUploadInfo',
     ];
 
     public function validate()
@@ -26,6 +33,9 @@ class GetUploadInfoResponseBody extends Model
         $res = [];
         if (null !== $this->stsUploadInfo) {
             $res['stsUploadInfo'] = null !== $this->stsUploadInfo ? $this->stsUploadInfo->toMap() : null;
+        }
+        if (null !== $this->headerSignatureUploadInfo) {
+            $res['headerSignatureUploadInfo'] = null !== $this->headerSignatureUploadInfo ? $this->headerSignatureUploadInfo->toMap() : null;
         }
 
         return $res;
@@ -41,6 +51,9 @@ class GetUploadInfoResponseBody extends Model
         $model = new self();
         if (isset($map['stsUploadInfo'])) {
             $model->stsUploadInfo = stsUploadInfo::fromMap($map['stsUploadInfo']);
+        }
+        if (isset($map['headerSignatureUploadInfo'])) {
+            $model->headerSignatureUploadInfo = headerSignatureUploadInfo::fromMap($map['headerSignatureUploadInfo']);
         }
 
         return $model;
