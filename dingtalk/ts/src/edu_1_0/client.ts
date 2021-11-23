@@ -6150,6 +6150,7 @@ export class QueryRemoteClassCourseResponseBodyResult extends $tea.Model {
   canEdit?: boolean;
   teachingParticipant?: QueryRemoteClassCourseResponseBodyResultTeachingParticipant;
   attendParticipants?: QueryRemoteClassCourseResponseBodyResultAttendParticipants[];
+  courseWays?: string[];
   static names(): { [key: string]: string } {
     return {
       courseCode: 'courseCode',
@@ -6160,6 +6161,7 @@ export class QueryRemoteClassCourseResponseBodyResult extends $tea.Model {
       canEdit: 'canEdit',
       teachingParticipant: 'teachingParticipant',
       attendParticipants: 'attendParticipants',
+      courseWays: 'courseWays',
     };
   }
 
@@ -6173,6 +6175,7 @@ export class QueryRemoteClassCourseResponseBodyResult extends $tea.Model {
       canEdit: 'boolean',
       teachingParticipant: QueryRemoteClassCourseResponseBodyResultTeachingParticipant,
       attendParticipants: { 'type': 'array', 'itemType': QueryRemoteClassCourseResponseBodyResultAttendParticipants },
+      courseWays: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -6742,6 +6745,31 @@ export class GetRemoteClassCourseResponseBodyResultAttendParticipants extends $t
   }
 }
 
+export class GetRemoteClassCourseResponseBodyResultRecordInfos extends $tea.Model {
+  url?: string;
+  startTime?: string;
+  stopTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      url: 'url',
+      startTime: 'startTime',
+      stopTime: 'stopTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      url: 'string',
+      startTime: 'string',
+      stopTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRemoteClassCourseResponseBodyResult extends $tea.Model {
   courseCode?: string;
   courseName?: string;
@@ -6752,6 +6780,8 @@ export class GetRemoteClassCourseResponseBodyResult extends $tea.Model {
   canEdit?: boolean;
   teachingParticipant?: GetRemoteClassCourseResponseBodyResultTeachingParticipant;
   attendParticipants?: GetRemoteClassCourseResponseBodyResultAttendParticipants[];
+  liveUrl?: string;
+  recordInfos?: GetRemoteClassCourseResponseBodyResultRecordInfos[];
   static names(): { [key: string]: string } {
     return {
       courseCode: 'courseCode',
@@ -6763,6 +6793,8 @@ export class GetRemoteClassCourseResponseBodyResult extends $tea.Model {
       canEdit: 'canEdit',
       teachingParticipant: 'teachingParticipant',
       attendParticipants: 'attendParticipants',
+      liveUrl: 'liveUrl',
+      recordInfos: 'recordInfos',
     };
   }
 
@@ -6777,6 +6809,8 @@ export class GetRemoteClassCourseResponseBodyResult extends $tea.Model {
       canEdit: 'boolean',
       teachingParticipant: GetRemoteClassCourseResponseBodyResultTeachingParticipant,
       attendParticipants: { 'type': 'array', 'itemType': GetRemoteClassCourseResponseBodyResultAttendParticipants },
+      liveUrl: 'string',
+      recordInfos: { 'type': 'array', 'itemType': GetRemoteClassCourseResponseBodyResultRecordInfos },
     };
   }
 

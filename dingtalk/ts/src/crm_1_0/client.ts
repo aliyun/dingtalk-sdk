@@ -1069,11 +1069,15 @@ export class DescribeCrmPersonalCustomerObjectMetaResponseBody extends $tea.Mode
   name?: string;
   customized?: boolean;
   fields?: DescribeCrmPersonalCustomerObjectMetaResponseBodyFields[];
+  status?: string;
+  code?: string;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
       customized: 'customized',
       fields: 'fields',
+      status: 'status',
+      code: 'code',
     };
   }
 
@@ -1082,6 +1086,8 @@ export class DescribeCrmPersonalCustomerObjectMetaResponseBody extends $tea.Mode
       name: 'string',
       customized: 'boolean',
       fields: { 'type': 'array', 'itemType': DescribeCrmPersonalCustomerObjectMetaResponseBodyFields },
+      status: 'string',
+      code: 'string',
     };
   }
 

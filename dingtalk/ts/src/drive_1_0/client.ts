@@ -2384,15 +2384,18 @@ export class GetUploadInfoRequest extends $tea.Model {
 
 export class GetUploadInfoResponseBody extends $tea.Model {
   stsUploadInfo?: GetUploadInfoResponseBodyStsUploadInfo;
+  headerSignatureUploadInfo?: GetUploadInfoResponseBodyHeaderSignatureUploadInfo;
   static names(): { [key: string]: string } {
     return {
       stsUploadInfo: 'stsUploadInfo',
+      headerSignatureUploadInfo: 'headerSignatureUploadInfo',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       stsUploadInfo: GetUploadInfoResponseBodyStsUploadInfo,
+      headerSignatureUploadInfo: GetUploadInfoResponseBodyHeaderSignatureUploadInfo,
     };
   }
 
@@ -3322,6 +3325,31 @@ export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
       accessToken: 'string',
       accessTokenExpirationMillis: 'number',
       mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Model {
+  resourceUrl?: string;
+  expirationSeconds?: number;
+  headers?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      resourceUrl: 'resourceUrl',
+      expirationSeconds: 'expirationSeconds',
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resourceUrl: 'string',
+      expirationSeconds: 'number',
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
