@@ -4787,6 +4787,7 @@ class QueryRemoteClassCourseResponseBodyResult(TeaModel):
         can_edit: bool = None,
         teaching_participant: QueryRemoteClassCourseResponseBodyResultTeachingParticipant = None,
         attend_participants: List[QueryRemoteClassCourseResponseBodyResultAttendParticipants] = None,
+        course_ways: List[str] = None,
     ):
         # 课程code
         self.course_code = course_code
@@ -4804,6 +4805,8 @@ class QueryRemoteClassCourseResponseBodyResult(TeaModel):
         self.teaching_participant = teaching_participant
         # 听课设备列表
         self.attend_participants = attend_participants
+        # 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
+        self.course_ways = course_ways
 
     def validate(self):
         if self.teaching_participant:
@@ -4837,6 +4840,8 @@ class QueryRemoteClassCourseResponseBodyResult(TeaModel):
         if self.attend_participants is not None:
             for k in self.attend_participants:
                 result['attendParticipants'].append(k.to_map() if k else None)
+        if self.course_ways is not None:
+            result['courseWays'] = self.course_ways
         return result
 
     def from_map(self, m: dict = None):
@@ -4861,6 +4866,8 @@ class QueryRemoteClassCourseResponseBodyResult(TeaModel):
             for k in m.get('attendParticipants'):
                 temp_model = QueryRemoteClassCourseResponseBodyResultAttendParticipants()
                 self.attend_participants.append(temp_model.from_map(k))
+        if m.get('courseWays') is not None:
+            self.course_ways = m.get('courseWays')
         return self
 
 
@@ -7346,6 +7353,48 @@ class GetRemoteClassCourseResponseBodyResultAttendParticipants(TeaModel):
         return self
 
 
+class GetRemoteClassCourseResponseBodyResultRecordInfos(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+        start_time: str = None,
+        stop_time: str = None,
+    ):
+        # 录制文件地址（文件有效期7天）
+        self.url = url
+        # 录制开始时间（UTC/GMT格式）
+        self.start_time = start_time
+        # 录制结束时间（UTC/GMT格式）
+        self.stop_time = stop_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.stop_time is not None:
+            result['stopTime'] = self.stop_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('stopTime') is not None:
+            self.stop_time = m.get('stopTime')
+        return self
+
+
 class GetRemoteClassCourseResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -7358,6 +7407,8 @@ class GetRemoteClassCourseResponseBodyResult(TeaModel):
         can_edit: bool = None,
         teaching_participant: GetRemoteClassCourseResponseBodyResultTeachingParticipant = None,
         attend_participants: List[GetRemoteClassCourseResponseBodyResultAttendParticipants] = None,
+        live_url: str = None,
+        record_infos: List[GetRemoteClassCourseResponseBodyResultRecordInfos] = None,
     ):
         # 课程code
         self.course_code = course_code
@@ -7377,12 +7428,20 @@ class GetRemoteClassCourseResponseBodyResult(TeaModel):
         self.teaching_participant = teaching_participant
         # 听课设备列表
         self.attend_participants = attend_participants
+        # 直播观看URL（如果有）
+        self.live_url = live_url
+        # 录制信息列表（如果有）。根据录制端的不同，有不同时长的延迟
+        self.record_infos = record_infos
 
     def validate(self):
         if self.teaching_participant:
             self.teaching_participant.validate()
         if self.attend_participants:
             for k in self.attend_participants:
+                if k:
+                    k.validate()
+        if self.record_infos:
+            for k in self.record_infos:
                 if k:
                     k.validate()
 
@@ -7412,6 +7471,12 @@ class GetRemoteClassCourseResponseBodyResult(TeaModel):
         if self.attend_participants is not None:
             for k in self.attend_participants:
                 result['attendParticipants'].append(k.to_map() if k else None)
+        if self.live_url is not None:
+            result['liveUrl'] = self.live_url
+        result['recordInfos'] = []
+        if self.record_infos is not None:
+            for k in self.record_infos:
+                result['recordInfos'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -7438,6 +7503,13 @@ class GetRemoteClassCourseResponseBodyResult(TeaModel):
             for k in m.get('attendParticipants'):
                 temp_model = GetRemoteClassCourseResponseBodyResultAttendParticipants()
                 self.attend_participants.append(temp_model.from_map(k))
+        if m.get('liveUrl') is not None:
+            self.live_url = m.get('liveUrl')
+        self.record_infos = []
+        if m.get('recordInfos') is not None:
+            for k in m.get('recordInfos'):
+                temp_model = GetRemoteClassCourseResponseBodyResultRecordInfos()
+                self.record_infos.append(temp_model.from_map(k))
         return self
 
 

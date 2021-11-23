@@ -186,6 +186,625 @@ class ApproveCityCarApplyResponse(TeaModel):
         return self
 
 
+class BillSettementHotelHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BillSettementHotelRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        category: int = None,
+        page_size: int = None,
+        period_start: str = None,
+        page_number: int = None,
+        period_end: str = None,
+    ):
+        # 第三方企业
+        self.corp_id = corp_id
+        # 类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票
+        self.category = category
+        # 每页数据量，默认100，最高500
+        self.page_size = page_size
+        # 记账更新开始日期
+        self.period_start = period_start
+        # 页数，从1开始
+        self.page_number = page_number
+        # 记账更新结束日期
+        self.period_end = period_end
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.category is not None:
+            result['category'] = self.category
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        return self
+
+
+class BillSettementHotelResponseBodyModuleDataList(TeaModel):
+    def __init__(
+        self,
+        alipay_trade_no: str = None,
+        apply_id: str = None,
+        book_time: str = None,
+        booker_id: str = None,
+        booker_name: str = None,
+        capital_direction: str = None,
+        cascade_department: str = None,
+        check_in_date: str = None,
+        checkout_date: str = None,
+        city: str = None,
+        city_code: str = None,
+        corp_refund_fee: float = None,
+        corp_total_fee: float = None,
+        cost_center: str = None,
+        cost_center_number: str = None,
+        department: str = None,
+        department_id: str = None,
+        fee_type: str = None,
+        fees: float = None,
+        fu_point_fee: float = None,
+        hotel_name: str = None,
+        index: str = None,
+        invoice_title: str = None,
+        is_negotiation: bool = None,
+        is_share_str: str = None,
+        nights: int = None,
+        order_id: str = None,
+        order_price: float = None,
+        order_type: str = None,
+        over_apply_id: str = None,
+        person_refund_fee: float = None,
+        person_settle_price: float = None,
+        primary_id: int = None,
+        project_code: str = None,
+        project_name: str = None,
+        promotion_fee: float = None,
+        room_number: int = None,
+        room_price: float = None,
+        room_type: str = None,
+        service_fee: float = None,
+        settlement_fee: int = None,
+        settlement_time: str = None,
+        settlement_type: str = None,
+        status: int = None,
+        total_nights: int = None,
+        traveler_id: str = None,
+        traveler_name: str = None,
+        booker_job_no: str = None,
+        traveler_job_no: str = None,
+    ):
+        # 交易流水号
+        self.alipay_trade_no = alipay_trade_no
+        # 审批单号
+        self.apply_id = apply_id
+        # 预定时间
+        self.book_time = book_time
+        # 预定人use id
+        self.booker_id = booker_id
+        # 预订人名称
+        self.booker_name = booker_name
+        # 资金方向
+        self.capital_direction = capital_direction
+        # 级联部门
+        self.cascade_department = cascade_department
+        # 入住时间
+        self.check_in_date = check_in_date
+        # 离店时间
+        self.checkout_date = checkout_date
+        # 入住城市
+        self.city = city
+        # 城市编码
+        self.city_code = city_code
+        # 企业退款金额
+        self.corp_refund_fee = corp_refund_fee
+        # 企业支付金额
+        self.corp_total_fee = corp_total_fee
+        # 成本中心名称
+        self.cost_center = cost_center
+        # 成本中心编码
+        self.cost_center_number = cost_center_number
+        # 末级部门
+        self.department = department
+        # 部门id
+        self.department_id = department_id
+        # 费用类型
+        self.fee_type = fee_type
+        # 杂费
+        self.fees = fees
+        # 福豆支付
+        self.fu_point_fee = fu_point_fee
+        # 酒店名称
+        self.hotel_name = hotel_name
+        # 序号
+        self.index = index
+        # 发票抬头
+        self.invoice_title = invoice_title
+        # 是否协议价
+        self.is_negotiation = is_negotiation
+        # 是否合住
+        self.is_share_str = is_share_str
+        # 入住天数
+        self.nights = nights
+        # 订单号
+        self.order_id = order_id
+        # 订单金额
+        self.order_price = order_price
+        # 订单类型
+        self.order_type = order_type
+        # 超标审批单号
+        self.over_apply_id = over_apply_id
+        # 个人退款金额
+        self.person_refund_fee = person_refund_fee
+        # 个人支付金额
+        self.person_settle_price = person_settle_price
+        # 主键id
+        self.primary_id = primary_id
+        # 项目编码
+        self.project_code = project_code
+        # 项目名称
+        self.project_name = project_name
+        # 优惠券
+        self.promotion_fee = promotion_fee
+        # 房间数
+        self.room_number = room_number
+        # 房价
+        self.room_price = room_price
+        # 房间类型
+        self.room_type = room_type
+        # 服务费,仅在 feeType 20111、20112中展示
+        self.service_fee = service_fee
+        # 结算金额
+        self.settlement_fee = settlement_fee
+        # 结算时间
+        self.settlement_time = settlement_time
+        # 结算类型
+        self.settlement_type = settlement_type
+        # 入账状态
+        self.status = status
+        # 总间夜数
+        self.total_nights = total_nights
+        # 出行人use id
+        self.traveler_id = traveler_id
+        # 出行人名称
+        self.traveler_name = traveler_name
+        # 预订人工号
+        self.booker_job_no = booker_job_no
+        # 出行人工号
+        self.traveler_job_no = traveler_job_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_trade_no is not None:
+            result['alipayTradeNo'] = self.alipay_trade_no
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.book_time is not None:
+            result['bookTime'] = self.book_time
+        if self.booker_id is not None:
+            result['bookerId'] = self.booker_id
+        if self.booker_name is not None:
+            result['bookerName'] = self.booker_name
+        if self.capital_direction is not None:
+            result['capitalDirection'] = self.capital_direction
+        if self.cascade_department is not None:
+            result['cascadeDepartment'] = self.cascade_department
+        if self.check_in_date is not None:
+            result['checkInDate'] = self.check_in_date
+        if self.checkout_date is not None:
+            result['checkoutDate'] = self.checkout_date
+        if self.city is not None:
+            result['city'] = self.city
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.corp_refund_fee is not None:
+            result['corpRefundFee'] = self.corp_refund_fee
+        if self.corp_total_fee is not None:
+            result['corpTotalFee'] = self.corp_total_fee
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_number is not None:
+            result['costCenterNumber'] = self.cost_center_number
+        if self.department is not None:
+            result['department'] = self.department
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.fee_type is not None:
+            result['feeType'] = self.fee_type
+        if self.fees is not None:
+            result['fees'] = self.fees
+        if self.fu_point_fee is not None:
+            result['fuPointFee'] = self.fu_point_fee
+        if self.hotel_name is not None:
+            result['hotelName'] = self.hotel_name
+        if self.index is not None:
+            result['index'] = self.index
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.is_negotiation is not None:
+            result['isNegotiation'] = self.is_negotiation
+        if self.is_share_str is not None:
+            result['isShareStr'] = self.is_share_str
+        if self.nights is not None:
+            result['nights'] = self.nights
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.order_price is not None:
+            result['orderPrice'] = self.order_price
+        if self.order_type is not None:
+            result['orderType'] = self.order_type
+        if self.over_apply_id is not None:
+            result['overApplyId'] = self.over_apply_id
+        if self.person_refund_fee is not None:
+            result['personRefundFee'] = self.person_refund_fee
+        if self.person_settle_price is not None:
+            result['personSettlePrice'] = self.person_settle_price
+        if self.primary_id is not None:
+            result['primaryId'] = self.primary_id
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_name is not None:
+            result['projectName'] = self.project_name
+        if self.promotion_fee is not None:
+            result['promotionFee'] = self.promotion_fee
+        if self.room_number is not None:
+            result['roomNumber'] = self.room_number
+        if self.room_price is not None:
+            result['roomPrice'] = self.room_price
+        if self.room_type is not None:
+            result['roomType'] = self.room_type
+        if self.service_fee is not None:
+            result['serviceFee'] = self.service_fee
+        if self.settlement_fee is not None:
+            result['settlementFee'] = self.settlement_fee
+        if self.settlement_time is not None:
+            result['settlementTime'] = self.settlement_time
+        if self.settlement_type is not None:
+            result['settlementType'] = self.settlement_type
+        if self.status is not None:
+            result['status'] = self.status
+        if self.total_nights is not None:
+            result['totalNights'] = self.total_nights
+        if self.traveler_id is not None:
+            result['travelerId'] = self.traveler_id
+        if self.traveler_name is not None:
+            result['travelerName'] = self.traveler_name
+        if self.booker_job_no is not None:
+            result['bookerJobNo'] = self.booker_job_no
+        if self.traveler_job_no is not None:
+            result['travelerJobNo'] = self.traveler_job_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayTradeNo') is not None:
+            self.alipay_trade_no = m.get('alipayTradeNo')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('bookTime') is not None:
+            self.book_time = m.get('bookTime')
+        if m.get('bookerId') is not None:
+            self.booker_id = m.get('bookerId')
+        if m.get('bookerName') is not None:
+            self.booker_name = m.get('bookerName')
+        if m.get('capitalDirection') is not None:
+            self.capital_direction = m.get('capitalDirection')
+        if m.get('cascadeDepartment') is not None:
+            self.cascade_department = m.get('cascadeDepartment')
+        if m.get('checkInDate') is not None:
+            self.check_in_date = m.get('checkInDate')
+        if m.get('checkoutDate') is not None:
+            self.checkout_date = m.get('checkoutDate')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('corpRefundFee') is not None:
+            self.corp_refund_fee = m.get('corpRefundFee')
+        if m.get('corpTotalFee') is not None:
+            self.corp_total_fee = m.get('corpTotalFee')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterNumber') is not None:
+            self.cost_center_number = m.get('costCenterNumber')
+        if m.get('department') is not None:
+            self.department = m.get('department')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('feeType') is not None:
+            self.fee_type = m.get('feeType')
+        if m.get('fees') is not None:
+            self.fees = m.get('fees')
+        if m.get('fuPointFee') is not None:
+            self.fu_point_fee = m.get('fuPointFee')
+        if m.get('hotelName') is not None:
+            self.hotel_name = m.get('hotelName')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('isNegotiation') is not None:
+            self.is_negotiation = m.get('isNegotiation')
+        if m.get('isShareStr') is not None:
+            self.is_share_str = m.get('isShareStr')
+        if m.get('nights') is not None:
+            self.nights = m.get('nights')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('orderPrice') is not None:
+            self.order_price = m.get('orderPrice')
+        if m.get('orderType') is not None:
+            self.order_type = m.get('orderType')
+        if m.get('overApplyId') is not None:
+            self.over_apply_id = m.get('overApplyId')
+        if m.get('personRefundFee') is not None:
+            self.person_refund_fee = m.get('personRefundFee')
+        if m.get('personSettlePrice') is not None:
+            self.person_settle_price = m.get('personSettlePrice')
+        if m.get('primaryId') is not None:
+            self.primary_id = m.get('primaryId')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectName') is not None:
+            self.project_name = m.get('projectName')
+        if m.get('promotionFee') is not None:
+            self.promotion_fee = m.get('promotionFee')
+        if m.get('roomNumber') is not None:
+            self.room_number = m.get('roomNumber')
+        if m.get('roomPrice') is not None:
+            self.room_price = m.get('roomPrice')
+        if m.get('roomType') is not None:
+            self.room_type = m.get('roomType')
+        if m.get('serviceFee') is not None:
+            self.service_fee = m.get('serviceFee')
+        if m.get('settlementFee') is not None:
+            self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementTime') is not None:
+            self.settlement_time = m.get('settlementTime')
+        if m.get('settlementType') is not None:
+            self.settlement_type = m.get('settlementType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('totalNights') is not None:
+            self.total_nights = m.get('totalNights')
+        if m.get('travelerId') is not None:
+            self.traveler_id = m.get('travelerId')
+        if m.get('travelerName') is not None:
+            self.traveler_name = m.get('travelerName')
+        if m.get('bookerJobNo') is not None:
+            self.booker_job_no = m.get('bookerJobNo')
+        if m.get('travelerJobNo') is not None:
+            self.traveler_job_no = m.get('travelerJobNo')
+        return self
+
+
+class BillSettementHotelResponseBodyModule(TeaModel):
+    def __init__(
+        self,
+        category: int = None,
+        corp_id: str = None,
+        data_list: List[BillSettementHotelResponseBodyModuleDataList] = None,
+        period_end: str = None,
+        period_start: str = None,
+        total_num: int = None,
+    ):
+        # 类目
+        self.category = category
+        # 企业id
+        self.corp_id = corp_id
+        # 数据集合
+        self.data_list = data_list
+        # 记账更新结束日期
+        self.period_end = period_end
+        # 记账更新开始日期
+        self.period_start = period_start
+        # 总数据量
+        self.total_num = total_num
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = BillSettementHotelResponseBodyModuleDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class BillSettementHotelResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_msg: str = None,
+        module: BillSettementHotelResponseBodyModule = None,
+        success: bool = None,
+        result_code: int = None,
+    ):
+        # 结果msg
+        self.result_msg = result_msg
+        # module
+        self.module = module
+        # 是否成功
+        self.success = success
+        # 结果code
+        self.result_code = result_code
+
+    def validate(self):
+        if self.module:
+            self.module.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result_msg is not None:
+            result['resultMsg'] = self.result_msg
+        if self.module is not None:
+            result['module'] = self.module.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result_code is not None:
+            result['resultCode'] = self.result_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resultMsg') is not None:
+            self.result_msg = m.get('resultMsg')
+        if m.get('module') is not None:
+            temp_model = BillSettementHotelResponseBodyModule()
+            self.module = temp_model.from_map(m['module'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('resultCode') is not None:
+            self.result_code = m.get('resultCode')
+        return self
+
+
+class BillSettementHotelResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BillSettementHotelResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BillSettementHotelResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFlightExceedApplyHeaders(TeaModel):
     def __init__(
         self,
@@ -499,6 +1118,1231 @@ class GetFlightExceedApplyResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetFlightExceedApplyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BillSettementCarHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BillSettementCarRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        category: int = None,
+        page_size: int = None,
+        period_start: str = None,
+        period_end: str = None,
+        page_number: int = None,
+    ):
+        self.corp_id = corp_id
+        self.category = category
+        self.page_size = page_size
+        self.period_start = period_start
+        self.period_end = period_end
+        self.page_number = page_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.category is not None:
+            result['category'] = self.category
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        return self
+
+
+class BillSettementCarResponseBodyModuleDataList(TeaModel):
+    def __init__(
+        self,
+        alipay_trade_no: str = None,
+        apply_id: str = None,
+        arr_city: str = None,
+        arr_date: str = None,
+        arr_location: str = None,
+        arr_time: str = None,
+        book_time: str = None,
+        booker_id: str = None,
+        booker_name: str = None,
+        business_category: str = None,
+        capital_direction: str = None,
+        car_level: str = None,
+        cascade_department: str = None,
+        cost_center: str = None,
+        cost_center_number: str = None,
+        coupon: float = None,
+        coupon_price: float = None,
+        department: str = None,
+        department_id: str = None,
+        dept_city: str = None,
+        dept_date: str = None,
+        dept_location: str = None,
+        dept_time: str = None,
+        estimate_drive_distance: str = None,
+        estimate_price: float = None,
+        fee_type: str = None,
+        index: str = None,
+        invoice_title: str = None,
+        memo: str = None,
+        order_id: str = None,
+        order_price: float = None,
+        over_apply_id: str = None,
+        person_settle_fee: float = None,
+        primary_id: str = None,
+        project_code: str = None,
+        project_name: str = None,
+        provider_name: str = None,
+        real_drive_distance: str = None,
+        real_from_addr: str = None,
+        real_to_addr: str = None,
+        service_fee: str = None,
+        settlement_fee: float = None,
+        settlement_time: str = None,
+        settlement_type: str = None,
+        special_order: str = None,
+        special_reason: str = None,
+        status: int = None,
+        traveler_id: str = None,
+        traveler_name: str = None,
+        user_confirm_desc: str = None,
+        booker_job_no: str = None,
+        traveler_job_no: str = None,
+    ):
+        # 支付交易流水号
+        self.alipay_trade_no = alipay_trade_no
+        # 审批单号
+        self.apply_id = apply_id
+        # 到达城市
+        self.arr_city = arr_city
+        # 到达日期
+        self.arr_date = arr_date
+        # 到达地
+        self.arr_location = arr_location
+        # 到达时间
+        self.arr_time = arr_time
+        # 预定时间
+        self.book_time = book_time
+        # 预定人use id
+        self.booker_id = booker_id
+        # 预订人名称
+        self.booker_name = booker_name
+        # 用车事由
+        self.business_category = business_category
+        # 资金方向
+        self.capital_direction = capital_direction
+        # 车型
+        self.car_level = car_level
+        # 级联部门
+        self.cascade_department = cascade_department
+        # 成本中心名称
+        self.cost_center = cost_center
+        # 成本中心编号
+        self.cost_center_number = cost_center_number
+        # 优惠券
+        self.coupon = coupon
+        # 优惠金额
+        self.coupon_price = coupon_price
+        # 末级部门
+        self.department = department
+        # 部门id
+        self.department_id = department_id
+        # 出发城市
+        self.dept_city = dept_city
+        # 出发日期
+        self.dept_date = dept_date
+        # 出发地
+        self.dept_location = dept_location
+        # 出发时间
+        self.dept_time = dept_time
+        # 预估行驶距离
+        self.estimate_drive_distance = estimate_drive_distance
+        # 预估金额
+        self.estimate_price = estimate_price
+        # 费用类型
+        self.fee_type = fee_type
+        # 序号
+        self.index = index
+        # 发票抬头
+        self.invoice_title = invoice_title
+        # 用车事由
+        self.memo = memo
+        # 订单id
+        self.order_id = order_id
+        # 订单金额
+        self.order_price = order_price
+        # 超标审批单号
+        self.over_apply_id = over_apply_id
+        # 个人支付金额
+        self.person_settle_fee = person_settle_fee
+        self.primary_id = primary_id
+        # 项目编码
+        self.project_code = project_code
+        # 项目名称
+        self.project_name = project_name
+        # 供应商
+        self.provider_name = provider_name
+        # 实际行驶距离
+        self.real_drive_distance = real_drive_distance
+        # 实际上车点
+        self.real_from_addr = real_from_addr
+        # 实际下车点
+        self.real_to_addr = real_to_addr
+        # 服务费，仅在feeType 40111 中展示
+        self.service_fee = service_fee
+        # 结算金额
+        self.settlement_fee = settlement_fee
+        # 结算时间
+        self.settlement_time = settlement_time
+        # 结算类型
+        self.settlement_type = settlement_type
+        # 特别关注订单
+        self.special_order = special_order
+        # 特别关注原因
+        self.special_reason = special_reason
+        # 入账状态
+        self.status = status
+        # 出行人use id
+        self.traveler_id = traveler_id
+        # 出行人名称
+        self.traveler_name = traveler_name
+        # 员工是否认可
+        self.user_confirm_desc = user_confirm_desc
+        # 预订人工号
+        self.booker_job_no = booker_job_no
+        # 出行人工号
+        self.traveler_job_no = traveler_job_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_trade_no is not None:
+            result['alipayTradeNo'] = self.alipay_trade_no
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.arr_city is not None:
+            result['arrCity'] = self.arr_city
+        if self.arr_date is not None:
+            result['arrDate'] = self.arr_date
+        if self.arr_location is not None:
+            result['arrLocation'] = self.arr_location
+        if self.arr_time is not None:
+            result['arrTime'] = self.arr_time
+        if self.book_time is not None:
+            result['bookTime'] = self.book_time
+        if self.booker_id is not None:
+            result['bookerId'] = self.booker_id
+        if self.booker_name is not None:
+            result['bookerName'] = self.booker_name
+        if self.business_category is not None:
+            result['businessCategory'] = self.business_category
+        if self.capital_direction is not None:
+            result['capitalDirection'] = self.capital_direction
+        if self.car_level is not None:
+            result['carLevel'] = self.car_level
+        if self.cascade_department is not None:
+            result['cascadeDepartment'] = self.cascade_department
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_number is not None:
+            result['costCenterNumber'] = self.cost_center_number
+        if self.coupon is not None:
+            result['coupon'] = self.coupon
+        if self.coupon_price is not None:
+            result['couponPrice'] = self.coupon_price
+        if self.department is not None:
+            result['department'] = self.department
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.dept_city is not None:
+            result['deptCity'] = self.dept_city
+        if self.dept_date is not None:
+            result['deptDate'] = self.dept_date
+        if self.dept_location is not None:
+            result['deptLocation'] = self.dept_location
+        if self.dept_time is not None:
+            result['deptTime'] = self.dept_time
+        if self.estimate_drive_distance is not None:
+            result['estimateDriveDistance'] = self.estimate_drive_distance
+        if self.estimate_price is not None:
+            result['estimatePrice'] = self.estimate_price
+        if self.fee_type is not None:
+            result['feeType'] = self.fee_type
+        if self.index is not None:
+            result['index'] = self.index
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.order_price is not None:
+            result['orderPrice'] = self.order_price
+        if self.over_apply_id is not None:
+            result['overApplyId'] = self.over_apply_id
+        if self.person_settle_fee is not None:
+            result['personSettleFee'] = self.person_settle_fee
+        if self.primary_id is not None:
+            result['primaryId'] = self.primary_id
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_name is not None:
+            result['projectName'] = self.project_name
+        if self.provider_name is not None:
+            result['providerName'] = self.provider_name
+        if self.real_drive_distance is not None:
+            result['realDriveDistance'] = self.real_drive_distance
+        if self.real_from_addr is not None:
+            result['realFromAddr'] = self.real_from_addr
+        if self.real_to_addr is not None:
+            result['realToAddr'] = self.real_to_addr
+        if self.service_fee is not None:
+            result['serviceFee'] = self.service_fee
+        if self.settlement_fee is not None:
+            result['settlementFee'] = self.settlement_fee
+        if self.settlement_time is not None:
+            result['settlementTime'] = self.settlement_time
+        if self.settlement_type is not None:
+            result['settlementType'] = self.settlement_type
+        if self.special_order is not None:
+            result['specialOrder'] = self.special_order
+        if self.special_reason is not None:
+            result['specialReason'] = self.special_reason
+        if self.status is not None:
+            result['status'] = self.status
+        if self.traveler_id is not None:
+            result['travelerId'] = self.traveler_id
+        if self.traveler_name is not None:
+            result['travelerName'] = self.traveler_name
+        if self.user_confirm_desc is not None:
+            result['userConfirmDesc'] = self.user_confirm_desc
+        if self.booker_job_no is not None:
+            result['bookerJobNo'] = self.booker_job_no
+        if self.traveler_job_no is not None:
+            result['travelerJobNo'] = self.traveler_job_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayTradeNo') is not None:
+            self.alipay_trade_no = m.get('alipayTradeNo')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('arrCity') is not None:
+            self.arr_city = m.get('arrCity')
+        if m.get('arrDate') is not None:
+            self.arr_date = m.get('arrDate')
+        if m.get('arrLocation') is not None:
+            self.arr_location = m.get('arrLocation')
+        if m.get('arrTime') is not None:
+            self.arr_time = m.get('arrTime')
+        if m.get('bookTime') is not None:
+            self.book_time = m.get('bookTime')
+        if m.get('bookerId') is not None:
+            self.booker_id = m.get('bookerId')
+        if m.get('bookerName') is not None:
+            self.booker_name = m.get('bookerName')
+        if m.get('businessCategory') is not None:
+            self.business_category = m.get('businessCategory')
+        if m.get('capitalDirection') is not None:
+            self.capital_direction = m.get('capitalDirection')
+        if m.get('carLevel') is not None:
+            self.car_level = m.get('carLevel')
+        if m.get('cascadeDepartment') is not None:
+            self.cascade_department = m.get('cascadeDepartment')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterNumber') is not None:
+            self.cost_center_number = m.get('costCenterNumber')
+        if m.get('coupon') is not None:
+            self.coupon = m.get('coupon')
+        if m.get('couponPrice') is not None:
+            self.coupon_price = m.get('couponPrice')
+        if m.get('department') is not None:
+            self.department = m.get('department')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('deptCity') is not None:
+            self.dept_city = m.get('deptCity')
+        if m.get('deptDate') is not None:
+            self.dept_date = m.get('deptDate')
+        if m.get('deptLocation') is not None:
+            self.dept_location = m.get('deptLocation')
+        if m.get('deptTime') is not None:
+            self.dept_time = m.get('deptTime')
+        if m.get('estimateDriveDistance') is not None:
+            self.estimate_drive_distance = m.get('estimateDriveDistance')
+        if m.get('estimatePrice') is not None:
+            self.estimate_price = m.get('estimatePrice')
+        if m.get('feeType') is not None:
+            self.fee_type = m.get('feeType')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('orderPrice') is not None:
+            self.order_price = m.get('orderPrice')
+        if m.get('overApplyId') is not None:
+            self.over_apply_id = m.get('overApplyId')
+        if m.get('personSettleFee') is not None:
+            self.person_settle_fee = m.get('personSettleFee')
+        if m.get('primaryId') is not None:
+            self.primary_id = m.get('primaryId')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectName') is not None:
+            self.project_name = m.get('projectName')
+        if m.get('providerName') is not None:
+            self.provider_name = m.get('providerName')
+        if m.get('realDriveDistance') is not None:
+            self.real_drive_distance = m.get('realDriveDistance')
+        if m.get('realFromAddr') is not None:
+            self.real_from_addr = m.get('realFromAddr')
+        if m.get('realToAddr') is not None:
+            self.real_to_addr = m.get('realToAddr')
+        if m.get('serviceFee') is not None:
+            self.service_fee = m.get('serviceFee')
+        if m.get('settlementFee') is not None:
+            self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementTime') is not None:
+            self.settlement_time = m.get('settlementTime')
+        if m.get('settlementType') is not None:
+            self.settlement_type = m.get('settlementType')
+        if m.get('specialOrder') is not None:
+            self.special_order = m.get('specialOrder')
+        if m.get('specialReason') is not None:
+            self.special_reason = m.get('specialReason')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('travelerId') is not None:
+            self.traveler_id = m.get('travelerId')
+        if m.get('travelerName') is not None:
+            self.traveler_name = m.get('travelerName')
+        if m.get('userConfirmDesc') is not None:
+            self.user_confirm_desc = m.get('userConfirmDesc')
+        if m.get('bookerJobNo') is not None:
+            self.booker_job_no = m.get('bookerJobNo')
+        if m.get('travelerJobNo') is not None:
+            self.traveler_job_no = m.get('travelerJobNo')
+        return self
+
+
+class BillSettementCarResponseBodyModule(TeaModel):
+    def __init__(
+        self,
+        category: int = None,
+        corp_id: str = None,
+        data_list: List[BillSettementCarResponseBodyModuleDataList] = None,
+        period_end: str = None,
+        period_start: str = None,
+        total_num: int = None,
+    ):
+        # 类目
+        self.category = category
+        # 企业id
+        self.corp_id = corp_id
+        # 数据集合
+        self.data_list = data_list
+        # 记账更新开始日期
+        self.period_end = period_end
+        # 记账更新结束日期
+        self.period_start = period_start
+        # 总数量
+        self.total_num = total_num
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = BillSettementCarResponseBodyModuleDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class BillSettementCarResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_msg: str = None,
+        module: BillSettementCarResponseBodyModule = None,
+        success: bool = None,
+        result_code: int = None,
+    ):
+        # 结果msg
+        self.result_msg = result_msg
+        # module
+        self.module = module
+        # 是否成功
+        self.success = success
+        # 结果code
+        self.result_code = result_code
+
+    def validate(self):
+        if self.module:
+            self.module.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result_msg is not None:
+            result['resultMsg'] = self.result_msg
+        if self.module is not None:
+            result['module'] = self.module.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result_code is not None:
+            result['resultCode'] = self.result_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resultMsg') is not None:
+            self.result_msg = m.get('resultMsg')
+        if m.get('module') is not None:
+            temp_model = BillSettementCarResponseBodyModule()
+            self.module = temp_model.from_map(m['module'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('resultCode') is not None:
+            self.result_code = m.get('resultCode')
+        return self
+
+
+class BillSettementCarResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BillSettementCarResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BillSettementCarResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BillSettementBtripTrainHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BillSettementBtripTrainRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        category: int = None,
+        page_size: int = None,
+        period_start: str = None,
+        page_number: int = None,
+        period_end: str = None,
+    ):
+        self.corp_id = corp_id
+        self.category = category
+        self.page_size = page_size
+        self.period_start = period_start
+        self.page_number = page_number
+        self.period_end = period_end
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.category is not None:
+            result['category'] = self.category
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        return self
+
+
+class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
+    def __init__(
+        self,
+        alipay_trade_no: str = None,
+        apply_id: str = None,
+        arr_date: str = None,
+        arr_station: str = None,
+        arr_time: str = None,
+        book_time: str = None,
+        booker_id: str = None,
+        booker_name: str = None,
+        capital_direction: str = None,
+        cascade_department: str = None,
+        change_fee: float = None,
+        cost_center: str = None,
+        cost_center_number: str = None,
+        coupon: float = None,
+        department: str = None,
+        department_id: str = None,
+        dept_date: str = None,
+        dept_station: str = None,
+        dept_time: str = None,
+        fee_type: str = None,
+        index: str = None,
+        invoice_title: str = None,
+        order_id: str = None,
+        order_price: float = None,
+        over_apply_id: str = None,
+        primary_id: int = None,
+        project_code: str = None,
+        project_name: str = None,
+        refund_fee: float = None,
+        run_time: str = None,
+        seat_no: str = None,
+        seat_type: str = None,
+        service_fee: float = None,
+        settlement_fee: float = None,
+        settlement_time: str = None,
+        settlement_type: str = None,
+        status: int = None,
+        ticket_no: str = None,
+        ticket_price: float = None,
+        train_no: str = None,
+        train_type: str = None,
+        traveler_id: str = None,
+        traveler_name: str = None,
+        booker_job_no: str = None,
+        traveler_job_no: str = None,
+        voucher_type: int = None,
+    ):
+        # 交易流水号
+        self.alipay_trade_no = alipay_trade_no
+        # 审批单号
+        self.apply_id = apply_id
+        # 到达日期
+        self.arr_date = arr_date
+        # 到达站点
+        self.arr_station = arr_station
+        # 到达时间
+        self.arr_time = arr_time
+        # 预定时间
+        self.book_time = book_time
+        # 预定人use id
+        self.booker_id = booker_id
+        # 预订人名称
+        self.booker_name = booker_name
+        # 资金方向
+        self.capital_direction = capital_direction
+        # 级联部门
+        self.cascade_department = cascade_department
+        # 改签手续费
+        self.change_fee = change_fee
+        # 成本中心名称
+        self.cost_center = cost_center
+        # 成本中心编码
+        self.cost_center_number = cost_center_number
+        # 折扣率
+        self.coupon = coupon
+        # 末级部门
+        self.department = department
+        # 部门id
+        self.department_id = department_id
+        # 出发日期
+        self.dept_date = dept_date
+        # 出发站
+        self.dept_station = dept_station
+        # 出发时间
+        self.dept_time = dept_time
+        # 费用类型
+        self.fee_type = fee_type
+        # 序号
+        self.index = index
+        # 发票抬头
+        self.invoice_title = invoice_title
+        # 订单号
+        self.order_id = order_id
+        # 订单金额
+        self.order_price = order_price
+        # 超标审批单号
+        self.over_apply_id = over_apply_id
+        # 主键id
+        self.primary_id = primary_id
+        # 项目编号
+        self.project_code = project_code
+        # 项目名称
+        self.project_name = project_name
+        # 退款手续费
+        self.refund_fee = refund_fee
+        # 运行时长
+        self.run_time = run_time
+        # 座位号
+        self.seat_no = seat_no
+        # 坐席
+        self.seat_type = seat_type
+        # 服务费，仅在feeType 6007、6008中展示
+        self.service_fee = service_fee
+        # 结算金额
+        self.settlement_fee = settlement_fee
+        # 结算时间
+        self.settlement_time = settlement_time
+        # 结算类型
+        self.settlement_type = settlement_type
+        # 入账状态
+        self.status = status
+        # 票面票号
+        self.ticket_no = ticket_no
+        # 票价
+        self.ticket_price = ticket_price
+        # 车次号
+        self.train_no = train_no
+        # 车次类型
+        self.train_type = train_type
+        # 出行人useId
+        self.traveler_id = traveler_id
+        # 出行人名称
+        self.traveler_name = traveler_name
+        # 预订人工号
+        self.booker_job_no = booker_job_no
+        # 出行人工号
+        self.traveler_job_no = traveler_job_no
+        # 发票类型
+        self.voucher_type = voucher_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_trade_no is not None:
+            result['alipayTradeNo'] = self.alipay_trade_no
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.arr_date is not None:
+            result['arrDate'] = self.arr_date
+        if self.arr_station is not None:
+            result['arrStation'] = self.arr_station
+        if self.arr_time is not None:
+            result['arrTime'] = self.arr_time
+        if self.book_time is not None:
+            result['bookTime'] = self.book_time
+        if self.booker_id is not None:
+            result['bookerId'] = self.booker_id
+        if self.booker_name is not None:
+            result['bookerName'] = self.booker_name
+        if self.capital_direction is not None:
+            result['capitalDirection'] = self.capital_direction
+        if self.cascade_department is not None:
+            result['cascadeDepartment'] = self.cascade_department
+        if self.change_fee is not None:
+            result['changeFee'] = self.change_fee
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_number is not None:
+            result['costCenterNumber'] = self.cost_center_number
+        if self.coupon is not None:
+            result['coupon'] = self.coupon
+        if self.department is not None:
+            result['department'] = self.department
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.dept_date is not None:
+            result['deptDate'] = self.dept_date
+        if self.dept_station is not None:
+            result['deptStation'] = self.dept_station
+        if self.dept_time is not None:
+            result['deptTime'] = self.dept_time
+        if self.fee_type is not None:
+            result['feeType'] = self.fee_type
+        if self.index is not None:
+            result['index'] = self.index
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.order_price is not None:
+            result['orderPrice'] = self.order_price
+        if self.over_apply_id is not None:
+            result['overApplyId'] = self.over_apply_id
+        if self.primary_id is not None:
+            result['primaryId'] = self.primary_id
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_name is not None:
+            result['projectName'] = self.project_name
+        if self.refund_fee is not None:
+            result['refundFee'] = self.refund_fee
+        if self.run_time is not None:
+            result['runTime'] = self.run_time
+        if self.seat_no is not None:
+            result['seatNo'] = self.seat_no
+        if self.seat_type is not None:
+            result['seatType'] = self.seat_type
+        if self.service_fee is not None:
+            result['serviceFee'] = self.service_fee
+        if self.settlement_fee is not None:
+            result['settlementFee'] = self.settlement_fee
+        if self.settlement_time is not None:
+            result['settlementTime'] = self.settlement_time
+        if self.settlement_type is not None:
+            result['settlementType'] = self.settlement_type
+        if self.status is not None:
+            result['status'] = self.status
+        if self.ticket_no is not None:
+            result['ticketNo'] = self.ticket_no
+        if self.ticket_price is not None:
+            result['ticketPrice'] = self.ticket_price
+        if self.train_no is not None:
+            result['trainNo'] = self.train_no
+        if self.train_type is not None:
+            result['trainType'] = self.train_type
+        if self.traveler_id is not None:
+            result['travelerId'] = self.traveler_id
+        if self.traveler_name is not None:
+            result['travelerName'] = self.traveler_name
+        if self.booker_job_no is not None:
+            result['bookerJobNo'] = self.booker_job_no
+        if self.traveler_job_no is not None:
+            result['travelerJobNo'] = self.traveler_job_no
+        if self.voucher_type is not None:
+            result['voucherType'] = self.voucher_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayTradeNo') is not None:
+            self.alipay_trade_no = m.get('alipayTradeNo')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('arrDate') is not None:
+            self.arr_date = m.get('arrDate')
+        if m.get('arrStation') is not None:
+            self.arr_station = m.get('arrStation')
+        if m.get('arrTime') is not None:
+            self.arr_time = m.get('arrTime')
+        if m.get('bookTime') is not None:
+            self.book_time = m.get('bookTime')
+        if m.get('bookerId') is not None:
+            self.booker_id = m.get('bookerId')
+        if m.get('bookerName') is not None:
+            self.booker_name = m.get('bookerName')
+        if m.get('capitalDirection') is not None:
+            self.capital_direction = m.get('capitalDirection')
+        if m.get('cascadeDepartment') is not None:
+            self.cascade_department = m.get('cascadeDepartment')
+        if m.get('changeFee') is not None:
+            self.change_fee = m.get('changeFee')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterNumber') is not None:
+            self.cost_center_number = m.get('costCenterNumber')
+        if m.get('coupon') is not None:
+            self.coupon = m.get('coupon')
+        if m.get('department') is not None:
+            self.department = m.get('department')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('deptDate') is not None:
+            self.dept_date = m.get('deptDate')
+        if m.get('deptStation') is not None:
+            self.dept_station = m.get('deptStation')
+        if m.get('deptTime') is not None:
+            self.dept_time = m.get('deptTime')
+        if m.get('feeType') is not None:
+            self.fee_type = m.get('feeType')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('orderPrice') is not None:
+            self.order_price = m.get('orderPrice')
+        if m.get('overApplyId') is not None:
+            self.over_apply_id = m.get('overApplyId')
+        if m.get('primaryId') is not None:
+            self.primary_id = m.get('primaryId')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectName') is not None:
+            self.project_name = m.get('projectName')
+        if m.get('refundFee') is not None:
+            self.refund_fee = m.get('refundFee')
+        if m.get('runTime') is not None:
+            self.run_time = m.get('runTime')
+        if m.get('seatNo') is not None:
+            self.seat_no = m.get('seatNo')
+        if m.get('seatType') is not None:
+            self.seat_type = m.get('seatType')
+        if m.get('serviceFee') is not None:
+            self.service_fee = m.get('serviceFee')
+        if m.get('settlementFee') is not None:
+            self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementTime') is not None:
+            self.settlement_time = m.get('settlementTime')
+        if m.get('settlementType') is not None:
+            self.settlement_type = m.get('settlementType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('ticketNo') is not None:
+            self.ticket_no = m.get('ticketNo')
+        if m.get('ticketPrice') is not None:
+            self.ticket_price = m.get('ticketPrice')
+        if m.get('trainNo') is not None:
+            self.train_no = m.get('trainNo')
+        if m.get('trainType') is not None:
+            self.train_type = m.get('trainType')
+        if m.get('travelerId') is not None:
+            self.traveler_id = m.get('travelerId')
+        if m.get('travelerName') is not None:
+            self.traveler_name = m.get('travelerName')
+        if m.get('bookerJobNo') is not None:
+            self.booker_job_no = m.get('bookerJobNo')
+        if m.get('travelerJobNo') is not None:
+            self.traveler_job_no = m.get('travelerJobNo')
+        if m.get('voucherType') is not None:
+            self.voucher_type = m.get('voucherType')
+        return self
+
+
+class BillSettementBtripTrainResponseBodyModule(TeaModel):
+    def __init__(
+        self,
+        category: int = None,
+        corp_id: str = None,
+        data_list: List[BillSettementBtripTrainResponseBodyModuleDataList] = None,
+        period_end: str = None,
+        period_start: str = None,
+        total_num: int = None,
+    ):
+        # 类目
+        self.category = category
+        # 企业id
+        self.corp_id = corp_id
+        # 数据集合
+        self.data_list = data_list
+        # 记账更新开始时间
+        self.period_end = period_end
+        # 记账更新结束时间
+        self.period_start = period_start
+        # 总数据量
+        self.total_num = total_num
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = BillSettementBtripTrainResponseBodyModuleDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class BillSettementBtripTrainResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_msg: str = None,
+        module: BillSettementBtripTrainResponseBodyModule = None,
+        success: bool = None,
+        result_code: int = None,
+    ):
+        # 结果msg
+        self.result_msg = result_msg
+        # module
+        self.module = module
+        # 是否成功
+        self.success = success
+        # 结果code
+        self.result_code = result_code
+
+    def validate(self):
+        if self.module:
+            self.module.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result_msg is not None:
+            result['resultMsg'] = self.result_msg
+        if self.module is not None:
+            result['module'] = self.module.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result_code is not None:
+            result['resultCode'] = self.result_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resultMsg') is not None:
+            self.result_msg = m.get('resultMsg')
+        if m.get('module') is not None:
+            temp_model = BillSettementBtripTrainResponseBodyModule()
+            self.module = temp_model.from_map(m['module'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('resultCode') is not None:
+            self.result_code = m.get('resultCode')
+        return self
+
+
+class BillSettementBtripTrainResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BillSettementBtripTrainResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BillSettementBtripTrainResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -912,6 +2756,751 @@ class AddCityCarApplyResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AddCityCarApplyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BillSettementFlightHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BillSettementFlightRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        category: int = None,
+        page_size: int = None,
+        period_start: str = None,
+        page_number: int = None,
+        period_end: str = None,
+    ):
+        # 第三方企业ID
+        self.corp_id = corp_id
+        # 类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票
+        self.category = category
+        # 每页数据量，默认100，最高500
+        self.page_size = page_size
+        # 记账更新开始日期
+        self.period_start = period_start
+        # 页数，从1开始
+        self.page_number = page_number
+        # 记账更新结束日期
+        self.period_end = period_end
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.category is not None:
+            result['category'] = self.category
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        return self
+
+
+class BillSettementFlightResponseBodyModuleDataList(TeaModel):
+    def __init__(
+        self,
+        advance_day: int = None,
+        airline_corp_code: str = None,
+        airline_corp_name: str = None,
+        alipay_trade_no: str = None,
+        apply_id: str = None,
+        arr_airport_code: str = None,
+        arr_city: str = None,
+        arr_date: str = None,
+        arr_station: str = None,
+        arr_time: str = None,
+        book_time: str = None,
+        booker_id: str = None,
+        booker_name: str = None,
+        btrip_coupon_fee: float = None,
+        build_fee: float = None,
+        cabin: str = None,
+        cabin_class: str = None,
+        capital_direction: str = None,
+        cascade_department: str = None,
+        change_fee: float = None,
+        corp_pay_order_fee: float = None,
+        cost_center: str = None,
+        cost_center_number: str = None,
+        coupon: float = None,
+        dep_airport_code: str = None,
+        department: str = None,
+        department_id: str = None,
+        dept_city: str = None,
+        dept_date: str = None,
+        dept_station: str = None,
+        dept_time: str = None,
+        discount: str = None,
+        fee_type: str = None,
+        flight_no: str = None,
+        index: str = None,
+        insurance_fee: float = None,
+        invoice_title: str = None,
+        itinerary_num: str = None,
+        itinerary_price: float = None,
+        most_difference_dept_time: str = None,
+        most_difference_discount: float = None,
+        most_difference_flight_no: str = None,
+        most_difference_price: float = None,
+        most_difference_reason: str = None,
+        most_price: float = None,
+        negotiation_coupon_fee: float = None,
+        oil_fee: float = None,
+        order_id: str = None,
+        over_apply_id: str = None,
+        primary_id: int = None,
+        project_code: str = None,
+        project_name: str = None,
+        refund_fee: float = None,
+        refund_upgrade_cost: float = None,
+        repeat_refund: str = None,
+        seal_price: float = None,
+        service_fee: float = None,
+        settlement_fee: float = None,
+        settlement_time: str = None,
+        settlement_type: str = None,
+        status: int = None,
+        ticket_id: str = None,
+        traveler_id: str = None,
+        traveler_name: str = None,
+        upgrade_cost: float = None,
+        booker_job_no: str = None,
+        traveler_job_no: str = None,
+    ):
+        # 提前预定天数
+        self.advance_day = advance_day
+        # 航司三字码
+        self.airline_corp_code = airline_corp_code
+        # 航司名称
+        self.airline_corp_name = airline_corp_name
+        # 交易流水号
+        self.alipay_trade_no = alipay_trade_no
+        # 审批单号
+        self.apply_id = apply_id
+        # 到达机场二字码
+        self.arr_airport_code = arr_airport_code
+        # 到达城市
+        self.arr_city = arr_city
+        # 到达日期
+        self.arr_date = arr_date
+        # 到达机场
+        self.arr_station = arr_station
+        # 到达时间
+        self.arr_time = arr_time
+        # 预定时间
+        self.book_time = book_time
+        # 预订人use id
+        self.booker_id = booker_id
+        # 预订人名称
+        self.booker_name = booker_name
+        # 商旅优惠金额
+        self.btrip_coupon_fee = btrip_coupon_fee
+        # 基建费
+        self.build_fee = build_fee
+        # 舱位
+        self.cabin = cabin
+        # 舱位码
+        self.cabin_class = cabin_class
+        # 资金方向
+        self.capital_direction = capital_direction
+        # 级联部门
+        self.cascade_department = cascade_department
+        # 改签费用
+        self.change_fee = change_fee
+        # 订单金额
+        self.corp_pay_order_fee = corp_pay_order_fee
+        # 成本中心名称
+        self.cost_center = cost_center
+        # 成本中心编号
+        self.cost_center_number = cost_center_number
+        # 优惠券
+        self.coupon = coupon
+        # 起飞机场二字码
+        self.dep_airport_code = dep_airport_code
+        # 末级部门
+        self.department = department
+        # 部门id
+        self.department_id = department_id
+        # 起飞城市
+        self.dept_city = dept_city
+        # 起飞日期
+        self.dept_date = dept_date
+        # 起飞机场
+        self.dept_station = dept_station
+        # 起飞时间
+        self.dept_time = dept_time
+        # 折扣率
+        self.discount = discount
+        # 费用类型
+        self.fee_type = fee_type
+        # 航班号
+        self.flight_no = flight_no
+        # 序号
+        self.index = index
+        # 保险费
+        self.insurance_fee = insurance_fee
+        # 发票抬头
+        self.invoice_title = invoice_title
+        # 行程单打印序号
+        self.itinerary_num = itinerary_num
+        # 行程单金额
+        self.itinerary_price = itinerary_price
+        # 低价提醒（起飞时间）
+        self.most_difference_dept_time = most_difference_dept_time
+        # 低价提醒（折扣）
+        self.most_difference_discount = most_difference_discount
+        # 低价提醒(航班号)
+        self.most_difference_flight_no = most_difference_flight_no
+        # 低价提醒(与最低价差额)
+        self.most_difference_price = most_difference_price
+        # 不选低价原因
+        self.most_difference_reason = most_difference_reason
+        # 低价航班价格
+        self.most_price = most_price
+        # 协议价优惠金额
+        self.negotiation_coupon_fee = negotiation_coupon_fee
+        # 燃油费
+        self.oil_fee = oil_fee
+        # 订单号
+        self.order_id = order_id
+        # 超标审批单号
+        self.over_apply_id = over_apply_id
+        # 主键id
+        self.primary_id = primary_id
+        # 项目代码
+        self.project_code = project_code
+        # 项目名称
+        self.project_name = project_name
+        # 退款手续费
+        self.refund_fee = refund_fee
+        # 改签退票手续费
+        self.refund_upgrade_cost = refund_upgrade_cost
+        # 是否重复退
+        self.repeat_refund = repeat_refund
+        # 销售价
+        self.seal_price = seal_price
+        # 服务费，仅在feeType  11001、11002中展示
+        self.service_fee = service_fee
+        # 结算金额
+        self.settlement_fee = settlement_fee
+        # 结算时间
+        self.settlement_time = settlement_time
+        # 结算类型
+        self.settlement_type = settlement_type
+        # 入账状态
+        self.status = status
+        # 行程单号
+        self.ticket_id = ticket_id
+        # 出行人use id
+        self.traveler_id = traveler_id
+        # 出行人名称
+        self.traveler_name = traveler_name
+        # 改签差价
+        self.upgrade_cost = upgrade_cost
+        # 预订人工号
+        self.booker_job_no = booker_job_no
+        # 出行人工号
+        self.traveler_job_no = traveler_job_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advance_day is not None:
+            result['advanceDay'] = self.advance_day
+        if self.airline_corp_code is not None:
+            result['airlineCorpCode'] = self.airline_corp_code
+        if self.airline_corp_name is not None:
+            result['airlineCorpName'] = self.airline_corp_name
+        if self.alipay_trade_no is not None:
+            result['alipayTradeNo'] = self.alipay_trade_no
+        if self.apply_id is not None:
+            result['applyId'] = self.apply_id
+        if self.arr_airport_code is not None:
+            result['arrAirportCode'] = self.arr_airport_code
+        if self.arr_city is not None:
+            result['arrCity'] = self.arr_city
+        if self.arr_date is not None:
+            result['arrDate'] = self.arr_date
+        if self.arr_station is not None:
+            result['arrStation'] = self.arr_station
+        if self.arr_time is not None:
+            result['arrTime'] = self.arr_time
+        if self.book_time is not None:
+            result['bookTime'] = self.book_time
+        if self.booker_id is not None:
+            result['bookerId'] = self.booker_id
+        if self.booker_name is not None:
+            result['bookerName'] = self.booker_name
+        if self.btrip_coupon_fee is not None:
+            result['btripCouponFee'] = self.btrip_coupon_fee
+        if self.build_fee is not None:
+            result['buildFee'] = self.build_fee
+        if self.cabin is not None:
+            result['cabin'] = self.cabin
+        if self.cabin_class is not None:
+            result['cabinClass'] = self.cabin_class
+        if self.capital_direction is not None:
+            result['capitalDirection'] = self.capital_direction
+        if self.cascade_department is not None:
+            result['cascadeDepartment'] = self.cascade_department
+        if self.change_fee is not None:
+            result['changeFee'] = self.change_fee
+        if self.corp_pay_order_fee is not None:
+            result['corpPayOrderFee'] = self.corp_pay_order_fee
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_number is not None:
+            result['costCenterNumber'] = self.cost_center_number
+        if self.coupon is not None:
+            result['coupon'] = self.coupon
+        if self.dep_airport_code is not None:
+            result['depAirportCode'] = self.dep_airport_code
+        if self.department is not None:
+            result['department'] = self.department
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.dept_city is not None:
+            result['deptCity'] = self.dept_city
+        if self.dept_date is not None:
+            result['deptDate'] = self.dept_date
+        if self.dept_station is not None:
+            result['deptStation'] = self.dept_station
+        if self.dept_time is not None:
+            result['deptTime'] = self.dept_time
+        if self.discount is not None:
+            result['discount'] = self.discount
+        if self.fee_type is not None:
+            result['feeType'] = self.fee_type
+        if self.flight_no is not None:
+            result['flightNo'] = self.flight_no
+        if self.index is not None:
+            result['index'] = self.index
+        if self.insurance_fee is not None:
+            result['insuranceFee'] = self.insurance_fee
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.itinerary_num is not None:
+            result['itineraryNum'] = self.itinerary_num
+        if self.itinerary_price is not None:
+            result['itineraryPrice'] = self.itinerary_price
+        if self.most_difference_dept_time is not None:
+            result['mostDifferenceDeptTime'] = self.most_difference_dept_time
+        if self.most_difference_discount is not None:
+            result['mostDifferenceDiscount'] = self.most_difference_discount
+        if self.most_difference_flight_no is not None:
+            result['mostDifferenceFlightNo'] = self.most_difference_flight_no
+        if self.most_difference_price is not None:
+            result['mostDifferencePrice'] = self.most_difference_price
+        if self.most_difference_reason is not None:
+            result['mostDifferenceReason'] = self.most_difference_reason
+        if self.most_price is not None:
+            result['mostPrice'] = self.most_price
+        if self.negotiation_coupon_fee is not None:
+            result['negotiationCouponFee'] = self.negotiation_coupon_fee
+        if self.oil_fee is not None:
+            result['oilFee'] = self.oil_fee
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.over_apply_id is not None:
+            result['overApplyId'] = self.over_apply_id
+        if self.primary_id is not None:
+            result['primaryId'] = self.primary_id
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        if self.project_name is not None:
+            result['projectName'] = self.project_name
+        if self.refund_fee is not None:
+            result['refundFee'] = self.refund_fee
+        if self.refund_upgrade_cost is not None:
+            result['refundUpgradeCost'] = self.refund_upgrade_cost
+        if self.repeat_refund is not None:
+            result['repeatRefund'] = self.repeat_refund
+        if self.seal_price is not None:
+            result['sealPrice'] = self.seal_price
+        if self.service_fee is not None:
+            result['serviceFee'] = self.service_fee
+        if self.settlement_fee is not None:
+            result['settlementFee'] = self.settlement_fee
+        if self.settlement_time is not None:
+            result['settlementTime'] = self.settlement_time
+        if self.settlement_type is not None:
+            result['settlementType'] = self.settlement_type
+        if self.status is not None:
+            result['status'] = self.status
+        if self.ticket_id is not None:
+            result['ticketId'] = self.ticket_id
+        if self.traveler_id is not None:
+            result['travelerId'] = self.traveler_id
+        if self.traveler_name is not None:
+            result['travelerName'] = self.traveler_name
+        if self.upgrade_cost is not None:
+            result['upgradeCost'] = self.upgrade_cost
+        if self.booker_job_no is not None:
+            result['bookerJobNo'] = self.booker_job_no
+        if self.traveler_job_no is not None:
+            result['travelerJobNo'] = self.traveler_job_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advanceDay') is not None:
+            self.advance_day = m.get('advanceDay')
+        if m.get('airlineCorpCode') is not None:
+            self.airline_corp_code = m.get('airlineCorpCode')
+        if m.get('airlineCorpName') is not None:
+            self.airline_corp_name = m.get('airlineCorpName')
+        if m.get('alipayTradeNo') is not None:
+            self.alipay_trade_no = m.get('alipayTradeNo')
+        if m.get('applyId') is not None:
+            self.apply_id = m.get('applyId')
+        if m.get('arrAirportCode') is not None:
+            self.arr_airport_code = m.get('arrAirportCode')
+        if m.get('arrCity') is not None:
+            self.arr_city = m.get('arrCity')
+        if m.get('arrDate') is not None:
+            self.arr_date = m.get('arrDate')
+        if m.get('arrStation') is not None:
+            self.arr_station = m.get('arrStation')
+        if m.get('arrTime') is not None:
+            self.arr_time = m.get('arrTime')
+        if m.get('bookTime') is not None:
+            self.book_time = m.get('bookTime')
+        if m.get('bookerId') is not None:
+            self.booker_id = m.get('bookerId')
+        if m.get('bookerName') is not None:
+            self.booker_name = m.get('bookerName')
+        if m.get('btripCouponFee') is not None:
+            self.btrip_coupon_fee = m.get('btripCouponFee')
+        if m.get('buildFee') is not None:
+            self.build_fee = m.get('buildFee')
+        if m.get('cabin') is not None:
+            self.cabin = m.get('cabin')
+        if m.get('cabinClass') is not None:
+            self.cabin_class = m.get('cabinClass')
+        if m.get('capitalDirection') is not None:
+            self.capital_direction = m.get('capitalDirection')
+        if m.get('cascadeDepartment') is not None:
+            self.cascade_department = m.get('cascadeDepartment')
+        if m.get('changeFee') is not None:
+            self.change_fee = m.get('changeFee')
+        if m.get('corpPayOrderFee') is not None:
+            self.corp_pay_order_fee = m.get('corpPayOrderFee')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterNumber') is not None:
+            self.cost_center_number = m.get('costCenterNumber')
+        if m.get('coupon') is not None:
+            self.coupon = m.get('coupon')
+        if m.get('depAirportCode') is not None:
+            self.dep_airport_code = m.get('depAirportCode')
+        if m.get('department') is not None:
+            self.department = m.get('department')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('deptCity') is not None:
+            self.dept_city = m.get('deptCity')
+        if m.get('deptDate') is not None:
+            self.dept_date = m.get('deptDate')
+        if m.get('deptStation') is not None:
+            self.dept_station = m.get('deptStation')
+        if m.get('deptTime') is not None:
+            self.dept_time = m.get('deptTime')
+        if m.get('discount') is not None:
+            self.discount = m.get('discount')
+        if m.get('feeType') is not None:
+            self.fee_type = m.get('feeType')
+        if m.get('flightNo') is not None:
+            self.flight_no = m.get('flightNo')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('insuranceFee') is not None:
+            self.insurance_fee = m.get('insuranceFee')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('itineraryNum') is not None:
+            self.itinerary_num = m.get('itineraryNum')
+        if m.get('itineraryPrice') is not None:
+            self.itinerary_price = m.get('itineraryPrice')
+        if m.get('mostDifferenceDeptTime') is not None:
+            self.most_difference_dept_time = m.get('mostDifferenceDeptTime')
+        if m.get('mostDifferenceDiscount') is not None:
+            self.most_difference_discount = m.get('mostDifferenceDiscount')
+        if m.get('mostDifferenceFlightNo') is not None:
+            self.most_difference_flight_no = m.get('mostDifferenceFlightNo')
+        if m.get('mostDifferencePrice') is not None:
+            self.most_difference_price = m.get('mostDifferencePrice')
+        if m.get('mostDifferenceReason') is not None:
+            self.most_difference_reason = m.get('mostDifferenceReason')
+        if m.get('mostPrice') is not None:
+            self.most_price = m.get('mostPrice')
+        if m.get('negotiationCouponFee') is not None:
+            self.negotiation_coupon_fee = m.get('negotiationCouponFee')
+        if m.get('oilFee') is not None:
+            self.oil_fee = m.get('oilFee')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('overApplyId') is not None:
+            self.over_apply_id = m.get('overApplyId')
+        if m.get('primaryId') is not None:
+            self.primary_id = m.get('primaryId')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        if m.get('projectName') is not None:
+            self.project_name = m.get('projectName')
+        if m.get('refundFee') is not None:
+            self.refund_fee = m.get('refundFee')
+        if m.get('refundUpgradeCost') is not None:
+            self.refund_upgrade_cost = m.get('refundUpgradeCost')
+        if m.get('repeatRefund') is not None:
+            self.repeat_refund = m.get('repeatRefund')
+        if m.get('sealPrice') is not None:
+            self.seal_price = m.get('sealPrice')
+        if m.get('serviceFee') is not None:
+            self.service_fee = m.get('serviceFee')
+        if m.get('settlementFee') is not None:
+            self.settlement_fee = m.get('settlementFee')
+        if m.get('settlementTime') is not None:
+            self.settlement_time = m.get('settlementTime')
+        if m.get('settlementType') is not None:
+            self.settlement_type = m.get('settlementType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('ticketId') is not None:
+            self.ticket_id = m.get('ticketId')
+        if m.get('travelerId') is not None:
+            self.traveler_id = m.get('travelerId')
+        if m.get('travelerName') is not None:
+            self.traveler_name = m.get('travelerName')
+        if m.get('upgradeCost') is not None:
+            self.upgrade_cost = m.get('upgradeCost')
+        if m.get('bookerJobNo') is not None:
+            self.booker_job_no = m.get('bookerJobNo')
+        if m.get('travelerJobNo') is not None:
+            self.traveler_job_no = m.get('travelerJobNo')
+        return self
+
+
+class BillSettementFlightResponseBodyModule(TeaModel):
+    def __init__(
+        self,
+        category: int = None,
+        corp_id: str = None,
+        data_list: List[BillSettementFlightResponseBodyModuleDataList] = None,
+        period_end: str = None,
+        period_start: str = None,
+        total_num: int = None,
+    ):
+        # 类目
+        self.category = category
+        # 企业id
+        self.corp_id = corp_id
+        # 数据集合
+        self.data_list = data_list
+        # 记账更新开始日期
+        self.period_end = period_end
+        # 记账更新结束日期
+        self.period_start = period_start
+        # 总数据量
+        self.total_num = total_num
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.period_end is not None:
+            result['periodEnd'] = self.period_end
+        if self.period_start is not None:
+            result['periodStart'] = self.period_start
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = BillSettementFlightResponseBodyModuleDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('periodEnd') is not None:
+            self.period_end = m.get('periodEnd')
+        if m.get('periodStart') is not None:
+            self.period_start = m.get('periodStart')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class BillSettementFlightResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_msg: str = None,
+        module: BillSettementFlightResponseBodyModule = None,
+        success: bool = None,
+        result_code: int = None,
+    ):
+        # 结果msg
+        self.result_msg = result_msg
+        # module
+        self.module = module
+        # 是否成功
+        self.success = success
+        # 结果code
+        self.result_code = result_code
+
+    def validate(self):
+        if self.module:
+            self.module.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result_msg is not None:
+            result['resultMsg'] = self.result_msg
+        if self.module is not None:
+            result['module'] = self.module.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result_code is not None:
+            result['resultCode'] = self.result_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resultMsg') is not None:
+            self.result_msg = m.get('resultMsg')
+        if m.get('module') is not None:
+            temp_model = BillSettementFlightResponseBodyModule()
+            self.module = temp_model.from_map(m['module'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('resultCode') is not None:
+            self.result_code = m.get('resultCode')
+        return self
+
+
+class BillSettementFlightResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BillSettementFlightResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BillSettementFlightResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

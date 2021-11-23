@@ -5028,16 +5028,62 @@ class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
         return self
 
 
+class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
+    def __init__(
+        self,
+        resource_url: str = None,
+        expiration_seconds: int = None,
+        headers: Dict[str, Any] = None,
+    ):
+        # 上传地址
+        self.resource_url = resource_url
+        # 过期秒数
+        self.expiration_seconds = expiration_seconds
+        # header加签信息
+        self.headers = headers
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.resource_url is not None:
+            result['resourceUrl'] = self.resource_url
+        if self.expiration_seconds is not None:
+            result['expirationSeconds'] = self.expiration_seconds
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resourceUrl') is not None:
+            self.resource_url = m.get('resourceUrl')
+        if m.get('expirationSeconds') is not None:
+            self.expiration_seconds = m.get('expirationSeconds')
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class GetUploadInfoResponseBody(TeaModel):
     def __init__(
         self,
         sts_upload_info: GetUploadInfoResponseBodyStsUploadInfo = None,
+        header_signature_upload_info: GetUploadInfoResponseBodyHeaderSignatureUploadInfo = None,
     ):
         self.sts_upload_info = sts_upload_info
+        self.header_signature_upload_info = header_signature_upload_info
 
     def validate(self):
         if self.sts_upload_info:
             self.sts_upload_info.validate()
+        if self.header_signature_upload_info:
+            self.header_signature_upload_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5047,6 +5093,8 @@ class GetUploadInfoResponseBody(TeaModel):
         result = dict()
         if self.sts_upload_info is not None:
             result['stsUploadInfo'] = self.sts_upload_info.to_map()
+        if self.header_signature_upload_info is not None:
+            result['headerSignatureUploadInfo'] = self.header_signature_upload_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -5054,6 +5102,9 @@ class GetUploadInfoResponseBody(TeaModel):
         if m.get('stsUploadInfo') is not None:
             temp_model = GetUploadInfoResponseBodyStsUploadInfo()
             self.sts_upload_info = temp_model.from_map(m['stsUploadInfo'])
+        if m.get('headerSignatureUploadInfo') is not None:
+            temp_model = GetUploadInfoResponseBodyHeaderSignatureUploadInfo()
+            self.header_signature_upload_info = temp_model.from_map(m['headerSignatureUploadInfo'])
         return self
 
 

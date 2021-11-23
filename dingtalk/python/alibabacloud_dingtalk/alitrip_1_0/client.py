@@ -119,6 +119,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
         )
 
+    def bill_settement_hotel(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
+        return self.bill_settement_hotel_with_options(request, headers, runtime)
+
+    async def bill_settement_hotel_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
+        return await self.bill_settement_hotel_with_options_async(request, headers, runtime)
+
+    def bill_settement_hotel_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementHotelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementHotelResponse(),
+            self.do_roarequest('BillSettementHotel', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/hotels', 'json', req, runtime)
+        )
+
+    async def bill_settement_hotel_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementHotelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementHotelResponse(),
+            await self.do_roarequest_async('BillSettementHotel', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/hotels', 'json', req, runtime)
+        )
+
     def get_flight_exceed_apply(
         self,
         request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
@@ -185,6 +269,174 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse(),
             await self.do_roarequest_async('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getFlight', 'json', req, runtime)
+        )
+
+    def bill_settement_car(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
+        return self.bill_settement_car_with_options(request, headers, runtime)
+
+    async def bill_settement_car_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
+        return await self.bill_settement_car_with_options_async(request, headers, runtime)
+
+    def bill_settement_car_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementCarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementCarResponse(),
+            self.do_roarequest('BillSettementCar', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/cars', 'json', req, runtime)
+        )
+
+    async def bill_settement_car_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementCarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementCarResponse(),
+            await self.do_roarequest_async('BillSettementCar', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/cars', 'json', req, runtime)
+        )
+
+    def bill_settement_btrip_train(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
+        return self.bill_settement_btrip_train_with_options(request, headers, runtime)
+
+    async def bill_settement_btrip_train_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
+        return await self.bill_settement_btrip_train_with_options_async(request, headers, runtime)
+
+    def bill_settement_btrip_train_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse(),
+            self.do_roarequest('BillSettementBtripTrain', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/btripTrains', 'json', req, runtime)
+        )
+
+    async def bill_settement_btrip_train_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse(),
+            await self.do_roarequest_async('BillSettementBtripTrain', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/btripTrains', 'json', req, runtime)
         )
 
     def sync_exceed_apply(
@@ -405,6 +657,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.AddCityCarApplyResponse(),
             await self.do_roarequest_async('AddCityCarApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+        )
+
+    def bill_settement_flight(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
+        return self.bill_settement_flight_with_options(request, headers, runtime)
+
+    async def bill_settement_flight_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
+        return await self.bill_settement_flight_with_options_async(request, headers, runtime)
+
+    def bill_settement_flight_with_options(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementFlightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementFlightResponse(),
+            self.do_roarequest('BillSettementFlight', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/flights', 'json', req, runtime)
+        )
+
+    async def bill_settement_flight_with_options_async(
+        self,
+        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
+        headers: dingtalkalitrip__1__0_models.BillSettementFlightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.category):
+            query['category'] = request.category
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_start):
+            query['periodStart'] = request.period_start
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.period_end):
+            query['periodEnd'] = request.period_end
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkalitrip__1__0_models.BillSettementFlightResponse(),
+            await self.do_roarequest_async('BillSettementFlight', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/flights', 'json', req, runtime)
         )
 
     def get_hotel_exceed_apply(

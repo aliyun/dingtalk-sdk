@@ -3857,6 +3857,8 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody(TeaModel):
         name: str = None,
         customized: bool = None,
         fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFields] = None,
+        status: str = None,
+        code: str = None,
     ):
         # 对象名称
         self.name = name
@@ -3864,6 +3866,10 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody(TeaModel):
         self.customized = customized
         # 字段列表
         self.fields = fields
+        # 表单状态
+        self.status = status
+        # 表单code
+        self.code = code
 
     def validate(self):
         if self.fields:
@@ -3885,6 +3891,10 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody(TeaModel):
         if self.fields is not None:
             for k in self.fields:
                 result['fields'].append(k.to_map() if k else None)
+        if self.status is not None:
+            result['status'] = self.status
+        if self.code is not None:
+            result['code'] = self.code
         return result
 
     def from_map(self, m: dict = None):
@@ -3898,6 +3908,10 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody(TeaModel):
             for k in m.get('fields'):
                 temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFields()
                 self.fields.append(temp_model.from_map(k))
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('code') is not None:
+            self.code = m.get('code')
         return self
 
 

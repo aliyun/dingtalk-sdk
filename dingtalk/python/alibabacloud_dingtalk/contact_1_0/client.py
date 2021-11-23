@@ -2465,6 +2465,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUnionIdByMigrationUnionId', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccount/getUnionIdByMigrationUnionIds', 'json', req, runtime)
         )
 
+    def multi_org_permission_grant(
+        self,
+        request: dingtalkcontact__1__0_models.MultiOrgPermissionGrantRequest,
+    ) -> dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.MultiOrgPermissionGrantHeaders()
+        return self.multi_org_permission_grant_with_options(request, headers, runtime)
+
+    async def multi_org_permission_grant_async(
+        self,
+        request: dingtalkcontact__1__0_models.MultiOrgPermissionGrantRequest,
+    ) -> dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.MultiOrgPermissionGrantHeaders()
+        return await self.multi_org_permission_grant_with_options_async(request, headers, runtime)
+
+    def multi_org_permission_grant_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.MultiOrgPermissionGrantRequest,
+        headers: dingtalkcontact__1__0_models.MultiOrgPermissionGrantHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.join_corp_id):
+            body['joinCorpId'] = request.join_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse(),
+            self.do_roarequest('MultiOrgPermissionGrant', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/multiOrgPermissions/auth', 'none', req, runtime)
+        )
+
+    async def multi_org_permission_grant_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.MultiOrgPermissionGrantRequest,
+        headers: dingtalkcontact__1__0_models.MultiOrgPermissionGrantHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.join_corp_id):
+            body['joinCorpId'] = request.join_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.MultiOrgPermissionGrantResponse(),
+            await self.do_roarequest_async('MultiOrgPermissionGrant', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/multiOrgPermissions/auth', 'none', req, runtime)
+        )
+
     def get_latest_ding_index(self) -> dingtalkcontact__1__0_models.GetLatestDingIndexResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.GetLatestDingIndexHeaders()
