@@ -3492,7 +3492,7 @@ export class CreateTeamHeaders extends $tea.Model {
 }
 
 export class CreateTeamRequest extends $tea.Model {
-  creatorDingUid?: number;
+  creatorDingUnionId?: string;
   teamName?: string;
   dingIsvOrgId?: number;
   dingOrgId?: number;
@@ -3500,7 +3500,7 @@ export class CreateTeamRequest extends $tea.Model {
   dingTokenGrantType?: number;
   static names(): { [key: string]: string } {
     return {
-      creatorDingUid: 'creatorDingUid',
+      creatorDingUnionId: 'creatorDingUnionId',
       teamName: 'teamName',
       dingIsvOrgId: 'dingIsvOrgId',
       dingOrgId: 'dingOrgId',
@@ -3511,7 +3511,7 @@ export class CreateTeamRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      creatorDingUid: 'number',
+      creatorDingUnionId: 'string',
       teamName: 'string',
       dingIsvOrgId: 'number',
       dingOrgId: 'number',
@@ -6995,8 +6995,8 @@ export default class Client extends OpenApi {
   async createTeamWithOptions(request: CreateTeamRequest, headers: CreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTeamResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.creatorDingUid)) {
-      body["creatorDingUid"] = request.creatorDingUid;
+    if (!Util.isUnset(request.creatorDingUnionId)) {
+      body["creatorDingUnionId"] = request.creatorDingUnionId;
     }
 
     if (!Util.isUnset(request.teamName)) {
