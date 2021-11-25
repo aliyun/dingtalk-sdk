@@ -4,9 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTeamRequest extends TeaModel {
-    // 团队管理员钉钉uid
-    @NameInMap("creatorDingUid")
-    public Long creatorDingUid;
+    // 团队管理员钉钉unionId
+    @NameInMap("creatorDingUnionId")
+    public String creatorDingUnionId;
 
     // 团队名字
     @NameInMap("teamName")
@@ -29,12 +29,12 @@ public class CreateTeamRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateTeamRequest setCreatorDingUid(Long creatorDingUid) {
-        this.creatorDingUid = creatorDingUid;
+    public CreateTeamRequest setCreatorDingUnionId(String creatorDingUnionId) {
+        this.creatorDingUnionId = creatorDingUnionId;
         return this;
     }
-    public Long getCreatorDingUid() {
-        return this.creatorDingUid;
+    public String getCreatorDingUnionId() {
+        return this.creatorDingUnionId;
     }
 
     public CreateTeamRequest setTeamName(String teamName) {

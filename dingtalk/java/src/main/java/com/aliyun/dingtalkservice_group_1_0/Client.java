@@ -2118,8 +2118,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateTeamResponse createTeamWithOptions(CreateTeamRequest request, CreateTeamHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.creatorDingUid)) {
-            body.put("creatorDingUid", request.creatorDingUid);
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorDingUnionId)) {
+            body.put("creatorDingUnionId", request.creatorDingUnionId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.teamName)) {
