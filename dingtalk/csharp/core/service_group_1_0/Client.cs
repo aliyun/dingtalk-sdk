@@ -1860,9 +1860,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorDingUid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorDingUnionId))
             {
-                body["creatorDingUid"] = request.CreatorDingUid;
+                body["creatorDingUnionId"] = request.CreatorDingUnionId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {
@@ -1905,9 +1905,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorDingUid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorDingUnionId))
             {
-                body["creatorDingUid"] = request.CreatorDingUid;
+                body["creatorDingUnionId"] = request.CreatorDingUnionId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
             {

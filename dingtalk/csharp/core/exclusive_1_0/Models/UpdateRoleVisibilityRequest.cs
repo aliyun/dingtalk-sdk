@@ -6,15 +6,23 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class CreateTeamRequest : TeaModel {
+    public class UpdateRoleVisibilityRequest : TeaModel {
         /// <summary>
-        /// 团队管理员钉钉unionId
+        /// 可见的部门id
         /// </summary>
-        [NameInMap("creatorDingUnionId")]
+        [NameInMap("deptIds")]
         [Validation(Required=false)]
-        public string CreatorDingUnionId { get; set; }
+        public List<long?> DeptIds { get; set; }
+
+        [NameInMap("dingClientId")]
+        [Validation(Required=false)]
+        public string DingClientId { get; set; }
+
+        [NameInMap("dingCorpId")]
+        [Validation(Required=false)]
+        public string DingCorpId { get; set; }
 
         [NameInMap("dingIsvOrgId")]
         [Validation(Required=false)]
@@ -33,11 +41,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 团队名字
+        /// 标签id
         /// </summary>
-        [NameInMap("teamName")]
+        [NameInMap("labelId")]
         [Validation(Required=false)]
-        public string TeamName { get; set; }
+        public long? LabelId { get; set; }
+
+        /// <summary>
+        /// 可见的员工id
+        /// </summary>
+        [NameInMap("userIds")]
+        [Validation(Required=false)]
+        public List<string> UserIds { get; set; }
 
     }
 
