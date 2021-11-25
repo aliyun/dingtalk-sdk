@@ -2429,8 +2429,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->creatorDingUid)) {
-            @$body['creatorDingUid'] = $request->creatorDingUid;
+        if (!Utils::isUnset($request->creatorDingUnionId)) {
+            @$body['creatorDingUnionId'] = $request->creatorDingUnionId;
         }
         if (!Utils::isUnset($request->teamName)) {
             @$body['teamName'] = $request->teamName;

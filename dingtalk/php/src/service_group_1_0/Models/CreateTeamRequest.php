@@ -9,11 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateTeamRequest extends Model
 {
     /**
-     * @description 团队管理员钉钉uid
+     * @description 团队管理员钉钉unionId
      *
-     * @var int
+     * @var string
      */
-    public $creatorDingUid;
+    public $creatorDingUnionId;
 
     /**
      * @description 团队名字
@@ -42,7 +42,7 @@ class CreateTeamRequest extends Model
      */
     public $dingTokenGrantType;
     protected $_name = [
-        'creatorDingUid'     => 'creatorDingUid',
+        'creatorDingUnionId' => 'creatorDingUnionId',
         'teamName'           => 'teamName',
         'dingIsvOrgId'       => 'dingIsvOrgId',
         'dingOrgId'          => 'dingOrgId',
@@ -57,8 +57,8 @@ class CreateTeamRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->creatorDingUid) {
-            $res['creatorDingUid'] = $this->creatorDingUid;
+        if (null !== $this->creatorDingUnionId) {
+            $res['creatorDingUnionId'] = $this->creatorDingUnionId;
         }
         if (null !== $this->teamName) {
             $res['teamName'] = $this->teamName;
@@ -87,8 +87,8 @@ class CreateTeamRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['creatorDingUid'])) {
-            $model->creatorDingUid = $map['creatorDingUid'];
+        if (isset($map['creatorDingUnionId'])) {
+            $model->creatorDingUnionId = $map['creatorDingUnionId'];
         }
         if (isset($map['teamName'])) {
             $model->teamName = $map['teamName'];

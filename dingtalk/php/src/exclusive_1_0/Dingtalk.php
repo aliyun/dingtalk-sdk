@@ -69,12 +69,21 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRespo
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendAppDingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendAppDingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendAppDingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -831,6 +840,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpdateRoleVisibilityRequest $request
+     *
+     * @return UpdateRoleVisibilityResponse
+     */
+    public function updateRoleVisibility($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRoleVisibilityHeaders([]);
+
+        return $this->updateRoleVisibilityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateRoleVisibilityRequest $request
+     * @param UpdateRoleVisibilityHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateRoleVisibilityResponse
+     */
+    public function updateRoleVisibilityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->labelId)) {
+            @$body['labelId'] = $request->labelId;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            @$body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateRoleVisibilityResponse::fromMap($this->doROARequest('UpdateRoleVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/partnerDepartments/visibilityRoles', 'boolean', $req, $runtime));
+    }
+
+    /**
      * @param string $dataId
      *
      * @return GetGeneralFormCreatedSummaryResponse
@@ -945,6 +1020,72 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendAppDingResponse::fromMap($this->doROARequest('SendAppDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/appDings/send', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param UpdatePartnerVisibilityRequest $request
+     *
+     * @return UpdatePartnerVisibilityResponse
+     */
+    public function updatePartnerVisibility($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePartnerVisibilityHeaders([]);
+
+        return $this->updatePartnerVisibilityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdatePartnerVisibilityRequest $request
+     * @param UpdatePartnerVisibilityHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return UpdatePartnerVisibilityResponse
+     */
+    public function updatePartnerVisibilityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->labelId)) {
+            @$body['labelId'] = $request->labelId;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            @$body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdatePartnerVisibilityResponse::fromMap($this->doROARequest('UpdatePartnerVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/exclusive/partnerDepartments/visibilityPartners', 'boolean', $req, $runtime));
     }
 
     /**
@@ -1241,6 +1382,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchOrgInnerGroupInfoResponse::fromMap($this->doROARequest('SearchOrgInnerGroupInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/securities/orgGroupInfos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendInvitationRequest $request
+     *
+     * @return SendInvitationResponse
+     */
+    public function sendInvitation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendInvitationHeaders([]);
+
+        return $this->sendInvitationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendInvitationRequest $request
+     * @param SendInvitationHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SendInvitationResponse
+     */
+    public function sendInvitationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->partnerNum)) {
+            @$body['partnerNum'] = $request->partnerNum;
+        }
+        if (!Utils::isUnset($request->partnerLabelId)) {
+            @$body['partnerLabelId'] = $request->partnerLabelId;
+        }
+        if (!Utils::isUnset($request->phone)) {
+            @$body['phone'] = $request->phone;
+        }
+        if (!Utils::isUnset($request->orgAlias)) {
+            @$body['orgAlias'] = $request->orgAlias;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendInvitationResponse::fromMap($this->doROARequest('SendInvitation', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/partnerDepartments/invitations/send', 'none', $req, $runtime));
     }
 
     /**
