@@ -1127,6 +1127,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateMiniAppVersionStatus', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/versionStatus', 'json', req, runtime)
         )
 
+    def update_role_visibility(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateRoleVisibilityRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateRoleVisibilityHeaders()
+        return self.update_role_visibility_with_options(request, headers, runtime)
+
+    async def update_role_visibility_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateRoleVisibilityRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateRoleVisibilityHeaders()
+        return await self.update_role_visibility_with_options_async(request, headers, runtime)
+
+    def update_role_visibility_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateRoleVisibilityRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateRoleVisibilityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.label_id):
+            body['labelId'] = request.label_id
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse(),
+            self.do_roarequest('UpdateRoleVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/partnerDepartments/visibilityRoles', 'boolean', req, runtime)
+        )
+
+    async def update_role_visibility_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateRoleVisibilityRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateRoleVisibilityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.label_id):
+            body['labelId'] = request.label_id
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateRoleVisibilityResponse(),
+            await self.do_roarequest_async('UpdateRoleVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/partnerDepartments/visibilityRoles', 'boolean', req, runtime)
+        )
+
     def get_general_form_created_summary(
         self,
         data_id: str,
@@ -1301,6 +1397,102 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.SendAppDingResponse(),
             await self.do_roarequest_async('SendAppDing', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/appDings/send', 'none', req, runtime)
+        )
+
+    def update_partner_visibility(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdatePartnerVisibilityRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdatePartnerVisibilityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdatePartnerVisibilityHeaders()
+        return self.update_partner_visibility_with_options(request, headers, runtime)
+
+    async def update_partner_visibility_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdatePartnerVisibilityRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdatePartnerVisibilityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdatePartnerVisibilityHeaders()
+        return await self.update_partner_visibility_with_options_async(request, headers, runtime)
+
+    def update_partner_visibility_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdatePartnerVisibilityRequest,
+        headers: dingtalkexclusive__1__0_models.UpdatePartnerVisibilityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdatePartnerVisibilityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.label_id):
+            body['labelId'] = request.label_id
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdatePartnerVisibilityResponse(),
+            self.do_roarequest('UpdatePartnerVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/partnerDepartments/visibilityPartners', 'boolean', req, runtime)
+        )
+
+    async def update_partner_visibility_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdatePartnerVisibilityRequest,
+        headers: dingtalkexclusive__1__0_models.UpdatePartnerVisibilityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdatePartnerVisibilityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.label_id):
+            body['labelId'] = request.label_id
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdatePartnerVisibilityResponse(),
+            await self.do_roarequest_async('UpdatePartnerVisibility', 'exclusive_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/exclusive/partnerDepartments/visibilityPartners', 'boolean', req, runtime)
         )
 
     def get_ding_report_dept_summary(
@@ -1737,6 +1929,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoResponse(),
             await self.do_roarequest_async('SearchOrgInnerGroupInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/securities/orgGroupInfos', 'json', req, runtime)
+        )
+
+    def send_invitation(
+        self,
+        request: dingtalkexclusive__1__0_models.SendInvitationRequest,
+    ) -> dingtalkexclusive__1__0_models.SendInvitationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendInvitationHeaders()
+        return self.send_invitation_with_options(request, headers, runtime)
+
+    async def send_invitation_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendInvitationRequest,
+    ) -> dingtalkexclusive__1__0_models.SendInvitationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendInvitationHeaders()
+        return await self.send_invitation_with_options_async(request, headers, runtime)
+
+    def send_invitation_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SendInvitationRequest,
+        headers: dingtalkexclusive__1__0_models.SendInvitationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendInvitationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.partner_num):
+            body['partnerNum'] = request.partner_num
+        if not UtilClient.is_unset(request.partner_label_id):
+            body['partnerLabelId'] = request.partner_label_id
+        if not UtilClient.is_unset(request.phone):
+            body['phone'] = request.phone
+        if not UtilClient.is_unset(request.org_alias):
+            body['orgAlias'] = request.org_alias
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendInvitationResponse(),
+            self.do_roarequest('SendInvitation', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partnerDepartments/invitations/send', 'none', req, runtime)
+        )
+
+    async def send_invitation_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendInvitationRequest,
+        headers: dingtalkexclusive__1__0_models.SendInvitationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendInvitationResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.partner_num):
+            body['partnerNum'] = request.partner_num
+        if not UtilClient.is_unset(request.partner_label_id):
+            body['partnerLabelId'] = request.partner_label_id
+        if not UtilClient.is_unset(request.phone):
+            body['phone'] = request.phone
+        if not UtilClient.is_unset(request.org_alias):
+            body['orgAlias'] = request.org_alias
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendInvitationResponse(),
+            await self.do_roarequest_async('SendInvitation', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/partnerDepartments/invitations/send', 'none', req, runtime)
         )
 
     def get_group_active_info(

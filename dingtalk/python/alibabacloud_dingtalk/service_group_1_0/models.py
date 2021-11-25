@@ -8100,15 +8100,15 @@ class CreateTeamHeaders(TeaModel):
 class CreateTeamRequest(TeaModel):
     def __init__(
         self,
-        creator_ding_uid: int = None,
+        creator_ding_union_id: str = None,
         team_name: str = None,
         ding_isv_org_id: int = None,
         ding_org_id: int = None,
         ding_suite_key: str = None,
         ding_token_grant_type: int = None,
     ):
-        # 团队管理员钉钉uid
-        self.creator_ding_uid = creator_ding_uid
+        # 团队管理员钉钉unionId
+        self.creator_ding_union_id = creator_ding_union_id
         # 团队名字
         self.team_name = team_name
         self.ding_isv_org_id = ding_isv_org_id
@@ -8125,8 +8125,8 @@ class CreateTeamRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.creator_ding_uid is not None:
-            result['creatorDingUid'] = self.creator_ding_uid
+        if self.creator_ding_union_id is not None:
+            result['creatorDingUnionId'] = self.creator_ding_union_id
         if self.team_name is not None:
             result['teamName'] = self.team_name
         if self.ding_isv_org_id is not None:
@@ -8141,8 +8141,8 @@ class CreateTeamRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('creatorDingUid') is not None:
-            self.creator_ding_uid = m.get('creatorDingUid')
+        if m.get('creatorDingUnionId') is not None:
+            self.creator_ding_union_id = m.get('creatorDingUnionId')
         if m.get('teamName') is not None:
             self.team_name = m.get('teamName')
         if m.get('dingIsvOrgId') is not None:

@@ -3357,8 +3357,8 @@ class Client(OpenApiClient):
     ) -> dingtalkservice_group__1__0_models.CreateTeamResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.creator_ding_uid):
-            body['creatorDingUid'] = request.creator_ding_uid
+        if not UtilClient.is_unset(request.creator_ding_union_id):
+            body['creatorDingUnionId'] = request.creator_ding_union_id
         if not UtilClient.is_unset(request.team_name):
             body['teamName'] = request.team_name
         if not UtilClient.is_unset(request.ding_isv_org_id):
@@ -3391,8 +3391,8 @@ class Client(OpenApiClient):
     ) -> dingtalkservice_group__1__0_models.CreateTeamResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.creator_ding_uid):
-            body['creatorDingUid'] = request.creator_ding_uid
+        if not UtilClient.is_unset(request.creator_ding_union_id):
+            body['creatorDingUnionId'] = request.creator_ding_union_id
         if not UtilClient.is_unset(request.team_name):
             body['teamName'] = request.team_name
         if not UtilClient.is_unset(request.ding_isv_org_id):
