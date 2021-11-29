@@ -1008,24 +1008,23 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return TeaModel.ToObject<GetWorkspaceNodeResponse>(await DoROARequestAsync("GetWorkspaceNode", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId, "json", req, runtime));
         }
 
-        public SearchWorkspaceDocsResponse SearchWorkspaceDocs(string workspaceId, SearchWorkspaceDocsRequest request)
+        public SearchWorkspaceDocsResponse SearchWorkspaceDocs(SearchWorkspaceDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
-            return SearchWorkspaceDocsWithOptions(workspaceId, request, headers, runtime);
+            return SearchWorkspaceDocsWithOptions(request, headers, runtime);
         }
 
-        public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsAsync(string workspaceId, SearchWorkspaceDocsRequest request)
+        public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsAsync(SearchWorkspaceDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
-            return await SearchWorkspaceDocsWithOptionsAsync(workspaceId, request, headers, runtime);
+            return await SearchWorkspaceDocsWithOptionsAsync(request, headers, runtime);
         }
 
-        public SearchWorkspaceDocsResponse SearchWorkspaceDocsWithOptions(string workspaceId, SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public SearchWorkspaceDocsResponse SearchWorkspaceDocsWithOptions(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
             {
@@ -1043,6 +1042,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 query["operatorId"] = request.OperatorId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkspaceId))
+            {
+                query["workspaceId"] = request.WorkspaceId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1057,13 +1060,12 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(DoROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs", "json", req, runtime));
+            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(DoROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/docs", "json", req, runtime));
         }
 
-        public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsWithOptionsAsync(string workspaceId, SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsWithOptionsAsync(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
             {
@@ -1081,6 +1083,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 query["operatorId"] = request.OperatorId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkspaceId))
+            {
+                query["workspaceId"] = request.WorkspaceId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1095,7 +1101,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(await DoROARequestAsync("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs", "json", req, runtime));
+            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(await DoROARequestAsync("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/docs", "json", req, runtime));
         }
 
         public UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembers(string nodeId, string workspaceId, UpdateWorkspaceDocMembersRequest request)

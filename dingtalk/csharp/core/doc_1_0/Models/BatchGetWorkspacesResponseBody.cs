@@ -50,6 +50,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("orgPublished")]
                 [Validation(Required=false)]
                 public bool? OrgPublished { get; set; }
+                [NameInMap("createTime")]
+                [Validation(Required=false)]
+                public long? CreateTime { get; set; }
             };
 
         }

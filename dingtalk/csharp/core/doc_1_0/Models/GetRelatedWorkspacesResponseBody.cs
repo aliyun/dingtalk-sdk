@@ -78,6 +78,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
             }
 
+            /// <summary>
+            /// 团队空间创建时间
+            /// </summary>
+            [NameInMap("createTime")]
+            [Validation(Required=false)]
+            public long? CreateTime { get; set; }
+
         }
 
     }
