@@ -187,6 +187,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchRegisterDevice', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/devices/batch', 'json', req, runtime)
         )
 
+    def device_ding(
+        self,
+        request: dingtalkdevicemng__1__0_models.DeviceDingRequest,
+    ) -> dingtalkdevicemng__1__0_models.DeviceDingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.DeviceDingHeaders()
+        return self.device_ding_with_options(request, headers, runtime)
+
+    async def device_ding_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.DeviceDingRequest,
+    ) -> dingtalkdevicemng__1__0_models.DeviceDingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.DeviceDingHeaders()
+        return await self.device_ding_with_options_async(request, headers, runtime)
+
+    def device_ding_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.DeviceDingRequest,
+        headers: dingtalkdevicemng__1__0_models.DeviceDingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.DeviceDingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.params_json):
+            body['paramsJson'] = request.params_json
+        if not UtilClient.is_unset(request.device_key):
+            body['deviceKey'] = request.device_key
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.DeviceDingResponse(),
+            self.do_roarequest('DeviceDing', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/ding', 'json', req, runtime)
+        )
+
+    async def device_ding_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.DeviceDingRequest,
+        headers: dingtalkdevicemng__1__0_models.DeviceDingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.DeviceDingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.params_json):
+            body['paramsJson'] = request.params_json
+        if not UtilClient.is_unset(request.device_key):
+            body['deviceKey'] = request.device_key
+        if not UtilClient.is_unset(request.receiver_user_id_list):
+            body['receiverUserIdList'] = request.receiver_user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.DeviceDingResponse(),
+            await self.do_roarequest_async('DeviceDing', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/ding', 'json', req, runtime)
+        )
+
     def create_department(
         self,
         request: dingtalkdevicemng__1__0_models.CreateDepartmentRequest,

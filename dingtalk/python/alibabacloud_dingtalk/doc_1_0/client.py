@@ -479,31 +479,30 @@ class Client(OpenApiClient):
 
     def search_workspace_docs(
         self,
-        workspace_id: str,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders()
-        return self.search_workspace_docs_with_options(workspace_id, request, headers, runtime)
+        return self.search_workspace_docs_with_options(request, headers, runtime)
 
     async def search_workspace_docs_async(
         self,
-        workspace_id: str,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders()
-        return await self.search_workspace_docs_with_options_async(workspace_id, request, headers, runtime)
+        return await self.search_workspace_docs_with_options_async(request, headers, runtime)
 
     def search_workspace_docs_with_options(
         self,
-        workspace_id: str,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,
         headers: dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.workspace_id):
+            query['workspaceId'] = request.workspace_id
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.keyword):
@@ -523,18 +522,19 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse(),
-            self.do_roarequest('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs', 'json', req, runtime)
+            self.do_roarequest('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/docs', 'json', req, runtime)
         )
 
     async def search_workspace_docs_with_options_async(
         self,
-        workspace_id: str,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,
         headers: dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.workspace_id):
+            query['workspaceId'] = request.workspace_id
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.keyword):
@@ -554,7 +554,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse(),
-            await self.do_roarequest_async('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs', 'json', req, runtime)
+            await self.do_roarequest_async('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/docs', 'json', req, runtime)
         )
 
     def batch_get_workspaces(

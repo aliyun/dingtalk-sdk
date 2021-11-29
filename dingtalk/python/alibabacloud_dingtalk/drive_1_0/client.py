@@ -1599,6 +1599,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddFile', 'drive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/drive/spaces/{space_id}/files', 'json', req, runtime)
         )
 
+    def get_preview_info(
+        self,
+        space_id: str,
+        file_id: str,
+        request: dingtalkdrive__1__0_models.GetPreviewInfoRequest,
+    ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdrive__1__0_models.GetPreviewInfoHeaders()
+        return self.get_preview_info_with_options(space_id, file_id, request, headers, runtime)
+
+    async def get_preview_info_async(
+        self,
+        space_id: str,
+        file_id: str,
+        request: dingtalkdrive__1__0_models.GetPreviewInfoRequest,
+    ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdrive__1__0_models.GetPreviewInfoHeaders()
+        return await self.get_preview_info_with_options_async(space_id, file_id, request, headers, runtime)
+
+    def get_preview_info_with_options(
+        self,
+        space_id: str,
+        file_id: str,
+        request: dingtalkdrive__1__0_models.GetPreviewInfoRequest,
+        headers: dingtalkdrive__1__0_models.GetPreviewInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdrive__1__0_models.GetPreviewInfoResponse(),
+            self.do_roarequest('GetPreviewInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/spaces/{space_id}/files/{file_id}/previewInfos', 'json', req, runtime)
+        )
+
+    async def get_preview_info_with_options_async(
+        self,
+        space_id: str,
+        file_id: str,
+        request: dingtalkdrive__1__0_models.GetPreviewInfoRequest,
+        headers: dingtalkdrive__1__0_models.GetPreviewInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdrive__1__0_models.GetPreviewInfoResponse(),
+            await self.do_roarequest_async('GetPreviewInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/drive/spaces/{space_id}/files/{file_id}/previewInfos', 'json', req, runtime)
+        )
+
     def info_space(
         self,
         space_id: str,

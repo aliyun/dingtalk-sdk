@@ -1064,11 +1064,14 @@ class SearchWorkspaceDocsHeaders(TeaModel):
 class SearchWorkspaceDocsRequest(TeaModel):
     def __init__(
         self,
+        workspace_id: str = None,
         operator_id: str = None,
         keyword: str = None,
         max_results: int = None,
         next_token: str = None,
     ):
+        # 团队空间Id
+        self.workspace_id = workspace_id
         # 发起操作用户unionId
         self.operator_id = operator_id
         # 搜索关键字
@@ -1087,6 +1090,8 @@ class SearchWorkspaceDocsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         if self.keyword is not None:
@@ -1099,6 +1104,8 @@ class SearchWorkspaceDocsRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         if m.get('keyword') is not None:
@@ -1466,6 +1473,7 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspace(TeaModel):
         url: str = None,
         recent_list: List[BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList] = None,
         org_published: bool = None,
+        create_time: int = None,
     ):
         # 团队空间Id
         self.workspace_id = workspace_id
@@ -1477,6 +1485,8 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspace(TeaModel):
         self.recent_list = recent_list
         # 是否全员公开
         self.org_published = org_published
+        # 团队空间创建时间
+        self.create_time = create_time
 
     def validate(self):
         if self.recent_list:
@@ -1502,6 +1512,8 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspace(TeaModel):
                 result['recentList'].append(k.to_map() if k else None)
         if self.org_published is not None:
             result['orgPublished'] = self.org_published
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         return result
 
     def from_map(self, m: dict = None):
@@ -1519,6 +1531,8 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspace(TeaModel):
                 self.recent_list.append(temp_model.from_map(k))
         if m.get('orgPublished') is not None:
             self.org_published = m.get('orgPublished')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         return self
 
 
@@ -2179,6 +2193,7 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         owner: str = None,
         name: str = None,
         recent_list: List[GetRelatedWorkspacesResponseBodyWorkspacesRecentList] = None,
+        create_time: int = None,
     ):
         # 团队空间Id
         self.workspace_id = workspace_id
@@ -2191,6 +2206,8 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         self.name = name
         # 团队空间最近访问文档列表
         self.recent_list = recent_list
+        # 团队空间创建时间
+        self.create_time = create_time
 
     def validate(self):
         if self.recent_list:
@@ -2218,6 +2235,8 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         if self.recent_list is not None:
             for k in self.recent_list:
                 result['recentList'].append(k.to_map() if k else None)
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         return result
 
     def from_map(self, m: dict = None):
@@ -2237,6 +2256,8 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
             for k in m.get('recentList'):
                 temp_model = GetRelatedWorkspacesResponseBodyWorkspacesRecentList()
                 self.recent_list.append(temp_model.from_map(k))
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         return self
 
 

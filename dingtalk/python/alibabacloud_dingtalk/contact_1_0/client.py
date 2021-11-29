@@ -23,6 +23,64 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def update_branch_visible_setting_in_cooperate(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateHeaders()
+        return self.update_branch_visible_setting_in_cooperate_with_options(request, headers, runtime)
+
+    async def update_branch_visible_setting_in_cooperate_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateHeaders()
+        return await self.update_branch_visible_setting_in_cooperate_with_options_async(request, headers, runtime)
+
+    def update_branch_visible_setting_in_cooperate_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateRequest,
+        headers: dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateResponse(),
+            self.do_roarequest('UpdateBranchVisibleSettingInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/cooperateCorps/branchVisibleSettings', 'none', req, runtime)
+        )
+
+    async def update_branch_visible_setting_in_cooperate_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateRequest,
+        headers: dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateBranchVisibleSettingInCooperateResponse(),
+            await self.do_roarequest_async('UpdateBranchVisibleSettingInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/cooperateCorps/branchVisibleSettings', 'none', req, runtime)
+        )
+
     def sort_user(
         self,
         request: dingtalkcontact__1__0_models.SortUserRequest,
@@ -1673,6 +1731,64 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.QueryResourceManagementMembersResponse(),
             await self.do_roarequest_async('QueryResourceManagementMembers', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/resources/{resource_id}/managementMembers', 'json', req, runtime)
+        )
+
+    def update_branch_attributes_in_cooperate(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateHeaders()
+        return self.update_branch_attributes_in_cooperate_with_options(request, headers, runtime)
+
+    async def update_branch_attributes_in_cooperate_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateHeaders()
+        return await self.update_branch_attributes_in_cooperate_with_options_async(request, headers, runtime)
+
+    def update_branch_attributes_in_cooperate_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateRequest,
+        headers: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateResponse(),
+            self.do_roarequest('UpdateBranchAttributesInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/cooperateCorps/branchAttributes', 'none', req, runtime)
+        )
+
+    async def update_branch_attributes_in_cooperate_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateRequest,
+        headers: dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateBranchAttributesInCooperateResponse(),
+            await self.do_roarequest_async('UpdateBranchAttributesInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/cooperateCorps/branchAttributes', 'none', req, runtime)
         )
 
     def translate_file(

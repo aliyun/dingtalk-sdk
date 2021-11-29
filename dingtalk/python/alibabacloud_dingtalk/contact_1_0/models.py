@@ -4,6 +4,157 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class UpdateBranchVisibleSettingInCooperateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateBranchVisibleSettingInCooperateRequestBody(TeaModel):
+    def __init__(
+        self,
+        branch_corp_id: str = None,
+        type: int = None,
+        open: bool = None,
+        visible_branch_corp_ids: List[str] = None,
+        visible_dept_ids: List[int] = None,
+    ):
+        # 分支的企业ID
+        self.branch_corp_id = branch_corp_id
+        # 设置可见性类型 0 ：在主干通讯录隐藏分支(其它分支包含主组织都看不到,额外设置可以看到) 1 ： 仅可见分支所在部门(只能看到自己企业加入的成员，额外设置可以看到其它成员)
+        self.type = type
+        # 是否开启 true：开启，false：关闭
+        self.open = open
+        # 设置例外的加入合作空间/关联组织的分支企业CorpId列表
+        self.visible_branch_corp_ids = visible_branch_corp_ids
+        # 设置例外的部门ID列表
+        self.visible_dept_ids = visible_dept_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.branch_corp_id is not None:
+            result['branchCorpId'] = self.branch_corp_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.open is not None:
+            result['open'] = self.open
+        if self.visible_branch_corp_ids is not None:
+            result['visibleBranchCorpIds'] = self.visible_branch_corp_ids
+        if self.visible_dept_ids is not None:
+            result['visibleDeptIds'] = self.visible_dept_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('branchCorpId') is not None:
+            self.branch_corp_id = m.get('branchCorpId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('open') is not None:
+            self.open = m.get('open')
+        if m.get('visibleBranchCorpIds') is not None:
+            self.visible_branch_corp_ids = m.get('visibleBranchCorpIds')
+        if m.get('visibleDeptIds') is not None:
+            self.visible_dept_ids = m.get('visibleDeptIds')
+        return self
+
+
+class UpdateBranchVisibleSettingInCooperateRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[UpdateBranchVisibleSettingInCooperateRequestBody] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = UpdateBranchVisibleSettingInCooperateRequestBody()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateBranchVisibleSettingInCooperateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class SortUserHeaders(TeaModel):
     def __init__(
         self,
@@ -3652,6 +3803,143 @@ class QueryResourceManagementMembersResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = QueryResourceManagementMembersResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateBranchAttributesInCooperateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateBranchAttributesInCooperateRequestBody(TeaModel):
+    def __init__(
+        self,
+        branch_corp_id: str = None,
+        union_root_name: str = None,
+        link_dept_id: int = None,
+    ):
+        # 分支的企业ID
+        self.branch_corp_id = branch_corp_id
+        # （分支/合作伙伴）在（集团/合作空间）的别名
+        self.union_root_name = union_root_name
+        # 挂载节点部门ID
+        self.link_dept_id = link_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.branch_corp_id is not None:
+            result['branchCorpId'] = self.branch_corp_id
+        if self.union_root_name is not None:
+            result['unionRootName'] = self.union_root_name
+        if self.link_dept_id is not None:
+            result['linkDeptId'] = self.link_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('branchCorpId') is not None:
+            self.branch_corp_id = m.get('branchCorpId')
+        if m.get('unionRootName') is not None:
+            self.union_root_name = m.get('unionRootName')
+        if m.get('linkDeptId') is not None:
+            self.link_dept_id = m.get('linkDeptId')
+        return self
+
+
+class UpdateBranchAttributesInCooperateRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[UpdateBranchAttributesInCooperateRequestBody] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = UpdateBranchAttributesInCooperateRequestBody()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateBranchAttributesInCooperateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
         return self
 
 
