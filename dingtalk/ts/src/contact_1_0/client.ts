@@ -7,6 +7,66 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class UpdateBranchVisibleSettingInCooperateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateBranchVisibleSettingInCooperateRequest extends $tea.Model {
+  body?: UpdateBranchVisibleSettingInCooperateRequestBody[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': UpdateBranchVisibleSettingInCooperateRequestBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateBranchVisibleSettingInCooperateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SortUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1931,6 +1991,66 @@ export class QueryResourceManagementMembersResponse extends $tea.Model {
   }
 }
 
+export class UpdateBranchAttributesInCooperateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateBranchAttributesInCooperateRequest extends $tea.Model {
+  body?: UpdateBranchAttributesInCooperateRequestBody[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': UpdateBranchAttributesInCooperateRequestBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateBranchAttributesInCooperateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TranslateFileHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2929,6 +3049,37 @@ export class GetLatestDingIndexResponse extends $tea.Model {
   }
 }
 
+export class UpdateBranchVisibleSettingInCooperateRequestBody extends $tea.Model {
+  branchCorpId?: string;
+  type?: number;
+  open?: boolean;
+  visibleBranchCorpIds?: string[];
+  visibleDeptIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      branchCorpId: 'branchCorpId',
+      type: 'type',
+      open: 'open',
+      visibleBranchCorpIds: 'visibleBranchCorpIds',
+      visibleDeptIds: 'visibleDeptIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      branchCorpId: 'string',
+      type: 'number',
+      open: 'boolean',
+      visibleBranchCorpIds: { 'type': 'array', 'itemType': 'string' },
+      visibleDeptIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListContactHideSettingsResponseBodyList extends $tea.Model {
   name?: string;
   description?: string;
@@ -3221,6 +3372,31 @@ export class QueryResourceManagementMembersResponseBodyMembers extends $tea.Mode
   }
 }
 
+export class UpdateBranchAttributesInCooperateRequestBody extends $tea.Model {
+  branchCorpId?: string;
+  unionRootName?: string;
+  linkDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      branchCorpId: 'branchCorpId',
+      unionRootName: 'unionRootName',
+      linkDeptId: 'linkDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      branchCorpId: 'string',
+      unionRootName: 'string',
+      linkDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateManagementGroupRequestMembers extends $tea.Model {
   memberType?: string;
   memberId?: string;
@@ -3277,6 +3453,30 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async updateBranchVisibleSettingInCooperate(request: UpdateBranchVisibleSettingInCooperateRequest): Promise<UpdateBranchVisibleSettingInCooperateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateBranchVisibleSettingInCooperateHeaders({ });
+    return await this.updateBranchVisibleSettingInCooperateWithOptions(request, headers, runtime);
+  }
+
+  async updateBranchVisibleSettingInCooperateWithOptions(request: UpdateBranchVisibleSettingInCooperateRequest, headers: UpdateBranchVisibleSettingInCooperateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBranchVisibleSettingInCooperateResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: Util.toArray(request.body),
+    });
+    return $tea.cast<UpdateBranchVisibleSettingInCooperateResponse>(await this.doROARequest("UpdateBranchVisibleSettingInCooperate", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/cooperateCorps/branchVisibleSettings`, "none", req, runtime), new UpdateBranchVisibleSettingInCooperateResponse({}));
+  }
 
   async sortUser(request: SortUserRequest): Promise<SortUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4096,6 +4296,30 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryResourceManagementMembersResponse>(await this.doROARequest("QueryResourceManagementMembers", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/resources/${resourceId}/managementMembers`, "json", req, runtime), new QueryResourceManagementMembersResponse({}));
+  }
+
+  async updateBranchAttributesInCooperate(request: UpdateBranchAttributesInCooperateRequest): Promise<UpdateBranchAttributesInCooperateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateBranchAttributesInCooperateHeaders({ });
+    return await this.updateBranchAttributesInCooperateWithOptions(request, headers, runtime);
+  }
+
+  async updateBranchAttributesInCooperateWithOptions(request: UpdateBranchAttributesInCooperateRequest, headers: UpdateBranchAttributesInCooperateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBranchAttributesInCooperateResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: Util.toArray(request.body),
+    });
+    return $tea.cast<UpdateBranchAttributesInCooperateResponse>(await this.doROARequest("UpdateBranchAttributesInCooperate", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/cooperateCorps/branchAttributes`, "none", req, runtime), new UpdateBranchAttributesInCooperateResponse({}));
   }
 
   async translateFile(request: TranslateFileRequest): Promise<TranslateFileResponse> {

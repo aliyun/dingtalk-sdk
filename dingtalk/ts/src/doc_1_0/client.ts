@@ -528,12 +528,14 @@ export class SearchWorkspaceDocsHeaders extends $tea.Model {
 }
 
 export class SearchWorkspaceDocsRequest extends $tea.Model {
+  workspaceId?: string;
   operatorId?: string;
   keyword?: string;
   maxResults?: number;
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
+      workspaceId: 'workspaceId',
       operatorId: 'operatorId',
       keyword: 'keyword',
       maxResults: 'maxResults',
@@ -543,6 +545,7 @@ export class SearchWorkspaceDocsRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      workspaceId: 'string',
       operatorId: 'string',
       keyword: 'string',
       maxResults: 'number',
@@ -1465,6 +1468,7 @@ export class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends $tea.Mode
   url?: string;
   recentList?: BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList[];
   orgPublished?: boolean;
+  createTime?: number;
   static names(): { [key: string]: string } {
     return {
       workspaceId: 'workspaceId',
@@ -1472,6 +1476,7 @@ export class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends $tea.Mode
       url: 'url',
       recentList: 'recentList',
       orgPublished: 'orgPublished',
+      createTime: 'createTime',
     };
   }
 
@@ -1482,6 +1487,7 @@ export class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends $tea.Mode
       url: 'string',
       recentList: { 'type': 'array', 'itemType': BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList },
       orgPublished: 'boolean',
+      createTime: 'number',
     };
   }
 
@@ -1616,6 +1622,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
   owner?: string;
   name?: string;
   recentList?: GetRelatedWorkspacesResponseBodyWorkspacesRecentList[];
+  createTime?: number;
   static names(): { [key: string]: string } {
     return {
       workspaceId: 'workspaceId',
@@ -1624,6 +1631,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
       owner: 'owner',
       name: 'name',
       recentList: 'recentList',
+      createTime: 'createTime',
     };
   }
 
@@ -1635,6 +1643,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
       owner: 'string',
       name: 'string',
       recentList: { 'type': 'array', 'itemType': GetRelatedWorkspacesResponseBodyWorkspacesRecentList },
+      createTime: 'number',
     };
   }
 
@@ -2027,15 +2036,19 @@ export default class Client extends OpenApi {
     return $tea.cast<GetWorkspaceResponse>(await this.doROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}`, "json", req, runtime), new GetWorkspaceResponse({}));
   }
 
-  async searchWorkspaceDocs(workspaceId: string, request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
+  async searchWorkspaceDocs(request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchWorkspaceDocsHeaders({ });
-    return await this.searchWorkspaceDocsWithOptions(workspaceId, request, headers, runtime);
+    return await this.searchWorkspaceDocsWithOptions(request, headers, runtime);
   }
 
-  async searchWorkspaceDocsWithOptions(workspaceId: string, request: SearchWorkspaceDocsRequest, headers: SearchWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspaceDocsResponse> {
+  async searchWorkspaceDocsWithOptions(request: SearchWorkspaceDocsRequest, headers: SearchWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspaceDocsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.workspaceId)) {
+      query["workspaceId"] = request.workspaceId;
+    }
+
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
     }
@@ -2065,7 +2078,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchWorkspaceDocsResponse>(await this.doROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs`, "json", req, runtime), new SearchWorkspaceDocsResponse({}));
+    return $tea.cast<SearchWorkspaceDocsResponse>(await this.doROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/docs`, "json", req, runtime), new SearchWorkspaceDocsResponse({}));
   }
 
   async batchGetWorkspaces(request: BatchGetWorkspacesRequest): Promise<BatchGetWorkspacesResponse> {
