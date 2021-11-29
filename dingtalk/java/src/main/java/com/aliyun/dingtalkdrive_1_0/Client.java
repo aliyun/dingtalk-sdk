@@ -786,6 +786,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime), new AddFileResponse());
     }
 
+    public GetPreviewInfoResponse getPreviewInfo(String spaceId, String fileId, GetPreviewInfoRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetPreviewInfoHeaders headers = new GetPreviewInfoHeaders();
+        return this.getPreviewInfoWithOptions(spaceId, fileId, request, headers, runtime);
+    }
+
+    public GetPreviewInfoResponse getPreviewInfoWithOptions(String spaceId, String fileId, GetPreviewInfoRequest request, GetPreviewInfoHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetPreviewInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/previewInfos", "json", req, runtime), new GetPreviewInfoResponse());
+    }
+
     public InfoSpaceResponse infoSpace(String spaceId, InfoSpaceRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         InfoSpaceHeaders headers = new InfoSpaceHeaders();

@@ -248,15 +248,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "", "json", req, runtime), new GetWorkspaceResponse());
     }
 
-    public SearchWorkspaceDocsResponse searchWorkspaceDocs(String workspaceId, SearchWorkspaceDocsRequest request) throws Exception {
+    public SearchWorkspaceDocsResponse searchWorkspaceDocs(SearchWorkspaceDocsRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
-        return this.searchWorkspaceDocsWithOptions(workspaceId, request, headers, runtime);
+        return this.searchWorkspaceDocsWithOptions(request, headers, runtime);
     }
 
-    public SearchWorkspaceDocsResponse searchWorkspaceDocsWithOptions(String workspaceId, SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, RuntimeOptions runtime) throws Exception {
+    public SearchWorkspaceDocsResponse searchWorkspaceDocsWithOptions(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.workspaceId)) {
+            query.put("workspaceId", request.workspaceId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
         }
@@ -286,7 +290,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs", "json", req, runtime), new SearchWorkspaceDocsResponse());
+        return TeaModel.toModel(this.doROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/docs", "json", req, runtime), new SearchWorkspaceDocsResponse());
     }
 
     public BatchGetWorkspacesResponse batchGetWorkspaces(BatchGetWorkspacesRequest request) throws Exception {

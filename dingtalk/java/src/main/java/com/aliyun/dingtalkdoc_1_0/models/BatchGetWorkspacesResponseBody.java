@@ -86,6 +86,10 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
         @NameInMap("orgPublished")
         public Boolean orgPublished;
 
+        // 团队空间创建时间
+        @NameInMap("createTime")
+        public Long createTime;
+
         public static BatchGetWorkspacesResponseBodyWorkspacesWorkspace build(java.util.Map<String, ?> map) throws Exception {
             BatchGetWorkspacesResponseBodyWorkspacesWorkspace self = new BatchGetWorkspacesResponseBodyWorkspacesWorkspace();
             return TeaModel.build(map, self);
@@ -129,6 +133,14 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
         }
         public Boolean getOrgPublished() {
             return this.orgPublished;
+        }
+
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspace setCreateTime(Long createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
     }

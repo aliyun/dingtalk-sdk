@@ -89,6 +89,10 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("recentList")
         public java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> recentList;
 
+        // 团队空间创建时间
+        @NameInMap("createTime")
+        public Long createTime;
+
         public static GetRelatedWorkspacesResponseBodyWorkspaces build(java.util.Map<String, ?> map) throws Exception {
             GetRelatedWorkspacesResponseBodyWorkspaces self = new GetRelatedWorkspacesResponseBodyWorkspaces();
             return TeaModel.build(map, self);
@@ -140,6 +144,14 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         }
         public java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> getRecentList() {
             return this.recentList;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspaces setCreateTime(Long createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public Long getCreateTime() {
+            return this.createTime;
         }
 
     }

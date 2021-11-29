@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliyun</groupId>
   <artifactId>dingtalk</artifactId>
-  <version>1.2.3</version>
+  <version>1.2.4</version>
   <packaging>jar</packaging>
   <name>dingtalk</name>
   <description>Alibaba Cloud dingtalk SDK for Java
@@ -41,7 +41,7 @@
     <dependency>
       <groupId>com.aliyun</groupId>
       <artifactId>tea-openapi</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.6</version>
     </dependency>
     <dependency>
       <groupId>com.aliyun</groupId>

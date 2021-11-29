@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchWorkspaceDocsRequest extends TeaModel {
+    // 团队空间Id
+    @NameInMap("workspaceId")
+    public String workspaceId;
+
     // 发起操作用户unionId
     @NameInMap("operatorId")
     public String operatorId;
@@ -23,6 +27,14 @@ public class SearchWorkspaceDocsRequest extends TeaModel {
     public static SearchWorkspaceDocsRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchWorkspaceDocsRequest self = new SearchWorkspaceDocsRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SearchWorkspaceDocsRequest setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     public SearchWorkspaceDocsRequest setOperatorId(String operatorId) {

@@ -21,6 +21,30 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public UpdateBranchVisibleSettingInCooperateResponse updateBranchVisibleSettingInCooperate(UpdateBranchVisibleSettingInCooperateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateBranchVisibleSettingInCooperateHeaders headers = new UpdateBranchVisibleSettingInCooperateHeaders();
+        return this.updateBranchVisibleSettingInCooperateWithOptions(request, headers, runtime);
+    }
+
+    public UpdateBranchVisibleSettingInCooperateResponse updateBranchVisibleSettingInCooperateWithOptions(UpdateBranchVisibleSettingInCooperateRequest request, UpdateBranchVisibleSettingInCooperateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateBranchVisibleSettingInCooperate", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/cooperateCorps/branchVisibleSettings", "none", req, runtime), new UpdateBranchVisibleSettingInCooperateResponse());
+    }
+
     public SortUserResponse sortUser(SortUserRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SortUserHeaders headers = new SortUserHeaders();
@@ -839,6 +863,30 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("QueryResourceManagementMembers", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/resources/" + resourceId + "/managementMembers", "json", req, runtime), new QueryResourceManagementMembersResponse());
+    }
+
+    public UpdateBranchAttributesInCooperateResponse updateBranchAttributesInCooperate(UpdateBranchAttributesInCooperateRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        UpdateBranchAttributesInCooperateHeaders headers = new UpdateBranchAttributesInCooperateHeaders();
+        return this.updateBranchAttributesInCooperateWithOptions(request, headers, runtime);
+    }
+
+    public UpdateBranchAttributesInCooperateResponse updateBranchAttributesInCooperateWithOptions(UpdateBranchAttributesInCooperateRequest request, UpdateBranchAttributesInCooperateHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateBranchAttributesInCooperate", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/cooperateCorps/branchAttributes", "none", req, runtime), new UpdateBranchAttributesInCooperateResponse());
     }
 
     public TranslateFileResponse translateFile(TranslateFileRequest request) throws Exception {
