@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetDownloadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetFileInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPreviewInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPreviewInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPreviewInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPrivilegeInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPrivilegeInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdrive_1_0\Models\GetPrivilegeInfoResponse;
@@ -1149,6 +1152,52 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddFileResponse::fromMap($this->doROARequest('AddFile', 'drive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                $spaceId
+     * @param string                $fileId
+     * @param GetPreviewInfoRequest $request
+     *
+     * @return GetPreviewInfoResponse
+     */
+    public function getPreviewInfo($spaceId, $fileId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPreviewInfoHeaders([]);
+
+        return $this->getPreviewInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $spaceId
+     * @param string                $fileId
+     * @param GetPreviewInfoRequest $request
+     * @param GetPreviewInfoHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetPreviewInfoResponse
+     */
+    public function getPreviewInfoWithOptions($spaceId, $fileId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetPreviewInfoResponse::fromMap($this->doROARequest('GetPreviewInfo', 'drive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/previewInfos', 'json', $req, $runtime));
     }
 
     /**

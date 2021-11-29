@@ -48,6 +48,13 @@ class workspaces extends Model
      * @var recentList[]
      */
     public $recentList;
+
+    /**
+     * @description 团队空间创建时间
+     *
+     * @var int
+     */
+    public $createTime;
     protected $_name = [
         'workspaceId' => 'workspaceId',
         'url'         => 'url',
@@ -55,6 +62,7 @@ class workspaces extends Model
         'owner'       => 'owner',
         'name'        => 'name',
         'recentList'  => 'recentList',
+        'createTime'  => 'createTime',
     ];
 
     public function validate()
@@ -87,6 +95,9 @@ class workspaces extends Model
                     $res['recentList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
 
         return $res;
@@ -123,6 +134,9 @@ class workspaces extends Model
                     $model->recentList[$n++] = null !== $item ? recentList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
 
         return $model;

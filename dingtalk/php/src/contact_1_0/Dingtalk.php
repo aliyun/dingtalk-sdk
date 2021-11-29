@@ -90,6 +90,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRes
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooperateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooperateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooperateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchVisibleSettingInCooperateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchVisibleSettingInCooperateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchVisibleSettingInCooperateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingResponse;
@@ -122,6 +128,44 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param UpdateBranchVisibleSettingInCooperateRequest $request
+     *
+     * @return UpdateBranchVisibleSettingInCooperateResponse
+     */
+    public function updateBranchVisibleSettingInCooperate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateBranchVisibleSettingInCooperateHeaders([]);
+
+        return $this->updateBranchVisibleSettingInCooperateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateBranchVisibleSettingInCooperateRequest $request
+     * @param UpdateBranchVisibleSettingInCooperateHeaders $headers
+     * @param RuntimeOptions                               $runtime
+     *
+     * @return UpdateBranchVisibleSettingInCooperateResponse
+     */
+    public function updateBranchVisibleSettingInCooperateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => Utils::toArray($request->body),
+        ]);
+
+        return UpdateBranchVisibleSettingInCooperateResponse::fromMap($this->doROARequest('UpdateBranchVisibleSettingInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/cooperateCorps/branchVisibleSettings', 'none', $req, $runtime));
     }
 
     /**
@@ -1223,6 +1267,44 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryResourceManagementMembersResponse::fromMap($this->doROARequest('QueryResourceManagementMembers', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/resources/' . $resourceId . '/managementMembers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateBranchAttributesInCooperateRequest $request
+     *
+     * @return UpdateBranchAttributesInCooperateResponse
+     */
+    public function updateBranchAttributesInCooperate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateBranchAttributesInCooperateHeaders([]);
+
+        return $this->updateBranchAttributesInCooperateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateBranchAttributesInCooperateRequest $request
+     * @param UpdateBranchAttributesInCooperateHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return UpdateBranchAttributesInCooperateResponse
+     */
+    public function updateBranchAttributesInCooperateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => Utils::toArray($request->body),
+        ]);
+
+        return UpdateBranchAttributesInCooperateResponse::fromMap($this->doROARequest('UpdateBranchAttributesInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/cooperateCorps/branchAttributes', 'none', $req, $runtime));
     }
 
     /**

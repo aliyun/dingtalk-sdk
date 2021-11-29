@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SearchWorkspaceDocsRequest extends Model
 {
     /**
+     * @description 团队空间Id
+     *
+     * @var string
+     */
+    public $workspaceId;
+
+    /**
      * @description 发起操作用户unionId
      *
      * @var string
@@ -36,10 +43,11 @@ class SearchWorkspaceDocsRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'operatorId' => 'operatorId',
-        'keyword'    => 'keyword',
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'workspaceId' => 'workspaceId',
+        'operatorId'  => 'operatorId',
+        'keyword'     => 'keyword',
+        'maxResults'  => 'maxResults',
+        'nextToken'   => 'nextToken',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class SearchWorkspaceDocsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->workspaceId) {
+            $res['workspaceId'] = $this->workspaceId;
+        }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
         }
@@ -73,6 +84,9 @@ class SearchWorkspaceDocsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['workspaceId'])) {
+            $model->workspaceId = $map['workspaceId'];
+        }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
         }

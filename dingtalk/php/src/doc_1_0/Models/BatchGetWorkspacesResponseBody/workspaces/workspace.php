@@ -43,12 +43,20 @@ class workspace extends Model
      * @var bool
      */
     public $orgPublished;
+
+    /**
+     * @description 团队空间创建时间
+     *
+     * @var int
+     */
+    public $createTime;
     protected $_name = [
         'workspaceId'  => 'workspaceId',
         'name'         => 'name',
         'url'          => 'url',
         'recentList'   => 'recentList',
         'orgPublished' => 'orgPublished',
+        'createTime'   => 'createTime',
     ];
 
     public function validate()
@@ -78,6 +86,9 @@ class workspace extends Model
         }
         if (null !== $this->orgPublished) {
             $res['orgPublished'] = $this->orgPublished;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
 
         return $res;
@@ -111,6 +122,9 @@ class workspace extends Model
         }
         if (isset($map['orgPublished'])) {
             $model->orgPublished = $map['orgPublished'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
 
         return $model;

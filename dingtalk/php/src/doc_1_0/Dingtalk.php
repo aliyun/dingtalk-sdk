@@ -367,31 +367,32 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $workspaceId
      * @param SearchWorkspaceDocsRequest $request
      *
      * @return SearchWorkspaceDocsResponse
      */
-    public function searchWorkspaceDocs($workspaceId, $request)
+    public function searchWorkspaceDocs($request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new SearchWorkspaceDocsHeaders([]);
 
-        return $this->searchWorkspaceDocsWithOptions($workspaceId, $request, $headers, $runtime);
+        return $this->searchWorkspaceDocsWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                     $workspaceId
      * @param SearchWorkspaceDocsRequest $request
      * @param SearchWorkspaceDocsHeaders $headers
      * @param RuntimeOptions             $runtime
      *
      * @return SearchWorkspaceDocsResponse
      */
-    public function searchWorkspaceDocsWithOptions($workspaceId, $request, $headers, $runtime)
+    public function searchWorkspaceDocsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->workspaceId)) {
+            @$query['workspaceId'] = $request->workspaceId;
+        }
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
@@ -416,7 +417,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return SearchWorkspaceDocsResponse::fromMap($this->doROARequest('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/docs', 'json', $req, $runtime));
+        return SearchWorkspaceDocsResponse::fromMap($this->doROARequest('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/docs', 'json', $req, $runtime));
     }
 
     /**
