@@ -6,22 +6,22 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class GetAccessTokenRequest : TeaModel {
+    public class GetReceiptRequest : TeaModel {
         /// <summary>
-        /// 应用id
+        /// 单据号
         /// </summary>
-        [NameInMap("appKey")]
+        [NameInMap("code")]
         [Validation(Required=false)]
-        public string AppKey { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
-        /// 应用密码
+        /// 模型id
         /// </summary>
-        [NameInMap("appSecret")]
+        [NameInMap("modelId")]
         [Validation(Required=false)]
-        public string AppSecret { get; set; }
+        public string ModelId { get; set; }
 
     }
 

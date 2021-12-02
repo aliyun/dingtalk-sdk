@@ -8,20 +8,20 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
-    public class GetAccessTokenRequest : TeaModel {
+    public class GetSsoAccessTokenRequest : TeaModel {
         /// <summary>
-        /// 应用id
+        /// 企业id
         /// </summary>
-        [NameInMap("appKey")]
+        [NameInMap("corpid")]
         [Validation(Required=false)]
-        public string AppKey { get; set; }
+        public string Corpid { get; set; }
 
         /// <summary>
-        /// 应用密码
+        /// sso密码
         /// </summary>
-        [NameInMap("appSecret")]
+        [NameInMap("ssoSecret")]
         [Validation(Required=false)]
-        public string AppSecret { get; set; }
+        public string SsoSecret { get; set; }
 
     }
 

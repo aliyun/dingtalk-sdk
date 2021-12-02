@@ -8,20 +8,20 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
-    public class GetAccessTokenRequest : TeaModel {
+    public class CreateJsapiTicketResponseBody : TeaModel {
         /// <summary>
-        /// 应用id
+        /// 超时时间
         /// </summary>
-        [NameInMap("appKey")]
+        [NameInMap("expireIn")]
         [Validation(Required=false)]
-        public string AppKey { get; set; }
+        public long? ExpireIn { get; set; }
 
         /// <summary>
-        /// 应用密码
+        /// jsapi ticket
         /// </summary>
-        [NameInMap("appSecret")]
+        [NameInMap("jsapiTicket")]
         [Validation(Required=false)]
-        public string AppSecret { get; set; }
+        public string JsapiTicket { get; set; }
 
     }
 
