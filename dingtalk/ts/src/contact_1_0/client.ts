@@ -2486,6 +2486,106 @@ export class CreateCooperateOrgResponse extends $tea.Model {
   }
 }
 
+export class ListEmpLeaveRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEmpLeaveRecordsRequest extends $tea.Model {
+  startTime?: string;
+  endTime?: string;
+  nextToken?: string;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      startTime: 'startTime',
+      endTime: 'endTime',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      startTime: 'string',
+      endTime: 'string',
+      nextToken: 'string',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEmpLeaveRecordsResponseBody extends $tea.Model {
+  errorMsg?: string;
+  dingOpenErrcode?: number;
+  success?: boolean;
+  result?: ListEmpLeaveRecordsResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      errorMsg: 'errorMsg',
+      dingOpenErrcode: 'dingOpenErrcode',
+      success: 'success',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorMsg: 'string',
+      dingOpenErrcode: 'number',
+      success: 'boolean',
+      result: ListEmpLeaveRecordsResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEmpLeaveRecordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListEmpLeaveRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListEmpLeaveRecordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMigrationDingIdByDingIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3389,6 +3489,62 @@ export class UpdateBranchAttributesInCooperateRequestBody extends $tea.Model {
       branchCorpId: 'string',
       unionRootName: 'string',
       linkDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEmpLeaveRecordsResponseBodyResultRecords extends $tea.Model {
+  userId?: string;
+  name?: string;
+  stateCode?: string;
+  mobile?: string;
+  leaveTime?: string;
+  leaveReason?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      name: 'name',
+      stateCode: 'stateCode',
+      mobile: 'mobile',
+      leaveTime: 'leaveTime',
+      leaveReason: 'leaveReason',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      name: 'string',
+      stateCode: 'string',
+      mobile: 'string',
+      leaveTime: 'string',
+      leaveReason: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEmpLeaveRecordsResponseBodyResult extends $tea.Model {
+  nextToken?: string;
+  records?: ListEmpLeaveRecordsResponseBodyResultRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      records: 'records',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      records: { 'type': 'array', 'itemType': ListEmpLeaveRecordsResponseBodyResultRecords },
     };
   }
 
@@ -4533,6 +4689,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateCooperateOrgResponse>(await this.doROARequest("CreateCooperateOrg", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cooperateCorps`, "json", req, runtime), new CreateCooperateOrgResponse({}));
+  }
+
+  async listEmpLeaveRecords(request: ListEmpLeaveRecordsRequest): Promise<ListEmpLeaveRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListEmpLeaveRecordsHeaders({ });
+    return await this.listEmpLeaveRecordsWithOptions(request, headers, runtime);
+  }
+
+  async listEmpLeaveRecordsWithOptions(request: ListEmpLeaveRecordsRequest, headers: ListEmpLeaveRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<ListEmpLeaveRecordsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ListEmpLeaveRecordsResponse>(await this.doROARequest("ListEmpLeaveRecords", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/empLeaveRecords`, "json", req, runtime), new ListEmpLeaveRecordsResponse({}));
   }
 
   async getMigrationDingIdByDingId(request: GetMigrationDingIdByDingIdRequest): Promise<GetMigrationDingIdByDingIdResponse> {

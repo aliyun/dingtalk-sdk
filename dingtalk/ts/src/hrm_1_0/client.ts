@@ -920,14 +920,12 @@ export class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends $tea
   fieldDataVO?: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO;
   fieldName?: string;
   fieldType?: string;
-  attrs?: { [key: string]: {[key: string]: any} };
   static names(): { [key: string]: string } {
     return {
       fieldCode: 'fieldCode',
       fieldDataVO: 'fieldDataVO',
       fieldName: 'fieldName',
       fieldType: 'fieldType',
-      attrs: 'attrs',
     };
   }
 
@@ -937,113 +935,6 @@ export class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends $tea
       fieldDataVO: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO,
       fieldName: 'string',
       fieldType: 'string',
-      attrs: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO extends $tea.Model {
-  key?: string;
-  value?: string;
-  static names(): { [key: string]: string } {
-    return {
-      key: 'key',
-      value: 'value',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      key: 'string',
-      value: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList extends $tea.Model {
-  fieldCode?: string;
-  fieldName?: string;
-  fieldDataVO?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO;
-  fieldType?: string;
-  attrs?: { [key: string]: {[key: string]: any} };
-  static names(): { [key: string]: string } {
-    return {
-      fieldCode: 'fieldCode',
-      fieldName: 'fieldName',
-      fieldDataVO: 'fieldDataVO',
-      fieldType: 'fieldType',
-      attrs: 'attrs',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldCode: 'string',
-      fieldName: 'string',
-      fieldDataVO: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO,
-      fieldType: 'string',
-      attrs: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields extends $tea.Model {
-  fieldCode?: string;
-  fieldName?: string;
-  viewEntityFieldList?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList[];
-  static names(): { [key: string]: string } {
-    return {
-      fieldCode: 'fieldCode',
-      fieldName: 'fieldName',
-      viewEntityFieldList: 'viewEntityFieldList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldCode: 'string',
-      fieldName: 'string',
-      viewEntityFieldList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList extends $tea.Model {
-  fieldCode?: string;
-  fieldName?: string;
-  fieldType?: string;
-  rowFields?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields[];
-  static names(): { [key: string]: string } {
-    return {
-      fieldCode: 'fieldCode',
-      fieldName: 'fieldName',
-      fieldType: 'fieldType',
-      rowFields: 'rowFields',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldCode: 'string',
-      fieldName: 'string',
-      fieldType: 'string',
-      rowFields: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields },
     };
   }
 
@@ -1057,14 +948,12 @@ export class MasterDataQueryResponseBodyResult extends $tea.Model {
   scopeCode?: string;
   viewEntityCode?: string;
   viewEntityFieldVOList?: MasterDataQueryResponseBodyResultViewEntityFieldVOList[];
-  viewEntityMultiFieldVOList?: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList[];
   static names(): { [key: string]: string } {
     return {
       outerId: 'outerId',
       scopeCode: 'scopeCode',
       viewEntityCode: 'viewEntityCode',
       viewEntityFieldVOList: 'viewEntityFieldVOList',
-      viewEntityMultiFieldVOList: 'viewEntityMultiFieldVOList',
     };
   }
 
@@ -1074,7 +963,6 @@ export class MasterDataQueryResponseBodyResult extends $tea.Model {
       scopeCode: 'string',
       viewEntityCode: 'string',
       viewEntityFieldVOList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityFieldVOList },
-      viewEntityMultiFieldVOList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList },
     };
   }
 

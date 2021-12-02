@@ -1059,6 +1059,109 @@ export class UpdateMemberGroupNickResponse extends $tea.Model {
   }
 }
 
+export class GetInterconnectionUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInterconnectionUrlRequest extends $tea.Model {
+  appUserId?: string;
+  appUserName?: string;
+  appUserAvatar?: string;
+  appUserAvatarType?: number;
+  appUserMobileNumber?: string;
+  dingCorpId?: string;
+  dingUserId?: string;
+  msgPageSettingId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      appUserName: 'appUserName',
+      appUserAvatar: 'appUserAvatar',
+      appUserAvatarType: 'appUserAvatarType',
+      appUserMobileNumber: 'appUserMobileNumber',
+      dingCorpId: 'dingCorpId',
+      dingUserId: 'dingUserId',
+      msgPageSettingId: 'msgPageSettingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      appUserName: 'string',
+      appUserAvatar: 'string',
+      appUserAvatarType: 'number',
+      appUserMobileNumber: 'string',
+      dingCorpId: 'string',
+      dingUserId: 'string',
+      msgPageSettingId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInterconnectionUrlResponseBody extends $tea.Model {
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInterconnectionUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetInterconnectionUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetInterconnectionUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendTemplateInteractiveCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1999,6 +2102,63 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateMemberGroupNickResponse>(await this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupNicks`, "json", req, runtime), new UpdateMemberGroupNickResponse({}));
+  }
+
+  async getInterconnectionUrl(request: GetInterconnectionUrlRequest): Promise<GetInterconnectionUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetInterconnectionUrlHeaders({ });
+    return await this.getInterconnectionUrlWithOptions(request, headers, runtime);
+  }
+
+  async getInterconnectionUrlWithOptions(request: GetInterconnectionUrlRequest, headers: GetInterconnectionUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetInterconnectionUrlResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUserId)) {
+      body["appUserId"] = request.appUserId;
+    }
+
+    if (!Util.isUnset(request.appUserName)) {
+      body["appUserName"] = request.appUserName;
+    }
+
+    if (!Util.isUnset(request.appUserAvatar)) {
+      body["appUserAvatar"] = request.appUserAvatar;
+    }
+
+    if (!Util.isUnset(request.appUserAvatarType)) {
+      body["appUserAvatarType"] = request.appUserAvatarType;
+    }
+
+    if (!Util.isUnset(request.appUserMobileNumber)) {
+      body["appUserMobileNumber"] = request.appUserMobileNumber;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingUserId)) {
+      body["dingUserId"] = request.dingUserId;
+    }
+
+    if (!Util.isUnset(request.msgPageSettingId)) {
+      body["msgPageSettingId"] = request.msgPageSettingId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetInterconnectionUrlResponse>(await this.doROARequest("GetInterconnectionUrl", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/sessions/urls`, "json", req, runtime), new GetInterconnectionUrlResponse({}));
   }
 
   async sendTemplateInteractiveCard(request: SendTemplateInteractiveCardRequest): Promise<SendTemplateInteractiveCardResponse> {

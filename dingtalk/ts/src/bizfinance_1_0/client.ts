@@ -268,6 +268,200 @@ export class QueryCategoryByPageResponse extends $tea.Model {
   }
 }
 
+export class GetReceiptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetReceiptRequest extends $tea.Model {
+  modelId?: string;
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      modelId: 'modelId',
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      modelId: 'string',
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetReceiptResponseBody extends $tea.Model {
+  modelId?: string;
+  source?: string;
+  appId?: string;
+  data?: string;
+  static names(): { [key: string]: string } {
+    return {
+      modelId: 'modelId',
+      source: 'source',
+      appId: 'appId',
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      modelId: 'string',
+      source: 'string',
+      appId: 'string',
+      data: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetReceiptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetReceiptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetReceiptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsByPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsByPageRequest extends $tea.Model {
+  modelId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  startTime?: number;
+  endTime?: number;
+  timeFilterField?: string;
+  static names(): { [key: string]: string } {
+    return {
+      modelId: 'modelId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      timeFilterField: 'timeFilterField',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      modelId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+      endTime: 'number',
+      timeFilterField: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsByPageResponseBody extends $tea.Model {
+  list?: QueryReceiptsByPageResponseBodyList[];
+  hasMore?: string;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      hasMore: 'hasMore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': QueryReceiptsByPageResponseBodyList },
+      hasMore: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptsByPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryReceiptsByPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryReceiptsByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomerByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1308,6 +1502,34 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryReceiptsByPageResponseBodyList extends $tea.Model {
+  modelId?: string;
+  source?: string;
+  appId?: string;
+  data?: string;
+  static names(): { [key: string]: string } {
+    return {
+      modelId: 'modelId',
+      source: 'source',
+      appId: 'appId',
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      modelId: 'string',
+      source: 'string',
+      appId: 'string',
+      data: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomerByPageResponseBodyList extends $tea.Model {
   code?: string;
   name?: string;
@@ -1692,6 +1914,88 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryCategoryByPageResponse>(await this.doROARequest("QueryCategoryByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/categories/list`, "json", req, runtime), new QueryCategoryByPageResponse({}));
+  }
+
+  async getReceipt(request: GetReceiptRequest): Promise<GetReceiptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetReceiptHeaders({ });
+    return await this.getReceiptWithOptions(request, headers, runtime);
+  }
+
+  async getReceiptWithOptions(request: GetReceiptRequest, headers: GetReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<GetReceiptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.modelId)) {
+      query["modelId"] = request.modelId;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetReceiptResponse>(await this.doROARequest("GetReceipt", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/receipts/details`, "json", req, runtime), new GetReceiptResponse({}));
+  }
+
+  async queryReceiptsByPage(request: QueryReceiptsByPageRequest): Promise<QueryReceiptsByPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryReceiptsByPageHeaders({ });
+    return await this.queryReceiptsByPageWithOptions(request, headers, runtime);
+  }
+
+  async queryReceiptsByPageWithOptions(request: QueryReceiptsByPageRequest, headers: QueryReceiptsByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsByPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.modelId)) {
+      query["modelId"] = request.modelId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.timeFilterField)) {
+      query["timeFilterField"] = request.timeFilterField;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryReceiptsByPageResponse>(await this.doROARequest("QueryReceiptsByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/receipts`, "json", req, runtime), new QueryReceiptsByPageResponse({}));
   }
 
   async queryCustomerByPage(request: QueryCustomerByPageRequest): Promise<QueryCustomerByPageResponse> {
