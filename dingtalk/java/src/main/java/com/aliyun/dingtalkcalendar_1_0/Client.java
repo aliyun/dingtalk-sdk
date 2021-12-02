@@ -540,6 +540,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ListEventsView", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/eventsview", "json", req, runtime), new ListEventsViewResponse());
     }
 
+    public SignInResponse signIn(String userId, String calendarId, String eventId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SignInHeaders headers = new SignInHeaders();
+        return this.signInWithOptions(userId, calendarId, eventId, headers, runtime);
+    }
+
+    public SignInResponse signInWithOptions(String userId, String calendarId, String eventId, SignInHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signIn", "json", req, runtime), new SignInResponse());
+    }
+
     public GetEventResponse getEvent(String userId, String calendarId, String eventId) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetEventHeaders headers = new GetEventHeaders();
@@ -560,6 +582,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "", "json", req, runtime), new GetEventResponse());
+    }
+
+    public CheckInResponse checkIn(String userId, String calendarId, String eventId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CheckInHeaders headers = new CheckInHeaders();
+        return this.checkInWithOptions(userId, calendarId, eventId, headers, runtime);
+    }
+
+    public CheckInResponse checkInWithOptions(String userId, String calendarId, String eventId, CheckInHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("CheckIn", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/checkIn", "json", req, runtime), new CheckInResponse());
     }
 
     public PatchEventResponse patchEvent(String userId, String calendarId, String eventId, PatchEventRequest request) throws Exception {

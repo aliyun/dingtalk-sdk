@@ -675,6 +675,63 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", "/v1.0/im/sceneGroups/members/groupNicks", "json", req, runtime), new UpdateMemberGroupNickResponse());
     }
 
+    public GetInterconnectionUrlResponse getInterconnectionUrl(GetInterconnectionUrlRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetInterconnectionUrlHeaders headers = new GetInterconnectionUrlHeaders();
+        return this.getInterconnectionUrlWithOptions(request, headers, runtime);
+    }
+
+    public GetInterconnectionUrlResponse getInterconnectionUrlWithOptions(GetInterconnectionUrlRequest request, GetInterconnectionUrlHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appUserId)) {
+            body.put("appUserId", request.appUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appUserName)) {
+            body.put("appUserName", request.appUserName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appUserAvatar)) {
+            body.put("appUserAvatar", request.appUserAvatar);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appUserAvatarType)) {
+            body.put("appUserAvatarType", request.appUserAvatarType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appUserMobileNumber)) {
+            body.put("appUserMobileNumber", request.appUserMobileNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
+            body.put("dingCorpId", request.dingCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingUserId)) {
+            body.put("dingUserId", request.dingUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgPageSettingId)) {
+            body.put("msgPageSettingId", request.msgPageSettingId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetInterconnectionUrl", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/sessions/urls", "json", req, runtime), new GetInterconnectionUrlResponse());
+    }
+
     public SendTemplateInteractiveCardResponse sendTemplateInteractiveCard(SendTemplateInteractiveCardRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         SendTemplateInteractiveCardHeaders headers = new SendTemplateInteractiveCardHeaders();

@@ -4,18 +4,23 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryResponseBody extends TeaModel {
+    // 总条目数
     @NameInMap("total")
     public Long total;
 
+    // 是否还有更多
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    // 分页游标
     @NameInMap("nextToken")
     public Long nextToken;
 
+    // 是否成功
     @NameInMap("success")
     public Boolean success;
 
+    // 结果
     @NameInMap("result")
     public java.util.List<MasterDataQueryResponseBodyResult> result;
 
@@ -65,9 +70,11 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends TeaModel {
+        // 字段值的key
         @NameInMap("key")
         public String key;
 
+        // 字段值的文本
         @NameInMap("value")
         public String value;
 
@@ -95,20 +102,21 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends TeaModel {
+        // 字段code
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        // 字段值
         @NameInMap("fieldDataVO")
         public MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO fieldDataVO;
 
+        // 字段名称
         @NameInMap("fieldName")
         public String fieldName;
 
+        // 字段类型
         @NameInMap("fieldType")
         public String fieldType;
-
-        @NameInMap("attrs")
-        public java.util.Map<String, java.util.Map<String, ?>> attrs;
 
         public static MasterDataQueryResponseBodyResultViewEntityFieldVOList build(java.util.Map<String, ?> map) throws Exception {
             MasterDataQueryResponseBodyResultViewEntityFieldVOList self = new MasterDataQueryResponseBodyResultViewEntityFieldVOList();
@@ -147,217 +155,24 @@ public class MasterDataQueryResponseBody extends TeaModel {
             return this.fieldType;
         }
 
-        public MasterDataQueryResponseBodyResultViewEntityFieldVOList setAttrs(java.util.Map<String, java.util.Map<String, ?>> attrs) {
-            this.attrs = attrs;
-            return this;
-        }
-        public java.util.Map<String, java.util.Map<String, ?>> getAttrs() {
-            return this.attrs;
-        }
-
-    }
-
-    public static class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO extends TeaModel {
-        @NameInMap("key")
-        public String key;
-
-        @NameInMap("value")
-        public String value;
-
-        public static MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO build(java.util.Map<String, ?> map) throws Exception {
-            MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO self = new MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO();
-            return TeaModel.build(map, self);
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO setKey(String key) {
-            this.key = key;
-            return this;
-        }
-        public String getKey() {
-            return this.key;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO setValue(String value) {
-            this.value = value;
-            return this;
-        }
-        public String getValue() {
-            return this.value;
-        }
-
-    }
-
-    public static class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList extends TeaModel {
-        @NameInMap("fieldCode")
-        public String fieldCode;
-
-        @NameInMap("fieldName")
-        public String fieldName;
-
-        @NameInMap("fieldDataVO")
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO fieldDataVO;
-
-        @NameInMap("fieldType")
-        public String fieldType;
-
-        @NameInMap("attrs")
-        public java.util.Map<String, java.util.Map<String, ?>> attrs;
-
-        public static MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList build(java.util.Map<String, ?> map) throws Exception {
-            MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList self = new MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList();
-            return TeaModel.build(map, self);
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList setFieldCode(String fieldCode) {
-            this.fieldCode = fieldCode;
-            return this;
-        }
-        public String getFieldCode() {
-            return this.fieldCode;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList setFieldName(String fieldName) {
-            this.fieldName = fieldName;
-            return this;
-        }
-        public String getFieldName() {
-            return this.fieldName;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList setFieldDataVO(MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO fieldDataVO) {
-            this.fieldDataVO = fieldDataVO;
-            return this;
-        }
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO getFieldDataVO() {
-            return this.fieldDataVO;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList setFieldType(String fieldType) {
-            this.fieldType = fieldType;
-            return this;
-        }
-        public String getFieldType() {
-            return this.fieldType;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList setAttrs(java.util.Map<String, java.util.Map<String, ?>> attrs) {
-            this.attrs = attrs;
-            return this;
-        }
-        public java.util.Map<String, java.util.Map<String, ?>> getAttrs() {
-            return this.attrs;
-        }
-
-    }
-
-    public static class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields extends TeaModel {
-        @NameInMap("fieldCode")
-        public String fieldCode;
-
-        @NameInMap("fieldName")
-        public String fieldName;
-
-        @NameInMap("viewEntityFieldList")
-        public java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList> viewEntityFieldList;
-
-        public static MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields build(java.util.Map<String, ?> map) throws Exception {
-            MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields self = new MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields();
-            return TeaModel.build(map, self);
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields setFieldCode(String fieldCode) {
-            this.fieldCode = fieldCode;
-            return this;
-        }
-        public String getFieldCode() {
-            return this.fieldCode;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields setFieldName(String fieldName) {
-            this.fieldName = fieldName;
-            return this;
-        }
-        public String getFieldName() {
-            return this.fieldName;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields setViewEntityFieldList(java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList> viewEntityFieldList) {
-            this.viewEntityFieldList = viewEntityFieldList;
-            return this;
-        }
-        public java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList> getViewEntityFieldList() {
-            return this.viewEntityFieldList;
-        }
-
-    }
-
-    public static class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList extends TeaModel {
-        @NameInMap("fieldCode")
-        public String fieldCode;
-
-        @NameInMap("fieldName")
-        public String fieldName;
-
-        @NameInMap("fieldType")
-        public String fieldType;
-
-        @NameInMap("rowFields")
-        public java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields> rowFields;
-
-        public static MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList build(java.util.Map<String, ?> map) throws Exception {
-            MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList self = new MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList();
-            return TeaModel.build(map, self);
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList setFieldCode(String fieldCode) {
-            this.fieldCode = fieldCode;
-            return this;
-        }
-        public String getFieldCode() {
-            return this.fieldCode;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList setFieldName(String fieldName) {
-            this.fieldName = fieldName;
-            return this;
-        }
-        public String getFieldName() {
-            return this.fieldName;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList setFieldType(String fieldType) {
-            this.fieldType = fieldType;
-            return this;
-        }
-        public String getFieldType() {
-            return this.fieldType;
-        }
-
-        public MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList setRowFields(java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields> rowFields) {
-            this.rowFields = rowFields;
-            return this;
-        }
-        public java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields> getRowFields() {
-            return this.rowFields;
-        }
-
     }
 
     public static class MasterDataQueryResponseBodyResult extends TeaModel {
+        // 唯一id
         @NameInMap("outerId")
         public String outerId;
 
+        // 领域
         @NameInMap("scopeCode")
         public String scopeCode;
 
+        // 编码
         @NameInMap("viewEntityCode")
         public String viewEntityCode;
 
+        // 字段列表
         @NameInMap("viewEntityFieldVOList")
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> viewEntityFieldVOList;
-
-        @NameInMap("viewEntityMultiFieldVOList")
-        public java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList> viewEntityMultiFieldVOList;
 
         public static MasterDataQueryResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             MasterDataQueryResponseBodyResult self = new MasterDataQueryResponseBodyResult();
@@ -394,14 +209,6 @@ public class MasterDataQueryResponseBody extends TeaModel {
         }
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> getViewEntityFieldVOList() {
             return this.viewEntityFieldVOList;
-        }
-
-        public MasterDataQueryResponseBodyResult setViewEntityMultiFieldVOList(java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList> viewEntityMultiFieldVOList) {
-            this.viewEntityMultiFieldVOList = viewEntityMultiFieldVOList;
-            return this;
-        }
-        public java.util.List<MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList> getViewEntityMultiFieldVOList() {
-            return this.viewEntityMultiFieldVOList;
         }
 
     }

@@ -1,0 +1,36 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkcontact_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class ListEmpLeaveRecordsResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    @NameInMap("body")
+    @Validation(required = true)
+    public ListEmpLeaveRecordsResponseBody body;
+
+    public static ListEmpLeaveRecordsResponse build(java.util.Map<String, ?> map) throws Exception {
+        ListEmpLeaveRecordsResponse self = new ListEmpLeaveRecordsResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public ListEmpLeaveRecordsResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    public ListEmpLeaveRecordsResponse setBody(ListEmpLeaveRecordsResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public ListEmpLeaveRecordsResponseBody getBody() {
+        return this.body;
+    }
+
+}
