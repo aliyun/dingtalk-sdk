@@ -1295,7 +1295,9 @@ class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO(TeaModel
         key: str = None,
         value: str = None,
     ):
+        # 字段值的key
         self.key = key
+        # 字段值的文本
         self.value = value
 
     def validate(self):
@@ -1329,13 +1331,15 @@ class MasterDataQueryResponseBodyResultViewEntityFieldVOList(TeaModel):
         field_data_vo: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO = None,
         field_name: str = None,
         field_type: str = None,
-        attrs: Dict[str, dict] = None,
     ):
+        # 字段code
         self.field_code = field_code
+        # 字段值
         self.field_data_vo = field_data_vo
+        # 字段名称
         self.field_name = field_name
+        # 字段类型
         self.field_type = field_type
-        self.attrs = attrs
 
     def validate(self):
         if self.field_data_vo:
@@ -1355,8 +1359,6 @@ class MasterDataQueryResponseBodyResultViewEntityFieldVOList(TeaModel):
             result['fieldName'] = self.field_name
         if self.field_type is not None:
             result['fieldType'] = self.field_type
-        if self.attrs is not None:
-            result['attrs'] = self.attrs
         return result
 
     def from_map(self, m: dict = None):
@@ -1370,194 +1372,6 @@ class MasterDataQueryResponseBodyResultViewEntityFieldVOList(TeaModel):
             self.field_name = m.get('fieldName')
         if m.get('fieldType') is not None:
             self.field_type = m.get('fieldType')
-        if m.get('attrs') is not None:
-            self.attrs = m.get('attrs')
-        return self
-
-
-class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList(TeaModel):
-    def __init__(
-        self,
-        field_code: str = None,
-        field_name: str = None,
-        field_data_vo: MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO = None,
-        field_type: str = None,
-        attrs: Dict[str, dict] = None,
-    ):
-        self.field_code = field_code
-        self.field_name = field_name
-        self.field_data_vo = field_data_vo
-        self.field_type = field_type
-        self.attrs = attrs
-
-    def validate(self):
-        if self.field_data_vo:
-            self.field_data_vo.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_code is not None:
-            result['fieldCode'] = self.field_code
-        if self.field_name is not None:
-            result['fieldName'] = self.field_name
-        if self.field_data_vo is not None:
-            result['fieldDataVO'] = self.field_data_vo.to_map()
-        if self.field_type is not None:
-            result['fieldType'] = self.field_type
-        if self.attrs is not None:
-            result['attrs'] = self.attrs
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldCode') is not None:
-            self.field_code = m.get('fieldCode')
-        if m.get('fieldName') is not None:
-            self.field_name = m.get('fieldName')
-        if m.get('fieldDataVO') is not None:
-            temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldListFieldDataVO()
-            self.field_data_vo = temp_model.from_map(m['fieldDataVO'])
-        if m.get('fieldType') is not None:
-            self.field_type = m.get('fieldType')
-        if m.get('attrs') is not None:
-            self.attrs = m.get('attrs')
-        return self
-
-
-class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields(TeaModel):
-    def __init__(
-        self,
-        field_code: str = None,
-        field_name: str = None,
-        view_entity_field_list: List[MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList] = None,
-    ):
-        self.field_code = field_code
-        self.field_name = field_name
-        self.view_entity_field_list = view_entity_field_list
-
-    def validate(self):
-        if self.view_entity_field_list:
-            for k in self.view_entity_field_list:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_code is not None:
-            result['fieldCode'] = self.field_code
-        if self.field_name is not None:
-            result['fieldName'] = self.field_name
-        result['viewEntityFieldList'] = []
-        if self.view_entity_field_list is not None:
-            for k in self.view_entity_field_list:
-                result['viewEntityFieldList'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldCode') is not None:
-            self.field_code = m.get('fieldCode')
-        if m.get('fieldName') is not None:
-            self.field_name = m.get('fieldName')
-        self.view_entity_field_list = []
-        if m.get('viewEntityFieldList') is not None:
-            for k in m.get('viewEntityFieldList'):
-                temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFieldsViewEntityFieldList()
-                self.view_entity_field_list.append(temp_model.from_map(k))
-        return self
-
-
-class MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList(TeaModel):
-    def __init__(
-        self,
-        field_code: str = None,
-        field_name: str = None,
-        field_type: str = None,
-        row_fields: List[MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields] = None,
-    ):
-        self.field_code = field_code
-        self.field_name = field_name
-        self.field_type = field_type
-        self.row_fields = row_fields
-
-    def validate(self):
-        if self.row_fields:
-            for k in self.row_fields:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_code is not None:
-            result['fieldCode'] = self.field_code
-        if self.field_name is not None:
-            result['fieldName'] = self.field_name
-        if self.field_type is not None:
-            result['fieldType'] = self.field_type
-        result['rowFields'] = []
-        if self.row_fields is not None:
-            for k in self.row_fields:
-                result['rowFields'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldCode') is not None:
-            self.field_code = m.get('fieldCode')
-        if m.get('fieldName') is not None:
-            self.field_name = m.get('fieldName')
-        if m.get('fieldType') is not None:
-            self.field_type = m.get('fieldType')
-        self.row_fields = []
-        if m.get('rowFields') is not None:
-            for k in m.get('rowFields'):
-                temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOListRowFields()
-                self.row_fields.append(temp_model.from_map(k))
         return self
 
 
@@ -1568,21 +1382,19 @@ class MasterDataQueryResponseBodyResult(TeaModel):
         scope_code: str = None,
         view_entity_code: str = None,
         view_entity_field_volist: List[MasterDataQueryResponseBodyResultViewEntityFieldVOList] = None,
-        view_entity_multi_field_volist: List[MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList] = None,
     ):
+        # 唯一id
         self.outer_id = outer_id
+        # 领域
         self.scope_code = scope_code
+        # 编码
         self.view_entity_code = view_entity_code
+        # 字段列表
         self.view_entity_field_volist = view_entity_field_volist
-        self.view_entity_multi_field_volist = view_entity_multi_field_volist
 
     def validate(self):
         if self.view_entity_field_volist:
             for k in self.view_entity_field_volist:
-                if k:
-                    k.validate()
-        if self.view_entity_multi_field_volist:
-            for k in self.view_entity_multi_field_volist:
                 if k:
                     k.validate()
 
@@ -1602,10 +1414,6 @@ class MasterDataQueryResponseBodyResult(TeaModel):
         if self.view_entity_field_volist is not None:
             for k in self.view_entity_field_volist:
                 result['viewEntityFieldVOList'].append(k.to_map() if k else None)
-        result['viewEntityMultiFieldVOList'] = []
-        if self.view_entity_multi_field_volist is not None:
-            for k in self.view_entity_multi_field_volist:
-                result['viewEntityMultiFieldVOList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -1621,11 +1429,6 @@ class MasterDataQueryResponseBodyResult(TeaModel):
             for k in m.get('viewEntityFieldVOList'):
                 temp_model = MasterDataQueryResponseBodyResultViewEntityFieldVOList()
                 self.view_entity_field_volist.append(temp_model.from_map(k))
-        self.view_entity_multi_field_volist = []
-        if m.get('viewEntityMultiFieldVOList') is not None:
-            for k in m.get('viewEntityMultiFieldVOList'):
-                temp_model = MasterDataQueryResponseBodyResultViewEntityMultiFieldVOList()
-                self.view_entity_multi_field_volist.append(temp_model.from_map(k))
         return self
 
 
@@ -1638,10 +1441,15 @@ class MasterDataQueryResponseBody(TeaModel):
         success: bool = None,
         result: List[MasterDataQueryResponseBodyResult] = None,
     ):
+        # 总条目数
         self.total = total
+        # 是否还有更多
         self.has_more = has_more
+        # 分页游标
         self.next_token = next_token
+        # 是否成功
         self.success = success
+        # 结果
         self.result = result
 
     def validate(self):

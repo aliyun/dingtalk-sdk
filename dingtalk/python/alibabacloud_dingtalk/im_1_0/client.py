@@ -1027,6 +1027,98 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupNicks', 'json', req, runtime)
         )
 
+    def get_interconnection_url(
+        self,
+        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
+    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
+        return self.get_interconnection_url_with_options(request, headers, runtime)
+
+    async def get_interconnection_url_async(
+        self,
+        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
+    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
+        return await self.get_interconnection_url_with_options_async(request, headers, runtime)
+
+    def get_interconnection_url_with_options(
+        self,
+        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
+        headers: dingtalkim__1__0_models.GetInterconnectionUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.app_user_name):
+            body['appUserName'] = request.app_user_name
+        if not UtilClient.is_unset(request.app_user_avatar):
+            body['appUserAvatar'] = request.app_user_avatar
+        if not UtilClient.is_unset(request.app_user_avatar_type):
+            body['appUserAvatarType'] = request.app_user_avatar_type
+        if not UtilClient.is_unset(request.app_user_mobile_number):
+            body['appUserMobileNumber'] = request.app_user_mobile_number
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_user_id):
+            body['dingUserId'] = request.ding_user_id
+        if not UtilClient.is_unset(request.msg_page_setting_id):
+            body['msgPageSettingId'] = request.msg_page_setting_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetInterconnectionUrlResponse(),
+            self.do_roarequest('GetInterconnectionUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/sessions/urls', 'json', req, runtime)
+        )
+
+    async def get_interconnection_url_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
+        headers: dingtalkim__1__0_models.GetInterconnectionUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_user_id):
+            body['appUserId'] = request.app_user_id
+        if not UtilClient.is_unset(request.app_user_name):
+            body['appUserName'] = request.app_user_name
+        if not UtilClient.is_unset(request.app_user_avatar):
+            body['appUserAvatar'] = request.app_user_avatar
+        if not UtilClient.is_unset(request.app_user_avatar_type):
+            body['appUserAvatarType'] = request.app_user_avatar_type
+        if not UtilClient.is_unset(request.app_user_mobile_number):
+            body['appUserMobileNumber'] = request.app_user_mobile_number
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_user_id):
+            body['dingUserId'] = request.ding_user_id
+        if not UtilClient.is_unset(request.msg_page_setting_id):
+            body['msgPageSettingId'] = request.msg_page_setting_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetInterconnectionUrlResponse(),
+            await self.do_roarequest_async('GetInterconnectionUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/sessions/urls', 'json', req, runtime)
+        )
+
     def send_template_interactive_card(
         self,
         request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,

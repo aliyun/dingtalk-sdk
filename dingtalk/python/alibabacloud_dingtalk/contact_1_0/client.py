@@ -2179,6 +2179,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateCooperateOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cooperateCorps', 'json', req, runtime)
         )
 
+    def list_emp_leave_records(
+        self,
+        request: dingtalkcontact__1__0_models.ListEmpLeaveRecordsRequest,
+    ) -> dingtalkcontact__1__0_models.ListEmpLeaveRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListEmpLeaveRecordsHeaders()
+        return self.list_emp_leave_records_with_options(request, headers, runtime)
+
+    async def list_emp_leave_records_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListEmpLeaveRecordsRequest,
+    ) -> dingtalkcontact__1__0_models.ListEmpLeaveRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListEmpLeaveRecordsHeaders()
+        return await self.list_emp_leave_records_with_options_async(request, headers, runtime)
+
+    def list_emp_leave_records_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ListEmpLeaveRecordsRequest,
+        headers: dingtalkcontact__1__0_models.ListEmpLeaveRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListEmpLeaveRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListEmpLeaveRecordsResponse(),
+            self.do_roarequest('ListEmpLeaveRecords', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/empLeaveRecords', 'json', req, runtime)
+        )
+
+    async def list_emp_leave_records_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListEmpLeaveRecordsRequest,
+        headers: dingtalkcontact__1__0_models.ListEmpLeaveRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListEmpLeaveRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListEmpLeaveRecordsResponse(),
+            await self.do_roarequest_async('ListEmpLeaveRecords', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/empLeaveRecords', 'json', req, runtime)
+        )
+
     def get_migration_ding_id_by_ding_id(
         self,
         request: dingtalkcontact__1__0_models.GetMigrationDingIdByDingIdRequest,

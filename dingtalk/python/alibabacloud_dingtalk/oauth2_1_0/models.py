@@ -146,6 +146,666 @@ class GetUserTokenResponse(TeaModel):
         return self
 
 
+class CreateJsapiTicketHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateJsapiTicketRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_oauth_app_id: int = None,
+        ding_suite_key: str = None,
+    ):
+        self.agent_id = agent_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_oauth_app_id = ding_oauth_app_id
+        self.ding_suite_key = ding_suite_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_oauth_app_id is not None:
+            result['dingOauthAppId'] = self.ding_oauth_app_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingOauthAppId') is not None:
+            self.ding_oauth_app_id = m.get('dingOauthAppId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        return self
+
+
+class CreateJsapiTicketResponseBody(TeaModel):
+    def __init__(
+        self,
+        jsapi_ticket: str = None,
+        expire_in: int = None,
+    ):
+        # jsapi ticket
+        self.jsapi_ticket = jsapi_ticket
+        # 超时时间
+        self.expire_in = expire_in
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.jsapi_ticket is not None:
+            result['jsapiTicket'] = self.jsapi_ticket
+        if self.expire_in is not None:
+            result['expireIn'] = self.expire_in
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jsapiTicket') is not None:
+            self.jsapi_ticket = m.get('jsapiTicket')
+        if m.get('expireIn') is not None:
+            self.expire_in = m.get('expireIn')
+        return self
+
+
+class CreateJsapiTicketResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateJsapiTicketResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateJsapiTicketResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAuthInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAuthInfoRequest(TeaModel):
+    def __init__(
+        self,
+        auth_corp_id: str = None,
+    ):
+        self.auth_corp_id = auth_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_corp_id is not None:
+            result['authCorpId'] = self.auth_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authCorpId') is not None:
+            self.auth_corp_id = m.get('authCorpId')
+        return self
+
+
+class GetAuthInfoResponseBodyAuthAppInfoAgentList(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        agent_name: str = None,
+        app_id: int = None,
+        admin_list: List[str] = None,
+    ):
+        # 应用id
+        self.agent_id = agent_id
+        # 应用名称
+        self.agent_name = agent_name
+        # 三方应用id
+        self.app_id = app_id
+        # 对此微应用有管理权限的管理员列表
+        self.admin_list = admin_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.agent_name is not None:
+            result['agentName'] = self.agent_name
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.admin_list is not None:
+            result['adminList'] = self.admin_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('agentName') is not None:
+            self.agent_name = m.get('agentName')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('adminList') is not None:
+            self.admin_list = m.get('adminList')
+        return self
+
+
+class GetAuthInfoResponseBodyAuthAppInfo(TeaModel):
+    def __init__(
+        self,
+        agent_list: List[GetAuthInfoResponseBodyAuthAppInfoAgentList] = None,
+    ):
+        self.agent_list = agent_list
+
+    def validate(self):
+        if self.agent_list:
+            for k in self.agent_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['agentList'] = []
+        if self.agent_list is not None:
+            for k in self.agent_list:
+                result['agentList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.agent_list = []
+        if m.get('agentList') is not None:
+            for k in m.get('agentList'):
+                temp_model = GetAuthInfoResponseBodyAuthAppInfoAgentList()
+                self.agent_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetAuthInfoResponseBodyAuthCorpInfo(TeaModel):
+    def __init__(
+        self,
+        invite_code: str = None,
+        industry: str = None,
+        corp_name: str = None,
+        license_code: str = None,
+        auth_channel: str = None,
+        auth_channel_type: str = None,
+        auth_level: int = None,
+        invite_url: str = None,
+        corp_logo_url: str = None,
+    ):
+        # 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
+        self.invite_code = invite_code
+        # 企业所属行业。
+        self.industry = industry
+        # 授权方企业名称。
+        self.corp_name = corp_name
+        # 序列号。
+        self.license_code = license_code
+        # 渠道码。
+        self.auth_channel = auth_channel
+        # 渠道类型。  为了避免渠道码重复，可与渠道码共同确认渠道。可能为空，非空时当前只有满天星类型，值为STAR_ACTIVITY。
+        self.auth_channel_type = auth_channel_type
+        # 企业认证等级：  0：未认证  1：高级认证  2：中级认证  3：初级认证
+        self.auth_level = auth_level
+        # 企业邀请链接。
+        self.invite_url = invite_url
+        # 企业logo。
+        self.corp_logo_url = corp_logo_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invite_code is not None:
+            result['inviteCode'] = self.invite_code
+        if self.industry is not None:
+            result['industry'] = self.industry
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        if self.license_code is not None:
+            result['licenseCode'] = self.license_code
+        if self.auth_channel is not None:
+            result['authChannel'] = self.auth_channel
+        if self.auth_channel_type is not None:
+            result['authChannelType'] = self.auth_channel_type
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.invite_url is not None:
+            result['inviteUrl'] = self.invite_url
+        if self.corp_logo_url is not None:
+            result['corpLogoUrl'] = self.corp_logo_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('inviteCode') is not None:
+            self.invite_code = m.get('inviteCode')
+        if m.get('industry') is not None:
+            self.industry = m.get('industry')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        if m.get('licenseCode') is not None:
+            self.license_code = m.get('licenseCode')
+        if m.get('authChannel') is not None:
+            self.auth_channel = m.get('authChannel')
+        if m.get('authChannelType') is not None:
+            self.auth_channel_type = m.get('authChannelType')
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('inviteUrl') is not None:
+            self.invite_url = m.get('inviteUrl')
+        if m.get('corpLogoUrl') is not None:
+            self.corp_logo_url = m.get('corpLogoUrl')
+        return self
+
+
+class GetAuthInfoResponseBodyAuthUserInfo(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 授权管理员id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetAuthInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        auth_app_info: GetAuthInfoResponseBodyAuthAppInfo = None,
+        auth_corp_info: GetAuthInfoResponseBodyAuthCorpInfo = None,
+        auth_user_info: GetAuthInfoResponseBodyAuthUserInfo = None,
+    ):
+        # 授权应用信息
+        self.auth_app_info = auth_app_info
+        # 应用企业信息
+        self.auth_corp_info = auth_corp_info
+        # 授权用户信息
+        self.auth_user_info = auth_user_info
+
+    def validate(self):
+        if self.auth_app_info:
+            self.auth_app_info.validate()
+        if self.auth_corp_info:
+            self.auth_corp_info.validate()
+        if self.auth_user_info:
+            self.auth_user_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_app_info is not None:
+            result['authAppInfo'] = self.auth_app_info.to_map()
+        if self.auth_corp_info is not None:
+            result['authCorpInfo'] = self.auth_corp_info.to_map()
+        if self.auth_user_info is not None:
+            result['authUserInfo'] = self.auth_user_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authAppInfo') is not None:
+            temp_model = GetAuthInfoResponseBodyAuthAppInfo()
+            self.auth_app_info = temp_model.from_map(m['authAppInfo'])
+        if m.get('authCorpInfo') is not None:
+            temp_model = GetAuthInfoResponseBodyAuthCorpInfo()
+            self.auth_corp_info = temp_model.from_map(m['authCorpInfo'])
+        if m.get('authUserInfo') is not None:
+            temp_model = GetAuthInfoResponseBodyAuthUserInfo()
+            self.auth_user_info = temp_model.from_map(m['authUserInfo'])
+        return self
+
+
+class GetAuthInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAuthInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAuthInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSsoUserInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSsoUserInfoRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+    ):
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class GetSsoUserInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        corp_name: str = None,
+        user_id: str = None,
+        email: str = None,
+        user_name: str = None,
+        avatar: str = None,
+        is_admin: bool = None,
+    ):
+        # 微应用免登用户所在企业id
+        self.corp_id = corp_id
+        # 微应用免登用户所在企业名称
+        self.corp_name = corp_name
+        # 用户id
+        self.user_id = user_id
+        # 用户邮箱
+        self.email = email
+        # 用户名称
+        self.user_name = user_name
+        # 用户头像链接
+        self.avatar = avatar
+        # 是否为企业管理员
+        self.is_admin = is_admin
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.email is not None:
+            result['email'] = self.email
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.is_admin is not None:
+            result['isAdmin'] = self.is_admin
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('isAdmin') is not None:
+            self.is_admin = m.get('isAdmin')
+        return self
+
+
+class GetSsoUserInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSsoUserInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSsoUserInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAccessTokenRequest(TeaModel):
     def __init__(
         self,
@@ -625,6 +1285,113 @@ class GetPersonalAuthRuleResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetPersonalAuthRuleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSsoAccessTokenRequest(TeaModel):
+    def __init__(
+        self,
+        corpid: str = None,
+        sso_secret: str = None,
+    ):
+        # 企业id
+        self.corpid = corpid
+        # sso密码
+        self.sso_secret = sso_secret
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corpid is not None:
+            result['corpid'] = self.corpid
+        if self.sso_secret is not None:
+            result['ssoSecret'] = self.sso_secret
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpid') is not None:
+            self.corpid = m.get('corpid')
+        if m.get('ssoSecret') is not None:
+            self.sso_secret = m.get('ssoSecret')
+        return self
+
+
+class GetSsoAccessTokenResponseBody(TeaModel):
+    def __init__(
+        self,
+        access_token: str = None,
+        expire_in: int = None,
+    ):
+        # accessToken
+        self.access_token = access_token
+        # 超时时间
+        self.expire_in = expire_in
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_token is not None:
+            result['accessToken'] = self.access_token
+        if self.expire_in is not None:
+            result['expireIn'] = self.expire_in
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessToken') is not None:
+            self.access_token = m.get('accessToken')
+        if m.get('expireIn') is not None:
+            self.expire_in = m.get('expireIn')
+        return self
+
+
+class GetSsoAccessTokenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSsoAccessTokenResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSsoAccessTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

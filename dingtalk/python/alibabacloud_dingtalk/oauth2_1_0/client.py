@@ -94,6 +94,210 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
         )
 
+    def create_jsapi_ticket(
+        self,
+        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
+    ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
+        return self.create_jsapi_ticket_with_options(request, headers, runtime)
+
+    async def create_jsapi_ticket_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
+    ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
+        return await self.create_jsapi_ticket_with_options_async(request, headers, runtime)
+
+    def create_jsapi_ticket_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
+        headers: dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse(),
+            self.do_roarequest('CreateJsapiTicket', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/jsapiTickets', 'json', req, runtime)
+        )
+
+    async def create_jsapi_ticket_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
+        headers: dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_oauth_app_id):
+            body['dingOauthAppId'] = request.ding_oauth_app_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse(),
+            await self.do_roarequest_async('CreateJsapiTicket', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/jsapiTickets', 'json', req, runtime)
+        )
+
+    def get_auth_info(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
+        return self.get_auth_info_with_options(request, headers, runtime)
+
+    async def get_auth_info_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
+        return await self.get_auth_info_with_options_async(request, headers, runtime)
+
+    def get_auth_info_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
+        headers: dingtalkoauth_2__1__0_models.GetAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.auth_corp_id):
+            query['authCorpId'] = request.auth_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetAuthInfoResponse(),
+            self.do_roarequest('GetAuthInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/apps/authInfo', 'json', req, runtime)
+        )
+
+    async def get_auth_info_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
+        headers: dingtalkoauth_2__1__0_models.GetAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.auth_corp_id):
+            query['authCorpId'] = request.auth_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetAuthInfoResponse(),
+            await self.do_roarequest_async('GetAuthInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/apps/authInfo', 'json', req, runtime)
+        )
+
+    def get_sso_user_info(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
+        return self.get_sso_user_info_with_options(request, headers, runtime)
+
+    async def get_sso_user_info_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
+        return await self.get_sso_user_info_with_options_async(request, headers, runtime)
+
+    def get_sso_user_info_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
+        headers: dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse(),
+            self.do_roarequest('GetSsoUserInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/ssoUserInfo', 'json', req, runtime)
+        )
+
+    async def get_sso_user_info_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
+        headers: dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse(),
+            await self.do_roarequest_async('GetSsoUserInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/ssoUserInfo', 'json', req, runtime)
+        )
+
     def get_access_token(
         self,
         request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
@@ -324,4 +528,62 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse(),
             await self.do_roarequest_async('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/authRules/user', 'json', req, runtime)
+        )
+
+    def get_sso_access_token(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_sso_access_token_with_options(request, headers, runtime)
+
+    async def get_sso_access_token_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_sso_access_token_with_options_async(request, headers, runtime)
+
+    def get_sso_access_token_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corpid):
+            body['corpid'] = request.corpid
+        if not UtilClient.is_unset(request.sso_secret):
+            body['ssoSecret'] = request.sso_secret
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse(),
+            self.do_roarequest('GetSsoAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/ssoAccessToken', 'json', req, runtime)
+        )
+
+    async def get_sso_access_token_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corpid):
+            body['corpid'] = request.corpid
+        if not UtilClient.is_unset(request.sso_secret):
+            body['ssoSecret'] = request.sso_secret
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse(),
+            await self.do_roarequest_async('GetSsoAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/ssoAccessToken', 'json', req, runtime)
         )

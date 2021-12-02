@@ -2020,6 +2020,181 @@ class UpdateMemberGroupNickResponse(TeaModel):
         return self
 
 
+class GetInterconnectionUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetInterconnectionUrlRequest(TeaModel):
+    def __init__(
+        self,
+        app_user_id: str = None,
+        app_user_name: str = None,
+        app_user_avatar: str = None,
+        app_user_avatar_type: int = None,
+        app_user_mobile_number: str = None,
+        ding_corp_id: str = None,
+        ding_user_id: str = None,
+        msg_page_setting_id: int = None,
+    ):
+        # appUserId
+        self.app_user_id = app_user_id
+        # appUserName
+        self.app_user_name = app_user_name
+        # appUserAvatar
+        self.app_user_avatar = app_user_avatar
+        # appUserAvatarType
+        self.app_user_avatar_type = app_user_avatar_type
+        # appUserMobileNumber
+        self.app_user_mobile_number = app_user_mobile_number
+        # dingCorpId
+        self.ding_corp_id = ding_corp_id
+        # dingUserId
+        self.ding_user_id = ding_user_id
+        # msgPageSettingId
+        self.msg_page_setting_id = msg_page_setting_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_user_id is not None:
+            result['appUserId'] = self.app_user_id
+        if self.app_user_name is not None:
+            result['appUserName'] = self.app_user_name
+        if self.app_user_avatar is not None:
+            result['appUserAvatar'] = self.app_user_avatar
+        if self.app_user_avatar_type is not None:
+            result['appUserAvatarType'] = self.app_user_avatar_type
+        if self.app_user_mobile_number is not None:
+            result['appUserMobileNumber'] = self.app_user_mobile_number
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
+        if self.msg_page_setting_id is not None:
+            result['msgPageSettingId'] = self.msg_page_setting_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUserId') is not None:
+            self.app_user_id = m.get('appUserId')
+        if m.get('appUserName') is not None:
+            self.app_user_name = m.get('appUserName')
+        if m.get('appUserAvatar') is not None:
+            self.app_user_avatar = m.get('appUserAvatar')
+        if m.get('appUserAvatarType') is not None:
+            self.app_user_avatar_type = m.get('appUserAvatarType')
+        if m.get('appUserMobileNumber') is not None:
+            self.app_user_mobile_number = m.get('appUserMobileNumber')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
+        if m.get('msgPageSettingId') is not None:
+            self.msg_page_setting_id = m.get('msgPageSettingId')
+        return self
+
+
+class GetInterconnectionUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+    ):
+        # 会话url
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetInterconnectionUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetInterconnectionUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetInterconnectionUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendTemplateInteractiveCardHeaders(TeaModel):
     def __init__(
         self,

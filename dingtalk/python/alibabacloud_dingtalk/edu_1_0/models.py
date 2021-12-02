@@ -2651,6 +2651,223 @@ class PollingConfirmStatusResponse(TeaModel):
         return self
 
 
+class CreateEduAssetSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateEduAssetSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        space_name: str = None,
+        space_desc: str = None,
+        space_icon: str = None,
+        user_id: str = None,
+        biz_code: str = None,
+        ding_corp_id: str = None,
+        ding_org_id: int = None,
+    ):
+        # 空间名称
+        self.space_name = space_name
+        # 空间描述
+        self.space_desc = space_desc
+        # 空间图标
+        self.space_icon = space_icon
+        # 用户staffId
+        self.user_id = user_id
+        # 业务类型编码
+        self.biz_code = biz_code
+        # 组织corpId
+        self.ding_corp_id = ding_corp_id
+        # 组织id
+        self.ding_org_id = ding_org_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_desc is not None:
+            result['spaceDesc'] = self.space_desc
+        if self.space_icon is not None:
+            result['spaceIcon'] = self.space_icon
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceDesc') is not None:
+            self.space_desc = m.get('spaceDesc')
+        if m.get('spaceIcon') is not None:
+            self.space_icon = m.get('spaceIcon')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        return self
+
+
+class CreateEduAssetSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        permission_mode: str = None,
+        create_time_millis: int = None,
+        modify_time_millis: int = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 总容量
+        self.quota = quota
+        # 已使用容量
+        self.used_quota = used_quota
+        # 权限模型
+        self.permission_mode = permission_mode
+        # 创建时间戳
+        self.create_time_millis = create_time_millis
+        # 修改时间戳
+        self.modify_time_millis = modify_time_millis
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.create_time_millis is not None:
+            result['createTimeMillis'] = self.create_time_millis
+        if self.modify_time_millis is not None:
+            result['modifyTimeMillis'] = self.modify_time_millis
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('createTimeMillis') is not None:
+            self.create_time_millis = m.get('createTimeMillis')
+        if m.get('modifyTimeMillis') is not None:
+            self.modify_time_millis = m.get('modifyTimeMillis')
+        return self
+
+
+class CreateEduAssetSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateEduAssetSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateEduAssetSpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteTeacherHeaders(TeaModel):
     def __init__(
         self,
@@ -6753,6 +6970,245 @@ class MoveStudentResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = MoveStudentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryEduAssetSpacesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryEduAssetSpacesRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+        biz_code: str = None,
+    ):
+        # 标记当前开始读取的位置，置空表示从头开始
+        self.next_token = next_token
+        # 本次读取的最大数据记录数量
+        self.max_results = max_results
+        # 业务编码
+        self.biz_code = biz_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        return self
+
+
+class QueryEduAssetSpacesResponseBodySpaces(TeaModel):
+    def __init__(
+        self,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        quota: int = None,
+        used_quota: int = None,
+        permission_mode: str = None,
+        create_time_millis: int = None,
+        modify_time_millis: int = None,
+    ):
+        # 空间id
+        self.space_id = space_id
+        # 空间名称
+        self.space_name = space_name
+        # 空间类型
+        self.space_type = space_type
+        # 空间容量
+        self.quota = quota
+        # 已使用容量
+        self.used_quota = used_quota
+        # 权限类型acl：acl授权；custom：自定义授权
+        self.permission_mode = permission_mode
+        # 创建时间的时间戳
+        self.create_time_millis = create_time_millis
+        # 修改时间的时间戳
+        self.modify_time_millis = modify_time_millis
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        if self.permission_mode is not None:
+            result['permissionMode'] = self.permission_mode
+        if self.create_time_millis is not None:
+            result['createTimeMillis'] = self.create_time_millis
+        if self.modify_time_millis is not None:
+            result['modifyTimeMillis'] = self.modify_time_millis
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        if m.get('permissionMode') is not None:
+            self.permission_mode = m.get('permissionMode')
+        if m.get('createTimeMillis') is not None:
+            self.create_time_millis = m.get('createTimeMillis')
+        if m.get('modifyTimeMillis') is not None:
+            self.modify_time_millis = m.get('modifyTimeMillis')
+        return self
+
+
+class QueryEduAssetSpacesResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        has_more: bool = None,
+        spaces: List[QueryEduAssetSpacesResponseBodySpaces] = None,
+    ):
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 是否还有数据
+        self.has_more = has_more
+        # 空间结果集
+        self.spaces = spaces
+
+    def validate(self):
+        if self.spaces:
+            for k in self.spaces:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['spaces'] = []
+        if self.spaces is not None:
+            for k in self.spaces:
+                result['spaces'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.spaces = []
+        if m.get('spaces') is not None:
+            for k in m.get('spaces'):
+                temp_model = QueryEduAssetSpacesResponseBodySpaces()
+                self.spaces.append(temp_model.from_map(k))
+        return self
+
+
+class QueryEduAssetSpacesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryEduAssetSpacesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryEduAssetSpacesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -11758,6 +12214,39 @@ class DeleteOrgRelationResponse(TeaModel):
         if m.get('body') is not None:
             temp_model = DeleteOrgRelationResponseBody()
             self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class StartCourseHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
 
 

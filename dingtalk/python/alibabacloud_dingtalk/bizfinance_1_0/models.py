@@ -673,6 +673,385 @@ class QueryCategoryByPageResponse(TeaModel):
         return self
 
 
+class GetReceiptHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetReceiptRequest(TeaModel):
+    def __init__(
+        self,
+        model_id: str = None,
+        code: str = None,
+    ):
+        # 模型id
+        self.model_id = model_id
+        # 单据号
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class GetReceiptResponseBody(TeaModel):
+    def __init__(
+        self,
+        model_id: str = None,
+        source: str = None,
+        app_id: str = None,
+        data: str = None,
+    ):
+        # 数据模型id
+        self.model_id = model_id
+        # 数据来源：审批(approval)，开放接口(openapi)
+        self.source = source
+        # 数据来源于开放时，对应的微应用id
+        self.app_id = app_id
+        # 单据数据体json
+        self.data = data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.source is not None:
+            result['source'] = self.source
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class GetReceiptResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetReceiptResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetReceiptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryReceiptsByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryReceiptsByPageRequest(TeaModel):
+    def __init__(
+        self,
+        model_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        end_time: int = None,
+        time_filter_field: str = None,
+    ):
+        # 数据模型id
+        self.model_id = model_id
+        # 分页，从1开始
+        self.page_number = page_number
+        # 分页大小，默认10，最大100
+        self.page_size = page_size
+        # 检索开始时间
+        self.start_time = start_time
+        # 检索结束时间，默认当前时间，离开始时间最长不超过180天
+        self.end_time = end_time
+        # 检索排序时间类型：创建时间(gmt_create)，更新时间(gmt_modified)
+        self.time_filter_field = time_filter_field
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.time_filter_field is not None:
+            result['timeFilterField'] = self.time_filter_field
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('timeFilterField') is not None:
+            self.time_filter_field = m.get('timeFilterField')
+        return self
+
+
+class QueryReceiptsByPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        model_id: str = None,
+        source: str = None,
+        app_id: str = None,
+        data: str = None,
+    ):
+        # 模型id
+        self.model_id = model_id
+        # 数据来源：审批(approval)，开放接口(openapi)
+        self.source = source
+        # 数据来源于开放时，对应的微应用id
+        self.app_id = app_id
+        # 单据数据体json
+        self.data = data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.source is not None:
+            result['source'] = self.source
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class QueryReceiptsByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[QueryReceiptsByPageResponseBodyList] = None,
+        has_more: str = None,
+    ):
+        # 数据列表
+        self.list = list
+        # 是否还有更多数据
+        self.has_more = has_more
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryReceiptsByPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class QueryReceiptsByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryReceiptsByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryReceiptsByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCustomerByPageHeaders(TeaModel):
     def __init__(
         self,

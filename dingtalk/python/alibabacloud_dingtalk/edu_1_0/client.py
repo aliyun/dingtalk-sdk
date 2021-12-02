@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
-from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -632,6 +631,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.PollingConfirmStatusResponse(),
             await self.do_roarequest_async('PollingConfirmStatus', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/universities/courses/pollingConfirmStatus', 'json', req, runtime)
+        )
+
+    def create_edu_asset_space(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduAssetSpaceRequest,
+    ) -> dingtalkedu__1__0_models.CreateEduAssetSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateEduAssetSpaceHeaders()
+        return self.create_edu_asset_space_with_options(request, headers, runtime)
+
+    async def create_edu_asset_space_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduAssetSpaceRequest,
+    ) -> dingtalkedu__1__0_models.CreateEduAssetSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateEduAssetSpaceHeaders()
+        return await self.create_edu_asset_space_with_options_async(request, headers, runtime)
+
+    def create_edu_asset_space_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduAssetSpaceRequest,
+        headers: dingtalkedu__1__0_models.CreateEduAssetSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateEduAssetSpaceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.space_name):
+            body['spaceName'] = request.space_name
+        if not UtilClient.is_unset(request.space_desc):
+            body['spaceDesc'] = request.space_desc
+        if not UtilClient.is_unset(request.space_icon):
+            body['spaceIcon'] = request.space_icon
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateEduAssetSpaceResponse(),
+            self.do_roarequest('CreateEduAssetSpace', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/assets/spaces', 'json', req, runtime)
+        )
+
+    async def create_edu_asset_space_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduAssetSpaceRequest,
+        headers: dingtalkedu__1__0_models.CreateEduAssetSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateEduAssetSpaceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.space_name):
+            body['spaceName'] = request.space_name
+        if not UtilClient.is_unset(request.space_desc):
+            body['spaceDesc'] = request.space_desc
+        if not UtilClient.is_unset(request.space_icon):
+            body['spaceIcon'] = request.space_icon
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateEduAssetSpaceResponse(),
+            await self.do_roarequest_async('CreateEduAssetSpace', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/assets/spaces', 'json', req, runtime)
         )
 
     def delete_teacher(
@@ -1858,6 +1945,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.MoveStudentResponse(),
             await self.do_roarequest_async('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/students/move', 'json', req, runtime)
+        )
+
+    def query_edu_asset_spaces(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduAssetSpacesRequest,
+    ) -> dingtalkedu__1__0_models.QueryEduAssetSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryEduAssetSpacesHeaders()
+        return self.query_edu_asset_spaces_with_options(request, headers, runtime)
+
+    async def query_edu_asset_spaces_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduAssetSpacesRequest,
+    ) -> dingtalkedu__1__0_models.QueryEduAssetSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryEduAssetSpacesHeaders()
+        return await self.query_edu_asset_spaces_with_options_async(request, headers, runtime)
+
+    def query_edu_asset_spaces_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduAssetSpacesRequest,
+        headers: dingtalkedu__1__0_models.QueryEduAssetSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryEduAssetSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryEduAssetSpacesResponse(),
+            self.do_roarequest('QueryEduAssetSpaces', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/assets/spaces', 'json', req, runtime)
+        )
+
+    async def query_edu_asset_spaces_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduAssetSpacesRequest,
+        headers: dingtalkedu__1__0_models.QueryEduAssetSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryEduAssetSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryEduAssetSpacesResponse(),
+            await self.do_roarequest_async('QueryEduAssetSpaces', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/assets/spaces', 'json', req, runtime)
         )
 
     def create_university_course_group(
@@ -3371,7 +3530,7 @@ class Client(OpenApiClient):
         request: dingtalkedu__1__0_models.StartCourseRequest,
     ) -> dingtalkedu__1__0_models.StartCourseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkedu__1__0_models.StartCourseHeaders()
         return self.start_course_with_options(request, headers, runtime)
 
     async def start_course_async(
@@ -3379,13 +3538,13 @@ class Client(OpenApiClient):
         request: dingtalkedu__1__0_models.StartCourseRequest,
     ) -> dingtalkedu__1__0_models.StartCourseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkedu__1__0_models.StartCourseHeaders()
         return await self.start_course_with_options_async(request, headers, runtime)
 
     def start_course_with_options(
         self,
         request: dingtalkedu__1__0_models.StartCourseRequest,
-        headers: Dict[str, str],
+        headers: dingtalkedu__1__0_models.StartCourseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.StartCourseResponse:
         UtilClient.validate_model(request)
@@ -3401,8 +3560,13 @@ class Client(OpenApiClient):
             body['livePlayInfoList'] = request.live_play_info_list
         if not UtilClient.is_unset(request.isv_code):
             body['isvCode'] = request.isv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
@@ -3414,7 +3578,7 @@ class Client(OpenApiClient):
     async def start_course_with_options_async(
         self,
         request: dingtalkedu__1__0_models.StartCourseRequest,
-        headers: Dict[str, str],
+        headers: dingtalkedu__1__0_models.StartCourseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.StartCourseResponse:
         UtilClient.validate_model(request)
@@ -3430,8 +3594,13 @@ class Client(OpenApiClient):
             body['livePlayInfoList'] = request.live_play_info_list
         if not UtilClient.is_unset(request.isv_code):
             body['isvCode'] = request.isv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )

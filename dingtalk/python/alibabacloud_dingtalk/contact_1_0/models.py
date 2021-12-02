@@ -4646,6 +4646,282 @@ class CreateCooperateOrgResponse(TeaModel):
         return self
 
 
+class ListEmpLeaveRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListEmpLeaveRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        start_time: str = None,
+        end_time: str = None,
+        next_token: str = None,
+        max_results: int = None,
+    ):
+        # 开始时间
+        self.start_time = start_time
+        # 结束时间
+        self.end_time = end_time
+        # 分页token
+        self.next_token = next_token
+        # 分页大小
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class ListEmpLeaveRecordsResponseBodyResultRecords(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        name: str = None,
+        state_code: str = None,
+        mobile: str = None,
+        leave_time: str = None,
+        leave_reason: str = None,
+    ):
+        # 员工userid
+        self.user_id = user_id
+        # 员工名称
+        self.name = name
+        # 国际电话区号
+        self.state_code = state_code
+        # 手机号码
+        self.mobile = mobile
+        # 离职时间
+        self.leave_time = leave_time
+        # 离职原因(oapi-开放平台删除，cancel-注销，leave-主动离职，unknown-未知原因，delete-管理员删除）
+        self.leave_reason = leave_reason
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.state_code is not None:
+            result['stateCode'] = self.state_code
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.leave_time is not None:
+            result['leaveTime'] = self.leave_time
+        if self.leave_reason is not None:
+            result['leaveReason'] = self.leave_reason
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('stateCode') is not None:
+            self.state_code = m.get('stateCode')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('leaveTime') is not None:
+            self.leave_time = m.get('leaveTime')
+        if m.get('leaveReason') is not None:
+            self.leave_reason = m.get('leaveReason')
+        return self
+
+
+class ListEmpLeaveRecordsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        records: List[ListEmpLeaveRecordsResponseBodyResultRecords] = None,
+    ):
+        # 分页token
+        self.next_token = next_token
+        # 离职记录列表
+        self.records = records
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = ListEmpLeaveRecordsResponseBodyResultRecords()
+                self.records.append(temp_model.from_map(k))
+        return self
+
+
+class ListEmpLeaveRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_msg: str = None,
+        ding_open_errcode: int = None,
+        success: bool = None,
+        result: ListEmpLeaveRecordsResponseBodyResult = None,
+    ):
+        # errorMsg
+        self.error_msg = error_msg
+        # dingOpenErrcode
+        self.ding_open_errcode = ding_open_errcode
+        # success
+        self.success = success
+        # result
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.success is not None:
+            result['success'] = self.success
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('result') is not None:
+            temp_model = ListEmpLeaveRecordsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ListEmpLeaveRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListEmpLeaveRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListEmpLeaveRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetMigrationDingIdByDingIdHeaders(TeaModel):
     def __init__(
         self,

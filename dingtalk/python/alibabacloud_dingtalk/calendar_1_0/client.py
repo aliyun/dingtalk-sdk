@@ -1167,6 +1167,68 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListEventsView', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/eventsview', 'json', req, runtime)
         )
 
+    def sign_in(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.SignInHeaders()
+        return self.sign_in_with_options(user_id, calendar_id, event_id, headers, runtime)
+
+    async def sign_in_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.SignInHeaders()
+        return await self.sign_in_with_options_async(user_id, calendar_id, event_id, headers, runtime)
+
+    def sign_in_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.SignInHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.SignInResponse(),
+            self.do_roarequest('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signIn', 'json', req, runtime)
+        )
+
+    async def sign_in_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.SignInHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.SignInResponse(),
+            await self.do_roarequest_async('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signIn', 'json', req, runtime)
+        )
+
     def get_event(
         self,
         user_id: str,
@@ -1227,6 +1289,68 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.GetEventResponse(),
             await self.do_roarequest_async('GetEvent', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}', 'json', req, runtime)
+        )
+
+    def check_in(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.CheckInHeaders()
+        return self.check_in_with_options(user_id, calendar_id, event_id, headers, runtime)
+
+    async def check_in_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.CheckInHeaders()
+        return await self.check_in_with_options_async(user_id, calendar_id, event_id, headers, runtime)
+
+    def check_in_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.CheckInHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.CheckInResponse(),
+            self.do_roarequest('CheckIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/checkIn', 'json', req, runtime)
+        )
+
+    async def check_in_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.CheckInHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.CheckInResponse(),
+            await self.do_roarequest_async('CheckIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/checkIn', 'json', req, runtime)
         )
 
     def patch_event(
