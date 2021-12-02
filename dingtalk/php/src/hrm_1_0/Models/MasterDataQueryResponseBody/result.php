@@ -5,41 +5,42 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponseBody\result\viewEntityFieldVOList;
-use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponseBody\result\viewEntityMultiFieldVOList;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
     /**
+     * @description 唯一id
+     *
      * @var string
      */
     public $outerId;
 
     /**
+     * @description 领域
+     *
      * @var string
      */
     public $scopeCode;
 
     /**
+     * @description 编码
+     *
      * @var string
      */
     public $viewEntityCode;
 
     /**
+     * @description 字段列表
+     *
      * @var viewEntityFieldVOList[]
      */
     public $viewEntityFieldVOList;
-
-    /**
-     * @var viewEntityMultiFieldVOList[]
-     */
-    public $viewEntityMultiFieldVOList;
     protected $_name = [
-        'outerId'                    => 'outerId',
-        'scopeCode'                  => 'scopeCode',
-        'viewEntityCode'             => 'viewEntityCode',
-        'viewEntityFieldVOList'      => 'viewEntityFieldVOList',
-        'viewEntityMultiFieldVOList' => 'viewEntityMultiFieldVOList',
+        'outerId'               => 'outerId',
+        'scopeCode'             => 'scopeCode',
+        'viewEntityCode'        => 'viewEntityCode',
+        'viewEntityFieldVOList' => 'viewEntityFieldVOList',
     ];
 
     public function validate()
@@ -64,15 +65,6 @@ class result extends Model
                 $n = 0;
                 foreach ($this->viewEntityFieldVOList as $item) {
                     $res['viewEntityFieldVOList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->viewEntityMultiFieldVOList) {
-            $res['viewEntityMultiFieldVOList'] = [];
-            if (null !== $this->viewEntityMultiFieldVOList && \is_array($this->viewEntityMultiFieldVOList)) {
-                $n = 0;
-                foreach ($this->viewEntityMultiFieldVOList as $item) {
-                    $res['viewEntityMultiFieldVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -103,15 +95,6 @@ class result extends Model
                 $n                            = 0;
                 foreach ($map['viewEntityFieldVOList'] as $item) {
                     $model->viewEntityFieldVOList[$n++] = null !== $item ? viewEntityFieldVOList::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['viewEntityMultiFieldVOList'])) {
-            if (!empty($map['viewEntityMultiFieldVOList'])) {
-                $model->viewEntityMultiFieldVOList = [];
-                $n                                 = 0;
-                foreach ($map['viewEntityMultiFieldVOList'] as $item) {
-                    $model->viewEntityMultiFieldVOList[$n++] = null !== $item ? viewEntityMultiFieldVOList::fromMap($item) : $item;
                 }
             }
         }

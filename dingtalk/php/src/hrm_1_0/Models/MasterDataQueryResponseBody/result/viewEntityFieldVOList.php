@@ -10,35 +10,37 @@ use AlibabaCloud\Tea\Model;
 class viewEntityFieldVOList extends Model
 {
     /**
+     * @description 字段code
+     *
      * @var string
      */
     public $fieldCode;
 
     /**
+     * @description 字段值
+     *
      * @var fieldDataVO
      */
     public $fieldDataVO;
 
     /**
+     * @description 字段名称
+     *
      * @var string
      */
     public $fieldName;
 
     /**
+     * @description 字段类型
+     *
      * @var string
      */
     public $fieldType;
-
-    /**
-     * @var mixed[][]
-     */
-    public $attrs;
     protected $_name = [
         'fieldCode'   => 'fieldCode',
         'fieldDataVO' => 'fieldDataVO',
         'fieldName'   => 'fieldName',
         'fieldType'   => 'fieldType',
-        'attrs'       => 'attrs',
     ];
 
     public function validate()
@@ -59,9 +61,6 @@ class viewEntityFieldVOList extends Model
         }
         if (null !== $this->fieldType) {
             $res['fieldType'] = $this->fieldType;
-        }
-        if (null !== $this->attrs) {
-            $res['attrs'] = $this->attrs;
         }
 
         return $res;
@@ -86,9 +85,6 @@ class viewEntityFieldVOList extends Model
         }
         if (isset($map['fieldType'])) {
             $model->fieldType = $map['fieldType'];
-        }
-        if (isset($map['attrs'])) {
-            $model->attrs = $map['attrs'];
         }
 
         return $model;

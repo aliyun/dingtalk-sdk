@@ -10,26 +10,36 @@ use AlibabaCloud\Tea\Model;
 class MasterDataQueryResponseBody extends Model
 {
     /**
+     * @description 总条目数
+     *
      * @var int
      */
     public $total;
 
     /**
+     * @description 是否还有更多
+     *
      * @var bool
      */
     public $hasMore;
 
     /**
+     * @description 分页游标
+     *
      * @var int
      */
     public $nextToken;
 
     /**
+     * @description 是否成功
+     *
      * @var bool
      */
     public $success;
 
     /**
+     * @description 结果
+     *
      * @var result[]
      */
     public $result;

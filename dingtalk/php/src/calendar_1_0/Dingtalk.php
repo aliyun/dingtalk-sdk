@@ -8,6 +8,8 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CheckInHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CheckInResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdResponse;
@@ -51,6 +53,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RemoveAttendeeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\RespondEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignInHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignInResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -818,6 +822,46 @@ class Dingtalk extends OpenApiClient
      * @param string $calendarId
      * @param string $eventId
      *
+     * @return SignInResponse
+     */
+    public function signIn($userId, $calendarId, $eventId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SignInHeaders([]);
+
+        return $this->signInWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $userId
+     * @param string         $calendarId
+     * @param string         $eventId
+     * @param SignInHeaders  $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return SignInResponse
+     */
+    public function signInWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return SignInResponse::fromMap($this->doROARequest('SignIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signIn', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     * @param string $eventId
+     *
      * @return GetEventResponse
      */
     public function getEvent($userId, $calendarId, $eventId)
@@ -851,6 +895,46 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetEventResponse::fromMap($this->doROARequest('GetEvent', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     * @param string $calendarId
+     * @param string $eventId
+     *
+     * @return CheckInResponse
+     */
+    public function checkIn($userId, $calendarId, $eventId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckInHeaders([]);
+
+        return $this->checkInWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $userId
+     * @param string         $calendarId
+     * @param string         $eventId
+     * @param CheckInHeaders $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return CheckInResponse
+     */
+    public function checkInWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return CheckInResponse::fromMap($this->doROARequest('CheckIn', 'calendar_1.0', 'HTTP', 'POST', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/checkIn', 'json', $req, $runtime));
     }
 
     /**

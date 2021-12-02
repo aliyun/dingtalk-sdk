@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
@@ -745,6 +748,69 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateMemberGroupNickResponse::fromMap($this->doROARequest('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupNicks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetInterconnectionUrlRequest $request
+     *
+     * @return GetInterconnectionUrlResponse
+     */
+    public function getInterconnectionUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInterconnectionUrlHeaders([]);
+
+        return $this->getInterconnectionUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInterconnectionUrlRequest $request
+     * @param GetInterconnectionUrlHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetInterconnectionUrlResponse
+     */
+    public function getInterconnectionUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appUserId)) {
+            @$body['appUserId'] = $request->appUserId;
+        }
+        if (!Utils::isUnset($request->appUserName)) {
+            @$body['appUserName'] = $request->appUserName;
+        }
+        if (!Utils::isUnset($request->appUserAvatar)) {
+            @$body['appUserAvatar'] = $request->appUserAvatar;
+        }
+        if (!Utils::isUnset($request->appUserAvatarType)) {
+            @$body['appUserAvatarType'] = $request->appUserAvatarType;
+        }
+        if (!Utils::isUnset($request->appUserMobileNumber)) {
+            @$body['appUserMobileNumber'] = $request->appUserMobileNumber;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingUserId)) {
+            @$body['dingUserId'] = $request->dingUserId;
+        }
+        if (!Utils::isUnset($request->msgPageSettingId)) {
+            @$body['msgPageSettingId'] = $request->msgPageSettingId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetInterconnectionUrlResponse::fromMap($this->doROARequest('GetInterconnectionUrl', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/sessions/urls', 'json', $req, $runtime));
     }
 
     /**

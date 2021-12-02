@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlResponse;
@@ -108,6 +111,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListResponse;
@@ -137,6 +143,7 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupResponse
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareResponse;
@@ -584,6 +591,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return PollingConfirmStatusResponse::fromMap($this->doROARequest('PollingConfirmStatus', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/universities/courses/pollingConfirmStatus', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateEduAssetSpaceRequest $request
+     *
+     * @return CreateEduAssetSpaceResponse
+     */
+    public function createEduAssetSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateEduAssetSpaceHeaders([]);
+
+        return $this->createEduAssetSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateEduAssetSpaceRequest $request
+     * @param CreateEduAssetSpaceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CreateEduAssetSpaceResponse
+     */
+    public function createEduAssetSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->spaceName)) {
+            @$body['spaceName'] = $request->spaceName;
+        }
+        if (!Utils::isUnset($request->spaceDesc)) {
+            @$body['spaceDesc'] = $request->spaceDesc;
+        }
+        if (!Utils::isUnset($request->spaceIcon)) {
+            @$body['spaceIcon'] = $request->spaceIcon;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            @$body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateEduAssetSpaceResponse::fromMap($this->doROARequest('CreateEduAssetSpace', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/assets/spaces', 'json', $req, $runtime));
     }
 
     /**
@@ -1404,6 +1471,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return MoveStudentResponse::fromMap($this->doROARequest('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/students/move', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryEduAssetSpacesRequest $request
+     *
+     * @return QueryEduAssetSpacesResponse
+     */
+    public function queryEduAssetSpaces($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryEduAssetSpacesHeaders([]);
+
+        return $this->queryEduAssetSpacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryEduAssetSpacesRequest $request
+     * @param QueryEduAssetSpacesHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryEduAssetSpacesResponse
+     */
+    public function queryEduAssetSpacesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryEduAssetSpacesResponse::fromMap($this->doROARequest('QueryEduAssetSpaces', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/assets/spaces', 'json', $req, $runtime));
     }
 
     /**
@@ -2424,14 +2539,14 @@ class Dingtalk extends OpenApiClient
     public function startCourse($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = [];
+        $headers = new StartCourseHeaders([]);
 
         return $this->startCourseWithOptions($request, $headers, $runtime);
     }
 
     /**
      * @param StartCourseRequest $request
-     * @param string[]           $headers
+     * @param StartCourseHeaders $headers
      * @param RuntimeOptions     $runtime
      *
      * @return StartCourseResponse
@@ -2456,8 +2571,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->isvCode)) {
             @$body['isvCode'] = $request->isvCode;
         }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
         $req = new OpenApiRequest([
-            'headers' => $headers,
+            'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);

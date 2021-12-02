@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFinanceAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetReceiptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetReceiptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierResponse;
@@ -38,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryEnterpriseAccountByPag
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageResponse;
@@ -193,6 +199,108 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryCategoryByPageResponse::fromMap($this->doROARequest('QueryCategoryByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/categories/list', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetReceiptRequest $request
+     *
+     * @return GetReceiptResponse
+     */
+    public function getReceipt($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetReceiptHeaders([]);
+
+        return $this->getReceiptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetReceiptRequest $request
+     * @param GetReceiptHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetReceiptResponse
+     */
+    public function getReceiptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->modelId)) {
+            @$query['modelId'] = $request->modelId;
+        }
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetReceiptResponse::fromMap($this->doROARequest('GetReceipt', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/receipts/details', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryReceiptsByPageRequest $request
+     *
+     * @return QueryReceiptsByPageResponse
+     */
+    public function queryReceiptsByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryReceiptsByPageHeaders([]);
+
+        return $this->queryReceiptsByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryReceiptsByPageRequest $request
+     * @param QueryReceiptsByPageHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryReceiptsByPageResponse
+     */
+    public function queryReceiptsByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->modelId)) {
+            @$query['modelId'] = $request->modelId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->timeFilterField)) {
+            @$query['timeFilterField'] = $request->timeFilterField;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryReceiptsByPageResponse::fromMap($this->doROARequest('QueryReceiptsByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/receipts', 'json', $req, $runtime));
     }
 
     /**

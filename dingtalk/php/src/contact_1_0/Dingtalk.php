@@ -50,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsRespons
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpAttributeVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpLeaveRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpLeaveRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpLeaveRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListManagementGroupsResponse;
@@ -1566,6 +1569,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateCooperateOrgResponse::fromMap($this->doROARequest('CreateCooperateOrg', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cooperateCorps', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListEmpLeaveRecordsRequest $request
+     *
+     * @return ListEmpLeaveRecordsResponse
+     */
+    public function listEmpLeaveRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListEmpLeaveRecordsHeaders([]);
+
+        return $this->listEmpLeaveRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListEmpLeaveRecordsRequest $request
+     * @param ListEmpLeaveRecordsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ListEmpLeaveRecordsResponse
+     */
+    public function listEmpLeaveRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->startTime)) {
+            @$query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            @$query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListEmpLeaveRecordsResponse::fromMap($this->doROARequest('ListEmpLeaveRecords', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/empLeaveRecords', 'json', $req, $runtime));
     }
 
     /**
