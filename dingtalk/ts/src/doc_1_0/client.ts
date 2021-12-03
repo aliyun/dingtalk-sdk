@@ -462,11 +462,13 @@ export class GetWorkspaceResponseBody extends $tea.Model {
   url?: string;
   isDeleted?: boolean;
   owner?: string;
+  corpId?: string;
   static names(): { [key: string]: string } {
     return {
       url: 'url',
       isDeleted: 'isDeleted',
       owner: 'owner',
+      corpId: 'corpId',
     };
   }
 
@@ -475,6 +477,7 @@ export class GetWorkspaceResponseBody extends $tea.Model {
       url: 'string',
       isDeleted: 'boolean',
       owner: 'string',
+      corpId: 'string',
     };
   }
 
@@ -1441,11 +1444,13 @@ export class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList extends
   nodeId?: string;
   name?: string;
   url?: string;
+  lastEditTime?: string;
   static names(): { [key: string]: string } {
     return {
       nodeId: 'nodeId',
       name: 'name',
       url: 'url',
+      lastEditTime: 'lastEditTime',
     };
   }
 
@@ -1454,6 +1459,7 @@ export class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList extends
       nodeId: 'string',
       name: 'string',
       url: 'string',
+      lastEditTime: 'string',
     };
   }
 
@@ -1594,11 +1600,13 @@ export class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends $tea.M
   nodeId?: string;
   name?: string;
   url?: string;
+  lastEditTime?: number;
   static names(): { [key: string]: string } {
     return {
       nodeId: 'nodeId',
       name: 'name',
       url: 'url',
+      lastEditTime: 'lastEditTime',
     };
   }
 
@@ -1607,6 +1615,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends $tea.M
       nodeId: 'string',
       name: 'string',
       url: 'string',
+      lastEditTime: 'number',
     };
   }
 
@@ -1620,6 +1629,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
   url?: string;
   deleted?: boolean;
   owner?: string;
+  role?: string;
   name?: string;
   recentList?: GetRelatedWorkspacesResponseBodyWorkspacesRecentList[];
   createTime?: number;
@@ -1629,6 +1639,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
       url: 'url',
       deleted: 'deleted',
       owner: 'owner',
+      role: 'role',
       name: 'name',
       recentList: 'recentList',
       createTime: 'createTime',
@@ -1641,6 +1652,7 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
       url: 'string',
       deleted: 'boolean',
       owner: 'string',
+      role: 'string',
       name: 'string',
       recentList: { 'type': 'array', 'itemType': GetRelatedWorkspacesResponseBodyWorkspacesRecentList },
       createTime: 'number',
