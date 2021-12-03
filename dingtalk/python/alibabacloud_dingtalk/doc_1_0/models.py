@@ -958,10 +958,13 @@ class GetWorkspaceResponseBody(TeaModel):
         url: str = None,
         is_deleted: bool = None,
         owner: str = None,
+        corp_id: str = None,
     ):
         self.url = url
         self.is_deleted = is_deleted
         self.owner = owner
+        # 团队空间所属企业id
+        self.corp_id = corp_id
 
     def validate(self):
         pass
@@ -978,6 +981,8 @@ class GetWorkspaceResponseBody(TeaModel):
             result['isDeleted'] = self.is_deleted
         if self.owner is not None:
             result['owner'] = self.owner
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
         return result
 
     def from_map(self, m: dict = None):
@@ -988,6 +993,8 @@ class GetWorkspaceResponseBody(TeaModel):
             self.is_deleted = m.get('isDeleted')
         if m.get('owner') is not None:
             self.owner = m.get('owner')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
         return self
 
 
@@ -1429,6 +1436,7 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList(TeaModel):
         node_id: str = None,
         name: str = None,
         url: str = None,
+        last_edit_time: str = None,
     ):
         # 文档Id
         self.node_id = node_id
@@ -1436,6 +1444,8 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList(TeaModel):
         self.name = name
         # 文档打开url
         self.url = url
+        # 最近编辑时间
+        self.last_edit_time = last_edit_time
 
     def validate(self):
         pass
@@ -1452,6 +1462,8 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList(TeaModel):
             result['name'] = self.name
         if self.url is not None:
             result['url'] = self.url
+        if self.last_edit_time is not None:
+            result['lastEditTime'] = self.last_edit_time
         return result
 
     def from_map(self, m: dict = None):
@@ -1462,6 +1474,8 @@ class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList(TeaModel):
             self.name = m.get('name')
         if m.get('url') is not None:
             self.url = m.get('url')
+        if m.get('lastEditTime') is not None:
+            self.last_edit_time = m.get('lastEditTime')
         return self
 
 
@@ -2148,6 +2162,7 @@ class GetRelatedWorkspacesResponseBodyWorkspacesRecentList(TeaModel):
         node_id: str = None,
         name: str = None,
         url: str = None,
+        last_edit_time: int = None,
     ):
         # 文档id
         self.node_id = node_id
@@ -2155,6 +2170,8 @@ class GetRelatedWorkspacesResponseBodyWorkspacesRecentList(TeaModel):
         self.name = name
         # 文档打开url
         self.url = url
+        # 文档最后编辑时间
+        self.last_edit_time = last_edit_time
 
     def validate(self):
         pass
@@ -2171,6 +2188,8 @@ class GetRelatedWorkspacesResponseBodyWorkspacesRecentList(TeaModel):
             result['name'] = self.name
         if self.url is not None:
             result['url'] = self.url
+        if self.last_edit_time is not None:
+            result['lastEditTime'] = self.last_edit_time
         return result
 
     def from_map(self, m: dict = None):
@@ -2181,6 +2200,8 @@ class GetRelatedWorkspacesResponseBodyWorkspacesRecentList(TeaModel):
             self.name = m.get('name')
         if m.get('url') is not None:
             self.url = m.get('url')
+        if m.get('lastEditTime') is not None:
+            self.last_edit_time = m.get('lastEditTime')
         return self
 
 
@@ -2191,6 +2212,7 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         url: str = None,
         deleted: bool = None,
         owner: str = None,
+        role: str = None,
         name: str = None,
         recent_list: List[GetRelatedWorkspacesResponseBodyWorkspacesRecentList] = None,
         create_time: int = None,
@@ -2202,6 +2224,8 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         # 团队空间是否被删除
         self.deleted = deleted
         self.owner = owner
+        # 用户的角色
+        self.role = role
         # 团队空间名称
         self.name = name
         # 团队空间最近访问文档列表
@@ -2229,6 +2253,8 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
             result['deleted'] = self.deleted
         if self.owner is not None:
             result['owner'] = self.owner
+        if self.role is not None:
+            result['role'] = self.role
         if self.name is not None:
             result['name'] = self.name
         result['recentList'] = []
@@ -2249,6 +2275,8 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
             self.deleted = m.get('deleted')
         if m.get('owner') is not None:
             self.owner = m.get('owner')
+        if m.get('role') is not None:
+            self.role = m.get('role')
         if m.get('name') is not None:
             self.name = m.get('name')
         self.recent_list = []
