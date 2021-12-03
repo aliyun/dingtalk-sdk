@@ -36,6 +36,13 @@ class workspaces extends Model
     public $owner;
 
     /**
+     * @description 用户的角色
+     *
+     * @var string
+     */
+    public $role;
+
+    /**
      * @description 团队空间名称
      *
      * @var string
@@ -60,6 +67,7 @@ class workspaces extends Model
         'url'         => 'url',
         'deleted'     => 'deleted',
         'owner'       => 'owner',
+        'role'        => 'role',
         'name'        => 'name',
         'recentList'  => 'recentList',
         'createTime'  => 'createTime',
@@ -83,6 +91,9 @@ class workspaces extends Model
         }
         if (null !== $this->owner) {
             $res['owner'] = $this->owner;
+        }
+        if (null !== $this->role) {
+            $res['role'] = $this->role;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -122,6 +133,9 @@ class workspaces extends Model
         }
         if (isset($map['owner'])) {
             $model->owner = $map['owner'];
+        }
+        if (isset($map['role'])) {
+            $model->role = $map['role'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

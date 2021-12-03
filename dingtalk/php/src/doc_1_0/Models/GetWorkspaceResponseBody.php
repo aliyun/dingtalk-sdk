@@ -22,10 +22,18 @@ class GetWorkspaceResponseBody extends Model
      * @var string
      */
     public $owner;
+
+    /**
+     * @description 团队空间所属企业id
+     *
+     * @var string
+     */
+    public $corpId;
     protected $_name = [
         'url'       => 'url',
         'isDeleted' => 'isDeleted',
         'owner'     => 'owner',
+        'corpId'    => 'corpId',
     ];
 
     public function validate()
@@ -43,6 +51,9 @@ class GetWorkspaceResponseBody extends Model
         }
         if (null !== $this->owner) {
             $res['owner'] = $this->owner;
+        }
+        if (null !== $this->corpId) {
+            $res['corpId'] = $this->corpId;
         }
 
         return $res;
@@ -64,6 +75,9 @@ class GetWorkspaceResponseBody extends Model
         }
         if (isset($map['owner'])) {
             $model->owner = $map['owner'];
+        }
+        if (isset($map['corpId'])) {
+            $model->corpId = $map['corpId'];
         }
 
         return $model;

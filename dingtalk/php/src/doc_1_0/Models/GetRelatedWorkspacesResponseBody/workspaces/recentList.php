@@ -28,10 +28,18 @@ class recentList extends Model
      * @var string
      */
     public $url;
+
+    /**
+     * @description 文档最后编辑时间
+     *
+     * @var int
+     */
+    public $lastEditTime;
     protected $_name = [
-        'nodeId' => 'nodeId',
-        'name'   => 'name',
-        'url'    => 'url',
+        'nodeId'       => 'nodeId',
+        'name'         => 'name',
+        'url'          => 'url',
+        'lastEditTime' => 'lastEditTime',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class recentList extends Model
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
+        }
+        if (null !== $this->lastEditTime) {
+            $res['lastEditTime'] = $this->lastEditTime;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class recentList extends Model
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
+        }
+        if (isset($map['lastEditTime'])) {
+            $model->lastEditTime = $map['lastEditTime'];
         }
 
         return $model;
