@@ -13,6 +13,10 @@ public class GetWorkspaceResponseBody extends TeaModel {
     @NameInMap("owner")
     public String owner;
 
+    // 团队空间所属企业id
+    @NameInMap("corpId")
+    public String corpId;
+
     public static GetWorkspaceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetWorkspaceResponseBody self = new GetWorkspaceResponseBody();
         return TeaModel.build(map, self);
@@ -40,6 +44,14 @@ public class GetWorkspaceResponseBody extends TeaModel {
     }
     public String getOwner() {
         return this.owner;
+    }
+
+    public GetWorkspaceResponseBody setCorpId(String corpId) {
+        this.corpId = corpId;
+        return this;
+    }
+    public String getCorpId() {
+        return this.corpId;
     }
 
 }

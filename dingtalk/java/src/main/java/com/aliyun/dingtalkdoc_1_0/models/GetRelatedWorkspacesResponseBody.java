@@ -34,6 +34,10 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
+        // 文档最后编辑时间
+        @NameInMap("lastEditTime")
+        public Long lastEditTime;
+
         public static GetRelatedWorkspacesResponseBodyWorkspacesRecentList build(java.util.Map<String, ?> map) throws Exception {
             GetRelatedWorkspacesResponseBodyWorkspacesRecentList self = new GetRelatedWorkspacesResponseBodyWorkspacesRecentList();
             return TeaModel.build(map, self);
@@ -63,6 +67,14 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
             return this.url;
         }
 
+        public GetRelatedWorkspacesResponseBodyWorkspacesRecentList setLastEditTime(Long lastEditTime) {
+            this.lastEditTime = lastEditTime;
+            return this;
+        }
+        public Long getLastEditTime() {
+            return this.lastEditTime;
+        }
+
     }
 
     public static class GetRelatedWorkspacesResponseBodyWorkspaces extends TeaModel {
@@ -80,6 +92,10 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
 
         @NameInMap("owner")
         public String owner;
+
+        // 用户的角色
+        @NameInMap("role")
+        public String role;
 
         // 团队空间名称
         @NameInMap("name")
@@ -128,6 +144,14 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         }
         public String getOwner() {
             return this.owner;
+        }
+
+        public GetRelatedWorkspacesResponseBodyWorkspaces setRole(String role) {
+            this.role = role;
+            return this;
+        }
+        public String getRole() {
+            return this.role;
         }
 
         public GetRelatedWorkspacesResponseBodyWorkspaces setName(String name) {

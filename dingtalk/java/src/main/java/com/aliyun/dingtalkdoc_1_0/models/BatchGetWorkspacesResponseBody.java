@@ -34,6 +34,10 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
+        // 最近编辑时间
+        @NameInMap("lastEditTime")
+        public String lastEditTime;
+
         public static BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList build(java.util.Map<String, ?> map) throws Exception {
             BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList self = new BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList();
             return TeaModel.build(map, self);
@@ -61,6 +65,14 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
         }
         public String getUrl() {
             return this.url;
+        }
+
+        public BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList setLastEditTime(String lastEditTime) {
+            this.lastEditTime = lastEditTime;
+            return this;
+        }
+        public String getLastEditTime() {
+            return this.lastEditTime;
         }
 
     }
