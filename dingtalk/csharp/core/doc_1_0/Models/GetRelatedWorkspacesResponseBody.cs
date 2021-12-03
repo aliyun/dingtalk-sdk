@@ -42,6 +42,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public string Owner { get; set; }
 
             /// <summary>
+            /// 用户的角色
+            /// </summary>
+            [NameInMap("role")]
+            [Validation(Required=false)]
+            public string Role { get; set; }
+
+            /// <summary>
             /// 团队空间名称
             /// </summary>
             [NameInMap("name")]
@@ -75,6 +82,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
+
+                /// <summary>
+                /// 文档最后编辑时间
+                /// </summary>
+                [NameInMap("lastEditTime")]
+                [Validation(Required=false)]
+                public long? LastEditTime { get; set; }
 
             }
 

@@ -46,6 +46,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                     public string NodeId { get; set; }
                     public string Name { get; set; }
                     public string Url { get; set; }
+                    public string LastEditTime { get; set; }
                 }
                 [NameInMap("orgPublished")]
                 [Validation(Required=false)]

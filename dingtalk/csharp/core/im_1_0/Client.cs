@@ -26,6 +26,126 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
 
+        public GetInterconnectionUrlResponse GetInterconnectionUrl(GetInterconnectionUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetInterconnectionUrlHeaders headers = new GetInterconnectionUrlHeaders();
+            return GetInterconnectionUrlWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetInterconnectionUrlResponse> GetInterconnectionUrlAsync(GetInterconnectionUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetInterconnectionUrlHeaders headers = new GetInterconnectionUrlHeaders();
+            return await GetInterconnectionUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetInterconnectionUrlResponse GetInterconnectionUrlWithOptions(GetInterconnectionUrlRequest request, GetInterconnectionUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserAvatar))
+            {
+                body["appUserAvatar"] = request.AppUserAvatar;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserAvatarType))
+            {
+                body["appUserAvatarType"] = request.AppUserAvatarType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserId))
+            {
+                body["appUserId"] = request.AppUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserMobileNumber))
+            {
+                body["appUserMobileNumber"] = request.AppUserMobileNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserName))
+            {
+                body["appUserName"] = request.AppUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserId))
+            {
+                body["dingUserId"] = request.DingUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgPageSettingId))
+            {
+                body["msgPageSettingId"] = request.MsgPageSettingId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetInterconnectionUrlResponse>(DoROARequest("GetInterconnectionUrl", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/sessions/urls", "json", req, runtime));
+        }
+
+        public async Task<GetInterconnectionUrlResponse> GetInterconnectionUrlWithOptionsAsync(GetInterconnectionUrlRequest request, GetInterconnectionUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserAvatar))
+            {
+                body["appUserAvatar"] = request.AppUserAvatar;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserAvatarType))
+            {
+                body["appUserAvatarType"] = request.AppUserAvatarType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserId))
+            {
+                body["appUserId"] = request.AppUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserMobileNumber))
+            {
+                body["appUserMobileNumber"] = request.AppUserMobileNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppUserName))
+            {
+                body["appUserName"] = request.AppUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                body["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserId))
+            {
+                body["dingUserId"] = request.DingUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgPageSettingId))
+            {
+                body["msgPageSettingId"] = request.MsgPageSettingId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetInterconnectionUrlResponse>(await DoROARequestAsync("GetInterconnectionUrl", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/sessions/urls", "json", req, runtime));
+        }
+
         public InteractiveCardCreateInstanceResponse InteractiveCardCreateInstance(InteractiveCardCreateInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
