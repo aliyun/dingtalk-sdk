@@ -542,35 +542,40 @@ export class MasterDataQueryHeaders extends $tea.Model {
 }
 
 export class MasterDataQueryRequest extends $tea.Model {
-  body?: MasterDataQueryRequestBody;
+  scopeCode?: string;
+  viewEntityCode?: string;
+  tenantId?: number;
+  bizUK?: string;
+  relationIds?: string[];
+  optUserId?: string;
+  nextToken?: number;
+  maxResults?: number;
+  queryParams?: MasterDataQueryRequestQueryParams[];
   static names(): { [key: string]: string } {
     return {
-      body: 'body',
+      scopeCode: 'scopeCode',
+      viewEntityCode: 'viewEntityCode',
+      tenantId: 'tenantId',
+      bizUK: 'bizUK',
+      relationIds: 'relationIds',
+      optUserId: 'optUserId',
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+      queryParams: 'queryParams',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      body: MasterDataQueryRequestBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class MasterDataQueryShrinkRequest extends $tea.Model {
-  bodyShrink?: string;
-  static names(): { [key: string]: string } {
-    return {
-      bodyShrink: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      bodyShrink: 'string',
+      scopeCode: 'string',
+      viewEntityCode: 'string',
+      tenantId: 'number',
+      bizUK: 'string',
+      relationIds: { 'type': 'array', 'itemType': 'string' },
+      optUserId: 'string',
+      nextToken: 'number',
+      maxResults: 'number',
+      queryParams: { 'type': 'array', 'itemType': MasterDataQueryRequestQueryParams },
     };
   }
 
@@ -853,38 +858,45 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
   }
 }
 
-export class MasterDataQueryRequestBody extends $tea.Model {
-  scopeCode?: string;
-  viewEntityCode?: string;
-  tenantId?: number;
-  bizUK?: string;
-  relationIds?: string[];
-  optUserId?: string;
-  nextToken?: number;
-  maxResults?: number;
+export class MasterDataQueryRequestQueryParamsConditionList extends $tea.Model {
+  operate?: string;
+  value?: string;
   static names(): { [key: string]: string } {
     return {
-      scopeCode: 'scopeCode',
-      viewEntityCode: 'viewEntityCode',
-      tenantId: 'tenantId',
-      bizUK: 'bizUK',
-      relationIds: 'relationIds',
-      optUserId: 'optUserId',
-      nextToken: 'nextToken',
-      maxResults: 'maxResults',
+      operate: 'operate',
+      value: 'value',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      scopeCode: 'string',
-      viewEntityCode: 'string',
-      tenantId: 'number',
-      bizUK: 'string',
-      relationIds: { 'type': 'array', 'itemType': 'string' },
-      optUserId: 'string',
-      nextToken: 'number',
-      maxResults: 'number',
+      operate: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataQueryRequestQueryParams extends $tea.Model {
+  fieldCode?: string;
+  joinType?: string;
+  conditionList?: MasterDataQueryRequestQueryParamsConditionList[];
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      joinType: 'joinType',
+      conditionList: 'conditionList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      joinType: 'string',
+      conditionList: { 'type': 'array', 'itemType': MasterDataQueryRequestQueryParamsConditionList },
     };
   }
 
@@ -1251,17 +1263,43 @@ export default class Client extends OpenApi {
     return await this.masterDataQueryWithOptions(request, headers, runtime);
   }
 
-  async masterDataQueryWithOptions(tmpReq: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
-    Util.validateModel(tmpReq);
-    let request = new MasterDataQueryShrinkRequest({ });
-    OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset($tea.toMap(tmpReq.body))) {
-      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.body), "body", "json");
+  async masterDataQueryWithOptions(request: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.scopeCode)) {
+      body["scopeCode"] = request.scopeCode;
     }
 
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.bodyShrink)) {
-      query["body"] = request.bodyShrink;
+    if (!Util.isUnset(request.viewEntityCode)) {
+      body["viewEntityCode"] = request.viewEntityCode;
+    }
+
+    if (!Util.isUnset(request.tenantId)) {
+      body["tenantId"] = request.tenantId;
+    }
+
+    if (!Util.isUnset(request.bizUK)) {
+      body["bizUK"] = request.bizUK;
+    }
+
+    if (!Util.isUnset(request.relationIds)) {
+      body["relationIds"] = request.relationIds;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.queryParams)) {
+      body["queryParams"] = request.queryParams;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1275,7 +1313,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<MasterDataQueryResponse>(await this.doROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/masters/datas/query`, "json", req, runtime), new MasterDataQueryResponse({}));
   }

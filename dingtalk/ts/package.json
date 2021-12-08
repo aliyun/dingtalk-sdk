@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/dingtalk",
-  "version": "1.2.8",
+  "version": "1.2.10",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "@alicloud/tea-typescript": "^1.7.1",
     "@alicloud/openapi-client": "^0.4.0",
     "@alicloud/tea-util": "^1.4.0",
-    "@alicloud/openapi-util": "^0.2.4",
+    "@alicloud/openapi-util": "^0.2.7",
     "@alicloud/endpoint-util": "^0.0.1"
   },
   "files": [

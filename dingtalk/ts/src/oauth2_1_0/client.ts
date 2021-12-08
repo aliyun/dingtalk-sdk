@@ -110,34 +110,6 @@ export class CreateJsapiTicketHeaders extends $tea.Model {
   }
 }
 
-export class CreateJsapiTicketRequest extends $tea.Model {
-  agentId?: number;
-  dingTokenGrantType?: number;
-  dingOauthAppId?: number;
-  dingSuiteKey?: string;
-  static names(): { [key: string]: string } {
-    return {
-      agentId: 'agentId',
-      dingTokenGrantType: 'dingTokenGrantType',
-      dingOauthAppId: 'dingOauthAppId',
-      dingSuiteKey: 'dingSuiteKey',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      agentId: 'number',
-      dingTokenGrantType: 'number',
-      dingOauthAppId: 'number',
-      dingSuiteKey: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class CreateJsapiTicketResponseBody extends $tea.Model {
   jsapiTicket?: string;
   expireIn?: number;
@@ -886,31 +858,13 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserTokenResponse>(await this.doROARequest("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/userAccessToken`, "json", req, runtime), new GetUserTokenResponse({}));
   }
 
-  async createJsapiTicket(request: CreateJsapiTicketRequest): Promise<CreateJsapiTicketResponse> {
+  async createJsapiTicket(): Promise<CreateJsapiTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateJsapiTicketHeaders({ });
-    return await this.createJsapiTicketWithOptions(request, headers, runtime);
+    return await this.createJsapiTicketWithOptions(headers, runtime);
   }
 
-  async createJsapiTicketWithOptions(request: CreateJsapiTicketRequest, headers: CreateJsapiTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateJsapiTicketResponse> {
-    Util.validateModel(request);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.agentId)) {
-      body["agentId"] = request.agentId;
-    }
-
-    if (!Util.isUnset(request.dingTokenGrantType)) {
-      body["dingTokenGrantType"] = request.dingTokenGrantType;
-    }
-
-    if (!Util.isUnset(request.dingOauthAppId)) {
-      body["dingOauthAppId"] = request.dingOauthAppId;
-    }
-
-    if (!Util.isUnset(request.dingSuiteKey)) {
-      body["dingSuiteKey"] = request.dingSuiteKey;
-    }
-
+  async createJsapiTicketWithOptions(headers: CreateJsapiTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateJsapiTicketResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -922,7 +876,6 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateJsapiTicketResponse>(await this.doROARequest("CreateJsapiTicket", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/jsapiTickets`, "json", req, runtime), new CreateJsapiTicketResponse({}));
   }

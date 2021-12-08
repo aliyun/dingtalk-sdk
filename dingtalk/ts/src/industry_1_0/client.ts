@@ -1830,6 +1830,8 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
   userCode?: string;
   deptCode?: string;
   status?: number;
+  assessGroupId?: string;
+  assessGroupName?: string;
   static names(): { [key: string]: string } {
     return {
       uid: 'uid',
@@ -1842,6 +1844,8 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
       userCode: 'userCode',
       deptCode: 'deptCode',
       status: 'status',
+      assessGroupId: 'assessGroupId',
+      assessGroupName: 'assessGroupName',
     };
   }
 
@@ -1857,6 +1861,8 @@ export class QueryAllDoctorsResponseBodyContent extends $tea.Model {
       userCode: 'string',
       deptCode: 'string',
       status: 'number',
+      assessGroupId: 'string',
+      assessGroupName: 'string',
     };
   }
 

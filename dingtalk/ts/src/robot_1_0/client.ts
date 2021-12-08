@@ -104,6 +104,121 @@ export class BatchSendOTOResponse extends $tea.Model {
   }
 }
 
+export class OrgGroupSendHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrgGroupSendRequest extends $tea.Model {
+  msgParam?: string;
+  msgKey?: string;
+  openConversationId?: string;
+  robotCode?: string;
+  token?: string;
+  coolAppCode?: string;
+  dingTokenGrantType?: number;
+  dingOrgId?: number;
+  dingCorpId?: string;
+  dingIsvOrgId?: number;
+  dingSuiteKey?: string;
+  dingClientId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgParam: 'msgParam',
+      msgKey: 'msgKey',
+      openConversationId: 'openConversationId',
+      robotCode: 'robotCode',
+      token: 'token',
+      coolAppCode: 'coolAppCode',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingOrgId: 'dingOrgId',
+      dingCorpId: 'dingCorpId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingSuiteKey: 'dingSuiteKey',
+      dingClientId: 'dingClientId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgParam: 'string',
+      msgKey: 'string',
+      openConversationId: 'string',
+      robotCode: 'string',
+      token: 'string',
+      coolAppCode: 'string',
+      dingTokenGrantType: 'number',
+      dingOrgId: 'number',
+      dingCorpId: 'string',
+      dingIsvOrgId: 'number',
+      dingSuiteKey: 'string',
+      dingClientId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrgGroupSendResponseBody extends $tea.Model {
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrgGroupSendResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: OrgGroupSendResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: OrgGroupSendResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchRecallOTOHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -545,6 +660,79 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchSendOTOResponse>(await this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/oToMessages/batchSend`, "json", req, runtime), new BatchSendOTOResponse({}));
+  }
+
+  async orgGroupSend(request: OrgGroupSendRequest): Promise<OrgGroupSendResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OrgGroupSendHeaders({ });
+    return await this.orgGroupSendWithOptions(request, headers, runtime);
+  }
+
+  async orgGroupSendWithOptions(request: OrgGroupSendRequest, headers: OrgGroupSendHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupSendResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.msgParam)) {
+      body["msgParam"] = request.msgParam;
+    }
+
+    if (!Util.isUnset(request.msgKey)) {
+      body["msgKey"] = request.msgKey;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.token)) {
+      body["token"] = request.token;
+    }
+
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<OrgGroupSendResponse>(await this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/send`, "json", req, runtime), new OrgGroupSendResponse({}));
   }
 
   async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {

@@ -2537,25 +2537,19 @@ export class ListEmpLeaveRecordsRequest extends $tea.Model {
 }
 
 export class ListEmpLeaveRecordsResponseBody extends $tea.Model {
-  errorMsg?: string;
-  dingOpenErrcode?: number;
-  success?: boolean;
-  result?: ListEmpLeaveRecordsResponseBodyResult;
+  nextToken?: string;
+  records?: ListEmpLeaveRecordsResponseBodyRecords[];
   static names(): { [key: string]: string } {
     return {
-      errorMsg: 'errorMsg',
-      dingOpenErrcode: 'dingOpenErrcode',
-      success: 'success',
-      result: 'result',
+      nextToken: 'nextToken',
+      records: 'records',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      errorMsg: 'string',
-      dingOpenErrcode: 'number',
-      success: 'boolean',
-      result: ListEmpLeaveRecordsResponseBodyResult,
+      nextToken: 'string',
+      records: { 'type': 'array', 'itemType': ListEmpLeaveRecordsResponseBodyRecords },
     };
   }
 
@@ -3497,7 +3491,7 @@ export class UpdateBranchAttributesInCooperateRequestBody extends $tea.Model {
   }
 }
 
-export class ListEmpLeaveRecordsResponseBodyResultRecords extends $tea.Model {
+export class ListEmpLeaveRecordsResponseBodyRecords extends $tea.Model {
   userId?: string;
   name?: string;
   stateCode?: string;
@@ -3523,28 +3517,6 @@ export class ListEmpLeaveRecordsResponseBodyResultRecords extends $tea.Model {
       mobile: 'string',
       leaveTime: 'string',
       leaveReason: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class ListEmpLeaveRecordsResponseBodyResult extends $tea.Model {
-  nextToken?: string;
-  records?: ListEmpLeaveRecordsResponseBodyResultRecords[];
-  static names(): { [key: string]: string } {
-    return {
-      nextToken: 'nextToken',
-      records: 'records',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      nextToken: 'string',
-      records: { 'type': 'array', 'itemType': ListEmpLeaveRecordsResponseBodyResultRecords },
     };
   }
 

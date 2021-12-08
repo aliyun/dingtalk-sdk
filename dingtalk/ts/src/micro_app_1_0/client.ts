@@ -31,7 +31,6 @@ export class CreateInnerAppHeaders extends $tea.Model {
 
 export class CreateInnerAppRequest extends $tea.Model {
   opUnionId?: string;
-  ecologicalCorpId?: string;
   name?: string;
   desc?: string;
   icon?: string;
@@ -43,7 +42,6 @@ export class CreateInnerAppRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       opUnionId: 'opUnionId',
-      ecologicalCorpId: 'ecologicalCorpId',
       name: 'name',
       desc: 'desc',
       icon: 'icon',
@@ -58,7 +56,6 @@ export class CreateInnerAppRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       opUnionId: 'string',
-      ecologicalCorpId: 'string',
       name: 'string',
       desc: 'string',
       icon: 'string',
@@ -854,7 +851,6 @@ export class UpdateInnerAppHeaders extends $tea.Model {
 
 export class UpdateInnerAppRequest extends $tea.Model {
   opUnionId?: string;
-  ecologicalCorpId?: string;
   name?: string;
   desc?: string;
   icon?: string;
@@ -865,7 +861,6 @@ export class UpdateInnerAppRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       opUnionId: 'opUnionId',
-      ecologicalCorpId: 'ecologicalCorpId',
       name: 'name',
       desc: 'desc',
       icon: 'icon',
@@ -879,7 +874,6 @@ export class UpdateInnerAppRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       opUnionId: 'string',
-      ecologicalCorpId: 'string',
       name: 'string',
       desc: 'string',
       icon: 'string',
@@ -928,6 +922,69 @@ export class UpdateInnerAppResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateInnerAppResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserVilebleAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserVilebleAppResponseBody extends $tea.Model {
+  appList?: ListUserVilebleAppResponseBodyAppList[];
+  static names(): { [key: string]: string } {
+    return {
+      appList: 'appList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appList: { 'type': 'array', 'itemType': ListUserVilebleAppResponseBodyAppList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListUserVilebleAppResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListUserVilebleAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListUserVilebleAppResponseBody,
     };
   }
 
@@ -1110,6 +1167,69 @@ export class ListAppRoleScopesResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListAppRoleScopesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAllAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAllAppResponseBody extends $tea.Model {
+  appList?: ListAllAppResponseBodyAppList[];
+  static names(): { [key: string]: string } {
+    return {
+      appList: 'appList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appList: { 'type': 'array', 'itemType': ListAllAppResponseBodyAppList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAllAppResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListAllAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListAllAppResponseBody,
     };
   }
 
@@ -1609,18 +1729,15 @@ export class DeleteInnerAppHeaders extends $tea.Model {
 
 export class DeleteInnerAppRequest extends $tea.Model {
   opUnionId?: string;
-  ecologicalCorpId?: string;
   static names(): { [key: string]: string } {
     return {
       opUnionId: 'opUnionId',
-      ecologicalCorpId: 'ecologicalCorpId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       opUnionId: 'string',
-      ecologicalCorpId: 'string',
     };
   }
 
@@ -1873,6 +1990,49 @@ export class ListInnerAppResponseBodyAppList extends $tea.Model {
   }
 }
 
+export class ListUserVilebleAppResponseBodyAppList extends $tea.Model {
+  agentId?: number;
+  name?: string;
+  desc?: string;
+  icon?: string;
+  homepageLink?: string;
+  pcHomepageLink?: string;
+  ompLink?: string;
+  appId?: number;
+  appStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      name: 'name',
+      desc: 'desc',
+      icon: 'icon',
+      homepageLink: 'homepageLink',
+      pcHomepageLink: 'pcHomepageLink',
+      ompLink: 'ompLink',
+      appId: 'appId',
+      appStatus: 'appStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+      name: 'string',
+      desc: 'string',
+      icon: 'string',
+      homepageLink: 'string',
+      pcHomepageLink: 'string',
+      ompLink: 'string',
+      appId: 'number',
+      appStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAppRoleScopesResponseBodyDataList extends $tea.Model {
   roleName?: string;
   roleId?: number;
@@ -1910,6 +2070,49 @@ export class ListAppRoleScopesResponseBodyDataList extends $tea.Model {
   }
 }
 
+export class ListAllAppResponseBodyAppList extends $tea.Model {
+  agentId?: number;
+  name?: string;
+  desc?: string;
+  icon?: string;
+  homepageLink?: string;
+  pcHomepageLink?: string;
+  ompLink?: string;
+  appId?: number;
+  appStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      name: 'name',
+      desc: 'desc',
+      icon: 'icon',
+      homepageLink: 'homepageLink',
+      pcHomepageLink: 'pcHomepageLink',
+      ompLink: 'ompLink',
+      appId: 'appId',
+      appStatus: 'appStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+      name: 'string',
+      desc: 'string',
+      icon: 'string',
+      homepageLink: 'string',
+      pcHomepageLink: 'string',
+      ompLink: 'string',
+      appId: 'number',
+      appStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1934,10 +2137,6 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       body["opUnionId"] = request.opUnionId;
-    }
-
-    if (!Util.isUnset(request.ecologicalCorpId)) {
-      body["ecologicalCorpId"] = request.ecologicalCorpId;
     }
 
     if (!Util.isUnset(request.name)) {
@@ -2271,10 +2470,6 @@ export default class Client extends OpenApi {
       body["opUnionId"] = request.opUnionId;
     }
 
-    if (!Util.isUnset(request.ecologicalCorpId)) {
-      body["ecologicalCorpId"] = request.ecologicalCorpId;
-    }
-
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }
@@ -2317,6 +2512,28 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateInnerAppResponse>(await this.doROARequest("UpdateInnerApp", "microApp_1.0", "HTTP", "PUT", "AK", `/v1.0/microApp/apps/${agentId}`, "json", req, runtime), new UpdateInnerAppResponse({}));
+  }
+
+  async listUserVilebleApp(userId: string): Promise<ListUserVilebleAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListUserVilebleAppHeaders({ });
+    return await this.listUserVilebleAppWithOptions(userId, headers, runtime);
+  }
+
+  async listUserVilebleAppWithOptions(userId: string, headers: ListUserVilebleAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserVilebleAppResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListUserVilebleAppResponse>(await this.doROARequest("ListUserVilebleApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/users/${userId}/apps`, "json", req, runtime), new ListUserVilebleAppResponse({}));
   }
 
   async addMemberToAppRole(agentId: string, roleId: string, request: AddMemberToAppRoleRequest): Promise<AddMemberToAppRoleResponse> {
@@ -2391,6 +2608,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListAppRoleScopesResponse>(await this.doROARequest("ListAppRoleScopes", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/roles`, "json", req, runtime), new ListAppRoleScopesResponse({}));
+  }
+
+  async listAllApp(): Promise<ListAllAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAllAppHeaders({ });
+    return await this.listAllAppWithOptions(headers, runtime);
+  }
+
+  async listAllAppWithOptions(headers: ListAllAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllAppResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListAllAppResponse>(await this.doROARequest("ListAllApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/allApps`, "json", req, runtime), new ListAllAppResponse({}));
   }
 
   async addAppToWorkBenchGroup(agentId: string, request: AddAppToWorkBenchGroupRequest): Promise<AddAppToWorkBenchGroupResponse> {
@@ -2621,10 +2860,6 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       query["opUnionId"] = request.opUnionId;
-    }
-
-    if (!Util.isUnset(request.ecologicalCorpId)) {
-      query["ecologicalCorpId"] = request.ecologicalCorpId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

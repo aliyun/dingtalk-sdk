@@ -1214,11 +1214,13 @@ export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
   planId?: number;
   wifiKeys?: string[];
   positionKeys?: string[];
+  retainAttendanceCheck?: boolean;
   static names(): { [key: string]: string } {
     return {
       planId: 'planId',
       wifiKeys: 'wifiKeys',
       positionKeys: 'positionKeys',
+      retainAttendanceCheck: 'retainAttendanceCheck',
     };
   }
 
@@ -1227,6 +1229,7 @@ export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
       planId: 'number',
       wifiKeys: { 'type': 'array', 'itemType': 'string' },
       positionKeys: { 'type': 'array', 'itemType': 'string' },
+      retainAttendanceCheck: 'boolean',
     };
   }
 
