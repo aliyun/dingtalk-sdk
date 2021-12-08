@@ -16,13 +16,6 @@ class CreateInnerAppRequest extends Model
     public $opUnionId;
 
     /**
-     * @description 关联组织corpId
-     *
-     * @var string
-     */
-    public $ecologicalCorpId;
-
-    /**
      * @description 应用名称
      *
      * @var string
@@ -78,16 +71,15 @@ class CreateInnerAppRequest extends Model
      */
     public $scopeType;
     protected $_name = [
-        'opUnionId'        => 'opUnionId',
-        'ecologicalCorpId' => 'ecologicalCorpId',
-        'name'             => 'name',
-        'desc'             => 'desc',
-        'icon'             => 'icon',
-        'homepageLink'     => 'homepageLink',
-        'pcHomepageLink'   => 'pcHomepageLink',
-        'ompLink'          => 'ompLink',
-        'ipWhiteList'      => 'ipWhiteList',
-        'scopeType'        => 'scopeType',
+        'opUnionId'      => 'opUnionId',
+        'name'           => 'name',
+        'desc'           => 'desc',
+        'icon'           => 'icon',
+        'homepageLink'   => 'homepageLink',
+        'pcHomepageLink' => 'pcHomepageLink',
+        'ompLink'        => 'ompLink',
+        'ipWhiteList'    => 'ipWhiteList',
+        'scopeType'      => 'scopeType',
     ];
 
     public function validate()
@@ -99,9 +91,6 @@ class CreateInnerAppRequest extends Model
         $res = [];
         if (null !== $this->opUnionId) {
             $res['opUnionId'] = $this->opUnionId;
-        }
-        if (null !== $this->ecologicalCorpId) {
-            $res['ecologicalCorpId'] = $this->ecologicalCorpId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -141,9 +130,6 @@ class CreateInnerAppRequest extends Model
         $model = new self();
         if (isset($map['opUnionId'])) {
             $model->opUnionId = $map['opUnionId'];
-        }
-        if (isset($map['ecologicalCorpId'])) {
-            $model->ecologicalCorpId = $map['ecologicalCorpId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

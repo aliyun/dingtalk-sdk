@@ -4,43 +4,27 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpLeaveRecordsResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListEmpLeaveRecordsResponseBody\records;
 use AlibabaCloud\Tea\Model;
 
 class ListEmpLeaveRecordsResponseBody extends Model
 {
     /**
-     * @description errorMsg
+     * @description 分页token
      *
      * @var string
      */
-    public $errorMsg;
+    public $nextToken;
 
     /**
-     * @description dingOpenErrcode
+     * @description 离职记录列表
      *
-     * @var int
+     * @var records[]
      */
-    public $dingOpenErrcode;
-
-    /**
-     * @description success
-     *
-     * @var bool
-     */
-    public $success;
-
-    /**
-     * @description result
-     *
-     * @var result
-     */
-    public $result;
+    public $records;
     protected $_name = [
-        'errorMsg'        => 'errorMsg',
-        'dingOpenErrcode' => 'dingOpenErrcode',
-        'success'         => 'success',
-        'result'          => 'result',
+        'nextToken' => 'nextToken',
+        'records'   => 'records',
     ];
 
     public function validate()
@@ -50,17 +34,17 @@ class ListEmpLeaveRecordsResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->errorMsg) {
-            $res['errorMsg'] = $this->errorMsg;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
-        if (null !== $this->dingOpenErrcode) {
-            $res['dingOpenErrcode'] = $this->dingOpenErrcode;
-        }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        if (null !== $this->records) {
+            $res['records'] = [];
+            if (null !== $this->records && \is_array($this->records)) {
+                $n = 0;
+                foreach ($this->records as $item) {
+                    $res['records'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -74,17 +58,17 @@ class ListEmpLeaveRecordsResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['errorMsg'])) {
-            $model->errorMsg = $map['errorMsg'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
-        if (isset($map['dingOpenErrcode'])) {
-            $model->dingOpenErrcode = $map['dingOpenErrcode'];
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
-        }
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
+        if (isset($map['records'])) {
+            if (!empty($map['records'])) {
+                $model->records = [];
+                $n              = 0;
+                foreach ($map['records'] as $item) {
+                    $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

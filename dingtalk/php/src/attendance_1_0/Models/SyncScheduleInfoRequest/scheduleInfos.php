@@ -22,10 +22,16 @@ class scheduleInfos extends Model
      * @var string[]
      */
     public $positionKeys;
+
+    /**
+     * @var bool
+     */
+    public $retainAttendanceCheck;
     protected $_name = [
-        'planId'       => 'planId',
-        'wifiKeys'     => 'wifiKeys',
-        'positionKeys' => 'positionKeys',
+        'planId'                => 'planId',
+        'wifiKeys'              => 'wifiKeys',
+        'positionKeys'          => 'positionKeys',
+        'retainAttendanceCheck' => 'retainAttendanceCheck',
     ];
 
     public function validate()
@@ -43,6 +49,9 @@ class scheduleInfos extends Model
         }
         if (null !== $this->positionKeys) {
             $res['positionKeys'] = $this->positionKeys;
+        }
+        if (null !== $this->retainAttendanceCheck) {
+            $res['retainAttendanceCheck'] = $this->retainAttendanceCheck;
         }
 
         return $res;
@@ -68,6 +77,9 @@ class scheduleInfos extends Model
             if (!empty($map['positionKeys'])) {
                 $model->positionKeys = $map['positionKeys'];
             }
+        }
+        if (isset($map['retainAttendanceCheck'])) {
+            $model->retainAttendanceCheck = $map['retainAttendanceCheck'];
         }
 
         return $model;

@@ -8,6 +8,12 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
@@ -55,69 +61,6 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @param UpdateGroupPermissionRequest $request
-     *
-     * @return UpdateGroupPermissionResponse
-     */
-    public function updateGroupPermission($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateGroupPermissionHeaders([]);
-
-        return $this->updateGroupPermissionWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateGroupPermissionRequest $request
-     * @param UpdateGroupPermissionHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return UpdateGroupPermissionResponse
-     */
-    public function updateGroupPermissionWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->permissionGroup)) {
-            @$body['permissionGroup'] = $request->permissionGroup;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateGroupPermissionResponse::fromMap($this->doROARequest('UpdateGroupPermission', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/permissions', 'json', $req, $runtime));
     }
 
     /**
@@ -178,96 +121,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TopboxCloseResponse::fromMap($this->doROARequest('TopboxClose', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/topBoxes/close', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param SendInteractiveCardRequest $request
-     *
-     * @return SendInteractiveCardResponse
-     */
-    public function sendInteractiveCard($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new SendInteractiveCardHeaders([]);
-
-        return $this->sendInteractiveCardWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param SendInteractiveCardRequest $request
-     * @param SendInteractiveCardHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return SendInteractiveCardResponse
-     */
-    public function sendInteractiveCardWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->cardTemplateId)) {
-            @$body['cardTemplateId'] = $request->cardTemplateId;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->receiverUserIdList)) {
-            @$body['receiverUserIdList'] = $request->receiverUserIdList;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->outTrackId)) {
-            @$body['outTrackId'] = $request->outTrackId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->robotCode)) {
-            @$body['robotCode'] = $request->robotCode;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->conversationType)) {
-            @$body['conversationType'] = $request->conversationType;
-        }
-        if (!Utils::isUnset($request->callbackRouteKey)) {
-            @$body['callbackRouteKey'] = $request->callbackRouteKey;
-        }
-        if (!Utils::isUnset($request->cardData)) {
-            @$body['cardData'] = $request->cardData;
-        }
-        if (!Utils::isUnset($request->privateData)) {
-            @$body['privateData'] = $request->privateData;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
-        if (!Utils::isUnset($request->chatBotId)) {
-            @$body['chatBotId'] = $request->chatBotId;
-        }
-        if (!Utils::isUnset($request->userIdType)) {
-            @$body['userIdType'] = $request->userIdType;
-        }
-        if (!Utils::isUnset($request->atOpenIds)) {
-            @$body['atOpenIds'] = $request->atOpenIds;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return SendInteractiveCardResponse::fromMap($this->doROARequest('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/send', 'json', $req, $runtime));
     }
 
     /**
@@ -337,93 +190,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInteractiveCardResponse::fromMap($this->doROARequest('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/interactiveCards', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param InteractiveCardCreateInstanceRequest $request
-     *
-     * @return InteractiveCardCreateInstanceResponse
-     */
-    public function interactiveCardCreateInstance($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new InteractiveCardCreateInstanceHeaders([]);
-
-        return $this->interactiveCardCreateInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param InteractiveCardCreateInstanceRequest $request
-     * @param InteractiveCardCreateInstanceHeaders $headers
-     * @param RuntimeOptions                       $runtime
-     *
-     * @return InteractiveCardCreateInstanceResponse
-     */
-    public function interactiveCardCreateInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->cardTemplateId)) {
-            @$body['cardTemplateId'] = $request->cardTemplateId;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->receiverUserIdList)) {
-            @$body['receiverUserIdList'] = $request->receiverUserIdList;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->outTrackId)) {
-            @$body['outTrackId'] = $request->outTrackId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->robotCode)) {
-            @$body['robotCode'] = $request->robotCode;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->conversationType)) {
-            @$body['conversationType'] = $request->conversationType;
-        }
-        if (!Utils::isUnset($request->callbackRouteKey)) {
-            @$body['callbackRouteKey'] = $request->callbackRouteKey;
-        }
-        if (!Utils::isUnset($request->cardData)) {
-            @$body['cardData'] = $request->cardData;
-        }
-        if (!Utils::isUnset($request->privateData)) {
-            @$body['privateData'] = $request->privateData;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
-        if (!Utils::isUnset($request->chatBotId)) {
-            @$body['chatBotId'] = $request->chatBotId;
-        }
-        if (!Utils::isUnset($request->userIdType)) {
-            @$body['userIdType'] = $request->userIdType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return InteractiveCardCreateInstanceResponse::fromMap($this->doROARequest('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/instances', 'json', $req, $runtime));
     }
 
     /**
@@ -553,135 +319,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryMembersOfGroupRoleResponse::fromMap($this->doROARequest('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups/roles/members/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param TopboxOpenRequest $request
-     *
-     * @return TopboxOpenResponse
-     */
-    public function topboxOpen($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new TopboxOpenHeaders([]);
-
-        return $this->topboxOpenWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param TopboxOpenRequest $request
-     * @param TopboxOpenHeaders $headers
-     * @param RuntimeOptions    $runtime
-     *
-     * @return TopboxOpenResponse
-     */
-    public function topboxOpenWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->outTrackId)) {
-            @$body['outTrackId'] = $request->outTrackId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
-        if (!Utils::isUnset($request->expiredTime)) {
-            @$body['expiredTime'] = $request->expiredTime;
-        }
-        if (!Utils::isUnset($request->platforms)) {
-            @$body['platforms'] = $request->platforms;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return TopboxOpenResponse::fromMap($this->doROARequest('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/topBoxes/open', 'none', $req, $runtime));
-    }
-
-    /**
-     * @param UpdateTheGroupRolesOfGroupMemberRequest $request
-     *
-     * @return UpdateTheGroupRolesOfGroupMemberResponse
-     */
-    public function updateTheGroupRolesOfGroupMember($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new UpdateTheGroupRolesOfGroupMemberHeaders([]);
-
-        return $this->updateTheGroupRolesOfGroupMemberWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateTheGroupRolesOfGroupMemberRequest $request
-     * @param UpdateTheGroupRolesOfGroupMemberHeaders $headers
-     * @param RuntimeOptions                          $runtime
-     *
-     * @return UpdateTheGroupRolesOfGroupMemberResponse
-     */
-    public function updateTheGroupRolesOfGroupMemberWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->openRoleIds)) {
-            @$body['openRoleIds'] = $request->openRoleIds;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateTheGroupRolesOfGroupMemberResponse::fromMap($this->doROARequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupRoles', 'json', $req, $runtime));
     }
 
     /**
@@ -889,5 +526,506 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendTemplateInteractiveCardResponse::fromMap($this->doROARequest('SendTemplateInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/templates/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupPermissionRequest $request
+     *
+     * @return UpdateGroupPermissionResponse
+     */
+    public function updateGroupPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupPermissionHeaders([]);
+
+        return $this->updateGroupPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupPermissionRequest $request
+     * @param UpdateGroupPermissionHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return UpdateGroupPermissionResponse
+     */
+    public function updateGroupPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->permissionGroup)) {
+            @$body['permissionGroup'] = $request->permissionGroup;
+        }
+        if (!Utils::isUnset($request->status)) {
+            @$body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupPermissionResponse::fromMap($this->doROARequest('UpdateGroupPermission', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/permissions', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendInteractiveCardRequest $request
+     *
+     * @return SendInteractiveCardResponse
+     */
+    public function sendInteractiveCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendInteractiveCardHeaders([]);
+
+        return $this->sendInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendInteractiveCardRequest $request
+     * @param SendInteractiveCardHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return SendInteractiveCardResponse
+     */
+    public function sendInteractiveCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            @$body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->receiverUserIdList)) {
+            @$body['receiverUserIdList'] = $request->receiverUserIdList;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            @$body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->conversationType)) {
+            @$body['conversationType'] = $request->conversationType;
+        }
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            @$body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->privateData)) {
+            @$body['privateData'] = $request->privateData;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->chatBotId)) {
+            @$body['chatBotId'] = $request->chatBotId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
+        }
+        if (!Utils::isUnset($request->atOpenIds)) {
+            @$body['atOpenIds'] = $request->atOpenIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendInteractiveCardResponse::fromMap($this->doROARequest('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetSceneGroupInfoRequest $request
+     *
+     * @return GetSceneGroupInfoResponse
+     */
+    public function getSceneGroupInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSceneGroupInfoHeaders([]);
+
+        return $this->getSceneGroupInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetSceneGroupInfoRequest $request
+     * @param GetSceneGroupInfoHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetSceneGroupInfoResponse
+     */
+    public function getSceneGroupInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->coolAppCode)) {
+            @$body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetSceneGroupInfoResponse::fromMap($this->doROARequest('GetSceneGroupInfo', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param InteractiveCardCreateInstanceRequest $request
+     *
+     * @return InteractiveCardCreateInstanceResponse
+     */
+    public function interactiveCardCreateInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InteractiveCardCreateInstanceHeaders([]);
+
+        return $this->interactiveCardCreateInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param InteractiveCardCreateInstanceRequest $request
+     * @param InteractiveCardCreateInstanceHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return InteractiveCardCreateInstanceResponse
+     */
+    public function interactiveCardCreateInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            @$body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->receiverUserIdList)) {
+            @$body['receiverUserIdList'] = $request->receiverUserIdList;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            @$body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->conversationType)) {
+            @$body['conversationType'] = $request->conversationType;
+        }
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            @$body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            @$body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->privateData)) {
+            @$body['privateData'] = $request->privateData;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->chatBotId)) {
+            @$body['chatBotId'] = $request->chatBotId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InteractiveCardCreateInstanceResponse::fromMap($this->doROARequest('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/instances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param TopboxOpenRequest $request
+     *
+     * @return TopboxOpenResponse
+     */
+    public function topboxOpen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TopboxOpenHeaders([]);
+
+        return $this->topboxOpenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TopboxOpenRequest $request
+     * @param TopboxOpenHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return TopboxOpenResponse
+     */
+    public function topboxOpenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            @$body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        if (!Utils::isUnset($request->expiredTime)) {
+            @$body['expiredTime'] = $request->expiredTime;
+        }
+        if (!Utils::isUnset($request->platforms)) {
+            @$body['platforms'] = $request->platforms;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return TopboxOpenResponse::fromMap($this->doROARequest('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/topBoxes/open', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GetSceneGroupMembersRequest $request
+     *
+     * @return GetSceneGroupMembersResponse
+     */
+    public function getSceneGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSceneGroupMembersHeaders([]);
+
+        return $this->getSceneGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetSceneGroupMembersRequest $request
+     * @param GetSceneGroupMembersHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetSceneGroupMembersResponse
+     */
+    public function getSceneGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->coolAppCode)) {
+            @$body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->size)) {
+            @$body['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            @$body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetSceneGroupMembersResponse::fromMap($this->doROARequest('GetSceneGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/sceneGroups/members/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateTheGroupRolesOfGroupMemberRequest $request
+     *
+     * @return UpdateTheGroupRolesOfGroupMemberResponse
+     */
+    public function updateTheGroupRolesOfGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateTheGroupRolesOfGroupMemberHeaders([]);
+
+        return $this->updateTheGroupRolesOfGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateTheGroupRolesOfGroupMemberRequest $request
+     * @param UpdateTheGroupRolesOfGroupMemberHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return UpdateTheGroupRolesOfGroupMemberResponse
+     */
+    public function updateTheGroupRolesOfGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->openRoleIds)) {
+            @$body['openRoleIds'] = $request->openRoleIds;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOauthAppId)) {
+            @$body['dingOauthAppId'] = $request->dingOauthAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateTheGroupRolesOfGroupMemberResponse::fromMap($this->doROARequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/members/groupRoles', 'json', $req, $runtime));
     }
 }

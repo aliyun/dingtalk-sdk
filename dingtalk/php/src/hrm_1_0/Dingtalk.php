@@ -14,7 +14,6 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
-use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
@@ -27,7 +26,6 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
-use AlibabaCloud\Tea\Tea;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -306,23 +304,42 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MasterDataQueryRequest $tmpReq
+     * @param MasterDataQueryRequest $request
      * @param MasterDataQueryHeaders $headers
      * @param RuntimeOptions         $runtime
      *
      * @return MasterDataQueryResponse
      */
-    public function masterDataQueryWithOptions($tmpReq, $headers, $runtime)
+    public function masterDataQueryWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new MasterDataQueryShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->body)) {
-            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle(Tea::merge($tmpReq->body), 'body', 'json');
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->scopeCode)) {
+            @$body['scopeCode'] = $request->scopeCode;
         }
-        $query = [];
-        if (!Utils::isUnset($request->bodyShrink)) {
-            @$query['body'] = $request->bodyShrink;
+        if (!Utils::isUnset($request->viewEntityCode)) {
+            @$body['viewEntityCode'] = $request->viewEntityCode;
+        }
+        if (!Utils::isUnset($request->tenantId)) {
+            @$body['tenantId'] = $request->tenantId;
+        }
+        if (!Utils::isUnset($request->bizUK)) {
+            @$body['bizUK'] = $request->bizUK;
+        }
+        if (!Utils::isUnset($request->relationIds)) {
+            @$body['relationIds'] = $request->relationIds;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            @$body['optUserId'] = $request->optUserId;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->queryParams)) {
+            @$body['queryParams'] = $request->queryParams;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -333,7 +350,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return MasterDataQueryResponse::fromMap($this->doROARequest('MasterDataQuery', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/masters/datas/query', 'json', $req, $runtime));

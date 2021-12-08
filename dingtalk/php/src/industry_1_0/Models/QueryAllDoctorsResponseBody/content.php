@@ -77,17 +77,33 @@ class content extends Model
      * @var int
      */
     public $status;
+
+    /**
+     * @description 考核医疗组id
+     *
+     * @var string
+     */
+    public $assessGroupId;
+
+    /**
+     * @description 考核医疗组名称
+     *
+     * @var string
+     */
+    public $assessGroupName;
     protected $_name = [
-        'uid'            => 'uid',
-        'userName'       => 'userName',
-        'jobNum'         => 'jobNum',
-        'id'             => 'id',
-        'gmtCreateStr'   => 'gmtCreateStr',
-        'gmtModifiedStr' => 'gmtModifiedStr',
-        'corpId'         => 'corpId',
-        'userCode'       => 'userCode',
-        'deptCode'       => 'deptCode',
-        'status'         => 'status',
+        'uid'             => 'uid',
+        'userName'        => 'userName',
+        'jobNum'          => 'jobNum',
+        'id'              => 'id',
+        'gmtCreateStr'    => 'gmtCreateStr',
+        'gmtModifiedStr'  => 'gmtModifiedStr',
+        'corpId'          => 'corpId',
+        'userCode'        => 'userCode',
+        'deptCode'        => 'deptCode',
+        'status'          => 'status',
+        'assessGroupId'   => 'assessGroupId',
+        'assessGroupName' => 'assessGroupName',
     ];
 
     public function validate()
@@ -126,6 +142,12 @@ class content extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->assessGroupId) {
+            $res['assessGroupId'] = $this->assessGroupId;
+        }
+        if (null !== $this->assessGroupName) {
+            $res['assessGroupName'] = $this->assessGroupName;
         }
 
         return $res;
@@ -168,6 +190,12 @@ class content extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['assessGroupId'])) {
+            $model->assessGroupId = $map['assessGroupId'];
+        }
+        if (isset($map['assessGroupName'])) {
+            $model->assessGroupName = $map['assessGroupName'];
         }
 
         return $model;

@@ -31,6 +31,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdRespo
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppRoleScopesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppRoleScopesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppRoleScopesResponse;
@@ -39,6 +41,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListInnerAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListRoleInfoByUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListRoleInfoByUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleResponse;
@@ -102,9 +106,6 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->opUnionId)) {
             @$body['opUnionId'] = $request->opUnionId;
-        }
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            @$body['ecologicalCorpId'] = $request->ecologicalCorpId;
         }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
@@ -551,9 +552,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->opUnionId)) {
             @$body['opUnionId'] = $request->opUnionId;
         }
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            @$body['ecologicalCorpId'] = $request->ecologicalCorpId;
-        }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
@@ -588,6 +586,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInnerAppResponse::fromMap($this->doROARequest('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/microApp/apps/' . $agentId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return ListUserVilebleAppResponse
+     */
+    public function listUserVilebleApp($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListUserVilebleAppHeaders([]);
+
+        return $this->listUserVilebleAppWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                    $userId
+     * @param ListUserVilebleAppHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ListUserVilebleAppResponse
+     */
+    public function listUserVilebleAppWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListUserVilebleAppResponse::fromMap($this->doROARequest('ListUserVilebleApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/users/' . $userId . '/apps', 'json', $req, $runtime));
     }
 
     /**
@@ -690,6 +724,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListAppRoleScopesResponse::fromMap($this->doROARequest('ListAppRoleScopes', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return ListAllAppResponse
+     */
+    public function listAllApp()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAllAppHeaders([]);
+
+        return $this->listAllAppWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param ListAllAppHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return ListAllAppResponse
+     */
+    public function listAllAppWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListAllAppResponse::fromMap($this->doROARequest('ListAllApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/allApps', 'json', $req, $runtime));
     }
 
     /**
@@ -994,9 +1061,6 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->opUnionId)) {
             @$query['opUnionId'] = $request->opUnionId;
-        }
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            @$query['ecologicalCorpId'] = $request->ecologicalCorpId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

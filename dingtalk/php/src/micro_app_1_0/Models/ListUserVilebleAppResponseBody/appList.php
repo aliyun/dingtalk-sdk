@@ -2,18 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateInnerAppRequest extends Model
+class appList extends Model
 {
     /**
-     * @description 创建人unionId
+     * @description 应用id
      *
-     * @var string
+     * @var int
      */
-    public $opUnionId;
+    public $agentId;
 
     /**
      * @description 应用名称
@@ -37,14 +37,14 @@ class UpdateInnerAppRequest extends Model
     public $icon;
 
     /**
-     * @description 应用首页地址
+     * @description 应用移动端首页地址
      *
      * @var string
      */
     public $homepageLink;
 
     /**
-     * @description 应用PC端地址
+     * @description 应用PC端首页地址
      *
      * @var string
      */
@@ -58,20 +58,28 @@ class UpdateInnerAppRequest extends Model
     public $ompLink;
 
     /**
-     * @description 服务器出口ip白名单
+     * @description 三方应用id，如果是企业内部应用，返回0
      *
-     * @var string[]
+     * @var int
      */
-    public $ipWhiteList;
+    public $appId;
+
+    /**
+     * @description 应用状态，0：停用，1：启用 ，3：过期
+     *
+     * @var int
+     */
+    public $appStatus;
     protected $_name = [
-        'opUnionId'      => 'opUnionId',
+        'agentId'        => 'agentId',
         'name'           => 'name',
         'desc'           => 'desc',
         'icon'           => 'icon',
         'homepageLink'   => 'homepageLink',
         'pcHomepageLink' => 'pcHomepageLink',
         'ompLink'        => 'ompLink',
-        'ipWhiteList'    => 'ipWhiteList',
+        'appId'          => 'appId',
+        'appStatus'      => 'appStatus',
     ];
 
     public function validate()
@@ -81,8 +89,8 @@ class UpdateInnerAppRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUnionId) {
-            $res['opUnionId'] = $this->opUnionId;
+        if (null !== $this->agentId) {
+            $res['agentId'] = $this->agentId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -102,8 +110,11 @@ class UpdateInnerAppRequest extends Model
         if (null !== $this->ompLink) {
             $res['ompLink'] = $this->ompLink;
         }
-        if (null !== $this->ipWhiteList) {
-            $res['ipWhiteList'] = $this->ipWhiteList;
+        if (null !== $this->appId) {
+            $res['appId'] = $this->appId;
+        }
+        if (null !== $this->appStatus) {
+            $res['appStatus'] = $this->appStatus;
         }
 
         return $res;
@@ -112,13 +123,13 @@ class UpdateInnerAppRequest extends Model
     /**
      * @param array $map
      *
-     * @return UpdateInnerAppRequest
+     * @return appList
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUnionId'])) {
-            $model->opUnionId = $map['opUnionId'];
+        if (isset($map['agentId'])) {
+            $model->agentId = $map['agentId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
@@ -138,10 +149,11 @@ class UpdateInnerAppRequest extends Model
         if (isset($map['ompLink'])) {
             $model->ompLink = $map['ompLink'];
         }
-        if (isset($map['ipWhiteList'])) {
-            if (!empty($map['ipWhiteList'])) {
-                $model->ipWhiteList = $map['ipWhiteList'];
-            }
+        if (isset($map['appId'])) {
+            $model->appId = $map['appId'];
+        }
+        if (isset($map['appStatus'])) {
+            $model->appStatus = $map['appStatus'];
         }
 
         return $model;

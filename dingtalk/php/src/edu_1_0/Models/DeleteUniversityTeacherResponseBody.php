@@ -2,18 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class MasterDataQueryShrinkRequest extends Model
+class DeleteUniversityTeacherResponseBody extends Model
 {
     /**
-     * @var string
+     * @description 返回结果
+     *
+     * @var bool
      */
-    public $bodyShrink;
+    public $result;
     protected $_name = [
-        'bodyShrink' => 'body',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -23,8 +25,8 @@ class MasterDataQueryShrinkRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bodyShrink) {
-            $res['body'] = $this->bodyShrink;
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
         }
 
         return $res;
@@ -33,13 +35,13 @@ class MasterDataQueryShrinkRequest extends Model
     /**
      * @param array $map
      *
-     * @return MasterDataQueryShrinkRequest
+     * @return DeleteUniversityTeacherResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['body'])) {
-            $model->bodyShrink = $map['body'];
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;

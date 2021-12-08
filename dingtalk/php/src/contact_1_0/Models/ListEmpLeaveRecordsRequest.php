@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ListEmpLeaveRecordsRequest extends Model
 {
     /**
-     * @description 开始时间
+     * @description 开始时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
      *
      * @var string
      */
     public $startTime;
 
     /**
-     * @description 结束时间
+     * @description 结束时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
      *
      * @var string
      */

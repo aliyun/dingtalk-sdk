@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class DeleteInnerAppRequest extends Model
+class OrgGroupSendResponseBody extends Model
 {
     /**
-     * @description 操作人unionId
+     * @description 加密消息id
      *
      * @var string
      */
-    public $opUnionId;
+    public $processQueryKey;
     protected $_name = [
-        'opUnionId' => 'opUnionId',
+        'processQueryKey' => 'processQueryKey',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class DeleteInnerAppRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUnionId) {
-            $res['opUnionId'] = $this->opUnionId;
+        if (null !== $this->processQueryKey) {
+            $res['processQueryKey'] = $this->processQueryKey;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class DeleteInnerAppRequest extends Model
     /**
      * @param array $map
      *
-     * @return DeleteInnerAppRequest
+     * @return OrgGroupSendResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUnionId'])) {
-            $model->opUnionId = $map['opUnionId'];
+        if (isset($map['processQueryKey'])) {
+            $model->processQueryKey = $map['processQueryKey'];
         }
 
         return $model;

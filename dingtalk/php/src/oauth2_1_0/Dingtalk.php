@@ -6,7 +6,6 @@ namespace AlibabaCloud\SDK\Dingtalk\Voauth2_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\CreateJsapiTicketHeaders;
-use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\CreateJsapiTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\CreateJsapiTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetAccessTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetAccessTokenResponse;
@@ -90,41 +89,24 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateJsapiTicketRequest $request
-     *
      * @return CreateJsapiTicketResponse
      */
-    public function createJsapiTicket($request)
+    public function createJsapiTicket()
     {
         $runtime = new RuntimeOptions([]);
         $headers = new CreateJsapiTicketHeaders([]);
 
-        return $this->createJsapiTicketWithOptions($request, $headers, $runtime);
+        return $this->createJsapiTicketWithOptions($headers, $runtime);
     }
 
     /**
-     * @param CreateJsapiTicketRequest $request
      * @param CreateJsapiTicketHeaders $headers
      * @param RuntimeOptions           $runtime
      *
      * @return CreateJsapiTicketResponse
      */
-    public function createJsapiTicketWithOptions($request, $headers, $runtime)
+    public function createJsapiTicketWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingOauthAppId)) {
-            @$body['dingOauthAppId'] = $request->dingOauthAppId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -134,7 +116,6 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return CreateJsapiTicketResponse::fromMap($this->doROARequest('CreateJsapiTicket', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/jsapiTickets', 'json', $req, $runtime));
