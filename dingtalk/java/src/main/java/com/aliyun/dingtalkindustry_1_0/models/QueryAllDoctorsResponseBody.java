@@ -98,6 +98,14 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         @NameInMap("status")
         public Integer status;
 
+        // 考核医疗组id
+        @NameInMap("assessGroupId")
+        public String assessGroupId;
+
+        // 考核医疗组名称
+        @NameInMap("assessGroupName")
+        public String assessGroupName;
+
         public static QueryAllDoctorsResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             QueryAllDoctorsResponseBodyContent self = new QueryAllDoctorsResponseBodyContent();
             return TeaModel.build(map, self);
@@ -181,6 +189,22 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
         }
         public Integer getStatus() {
             return this.status;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setAssessGroupId(String assessGroupId) {
+            this.assessGroupId = assessGroupId;
+            return this;
+        }
+        public String getAssessGroupId() {
+            return this.assessGroupId;
+        }
+
+        public QueryAllDoctorsResponseBodyContent setAssessGroupName(String assessGroupName) {
+            this.assessGroupName = assessGroupName;
+            return this;
+        }
+        public String getAssessGroupName() {
+            return this.assessGroupName;
         }
 
     }

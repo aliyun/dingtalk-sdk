@@ -8,10 +8,6 @@ public class UpdateInnerAppRequest extends TeaModel {
     @NameInMap("opUnionId")
     public String opUnionId;
 
-    // 关联组织corpId
-    @NameInMap("ecologicalCorpId")
-    public String ecologicalCorpId;
-
     // 应用名称
     @NameInMap("name")
     public String name;
@@ -51,14 +47,6 @@ public class UpdateInnerAppRequest extends TeaModel {
     }
     public String getOpUnionId() {
         return this.opUnionId;
-    }
-
-    public UpdateInnerAppRequest setEcologicalCorpId(String ecologicalCorpId) {
-        this.ecologicalCorpId = ecologicalCorpId;
-        return this;
-    }
-    public String getEcologicalCorpId() {
-        return this.ecologicalCorpId;
     }
 
     public UpdateInnerAppRequest setName(String name) {

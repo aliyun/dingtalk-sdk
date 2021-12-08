@@ -34,10 +34,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("opUnionId", request.opUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.ecologicalCorpId)) {
-            body.put("ecologicalCorpId", request.ecologicalCorpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
@@ -369,10 +365,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("opUnionId", request.opUnionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.ecologicalCorpId)) {
-            body.put("ecologicalCorpId", request.ecologicalCorpId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
@@ -415,6 +407,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateInnerApp", "microApp_1.0", "HTTP", "PUT", "AK", "/v1.0/microApp/apps/" + agentId + "", "json", req, runtime), new UpdateInnerAppResponse());
+    }
+
+    public ListUserVilebleAppResponse listUserVilebleApp(String userId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListUserVilebleAppHeaders headers = new ListUserVilebleAppHeaders();
+        return this.listUserVilebleAppWithOptions(userId, headers, runtime);
+    }
+
+    public ListUserVilebleAppResponse listUserVilebleAppWithOptions(String userId, ListUserVilebleAppHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ListUserVilebleApp", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/users/" + userId + "/apps", "json", req, runtime), new ListUserVilebleAppResponse());
     }
 
     public AddMemberToAppRoleResponse addMemberToAppRole(String agentId, String roleId, AddMemberToAppRoleRequest request) throws Exception {
@@ -489,6 +503,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("ListAppRoleScopes", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/apps/" + agentId + "/roles", "json", req, runtime), new ListAppRoleScopesResponse());
+    }
+
+    public ListAllAppResponse listAllApp() throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        ListAllAppHeaders headers = new ListAllAppHeaders();
+        return this.listAllAppWithOptions(headers, runtime);
+    }
+
+    public ListAllAppResponse listAllAppWithOptions(ListAllAppHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("ListAllApp", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/allApps", "json", req, runtime), new ListAllAppResponse());
     }
 
     public AddAppToWorkBenchGroupResponse addAppToWorkBenchGroup(String agentId, AddAppToWorkBenchGroupRequest request) throws Exception {
@@ -719,10 +755,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
             query.put("opUnionId", request.opUnionId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.ecologicalCorpId)) {
-            query.put("ecologicalCorpId", request.ecologicalCorpId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

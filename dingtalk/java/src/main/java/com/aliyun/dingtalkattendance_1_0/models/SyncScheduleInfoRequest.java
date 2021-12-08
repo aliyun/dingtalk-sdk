@@ -41,6 +41,9 @@ public class SyncScheduleInfoRequest extends TeaModel {
         @NameInMap("positionKeys")
         public java.util.List<String> positionKeys;
 
+        @NameInMap("retainAttendanceCheck")
+        public Boolean retainAttendanceCheck;
+
         public static SyncScheduleInfoRequestScheduleInfos build(java.util.Map<String, ?> map) throws Exception {
             SyncScheduleInfoRequestScheduleInfos self = new SyncScheduleInfoRequestScheduleInfos();
             return TeaModel.build(map, self);
@@ -68,6 +71,14 @@ public class SyncScheduleInfoRequest extends TeaModel {
         }
         public java.util.List<String> getPositionKeys() {
             return this.positionKeys;
+        }
+
+        public SyncScheduleInfoRequestScheduleInfos setRetainAttendanceCheck(Boolean retainAttendanceCheck) {
+            this.retainAttendanceCheck = retainAttendanceCheck;
+            return this;
+        }
+        public Boolean getRetainAttendanceCheck() {
+            return this.retainAttendanceCheck;
         }
 
     }

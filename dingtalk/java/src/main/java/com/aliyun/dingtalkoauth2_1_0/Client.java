@@ -57,31 +57,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/userAccessToken", "json", req, runtime), new GetUserTokenResponse());
     }
 
-    public CreateJsapiTicketResponse createJsapiTicket(CreateJsapiTicketRequest request) throws Exception {
+    public CreateJsapiTicketResponse createJsapiTicket() throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         CreateJsapiTicketHeaders headers = new CreateJsapiTicketHeaders();
-        return this.createJsapiTicketWithOptions(request, headers, runtime);
+        return this.createJsapiTicketWithOptions(headers, runtime);
     }
 
-    public CreateJsapiTicketResponse createJsapiTicketWithOptions(CreateJsapiTicketRequest request, CreateJsapiTicketHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.agentId)) {
-            body.put("agentId", request.agentId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
-            body.put("dingTokenGrantType", request.dingTokenGrantType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingOauthAppId)) {
-            body.put("dingOauthAppId", request.dingOauthAppId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingSuiteKey)) {
-            body.put("dingSuiteKey", request.dingSuiteKey);
-        }
-
+    public CreateJsapiTicketResponse createJsapiTicketWithOptions(CreateJsapiTicketHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -92,8 +74,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+            new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("CreateJsapiTicket", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/jsapiTickets", "json", req, runtime), new CreateJsapiTicketResponse());
     }

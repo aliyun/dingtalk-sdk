@@ -4,11 +4,11 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpLeaveRecordsRequest extends TeaModel {
-    // 开始时间
+    // 开始时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
     @NameInMap("startTime")
     public String startTime;
 
-    // 结束时间
+    // 结束时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
     @NameInMap("endTime")
     public String endTime;
 

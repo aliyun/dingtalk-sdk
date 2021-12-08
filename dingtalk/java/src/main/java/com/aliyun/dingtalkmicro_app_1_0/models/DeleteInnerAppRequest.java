@@ -8,10 +8,6 @@ public class DeleteInnerAppRequest extends TeaModel {
     @NameInMap("opUnionId")
     public String opUnionId;
 
-    // 合作空间corpId
-    @NameInMap("ecologicalCorpId")
-    public String ecologicalCorpId;
-
     public static DeleteInnerAppRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteInnerAppRequest self = new DeleteInnerAppRequest();
         return TeaModel.build(map, self);
@@ -23,14 +19,6 @@ public class DeleteInnerAppRequest extends TeaModel {
     }
     public String getOpUnionId() {
         return this.opUnionId;
-    }
-
-    public DeleteInnerAppRequest setEcologicalCorpId(String ecologicalCorpId) {
-        this.ecologicalCorpId = ecologicalCorpId;
-        return this;
-    }
-    public String getEcologicalCorpId() {
-        return this.ecologicalCorpId;
     }
 
 }

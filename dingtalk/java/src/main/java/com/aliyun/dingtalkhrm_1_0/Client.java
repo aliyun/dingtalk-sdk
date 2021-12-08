@@ -222,17 +222,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.masterDataQueryWithOptions(request, headers, runtime);
     }
 
-    public MasterDataQueryResponse masterDataQueryWithOptions(MasterDataQueryRequest tmpReq, MasterDataQueryHeaders headers, RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        MasterDataQueryShrinkRequest request = new MasterDataQueryShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(tmpReq.body))) {
-            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(TeaModel.buildMap(tmpReq.body), "body", "json");
+    public MasterDataQueryResponse masterDataQueryWithOptions(MasterDataQueryRequest request, MasterDataQueryHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.scopeCode)) {
+            body.put("scopeCode", request.scopeCode);
         }
 
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
-            query.put("body", request.bodyShrink);
+        if (!com.aliyun.teautil.Common.isUnset(request.viewEntityCode)) {
+            body.put("viewEntityCode", request.viewEntityCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tenantId)) {
+            body.put("tenantId", request.tenantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizUK)) {
+            body.put("bizUK", request.bizUK);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationIds)) {
+            body.put("relationIds", request.relationIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
+            body.put("optUserId", request.optUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.queryParams)) {
+            body.put("queryParams", request.queryParams);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -246,7 +272,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/query", "json", req, runtime), new MasterDataQueryResponse());
     }
