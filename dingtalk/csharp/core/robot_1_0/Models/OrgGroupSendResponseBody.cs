@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
-    public class DeleteInnerAppRequest : TeaModel {
+    public class OrgGroupSendResponseBody : TeaModel {
         /// <summary>
-        /// 操作人unionId
+        /// 加密消息id
         /// </summary>
-        [NameInMap("opUnionId")]
+        [NameInMap("processQueryKey")]
         [Validation(Required=false)]
-        public string OpUnionId { get; set; }
+        public string ProcessQueryKey { get; set; }
 
     }
 

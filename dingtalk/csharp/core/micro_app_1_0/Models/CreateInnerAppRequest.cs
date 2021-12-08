@@ -17,13 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string Desc { get; set; }
 
         /// <summary>
-        /// 关联组织corpId
-        /// </summary>
-        [NameInMap("ecologicalCorpId")]
-        [Validation(Required=false)]
-        public string EcologicalCorpId { get; set; }
-
-        /// <summary>
         /// 应用首页地址
         /// </summary>
         [NameInMap("homepageLink")]

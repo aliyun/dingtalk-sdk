@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public List<string> PositionKeys { get; set; }
 
+            [NameInMap("retainAttendanceCheck")]
+            [Validation(Required=false)]
+            public bool? RetainAttendanceCheck { get; set; }
+
         }
 
     }

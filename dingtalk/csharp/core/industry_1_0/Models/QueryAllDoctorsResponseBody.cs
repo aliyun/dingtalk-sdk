@@ -86,6 +86,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public int? Status { get; set; }
 
+            /// <summary>
+            /// 考核医疗组id
+            /// </summary>
+            [NameInMap("assessGroupId")]
+            [Validation(Required=false)]
+            public string AssessGroupId { get; set; }
+
+            /// <summary>
+            /// 考核医疗组名称
+            /// </summary>
+            [NameInMap("assessGroupName")]
+            [Validation(Required=false)]
+            public string AssessGroupName { get; set; }
+
         }
 
         /// <summary>
