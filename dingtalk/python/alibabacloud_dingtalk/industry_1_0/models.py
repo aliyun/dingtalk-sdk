@@ -2595,6 +2595,8 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         user_code: str = None,
         dept_code: str = None,
         status: int = None,
+        assess_group_id: str = None,
+        assess_group_name: str = None,
     ):
         # 租户下staffId
         self.uid = uid
@@ -2616,6 +2618,10 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         self.dept_code = dept_code
         # 状态0-有效，1-删除
         self.status = status
+        # 考核医疗组id
+        self.assess_group_id = assess_group_id
+        # 考核医疗组名称
+        self.assess_group_name = assess_group_name
 
     def validate(self):
         pass
@@ -2646,6 +2652,10 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             result['deptCode'] = self.dept_code
         if self.status is not None:
             result['status'] = self.status
+        if self.assess_group_id is not None:
+            result['assessGroupId'] = self.assess_group_id
+        if self.assess_group_name is not None:
+            result['assessGroupName'] = self.assess_group_name
         return result
 
     def from_map(self, m: dict = None):
@@ -2670,6 +2680,10 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
             self.dept_code = m.get('deptCode')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('assessGroupId') is not None:
+            self.assess_group_id = m.get('assessGroupId')
+        if m.get('assessGroupName') is not None:
+            self.assess_group_name = m.get('assessGroupName')
         return self
 
 

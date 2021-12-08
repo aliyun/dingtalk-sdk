@@ -1164,7 +1164,92 @@ class MasterDataQueryHeaders(TeaModel):
         return self
 
 
-class MasterDataQueryRequestBody(TeaModel):
+class MasterDataQueryRequestQueryParamsConditionList(TeaModel):
+    def __init__(
+        self,
+        operate: str = None,
+        value: str = None,
+    ):
+        # 字段关系符
+        self.operate = operate
+        # 操作值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operate is not None:
+            result['operate'] = self.operate
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operate') is not None:
+            self.operate = m.get('operate')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class MasterDataQueryRequestQueryParams(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        join_type: str = None,
+        condition_list: List[MasterDataQueryRequestQueryParamsConditionList] = None,
+    ):
+        # 需要筛选的字段
+        self.field_code = field_code
+        # 筛选条件连接类型
+        self.join_type = join_type
+        # 筛选条件
+        self.condition_list = condition_list
+
+    def validate(self):
+        if self.condition_list:
+            for k in self.condition_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.join_type is not None:
+            result['joinType'] = self.join_type
+        result['conditionList'] = []
+        if self.condition_list is not None:
+            for k in self.condition_list:
+                result['conditionList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('joinType') is not None:
+            self.join_type = m.get('joinType')
+        self.condition_list = []
+        if m.get('conditionList') is not None:
+            for k in m.get('conditionList'):
+                temp_model = MasterDataQueryRequestQueryParamsConditionList()
+                self.condition_list.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDataQueryRequest(TeaModel):
     def __init__(
         self,
         scope_code: str = None,
@@ -1175,18 +1260,32 @@ class MasterDataQueryRequestBody(TeaModel):
         opt_user_id: str = None,
         next_token: int = None,
         max_results: int = None,
+        query_params: List[MasterDataQueryRequestQueryParams] = None,
     ):
+        # 领域code 由钉钉分配
         self.scope_code = scope_code
+        # 实体code
         self.view_entity_code = view_entity_code
+        # 数据生产方的租户id，由钉钉分配
         self.tenant_id = tenant_id
+        # 数据唯一键
         self.biz_uk = biz_uk
+        # 关联id列表，一般为userId
         self.relation_ids = relation_ids
+        # 当前操作人userId
         self.opt_user_id = opt_user_id
+        # 分页查询的游标
         self.next_token = next_token
+        # 分页查询每页数据条数
         self.max_results = max_results
+        # 其他查询条件
+        self.query_params = query_params
 
     def validate(self):
-        pass
+        if self.query_params:
+            for k in self.query_params:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1210,6 +1309,10 @@ class MasterDataQueryRequestBody(TeaModel):
             result['nextToken'] = self.next_token
         if self.max_results is not None:
             result['maxResults'] = self.max_results
+        result['queryParams'] = []
+        if self.query_params is not None:
+            for k in self.query_params:
+                result['queryParams'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -1230,62 +1333,11 @@ class MasterDataQueryRequestBody(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
-        return self
-
-
-class MasterDataQueryRequest(TeaModel):
-    def __init__(
-        self,
-        body: MasterDataQueryRequestBody = None,
-    ):
-        self.body = body
-
-    def validate(self):
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            temp_model = MasterDataQueryRequestBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class MasterDataQueryShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        body_shrink: str = None,
-    ):
-        self.body_shrink = body_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body_shrink is not None:
-            result['body'] = self.body_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            self.body_shrink = m.get('body')
+        self.query_params = []
+        if m.get('queryParams') is not None:
+            for k in m.get('queryParams'):
+                temp_model = MasterDataQueryRequestQueryParams()
+                self.query_params.append(temp_model.from_map(k))
         return self
 
 

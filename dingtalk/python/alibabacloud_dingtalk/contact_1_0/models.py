@@ -4687,9 +4687,9 @@ class ListEmpLeaveRecordsRequest(TeaModel):
         next_token: str = None,
         max_results: int = None,
     ):
-        # 开始时间
+        # 开始时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
         self.start_time = start_time
-        # 结束时间
+        # 结束时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
         self.end_time = end_time
         # 分页token
         self.next_token = next_token
@@ -4728,7 +4728,7 @@ class ListEmpLeaveRecordsRequest(TeaModel):
         return self
 
 
-class ListEmpLeaveRecordsResponseBodyResultRecords(TeaModel):
+class ListEmpLeaveRecordsResponseBodyRecords(TeaModel):
     def __init__(
         self,
         user_id: str = None,
@@ -4791,11 +4791,11 @@ class ListEmpLeaveRecordsResponseBodyResultRecords(TeaModel):
         return self
 
 
-class ListEmpLeaveRecordsResponseBodyResult(TeaModel):
+class ListEmpLeaveRecordsResponseBody(TeaModel):
     def __init__(
         self,
         next_token: str = None,
-        records: List[ListEmpLeaveRecordsResponseBodyResultRecords] = None,
+        records: List[ListEmpLeaveRecordsResponseBodyRecords] = None,
     ):
         # 分页token
         self.next_token = next_token
@@ -4829,59 +4829,8 @@ class ListEmpLeaveRecordsResponseBodyResult(TeaModel):
         self.records = []
         if m.get('records') is not None:
             for k in m.get('records'):
-                temp_model = ListEmpLeaveRecordsResponseBodyResultRecords()
+                temp_model = ListEmpLeaveRecordsResponseBodyRecords()
                 self.records.append(temp_model.from_map(k))
-        return self
-
-
-class ListEmpLeaveRecordsResponseBody(TeaModel):
-    def __init__(
-        self,
-        error_msg: str = None,
-        ding_open_errcode: int = None,
-        success: bool = None,
-        result: ListEmpLeaveRecordsResponseBodyResult = None,
-    ):
-        # errorMsg
-        self.error_msg = error_msg
-        # dingOpenErrcode
-        self.ding_open_errcode = ding_open_errcode
-        # success
-        self.success = success
-        # result
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.error_msg is not None:
-            result['errorMsg'] = self.error_msg
-        if self.ding_open_errcode is not None:
-            result['dingOpenErrcode'] = self.ding_open_errcode
-        if self.success is not None:
-            result['success'] = self.success
-        if self.result is not None:
-            result['result'] = self.result.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('errorMsg') is not None:
-            self.error_msg = m.get('errorMsg')
-        if m.get('dingOpenErrcode') is not None:
-            self.ding_open_errcode = m.get('dingOpenErrcode')
-        if m.get('success') is not None:
-            self.success = m.get('success')
-        if m.get('result') is not None:
-            temp_model = ListEmpLeaveRecordsResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
         return self
 
 

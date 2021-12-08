@@ -413,18 +413,30 @@ class Client(OpenApiClient):
 
     def master_data_query_with_options(
         self,
-        tmp_req: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
         headers: dingtalkhrm__1__0_models.MasterDataQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkhrm__1__0_models.MasterDataQueryShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.scope_code):
+            body['scopeCode'] = request.scope_code
+        if not UtilClient.is_unset(request.view_entity_code):
+            body['viewEntityCode'] = request.view_entity_code
+        if not UtilClient.is_unset(request.tenant_id):
+            body['tenantId'] = request.tenant_id
+        if not UtilClient.is_unset(request.biz_uk):
+            body['bizUK'] = request.biz_uk
+        if not UtilClient.is_unset(request.relation_ids):
+            body['relationIds'] = request.relation_ids
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.query_params):
+            body['queryParams'] = request.query_params
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -432,7 +444,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataQueryResponse(),
@@ -441,18 +453,30 @@ class Client(OpenApiClient):
 
     async def master_data_query_with_options_async(
         self,
-        tmp_req: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
         headers: dingtalkhrm__1__0_models.MasterDataQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkhrm__1__0_models.MasterDataQueryShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(TeaCore.to_map(tmp_req.body), 'body', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.scope_code):
+            body['scopeCode'] = request.scope_code
+        if not UtilClient.is_unset(request.view_entity_code):
+            body['viewEntityCode'] = request.view_entity_code
+        if not UtilClient.is_unset(request.tenant_id):
+            body['tenantId'] = request.tenant_id
+        if not UtilClient.is_unset(request.biz_uk):
+            body['bizUK'] = request.biz_uk
+        if not UtilClient.is_unset(request.relation_ids):
+            body['relationIds'] = request.relation_ids
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.query_params):
+            body['queryParams'] = request.query_params
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -460,7 +484,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataQueryResponse(),

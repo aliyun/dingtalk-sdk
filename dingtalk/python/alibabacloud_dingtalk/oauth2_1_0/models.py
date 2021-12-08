@@ -179,51 +179,6 @@ class CreateJsapiTicketHeaders(TeaModel):
         return self
 
 
-class CreateJsapiTicketRequest(TeaModel):
-    def __init__(
-        self,
-        agent_id: int = None,
-        ding_token_grant_type: int = None,
-        ding_oauth_app_id: int = None,
-        ding_suite_key: str = None,
-    ):
-        self.agent_id = agent_id
-        self.ding_token_grant_type = ding_token_grant_type
-        self.ding_oauth_app_id = ding_oauth_app_id
-        self.ding_suite_key = ding_suite_key
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.agent_id is not None:
-            result['agentId'] = self.agent_id
-        if self.ding_token_grant_type is not None:
-            result['dingTokenGrantType'] = self.ding_token_grant_type
-        if self.ding_oauth_app_id is not None:
-            result['dingOauthAppId'] = self.ding_oauth_app_id
-        if self.ding_suite_key is not None:
-            result['dingSuiteKey'] = self.ding_suite_key
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('agentId') is not None:
-            self.agent_id = m.get('agentId')
-        if m.get('dingTokenGrantType') is not None:
-            self.ding_token_grant_type = m.get('dingTokenGrantType')
-        if m.get('dingOauthAppId') is not None:
-            self.ding_oauth_app_id = m.get('dingOauthAppId')
-        if m.get('dingSuiteKey') is not None:
-            self.ding_suite_key = m.get('dingSuiteKey')
-        return self
-
-
 class CreateJsapiTicketResponseBody(TeaModel):
     def __init__(
         self,

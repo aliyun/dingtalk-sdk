@@ -94,46 +94,28 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
         )
 
-    def create_jsapi_ticket(
-        self,
-        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
-    ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+    def create_jsapi_ticket(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
-        return self.create_jsapi_ticket_with_options(request, headers, runtime)
+        return self.create_jsapi_ticket_with_options(headers, runtime)
 
-    async def create_jsapi_ticket_async(
-        self,
-        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
-    ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+    async def create_jsapi_ticket_async(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
-        return await self.create_jsapi_ticket_with_options_async(request, headers, runtime)
+        return await self.create_jsapi_ticket_with_options_async(headers, runtime)
 
     def create_jsapi_ticket_with_options(
         self,
-        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
         headers: dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.agent_id):
-            body['agentId'] = request.agent_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_oauth_app_id):
-            body['dingOauthAppId'] = request.ding_oauth_app_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            headers=real_headers
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse(),
@@ -142,28 +124,16 @@ class Client(OpenApiClient):
 
     async def create_jsapi_ticket_with_options_async(
         self,
-        request: dingtalkoauth_2__1__0_models.CreateJsapiTicketRequest,
         headers: dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.agent_id):
-            body['agentId'] = request.agent_id
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            body['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_oauth_app_id):
-            body['dingOauthAppId'] = request.ding_oauth_app_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            body['dingSuiteKey'] = request.ding_suite_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            headers=real_headers
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse(),

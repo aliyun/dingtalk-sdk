@@ -49,8 +49,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            body['ecologicalCorpId'] = request.ecological_corp_id
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.desc):
@@ -91,8 +89,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            body['ecologicalCorpId'] = request.ecological_corp_id
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.desc):
@@ -724,8 +720,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            body['ecologicalCorpId'] = request.ecological_corp_id
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.desc):
@@ -765,8 +759,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            body['ecologicalCorpId'] = request.ecological_corp_id
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.desc):
@@ -793,6 +785,60 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.UpdateInnerAppResponse(),
             await self.do_roarequest_async('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/microApp/apps/{agent_id}', 'json', req, runtime)
+        )
+
+    def list_user_vileble_app(
+        self,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListUserVilebleAppHeaders()
+        return self.list_user_vileble_app_with_options(user_id, headers, runtime)
+
+    async def list_user_vileble_app_async(
+        self,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListUserVilebleAppHeaders()
+        return await self.list_user_vileble_app_with_options_async(user_id, headers, runtime)
+
+    def list_user_vileble_app_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.ListUserVilebleAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse(),
+            self.do_roarequest('ListUserVilebleApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/users/{user_id}/apps', 'json', req, runtime)
+        )
+
+    async def list_user_vileble_app_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.ListUserVilebleAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse(),
+            await self.do_roarequest_async('ListUserVilebleApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/users/{user_id}/apps', 'json', req, runtime)
         )
 
     def add_member_to_app_role(
@@ -949,6 +995,52 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.ListAppRoleScopesResponse(),
             await self.do_roarequest_async('ListAppRoleScopes', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles', 'json', req, runtime)
+        )
+
+    def list_all_app(self) -> dingtalkmicro_app__1__0_models.ListAllAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListAllAppHeaders()
+        return self.list_all_app_with_options(headers, runtime)
+
+    async def list_all_app_async(self) -> dingtalkmicro_app__1__0_models.ListAllAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListAllAppHeaders()
+        return await self.list_all_app_with_options_async(headers, runtime)
+
+    def list_all_app_with_options(
+        self,
+        headers: dingtalkmicro_app__1__0_models.ListAllAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListAllAppResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListAllAppResponse(),
+            self.do_roarequest('ListAllApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/allApps', 'json', req, runtime)
+        )
+
+    async def list_all_app_with_options_async(
+        self,
+        headers: dingtalkmicro_app__1__0_models.ListAllAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListAllAppResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListAllAppResponse(),
+            await self.do_roarequest_async('ListAllApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/allApps', 'json', req, runtime)
         )
 
     def add_app_to_work_bench_group(
@@ -1392,8 +1484,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.op_union_id):
             query['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            query['ecologicalCorpId'] = request.ecological_corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1419,8 +1509,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.op_union_id):
             query['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            query['ecologicalCorpId'] = request.ecological_corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

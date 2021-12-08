@@ -41,7 +41,6 @@ class CreateInnerAppRequest(TeaModel):
     def __init__(
         self,
         op_union_id: str = None,
-        ecological_corp_id: str = None,
         name: str = None,
         desc: str = None,
         icon: str = None,
@@ -53,8 +52,6 @@ class CreateInnerAppRequest(TeaModel):
     ):
         # 创建人unionId
         self.op_union_id = op_union_id
-        # 关联组织corpId
-        self.ecological_corp_id = ecological_corp_id
         # 应用名称
         self.name = name
         # 应用描述
@@ -83,8 +80,6 @@ class CreateInnerAppRequest(TeaModel):
         result = dict()
         if self.op_union_id is not None:
             result['opUnionId'] = self.op_union_id
-        if self.ecological_corp_id is not None:
-            result['ecologicalCorpId'] = self.ecological_corp_id
         if self.name is not None:
             result['name'] = self.name
         if self.desc is not None:
@@ -107,8 +102,6 @@ class CreateInnerAppRequest(TeaModel):
         m = m or dict()
         if m.get('opUnionId') is not None:
             self.op_union_id = m.get('opUnionId')
-        if m.get('ecologicalCorpId') is not None:
-            self.ecological_corp_id = m.get('ecologicalCorpId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('desc') is not None:
@@ -1630,7 +1623,6 @@ class UpdateInnerAppRequest(TeaModel):
     def __init__(
         self,
         op_union_id: str = None,
-        ecological_corp_id: str = None,
         name: str = None,
         desc: str = None,
         icon: str = None,
@@ -1641,8 +1633,6 @@ class UpdateInnerAppRequest(TeaModel):
     ):
         # 创建人unionId
         self.op_union_id = op_union_id
-        # 关联组织corpId
-        self.ecological_corp_id = ecological_corp_id
         # 应用名称
         self.name = name
         # 应用描述
@@ -1669,8 +1659,6 @@ class UpdateInnerAppRequest(TeaModel):
         result = dict()
         if self.op_union_id is not None:
             result['opUnionId'] = self.op_union_id
-        if self.ecological_corp_id is not None:
-            result['ecologicalCorpId'] = self.ecological_corp_id
         if self.name is not None:
             result['name'] = self.name
         if self.desc is not None:
@@ -1691,8 +1679,6 @@ class UpdateInnerAppRequest(TeaModel):
         m = m or dict()
         if m.get('opUnionId') is not None:
             self.op_union_id = m.get('opUnionId')
-        if m.get('ecologicalCorpId') is not None:
-            self.ecological_corp_id = m.get('ecologicalCorpId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('desc') is not None:
@@ -1771,6 +1757,196 @@ class UpdateInnerAppResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateInnerAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListUserVilebleAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListUserVilebleAppResponseBodyAppList(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        name: str = None,
+        desc: str = None,
+        icon: str = None,
+        homepage_link: str = None,
+        pc_homepage_link: str = None,
+        omp_link: str = None,
+        app_id: int = None,
+        app_status: int = None,
+    ):
+        # 应用id
+        self.agent_id = agent_id
+        # 应用名称
+        self.name = name
+        # 应用描述
+        self.desc = desc
+        # 应用图标
+        self.icon = icon
+        # 应用移动端首页地址
+        self.homepage_link = homepage_link
+        # 应用PC端首页地址
+        self.pc_homepage_link = pc_homepage_link
+        # 应用管理后台地址
+        self.omp_link = omp_link
+        # 三方应用id，如果是企业内部应用，返回0
+        self.app_id = app_id
+        # 应用状态，0：停用，1：启用 ，3：过期
+        self.app_status = app_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.homepage_link is not None:
+            result['homepageLink'] = self.homepage_link
+        if self.pc_homepage_link is not None:
+            result['pcHomepageLink'] = self.pc_homepage_link
+        if self.omp_link is not None:
+            result['ompLink'] = self.omp_link
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_status is not None:
+            result['appStatus'] = self.app_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('homepageLink') is not None:
+            self.homepage_link = m.get('homepageLink')
+        if m.get('pcHomepageLink') is not None:
+            self.pc_homepage_link = m.get('pcHomepageLink')
+        if m.get('ompLink') is not None:
+            self.omp_link = m.get('ompLink')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appStatus') is not None:
+            self.app_status = m.get('appStatus')
+        return self
+
+
+class ListUserVilebleAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        app_list: List[ListUserVilebleAppResponseBodyAppList] = None,
+    ):
+        # 应用列表
+        self.app_list = app_list
+
+    def validate(self):
+        if self.app_list:
+            for k in self.app_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['appList'] = []
+        if self.app_list is not None:
+            for k in self.app_list:
+                result['appList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.app_list = []
+        if m.get('appList') is not None:
+            for k in m.get('appList'):
+                temp_model = ListUserVilebleAppResponseBodyAppList()
+                self.app_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListUserVilebleAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListUserVilebleAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListUserVilebleAppResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2143,6 +2319,196 @@ class ListAppRoleScopesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListAppRoleScopesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListAllAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListAllAppResponseBodyAppList(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        name: str = None,
+        desc: str = None,
+        icon: str = None,
+        homepage_link: str = None,
+        pc_homepage_link: str = None,
+        omp_link: str = None,
+        app_id: int = None,
+        app_status: int = None,
+    ):
+        # 应用id
+        self.agent_id = agent_id
+        # 应用名称
+        self.name = name
+        # 应用描述
+        self.desc = desc
+        # 应用图标
+        self.icon = icon
+        # 应用移动端首页地址
+        self.homepage_link = homepage_link
+        # 应用PC端首页地址
+        self.pc_homepage_link = pc_homepage_link
+        # 应用管理后台地址
+        self.omp_link = omp_link
+        # 三方应用id，如果是企业内部应用，返回0
+        self.app_id = app_id
+        # 应用状态，0：停用，1：启用 ，3：过期
+        self.app_status = app_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.homepage_link is not None:
+            result['homepageLink'] = self.homepage_link
+        if self.pc_homepage_link is not None:
+            result['pcHomepageLink'] = self.pc_homepage_link
+        if self.omp_link is not None:
+            result['ompLink'] = self.omp_link
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_status is not None:
+            result['appStatus'] = self.app_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('homepageLink') is not None:
+            self.homepage_link = m.get('homepageLink')
+        if m.get('pcHomepageLink') is not None:
+            self.pc_homepage_link = m.get('pcHomepageLink')
+        if m.get('ompLink') is not None:
+            self.omp_link = m.get('ompLink')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appStatus') is not None:
+            self.app_status = m.get('appStatus')
+        return self
+
+
+class ListAllAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        app_list: List[ListAllAppResponseBodyAppList] = None,
+    ):
+        # 应用列表
+        self.app_list = app_list
+
+    def validate(self):
+        if self.app_list:
+            for k in self.app_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['appList'] = []
+        if self.app_list is not None:
+            for k in self.app_list:
+                result['appList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.app_list = []
+        if m.get('appList') is not None:
+            for k in m.get('appList'):
+                temp_model = ListAllAppResponseBodyAppList()
+                self.app_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListAllAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListAllAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListAllAppResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2932,12 +3298,9 @@ class DeleteInnerAppRequest(TeaModel):
     def __init__(
         self,
         op_union_id: str = None,
-        ecological_corp_id: str = None,
     ):
         # 操作人unionId
         self.op_union_id = op_union_id
-        # 合作空间corpId
-        self.ecological_corp_id = ecological_corp_id
 
     def validate(self):
         pass
@@ -2950,16 +3313,12 @@ class DeleteInnerAppRequest(TeaModel):
         result = dict()
         if self.op_union_id is not None:
             result['opUnionId'] = self.op_union_id
-        if self.ecological_corp_id is not None:
-            result['ecologicalCorpId'] = self.ecological_corp_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('opUnionId') is not None:
             self.op_union_id = m.get('opUnionId')
-        if m.get('ecologicalCorpId') is not None:
-            self.ecological_corp_id = m.get('ecologicalCorpId')
         return self
 
 

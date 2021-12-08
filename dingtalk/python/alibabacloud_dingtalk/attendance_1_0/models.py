@@ -1379,10 +1379,12 @@ class SyncScheduleInfoRequestScheduleInfos(TeaModel):
         plan_id: int = None,
         wifi_keys: List[str] = None,
         position_keys: List[str] = None,
+        retain_attendance_check: bool = None,
     ):
         self.plan_id = plan_id
         self.wifi_keys = wifi_keys
         self.position_keys = position_keys
+        self.retain_attendance_check = retain_attendance_check
 
     def validate(self):
         pass
@@ -1399,6 +1401,8 @@ class SyncScheduleInfoRequestScheduleInfos(TeaModel):
             result['wifiKeys'] = self.wifi_keys
         if self.position_keys is not None:
             result['positionKeys'] = self.position_keys
+        if self.retain_attendance_check is not None:
+            result['retainAttendanceCheck'] = self.retain_attendance_check
         return result
 
     def from_map(self, m: dict = None):
@@ -1409,6 +1413,8 @@ class SyncScheduleInfoRequestScheduleInfos(TeaModel):
             self.wifi_keys = m.get('wifiKeys')
         if m.get('positionKeys') is not None:
             self.position_keys = m.get('positionKeys')
+        if m.get('retainAttendanceCheck') is not None:
+            self.retain_attendance_check = m.get('retainAttendanceCheck')
         return self
 
 
