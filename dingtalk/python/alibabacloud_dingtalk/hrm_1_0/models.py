@@ -1434,6 +1434,7 @@ class MasterDataQueryResponseBodyResult(TeaModel):
         scope_code: str = None,
         view_entity_code: str = None,
         view_entity_field_volist: List[MasterDataQueryResponseBodyResultViewEntityFieldVOList] = None,
+        relation_id: str = None,
     ):
         # 唯一id
         self.outer_id = outer_id
@@ -1443,6 +1444,8 @@ class MasterDataQueryResponseBodyResult(TeaModel):
         self.view_entity_code = view_entity_code
         # 字段列表
         self.view_entity_field_volist = view_entity_field_volist
+        # 关联id列表，一般为userId
+        self.relation_id = relation_id
 
     def validate(self):
         if self.view_entity_field_volist:
@@ -1466,6 +1469,8 @@ class MasterDataQueryResponseBodyResult(TeaModel):
         if self.view_entity_field_volist is not None:
             for k in self.view_entity_field_volist:
                 result['viewEntityFieldVOList'].append(k.to_map() if k else None)
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1481,6 +1486,8 @@ class MasterDataQueryResponseBodyResult(TeaModel):
             for k in m.get('viewEntityFieldVOList'):
                 temp_model = MasterDataQueryResponseBodyResultViewEntityFieldVOList()
                 self.view_entity_field_volist.append(temp_model.from_map(k))
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
         return self
 
 

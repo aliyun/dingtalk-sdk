@@ -2776,6 +2776,7 @@ class SendOfficialAccountOTOMessageRequestDetail(TeaModel):
         msg_type: str = None,
         uuid: str = None,
         user_id: str = None,
+        union_id: str = None,
         message_body: SendOfficialAccountOTOMessageRequestDetailMessageBody = None,
     ):
         # 消息类型
@@ -2784,6 +2785,8 @@ class SendOfficialAccountOTOMessageRequestDetail(TeaModel):
         self.uuid = uuid
         # 消息接收人id
         self.user_id = user_id
+        # 消息接收人unionId
+        self.union_id = union_id
         # 消息体
         self.message_body = message_body
 
@@ -2803,6 +2806,8 @@ class SendOfficialAccountOTOMessageRequestDetail(TeaModel):
             result['uuid'] = self.uuid
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         if self.message_body is not None:
             result['messageBody'] = self.message_body.to_map()
         return result
@@ -2815,6 +2820,8 @@ class SendOfficialAccountOTOMessageRequestDetail(TeaModel):
             self.uuid = m.get('uuid')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         if m.get('messageBody') is not None:
             temp_model = SendOfficialAccountOTOMessageRequestDetailMessageBody()
             self.message_body = temp_model.from_map(m['messageBody'])

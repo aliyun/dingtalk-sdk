@@ -1122,11 +1122,17 @@ class DecodePayCodeRequest(TeaModel):
         self,
         pay_code: str = None,
         request_id: str = None,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
     ):
         # payCode
         self.pay_code = pay_code
         # requestId
         self.request_id = request_id
+        # ISV组织ID
+        self.ding_isv_org_id = ding_isv_org_id
+        # 组织ID
+        self.ding_org_id = ding_org_id
 
     def validate(self):
         pass
@@ -1141,6 +1147,10 @@ class DecodePayCodeRequest(TeaModel):
             result['payCode'] = self.pay_code
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1149,6 +1159,10 @@ class DecodePayCodeRequest(TeaModel):
             self.pay_code = m.get('payCode')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
         return self
 
 

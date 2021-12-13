@@ -2443,6 +2443,7 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
         node_name: str = None,
         url: str = None,
         last_edit_time: int = None,
+        is_deleted: bool = None,
     ):
         # 文档Id
         self.node_id = node_id
@@ -2452,6 +2453,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
         self.url = url
         # 最后编辑时间
         self.last_edit_time = last_edit_time
+        # 是否被删除
+        self.is_deleted = is_deleted
 
     def validate(self):
         pass
@@ -2470,6 +2473,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             result['url'] = self.url
         if self.last_edit_time is not None:
             result['lastEditTime'] = self.last_edit_time
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
         return result
 
     def from_map(self, m: dict = None):
@@ -2482,6 +2487,8 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
             self.url = m.get('url')
         if m.get('lastEditTime') is not None:
             self.last_edit_time = m.get('lastEditTime')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
         return self
 
 

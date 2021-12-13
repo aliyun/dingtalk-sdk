@@ -81,6 +81,102 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryDeviceVideoConferenceBook', 'smartDevice_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/smartDevice/devices/{device_id}/books/{book_id}', 'json', req, runtime)
         )
 
+    def machine_users_update(
+        self,
+        request: dingtalksmart_device__1__0_models.MachineUsersUpdateRequest,
+    ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders()
+        return self.machine_users_update_with_options(request, headers, runtime)
+
+    async def machine_users_update_async(
+        self,
+        request: dingtalksmart_device__1__0_models.MachineUsersUpdateRequest,
+    ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders()
+        return await self.machine_users_update_with_options_async(request, headers, runtime)
+
+    def machine_users_update_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.MachineUsersUpdateRequest,
+        headers: dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.del_user_ids):
+            body['delUserIds'] = request.del_user_ids
+        if not UtilClient.is_unset(request.device_ids):
+            body['deviceIds'] = request.device_ids
+        if not UtilClient.is_unset(request.add_user_ids):
+            body['addUserIds'] = request.add_user_ids
+        if not UtilClient.is_unset(request.dev_ids):
+            body['devIds'] = request.dev_ids
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.MachineUsersUpdateResponse(),
+            self.do_roarequest('MachineUsersUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/smartDevice/atmachines/users', 'none', req, runtime)
+        )
+
+    async def machine_users_update_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.MachineUsersUpdateRequest,
+        headers: dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.del_user_ids):
+            body['delUserIds'] = request.del_user_ids
+        if not UtilClient.is_unset(request.device_ids):
+            body['deviceIds'] = request.device_ids
+        if not UtilClient.is_unset(request.add_user_ids):
+            body['addUserIds'] = request.add_user_ids
+        if not UtilClient.is_unset(request.dev_ids):
+            body['devIds'] = request.dev_ids
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.MachineUsersUpdateResponse(),
+            await self.do_roarequest_async('MachineUsersUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/smartDevice/atmachines/users', 'none', req, runtime)
+        )
+
     def add_device_video_conference_members(
         self,
         device_id: str,

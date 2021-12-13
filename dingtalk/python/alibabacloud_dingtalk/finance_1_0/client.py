@@ -447,6 +447,10 @@ class Client(OpenApiClient):
             body['payCode'] = request.pay_code
         if not UtilClient.is_unset(request.request_id):
             body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -473,6 +477,10 @@ class Client(OpenApiClient):
             body['payCode'] = request.pay_code
         if not UtilClient.is_unset(request.request_id):
             body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
