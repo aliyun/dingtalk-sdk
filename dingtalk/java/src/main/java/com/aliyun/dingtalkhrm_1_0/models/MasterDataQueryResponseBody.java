@@ -174,6 +174,10 @@ public class MasterDataQueryResponseBody extends TeaModel {
         @NameInMap("viewEntityFieldVOList")
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> viewEntityFieldVOList;
 
+        // 关联id列表，一般为userId
+        @NameInMap("relationId")
+        public String relationId;
+
         public static MasterDataQueryResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             MasterDataQueryResponseBodyResult self = new MasterDataQueryResponseBodyResult();
             return TeaModel.build(map, self);
@@ -209,6 +213,14 @@ public class MasterDataQueryResponseBody extends TeaModel {
         }
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> getViewEntityFieldVOList() {
             return this.viewEntityFieldVOList;
+        }
+
+        public MasterDataQueryResponseBodyResult setRelationId(String relationId) {
+            this.relationId = relationId;
+            return this;
+        }
+        public String getRelationId() {
+            return this.relationId;
         }
 
     }

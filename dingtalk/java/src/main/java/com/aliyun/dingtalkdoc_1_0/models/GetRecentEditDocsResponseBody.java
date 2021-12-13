@@ -49,6 +49,10 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
+        // 是否被删除
+        @NameInMap("isDeleted")
+        public Boolean isDeleted;
+
         public static GetRecentEditDocsResponseBodyRecentListNodeBO build(java.util.Map<String, ?> map) throws Exception {
             GetRecentEditDocsResponseBodyRecentListNodeBO self = new GetRecentEditDocsResponseBodyRecentListNodeBO();
             return TeaModel.build(map, self);
@@ -84,6 +88,14 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         }
         public Long getLastEditTime() {
             return this.lastEditTime;
+        }
+
+        public GetRecentEditDocsResponseBodyRecentListNodeBO setIsDeleted(Boolean isDeleted) {
+            this.isDeleted = isDeleted;
+            return this;
+        }
+        public Boolean getIsDeleted() {
+            return this.isDeleted;
         }
 
     }

@@ -12,6 +12,14 @@ public class DecodePayCodeRequest extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    // ISV组织ID
+    @NameInMap("dingIsvOrgId")
+    public Long dingIsvOrgId;
+
+    // 组织ID
+    @NameInMap("dingOrgId")
+    public Long dingOrgId;
+
     public static DecodePayCodeRequest build(java.util.Map<String, ?> map) throws Exception {
         DecodePayCodeRequest self = new DecodePayCodeRequest();
         return TeaModel.build(map, self);
@@ -31,6 +39,22 @@ public class DecodePayCodeRequest extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
+    }
+
+    public DecodePayCodeRequest setDingIsvOrgId(Long dingIsvOrgId) {
+        this.dingIsvOrgId = dingIsvOrgId;
+        return this;
+    }
+    public Long getDingIsvOrgId() {
+        return this.dingIsvOrgId;
+    }
+
+    public DecodePayCodeRequest setDingOrgId(Long dingOrgId) {
+        this.dingOrgId = dingOrgId;
+        return this;
+    }
+    public Long getDingOrgId() {
+        return this.dingOrgId;
     }
 
 }

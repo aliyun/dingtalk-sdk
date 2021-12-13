@@ -734,6 +734,10 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
+        // 消息接收人unionId
+        @NameInMap("unionId")
+        public String unionId;
+
         // 消息体
         @NameInMap("messageBody")
         public SendOfficialAccountOTOMessageRequestDetailMessageBody messageBody;
@@ -765,6 +769,14 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
         }
         public String getUserId() {
             return this.userId;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetail setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
         }
 
         public SendOfficialAccountOTOMessageRequestDetail setMessageBody(SendOfficialAccountOTOMessageRequestDetailMessageBody messageBody) {
