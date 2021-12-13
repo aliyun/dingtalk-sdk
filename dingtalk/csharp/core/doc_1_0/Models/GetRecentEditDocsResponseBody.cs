@@ -39,6 +39,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [NameInMap("lastEditTime")]
                 [Validation(Required=false)]
                 public long? LastEditTime { get; set; }
+                [NameInMap("isDeleted")]
+                [Validation(Required=false)]
+                public bool? IsDeleted { get; set; }
             };
 
             /// <summary>

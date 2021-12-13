@@ -117,6 +117,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [NameInMap("msgType")]
             [Validation(Required=false)]
             public string MsgType { get; set; }
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

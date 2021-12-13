@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
 {
-    public class GetInterconnectionUrlHeaders : TeaModel {
+    public class MachineUsersUpdateHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

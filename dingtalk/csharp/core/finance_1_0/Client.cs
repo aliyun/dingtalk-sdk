@@ -444,6 +444,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
+            {
+                body["dingIsvOrgId"] = request.DingIsvOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
+            {
+                body["dingOrgId"] = request.DingOrgId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PayCode))
             {
                 body["payCode"] = request.PayCode;
@@ -473,6 +481,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
+            {
+                body["dingIsvOrgId"] = request.DingIsvOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
+            {
+                body["dingOrgId"] = request.DingOrgId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PayCode))
             {
                 body["payCode"] = request.PayCode;

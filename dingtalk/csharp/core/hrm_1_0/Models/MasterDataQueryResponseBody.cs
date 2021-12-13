@@ -96,6 +96,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
             }
 
+            /// <summary>
+            /// 关联id列表，一般为userId
+            /// </summary>
+            [NameInMap("relationId")]
+            [Validation(Required=false)]
+            public string RelationId { get; set; }
+
         }
 
         /// <summary>
