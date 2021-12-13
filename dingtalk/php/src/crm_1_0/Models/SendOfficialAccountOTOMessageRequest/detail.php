@@ -31,6 +31,13 @@ class detail extends Model
     public $userId;
 
     /**
+     * @description 消息接收人unionId
+     *
+     * @var string
+     */
+    public $unionId;
+
+    /**
      * @description 消息体
      *
      * @var messageBody
@@ -40,6 +47,7 @@ class detail extends Model
         'msgType'     => 'msgType',
         'uuid'        => 'uuid',
         'userId'      => 'userId',
+        'unionId'     => 'unionId',
         'messageBody' => 'messageBody',
     ];
 
@@ -58,6 +66,9 @@ class detail extends Model
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->messageBody) {
             $res['messageBody'] = null !== $this->messageBody ? $this->messageBody->toMap() : null;
@@ -82,6 +93,9 @@ class detail extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['messageBody'])) {
             $model->messageBody = messageBody::fromMap($map['messageBody']);

@@ -35,11 +35,19 @@ class nodeBO extends Model
      * @var int
      */
     public $lastEditTime;
+
+    /**
+     * @description 是否被删除
+     *
+     * @var bool
+     */
+    public $isDeleted;
     protected $_name = [
         'nodeId'       => 'nodeId',
         'nodeName'     => 'nodeName',
         'url'          => 'url',
         'lastEditTime' => 'lastEditTime',
+        'isDeleted'    => 'isDeleted',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class nodeBO extends Model
         }
         if (null !== $this->lastEditTime) {
             $res['lastEditTime'] = $this->lastEditTime;
+        }
+        if (null !== $this->isDeleted) {
+            $res['isDeleted'] = $this->isDeleted;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class nodeBO extends Model
         }
         if (isset($map['lastEditTime'])) {
             $model->lastEditTime = $map['lastEditTime'];
+        }
+        if (isset($map['isDeleted'])) {
+            $model->isDeleted = $map['isDeleted'];
         }
 
         return $model;

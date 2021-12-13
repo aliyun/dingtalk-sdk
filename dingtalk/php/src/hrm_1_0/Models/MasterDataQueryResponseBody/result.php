@@ -36,11 +36,19 @@ class result extends Model
      * @var viewEntityFieldVOList[]
      */
     public $viewEntityFieldVOList;
+
+    /**
+     * @description 关联id列表，一般为userId
+     *
+     * @var string
+     */
+    public $relationId;
     protected $_name = [
         'outerId'               => 'outerId',
         'scopeCode'             => 'scopeCode',
         'viewEntityCode'        => 'viewEntityCode',
         'viewEntityFieldVOList' => 'viewEntityFieldVOList',
+        'relationId'            => 'relationId',
     ];
 
     public function validate()
@@ -67,6 +75,9 @@ class result extends Model
                     $res['viewEntityFieldVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->relationId) {
+            $res['relationId'] = $this->relationId;
         }
 
         return $res;
@@ -97,6 +108,9 @@ class result extends Model
                     $model->viewEntityFieldVOList[$n++] = null !== $item ? viewEntityFieldVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['relationId'])) {
+            $model->relationId = $map['relationId'];
         }
 
         return $model;

@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureRespo
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\KickDeviceVideoConferenceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenceBookHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenceBookResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -71,6 +74,72 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryDeviceVideoConferenceBookResponse::fromMap($this->doROARequest('QueryDeviceVideoConferenceBook', 'smartDevice_1.0', 'HTTP', 'GET', 'AK', '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param MachineUsersUpdateRequest $request
+     *
+     * @return MachineUsersUpdateResponse
+     */
+    public function machineUsersUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MachineUsersUpdateHeaders([]);
+
+        return $this->machineUsersUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MachineUsersUpdateRequest $request
+     * @param MachineUsersUpdateHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return MachineUsersUpdateResponse
+     */
+    public function machineUsersUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->delUserIds)) {
+            @$body['delUserIds'] = $request->delUserIds;
+        }
+        if (!Utils::isUnset($request->deviceIds)) {
+            @$body['deviceIds'] = $request->deviceIds;
+        }
+        if (!Utils::isUnset($request->addUserIds)) {
+            @$body['addUserIds'] = $request->addUserIds;
+        }
+        if (!Utils::isUnset($request->devIds)) {
+            @$body['devIds'] = $request->devIds;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return MachineUsersUpdateResponse::fromMap($this->doROARequest('MachineUsersUpdate', 'smartDevice_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/smartDevice/atmachines/users', 'none', $req, $runtime));
     }
 
     /**
