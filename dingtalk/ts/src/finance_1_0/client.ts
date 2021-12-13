@@ -468,10 +468,14 @@ export class DecodePayCodeHeaders extends $tea.Model {
 export class DecodePayCodeRequest extends $tea.Model {
   payCode?: string;
   requestId?: string;
+  dingIsvOrgId?: number;
+  dingOrgId?: number;
   static names(): { [key: string]: string } {
     return {
       payCode: 'payCode',
       requestId: 'requestId',
+      dingIsvOrgId: 'dingIsvOrgId',
+      dingOrgId: 'dingOrgId',
     };
   }
 
@@ -479,6 +483,8 @@ export class DecodePayCodeRequest extends $tea.Model {
     return {
       payCode: 'string',
       requestId: 'string',
+      dingIsvOrgId: 'number',
+      dingOrgId: 'number',
     };
   }
 
@@ -1902,6 +1908,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.requestId)) {
       body["requestId"] = request.requestId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

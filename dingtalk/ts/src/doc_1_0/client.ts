@@ -1669,12 +1669,14 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
   nodeName?: string;
   url?: string;
   lastEditTime?: number;
+  isDeleted?: boolean;
   static names(): { [key: string]: string } {
     return {
       nodeId: 'nodeId',
       nodeName: 'nodeName',
       url: 'url',
       lastEditTime: 'lastEditTime',
+      isDeleted: 'isDeleted',
     };
   }
 
@@ -1684,6 +1686,7 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
       nodeName: 'string',
       url: 'string',
       lastEditTime: 'number',
+      isDeleted: 'boolean',
     };
   }
 

@@ -73,6 +73,90 @@ export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
   }
 }
 
+export class MachineUsersUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MachineUsersUpdateRequest extends $tea.Model {
+  delUserIds?: string[];
+  deviceIds?: string[];
+  addUserIds?: string[];
+  devIds?: number[];
+  dingTokenGrantType?: number;
+  dingSuiteKey?: string;
+  dingCorpId?: string;
+  dingOrgId?: number;
+  dingIsvOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      delUserIds: 'delUserIds',
+      deviceIds: 'deviceIds',
+      addUserIds: 'addUserIds',
+      devIds: 'devIds',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingSuiteKey: 'dingSuiteKey',
+      dingCorpId: 'dingCorpId',
+      dingOrgId: 'dingOrgId',
+      dingIsvOrgId: 'dingIsvOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      delUserIds: { 'type': 'array', 'itemType': 'string' },
+      deviceIds: { 'type': 'array', 'itemType': 'string' },
+      addUserIds: { 'type': 'array', 'itemType': 'string' },
+      devIds: { 'type': 'array', 'itemType': 'number' },
+      dingTokenGrantType: 'number',
+      dingSuiteKey: 'string',
+      dingCorpId: 'string',
+      dingOrgId: 'number',
+      dingIsvOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MachineUsersUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddDeviceVideoConferenceMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -396,6 +480,67 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryDeviceVideoConferenceBookResponse>(await this.doROARequest("QueryDeviceVideoConferenceBook", "smartDevice_1.0", "HTTP", "GET", "AK", `/v1.0/smartDevice/devices/${deviceId}/books/${bookId}`, "json", req, runtime), new QueryDeviceVideoConferenceBookResponse({}));
+  }
+
+  async machineUsersUpdate(request: MachineUsersUpdateRequest): Promise<MachineUsersUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MachineUsersUpdateHeaders({ });
+    return await this.machineUsersUpdateWithOptions(request, headers, runtime);
+  }
+
+  async machineUsersUpdateWithOptions(request: MachineUsersUpdateRequest, headers: MachineUsersUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineUsersUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.delUserIds)) {
+      body["delUserIds"] = request.delUserIds;
+    }
+
+    if (!Util.isUnset(request.deviceIds)) {
+      body["deviceIds"] = request.deviceIds;
+    }
+
+    if (!Util.isUnset(request.addUserIds)) {
+      body["addUserIds"] = request.addUserIds;
+    }
+
+    if (!Util.isUnset(request.devIds)) {
+      body["devIds"] = request.devIds;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingSuiteKey)) {
+      body["dingSuiteKey"] = request.dingSuiteKey;
+    }
+
+    if (!Util.isUnset(request.dingCorpId)) {
+      body["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.dingOrgId)) {
+      body["dingOrgId"] = request.dingOrgId;
+    }
+
+    if (!Util.isUnset(request.dingIsvOrgId)) {
+      body["dingIsvOrgId"] = request.dingIsvOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<MachineUsersUpdateResponse>(await this.doROARequest("MachineUsersUpdate", "smartDevice_1.0", "HTTP", "PUT", "AK", `/v1.0/smartDevice/atmachines/users`, "none", req, runtime), new MachineUsersUpdateResponse({}));
   }
 
   async addDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest): Promise<AddDeviceVideoConferenceMembersResponse> {

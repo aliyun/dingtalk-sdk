@@ -2696,12 +2696,14 @@ export class SendOfficialAccountOTOMessageRequestDetail extends $tea.Model {
   msgType?: string;
   uuid?: string;
   userId?: string;
+  unionId?: string;
   messageBody?: SendOfficialAccountOTOMessageRequestDetailMessageBody;
   static names(): { [key: string]: string } {
     return {
       msgType: 'msgType',
       uuid: 'uuid',
       userId: 'userId',
+      unionId: 'unionId',
       messageBody: 'messageBody',
     };
   }
@@ -2711,6 +2713,7 @@ export class SendOfficialAccountOTOMessageRequestDetail extends $tea.Model {
       msgType: 'string',
       uuid: 'string',
       userId: 'string',
+      unionId: 'string',
       messageBody: SendOfficialAccountOTOMessageRequestDetailMessageBody,
     };
   }

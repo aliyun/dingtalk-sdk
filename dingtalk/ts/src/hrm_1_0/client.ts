@@ -960,12 +960,14 @@ export class MasterDataQueryResponseBodyResult extends $tea.Model {
   scopeCode?: string;
   viewEntityCode?: string;
   viewEntityFieldVOList?: MasterDataQueryResponseBodyResultViewEntityFieldVOList[];
+  relationId?: string;
   static names(): { [key: string]: string } {
     return {
       outerId: 'outerId',
       scopeCode: 'scopeCode',
       viewEntityCode: 'viewEntityCode',
       viewEntityFieldVOList: 'viewEntityFieldVOList',
+      relationId: 'relationId',
     };
   }
 
@@ -975,6 +977,7 @@ export class MasterDataQueryResponseBodyResult extends $tea.Model {
       scopeCode: 'string',
       viewEntityCode: 'string',
       viewEntityFieldVOList: { 'type': 'array', 'itemType': MasterDataQueryResponseBodyResultViewEntityFieldVOList },
+      relationId: 'string',
     };
   }
 

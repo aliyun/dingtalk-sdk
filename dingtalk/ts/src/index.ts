@@ -14,6 +14,7 @@ import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as datacenter_1_0 from './datacenter_1_0/client';
 import * as devicemng_1_0 from './devicemng_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
+import * as diot_1_0 from './diot_1_0/client';
 import * as doc_1_0 from './doc_1_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
@@ -21,6 +22,7 @@ import * as esign_1_0 from './esign_1_0/client';
 import * as esign_2_0 from './esign_2_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as finance_1_0 from './finance_1_0/client';
+import * as h3yun_1_0 from './h3yun_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
 import * as im_1_0 from './im_1_0/client';
@@ -66,6 +68,7 @@ export = {
   datacenter_1_0,
   devicemng_1_0,
   dingmi_1_0,
+  diot_1_0,
   doc_1_0,
   drive_1_0,
   edu_1_0,
@@ -73,6 +76,7 @@ export = {
   esign_2_0,
   exclusive_1_0,
   finance_1_0,
+  h3yun_1_0,
   hrbrain_1_0,
   hrm_1_0,
   im_1_0,
