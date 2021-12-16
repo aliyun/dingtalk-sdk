@@ -50,6 +50,105 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("LoadBizFields", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/forms/loadBizFields", "json", req, runtime), new LoadBizFieldsResponse());
     }
 
+    public CancelProcessInstanceResponse cancelProcessInstance(CancelProcessInstanceRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        CancelProcessInstanceHeaders headers = new CancelProcessInstanceHeaders();
+        return this.cancelProcessInstanceWithOptions(request, headers, runtime);
+    }
+
+    public CancelProcessInstanceResponse cancelProcessInstanceWithOptions(CancelProcessInstanceRequest request, CancelProcessInstanceHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
+            body.put("processInstanceId", request.processInstanceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CancelProcessInstance", "h3yun_1.0", "HTTP", "POST", "AK", "/v1.0/h3yun/processes/instances/cancel", "json", req, runtime), new CancelProcessInstanceResponse());
+    }
+
+    public GetAttachmentTemporaryUrlResponse getAttachmentTemporaryUrl(GetAttachmentTemporaryUrlRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetAttachmentTemporaryUrlHeaders headers = new GetAttachmentTemporaryUrlHeaders();
+        return this.getAttachmentTemporaryUrlWithOptions(request, headers, runtime);
+    }
+
+    public GetAttachmentTemporaryUrlResponse getAttachmentTemporaryUrlWithOptions(GetAttachmentTemporaryUrlRequest request, GetAttachmentTemporaryUrlHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attachmentId)) {
+            query.put("attachmentId", request.attachmentId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetAttachmentTemporaryUrl", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/attachments/temporaryUrls", "json", req, runtime), new GetAttachmentTemporaryUrlResponse());
+    }
+
+    public GetUploadUrlResponse getUploadUrl(GetUploadUrlRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetUploadUrlHeaders headers = new GetUploadUrlHeaders();
+        return this.getUploadUrlWithOptions(request, headers, runtime);
+    }
+
+    public GetUploadUrlResponse getUploadUrlWithOptions(GetUploadUrlRequest request, GetUploadUrlHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.schemaCode)) {
+            query.put("schemaCode", request.schemaCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizObjectId)) {
+            query.put("bizObjectId", request.bizObjectId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldName)) {
+            query.put("fieldName", request.fieldName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isOverwrite)) {
+            query.put("isOverwrite", request.isOverwrite);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetUploadUrl", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/attachments/uploadUrls", "json", req, runtime), new GetUploadUrlResponse());
+    }
+
     public GetUsersResponse getUsers(GetUsersRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetUsersHeaders headers = new GetUsersHeaders();

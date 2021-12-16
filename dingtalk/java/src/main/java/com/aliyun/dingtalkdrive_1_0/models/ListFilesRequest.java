@@ -24,6 +24,10 @@ public class ListFilesRequest extends TeaModel {
     @NameInMap("orderType")
     public String orderType;
 
+    // 是否返回文件图标
+    @NameInMap("withIcon")
+    public Boolean withIcon;
+
     public static ListFilesRequest build(java.util.Map<String, ?> map) throws Exception {
         ListFilesRequest self = new ListFilesRequest();
         return TeaModel.build(map, self);
@@ -67,6 +71,14 @@ public class ListFilesRequest extends TeaModel {
     }
     public String getOrderType() {
         return this.orderType;
+    }
+
+    public ListFilesRequest setWithIcon(Boolean withIcon) {
+        this.withIcon = withIcon;
+        return this;
+    }
+    public Boolean getWithIcon() {
+        return this.withIcon;
     }
 
 }

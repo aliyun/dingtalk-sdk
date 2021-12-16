@@ -10,6 +10,10 @@ public class GetUploadInfoResponseBody extends TeaModel {
     @NameInMap("headerSignatureUploadInfo")
     public GetUploadInfoResponseBodyHeaderSignatureUploadInfo headerSignatureUploadInfo;
 
+    // 文件所存储的区域
+    @NameInMap("region")
+    public String region;
+
     public static GetUploadInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUploadInfoResponseBody self = new GetUploadInfoResponseBody();
         return TeaModel.build(map, self);
@@ -31,6 +35,14 @@ public class GetUploadInfoResponseBody extends TeaModel {
         return this.headerSignatureUploadInfo;
     }
 
+    public GetUploadInfoResponseBody setRegion(String region) {
+        this.region = region;
+        return this;
+    }
+    public String getRegion() {
+        return this.region;
+    }
+
     public static class GetUploadInfoResponseBodyStsUploadInfo extends TeaModel {
         // bucket
         @NameInMap("bucket")
@@ -39,6 +51,10 @@ public class GetUploadInfoResponseBody extends TeaModel {
         // endPoint
         @NameInMap("endPoint")
         public String endPoint;
+
+        // 内网endPoint
+        @NameInMap("internalEndPoint")
+        public String internalEndPoint;
 
         // accessKeyId
         @NameInMap("accessKeyId")
@@ -79,6 +95,14 @@ public class GetUploadInfoResponseBody extends TeaModel {
         }
         public String getEndPoint() {
             return this.endPoint;
+        }
+
+        public GetUploadInfoResponseBodyStsUploadInfo setInternalEndPoint(String internalEndPoint) {
+            this.internalEndPoint = internalEndPoint;
+            return this;
+        }
+        public String getInternalEndPoint() {
+            return this.internalEndPoint;
         }
 
         public GetUploadInfoResponseBodyStsUploadInfo setAccessKeyId(String accessKeyId) {
@@ -128,6 +152,10 @@ public class GetUploadInfoResponseBody extends TeaModel {
         @NameInMap("resourceUrl")
         public String resourceUrl;
 
+        // 内网上传地址
+        @NameInMap("internalResourceUrl")
+        public String internalResourceUrl;
+
         // 过期秒数
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
@@ -147,6 +175,14 @@ public class GetUploadInfoResponseBody extends TeaModel {
         }
         public String getResourceUrl() {
             return this.resourceUrl;
+        }
+
+        public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setInternalResourceUrl(String internalResourceUrl) {
+            this.internalResourceUrl = internalResourceUrl;
+            return this;
+        }
+        public String getInternalResourceUrl() {
+            return this.internalResourceUrl;
         }
 
         public GetUploadInfoResponseBodyHeaderSignatureUploadInfo setExpirationSeconds(Integer expirationSeconds) {

@@ -441,6 +441,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("orderType", request.orderType);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.withIcon)) {
+            query.put("withIcon", request.withIcon);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -976,6 +980,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("unionId", request.unionId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.withRegion)) {
+            query.put("withRegion", request.withRegion);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withInternalResourceUrl)) {
+            query.put("withInternalResourceUrl", request.withInternalResourceUrl);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -1023,6 +1035,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
             query.put("mediaId", request.mediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withRegion)) {
+            query.put("withRegion", request.withRegion);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withInternalEndPoint)) {
+            query.put("withInternalEndPoint", request.withInternalEndPoint);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.callerRegion)) {
+            query.put("callerRegion", request.callerRegion);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

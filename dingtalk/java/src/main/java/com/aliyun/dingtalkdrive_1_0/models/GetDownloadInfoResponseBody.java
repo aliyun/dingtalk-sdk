@@ -8,6 +8,10 @@ public class GetDownloadInfoResponseBody extends TeaModel {
     @NameInMap("downloadInfo")
     public GetDownloadInfoResponseBodyDownloadInfo downloadInfo;
 
+    // 文件所存储的区域
+    @NameInMap("region")
+    public String region;
+
     public static GetDownloadInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetDownloadInfoResponseBody self = new GetDownloadInfoResponseBody();
         return TeaModel.build(map, self);
@@ -21,10 +25,22 @@ public class GetDownloadInfoResponseBody extends TeaModel {
         return this.downloadInfo;
     }
 
+    public GetDownloadInfoResponseBody setRegion(String region) {
+        this.region = region;
+        return this;
+    }
+    public String getRegion() {
+        return this.region;
+    }
+
     public static class GetDownloadInfoResponseBodyDownloadInfo extends TeaModel {
         // 加签url
         @NameInMap("resourceUrl")
         public String resourceUrl;
+
+        // 内网加签url
+        @NameInMap("internalResourceUrl")
+        public String internalResourceUrl;
 
         // 加签url过期时间
         @NameInMap("expirationSeconds")
@@ -45,6 +61,14 @@ public class GetDownloadInfoResponseBody extends TeaModel {
         }
         public String getResourceUrl() {
             return this.resourceUrl;
+        }
+
+        public GetDownloadInfoResponseBodyDownloadInfo setInternalResourceUrl(String internalResourceUrl) {
+            this.internalResourceUrl = internalResourceUrl;
+            return this;
+        }
+        public String getInternalResourceUrl() {
+            return this.internalResourceUrl;
         }
 
         public GetDownloadInfoResponseBodyDownloadInfo setExpirationSeconds(Integer expirationSeconds) {

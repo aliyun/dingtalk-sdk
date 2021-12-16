@@ -70,6 +70,14 @@ public class ListFilesResponseBody extends TeaModel {
         @NameInMap("fileSize")
         public Long fileSize;
 
+        // 文件缩略图
+        @NameInMap("thumbnail")
+        public String thumbnail;
+
+        // 文件图标
+        @NameInMap("icon")
+        public String icon;
+
         // 创建时间
         @NameInMap("createTime")
         public String createTime;
@@ -161,6 +169,22 @@ public class ListFilesResponseBody extends TeaModel {
         }
         public Long getFileSize() {
             return this.fileSize;
+        }
+
+        public ListFilesResponseBodyFiles setThumbnail(String thumbnail) {
+            this.thumbnail = thumbnail;
+            return this;
+        }
+        public String getThumbnail() {
+            return this.thumbnail;
+        }
+
+        public ListFilesResponseBodyFiles setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
         }
 
         public ListFilesResponseBodyFiles setCreateTime(String createTime) {

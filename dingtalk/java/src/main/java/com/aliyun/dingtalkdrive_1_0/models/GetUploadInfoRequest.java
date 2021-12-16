@@ -28,6 +28,18 @@ public class GetUploadInfoRequest extends TeaModel {
     @NameInMap("mediaId")
     public String mediaId;
 
+    // 是否返回区域
+    @NameInMap("withRegion")
+    public Boolean withRegion;
+
+    // 是否返回OSS内网访问域名
+    @NameInMap("withInternalEndPoint")
+    public Boolean withInternalEndPoint;
+
+    // 调用方所处区域
+    @NameInMap("callerRegion")
+    public String callerRegion;
+
     public static GetUploadInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetUploadInfoRequest self = new GetUploadInfoRequest();
         return TeaModel.build(map, self);
@@ -79,6 +91,30 @@ public class GetUploadInfoRequest extends TeaModel {
     }
     public String getMediaId() {
         return this.mediaId;
+    }
+
+    public GetUploadInfoRequest setWithRegion(Boolean withRegion) {
+        this.withRegion = withRegion;
+        return this;
+    }
+    public Boolean getWithRegion() {
+        return this.withRegion;
+    }
+
+    public GetUploadInfoRequest setWithInternalEndPoint(Boolean withInternalEndPoint) {
+        this.withInternalEndPoint = withInternalEndPoint;
+        return this;
+    }
+    public Boolean getWithInternalEndPoint() {
+        return this.withInternalEndPoint;
+    }
+
+    public GetUploadInfoRequest setCallerRegion(String callerRegion) {
+        this.callerRegion = callerRegion;
+        return this;
+    }
+    public String getCallerRegion() {
+        return this.callerRegion;
     }
 
 }
