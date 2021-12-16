@@ -506,6 +506,110 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<GetBranchAuthDataResponse>(await DoROARequestAsync("GetBranchAuthData", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/branchAuthDatas/search", "json", req, runtime));
         }
 
+        public GetCardInUserHolderResponse GetCardInUserHolder(string cardId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCardInUserHolderHeaders headers = new GetCardInUserHolderHeaders();
+            return GetCardInUserHolderWithOptions(cardId, headers, runtime);
+        }
+
+        public async Task<GetCardInUserHolderResponse> GetCardInUserHolderAsync(string cardId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCardInUserHolderHeaders headers = new GetCardInUserHolderHeaders();
+            return await GetCardInUserHolderWithOptionsAsync(cardId, headers, runtime);
+        }
+
+        public GetCardInUserHolderResponse GetCardInUserHolderWithOptions(string cardId, GetCardInUserHolderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            cardId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetCardInUserHolderResponse>(DoROARequest("GetCardInUserHolder", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/holders/infos/" + cardId, "json", req, runtime));
+        }
+
+        public async Task<GetCardInUserHolderResponse> GetCardInUserHolderWithOptionsAsync(string cardId, GetCardInUserHolderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            cardId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetCardInUserHolderResponse>(await DoROARequestAsync("GetCardInUserHolder", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/holders/infos/" + cardId, "json", req, runtime));
+        }
+
+        public GetCardInfoResponse GetCardInfo(string cardId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCardInfoHeaders headers = new GetCardInfoHeaders();
+            return GetCardInfoWithOptions(cardId, headers, runtime);
+        }
+
+        public async Task<GetCardInfoResponse> GetCardInfoAsync(string cardId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCardInfoHeaders headers = new GetCardInfoHeaders();
+            return await GetCardInfoWithOptionsAsync(cardId, headers, runtime);
+        }
+
+        public GetCardInfoResponse GetCardInfoWithOptions(string cardId, GetCardInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            cardId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetCardInfoResponse>(DoROARequest("GetCardInfo", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/infos/" + cardId, "json", req, runtime));
+        }
+
+        public async Task<GetCardInfoResponse> GetCardInfoWithOptionsAsync(string cardId, GetCardInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            cardId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(cardId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetCardInfoResponse>(await DoROARequestAsync("GetCardInfo", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/infos/" + cardId, "json", req, runtime));
+        }
+
         public GetCooperateOrgInviteInfoResponse GetCooperateOrgInviteInfo(string cooperateCorpId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -556,6 +660,56 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
             };
             return TeaModel.ToObject<GetCooperateOrgInviteInfoResponse>(await DoROARequestAsync("GetCooperateOrgInviteInfo", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cooperateCorps/" + cooperateCorpId + "/inviteInfos", "json", req, runtime));
+        }
+
+        public GetCorpCardStyleListResponse GetCorpCardStyleList()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCorpCardStyleListHeaders headers = new GetCorpCardStyleListHeaders();
+            return GetCorpCardStyleListWithOptions(headers, runtime);
+        }
+
+        public async Task<GetCorpCardStyleListResponse> GetCorpCardStyleListAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCorpCardStyleListHeaders headers = new GetCorpCardStyleListHeaders();
+            return await GetCorpCardStyleListWithOptionsAsync(headers, runtime);
+        }
+
+        public GetCorpCardStyleListResponse GetCorpCardStyleListWithOptions(GetCorpCardStyleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetCorpCardStyleListResponse>(DoROARequest("GetCorpCardStyleList", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/styles/lists", "json", req, runtime));
+        }
+
+        public async Task<GetCorpCardStyleListResponse> GetCorpCardStyleListWithOptionsAsync(GetCorpCardStyleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetCorpCardStyleListResponse>(await DoROARequestAsync("GetCorpCardStyleList", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/styles/lists", "json", req, runtime));
         }
 
         public GetDingIdByMigrationDingIdResponse GetDingIdByMigrationDingId(GetDingIdByMigrationDingIdRequest request)
@@ -978,6 +1132,178 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
             };
             return TeaModel.ToObject<GetUserResponse>(await DoROARequestAsync("GetUser", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/users/" + unionId, "json", req, runtime));
+        }
+
+        public GetUserCardHolderListResponse GetUserCardHolderList(GetUserCardHolderListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserCardHolderListHeaders headers = new GetUserCardHolderListHeaders();
+            return GetUserCardHolderListWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetUserCardHolderListResponse> GetUserCardHolderListAsync(GetUserCardHolderListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserCardHolderListHeaders headers = new GetUserCardHolderListHeaders();
+            return await GetUserCardHolderListWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetUserCardHolderListResponse GetUserCardHolderListWithOptions(GetUserCardHolderListRequest request, GetUserCardHolderListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetUserCardHolderListResponse>(DoROARequest("GetUserCardHolderList", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/holders/lists", "json", req, runtime));
+        }
+
+        public async Task<GetUserCardHolderListResponse> GetUserCardHolderListWithOptionsAsync(GetUserCardHolderListRequest request, GetUserCardHolderListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetUserCardHolderListResponse>(await DoROARequestAsync("GetUserCardHolderList", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/holders/lists", "json", req, runtime));
+        }
+
+        public IsvCardEventPushResponse IsvCardEventPush(IsvCardEventPushRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsvCardEventPushHeaders headers = new IsvCardEventPushHeaders();
+            return IsvCardEventPushWithOptions(request, headers, runtime);
+        }
+
+        public async Task<IsvCardEventPushResponse> IsvCardEventPushAsync(IsvCardEventPushRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsvCardEventPushHeaders headers = new IsvCardEventPushHeaders();
+            return await IsvCardEventPushWithOptionsAsync(request, headers, runtime);
+        }
+
+        public IsvCardEventPushResponse IsvCardEventPushWithOptions(IsvCardEventPushRequest request, IsvCardEventPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCardId))
+            {
+                query["isvCardId"] = request.IsvCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
+            {
+                query["isvToken"] = request.IsvToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvUid))
+            {
+                query["isvUid"] = request.IsvUid;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventParams))
+            {
+                body["eventParams"] = request.EventParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IsvCardEventPushResponse>(DoROARequest("IsvCardEventPush", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cards/events/push", "json", req, runtime));
+        }
+
+        public async Task<IsvCardEventPushResponse> IsvCardEventPushWithOptionsAsync(IsvCardEventPushRequest request, IsvCardEventPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCardId))
+            {
+                query["isvCardId"] = request.IsvCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
+            {
+                query["isvToken"] = request.IsvToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvUid))
+            {
+                query["isvUid"] = request.IsvUid;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventParams))
+            {
+                body["eventParams"] = request.EventParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<IsvCardEventPushResponse>(await DoROARequestAsync("IsvCardEventPush", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/cards/events/push", "json", req, runtime));
         }
 
         public ListContactHideSettingsResponse ListContactHideSettings(ListContactHideSettingsRequest request)

@@ -114,6 +114,70 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0
             return TeaModel.ToObject<BatchInsertBizObjectResponse>(await DoROARequestAsync("BatchInsertBizObject", "h3yun_1.0", "HTTP", "POST", "AK", "/v1.0/h3yun/forms/instances/batch", "json", req, runtime));
         }
 
+        public CancelProcessInstanceResponse CancelProcessInstance(CancelProcessInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelProcessInstanceHeaders headers = new CancelProcessInstanceHeaders();
+            return CancelProcessInstanceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CancelProcessInstanceResponse> CancelProcessInstanceAsync(CancelProcessInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelProcessInstanceHeaders headers = new CancelProcessInstanceHeaders();
+            return await CancelProcessInstanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CancelProcessInstanceResponse CancelProcessInstanceWithOptions(CancelProcessInstanceRequest request, CancelProcessInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CancelProcessInstanceResponse>(DoROARequest("CancelProcessInstance", "h3yun_1.0", "HTTP", "POST", "AK", "/v1.0/h3yun/processes/instances/cancel", "json", req, runtime));
+        }
+
+        public async Task<CancelProcessInstanceResponse> CancelProcessInstanceWithOptionsAsync(CancelProcessInstanceRequest request, CancelProcessInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CancelProcessInstanceResponse>(await DoROARequestAsync("CancelProcessInstance", "h3yun_1.0", "HTTP", "POST", "AK", "/v1.0/h3yun/processes/instances/cancel", "json", req, runtime));
+        }
+
         public CreateBizObjectResponse CreateBizObject(CreateBizObjectRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -498,6 +562,70 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0
             return TeaModel.ToObject<GetAppsResponse>(await DoROARequestAsync("GetApps", "h3yun_1.0", "HTTP", "POST", "AK", "/v1.0/h3yun/apps/search", "json", req, runtime));
         }
 
+        public GetAttachmentTemporaryUrlResponse GetAttachmentTemporaryUrl(GetAttachmentTemporaryUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAttachmentTemporaryUrlHeaders headers = new GetAttachmentTemporaryUrlHeaders();
+            return GetAttachmentTemporaryUrlWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetAttachmentTemporaryUrlResponse> GetAttachmentTemporaryUrlAsync(GetAttachmentTemporaryUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAttachmentTemporaryUrlHeaders headers = new GetAttachmentTemporaryUrlHeaders();
+            return await GetAttachmentTemporaryUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetAttachmentTemporaryUrlResponse GetAttachmentTemporaryUrlWithOptions(GetAttachmentTemporaryUrlRequest request, GetAttachmentTemporaryUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentId))
+            {
+                query["attachmentId"] = request.AttachmentId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetAttachmentTemporaryUrlResponse>(DoROARequest("GetAttachmentTemporaryUrl", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/attachments/temporaryUrls", "json", req, runtime));
+        }
+
+        public async Task<GetAttachmentTemporaryUrlResponse> GetAttachmentTemporaryUrlWithOptionsAsync(GetAttachmentTemporaryUrlRequest request, GetAttachmentTemporaryUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentId))
+            {
+                query["attachmentId"] = request.AttachmentId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetAttachmentTemporaryUrlResponse>(await DoROARequestAsync("GetAttachmentTemporaryUrl", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/attachments/temporaryUrls", "json", req, runtime));
+        }
+
         public GetOrganizationsResponse GetOrganizations(GetOrganizationsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -674,6 +802,94 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0
                 Headers = realHeaders,
             };
             return TeaModel.ToObject<GetRolesResponse>(await DoROARequestAsync("GetRoles", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/roles", "json", req, runtime));
+        }
+
+        public GetUploadUrlResponse GetUploadUrl(GetUploadUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUploadUrlHeaders headers = new GetUploadUrlHeaders();
+            return GetUploadUrlWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetUploadUrlResponse> GetUploadUrlAsync(GetUploadUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUploadUrlHeaders headers = new GetUploadUrlHeaders();
+            return await GetUploadUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetUploadUrlResponse GetUploadUrlWithOptions(GetUploadUrlRequest request, GetUploadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizObjectId))
+            {
+                query["bizObjectId"] = request.BizObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldName))
+            {
+                query["fieldName"] = request.FieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsOverwrite))
+            {
+                query["isOverwrite"] = request.IsOverwrite;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchemaCode))
+            {
+                query["schemaCode"] = request.SchemaCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetUploadUrlResponse>(DoROARequest("GetUploadUrl", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/attachments/uploadUrls", "json", req, runtime));
+        }
+
+        public async Task<GetUploadUrlResponse> GetUploadUrlWithOptionsAsync(GetUploadUrlRequest request, GetUploadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizObjectId))
+            {
+                query["bizObjectId"] = request.BizObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldName))
+            {
+                query["fieldName"] = request.FieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsOverwrite))
+            {
+                query["isOverwrite"] = request.IsOverwrite;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchemaCode))
+            {
+                query["schemaCode"] = request.SchemaCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetUploadUrlResponse>(await DoROARequestAsync("GetUploadUrl", "h3yun_1.0", "HTTP", "GET", "AK", "/v1.0/h3yun/attachments/uploadUrls", "json", req, runtime));
         }
 
         public GetUsersResponse GetUsers(GetUsersRequest request)

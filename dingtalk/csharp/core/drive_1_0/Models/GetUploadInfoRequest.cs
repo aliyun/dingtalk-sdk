@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string AddConflictPolicy { get; set; }
 
         /// <summary>
+        /// 调用方所处区域
+        /// </summary>
+        [NameInMap("callerRegion")]
+        [Validation(Required=false)]
+        public string CallerRegion { get; set; }
+
+        /// <summary>
         /// 文件名
         /// </summary>
         [NameInMap("fileName")]
@@ -50,6 +57,20 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }
+
+        /// <summary>
+        /// 是否返回OSS内网访问域名
+        /// </summary>
+        [NameInMap("withInternalEndPoint")]
+        [Validation(Required=false)]
+        public bool? WithInternalEndPoint { get; set; }
+
+        /// <summary>
+        /// 是否返回区域
+        /// </summary>
+        [NameInMap("withRegion")]
+        [Validation(Required=false)]
+        public bool? WithRegion { get; set; }
 
     }
 

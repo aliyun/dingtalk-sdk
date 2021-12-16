@@ -1018,6 +1018,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             {
                 query["unionId"] = request.UnionId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithInternalResourceUrl))
+            {
+                query["withInternalResourceUrl"] = request.WithInternalResourceUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithRegion))
+            {
+                query["withRegion"] = request.WithRegion;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1044,6 +1052,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithInternalResourceUrl))
+            {
+                query["withInternalResourceUrl"] = request.WithInternalResourceUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithRegion))
+            {
+                query["withRegion"] = request.WithRegion;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1370,6 +1386,10 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             {
                 query["addConflictPolicy"] = request.AddConflictPolicy;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallerRegion))
+            {
+                query["callerRegion"] = request.CallerRegion;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
             {
                 query["fileName"] = request.FileName;
@@ -1389,6 +1409,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithInternalEndPoint))
+            {
+                query["withInternalEndPoint"] = request.WithInternalEndPoint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithRegion))
+            {
+                query["withRegion"] = request.WithRegion;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1417,6 +1445,10 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             {
                 query["addConflictPolicy"] = request.AddConflictPolicy;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallerRegion))
+            {
+                query["callerRegion"] = request.CallerRegion;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
             {
                 query["fileName"] = request.FileName;
@@ -1436,6 +1468,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithInternalEndPoint))
+            {
+                query["withInternalEndPoint"] = request.WithInternalEndPoint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithRegion))
+            {
+                query["withRegion"] = request.WithRegion;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1657,6 +1697,10 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             {
                 query["unionId"] = request.UnionId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithIcon))
+            {
+                query["withIcon"] = request.WithIcon;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1698,6 +1742,10 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithIcon))
+            {
+                query["withIcon"] = request.WithIcon;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

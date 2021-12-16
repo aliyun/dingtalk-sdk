@@ -648,6 +648,86 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             return TeaModel.ToObject<DescribeCrmPersonalCustomerObjectMetaResponse>(await DoROARequestAsync("DescribeCrmPersonalCustomerObjectMeta", "crm_1.0", "HTTP", "GET", "AK", "/v1.0/crm/personalCustomers/objectMeta", "json", req, runtime));
         }
 
+        public DescribeRelationMetaResponse DescribeRelationMeta(DescribeRelationMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DescribeRelationMetaHeaders headers = new DescribeRelationMetaHeaders();
+            return DescribeRelationMetaWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DescribeRelationMetaResponse> DescribeRelationMetaAsync(DescribeRelationMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DescribeRelationMetaHeaders headers = new DescribeRelationMetaHeaders();
+            return await DescribeRelationMetaWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DescribeRelationMetaResponse DescribeRelationMetaWithOptions(DescribeRelationMetaRequest request, DescribeRelationMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationTypes))
+            {
+                body["relationTypes"] = request.RelationTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DescribeRelationMetaResponse>(DoROARequest("DescribeRelationMeta", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/query", "json", req, runtime));
+        }
+
+        public async Task<DescribeRelationMetaResponse> DescribeRelationMetaWithOptionsAsync(DescribeRelationMetaRequest request, DescribeRelationMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationTypes))
+            {
+                body["relationTypes"] = request.RelationTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DescribeRelationMetaResponse>(await DoROARequestAsync("DescribeRelationMeta", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/relations/metas/query", "json", req, runtime));
+        }
+
         public GetCrmRolePermissionResponse GetCrmRolePermission(GetCrmRolePermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1716,6 +1796,94 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<UpdateCrmPersonalCustomerResponse>(await DoROARequestAsync("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/personalCustomers", "json", req, runtime));
+        }
+
+        public UpdateRelationMetaFieldResponse UpdateRelationMetaField(UpdateRelationMetaFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRelationMetaFieldHeaders headers = new UpdateRelationMetaFieldHeaders();
+            return UpdateRelationMetaFieldWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateRelationMetaFieldResponse> UpdateRelationMetaFieldAsync(UpdateRelationMetaFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRelationMetaFieldHeaders headers = new UpdateRelationMetaFieldHeaders();
+            return await UpdateRelationMetaFieldWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateRelationMetaFieldResponse UpdateRelationMetaFieldWithOptions(UpdateRelationMetaFieldRequest request, UpdateRelationMetaFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldDTOList))
+            {
+                body["fieldDTOList"] = request.FieldDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationType))
+            {
+                body["relationType"] = request.RelationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateRelationMetaFieldResponse>(DoROARequest("UpdateRelationMetaField", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/relations/metas/fields", "json", req, runtime));
+        }
+
+        public async Task<UpdateRelationMetaFieldResponse> UpdateRelationMetaFieldWithOptionsAsync(UpdateRelationMetaFieldRequest request, UpdateRelationMetaFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldDTOList))
+            {
+                body["fieldDTOList"] = request.FieldDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationType))
+            {
+                body["relationType"] = request.RelationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateRelationMetaFieldResponse>(await DoROARequestAsync("UpdateRelationMetaField", "crm_1.0", "HTTP", "PUT", "AK", "/v1.0/crm/relations/metas/fields", "json", req, runtime));
         }
 
     }

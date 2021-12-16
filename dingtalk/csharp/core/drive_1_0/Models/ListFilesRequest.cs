@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         [Validation(Required=false)]
         public string UnionId { get; set; }
 
+        /// <summary>
+        /// 是否返回文件图标
+        /// </summary>
+        [NameInMap("withIcon")]
+        [Validation(Required=false)]
+        public bool? WithIcon { get; set; }
+
     }
 
 }

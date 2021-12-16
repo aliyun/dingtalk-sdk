@@ -80,6 +80,20 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public long? FileSize { get; set; }
 
             /// <summary>
+            /// 文件缩略图
+            /// </summary>
+            [NameInMap("thumbnail")]
+            [Validation(Required=false)]
+            public string Thumbnail { get; set; }
+
+            /// <summary>
+            /// 文件图标
+            /// </summary>
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
+
+            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("createTime")]

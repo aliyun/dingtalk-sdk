@@ -22,10 +22,20 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             [NameInMap("headers")]
             [Validation(Required=false)]
             public Dictionary<string, string> Headers { get; set; }
+            [NameInMap("internalResourceUrl")]
+            [Validation(Required=false)]
+            public string InternalResourceUrl { get; set; }
             [NameInMap("resourceUrl")]
             [Validation(Required=false)]
             public string ResourceUrl { get; set; }
         };
+
+        /// <summary>
+        /// 文件所存储的区域
+        /// </summary>
+        [NameInMap("region")]
+        [Validation(Required=false)]
+        public string Region { get; set; }
 
     }
 
