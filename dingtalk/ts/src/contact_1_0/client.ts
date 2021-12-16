@@ -478,6 +478,93 @@ export class UpdateDeptSettngTailFirstResponse extends $tea.Model {
   }
 }
 
+export class GetCardInUserHolderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInUserHolderResponseBody extends $tea.Model {
+  cardId?: string;
+  name?: string;
+  avatarUrl?: string;
+  orgName?: string;
+  title?: string;
+  industryName?: string;
+  introduce?: string;
+  templateId?: string;
+  extension?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      cardId: 'cardId',
+      name: 'name',
+      avatarUrl: 'avatarUrl',
+      orgName: 'orgName',
+      title: 'title',
+      industryName: 'industryName',
+      introduce: 'introduce',
+      templateId: 'templateId',
+      extension: 'extension',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardId: 'string',
+      name: 'string',
+      avatarUrl: 'string',
+      orgName: 'string',
+      title: 'string',
+      industryName: 'string',
+      introduce: 'string',
+      templateId: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInUserHolderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCardInUserHolderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCardInUserHolderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateEmpAttrbuteVisibilitySettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1257,6 +1344,163 @@ export class QueryStatusResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCorpCardStyleListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCorpCardStyleListResponseBody extends $tea.Model {
+  result?: { [key: string]: any }[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCorpCardStyleListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCorpCardStyleListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCorpCardStyleListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvCardEventPushHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvCardEventPushRequest extends $tea.Model {
+  isvUid?: string;
+  isvCardId?: string;
+  isvToken?: string;
+  eventType?: string;
+  eventParams?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      isvUid: 'isvUid',
+      isvCardId: 'isvCardId',
+      isvToken: 'isvToken',
+      eventType: 'eventType',
+      eventParams: 'eventParams',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isvUid: 'string',
+      isvCardId: 'string',
+      isvToken: 'string',
+      eventType: 'string',
+      eventParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvCardEventPushResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvCardEventPushResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: IsvCardEventPushResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: IsvCardEventPushResponseBody,
     };
   }
 
@@ -2580,6 +2824,93 @@ export class ListEmpLeaveRecordsResponse extends $tea.Model {
   }
 }
 
+export class GetCardInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBody extends $tea.Model {
+  cardId?: string;
+  name?: string;
+  avatarUrl?: string;
+  orgName?: string;
+  title?: string;
+  industryName?: string;
+  introduce?: boolean;
+  templateId?: string;
+  extension?: GetCardInfoResponseBodyExtension;
+  static names(): { [key: string]: string } {
+    return {
+      cardId: 'cardId',
+      name: 'name',
+      avatarUrl: 'avatarUrl',
+      orgName: 'orgName',
+      title: 'title',
+      industryName: 'industryName',
+      introduce: 'introduce',
+      templateId: 'templateId',
+      extension: 'extension',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardId: 'string',
+      name: 'string',
+      avatarUrl: 'string',
+      orgName: 'string',
+      title: 'string',
+      industryName: 'string',
+      introduce: 'boolean',
+      templateId: 'string',
+      extension: GetCardInfoResponseBodyExtension,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetCardInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetCardInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMigrationDingIdByDingIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2918,6 +3249,100 @@ export class TransformToExclusiveAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserCardHolderListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserCardHolderListRequest extends $tea.Model {
+  nextToken?: number;
+  maxResults?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      maxResults: 'maxResults',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'number',
+      maxResults: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserCardHolderListResponseBody extends $tea.Model {
+  totalCount?: number;
+  nextToken?: number;
+  hasMore?: boolean;
+  list?: GetUserCardHolderListResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      totalCount: 'totalCount',
+      nextToken: 'nextToken',
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      totalCount: 'number',
+      nextToken: 'number',
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': GetUserCardHolderListResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserCardHolderListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetUserCardHolderListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetUserCardHolderListResponseBody,
     };
   }
 
@@ -3525,6 +3950,178 @@ export class ListEmpLeaveRecordsResponseBodyRecords extends $tea.Model {
   }
 }
 
+export class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends $tea.Model {
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBodyExtensionCardContactInfoWechat extends $tea.Model {
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBodyExtensionCardContactInfoEmail extends $tea.Model {
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBodyExtensionCardContactInfoAddressArea extends $tea.Model {
+  region?: string;
+  regionFullName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      region: 'region',
+      regionFullName: 'regionFullName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      region: 'string',
+      regionFullName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBodyExtensionCardContactInfoAddress extends $tea.Model {
+  area?: GetCardInfoResponseBodyExtensionCardContactInfoAddressArea;
+  detail?: string;
+  static names(): { [key: string]: string } {
+    return {
+      area: 'area',
+      detail: 'detail',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      area: GetCardInfoResponseBodyExtensionCardContactInfoAddressArea,
+      detail: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBodyExtensionCardContactInfo extends $tea.Model {
+  telephone?: GetCardInfoResponseBodyExtensionCardContactInfoTelephone[];
+  wechat?: GetCardInfoResponseBodyExtensionCardContactInfoWechat[];
+  email?: GetCardInfoResponseBodyExtensionCardContactInfoEmail[];
+  address?: GetCardInfoResponseBodyExtensionCardContactInfoAddress[];
+  static names(): { [key: string]: string } {
+    return {
+      telephone: 'telephone',
+      wechat: 'wechat',
+      email: 'email',
+      address: 'address',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      telephone: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoTelephone },
+      wechat: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoWechat },
+      email: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoEmail },
+      address: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoAddress },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCardInfoResponseBodyExtension extends $tea.Model {
+  orgAuthed?: boolean;
+  orgAuthLevel?: number;
+  corpId?: string;
+  orgLogo?: string;
+  videoMediaId?: string;
+  cardContactInfo?: GetCardInfoResponseBodyExtensionCardContactInfo;
+  static names(): { [key: string]: string } {
+    return {
+      orgAuthed: 'orgAuthed',
+      orgAuthLevel: 'orgAuthLevel',
+      corpId: 'corpId',
+      orgLogo: 'orgLogo',
+      videoMediaId: 'videoMediaId',
+      cardContactInfo: 'cardContactInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orgAuthed: 'boolean',
+      orgAuthLevel: 'number',
+      corpId: 'string',
+      orgLogo: 'string',
+      videoMediaId: 'string',
+      cardContactInfo: GetCardInfoResponseBodyExtensionCardContactInfo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateManagementGroupRequestMembers extends $tea.Model {
   memberType?: string;
   memberId?: string;
@@ -3561,6 +4158,49 @@ export class CreateManagementGroupRequestScope extends $tea.Model {
     return {
       scopeType: 'number',
       deptIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserCardHolderListResponseBodyList extends $tea.Model {
+  cardId?: string;
+  name?: string;
+  avatarUrl?: string;
+  orgName?: string;
+  title?: string;
+  industryName?: string;
+  introduce?: string;
+  templateId?: string;
+  extension?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      cardId: 'cardId',
+      name: 'name',
+      avatarUrl: 'avatarUrl',
+      orgName: 'orgName',
+      title: 'title',
+      industryName: 'industryName',
+      introduce: 'introduce',
+      templateId: 'templateId',
+      extension: 'extension',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardId: 'string',
+      name: 'string',
+      avatarUrl: 'string',
+      orgName: 'string',
+      title: 'string',
+      industryName: 'string',
+      introduce: 'string',
+      templateId: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
@@ -3801,6 +4441,28 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateDeptSettngTailFirstResponse>(await this.doROARequest("UpdateDeptSettngTailFirst", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/depts/settings/priorities`, "none", req, runtime), new UpdateDeptSettngTailFirstResponse({}));
+  }
+
+  async getCardInUserHolder(cardId: string): Promise<GetCardInUserHolderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCardInUserHolderHeaders({ });
+    return await this.getCardInUserHolderWithOptions(cardId, headers, runtime);
+  }
+
+  async getCardInUserHolderWithOptions(cardId: string, headers: GetCardInUserHolderHeaders, runtime: $Util.RuntimeOptions): Promise<GetCardInUserHolderResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCardInUserHolderResponse>(await this.doROARequest("GetCardInUserHolder", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/holders/infos/${cardId}`, "json", req, runtime), new GetCardInUserHolderResponse({}));
   }
 
   async updateEmpAttrbuteVisibilitySetting(request: UpdateEmpAttrbuteVisibilitySettingRequest): Promise<UpdateEmpAttrbuteVisibilitySettingResponse> {
@@ -4131,6 +4793,75 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryStatusResponse>(await this.doROARequest("QueryStatus", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccounts/status`, "json", req, runtime), new QueryStatusResponse({}));
+  }
+
+  async getCorpCardStyleList(): Promise<GetCorpCardStyleListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCorpCardStyleListHeaders({ });
+    return await this.getCorpCardStyleListWithOptions(headers, runtime);
+  }
+
+  async getCorpCardStyleListWithOptions(headers: GetCorpCardStyleListHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpCardStyleListResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCorpCardStyleListResponse>(await this.doROARequest("GetCorpCardStyleList", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/styles/lists`, "json", req, runtime), new GetCorpCardStyleListResponse({}));
+  }
+
+  async isvCardEventPush(request: IsvCardEventPushRequest): Promise<IsvCardEventPushResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IsvCardEventPushHeaders({ });
+    return await this.isvCardEventPushWithOptions(request, headers, runtime);
+  }
+
+  async isvCardEventPushWithOptions(request: IsvCardEventPushRequest, headers: IsvCardEventPushHeaders, runtime: $Util.RuntimeOptions): Promise<IsvCardEventPushResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isvUid)) {
+      query["isvUid"] = request.isvUid;
+    }
+
+    if (!Util.isUnset(request.isvCardId)) {
+      query["isvCardId"] = request.isvCardId;
+    }
+
+    if (!Util.isUnset(request.isvToken)) {
+      query["isvToken"] = request.isvToken;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.eventType)) {
+      body["eventType"] = request.eventType;
+    }
+
+    if (!Util.isUnset(request.eventParams)) {
+      body["eventParams"] = request.eventParams;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<IsvCardEventPushResponse>(await this.doROARequest("IsvCardEventPush", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cards/events/push`, "json", req, runtime), new IsvCardEventPushResponse({}));
   }
 
   async queryUserManagementResources(userId: string): Promise<QueryUserManagementResourcesResponse> {
@@ -4704,6 +5435,28 @@ export default class Client extends OpenApi {
     return $tea.cast<ListEmpLeaveRecordsResponse>(await this.doROARequest("ListEmpLeaveRecords", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/empLeaveRecords`, "json", req, runtime), new ListEmpLeaveRecordsResponse({}));
   }
 
+  async getCardInfo(cardId: string): Promise<GetCardInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCardInfoHeaders({ });
+    return await this.getCardInfoWithOptions(cardId, headers, runtime);
+  }
+
+  async getCardInfoWithOptions(cardId: string, headers: GetCardInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCardInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetCardInfoResponse>(await this.doROARequest("GetCardInfo", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/infos/${cardId}`, "json", req, runtime), new GetCardInfoResponse({}));
+  }
+
   async getMigrationDingIdByDingId(request: GetMigrationDingIdByDingIdRequest): Promise<GetMigrationDingIdByDingIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMigrationDingIdByDingIdHeaders({ });
@@ -4868,6 +5621,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<TransformToExclusiveAccountResponse>(await this.doROARequest("TransformToExclusiveAccount", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccount/transformToExclusiveAccounts`, "none", req, runtime), new TransformToExclusiveAccountResponse({}));
+  }
+
+  async getUserCardHolderList(request: GetUserCardHolderListRequest): Promise<GetUserCardHolderListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserCardHolderListHeaders({ });
+    return await this.getUserCardHolderListWithOptions(request, headers, runtime);
+  }
+
+  async getUserCardHolderListWithOptions(request: GetUserCardHolderListRequest, headers: GetUserCardHolderListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserCardHolderListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetUserCardHolderListResponse>(await this.doROARequest("GetUserCardHolderList", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/holders/lists`, "json", req, runtime), new GetUserCardHolderListResponse({}));
   }
 
   async getUnionIdByMigrationUnionId(request: GetUnionIdByMigrationUnionIdRequest): Promise<GetUnionIdByMigrationUnionIdResponse> {

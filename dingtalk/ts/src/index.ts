@@ -22,6 +22,7 @@ import * as esign_1_0 from './esign_1_0/client';
 import * as esign_2_0 from './esign_2_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as finance_1_0 from './finance_1_0/client';
+import * as flashmeeting_1_0 from './flashmeeting_1_0/client';
 import * as h3yun_1_0 from './h3yun_1_0/client';
 import * as hrbrain_1_0 from './hrbrain_1_0/client';
 import * as hrm_1_0 from './hrm_1_0/client';
@@ -46,6 +47,7 @@ import * as todo_1_0 from './todo_1_0/client';
 import * as trade_1_0 from './trade_1_0/client';
 import * as trajectory_1_0 from './trajectory_1_0/client';
 import * as village_1_0 from './village_1_0/client';
+import * as wms_1_0 from './wms_1_0/client';
 import * as workbench_1_0 from './workbench_1_0/client';
 import * as workflow_1_0 from './workflow_1_0/client';
 import * as workrecord_1_0 from './workrecord_1_0/client';
@@ -76,6 +78,7 @@ export = {
   esign_2_0,
   exclusive_1_0,
   finance_1_0,
+  flashmeeting_1_0,
   h3yun_1_0,
   hrbrain_1_0,
   hrm_1_0,
@@ -100,6 +103,7 @@ export = {
   trade_1_0,
   trajectory_1_0,
   village_1_0,
+  wms_1_0,
   workbench_1_0,
   workflow_1_0,
   workrecord_1_0,

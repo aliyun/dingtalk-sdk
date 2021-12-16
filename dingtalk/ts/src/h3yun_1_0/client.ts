@@ -95,6 +95,276 @@ export class LoadBizFieldsResponse extends $tea.Model {
   }
 }
 
+export class CancelProcessInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelProcessInstanceRequest extends $tea.Model {
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelProcessInstanceResponseBody extends $tea.Model {
+  code?: string;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelProcessInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CancelProcessInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CancelProcessInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachmentTemporaryUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachmentTemporaryUrlRequest extends $tea.Model {
+  attachmentId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachmentId: 'attachmentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachmentId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachmentTemporaryUrlResponseBody extends $tea.Model {
+  code?: string;
+  message?: string;
+  data?: GetAttachmentTemporaryUrlResponseBodyData;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      message: 'message',
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      message: 'string',
+      data: GetAttachmentTemporaryUrlResponseBodyData,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAttachmentTemporaryUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAttachmentTemporaryUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAttachmentTemporaryUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUploadUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUploadUrlRequest extends $tea.Model {
+  schemaCode?: string;
+  bizObjectId?: string;
+  fieldName?: string;
+  isOverwrite?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      schemaCode: 'schemaCode',
+      bizObjectId: 'bizObjectId',
+      fieldName: 'fieldName',
+      isOverwrite: 'isOverwrite',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      schemaCode: 'string',
+      bizObjectId: 'string',
+      fieldName: 'string',
+      isOverwrite: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUploadUrlResponseBody extends $tea.Model {
+  code?: string;
+  message?: string;
+  data?: GetUploadUrlResponseBodyData;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      message: 'message',
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      message: 'string',
+      data: GetUploadUrlResponseBodyData,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUploadUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetUploadUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetUploadUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUsersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1641,6 +1911,44 @@ export class LoadBizFieldsResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetAttachmentTemporaryUrlResponseBodyData extends $tea.Model {
+  attachmentUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachmentUrl: 'attachmentUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachmentUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUploadUrlResponseBodyData extends $tea.Model {
+  uploadUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uploadUrl: 'uploadUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uploadUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUsersResponseBodyData extends $tea.Model {
   id?: string;
   name?: string;
@@ -2360,6 +2668,105 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<LoadBizFieldsResponse>(await this.doROARequest("LoadBizFields", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/forms/loadBizFields`, "json", req, runtime), new LoadBizFieldsResponse({}));
+  }
+
+  async cancelProcessInstance(request: CancelProcessInstanceRequest): Promise<CancelProcessInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CancelProcessInstanceHeaders({ });
+    return await this.cancelProcessInstanceWithOptions(request, headers, runtime);
+  }
+
+  async cancelProcessInstanceWithOptions(request: CancelProcessInstanceRequest, headers: CancelProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CancelProcessInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processInstanceId)) {
+      body["processInstanceId"] = request.processInstanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CancelProcessInstanceResponse>(await this.doROARequest("CancelProcessInstance", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/processes/instances/cancel`, "json", req, runtime), new CancelProcessInstanceResponse({}));
+  }
+
+  async getAttachmentTemporaryUrl(request: GetAttachmentTemporaryUrlRequest): Promise<GetAttachmentTemporaryUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAttachmentTemporaryUrlHeaders({ });
+    return await this.getAttachmentTemporaryUrlWithOptions(request, headers, runtime);
+  }
+
+  async getAttachmentTemporaryUrlWithOptions(request: GetAttachmentTemporaryUrlRequest, headers: GetAttachmentTemporaryUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachmentTemporaryUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attachmentId)) {
+      query["attachmentId"] = request.attachmentId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetAttachmentTemporaryUrlResponse>(await this.doROARequest("GetAttachmentTemporaryUrl", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/attachments/temporaryUrls`, "json", req, runtime), new GetAttachmentTemporaryUrlResponse({}));
+  }
+
+  async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUploadUrlHeaders({ });
+    return await this.getUploadUrlWithOptions(request, headers, runtime);
+  }
+
+  async getUploadUrlWithOptions(request: GetUploadUrlRequest, headers: GetUploadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.schemaCode)) {
+      query["schemaCode"] = request.schemaCode;
+    }
+
+    if (!Util.isUnset(request.bizObjectId)) {
+      query["bizObjectId"] = request.bizObjectId;
+    }
+
+    if (!Util.isUnset(request.fieldName)) {
+      query["fieldName"] = request.fieldName;
+    }
+
+    if (!Util.isUnset(request.isOverwrite)) {
+      query["isOverwrite"] = request.isOverwrite;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetUploadUrlResponse>(await this.doROARequest("GetUploadUrl", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/attachments/uploadUrls`, "json", req, runtime), new GetUploadUrlResponse({}));
   }
 
   async getUsers(request: GetUsersRequest): Promise<GetUsersResponse> {

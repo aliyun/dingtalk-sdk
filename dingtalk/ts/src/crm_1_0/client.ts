@@ -655,6 +655,97 @@ export class QueryAllCustomerResponse extends $tea.Model {
   }
 }
 
+export class UpdateRelationMetaFieldHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldRequest extends $tea.Model {
+  tenant?: string;
+  operatorUserId?: string;
+  relationType?: string;
+  fieldDTOList?: UpdateRelationMetaFieldRequestFieldDTOList[];
+  static names(): { [key: string]: string } {
+    return {
+      tenant: 'tenant',
+      operatorUserId: 'operatorUserId',
+      relationType: 'relationType',
+      fieldDTOList: 'fieldDTOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenant: 'string',
+      operatorUserId: 'string',
+      relationType: 'string',
+      fieldDTOList: { 'type': 'array', 'itemType': UpdateRelationMetaFieldRequestFieldDTOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBody extends $tea.Model {
+  relationMetaDTO?: UpdateRelationMetaFieldResponseBodyRelationMetaDTO;
+  static names(): { [key: string]: string } {
+    return {
+      relationMetaDTO: 'relationMetaDTO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationMetaDTO: UpdateRelationMetaFieldResponseBodyRelationMetaDTO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateRelationMetaFieldResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateRelationMetaFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendOfficialAccountOTOMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -838,6 +929,94 @@ export class GetOfficialAccountOTOMessageResultResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetOfficialAccountOTOMessageResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaRequest extends $tea.Model {
+  tenant?: string;
+  operatorUserId?: string;
+  relationTypes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      tenant: 'tenant',
+      operatorUserId: 'operatorUserId',
+      relationTypes: 'relationTypes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenant: 'string',
+      operatorUserId: 'string',
+      relationTypes: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBody extends $tea.Model {
+  relationMetaDTOList?: DescribeRelationMetaResponseBodyRelationMetaDTOList[];
+  static names(): { [key: string]: string } {
+    return {
+      relationMetaDTOList: 'relationMetaDTOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationMetaDTOList: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DescribeRelationMetaResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DescribeRelationMetaResponseBody,
     };
   }
 
@@ -2539,6 +2718,879 @@ export class QueryAllCustomerResponseBodyResult extends $tea.Model {
   }
 }
 
+export class UpdateRelationMetaFieldRequestFieldDTOListPropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldRequestFieldDTOListProps extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  labelEditableFreeze?: boolean;
+  required?: boolean;
+  requiredEditableFreeze?: boolean;
+  notPrint?: string;
+  content?: string;
+  format?: string;
+  options?: UpdateRelationMetaFieldRequestFieldDTOListPropsOptions[];
+  notUpper?: string;
+  unit?: string;
+  placeholder?: string;
+  bizAlias?: string;
+  duration?: boolean;
+  choice?: number;
+  disabled?: boolean;
+  align?: string;
+  invisible?: boolean;
+  payEnable?: boolean;
+  link?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      labelEditableFreeze: 'labelEditableFreeze',
+      required: 'required',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      notPrint: 'notPrint',
+      content: 'content',
+      format: 'format',
+      options: 'options',
+      notUpper: 'notUpper',
+      unit: 'unit',
+      placeholder: 'placeholder',
+      bizAlias: 'bizAlias',
+      duration: 'duration',
+      choice: 'choice',
+      disabled: 'disabled',
+      align: 'align',
+      invisible: 'invisible',
+      payEnable: 'payEnable',
+      link: 'link',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      labelEditableFreeze: 'boolean',
+      required: 'boolean',
+      requiredEditableFreeze: 'boolean',
+      notPrint: 'string',
+      content: 'string',
+      format: 'string',
+      options: { 'type': 'array', 'itemType': UpdateRelationMetaFieldRequestFieldDTOListPropsOptions },
+      notUpper: 'string',
+      unit: 'string',
+      placeholder: 'string',
+      bizAlias: 'string',
+      duration: 'boolean',
+      choice: 'number',
+      disabled: 'boolean',
+      align: 'string',
+      invisible: 'boolean',
+      payEnable: 'boolean',
+      link: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldRequestFieldDTOList extends $tea.Model {
+  componentName?: string;
+  props?: UpdateRelationMetaFieldRequestFieldDTOListProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      props: UpdateRelationMetaFieldRequestFieldDTOListProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSourceTarget extends $tea.Model {
+  appType?: number;
+  appUuid?: string;
+  bizType?: string;
+  formCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      appUuid: 'appUuid',
+      bizType: 'bizType',
+      formCode: 'formCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'number',
+      appUuid: 'string',
+      bizType: 'string',
+      formCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSource extends $tea.Model {
+  target?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSourceTarget;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      target: 'target',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      target: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSourceTarget,
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  unit?: string;
+  upper?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      unit: 'unit',
+      upper: 'upper',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      unit: 'string',
+      upper: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelateProps extends $tea.Model {
+  align?: string;
+  bizAlias?: string;
+  choice?: number;
+  content?: string;
+  disabled?: boolean;
+  duration?: boolean;
+  format?: string;
+  formula?: string;
+  fieldId?: string;
+  invisible?: boolean;
+  label?: string;
+  link?: string;
+  notUpper?: string;
+  options?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsOptions[];
+  payEnable?: boolean;
+  placeholder?: string;
+  required?: boolean;
+  statField?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsStatField[];
+  unit?: string;
+  verticalPrint?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      align: 'align',
+      bizAlias: 'bizAlias',
+      choice: 'choice',
+      content: 'content',
+      disabled: 'disabled',
+      duration: 'duration',
+      format: 'format',
+      formula: 'formula',
+      fieldId: 'fieldId',
+      invisible: 'invisible',
+      label: 'label',
+      link: 'link',
+      notUpper: 'notUpper',
+      options: 'options',
+      payEnable: 'payEnable',
+      placeholder: 'placeholder',
+      required: 'required',
+      statField: 'statField',
+      unit: 'unit',
+      verticalPrint: 'verticalPrint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      align: 'string',
+      bizAlias: 'string',
+      choice: 'number',
+      content: 'string',
+      disabled: 'boolean',
+      duration: 'boolean',
+      format: 'string',
+      formula: 'string',
+      fieldId: 'string',
+      invisible: 'boolean',
+      label: 'string',
+      link: 'string',
+      notUpper: 'string',
+      options: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsOptions },
+      payEnable: 'boolean',
+      placeholder: 'string',
+      required: 'boolean',
+      statField: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsStatField },
+      unit: 'string',
+      verticalPrint: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFields extends $tea.Model {
+  componentName?: string;
+  relateProps?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelateProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      relateProps: 'relateProps',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      relateProps: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelateProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  unit?: string;
+  upper?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      unit: 'unit',
+      upper: 'upper',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      unit: 'string',
+      upper: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenProps extends $tea.Model {
+  align?: string;
+  bizAlias?: string;
+  choice?: number;
+  content?: string;
+  dataSource?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSource;
+  disabled?: boolean;
+  duration?: boolean;
+  fields?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFields[];
+  format?: string;
+  formula?: string;
+  fieldId?: string;
+  invisible?: boolean;
+  label?: string;
+  labelEditableFreeze?: boolean;
+  link?: string;
+  notPrint?: string;
+  notUpper?: string;
+  options?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsOptions[];
+  payEnable?: boolean;
+  placeholder?: string;
+  required?: boolean;
+  requiredEditableFreeze?: boolean;
+  statField?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsStatField[];
+  unit?: string;
+  verticalPrint?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      align: 'align',
+      bizAlias: 'bizAlias',
+      choice: 'choice',
+      content: 'content',
+      dataSource: 'dataSource',
+      disabled: 'disabled',
+      duration: 'duration',
+      fields: 'fields',
+      format: 'format',
+      formula: 'formula',
+      fieldId: 'fieldId',
+      invisible: 'invisible',
+      label: 'label',
+      labelEditableFreeze: 'labelEditableFreeze',
+      link: 'link',
+      notPrint: 'notPrint',
+      notUpper: 'notUpper',
+      options: 'options',
+      payEnable: 'payEnable',
+      placeholder: 'placeholder',
+      required: 'required',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      statField: 'statField',
+      unit: 'unit',
+      verticalPrint: 'verticalPrint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      align: 'string',
+      bizAlias: 'string',
+      choice: 'number',
+      content: 'string',
+      dataSource: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSource,
+      disabled: 'boolean',
+      duration: 'boolean',
+      fields: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFields },
+      format: 'string',
+      formula: 'string',
+      fieldId: 'string',
+      invisible: 'boolean',
+      label: 'string',
+      labelEditableFreeze: 'boolean',
+      link: 'string',
+      notPrint: 'string',
+      notUpper: 'string',
+      options: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsOptions },
+      payEnable: 'boolean',
+      placeholder: 'string',
+      required: 'boolean',
+      requiredEditableFreeze: 'boolean',
+      statField: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsStatField },
+      unit: 'string',
+      verticalPrint: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildren extends $tea.Model {
+  componentName?: string;
+  props?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      props: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSourceTarget extends $tea.Model {
+  appType?: number;
+  appUuid?: string;
+  bizType?: string;
+  formCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      appUuid: 'appUuid',
+      bizType: 'bizType',
+      formCode: 'formCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'number',
+      appUuid: 'string',
+      bizType: 'string',
+      formCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSource extends $tea.Model {
+  target?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSourceTarget;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      target: 'target',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      target: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSourceTarget,
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  unit?: string;
+  upper?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      unit: 'unit',
+      upper: 'upper',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      unit: 'string',
+      upper: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelateProps extends $tea.Model {
+  align?: string;
+  bizAlias?: string;
+  choice?: number;
+  content?: string;
+  disabled?: boolean;
+  duration?: string;
+  format?: string;
+  formula?: string;
+  fieldId?: string;
+  invisible?: boolean;
+  label?: string;
+  link?: string;
+  notUpper?: string;
+  options?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsOptions[];
+  payEnable?: boolean;
+  placeholder?: string;
+  required?: boolean;
+  statField?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsStatField[];
+  unit?: string;
+  verticalPrint?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      align: 'align',
+      bizAlias: 'bizAlias',
+      choice: 'choice',
+      content: 'content',
+      disabled: 'disabled',
+      duration: 'duration',
+      format: 'format',
+      formula: 'formula',
+      fieldId: 'fieldId',
+      invisible: 'invisible',
+      label: 'label',
+      link: 'link',
+      notUpper: 'notUpper',
+      options: 'options',
+      payEnable: 'payEnable',
+      placeholder: 'placeholder',
+      required: 'required',
+      statField: 'statField',
+      unit: 'unit',
+      verticalPrint: 'verticalPrint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      align: 'string',
+      bizAlias: 'string',
+      choice: 'number',
+      content: 'string',
+      disabled: 'boolean',
+      duration: 'string',
+      format: 'string',
+      formula: 'string',
+      fieldId: 'string',
+      invisible: 'boolean',
+      label: 'string',
+      link: 'string',
+      notUpper: 'string',
+      options: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsOptions },
+      payEnable: 'boolean',
+      placeholder: 'string',
+      required: 'boolean',
+      statField: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsStatField },
+      unit: 'string',
+      verticalPrint: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFields extends $tea.Model {
+  componentName?: string;
+  relateProps?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelateProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      relateProps: 'relateProps',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      relateProps: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelateProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  unit?: string;
+  upper?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      unit: 'unit',
+      upper: 'upper',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      unit: 'string',
+      upper: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsProps extends $tea.Model {
+  align?: string;
+  bizAlias?: string;
+  choice?: number;
+  content?: string;
+  dataSource?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSource;
+  disabled?: boolean;
+  duration?: boolean;
+  fields?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFields[];
+  format?: string;
+  formula?: string;
+  fieldId?: string;
+  invisible?: boolean;
+  label?: string;
+  labelEditableFreeze?: boolean;
+  link?: string;
+  notPrint?: string;
+  notUpper?: string;
+  options?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsOptions[];
+  payEnable?: boolean;
+  placeholder?: string;
+  required?: boolean;
+  requiredEditableFreeze?: boolean;
+  statField?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsStatField[];
+  unit?: string;
+  verticalPrint?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      align: 'align',
+      bizAlias: 'bizAlias',
+      choice: 'choice',
+      content: 'content',
+      dataSource: 'dataSource',
+      disabled: 'disabled',
+      duration: 'duration',
+      fields: 'fields',
+      format: 'format',
+      formula: 'formula',
+      fieldId: 'fieldId',
+      invisible: 'invisible',
+      label: 'label',
+      labelEditableFreeze: 'labelEditableFreeze',
+      link: 'link',
+      notPrint: 'notPrint',
+      notUpper: 'notUpper',
+      options: 'options',
+      payEnable: 'payEnable',
+      placeholder: 'placeholder',
+      required: 'required',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      statField: 'statField',
+      unit: 'unit',
+      verticalPrint: 'verticalPrint',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      align: 'string',
+      bizAlias: 'string',
+      choice: 'number',
+      content: 'string',
+      dataSource: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSource,
+      disabled: 'boolean',
+      duration: 'boolean',
+      fields: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFields },
+      format: 'string',
+      formula: 'string',
+      fieldId: 'string',
+      invisible: 'boolean',
+      label: 'string',
+      labelEditableFreeze: 'boolean',
+      link: 'string',
+      notPrint: 'string',
+      notUpper: 'string',
+      options: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsOptions },
+      payEnable: 'boolean',
+      placeholder: 'string',
+      required: 'boolean',
+      requiredEditableFreeze: 'boolean',
+      statField: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsStatField },
+      unit: 'string',
+      verticalPrint: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItems extends $tea.Model {
+  children?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildren[];
+  componentName?: string;
+  props?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsProps[];
+  static names(): { [key: string]: string } {
+    return {
+      children: 'children',
+      componentName: 'componentName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      children: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildren },
+      componentName: 'string',
+      props: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsProps },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRelationMetaFieldResponseBodyRelationMetaDTO extends $tea.Model {
+  desc?: string;
+  items?: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItems[];
+  name?: string;
+  relationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      desc: 'desc',
+      items: 'items',
+      name: 'name',
+      relationType: 'relationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      desc: 'string',
+      items: { 'type': 'array', 'itemType': UpdateRelationMetaFieldResponseBodyRelationMetaDTOItems },
+      name: 'string',
+      relationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendOfficialAccountOTOMessageRequestDetailMessageBodyText extends $tea.Model {
   content?: string;
   static names(): { [key: string]: string } {
@@ -2756,6 +3808,759 @@ export class GetOfficialAccountOTOMessageResultResponseBodyResult extends $tea.M
     return {
       status: 'number',
       readUserIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  upper?: boolean;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      upper: 'upper',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      upper: 'boolean',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  required?: boolean;
+  content?: string;
+  format?: string;
+  options?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions[];
+  notUpper?: string;
+  unit?: string;
+  placeholder?: string;
+  bizAlias?: string;
+  duration?: string;
+  choice?: number;
+  disabled?: boolean;
+  align?: string;
+  invisible?: boolean;
+  payEnable?: boolean;
+  statField?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField[];
+  link?: string;
+  verticalPrint?: boolean;
+  formula?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      required: 'required',
+      content: 'content',
+      format: 'format',
+      options: 'options',
+      notUpper: 'notUpper',
+      unit: 'unit',
+      placeholder: 'placeholder',
+      bizAlias: 'bizAlias',
+      duration: 'duration',
+      choice: 'choice',
+      disabled: 'disabled',
+      align: 'align',
+      invisible: 'invisible',
+      payEnable: 'payEnable',
+      statField: 'statField',
+      link: 'link',
+      verticalPrint: 'verticalPrint',
+      formula: 'formula',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      required: 'boolean',
+      content: 'string',
+      format: 'string',
+      options: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions },
+      notUpper: 'string',
+      unit: 'string',
+      placeholder: 'string',
+      bizAlias: 'string',
+      duration: 'string',
+      choice: 'number',
+      disabled: 'boolean',
+      align: 'string',
+      invisible: 'boolean',
+      payEnable: 'boolean',
+      statField: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField },
+      link: 'string',
+      verticalPrint: 'boolean',
+      formula: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields extends $tea.Model {
+  componentName?: string;
+  relateProps?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      relateProps: 'relateProps',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      relateProps: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget extends $tea.Model {
+  appUuid?: string;
+  appType?: number;
+  bizType?: string;
+  formCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      appType: 'appType',
+      bizType: 'bizType',
+      formCode: 'formCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      appType: 'number',
+      bizType: 'string',
+      formCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource extends $tea.Model {
+  type?: string;
+  target?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      target: 'target',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  upper?: boolean;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      upper: 'upper',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      upper: 'boolean',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  labelEditableFreeze?: boolean;
+  required?: boolean;
+  requiredEditableFreeze?: boolean;
+  notPrint?: string;
+  content?: string;
+  format?: string;
+  options?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions[];
+  notUpper?: string;
+  unit?: string;
+  placeholder?: string;
+  bizAlias?: string;
+  duration?: boolean;
+  choice?: number;
+  disabled?: boolean;
+  align?: string;
+  fields?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields[];
+  dataSource?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource;
+  invisible?: boolean;
+  payEnable?: boolean;
+  statField?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField[];
+  link?: string;
+  verticalPrint?: boolean;
+  formula?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      labelEditableFreeze: 'labelEditableFreeze',
+      required: 'required',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      notPrint: 'notPrint',
+      content: 'content',
+      format: 'format',
+      options: 'options',
+      notUpper: 'notUpper',
+      unit: 'unit',
+      placeholder: 'placeholder',
+      bizAlias: 'bizAlias',
+      duration: 'duration',
+      choice: 'choice',
+      disabled: 'disabled',
+      align: 'align',
+      fields: 'fields',
+      dataSource: 'dataSource',
+      invisible: 'invisible',
+      payEnable: 'payEnable',
+      statField: 'statField',
+      link: 'link',
+      verticalPrint: 'verticalPrint',
+      formula: 'formula',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      labelEditableFreeze: 'boolean',
+      required: 'boolean',
+      requiredEditableFreeze: 'boolean',
+      notPrint: 'string',
+      content: 'string',
+      format: 'string',
+      options: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions },
+      notUpper: 'string',
+      unit: 'string',
+      placeholder: 'string',
+      bizAlias: 'string',
+      duration: 'boolean',
+      choice: 'number',
+      disabled: 'boolean',
+      align: 'string',
+      fields: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields },
+      dataSource: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource,
+      invisible: 'boolean',
+      payEnable: 'boolean',
+      statField: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField },
+      link: 'string',
+      verticalPrint: 'boolean',
+      formula: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  upper?: boolean;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      upper: 'upper',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      upper: 'boolean',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  required?: boolean;
+  content?: string;
+  format?: string;
+  options?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions[];
+  notUpper?: string;
+  unit?: string;
+  placeholder?: string;
+  bizAlias?: string;
+  duration?: boolean;
+  choice?: number;
+  disabled?: boolean;
+  align?: string;
+  invisible?: boolean;
+  payEnable?: boolean;
+  statField?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField[];
+  link?: string;
+  verticalPrint?: boolean;
+  formula?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      required: 'required',
+      content: 'content',
+      format: 'format',
+      options: 'options',
+      notUpper: 'notUpper',
+      unit: 'unit',
+      placeholder: 'placeholder',
+      bizAlias: 'bizAlias',
+      duration: 'duration',
+      choice: 'choice',
+      disabled: 'disabled',
+      align: 'align',
+      invisible: 'invisible',
+      payEnable: 'payEnable',
+      statField: 'statField',
+      link: 'link',
+      verticalPrint: 'verticalPrint',
+      formula: 'formula',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      required: 'boolean',
+      content: 'string',
+      format: 'string',
+      options: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions },
+      notUpper: 'string',
+      unit: 'string',
+      placeholder: 'string',
+      bizAlias: 'string',
+      duration: 'boolean',
+      choice: 'number',
+      disabled: 'boolean',
+      align: 'string',
+      invisible: 'boolean',
+      payEnable: 'boolean',
+      statField: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField },
+      link: 'string',
+      verticalPrint: 'boolean',
+      formula: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields extends $tea.Model {
+  componentName?: string;
+  relateProps?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      relateProps: 'relateProps',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      relateProps: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget extends $tea.Model {
+  appUuid?: string;
+  appType?: number;
+  bizType?: string;
+  formCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      appType: 'appType',
+      bizType: 'bizType',
+      formCode: 'formCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      appType: 'number',
+      bizType: 'string',
+      formCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource extends $tea.Model {
+  type?: string;
+  target?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      target: 'target',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+      target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  upper?: boolean;
+  unit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      upper: 'upper',
+      unit: 'unit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      upper: 'boolean',
+      unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps extends $tea.Model {
+  fieldId?: string;
+  label?: string;
+  labelEditableFreeze?: boolean;
+  required?: boolean;
+  requiredEditableFreeze?: boolean;
+  notPrint?: string;
+  content?: string;
+  format?: string;
+  options?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions[];
+  notUpper?: string;
+  unit?: string;
+  placeholder?: string;
+  bizAlias?: string;
+  duration?: boolean;
+  choice?: number;
+  disabled?: boolean;
+  align?: string;
+  fields?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields[];
+  dataSource?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource;
+  invisible?: boolean;
+  payEnable?: boolean;
+  statField?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField[];
+  link?: string;
+  verticalPrint?: boolean;
+  formula?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      label: 'label',
+      labelEditableFreeze: 'labelEditableFreeze',
+      required: 'required',
+      requiredEditableFreeze: 'requiredEditableFreeze',
+      notPrint: 'notPrint',
+      content: 'content',
+      format: 'format',
+      options: 'options',
+      notUpper: 'notUpper',
+      unit: 'unit',
+      placeholder: 'placeholder',
+      bizAlias: 'bizAlias',
+      duration: 'duration',
+      choice: 'choice',
+      disabled: 'disabled',
+      align: 'align',
+      fields: 'fields',
+      dataSource: 'dataSource',
+      invisible: 'invisible',
+      payEnable: 'payEnable',
+      statField: 'statField',
+      link: 'link',
+      verticalPrint: 'verticalPrint',
+      formula: 'formula',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      label: 'string',
+      labelEditableFreeze: 'boolean',
+      required: 'boolean',
+      requiredEditableFreeze: 'boolean',
+      notPrint: 'string',
+      content: 'string',
+      format: 'string',
+      options: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions },
+      notUpper: 'string',
+      unit: 'string',
+      placeholder: 'string',
+      bizAlias: 'string',
+      duration: 'boolean',
+      choice: 'number',
+      disabled: 'boolean',
+      align: 'string',
+      fields: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields },
+      dataSource: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource,
+      invisible: 'boolean',
+      payEnable: 'boolean',
+      statField: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField },
+      link: 'string',
+      verticalPrint: 'boolean',
+      formula: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren extends $tea.Model {
+  componentName?: string;
+  props?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItems extends $tea.Model {
+  componentName?: string;
+  props?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps[];
+  children?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren[];
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      props: 'props',
+      children: 'children',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      props: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps },
+      children: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOList extends $tea.Model {
+  relationType?: string;
+  name?: string;
+  desc?: string;
+  items?: DescribeRelationMetaResponseBodyRelationMetaDTOListItems[];
+  static names(): { [key: string]: string } {
+    return {
+      relationType: 'relationType',
+      name: 'name',
+      desc: 'desc',
+      items: 'items',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationType: 'string',
+      name: 'string',
+      desc: 'string',
+      items: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItems },
     };
   }
 
@@ -3542,6 +5347,47 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAllCustomerResponse>(await this.doROARequest("QueryAllCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customerInstances`, "json", req, runtime), new QueryAllCustomerResponse({}));
   }
 
+  async updateRelationMetaField(request: UpdateRelationMetaFieldRequest): Promise<UpdateRelationMetaFieldResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateRelationMetaFieldHeaders({ });
+    return await this.updateRelationMetaFieldWithOptions(request, headers, runtime);
+  }
+
+  async updateRelationMetaFieldWithOptions(request: UpdateRelationMetaFieldRequest, headers: UpdateRelationMetaFieldHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRelationMetaFieldResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenant)) {
+      body["tenant"] = request.tenant;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
+    if (!Util.isUnset(request.fieldDTOList)) {
+      body["fieldDTOList"] = request.fieldDTOList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateRelationMetaFieldResponse>(await this.doROARequest("UpdateRelationMetaField", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/relations/metas/fields`, "json", req, runtime), new UpdateRelationMetaFieldResponse({}));
+  }
+
   async sendOfficialAccountOTOMessage(request: SendOfficialAccountOTOMessageRequest): Promise<SendOfficialAccountOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendOfficialAccountOTOMessageHeaders({ });
@@ -3626,6 +5472,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetOfficialAccountOTOMessageResultResponse>(await this.doROARequest("GetOfficialAccountOTOMessageResult", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/oToMessages/sendResults`, "json", req, runtime), new GetOfficialAccountOTOMessageResultResponse({}));
+  }
+
+  async describeRelationMeta(request: DescribeRelationMetaRequest): Promise<DescribeRelationMetaResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DescribeRelationMetaHeaders({ });
+    return await this.describeRelationMetaWithOptions(request, headers, runtime);
+  }
+
+  async describeRelationMetaWithOptions(request: DescribeRelationMetaRequest, headers: DescribeRelationMetaHeaders, runtime: $Util.RuntimeOptions): Promise<DescribeRelationMetaResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenant)) {
+      body["tenant"] = request.tenant;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    if (!Util.isUnset(request.relationTypes)) {
+      body["relationTypes"] = request.relationTypes;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DescribeRelationMetaResponse>(await this.doROARequest("DescribeRelationMeta", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/query`, "json", req, runtime), new DescribeRelationMetaResponse({}));
   }
 
   async addCrmPersonalCustomer(request: AddCrmPersonalCustomerRequest): Promise<AddCrmPersonalCustomerResponse> {

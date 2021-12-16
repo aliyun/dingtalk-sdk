@@ -1020,6 +1020,7 @@ export class ListFilesRequest extends $tea.Model {
   nextToken?: string;
   maxResults?: number;
   orderType?: string;
+  withIcon?: boolean;
   static names(): { [key: string]: string } {
     return {
       unionId: 'unionId',
@@ -1027,6 +1028,7 @@ export class ListFilesRequest extends $tea.Model {
       nextToken: 'nextToken',
       maxResults: 'maxResults',
       orderType: 'orderType',
+      withIcon: 'withIcon',
     };
   }
 
@@ -1037,6 +1039,7 @@ export class ListFilesRequest extends $tea.Model {
       nextToken: 'string',
       maxResults: 'number',
       orderType: 'string',
+      withIcon: 'boolean',
     };
   }
 
@@ -2350,15 +2353,21 @@ export class GetDownloadInfoHeaders extends $tea.Model {
 
 export class GetDownloadInfoRequest extends $tea.Model {
   unionId?: string;
+  withRegion?: boolean;
+  withInternalResourceUrl?: boolean;
   static names(): { [key: string]: string } {
     return {
       unionId: 'unionId',
+      withRegion: 'withRegion',
+      withInternalResourceUrl: 'withInternalResourceUrl',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       unionId: 'string',
+      withRegion: 'boolean',
+      withInternalResourceUrl: 'boolean',
     };
   }
 
@@ -2369,15 +2378,18 @@ export class GetDownloadInfoRequest extends $tea.Model {
 
 export class GetDownloadInfoResponseBody extends $tea.Model {
   downloadInfo?: GetDownloadInfoResponseBodyDownloadInfo;
+  region?: string;
   static names(): { [key: string]: string } {
     return {
       downloadInfo: 'downloadInfo',
+      region: 'region',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       downloadInfo: GetDownloadInfoResponseBodyDownloadInfo,
+      region: 'string',
     };
   }
 
@@ -2437,6 +2449,9 @@ export class GetUploadInfoRequest extends $tea.Model {
   md5?: string;
   addConflictPolicy?: string;
   mediaId?: string;
+  withRegion?: boolean;
+  withInternalEndPoint?: boolean;
+  callerRegion?: string;
   static names(): { [key: string]: string } {
     return {
       unionId: 'unionId',
@@ -2445,6 +2460,9 @@ export class GetUploadInfoRequest extends $tea.Model {
       md5: 'md5',
       addConflictPolicy: 'addConflictPolicy',
       mediaId: 'mediaId',
+      withRegion: 'withRegion',
+      withInternalEndPoint: 'withInternalEndPoint',
+      callerRegion: 'callerRegion',
     };
   }
 
@@ -2456,6 +2474,9 @@ export class GetUploadInfoRequest extends $tea.Model {
       md5: 'string',
       addConflictPolicy: 'string',
       mediaId: 'string',
+      withRegion: 'boolean',
+      withInternalEndPoint: 'boolean',
+      callerRegion: 'string',
     };
   }
 
@@ -2467,10 +2488,12 @@ export class GetUploadInfoRequest extends $tea.Model {
 export class GetUploadInfoResponseBody extends $tea.Model {
   stsUploadInfo?: GetUploadInfoResponseBodyStsUploadInfo;
   headerSignatureUploadInfo?: GetUploadInfoResponseBodyHeaderSignatureUploadInfo;
+  region?: string;
   static names(): { [key: string]: string } {
     return {
       stsUploadInfo: 'stsUploadInfo',
       headerSignatureUploadInfo: 'headerSignatureUploadInfo',
+      region: 'region',
     };
   }
 
@@ -2478,6 +2501,7 @@ export class GetUploadInfoResponseBody extends $tea.Model {
     return {
       stsUploadInfo: GetUploadInfoResponseBodyStsUploadInfo,
       headerSignatureUploadInfo: GetUploadInfoResponseBodyHeaderSignatureUploadInfo,
+      region: 'string',
     };
   }
 
@@ -3002,6 +3026,8 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
   contentType?: string;
   fileExtension?: string;
   fileSize?: number;
+  thumbnail?: string;
+  icon?: string;
   createTime?: string;
   modifyTime?: string;
   creator?: string;
@@ -3017,6 +3043,8 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
       contentType: 'contentType',
       fileExtension: 'fileExtension',
       fileSize: 'fileSize',
+      thumbnail: 'thumbnail',
+      icon: 'icon',
       createTime: 'createTime',
       modifyTime: 'modifyTime',
       creator: 'creator',
@@ -3035,6 +3063,8 @@ export class ListFilesResponseBodyFiles extends $tea.Model {
       contentType: 'string',
       fileExtension: 'string',
       fileSize: 'number',
+      thumbnail: 'string',
+      icon: 'string',
       createTime: 'string',
       modifyTime: 'string',
       creator: 'string',
@@ -3374,11 +3404,13 @@ export class ModifyPermissionRequestMembers extends $tea.Model {
 
 export class GetDownloadInfoResponseBodyDownloadInfo extends $tea.Model {
   resourceUrl?: string;
+  internalResourceUrl?: string;
   expirationSeconds?: number;
   headers?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
       resourceUrl: 'resourceUrl',
+      internalResourceUrl: 'internalResourceUrl',
       expirationSeconds: 'expirationSeconds',
       headers: 'headers',
     };
@@ -3387,6 +3419,7 @@ export class GetDownloadInfoResponseBodyDownloadInfo extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       resourceUrl: 'string',
+      internalResourceUrl: 'string',
       expirationSeconds: 'number',
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
@@ -3400,6 +3433,7 @@ export class GetDownloadInfoResponseBodyDownloadInfo extends $tea.Model {
 export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
   bucket?: string;
   endPoint?: string;
+  internalEndPoint?: string;
   accessKeyId?: string;
   accessKeySecret?: string;
   accessToken?: string;
@@ -3409,6 +3443,7 @@ export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
     return {
       bucket: 'bucket',
       endPoint: 'endPoint',
+      internalEndPoint: 'internalEndPoint',
       accessKeyId: 'accessKeyId',
       accessKeySecret: 'accessKeySecret',
       accessToken: 'accessToken',
@@ -3421,6 +3456,7 @@ export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
     return {
       bucket: 'string',
       endPoint: 'string',
+      internalEndPoint: 'string',
       accessKeyId: 'string',
       accessKeySecret: 'string',
       accessToken: 'string',
@@ -3436,11 +3472,13 @@ export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
 
 export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Model {
   resourceUrl?: string;
+  internalResourceUrl?: string;
   expirationSeconds?: number;
   headers?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
       resourceUrl: 'resourceUrl',
+      internalResourceUrl: 'internalResourceUrl',
       expirationSeconds: 'expirationSeconds',
       headers: 'headers',
     };
@@ -3449,6 +3487,7 @@ export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Mod
   static types(): { [key: string]: any } {
     return {
       resourceUrl: 'string',
+      internalResourceUrl: 'string',
       expirationSeconds: 'number',
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
@@ -3970,6 +4009,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.orderType)) {
       query["orderType"] = request.orderType;
+    }
+
+    if (!Util.isUnset(request.withIcon)) {
+      query["withIcon"] = request.withIcon;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -4507,6 +4550,14 @@ export default class Client extends OpenApi {
       query["unionId"] = request.unionId;
     }
 
+    if (!Util.isUnset(request.withRegion)) {
+      query["withRegion"] = request.withRegion;
+    }
+
+    if (!Util.isUnset(request.withInternalResourceUrl)) {
+      query["withInternalResourceUrl"] = request.withInternalResourceUrl;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -4554,6 +4605,18 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.mediaId)) {
       query["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.withRegion)) {
+      query["withRegion"] = request.withRegion;
+    }
+
+    if (!Util.isUnset(request.withInternalEndPoint)) {
+      query["withInternalEndPoint"] = request.withInternalEndPoint;
+    }
+
+    if (!Util.isUnset(request.callerRegion)) {
+      query["callerRegion"] = request.callerRegion;
     }
 
     let realHeaders : {[key: string ]: string} = { };
