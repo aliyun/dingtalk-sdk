@@ -60,6 +60,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppAvailableVersionR
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListMiniAppHistoryVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionResponse;
@@ -608,6 +611,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RollbackMiniAppVersionResponse::fromMap($this->doROARequest('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/miniApps/versions/rollback', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PublishFileChangeNoticeRequest $request
+     *
+     * @return PublishFileChangeNoticeResponse
+     */
+    public function publishFileChangeNotice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PublishFileChangeNoticeHeaders([]);
+
+        return $this->publishFileChangeNoticeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PublishFileChangeNoticeRequest $request
+     * @param PublishFileChangeNoticeHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return PublishFileChangeNoticeResponse
+     */
+    public function publishFileChangeNoticeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileId)) {
+            @$body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            @$body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            @$body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        if (!Utils::isUnset($request->operateType)) {
+            @$body['operateType'] = $request->operateType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PublishFileChangeNoticeResponse::fromMap($this->doROARequest('PublishFileChangeNotice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/comments/send', 'none', $req, $runtime));
     }
 
     /**

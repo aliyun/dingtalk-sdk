@@ -19,9 +19,17 @@ class GetUploadInfoResponseBody extends Model
      * @var headerSignatureUploadInfo
      */
     public $headerSignatureUploadInfo;
+
+    /**
+     * @description 文件所存储的区域
+     *
+     * @var string
+     */
+    public $region;
     protected $_name = [
         'stsUploadInfo'             => 'stsUploadInfo',
         'headerSignatureUploadInfo' => 'headerSignatureUploadInfo',
+        'region'                    => 'region',
     ];
 
     public function validate()
@@ -36,6 +44,9 @@ class GetUploadInfoResponseBody extends Model
         }
         if (null !== $this->headerSignatureUploadInfo) {
             $res['headerSignatureUploadInfo'] = null !== $this->headerSignatureUploadInfo ? $this->headerSignatureUploadInfo->toMap() : null;
+        }
+        if (null !== $this->region) {
+            $res['region'] = $this->region;
         }
 
         return $res;
@@ -54,6 +65,9 @@ class GetUploadInfoResponseBody extends Model
         }
         if (isset($map['headerSignatureUploadInfo'])) {
             $model->headerSignatureUploadInfo = headerSignatureUploadInfo::fromMap($map['headerSignatureUploadInfo']);
+        }
+        if (isset($map['region'])) {
+            $model->region = $map['region'];
         }
 
         return $model;

@@ -11,18 +11,27 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceDocMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AppendRowsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AppendRowsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AppendRowsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspaceDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspaceDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspaceDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateSheetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceDocRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocMembersResponse;
@@ -35,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentEditDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeRequest;
@@ -43,6 +55,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateWorkspaceDocMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateWorkspaceDocMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateWorkspaceDocMembersResponse;
@@ -120,6 +135,52 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchGetWorkspaceDocsResponse::fromMap($this->doROARequest('BatchGetWorkspaceDocs', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workspaces/docs/infos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param string             $sheetId
+     * @param DeleteSheetRequest $request
+     *
+     * @return DeleteSheetResponse
+     */
+    public function deleteSheet($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteSheetHeaders([]);
+
+        return $this->deleteSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param string             $sheetId
+     * @param DeleteSheetRequest $request
+     * @param DeleteSheetHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return DeleteSheetResponse
+     */
+    public function deleteSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteSheetResponse::fromMap($this->doROARequest('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '', 'none', $req, $runtime));
     }
 
     /**
@@ -219,6 +280,55 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateWorkspaceDocResponse::fromMap($this->doROARequest('CreateWorkspaceDoc', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/docs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param CreateSheetRequest $request
+     *
+     * @return CreateSheetResponse
+     */
+    public function createSheet($workbookId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSheetHeaders([]);
+
+        return $this->createSheetWithOptions($workbookId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param CreateSheetRequest $request
+     * @param CreateSheetHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateSheetResponse
+     */
+    public function createSheetWithOptions($workbookId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateSheetResponse::fromMap($this->doROARequest('CreateSheet', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets', 'json', $req, $runtime));
     }
 
     /**
@@ -418,6 +528,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchWorkspaceDocsResponse::fromMap($this->doROARequest('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/docs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param string             $sheetId
+     * @param string             $rangeAddress
+     * @param UpdateRangeRequest $request
+     *
+     * @return UpdateRangeResponse
+     */
+    public function updateRange($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRangeHeaders([]);
+
+        return $this->updateRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $workbookId
+     * @param string             $sheetId
+     * @param string             $rangeAddress
+     * @param UpdateRangeRequest $request
+     * @param UpdateRangeHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return UpdateRangeResponse
+     */
+    public function updateRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->values)) {
+            @$body['values'] = $request->values;
+        }
+        if (!Utils::isUnset($request->backgroundColors)) {
+            @$body['backgroundColors'] = $request->backgroundColors;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateRangeResponse::fromMap($this->doROARequest('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '', 'none', $req, $runtime));
     }
 
     /**
@@ -624,6 +790,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string          $workbookId
+     * @param string          $sheetId
+     * @param GetSheetRequest $request
+     *
+     * @return GetSheetResponse
+     */
+    public function getSheet($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSheetHeaders([]);
+
+        return $this->getSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string          $workbookId
+     * @param string          $sheetId
+     * @param GetSheetRequest $request
+     * @param GetSheetHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return GetSheetResponse
+     */
+    public function getSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSheetResponse::fromMap($this->doROARequest('GetSheet', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetRelatedWorkspacesRequest $request
      *
      * @return GetRelatedWorkspacesResponse
@@ -807,5 +1019,56 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetWorkspaceNodeResponse::fromMap($this->doROARequest('GetWorkspaceNode', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param AppendRowsRequest $request
+     *
+     * @return AppendRowsResponse
+     */
+    public function appendRows($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppendRowsHeaders([]);
+
+        return $this->appendRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param AppendRowsRequest $request
+     * @param AppendRowsHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return AppendRowsResponse
+     */
+    public function appendRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->values)) {
+            @$body['values'] = $request->values;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AppendRowsResponse::fromMap($this->doROARequest('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/appendRows', 'none', $req, $runtime));
     }
 }

@@ -690,6 +690,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->orderType)) {
             @$query['orderType'] = $request->orderType;
         }
+        if (!Utils::isUnset($request->withIcon)) {
+            @$query['withIcon'] = $request->withIcon;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1431,6 +1434,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->unionId)) {
             @$query['unionId'] = $request->unionId;
         }
+        if (!Utils::isUnset($request->withRegion)) {
+            @$query['withRegion'] = $request->withRegion;
+        }
+        if (!Utils::isUnset($request->withInternalResourceUrl)) {
+            @$query['withInternalResourceUrl'] = $request->withInternalResourceUrl;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1491,6 +1500,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->mediaId)) {
             @$query['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->withRegion)) {
+            @$query['withRegion'] = $request->withRegion;
+        }
+        if (!Utils::isUnset($request->withInternalEndPoint)) {
+            @$query['withInternalEndPoint'] = $request->withInternalEndPoint;
+        }
+        if (!Utils::isUnset($request->callerRegion)) {
+            @$query['callerRegion'] = $request->callerRegion;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

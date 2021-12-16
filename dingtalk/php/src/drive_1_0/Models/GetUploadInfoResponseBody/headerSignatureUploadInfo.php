@@ -16,6 +16,13 @@ class headerSignatureUploadInfo extends Model
     public $resourceUrl;
 
     /**
+     * @description 内网上传地址
+     *
+     * @var string
+     */
+    public $internalResourceUrl;
+
+    /**
      * @description 过期秒数
      *
      * @var int
@@ -29,9 +36,10 @@ class headerSignatureUploadInfo extends Model
      */
     public $headers;
     protected $_name = [
-        'resourceUrl'       => 'resourceUrl',
-        'expirationSeconds' => 'expirationSeconds',
-        'headers'           => 'headers',
+        'resourceUrl'         => 'resourceUrl',
+        'internalResourceUrl' => 'internalResourceUrl',
+        'expirationSeconds'   => 'expirationSeconds',
+        'headers'             => 'headers',
     ];
 
     public function validate()
@@ -43,6 +51,9 @@ class headerSignatureUploadInfo extends Model
         $res = [];
         if (null !== $this->resourceUrl) {
             $res['resourceUrl'] = $this->resourceUrl;
+        }
+        if (null !== $this->internalResourceUrl) {
+            $res['internalResourceUrl'] = $this->internalResourceUrl;
         }
         if (null !== $this->expirationSeconds) {
             $res['expirationSeconds'] = $this->expirationSeconds;
@@ -64,6 +75,9 @@ class headerSignatureUploadInfo extends Model
         $model = new self();
         if (isset($map['resourceUrl'])) {
             $model->resourceUrl = $map['resourceUrl'];
+        }
+        if (isset($map['internalResourceUrl'])) {
+            $model->internalResourceUrl = $map['internalResourceUrl'];
         }
         if (isset($map['expirationSeconds'])) {
             $model->expirationSeconds = $map['expirationSeconds'];

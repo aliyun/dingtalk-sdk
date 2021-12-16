@@ -23,6 +23,13 @@ class stsUploadInfo extends Model
     public $endPoint;
 
     /**
+     * @description 内网endPoint
+     *
+     * @var string
+     */
+    public $internalEndPoint;
+
+    /**
      * @description accessKeyId
      *
      * @var string
@@ -59,6 +66,7 @@ class stsUploadInfo extends Model
     protected $_name = [
         'bucket'                      => 'bucket',
         'endPoint'                    => 'endPoint',
+        'internalEndPoint'            => 'internalEndPoint',
         'accessKeyId'                 => 'accessKeyId',
         'accessKeySecret'             => 'accessKeySecret',
         'accessToken'                 => 'accessToken',
@@ -78,6 +86,9 @@ class stsUploadInfo extends Model
         }
         if (null !== $this->endPoint) {
             $res['endPoint'] = $this->endPoint;
+        }
+        if (null !== $this->internalEndPoint) {
+            $res['internalEndPoint'] = $this->internalEndPoint;
         }
         if (null !== $this->accessKeyId) {
             $res['accessKeyId'] = $this->accessKeyId;
@@ -111,6 +122,9 @@ class stsUploadInfo extends Model
         }
         if (isset($map['endPoint'])) {
             $model->endPoint = $map['endPoint'];
+        }
+        if (isset($map['internalEndPoint'])) {
+            $model->internalEndPoint = $map['internalEndPoint'];
         }
         if (isset($map['accessKeyId'])) {
             $model->accessKeyId = $map['accessKeyId'];

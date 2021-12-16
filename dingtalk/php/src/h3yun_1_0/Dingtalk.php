@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\BatchInsertBizObjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\BatchInsertBizObjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\BatchInsertBizObjectResponse;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\CancelProcessInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\CancelProcessInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\CancelProcessInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\CreateBizObjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\CreateBizObjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\CreateBizObjectResponse;
@@ -23,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\DeleteProcessesInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetAppsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetAppsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetAppsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetAttachmentTemporaryUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetAttachmentTemporaryUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetAttachmentTemporaryUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetOrganizationsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetOrganizationsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetOrganizationsResponse;
@@ -31,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetRoleUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetRoleUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetRoleUsersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetUploadUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetUploadUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetUploadUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh3yun_1_0\Models\GetUsersResponse;
@@ -111,6 +120,141 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return LoadBizFieldsResponse::fromMap($this->doROARequest('LoadBizFields', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/forms/loadBizFields', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CancelProcessInstanceRequest $request
+     *
+     * @return CancelProcessInstanceResponse
+     */
+    public function cancelProcessInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelProcessInstanceHeaders([]);
+
+        return $this->cancelProcessInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CancelProcessInstanceRequest $request
+     * @param CancelProcessInstanceHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CancelProcessInstanceResponse
+     */
+    public function cancelProcessInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            @$body['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CancelProcessInstanceResponse::fromMap($this->doROARequest('CancelProcessInstance', 'h3yun_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h3yun/processes/instances/cancel', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetAttachmentTemporaryUrlRequest $request
+     *
+     * @return GetAttachmentTemporaryUrlResponse
+     */
+    public function getAttachmentTemporaryUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAttachmentTemporaryUrlHeaders([]);
+
+        return $this->getAttachmentTemporaryUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAttachmentTemporaryUrlRequest $request
+     * @param GetAttachmentTemporaryUrlHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetAttachmentTemporaryUrlResponse
+     */
+    public function getAttachmentTemporaryUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->attachmentId)) {
+            @$query['attachmentId'] = $request->attachmentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetAttachmentTemporaryUrlResponse::fromMap($this->doROARequest('GetAttachmentTemporaryUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/attachments/temporaryUrls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetUploadUrlRequest $request
+     *
+     * @return GetUploadUrlResponse
+     */
+    public function getUploadUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUploadUrlHeaders([]);
+
+        return $this->getUploadUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUploadUrlRequest $request
+     * @param GetUploadUrlHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetUploadUrlResponse
+     */
+    public function getUploadUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->schemaCode)) {
+            @$query['schemaCode'] = $request->schemaCode;
+        }
+        if (!Utils::isUnset($request->bizObjectId)) {
+            @$query['bizObjectId'] = $request->bizObjectId;
+        }
+        if (!Utils::isUnset($request->fieldName)) {
+            @$query['fieldName'] = $request->fieldName;
+        }
+        if (!Utils::isUnset($request->isOverwrite)) {
+            @$query['isOverwrite'] = $request->isOverwrite;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUploadUrlResponse::fromMap($this->doROARequest('GetUploadUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h3yun/attachments/uploadUrls', 'json', $req, $runtime));
     }
 
     /**

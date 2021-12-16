@@ -13,7 +13,7 @@
     "php": ">5.5",
     "alibabacloud/darabonba-openapi": "^0.2.3",
     "alibabacloud/tea-utils": "^0.2.0",
-    "alibabacloud/openapi-util": "^0.1.9",
+    "alibabacloud/openapi-util": "^0.1.10",
     "alibabacloud/endpoint-util": "^0.1.0"
   },
   "autoload": {
@@ -42,6 +42,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vesign_2_0\\": "src/esign_2_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vexclusive_1_0\\": "src/exclusive_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vfinance_1_0\\": "src/finance_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vflashmeeting_1_0\\": "src/flashmeeting_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vh3yun_1_0\\": "src/h3yun_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vhrbrain_1_0\\": "src/hrbrain_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vhrm_1_0\\": "src/hrm_1_0/",
@@ -66,6 +67,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrade_1_0\\": "src/trade_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrajectory_1_0\\": "src/trajectory_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vvillage_1_0\\": "src/village_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vwms_1_0\\": "src/wms_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkbench_1_0\\": "src/workbench_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkflow_1_0\\": "src/workflow_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vworkrecord_1_0\\": "src/workrecord_1_0/",

@@ -14,8 +14,24 @@ class GetDownloadInfoRequest extends Model
      * @var string
      */
     public $unionId;
+
+    /**
+     * @description 是否返回区域信息
+     *
+     * @var bool
+     */
+    public $withRegion;
+
+    /**
+     * @description 是否返回内网加签url
+     *
+     * @var bool
+     */
+    public $withInternalResourceUrl;
     protected $_name = [
-        'unionId' => 'unionId',
+        'unionId'                 => 'unionId',
+        'withRegion'              => 'withRegion',
+        'withInternalResourceUrl' => 'withInternalResourceUrl',
     ];
 
     public function validate()
@@ -27,6 +43,12 @@ class GetDownloadInfoRequest extends Model
         $res = [];
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->withRegion) {
+            $res['withRegion'] = $this->withRegion;
+        }
+        if (null !== $this->withInternalResourceUrl) {
+            $res['withInternalResourceUrl'] = $this->withInternalResourceUrl;
         }
 
         return $res;
@@ -42,6 +64,12 @@ class GetDownloadInfoRequest extends Model
         $model = new self();
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['withRegion'])) {
+            $model->withRegion = $map['withRegion'];
+        }
+        if (isset($map['withInternalResourceUrl'])) {
+            $model->withInternalResourceUrl = $map['withInternalResourceUrl'];
         }
 
         return $model;

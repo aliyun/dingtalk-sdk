@@ -23,8 +23,14 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetBranchAuthDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInUserHolderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInUserHolderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCorpCardStyleListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCorpCardStyleListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetDingIdByMigrationDingIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetDingIdByMigrationDingIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetDingIdByMigrationDingIdResponse;
@@ -42,8 +48,14 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetTranslateFileJobResultRespo
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsvCardEventPushResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListContactHideSettingsResponse;
@@ -418,6 +430,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateDeptSettngTailFirstResponse::fromMap($this->doROARequest('UpdateDeptSettngTailFirst', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/depts/settings/priorities', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param string $cardId
+     *
+     * @return GetCardInUserHolderResponse
+     */
+    public function getCardInUserHolder($cardId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCardInUserHolderHeaders([]);
+
+        return $this->getCardInUserHolderWithOptions($cardId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $cardId
+     * @param GetCardInUserHolderHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetCardInUserHolderResponse
+     */
+    public function getCardInUserHolderWithOptions($cardId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetCardInUserHolderResponse::fromMap($this->doROARequest('GetCardInUserHolder', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/holders/infos/' . $cardId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -847,6 +895,95 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryStatusResponse::fromMap($this->doROARequest('QueryStatus', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccounts/status', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetCorpCardStyleListResponse
+     */
+    public function getCorpCardStyleList()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCorpCardStyleListHeaders([]);
+
+        return $this->getCorpCardStyleListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetCorpCardStyleListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetCorpCardStyleListResponse
+     */
+    public function getCorpCardStyleListWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetCorpCardStyleListResponse::fromMap($this->doROARequest('GetCorpCardStyleList', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/styles/lists', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param IsvCardEventPushRequest $request
+     *
+     * @return IsvCardEventPushResponse
+     */
+    public function isvCardEventPush($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IsvCardEventPushHeaders([]);
+
+        return $this->isvCardEventPushWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IsvCardEventPushRequest $request
+     * @param IsvCardEventPushHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return IsvCardEventPushResponse
+     */
+    public function isvCardEventPushWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isvUid)) {
+            @$query['isvUid'] = $request->isvUid;
+        }
+        if (!Utils::isUnset($request->isvCardId)) {
+            @$query['isvCardId'] = $request->isvCardId;
+        }
+        if (!Utils::isUnset($request->isvToken)) {
+            @$query['isvToken'] = $request->isvToken;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->eventType)) {
+            @$body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->eventParams)) {
+            @$body['eventParams'] = $request->eventParams;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return IsvCardEventPushResponse::fromMap($this->doROARequest('IsvCardEventPush', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cards/events/push', 'json', $req, $runtime));
     }
 
     /**
@@ -1623,6 +1760,42 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string $cardId
+     *
+     * @return GetCardInfoResponse
+     */
+    public function getCardInfo($cardId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCardInfoHeaders([]);
+
+        return $this->getCardInfoWithOptions($cardId, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $cardId
+     * @param GetCardInfoHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetCardInfoResponse
+     */
+    public function getCardInfoWithOptions($cardId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetCardInfoResponse::fromMap($this->doROARequest('GetCardInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/infos/' . $cardId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetMigrationDingIdByDingIdRequest $request
      *
      * @return GetMigrationDingIdByDingIdResponse
@@ -1845,6 +2018,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return TransformToExclusiveAccountResponse::fromMap($this->doROARequest('TransformToExclusiveAccount', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccount/transformToExclusiveAccounts', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param GetUserCardHolderListRequest $request
+     *
+     * @return GetUserCardHolderListResponse
+     */
+    public function getUserCardHolderList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserCardHolderListHeaders([]);
+
+        return $this->getUserCardHolderListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserCardHolderListRequest $request
+     * @param GetUserCardHolderListHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetUserCardHolderListResponse
+     */
+    public function getUserCardHolderListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUserCardHolderListResponse::fromMap($this->doROARequest('GetUserCardHolderList', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/holders/lists', 'json', $req, $runtime));
     }
 
     /**

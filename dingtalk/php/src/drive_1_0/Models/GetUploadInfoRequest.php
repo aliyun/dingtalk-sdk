@@ -49,13 +49,37 @@ class GetUploadInfoRequest extends Model
      * @var string
      */
     public $mediaId;
+
+    /**
+     * @description 是否返回区域
+     *
+     * @var bool
+     */
+    public $withRegion;
+
+    /**
+     * @description 是否返回OSS内网访问域名
+     *
+     * @var bool
+     */
+    public $withInternalEndPoint;
+
+    /**
+     * @description 调用方所处区域
+     *
+     * @var string
+     */
+    public $callerRegion;
     protected $_name = [
-        'unionId'           => 'unionId',
-        'fileName'          => 'fileName',
-        'fileSize'          => 'fileSize',
-        'md5'               => 'md5',
-        'addConflictPolicy' => 'addConflictPolicy',
-        'mediaId'           => 'mediaId',
+        'unionId'              => 'unionId',
+        'fileName'             => 'fileName',
+        'fileSize'             => 'fileSize',
+        'md5'                  => 'md5',
+        'addConflictPolicy'    => 'addConflictPolicy',
+        'mediaId'              => 'mediaId',
+        'withRegion'           => 'withRegion',
+        'withInternalEndPoint' => 'withInternalEndPoint',
+        'callerRegion'         => 'callerRegion',
     ];
 
     public function validate()
@@ -82,6 +106,15 @@ class GetUploadInfoRequest extends Model
         }
         if (null !== $this->mediaId) {
             $res['mediaId'] = $this->mediaId;
+        }
+        if (null !== $this->withRegion) {
+            $res['withRegion'] = $this->withRegion;
+        }
+        if (null !== $this->withInternalEndPoint) {
+            $res['withInternalEndPoint'] = $this->withInternalEndPoint;
+        }
+        if (null !== $this->callerRegion) {
+            $res['callerRegion'] = $this->callerRegion;
         }
 
         return $res;
@@ -112,6 +145,15 @@ class GetUploadInfoRequest extends Model
         }
         if (isset($map['mediaId'])) {
             $model->mediaId = $map['mediaId'];
+        }
+        if (isset($map['withRegion'])) {
+            $model->withRegion = $map['withRegion'];
+        }
+        if (isset($map['withInternalEndPoint'])) {
+            $model->withInternalEndPoint = $map['withInternalEndPoint'];
+        }
+        if (isset($map['callerRegion'])) {
+            $model->callerRegion = $map['callerRegion'];
         }
 
         return $model;

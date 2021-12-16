@@ -42,12 +42,20 @@ class ListFilesRequest extends Model
      * @var string
      */
     public $orderType;
+
+    /**
+     * @description 是否返回文件图标
+     *
+     * @var bool
+     */
+    public $withIcon;
     protected $_name = [
         'unionId'    => 'unionId',
         'parentId'   => 'parentId',
         'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
         'orderType'  => 'orderType',
+        'withIcon'   => 'withIcon',
     ];
 
     public function validate()
@@ -71,6 +79,9 @@ class ListFilesRequest extends Model
         }
         if (null !== $this->orderType) {
             $res['orderType'] = $this->orderType;
+        }
+        if (null !== $this->withIcon) {
+            $res['withIcon'] = $this->withIcon;
         }
 
         return $res;
@@ -98,6 +109,9 @@ class ListFilesRequest extends Model
         }
         if (isset($map['orderType'])) {
             $model->orderType = $map['orderType'];
+        }
+        if (isset($map['withIcon'])) {
+            $model->withIcon = $map['withIcon'];
         }
 
         return $model;

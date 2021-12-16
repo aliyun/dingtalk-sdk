@@ -25,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionResponse;
@@ -60,6 +63,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -433,6 +439,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpdateRelationMetaFieldRequest $request
+     *
+     * @return UpdateRelationMetaFieldResponse
+     */
+    public function updateRelationMetaField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRelationMetaFieldHeaders([]);
+
+        return $this->updateRelationMetaFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateRelationMetaFieldRequest $request
+     * @param UpdateRelationMetaFieldHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return UpdateRelationMetaFieldResponse
+     */
+    public function updateRelationMetaFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenant)) {
+            @$body['tenant'] = $request->tenant;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->fieldDTOList)) {
+            @$body['fieldDTOList'] = $request->fieldDTOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateRelationMetaFieldResponse::fromMap($this->doROARequest('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/relations/metas/fields', 'json', $req, $runtime));
+    }
+
+    /**
      * @param SendOfficialAccountOTOMessageRequest $request
      *
      * @return SendOfficialAccountOTOMessageResponse
@@ -535,6 +592,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetOfficialAccountOTOMessageResultResponse::fromMap($this->doROARequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DescribeRelationMetaRequest $request
+     *
+     * @return DescribeRelationMetaResponse
+     */
+    public function describeRelationMeta($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DescribeRelationMetaHeaders([]);
+
+        return $this->describeRelationMetaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DescribeRelationMetaRequest $request
+     * @param DescribeRelationMetaHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DescribeRelationMetaResponse
+     */
+    public function describeRelationMetaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenant)) {
+            @$body['tenant'] = $request->tenant;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationTypes)) {
+            @$body['relationTypes'] = $request->relationTypes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DescribeRelationMetaResponse::fromMap($this->doROARequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/query', 'json', $req, $runtime));
     }
 
     /**

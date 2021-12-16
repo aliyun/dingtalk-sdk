@@ -72,6 +72,20 @@ class files extends Model
     public $fileSize;
 
     /**
+     * @description 文件缩略图
+     *
+     * @var string
+     */
+    public $thumbnail;
+
+    /**
+     * @description 文件图标
+     *
+     * @var string
+     */
+    public $icon;
+
+    /**
      * @description 创建时间
      *
      * @var string
@@ -108,6 +122,8 @@ class files extends Model
         'contentType'   => 'contentType',
         'fileExtension' => 'fileExtension',
         'fileSize'      => 'fileSize',
+        'thumbnail'     => 'thumbnail',
+        'icon'          => 'icon',
         'createTime'    => 'createTime',
         'modifyTime'    => 'modifyTime',
         'creator'       => 'creator',
@@ -147,6 +163,12 @@ class files extends Model
         }
         if (null !== $this->fileSize) {
             $res['fileSize'] = $this->fileSize;
+        }
+        if (null !== $this->thumbnail) {
+            $res['thumbnail'] = $this->thumbnail;
+        }
+        if (null !== $this->icon) {
+            $res['icon'] = $this->icon;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -198,6 +220,12 @@ class files extends Model
         }
         if (isset($map['fileSize'])) {
             $model->fileSize = $map['fileSize'];
+        }
+        if (isset($map['thumbnail'])) {
+            $model->thumbnail = $map['thumbnail'];
+        }
+        if (isset($map['icon'])) {
+            $model->icon = $map['icon'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

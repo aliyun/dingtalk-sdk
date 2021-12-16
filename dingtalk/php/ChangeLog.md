@@ -1,3 +1,6 @@
+2021-12-16 Version: 1.2.12
+- Online.
+
 2021-12-13 Version: 1.2.11
 - Online.
 
