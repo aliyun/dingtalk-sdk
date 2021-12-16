@@ -868,6 +868,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.order_type):
             query['orderType'] = request.order_type
+        if not UtilClient.is_unset(request.with_icon):
+            query['withIcon'] = request.with_icon
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -901,6 +903,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.order_type):
             query['orderType'] = request.order_type
+        if not UtilClient.is_unset(request.with_icon):
+            query['withIcon'] = request.with_icon
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2007,6 +2011,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.with_region):
+            query['withRegion'] = request.with_region
+        if not UtilClient.is_unset(request.with_internal_resource_url):
+            query['withInternalResourceUrl'] = request.with_internal_resource_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2033,6 +2041,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.with_region):
+            query['withRegion'] = request.with_region
+        if not UtilClient.is_unset(request.with_internal_resource_url):
+            query['withInternalResourceUrl'] = request.with_internal_resource_url
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2089,6 +2101,12 @@ class Client(OpenApiClient):
             query['addConflictPolicy'] = request.add_conflict_policy
         if not UtilClient.is_unset(request.media_id):
             query['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.with_region):
+            query['withRegion'] = request.with_region
+        if not UtilClient.is_unset(request.with_internal_end_point):
+            query['withInternalEndPoint'] = request.with_internal_end_point
+        if not UtilClient.is_unset(request.caller_region):
+            query['callerRegion'] = request.caller_region
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2125,6 +2143,12 @@ class Client(OpenApiClient):
             query['addConflictPolicy'] = request.add_conflict_policy
         if not UtilClient.is_unset(request.media_id):
             query['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.with_region):
+            query['withRegion'] = request.with_region
+        if not UtilClient.is_unset(request.with_internal_end_point):
+            query['withInternalEndPoint'] = request.with_internal_end_point
+        if not UtilClient.is_unset(request.caller_region):
+            query['callerRegion'] = request.caller_region
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

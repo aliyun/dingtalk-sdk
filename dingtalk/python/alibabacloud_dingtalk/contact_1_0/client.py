@@ -453,6 +453,60 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateDeptSettngTailFirst', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/depts/settings/priorities', 'none', req, runtime)
         )
 
+    def get_card_in_user_holder(
+        self,
+        card_id: str,
+    ) -> dingtalkcontact__1__0_models.GetCardInUserHolderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCardInUserHolderHeaders()
+        return self.get_card_in_user_holder_with_options(card_id, headers, runtime)
+
+    async def get_card_in_user_holder_async(
+        self,
+        card_id: str,
+    ) -> dingtalkcontact__1__0_models.GetCardInUserHolderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCardInUserHolderHeaders()
+        return await self.get_card_in_user_holder_with_options_async(card_id, headers, runtime)
+
+    def get_card_in_user_holder_with_options(
+        self,
+        card_id: str,
+        headers: dingtalkcontact__1__0_models.GetCardInUserHolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCardInUserHolderResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCardInUserHolderResponse(),
+            self.do_roarequest('GetCardInUserHolder', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/holders/infos/{card_id}', 'json', req, runtime)
+        )
+
+    async def get_card_in_user_holder_with_options_async(
+        self,
+        card_id: str,
+        headers: dingtalkcontact__1__0_models.GetCardInUserHolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCardInUserHolderResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCardInUserHolderResponse(),
+            await self.do_roarequest_async('GetCardInUserHolder', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/holders/infos/{card_id}', 'json', req, runtime)
+        )
+
     def update_emp_attrbute_visibility_setting(
         self,
         request: dingtalkcontact__1__0_models.UpdateEmpAttrbuteVisibilitySettingRequest,
@@ -1093,6 +1147,136 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.QueryStatusResponse(),
             await self.do_roarequest_async('QueryStatus', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccounts/status', 'json', req, runtime)
+        )
+
+    def get_corp_card_style_list(self) -> dingtalkcontact__1__0_models.GetCorpCardStyleListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCorpCardStyleListHeaders()
+        return self.get_corp_card_style_list_with_options(headers, runtime)
+
+    async def get_corp_card_style_list_async(self) -> dingtalkcontact__1__0_models.GetCorpCardStyleListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCorpCardStyleListHeaders()
+        return await self.get_corp_card_style_list_with_options_async(headers, runtime)
+
+    def get_corp_card_style_list_with_options(
+        self,
+        headers: dingtalkcontact__1__0_models.GetCorpCardStyleListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCorpCardStyleListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCorpCardStyleListResponse(),
+            self.do_roarequest('GetCorpCardStyleList', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/styles/lists', 'json', req, runtime)
+        )
+
+    async def get_corp_card_style_list_with_options_async(
+        self,
+        headers: dingtalkcontact__1__0_models.GetCorpCardStyleListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCorpCardStyleListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCorpCardStyleListResponse(),
+            await self.do_roarequest_async('GetCorpCardStyleList', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/styles/lists', 'json', req, runtime)
+        )
+
+    def isv_card_event_push(
+        self,
+        request: dingtalkcontact__1__0_models.IsvCardEventPushRequest,
+    ) -> dingtalkcontact__1__0_models.IsvCardEventPushResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.IsvCardEventPushHeaders()
+        return self.isv_card_event_push_with_options(request, headers, runtime)
+
+    async def isv_card_event_push_async(
+        self,
+        request: dingtalkcontact__1__0_models.IsvCardEventPushRequest,
+    ) -> dingtalkcontact__1__0_models.IsvCardEventPushResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.IsvCardEventPushHeaders()
+        return await self.isv_card_event_push_with_options_async(request, headers, runtime)
+
+    def isv_card_event_push_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.IsvCardEventPushRequest,
+        headers: dingtalkcontact__1__0_models.IsvCardEventPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.IsvCardEventPushResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_uid):
+            query['isvUid'] = request.isv_uid
+        if not UtilClient.is_unset(request.isv_card_id):
+            query['isvCardId'] = request.isv_card_id
+        if not UtilClient.is_unset(request.isv_token):
+            query['isvToken'] = request.isv_token
+        body = {}
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.event_params):
+            body['eventParams'] = request.event_params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.IsvCardEventPushResponse(),
+            self.do_roarequest('IsvCardEventPush', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cards/events/push', 'json', req, runtime)
+        )
+
+    async def isv_card_event_push_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.IsvCardEventPushRequest,
+        headers: dingtalkcontact__1__0_models.IsvCardEventPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.IsvCardEventPushResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.isv_uid):
+            query['isvUid'] = request.isv_uid
+        if not UtilClient.is_unset(request.isv_card_id):
+            query['isvCardId'] = request.isv_card_id
+        if not UtilClient.is_unset(request.isv_token):
+            query['isvToken'] = request.isv_token
+        body = {}
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.event_params):
+            body['eventParams'] = request.event_params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.IsvCardEventPushResponse(),
+            await self.do_roarequest_async('IsvCardEventPush', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cards/events/push', 'json', req, runtime)
         )
 
     def query_user_management_resources(
@@ -2255,6 +2439,60 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListEmpLeaveRecords', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/empLeaveRecords', 'json', req, runtime)
         )
 
+    def get_card_info(
+        self,
+        card_id: str,
+    ) -> dingtalkcontact__1__0_models.GetCardInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCardInfoHeaders()
+        return self.get_card_info_with_options(card_id, headers, runtime)
+
+    async def get_card_info_async(
+        self,
+        card_id: str,
+    ) -> dingtalkcontact__1__0_models.GetCardInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetCardInfoHeaders()
+        return await self.get_card_info_with_options_async(card_id, headers, runtime)
+
+    def get_card_info_with_options(
+        self,
+        card_id: str,
+        headers: dingtalkcontact__1__0_models.GetCardInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCardInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCardInfoResponse(),
+            self.do_roarequest('GetCardInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/infos/{card_id}', 'json', req, runtime)
+        )
+
+    async def get_card_info_with_options_async(
+        self,
+        card_id: str,
+        headers: dingtalkcontact__1__0_models.GetCardInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetCardInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetCardInfoResponse(),
+            await self.do_roarequest_async('GetCardInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/infos/{card_id}', 'json', req, runtime)
+        )
+
     def get_migration_ding_id_by_ding_id(
         self,
         request: dingtalkcontact__1__0_models.GetMigrationDingIdByDingIdRequest,
@@ -2591,6 +2829,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.TransformToExclusiveAccountResponse(),
             await self.do_roarequest_async('TransformToExclusiveAccount', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccount/transformToExclusiveAccounts', 'none', req, runtime)
+        )
+
+    def get_user_card_holder_list(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserCardHolderListRequest,
+    ) -> dingtalkcontact__1__0_models.GetUserCardHolderListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetUserCardHolderListHeaders()
+        return self.get_user_card_holder_list_with_options(request, headers, runtime)
+
+    async def get_user_card_holder_list_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserCardHolderListRequest,
+    ) -> dingtalkcontact__1__0_models.GetUserCardHolderListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetUserCardHolderListHeaders()
+        return await self.get_user_card_holder_list_with_options_async(request, headers, runtime)
+
+    def get_user_card_holder_list_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserCardHolderListRequest,
+        headers: dingtalkcontact__1__0_models.GetUserCardHolderListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetUserCardHolderListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetUserCardHolderListResponse(),
+            self.do_roarequest('GetUserCardHolderList', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/holders/lists', 'json', req, runtime)
+        )
+
+    async def get_user_card_holder_list_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserCardHolderListRequest,
+        headers: dingtalkcontact__1__0_models.GetUserCardHolderListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetUserCardHolderListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetUserCardHolderListResponse(),
+            await self.do_roarequest_async('GetUserCardHolderList', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/holders/lists', 'json', req, runtime)
         )
 
     def get_union_id_by_migration_union_id(

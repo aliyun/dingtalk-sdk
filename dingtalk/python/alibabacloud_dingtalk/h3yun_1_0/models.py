@@ -346,6 +346,500 @@ class LoadBizFieldsResponse(TeaModel):
         return self
 
 
+class CancelProcessInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CancelProcessInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        process_instance_id: str = None,
+    ):
+        # 流程实例id
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class CancelProcessInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        message: str = None,
+    ):
+        # 状态码
+        self.code = code
+        # 提示信息
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class CancelProcessInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CancelProcessInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CancelProcessInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAttachmentTemporaryUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAttachmentTemporaryUrlRequest(TeaModel):
+    def __init__(
+        self,
+        attachment_id: str = None,
+    ):
+        # 附件id
+        self.attachment_id = attachment_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attachment_id is not None:
+            result['attachmentId'] = self.attachment_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attachmentId') is not None:
+            self.attachment_id = m.get('attachmentId')
+        return self
+
+
+class GetAttachmentTemporaryUrlResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        attachment_url: str = None,
+    ):
+        # 附件临时免登地址。有效期为30分钟
+        self.attachment_url = attachment_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attachment_url is not None:
+            result['attachmentUrl'] = self.attachment_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attachmentUrl') is not None:
+            self.attachment_url = m.get('attachmentUrl')
+        return self
+
+
+class GetAttachmentTemporaryUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        message: str = None,
+        data: GetAttachmentTemporaryUrlResponseBodyData = None,
+    ):
+        # 状态码
+        self.code = code
+        # 提示信息
+        self.message = message
+        # 业务响应结果
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.message is not None:
+            result['message'] = self.message
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('data') is not None:
+            temp_model = GetAttachmentTemporaryUrlResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class GetAttachmentTemporaryUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAttachmentTemporaryUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAttachmentTemporaryUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUploadUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUploadUrlRequest(TeaModel):
+    def __init__(
+        self,
+        schema_code: str = None,
+        biz_object_id: str = None,
+        field_name: str = None,
+        is_overwrite: bool = None,
+    ):
+        # 表单编码
+        self.schema_code = schema_code
+        # 业务数据实例id
+        self.biz_object_id = biz_object_id
+        # 文件上传至目标控件的字段名
+        self.field_name = field_name
+        # 是否覆盖。false=添加，true=覆盖
+        self.is_overwrite = is_overwrite
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.schema_code is not None:
+            result['schemaCode'] = self.schema_code
+        if self.biz_object_id is not None:
+            result['bizObjectId'] = self.biz_object_id
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.is_overwrite is not None:
+            result['isOverwrite'] = self.is_overwrite
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('schemaCode') is not None:
+            self.schema_code = m.get('schemaCode')
+        if m.get('bizObjectId') is not None:
+            self.biz_object_id = m.get('bizObjectId')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('isOverwrite') is not None:
+            self.is_overwrite = m.get('isOverwrite')
+        return self
+
+
+class GetUploadUrlResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        upload_url: str = None,
+    ):
+        # 附件上传地址
+        self.upload_url = upload_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.upload_url is not None:
+            result['uploadUrl'] = self.upload_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uploadUrl') is not None:
+            self.upload_url = m.get('uploadUrl')
+        return self
+
+
+class GetUploadUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        message: str = None,
+        data: GetUploadUrlResponseBodyData = None,
+    ):
+        # 状态码
+        self.code = code
+        # 提示信息
+        self.message = message
+        # 返回结果
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.message is not None:
+            result['message'] = self.message
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('data') is not None:
+            temp_model = GetUploadUrlResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class GetUploadUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUploadUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUploadUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUsersHeaders(TeaModel):
     def __init__(
         self,

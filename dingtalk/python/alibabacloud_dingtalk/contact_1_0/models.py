@@ -907,6 +907,160 @@ class UpdateDeptSettngTailFirstResponse(TeaModel):
         return self
 
 
+class GetCardInUserHolderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCardInUserHolderResponseBody(TeaModel):
+    def __init__(
+        self,
+        card_id: str = None,
+        name: str = None,
+        avatar_url: str = None,
+        org_name: str = None,
+        title: str = None,
+        industry_name: str = None,
+        introduce: str = None,
+        template_id: str = None,
+        extension: Dict[str, Any] = None,
+    ):
+        # 名片ID
+        self.card_id = card_id
+        # 名字
+        self.name = name
+        # 头像
+        self.avatar_url = avatar_url
+        # 组织名称
+        self.org_name = org_name
+        # 职位
+        self.title = title
+        # 行业
+        self.industry_name = industry_name
+        # 简介
+        self.introduce = introduce
+        # 模板ID
+        self.template_id = template_id
+        # 扩展信息
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.title is not None:
+            result['title'] = self.title
+        if self.industry_name is not None:
+            result['industryName'] = self.industry_name
+        if self.introduce is not None:
+            result['introduce'] = self.introduce
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('industryName') is not None:
+            self.industry_name = m.get('industryName')
+        if m.get('introduce') is not None:
+            self.introduce = m.get('introduce')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
+class GetCardInUserHolderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCardInUserHolderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCardInUserHolderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateEmpAttrbuteVisibilitySettingHeaders(TeaModel):
     def __init__(
         self,
@@ -2481,6 +2635,258 @@ class QueryStatusResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCorpCardStyleListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCorpCardStyleListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[Dict[str, Any]] = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class GetCorpCardStyleListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCorpCardStyleListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCorpCardStyleListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IsvCardEventPushHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IsvCardEventPushRequest(TeaModel):
+    def __init__(
+        self,
+        isv_uid: str = None,
+        isv_card_id: str = None,
+        isv_token: str = None,
+        event_type: str = None,
+        event_params: Dict[str, Any] = None,
+    ):
+        # ISV用户iD
+        self.isv_uid = isv_uid
+        # ISV名片ID
+        self.isv_card_id = isv_card_id
+        # ISV用户TOKEN
+        self.isv_token = isv_token
+        # 事件类型
+        self.event_type = event_type
+        # 事件参数
+        self.event_params = event_params
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.isv_uid is not None:
+            result['isvUid'] = self.isv_uid
+        if self.isv_card_id is not None:
+            result['isvCardId'] = self.isv_card_id
+        if self.isv_token is not None:
+            result['isvToken'] = self.isv_token
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.event_params is not None:
+            result['eventParams'] = self.event_params
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isvUid') is not None:
+            self.isv_uid = m.get('isvUid')
+        if m.get('isvCardId') is not None:
+            self.isv_card_id = m.get('isvCardId')
+        if m.get('isvToken') is not None:
+            self.isv_token = m.get('isvToken')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('eventParams') is not None:
+            self.event_params = m.get('eventParams')
+        return self
+
+
+class IsvCardEventPushResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 执行结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IsvCardEventPushResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: IsvCardEventPushResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = IsvCardEventPushResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4871,6 +5277,482 @@ class ListEmpLeaveRecordsResponse(TeaModel):
         return self
 
 
+class GetCardInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCardInfoResponseBodyExtensionCardContactInfoTelephone(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetCardInfoResponseBodyExtensionCardContactInfoWechat(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetCardInfoResponseBodyExtensionCardContactInfoEmail(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetCardInfoResponseBodyExtensionCardContactInfoAddressArea(TeaModel):
+    def __init__(
+        self,
+        region: str = None,
+        region_full_name: str = None,
+    ):
+        # 地区
+        self.region = region
+        # 地区详细数据
+        self.region_full_name = region_full_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.region is not None:
+            result['region'] = self.region
+        if self.region_full_name is not None:
+            result['regionFullName'] = self.region_full_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('region') is not None:
+            self.region = m.get('region')
+        if m.get('regionFullName') is not None:
+            self.region_full_name = m.get('regionFullName')
+        return self
+
+
+class GetCardInfoResponseBodyExtensionCardContactInfoAddress(TeaModel):
+    def __init__(
+        self,
+        area: GetCardInfoResponseBodyExtensionCardContactInfoAddressArea = None,
+        detail: str = None,
+    ):
+        # 区域
+        self.area = area
+        # 详细地址
+        self.detail = detail
+
+    def validate(self):
+        if self.area:
+            self.area.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.area is not None:
+            result['area'] = self.area.to_map()
+        if self.detail is not None:
+            result['detail'] = self.detail
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('area') is not None:
+            temp_model = GetCardInfoResponseBodyExtensionCardContactInfoAddressArea()
+            self.area = temp_model.from_map(m['area'])
+        if m.get('detail') is not None:
+            self.detail = m.get('detail')
+        return self
+
+
+class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
+    def __init__(
+        self,
+        telephone: List[GetCardInfoResponseBodyExtensionCardContactInfoTelephone] = None,
+        wechat: List[GetCardInfoResponseBodyExtensionCardContactInfoWechat] = None,
+        email: List[GetCardInfoResponseBodyExtensionCardContactInfoEmail] = None,
+        address: List[GetCardInfoResponseBodyExtensionCardContactInfoAddress] = None,
+    ):
+        # 电话
+        self.telephone = telephone
+        # 微信
+        self.wechat = wechat
+        # 邮箱
+        self.email = email
+        # 地址
+        self.address = address
+
+    def validate(self):
+        if self.telephone:
+            for k in self.telephone:
+                if k:
+                    k.validate()
+        if self.wechat:
+            for k in self.wechat:
+                if k:
+                    k.validate()
+        if self.email:
+            for k in self.email:
+                if k:
+                    k.validate()
+        if self.address:
+            for k in self.address:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['telephone'] = []
+        if self.telephone is not None:
+            for k in self.telephone:
+                result['telephone'].append(k.to_map() if k else None)
+        result['wechat'] = []
+        if self.wechat is not None:
+            for k in self.wechat:
+                result['wechat'].append(k.to_map() if k else None)
+        result['email'] = []
+        if self.email is not None:
+            for k in self.email:
+                result['email'].append(k.to_map() if k else None)
+        result['address'] = []
+        if self.address is not None:
+            for k in self.address:
+                result['address'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.telephone = []
+        if m.get('telephone') is not None:
+            for k in m.get('telephone'):
+                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoTelephone()
+                self.telephone.append(temp_model.from_map(k))
+        self.wechat = []
+        if m.get('wechat') is not None:
+            for k in m.get('wechat'):
+                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoWechat()
+                self.wechat.append(temp_model.from_map(k))
+        self.email = []
+        if m.get('email') is not None:
+            for k in m.get('email'):
+                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoEmail()
+                self.email.append(temp_model.from_map(k))
+        self.address = []
+        if m.get('address') is not None:
+            for k in m.get('address'):
+                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoAddress()
+                self.address.append(temp_model.from_map(k))
+        return self
+
+
+class GetCardInfoResponseBodyExtension(TeaModel):
+    def __init__(
+        self,
+        org_authed: bool = None,
+        org_auth_level: int = None,
+        corp_id: str = None,
+        org_logo: str = None,
+        video_media_id: str = None,
+        card_contact_info: GetCardInfoResponseBodyExtensionCardContactInfo = None,
+    ):
+        # 企业是否认证
+        self.org_authed = org_authed
+        # 企业认证等级
+        self.org_auth_level = org_auth_level
+        # 企业corpId
+        self.corp_id = corp_id
+        # 企业LOGO
+        self.org_logo = org_logo
+        # 视频信息
+        self.video_media_id = video_media_id
+        # 联系信息
+        self.card_contact_info = card_contact_info
+
+    def validate(self):
+        if self.card_contact_info:
+            self.card_contact_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.org_authed is not None:
+            result['orgAuthed'] = self.org_authed
+        if self.org_auth_level is not None:
+            result['orgAuthLevel'] = self.org_auth_level
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.org_logo is not None:
+            result['orgLogo'] = self.org_logo
+        if self.video_media_id is not None:
+            result['videoMediaId'] = self.video_media_id
+        if self.card_contact_info is not None:
+            result['cardContactInfo'] = self.card_contact_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orgAuthed') is not None:
+            self.org_authed = m.get('orgAuthed')
+        if m.get('orgAuthLevel') is not None:
+            self.org_auth_level = m.get('orgAuthLevel')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('orgLogo') is not None:
+            self.org_logo = m.get('orgLogo')
+        if m.get('videoMediaId') is not None:
+            self.video_media_id = m.get('videoMediaId')
+        if m.get('cardContactInfo') is not None:
+            temp_model = GetCardInfoResponseBodyExtensionCardContactInfo()
+            self.card_contact_info = temp_model.from_map(m['cardContactInfo'])
+        return self
+
+
+class GetCardInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        card_id: str = None,
+        name: str = None,
+        avatar_url: str = None,
+        org_name: str = None,
+        title: str = None,
+        industry_name: str = None,
+        introduce: bool = None,
+        template_id: str = None,
+        extension: GetCardInfoResponseBodyExtension = None,
+    ):
+        # 名片ID
+        self.card_id = card_id
+        # 名字
+        self.name = name
+        # 头像
+        self.avatar_url = avatar_url
+        # 组织名称
+        self.org_name = org_name
+        # 职位
+        self.title = title
+        # 行业
+        self.industry_name = industry_name
+        # 是否主名片
+        self.introduce = introduce
+        # 模板ID
+        self.template_id = template_id
+        # 扩展信息
+        self.extension = extension
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.title is not None:
+            result['title'] = self.title
+        if self.industry_name is not None:
+            result['industryName'] = self.industry_name
+        if self.introduce is not None:
+            result['introduce'] = self.introduce
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('industryName') is not None:
+            self.industry_name = m.get('industryName')
+        if m.get('introduce') is not None:
+            self.introduce = m.get('introduce')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('extension') is not None:
+            temp_model = GetCardInfoResponseBodyExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        return self
+
+
+class GetCardInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetCardInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetCardInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetMigrationDingIdByDingIdHeaders(TeaModel):
     def __init__(
         self,
@@ -5485,6 +6367,252 @@ class TransformToExclusiveAccountResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        return self
+
+
+class GetUserCardHolderListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserCardHolderListRequest(TeaModel):
+    def __init__(
+        self,
+        next_token: int = None,
+        max_results: int = None,
+    ):
+        # 标记当前开始读取的位置，置空表示从头开始
+        self.next_token = next_token
+        # 每页返回个数
+        self.max_results = max_results
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class GetUserCardHolderListResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        card_id: str = None,
+        name: str = None,
+        avatar_url: str = None,
+        org_name: str = None,
+        title: str = None,
+        industry_name: str = None,
+        introduce: str = None,
+        template_id: str = None,
+        extension: Dict[str, Any] = None,
+    ):
+        # 名片ID
+        self.card_id = card_id
+        # 名字
+        self.name = name
+        # 头像
+        self.avatar_url = avatar_url
+        # 组织名称
+        self.org_name = org_name
+        # 职位
+        self.title = title
+        # 行业名称
+        self.industry_name = industry_name
+        # 个人介绍
+        self.introduce = introduce
+        # 模板ID
+        self.template_id = template_id
+        # 扩展信息
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.title is not None:
+            result['title'] = self.title
+        if self.industry_name is not None:
+            result['industryName'] = self.industry_name
+        if self.introduce is not None:
+            result['introduce'] = self.introduce
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('industryName') is not None:
+            self.industry_name = m.get('industryName')
+        if m.get('introduce') is not None:
+            self.introduce = m.get('introduce')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
+class GetUserCardHolderListResponseBody(TeaModel):
+    def __init__(
+        self,
+        total_count: int = None,
+        next_token: int = None,
+        has_more: bool = None,
+        list: List[GetUserCardHolderListResponseBodyList] = None,
+    ):
+        # TotalCount本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+        self.total_count = total_count
+        # 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+        self.next_token = next_token
+        # 是否还有数据
+        self.has_more = has_more
+        # 名片夹列表
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetUserCardHolderListResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserCardHolderListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserCardHolderListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserCardHolderListResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

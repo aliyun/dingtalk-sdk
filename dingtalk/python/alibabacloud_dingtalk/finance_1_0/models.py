@@ -831,7 +831,7 @@ class ApplyBatchPayResponse(TeaModel):
         return self
 
 
-class QueryBatchTradeOrderHeaders(TeaModel):
+class QueryUserAlipayAccountHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -864,13 +864,13 @@ class QueryBatchTradeOrderHeaders(TeaModel):
         return self
 
 
-class QueryBatchTradeOrderRequest(TeaModel):
+class QueryUserAlipayAccountResponseBody(TeaModel):
     def __init__(
         self,
-        out_batch_nos: List[str] = None,
+        alipay_uid: str = None,
     ):
-        # 外部商户批次号列表
-        self.out_batch_nos = out_batch_nos
+        # 支付宝uid
+        self.alipay_uid = alipay_uid
 
     def validate(self):
         pass
@@ -881,177 +881,22 @@ class QueryBatchTradeOrderRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.out_batch_nos is not None:
-            result['outBatchNos'] = self.out_batch_nos
+        if self.alipay_uid is not None:
+            result['alipayUid'] = self.alipay_uid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('outBatchNos') is not None:
-            self.out_batch_nos = m.get('outBatchNos')
+        if m.get('alipayUid') is not None:
+            self.alipay_uid = m.get('alipayUid')
         return self
 
 
-class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs(TeaModel):
-    def __init__(
-        self,
-        out_batch_no: str = None,
-        alipay_trans_id: str = None,
-        status: str = None,
-        success_count: int = None,
-        success_amount: str = None,
-        fail_count: int = None,
-        fail_amount: str = None,
-        total_amount: str = None,
-        gmt_finish: str = None,
-        gmt_submit: str = None,
-        fail_reason: str = None,
-        payment_amount: str = None,
-        payment_currency: str = None,
-        payer_staff_id: str = None,
-    ):
-        # 批次号
-        self.out_batch_no = out_batch_no
-        # 支付宝批次订单号
-        self.alipay_trans_id = alipay_trans_id
-        # 状态
-        self.status = status
-        # 成功笔数
-        self.success_count = success_count
-        # 成功金额（元）
-        self.success_amount = success_amount
-        # 失败笔数
-        self.fail_count = fail_count
-        # 明细处理失败的支付汇总金额
-        self.fail_amount = fail_amount
-        # 批次的总金额（元）
-        self.total_amount = total_amount
-        # 批次完成交易时间
-        self.gmt_finish = gmt_finish
-        # 批次受理交易时间
-        self.gmt_submit = gmt_submit
-        # 失败原因
-        self.fail_reason = fail_reason
-        # 付款方需要支付的金额（元）
-        self.payment_amount = payment_amount
-        # 支付币种
-        self.payment_currency = payment_currency
-        # 付款人staffId
-        self.payer_staff_id = payer_staff_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.out_batch_no is not None:
-            result['outBatchNo'] = self.out_batch_no
-        if self.alipay_trans_id is not None:
-            result['alipayTransId'] = self.alipay_trans_id
-        if self.status is not None:
-            result['status'] = self.status
-        if self.success_count is not None:
-            result['successCount'] = self.success_count
-        if self.success_amount is not None:
-            result['successAmount'] = self.success_amount
-        if self.fail_count is not None:
-            result['failCount'] = self.fail_count
-        if self.fail_amount is not None:
-            result['failAmount'] = self.fail_amount
-        if self.total_amount is not None:
-            result['totalAmount'] = self.total_amount
-        if self.gmt_finish is not None:
-            result['gmtFinish'] = self.gmt_finish
-        if self.gmt_submit is not None:
-            result['gmtSubmit'] = self.gmt_submit
-        if self.fail_reason is not None:
-            result['failReason'] = self.fail_reason
-        if self.payment_amount is not None:
-            result['paymentAmount'] = self.payment_amount
-        if self.payment_currency is not None:
-            result['paymentCurrency'] = self.payment_currency
-        if self.payer_staff_id is not None:
-            result['payerStaffId'] = self.payer_staff_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('outBatchNo') is not None:
-            self.out_batch_no = m.get('outBatchNo')
-        if m.get('alipayTransId') is not None:
-            self.alipay_trans_id = m.get('alipayTransId')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('successCount') is not None:
-            self.success_count = m.get('successCount')
-        if m.get('successAmount') is not None:
-            self.success_amount = m.get('successAmount')
-        if m.get('failCount') is not None:
-            self.fail_count = m.get('failCount')
-        if m.get('failAmount') is not None:
-            self.fail_amount = m.get('failAmount')
-        if m.get('totalAmount') is not None:
-            self.total_amount = m.get('totalAmount')
-        if m.get('gmtFinish') is not None:
-            self.gmt_finish = m.get('gmtFinish')
-        if m.get('gmtSubmit') is not None:
-            self.gmt_submit = m.get('gmtSubmit')
-        if m.get('failReason') is not None:
-            self.fail_reason = m.get('failReason')
-        if m.get('paymentAmount') is not None:
-            self.payment_amount = m.get('paymentAmount')
-        if m.get('paymentCurrency') is not None:
-            self.payment_currency = m.get('paymentCurrency')
-        if m.get('payerStaffId') is not None:
-            self.payer_staff_id = m.get('payerStaffId')
-        return self
-
-
-class QueryBatchTradeOrderResponseBody(TeaModel):
-    def __init__(
-        self,
-        batch_trade_order_vos: List[QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs] = None,
-    ):
-        # 批量交易订单VO
-        self.batch_trade_order_vos = batch_trade_order_vos
-
-    def validate(self):
-        if self.batch_trade_order_vos:
-            for k in self.batch_trade_order_vos:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['batchTradeOrderVOs'] = []
-        if self.batch_trade_order_vos is not None:
-            for k in self.batch_trade_order_vos:
-                result['batchTradeOrderVOs'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.batch_trade_order_vos = []
-        if m.get('batchTradeOrderVOs') is not None:
-            for k in m.get('batchTradeOrderVOs'):
-                temp_model = QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs()
-                self.batch_trade_order_vos.append(temp_model.from_map(k))
-        return self
-
-
-class QueryBatchTradeOrderResponse(TeaModel):
+class QueryUserAlipayAccountResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: QueryBatchTradeOrderResponseBody = None,
+        body: QueryUserAlipayAccountResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -1079,7 +924,7 @@ class QueryBatchTradeOrderResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = QueryBatchTradeOrderResponseBody()
+            temp_model = QueryUserAlipayAccountResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1262,367 +1107,6 @@ class DecodePayCodeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DecodePayCodeResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class SaveCorpPayCodeHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class SaveCorpPayCodeRequest(TeaModel):
-    def __init__(
-        self,
-        code_identity: str = None,
-        corp_id: str = None,
-        status: str = None,
-        ext_info: Dict[str, str] = None,
-        ding_org_id: int = None,
-        ding_isv_org_id: int = None,
-    ):
-        # 码标识，由钉钉颁发
-        self.code_identity = code_identity
-        # 开通的企业ID
-        self.corp_id = corp_id
-        # 状态，OPEN或CLOSED
-        self.status = status
-        # 扩展参数
-        self.ext_info = ext_info
-        # 企业orgId
-        self.ding_org_id = ding_org_id
-        self.ding_isv_org_id = ding_isv_org_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.code_identity is not None:
-            result['codeIdentity'] = self.code_identity
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.status is not None:
-            result['status'] = self.status
-        if self.ext_info is not None:
-            result['extInfo'] = self.ext_info
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_isv_org_id is not None:
-            result['dingIsvOrgId'] = self.ding_isv_org_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('codeIdentity') is not None:
-            self.code_identity = m.get('codeIdentity')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('extInfo') is not None:
-            self.ext_info = m.get('extInfo')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingIsvOrgId') is not None:
-            self.ding_isv_org_id = m.get('dingIsvOrgId')
-        return self
-
-
-class SaveCorpPayCodeResponseBody(TeaModel):
-    def __init__(
-        self,
-        code_identity: str = None,
-        corp_id: str = None,
-        status: str = None,
-        ext_info: Dict[str, str] = None,
-    ):
-        # 码标识
-        self.code_identity = code_identity
-        # 开通的企业ID
-        self.corp_id = corp_id
-        # 状态
-        self.status = status
-        # 扩展参数
-        self.ext_info = ext_info
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.code_identity is not None:
-            result['codeIdentity'] = self.code_identity
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.status is not None:
-            result['status'] = self.status
-        if self.ext_info is not None:
-            result['extInfo'] = self.ext_info
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('codeIdentity') is not None:
-            self.code_identity = m.get('codeIdentity')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('extInfo') is not None:
-            self.ext_info = m.get('extInfo')
-        return self
-
-
-class SaveCorpPayCodeResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: SaveCorpPayCodeResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = SaveCorpPayCodeResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class NotifyVerifyResultHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class NotifyVerifyResultRequest(TeaModel):
-    def __init__(
-        self,
-        pay_code: str = None,
-        corp_id: str = None,
-        user_corp_relation_type: str = None,
-        user_identity: str = None,
-        verify_time: str = None,
-        verify_result: bool = None,
-        verify_location: str = None,
-        ding_org_id: int = None,
-        ding_isv_org_id: int = None,
-    ):
-        # 码值
-        self.pay_code = pay_code
-        # 企业ID
-        self.corp_id = corp_id
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
-        self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识
-        self.user_identity = user_identity
-        # 验证时间
-        self.verify_time = verify_time
-        # 验证结果
-        self.verify_result = verify_result
-        # 验证地点
-        self.verify_location = verify_location
-        self.ding_org_id = ding_org_id
-        self.ding_isv_org_id = ding_isv_org_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.pay_code is not None:
-            result['payCode'] = self.pay_code
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
-        if self.user_corp_relation_type is not None:
-            result['userCorpRelationType'] = self.user_corp_relation_type
-        if self.user_identity is not None:
-            result['userIdentity'] = self.user_identity
-        if self.verify_time is not None:
-            result['verifyTime'] = self.verify_time
-        if self.verify_result is not None:
-            result['verifyResult'] = self.verify_result
-        if self.verify_location is not None:
-            result['verifyLocation'] = self.verify_location
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_isv_org_id is not None:
-            result['dingIsvOrgId'] = self.ding_isv_org_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('payCode') is not None:
-            self.pay_code = m.get('payCode')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
-        if m.get('userCorpRelationType') is not None:
-            self.user_corp_relation_type = m.get('userCorpRelationType')
-        if m.get('userIdentity') is not None:
-            self.user_identity = m.get('userIdentity')
-        if m.get('verifyTime') is not None:
-            self.verify_time = m.get('verifyTime')
-        if m.get('verifyResult') is not None:
-            self.verify_result = m.get('verifyResult')
-        if m.get('verifyLocation') is not None:
-            self.verify_location = m.get('verifyLocation')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingIsvOrgId') is not None:
-            self.ding_isv_org_id = m.get('dingIsvOrgId')
-        return self
-
-
-class NotifyVerifyResultResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: str = None,
-    ):
-        # 结果
-        self.result = result
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
-        return self
-
-
-class NotifyVerifyResultResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: NotifyVerifyResultResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = NotifyVerifyResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2506,175 +1990,6 @@ class QueryBatchTradeDetailListResponse(TeaModel):
         return self
 
 
-class QueryPayAccountListHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class QueryPayAccountListResponseBodyPayAccountVOList(TeaModel):
-    def __init__(
-        self,
-        account_no: str = None,
-        account_name: str = None,
-        account_type: str = None,
-        account_remark: str = None,
-        account_id: str = None,
-        account_class: str = None,
-    ):
-        # 付款账号（脱敏）
-        self.account_no = account_no
-        # 账号名称
-        self.account_name = account_name
-        # 账户类型
-        self.account_type = account_type
-        # 账户备注
-        self.account_remark = account_remark
-        # 账号唯一id
-        self.account_id = account_id
-        # 账户分类
-        self.account_class = account_class
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.account_no is not None:
-            result['accountNo'] = self.account_no
-        if self.account_name is not None:
-            result['accountName'] = self.account_name
-        if self.account_type is not None:
-            result['accountType'] = self.account_type
-        if self.account_remark is not None:
-            result['accountRemark'] = self.account_remark
-        if self.account_id is not None:
-            result['accountId'] = self.account_id
-        if self.account_class is not None:
-            result['accountClass'] = self.account_class
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('accountNo') is not None:
-            self.account_no = m.get('accountNo')
-        if m.get('accountName') is not None:
-            self.account_name = m.get('accountName')
-        if m.get('accountType') is not None:
-            self.account_type = m.get('accountType')
-        if m.get('accountRemark') is not None:
-            self.account_remark = m.get('accountRemark')
-        if m.get('accountId') is not None:
-            self.account_id = m.get('accountId')
-        if m.get('accountClass') is not None:
-            self.account_class = m.get('accountClass')
-        return self
-
-
-class QueryPayAccountListResponseBody(TeaModel):
-    def __init__(
-        self,
-        pay_account_volist: List[QueryPayAccountListResponseBodyPayAccountVOList] = None,
-    ):
-        # 账号列表
-        self.pay_account_volist = pay_account_volist
-
-    def validate(self):
-        if self.pay_account_volist:
-            for k in self.pay_account_volist:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['payAccountVOList'] = []
-        if self.pay_account_volist is not None:
-            for k in self.pay_account_volist:
-                result['payAccountVOList'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.pay_account_volist = []
-        if m.get('payAccountVOList') is not None:
-            for k in m.get('payAccountVOList'):
-                temp_model = QueryPayAccountListResponseBodyPayAccountVOList()
-                self.pay_account_volist.append(temp_model.from_map(k))
-        return self
-
-
-class QueryPayAccountListResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: QueryPayAccountListResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = QueryPayAccountListResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
 class CreateUserCodeInstanceHeaders(TeaModel):
     def __init__(
         self,
@@ -2915,6 +2230,789 @@ class CreateUserCodeInstanceResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateUserCodeInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryBatchTradeOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryBatchTradeOrderRequest(TeaModel):
+    def __init__(
+        self,
+        out_batch_nos: List[str] = None,
+    ):
+        # 外部商户批次号列表
+        self.out_batch_nos = out_batch_nos
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_batch_nos is not None:
+            result['outBatchNos'] = self.out_batch_nos
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outBatchNos') is not None:
+            self.out_batch_nos = m.get('outBatchNos')
+        return self
+
+
+class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs(TeaModel):
+    def __init__(
+        self,
+        out_batch_no: str = None,
+        alipay_trans_id: str = None,
+        status: str = None,
+        success_count: int = None,
+        success_amount: str = None,
+        fail_count: int = None,
+        fail_amount: str = None,
+        total_amount: str = None,
+        gmt_finish: str = None,
+        gmt_submit: str = None,
+        fail_reason: str = None,
+        payment_amount: str = None,
+        payment_currency: str = None,
+        payer_staff_id: str = None,
+    ):
+        # 批次号
+        self.out_batch_no = out_batch_no
+        # 支付宝批次订单号
+        self.alipay_trans_id = alipay_trans_id
+        # 状态
+        self.status = status
+        # 成功笔数
+        self.success_count = success_count
+        # 成功金额（元）
+        self.success_amount = success_amount
+        # 失败笔数
+        self.fail_count = fail_count
+        # 明细处理失败的支付汇总金额
+        self.fail_amount = fail_amount
+        # 批次的总金额（元）
+        self.total_amount = total_amount
+        # 批次完成交易时间
+        self.gmt_finish = gmt_finish
+        # 批次受理交易时间
+        self.gmt_submit = gmt_submit
+        # 失败原因
+        self.fail_reason = fail_reason
+        # 付款方需要支付的金额（元）
+        self.payment_amount = payment_amount
+        # 支付币种
+        self.payment_currency = payment_currency
+        # 付款人staffId
+        self.payer_staff_id = payer_staff_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_batch_no is not None:
+            result['outBatchNo'] = self.out_batch_no
+        if self.alipay_trans_id is not None:
+            result['alipayTransId'] = self.alipay_trans_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.success_count is not None:
+            result['successCount'] = self.success_count
+        if self.success_amount is not None:
+            result['successAmount'] = self.success_amount
+        if self.fail_count is not None:
+            result['failCount'] = self.fail_count
+        if self.fail_amount is not None:
+            result['failAmount'] = self.fail_amount
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.gmt_finish is not None:
+            result['gmtFinish'] = self.gmt_finish
+        if self.gmt_submit is not None:
+            result['gmtSubmit'] = self.gmt_submit
+        if self.fail_reason is not None:
+            result['failReason'] = self.fail_reason
+        if self.payment_amount is not None:
+            result['paymentAmount'] = self.payment_amount
+        if self.payment_currency is not None:
+            result['paymentCurrency'] = self.payment_currency
+        if self.payer_staff_id is not None:
+            result['payerStaffId'] = self.payer_staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outBatchNo') is not None:
+            self.out_batch_no = m.get('outBatchNo')
+        if m.get('alipayTransId') is not None:
+            self.alipay_trans_id = m.get('alipayTransId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('successCount') is not None:
+            self.success_count = m.get('successCount')
+        if m.get('successAmount') is not None:
+            self.success_amount = m.get('successAmount')
+        if m.get('failCount') is not None:
+            self.fail_count = m.get('failCount')
+        if m.get('failAmount') is not None:
+            self.fail_amount = m.get('failAmount')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('gmtFinish') is not None:
+            self.gmt_finish = m.get('gmtFinish')
+        if m.get('gmtSubmit') is not None:
+            self.gmt_submit = m.get('gmtSubmit')
+        if m.get('failReason') is not None:
+            self.fail_reason = m.get('failReason')
+        if m.get('paymentAmount') is not None:
+            self.payment_amount = m.get('paymentAmount')
+        if m.get('paymentCurrency') is not None:
+            self.payment_currency = m.get('paymentCurrency')
+        if m.get('payerStaffId') is not None:
+            self.payer_staff_id = m.get('payerStaffId')
+        return self
+
+
+class QueryBatchTradeOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        batch_trade_order_vos: List[QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs] = None,
+    ):
+        # 批量交易订单VO
+        self.batch_trade_order_vos = batch_trade_order_vos
+
+    def validate(self):
+        if self.batch_trade_order_vos:
+            for k in self.batch_trade_order_vos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['batchTradeOrderVOs'] = []
+        if self.batch_trade_order_vos is not None:
+            for k in self.batch_trade_order_vos:
+                result['batchTradeOrderVOs'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.batch_trade_order_vos = []
+        if m.get('batchTradeOrderVOs') is not None:
+            for k in m.get('batchTradeOrderVOs'):
+                temp_model = QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs()
+                self.batch_trade_order_vos.append(temp_model.from_map(k))
+        return self
+
+
+class QueryBatchTradeOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryBatchTradeOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryBatchTradeOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveCorpPayCodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveCorpPayCodeRequest(TeaModel):
+    def __init__(
+        self,
+        code_identity: str = None,
+        corp_id: str = None,
+        status: str = None,
+        ext_info: Dict[str, str] = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+    ):
+        # 码标识，由钉钉颁发
+        self.code_identity = code_identity
+        # 开通的企业ID
+        self.corp_id = corp_id
+        # 状态，OPEN或CLOSED
+        self.status = status
+        # 扩展参数
+        self.ext_info = ext_info
+        # 企业orgId
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code_identity is not None:
+            result['codeIdentity'] = self.code_identity
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('codeIdentity') is not None:
+            self.code_identity = m.get('codeIdentity')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        return self
+
+
+class SaveCorpPayCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        code_identity: str = None,
+        corp_id: str = None,
+        status: str = None,
+        ext_info: Dict[str, str] = None,
+    ):
+        # 码标识
+        self.code_identity = code_identity
+        # 开通的企业ID
+        self.corp_id = corp_id
+        # 状态
+        self.status = status
+        # 扩展参数
+        self.ext_info = ext_info
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code_identity is not None:
+            result['codeIdentity'] = self.code_identity
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('codeIdentity') is not None:
+            self.code_identity = m.get('codeIdentity')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        return self
+
+
+class SaveCorpPayCodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SaveCorpPayCodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SaveCorpPayCodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class NotifyVerifyResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class NotifyVerifyResultRequest(TeaModel):
+    def __init__(
+        self,
+        pay_code: str = None,
+        corp_id: str = None,
+        user_corp_relation_type: str = None,
+        user_identity: str = None,
+        verify_time: str = None,
+        verify_result: bool = None,
+        verify_location: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+    ):
+        # 码值
+        self.pay_code = pay_code
+        # 企业ID
+        self.corp_id = corp_id
+        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
+        self.user_corp_relation_type = user_corp_relation_type
+        # 用户身份标识
+        self.user_identity = user_identity
+        # 验证时间
+        self.verify_time = verify_time
+        # 验证结果
+        self.verify_result = verify_result
+        # 验证地点
+        self.verify_location = verify_location
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pay_code is not None:
+            result['payCode'] = self.pay_code
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.user_corp_relation_type is not None:
+            result['userCorpRelationType'] = self.user_corp_relation_type
+        if self.user_identity is not None:
+            result['userIdentity'] = self.user_identity
+        if self.verify_time is not None:
+            result['verifyTime'] = self.verify_time
+        if self.verify_result is not None:
+            result['verifyResult'] = self.verify_result
+        if self.verify_location is not None:
+            result['verifyLocation'] = self.verify_location
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('payCode') is not None:
+            self.pay_code = m.get('payCode')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('userCorpRelationType') is not None:
+            self.user_corp_relation_type = m.get('userCorpRelationType')
+        if m.get('userIdentity') is not None:
+            self.user_identity = m.get('userIdentity')
+        if m.get('verifyTime') is not None:
+            self.verify_time = m.get('verifyTime')
+        if m.get('verifyResult') is not None:
+            self.verify_result = m.get('verifyResult')
+        if m.get('verifyLocation') is not None:
+            self.verify_location = m.get('verifyLocation')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        return self
+
+
+class NotifyVerifyResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class NotifyVerifyResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: NotifyVerifyResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = NotifyVerifyResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPayAccountListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPayAccountListResponseBodyPayAccountVOList(TeaModel):
+    def __init__(
+        self,
+        account_no: str = None,
+        account_name: str = None,
+        account_type: str = None,
+        account_remark: str = None,
+        account_id: str = None,
+        account_class: str = None,
+    ):
+        # 付款账号（脱敏）
+        self.account_no = account_no
+        # 账号名称
+        self.account_name = account_name
+        # 账户类型
+        self.account_type = account_type
+        # 账户备注
+        self.account_remark = account_remark
+        # 账号唯一id
+        self.account_id = account_id
+        # 账户分类
+        self.account_class = account_class
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_no is not None:
+            result['accountNo'] = self.account_no
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.account_type is not None:
+            result['accountType'] = self.account_type
+        if self.account_remark is not None:
+            result['accountRemark'] = self.account_remark
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.account_class is not None:
+            result['accountClass'] = self.account_class
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountNo') is not None:
+            self.account_no = m.get('accountNo')
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('accountType') is not None:
+            self.account_type = m.get('accountType')
+        if m.get('accountRemark') is not None:
+            self.account_remark = m.get('accountRemark')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('accountClass') is not None:
+            self.account_class = m.get('accountClass')
+        return self
+
+
+class QueryPayAccountListResponseBody(TeaModel):
+    def __init__(
+        self,
+        pay_account_volist: List[QueryPayAccountListResponseBodyPayAccountVOList] = None,
+    ):
+        # 账号列表
+        self.pay_account_volist = pay_account_volist
+
+    def validate(self):
+        if self.pay_account_volist:
+            for k in self.pay_account_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['payAccountVOList'] = []
+        if self.pay_account_volist is not None:
+            for k in self.pay_account_volist:
+                result['payAccountVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.pay_account_volist = []
+        if m.get('payAccountVOList') is not None:
+            for k in m.get('payAccountVOList'):
+                temp_model = QueryPayAccountListResponseBodyPayAccountVOList()
+                self.pay_account_volist.append(temp_model.from_map(k))
+        return self
+
+
+class QueryPayAccountListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryPayAccountListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryPayAccountListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

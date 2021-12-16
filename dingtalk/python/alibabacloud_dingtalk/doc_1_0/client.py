@@ -107,6 +107,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchGetWorkspaceDocs', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/docs/infos/query', 'json', req, runtime)
         )
 
+    def delete_sheet(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteSheetRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteSheetHeaders()
+        return self.delete_sheet_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def delete_sheet_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteSheetRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteSheetHeaders()
+        return await self.delete_sheet_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def delete_sheet_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteSheetRequest,
+        headers: dingtalkdoc__1__0_models.DeleteSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteSheetResponse(),
+            self.do_roarequest('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'none', req, runtime)
+        )
+
+    async def delete_sheet_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteSheetRequest,
+        headers: dingtalkdoc__1__0_models.DeleteSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteSheetResponse(),
+            await self.do_roarequest_async('DeleteSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'none', req, runtime)
+        )
+
     def update_workspace_doc_members(
         self,
         workspace_id: str,
@@ -257,6 +329,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.CreateWorkspaceDocResponse(),
             await self.do_roarequest_async('CreateWorkspaceDoc', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs', 'json', req, runtime)
+        )
+
+    def create_sheet(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateSheetRequest,
+    ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateSheetHeaders()
+        return self.create_sheet_with_options(workbook_id, request, headers, runtime)
+
+    async def create_sheet_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateSheetRequest,
+    ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateSheetHeaders()
+        return await self.create_sheet_with_options_async(workbook_id, request, headers, runtime)
+
+    def create_sheet_with_options(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateSheetRequest,
+        headers: dingtalkdoc__1__0_models.CreateSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateSheetResponse(),
+            self.do_roarequest('CreateSheet', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets', 'json', req, runtime)
+        )
+
+    async def create_sheet_with_options_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateSheetRequest,
+        headers: dingtalkdoc__1__0_models.CreateSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateSheetResponse(),
+            await self.do_roarequest_async('CreateSheet', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets', 'json', req, runtime)
         )
 
     def create_workspace(
@@ -555,6 +703,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse(),
             await self.do_roarequest_async('SearchWorkspaceDocs', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/docs', 'json', req, runtime)
+        )
+
+    def update_range(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.UpdateRangeRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateRangeHeaders()
+        return self.update_range_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    async def update_range_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.UpdateRangeRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateRangeHeaders()
+        return await self.update_range_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    def update_range_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.UpdateRangeRequest,
+        headers: dingtalkdoc__1__0_models.UpdateRangeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.values):
+            body['values'] = request.values
+        if not UtilClient.is_unset(request.background_colors):
+            body['backgroundColors'] = request.background_colors
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateRangeResponse(),
+            self.do_roarequest('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}', 'none', req, runtime)
+        )
+
+    async def update_range_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.UpdateRangeRequest,
+        headers: dingtalkdoc__1__0_models.UpdateRangeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.values):
+            body['values'] = request.values
+        if not UtilClient.is_unset(request.background_colors):
+            body['backgroundColors'] = request.background_colors
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateRangeResponse(),
+            await self.do_roarequest_async('UpdateRange', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}', 'none', req, runtime)
         )
 
     def batch_get_workspaces(
@@ -865,6 +1101,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateWorkspaceMembers', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/members', 'none', req, runtime)
         )
 
+    def get_sheet(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetSheetRequest,
+    ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetSheetHeaders()
+        return self.get_sheet_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def get_sheet_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetSheetRequest,
+    ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetSheetHeaders()
+        return await self.get_sheet_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def get_sheet_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetSheetRequest,
+        headers: dingtalkdoc__1__0_models.GetSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetSheetResponse(),
+            self.do_roarequest('GetSheet', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
+        )
+
+    async def get_sheet_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetSheetRequest,
+        headers: dingtalkdoc__1__0_models.GetSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetSheetResponse(),
+            await self.do_roarequest_async('GetSheet', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
+        )
+
     def get_related_workspaces(
         self,
         request: dingtalkdoc__1__0_models.GetRelatedWorkspacesRequest,
@@ -1147,4 +1455,84 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.GetWorkspaceNodeResponse(),
             await self.do_roarequest_async('GetWorkspaceNode', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workspaces/{workspace_id}/docs/{node_id}', 'json', req, runtime)
+        )
+
+    def append_rows(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.AppendRowsRequest,
+    ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.AppendRowsHeaders()
+        return self.append_rows_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def append_rows_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.AppendRowsRequest,
+    ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.AppendRowsHeaders()
+        return await self.append_rows_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def append_rows_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.AppendRowsRequest,
+        headers: dingtalkdoc__1__0_models.AppendRowsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.values):
+            body['values'] = request.values
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.AppendRowsResponse(),
+            self.do_roarequest('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/appendRows', 'none', req, runtime)
+        )
+
+    async def append_rows_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.AppendRowsRequest,
+        headers: dingtalkdoc__1__0_models.AppendRowsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.values):
+            body['values'] = request.values
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.AppendRowsResponse(),
+            await self.do_roarequest_async('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/appendRows', 'none', req, runtime)
         )

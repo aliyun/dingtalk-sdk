@@ -355,68 +355,50 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/pay', 'json', req, runtime)
         )
 
-    def query_batch_trade_order(
-        self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+    def query_user_alipay_account(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
-        return self.query_batch_trade_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
+        return self.query_user_alipay_account_with_options(headers, runtime)
 
-    async def query_batch_trade_order_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+    async def query_user_alipay_account_async(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
-        return await self.query_batch_trade_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
+        return await self.query_user_alipay_account_with_options_async(headers, runtime)
 
-    def query_batch_trade_order_with_options(
+    def query_user_alipay_account_with_options(
         self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
-        headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
+        headers: dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.out_batch_nos):
-            body['outBatchNos'] = request.out_batch_nos
+    ) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
-            self.do_roarequest('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+            dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse(),
+            self.do_roarequest('QueryUserAlipayAccount', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/userAlipayAccounts', 'json', req, runtime)
         )
 
-    async def query_batch_trade_order_with_options_async(
+    async def query_user_alipay_account_with_options_async(
         self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
-        headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
+        headers: dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.out_batch_nos):
-            body['outBatchNos'] = request.out_batch_nos
+    ) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
-            await self.do_roarequest_async('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+            dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse(),
+            await self.do_roarequest_async('QueryUserAlipayAccount', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/userAlipayAccounts', 'json', req, runtime)
         )
 
     def decode_pay_code(
@@ -493,186 +475,6 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.DecodePayCodeResponse(),
             await self.do_roarequest_async('DecodePayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/decode', 'json', req, runtime)
-        )
-
-    def save_corp_pay_code(
-        self,
-        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
-    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
-        return self.save_corp_pay_code_with_options(request, headers, runtime)
-
-    async def save_corp_pay_code_async(
-        self,
-        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
-    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
-        return await self.save_corp_pay_code_with_options_async(request, headers, runtime)
-
-    def save_corp_pay_code_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
-        headers: dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.code_identity):
-            body['codeIdentity'] = request.code_identity
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
-        if not UtilClient.is_unset(request.ext_info):
-            body['extInfo'] = request.ext_info
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.SaveCorpPayCodeResponse(),
-            self.do_roarequest('SaveCorpPayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/corpSettings', 'json', req, runtime)
-        )
-
-    async def save_corp_pay_code_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
-        headers: dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.code_identity):
-            body['codeIdentity'] = request.code_identity
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.status):
-            body['status'] = request.status
-        if not UtilClient.is_unset(request.ext_info):
-            body['extInfo'] = request.ext_info
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.SaveCorpPayCodeResponse(),
-            await self.do_roarequest_async('SaveCorpPayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/corpSettings', 'json', req, runtime)
-        )
-
-    def notify_verify_result(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
-        return self.notify_verify_result_with_options(request, headers, runtime)
-
-    async def notify_verify_result_async(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
-        return await self.notify_verify_result_with_options_async(request, headers, runtime)
-
-    def notify_verify_result_with_options(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
-        headers: dingtalkfinance__1__0_models.NotifyVerifyResultHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.pay_code):
-            body['payCode'] = request.pay_code
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.user_corp_relation_type):
-            body['userCorpRelationType'] = request.user_corp_relation_type
-        if not UtilClient.is_unset(request.user_identity):
-            body['userIdentity'] = request.user_identity
-        if not UtilClient.is_unset(request.verify_time):
-            body['verifyTime'] = request.verify_time
-        if not UtilClient.is_unset(request.verify_result):
-            body['verifyResult'] = request.verify_result
-        if not UtilClient.is_unset(request.verify_location):
-            body['verifyLocation'] = request.verify_location
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.NotifyVerifyResultResponse(),
-            self.do_roarequest('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
-        )
-
-    async def notify_verify_result_with_options_async(
-        self,
-        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
-        headers: dingtalkfinance__1__0_models.NotifyVerifyResultHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
-        UtilClient.validate_model(request)
-        body = {}
-        if not UtilClient.is_unset(request.pay_code):
-            body['payCode'] = request.pay_code
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
-        if not UtilClient.is_unset(request.user_corp_relation_type):
-            body['userCorpRelationType'] = request.user_corp_relation_type
-        if not UtilClient.is_unset(request.user_identity):
-            body['userIdentity'] = request.user_identity
-        if not UtilClient.is_unset(request.verify_time):
-            body['verifyTime'] = request.verify_time
-        if not UtilClient.is_unset(request.verify_result):
-            body['verifyResult'] = request.verify_result
-        if not UtilClient.is_unset(request.verify_location):
-            body['verifyLocation'] = request.verify_location
-        if not UtilClient.is_unset(request.ding_org_id):
-            body['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            body['dingIsvOrgId'] = request.ding_isv_org_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.NotifyVerifyResultResponse(),
-            await self.do_roarequest_async('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
         )
 
     def create_batch_trade_order(
@@ -947,52 +749,6 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryBatchTradeDetailList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/batchTrades/details', 'json', req, runtime)
         )
 
-    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return self.query_pay_account_list_with_options(headers, runtime)
-
-    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return await self.query_pay_account_list_with_options_async(headers, runtime)
-
-    def query_pay_account_list_with_options(
-        self,
-        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
-            self.do_roarequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
-        )
-
-    async def query_pay_account_list_with_options_async(
-        self,
-        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
-            await self.do_roarequest_async('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
-        )
-
     def create_user_code_instance(
         self,
         request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
@@ -1099,4 +855,294 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse(),
             await self.do_roarequest_async('CreateUserCodeInstance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
+        )
+
+    def query_batch_trade_order(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
+        return self.query_batch_trade_order_with_options(request, headers, runtime)
+
+    async def query_batch_trade_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
+        return await self.query_batch_trade_order_with_options_async(request, headers, runtime)
+
+    def query_batch_trade_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.out_batch_nos):
+            body['outBatchNos'] = request.out_batch_nos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
+            self.do_roarequest('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+        )
+
+    async def query_batch_trade_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+        headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.out_batch_nos):
+            body['outBatchNos'] = request.out_batch_nos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
+            await self.do_roarequest_async('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+        )
+
+    def save_corp_pay_code(
+        self,
+        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
+    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
+        return self.save_corp_pay_code_with_options(request, headers, runtime)
+
+    async def save_corp_pay_code_async(
+        self,
+        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
+    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
+        return await self.save_corp_pay_code_with_options_async(request, headers, runtime)
+
+    def save_corp_pay_code_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
+        headers: dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code_identity):
+            body['codeIdentity'] = request.code_identity
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.ext_info):
+            body['extInfo'] = request.ext_info
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.SaveCorpPayCodeResponse(),
+            self.do_roarequest('SaveCorpPayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/corpSettings', 'json', req, runtime)
+        )
+
+    async def save_corp_pay_code_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
+        headers: dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code_identity):
+            body['codeIdentity'] = request.code_identity
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.ext_info):
+            body['extInfo'] = request.ext_info
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.SaveCorpPayCodeResponse(),
+            await self.do_roarequest_async('SaveCorpPayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/corpSettings', 'json', req, runtime)
+        )
+
+    def notify_verify_result(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
+        return self.notify_verify_result_with_options(request, headers, runtime)
+
+    async def notify_verify_result_async(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
+        return await self.notify_verify_result_with_options_async(request, headers, runtime)
+
+    def notify_verify_result_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
+        headers: dingtalkfinance__1__0_models.NotifyVerifyResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.pay_code):
+            body['payCode'] = request.pay_code
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.user_corp_relation_type):
+            body['userCorpRelationType'] = request.user_corp_relation_type
+        if not UtilClient.is_unset(request.user_identity):
+            body['userIdentity'] = request.user_identity
+        if not UtilClient.is_unset(request.verify_time):
+            body['verifyTime'] = request.verify_time
+        if not UtilClient.is_unset(request.verify_result):
+            body['verifyResult'] = request.verify_result
+        if not UtilClient.is_unset(request.verify_location):
+            body['verifyLocation'] = request.verify_location
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.NotifyVerifyResultResponse(),
+            self.do_roarequest('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
+        )
+
+    async def notify_verify_result_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
+        headers: dingtalkfinance__1__0_models.NotifyVerifyResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.pay_code):
+            body['payCode'] = request.pay_code
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.user_corp_relation_type):
+            body['userCorpRelationType'] = request.user_corp_relation_type
+        if not UtilClient.is_unset(request.user_identity):
+            body['userIdentity'] = request.user_identity
+        if not UtilClient.is_unset(request.verify_time):
+            body['verifyTime'] = request.verify_time
+        if not UtilClient.is_unset(request.verify_result):
+            body['verifyResult'] = request.verify_result
+        if not UtilClient.is_unset(request.verify_location):
+            body['verifyLocation'] = request.verify_location
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.NotifyVerifyResultResponse(),
+            await self.do_roarequest_async('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
+        )
+
+    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return self.query_pay_account_list_with_options(headers, runtime)
+
+    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return await self.query_pay_account_list_with_options_async(headers, runtime)
+
+    def query_pay_account_list_with_options(
+        self,
+        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
+            self.do_roarequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
+        )
+
+    async def query_pay_account_list_with_options_async(
+        self,
+        headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
+            await self.do_roarequest_async('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
         )

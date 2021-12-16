@@ -553,6 +553,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerInstances', 'json', req, runtime)
         )
 
+    def update_relation_meta_field(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
+        return self.update_relation_meta_field_with_options(request, headers, runtime)
+
+    async def update_relation_meta_field_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
+        return await self.update_relation_meta_field_with_options_async(request, headers, runtime)
+
+    def update_relation_meta_field_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
+        headers: dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.field_dtolist):
+            body['fieldDTOList'] = request.field_dtolist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse(),
+            self.do_roarequest('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+        )
+
+    async def update_relation_meta_field_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
+        headers: dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.field_dtolist):
+            body['fieldDTOList'] = request.field_dtolist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse(),
+            await self.do_roarequest_async('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+        )
+
     def send_official_account_otomessage(
         self,
         request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
@@ -707,6 +783,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse(),
             await self.do_roarequest_async('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', req, runtime)
+        )
+
+    def describe_relation_meta(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
+        return self.describe_relation_meta_with_options(request, headers, runtime)
+
+    async def describe_relation_meta_async(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
+        return await self.describe_relation_meta_with_options_async(request, headers, runtime)
+
+    def describe_relation_meta_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
+        headers: dingtalkcrm__1__0_models.DescribeRelationMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_types):
+            body['relationTypes'] = request.relation_types
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DescribeRelationMetaResponse(),
+            self.do_roarequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/query', 'json', req, runtime)
+        )
+
+    async def describe_relation_meta_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
+        headers: dingtalkcrm__1__0_models.DescribeRelationMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.relation_types):
+            body['relationTypes'] = request.relation_types
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DescribeRelationMetaResponse(),
+            await self.do_roarequest_async('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/query', 'json', req, runtime)
         )
 
     def add_crm_personal_customer(

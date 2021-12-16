@@ -1809,6 +1809,115 @@ class RollbackMiniAppVersionResponse(TeaModel):
         return self
 
 
+class PublishFileChangeNoticeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PublishFileChangeNoticeRequest(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        space_id: str = None,
+        operator_union_id: str = None,
+        operate_type: str = None,
+    ):
+        # 钉盘文件id
+        self.file_id = file_id
+        # 钉盘spaceId
+        self.space_id = space_id
+        # 操作人unionId
+        self.operator_union_id = operator_union_id
+        # 操作类型: 1-添加 2-修改
+        self.operate_type = operate_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        return self
+
+
+class PublishFileChangeNoticeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+    ):
+        self.headers = headers
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        return self
+
+
 class GetGeneralFormCreatedDeptSummaryHeaders(TeaModel):
     def __init__(
         self,

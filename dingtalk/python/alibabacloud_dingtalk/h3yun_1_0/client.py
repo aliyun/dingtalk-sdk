@@ -87,6 +87,210 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('LoadBizFields', 'h3yun_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h3yun/forms/loadBizFields', 'json', req, runtime)
         )
 
+    def cancel_process_instance(
+        self,
+        request: dingtalkh_3yun__1__0_models.CancelProcessInstanceRequest,
+    ) -> dingtalkh_3yun__1__0_models.CancelProcessInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkh_3yun__1__0_models.CancelProcessInstanceHeaders()
+        return self.cancel_process_instance_with_options(request, headers, runtime)
+
+    async def cancel_process_instance_async(
+        self,
+        request: dingtalkh_3yun__1__0_models.CancelProcessInstanceRequest,
+    ) -> dingtalkh_3yun__1__0_models.CancelProcessInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkh_3yun__1__0_models.CancelProcessInstanceHeaders()
+        return await self.cancel_process_instance_with_options_async(request, headers, runtime)
+
+    def cancel_process_instance_with_options(
+        self,
+        request: dingtalkh_3yun__1__0_models.CancelProcessInstanceRequest,
+        headers: dingtalkh_3yun__1__0_models.CancelProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkh_3yun__1__0_models.CancelProcessInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkh_3yun__1__0_models.CancelProcessInstanceResponse(),
+            self.do_roarequest('CancelProcessInstance', 'h3yun_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/h3yun/processes/instances/cancel', 'json', req, runtime)
+        )
+
+    async def cancel_process_instance_with_options_async(
+        self,
+        request: dingtalkh_3yun__1__0_models.CancelProcessInstanceRequest,
+        headers: dingtalkh_3yun__1__0_models.CancelProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkh_3yun__1__0_models.CancelProcessInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkh_3yun__1__0_models.CancelProcessInstanceResponse(),
+            await self.do_roarequest_async('CancelProcessInstance', 'h3yun_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/h3yun/processes/instances/cancel', 'json', req, runtime)
+        )
+
+    def get_attachment_temporary_url(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlRequest,
+    ) -> dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlHeaders()
+        return self.get_attachment_temporary_url_with_options(request, headers, runtime)
+
+    async def get_attachment_temporary_url_async(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlRequest,
+    ) -> dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlHeaders()
+        return await self.get_attachment_temporary_url_with_options_async(request, headers, runtime)
+
+    def get_attachment_temporary_url_with_options(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlRequest,
+        headers: dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.attachment_id):
+            query['attachmentId'] = request.attachment_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlResponse(),
+            self.do_roarequest('GetAttachmentTemporaryUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h3yun/attachments/temporaryUrls', 'json', req, runtime)
+        )
+
+    async def get_attachment_temporary_url_with_options_async(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlRequest,
+        headers: dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.attachment_id):
+            query['attachmentId'] = request.attachment_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkh_3yun__1__0_models.GetAttachmentTemporaryUrlResponse(),
+            await self.do_roarequest_async('GetAttachmentTemporaryUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h3yun/attachments/temporaryUrls', 'json', req, runtime)
+        )
+
+    def get_upload_url(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetUploadUrlRequest,
+    ) -> dingtalkh_3yun__1__0_models.GetUploadUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkh_3yun__1__0_models.GetUploadUrlHeaders()
+        return self.get_upload_url_with_options(request, headers, runtime)
+
+    async def get_upload_url_async(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetUploadUrlRequest,
+    ) -> dingtalkh_3yun__1__0_models.GetUploadUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkh_3yun__1__0_models.GetUploadUrlHeaders()
+        return await self.get_upload_url_with_options_async(request, headers, runtime)
+
+    def get_upload_url_with_options(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetUploadUrlRequest,
+        headers: dingtalkh_3yun__1__0_models.GetUploadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkh_3yun__1__0_models.GetUploadUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.schema_code):
+            query['schemaCode'] = request.schema_code
+        if not UtilClient.is_unset(request.biz_object_id):
+            query['bizObjectId'] = request.biz_object_id
+        if not UtilClient.is_unset(request.field_name):
+            query['fieldName'] = request.field_name
+        if not UtilClient.is_unset(request.is_overwrite):
+            query['isOverwrite'] = request.is_overwrite
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkh_3yun__1__0_models.GetUploadUrlResponse(),
+            self.do_roarequest('GetUploadUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h3yun/attachments/uploadUrls', 'json', req, runtime)
+        )
+
+    async def get_upload_url_with_options_async(
+        self,
+        request: dingtalkh_3yun__1__0_models.GetUploadUrlRequest,
+        headers: dingtalkh_3yun__1__0_models.GetUploadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkh_3yun__1__0_models.GetUploadUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.schema_code):
+            query['schemaCode'] = request.schema_code
+        if not UtilClient.is_unset(request.biz_object_id):
+            query['bizObjectId'] = request.biz_object_id
+        if not UtilClient.is_unset(request.field_name):
+            query['fieldName'] = request.field_name
+        if not UtilClient.is_unset(request.is_overwrite):
+            query['isOverwrite'] = request.is_overwrite
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkh_3yun__1__0_models.GetUploadUrlResponse(),
+            await self.do_roarequest_async('GetUploadUrl', 'h3yun_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/h3yun/attachments/uploadUrls', 'json', req, runtime)
+        )
+
     def get_users(
         self,
         request: dingtalkh_3yun__1__0_models.GetUsersRequest,

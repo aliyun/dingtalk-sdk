@@ -1934,6 +1934,7 @@ class ListFilesRequest(TeaModel):
         next_token: str = None,
         max_results: int = None,
         order_type: str = None,
+        with_icon: bool = None,
     ):
         # 用户id
         self.union_id = union_id
@@ -1945,6 +1946,8 @@ class ListFilesRequest(TeaModel):
         self.max_results = max_results
         # 排序类型
         self.order_type = order_type
+        # 是否返回文件图标
+        self.with_icon = with_icon
 
     def validate(self):
         pass
@@ -1965,6 +1968,8 @@ class ListFilesRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.order_type is not None:
             result['orderType'] = self.order_type
+        if self.with_icon is not None:
+            result['withIcon'] = self.with_icon
         return result
 
     def from_map(self, m: dict = None):
@@ -1979,6 +1984,8 @@ class ListFilesRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('orderType') is not None:
             self.order_type = m.get('orderType')
+        if m.get('withIcon') is not None:
+            self.with_icon = m.get('withIcon')
         return self
 
 
@@ -1994,6 +2001,8 @@ class ListFilesResponseBodyFiles(TeaModel):
         content_type: str = None,
         file_extension: str = None,
         file_size: int = None,
+        thumbnail: str = None,
+        icon: str = None,
         create_time: str = None,
         modify_time: str = None,
         creator: str = None,
@@ -2017,6 +2026,10 @@ class ListFilesResponseBodyFiles(TeaModel):
         self.file_extension = file_extension
         # 文件大小
         self.file_size = file_size
+        # 文件缩略图
+        self.thumbnail = thumbnail
+        # 文件图标
+        self.icon = icon
         # 创建时间
         self.create_time = create_time
         # 修改时间
@@ -2053,6 +2066,10 @@ class ListFilesResponseBodyFiles(TeaModel):
             result['fileExtension'] = self.file_extension
         if self.file_size is not None:
             result['fileSize'] = self.file_size
+        if self.thumbnail is not None:
+            result['thumbnail'] = self.thumbnail
+        if self.icon is not None:
+            result['icon'] = self.icon
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.modify_time is not None:
@@ -2083,6 +2100,10 @@ class ListFilesResponseBodyFiles(TeaModel):
             self.file_extension = m.get('fileExtension')
         if m.get('fileSize') is not None:
             self.file_size = m.get('fileSize')
+        if m.get('thumbnail') is not None:
+            self.thumbnail = m.get('thumbnail')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('modifyTime') is not None:
@@ -4885,9 +4906,15 @@ class GetDownloadInfoRequest(TeaModel):
     def __init__(
         self,
         union_id: str = None,
+        with_region: bool = None,
+        with_internal_resource_url: bool = None,
     ):
         # 用户id
         self.union_id = union_id
+        # 是否返回区域信息
+        self.with_region = with_region
+        # 是否返回内网加签url
+        self.with_internal_resource_url = with_internal_resource_url
 
     def validate(self):
         pass
@@ -4900,12 +4927,20 @@ class GetDownloadInfoRequest(TeaModel):
         result = dict()
         if self.union_id is not None:
             result['unionId'] = self.union_id
+        if self.with_region is not None:
+            result['withRegion'] = self.with_region
+        if self.with_internal_resource_url is not None:
+            result['withInternalResourceUrl'] = self.with_internal_resource_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
+        if m.get('withRegion') is not None:
+            self.with_region = m.get('withRegion')
+        if m.get('withInternalResourceUrl') is not None:
+            self.with_internal_resource_url = m.get('withInternalResourceUrl')
         return self
 
 
@@ -4913,11 +4948,14 @@ class GetDownloadInfoResponseBodyDownloadInfo(TeaModel):
     def __init__(
         self,
         resource_url: str = None,
+        internal_resource_url: str = None,
         expiration_seconds: int = None,
         headers: Dict[str, Any] = None,
     ):
         # 加签url
         self.resource_url = resource_url
+        # 内网加签url
+        self.internal_resource_url = internal_resource_url
         # 加签url过期时间
         self.expiration_seconds = expiration_seconds
         # headers
@@ -4934,6 +4972,8 @@ class GetDownloadInfoResponseBodyDownloadInfo(TeaModel):
         result = dict()
         if self.resource_url is not None:
             result['resourceUrl'] = self.resource_url
+        if self.internal_resource_url is not None:
+            result['internalResourceUrl'] = self.internal_resource_url
         if self.expiration_seconds is not None:
             result['expirationSeconds'] = self.expiration_seconds
         if self.headers is not None:
@@ -4944,6 +4984,8 @@ class GetDownloadInfoResponseBodyDownloadInfo(TeaModel):
         m = m or dict()
         if m.get('resourceUrl') is not None:
             self.resource_url = m.get('resourceUrl')
+        if m.get('internalResourceUrl') is not None:
+            self.internal_resource_url = m.get('internalResourceUrl')
         if m.get('expirationSeconds') is not None:
             self.expiration_seconds = m.get('expirationSeconds')
         if m.get('headers') is not None:
@@ -4955,9 +4997,12 @@ class GetDownloadInfoResponseBody(TeaModel):
     def __init__(
         self,
         download_info: GetDownloadInfoResponseBodyDownloadInfo = None,
+        region: str = None,
     ):
         # 下载加签url信息
         self.download_info = download_info
+        # 文件所存储的区域
+        self.region = region
 
     def validate(self):
         if self.download_info:
@@ -4971,6 +5016,8 @@ class GetDownloadInfoResponseBody(TeaModel):
         result = dict()
         if self.download_info is not None:
             result['downloadInfo'] = self.download_info.to_map()
+        if self.region is not None:
+            result['region'] = self.region
         return result
 
     def from_map(self, m: dict = None):
@@ -4978,6 +5025,8 @@ class GetDownloadInfoResponseBody(TeaModel):
         if m.get('downloadInfo') is not None:
             temp_model = GetDownloadInfoResponseBodyDownloadInfo()
             self.download_info = temp_model.from_map(m['downloadInfo'])
+        if m.get('region') is not None:
+            self.region = m.get('region')
         return self
 
 
@@ -5060,6 +5109,9 @@ class GetUploadInfoRequest(TeaModel):
         md_5: str = None,
         add_conflict_policy: str = None,
         media_id: str = None,
+        with_region: bool = None,
+        with_internal_end_point: bool = None,
+        caller_region: str = None,
     ):
         # 用户id
         self.union_id = union_id
@@ -5073,6 +5125,12 @@ class GetUploadInfoRequest(TeaModel):
         self.add_conflict_policy = add_conflict_policy
         # mediaId
         self.media_id = media_id
+        # 是否返回区域
+        self.with_region = with_region
+        # 是否返回OSS内网访问域名
+        self.with_internal_end_point = with_internal_end_point
+        # 调用方所处区域
+        self.caller_region = caller_region
 
     def validate(self):
         pass
@@ -5095,6 +5153,12 @@ class GetUploadInfoRequest(TeaModel):
             result['addConflictPolicy'] = self.add_conflict_policy
         if self.media_id is not None:
             result['mediaId'] = self.media_id
+        if self.with_region is not None:
+            result['withRegion'] = self.with_region
+        if self.with_internal_end_point is not None:
+            result['withInternalEndPoint'] = self.with_internal_end_point
+        if self.caller_region is not None:
+            result['callerRegion'] = self.caller_region
         return result
 
     def from_map(self, m: dict = None):
@@ -5111,6 +5175,12 @@ class GetUploadInfoRequest(TeaModel):
             self.add_conflict_policy = m.get('addConflictPolicy')
         if m.get('mediaId') is not None:
             self.media_id = m.get('mediaId')
+        if m.get('withRegion') is not None:
+            self.with_region = m.get('withRegion')
+        if m.get('withInternalEndPoint') is not None:
+            self.with_internal_end_point = m.get('withInternalEndPoint')
+        if m.get('callerRegion') is not None:
+            self.caller_region = m.get('callerRegion')
         return self
 
 
@@ -5119,6 +5189,7 @@ class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
         self,
         bucket: str = None,
         end_point: str = None,
+        internal_end_point: str = None,
         access_key_id: str = None,
         access_key_secret: str = None,
         access_token: str = None,
@@ -5129,6 +5200,8 @@ class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
         self.bucket = bucket
         # endPoint
         self.end_point = end_point
+        # 内网endPoint
+        self.internal_end_point = internal_end_point
         # accessKeyId
         self.access_key_id = access_key_id
         # accessKeySecret
@@ -5153,6 +5226,8 @@ class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
             result['bucket'] = self.bucket
         if self.end_point is not None:
             result['endPoint'] = self.end_point
+        if self.internal_end_point is not None:
+            result['internalEndPoint'] = self.internal_end_point
         if self.access_key_id is not None:
             result['accessKeyId'] = self.access_key_id
         if self.access_key_secret is not None:
@@ -5171,6 +5246,8 @@ class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
             self.bucket = m.get('bucket')
         if m.get('endPoint') is not None:
             self.end_point = m.get('endPoint')
+        if m.get('internalEndPoint') is not None:
+            self.internal_end_point = m.get('internalEndPoint')
         if m.get('accessKeyId') is not None:
             self.access_key_id = m.get('accessKeyId')
         if m.get('accessKeySecret') is not None:
@@ -5188,11 +5265,14 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
     def __init__(
         self,
         resource_url: str = None,
+        internal_resource_url: str = None,
         expiration_seconds: int = None,
         headers: Dict[str, Any] = None,
     ):
         # 上传地址
         self.resource_url = resource_url
+        # 内网上传地址
+        self.internal_resource_url = internal_resource_url
         # 过期秒数
         self.expiration_seconds = expiration_seconds
         # header加签信息
@@ -5209,6 +5289,8 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
         result = dict()
         if self.resource_url is not None:
             result['resourceUrl'] = self.resource_url
+        if self.internal_resource_url is not None:
+            result['internalResourceUrl'] = self.internal_resource_url
         if self.expiration_seconds is not None:
             result['expirationSeconds'] = self.expiration_seconds
         if self.headers is not None:
@@ -5219,6 +5301,8 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
         m = m or dict()
         if m.get('resourceUrl') is not None:
             self.resource_url = m.get('resourceUrl')
+        if m.get('internalResourceUrl') is not None:
+            self.internal_resource_url = m.get('internalResourceUrl')
         if m.get('expirationSeconds') is not None:
             self.expiration_seconds = m.get('expirationSeconds')
         if m.get('headers') is not None:
@@ -5231,9 +5315,12 @@ class GetUploadInfoResponseBody(TeaModel):
         self,
         sts_upload_info: GetUploadInfoResponseBodyStsUploadInfo = None,
         header_signature_upload_info: GetUploadInfoResponseBodyHeaderSignatureUploadInfo = None,
+        region: str = None,
     ):
         self.sts_upload_info = sts_upload_info
         self.header_signature_upload_info = header_signature_upload_info
+        # 文件所存储的区域
+        self.region = region
 
     def validate(self):
         if self.sts_upload_info:
@@ -5251,6 +5338,8 @@ class GetUploadInfoResponseBody(TeaModel):
             result['stsUploadInfo'] = self.sts_upload_info.to_map()
         if self.header_signature_upload_info is not None:
             result['headerSignatureUploadInfo'] = self.header_signature_upload_info.to_map()
+        if self.region is not None:
+            result['region'] = self.region
         return result
 
     def from_map(self, m: dict = None):
@@ -5261,6 +5350,8 @@ class GetUploadInfoResponseBody(TeaModel):
         if m.get('headerSignatureUploadInfo') is not None:
             temp_model = GetUploadInfoResponseBodyHeaderSignatureUploadInfo()
             self.header_signature_upload_info = temp_model.from_map(m['headerSignatureUploadInfo'])
+        if m.get('region') is not None:
+            self.region = m.get('region')
         return self
 
 

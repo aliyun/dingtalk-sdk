@@ -787,6 +787,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RollbackMiniAppVersion', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/versions/rollback', 'json', req, runtime)
         )
 
+    def publish_file_change_notice(
+        self,
+        request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,
+    ) -> dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.PublishFileChangeNoticeHeaders()
+        return self.publish_file_change_notice_with_options(request, headers, runtime)
+
+    async def publish_file_change_notice_async(
+        self,
+        request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,
+    ) -> dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.PublishFileChangeNoticeHeaders()
+        return await self.publish_file_change_notice_with_options_async(request, headers, runtime)
+
+    def publish_file_change_notice_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,
+        headers: dingtalkexclusive__1__0_models.PublishFileChangeNoticeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse(),
+            self.do_roarequest('PublishFileChangeNotice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/comments/send', 'none', req, runtime)
+        )
+
+    async def publish_file_change_notice_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,
+        headers: dingtalkexclusive__1__0_models.PublishFileChangeNoticeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.PublishFileChangeNoticeResponse(),
+            await self.do_roarequest_async('PublishFileChangeNotice', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/comments/send', 'none', req, runtime)
+        )
+
     def get_general_form_created_dept_summary(
         self,
         data_id: str,
