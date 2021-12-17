@@ -1234,26 +1234,29 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
+        max_attendees: str,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetEventHeaders()
-        return self.get_event_with_options(user_id, calendar_id, event_id, headers, runtime)
+        return self.get_event_with_options(user_id, calendar_id, event_id, max_attendees, headers, runtime)
 
     async def get_event_async(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
+        max_attendees: str,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetEventHeaders()
-        return await self.get_event_with_options_async(user_id, calendar_id, event_id, headers, runtime)
+        return await self.get_event_with_options_async(user_id, calendar_id, event_id, max_attendees, headers, runtime)
 
     def get_event_with_options(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
+        max_attendees: str,
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
@@ -1275,6 +1278,7 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
+        max_attendees: str,
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:

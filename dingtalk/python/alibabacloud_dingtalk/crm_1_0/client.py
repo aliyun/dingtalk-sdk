@@ -1425,6 +1425,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):
@@ -1455,6 +1457,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.max_results):

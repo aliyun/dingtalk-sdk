@@ -8378,12 +8378,14 @@ class QueryCrmPersonalCustomerRequest(TeaModel):
     def __init__(
         self,
         current_operator_user_id: str = None,
+        relation_type: str = None,
         next_token: str = None,
         max_results: int = None,
         query_dsl: str = None,
     ):
         # 用户ID
         self.current_operator_user_id = current_operator_user_id
+        self.relation_type = relation_type
         # 分页页码
         self.next_token = next_token
         # 分页条数
@@ -8402,6 +8404,8 @@ class QueryCrmPersonalCustomerRequest(TeaModel):
         result = dict()
         if self.current_operator_user_id is not None:
             result['currentOperatorUserId'] = self.current_operator_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         if self.max_results is not None:
@@ -8414,6 +8418,8 @@ class QueryCrmPersonalCustomerRequest(TeaModel):
         m = m or dict()
         if m.get('currentOperatorUserId') is not None:
             self.current_operator_user_id = m.get('currentOperatorUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         if m.get('maxResults') is not None:
