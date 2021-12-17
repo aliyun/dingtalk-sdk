@@ -1040,6 +1040,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->currentOperatorUserId)) {
             @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
         }
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
+        }
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }

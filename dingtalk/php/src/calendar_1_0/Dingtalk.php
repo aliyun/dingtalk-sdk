@@ -861,27 +861,29 @@ class Dingtalk extends OpenApiClient
      * @param string $userId
      * @param string $calendarId
      * @param string $eventId
+     * @param string $maxAttendees
      *
      * @return GetEventResponse
      */
-    public function getEvent($userId, $calendarId, $eventId)
+    public function getEvent($userId, $calendarId, $eventId, $maxAttendees)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetEventHeaders([]);
 
-        return $this->getEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
+        return $this->getEventWithOptions($userId, $calendarId, $eventId, $maxAttendees, $headers, $runtime);
     }
 
     /**
      * @param string          $userId
      * @param string          $calendarId
      * @param string          $eventId
+     * @param string          $maxAttendees
      * @param GetEventHeaders $headers
      * @param RuntimeOptions  $runtime
      *
      * @return GetEventResponse
      */
-    public function getEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
+    public function getEventWithOptions($userId, $calendarId, $eventId, $maxAttendees, $headers, $runtime)
     {
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

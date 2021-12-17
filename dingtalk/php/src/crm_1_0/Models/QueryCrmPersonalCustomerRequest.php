@@ -16,6 +16,11 @@ class QueryCrmPersonalCustomerRequest extends Model
     public $currentOperatorUserId;
 
     /**
+     * @var string
+     */
+    public $relationType;
+
+    /**
      * @description 分页页码
      *
      * @var string
@@ -37,6 +42,7 @@ class QueryCrmPersonalCustomerRequest extends Model
     public $queryDsl;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
+        'relationType'          => 'relationType',
         'nextToken'             => 'nextToken',
         'maxResults'            => 'maxResults',
         'queryDsl'              => 'queryDsl',
@@ -51,6 +57,9 @@ class QueryCrmPersonalCustomerRequest extends Model
         $res = [];
         if (null !== $this->currentOperatorUserId) {
             $res['currentOperatorUserId'] = $this->currentOperatorUserId;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
@@ -75,6 +84,9 @@ class QueryCrmPersonalCustomerRequest extends Model
         $model = new self();
         if (isset($map['currentOperatorUserId'])) {
             $model->currentOperatorUserId = $map['currentOperatorUserId'];
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
