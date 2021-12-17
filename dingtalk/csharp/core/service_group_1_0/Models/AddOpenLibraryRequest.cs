@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? DingTokenGrantType { get; set; }
 
         /// <summary>
-        /// 团队ID
+        /// 开放团队ID
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
@@ -61,7 +61,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string Type { get; set; }
 
         /// <summary>
-        /// 用户ID
+        /// 用户/员工ID
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

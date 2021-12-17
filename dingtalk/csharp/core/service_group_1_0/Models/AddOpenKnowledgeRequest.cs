@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Title { get; set; }
 
             /// <summary>
-            /// 这个是附件URL
+            /// 附件URL
             /// </summary>
             [NameInMap("path")]
             [Validation(Required=false)]
@@ -38,14 +38,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public double? Size { get; set; }
 
             /// <summary>
-            /// 附件扩展名
+            /// 扩展名
             /// </summary>
             [NameInMap("suffix")]
             [Validation(Required=false)]
             public string Suffix { get; set; }
 
             /// <summary>
-            /// 媒体类型
+            /// 媒体类型(扩展名大写)
             /// </summary>
             [NameInMap("mimeType")]
             [Validation(Required=false)]
@@ -119,7 +119,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public long? LibraryId { get; set; }
 
         /// <summary>
-        /// 所属团队ID
+        /// 开放团队ID
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
@@ -154,7 +154,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public string Type { get; set; }
 
         /// <summary>
-        /// 用户ID
+        /// 用户/员工ID
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -56,6 +56,10 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             {
                 body["codeValue"] = request.CodeValue;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CodeValueType))
+            {
+                body["codeValueType"] = request.CodeValueType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
                 body["corpId"] = request.CorpId;
@@ -124,6 +128,10 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CodeValue))
             {
                 body["codeValue"] = request.CodeValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CodeValueType))
+            {
+                body["codeValueType"] = request.CodeValueType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {

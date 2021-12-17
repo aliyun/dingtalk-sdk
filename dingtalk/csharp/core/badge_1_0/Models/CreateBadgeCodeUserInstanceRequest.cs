@@ -47,6 +47,13 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public string CodeValue { get; set; }
 
         /// <summary>
+        /// 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+        /// </summary>
+        [NameInMap("codeValueType")]
+        [Validation(Required=false)]
+        public string CodeValueType { get; set; }
+
+        /// <summary>
         /// 企业ID
         /// </summary>
         [NameInMap("corpId")]

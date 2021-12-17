@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class CreateBadgeCodeUserInstanceResponseBody : TeaModel {
         /// <summary>
+        /// 码详情跳转地址
+        /// </summary>
+        [NameInMap("codeDetailUrl")]
+        [Validation(Required=false)]
+        public string CodeDetailUrl { get; set; }
+
+        /// <summary>
         /// 码ID
         /// </summary>
         [NameInMap("codeId")]

@@ -1574,6 +1574,118 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             return TeaModel.ToObject<SendOfficialAccountOTOMessageResponse>(await DoROARequestAsync("SendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/officialAccounts/oToMessages/send", "json", req, runtime));
         }
 
+        public SendOfficialAccountSNSMessageResponse SendOfficialAccountSNSMessage(SendOfficialAccountSNSMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendOfficialAccountSNSMessageHeaders headers = new SendOfficialAccountSNSMessageHeaders();
+            return SendOfficialAccountSNSMessageWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SendOfficialAccountSNSMessageResponse> SendOfficialAccountSNSMessageAsync(SendOfficialAccountSNSMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendOfficialAccountSNSMessageHeaders headers = new SendOfficialAccountSNSMessageHeaders();
+            return await SendOfficialAccountSNSMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SendOfficialAccountSNSMessageResponse SendOfficialAccountSNSMessageWithOptions(SendOfficialAccountSNSMessageRequest request, SendOfficialAccountSNSMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BindingToken))
+            {
+                body["bindingToken"] = request.BindingToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            {
+                body["detail"] = request.Detail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
+            {
+                body["dingClientId"] = request.DingClientId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOpenAppOrgId))
+            {
+                body["dingOpenAppOrgId"] = request.DingOpenAppOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
+            {
+                body["dingTokenGrantType"] = request.DingTokenGrantType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUid))
+            {
+                body["dingUid"] = request.DingUid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SendOfficialAccountSNSMessageResponse>(DoROARequest("SendOfficialAccountSNSMessage", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/officialAccounts/snsMessages/send", "json", req, runtime));
+        }
+
+        public async Task<SendOfficialAccountSNSMessageResponse> SendOfficialAccountSNSMessageWithOptionsAsync(SendOfficialAccountSNSMessageRequest request, SendOfficialAccountSNSMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BindingToken))
+            {
+                body["bindingToken"] = request.BindingToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail.ToMap()))
+            {
+                body["detail"] = request.Detail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
+            {
+                body["dingClientId"] = request.DingClientId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOpenAppOrgId))
+            {
+                body["dingOpenAppOrgId"] = request.DingOpenAppOrgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
+            {
+                body["dingTokenGrantType"] = request.DingTokenGrantType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUid))
+            {
+                body["dingUid"] = request.DingUid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = headers.XAcsDingtalkAccessToken;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SendOfficialAccountSNSMessageResponse>(await DoROARequestAsync("SendOfficialAccountSNSMessage", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/officialAccounts/snsMessages/send", "json", req, runtime));
+        }
+
         public ServiceWindowMessageBatchPushResponse ServiceWindowMessageBatchPush(ServiceWindowMessageBatchPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

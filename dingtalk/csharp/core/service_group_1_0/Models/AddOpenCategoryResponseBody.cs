@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         };
 
         /// <summary>
-        /// success
+        /// 请求是否成功
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
