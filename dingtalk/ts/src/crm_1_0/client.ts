@@ -1470,6 +1470,109 @@ export class AbandonCustomerResponse extends $tea.Model {
   }
 }
 
+export class SendOfficialAccountSNSMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequest extends $tea.Model {
+  detail?: SendOfficialAccountSNSMessageRequestDetail;
+  bizId?: string;
+  dingTokenGrantType?: number;
+  dingClientId?: string;
+  bindingToken?: string;
+  dingUid?: number;
+  dingOpenAppOrgId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      detail: 'detail',
+      bizId: 'bizId',
+      dingTokenGrantType: 'dingTokenGrantType',
+      dingClientId: 'dingClientId',
+      bindingToken: 'bindingToken',
+      dingUid: 'dingUid',
+      dingOpenAppOrgId: 'dingOpenAppOrgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detail: SendOfficialAccountSNSMessageRequestDetail,
+      bizId: 'string',
+      dingTokenGrantType: 'number',
+      dingClientId: 'string',
+      bindingToken: 'string',
+      dingUid: 'number',
+      dingOpenAppOrgId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: SendOfficialAccountSNSMessageResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: SendOfficialAccountSNSMessageResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SendOfficialAccountSNSMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SendOfficialAccountSNSMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCrmPersonalCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4746,6 +4849,203 @@ export class DescribeCrmPersonalCustomerObjectMetaResponseBodyFields extends $te
   }
 }
 
+export class SendOfficialAccountSNSMessageRequestDetailMessageBodyText extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequestDetailMessageBodyMarkdown extends $tea.Model {
+  title?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequestDetailMessageBodyLink extends $tea.Model {
+  picUrl?: string;
+  messageUrl?: string;
+  title?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      picUrl: 'picUrl',
+      messageUrl: 'messageUrl',
+      title: 'title',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      picUrl: 'string',
+      messageUrl: 'string',
+      title: 'string',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList extends $tea.Model {
+  title?: string;
+  actionUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+      actionUrl: 'actionUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+      actionUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCard extends $tea.Model {
+  buttonOrientation?: string;
+  singleUrl?: string;
+  singleTitle?: string;
+  markdown?: string;
+  title?: string;
+  buttonList?: SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList[];
+  static names(): { [key: string]: string } {
+    return {
+      buttonOrientation: 'buttonOrientation',
+      singleUrl: 'singleUrl',
+      singleTitle: 'singleTitle',
+      markdown: 'markdown',
+      title: 'title',
+      buttonList: 'buttonList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      buttonOrientation: 'string',
+      singleUrl: 'string',
+      singleTitle: 'string',
+      markdown: 'string',
+      title: 'string',
+      buttonList: { 'type': 'array', 'itemType': SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequestDetailMessageBody extends $tea.Model {
+  text?: SendOfficialAccountSNSMessageRequestDetailMessageBodyText;
+  markdown?: SendOfficialAccountSNSMessageRequestDetailMessageBodyMarkdown;
+  link?: SendOfficialAccountSNSMessageRequestDetailMessageBodyLink;
+  actionCard?: SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCard;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+      markdown: 'markdown',
+      link: 'link',
+      actionCard: 'actionCard',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: SendOfficialAccountSNSMessageRequestDetailMessageBodyText,
+      markdown: SendOfficialAccountSNSMessageRequestDetailMessageBodyMarkdown,
+      link: SendOfficialAccountSNSMessageRequestDetailMessageBodyLink,
+      actionCard: SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCard,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageRequestDetail extends $tea.Model {
+  msgType?: string;
+  uuid?: string;
+  messageBody?: SendOfficialAccountSNSMessageRequestDetailMessageBody;
+  static names(): { [key: string]: string } {
+    return {
+      msgType: 'msgType',
+      uuid: 'uuid',
+      messageBody: 'messageBody',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgType: 'string',
+      uuid: 'string',
+      messageBody: SendOfficialAccountSNSMessageRequestDetailMessageBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendOfficialAccountSNSMessageResponseBodyResult extends $tea.Model {
+  openPushId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openPushId: 'openPushId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openPushId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCrmPersonalCustomerRequestPermission extends $tea.Model {
   ownerStaffIds?: string[];
   participantStaffIds?: string[];
@@ -5703,6 +6003,59 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AbandonCustomerResponse>(await this.doROARequest("AbandonCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers/abandon`, "json", req, runtime), new AbandonCustomerResponse({}));
+  }
+
+  async sendOfficialAccountSNSMessage(request: SendOfficialAccountSNSMessageRequest): Promise<SendOfficialAccountSNSMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendOfficialAccountSNSMessageHeaders({ });
+    return await this.sendOfficialAccountSNSMessageWithOptions(request, headers, runtime);
+  }
+
+  async sendOfficialAccountSNSMessageWithOptions(request: SendOfficialAccountSNSMessageRequest, headers: SendOfficialAccountSNSMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendOfficialAccountSNSMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.detail))) {
+      body["detail"] = request.detail;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.dingTokenGrantType)) {
+      body["dingTokenGrantType"] = request.dingTokenGrantType;
+    }
+
+    if (!Util.isUnset(request.dingClientId)) {
+      body["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.bindingToken)) {
+      body["bindingToken"] = request.bindingToken;
+    }
+
+    if (!Util.isUnset(request.dingUid)) {
+      body["dingUid"] = request.dingUid;
+    }
+
+    if (!Util.isUnset(request.dingOpenAppOrgId)) {
+      body["dingOpenAppOrgId"] = request.dingOpenAppOrgId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SendOfficialAccountSNSMessageResponse>(await this.doROARequest("SendOfficialAccountSNSMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/snsMessages/send`, "json", req, runtime), new SendOfficialAccountSNSMessageResponse({}));
   }
 
   async updateCrmPersonalCustomer(request: UpdateCrmPersonalCustomerRequest): Promise<UpdateCrmPersonalCustomerResponse> {

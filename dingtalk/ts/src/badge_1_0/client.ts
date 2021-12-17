@@ -251,6 +251,7 @@ export class CreateBadgeCodeUserInstanceRequest extends $tea.Model {
   requestId?: string;
   codeIdentity?: string;
   codeValue?: string;
+  codeValueType?: string;
   status?: string;
   corpId?: string;
   userCorpRelationType?: string;
@@ -265,6 +266,7 @@ export class CreateBadgeCodeUserInstanceRequest extends $tea.Model {
       requestId: 'requestId',
       codeIdentity: 'codeIdentity',
       codeValue: 'codeValue',
+      codeValueType: 'codeValueType',
       status: 'status',
       corpId: 'corpId',
       userCorpRelationType: 'userCorpRelationType',
@@ -282,6 +284,7 @@ export class CreateBadgeCodeUserInstanceRequest extends $tea.Model {
       requestId: 'string',
       codeIdentity: 'string',
       codeValue: 'string',
+      codeValueType: 'string',
       status: 'string',
       corpId: 'string',
       userCorpRelationType: 'string',
@@ -301,15 +304,18 @@ export class CreateBadgeCodeUserInstanceRequest extends $tea.Model {
 
 export class CreateBadgeCodeUserInstanceResponseBody extends $tea.Model {
   codeId?: string;
+  codeDetailUrl?: string;
   static names(): { [key: string]: string } {
     return {
       codeId: 'codeId',
+      codeDetailUrl: 'codeDetailUrl',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       codeId: 'string',
+      codeDetailUrl: 'string',
     };
   }
 
@@ -1235,6 +1241,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.codeValue)) {
       body["codeValue"] = request.codeValue;
+    }
+
+    if (!Util.isUnset(request.codeValueType)) {
+      body["codeValueType"] = request.codeValueType;
     }
 
     if (!Util.isUnset(request.status)) {
