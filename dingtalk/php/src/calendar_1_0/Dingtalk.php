@@ -27,6 +27,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GenerateCaldavAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleRequest;
@@ -858,33 +859,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $userId
-     * @param string $calendarId
-     * @param string $eventId
-     * @param string $maxAttendees
+     * @param string          $userId
+     * @param string          $calendarId
+     * @param string          $eventId
+     * @param GetEventRequest $request
      *
      * @return GetEventResponse
      */
-    public function getEvent($userId, $calendarId, $eventId, $maxAttendees)
+    public function getEvent($userId, $calendarId, $eventId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetEventHeaders([]);
 
-        return $this->getEventWithOptions($userId, $calendarId, $eventId, $maxAttendees, $headers, $runtime);
+        return $this->getEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
     }
 
     /**
      * @param string          $userId
      * @param string          $calendarId
      * @param string          $eventId
-     * @param string          $maxAttendees
+     * @param GetEventRequest $request
      * @param GetEventHeaders $headers
      * @param RuntimeOptions  $runtime
      *
      * @return GetEventResponse
      */
-    public function getEventWithOptions($userId, $calendarId, $eventId, $maxAttendees, $headers, $runtime)
+    public function getEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxAttendees)) {
+            @$query['maxAttendees'] = $request->maxAttendees;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -894,6 +900,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
 
         return GetEventResponse::fromMap($this->doROARequest('GetEvent', 'calendar_1.0', 'HTTP', 'GET', 'AK', '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '', 'json', $req, $runtime));
