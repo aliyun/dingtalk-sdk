@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
-    public class QueryAllFormInstancesHeaders : TeaModel {
+    public class StartProcessInstanceHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
