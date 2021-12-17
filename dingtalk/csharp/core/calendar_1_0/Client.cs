@@ -660,24 +660,25 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<GenerateCaldavAccountResponse>(await DoROARequestAsync("GenerateCaldavAccount", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/caldavAccounts", "json", req, runtime));
         }
 
-        public GetEventResponse GetEvent(string calendarId, string eventId, string userId)
+        public GetEventResponse GetEvent(string calendarId, string eventId, string maxAttendees, string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetEventHeaders headers = new GetEventHeaders();
-            return GetEventWithOptions(calendarId, eventId, userId, headers, runtime);
+            return GetEventWithOptions(calendarId, eventId, maxAttendees, userId, headers, runtime);
         }
 
-        public async Task<GetEventResponse> GetEventAsync(string calendarId, string eventId, string userId)
+        public async Task<GetEventResponse> GetEventAsync(string calendarId, string eventId, string maxAttendees, string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetEventHeaders headers = new GetEventHeaders();
-            return await GetEventWithOptionsAsync(calendarId, eventId, userId, headers, runtime);
+            return await GetEventWithOptionsAsync(calendarId, eventId, maxAttendees, userId, headers, runtime);
         }
 
-        public GetEventResponse GetEventWithOptions(string calendarId, string eventId, string userId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetEventResponse GetEventWithOptions(string calendarId, string eventId, string maxAttendees, string userId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            maxAttendees = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(maxAttendees);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -695,10 +696,11 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<GetEventResponse>(DoROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId, "json", req, runtime));
         }
 
-        public async Task<GetEventResponse> GetEventWithOptionsAsync(string calendarId, string eventId, string userId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetEventResponse> GetEventWithOptionsAsync(string calendarId, string eventId, string maxAttendees, string userId, GetEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             calendarId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(calendarId);
             eventId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(eventId);
+            maxAttendees = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(maxAttendees);
             userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
