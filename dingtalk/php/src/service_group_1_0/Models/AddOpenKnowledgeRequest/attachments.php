@@ -16,7 +16,7 @@ class attachments extends Model
     public $title;
 
     /**
-     * @description 这个是附件URL
+     * @description 附件URL
      *
      * @var string
      */
@@ -30,14 +30,14 @@ class attachments extends Model
     public $size;
 
     /**
-     * @description 附件扩展名
+     * @description 扩展名
      *
      * @var string
      */
     public $suffix;
 
     /**
-     * @description 媒体类型
+     * @description 媒体类型(扩展名大写)
      *
      * @var string
      */

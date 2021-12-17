@@ -204,6 +204,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->codeValue)) {
             @$body['codeValue'] = $request->codeValue;
         }
+        if (!Utils::isUnset($request->codeValueType)) {
+            @$body['codeValueType'] = $request->codeValueType;
+        }
         if (!Utils::isUnset($request->status)) {
             @$body['status'] = $request->status;
         }

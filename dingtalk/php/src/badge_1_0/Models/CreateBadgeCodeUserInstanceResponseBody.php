@@ -14,8 +14,16 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
      * @var string
      */
     public $codeId;
+
+    /**
+     * @description 码详情跳转地址
+     *
+     * @var string
+     */
+    public $codeDetailUrl;
     protected $_name = [
-        'codeId' => 'codeId',
+        'codeId'        => 'codeId',
+        'codeDetailUrl' => 'codeDetailUrl',
     ];
 
     public function validate()
@@ -27,6 +35,9 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
         $res = [];
         if (null !== $this->codeId) {
             $res['codeId'] = $this->codeId;
+        }
+        if (null !== $this->codeDetailUrl) {
+            $res['codeDetailUrl'] = $this->codeDetailUrl;
         }
 
         return $res;
@@ -42,6 +53,9 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
         $model = new self();
         if (isset($map['codeId'])) {
             $model->codeId = $map['codeId'];
+        }
+        if (isset($map['codeDetailUrl'])) {
+            $model->codeDetailUrl = $map['codeDetailUrl'];
         }
 
         return $model;

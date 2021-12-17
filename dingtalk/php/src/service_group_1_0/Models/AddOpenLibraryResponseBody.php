@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class AddOpenLibraryResponseBody extends Model
 {
     /**
-     * @description success
+     * @description 请求是否成功
      *
      * @var bool
      */

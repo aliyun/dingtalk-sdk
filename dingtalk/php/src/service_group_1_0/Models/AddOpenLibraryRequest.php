@@ -29,14 +29,14 @@ class AddOpenLibraryRequest extends Model
     public $dingOrgId;
 
     /**
-     * @description 团队ID
+     * @description 开放团队ID
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 用户ID
+     * @description 用户/员工ID
      *
      * @var string
      */

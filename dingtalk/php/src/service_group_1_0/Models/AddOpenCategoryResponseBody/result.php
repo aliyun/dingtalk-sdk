@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description success
+     * @description 操作是否成功
      *
      * @var bool
      */

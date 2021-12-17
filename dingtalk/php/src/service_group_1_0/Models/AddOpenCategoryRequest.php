@@ -29,14 +29,14 @@ class AddOpenCategoryRequest extends Model
     public $dingOrgId;
 
     /**
-     * @description 团队ID
+     * @description 开放团队ID
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 用户ID
+     * @description 员工/用户ID
      *
      * @var string
      */
@@ -57,7 +57,7 @@ class AddOpenCategoryRequest extends Model
     public $title;
 
     /**
-     * @description 父类目ID
+     * @description 父类目ID(为0代表顶层id)
      *
      * @var int
      */

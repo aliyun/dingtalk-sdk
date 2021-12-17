@@ -2,29 +2,29 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\AddOpenCategoryResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountSNSMessageResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class AddOpenCategoryResponseBody extends Model
+class SendOfficialAccountSNSMessageResponseBody extends Model
 {
     /**
-     * @description 请求是否成功
+     * @description Id of the request
      *
-     * @var bool
+     * @var string
      */
-    public $success;
+    public $requestId;
 
     /**
-     * @description 返回结果
+     * @description 推送结果
      *
      * @var result
      */
     public $result;
     protected $_name = [
-        'success' => 'success',
-        'result'  => 'result',
+        'requestId' => 'requestId',
+        'result'    => 'result',
     ];
 
     public function validate()
@@ -34,8 +34,8 @@ class AddOpenCategoryResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
+        if (null !== $this->requestId) {
+            $res['requestId'] = $this->requestId;
         }
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
@@ -47,13 +47,13 @@ class AddOpenCategoryResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return AddOpenCategoryResponseBody
+     * @return SendOfficialAccountSNSMessageResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
+        if (isset($map['requestId'])) {
+            $model->requestId = $map['requestId'];
         }
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);

@@ -57,6 +57,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageRes
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountSNSMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountSNSMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountSNSMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushResponse;
@@ -885,6 +888,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AbandonCustomerResponse::fromMap($this->doROARequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers/abandon', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SendOfficialAccountSNSMessageRequest $request
+     *
+     * @return SendOfficialAccountSNSMessageResponse
+     */
+    public function sendOfficialAccountSNSMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendOfficialAccountSNSMessageHeaders([]);
+
+        return $this->sendOfficialAccountSNSMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendOfficialAccountSNSMessageRequest $request
+     * @param SendOfficialAccountSNSMessageHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return SendOfficialAccountSNSMessageResponse
+     */
+    public function sendOfficialAccountSNSMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detail)) {
+            @$body['detail'] = $request->detail;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingClientId)) {
+            @$body['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->bindingToken)) {
+            @$body['bindingToken'] = $request->bindingToken;
+        }
+        if (!Utils::isUnset($request->dingUid)) {
+            @$body['dingUid'] = $request->dingUid;
+        }
+        if (!Utils::isUnset($request->dingOpenAppOrgId)) {
+            @$body['dingOpenAppOrgId'] = $request->dingOpenAppOrgId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SendOfficialAccountSNSMessageResponse::fromMap($this->doROARequest('SendOfficialAccountSNSMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/snsMessages/send', 'json', $req, $runtime));
     }
 
     /**
