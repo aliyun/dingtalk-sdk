@@ -786,6 +786,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("currentOperatorUserId", request.currentOperatorUserId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.relationType)) {
+            query.put("relationType", request.relationType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             query.put("nextToken", request.nextToken);
         }

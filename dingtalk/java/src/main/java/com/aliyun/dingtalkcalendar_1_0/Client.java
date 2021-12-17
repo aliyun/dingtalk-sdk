@@ -562,13 +562,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/signIn", "json", req, runtime), new SignInResponse());
     }
 
-    public GetEventResponse getEvent(String userId, String calendarId, String eventId) throws Exception {
+    public GetEventResponse getEvent(String userId, String calendarId, String eventId, String maxAttendees) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         GetEventHeaders headers = new GetEventHeaders();
-        return this.getEventWithOptions(userId, calendarId, eventId, headers, runtime);
+        return this.getEventWithOptions(userId, calendarId, eventId, maxAttendees, headers, runtime);
     }
 
-    public GetEventResponse getEventWithOptions(String userId, String calendarId, String eventId, GetEventHeaders headers, RuntimeOptions runtime) throws Exception {
+    public GetEventResponse getEventWithOptions(String userId, String calendarId, String eventId, String maxAttendees, GetEventHeaders headers, RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

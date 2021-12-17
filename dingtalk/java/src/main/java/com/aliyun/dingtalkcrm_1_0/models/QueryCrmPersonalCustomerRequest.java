@@ -8,6 +8,9 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
+    @NameInMap("relationType")
+    public String relationType;
+
     // 分页页码
     @NameInMap("nextToken")
     public String nextToken;
@@ -31,6 +34,14 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
     }
     public String getCurrentOperatorUserId() {
         return this.currentOperatorUserId;
+    }
+
+    public QueryCrmPersonalCustomerRequest setRelationType(String relationType) {
+        this.relationType = relationType;
+        return this;
+    }
+    public String getRelationType() {
+        return this.relationType;
     }
 
     public QueryCrmPersonalCustomerRequest setNextToken(String nextToken) {
