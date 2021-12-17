@@ -16,11 +16,11 @@ public class AddOpenKnowledgeRequest extends TeaModel {
     @NameInMap("dingOrgId")
     public Long dingOrgId;
 
-    // 所属团队ID
+    // 开放团队ID
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 用户ID
+    // 用户/员工ID
     @NameInMap("userId")
     public String userId;
 
@@ -238,7 +238,7 @@ public class AddOpenKnowledgeRequest extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        // 这个是附件URL
+        // 附件URL
         @NameInMap("path")
         public String path;
 
@@ -246,11 +246,11 @@ public class AddOpenKnowledgeRequest extends TeaModel {
         @NameInMap("size")
         public Double size;
 
-        // 附件扩展名
+        // 扩展名
         @NameInMap("suffix")
         public String suffix;
 
-        // 媒体类型
+        // 媒体类型(扩展名大写)
         @NameInMap("mimeType")
         public String mimeType;
 

@@ -16,11 +16,11 @@ public class AddOpenCategoryRequest extends TeaModel {
     @NameInMap("dingOrgId")
     public Long dingOrgId;
 
-    // 团队ID
+    // 开放团队ID
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 用户ID
+    // 员工/用户ID
     @NameInMap("userId")
     public String userId;
 
@@ -32,7 +32,7 @@ public class AddOpenCategoryRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
-    // 父类目ID
+    // 父类目ID(为0代表顶层id)
     @NameInMap("parentId")
     public Long parentId;
 

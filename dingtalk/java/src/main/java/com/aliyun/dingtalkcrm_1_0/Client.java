@@ -663,6 +663,59 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AbandonCustomer", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/customers/abandon", "json", req, runtime), new AbandonCustomerResponse());
     }
 
+    public SendOfficialAccountSNSMessageResponse sendOfficialAccountSNSMessage(SendOfficialAccountSNSMessageRequest request) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        SendOfficialAccountSNSMessageHeaders headers = new SendOfficialAccountSNSMessageHeaders();
+        return this.sendOfficialAccountSNSMessageWithOptions(request, headers, runtime);
+    }
+
+    public SendOfficialAccountSNSMessageResponse sendOfficialAccountSNSMessageWithOptions(SendOfficialAccountSNSMessageRequest request, SendOfficialAccountSNSMessageHeaders headers, RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(TeaModel.buildMap(request.detail))) {
+            body.put("detail", request.detail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
+            body.put("dingTokenGrantType", request.dingTokenGrantType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
+            body.put("dingClientId", request.dingClientId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bindingToken)) {
+            body.put("bindingToken", request.bindingToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingUid)) {
+            body.put("dingUid", request.dingUid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingOpenAppOrgId)) {
+            body.put("dingOpenAppOrgId", request.dingOpenAppOrgId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("SendOfficialAccountSNSMessage", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/officialAccounts/snsMessages/send", "json", req, runtime), new SendOfficialAccountSNSMessageResponse());
+    }
+
     public UpdateCrmPersonalCustomerResponse updateCrmPersonalCustomer(UpdateCrmPersonalCustomerRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateCrmPersonalCustomerHeaders headers = new UpdateCrmPersonalCustomerHeaders();

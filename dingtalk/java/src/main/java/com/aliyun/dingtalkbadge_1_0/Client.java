@@ -156,6 +156,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("codeValue", request.codeValue);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.codeValueType)) {
+            body.put("codeValueType", request.codeValueType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
             body.put("status", request.status);
         }

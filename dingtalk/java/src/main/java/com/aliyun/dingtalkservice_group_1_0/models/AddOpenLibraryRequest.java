@@ -16,11 +16,11 @@ public class AddOpenLibraryRequest extends TeaModel {
     @NameInMap("dingOrgId")
     public Long dingOrgId;
 
-    // 团队ID
+    // 开放团队ID
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 用户ID
+    // 用户/员工ID
     @NameInMap("userId")
     public String userId;
 

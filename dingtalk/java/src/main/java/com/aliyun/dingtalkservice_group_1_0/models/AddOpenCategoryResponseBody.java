@@ -4,7 +4,7 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenCategoryResponseBody extends TeaModel {
-    // success
+    // 请求是否成功
     @NameInMap("success")
     public Boolean success;
 
@@ -34,7 +34,7 @@ public class AddOpenCategoryResponseBody extends TeaModel {
     }
 
     public static class AddOpenCategoryResponseBodyResult extends TeaModel {
-        // success
+        // 操作是否成功
         @NameInMap("success")
         public Boolean success;
 
