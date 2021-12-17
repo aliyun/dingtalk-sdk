@@ -1234,39 +1234,44 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
-        max_attendees: str,
+        request: dingtalkcalendar__1__0_models.GetEventRequest,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetEventHeaders()
-        return self.get_event_with_options(user_id, calendar_id, event_id, max_attendees, headers, runtime)
+        return self.get_event_with_options(user_id, calendar_id, event_id, request, headers, runtime)
 
     async def get_event_async(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
-        max_attendees: str,
+        request: dingtalkcalendar__1__0_models.GetEventRequest,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetEventHeaders()
-        return await self.get_event_with_options_async(user_id, calendar_id, event_id, max_attendees, headers, runtime)
+        return await self.get_event_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
 
     def get_event_with_options(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
-        max_attendees: str,
+        request: dingtalkcalendar__1__0_models.GetEventRequest,
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_attendees):
+            query['maxAttendees'] = request.max_attendees
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.GetEventResponse(),
@@ -1278,17 +1283,22 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
-        max_attendees: str,
+        request: dingtalkcalendar__1__0_models.GetEventRequest,
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_attendees):
+            query['maxAttendees'] = request.max_attendees
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         return TeaCore.from_map(
             dingtalkcalendar__1__0_models.GetEventResponse(),

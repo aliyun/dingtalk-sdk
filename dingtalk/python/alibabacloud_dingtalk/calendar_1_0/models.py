@@ -4552,6 +4552,34 @@ class GetEventHeaders(TeaModel):
         return self
 
 
+class GetEventRequest(TeaModel):
+    def __init__(
+        self,
+        max_attendees: int = None,
+    ):
+        # 返回参与人，上限500人，默认为0
+        self.max_attendees = max_attendees
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_attendees is not None:
+            result['maxAttendees'] = self.max_attendees
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxAttendees') is not None:
+            self.max_attendees = m.get('maxAttendees')
+        return self
+
+
 class GetEventResponseBodyStart(TeaModel):
     def __init__(
         self,

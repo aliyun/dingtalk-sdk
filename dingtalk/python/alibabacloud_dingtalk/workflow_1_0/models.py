@@ -286,7 +286,7 @@ class QueryFormInstanceResponse(TeaModel):
         return self
 
 
-class QueryFormByBizTypeHeaders(TeaModel):
+class ProcessForecastHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -319,84 +319,27 @@ class QueryFormByBizTypeHeaders(TeaModel):
         return self
 
 
-class QueryFormByBizTypeRequest(TeaModel):
+class ProcessForecastRequestFormComponentValuesDetailsDetails(TeaModel):
     def __init__(
         self,
-        app_uuid: str = None,
-        biz_types: List[str] = None,
-    ):
-        # 应用搭建id
-        self.app_uuid = app_uuid
-        # 表单业务标识
-        self.biz_types = biz_types
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.app_uuid is not None:
-            result['appUuid'] = self.app_uuid
-        if self.biz_types is not None:
-            result['bizTypes'] = self.biz_types
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('appUuid') is not None:
-            self.app_uuid = m.get('appUuid')
-        if m.get('bizTypes') is not None:
-            self.biz_types = m.get('bizTypes')
-        return self
-
-
-class QueryFormByBizTypeResponseBodyResult(TeaModel):
-    def __init__(
-        self,
-        creator: str = None,
-        app_uuid: str = None,
-        form_code: str = None,
-        form_uuid: str = None,
+        id: str = None,
+        biz_alias: str = None,
         name: str = None,
-        memo: str = None,
-        owner_id: str = None,
-        app_type: int = None,
-        biz_type: str = None,
-        status: str = None,
-        create_time: int = None,
-        modifed_time: int = None,
-        content: str = None,
+        value: str = None,
+        ext_value: str = None,
+        component_type: str = None,
     ):
-        # 创建人
-        self.creator = creator
-        # 应用搭建id
-        self.app_uuid = app_uuid
-        # 模板code
-        self.form_code = form_code
-        # 表单uuid
-        self.form_uuid = form_uuid
-        # 模板名称
+        # 控件id
+        self.id = id
+        # 控件别名
+        self.biz_alias = biz_alias
+        # 控件名称
         self.name = name
-        # 模板描述
-        self.memo = memo
-        # 数据归属id
-        self.owner_id = owner_id
-        # 表单类型，0为流程表单，1为数据表单
-        self.app_type = app_type
-        # 业务标识
-        self.biz_type = biz_type
-        # 模板状态
-        self.status = status
-        # 创建时间
-        self.create_time = create_time
-        # 修改时间
-        self.modifed_time = modifed_time
-        # 表单控件描述
-        self.content = content
+        # 控件值
+        self.value = value
+        # 控件扩展值
+        self.ext_value = ext_value
+        self.component_type = component_type
 
     def validate(self):
         pass
@@ -407,76 +350,62 @@ class QueryFormByBizTypeResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.creator is not None:
-            result['creator'] = self.creator
-        if self.app_uuid is not None:
-            result['appUuid'] = self.app_uuid
-        if self.form_code is not None:
-            result['formCode'] = self.form_code
-        if self.form_uuid is not None:
-            result['formUuid'] = self.form_uuid
+        if self.id is not None:
+            result['id'] = self.id
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
         if self.name is not None:
             result['name'] = self.name
-        if self.memo is not None:
-            result['memo'] = self.memo
-        if self.owner_id is not None:
-            result['ownerId'] = self.owner_id
-        if self.app_type is not None:
-            result['appType'] = self.app_type
-        if self.biz_type is not None:
-            result['bizType'] = self.biz_type
-        if self.status is not None:
-            result['status'] = self.status
-        if self.create_time is not None:
-            result['createTime'] = self.create_time
-        if self.modifed_time is not None:
-            result['modifedTime'] = self.modifed_time
-        if self.content is not None:
-            result['content'] = self.content
+        if self.value is not None:
+            result['value'] = self.value
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('creator') is not None:
-            self.creator = m.get('creator')
-        if m.get('appUuid') is not None:
-            self.app_uuid = m.get('appUuid')
-        if m.get('formCode') is not None:
-            self.form_code = m.get('formCode')
-        if m.get('formUuid') is not None:
-            self.form_uuid = m.get('formUuid')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('memo') is not None:
-            self.memo = m.get('memo')
-        if m.get('ownerId') is not None:
-            self.owner_id = m.get('ownerId')
-        if m.get('appType') is not None:
-            self.app_type = m.get('appType')
-        if m.get('bizType') is not None:
-            self.biz_type = m.get('bizType')
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('createTime') is not None:
-            self.create_time = m.get('createTime')
-        if m.get('modifedTime') is not None:
-            self.modifed_time = m.get('modifedTime')
-        if m.get('content') is not None:
-            self.content = m.get('content')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
         return self
 
 
-class QueryFormByBizTypeResponseBody(TeaModel):
+class ProcessForecastRequestFormComponentValuesDetails(TeaModel):
     def __init__(
         self,
-        result: List[QueryFormByBizTypeResponseBodyResult] = None,
+        id: str = None,
+        biz_alias: str = None,
+        name: str = None,
+        value: str = None,
+        ext_value: str = None,
+        details: List[ProcessForecastRequestFormComponentValuesDetailsDetails] = None,
     ):
-        # 模板列表
-        self.result = result
+        # 控件id
+        self.id = id
+        # 控件别名
+        self.biz_alias = biz_alias
+        # 控件名称
+        self.name = name
+        # 控件值
+        self.value = value
+        # 控件扩展值
+        self.ext_value = ext_value
+        self.details = details
 
     def validate(self):
-        if self.result:
-            for k in self.result:
+        if self.details:
+            for k in self.details:
                 if k:
                     k.validate()
 
@@ -486,27 +415,486 @@ class QueryFormByBizTypeResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+        if self.id is not None:
+            result['id'] = self.id
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        result['details'] = []
+        if self.details is not None:
+            for k in self.details:
+                result['details'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = QueryFormByBizTypeResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        self.details = []
+        if m.get('details') is not None:
+            for k in m.get('details'):
+                temp_model = ProcessForecastRequestFormComponentValuesDetailsDetails()
+                self.details.append(temp_model.from_map(k))
         return self
 
 
-class QueryFormByBizTypeResponse(TeaModel):
+class ProcessForecastRequestFormComponentValues(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        biz_alias: str = None,
+        name: str = None,
+        value: str = None,
+        ext_value: str = None,
+        component_type: str = None,
+        details: List[ProcessForecastRequestFormComponentValuesDetails] = None,
+    ):
+        # 控件id
+        self.id = id
+        # 控件别名
+        self.biz_alias = biz_alias
+        # 控件名称
+        self.name = name
+        # 控件值
+        self.value = value
+        # 控件扩展值
+        self.ext_value = ext_value
+        # 控件类型
+        self.component_type = component_type
+        self.details = details
+
+    def validate(self):
+        if self.details:
+            for k in self.details:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        result['details'] = []
+        if self.details is not None:
+            for k in self.details:
+                result['details'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        self.details = []
+        if m.get('details') is not None:
+            for k in m.get('details'):
+                temp_model = ProcessForecastRequestFormComponentValuesDetails()
+                self.details.append(temp_model.from_map(k))
+        return self
+
+
+class ProcessForecastRequest(TeaModel):
+    def __init__(
+        self,
+        ding_corp_id: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+        request_id: str = None,
+        process_code: str = None,
+        dept_id: int = None,
+        user_id: str = None,
+        form_component_values: List[ProcessForecastRequestFormComponentValues] = None,
+    ):
+        self.ding_corp_id = ding_corp_id
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+        self.request_id = request_id
+        # 审批流的唯一码
+        self.process_code = process_code
+        # 部门ID
+        self.dept_id = dept_id
+        # 审批发起人的userId
+        self.user_id = user_id
+        # 表单数据内容，控件列表
+        self.form_component_values = form_component_values
+
+    def validate(self):
+        if self.form_component_values:
+            for k in self.form_component_values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        result['formComponentValues'] = []
+        if self.form_component_values is not None:
+            for k in self.form_component_values:
+                result['formComponentValues'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('RequestId') is not None:
+            self.request_id = m.get('RequestId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        self.form_component_values = []
+        if m.get('formComponentValues') is not None:
+            for k in m.get('formComponentValues'):
+                temp_model = ProcessForecastRequestFormComponentValues()
+                self.form_component_values.append(temp_model.from_map(k))
+        return self
+
+
+class ProcessForecastResponseBodyResultWorkflowActorsActivityActors(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+        name: str = None,
+        avatar: str = None,
+    ):
+        # 用户 id
+        self.user_id = user_id
+        # 用户名字
+        self.name = name
+        # 用户头像
+        self.avatar = avatar
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        return self
+
+
+class ProcessForecastResponseBodyResultWorkflowActors(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        activity_name: str = None,
+        activity_type: str = None,
+        is_target_select: bool = None,
+        activity_actors: List[ProcessForecastResponseBodyResultWorkflowActorsActivityActors] = None,
+        is_target_form_component: bool = None,
+        node: str = None,
+    ):
+        # 节点 id
+        self.activity_id = activity_id
+        # 节点名称
+        self.activity_name = activity_name
+        # 规则类型
+        self.activity_type = activity_type
+        # 是否自选审批节点
+        self.is_target_select = is_target_select
+        self.activity_actors = activity_actors
+        # 是否联系人控件审批人节点
+        self.is_target_form_component = is_target_form_component
+        # 节点规则，当前是一个 JSONObject
+        self.node = node
+
+    def validate(self):
+        if self.activity_actors:
+            for k in self.activity_actors:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.activity_name is not None:
+            result['activityName'] = self.activity_name
+        if self.activity_type is not None:
+            result['activityType'] = self.activity_type
+        if self.is_target_select is not None:
+            result['isTargetSelect'] = self.is_target_select
+        result['activityActors'] = []
+        if self.activity_actors is not None:
+            for k in self.activity_actors:
+                result['activityActors'].append(k.to_map() if k else None)
+        if self.is_target_form_component is not None:
+            result['isTargetFormComponent'] = self.is_target_form_component
+        if self.node is not None:
+            result['node'] = self.node
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('activityName') is not None:
+            self.activity_name = m.get('activityName')
+        if m.get('activityType') is not None:
+            self.activity_type = m.get('activityType')
+        if m.get('isTargetSelect') is not None:
+            self.is_target_select = m.get('isTargetSelect')
+        self.activity_actors = []
+        if m.get('activityActors') is not None:
+            for k in m.get('activityActors'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowActorsActivityActors()
+                self.activity_actors.append(temp_model.from_map(k))
+        if m.get('isTargetFormComponent') is not None:
+            self.is_target_form_component = m.get('isTargetFormComponent')
+        if m.get('node') is not None:
+            self.node = m.get('node')
+        return self
+
+
+class ProcessForecastResponseBodyResultWorkflowForecastNodes(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        out_id: str = None,
+    ):
+        # 节点 id
+        self.activity_id = activity_id
+        # 节点出线 id
+        self.out_id = out_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.out_id is not None:
+            result['outId'] = self.out_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('outId') is not None:
+            self.out_id = m.get('outId')
+        return self
+
+
+class ProcessForecastResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        is_forecast_success: bool = None,
+        process_code: str = None,
+        user_id: str = None,
+        process_id: int = None,
+        is_static_workflow: bool = None,
+        workflow_actors: List[ProcessForecastResponseBodyResultWorkflowActors] = None,
+        workflow_forecast_nodes: List[ProcessForecastResponseBodyResultWorkflowForecastNodes] = None,
+    ):
+        # 是否预测成功
+        self.is_forecast_success = is_forecast_success
+        # 流程 code
+        self.process_code = process_code
+        # 用户 id
+        self.user_id = user_id
+        # 流程 id
+        self.process_id = process_id
+        # 是否静态流程
+        self.is_static_workflow = is_static_workflow
+        self.workflow_actors = workflow_actors
+        self.workflow_forecast_nodes = workflow_forecast_nodes
+
+    def validate(self):
+        if self.workflow_actors:
+            for k in self.workflow_actors:
+                if k:
+                    k.validate()
+        if self.workflow_forecast_nodes:
+            for k in self.workflow_forecast_nodes:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_forecast_success is not None:
+            result['isForecastSuccess'] = self.is_forecast_success
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.process_id is not None:
+            result['processId'] = self.process_id
+        if self.is_static_workflow is not None:
+            result['isStaticWorkflow'] = self.is_static_workflow
+        result['workflowActors'] = []
+        if self.workflow_actors is not None:
+            for k in self.workflow_actors:
+                result['workflowActors'].append(k.to_map() if k else None)
+        result['workflowForecastNodes'] = []
+        if self.workflow_forecast_nodes is not None:
+            for k in self.workflow_forecast_nodes:
+                result['workflowForecastNodes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isForecastSuccess') is not None:
+            self.is_forecast_success = m.get('isForecastSuccess')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('processId') is not None:
+            self.process_id = m.get('processId')
+        if m.get('isStaticWorkflow') is not None:
+            self.is_static_workflow = m.get('isStaticWorkflow')
+        self.workflow_actors = []
+        if m.get('workflowActors') is not None:
+            for k in m.get('workflowActors'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowActors()
+                self.workflow_actors.append(temp_model.from_map(k))
+        self.workflow_forecast_nodes = []
+        if m.get('workflowForecastNodes') is not None:
+            for k in m.get('workflowForecastNodes'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowForecastNodes()
+                self.workflow_forecast_nodes.append(temp_model.from_map(k))
+        return self
+
+
+class ProcessForecastResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ProcessForecastResponseBodyResult = None,
+    ):
+        # 返回结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ProcessForecastResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ProcessForecastResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: QueryFormByBizTypeResponseBody = None,
+        body: ProcessForecastResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -534,7 +922,7 @@ class QueryFormByBizTypeResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = QueryFormByBizTypeResponseBody()
+            temp_model = ProcessForecastResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1297,6 +1685,783 @@ class QueryAllFormInstancesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryAllFormInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryFormByBizTypeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryFormByBizTypeRequest(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        biz_types: List[str] = None,
+    ):
+        # 应用搭建id
+        self.app_uuid = app_uuid
+        # 表单业务标识
+        self.biz_types = biz_types
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.biz_types is not None:
+            result['bizTypes'] = self.biz_types
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('bizTypes') is not None:
+            self.biz_types = m.get('bizTypes')
+        return self
+
+
+class QueryFormByBizTypeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        creator: str = None,
+        app_uuid: str = None,
+        form_code: str = None,
+        form_uuid: str = None,
+        name: str = None,
+        memo: str = None,
+        owner_id: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        status: str = None,
+        create_time: int = None,
+        modifed_time: int = None,
+        content: str = None,
+    ):
+        # 创建人
+        self.creator = creator
+        # 应用搭建id
+        self.app_uuid = app_uuid
+        # 模板code
+        self.form_code = form_code
+        # 表单uuid
+        self.form_uuid = form_uuid
+        # 模板名称
+        self.name = name
+        # 模板描述
+        self.memo = memo
+        # 数据归属id
+        self.owner_id = owner_id
+        # 表单类型，0为流程表单，1为数据表单
+        self.app_type = app_type
+        # 业务标识
+        self.biz_type = biz_type
+        # 模板状态
+        self.status = status
+        # 创建时间
+        self.create_time = create_time
+        # 修改时间
+        self.modifed_time = modifed_time
+        # 表单控件描述
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.name is not None:
+            result['name'] = self.name
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.owner_id is not None:
+            result['ownerId'] = self.owner_id
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.status is not None:
+            result['status'] = self.status
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modifed_time is not None:
+            result['modifedTime'] = self.modifed_time
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('ownerId') is not None:
+            self.owner_id = m.get('ownerId')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifedTime') is not None:
+            self.modifed_time = m.get('modifedTime')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class QueryFormByBizTypeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryFormByBizTypeResponseBodyResult] = None,
+    ):
+        # 模板列表
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryFormByBizTypeResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryFormByBizTypeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryFormByBizTypeResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryFormByBizTypeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class StartProcessInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class StartProcessInstanceRequestApprovers(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        user_ids: List[str] = None,
+    ):
+        # 审批类型
+        self.action_type = action_type
+        # 审批人列表
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class StartProcessInstanceRequestTargetSelectActioners(TeaModel):
+    def __init__(
+        self,
+        actioner_key: str = None,
+        actioner_user_ids: List[str] = None,
+    ):
+        # 自选节点的规则key
+        self.actioner_key = actioner_key
+        # 操作人userId列表
+        self.actioner_user_ids = actioner_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actioner_key is not None:
+            result['actionerKey'] = self.actioner_key
+        if self.actioner_user_ids is not None:
+            result['actionerUserIds'] = self.actioner_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionerKey') is not None:
+            self.actioner_key = m.get('actionerKey')
+        if m.get('actionerUserIds') is not None:
+            self.actioner_user_ids = m.get('actionerUserIds')
+        return self
+
+
+class StartProcessInstanceRequestFormComponentValuesDetailsDetails(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        biz_alias: str = None,
+        name: str = None,
+        value: str = None,
+        ext_value: str = None,
+        component_type: str = None,
+    ):
+        # 控件id
+        self.id = id
+        # 控件别名
+        self.biz_alias = biz_alias
+        # 控件名称
+        self.name = name
+        # 控件值
+        self.value = value
+        # 控件扩展值
+        self.ext_value = ext_value
+        # 控件类型
+        self.component_type = component_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        return self
+
+
+class StartProcessInstanceRequestFormComponentValuesDetails(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        biz_alias: str = None,
+        name: str = None,
+        value: str = None,
+        ext_value: str = None,
+        details: List[StartProcessInstanceRequestFormComponentValuesDetailsDetails] = None,
+    ):
+        # 控件id
+        self.id = id
+        # 控件别名
+        self.biz_alias = biz_alias
+        # 控件名称
+        self.name = name
+        # 控件值
+        self.value = value
+        # 控件扩展值
+        self.ext_value = ext_value
+        self.details = details
+
+    def validate(self):
+        if self.details:
+            for k in self.details:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        result['details'] = []
+        if self.details is not None:
+            for k in self.details:
+                result['details'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        self.details = []
+        if m.get('details') is not None:
+            for k in m.get('details'):
+                temp_model = StartProcessInstanceRequestFormComponentValuesDetailsDetails()
+                self.details.append(temp_model.from_map(k))
+        return self
+
+
+class StartProcessInstanceRequestFormComponentValues(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        biz_alias: str = None,
+        name: str = None,
+        value: str = None,
+        ext_value: str = None,
+        component_type: str = None,
+        details: List[StartProcessInstanceRequestFormComponentValuesDetails] = None,
+    ):
+        # 控件id
+        self.id = id
+        # 控件别名
+        self.biz_alias = biz_alias
+        # 控件名称
+        self.name = name
+        # 控件值
+        self.value = value
+        # 控件扩展值
+        self.ext_value = ext_value
+        # 控件类型
+        self.component_type = component_type
+        self.details = details
+
+    def validate(self):
+        if self.details:
+            for k in self.details:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        result['details'] = []
+        if self.details is not None:
+            for k in self.details:
+                result['details'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        self.details = []
+        if m.get('details') is not None:
+            for k in m.get('details'):
+                temp_model = StartProcessInstanceRequestFormComponentValuesDetails()
+                self.details.append(temp_model.from_map(k))
+        return self
+
+
+class StartProcessInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        originator_user_id: str = None,
+        process_code: str = None,
+        dept_id: int = None,
+        microapp_agent_id: int = None,
+        approvers: List[StartProcessInstanceRequestApprovers] = None,
+        cc_list: List[str] = None,
+        cc_position: str = None,
+        target_select_actioners: List[StartProcessInstanceRequestTargetSelectActioners] = None,
+        form_component_values: List[StartProcessInstanceRequestFormComponentValues] = None,
+        request_id: str = None,
+        ding_corp_id: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_token_grant_type: int = None,
+    ):
+        # 审批发起人的userId
+        self.originator_user_id = originator_user_id
+        # 审批流的唯一码
+        self.process_code = process_code
+        # 部门ID
+        self.dept_id = dept_id
+        # 企业微应用标识
+        self.microapp_agent_id = microapp_agent_id
+        # 不使用审批流模板时，直接指定审批人列表
+        self.approvers = approvers
+        # 抄送人userId列表
+        self.cc_list = cc_list
+        # 抄送时间
+        self.cc_position = cc_position
+        # 使用审批流模板时，模板上的自选操作人列表
+        self.target_select_actioners = target_select_actioners
+        # 表单数据内容，控件列表
+        self.form_component_values = form_component_values
+        self.request_id = request_id
+        self.ding_corp_id = ding_corp_id
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_token_grant_type = ding_token_grant_type
+
+    def validate(self):
+        if self.approvers:
+            for k in self.approvers:
+                if k:
+                    k.validate()
+        if self.target_select_actioners:
+            for k in self.target_select_actioners:
+                if k:
+                    k.validate()
+        if self.form_component_values:
+            for k in self.form_component_values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.originator_user_id is not None:
+            result['originatorUserId'] = self.originator_user_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.microapp_agent_id is not None:
+            result['microappAgentId'] = self.microapp_agent_id
+        result['approvers'] = []
+        if self.approvers is not None:
+            for k in self.approvers:
+                result['approvers'].append(k.to_map() if k else None)
+        if self.cc_list is not None:
+            result['ccList'] = self.cc_list
+        if self.cc_position is not None:
+            result['ccPosition'] = self.cc_position
+        result['targetSelectActioners'] = []
+        if self.target_select_actioners is not None:
+            for k in self.target_select_actioners:
+                result['targetSelectActioners'].append(k.to_map() if k else None)
+        result['formComponentValues'] = []
+        if self.form_component_values is not None:
+            for k in self.form_component_values:
+                result['formComponentValues'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('originatorUserId') is not None:
+            self.originator_user_id = m.get('originatorUserId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('microappAgentId') is not None:
+            self.microapp_agent_id = m.get('microappAgentId')
+        self.approvers = []
+        if m.get('approvers') is not None:
+            for k in m.get('approvers'):
+                temp_model = StartProcessInstanceRequestApprovers()
+                self.approvers.append(temp_model.from_map(k))
+        if m.get('ccList') is not None:
+            self.cc_list = m.get('ccList')
+        if m.get('ccPosition') is not None:
+            self.cc_position = m.get('ccPosition')
+        self.target_select_actioners = []
+        if m.get('targetSelectActioners') is not None:
+            for k in m.get('targetSelectActioners'):
+                temp_model = StartProcessInstanceRequestTargetSelectActioners()
+                self.target_select_actioners.append(temp_model.from_map(k))
+        self.form_component_values = []
+        if m.get('formComponentValues') is not None:
+            for k in m.get('formComponentValues'):
+                temp_model = StartProcessInstanceRequestFormComponentValues()
+                self.form_component_values.append(temp_model.from_map(k))
+        if m.get('RequestId') is not None:
+            self.request_id = m.get('RequestId')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        return self
+
+
+class StartProcessInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+    ):
+        # 审批实例id
+        self.instance_id = instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        return self
+
+
+class StartProcessInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: StartProcessInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = StartProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
