@@ -1283,6 +1283,25 @@ export class GetEventHeaders extends $tea.Model {
   }
 }
 
+export class GetEventRequest extends $tea.Model {
+  maxAttendees?: number;
+  static names(): { [key: string]: string } {
+    return {
+      maxAttendees: 'maxAttendees',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxAttendees: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBody extends $tea.Model {
   id?: string;
   summary?: string;
@@ -4179,13 +4198,19 @@ export default class Client extends OpenApi {
     return $tea.cast<SignInResponse>(await this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signIn`, "json", req, runtime), new SignInResponse({}));
   }
 
-  async getEvent(userId: string, calendarId: string, eventId: string, maxAttendees: string): Promise<GetEventResponse> {
+  async getEvent(userId: string, calendarId: string, eventId: string, request: GetEventRequest): Promise<GetEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEventHeaders({ });
-    return await this.getEventWithOptions(userId, calendarId, eventId, maxAttendees, headers, runtime);
+    return await this.getEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
-  async getEventWithOptions(userId: string, calendarId: string, eventId: string, maxAttendees: string, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
+  async getEventWithOptions(userId: string, calendarId: string, eventId: string, request: GetEventRequest, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxAttendees)) {
+      query["maxAttendees"] = request.maxAttendees;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -4197,6 +4222,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetEventResponse>(await this.doROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`, "json", req, runtime), new GetEventResponse({}));
   }
