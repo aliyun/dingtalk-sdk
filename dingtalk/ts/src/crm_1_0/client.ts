@@ -1700,12 +1700,14 @@ export class QueryCrmPersonalCustomerHeaders extends $tea.Model {
 
 export class QueryCrmPersonalCustomerRequest extends $tea.Model {
   currentOperatorUserId?: string;
+  relationType?: string;
   nextToken?: string;
   maxResults?: number;
   queryDsl?: string;
   static names(): { [key: string]: string } {
     return {
       currentOperatorUserId: 'currentOperatorUserId',
+      relationType: 'relationType',
       nextToken: 'nextToken',
       maxResults: 'maxResults',
       queryDsl: 'queryDsl',
@@ -1715,6 +1717,7 @@ export class QueryCrmPersonalCustomerRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       currentOperatorUserId: 'string',
+      relationType: 'string',
       nextToken: 'string',
       maxResults: 'number',
       queryDsl: 'string',
@@ -6126,6 +6129,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.currentOperatorUserId)) {
       query["currentOperatorUserId"] = request.currentOperatorUserId;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      query["relationType"] = request.relationType;
     }
 
     if (!Util.isUnset(request.nextToken)) {

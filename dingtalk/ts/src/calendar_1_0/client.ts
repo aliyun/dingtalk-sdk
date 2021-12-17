@@ -4179,13 +4179,13 @@ export default class Client extends OpenApi {
     return $tea.cast<SignInResponse>(await this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signIn`, "json", req, runtime), new SignInResponse({}));
   }
 
-  async getEvent(userId: string, calendarId: string, eventId: string): Promise<GetEventResponse> {
+  async getEvent(userId: string, calendarId: string, eventId: string, maxAttendees: string): Promise<GetEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEventHeaders({ });
-    return await this.getEventWithOptions(userId, calendarId, eventId, headers, runtime);
+    return await this.getEventWithOptions(userId, calendarId, eventId, maxAttendees, headers, runtime);
   }
 
-  async getEventWithOptions(userId: string, calendarId: string, eventId: string, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
+  async getEventWithOptions(userId: string, calendarId: string, eventId: string, maxAttendees: string, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
