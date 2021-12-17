@@ -7613,6 +7613,530 @@ class AbandonCustomerResponse(TeaModel):
         return self
 
 
+class SendOfficialAccountSNSMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetailMessageBodyText(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        # 消息内容，建议500字符以内。
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetailMessageBodyMarkdown(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        text: str = None,
+    ):
+        # 首屏会话透出的展示内容。
+        self.title = title
+        # markdown格式的消息，建议500字符以内。
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetailMessageBodyLink(TeaModel):
+    def __init__(
+        self,
+        pic_url: str = None,
+        message_url: str = None,
+        title: str = None,
+        text: str = None,
+    ):
+        # 图片地址
+        self.pic_url = pic_url
+        # 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
+        self.message_url = message_url
+        # 消息标题，建议100字符以内。
+        self.title = title
+        # 消息描述，建议500字符以内。
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pic_url is not None:
+            result['picUrl'] = self.pic_url
+        if self.message_url is not None:
+            result['messageUrl'] = self.message_url
+        if self.title is not None:
+            result['title'] = self.title
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('picUrl') is not None:
+            self.pic_url = m.get('picUrl')
+        if m.get('messageUrl') is not None:
+            self.message_url = m.get('messageUrl')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        action_url: str = None,
+    ):
+        # 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
+        self.title = title
+        # 使用独立跳转ActionCard样式时的跳转链接。
+        self.action_url = action_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.action_url is not None:
+            result['actionUrl'] = self.action_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('actionUrl') is not None:
+            self.action_url = m.get('actionUrl')
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCard(TeaModel):
+    def __init__(
+        self,
+        button_orientation: str = None,
+        single_url: str = None,
+        single_title: str = None,
+        markdown: str = None,
+        title: str = None,
+        button_list: List[SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList] = None,
+    ):
+        # 按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。
+        self.button_orientation = button_orientation
+        # 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。
+        self.single_url = single_url
+        # 使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。
+        self.single_title = single_title
+        # 消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。
+        self.markdown = markdown
+        # 透出到会话列表和通知的文案
+        self.title = title
+        # 使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。
+        self.button_list = button_list
+
+    def validate(self):
+        if self.button_list:
+            for k in self.button_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.button_orientation is not None:
+            result['buttonOrientation'] = self.button_orientation
+        if self.single_url is not None:
+            result['singleUrl'] = self.single_url
+        if self.single_title is not None:
+            result['singleTitle'] = self.single_title
+        if self.markdown is not None:
+            result['markdown'] = self.markdown
+        if self.title is not None:
+            result['title'] = self.title
+        result['buttonList'] = []
+        if self.button_list is not None:
+            for k in self.button_list:
+                result['buttonList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('buttonOrientation') is not None:
+            self.button_orientation = m.get('buttonOrientation')
+        if m.get('singleUrl') is not None:
+            self.single_url = m.get('singleUrl')
+        if m.get('singleTitle') is not None:
+            self.single_title = m.get('singleTitle')
+        if m.get('markdown') is not None:
+            self.markdown = m.get('markdown')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        self.button_list = []
+        if m.get('buttonList') is not None:
+            for k in m.get('buttonList'):
+                temp_model = SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCardButtonList()
+                self.button_list.append(temp_model.from_map(k))
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetailMessageBody(TeaModel):
+    def __init__(
+        self,
+        text: SendOfficialAccountSNSMessageRequestDetailMessageBodyText = None,
+        markdown: SendOfficialAccountSNSMessageRequestDetailMessageBodyMarkdown = None,
+        link: SendOfficialAccountSNSMessageRequestDetailMessageBodyLink = None,
+        action_card: SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCard = None,
+    ):
+        # 文本消息体  对于文本类型消息时必填
+        self.text = text
+        # markdown消息，仅对消息类型为markdown时有效
+        self.markdown = markdown
+        # 链接消息类型
+        self.link = link
+        # 卡片消息
+        self.action_card = action_card
+
+    def validate(self):
+        if self.text:
+            self.text.validate()
+        if self.markdown:
+            self.markdown.validate()
+        if self.link:
+            self.link.validate()
+        if self.action_card:
+            self.action_card.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text.to_map()
+        if self.markdown is not None:
+            result['markdown'] = self.markdown.to_map()
+        if self.link is not None:
+            result['link'] = self.link.to_map()
+        if self.action_card is not None:
+            result['actionCard'] = self.action_card.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            temp_model = SendOfficialAccountSNSMessageRequestDetailMessageBodyText()
+            self.text = temp_model.from_map(m['text'])
+        if m.get('markdown') is not None:
+            temp_model = SendOfficialAccountSNSMessageRequestDetailMessageBodyMarkdown()
+            self.markdown = temp_model.from_map(m['markdown'])
+        if m.get('link') is not None:
+            temp_model = SendOfficialAccountSNSMessageRequestDetailMessageBodyLink()
+            self.link = temp_model.from_map(m['link'])
+        if m.get('actionCard') is not None:
+            temp_model = SendOfficialAccountSNSMessageRequestDetailMessageBodyActionCard()
+            self.action_card = temp_model.from_map(m['actionCard'])
+        return self
+
+
+class SendOfficialAccountSNSMessageRequestDetail(TeaModel):
+    def __init__(
+        self,
+        msg_type: str = None,
+        uuid: str = None,
+        message_body: SendOfficialAccountSNSMessageRequestDetailMessageBody = None,
+    ):
+        # 消息类型
+        self.msg_type = msg_type
+        # 请求唯一 ID
+        self.uuid = uuid
+        # 消息体
+        self.message_body = message_body
+
+    def validate(self):
+        if self.message_body:
+            self.message_body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.msg_type is not None:
+            result['msgType'] = self.msg_type
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        if self.message_body is not None:
+            result['messageBody'] = self.message_body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('msgType') is not None:
+            self.msg_type = m.get('msgType')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        if m.get('messageBody') is not None:
+            temp_model = SendOfficialAccountSNSMessageRequestDetailMessageBody()
+            self.message_body = temp_model.from_map(m['messageBody'])
+        return self
+
+
+class SendOfficialAccountSNSMessageRequest(TeaModel):
+    def __init__(
+        self,
+        detail: SendOfficialAccountSNSMessageRequestDetail = None,
+        biz_id: str = None,
+        ding_token_grant_type: int = None,
+        ding_client_id: str = None,
+        binding_token: str = None,
+        ding_uid: int = None,
+        ding_open_app_org_id: int = None,
+    ):
+        # 消息详情
+        self.detail = detail
+        # API调用标识，可选参数
+        self.biz_id = biz_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_client_id = ding_client_id
+        self.binding_token = binding_token
+        self.ding_uid = ding_uid
+        self.ding_open_app_org_id = ding_open_app_org_id
+
+    def validate(self):
+        if self.detail:
+            self.detail.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail is not None:
+            result['detail'] = self.detail.to_map()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.binding_token is not None:
+            result['bindingToken'] = self.binding_token
+        if self.ding_uid is not None:
+            result['dingUid'] = self.ding_uid
+        if self.ding_open_app_org_id is not None:
+            result['dingOpenAppOrgId'] = self.ding_open_app_org_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detail') is not None:
+            temp_model = SendOfficialAccountSNSMessageRequestDetail()
+            self.detail = temp_model.from_map(m['detail'])
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('bindingToken') is not None:
+            self.binding_token = m.get('bindingToken')
+        if m.get('dingUid') is not None:
+            self.ding_uid = m.get('dingUid')
+        if m.get('dingOpenAppOrgId') is not None:
+            self.ding_open_app_org_id = m.get('dingOpenAppOrgId')
+        return self
+
+
+class SendOfficialAccountSNSMessageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        open_push_id: str = None,
+    ):
+        # 推送ID
+        self.open_push_id = open_push_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_push_id is not None:
+            result['openPushId'] = self.open_push_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openPushId') is not None:
+            self.open_push_id = m.get('openPushId')
+        return self
+
+
+class SendOfficialAccountSNSMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: SendOfficialAccountSNSMessageResponseBodyResult = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+        # 推送结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = SendOfficialAccountSNSMessageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SendOfficialAccountSNSMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SendOfficialAccountSNSMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SendOfficialAccountSNSMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateCrmPersonalCustomerHeaders(TeaModel):
     def __init__(
         self,

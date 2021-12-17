@@ -3243,6 +3243,206 @@ class TakeTicketResponse(TeaModel):
         return self
 
 
+class SetRobotConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetRobotConfigRequest(TeaModel):
+    def __init__(
+        self,
+        ding_token_grant_type: int = None,
+        ding_isv_org_id: int = None,
+        ding_suite_key: str = None,
+        ding_org_id: int = None,
+        open_team_id: str = None,
+        open_group_set_id: str = None,
+        status: str = None,
+    ):
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_org_id = ding_org_id
+        # 开放团队ID
+        self.open_team_id = open_team_id
+        # 群组开放ID
+        self.open_group_set_id = open_group_set_id
+        # 设置状态，0代表关闭,1代表开启
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.open_group_set_id is not None:
+            result['openGroupSetId'] = self.open_group_set_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('openGroupSetId') is not None:
+            self.open_group_set_id = m.get('openGroupSetId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class SetRobotConfigResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        config_key: str = None,
+        config_value: str = None,
+    ):
+        # 业务Key
+        self.config_key = config_key
+        # 业务value
+        self.config_value = config_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.config_key is not None:
+            result['configKey'] = self.config_key
+        if self.config_value is not None:
+            result['configValue'] = self.config_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('configKey') is not None:
+            self.config_key = m.get('configKey')
+        if m.get('configValue') is not None:
+            self.config_value = m.get('configValue')
+        return self
+
+
+class SetRobotConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SetRobotConfigResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SetRobotConfigResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SetRobotConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SetRobotConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SetRobotConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendServiceGroupMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -6180,9 +6380,9 @@ class AddOpenLibraryRequest(TeaModel):
         self.ding_token_grant_type = ding_token_grant_type
         self.ding_suite_key = ding_suite_key
         self.ding_org_id = ding_org_id
-        # 团队ID
+        # 开放团队ID
         self.open_team_id = open_team_id
-        # 用户ID
+        # 用户/员工ID
         self.user_id = user_id
         # 用户昵称或姓名
         self.user_name = user_name
@@ -6262,7 +6462,7 @@ class AddOpenLibraryResponseBodyResult(TeaModel):
         id: int = None,
         message: str = None,
     ):
-        # success
+        # 添加/修改知识库是否成功
         self.success = success
         # 知识库ID
         self.id = id
@@ -6303,7 +6503,7 @@ class AddOpenLibraryResponseBody(TeaModel):
         success: bool = None,
         result: AddOpenLibraryResponseBodyResult = None,
     ):
-        # success
+        # 请求是否成功
         self.success = success
         # 返回结果
         self.result = result
@@ -6633,15 +6833,15 @@ class AddOpenCategoryRequest(TeaModel):
         self.ding_token_grant_type = ding_token_grant_type
         self.ding_suite_key = ding_suite_key
         self.ding_org_id = ding_org_id
-        # 团队ID
+        # 开放团队ID
         self.open_team_id = open_team_id
-        # 用户ID
+        # 员工/用户ID
         self.user_id = user_id
         # 用户昵称或姓名
         self.user_name = user_name
         # 类目标题
         self.title = title
-        # 父类目ID
+        # 父类目ID(为0代表顶层id)
         self.parent_id = parent_id
         # 所属知识库ID
         self.library_id = library_id
@@ -6709,7 +6909,7 @@ class AddOpenCategoryResponseBodyResult(TeaModel):
         id: int = None,
         message: str = None,
     ):
-        # success
+        # 操作是否成功
         self.success = success
         # 添加成类目ID
         self.id = id
@@ -6750,7 +6950,7 @@ class AddOpenCategoryResponseBody(TeaModel):
         success: bool = None,
         result: AddOpenCategoryResponseBodyResult = None,
     ):
-        # success
+        # 请求是否成功
         self.success = success
         # 返回结果
         self.result = result
@@ -7745,13 +7945,13 @@ class AddOpenKnowledgeRequestAttachments(TeaModel):
     ):
         # 附件名称
         self.title = title
-        # 这个是附件URL
+        # 附件URL
         self.path = path
         # 附件大小
         self.size = size
-        # 附件扩展名
+        # 扩展名
         self.suffix = suffix
-        # 媒体类型
+        # 媒体类型(扩展名大写)
         self.mime_type = mime_type
 
     def validate(self):
@@ -7817,9 +8017,9 @@ class AddOpenKnowledgeRequest(TeaModel):
         self.ding_isv_org_id = ding_isv_org_id
         self.ding_suite_key = ding_suite_key
         self.ding_org_id = ding_org_id
-        # 所属团队ID
+        # 开放团队ID
         self.open_team_id = open_team_id
-        # 用户ID
+        # 用户/员工ID
         self.user_id = user_id
         # 用户昵称或姓名
         self.user_name = user_name
@@ -7955,7 +8155,7 @@ class AddOpenKnowledgeResponseBodyResult(TeaModel):
         id: int = None,
         message: str = None,
     ):
-        # 操作标识
+        # 操作是否成功标识
         self.success = success
         # 知识点ID
         self.id = id
@@ -7996,7 +8196,7 @@ class AddOpenKnowledgeResponseBody(TeaModel):
         success: bool = None,
         result: AddOpenKnowledgeResponseBodyResult = None,
     ):
-        # success
+        # 请求是否成功
         self.success = success
         # 返回结果
         self.result = result

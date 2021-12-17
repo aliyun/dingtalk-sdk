@@ -498,6 +498,7 @@ class CreateBadgeCodeUserInstanceRequest(TeaModel):
         request_id: str = None,
         code_identity: str = None,
         code_value: str = None,
+        code_value_type: str = None,
         status: str = None,
         corp_id: str = None,
         user_corp_relation_type: str = None,
@@ -514,6 +515,8 @@ class CreateBadgeCodeUserInstanceRequest(TeaModel):
         self.code_identity = code_identity
         # 码值
         self.code_value = code_value
+        # 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+        self.code_value_type = code_value_type
         # 状态，传入关闭状态需要用户手动开启后才会渲染二维
         self.status = status
         # 企业ID
@@ -549,6 +552,8 @@ class CreateBadgeCodeUserInstanceRequest(TeaModel):
             result['codeIdentity'] = self.code_identity
         if self.code_value is not None:
             result['codeValue'] = self.code_value
+        if self.code_value_type is not None:
+            result['codeValueType'] = self.code_value_type
         if self.status is not None:
             result['status'] = self.status
         if self.corp_id is not None:
@@ -579,6 +584,8 @@ class CreateBadgeCodeUserInstanceRequest(TeaModel):
             self.code_identity = m.get('codeIdentity')
         if m.get('codeValue') is not None:
             self.code_value = m.get('codeValue')
+        if m.get('codeValueType') is not None:
+            self.code_value_type = m.get('codeValueType')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('corpId') is not None:
@@ -607,9 +614,12 @@ class CreateBadgeCodeUserInstanceResponseBody(TeaModel):
     def __init__(
         self,
         code_id: str = None,
+        code_detail_url: str = None,
     ):
         # 码ID
         self.code_id = code_id
+        # 码详情跳转地址
+        self.code_detail_url = code_detail_url
 
     def validate(self):
         pass
@@ -622,12 +632,16 @@ class CreateBadgeCodeUserInstanceResponseBody(TeaModel):
         result = dict()
         if self.code_id is not None:
             result['codeId'] = self.code_id
+        if self.code_detail_url is not None:
+            result['codeDetailUrl'] = self.code_detail_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('codeId') is not None:
             self.code_id = m.get('codeId')
+        if m.get('codeDetailUrl') is not None:
+            self.code_detail_url = m.get('codeDetailUrl')
         return self
 
 

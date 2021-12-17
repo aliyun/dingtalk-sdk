@@ -1219,6 +1219,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers/abandon', 'json', req, runtime)
         )
 
+    def send_official_account_snsmessage(
+        self,
+        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
+        return self.send_official_account_snsmessage_with_options(request, headers, runtime)
+
+    async def send_official_account_snsmessage_async(
+        self,
+        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
+        return await self.send_official_account_snsmessage_with_options_async(request, headers, runtime)
+
+    def send_official_account_snsmessage_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
+        headers: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.binding_token):
+            body['bindingToken'] = request.binding_token
+        if not UtilClient.is_unset(request.ding_uid):
+            body['dingUid'] = request.ding_uid
+        if not UtilClient.is_unset(request.ding_open_app_org_id):
+            body['dingOpenAppOrgId'] = request.ding_open_app_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse(),
+            self.do_roarequest('SendOfficialAccountSNSMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/snsMessages/send', 'json', req, runtime)
+        )
+
+    async def send_official_account_snsmessage_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
+        headers: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_client_id):
+            body['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.binding_token):
+            body['bindingToken'] = request.binding_token
+        if not UtilClient.is_unset(request.ding_uid):
+            body['dingUid'] = request.ding_uid
+        if not UtilClient.is_unset(request.ding_open_app_org_id):
+            body['dingOpenAppOrgId'] = request.ding_open_app_org_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse(),
+            await self.do_roarequest_async('SendOfficialAccountSNSMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/snsMessages/send', 'json', req, runtime)
+        )
+
     def update_crm_personal_customer(
         self,
         request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,

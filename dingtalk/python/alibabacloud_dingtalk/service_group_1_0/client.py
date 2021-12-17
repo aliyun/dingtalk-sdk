@@ -1311,6 +1311,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('TakeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/apply', 'none', req, runtime)
         )
 
+    def set_robot_config(
+        self,
+        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
+    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SetRobotConfigHeaders()
+        return self.set_robot_config_with_options(request, headers, runtime)
+
+    async def set_robot_config_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
+    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SetRobotConfigHeaders()
+        return await self.set_robot_config_with_options_async(request, headers, runtime)
+
+    def set_robot_config_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
+        headers: dingtalkservice_group__1__0_models.SetRobotConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SetRobotConfigResponse(),
+            self.do_roarequest('SetRobotConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/configs/set', 'json', req, runtime)
+        )
+
+    async def set_robot_config_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
+        headers: dingtalkservice_group__1__0_models.SetRobotConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_org_id):
+            body['dingOrgId'] = request.ding_org_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.open_group_set_id):
+            body['openGroupSetId'] = request.open_group_set_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SetRobotConfigResponse(),
+            await self.do_roarequest_async('SetRobotConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/configs/set', 'json', req, runtime)
+        )
+
     def send_service_group_message(
         self,
         request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
