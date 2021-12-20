@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddApplicationRegFormTemplateRespo
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\FinishBeginnerTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\FinishBeginnerTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\FinishBeginnerTaskResponse;
@@ -369,6 +372,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return FinishBeginnerTaskResponse::fromMap($this->doROARequest('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/beginnerTasks/' . $taskCode . '/finish', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string               $rightsCode
+     * @param ConfirmRightsRequest $request
+     *
+     * @return ConfirmRightsResponse
+     */
+    public function confirmRights($rightsCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConfirmRightsHeaders([]);
+
+        return $this->confirmRightsWithOptions($rightsCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $rightsCode
+     * @param ConfirmRightsRequest $request
+     * @param ConfirmRightsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ConfirmRightsResponse
+     */
+    public function confirmRightsWithOptions($rightsCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ConfirmRightsResponse::fromMap($this->doROARequest('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/rights/' . $rightsCode . '/confirm', 'json', $req, $runtime));
     }
 
     /**
