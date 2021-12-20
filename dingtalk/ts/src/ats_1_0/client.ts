@@ -592,6 +592,88 @@ export class FinishBeginnerTaskResponse extends $tea.Model {
   }
 }
 
+export class ConfirmRightsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConfirmRightsRequest extends $tea.Model {
+  bizCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConfirmRightsResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConfirmRightsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConfirmRightsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConfirmRightsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetApplicationRegFormByFlowIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1419,6 +1501,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<FinishBeginnerTaskResponse>(await this.doROARequest("FinishBeginnerTask", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/beginnerTasks/${taskCode}/finish`, "json", req, runtime), new FinishBeginnerTaskResponse({}));
+  }
+
+  async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConfirmRightsHeaders({ });
+    return await this.confirmRightsWithOptions(rightsCode, request, headers, runtime);
+  }
+
+  async confirmRightsWithOptions(rightsCode: string, request: ConfirmRightsRequest, headers: ConfirmRightsHeaders, runtime: $Util.RuntimeOptions): Promise<ConfirmRightsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ConfirmRightsResponse>(await this.doROARequest("ConfirmRights", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/rights/${rightsCode}/confirm`, "json", req, runtime), new ConfirmRightsResponse({}));
   }
 
   async getApplicationRegFormByFlowId(flowId: string, request: GetApplicationRegFormByFlowIdRequest): Promise<GetApplicationRegFormByFlowIdResponse> {
