@@ -499,6 +499,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/beginnerTasks/{task_code}/finish', 'json', req, runtime)
         )
 
+    def confirm_rights(
+        self,
+        rights_code: str,
+        request: dingtalkats__1__0_models.ConfirmRightsRequest,
+    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ConfirmRightsHeaders()
+        return self.confirm_rights_with_options(rights_code, request, headers, runtime)
+
+    async def confirm_rights_async(
+        self,
+        rights_code: str,
+        request: dingtalkats__1__0_models.ConfirmRightsRequest,
+    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ConfirmRightsHeaders()
+        return await self.confirm_rights_with_options_async(rights_code, request, headers, runtime)
+
+    def confirm_rights_with_options(
+        self,
+        rights_code: str,
+        request: dingtalkats__1__0_models.ConfirmRightsRequest,
+        headers: dingtalkats__1__0_models.ConfirmRightsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ConfirmRightsResponse(),
+            self.do_roarequest('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/rights/{rights_code}/confirm', 'json', req, runtime)
+        )
+
+    async def confirm_rights_with_options_async(
+        self,
+        rights_code: str,
+        request: dingtalkats__1__0_models.ConfirmRightsRequest,
+        headers: dingtalkats__1__0_models.ConfirmRightsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ConfirmRightsResponse(),
+            await self.do_roarequest_async('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/rights/{rights_code}/confirm', 'json', req, runtime)
+        )
+
     def get_application_reg_form_by_flow_id(
         self,
         flow_id: str,

@@ -23,6 +23,202 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_property_info(
+        self,
+        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
+        return self.get_property_info_with_options(request, headers, runtime)
+
+    async def get_property_info_async(
+        self,
+        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
+        return await self.get_property_info_with_options_async(request, headers, runtime)
+
+    def get_property_info_with_options(
+        self,
+        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
+        headers: dingtalkresident__1__0_models.GetPropertyInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.property_corp_id):
+            query['propertyCorpId'] = request.property_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetPropertyInfoResponse(),
+            self.do_roarequest('GetPropertyInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/propertyInfos', 'json', req, runtime)
+        )
+
+    async def get_property_info_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
+        headers: dingtalkresident__1__0_models.GetPropertyInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.property_corp_id):
+            query['propertyCorpId'] = request.property_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetPropertyInfoResponse(),
+            await self.do_roarequest_async('GetPropertyInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/propertyInfos', 'json', req, runtime)
+        )
+
+    def get_space_id_by_type(
+        self,
+        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
+    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
+        return self.get_space_id_by_type_with_options(request, headers, runtime)
+
+    async def get_space_id_by_type_async(
+        self,
+        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
+    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
+        return await self.get_space_id_by_type_with_options_async(request, headers, runtime)
+
+    def get_space_id_by_type_with_options(
+        self,
+        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
+        headers: dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.department_type):
+            query['departmentType'] = request.department_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetSpaceIdByTypeResponse(),
+            self.do_roarequest('GetSpaceIdByType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/types', 'json', req, runtime)
+        )
+
+    async def get_space_id_by_type_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
+        headers: dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.department_type):
+            query['departmentType'] = request.department_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetSpaceIdByTypeResponse(),
+            await self.do_roarequest_async('GetSpaceIdByType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/types', 'json', req, runtime)
+        )
+
+    def list_sub_space(
+        self,
+        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
+    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
+        return self.list_sub_space_with_options(request, headers, runtime)
+
+    async def list_sub_space_async(
+        self,
+        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
+    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
+        return await self.list_sub_space_with_options_async(request, headers, runtime)
+
+    def list_sub_space_with_options(
+        self,
+        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
+        headers: dingtalkresident__1__0_models.ListSubSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.resident_corp_id):
+            query['residentCorpId'] = request.resident_corp_id
+        if not UtilClient.is_unset(request.refer_id):
+            query['referId'] = request.refer_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.ListSubSpaceResponse(),
+            self.do_roarequest('ListSubSpace', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/subSpaces', 'json', req, runtime)
+        )
+
+    async def list_sub_space_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
+        headers: dingtalkresident__1__0_models.ListSubSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.resident_corp_id):
+            query['residentCorpId'] = request.resident_corp_id
+        if not UtilClient.is_unset(request.refer_id):
+            query['referId'] = request.refer_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.ListSubSpaceResponse(),
+            await self.do_roarequest_async('ListSubSpace', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/subSpaces', 'json', req, runtime)
+        )
+
     def update_residece_group(
         self,
         request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
@@ -93,6 +289,474 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResideceGroupResponse(),
             await self.do_roarequest_async('UpdateResideceGroup', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/departments/updateResideceGroup', 'json', req, runtime)
+        )
+
+    def get_resident_info(
+        self,
+        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
+        return self.get_resident_info_with_options(request, headers, runtime)
+
+    async def get_resident_info_async(
+        self,
+        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
+        return await self.get_resident_info_with_options_async(request, headers, runtime)
+
+    def get_resident_info_with_options(
+        self,
+        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
+        headers: dingtalkresident__1__0_models.GetResidentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.resident_corp_id):
+            query['residentCorpId'] = request.resident_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetResidentInfoResponse(),
+            self.do_roarequest('GetResidentInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residentInfos', 'json', req, runtime)
+        )
+
+    async def get_resident_info_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
+        headers: dingtalkresident__1__0_models.GetResidentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.resident_corp_id):
+            query['residentCorpId'] = request.resident_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetResidentInfoResponse(),
+            await self.do_roarequest_async('GetResidentInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residentInfos', 'json', req, runtime)
+        )
+
+    def search_resident(
+        self,
+        request: dingtalkresident__1__0_models.SearchResidentRequest,
+    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.SearchResidentHeaders()
+        return self.search_resident_with_options(request, headers, runtime)
+
+    async def search_resident_async(
+        self,
+        request: dingtalkresident__1__0_models.SearchResidentRequest,
+    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.SearchResidentHeaders()
+        return await self.search_resident_with_options_async(request, headers, runtime)
+
+    def search_resident_with_options(
+        self,
+        request: dingtalkresident__1__0_models.SearchResidentRequest,
+        headers: dingtalkresident__1__0_models.SearchResidentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.resident_crop_id):
+            query['residentCropId'] = request.resident_crop_id
+        if not UtilClient.is_unset(request.search_word):
+            query['searchWord'] = request.search_word
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.SearchResidentResponse(),
+            self.do_roarequest('SearchResident', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residences', 'json', req, runtime)
+        )
+
+    async def search_resident_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.SearchResidentRequest,
+        headers: dingtalkresident__1__0_models.SearchResidentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.resident_crop_id):
+            query['residentCropId'] = request.resident_crop_id
+        if not UtilClient.is_unset(request.search_word):
+            query['searchWord'] = request.search_word
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.SearchResidentResponse(),
+            await self.do_roarequest_async('SearchResident', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residences', 'json', req, runtime)
+        )
+
+    def add_resident_department(
+        self,
+        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
+        return self.add_resident_department_with_options(request, headers, runtime)
+
+    async def add_resident_department_async(
+        self,
+        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
+        return await self.add_resident_department_with_options_async(request, headers, runtime)
+
+    def add_resident_department_with_options(
+        self,
+        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
+        headers: dingtalkresident__1__0_models.AddResidentDepartmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_residence_group):
+            query['isResidenceGroup'] = request.is_residence_group
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
+        if not UtilClient.is_unset(request.parent_department_id):
+            query['parentDepartmentId'] = request.parent_department_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.AddResidentDepartmentResponse(),
+            self.do_roarequest('AddResidentDepartment', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+        )
+
+    async def add_resident_department_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
+        headers: dingtalkresident__1__0_models.AddResidentDepartmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_residence_group):
+            query['isResidenceGroup'] = request.is_residence_group
+        if not UtilClient.is_unset(request.department_name):
+            query['departmentName'] = request.department_name
+        if not UtilClient.is_unset(request.parent_department_id):
+            query['parentDepartmentId'] = request.parent_department_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.AddResidentDepartmentResponse(),
+            await self.do_roarequest_async('AddResidentDepartment', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+        )
+
+    def page_point_history(
+        self,
+        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
+    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
+        return self.page_point_history_with_options(request, headers, runtime)
+
+    async def page_point_history_async(
+        self,
+        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
+    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
+        return await self.page_point_history_with_options_async(request, headers, runtime)
+
+    def page_point_history_with_options(
+        self,
+        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
+        headers: dingtalkresident__1__0_models.PagePointHistoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_circle):
+            query['isCircle'] = request.is_circle
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.PagePointHistoryResponse(),
+            self.do_roarequest('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
+        )
+
+    async def page_point_history_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
+        headers: dingtalkresident__1__0_models.PagePointHistoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_circle):
+            query['isCircle'] = request.is_circle
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.PagePointHistoryResponse(),
+            await self.do_roarequest_async('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
+        )
+
+    def get_spaces_info(
+        self,
+        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
+        return self.get_spaces_info_with_options(request, headers, runtime)
+
+    async def get_spaces_info_async(
+        self,
+        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
+        return await self.get_spaces_info_with_options_async(request, headers, runtime)
+
+    def get_spaces_info_with_options(
+        self,
+        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
+        headers: dingtalkresident__1__0_models.GetSpacesInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.resident_corp_id):
+            body['residentCorpId'] = request.resident_corp_id
+        if not UtilClient.is_unset(request.refer_ids):
+            body['referIds'] = request.refer_ids
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetSpacesInfoResponse(),
+            self.do_roarequest('GetSpacesInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/query', 'json', req, runtime)
+        )
+
+    async def get_spaces_info_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
+        headers: dingtalkresident__1__0_models.GetSpacesInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.resident_corp_id):
+            body['residentCorpId'] = request.resident_corp_id
+        if not UtilClient.is_unset(request.refer_ids):
+            body['referIds'] = request.refer_ids
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.GetSpacesInfoResponse(),
+            await self.do_roarequest_async('GetSpacesInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/query', 'json', req, runtime)
+        )
+
+    def update_resident_user(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
+        return self.update_resident_user_with_options(request, headers, runtime)
+
+    async def update_resident_user_async(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
+        return await self.update_resident_user_with_options_async(request, headers, runtime)
+
+    def update_resident_user_with_options(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
+        headers: dingtalkresident__1__0_models.UpdateResidentUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.address):
+            query['address'] = request.address
+        if not UtilClient.is_unset(request.is_retain_old_dept):
+            query['isRetainOldDept'] = request.is_retain_old_dept
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.department_id):
+            query['departmentId'] = request.department_id
+        if not UtilClient.is_unset(request.ext_field):
+            query['extField'] = request.ext_field
+        if not UtilClient.is_unset(request.relate_type):
+            query['relateType'] = request.relate_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.old_department_id):
+            query['oldDepartmentId'] = request.old_department_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.UpdateResidentUserResponse(),
+            self.do_roarequest('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+        )
+
+    async def update_resident_user_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
+        headers: dingtalkresident__1__0_models.UpdateResidentUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.address):
+            query['address'] = request.address
+        if not UtilClient.is_unset(request.is_retain_old_dept):
+            query['isRetainOldDept'] = request.is_retain_old_dept
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.department_id):
+            query['departmentId'] = request.department_id
+        if not UtilClient.is_unset(request.ext_field):
+            query['extField'] = request.ext_field
+        if not UtilClient.is_unset(request.relate_type):
+            query['relateType'] = request.relate_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.old_department_id):
+            query['oldDepartmentId'] = request.old_department_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.UpdateResidentUserResponse(),
+            await self.do_roarequest_async('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
         )
 
     def add_point(
@@ -335,36 +999,42 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddResidentUsers', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
         )
 
-    def add_resident_department(
+    def get_resident_members_info(
         self,
-        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
-        return self.add_resident_department_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
+        return self.get_resident_members_info_with_options(request, headers, runtime)
 
-    async def add_resident_department_async(
+    async def get_resident_members_info_async(
         self,
-        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
-        return await self.add_resident_department_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
+        return await self.get_resident_members_info_with_options_async(request, headers, runtime)
 
-    def add_resident_department_with_options(
+    def get_resident_members_info_with_options(
         self,
-        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
-        headers: dingtalkresident__1__0_models.AddResidentDepartmentHeaders,
+        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
+        headers: dingtalkresident__1__0_models.GetResidentMembersInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
         UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.is_residence_group):
-            query['isResidenceGroup'] = request.is_residence_group
-        if not UtilClient.is_unset(request.department_name):
-            query['departmentName'] = request.department_name
-        if not UtilClient.is_unset(request.parent_department_id):
-            query['parentDepartmentId'] = request.parent_department_id
+        body = {}
+        if not UtilClient.is_unset(request.resident_crop_id):
+            body['residentCropId'] = request.resident_crop_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -372,27 +1042,33 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkresident__1__0_models.AddResidentDepartmentResponse(),
-            self.do_roarequest('AddResidentDepartment', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+            dingtalkresident__1__0_models.GetResidentMembersInfoResponse(),
+            self.do_roarequest('GetResidentMembersInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/residences/query', 'json', req, runtime)
         )
 
-    async def add_resident_department_with_options_async(
+    async def get_resident_members_info_with_options_async(
         self,
-        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
-        headers: dingtalkresident__1__0_models.AddResidentDepartmentHeaders,
+        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
+        headers: dingtalkresident__1__0_models.GetResidentMembersInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
         UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.is_residence_group):
-            query['isResidenceGroup'] = request.is_residence_group
-        if not UtilClient.is_unset(request.department_name):
-            query['departmentName'] = request.department_name
-        if not UtilClient.is_unset(request.parent_department_id):
-            query['parentDepartmentId'] = request.parent_department_id
+        body = {}
+        if not UtilClient.is_unset(request.resident_crop_id):
+            body['residentCropId'] = request.resident_crop_id
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -400,95 +1076,11 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
-            dingtalkresident__1__0_models.AddResidentDepartmentResponse(),
-            await self.do_roarequest_async('AddResidentDepartment', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
-        )
-
-    def page_point_history(
-        self,
-        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
-    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
-        return self.page_point_history_with_options(request, headers, runtime)
-
-    async def page_point_history_async(
-        self,
-        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
-    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
-        return await self.page_point_history_with_options_async(request, headers, runtime)
-
-    def page_point_history_with_options(
-        self,
-        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
-        headers: dingtalkresident__1__0_models.PagePointHistoryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.is_circle):
-            query['isCircle'] = request.is_circle
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.start_time):
-            query['startTime'] = request.start_time
-        if not UtilClient.is_unset(request.end_time):
-            query['endTime'] = request.end_time
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkresident__1__0_models.PagePointHistoryResponse(),
-            self.do_roarequest('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
-        )
-
-    async def page_point_history_with_options_async(
-        self,
-        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
-        headers: dingtalkresident__1__0_models.PagePointHistoryHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.is_circle):
-            query['isCircle'] = request.is_circle
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.start_time):
-            query['startTime'] = request.start_time
-        if not UtilClient.is_unset(request.end_time):
-            query['endTime'] = request.end_time
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkresident__1__0_models.PagePointHistoryResponse(),
-            await self.do_roarequest_async('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
+            dingtalkresident__1__0_models.GetResidentMembersInfoResponse(),
+            await self.do_roarequest_async('GetResidentMembersInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/residences/query', 'json', req, runtime)
         )
 
     def remove_resident_user(
@@ -647,6 +1239,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateResidence', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/departments/updateResidece', 'json', req, runtime)
         )
 
+    def create_resident_black_board(
+        self,
+        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
+        return self.create_resident_black_board_with_options(request, headers, runtime)
+
+    async def create_resident_black_board_async(
+        self,
+        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
+        return await self.create_resident_black_board_with_options_async(request, headers, runtime)
+
+    def create_resident_black_board_with_options(
+        self,
+        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
+        headers: dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.context):
+            body['context'] = request.context
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.CreateResidentBlackBoardResponse(),
+            self.do_roarequest('CreateResidentBlackBoard', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+        )
+
+    async def create_resident_black_board_with_options_async(
+        self,
+        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
+        headers: dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_isv_org_id):
+            body['dingIsvOrgId'] = request.ding_isv_org_id
+        if not UtilClient.is_unset(request.ding_corp_id):
+            body['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.ding_suite_key):
+            body['dingSuiteKey'] = request.ding_suite_key
+        if not UtilClient.is_unset(request.ding_token_grant_type):
+            body['dingTokenGrantType'] = request.ding_token_grant_type
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.context):
+            body['context'] = request.context
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkresident__1__0_models.CreateResidentBlackBoardResponse(),
+            await self.do_roarequest_async('CreateResidentBlackBoard', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+        )
+
     def list_point_rules(
         self,
         request: dingtalkresident__1__0_models.ListPointRulesRequest,
@@ -711,98 +1391,48 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListPointRules', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/rules', 'json', req, runtime)
         )
 
-    def update_resident_user(
-        self,
-        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+    def get_industry_type(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
-        return self.update_resident_user_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
+        return self.get_industry_type_with_options(headers, runtime)
 
-    async def update_resident_user_async(
-        self,
-        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+    async def get_industry_type_async(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
-        return await self.update_resident_user_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
+        return await self.get_industry_type_with_options_async(headers, runtime)
 
-    def update_resident_user_with_options(
+    def get_industry_type_with_options(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
-        headers: dingtalkresident__1__0_models.UpdateResidentUserHeaders,
+        headers: dingtalkresident__1__0_models.GetIndustryTypeHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.address):
-            query['address'] = request.address
-        if not UtilClient.is_unset(request.is_retain_old_dept):
-            query['isRetainOldDept'] = request.is_retain_old_dept
-        if not UtilClient.is_unset(request.user_name):
-            query['userName'] = request.user_name
-        if not UtilClient.is_unset(request.mobile):
-            query['mobile'] = request.mobile
-        if not UtilClient.is_unset(request.department_id):
-            query['departmentId'] = request.department_id
-        if not UtilClient.is_unset(request.ext_field):
-            query['extField'] = request.ext_field
-        if not UtilClient.is_unset(request.relate_type):
-            query['relateType'] = request.relate_type
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
-        if not UtilClient.is_unset(request.old_department_id):
-            query['oldDepartmentId'] = request.old_department_id
+    ) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkresident__1__0_models.UpdateResidentUserResponse(),
-            self.do_roarequest('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+            dingtalkresident__1__0_models.GetIndustryTypeResponse(),
+            self.do_roarequest('GetIndustryType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/industryTypes', 'json', req, runtime)
         )
 
-    async def update_resident_user_with_options_async(
+    async def get_industry_type_with_options_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
-        headers: dingtalkresident__1__0_models.UpdateResidentUserHeaders,
+        headers: dingtalkresident__1__0_models.GetIndustryTypeHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.address):
-            query['address'] = request.address
-        if not UtilClient.is_unset(request.is_retain_old_dept):
-            query['isRetainOldDept'] = request.is_retain_old_dept
-        if not UtilClient.is_unset(request.user_name):
-            query['userName'] = request.user_name
-        if not UtilClient.is_unset(request.mobile):
-            query['mobile'] = request.mobile
-        if not UtilClient.is_unset(request.department_id):
-            query['departmentId'] = request.department_id
-        if not UtilClient.is_unset(request.ext_field):
-            query['extField'] = request.ext_field
-        if not UtilClient.is_unset(request.relate_type):
-            query['relateType'] = request.relate_type
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
-        if not UtilClient.is_unset(request.old_department_id):
-            query['oldDepartmentId'] = request.old_department_id
+    ) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         return TeaCore.from_map(
-            dingtalkresident__1__0_models.UpdateResidentUserResponse(),
-            await self.do_roarequest_async('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+            dingtalkresident__1__0_models.GetIndustryTypeResponse(),
+            await self.do_roarequest_async('GetIndustryType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/industryTypes', 'json', req, runtime)
         )
