@@ -1159,6 +1159,109 @@ export class DeleteUniversityTeacherResponse extends $tea.Model {
   }
 }
 
+export class QueryPurchaseInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPurchaseInfoRequest extends $tea.Model {
+  sn?: string;
+  userId?: string;
+  merchantId?: string;
+  scene?: number;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+      userId: 'userId',
+      merchantId: 'merchantId',
+      scene: 'scene',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+      userId: 'string',
+      merchantId: 'string',
+      scene: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPurchaseInfoResponseBody extends $tea.Model {
+  corpId?: string;
+  userId?: string;
+  merchantId?: string;
+  scene?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      userId: 'userId',
+      merchantId: 'merchantId',
+      scene: 'scene',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      userId: 'string',
+      merchantId: 'string',
+      scene: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPurchaseInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryPurchaseInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryPurchaseInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteDeviceOrgHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2171,6 +2274,75 @@ export class CreateRemoteClassCourseResponse extends $tea.Model {
   }
 }
 
+export class ReportDeviceLogHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportDeviceLogRequest extends $tea.Model {
+  sn?: string;
+  mediaId?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+      mediaId: 'mediaId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+      mediaId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReportDeviceLogResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCustomClassHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3151,6 +3323,69 @@ export class DeleteUniversityCourseGroupResponse extends $tea.Model {
   }
 }
 
+export class DeviceHeartbeatHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeviceHeartbeatRequest extends $tea.Model {
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeviceHeartbeatResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: number;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteDeptHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3404,6 +3639,100 @@ export class InsertSectionConfigResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: InsertSectionConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserFaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserFaceRequest extends $tea.Model {
+  sn?: string;
+  faceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+      faceId: 'faceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+      faceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserFaceResponseBody extends $tea.Model {
+  corpId?: string;
+  faceId?: string;
+  userId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      faceId: 'faceId',
+      userId: 'userId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      faceId: 'string',
+      userId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserFaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserFaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserFaceResponseBody,
     };
   }
 
@@ -4179,6 +4508,103 @@ export class GetShareRolesResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetShareRolesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupIdRequest extends $tea.Model {
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupIdResponseBody extends $tea.Model {
+  pid?: string;
+  name?: string;
+  merchantId?: string;
+  merchantName?: string;
+  corpId?: string;
+  groupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pid: 'pid',
+      name: 'name',
+      merchantId: 'merchantId',
+      merchantName: 'merchantName',
+      corpId: 'corpId',
+      groupId: 'groupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pid: 'string',
+      name: 'string',
+      merchantId: 'string',
+      merchantName: 'string',
+      corpId: 'string',
+      groupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGroupIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryGroupIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryGroupIdResponseBody,
     };
   }
 
@@ -5080,6 +5506,103 @@ export class QueryOrgRelationListResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryOrgRelationListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchoolUserFaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchoolUserFaceRequest extends $tea.Model {
+  type?: number;
+  sn?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+      sn: 'sn',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'number',
+      sn: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchoolUserFaceResponseBody extends $tea.Model {
+  corpId?: string;
+  hasMore?: boolean;
+  userFaceList?: QuerySchoolUserFaceResponseBodyUserFaceList[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      hasMore: 'hasMore',
+      userFaceList: 'userFaceList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      hasMore: 'boolean',
+      userFaceList: { 'type': 'array', 'itemType': QuerySchoolUserFaceResponseBodyUserFaceList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchoolUserFaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QuerySchoolUserFaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QuerySchoolUserFaceResponseBody,
     };
   }
 
@@ -8524,6 +9047,34 @@ export class QueryOrgRelationListResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QuerySchoolUserFaceResponseBodyUserFaceList extends $tea.Model {
+  faceId?: string;
+  userId?: string;
+  name?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      faceId: 'faceId',
+      userId: 'userId',
+      name: 'name',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      faceId: 'string',
+      userId: 'string',
+      name: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EndCourseRequestLivePlayInfoList extends $tea.Model {
   liveOutputUrl?: string;
   liveType?: number;
@@ -9122,6 +9673,47 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteUniversityTeacherResponse>(await this.doROARequest("DeleteUniversityTeacher", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/universities/teachers`, "json", req, runtime), new DeleteUniversityTeacherResponse({}));
   }
 
+  async queryPurchaseInfo(request: QueryPurchaseInfoRequest): Promise<QueryPurchaseInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPurchaseInfoHeaders({ });
+    return await this.queryPurchaseInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryPurchaseInfoWithOptions(request: QueryPurchaseInfoRequest, headers: QueryPurchaseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPurchaseInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      query["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.scene)) {
+      query["scene"] = request.scene;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryPurchaseInfoResponse>(await this.doROARequest("QueryPurchaseInfo", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/users/purchases`, "json", req, runtime), new QueryPurchaseInfoResponse({}));
+  }
+
   async deleteDeviceOrg(request: DeleteDeviceOrgRequest): Promise<DeleteDeviceOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteDeviceOrgHeaders({ });
@@ -9568,6 +10160,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateRemoteClassCourseResponse>(await this.doROARequest("CreateRemoteClassCourse", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/remoteClasses/courses`, "json", req, runtime), new CreateRemoteClassCourseResponse({}));
+  }
+
+  async reportDeviceLog(request: ReportDeviceLogRequest): Promise<ReportDeviceLogResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReportDeviceLogHeaders({ });
+    return await this.reportDeviceLogWithOptions(request, headers, runtime);
+  }
+
+  async reportDeviceLogWithOptions(request: ReportDeviceLogRequest, headers: ReportDeviceLogHeaders, runtime: $Util.RuntimeOptions): Promise<ReportDeviceLogResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      query["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<ReportDeviceLogResponse>(await this.doROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/deviceLogs/report`, "boolean", req, runtime), new ReportDeviceLogResponse({}));
   }
 
   async createCustomClass(request: CreateCustomClassRequest): Promise<CreateCustomClassResponse> {
@@ -10034,6 +10663,35 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteUniversityCourseGroupResponse>(await this.doROARequest("DeleteUniversityCourseGroup", "edu_1.0", "HTTP", "DELETE", "AK", `/v1.0/edu/universities/courseGroups`, "json", req, runtime), new DeleteUniversityCourseGroupResponse({}));
   }
 
+  async deviceHeartbeat(request: DeviceHeartbeatRequest): Promise<DeviceHeartbeatResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeviceHeartbeatHeaders({ });
+    return await this.deviceHeartbeatWithOptions(request, headers, runtime);
+  }
+
+  async deviceHeartbeatWithOptions(request: DeviceHeartbeatRequest, headers: DeviceHeartbeatHeaders, runtime: $Util.RuntimeOptions): Promise<DeviceHeartbeatResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeviceHeartbeatResponse>(await this.doROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/heartbeats/report`, "int32", req, runtime), new DeviceHeartbeatResponse({}));
+  }
+
   async deleteDept(deptId: string, request: DeleteDeptRequest): Promise<DeleteDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteDeptHeaders({ });
@@ -10141,6 +10799,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<InsertSectionConfigResponse>(await this.doROARequest("InsertSectionConfig", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/schedules/configs`, "json", req, runtime), new InsertSectionConfigResponse({}));
+  }
+
+  async queryUserFace(request: QueryUserFaceRequest): Promise<QueryUserFaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserFaceHeaders({ });
+    return await this.queryUserFaceWithOptions(request, headers, runtime);
+  }
+
+  async queryUserFaceWithOptions(request: QueryUserFaceRequest, headers: QueryUserFaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserFaceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.faceId)) {
+      query["faceId"] = request.faceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryUserFaceResponse>(await this.doROARequest("QueryUserFace", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/users/faces`, "json", req, runtime), new QueryUserFaceResponse({}));
   }
 
   async queryDeviceListByCorpId(request: QueryDeviceListByCorpIdRequest): Promise<QueryDeviceListByCorpIdResponse> {
@@ -10548,6 +11239,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetShareRolesResponse>(await this.doROARequest("GetShareRoles", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/shareRoles`, "json", req, runtime), new GetShareRolesResponse({}));
   }
 
+  async queryGroupId(request: QueryGroupIdRequest): Promise<QueryGroupIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGroupIdHeaders({ });
+    return await this.queryGroupIdWithOptions(request, headers, runtime);
+  }
+
+  async queryGroupIdWithOptions(request: QueryGroupIdRequest, headers: QueryGroupIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryGroupIdResponse>(await this.doROARequest("QueryGroupId", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/faces/groups`, "json", req, runtime), new QueryGroupIdResponse({}));
+  }
+
   async subscribeUniversityCourseGroup(request: SubscribeUniversityCourseGroupRequest): Promise<SubscribeUniversityCourseGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SubscribeUniversityCourseGroupHeaders({ });
@@ -10938,6 +11658,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryOrgRelationListResponse>(await this.doROARequest("QueryOrgRelationList", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/remoteClasses/orgRelations`, "json", req, runtime), new QueryOrgRelationListResponse({}));
+  }
+
+  async querySchoolUserFace(request: QuerySchoolUserFaceRequest): Promise<QuerySchoolUserFaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySchoolUserFaceHeaders({ });
+    return await this.querySchoolUserFaceWithOptions(request, headers, runtime);
+  }
+
+  async querySchoolUserFaceWithOptions(request: QuerySchoolUserFaceRequest, headers: QuerySchoolUserFaceHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchoolUserFaceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QuerySchoolUserFaceResponse>(await this.doROARequest("QuerySchoolUserFace", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/schools/faces`, "json", req, runtime), new QuerySchoolUserFaceResponse({}));
   }
 
   async queryOrgType(): Promise<QueryOrgTypeResponse> {
