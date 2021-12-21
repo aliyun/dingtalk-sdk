@@ -3,7 +3,7 @@ package com.aliyun.dingtalkcrm_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class UpdateRelationMetaFieldRequest extends TeaModel {
+public class AddRelationMetaFieldRequest extends TeaModel {
     @NameInMap("tenant")
     public String tenant;
 
@@ -14,14 +14,14 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
     public String relationType;
 
     @NameInMap("fieldDTOList")
-    public java.util.List<UpdateRelationMetaFieldRequestFieldDTOList> fieldDTOList;
+    public java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList;
 
-    public static UpdateRelationMetaFieldRequest build(java.util.Map<String, ?> map) throws Exception {
-        UpdateRelationMetaFieldRequest self = new UpdateRelationMetaFieldRequest();
+    public static AddRelationMetaFieldRequest build(java.util.Map<String, ?> map) throws Exception {
+        AddRelationMetaFieldRequest self = new AddRelationMetaFieldRequest();
         return TeaModel.build(map, self);
     }
 
-    public UpdateRelationMetaFieldRequest setTenant(String tenant) {
+    public AddRelationMetaFieldRequest setTenant(String tenant) {
         this.tenant = tenant;
         return this;
     }
@@ -29,7 +29,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
         return this.tenant;
     }
 
-    public UpdateRelationMetaFieldRequest setOperatorUserId(String operatorUserId) {
+    public AddRelationMetaFieldRequest setOperatorUserId(String operatorUserId) {
         this.operatorUserId = operatorUserId;
         return this;
     }
@@ -37,7 +37,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
         return this.operatorUserId;
     }
 
-    public UpdateRelationMetaFieldRequest setRelationType(String relationType) {
+    public AddRelationMetaFieldRequest setRelationType(String relationType) {
         this.relationType = relationType;
         return this;
     }
@@ -45,27 +45,27 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
         return this.relationType;
     }
 
-    public UpdateRelationMetaFieldRequest setFieldDTOList(java.util.List<UpdateRelationMetaFieldRequestFieldDTOList> fieldDTOList) {
+    public AddRelationMetaFieldRequest setFieldDTOList(java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList) {
         this.fieldDTOList = fieldDTOList;
         return this;
     }
-    public java.util.List<UpdateRelationMetaFieldRequestFieldDTOList> getFieldDTOList() {
+    public java.util.List<AddRelationMetaFieldRequestFieldDTOList> getFieldDTOList() {
         return this.fieldDTOList;
     }
 
-    public static class UpdateRelationMetaFieldRequestFieldDTOListPropsOptions extends TeaModel {
+    public static class AddRelationMetaFieldRequestFieldDTOListPropsOptions extends TeaModel {
         @NameInMap("key")
         public String key;
 
         @NameInMap("value")
         public String value;
 
-        public static UpdateRelationMetaFieldRequestFieldDTOListPropsOptions build(java.util.Map<String, ?> map) throws Exception {
-            UpdateRelationMetaFieldRequestFieldDTOListPropsOptions self = new UpdateRelationMetaFieldRequestFieldDTOListPropsOptions();
+        public static AddRelationMetaFieldRequestFieldDTOListPropsOptions build(java.util.Map<String, ?> map) throws Exception {
+            AddRelationMetaFieldRequestFieldDTOListPropsOptions self = new AddRelationMetaFieldRequestFieldDTOListPropsOptions();
             return TeaModel.build(map, self);
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListPropsOptions setKey(String key) {
+        public AddRelationMetaFieldRequestFieldDTOListPropsOptions setKey(String key) {
             this.key = key;
             return this;
         }
@@ -73,7 +73,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.key;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListPropsOptions setValue(String value) {
+        public AddRelationMetaFieldRequestFieldDTOListPropsOptions setValue(String value) {
             this.value = value;
             return this;
         }
@@ -83,7 +83,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
 
     }
 
-    public static class UpdateRelationMetaFieldRequestFieldDTOListProps extends TeaModel {
+    public static class AddRelationMetaFieldRequestFieldDTOListProps extends TeaModel {
         @NameInMap("fieldId")
         public String fieldId;
 
@@ -92,9 +92,6 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
 
         @NameInMap("sortable")
         public Boolean sortable;
-
-        @NameInMap("needDetail")
-        public String needDetail;
 
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
@@ -115,13 +112,16 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
         public String format;
 
         @NameInMap("options")
-        public java.util.List<UpdateRelationMetaFieldRequestFieldDTOListPropsOptions> options;
+        public java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> options;
 
         @NameInMap("notUpper")
         public String notUpper;
 
         @NameInMap("unit")
         public String unit;
+
+        @NameInMap("needDetail")
+        public String needDetail;
 
         @NameInMap("placeholder")
         public String placeholder;
@@ -150,12 +150,12 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
         @NameInMap("link")
         public String link;
 
-        public static UpdateRelationMetaFieldRequestFieldDTOListProps build(java.util.Map<String, ?> map) throws Exception {
-            UpdateRelationMetaFieldRequestFieldDTOListProps self = new UpdateRelationMetaFieldRequestFieldDTOListProps();
+        public static AddRelationMetaFieldRequestFieldDTOListProps build(java.util.Map<String, ?> map) throws Exception {
+            AddRelationMetaFieldRequestFieldDTOListProps self = new AddRelationMetaFieldRequestFieldDTOListProps();
             return TeaModel.build(map, self);
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setFieldId(String fieldId) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setFieldId(String fieldId) {
             this.fieldId = fieldId;
             return this;
         }
@@ -163,7 +163,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.fieldId;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setLabel(String label) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setLabel(String label) {
             this.label = label;
             return this;
         }
@@ -171,7 +171,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.label;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setSortable(Boolean sortable) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setSortable(Boolean sortable) {
             this.sortable = sortable;
             return this;
         }
@@ -179,15 +179,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.sortable;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setNeedDetail(String needDetail) {
-            this.needDetail = needDetail;
-            return this;
-        }
-        public String getNeedDetail() {
-            return this.needDetail;
-        }
-
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setLabelEditableFreeze(Boolean labelEditableFreeze) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setLabelEditableFreeze(Boolean labelEditableFreeze) {
             this.labelEditableFreeze = labelEditableFreeze;
             return this;
         }
@@ -195,7 +187,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.labelEditableFreeze;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setRequired(Boolean required) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setRequired(Boolean required) {
             this.required = required;
             return this;
         }
@@ -203,7 +195,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.required;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setRequiredEditableFreeze(Boolean requiredEditableFreeze) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setRequiredEditableFreeze(Boolean requiredEditableFreeze) {
             this.requiredEditableFreeze = requiredEditableFreeze;
             return this;
         }
@@ -211,7 +203,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.requiredEditableFreeze;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setNotPrint(String notPrint) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setNotPrint(String notPrint) {
             this.notPrint = notPrint;
             return this;
         }
@@ -219,7 +211,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.notPrint;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setContent(String content) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setContent(String content) {
             this.content = content;
             return this;
         }
@@ -227,7 +219,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.content;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setFormat(String format) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setFormat(String format) {
             this.format = format;
             return this;
         }
@@ -235,15 +227,15 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.format;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setOptions(java.util.List<UpdateRelationMetaFieldRequestFieldDTOListPropsOptions> options) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setOptions(java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> options) {
             this.options = options;
             return this;
         }
-        public java.util.List<UpdateRelationMetaFieldRequestFieldDTOListPropsOptions> getOptions() {
+        public java.util.List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> getOptions() {
             return this.options;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setNotUpper(String notUpper) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setNotUpper(String notUpper) {
             this.notUpper = notUpper;
             return this;
         }
@@ -251,7 +243,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.notUpper;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setUnit(String unit) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setUnit(String unit) {
             this.unit = unit;
             return this;
         }
@@ -259,7 +251,15 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.unit;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setPlaceholder(String placeholder) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setNeedDetail(String needDetail) {
+            this.needDetail = needDetail;
+            return this;
+        }
+        public String getNeedDetail() {
+            return this.needDetail;
+        }
+
+        public AddRelationMetaFieldRequestFieldDTOListProps setPlaceholder(String placeholder) {
             this.placeholder = placeholder;
             return this;
         }
@@ -267,7 +267,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.placeholder;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setBizAlias(String bizAlias) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setBizAlias(String bizAlias) {
             this.bizAlias = bizAlias;
             return this;
         }
@@ -275,7 +275,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.bizAlias;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setDuration(Boolean duration) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setDuration(Boolean duration) {
             this.duration = duration;
             return this;
         }
@@ -283,7 +283,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.duration;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setChoice(Long choice) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setChoice(Long choice) {
             this.choice = choice;
             return this;
         }
@@ -291,7 +291,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.choice;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setDisabled(Boolean disabled) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setDisabled(Boolean disabled) {
             this.disabled = disabled;
             return this;
         }
@@ -299,7 +299,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.disabled;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setAlign(String align) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setAlign(String align) {
             this.align = align;
             return this;
         }
@@ -307,7 +307,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.align;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setInvisible(Boolean invisible) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setInvisible(Boolean invisible) {
             this.invisible = invisible;
             return this;
         }
@@ -315,7 +315,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.invisible;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setPayEnable(Boolean payEnable) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setPayEnable(Boolean payEnable) {
             this.payEnable = payEnable;
             return this;
         }
@@ -323,7 +323,7 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.payEnable;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOListProps setLink(String link) {
+        public AddRelationMetaFieldRequestFieldDTOListProps setLink(String link) {
             this.link = link;
             return this;
         }
@@ -333,19 +333,19 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
 
     }
 
-    public static class UpdateRelationMetaFieldRequestFieldDTOList extends TeaModel {
+    public static class AddRelationMetaFieldRequestFieldDTOList extends TeaModel {
         @NameInMap("componentName")
         public String componentName;
 
         @NameInMap("props")
-        public UpdateRelationMetaFieldRequestFieldDTOListProps props;
+        public AddRelationMetaFieldRequestFieldDTOListProps props;
 
-        public static UpdateRelationMetaFieldRequestFieldDTOList build(java.util.Map<String, ?> map) throws Exception {
-            UpdateRelationMetaFieldRequestFieldDTOList self = new UpdateRelationMetaFieldRequestFieldDTOList();
+        public static AddRelationMetaFieldRequestFieldDTOList build(java.util.Map<String, ?> map) throws Exception {
+            AddRelationMetaFieldRequestFieldDTOList self = new AddRelationMetaFieldRequestFieldDTOList();
             return TeaModel.build(map, self);
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOList setComponentName(String componentName) {
+        public AddRelationMetaFieldRequestFieldDTOList setComponentName(String componentName) {
             this.componentName = componentName;
             return this;
         }
@@ -353,11 +353,11 @@ public class UpdateRelationMetaFieldRequest extends TeaModel {
             return this.componentName;
         }
 
-        public UpdateRelationMetaFieldRequestFieldDTOList setProps(UpdateRelationMetaFieldRequestFieldDTOListProps props) {
+        public AddRelationMetaFieldRequestFieldDTOList setProps(AddRelationMetaFieldRequestFieldDTOListProps props) {
             this.props = props;
             return this;
         }
-        public UpdateRelationMetaFieldRequestFieldDTOListProps getProps() {
+        public AddRelationMetaFieldRequestFieldDTOListProps getProps() {
             return this.props;
         }
 

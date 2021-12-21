@@ -3,16 +3,16 @@ package com.aliyun.dingtalkcrm_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class UpdateRelationMetaFieldResponseBody extends TeaModel {
+public class DeleteRelationMetaFieldResponseBody extends TeaModel {
     @NameInMap("relationType")
     public String relationType;
 
-    public static UpdateRelationMetaFieldResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        UpdateRelationMetaFieldResponseBody self = new UpdateRelationMetaFieldResponseBody();
+    public static DeleteRelationMetaFieldResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        DeleteRelationMetaFieldResponseBody self = new DeleteRelationMetaFieldResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public UpdateRelationMetaFieldResponseBody setRelationType(String relationType) {
+    public DeleteRelationMetaFieldResponseBody setRelationType(String relationType) {
         this.relationType = relationType;
         return this;
     }
