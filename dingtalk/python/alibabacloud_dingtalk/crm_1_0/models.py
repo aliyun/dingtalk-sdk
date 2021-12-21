@@ -1955,7 +1955,7 @@ class BatchSendOfficialAccountOTOMessageResponse(TeaModel):
         return self
 
 
-class GetOfficialAccountContactInfoHeaders(TeaModel):
+class CreateRelationMetaHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
@@ -1988,28 +1988,14 @@ class GetOfficialAccountContactInfoHeaders(TeaModel):
         return self
 
 
-class GetOfficialAccountContactInfoResponseBody(TeaModel):
+class CreateRelationMetaRequestRelationMetaDTOItemsPropsOptions(TeaModel):
     def __init__(
         self,
-        corp_name: str = None,
-        mobile: str = None,
-        state_code: str = None,
-        union_id: str = None,
-        auth_items: List[str] = None,
-        user_infos: List[str] = None,
+        key: str = None,
+        value: str = None,
     ):
-        # 联系人主企业名称
-        self.corp_name = corp_name
-        # 手机号
-        self.mobile = mobile
-        # 手机号国家码
-        self.state_code = state_code
-        # 联系人的unionId
-        self.union_id = union_id
-        # 已授权的字段
-        self.auth_items = auth_items
-        # 已授权的字段
-        self.user_infos = user_infos
+        self.key = key
+        self.value = value
 
     def validate(self):
         pass
@@ -2020,345 +2006,73 @@ class GetOfficialAccountContactInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.corp_name is not None:
-            result['corpName'] = self.corp_name
-        if self.mobile is not None:
-            result['mobile'] = self.mobile
-        if self.state_code is not None:
-            result['stateCode'] = self.state_code
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        if self.auth_items is not None:
-            result['authItems'] = self.auth_items
-        if self.user_infos is not None:
-            result['userInfos'] = self.user_infos
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('corpName') is not None:
-            self.corp_name = m.get('corpName')
-        if m.get('mobile') is not None:
-            self.mobile = m.get('mobile')
-        if m.get('stateCode') is not None:
-            self.state_code = m.get('stateCode')
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        if m.get('authItems') is not None:
-            self.auth_items = m.get('authItems')
-        if m.get('userInfos') is not None:
-            self.user_infos = m.get('userInfos')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
         return self
 
 
-class GetOfficialAccountContactInfoResponse(TeaModel):
+class CreateRelationMetaRequestRelationMetaDTOItemsProps(TeaModel):
     def __init__(
         self,
-        headers: Dict[str, str] = None,
-        body: GetOfficialAccountContactInfoResponseBody = None,
+        field_id: str = None,
+        label: str = None,
+        sortable: bool = None,
+        need_detail: str = None,
+        label_editable_freeze: bool = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        not_print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[CreateRelationMetaRequestRelationMetaDTOItemsPropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: bool = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        link: str = None,
     ):
-        self.headers = headers
-        self.body = body
+        self.field_id = field_id
+        self.label = label
+        self.sortable = sortable
+        self.need_detail = need_detail
+        self.label_editable_freeze = label_editable_freeze
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.not_print = not_print
+        self.content = content
+        self.format = format
+        self.options = options
+        self.not_upper = not_upper
+        self.unit = unit
+        self.placeholder = placeholder
+        self.biz_alias = biz_alias
+        self.duration = duration
+        self.choice = choice
+        self.disabled = disabled
+        self.align = align
+        self.invisible = invisible
+        self.pay_enable = pay_enable
+        self.link = link
 
     def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = GetOfficialAccountContactInfoResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class QueryAllCustomerHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class QueryAllCustomerRequest(TeaModel):
-    def __init__(
-        self,
-        ding_isv_org_id: int = None,
-        ding_org_id: int = None,
-        ding_token_grant_type: int = None,
-        ding_corp_id: str = None,
-        ding_suite_key: str = None,
-        operator_user_id: str = None,
-        max_results: int = None,
-        next_token: str = None,
-        object_type: str = None,
-    ):
-        self.ding_isv_org_id = ding_isv_org_id
-        self.ding_org_id = ding_org_id
-        self.ding_token_grant_type = ding_token_grant_type
-        self.ding_corp_id = ding_corp_id
-        self.ding_suite_key = ding_suite_key
-        # 用户ID
-        self.operator_user_id = operator_user_id
-        # 翻页size
-        self.max_results = max_results
-        # 分页游标，第一次调用传空或者null
-        self.next_token = next_token
-        # 数据类型（私海个人客户：crm_customer_personal，私海企业客户：crm_customer，公海个人客户：open_customer_personal，公海企业客户：open_customer_org）
-        self.object_type = object_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.ding_isv_org_id is not None:
-            result['dingIsvOrgId'] = self.ding_isv_org_id
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_token_grant_type is not None:
-            result['dingTokenGrantType'] = self.ding_token_grant_type
-        if self.ding_corp_id is not None:
-            result['dingCorpId'] = self.ding_corp_id
-        if self.ding_suite_key is not None:
-            result['dingSuiteKey'] = self.ding_suite_key
-        if self.operator_user_id is not None:
-            result['operatorUserId'] = self.operator_user_id
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        if self.object_type is not None:
-            result['objectType'] = self.object_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('dingIsvOrgId') is not None:
-            self.ding_isv_org_id = m.get('dingIsvOrgId')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingTokenGrantType') is not None:
-            self.ding_token_grant_type = m.get('dingTokenGrantType')
-        if m.get('dingCorpId') is not None:
-            self.ding_corp_id = m.get('dingCorpId')
-        if m.get('dingSuiteKey') is not None:
-            self.ding_suite_key = m.get('dingSuiteKey')
-        if m.get('operatorUserId') is not None:
-            self.operator_user_id = m.get('operatorUserId')
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        if m.get('objectType') is not None:
-            self.object_type = m.get('objectType')
-        return self
-
-
-class QueryAllCustomerResponseBodyResultValuesPermission(TeaModel):
-    def __init__(
-        self,
-        participant_staff_ids: List[str] = None,
-        owner_staff_ids: List[str] = None,
-    ):
-        # 协同人用户ID列表
-        self.participant_staff_ids = participant_staff_ids
-        # 负责人用户ID列表
-        self.owner_staff_ids = owner_staff_ids
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.participant_staff_ids is not None:
-            result['participantStaffIds'] = self.participant_staff_ids
-        if self.owner_staff_ids is not None:
-            result['ownerStaffIds'] = self.owner_staff_ids
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('participantStaffIds') is not None:
-            self.participant_staff_ids = m.get('participantStaffIds')
-        if m.get('ownerStaffIds') is not None:
-            self.owner_staff_ids = m.get('ownerStaffIds')
-        return self
-
-
-class QueryAllCustomerResponseBodyResultValues(TeaModel):
-    def __init__(
-        self,
-        creator_nick: str = None,
-        modify_time: str = None,
-        creator_user_id: str = None,
-        instance_id: str = None,
-        data: Dict[str, Any] = None,
-        extend_data: Dict[str, Any] = None,
-        create_time: str = None,
-        org_id: int = None,
-        object_type: str = None,
-        permission: QueryAllCustomerResponseBodyResultValuesPermission = None,
-        process_out_result: str = None,
-        process_instance_status: str = None,
-    ):
-        # 创建记录的用户昵称
-        self.creator_nick = creator_nick
-        # 记录修改时间
-        self.modify_time = modify_time
-        # 创建记录的用户ID
-        self.creator_user_id = creator_user_id
-        # 数据ID
-        self.instance_id = instance_id
-        # 数据内容
-        self.data = data
-        # 扩展数据内容
-        self.extend_data = extend_data
-        # 记录创建时间
-        self.create_time = create_time
-        # 系统自动生成
-        self.org_id = org_id
-        # 数据类型
-        self.object_type = object_type
-        # 数据权限信息
-        self.permission = permission
-        # 审批结果
-        self.process_out_result = process_out_result
-        # 审批状态
-        self.process_instance_status = process_instance_status
-
-    def validate(self):
-        if self.permission:
-            self.permission.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.creator_nick is not None:
-            result['creatorNick'] = self.creator_nick
-        if self.modify_time is not None:
-            result['modifyTime'] = self.modify_time
-        if self.creator_user_id is not None:
-            result['creatorUserId'] = self.creator_user_id
-        if self.instance_id is not None:
-            result['instanceId'] = self.instance_id
-        if self.data is not None:
-            result['data'] = self.data
-        if self.extend_data is not None:
-            result['extendData'] = self.extend_data
-        if self.create_time is not None:
-            result['createTime'] = self.create_time
-        if self.org_id is not None:
-            result['orgId'] = self.org_id
-        if self.object_type is not None:
-            result['objectType'] = self.object_type
-        if self.permission is not None:
-            result['permission'] = self.permission.to_map()
-        if self.process_out_result is not None:
-            result['processOutResult'] = self.process_out_result
-        if self.process_instance_status is not None:
-            result['processInstanceStatus'] = self.process_instance_status
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('creatorNick') is not None:
-            self.creator_nick = m.get('creatorNick')
-        if m.get('modifyTime') is not None:
-            self.modify_time = m.get('modifyTime')
-        if m.get('creatorUserId') is not None:
-            self.creator_user_id = m.get('creatorUserId')
-        if m.get('instanceId') is not None:
-            self.instance_id = m.get('instanceId')
-        if m.get('data') is not None:
-            self.data = m.get('data')
-        if m.get('extendData') is not None:
-            self.extend_data = m.get('extendData')
-        if m.get('createTime') is not None:
-            self.create_time = m.get('createTime')
-        if m.get('orgId') is not None:
-            self.org_id = m.get('orgId')
-        if m.get('objectType') is not None:
-            self.object_type = m.get('objectType')
-        if m.get('permission') is not None:
-            temp_model = QueryAllCustomerResponseBodyResultValuesPermission()
-            self.permission = temp_model.from_map(m['permission'])
-        if m.get('processOutResult') is not None:
-            self.process_out_result = m.get('processOutResult')
-        if m.get('processInstanceStatus') is not None:
-            self.process_instance_status = m.get('processInstanceStatus')
-        return self
-
-
-class QueryAllCustomerResponseBodyResult(TeaModel):
-    def __init__(
-        self,
-        next_token: str = None,
-        values: List[QueryAllCustomerResponseBodyResultValues] = None,
-        max_results: int = None,
-    ):
-        # 下一页的游标，为null则表示无数据
-        self.next_token = next_token
-        # 客户数据节点
-        self.values = values
-        # 分页大小
-        self.max_results = max_results
-
-    def validate(self):
-        if self.values:
-            for k in self.values:
+        if self.options:
+            for k in self.options:
                 if k:
                     k.validate()
 
@@ -2368,41 +2082,118 @@ class QueryAllCustomerResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        result['values'] = []
-        if self.values is not None:
-            for k in self.values:
-                result['values'].append(k.to_map() if k else None)
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.sortable is not None:
+            result['sortable'] = self.sortable
+        if self.need_detail is not None:
+            result['needDetail'] = self.need_detail
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.not_print is not None:
+            result['notPrint'] = self.not_print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        if self.link is not None:
+            result['link'] = self.link
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        self.values = []
-        if m.get('values') is not None:
-            for k in m.get('values'):
-                temp_model = QueryAllCustomerResponseBodyResultValues()
-                self.values.append(temp_model.from_map(k))
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('sortable') is not None:
+            self.sortable = m.get('sortable')
+        if m.get('needDetail') is not None:
+            self.need_detail = m.get('needDetail')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('notPrint') is not None:
+            self.not_print = m.get('notPrint')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = CreateRelationMetaRequestRelationMetaDTOItemsPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        if m.get('link') is not None:
+            self.link = m.get('link')
         return self
 
 
-class QueryAllCustomerResponseBody(TeaModel):
+class CreateRelationMetaRequestRelationMetaDTOItems(TeaModel):
     def __init__(
         self,
-        result: QueryAllCustomerResponseBodyResult = None,
+        component_name: str = None,
+        props: CreateRelationMetaRequestRelationMetaDTOItemsProps = None,
     ):
-        # 分页结果
-        self.result = result
+        self.component_name = component_name
+        self.props = props
 
     def validate(self):
-        if self.result:
-            self.result.validate()
+        if self.props:
+            self.props.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2410,23 +2201,148 @@ class QueryAllCustomerResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.result is not None:
-            result['result'] = self.result.to_map()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.props is not None:
+            result['props'] = self.props.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('result') is not None:
-            temp_model = QueryAllCustomerResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('props') is not None:
+            temp_model = CreateRelationMetaRequestRelationMetaDTOItemsProps()
+            self.props = temp_model.from_map(m['props'])
         return self
 
 
-class QueryAllCustomerResponse(TeaModel):
+class CreateRelationMetaRequestRelationMetaDTO(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+        name: str = None,
+        desc: str = None,
+        items: List[CreateRelationMetaRequestRelationMetaDTOItems] = None,
+    ):
+        self.relation_type = relation_type
+        self.name = name
+        self.desc = desc
+        self.items = items
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.desc is not None:
+            result['desc'] = self.desc
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = CreateRelationMetaRequestRelationMetaDTOItems()
+                self.items.append(temp_model.from_map(k))
+        return self
+
+
+class CreateRelationMetaRequest(TeaModel):
+    def __init__(
+        self,
+        tenant: str = None,
+        operator_user_id: str = None,
+        relation_meta_dto: CreateRelationMetaRequestRelationMetaDTO = None,
+    ):
+        self.tenant = tenant
+        self.operator_user_id = operator_user_id
+        self.relation_meta_dto = relation_meta_dto
+
+    def validate(self):
+        if self.relation_meta_dto:
+            self.relation_meta_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tenant is not None:
+            result['tenant'] = self.tenant
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.relation_meta_dto is not None:
+            result['relationMetaDTO'] = self.relation_meta_dto.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenant') is not None:
+            self.tenant = m.get('tenant')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('relationMetaDTO') is not None:
+            temp_model = CreateRelationMetaRequestRelationMetaDTO()
+            self.relation_meta_dto = temp_model.from_map(m['relationMetaDTO'])
+        return self
+
+
+class CreateRelationMetaResponseBody(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+    ):
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        return self
+
+
+class CreateRelationMetaResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: QueryAllCustomerResponseBody = None,
+        body: CreateRelationMetaResponseBody = None,
     ):
         self.headers = headers
         self.body = body
@@ -2454,7 +2370,7 @@ class QueryAllCustomerResponse(TeaModel):
         if m.get('headers') is not None:
             self.headers = m.get('headers')
         if m.get('body') is not None:
-            temp_model = QueryAllCustomerResponseBody()
+            temp_model = CreateRelationMetaResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2530,6 +2446,8 @@ class UpdateRelationMetaFieldRequestFieldDTOListProps(TeaModel):
         self,
         field_id: str = None,
         label: str = None,
+        sortable: bool = None,
+        need_detail: str = None,
         label_editable_freeze: bool = None,
         required: bool = None,
         required_editable_freeze: bool = None,
@@ -2551,6 +2469,8 @@ class UpdateRelationMetaFieldRequestFieldDTOListProps(TeaModel):
     ):
         self.field_id = field_id
         self.label = label
+        self.sortable = sortable
+        self.need_detail = need_detail
         self.label_editable_freeze = label_editable_freeze
         self.required = required
         self.required_editable_freeze = required_editable_freeze
@@ -2586,6 +2506,10 @@ class UpdateRelationMetaFieldRequestFieldDTOListProps(TeaModel):
             result['fieldId'] = self.field_id
         if self.label is not None:
             result['label'] = self.label
+        if self.sortable is not None:
+            result['sortable'] = self.sortable
+        if self.need_detail is not None:
+            result['needDetail'] = self.need_detail
         if self.label_editable_freeze is not None:
             result['labelEditableFreeze'] = self.label_editable_freeze
         if self.required is not None:
@@ -2632,6 +2556,10 @@ class UpdateRelationMetaFieldRequestFieldDTOListProps(TeaModel):
             self.field_id = m.get('fieldId')
         if m.get('label') is not None:
             self.label = m.get('label')
+        if m.get('sortable') is not None:
+            self.sortable = m.get('sortable')
+        if m.get('needDetail') is not None:
+            self.need_detail = m.get('needDetail')
         if m.get('labelEditableFreeze') is not None:
             self.label_editable_freeze = m.get('labelEditableFreeze')
         if m.get('required') is not None:
@@ -2762,1373 +2690,15 @@ class UpdateRelationMetaFieldRequest(TeaModel):
         return self
 
 
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSourceTarget(TeaModel):
+class UpdateRelationMetaFieldResponseBody(TeaModel):
     def __init__(
         self,
-        app_type: int = None,
-        app_uuid: str = None,
-        biz_type: str = None,
-        form_code: str = None,
-    ):
-        self.app_type = app_type
-        self.app_uuid = app_uuid
-        self.biz_type = biz_type
-        self.form_code = form_code
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.app_type is not None:
-            result['appType'] = self.app_type
-        if self.app_uuid is not None:
-            result['appUuid'] = self.app_uuid
-        if self.biz_type is not None:
-            result['bizType'] = self.biz_type
-        if self.form_code is not None:
-            result['formCode'] = self.form_code
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('appType') is not None:
-            self.app_type = m.get('appType')
-        if m.get('appUuid') is not None:
-            self.app_uuid = m.get('appUuid')
-        if m.get('bizType') is not None:
-            self.biz_type = m.get('bizType')
-        if m.get('formCode') is not None:
-            self.form_code = m.get('formCode')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSource(TeaModel):
-    def __init__(
-        self,
-        target: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSourceTarget = None,
-        type: str = None,
-    ):
-        self.target = target
-        self.type = type
-
-    def validate(self):
-        if self.target:
-            self.target.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.target is not None:
-            result['target'] = self.target.to_map()
-        if self.type is not None:
-            result['type'] = self.type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('target') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSourceTarget()
-            self.target = temp_model.from_map(m['target'])
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        unit: str = None,
-        upper: bool = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.unit = unit
-        self.upper = upper
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.upper is not None:
-            result['upper'] = self.upper
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelateProps(TeaModel):
-    def __init__(
-        self,
-        align: str = None,
-        biz_alias: str = None,
-        choice: int = None,
-        content: str = None,
-        disabled: bool = None,
-        duration: bool = None,
-        format: str = None,
-        formula: str = None,
-        field_id: str = None,
-        invisible: bool = None,
-        label: str = None,
-        link: str = None,
-        not_upper: str = None,
-        options: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsOptions] = None,
-        pay_enable: bool = None,
-        placeholder: str = None,
-        required: bool = None,
-        stat_field: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsStatField] = None,
-        unit: str = None,
-        vertical_print: bool = None,
-    ):
-        self.align = align
-        self.biz_alias = biz_alias
-        self.choice = choice
-        self.content = content
-        self.disabled = disabled
-        self.duration = duration
-        self.format = format
-        self.formula = formula
-        self.field_id = field_id
-        self.invisible = invisible
-        self.label = label
-        self.link = link
-        self.not_upper = not_upper
-        self.options = options
-        self.pay_enable = pay_enable
-        self.placeholder = placeholder
-        self.required = required
-        self.stat_field = stat_field
-        self.unit = unit
-        self.vertical_print = vertical_print
-
-    def validate(self):
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.align is not None:
-            result['align'] = self.align
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.content is not None:
-            result['content'] = self.content
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.format is not None:
-            result['format'] = self.format
-        if self.formula is not None:
-            result['formula'] = self.formula
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.label is not None:
-            result['label'] = self.label
-        if self.link is not None:
-            result['link'] = self.link
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.required is not None:
-            result['required'] = self.required
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelatePropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFields(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        relate_props: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelateProps = None,
-    ):
-        self.component_name = component_name
-        self.relate_props = relate_props
-
-    def validate(self):
-        if self.relate_props:
-            self.relate_props.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        if self.relate_props is not None:
-            result['relateProps'] = self.relate_props.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        if m.get('relateProps') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFieldsRelateProps()
-            self.relate_props = temp_model.from_map(m['relateProps'])
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        unit: str = None,
-        upper: bool = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.unit = unit
-        self.upper = upper
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.upper is not None:
-            result['upper'] = self.upper
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenProps(TeaModel):
-    def __init__(
-        self,
-        align: str = None,
-        biz_alias: str = None,
-        choice: int = None,
-        content: str = None,
-        data_source: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSource = None,
-        disabled: bool = None,
-        duration: bool = None,
-        fields: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFields] = None,
-        format: str = None,
-        formula: str = None,
-        field_id: str = None,
-        invisible: bool = None,
-        label: str = None,
-        label_editable_freeze: bool = None,
-        link: str = None,
-        not_print: str = None,
-        not_upper: str = None,
-        options: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsOptions] = None,
-        pay_enable: bool = None,
-        placeholder: str = None,
-        required: bool = None,
-        required_editable_freeze: bool = None,
-        stat_field: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsStatField] = None,
-        unit: str = None,
-        vertical_print: bool = None,
-    ):
-        self.align = align
-        self.biz_alias = biz_alias
-        self.choice = choice
-        self.content = content
-        self.data_source = data_source
-        self.disabled = disabled
-        self.duration = duration
-        self.fields = fields
-        self.format = format
-        self.formula = formula
-        self.field_id = field_id
-        self.invisible = invisible
-        self.label = label
-        self.label_editable_freeze = label_editable_freeze
-        self.link = link
-        self.not_print = not_print
-        self.not_upper = not_upper
-        self.options = options
-        self.pay_enable = pay_enable
-        self.placeholder = placeholder
-        self.required = required
-        self.required_editable_freeze = required_editable_freeze
-        self.stat_field = stat_field
-        self.unit = unit
-        self.vertical_print = vertical_print
-
-    def validate(self):
-        if self.data_source:
-            self.data_source.validate()
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.align is not None:
-            result['align'] = self.align
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.content is not None:
-            result['content'] = self.content
-        if self.data_source is not None:
-            result['dataSource'] = self.data_source.to_map()
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.duration is not None:
-            result['duration'] = self.duration
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        if self.format is not None:
-            result['format'] = self.format
-        if self.formula is not None:
-            result['formula'] = self.formula
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.label is not None:
-            result['label'] = self.label
-        if self.label_editable_freeze is not None:
-            result['labelEditableFreeze'] = self.label_editable_freeze
-        if self.link is not None:
-            result['link'] = self.link
-        if self.not_print is not None:
-            result['notPrint'] = self.not_print
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.required is not None:
-            result['required'] = self.required
-        if self.required_editable_freeze is not None:
-            result['requiredEditableFreeze'] = self.required_editable_freeze
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('dataSource') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsDataSource()
-            self.data_source = temp_model.from_map(m['dataSource'])
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsFields()
-                self.fields.append(temp_model.from_map(k))
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('labelEditableFreeze') is not None:
-            self.label_editable_freeze = m.get('labelEditableFreeze')
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('notPrint') is not None:
-            self.not_print = m.get('notPrint')
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        if m.get('requiredEditableFreeze') is not None:
-            self.required_editable_freeze = m.get('requiredEditableFreeze')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenPropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildren(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        props: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenProps = None,
-    ):
-        self.component_name = component_name
-        self.props = props
-
-    def validate(self):
-        if self.props:
-            self.props.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        if self.props is not None:
-            result['props'] = self.props.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        if m.get('props') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildrenProps()
-            self.props = temp_model.from_map(m['props'])
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSourceTarget(TeaModel):
-    def __init__(
-        self,
-        app_type: int = None,
-        app_uuid: str = None,
-        biz_type: str = None,
-        form_code: str = None,
-    ):
-        self.app_type = app_type
-        self.app_uuid = app_uuid
-        self.biz_type = biz_type
-        self.form_code = form_code
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.app_type is not None:
-            result['appType'] = self.app_type
-        if self.app_uuid is not None:
-            result['appUuid'] = self.app_uuid
-        if self.biz_type is not None:
-            result['bizType'] = self.biz_type
-        if self.form_code is not None:
-            result['formCode'] = self.form_code
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('appType') is not None:
-            self.app_type = m.get('appType')
-        if m.get('appUuid') is not None:
-            self.app_uuid = m.get('appUuid')
-        if m.get('bizType') is not None:
-            self.biz_type = m.get('bizType')
-        if m.get('formCode') is not None:
-            self.form_code = m.get('formCode')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSource(TeaModel):
-    def __init__(
-        self,
-        target: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSourceTarget = None,
-        type: str = None,
-    ):
-        self.target = target
-        self.type = type
-
-    def validate(self):
-        if self.target:
-            self.target.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.target is not None:
-            result['target'] = self.target.to_map()
-        if self.type is not None:
-            result['type'] = self.type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('target') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSourceTarget()
-            self.target = temp_model.from_map(m['target'])
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        unit: str = None,
-        upper: bool = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.unit = unit
-        self.upper = upper
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.upper is not None:
-            result['upper'] = self.upper
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelateProps(TeaModel):
-    def __init__(
-        self,
-        align: str = None,
-        biz_alias: str = None,
-        choice: int = None,
-        content: str = None,
-        disabled: bool = None,
-        duration: str = None,
-        format: str = None,
-        formula: str = None,
-        field_id: str = None,
-        invisible: bool = None,
-        label: str = None,
-        link: str = None,
-        not_upper: str = None,
-        options: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsOptions] = None,
-        pay_enable: bool = None,
-        placeholder: str = None,
-        required: bool = None,
-        stat_field: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsStatField] = None,
-        unit: str = None,
-        vertical_print: bool = None,
-    ):
-        self.align = align
-        self.biz_alias = biz_alias
-        self.choice = choice
-        self.content = content
-        self.disabled = disabled
-        self.duration = duration
-        self.format = format
-        self.formula = formula
-        self.field_id = field_id
-        self.invisible = invisible
-        self.label = label
-        self.link = link
-        self.not_upper = not_upper
-        self.options = options
-        self.pay_enable = pay_enable
-        self.placeholder = placeholder
-        self.required = required
-        self.stat_field = stat_field
-        self.unit = unit
-        self.vertical_print = vertical_print
-
-    def validate(self):
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.align is not None:
-            result['align'] = self.align
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.content is not None:
-            result['content'] = self.content
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.format is not None:
-            result['format'] = self.format
-        if self.formula is not None:
-            result['formula'] = self.formula
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.label is not None:
-            result['label'] = self.label
-        if self.link is not None:
-            result['link'] = self.link
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.required is not None:
-            result['required'] = self.required
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelatePropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFields(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        relate_props: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelateProps = None,
-    ):
-        self.component_name = component_name
-        self.relate_props = relate_props
-
-    def validate(self):
-        if self.relate_props:
-            self.relate_props.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        if self.relate_props is not None:
-            result['relateProps'] = self.relate_props.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        if m.get('relateProps') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFieldsRelateProps()
-            self.relate_props = temp_model.from_map(m['relateProps'])
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        unit: str = None,
-        upper: bool = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.unit = unit
-        self.upper = upper
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.upper is not None:
-            result['upper'] = self.upper
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsProps(TeaModel):
-    def __init__(
-        self,
-        align: str = None,
-        biz_alias: str = None,
-        choice: int = None,
-        content: str = None,
-        data_source: UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSource = None,
-        disabled: bool = None,
-        duration: bool = None,
-        fields: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFields] = None,
-        format: str = None,
-        formula: str = None,
-        field_id: str = None,
-        invisible: bool = None,
-        label: str = None,
-        label_editable_freeze: bool = None,
-        link: str = None,
-        not_print: str = None,
-        not_upper: str = None,
-        options: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsOptions] = None,
-        pay_enable: bool = None,
-        placeholder: str = None,
-        required: bool = None,
-        required_editable_freeze: bool = None,
-        stat_field: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsStatField] = None,
-        unit: str = None,
-        vertical_print: bool = None,
-    ):
-        self.align = align
-        self.biz_alias = biz_alias
-        self.choice = choice
-        self.content = content
-        self.data_source = data_source
-        self.disabled = disabled
-        self.duration = duration
-        self.fields = fields
-        self.format = format
-        self.formula = formula
-        self.field_id = field_id
-        self.invisible = invisible
-        self.label = label
-        self.label_editable_freeze = label_editable_freeze
-        self.link = link
-        self.not_print = not_print
-        self.not_upper = not_upper
-        self.options = options
-        self.pay_enable = pay_enable
-        self.placeholder = placeholder
-        self.required = required
-        self.required_editable_freeze = required_editable_freeze
-        self.stat_field = stat_field
-        self.unit = unit
-        self.vertical_print = vertical_print
-
-    def validate(self):
-        if self.data_source:
-            self.data_source.validate()
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.align is not None:
-            result['align'] = self.align
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.content is not None:
-            result['content'] = self.content
-        if self.data_source is not None:
-            result['dataSource'] = self.data_source.to_map()
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.duration is not None:
-            result['duration'] = self.duration
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        if self.format is not None:
-            result['format'] = self.format
-        if self.formula is not None:
-            result['formula'] = self.formula
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.label is not None:
-            result['label'] = self.label
-        if self.label_editable_freeze is not None:
-            result['labelEditableFreeze'] = self.label_editable_freeze
-        if self.link is not None:
-            result['link'] = self.link
-        if self.not_print is not None:
-            result['notPrint'] = self.not_print
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.required is not None:
-            result['required'] = self.required
-        if self.required_editable_freeze is not None:
-            result['requiredEditableFreeze'] = self.required_editable_freeze
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('dataSource') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsDataSource()
-            self.data_source = temp_model.from_map(m['dataSource'])
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsFields()
-                self.fields.append(temp_model.from_map(k))
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('labelEditableFreeze') is not None:
-            self.label_editable_freeze = m.get('labelEditableFreeze')
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('notPrint') is not None:
-            self.not_print = m.get('notPrint')
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        if m.get('requiredEditableFreeze') is not None:
-            self.required_editable_freeze = m.get('requiredEditableFreeze')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsPropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTOItems(TeaModel):
-    def __init__(
-        self,
-        children: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildren] = None,
-        component_name: str = None,
-        props: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsProps] = None,
-    ):
-        self.children = children
-        self.component_name = component_name
-        self.props = props
-
-    def validate(self):
-        if self.children:
-            for k in self.children:
-                if k:
-                    k.validate()
-        if self.props:
-            for k in self.props:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['children'] = []
-        if self.children is not None:
-            for k in self.children:
-                result['children'].append(k.to_map() if k else None)
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        result['props'] = []
-        if self.props is not None:
-            for k in self.props:
-                result['props'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.children = []
-        if m.get('children') is not None:
-            for k in m.get('children'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsChildren()
-                self.children.append(temp_model.from_map(k))
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        self.props = []
-        if m.get('props') is not None:
-            for k in m.get('props'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItemsProps()
-                self.props.append(temp_model.from_map(k))
-        return self
-
-
-class UpdateRelationMetaFieldResponseBodyRelationMetaDTO(TeaModel):
-    def __init__(
-        self,
-        desc: str = None,
-        items: List[UpdateRelationMetaFieldResponseBodyRelationMetaDTOItems] = None,
-        name: str = None,
         relation_type: str = None,
     ):
-        self.desc = desc
-        self.items = items
-        self.name = name
         self.relation_type = relation_type
 
     def validate(self):
-        if self.items:
-            for k in self.items:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -4136,60 +2706,14 @@ class UpdateRelationMetaFieldResponseBodyRelationMetaDTO(TeaModel):
             return _map
 
         result = dict()
-        if self.desc is not None:
-            result['desc'] = self.desc
-        result['items'] = []
-        if self.items is not None:
-            for k in self.items:
-                result['items'].append(k.to_map() if k else None)
-        if self.name is not None:
-            result['name'] = self.name
         if self.relation_type is not None:
             result['relationType'] = self.relation_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('desc') is not None:
-            self.desc = m.get('desc')
-        self.items = []
-        if m.get('items') is not None:
-            for k in m.get('items'):
-                temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTOItems()
-                self.items.append(temp_model.from_map(k))
-        if m.get('name') is not None:
-            self.name = m.get('name')
         if m.get('relationType') is not None:
             self.relation_type = m.get('relationType')
-        return self
-
-
-class UpdateRelationMetaFieldResponseBody(TeaModel):
-    def __init__(
-        self,
-        relation_meta_dto: UpdateRelationMetaFieldResponseBodyRelationMetaDTO = None,
-    ):
-        self.relation_meta_dto = relation_meta_dto
-
-    def validate(self):
-        if self.relation_meta_dto:
-            self.relation_meta_dto.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.relation_meta_dto is not None:
-            result['relationMetaDTO'] = self.relation_meta_dto.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('relationMetaDTO') is not None:
-            temp_model = UpdateRelationMetaFieldResponseBodyRelationMetaDTO()
-            self.relation_meta_dto = temp_model.from_map(m['relationMetaDTO'])
         return self
 
 
@@ -4945,2401 +3469,6 @@ class GetOfficialAccountOTOMessageResultResponse(TeaModel):
         return self
 
 
-class DescribeRelationMetaHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class DescribeRelationMetaRequest(TeaModel):
-    def __init__(
-        self,
-        tenant: str = None,
-        operator_user_id: str = None,
-        relation_types: List[str] = None,
-    ):
-        self.tenant = tenant
-        self.operator_user_id = operator_user_id
-        self.relation_types = relation_types
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.tenant is not None:
-            result['tenant'] = self.tenant
-        if self.operator_user_id is not None:
-            result['operatorUserId'] = self.operator_user_id
-        if self.relation_types is not None:
-            result['relationTypes'] = self.relation_types
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('tenant') is not None:
-            self.tenant = m.get('tenant')
-        if m.get('operatorUserId') is not None:
-            self.operator_user_id = m.get('operatorUserId')
-        if m.get('relationTypes') is not None:
-            self.relation_types = m.get('relationTypes')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        # 选项数据主键
-        self.key = key
-        # 选项显示内容
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        # 选项数据主键
-        self.key = key
-        # 选项显示内容
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        upper: bool = None,
-        unit: str = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.upper = upper
-        self.unit = unit
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.upper is not None:
-            result['upper'] = self.upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        required: bool = None,
-        content: str = None,
-        format: str = None,
-        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions] = None,
-        not_upper: str = None,
-        unit: str = None,
-        placeholder: str = None,
-        biz_alias: str = None,
-        duration: str = None,
-        choice: int = None,
-        disabled: bool = None,
-        align: str = None,
-        invisible: bool = None,
-        pay_enable: bool = None,
-        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField] = None,
-        link: str = None,
-        vertical_print: bool = None,
-        formula: str = None,
-    ):
-        # 字段id
-        self.field_id = field_id
-        # 字段标题
-        self.label = label
-        # 字段是否必填
-        self.required = required
-        # 说明文字内容
-        self.content = content
-        # 时间格式
-        self.format = format
-        # 选项内容列表
-        self.options = options
-        # 是否需要大写 默认是需要
-        self.not_upper = not_upper
-        # 数字组件/日期区间组件单位属性
-        self.unit = unit
-        # 界面空值提示占位符 前后端统一用placeholder
-        self.placeholder = placeholder
-        # 字段别名
-        self.biz_alias = biz_alias
-        # 是否自动计算时长
-        self.duration = duration
-        # 内部联系人choice
-        self.choice = choice
-        # 是否可编辑
-        self.disabled = disabled
-        # textnote的样式
-        self.align = align
-        # 隐藏字段
-        self.invisible = invisible
-        # 是否有支付属性
-        self.pay_enable = pay_enable
-        # 需要计算总和的明细组件
-        self.stat_field = stat_field
-        # 说明文案的链接地址
-        self.link = link
-        # 明细打印排版方式
-        self.vertical_print = vertical_print
-        # 公式
-        self.formula = formula
-
-    def validate(self):
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.required is not None:
-            result['required'] = self.required
-        if self.content is not None:
-            result['content'] = self.content
-        if self.format is not None:
-            result['format'] = self.format
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.align is not None:
-            result['align'] = self.align
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.link is not None:
-            result['link'] = self.link
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        if self.formula is not None:
-            result['formula'] = self.formula
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps = None,
-    ):
-        # 字段类型
-        self.component_name = component_name
-        # 字段属性
-        self.relate_props = relate_props
-
-    def validate(self):
-        if self.relate_props:
-            self.relate_props.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        if self.relate_props is not None:
-            result['relateProps'] = self.relate_props.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        if m.get('relateProps') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps()
-            self.relate_props = temp_model.from_map(m['relateProps'])
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget(TeaModel):
-    def __init__(
-        self,
-        app_uuid: str = None,
-        app_type: int = None,
-        biz_type: str = None,
-        form_code: str = None,
-    ):
-        # 应用搭建id
-        self.app_uuid = app_uuid
-        # 应用类型
-        self.app_type = app_type
-        # 表单业务标识
-        self.biz_type = biz_type
-        # 被关联表单的formCode
-        self.form_code = form_code
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.app_uuid is not None:
-            result['appUuid'] = self.app_uuid
-        if self.app_type is not None:
-            result['appType'] = self.app_type
-        if self.biz_type is not None:
-            result['bizType'] = self.biz_type
-        if self.form_code is not None:
-            result['formCode'] = self.form_code
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('appUuid') is not None:
-            self.app_uuid = m.get('appUuid')
-        if m.get('appType') is not None:
-            self.app_type = m.get('appType')
-        if m.get('bizType') is not None:
-            self.biz_type = m.get('bizType')
-        if m.get('formCode') is not None:
-            self.form_code = m.get('formCode')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource(TeaModel):
-    def __init__(
-        self,
-        type: str = None,
-        target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget = None,
-    ):
-        # 关联类型{ "form": 关联表单 }
-        self.type = type
-        # 关联表单的业务标识
-        self.target = target
-
-    def validate(self):
-        if self.target:
-            self.target.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.type is not None:
-            result['type'] = self.type
-        if self.target is not None:
-            result['target'] = self.target.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        if m.get('target') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget()
-            self.target = temp_model.from_map(m['target'])
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        upper: bool = None,
-        unit: str = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.upper = upper
-        self.unit = unit
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.upper is not None:
-            result['upper'] = self.upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        label_editable_freeze: bool = None,
-        required: bool = None,
-        required_editable_freeze: bool = None,
-        not_print: str = None,
-        content: str = None,
-        format: str = None,
-        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions] = None,
-        not_upper: str = None,
-        unit: str = None,
-        placeholder: str = None,
-        biz_alias: str = None,
-        duration: bool = None,
-        choice: int = None,
-        disabled: bool = None,
-        align: str = None,
-        fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields] = None,
-        data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource = None,
-        invisible: bool = None,
-        pay_enable: bool = None,
-        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField] = None,
-        link: str = None,
-        vertical_print: bool = None,
-        formula: str = None,
-    ):
-        # 字段id
-        self.field_id = field_id
-        # 字段标题
-        self.label = label
-        # 字段标题是否可修改
-        self.label_editable_freeze = label_editable_freeze
-        # 字段是否必填
-        self.required = required
-        # 字段必填是否修改
-        self.required_editable_freeze = required_editable_freeze
-        # 是否参与打印
-        self.not_print = not_print
-        # 说明文字内容
-        self.content = content
-        # 时间格式
-        self.format = format
-        # 选项内容列表
-        self.options = options
-        # 是否需要大写 默认是需要
-        self.not_upper = not_upper
-        # 数字组件/日期区间组件单位属性
-        self.unit = unit
-        # 界面空值提示占位符 前后端统一用placeholder
-        self.placeholder = placeholder
-        # 字段别名
-        self.biz_alias = biz_alias
-        # 是否自动计算时长
-        self.duration = duration
-        # 内部联系人choice
-        self.choice = choice
-        # 是否可编辑
-        self.disabled = disabled
-        # textnote的样式
-        self.align = align
-        # 关联表单的关联控件显示
-        self.fields = fields
-        # 关联表单的数据源配置
-        self.data_source = data_source
-        # 隐藏字段
-        self.invisible = invisible
-        # 是否有支付属性
-        self.pay_enable = pay_enable
-        # 需要计算总和的明细组件
-        self.stat_field = stat_field
-        # 说明文案的链接地址
-        self.link = link
-        # 明细打印排版方式
-        self.vertical_print = vertical_print
-        # 公式
-        self.formula = formula
-
-    def validate(self):
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-        if self.data_source:
-            self.data_source.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.label_editable_freeze is not None:
-            result['labelEditableFreeze'] = self.label_editable_freeze
-        if self.required is not None:
-            result['required'] = self.required
-        if self.required_editable_freeze is not None:
-            result['requiredEditableFreeze'] = self.required_editable_freeze
-        if self.not_print is not None:
-            result['notPrint'] = self.not_print
-        if self.content is not None:
-            result['content'] = self.content
-        if self.format is not None:
-            result['format'] = self.format
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.align is not None:
-            result['align'] = self.align
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        if self.data_source is not None:
-            result['dataSource'] = self.data_source.to_map()
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.link is not None:
-            result['link'] = self.link
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        if self.formula is not None:
-            result['formula'] = self.formula
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('labelEditableFreeze') is not None:
-            self.label_editable_freeze = m.get('labelEditableFreeze')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        if m.get('requiredEditableFreeze') is not None:
-            self.required_editable_freeze = m.get('requiredEditableFreeze')
-        if m.get('notPrint') is not None:
-            self.not_print = m.get('notPrint')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields()
-                self.fields.append(temp_model.from_map(k))
-        if m.get('dataSource') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource()
-            self.data_source = temp_model.from_map(m['dataSource'])
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        upper: bool = None,
-        unit: str = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.upper = upper
-        self.unit = unit
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.upper is not None:
-            result['upper'] = self.upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        required: bool = None,
-        content: str = None,
-        format: str = None,
-        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions] = None,
-        not_upper: str = None,
-        unit: str = None,
-        placeholder: str = None,
-        biz_alias: str = None,
-        duration: bool = None,
-        choice: int = None,
-        disabled: bool = None,
-        align: str = None,
-        invisible: bool = None,
-        pay_enable: bool = None,
-        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField] = None,
-        link: str = None,
-        vertical_print: bool = None,
-        formula: str = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.required = required
-        self.content = content
-        self.format = format
-        self.options = options
-        self.not_upper = not_upper
-        self.unit = unit
-        self.placeholder = placeholder
-        self.biz_alias = biz_alias
-        self.duration = duration
-        self.choice = choice
-        self.disabled = disabled
-        self.align = align
-        self.invisible = invisible
-        self.pay_enable = pay_enable
-        self.stat_field = stat_field
-        self.link = link
-        self.vertical_print = vertical_print
-        self.formula = formula
-
-    def validate(self):
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.required is not None:
-            result['required'] = self.required
-        if self.content is not None:
-            result['content'] = self.content
-        if self.format is not None:
-            result['format'] = self.format
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.align is not None:
-            result['align'] = self.align
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.link is not None:
-            result['link'] = self.link
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        if self.formula is not None:
-            result['formula'] = self.formula
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps = None,
-    ):
-        self.component_name = component_name
-        self.relate_props = relate_props
-
-    def validate(self):
-        if self.relate_props:
-            self.relate_props.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        if self.relate_props is not None:
-            result['relateProps'] = self.relate_props.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        if m.get('relateProps') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps()
-            self.relate_props = temp_model.from_map(m['relateProps'])
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget(TeaModel):
-    def __init__(
-        self,
-        app_uuid: str = None,
-        app_type: int = None,
-        biz_type: str = None,
-        form_code: str = None,
-    ):
-        self.app_uuid = app_uuid
-        self.app_type = app_type
-        self.biz_type = biz_type
-        self.form_code = form_code
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.app_uuid is not None:
-            result['appUuid'] = self.app_uuid
-        if self.app_type is not None:
-            result['appType'] = self.app_type
-        if self.biz_type is not None:
-            result['bizType'] = self.biz_type
-        if self.form_code is not None:
-            result['formCode'] = self.form_code
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('appUuid') is not None:
-            self.app_uuid = m.get('appUuid')
-        if m.get('appType') is not None:
-            self.app_type = m.get('appType')
-        if m.get('bizType') is not None:
-            self.biz_type = m.get('bizType')
-        if m.get('formCode') is not None:
-            self.form_code = m.get('formCode')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource(TeaModel):
-    def __init__(
-        self,
-        type: str = None,
-        target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget = None,
-    ):
-        self.type = type
-        self.target = target
-
-    def validate(self):
-        if self.target:
-            self.target.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.type is not None:
-            result['type'] = self.type
-        if self.target is not None:
-            result['target'] = self.target.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        if m.get('target') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget()
-            self.target = temp_model.from_map(m['target'])
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        upper: bool = None,
-        unit: str = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.upper = upper
-        self.unit = unit
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.upper is not None:
-            result['upper'] = self.upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('upper') is not None:
-            self.upper = m.get('upper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaModel):
-    def __init__(
-        self,
-        field_id: str = None,
-        label: str = None,
-        label_editable_freeze: bool = None,
-        required: bool = None,
-        required_editable_freeze: bool = None,
-        not_print: str = None,
-        content: str = None,
-        format: str = None,
-        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions] = None,
-        not_upper: str = None,
-        unit: str = None,
-        placeholder: str = None,
-        biz_alias: str = None,
-        duration: bool = None,
-        choice: int = None,
-        disabled: bool = None,
-        align: str = None,
-        fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields] = None,
-        data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource = None,
-        invisible: bool = None,
-        pay_enable: bool = None,
-        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField] = None,
-        link: str = None,
-        vertical_print: bool = None,
-        formula: str = None,
-    ):
-        self.field_id = field_id
-        self.label = label
-        self.label_editable_freeze = label_editable_freeze
-        self.required = required
-        self.required_editable_freeze = required_editable_freeze
-        self.not_print = not_print
-        self.content = content
-        self.format = format
-        self.options = options
-        self.not_upper = not_upper
-        self.unit = unit
-        self.placeholder = placeholder
-        self.biz_alias = biz_alias
-        self.duration = duration
-        self.choice = choice
-        self.disabled = disabled
-        self.align = align
-        self.fields = fields
-        self.data_source = data_source
-        self.invisible = invisible
-        self.pay_enable = pay_enable
-        self.stat_field = stat_field
-        self.link = link
-        self.vertical_print = vertical_print
-        self.formula = formula
-
-    def validate(self):
-        if self.options:
-            for k in self.options:
-                if k:
-                    k.validate()
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-        if self.data_source:
-            self.data_source.validate()
-        if self.stat_field:
-            for k in self.stat_field:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.field_id is not None:
-            result['fieldId'] = self.field_id
-        if self.label is not None:
-            result['label'] = self.label
-        if self.label_editable_freeze is not None:
-            result['labelEditableFreeze'] = self.label_editable_freeze
-        if self.required is not None:
-            result['required'] = self.required
-        if self.required_editable_freeze is not None:
-            result['requiredEditableFreeze'] = self.required_editable_freeze
-        if self.not_print is not None:
-            result['notPrint'] = self.not_print
-        if self.content is not None:
-            result['content'] = self.content
-        if self.format is not None:
-            result['format'] = self.format
-        result['options'] = []
-        if self.options is not None:
-            for k in self.options:
-                result['options'].append(k.to_map() if k else None)
-        if self.not_upper is not None:
-            result['notUpper'] = self.not_upper
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.placeholder is not None:
-            result['placeholder'] = self.placeholder
-        if self.biz_alias is not None:
-            result['bizAlias'] = self.biz_alias
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.choice is not None:
-            result['choice'] = self.choice
-        if self.disabled is not None:
-            result['disabled'] = self.disabled
-        if self.align is not None:
-            result['align'] = self.align
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        if self.data_source is not None:
-            result['dataSource'] = self.data_source.to_map()
-        if self.invisible is not None:
-            result['invisible'] = self.invisible
-        if self.pay_enable is not None:
-            result['payEnable'] = self.pay_enable
-        result['statField'] = []
-        if self.stat_field is not None:
-            for k in self.stat_field:
-                result['statField'].append(k.to_map() if k else None)
-        if self.link is not None:
-            result['link'] = self.link
-        if self.vertical_print is not None:
-            result['verticalPrint'] = self.vertical_print
-        if self.formula is not None:
-            result['formula'] = self.formula
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldId') is not None:
-            self.field_id = m.get('fieldId')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('labelEditableFreeze') is not None:
-            self.label_editable_freeze = m.get('labelEditableFreeze')
-        if m.get('required') is not None:
-            self.required = m.get('required')
-        if m.get('requiredEditableFreeze') is not None:
-            self.required_editable_freeze = m.get('requiredEditableFreeze')
-        if m.get('notPrint') is not None:
-            self.not_print = m.get('notPrint')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        self.options = []
-        if m.get('options') is not None:
-            for k in m.get('options'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions()
-                self.options.append(temp_model.from_map(k))
-        if m.get('notUpper') is not None:
-            self.not_upper = m.get('notUpper')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('placeholder') is not None:
-            self.placeholder = m.get('placeholder')
-        if m.get('bizAlias') is not None:
-            self.biz_alias = m.get('bizAlias')
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('choice') is not None:
-            self.choice = m.get('choice')
-        if m.get('disabled') is not None:
-            self.disabled = m.get('disabled')
-        if m.get('align') is not None:
-            self.align = m.get('align')
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields()
-                self.fields.append(temp_model.from_map(k))
-        if m.get('dataSource') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource()
-            self.data_source = temp_model.from_map(m['dataSource'])
-        if m.get('invisible') is not None:
-            self.invisible = m.get('invisible')
-        if m.get('payEnable') is not None:
-            self.pay_enable = m.get('payEnable')
-        self.stat_field = []
-        if m.get('statField') is not None:
-            for k in m.get('statField'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField()
-                self.stat_field.append(temp_model.from_map(k))
-        if m.get('link') is not None:
-            self.link = m.get('link')
-        if m.get('verticalPrint') is not None:
-            self.vertical_print = m.get('verticalPrint')
-        if m.get('formula') is not None:
-            self.formula = m.get('formula')
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps = None,
-    ):
-        self.component_name = component_name
-        self.props = props
-
-    def validate(self):
-        if self.props:
-            self.props.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        if self.props is not None:
-            result['props'] = self.props.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        if m.get('props') is not None:
-            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps()
-            self.props = temp_model.from_map(m['props'])
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOListItems(TeaModel):
-    def __init__(
-        self,
-        component_name: str = None,
-        props: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps] = None,
-        children: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren] = None,
-    ):
-        # 字段类型
-        self.component_name = component_name
-        # 字段属性
-        self.props = props
-        # 子字段列表
-        self.children = children
-
-    def validate(self):
-        if self.props:
-            for k in self.props:
-                if k:
-                    k.validate()
-        if self.children:
-            for k in self.children:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.component_name is not None:
-            result['componentName'] = self.component_name
-        result['props'] = []
-        if self.props is not None:
-            for k in self.props:
-                result['props'].append(k.to_map() if k else None)
-        result['children'] = []
-        if self.children is not None:
-            for k in self.children:
-                result['children'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('componentName') is not None:
-            self.component_name = m.get('componentName')
-        self.props = []
-        if m.get('props') is not None:
-            for k in m.get('props'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps()
-                self.props.append(temp_model.from_map(k))
-        self.children = []
-        if m.get('children') is not None:
-            for k in m.get('children'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren()
-                self.children.append(temp_model.from_map(k))
-        return self
-
-
-class DescribeRelationMetaResponseBodyRelationMetaDTOList(TeaModel):
-    def __init__(
-        self,
-        relation_type: str = None,
-        name: str = None,
-        desc: str = None,
-        items: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItems] = None,
-    ):
-        # 关系类型
-        self.relation_type = relation_type
-        # 模型结构名称
-        self.name = name
-        # 模型结构描述
-        self.desc = desc
-        # 模型结构字段集合
-        self.items = items
-
-    def validate(self):
-        if self.items:
-            for k in self.items:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.relation_type is not None:
-            result['relationType'] = self.relation_type
-        if self.name is not None:
-            result['name'] = self.name
-        if self.desc is not None:
-            result['desc'] = self.desc
-        result['items'] = []
-        if self.items is not None:
-            for k in self.items:
-                result['items'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('relationType') is not None:
-            self.relation_type = m.get('relationType')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('desc') is not None:
-            self.desc = m.get('desc')
-        self.items = []
-        if m.get('items') is not None:
-            for k in m.get('items'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItems()
-                self.items.append(temp_model.from_map(k))
-        return self
-
-
-class DescribeRelationMetaResponseBody(TeaModel):
-    def __init__(
-        self,
-        relation_meta_dtolist: List[DescribeRelationMetaResponseBodyRelationMetaDTOList] = None,
-    ):
-        self.relation_meta_dtolist = relation_meta_dtolist
-
-    def validate(self):
-        if self.relation_meta_dtolist:
-            for k in self.relation_meta_dtolist:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['relationMetaDTOList'] = []
-        if self.relation_meta_dtolist is not None:
-            for k in self.relation_meta_dtolist:
-                result['relationMetaDTOList'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.relation_meta_dtolist = []
-        if m.get('relationMetaDTOList') is not None:
-            for k in m.get('relationMetaDTOList'):
-                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOList()
-                self.relation_meta_dtolist.append(temp_model.from_map(k))
-        return self
-
-
-class DescribeRelationMetaResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: DescribeRelationMetaResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = DescribeRelationMetaResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class AddCrmPersonalCustomerHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class AddCrmPersonalCustomerRequestPermission(TeaModel):
-    def __init__(
-        self,
-        owner_staff_ids: List[str] = None,
-        participant_staff_ids: List[str] = None,
-    ):
-        # 负责人的用户ID
-        self.owner_staff_ids = owner_staff_ids
-        # 协同人的用户ID
-        self.participant_staff_ids = participant_staff_ids
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.owner_staff_ids is not None:
-            result['ownerStaffIds'] = self.owner_staff_ids
-        if self.participant_staff_ids is not None:
-            result['participantStaffIds'] = self.participant_staff_ids
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('ownerStaffIds') is not None:
-            self.owner_staff_ids = m.get('ownerStaffIds')
-        if m.get('participantStaffIds') is not None:
-            self.participant_staff_ids = m.get('participantStaffIds')
-        return self
-
-
-class AddCrmPersonalCustomerRequest(TeaModel):
-    def __init__(
-        self,
-        creator_user_id: str = None,
-        creator_nick: str = None,
-        data: Dict[str, Any] = None,
-        extend_data: Dict[str, Any] = None,
-        permission: AddCrmPersonalCustomerRequestPermission = None,
-        skip_duplicate_check: bool = None,
-        action: str = None,
-    ):
-        # 记录创建人的用户ID
-        self.creator_user_id = creator_user_id
-        # 记录创建人的昵称
-        self.creator_nick = creator_nick
-        # 数据内容
-        self.data = data
-        # 扩展数据内容
-        self.extend_data = extend_data
-        # 权限
-        self.permission = permission
-        # 跳过uk查重
-        self.skip_duplicate_check = skip_duplicate_check
-        # 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-        self.action = action
-
-    def validate(self):
-        if self.permission:
-            self.permission.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.creator_user_id is not None:
-            result['creatorUserId'] = self.creator_user_id
-        if self.creator_nick is not None:
-            result['creatorNick'] = self.creator_nick
-        if self.data is not None:
-            result['data'] = self.data
-        if self.extend_data is not None:
-            result['extendData'] = self.extend_data
-        if self.permission is not None:
-            result['permission'] = self.permission.to_map()
-        if self.skip_duplicate_check is not None:
-            result['skipDuplicateCheck'] = self.skip_duplicate_check
-        if self.action is not None:
-            result['action'] = self.action
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('creatorUserId') is not None:
-            self.creator_user_id = m.get('creatorUserId')
-        if m.get('creatorNick') is not None:
-            self.creator_nick = m.get('creatorNick')
-        if m.get('data') is not None:
-            self.data = m.get('data')
-        if m.get('extendData') is not None:
-            self.extend_data = m.get('extendData')
-        if m.get('permission') is not None:
-            temp_model = AddCrmPersonalCustomerRequestPermission()
-            self.permission = temp_model.from_map(m['permission'])
-        if m.get('skipDuplicateCheck') is not None:
-            self.skip_duplicate_check = m.get('skipDuplicateCheck')
-        if m.get('action') is not None:
-            self.action = m.get('action')
-        return self
-
-
-class AddCrmPersonalCustomerResponseBody(TeaModel):
-    def __init__(
-        self,
-        instance_id: str = None,
-    ):
-        # 客户数据id
-        self.instance_id = instance_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.instance_id is not None:
-            result['instanceId'] = self.instance_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('instanceId') is not None:
-            self.instance_id = m.get('instanceId')
-        return self
-
-
-class AddCrmPersonalCustomerResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: AddCrmPersonalCustomerResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = AddCrmPersonalCustomerResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class RecallOfficialAccountOTOMessageHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class RecallOfficialAccountOTOMessageRequest(TeaModel):
-    def __init__(
-        self,
-        ding_suite_key: str = None,
-        ding_org_id: int = None,
-        ding_isv_org_id: int = None,
-        ding_token_grant_type: int = None,
-        account_id: str = None,
-        open_push_id: str = None,
-    ):
-        self.ding_suite_key = ding_suite_key
-        self.ding_org_id = ding_org_id
-        self.ding_isv_org_id = ding_isv_org_id
-        self.ding_token_grant_type = ding_token_grant_type
-        # 帐号ID 可空
-        self.account_id = account_id
-        # 消息推送时返回的ID
-        self.open_push_id = open_push_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.ding_suite_key is not None:
-            result['dingSuiteKey'] = self.ding_suite_key
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_isv_org_id is not None:
-            result['dingIsvOrgId'] = self.ding_isv_org_id
-        if self.ding_token_grant_type is not None:
-            result['dingTokenGrantType'] = self.ding_token_grant_type
-        if self.account_id is not None:
-            result['accountId'] = self.account_id
-        if self.open_push_id is not None:
-            result['openPushId'] = self.open_push_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('dingSuiteKey') is not None:
-            self.ding_suite_key = m.get('dingSuiteKey')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingIsvOrgId') is not None:
-            self.ding_isv_org_id = m.get('dingIsvOrgId')
-        if m.get('dingTokenGrantType') is not None:
-            self.ding_token_grant_type = m.get('dingTokenGrantType')
-        if m.get('accountId') is not None:
-            self.account_id = m.get('accountId')
-        if m.get('openPushId') is not None:
-            self.open_push_id = m.get('openPushId')
-        return self
-
-
-class RecallOfficialAccountOTOMessageResponseBody(TeaModel):
-    def __init__(
-        self,
-        request_id: str = None,
-    ):
-        # Id of the request
-        self.request_id = request_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
-        return self
-
-
-class RecallOfficialAccountOTOMessageResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: RecallOfficialAccountOTOMessageResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = RecallOfficialAccountOTOMessageResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFieldsSelectOptions(TeaModel):
-    def __init__(
-        self,
-        key: str = None,
-        value: str = None,
-    ):
-        self.key = key
-        self.value = value
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.key is not None:
-            result['key'] = self.key
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('key') is not None:
-            self.key = m.get('key')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields(TeaModel):
-    def __init__(
-        self,
-        label: str = None,
-        type: str = None,
-        nillable: bool = None,
-        unit: str = None,
-        format: str = None,
-        select_options: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFieldsSelectOptions] = None,
-        name: str = None,
-    ):
-        self.label = label
-        self.type = type
-        self.nillable = nillable
-        self.unit = unit
-        self.format = format
-        self.select_options = select_options
-        self.name = name
-
-    def validate(self):
-        if self.select_options:
-            for k in self.select_options:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.label is not None:
-            result['label'] = self.label
-        if self.type is not None:
-            result['type'] = self.type
-        if self.nillable is not None:
-            result['nillable'] = self.nillable
-        if self.unit is not None:
-            result['unit'] = self.unit
-        if self.format is not None:
-            result['format'] = self.format
-        result['selectOptions'] = []
-        if self.select_options is not None:
-            for k in self.select_options:
-                result['selectOptions'].append(k.to_map() if k else None)
-        if self.name is not None:
-            result['name'] = self.name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        if m.get('nillable') is not None:
-            self.nillable = m.get('nillable')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        self.select_options = []
-        if m.get('selectOptions') is not None:
-            for k in m.get('selectOptions'):
-                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFieldsSelectOptions()
-                self.select_options.append(temp_model.from_map(k))
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields(TeaModel):
-    def __init__(
-        self,
-        name: str = None,
-        aggregator: str = None,
-    ):
-        self.name = name
-        self.aggregator = aggregator
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name
-        if self.aggregator is not None:
-            result['aggregator'] = self.aggregator
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('aggregator') is not None:
-            self.aggregator = m.get('aggregator')
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponseBodyFields(TeaModel):
-    def __init__(
-        self,
-        name: str = None,
-        customized: bool = None,
-        label: str = None,
-        type: str = None,
-        nillable: bool = None,
-        format: str = None,
-        unit: str = None,
-        select_options: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions] = None,
-        quote: bool = None,
-        reference_to: str = None,
-        reference_fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields] = None,
-        roll_up_summary_fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields] = None,
-    ):
-        self.name = name
-        self.customized = customized
-        self.label = label
-        self.type = type
-        self.nillable = nillable
-        self.format = format
-        self.unit = unit
-        self.select_options = select_options
-        self.quote = quote
-        self.reference_to = reference_to
-        self.reference_fields = reference_fields
-        self.roll_up_summary_fields = roll_up_summary_fields
-
-    def validate(self):
-        if self.select_options:
-            for k in self.select_options:
-                if k:
-                    k.validate()
-        if self.reference_fields:
-            for k in self.reference_fields:
-                if k:
-                    k.validate()
-        if self.roll_up_summary_fields:
-            for k in self.roll_up_summary_fields:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name
-        if self.customized is not None:
-            result['customized'] = self.customized
-        if self.label is not None:
-            result['label'] = self.label
-        if self.type is not None:
-            result['type'] = self.type
-        if self.nillable is not None:
-            result['nillable'] = self.nillable
-        if self.format is not None:
-            result['format'] = self.format
-        if self.unit is not None:
-            result['unit'] = self.unit
-        result['selectOptions'] = []
-        if self.select_options is not None:
-            for k in self.select_options:
-                result['selectOptions'].append(k.to_map() if k else None)
-        if self.quote is not None:
-            result['quote'] = self.quote
-        if self.reference_to is not None:
-            result['referenceTo'] = self.reference_to
-        result['referenceFields'] = []
-        if self.reference_fields is not None:
-            for k in self.reference_fields:
-                result['referenceFields'].append(k.to_map() if k else None)
-        result['rollUpSummaryFields'] = []
-        if self.roll_up_summary_fields is not None:
-            for k in self.roll_up_summary_fields:
-                result['rollUpSummaryFields'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('customized') is not None:
-            self.customized = m.get('customized')
-        if m.get('label') is not None:
-            self.label = m.get('label')
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        if m.get('nillable') is not None:
-            self.nillable = m.get('nillable')
-        if m.get('format') is not None:
-            self.format = m.get('format')
-        if m.get('unit') is not None:
-            self.unit = m.get('unit')
-        self.select_options = []
-        if m.get('selectOptions') is not None:
-            for k in m.get('selectOptions'):
-                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions()
-                self.select_options.append(temp_model.from_map(k))
-        if m.get('quote') is not None:
-            self.quote = m.get('quote')
-        if m.get('referenceTo') is not None:
-            self.reference_to = m.get('referenceTo')
-        self.reference_fields = []
-        if m.get('referenceFields') is not None:
-            for k in m.get('referenceFields'):
-                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields()
-                self.reference_fields.append(temp_model.from_map(k))
-        self.roll_up_summary_fields = []
-        if m.get('rollUpSummaryFields') is not None:
-            for k in m.get('rollUpSummaryFields'):
-                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields()
-                self.roll_up_summary_fields.append(temp_model.from_map(k))
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponseBody(TeaModel):
-    def __init__(
-        self,
-        name: str = None,
-        customized: bool = None,
-        fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFields] = None,
-        status: str = None,
-        code: str = None,
-    ):
-        # 对象名称
-        self.name = name
-        # 是否自定义对象
-        self.customized = customized
-        # 字段列表
-        self.fields = fields
-        # 表单状态
-        self.status = status
-        # 表单code
-        self.code = code
-
-    def validate(self):
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name
-        if self.customized is not None:
-            result['customized'] = self.customized
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        if self.status is not None:
-            result['status'] = self.status
-        if self.code is not None:
-            result['code'] = self.code
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('customized') is not None:
-            self.customized = m.get('customized')
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFields()
-                self.fields.append(temp_model.from_map(k))
-        if m.get('status') is not None:
-            self.status = m.get('status')
-        if m.get('code') is not None:
-            self.code = m.get('code')
-        return self
-
-
-class DescribeCrmPersonalCustomerObjectMetaResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: DescribeCrmPersonalCustomerObjectMetaResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
 class DeleteCrmPersonalCustomerHeaders(TeaModel):
     def __init__(
         self,
@@ -7462,153 +3591,6 @@ class DeleteCrmPersonalCustomerResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteCrmPersonalCustomerResponseBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class AbandonCustomerHeaders(TeaModel):
-    def __init__(
-        self,
-        common_headers: Dict[str, str] = None,
-        x_acs_dingtalk_access_token: str = None,
-    ):
-        self.common_headers = common_headers
-        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.common_headers is not None:
-            result['commonHeaders'] = self.common_headers
-        if self.x_acs_dingtalk_access_token is not None:
-            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('commonHeaders') is not None:
-            self.common_headers = m.get('commonHeaders')
-        if m.get('x-acs-dingtalk-access-token') is not None:
-            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
-        return self
-
-
-class AbandonCustomerRequest(TeaModel):
-    def __init__(
-        self,
-        operator_user_id: str = None,
-        instance_id_list: List[str] = None,
-        custom_track_desc: str = None,
-        opt_type: str = None,
-    ):
-        # 操作人staffId，一般为企业员工
-        self.operator_user_id = operator_user_id
-        # 客户实例 id 数组
-        self.instance_id_list = instance_id_list
-        # 自定义动态描述
-        self.custom_track_desc = custom_track_desc
-        # 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
-        self.opt_type = opt_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.operator_user_id is not None:
-            result['operatorUserId'] = self.operator_user_id
-        if self.instance_id_list is not None:
-            result['instanceIdList'] = self.instance_id_list
-        if self.custom_track_desc is not None:
-            result['customTrackDesc'] = self.custom_track_desc
-        if self.opt_type is not None:
-            result['optType'] = self.opt_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('operatorUserId') is not None:
-            self.operator_user_id = m.get('operatorUserId')
-        if m.get('instanceIdList') is not None:
-            self.instance_id_list = m.get('instanceIdList')
-        if m.get('customTrackDesc') is not None:
-            self.custom_track_desc = m.get('customTrackDesc')
-        if m.get('optType') is not None:
-            self.opt_type = m.get('optType')
-        return self
-
-
-class AbandonCustomerResponseBody(TeaModel):
-    def __init__(
-        self,
-        instance_id_list: List[str] = None,
-    ):
-        # 成功退回公海的客户实例 id 数组
-        self.instance_id_list = instance_id_list
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.instance_id_list is not None:
-            result['instanceIdList'] = self.instance_id_list
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('instanceIdList') is not None:
-            self.instance_id_list = m.get('instanceIdList')
-        return self
-
-
-class AbandonCustomerResponse(TeaModel):
-    def __init__(
-        self,
-        headers: Dict[str, str] = None,
-        body: AbandonCustomerResponseBody = None,
-    ):
-        self.headers = headers
-        self.body = body
-
-    def validate(self):
-        self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.headers is not None:
-            result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('headers') is not None:
-            self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = AbandonCustomerResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8930,6 +4912,5409 @@ class ListCrmPersonalCustomersResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListCrmPersonalCustomersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteRelationMetaFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteRelationMetaFieldRequest(TeaModel):
+    def __init__(
+        self,
+        tenant: str = None,
+        operator_user_id: str = None,
+        relation_type: str = None,
+        field_id_list: List[str] = None,
+    ):
+        self.tenant = tenant
+        self.operator_user_id = operator_user_id
+        self.relation_type = relation_type
+        self.field_id_list = field_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tenant is not None:
+            result['tenant'] = self.tenant
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.field_id_list is not None:
+            result['fieldIdList'] = self.field_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenant') is not None:
+            self.tenant = m.get('tenant')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('fieldIdList') is not None:
+            self.field_id_list = m.get('fieldIdList')
+        return self
+
+
+class DeleteRelationMetaFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+    ):
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        return self
+
+
+class DeleteRelationMetaFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteRelationMetaFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteRelationMetaFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddRelationMetaFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddRelationMetaFieldRequestFieldDTOListPropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class AddRelationMetaFieldRequestFieldDTOListProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        sortable: bool = None,
+        label_editable_freeze: bool = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        not_print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[AddRelationMetaFieldRequestFieldDTOListPropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        need_detail: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: bool = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        link: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.sortable = sortable
+        self.label_editable_freeze = label_editable_freeze
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.not_print = not_print
+        self.content = content
+        self.format = format
+        self.options = options
+        self.not_upper = not_upper
+        self.unit = unit
+        self.need_detail = need_detail
+        self.placeholder = placeholder
+        self.biz_alias = biz_alias
+        self.duration = duration
+        self.choice = choice
+        self.disabled = disabled
+        self.align = align
+        self.invisible = invisible
+        self.pay_enable = pay_enable
+        self.link = link
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.sortable is not None:
+            result['sortable'] = self.sortable
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.not_print is not None:
+            result['notPrint'] = self.not_print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.need_detail is not None:
+            result['needDetail'] = self.need_detail
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        if self.link is not None:
+            result['link'] = self.link
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('sortable') is not None:
+            self.sortable = m.get('sortable')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('notPrint') is not None:
+            self.not_print = m.get('notPrint')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = AddRelationMetaFieldRequestFieldDTOListPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('needDetail') is not None:
+            self.need_detail = m.get('needDetail')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        return self
+
+
+class AddRelationMetaFieldRequestFieldDTOList(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        props: AddRelationMetaFieldRequestFieldDTOListProps = None,
+    ):
+        self.component_name = component_name
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('props') is not None:
+            temp_model = AddRelationMetaFieldRequestFieldDTOListProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class AddRelationMetaFieldRequest(TeaModel):
+    def __init__(
+        self,
+        tenant: str = None,
+        operator_user_id: str = None,
+        relation_type: str = None,
+        field_dtolist: List[AddRelationMetaFieldRequestFieldDTOList] = None,
+    ):
+        self.tenant = tenant
+        self.operator_user_id = operator_user_id
+        self.relation_type = relation_type
+        self.field_dtolist = field_dtolist
+
+    def validate(self):
+        if self.field_dtolist:
+            for k in self.field_dtolist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tenant is not None:
+            result['tenant'] = self.tenant
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        result['fieldDTOList'] = []
+        if self.field_dtolist is not None:
+            for k in self.field_dtolist:
+                result['fieldDTOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenant') is not None:
+            self.tenant = m.get('tenant')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        self.field_dtolist = []
+        if m.get('fieldDTOList') is not None:
+            for k in m.get('fieldDTOList'):
+                temp_model = AddRelationMetaFieldRequestFieldDTOList()
+                self.field_dtolist.append(temp_model.from_map(k))
+        return self
+
+
+class AddRelationMetaFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+    ):
+        self.relation_type = relation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        return self
+
+
+class AddRelationMetaFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddRelationMetaFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddRelationMetaFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetOfficialAccountContactInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOfficialAccountContactInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_name: str = None,
+        mobile: str = None,
+        state_code: str = None,
+        union_id: str = None,
+        auth_items: List[str] = None,
+        user_infos: List[str] = None,
+    ):
+        # 联系人主企业名称
+        self.corp_name = corp_name
+        # 手机号
+        self.mobile = mobile
+        # 手机号国家码
+        self.state_code = state_code
+        # 联系人的unionId
+        self.union_id = union_id
+        # 已授权的字段
+        self.auth_items = auth_items
+        # 已授权的字段
+        self.user_infos = user_infos
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_name is not None:
+            result['corpName'] = self.corp_name
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.state_code is not None:
+            result['stateCode'] = self.state_code
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.auth_items is not None:
+            result['authItems'] = self.auth_items
+        if self.user_infos is not None:
+            result['userInfos'] = self.user_infos
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpName') is not None:
+            self.corp_name = m.get('corpName')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('stateCode') is not None:
+            self.state_code = m.get('stateCode')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('authItems') is not None:
+            self.auth_items = m.get('authItems')
+        if m.get('userInfos') is not None:
+            self.user_infos = m.get('userInfos')
+        return self
+
+
+class GetOfficialAccountContactInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOfficialAccountContactInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOfficialAccountContactInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryAllCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAllCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        ding_isv_org_id: int = None,
+        ding_org_id: int = None,
+        ding_token_grant_type: int = None,
+        ding_corp_id: str = None,
+        ding_suite_key: str = None,
+        operator_user_id: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        object_type: str = None,
+    ):
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        self.ding_corp_id = ding_corp_id
+        self.ding_suite_key = ding_suite_key
+        # 用户ID
+        self.operator_user_id = operator_user_id
+        # 翻页size
+        self.max_results = max_results
+        # 分页游标，第一次调用传空或者null
+        self.next_token = next_token
+        # 数据类型（私海个人客户：crm_customer_personal，私海企业客户：crm_customer，公海个人客户：open_customer_personal，公海企业客户：open_customer_org）
+        self.object_type = object_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        return self
+
+
+class QueryAllCustomerResponseBodyResultValuesPermission(TeaModel):
+    def __init__(
+        self,
+        participant_staff_ids: List[str] = None,
+        owner_staff_ids: List[str] = None,
+    ):
+        # 协同人用户ID列表
+        self.participant_staff_ids = participant_staff_ids
+        # 负责人用户ID列表
+        self.owner_staff_ids = owner_staff_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.participant_staff_ids is not None:
+            result['participantStaffIds'] = self.participant_staff_ids
+        if self.owner_staff_ids is not None:
+            result['ownerStaffIds'] = self.owner_staff_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('participantStaffIds') is not None:
+            self.participant_staff_ids = m.get('participantStaffIds')
+        if m.get('ownerStaffIds') is not None:
+            self.owner_staff_ids = m.get('ownerStaffIds')
+        return self
+
+
+class QueryAllCustomerResponseBodyResultValues(TeaModel):
+    def __init__(
+        self,
+        creator_nick: str = None,
+        modify_time: str = None,
+        creator_user_id: str = None,
+        instance_id: str = None,
+        data: Dict[str, Any] = None,
+        extend_data: Dict[str, Any] = None,
+        create_time: str = None,
+        org_id: int = None,
+        object_type: str = None,
+        permission: QueryAllCustomerResponseBodyResultValuesPermission = None,
+        process_out_result: str = None,
+        process_instance_status: str = None,
+    ):
+        # 创建记录的用户昵称
+        self.creator_nick = creator_nick
+        # 记录修改时间
+        self.modify_time = modify_time
+        # 创建记录的用户ID
+        self.creator_user_id = creator_user_id
+        # 数据ID
+        self.instance_id = instance_id
+        # 数据内容
+        self.data = data
+        # 扩展数据内容
+        self.extend_data = extend_data
+        # 记录创建时间
+        self.create_time = create_time
+        # 系统自动生成
+        self.org_id = org_id
+        # 数据类型
+        self.object_type = object_type
+        # 数据权限信息
+        self.permission = permission
+        # 审批结果
+        self.process_out_result = process_out_result
+        # 审批状态
+        self.process_instance_status = process_instance_status
+
+    def validate(self):
+        if self.permission:
+            self.permission.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.data is not None:
+            result['data'] = self.data
+        if self.extend_data is not None:
+            result['extendData'] = self.extend_data
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.org_id is not None:
+            result['orgId'] = self.org_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.permission is not None:
+            result['permission'] = self.permission.to_map()
+        if self.process_out_result is not None:
+            result['processOutResult'] = self.process_out_result
+        if self.process_instance_status is not None:
+            result['processInstanceStatus'] = self.process_instance_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('extendData') is not None:
+            self.extend_data = m.get('extendData')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('orgId') is not None:
+            self.org_id = m.get('orgId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('permission') is not None:
+            temp_model = QueryAllCustomerResponseBodyResultValuesPermission()
+            self.permission = temp_model.from_map(m['permission'])
+        if m.get('processOutResult') is not None:
+            self.process_out_result = m.get('processOutResult')
+        if m.get('processInstanceStatus') is not None:
+            self.process_instance_status = m.get('processInstanceStatus')
+        return self
+
+
+class QueryAllCustomerResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        values: List[QueryAllCustomerResponseBodyResultValues] = None,
+        max_results: int = None,
+    ):
+        # 下一页的游标，为null则表示无数据
+        self.next_token = next_token
+        # 客户数据节点
+        self.values = values
+        # 分页大小
+        self.max_results = max_results
+
+    def validate(self):
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = QueryAllCustomerResponseBodyResultValues()
+                self.values.append(temp_model.from_map(k))
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        return self
+
+
+class QueryAllCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryAllCustomerResponseBodyResult = None,
+    ):
+        # 分页结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryAllCustomerResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryAllCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryAllCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryAllCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DescribeRelationMetaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DescribeRelationMetaRequest(TeaModel):
+    def __init__(
+        self,
+        tenant: str = None,
+        operator_user_id: str = None,
+        relation_types: List[str] = None,
+    ):
+        self.tenant = tenant
+        self.operator_user_id = operator_user_id
+        self.relation_types = relation_types
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tenant is not None:
+            result['tenant'] = self.tenant
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.relation_types is not None:
+            result['relationTypes'] = self.relation_types
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenant') is not None:
+            self.tenant = m.get('tenant')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('relationTypes') is not None:
+            self.relation_types = m.get('relationTypes')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension(TeaModel):
+    def __init__(
+        self,
+        edit_freeze: bool = None,
+    ):
+        # true
+        self.edit_freeze = edit_freeze
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.edit_freeze is not None:
+            result['editFreeze'] = self.edit_freeze
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('editFreeze') is not None:
+            self.edit_freeze = m.get('editFreeze')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+        warn: bool = None,
+        extension: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension = None,
+    ):
+        # 选项数据主键
+        self.key = key
+        # 选项显示内容
+        self.value = value
+        # false
+        self.warn = warn
+        self.extension = extension
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        if self.warn is not None:
+            result['warn'] = self.warn
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('warn') is not None:
+            self.warn = m.get('warn')
+        if m.get('extension') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptionsExtension(TeaModel):
+    def __init__(
+        self,
+        edit_freeze: bool = None,
+    ):
+        self.edit_freeze = edit_freeze
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.edit_freeze is not None:
+            result['editFreeze'] = self.edit_freeze
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('editFreeze') is not None:
+            self.edit_freeze = m.get('editFreeze')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+        extension: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptionsExtension = None,
+    ):
+        # 选项数据主键
+        self.key = key
+        # 选项显示内容
+        self.value = value
+        self.extension = extension
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extension') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptionsExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsStatField(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        unit: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.upper = upper
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        label_editable_freeze: bool = None,
+        content: str = None,
+        format: str = None,
+        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: str = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsStatField] = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        quote: int = None,
+        multi: int = None,
+    ):
+        # 字段id
+        self.field_id = field_id
+        # 字段标题
+        self.label = label
+        # 字段是否必填
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.label_editable_freeze = label_editable_freeze
+        # 说明文字内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容列表
+        self.options = options
+        # 是否需要大写 默认是需要
+        self.not_upper = not_upper
+        # 数字组件/日期区间组件单位属性
+        self.unit = unit
+        # 界面空值提示占位符 前后端统一用placeholder
+        self.placeholder = placeholder
+        # 字段别名
+        self.biz_alias = biz_alias
+        # 是否自动计算时长
+        self.duration = duration
+        # 内部联系人choice
+        self.choice = choice
+        # 是否可编辑
+        self.disabled = disabled
+        # textnote的样式
+        self.align = align
+        # 隐藏字段
+        self.invisible = invisible
+        # 是否有支付属性
+        self.pay_enable = pay_enable
+        # 需要计算总和的明细组件
+        self.stat_field = stat_field
+        # 说明文案的链接地址
+        self.link = link
+        # 明细打印排版方式
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        self.quote = quote
+        self.multi = multi
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.quote is not None:
+            result['quote'] = self.quote
+        if self.multi is not None:
+            result['multi'] = self.multi
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('quote') is not None:
+            self.quote = m.get('quote')
+        if m.get('multi') is not None:
+            self.multi = m.get('multi')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps = None,
+    ):
+        # 字段类型
+        self.component_name = component_name
+        # 字段属性
+        self.relate_props = relate_props
+
+    def validate(self):
+        if self.relate_props:
+            self.relate_props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.relate_props is not None:
+            result['relateProps'] = self.relate_props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('relateProps') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps()
+            self.relate_props = temp_model.from_map(m['relateProps'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters(TeaModel):
+    def __init__(
+        self,
+        value_type: str = None,
+        filter_type: str = None,
+        value: str = None,
+        field_id: str = None,
+    ):
+        self.value_type = value_type
+        self.filter_type = filter_type
+        self.value = value
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value_type is not None:
+            result['valueType'] = self.value_type
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.value is not None:
+            result['value'] = self.value
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('valueType') is not None:
+            self.value_type = m.get('valueType')
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParams(TeaModel):
+    def __init__(
+        self,
+        filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters] = None,
+    ):
+        self.filters = filters
+
+    def validate(self):
+        if self.filters:
+            for k in self.filters:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['filters'] = []
+        if self.filters is not None:
+            for k in self.filters:
+                result['filters'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.filters = []
+        if m.get('filters') is not None:
+            for k in m.get('filters'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters()
+                self.filters.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.app_type = app_type
+        self.biz_type = biz_type
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        params: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParams = None,
+        target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceTarget = None,
+    ):
+        self.type = type
+        self.params = params
+        self.target = target
+
+    def validate(self):
+        if self.params:
+            self.params.validate()
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.params is not None:
+            result['params'] = self.params.to_map()
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('params') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParams()
+            self.params = temp_model.from_map(m['params'])
+        if m.get('target') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields] = None,
+        data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource = None,
+    ):
+        self.biz_type = biz_type
+        # 关联表单的关联控件显示
+        self.fields = fields
+        self.data_source = data_source
+
+    def validate(self):
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptionsExtension(TeaModel):
+    def __init__(
+        self,
+        edit_freeze: bool = None,
+    ):
+        self.edit_freeze = edit_freeze
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.edit_freeze is not None:
+            result['editFreeze'] = self.edit_freeze
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('editFreeze') is not None:
+            self.edit_freeze = m.get('editFreeze')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+        extension: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptionsExtension = None,
+    ):
+        # 选项数据主键
+        self.key = key
+        # 选项显示内容
+        self.value = value
+        self.extension = extension
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extension') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptionsExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        unit: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.upper = upper
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        label_editable_freeze: bool = None,
+        content: str = None,
+        format: str = None,
+        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: str = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField] = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        watermark: bool = None,
+        limit: int = None,
+        spread: bool = None,
+        ratio: int = None,
+        duration_label: str = None,
+        mode: str = None,
+    ):
+        # 字段id
+        self.field_id = field_id
+        # 字段标题
+        self.label = label
+        # 字段是否必填
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.label_editable_freeze = label_editable_freeze
+        # 说明文字内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容列表
+        self.options = options
+        # 是否需要大写 默认是需要
+        self.not_upper = not_upper
+        # 数字组件/日期区间组件单位属性
+        self.unit = unit
+        # 界面空值提示占位符 前后端统一用placeholder
+        self.placeholder = placeholder
+        # 字段别名
+        self.biz_alias = biz_alias
+        # 是否自动计算时长
+        self.duration = duration
+        # 内部联系人choice
+        self.choice = choice
+        # 是否可编辑
+        self.disabled = disabled
+        # textnote的样式
+        self.align = align
+        # 隐藏字段
+        self.invisible = invisible
+        # 是否有支付属性
+        self.pay_enable = pay_enable
+        # 需要计算总和的明细组件
+        self.stat_field = stat_field
+        # 说明文案的链接地址
+        self.link = link
+        # 明细打印排版方式
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        self.watermark = watermark
+        self.limit = limit
+        self.spread = spread
+        self.ratio = ratio
+        self.duration_label = duration_label
+        self.mode = mode
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.watermark is not None:
+            result['watermark'] = self.watermark
+        if self.limit is not None:
+            result['limit'] = self.limit
+        if self.spread is not None:
+            result['spread'] = self.spread
+        if self.ratio is not None:
+            result['ratio'] = self.ratio
+        if self.duration_label is not None:
+            result['durationLabel'] = self.duration_label
+        if self.mode is not None:
+            result['mode'] = self.mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('watermark') is not None:
+            self.watermark = m.get('watermark')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        if m.get('spread') is not None:
+            self.spread = m.get('spread')
+        if m.get('ratio') is not None:
+            self.ratio = m.get('ratio')
+        if m.get('durationLabel') is not None:
+            self.duration_label = m.get('durationLabel')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps = None,
+    ):
+        # 字段类型
+        self.component_name = component_name
+        # 字段属性
+        self.relate_props = relate_props
+
+    def validate(self):
+        if self.relate_props:
+            self.relate_props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.relate_props is not None:
+            result['relateProps'] = self.relate_props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('relateProps') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps()
+            self.relate_props = temp_model.from_map(m['relateProps'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters(TeaModel):
+    def __init__(
+        self,
+        value_type: str = None,
+        filter_type: str = None,
+        value: str = None,
+        field_id: str = None,
+    ):
+        self.value_type = value_type
+        self.filter_type = filter_type
+        self.value = value
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value_type is not None:
+            result['valueType'] = self.value_type
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.value is not None:
+            result['value'] = self.value
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('valueType') is not None:
+            self.value_type = m.get('valueType')
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParams(TeaModel):
+    def __init__(
+        self,
+        filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters] = None,
+    ):
+        self.filters = filters
+
+    def validate(self):
+        if self.filters:
+            for k in self.filters:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['filters'] = []
+        if self.filters is not None:
+            for k in self.filters:
+                result['filters'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.filters = []
+        if m.get('filters') is not None:
+            for k in m.get('filters'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters()
+                self.filters.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        # 应用搭建id
+        self.app_uuid = app_uuid
+        # 应用类型
+        self.app_type = app_type
+        # 表单业务标识
+        self.biz_type = biz_type
+        # 被关联表单的formCode
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        params: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParams = None,
+        target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget = None,
+    ):
+        # 关联类型{ "form": 关联表单 }
+        self.type = type
+        self.params = params
+        # 关联表单的业务标识
+        self.target = target
+
+    def validate(self):
+        if self.params:
+            self.params.validate()
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.params is not None:
+            result['params'] = self.params.to_map()
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('params') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParams()
+            self.params = temp_model.from_map(m['params'])
+        if m.get('target') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        unit: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.upper = upper
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        value: str = None,
+    ):
+        self.type = type
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        sortable: bool = None,
+        label_editable_freeze: bool = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        not_print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: bool = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        relate_source: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource] = None,
+        fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields] = None,
+        data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField] = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        need_detail: str = None,
+        quote: int = None,
+        multi: int = None,
+        rule: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule] = None,
+        table_view_mode: str = None,
+        action_name: str = None,
+        watermark: bool = None,
+        limit: int = None,
+        spread: bool = None,
+        ratio: int = None,
+        duration_label: str = None,
+        mode: str = None,
+    ):
+        # 字段id
+        self.field_id = field_id
+        # 字段标题
+        self.label = label
+        self.sortable = sortable
+        # 字段标题是否可修改
+        self.label_editable_freeze = label_editable_freeze
+        # 字段是否必填
+        self.required = required
+        # 字段必填是否修改
+        self.required_editable_freeze = required_editable_freeze
+        # 是否参与打印
+        self.not_print = not_print
+        # 说明文字内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容列表
+        self.options = options
+        # 是否需要大写 默认是需要
+        self.not_upper = not_upper
+        # 数字组件/日期区间组件单位属性
+        self.unit = unit
+        # 界面空值提示占位符 前后端统一用placeholder
+        self.placeholder = placeholder
+        # 字段别名
+        self.biz_alias = biz_alias
+        # 是否自动计算时长
+        self.duration = duration
+        # 内部联系人choice
+        self.choice = choice
+        # 是否可编辑
+        self.disabled = disabled
+        # textnote的样式
+        self.align = align
+        self.relate_source = relate_source
+        # 关联表单的关联控件显示
+        self.fields = fields
+        # 关联表单的数据源配置
+        self.data_source = data_source
+        # 隐藏字段
+        self.invisible = invisible
+        # 是否有支付属性
+        self.pay_enable = pay_enable
+        # 需要计算总和的明细组件
+        self.stat_field = stat_field
+        # 说明文案的链接地址
+        self.link = link
+        # 明细打印排版方式
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        self.need_detail = need_detail
+        # 1
+        self.quote = quote
+        self.multi = multi
+        # 流水号控件规则
+        self.rule = rule
+        # table
+        self.table_view_mode = table_view_mode
+        self.action_name = action_name
+        # true
+        self.watermark = watermark
+        # 5
+        self.limit = limit
+        # true
+        self.spread = spread
+        # 50
+        self.ratio = ratio
+        self.duration_label = duration_label
+        # phone
+        self.mode = mode
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.relate_source:
+            for k in self.relate_source:
+                if k:
+                    k.validate()
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+        if self.rule:
+            for k in self.rule:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.sortable is not None:
+            result['sortable'] = self.sortable
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.not_print is not None:
+            result['notPrint'] = self.not_print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        result['relateSource'] = []
+        if self.relate_source is not None:
+            for k in self.relate_source:
+                result['relateSource'].append(k.to_map() if k else None)
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.need_detail is not None:
+            result['needDetail'] = self.need_detail
+        if self.quote is not None:
+            result['quote'] = self.quote
+        if self.multi is not None:
+            result['multi'] = self.multi
+        result['rule'] = []
+        if self.rule is not None:
+            for k in self.rule:
+                result['rule'].append(k.to_map() if k else None)
+        if self.table_view_mode is not None:
+            result['tableViewMode'] = self.table_view_mode
+        if self.action_name is not None:
+            result['actionName'] = self.action_name
+        if self.watermark is not None:
+            result['watermark'] = self.watermark
+        if self.limit is not None:
+            result['limit'] = self.limit
+        if self.spread is not None:
+            result['spread'] = self.spread
+        if self.ratio is not None:
+            result['ratio'] = self.ratio
+        if self.duration_label is not None:
+            result['durationLabel'] = self.duration_label
+        if self.mode is not None:
+            result['mode'] = self.mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('sortable') is not None:
+            self.sortable = m.get('sortable')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('notPrint') is not None:
+            self.not_print = m.get('notPrint')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        self.relate_source = []
+        if m.get('relateSource') is not None:
+            for k in m.get('relateSource'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource()
+                self.relate_source.append(temp_model.from_map(k))
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('needDetail') is not None:
+            self.need_detail = m.get('needDetail')
+        if m.get('quote') is not None:
+            self.quote = m.get('quote')
+        if m.get('multi') is not None:
+            self.multi = m.get('multi')
+        self.rule = []
+        if m.get('rule') is not None:
+            for k in m.get('rule'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule()
+                self.rule.append(temp_model.from_map(k))
+        if m.get('tableViewMode') is not None:
+            self.table_view_mode = m.get('tableViewMode')
+        if m.get('actionName') is not None:
+            self.action_name = m.get('actionName')
+        if m.get('watermark') is not None:
+            self.watermark = m.get('watermark')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        if m.get('spread') is not None:
+            self.spread = m.get('spread')
+        if m.get('ratio') is not None:
+            self.ratio = m.get('ratio')
+        if m.get('durationLabel') is not None:
+            self.duration_label = m.get('durationLabel')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension(TeaModel):
+    def __init__(
+        self,
+        edit_freeze: bool = None,
+    ):
+        self.edit_freeze = edit_freeze
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.edit_freeze is not None:
+            result['editFreeze'] = self.edit_freeze
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('editFreeze') is not None:
+            self.edit_freeze = m.get('editFreeze')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+        extension: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension = None,
+    ):
+        self.key = key
+        self.value = value
+        self.extension = extension
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extension') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        # 选项数据主键
+        self.key = key
+        # 选项显示内容
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsStatField(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        unit: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.upper = upper
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        label_editable_freeze: bool = None,
+        content: str = None,
+        format: str = None,
+        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: str = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsStatField] = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        quote: int = None,
+        multi: int = None,
+    ):
+        # 字段id
+        self.field_id = field_id
+        # 字段标题
+        self.label = label
+        # 字段是否必填
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.label_editable_freeze = label_editable_freeze
+        # 说明文字内容
+        self.content = content
+        # 时间格式
+        self.format = format
+        # 选项内容列表
+        self.options = options
+        # 是否需要大写 默认是需要
+        self.not_upper = not_upper
+        # 数字组件/日期区间组件单位属性
+        self.unit = unit
+        # 界面空值提示占位符 前后端统一用placeholder
+        self.placeholder = placeholder
+        # 字段别名
+        self.biz_alias = biz_alias
+        # 是否自动计算时长
+        self.duration = duration
+        # 内部联系人choice
+        self.choice = choice
+        # 是否可编辑
+        self.disabled = disabled
+        # textnote的样式
+        self.align = align
+        # 隐藏字段
+        self.invisible = invisible
+        # 是否有支付属性
+        self.pay_enable = pay_enable
+        # 需要计算总和的明细组件
+        self.stat_field = stat_field
+        # 说明文案的链接地址
+        self.link = link
+        # 明细打印排版方式
+        self.vertical_print = vertical_print
+        # 公式
+        self.formula = formula
+        self.quote = quote
+        self.multi = multi
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.quote is not None:
+            result['quote'] = self.quote
+        if self.multi is not None:
+            result['multi'] = self.multi
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('quote') is not None:
+            self.quote = m.get('quote')
+        if m.get('multi') is not None:
+            self.multi = m.get('multi')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps = None,
+    ):
+        # 字段类型
+        self.component_name = component_name
+        # 字段属性
+        self.relate_props = relate_props
+
+    def validate(self):
+        if self.relate_props:
+            self.relate_props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.relate_props is not None:
+            result['relateProps'] = self.relate_props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('relateProps') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps()
+            self.relate_props = temp_model.from_map(m['relateProps'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters(TeaModel):
+    def __init__(
+        self,
+        value_type: str = None,
+        filter_type: str = None,
+        value: str = None,
+        field_id: str = None,
+    ):
+        self.value_type = value_type
+        self.filter_type = filter_type
+        self.value = value
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value_type is not None:
+            result['valueType'] = self.value_type
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.value is not None:
+            result['value'] = self.value
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('valueType') is not None:
+            self.value_type = m.get('valueType')
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParams(TeaModel):
+    def __init__(
+        self,
+        filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters] = None,
+    ):
+        self.filters = filters
+
+    def validate(self):
+        if self.filters:
+            for k in self.filters:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['filters'] = []
+        if self.filters is not None:
+            for k in self.filters:
+                result['filters'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.filters = []
+        if m.get('filters') is not None:
+            for k in m.get('filters'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters()
+                self.filters.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.app_type = app_type
+        self.biz_type = biz_type
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        params: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParams = None,
+        target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceTarget = None,
+    ):
+        self.type = type
+        self.params = params
+        self.target = target
+
+    def validate(self):
+        if self.params:
+            self.params.validate()
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.params is not None:
+            result['params'] = self.params.to_map()
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('params') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParams()
+            self.params = temp_model.from_map(m['params'])
+        if m.get('target') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields] = None,
+        data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource = None,
+    ):
+        self.biz_type = biz_type
+        # 关联表单的关联控件显示
+        self.fields = fields
+        self.data_source = data_source
+
+    def validate(self):
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptionsExtension(TeaModel):
+    def __init__(
+        self,
+        edit_freeze: bool = None,
+    ):
+        self.edit_freeze = edit_freeze
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.edit_freeze is not None:
+            result['editFreeze'] = self.edit_freeze
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('editFreeze') is not None:
+            self.edit_freeze = m.get('editFreeze')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+        extension: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptionsExtension = None,
+    ):
+        self.key = key
+        self.value = value
+        self.extension = extension
+
+    def validate(self):
+        if self.extension:
+            self.extension.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        if self.extension is not None:
+            result['extension'] = self.extension.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('extension') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptionsExtension()
+            self.extension = temp_model.from_map(m['extension'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        unit: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.upper = upper
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        label_editable_freeze: bool = None,
+        content: str = None,
+        format: str = None,
+        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: bool = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField] = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        watermark: bool = None,
+        limit: int = None,
+        spread: bool = None,
+        ratio: int = None,
+        duration_label: str = None,
+        mode: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.label_editable_freeze = label_editable_freeze
+        self.content = content
+        self.format = format
+        self.options = options
+        self.not_upper = not_upper
+        self.unit = unit
+        self.placeholder = placeholder
+        self.biz_alias = biz_alias
+        self.duration = duration
+        self.choice = choice
+        self.disabled = disabled
+        self.align = align
+        self.invisible = invisible
+        self.pay_enable = pay_enable
+        self.stat_field = stat_field
+        self.link = link
+        self.vertical_print = vertical_print
+        self.formula = formula
+        self.watermark = watermark
+        self.limit = limit
+        self.spread = spread
+        self.ratio = ratio
+        self.duration_label = duration_label
+        self.mode = mode
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.watermark is not None:
+            result['watermark'] = self.watermark
+        if self.limit is not None:
+            result['limit'] = self.limit
+        if self.spread is not None:
+            result['spread'] = self.spread
+        if self.ratio is not None:
+            result['ratio'] = self.ratio
+        if self.duration_label is not None:
+            result['durationLabel'] = self.duration_label
+        if self.mode is not None:
+            result['mode'] = self.mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('watermark') is not None:
+            self.watermark = m.get('watermark')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        if m.get('spread') is not None:
+            self.spread = m.get('spread')
+        if m.get('ratio') is not None:
+            self.ratio = m.get('ratio')
+        if m.get('durationLabel') is not None:
+            self.duration_label = m.get('durationLabel')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps = None,
+    ):
+        self.component_name = component_name
+        self.relate_props = relate_props
+
+    def validate(self):
+        if self.relate_props:
+            self.relate_props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.relate_props is not None:
+            result['relateProps'] = self.relate_props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('relateProps') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps()
+            self.relate_props = temp_model.from_map(m['relateProps'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters(TeaModel):
+    def __init__(
+        self,
+        value_type: str = None,
+        filter_type: str = None,
+        value: str = None,
+        field_id: str = None,
+    ):
+        self.value_type = value_type
+        self.filter_type = filter_type
+        self.value = value
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value_type is not None:
+            result['valueType'] = self.value_type
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.value is not None:
+            result['value'] = self.value
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('valueType') is not None:
+            self.value_type = m.get('valueType')
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParams(TeaModel):
+    def __init__(
+        self,
+        filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters] = None,
+    ):
+        self.filters = filters
+
+    def validate(self):
+        if self.filters:
+            for k in self.filters:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['filters'] = []
+        if self.filters is not None:
+            for k in self.filters:
+                result['filters'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.filters = []
+        if m.get('filters') is not None:
+            for k in m.get('filters'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters()
+                self.filters.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        app_type: int = None,
+        biz_type: str = None,
+        form_code: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.app_type = app_type
+        self.biz_type = biz_type
+        self.form_code = form_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        params: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParams = None,
+        target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget = None,
+    ):
+        self.type = type
+        self.params = params
+        self.target = target
+
+    def validate(self):
+        if self.params:
+            self.params.validate()
+        if self.target:
+            self.target.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.params is not None:
+            result['params'] = self.params.to_map()
+        if self.target is not None:
+            result['target'] = self.target.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('params') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParams()
+            self.params = temp_model.from_map(m['params'])
+        if m.get('target') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget()
+            self.target = temp_model.from_map(m['target'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        upper: bool = None,
+        unit: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.upper = upper
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.upper is not None:
+            result['upper'] = self.upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('upper') is not None:
+            self.upper = m.get('upper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        value: str = None,
+    ):
+        self.type = type
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        label: str = None,
+        sortable: bool = None,
+        label_editable_freeze: bool = None,
+        required: bool = None,
+        required_editable_freeze: bool = None,
+        not_print: str = None,
+        content: str = None,
+        format: str = None,
+        options: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions] = None,
+        not_upper: str = None,
+        unit: str = None,
+        placeholder: str = None,
+        biz_alias: str = None,
+        duration: bool = None,
+        choice: int = None,
+        disabled: bool = None,
+        align: str = None,
+        relate_source: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource] = None,
+        fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields] = None,
+        data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource = None,
+        invisible: bool = None,
+        pay_enable: bool = None,
+        stat_field: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField] = None,
+        link: str = None,
+        vertical_print: bool = None,
+        formula: str = None,
+        quote: int = None,
+        rule: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule] = None,
+        table_view_mode: str = None,
+        action_name: str = None,
+        watermark: bool = None,
+        limit: int = None,
+        spread: bool = None,
+        ratio: int = None,
+        duration_label: str = None,
+        mode: str = None,
+    ):
+        self.field_id = field_id
+        self.label = label
+        self.sortable = sortable
+        self.label_editable_freeze = label_editable_freeze
+        self.required = required
+        self.required_editable_freeze = required_editable_freeze
+        self.not_print = not_print
+        self.content = content
+        self.format = format
+        self.options = options
+        self.not_upper = not_upper
+        self.unit = unit
+        self.placeholder = placeholder
+        self.biz_alias = biz_alias
+        self.duration = duration
+        self.choice = choice
+        self.disabled = disabled
+        self.align = align
+        self.relate_source = relate_source
+        self.fields = fields
+        self.data_source = data_source
+        self.invisible = invisible
+        self.pay_enable = pay_enable
+        self.stat_field = stat_field
+        self.link = link
+        self.vertical_print = vertical_print
+        self.formula = formula
+        self.quote = quote
+        self.rule = rule
+        self.table_view_mode = table_view_mode
+        self.action_name = action_name
+        self.watermark = watermark
+        self.limit = limit
+        self.spread = spread
+        self.ratio = ratio
+        self.duration_label = duration_label
+        self.mode = mode
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+        if self.relate_source:
+            for k in self.relate_source:
+                if k:
+                    k.validate()
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+        if self.data_source:
+            self.data_source.validate()
+        if self.stat_field:
+            for k in self.stat_field:
+                if k:
+                    k.validate()
+        if self.rule:
+            for k in self.rule:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.sortable is not None:
+            result['sortable'] = self.sortable
+        if self.label_editable_freeze is not None:
+            result['labelEditableFreeze'] = self.label_editable_freeze
+        if self.required is not None:
+            result['required'] = self.required
+        if self.required_editable_freeze is not None:
+            result['requiredEditableFreeze'] = self.required_editable_freeze
+        if self.not_print is not None:
+            result['notPrint'] = self.not_print
+        if self.content is not None:
+            result['content'] = self.content
+        if self.format is not None:
+            result['format'] = self.format
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.not_upper is not None:
+            result['notUpper'] = self.not_upper
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.placeholder is not None:
+            result['placeholder'] = self.placeholder
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.choice is not None:
+            result['choice'] = self.choice
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.align is not None:
+            result['align'] = self.align
+        result['relateSource'] = []
+        if self.relate_source is not None:
+            for k in self.relate_source:
+                result['relateSource'].append(k.to_map() if k else None)
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.data_source is not None:
+            result['dataSource'] = self.data_source.to_map()
+        if self.invisible is not None:
+            result['invisible'] = self.invisible
+        if self.pay_enable is not None:
+            result['payEnable'] = self.pay_enable
+        result['statField'] = []
+        if self.stat_field is not None:
+            for k in self.stat_field:
+                result['statField'].append(k.to_map() if k else None)
+        if self.link is not None:
+            result['link'] = self.link
+        if self.vertical_print is not None:
+            result['verticalPrint'] = self.vertical_print
+        if self.formula is not None:
+            result['formula'] = self.formula
+        if self.quote is not None:
+            result['quote'] = self.quote
+        result['rule'] = []
+        if self.rule is not None:
+            for k in self.rule:
+                result['rule'].append(k.to_map() if k else None)
+        if self.table_view_mode is not None:
+            result['tableViewMode'] = self.table_view_mode
+        if self.action_name is not None:
+            result['actionName'] = self.action_name
+        if self.watermark is not None:
+            result['watermark'] = self.watermark
+        if self.limit is not None:
+            result['limit'] = self.limit
+        if self.spread is not None:
+            result['spread'] = self.spread
+        if self.ratio is not None:
+            result['ratio'] = self.ratio
+        if self.duration_label is not None:
+            result['durationLabel'] = self.duration_label
+        if self.mode is not None:
+            result['mode'] = self.mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('sortable') is not None:
+            self.sortable = m.get('sortable')
+        if m.get('labelEditableFreeze') is not None:
+            self.label_editable_freeze = m.get('labelEditableFreeze')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('requiredEditableFreeze') is not None:
+            self.required_editable_freeze = m.get('requiredEditableFreeze')
+        if m.get('notPrint') is not None:
+            self.not_print = m.get('notPrint')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('notUpper') is not None:
+            self.not_upper = m.get('notUpper')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('placeholder') is not None:
+            self.placeholder = m.get('placeholder')
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('choice') is not None:
+            self.choice = m.get('choice')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('align') is not None:
+            self.align = m.get('align')
+        self.relate_source = []
+        if m.get('relateSource') is not None:
+            for k in m.get('relateSource'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource()
+                self.relate_source.append(temp_model.from_map(k))
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('dataSource') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource()
+            self.data_source = temp_model.from_map(m['dataSource'])
+        if m.get('invisible') is not None:
+            self.invisible = m.get('invisible')
+        if m.get('payEnable') is not None:
+            self.pay_enable = m.get('payEnable')
+        self.stat_field = []
+        if m.get('statField') is not None:
+            for k in m.get('statField'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField()
+                self.stat_field.append(temp_model.from_map(k))
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('verticalPrint') is not None:
+            self.vertical_print = m.get('verticalPrint')
+        if m.get('formula') is not None:
+            self.formula = m.get('formula')
+        if m.get('quote') is not None:
+            self.quote = m.get('quote')
+        self.rule = []
+        if m.get('rule') is not None:
+            for k in m.get('rule'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule()
+                self.rule.append(temp_model.from_map(k))
+        if m.get('tableViewMode') is not None:
+            self.table_view_mode = m.get('tableViewMode')
+        if m.get('actionName') is not None:
+            self.action_name = m.get('actionName')
+        if m.get('watermark') is not None:
+            self.watermark = m.get('watermark')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        if m.get('spread') is not None:
+            self.spread = m.get('spread')
+        if m.get('ratio') is not None:
+            self.ratio = m.get('ratio')
+        if m.get('durationLabel') is not None:
+            self.duration_label = m.get('durationLabel')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps = None,
+    ):
+        self.component_name = component_name
+        self.props = props
+
+    def validate(self):
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        if m.get('props') is not None:
+            temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItems(TeaModel):
+    def __init__(
+        self,
+        component_name: str = None,
+        props: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps] = None,
+        children: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren] = None,
+    ):
+        # 字段类型
+        self.component_name = component_name
+        # 字段属性
+        self.props = props
+        # 子字段列表
+        self.children = children
+
+    def validate(self):
+        if self.props:
+            for k in self.props:
+                if k:
+                    k.validate()
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_name is not None:
+            result['componentName'] = self.component_name
+        result['props'] = []
+        if self.props is not None:
+            for k in self.props:
+                result['props'].append(k.to_map() if k else None)
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentName') is not None:
+            self.component_name = m.get('componentName')
+        self.props = []
+        if m.get('props') is not None:
+            for k in m.get('props'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps()
+                self.props.append(temp_model.from_map(k))
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren()
+                self.children.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOList(TeaModel):
+    def __init__(
+        self,
+        relation_type: str = None,
+        name: str = None,
+        desc: str = None,
+        relation_meta_code: str = None,
+        relation_meta_status: str = None,
+        creator_user_id: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        items: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItems] = None,
+    ):
+        # 关系类型
+        self.relation_type = relation_type
+        # 模型结构名称
+        self.name = name
+        # 模型结构描述
+        self.desc = desc
+        # 模型结构code
+        self.relation_meta_code = relation_meta_code
+        # 模型结构状态
+        self.relation_meta_status = relation_meta_status
+        # 创建者userId
+        self.creator_user_id = creator_user_id
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 修改时间
+        self.gmt_modified = gmt_modified
+        # 模型结构字段集合
+        self.items = items
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.relation_meta_code is not None:
+            result['relationMetaCode'] = self.relation_meta_code
+        if self.relation_meta_status is not None:
+            result['relationMetaStatus'] = self.relation_meta_status
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('relationMetaCode') is not None:
+            self.relation_meta_code = m.get('relationMetaCode')
+        if m.get('relationMetaStatus') is not None:
+            self.relation_meta_status = m.get('relationMetaStatus')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItems()
+                self.items.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponseBody(TeaModel):
+    def __init__(
+        self,
+        relation_meta_dtolist: List[DescribeRelationMetaResponseBodyRelationMetaDTOList] = None,
+    ):
+        self.relation_meta_dtolist = relation_meta_dtolist
+
+    def validate(self):
+        if self.relation_meta_dtolist:
+            for k in self.relation_meta_dtolist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['relationMetaDTOList'] = []
+        if self.relation_meta_dtolist is not None:
+            for k in self.relation_meta_dtolist:
+                result['relationMetaDTOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.relation_meta_dtolist = []
+        if m.get('relationMetaDTOList') is not None:
+            for k in m.get('relationMetaDTOList'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOList()
+                self.relation_meta_dtolist.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeRelationMetaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DescribeRelationMetaResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DescribeRelationMetaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddCrmPersonalCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCrmPersonalCustomerRequestPermission(TeaModel):
+    def __init__(
+        self,
+        owner_staff_ids: List[str] = None,
+        participant_staff_ids: List[str] = None,
+    ):
+        # 负责人的用户ID
+        self.owner_staff_ids = owner_staff_ids
+        # 协同人的用户ID
+        self.participant_staff_ids = participant_staff_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.owner_staff_ids is not None:
+            result['ownerStaffIds'] = self.owner_staff_ids
+        if self.participant_staff_ids is not None:
+            result['participantStaffIds'] = self.participant_staff_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ownerStaffIds') is not None:
+            self.owner_staff_ids = m.get('ownerStaffIds')
+        if m.get('participantStaffIds') is not None:
+            self.participant_staff_ids = m.get('participantStaffIds')
+        return self
+
+
+class AddCrmPersonalCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        creator_user_id: str = None,
+        creator_nick: str = None,
+        data: Dict[str, Any] = None,
+        extend_data: Dict[str, Any] = None,
+        permission: AddCrmPersonalCustomerRequestPermission = None,
+        skip_duplicate_check: bool = None,
+        action: str = None,
+    ):
+        # 记录创建人的用户ID
+        self.creator_user_id = creator_user_id
+        # 记录创建人的昵称
+        self.creator_nick = creator_nick
+        # 数据内容
+        self.data = data
+        # 扩展数据内容
+        self.extend_data = extend_data
+        # 权限
+        self.permission = permission
+        # 跳过uk查重
+        self.skip_duplicate_check = skip_duplicate_check
+        # 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+        self.action = action
+
+    def validate(self):
+        if self.permission:
+            self.permission.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.data is not None:
+            result['data'] = self.data
+        if self.extend_data is not None:
+            result['extendData'] = self.extend_data
+        if self.permission is not None:
+            result['permission'] = self.permission.to_map()
+        if self.skip_duplicate_check is not None:
+            result['skipDuplicateCheck'] = self.skip_duplicate_check
+        if self.action is not None:
+            result['action'] = self.action
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('extendData') is not None:
+            self.extend_data = m.get('extendData')
+        if m.get('permission') is not None:
+            temp_model = AddCrmPersonalCustomerRequestPermission()
+            self.permission = temp_model.from_map(m['permission'])
+        if m.get('skipDuplicateCheck') is not None:
+            self.skip_duplicate_check = m.get('skipDuplicateCheck')
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        return self
+
+
+class AddCrmPersonalCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+    ):
+        # 客户数据id
+        self.instance_id = instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        return self
+
+
+class AddCrmPersonalCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddCrmPersonalCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddCrmPersonalCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RecallOfficialAccountOTOMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RecallOfficialAccountOTOMessageRequest(TeaModel):
+    def __init__(
+        self,
+        ding_suite_key: str = None,
+        ding_org_id: int = None,
+        ding_isv_org_id: int = None,
+        ding_token_grant_type: int = None,
+        account_id: str = None,
+        open_push_id: str = None,
+    ):
+        self.ding_suite_key = ding_suite_key
+        self.ding_org_id = ding_org_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_token_grant_type = ding_token_grant_type
+        # 帐号ID 可空
+        self.account_id = account_id
+        # 消息推送时返回的ID
+        self.open_push_id = open_push_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_token_grant_type is not None:
+            result['dingTokenGrantType'] = self.ding_token_grant_type
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.open_push_id is not None:
+            result['openPushId'] = self.open_push_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingTokenGrantType') is not None:
+            self.ding_token_grant_type = m.get('dingTokenGrantType')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('openPushId') is not None:
+            self.open_push_id = m.get('openPushId')
+        return self
+
+
+class RecallOfficialAccountOTOMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+    ):
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class RecallOfficialAccountOTOMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RecallOfficialAccountOTOMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RecallOfficialAccountOTOMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFieldsSelectOptions(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        type: str = None,
+        nillable: bool = None,
+        unit: str = None,
+        format: str = None,
+        select_options: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFieldsSelectOptions] = None,
+        name: str = None,
+    ):
+        self.label = label
+        self.type = type
+        self.nillable = nillable
+        self.unit = unit
+        self.format = format
+        self.select_options = select_options
+        self.name = name
+
+    def validate(self):
+        if self.select_options:
+            for k in self.select_options:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.type is not None:
+            result['type'] = self.type
+        if self.nillable is not None:
+            result['nillable'] = self.nillable
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.format is not None:
+            result['format'] = self.format
+        result['selectOptions'] = []
+        if self.select_options is not None:
+            for k in self.select_options:
+                result['selectOptions'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('nillable') is not None:
+            self.nillable = m.get('nillable')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        self.select_options = []
+        if m.get('selectOptions') is not None:
+            for k in m.get('selectOptions'):
+                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFieldsSelectOptions()
+                self.select_options.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        aggregator: str = None,
+    ):
+        self.name = name
+        self.aggregator = aggregator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.aggregator is not None:
+            result['aggregator'] = self.aggregator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('aggregator') is not None:
+            self.aggregator = m.get('aggregator')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponseBodyFields(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        customized: bool = None,
+        label: str = None,
+        type: str = None,
+        nillable: bool = None,
+        format: str = None,
+        unit: str = None,
+        select_options: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions] = None,
+        quote: bool = None,
+        reference_to: str = None,
+        reference_fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields] = None,
+        roll_up_summary_fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields] = None,
+    ):
+        self.name = name
+        self.customized = customized
+        self.label = label
+        self.type = type
+        self.nillable = nillable
+        self.format = format
+        self.unit = unit
+        self.select_options = select_options
+        self.quote = quote
+        self.reference_to = reference_to
+        self.reference_fields = reference_fields
+        self.roll_up_summary_fields = roll_up_summary_fields
+
+    def validate(self):
+        if self.select_options:
+            for k in self.select_options:
+                if k:
+                    k.validate()
+        if self.reference_fields:
+            for k in self.reference_fields:
+                if k:
+                    k.validate()
+        if self.roll_up_summary_fields:
+            for k in self.roll_up_summary_fields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.customized is not None:
+            result['customized'] = self.customized
+        if self.label is not None:
+            result['label'] = self.label
+        if self.type is not None:
+            result['type'] = self.type
+        if self.nillable is not None:
+            result['nillable'] = self.nillable
+        if self.format is not None:
+            result['format'] = self.format
+        if self.unit is not None:
+            result['unit'] = self.unit
+        result['selectOptions'] = []
+        if self.select_options is not None:
+            for k in self.select_options:
+                result['selectOptions'].append(k.to_map() if k else None)
+        if self.quote is not None:
+            result['quote'] = self.quote
+        if self.reference_to is not None:
+            result['referenceTo'] = self.reference_to
+        result['referenceFields'] = []
+        if self.reference_fields is not None:
+            for k in self.reference_fields:
+                result['referenceFields'].append(k.to_map() if k else None)
+        result['rollUpSummaryFields'] = []
+        if self.roll_up_summary_fields is not None:
+            for k in self.roll_up_summary_fields:
+                result['rollUpSummaryFields'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('customized') is not None:
+            self.customized = m.get('customized')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('nillable') is not None:
+            self.nillable = m.get('nillable')
+        if m.get('format') is not None:
+            self.format = m.get('format')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        self.select_options = []
+        if m.get('selectOptions') is not None:
+            for k in m.get('selectOptions'):
+                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsSelectOptions()
+                self.select_options.append(temp_model.from_map(k))
+        if m.get('quote') is not None:
+            self.quote = m.get('quote')
+        if m.get('referenceTo') is not None:
+            self.reference_to = m.get('referenceTo')
+        self.reference_fields = []
+        if m.get('referenceFields') is not None:
+            for k in m.get('referenceFields'):
+                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsReferenceFields()
+                self.reference_fields.append(temp_model.from_map(k))
+        self.roll_up_summary_fields = []
+        if m.get('rollUpSummaryFields') is not None:
+            for k in m.get('rollUpSummaryFields'):
+                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields()
+                self.roll_up_summary_fields.append(temp_model.from_map(k))
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponseBody(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        customized: bool = None,
+        fields: List[DescribeCrmPersonalCustomerObjectMetaResponseBodyFields] = None,
+        status: str = None,
+        code: str = None,
+    ):
+        # 对象名称
+        self.name = name
+        # 是否自定义对象
+        self.customized = customized
+        # 字段列表
+        self.fields = fields
+        # 表单状态
+        self.status = status
+        # 表单code
+        self.code = code
+
+    def validate(self):
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.customized is not None:
+            result['customized'] = self.customized
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.status is not None:
+            result['status'] = self.status
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('customized') is not None:
+            self.customized = m.get('customized')
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBodyFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class DescribeCrmPersonalCustomerObjectMetaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DescribeCrmPersonalCustomerObjectMetaResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DescribeCrmPersonalCustomerObjectMetaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AbandonCustomerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AbandonCustomerRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        instance_id_list: List[str] = None,
+        custom_track_desc: str = None,
+        opt_type: str = None,
+    ):
+        # 操作人staffId，一般为企业员工
+        self.operator_user_id = operator_user_id
+        # 客户实例 id 数组
+        self.instance_id_list = instance_id_list
+        # 自定义动态描述
+        self.custom_track_desc = custom_track_desc
+        # 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
+        self.opt_type = opt_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.instance_id_list is not None:
+            result['instanceIdList'] = self.instance_id_list
+        if self.custom_track_desc is not None:
+            result['customTrackDesc'] = self.custom_track_desc
+        if self.opt_type is not None:
+            result['optType'] = self.opt_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('instanceIdList') is not None:
+            self.instance_id_list = m.get('instanceIdList')
+        if m.get('customTrackDesc') is not None:
+            self.custom_track_desc = m.get('customTrackDesc')
+        if m.get('optType') is not None:
+            self.opt_type = m.get('optType')
+        return self
+
+
+class AbandonCustomerResponseBody(TeaModel):
+    def __init__(
+        self,
+        instance_id_list: List[str] = None,
+    ):
+        # 成功退回公海的客户实例 id 数组
+        self.instance_id_list = instance_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id_list is not None:
+            result['instanceIdList'] = self.instance_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceIdList') is not None:
+            self.instance_id_list = m.get('instanceIdList')
+        return self
+
+
+class AbandonCustomerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AbandonCustomerResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AbandonCustomerResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

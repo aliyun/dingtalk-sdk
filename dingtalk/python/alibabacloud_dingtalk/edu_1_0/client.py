@@ -965,6 +965,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteUniversityTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/universities/teachers', 'json', req, runtime)
         )
 
+    def query_purchase_info(
+        self,
+        request: dingtalkedu__1__0_models.QueryPurchaseInfoRequest,
+    ) -> dingtalkedu__1__0_models.QueryPurchaseInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryPurchaseInfoHeaders()
+        return self.query_purchase_info_with_options(request, headers, runtime)
+
+    async def query_purchase_info_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryPurchaseInfoRequest,
+    ) -> dingtalkedu__1__0_models.QueryPurchaseInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryPurchaseInfoHeaders()
+        return await self.query_purchase_info_with_options_async(request, headers, runtime)
+
+    def query_purchase_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryPurchaseInfoRequest,
+        headers: dingtalkedu__1__0_models.QueryPurchaseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryPurchaseInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.merchant_id):
+            query['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.scene):
+            query['scene'] = request.scene
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryPurchaseInfoResponse(),
+            self.do_roarequest('QueryPurchaseInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/users/purchases', 'json', req, runtime)
+        )
+
+    async def query_purchase_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryPurchaseInfoRequest,
+        headers: dingtalkedu__1__0_models.QueryPurchaseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryPurchaseInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.merchant_id):
+            query['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.scene):
+            query['scene'] = request.scene
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryPurchaseInfoResponse(),
+            await self.do_roarequest_async('QueryPurchaseInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/users/purchases', 'json', req, runtime)
+        )
+
     def delete_device_org(
         self,
         request: dingtalkedu__1__0_models.DeleteDeviceOrgRequest,
@@ -1819,6 +1895,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateRemoteClassCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/remoteClasses/courses', 'json', req, runtime)
         )
 
+    def report_device_log(
+        self,
+        request: dingtalkedu__1__0_models.ReportDeviceLogRequest,
+    ) -> dingtalkedu__1__0_models.ReportDeviceLogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ReportDeviceLogHeaders()
+        return self.report_device_log_with_options(request, headers, runtime)
+
+    async def report_device_log_async(
+        self,
+        request: dingtalkedu__1__0_models.ReportDeviceLogRequest,
+    ) -> dingtalkedu__1__0_models.ReportDeviceLogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ReportDeviceLogHeaders()
+        return await self.report_device_log_with_options_async(request, headers, runtime)
+
+    def report_device_log_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ReportDeviceLogRequest,
+        headers: dingtalkedu__1__0_models.ReportDeviceLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ReportDeviceLogResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.media_id):
+            query['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ReportDeviceLogResponse(),
+            self.do_roarequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/deviceLogs/report', 'boolean', req, runtime)
+        )
+
+    async def report_device_log_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ReportDeviceLogRequest,
+        headers: dingtalkedu__1__0_models.ReportDeviceLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ReportDeviceLogResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.media_id):
+            query['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ReportDeviceLogResponse(),
+            await self.do_roarequest_async('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/deviceLogs/report', 'boolean', req, runtime)
+        )
+
     def create_custom_class(
         self,
         request: dingtalkedu__1__0_models.CreateCustomClassRequest,
@@ -2643,6 +2791,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteUniversityCourseGroup', 'edu_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/edu/universities/courseGroups', 'json', req, runtime)
         )
 
+    def device_heartbeat(
+        self,
+        request: dingtalkedu__1__0_models.DeviceHeartbeatRequest,
+    ) -> dingtalkedu__1__0_models.DeviceHeartbeatResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeviceHeartbeatHeaders()
+        return self.device_heartbeat_with_options(request, headers, runtime)
+
+    async def device_heartbeat_async(
+        self,
+        request: dingtalkedu__1__0_models.DeviceHeartbeatRequest,
+    ) -> dingtalkedu__1__0_models.DeviceHeartbeatResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeviceHeartbeatHeaders()
+        return await self.device_heartbeat_with_options_async(request, headers, runtime)
+
+    def device_heartbeat_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeviceHeartbeatRequest,
+        headers: dingtalkedu__1__0_models.DeviceHeartbeatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeviceHeartbeatResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeviceHeartbeatResponse(),
+            self.do_roarequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/heartbeats/report', 'int32', req, runtime)
+        )
+
+    async def device_heartbeat_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeviceHeartbeatRequest,
+        headers: dingtalkedu__1__0_models.DeviceHeartbeatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeviceHeartbeatResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeviceHeartbeatResponse(),
+            await self.do_roarequest_async('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/heartbeats/report', 'int32', req, runtime)
+        )
+
     def delete_dept(
         self,
         dept_id: str,
@@ -2869,6 +3081,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.InsertSectionConfigResponse(),
             await self.do_roarequest_async('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/schedules/configs', 'json', req, runtime)
+        )
+
+    def query_user_face(
+        self,
+        request: dingtalkedu__1__0_models.QueryUserFaceRequest,
+    ) -> dingtalkedu__1__0_models.QueryUserFaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryUserFaceHeaders()
+        return self.query_user_face_with_options(request, headers, runtime)
+
+    async def query_user_face_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryUserFaceRequest,
+    ) -> dingtalkedu__1__0_models.QueryUserFaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryUserFaceHeaders()
+        return await self.query_user_face_with_options_async(request, headers, runtime)
+
+    def query_user_face_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryUserFaceRequest,
+        headers: dingtalkedu__1__0_models.QueryUserFaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryUserFaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.face_id):
+            query['faceId'] = request.face_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryUserFaceResponse(),
+            self.do_roarequest('QueryUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/users/faces', 'json', req, runtime)
+        )
+
+    async def query_user_face_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryUserFaceRequest,
+        headers: dingtalkedu__1__0_models.QueryUserFaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryUserFaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.face_id):
+            query['faceId'] = request.face_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryUserFaceResponse(),
+            await self.do_roarequest_async('QueryUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/users/faces', 'json', req, runtime)
         )
 
     def query_device_list_by_corp_id(
@@ -3547,6 +3827,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.GetShareRolesResponse(),
             await self.do_roarequest_async('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/shareRoles', 'json', req, runtime)
+        )
+
+    def query_group_id(
+        self,
+        request: dingtalkedu__1__0_models.QueryGroupIdRequest,
+    ) -> dingtalkedu__1__0_models.QueryGroupIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryGroupIdHeaders()
+        return self.query_group_id_with_options(request, headers, runtime)
+
+    async def query_group_id_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryGroupIdRequest,
+    ) -> dingtalkedu__1__0_models.QueryGroupIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryGroupIdHeaders()
+        return await self.query_group_id_with_options_async(request, headers, runtime)
+
+    def query_group_id_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryGroupIdRequest,
+        headers: dingtalkedu__1__0_models.QueryGroupIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryGroupIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryGroupIdResponse(),
+            self.do_roarequest('QueryGroupId', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/faces/groups', 'json', req, runtime)
+        )
+
+    async def query_group_id_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryGroupIdRequest,
+        headers: dingtalkedu__1__0_models.QueryGroupIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryGroupIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryGroupIdResponse(),
+            await self.do_roarequest_async('QueryGroupId', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/faces/groups', 'json', req, runtime)
         )
 
     def subscribe_university_course_group(
@@ -4295,6 +4639,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkedu__1__0_models.QueryOrgRelationListResponse(),
             await self.do_roarequest_async('QueryOrgRelationList', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/remoteClasses/orgRelations', 'json', req, runtime)
+        )
+
+    def query_school_user_face(
+        self,
+        request: dingtalkedu__1__0_models.QuerySchoolUserFaceRequest,
+    ) -> dingtalkedu__1__0_models.QuerySchoolUserFaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySchoolUserFaceHeaders()
+        return self.query_school_user_face_with_options(request, headers, runtime)
+
+    async def query_school_user_face_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySchoolUserFaceRequest,
+    ) -> dingtalkedu__1__0_models.QuerySchoolUserFaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySchoolUserFaceHeaders()
+        return await self.query_school_user_face_with_options_async(request, headers, runtime)
+
+    def query_school_user_face_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QuerySchoolUserFaceRequest,
+        headers: dingtalkedu__1__0_models.QuerySchoolUserFaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySchoolUserFaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySchoolUserFaceResponse(),
+            self.do_roarequest('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/schools/faces', 'json', req, runtime)
+        )
+
+    async def query_school_user_face_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySchoolUserFaceRequest,
+        headers: dingtalkedu__1__0_models.QuerySchoolUserFaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySchoolUserFaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = headers.x_acs_dingtalk_access_token
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySchoolUserFaceResponse(),
+            await self.do_roarequest_async('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/edu/schools/faces', 'json', req, runtime)
         )
 
     def query_org_type(self) -> dingtalkedu__1__0_models.QueryOrgTypeResponse:
