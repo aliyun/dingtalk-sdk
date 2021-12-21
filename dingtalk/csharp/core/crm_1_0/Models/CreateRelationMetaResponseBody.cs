@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class UpdateRelationMetaFieldResponseBody : TeaModel {
+    public class CreateRelationMetaResponseBody : TeaModel {
         [NameInMap("relationType")]
         [Validation(Required=false)]
         public string RelationType { get; set; }

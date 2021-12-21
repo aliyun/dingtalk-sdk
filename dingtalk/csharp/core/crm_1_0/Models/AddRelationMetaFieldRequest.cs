@@ -8,19 +8,19 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class UpdateRelationMetaFieldRequest : TeaModel {
+    public class AddRelationMetaFieldRequest : TeaModel {
         [NameInMap("fieldDTOList")]
         [Validation(Required=false)]
-        public List<UpdateRelationMetaFieldRequestFieldDTOList> FieldDTOList { get; set; }
-        public class UpdateRelationMetaFieldRequestFieldDTOList : TeaModel {
+        public List<AddRelationMetaFieldRequestFieldDTOList> FieldDTOList { get; set; }
+        public class AddRelationMetaFieldRequestFieldDTOList : TeaModel {
             [NameInMap("componentName")]
             [Validation(Required=false)]
             public string ComponentName { get; set; }
 
             [NameInMap("props")]
             [Validation(Required=false)]
-            public UpdateRelationMetaFieldRequestFieldDTOListProps Props { get; set; }
-            public class UpdateRelationMetaFieldRequestFieldDTOListProps : TeaModel {
+            public AddRelationMetaFieldRequestFieldDTOListProps Props { get; set; }
+            public class AddRelationMetaFieldRequestFieldDTOListProps : TeaModel {
                 [NameInMap("fieldId")]
                 [Validation(Required=false)]
                 public string FieldId { get; set; }
@@ -30,9 +30,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [NameInMap("sortable")]
                 [Validation(Required=false)]
                 public bool? Sortable { get; set; }
-                [NameInMap("needDetail")]
-                [Validation(Required=false)]
-                public string NeedDetail { get; set; }
                 [NameInMap("labelEditableFreeze")]
                 [Validation(Required=false)]
                 public bool? LabelEditableFreeze { get; set; }
@@ -53,8 +50,8 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string Format { get; set; }
                 [NameInMap("options")]
                 [Validation(Required=false)]
-                public List<UpdateRelationMetaFieldRequestFieldDTOListPropsOptions> Options { get; set; }
-                public class UpdateRelationMetaFieldRequestFieldDTOListPropsOptions : TeaModel {
+                public List<AddRelationMetaFieldRequestFieldDTOListPropsOptions> Options { get; set; }
+                public class AddRelationMetaFieldRequestFieldDTOListPropsOptions : TeaModel {
                     public string Key { get; set; }
                     public string Value { get; set; }
                 }
@@ -64,6 +61,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [NameInMap("unit")]
                 [Validation(Required=false)]
                 public string Unit { get; set; }
+                [NameInMap("needDetail")]
+                [Validation(Required=false)]
+                public string NeedDetail { get; set; }
                 [NameInMap("placeholder")]
                 [Validation(Required=false)]
                 public string Placeholder { get; set; }
