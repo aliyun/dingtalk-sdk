@@ -11,18 +11,27 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AbandonCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
@@ -340,91 +349,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $userId
+     * @param CreateRelationMetaRequest $request
      *
-     * @return GetOfficialAccountContactInfoResponse
+     * @return CreateRelationMetaResponse
      */
-    public function getOfficialAccountContactInfo($userId)
+    public function createRelationMeta($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetOfficialAccountContactInfoHeaders([]);
+        $headers = new CreateRelationMetaHeaders([]);
 
-        return $this->getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime);
+        return $this->createRelationMetaWithOptions($request, $headers, $runtime);
     }
 
     /**
-     * @param string                               $userId
-     * @param GetOfficialAccountContactInfoHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param CreateRelationMetaRequest $request
+     * @param CreateRelationMetaHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetOfficialAccountContactInfoResponse
+     * @return CreateRelationMetaResponse
      */
-    public function getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetOfficialAccountContactInfoResponse::fromMap($this->doROARequest('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/contacts/' . $userId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryAllCustomerRequest $request
-     *
-     * @return QueryAllCustomerResponse
-     */
-    public function queryAllCustomer($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryAllCustomerHeaders([]);
-
-        return $this->queryAllCustomerWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryAllCustomerRequest $request
-     * @param QueryAllCustomerHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return QueryAllCustomerResponse
-     */
-    public function queryAllCustomerWithOptions($request, $headers, $runtime)
+    public function createRelationMetaWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingCorpId)) {
-            @$body['dingCorpId'] = $request->dingCorpId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        if (!Utils::isUnset($request->tenant)) {
+            @$body['tenant'] = $request->tenant;
         }
         if (!Utils::isUnset($request->operatorUserId)) {
             @$body['operatorUserId'] = $request->operatorUserId;
         }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$body['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->objectType)) {
-            @$body['objectType'] = $request->objectType;
+        if (!Utils::isUnset($request->relationMetaDTO)) {
+            @$body['relationMetaDTO'] = $request->relationMetaDTO;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -438,7 +393,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return QueryAllCustomerResponse::fromMap($this->doROARequest('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerInstances', 'json', $req, $runtime));
+        return CreateRelationMetaResponse::fromMap($this->doROARequest('CreateRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/create', 'json', $req, $runtime));
     }
 
     /**
@@ -598,204 +553,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DescribeRelationMetaRequest $request
-     *
-     * @return DescribeRelationMetaResponse
-     */
-    public function describeRelationMeta($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DescribeRelationMetaHeaders([]);
-
-        return $this->describeRelationMetaWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param DescribeRelationMetaRequest $request
-     * @param DescribeRelationMetaHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return DescribeRelationMetaResponse
-     */
-    public function describeRelationMetaWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->tenant)) {
-            @$body['tenant'] = $request->tenant;
-        }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
-        if (!Utils::isUnset($request->relationTypes)) {
-            @$body['relationTypes'] = $request->relationTypes;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return DescribeRelationMetaResponse::fromMap($this->doROARequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/query', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param AddCrmPersonalCustomerRequest $request
-     *
-     * @return AddCrmPersonalCustomerResponse
-     */
-    public function addCrmPersonalCustomer($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AddCrmPersonalCustomerHeaders([]);
-
-        return $this->addCrmPersonalCustomerWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param AddCrmPersonalCustomerRequest $request
-     * @param AddCrmPersonalCustomerHeaders $headers
-     * @param RuntimeOptions                $runtime
-     *
-     * @return AddCrmPersonalCustomerResponse
-     */
-    public function addCrmPersonalCustomerWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->creatorUserId)) {
-            @$body['creatorUserId'] = $request->creatorUserId;
-        }
-        if (!Utils::isUnset($request->creatorNick)) {
-            @$body['creatorNick'] = $request->creatorNick;
-        }
-        if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
-        }
-        if (!Utils::isUnset($request->extendData)) {
-            @$body['extendData'] = $request->extendData;
-        }
-        if (!Utils::isUnset($request->permission)) {
-            @$body['permission'] = $request->permission;
-        }
-        if (!Utils::isUnset($request->skipDuplicateCheck)) {
-            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
-        }
-        if (!Utils::isUnset($request->action)) {
-            @$body['action'] = $request->action;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AddCrmPersonalCustomerResponse::fromMap($this->doROARequest('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param RecallOfficialAccountOTOMessageRequest $request
-     *
-     * @return RecallOfficialAccountOTOMessageResponse
-     */
-    public function recallOfficialAccountOTOMessage($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new RecallOfficialAccountOTOMessageHeaders([]);
-
-        return $this->recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param RecallOfficialAccountOTOMessageRequest $request
-     * @param RecallOfficialAccountOTOMessageHeaders $headers
-     * @param RuntimeOptions                         $runtime
-     *
-     * @return RecallOfficialAccountOTOMessageResponse
-     */
-    public function recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->accountId)) {
-            @$body['accountId'] = $request->accountId;
-        }
-        if (!Utils::isUnset($request->openPushId)) {
-            @$body['openPushId'] = $request->openPushId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return RecallOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/recall', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return DescribeCrmPersonalCustomerObjectMetaResponse
-     */
-    public function describeCrmPersonalCustomerObjectMeta()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new DescribeCrmPersonalCustomerObjectMetaHeaders([]);
-
-        return $this->describeCrmPersonalCustomerObjectMetaWithOptions($headers, $runtime);
-    }
-
-    /**
-     * @param DescribeCrmPersonalCustomerObjectMetaHeaders $headers
-     * @param RuntimeOptions                               $runtime
-     *
-     * @return DescribeCrmPersonalCustomerObjectMetaResponse
-     */
-    public function describeCrmPersonalCustomerObjectMetaWithOptions($headers, $runtime)
-    {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return DescribeCrmPersonalCustomerObjectMetaResponse::fromMap($this->doROARequest('DescribeCrmPersonalCustomerObjectMeta', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/personalCustomers/objectMeta', 'json', $req, $runtime));
-    }
-
-    /**
      * @param string                           $dataId
      * @param DeleteCrmPersonalCustomerRequest $request
      *
@@ -837,57 +594,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteCrmPersonalCustomerResponse::fromMap($this->doROARequest('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/personalCustomers/' . $dataId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param AbandonCustomerRequest $request
-     *
-     * @return AbandonCustomerResponse
-     */
-    public function abandonCustomer($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new AbandonCustomerHeaders([]);
-
-        return $this->abandonCustomerWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param AbandonCustomerRequest $request
-     * @param AbandonCustomerHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return AbandonCustomerResponse
-     */
-    public function abandonCustomerWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
-        if (!Utils::isUnset($request->instanceIdList)) {
-            @$body['instanceIdList'] = $request->instanceIdList;
-        }
-        if (!Utils::isUnset($request->customTrackDesc)) {
-            @$body['customTrackDesc'] = $request->customTrackDesc;
-        }
-        if (!Utils::isUnset($request->optType)) {
-            @$body['optType'] = $request->optType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return AbandonCustomerResponse::fromMap($this->doROARequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers/abandon', 'json', $req, $runtime));
     }
 
     /**
@@ -1108,6 +814,459 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListCrmPersonalCustomersResponse::fromMap($this->doROARequest('ListCrmPersonalCustomers', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers/batchQuery', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteRelationMetaFieldRequest $request
+     *
+     * @return DeleteRelationMetaFieldResponse
+     */
+    public function deleteRelationMetaField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRelationMetaFieldHeaders([]);
+
+        return $this->deleteRelationMetaFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteRelationMetaFieldRequest $request
+     * @param DeleteRelationMetaFieldHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return DeleteRelationMetaFieldResponse
+     */
+    public function deleteRelationMetaFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenant)) {
+            @$body['tenant'] = $request->tenant;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->fieldIdList)) {
+            @$body['fieldIdList'] = $request->fieldIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteRelationMetaFieldResponse::fromMap($this->doROARequest('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/fields/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddRelationMetaFieldRequest $request
+     *
+     * @return AddRelationMetaFieldResponse
+     */
+    public function addRelationMetaField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddRelationMetaFieldHeaders([]);
+
+        return $this->addRelationMetaFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddRelationMetaFieldRequest $request
+     * @param AddRelationMetaFieldHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return AddRelationMetaFieldResponse
+     */
+    public function addRelationMetaFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenant)) {
+            @$body['tenant'] = $request->tenant;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->fieldDTOList)) {
+            @$body['fieldDTOList'] = $request->fieldDTOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddRelationMetaFieldResponse::fromMap($this->doROARequest('AddRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/fields', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return GetOfficialAccountContactInfoResponse
+     */
+    public function getOfficialAccountContactInfo($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOfficialAccountContactInfoHeaders([]);
+
+        return $this->getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                               $userId
+     * @param GetOfficialAccountContactInfoHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return GetOfficialAccountContactInfoResponse
+     */
+    public function getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetOfficialAccountContactInfoResponse::fromMap($this->doROARequest('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/contacts/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryAllCustomerRequest $request
+     *
+     * @return QueryAllCustomerResponse
+     */
+    public function queryAllCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllCustomerHeaders([]);
+
+        return $this->queryAllCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAllCustomerRequest $request
+     * @param QueryAllCustomerHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return QueryAllCustomerResponse
+     */
+    public function queryAllCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->objectType)) {
+            @$body['objectType'] = $request->objectType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryAllCustomerResponse::fromMap($this->doROARequest('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerInstances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DescribeRelationMetaRequest $request
+     *
+     * @return DescribeRelationMetaResponse
+     */
+    public function describeRelationMeta($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DescribeRelationMetaHeaders([]);
+
+        return $this->describeRelationMetaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DescribeRelationMetaRequest $request
+     * @param DescribeRelationMetaHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DescribeRelationMetaResponse
+     */
+    public function describeRelationMetaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenant)) {
+            @$body['tenant'] = $request->tenant;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationTypes)) {
+            @$body['relationTypes'] = $request->relationTypes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DescribeRelationMetaResponse::fromMap($this->doROARequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddCrmPersonalCustomerRequest $request
+     *
+     * @return AddCrmPersonalCustomerResponse
+     */
+    public function addCrmPersonalCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCrmPersonalCustomerHeaders([]);
+
+        return $this->addCrmPersonalCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddCrmPersonalCustomerRequest $request
+     * @param AddCrmPersonalCustomerHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return AddCrmPersonalCustomerResponse
+     */
+    public function addCrmPersonalCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creatorUserId)) {
+            @$body['creatorUserId'] = $request->creatorUserId;
+        }
+        if (!Utils::isUnset($request->creatorNick)) {
+            @$body['creatorNick'] = $request->creatorNick;
+        }
+        if (!Utils::isUnset($request->data)) {
+            @$body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            @$body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->permission)) {
+            @$body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        }
+        if (!Utils::isUnset($request->action)) {
+            @$body['action'] = $request->action;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddCrmPersonalCustomerResponse::fromMap($this->doROARequest('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RecallOfficialAccountOTOMessageRequest $request
+     *
+     * @return RecallOfficialAccountOTOMessageResponse
+     */
+    public function recallOfficialAccountOTOMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallOfficialAccountOTOMessageHeaders([]);
+
+        return $this->recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RecallOfficialAccountOTOMessageRequest $request
+     * @param RecallOfficialAccountOTOMessageHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return RecallOfficialAccountOTOMessageResponse
+     */
+    public function recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->accountId)) {
+            @$body['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->openPushId)) {
+            @$body['openPushId'] = $request->openPushId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RecallOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/recall', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return DescribeCrmPersonalCustomerObjectMetaResponse
+     */
+    public function describeCrmPersonalCustomerObjectMeta()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DescribeCrmPersonalCustomerObjectMetaHeaders([]);
+
+        return $this->describeCrmPersonalCustomerObjectMetaWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param DescribeCrmPersonalCustomerObjectMetaHeaders $headers
+     * @param RuntimeOptions                               $runtime
+     *
+     * @return DescribeCrmPersonalCustomerObjectMetaResponse
+     */
+    public function describeCrmPersonalCustomerObjectMetaWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DescribeCrmPersonalCustomerObjectMetaResponse::fromMap($this->doROARequest('DescribeCrmPersonalCustomerObjectMeta', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/personalCustomers/objectMeta', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AbandonCustomerRequest $request
+     *
+     * @return AbandonCustomerResponse
+     */
+    public function abandonCustomer($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AbandonCustomerHeaders([]);
+
+        return $this->abandonCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AbandonCustomerRequest $request
+     * @param AbandonCustomerHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AbandonCustomerResponse
+     */
+    public function abandonCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->instanceIdList)) {
+            @$body['instanceIdList'] = $request->instanceIdList;
+        }
+        if (!Utils::isUnset($request->customTrackDesc)) {
+            @$body['customTrackDesc'] = $request->customTrackDesc;
+        }
+        if (!Utils::isUnset($request->optType)) {
+            @$body['optType'] = $request->optType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AbandonCustomerResponse::fromMap($this->doROARequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers/abandon', 'json', $req, $runtime));
     }
 
     /**

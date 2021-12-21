@@ -77,6 +77,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityStudentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityTeacherHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityTeacherRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityTeacherResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
@@ -126,6 +129,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListResponse;
@@ -137,9 +143,15 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPhysicalClassroomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPhysicalClassroomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPhysicalClassroomResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPurchaseInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPurchaseInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPurchaseInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataResponse;
@@ -152,6 +164,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserFaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserFaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserFaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceLogHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceLogRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
@@ -828,6 +846,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryPurchaseInfoRequest $request
+     *
+     * @return QueryPurchaseInfoResponse
+     */
+    public function queryPurchaseInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPurchaseInfoHeaders([]);
+
+        return $this->queryPurchaseInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryPurchaseInfoRequest $request
+     * @param QueryPurchaseInfoHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryPurchaseInfoResponse
+     */
+    public function queryPurchaseInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            @$query['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            @$query['scene'] = $request->scene;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryPurchaseInfoResponse::fromMap($this->doROARequest('QueryPurchaseInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/users/purchases', 'json', $req, $runtime));
+    }
+
+    /**
      * @param DeleteDeviceOrgRequest $request
      *
      * @return DeleteDeviceOrgResponse
@@ -1396,6 +1465,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ReportDeviceLogRequest $request
+     *
+     * @return ReportDeviceLogResponse
+     */
+    public function reportDeviceLog($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReportDeviceLogHeaders([]);
+
+        return $this->reportDeviceLogWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ReportDeviceLogRequest $request
+     * @param ReportDeviceLogHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ReportDeviceLogResponse
+     */
+    public function reportDeviceLogWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            @$query['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ReportDeviceLogResponse::fromMap($this->doROARequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/deviceLogs/report', 'boolean', $req, $runtime));
+    }
+
+    /**
      * @param CreateCustomClassRequest $request
      *
      * @return CreateCustomClassResponse
@@ -1950,6 +2067,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DeviceHeartbeatRequest $request
+     *
+     * @return DeviceHeartbeatResponse
+     */
+    public function deviceHeartbeat($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeviceHeartbeatHeaders([]);
+
+        return $this->deviceHeartbeatWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeviceHeartbeatRequest $request
+     * @param DeviceHeartbeatHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return DeviceHeartbeatResponse
+     */
+    public function deviceHeartbeatWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeviceHeartbeatResponse::fromMap($this->doROARequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/heartbeats/report', 'int32', $req, $runtime));
+    }
+
+    /**
      * @param string            $deptId
      * @param DeleteDeptRequest $request
      *
@@ -2096,6 +2255,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return InsertSectionConfigResponse::fromMap($this->doROARequest('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/configs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserFaceRequest $request
+     *
+     * @return QueryUserFaceResponse
+     */
+    public function queryUserFace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserFaceHeaders([]);
+
+        return $this->queryUserFaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserFaceRequest $request
+     * @param QueryUserFaceHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return QueryUserFaceResponse
+     */
+    public function queryUserFaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->faceId)) {
+            @$query['faceId'] = $request->faceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryUserFaceResponse::fromMap($this->doROARequest('QueryUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/users/faces', 'json', $req, $runtime));
     }
 
     /**
@@ -2559,6 +2763,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetShareRolesResponse::fromMap($this->doROARequest('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryGroupIdRequest $request
+     *
+     * @return QueryGroupIdResponse
+     */
+    public function queryGroupId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGroupIdHeaders([]);
+
+        return $this->queryGroupIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGroupIdRequest $request
+     * @param QueryGroupIdHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return QueryGroupIdResponse
+     */
+    public function queryGroupIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryGroupIdResponse::fromMap($this->doROARequest('QueryGroupId', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/faces/groups', 'json', $req, $runtime));
     }
 
     /**
@@ -3057,6 +3303,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryOrgRelationListResponse::fromMap($this->doROARequest('QueryOrgRelationList', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/orgRelations', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QuerySchoolUserFaceRequest $request
+     *
+     * @return QuerySchoolUserFaceResponse
+     */
+    public function querySchoolUserFace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySchoolUserFaceHeaders([]);
+
+        return $this->querySchoolUserFaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QuerySchoolUserFaceRequest $request
+     * @param QuerySchoolUserFaceHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QuerySchoolUserFaceResponse
+     */
+    public function querySchoolUserFaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            @$query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QuerySchoolUserFaceResponse::fromMap($this->doROARequest('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/schools/faces', 'json', $req, $runtime));
     }
 
     /**

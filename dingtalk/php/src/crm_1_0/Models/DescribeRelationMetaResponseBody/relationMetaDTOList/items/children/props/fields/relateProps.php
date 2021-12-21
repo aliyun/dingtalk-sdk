@@ -26,6 +26,16 @@ class relateProps extends Model
     public $required;
 
     /**
+     * @var bool
+     */
+    public $requiredEditableFreeze;
+
+    /**
+     * @var bool
+     */
+    public $labelEditableFreeze;
+
+    /**
      * @var string
      */
     public $content;
@@ -109,27 +119,65 @@ class relateProps extends Model
      * @var string
      */
     public $formula;
+
+    /**
+     * @var bool
+     */
+    public $watermark;
+
+    /**
+     * @var int
+     */
+    public $limit;
+
+    /**
+     * @var bool
+     */
+    public $spread;
+
+    /**
+     * @var int
+     */
+    public $ratio;
+
+    /**
+     * @var string
+     */
+    public $durationLabel;
+
+    /**
+     * @var string
+     */
+    public $mode;
     protected $_name = [
-        'fieldId'       => 'fieldId',
-        'label'         => 'label',
-        'required'      => 'required',
-        'content'       => 'content',
-        'format'        => 'format',
-        'options'       => 'options',
-        'notUpper'      => 'notUpper',
-        'unit'          => 'unit',
-        'placeholder'   => 'placeholder',
-        'bizAlias'      => 'bizAlias',
-        'duration'      => 'duration',
-        'choice'        => 'choice',
-        'disabled'      => 'disabled',
-        'align'         => 'align',
-        'invisible'     => 'invisible',
-        'payEnable'     => 'payEnable',
-        'statField'     => 'statField',
-        'link'          => 'link',
-        'verticalPrint' => 'verticalPrint',
-        'formula'       => 'formula',
+        'fieldId'                => 'fieldId',
+        'label'                  => 'label',
+        'required'               => 'required',
+        'requiredEditableFreeze' => 'requiredEditableFreeze',
+        'labelEditableFreeze'    => 'labelEditableFreeze',
+        'content'                => 'content',
+        'format'                 => 'format',
+        'options'                => 'options',
+        'notUpper'               => 'notUpper',
+        'unit'                   => 'unit',
+        'placeholder'            => 'placeholder',
+        'bizAlias'               => 'bizAlias',
+        'duration'               => 'duration',
+        'choice'                 => 'choice',
+        'disabled'               => 'disabled',
+        'align'                  => 'align',
+        'invisible'              => 'invisible',
+        'payEnable'              => 'payEnable',
+        'statField'              => 'statField',
+        'link'                   => 'link',
+        'verticalPrint'          => 'verticalPrint',
+        'formula'                => 'formula',
+        'watermark'              => 'watermark',
+        'limit'                  => 'limit',
+        'spread'                 => 'spread',
+        'ratio'                  => 'ratio',
+        'durationLabel'          => 'durationLabel',
+        'mode'                   => 'mode',
     ];
 
     public function validate()
@@ -147,6 +195,12 @@ class relateProps extends Model
         }
         if (null !== $this->required) {
             $res['required'] = $this->required;
+        }
+        if (null !== $this->requiredEditableFreeze) {
+            $res['requiredEditableFreeze'] = $this->requiredEditableFreeze;
+        }
+        if (null !== $this->labelEditableFreeze) {
+            $res['labelEditableFreeze'] = $this->labelEditableFreeze;
         }
         if (null !== $this->content) {
             $res['content'] = $this->content;
@@ -211,6 +265,24 @@ class relateProps extends Model
         if (null !== $this->formula) {
             $res['formula'] = $this->formula;
         }
+        if (null !== $this->watermark) {
+            $res['watermark'] = $this->watermark;
+        }
+        if (null !== $this->limit) {
+            $res['limit'] = $this->limit;
+        }
+        if (null !== $this->spread) {
+            $res['spread'] = $this->spread;
+        }
+        if (null !== $this->ratio) {
+            $res['ratio'] = $this->ratio;
+        }
+        if (null !== $this->durationLabel) {
+            $res['durationLabel'] = $this->durationLabel;
+        }
+        if (null !== $this->mode) {
+            $res['mode'] = $this->mode;
+        }
 
         return $res;
     }
@@ -231,6 +303,12 @@ class relateProps extends Model
         }
         if (isset($map['required'])) {
             $model->required = $map['required'];
+        }
+        if (isset($map['requiredEditableFreeze'])) {
+            $model->requiredEditableFreeze = $map['requiredEditableFreeze'];
+        }
+        if (isset($map['labelEditableFreeze'])) {
+            $model->labelEditableFreeze = $map['labelEditableFreeze'];
         }
         if (isset($map['content'])) {
             $model->content = $map['content'];
@@ -294,6 +372,24 @@ class relateProps extends Model
         }
         if (isset($map['formula'])) {
             $model->formula = $map['formula'];
+        }
+        if (isset($map['watermark'])) {
+            $model->watermark = $map['watermark'];
+        }
+        if (isset($map['limit'])) {
+            $model->limit = $map['limit'];
+        }
+        if (isset($map['spread'])) {
+            $model->spread = $map['spread'];
+        }
+        if (isset($map['ratio'])) {
+            $model->ratio = $map['ratio'];
+        }
+        if (isset($map['durationLabel'])) {
+            $model->durationLabel = $map['durationLabel'];
+        }
+        if (isset($map['mode'])) {
+            $model->mode = $map['mode'];
         }
 
         return $model;

@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\children\props;
 
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\children\props\dataSource\params;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\children\props\dataSource\target;
 use AlibabaCloud\Tea\Model;
 
@@ -15,11 +16,17 @@ class dataSource extends Model
     public $type;
 
     /**
+     * @var params
+     */
+    public $params;
+
+    /**
      * @var target
      */
     public $target;
     protected $_name = [
         'type'   => 'type',
+        'params' => 'params',
         'target' => 'target',
     ];
 
@@ -32,6 +39,9 @@ class dataSource extends Model
         $res = [];
         if (null !== $this->type) {
             $res['type'] = $this->type;
+        }
+        if (null !== $this->params) {
+            $res['params'] = null !== $this->params ? $this->params->toMap() : null;
         }
         if (null !== $this->target) {
             $res['target'] = null !== $this->target ? $this->target->toMap() : null;
@@ -50,6 +60,9 @@ class dataSource extends Model
         $model = new self();
         if (isset($map['type'])) {
             $model->type = $map['type'];
+        }
+        if (isset($map['params'])) {
+            $model->params = params::fromMap($map['params']);
         }
         if (isset($map['target'])) {
             $model->target = target::fromMap($map['target']);

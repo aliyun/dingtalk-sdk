@@ -4,17 +4,16 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldResponseBody\relationMetaDTO;
 use AlibabaCloud\Tea\Model;
 
 class UpdateRelationMetaFieldResponseBody extends Model
 {
     /**
-     * @var relationMetaDTO
+     * @var string
      */
-    public $relationMetaDTO;
+    public $relationType;
     protected $_name = [
-        'relationMetaDTO' => 'relationMetaDTO',
+        'relationType' => 'relationType',
     ];
 
     public function validate()
@@ -24,8 +23,8 @@ class UpdateRelationMetaFieldResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->relationMetaDTO) {
-            $res['relationMetaDTO'] = null !== $this->relationMetaDTO ? $this->relationMetaDTO->toMap() : null;
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
 
         return $res;
@@ -39,8 +38,8 @@ class UpdateRelationMetaFieldResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['relationMetaDTO'])) {
-            $model->relationMetaDTO = relationMetaDTO::fromMap($map['relationMetaDTO']);
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
 
         return $model;

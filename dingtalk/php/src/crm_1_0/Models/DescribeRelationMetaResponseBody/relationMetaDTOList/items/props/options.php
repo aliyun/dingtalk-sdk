@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props;
 
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\options\extension;
 use AlibabaCloud\Tea\Model;
 
 class options extends Model
@@ -21,9 +22,23 @@ class options extends Model
      * @var string
      */
     public $value;
+
+    /**
+     * @description false
+     *
+     * @var bool
+     */
+    public $warn;
+
+    /**
+     * @var extension
+     */
+    public $extension;
     protected $_name = [
-        'key'   => 'key',
-        'value' => 'value',
+        'key'       => 'key',
+        'value'     => 'value',
+        'warn'      => 'warn',
+        'extension' => 'extension',
     ];
 
     public function validate()
@@ -38,6 +53,12 @@ class options extends Model
         }
         if (null !== $this->value) {
             $res['value'] = $this->value;
+        }
+        if (null !== $this->warn) {
+            $res['warn'] = $this->warn;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = null !== $this->extension ? $this->extension->toMap() : null;
         }
 
         return $res;
@@ -56,6 +77,12 @@ class options extends Model
         }
         if (isset($map['value'])) {
             $model->value = $map['value'];
+        }
+        if (isset($map['warn'])) {
+            $model->warn = $map['warn'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = extension::fromMap($map['extension']);
         }
 
         return $model;

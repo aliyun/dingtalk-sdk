@@ -31,16 +31,56 @@ class relationMetaDTOList extends Model
     public $desc;
 
     /**
+     * @description 模型结构code
+     *
+     * @var string
+     */
+    public $relationMetaCode;
+
+    /**
+     * @description 模型结构状态
+     *
+     * @var string
+     */
+    public $relationMetaStatus;
+
+    /**
+     * @description 创建者userId
+     *
+     * @var string
+     */
+    public $creatorUserId;
+
+    /**
+     * @description 创建时间
+     *
+     * @var string
+     */
+    public $gmtCreate;
+
+    /**
+     * @description 修改时间
+     *
+     * @var string
+     */
+    public $gmtModified;
+
+    /**
      * @description 模型结构字段集合
      *
      * @var items[]
      */
     public $items;
     protected $_name = [
-        'relationType' => 'relationType',
-        'name'         => 'name',
-        'desc'         => 'desc',
-        'items'        => 'items',
+        'relationType'       => 'relationType',
+        'name'               => 'name',
+        'desc'               => 'desc',
+        'relationMetaCode'   => 'relationMetaCode',
+        'relationMetaStatus' => 'relationMetaStatus',
+        'creatorUserId'      => 'creatorUserId',
+        'gmtCreate'          => 'gmtCreate',
+        'gmtModified'        => 'gmtModified',
+        'items'              => 'items',
     ];
 
     public function validate()
@@ -58,6 +98,21 @@ class relationMetaDTOList extends Model
         }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
+        }
+        if (null !== $this->relationMetaCode) {
+            $res['relationMetaCode'] = $this->relationMetaCode;
+        }
+        if (null !== $this->relationMetaStatus) {
+            $res['relationMetaStatus'] = $this->relationMetaStatus;
+        }
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
+        }
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
         }
         if (null !== $this->items) {
             $res['items'] = [];
@@ -88,6 +143,21 @@ class relationMetaDTOList extends Model
         }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
+        }
+        if (isset($map['relationMetaCode'])) {
+            $model->relationMetaCode = $map['relationMetaCode'];
+        }
+        if (isset($map['relationMetaStatus'])) {
+            $model->relationMetaStatus = $map['relationMetaStatus'];
+        }
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
+        }
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
         }
         if (isset($map['items'])) {
             if (!empty($map['items'])) {

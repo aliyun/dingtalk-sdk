@@ -7,6 +7,8 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\dataSource;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\fields;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\options;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\relateSource;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\rule;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\statField;
 use AlibabaCloud\Tea\Model;
 
@@ -25,6 +27,11 @@ class props extends Model
      * @var string
      */
     public $label;
+
+    /**
+     * @var bool
+     */
+    public $sortable;
 
     /**
      * @description 字段标题是否可修改
@@ -132,6 +139,11 @@ class props extends Model
     public $align;
 
     /**
+     * @var relateSource[]
+     */
+    public $relateSource;
+
+    /**
      * @description 关联表单的关联控件显示
      *
      * @var fields[]
@@ -186,9 +198,86 @@ class props extends Model
      * @var string
      */
     public $formula;
+
+    /**
+     * @var string
+     */
+    public $needDetail;
+
+    /**
+     * @description 1
+     *
+     * @var int
+     */
+    public $quote;
+
+    /**
+     * @var int
+     */
+    public $multi;
+
+    /**
+     * @description 流水号控件规则
+     *
+     * @var rule[]
+     */
+    public $rule;
+
+    /**
+     * @description table
+     *
+     * @var string
+     */
+    public $tableViewMode;
+
+    /**
+     * @var string
+     */
+    public $actionName;
+
+    /**
+     * @description true
+     *
+     * @var bool
+     */
+    public $watermark;
+
+    /**
+     * @description 5
+     *
+     * @var int
+     */
+    public $limit;
+
+    /**
+     * @description true
+     *
+     * @var bool
+     */
+    public $spread;
+
+    /**
+     * @description 50
+     *
+     * @var int
+     */
+    public $ratio;
+
+    /**
+     * @var string
+     */
+    public $durationLabel;
+
+    /**
+     * @description phone
+     *
+     * @var string
+     */
+    public $mode;
     protected $_name = [
         'fieldId'                => 'fieldId',
         'label'                  => 'label',
+        'sortable'               => 'sortable',
         'labelEditableFreeze'    => 'labelEditableFreeze',
         'required'               => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
@@ -204,6 +293,7 @@ class props extends Model
         'choice'                 => 'choice',
         'disabled'               => 'disabled',
         'align'                  => 'align',
+        'relateSource'           => 'relateSource',
         'fields'                 => 'fields',
         'dataSource'             => 'dataSource',
         'invisible'              => 'invisible',
@@ -212,6 +302,18 @@ class props extends Model
         'link'                   => 'link',
         'verticalPrint'          => 'verticalPrint',
         'formula'                => 'formula',
+        'needDetail'             => 'needDetail',
+        'quote'                  => 'quote',
+        'multi'                  => 'multi',
+        'rule'                   => 'rule',
+        'tableViewMode'          => 'tableViewMode',
+        'actionName'             => 'actionName',
+        'watermark'              => 'watermark',
+        'limit'                  => 'limit',
+        'spread'                 => 'spread',
+        'ratio'                  => 'ratio',
+        'durationLabel'          => 'durationLabel',
+        'mode'                   => 'mode',
     ];
 
     public function validate()
@@ -226,6 +328,9 @@ class props extends Model
         }
         if (null !== $this->label) {
             $res['label'] = $this->label;
+        }
+        if (null !== $this->sortable) {
+            $res['sortable'] = $this->sortable;
         }
         if (null !== $this->labelEditableFreeze) {
             $res['labelEditableFreeze'] = $this->labelEditableFreeze;
@@ -278,6 +383,15 @@ class props extends Model
         if (null !== $this->align) {
             $res['align'] = $this->align;
         }
+        if (null !== $this->relateSource) {
+            $res['relateSource'] = [];
+            if (null !== $this->relateSource && \is_array($this->relateSource)) {
+                $n = 0;
+                foreach ($this->relateSource as $item) {
+                    $res['relateSource'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->fields) {
             $res['fields'] = [];
             if (null !== $this->fields && \is_array($this->fields)) {
@@ -314,6 +428,48 @@ class props extends Model
         if (null !== $this->formula) {
             $res['formula'] = $this->formula;
         }
+        if (null !== $this->needDetail) {
+            $res['needDetail'] = $this->needDetail;
+        }
+        if (null !== $this->quote) {
+            $res['quote'] = $this->quote;
+        }
+        if (null !== $this->multi) {
+            $res['multi'] = $this->multi;
+        }
+        if (null !== $this->rule) {
+            $res['rule'] = [];
+            if (null !== $this->rule && \is_array($this->rule)) {
+                $n = 0;
+                foreach ($this->rule as $item) {
+                    $res['rule'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->tableViewMode) {
+            $res['tableViewMode'] = $this->tableViewMode;
+        }
+        if (null !== $this->actionName) {
+            $res['actionName'] = $this->actionName;
+        }
+        if (null !== $this->watermark) {
+            $res['watermark'] = $this->watermark;
+        }
+        if (null !== $this->limit) {
+            $res['limit'] = $this->limit;
+        }
+        if (null !== $this->spread) {
+            $res['spread'] = $this->spread;
+        }
+        if (null !== $this->ratio) {
+            $res['ratio'] = $this->ratio;
+        }
+        if (null !== $this->durationLabel) {
+            $res['durationLabel'] = $this->durationLabel;
+        }
+        if (null !== $this->mode) {
+            $res['mode'] = $this->mode;
+        }
 
         return $res;
     }
@@ -331,6 +487,9 @@ class props extends Model
         }
         if (isset($map['label'])) {
             $model->label = $map['label'];
+        }
+        if (isset($map['sortable'])) {
+            $model->sortable = $map['sortable'];
         }
         if (isset($map['labelEditableFreeze'])) {
             $model->labelEditableFreeze = $map['labelEditableFreeze'];
@@ -383,6 +542,15 @@ class props extends Model
         if (isset($map['align'])) {
             $model->align = $map['align'];
         }
+        if (isset($map['relateSource'])) {
+            if (!empty($map['relateSource'])) {
+                $model->relateSource = [];
+                $n                   = 0;
+                foreach ($map['relateSource'] as $item) {
+                    $model->relateSource[$n++] = null !== $item ? relateSource::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
@@ -418,6 +586,48 @@ class props extends Model
         }
         if (isset($map['formula'])) {
             $model->formula = $map['formula'];
+        }
+        if (isset($map['needDetail'])) {
+            $model->needDetail = $map['needDetail'];
+        }
+        if (isset($map['quote'])) {
+            $model->quote = $map['quote'];
+        }
+        if (isset($map['multi'])) {
+            $model->multi = $map['multi'];
+        }
+        if (isset($map['rule'])) {
+            if (!empty($map['rule'])) {
+                $model->rule = [];
+                $n           = 0;
+                foreach ($map['rule'] as $item) {
+                    $model->rule[$n++] = null !== $item ? rule::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['tableViewMode'])) {
+            $model->tableViewMode = $map['tableViewMode'];
+        }
+        if (isset($map['actionName'])) {
+            $model->actionName = $map['actionName'];
+        }
+        if (isset($map['watermark'])) {
+            $model->watermark = $map['watermark'];
+        }
+        if (isset($map['limit'])) {
+            $model->limit = $map['limit'];
+        }
+        if (isset($map['spread'])) {
+            $model->spread = $map['spread'];
+        }
+        if (isset($map['ratio'])) {
+            $model->ratio = $map['ratio'];
+        }
+        if (isset($map['durationLabel'])) {
+            $model->durationLabel = $map['durationLabel'];
+        }
+        if (isset($map['mode'])) {
+            $model->mode = $map['mode'];
         }
 
         return $model;

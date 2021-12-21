@@ -22,6 +22,16 @@ class props extends Model
     /**
      * @var bool
      */
+    public $sortable;
+
+    /**
+     * @var string
+     */
+    public $needDetail;
+
+    /**
+     * @var bool
+     */
     public $labelEditableFreeze;
 
     /**
@@ -111,6 +121,8 @@ class props extends Model
     protected $_name = [
         'fieldId'                => 'fieldId',
         'label'                  => 'label',
+        'sortable'               => 'sortable',
+        'needDetail'             => 'needDetail',
         'labelEditableFreeze'    => 'labelEditableFreeze',
         'required'               => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
@@ -143,6 +155,12 @@ class props extends Model
         }
         if (null !== $this->label) {
             $res['label'] = $this->label;
+        }
+        if (null !== $this->sortable) {
+            $res['sortable'] = $this->sortable;
+        }
+        if (null !== $this->needDetail) {
+            $res['needDetail'] = $this->needDetail;
         }
         if (null !== $this->labelEditableFreeze) {
             $res['labelEditableFreeze'] = $this->labelEditableFreeze;
@@ -221,6 +239,12 @@ class props extends Model
         }
         if (isset($map['label'])) {
             $model->label = $map['label'];
+        }
+        if (isset($map['sortable'])) {
+            $model->sortable = $map['sortable'];
+        }
+        if (isset($map['needDetail'])) {
+            $model->needDetail = $map['needDetail'];
         }
         if (isset($map['labelEditableFreeze'])) {
             $model->labelEditableFreeze = $map['labelEditableFreeze'];

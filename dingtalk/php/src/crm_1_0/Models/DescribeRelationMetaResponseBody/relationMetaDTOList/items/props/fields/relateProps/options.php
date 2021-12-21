@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\fields\relateProps;
 
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\fields\relateProps\options\extension;
 use AlibabaCloud\Tea\Model;
 
 class options extends Model
@@ -21,9 +22,15 @@ class options extends Model
      * @var string
      */
     public $value;
+
+    /**
+     * @var extension
+     */
+    public $extension;
     protected $_name = [
-        'key'   => 'key',
-        'value' => 'value',
+        'key'       => 'key',
+        'value'     => 'value',
+        'extension' => 'extension',
     ];
 
     public function validate()
@@ -38,6 +45,9 @@ class options extends Model
         }
         if (null !== $this->value) {
             $res['value'] = $this->value;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = null !== $this->extension ? $this->extension->toMap() : null;
         }
 
         return $res;
@@ -56,6 +66,9 @@ class options extends Model
         }
         if (isset($map['value'])) {
             $model->value = $map['value'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = extension::fromMap($map['extension']);
         }
 
         return $model;
