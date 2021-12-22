@@ -352,6 +352,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("RemoveMemberForAppRole", "microApp_1.0", "HTTP", "POST", "AK", "/v1.0/microApp/apps/" + agentId + "/roles/" + roleId + "/members/batchRemove", "json", req, runtime), new RemoveMemberForAppRoleResponse());
     }
 
+    public GetApaasAppResponse getApaasApp(String bizAppId) throws Exception {
+        RuntimeOptions runtime = new RuntimeOptions();
+        GetApaasAppHeaders headers = new GetApaasAppHeaders();
+        return this.getApaasAppWithOptions(bizAppId, headers, runtime);
+    }
+
+    public GetApaasAppResponse getApaasAppWithOptions(String bizAppId, GetApaasAppHeaders headers, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", headers.xAcsDingtalkAccessToken);
+        }
+
+        OpenApiRequest req = OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetApaasApp", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/apaasApps/" + bizAppId + "", "json", req, runtime), new GetApaasAppResponse());
+    }
+
     public UpdateInnerAppResponse updateInnerApp(String agentId, UpdateInnerAppRequest request) throws Exception {
         RuntimeOptions runtime = new RuntimeOptions();
         UpdateInnerAppHeaders headers = new UpdateInnerAppHeaders();

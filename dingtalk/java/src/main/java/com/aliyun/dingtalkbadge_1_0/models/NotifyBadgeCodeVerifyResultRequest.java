@@ -28,9 +28,21 @@ public class NotifyBadgeCodeVerifyResultRequest extends TeaModel {
     @NameInMap("verifyResult")
     public Boolean verifyResult;
 
-    // 验证地点
+    // 验证地点，调用时请务必传入，以便生成工牌使用记录
     @NameInMap("verifyLocation")
     public String verifyLocation;
+
+    // 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
+    @NameInMap("verifyNo")
+    public String verifyNo;
+
+    // 验证事件，长度不超过8个中文
+    @NameInMap("verifyEvent")
+    public String verifyEvent;
+
+    // 备注信息
+    @NameInMap("remark")
+    public String remark;
 
     // 组织ID
     @NameInMap("dingOrgId")
@@ -99,6 +111,30 @@ public class NotifyBadgeCodeVerifyResultRequest extends TeaModel {
     }
     public String getVerifyLocation() {
         return this.verifyLocation;
+    }
+
+    public NotifyBadgeCodeVerifyResultRequest setVerifyNo(String verifyNo) {
+        this.verifyNo = verifyNo;
+        return this;
+    }
+    public String getVerifyNo() {
+        return this.verifyNo;
+    }
+
+    public NotifyBadgeCodeVerifyResultRequest setVerifyEvent(String verifyEvent) {
+        this.verifyEvent = verifyEvent;
+        return this;
+    }
+    public String getVerifyEvent() {
+        return this.verifyEvent;
+    }
+
+    public NotifyBadgeCodeVerifyResultRequest setRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+    public String getRemark() {
+        return this.remark;
     }
 
     public NotifyBadgeCodeVerifyResultRequest setDingOrgId(Long dingOrgId) {

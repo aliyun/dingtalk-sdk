@@ -521,6 +521,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("verifyLocation", request.verifyLocation);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.verifyNo)) {
+            body.put("verifyNo", request.verifyNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.verifyEvent)) {
+            body.put("verifyEvent", request.verifyEvent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
             body.put("dingOrgId", request.dingOrgId);
         }

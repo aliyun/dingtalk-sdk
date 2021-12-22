@@ -24,6 +24,18 @@ public class DecodeBadgeCodeResponseBody extends TeaModel {
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
+    // 码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
+    @NameInMap("codeIdentity")
+    public String codeIdentity;
+
+    // 码ID，对于访客或会展码等静态码值返回
+    @NameInMap("codeId")
+    public String codeId;
+
+    // 外部业务ID，值为调用创建工牌码接口传入的requestId
+    @NameInMap("outBizId")
+    public String outBizId;
+
     public static DecodeBadgeCodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         DecodeBadgeCodeResponseBody self = new DecodeBadgeCodeResponseBody();
         return TeaModel.build(map, self);
@@ -67,6 +79,30 @@ public class DecodeBadgeCodeResponseBody extends TeaModel {
     }
     public String getUserCorpRelationType() {
         return this.userCorpRelationType;
+    }
+
+    public DecodeBadgeCodeResponseBody setCodeIdentity(String codeIdentity) {
+        this.codeIdentity = codeIdentity;
+        return this;
+    }
+    public String getCodeIdentity() {
+        return this.codeIdentity;
+    }
+
+    public DecodeBadgeCodeResponseBody setCodeId(String codeId) {
+        this.codeId = codeId;
+        return this;
+    }
+    public String getCodeId() {
+        return this.codeId;
+    }
+
+    public DecodeBadgeCodeResponseBody setOutBizId(String outBizId) {
+        this.outBizId = outBizId;
+        return this;
+    }
+    public String getOutBizId() {
+        return this.outBizId;
     }
 
 }

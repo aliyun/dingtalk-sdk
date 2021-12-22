@@ -1,21 +1,21 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkim_1_0.models;
+package com.aliyun.dingtalkcarbon_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ChatSubAdminUpdateHeaders extends TeaModel {
+public class WriteUserCarbonHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
-    public static ChatSubAdminUpdateHeaders build(java.util.Map<String, ?> map) throws Exception {
-        ChatSubAdminUpdateHeaders self = new ChatSubAdminUpdateHeaders();
+    public static WriteUserCarbonHeaders build(java.util.Map<String, ?> map) throws Exception {
+        WriteUserCarbonHeaders self = new WriteUserCarbonHeaders();
         return TeaModel.build(map, self);
     }
 
-    public ChatSubAdminUpdateHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
+    public WriteUserCarbonHeaders setCommonHeaders(java.util.Map<String, String> commonHeaders) {
         this.commonHeaders = commonHeaders;
         return this;
     }
@@ -23,7 +23,7 @@ public class ChatSubAdminUpdateHeaders extends TeaModel {
         return this.commonHeaders;
     }
 
-    public ChatSubAdminUpdateHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
+    public WriteUserCarbonHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {
         this.xAcsDingtalkAccessToken = xAcsDingtalkAccessToken;
         return this;
     }
