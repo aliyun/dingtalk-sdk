@@ -93,6 +93,9 @@ class DecodeBadgeCodeResponseBody(TeaModel):
         code_type: str = None,
         alipay_code: str = None,
         user_corp_relation_type: str = None,
+        code_identity: str = None,
+        code_id: str = None,
+        out_biz_id: str = None,
     ):
         # 企业id
         self.corp_id = corp_id
@@ -104,6 +107,12 @@ class DecodeBadgeCodeResponseBody(TeaModel):
         self.alipay_code = alipay_code
         # 用户和企业关系
         self.user_corp_relation_type = user_corp_relation_type
+        # 码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
+        self.code_identity = code_identity
+        # 码ID，对于访客或会展码等静态码值返回
+        self.code_id = code_id
+        # 外部业务ID，值为调用创建工牌码接口传入的requestId
+        self.out_biz_id = out_biz_id
 
     def validate(self):
         pass
@@ -124,6 +133,12 @@ class DecodeBadgeCodeResponseBody(TeaModel):
             result['alipayCode'] = self.alipay_code
         if self.user_corp_relation_type is not None:
             result['userCorpRelationType'] = self.user_corp_relation_type
+        if self.code_identity is not None:
+            result['codeIdentity'] = self.code_identity
+        if self.code_id is not None:
+            result['codeId'] = self.code_id
+        if self.out_biz_id is not None:
+            result['outBizId'] = self.out_biz_id
         return result
 
     def from_map(self, m: dict = None):
@@ -138,6 +153,12 @@ class DecodeBadgeCodeResponseBody(TeaModel):
             self.alipay_code = m.get('alipayCode')
         if m.get('userCorpRelationType') is not None:
             self.user_corp_relation_type = m.get('userCorpRelationType')
+        if m.get('codeIdentity') is not None:
+            self.code_identity = m.get('codeIdentity')
+        if m.get('codeId') is not None:
+            self.code_id = m.get('codeId')
+        if m.get('outBizId') is not None:
+            self.out_biz_id = m.get('outBizId')
         return self
 
 
@@ -1826,6 +1847,9 @@ class NotifyBadgeCodeVerifyResultRequest(TeaModel):
         verify_time: str = None,
         verify_result: bool = None,
         verify_location: str = None,
+        verify_no: str = None,
+        verify_event: str = None,
+        remark: str = None,
         ding_org_id: int = None,
         ding_isv_org_id: int = None,
     ):
@@ -1841,8 +1865,14 @@ class NotifyBadgeCodeVerifyResultRequest(TeaModel):
         self.verify_time = verify_time
         # 验证结果
         self.verify_result = verify_result
-        # 验证地点
+        # 验证地点，调用时请务必传入，以便生成工牌使用记录
         self.verify_location = verify_location
+        # 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
+        self.verify_no = verify_no
+        # 验证事件，长度不超过8个中文
+        self.verify_event = verify_event
+        # 备注信息
+        self.remark = remark
         # 组织ID
         self.ding_org_id = ding_org_id
         # ISV组织ID
@@ -1871,6 +1901,12 @@ class NotifyBadgeCodeVerifyResultRequest(TeaModel):
             result['verifyResult'] = self.verify_result
         if self.verify_location is not None:
             result['verifyLocation'] = self.verify_location
+        if self.verify_no is not None:
+            result['verifyNo'] = self.verify_no
+        if self.verify_event is not None:
+            result['verifyEvent'] = self.verify_event
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.ding_org_id is not None:
             result['dingOrgId'] = self.ding_org_id
         if self.ding_isv_org_id is not None:
@@ -1893,6 +1929,12 @@ class NotifyBadgeCodeVerifyResultRequest(TeaModel):
             self.verify_result = m.get('verifyResult')
         if m.get('verifyLocation') is not None:
             self.verify_location = m.get('verifyLocation')
+        if m.get('verifyNo') is not None:
+            self.verify_no = m.get('verifyNo')
+        if m.get('verifyEvent') is not None:
+            self.verify_event = m.get('verifyEvent')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('dingOrgId') is not None:
             self.ding_org_id = m.get('dingOrgId')
         if m.get('dingIsvOrgId') is not None:
