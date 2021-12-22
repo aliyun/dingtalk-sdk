@@ -2,20 +2,28 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ChatSubAdminUpdateResponseBody extends Model
+class WriteAlibabaOrgCarbonResponseBody extends Model
 {
     /**
-     * @description result
+     * @description 请求是否成功
      *
-     * @var string
+     * @var bool
      */
     public $success;
+
+    /**
+     * @description 返回请求成功的数量
+     *
+     * @var int
+     */
+    public $result;
     protected $_name = [
         'success' => 'success',
+        'result'  => 'result',
     ];
 
     public function validate()
@@ -28,6 +36,9 @@ class ChatSubAdminUpdateResponseBody extends Model
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
+        }
 
         return $res;
     }
@@ -35,13 +46,16 @@ class ChatSubAdminUpdateResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return ChatSubAdminUpdateResponseBody
+     * @return WriteAlibabaOrgCarbonResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['success'])) {
             $model->success = $map['success'];
+        }
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;

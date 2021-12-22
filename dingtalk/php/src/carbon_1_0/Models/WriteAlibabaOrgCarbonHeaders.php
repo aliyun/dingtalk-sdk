@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ChatSubAdminUpdateHeaders extends Model
+class WriteAlibabaOrgCarbonHeaders extends Model
 {
     public $commonHeaders;
 
@@ -38,7 +38,7 @@ class ChatSubAdminUpdateHeaders extends Model
     /**
      * @param array $map
      *
-     * @return ChatSubAdminUpdateHeaders
+     * @return WriteAlibabaOrgCarbonHeaders
      */
     public static function fromMap($map = [])
     {

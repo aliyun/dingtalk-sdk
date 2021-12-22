@@ -5,9 +5,6 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
-use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateRequest;
-use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
@@ -592,66 +589,6 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateGroupPermissionResponse::fromMap($this->doROARequest('UpdateGroupPermission', 'im_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/im/sceneGroups/permissions', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param ChatSubAdminUpdateRequest $request
-     *
-     * @return ChatSubAdminUpdateResponse
-     */
-    public function chatSubAdminUpdate($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ChatSubAdminUpdateHeaders([]);
-
-        return $this->chatSubAdminUpdateWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ChatSubAdminUpdateRequest $request
-     * @param ChatSubAdminUpdateHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return ChatSubAdminUpdateResponse
-     */
-    public function chatSubAdminUpdateWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingOrgId)) {
-            @$body['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            @$body['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->userIds)) {
-            @$body['userIds'] = $request->userIds;
-        }
-        if (!Utils::isUnset($request->role)) {
-            @$body['role'] = $request->role;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return ChatSubAdminUpdateResponse::fromMap($this->doROARequest('ChatSubAdminUpdate', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/subAdministrators', 'json', $req, $runtime));
     }
 
     /**

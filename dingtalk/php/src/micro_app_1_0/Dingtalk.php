@@ -26,6 +26,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetApaasAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetApaasAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppHeaders;
@@ -521,6 +523,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RemoveMemberForAppRoleResponse::fromMap($this->doROARequest('RemoveMemberForAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members/batchRemove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $bizAppId
+     *
+     * @return GetApaasAppResponse
+     */
+    public function getApaasApp($bizAppId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetApaasAppHeaders([]);
+
+        return $this->getApaasAppWithOptions($bizAppId, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $bizAppId
+     * @param GetApaasAppHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetApaasAppResponse
+     */
+    public function getApaasAppWithOptions($bizAppId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetApaasAppResponse::fromMap($this->doROARequest('GetApaasApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apaasApps/' . $bizAppId . '', 'json', $req, $runtime));
     }
 
     /**

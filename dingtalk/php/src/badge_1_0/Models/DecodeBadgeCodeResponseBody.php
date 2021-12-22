@@ -42,12 +42,36 @@ class DecodeBadgeCodeResponseBody extends Model
      * @var string
      */
     public $userCorpRelationType;
+
+    /**
+     * @description 码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
+     *
+     * @var string
+     */
+    public $codeIdentity;
+
+    /**
+     * @description 码ID，对于访客或会展码等静态码值返回
+     *
+     * @var string
+     */
+    public $codeId;
+
+    /**
+     * @description 外部业务ID，值为调用创建工牌码接口传入的requestId
+     *
+     * @var string
+     */
+    public $outBizId;
     protected $_name = [
         'corpId'               => 'corpId',
         'userId'               => 'userId',
         'codeType'             => 'codeType',
         'alipayCode'           => 'alipayCode',
         'userCorpRelationType' => 'userCorpRelationType',
+        'codeIdentity'         => 'codeIdentity',
+        'codeId'               => 'codeId',
+        'outBizId'             => 'outBizId',
     ];
 
     public function validate()
@@ -71,6 +95,15 @@ class DecodeBadgeCodeResponseBody extends Model
         }
         if (null !== $this->userCorpRelationType) {
             $res['userCorpRelationType'] = $this->userCorpRelationType;
+        }
+        if (null !== $this->codeIdentity) {
+            $res['codeIdentity'] = $this->codeIdentity;
+        }
+        if (null !== $this->codeId) {
+            $res['codeId'] = $this->codeId;
+        }
+        if (null !== $this->outBizId) {
+            $res['outBizId'] = $this->outBizId;
         }
 
         return $res;
@@ -98,6 +131,15 @@ class DecodeBadgeCodeResponseBody extends Model
         }
         if (isset($map['userCorpRelationType'])) {
             $model->userCorpRelationType = $map['userCorpRelationType'];
+        }
+        if (isset($map['codeIdentity'])) {
+            $model->codeIdentity = $map['codeIdentity'];
+        }
+        if (isset($map['codeId'])) {
+            $model->codeId = $map['codeId'];
+        }
+        if (isset($map['outBizId'])) {
+            $model->outBizId = $map['outBizId'];
         }
 
         return $model;

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ChatSubAdminUpdateResponse extends Model
+class WriteAlibabaOrgCarbonResponse extends Model
 {
     /**
      * @var string[]
@@ -14,7 +14,7 @@ class ChatSubAdminUpdateResponse extends Model
     public $headers;
 
     /**
-     * @var ChatSubAdminUpdateResponseBody
+     * @var WriteAlibabaOrgCarbonResponseBody
      */
     public $body;
     protected $_name = [
@@ -44,7 +44,7 @@ class ChatSubAdminUpdateResponse extends Model
     /**
      * @param array $map
      *
-     * @return ChatSubAdminUpdateResponse
+     * @return WriteAlibabaOrgCarbonResponse
      */
     public static function fromMap($map = [])
     {
@@ -53,7 +53,7 @@ class ChatSubAdminUpdateResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = ChatSubAdminUpdateResponseBody::fromMap($map['body']);
+            $model->body = WriteAlibabaOrgCarbonResponseBody::fromMap($map['body']);
         }
 
         return $model;

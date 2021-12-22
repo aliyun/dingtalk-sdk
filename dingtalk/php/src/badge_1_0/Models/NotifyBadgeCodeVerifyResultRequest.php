@@ -51,11 +51,32 @@ class NotifyBadgeCodeVerifyResultRequest extends Model
     public $verifyResult;
 
     /**
-     * @description 验证地点
+     * @description 验证地点，调用时请务必传入，以便生成工牌使用记录
      *
      * @var string
      */
     public $verifyLocation;
+
+    /**
+     * @description 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
+     *
+     * @var string
+     */
+    public $verifyNo;
+
+    /**
+     * @description 验证事件，长度不超过8个中文
+     *
+     * @var string
+     */
+    public $verifyEvent;
+
+    /**
+     * @description 备注信息
+     *
+     * @var string
+     */
+    public $remark;
 
     /**
      * @description 组织ID
@@ -78,6 +99,9 @@ class NotifyBadgeCodeVerifyResultRequest extends Model
         'verifyTime'           => 'verifyTime',
         'verifyResult'         => 'verifyResult',
         'verifyLocation'       => 'verifyLocation',
+        'verifyNo'             => 'verifyNo',
+        'verifyEvent'          => 'verifyEvent',
+        'remark'               => 'remark',
         'dingOrgId'            => 'dingOrgId',
         'dingIsvOrgId'         => 'dingIsvOrgId',
     ];
@@ -109,6 +133,15 @@ class NotifyBadgeCodeVerifyResultRequest extends Model
         }
         if (null !== $this->verifyLocation) {
             $res['verifyLocation'] = $this->verifyLocation;
+        }
+        if (null !== $this->verifyNo) {
+            $res['verifyNo'] = $this->verifyNo;
+        }
+        if (null !== $this->verifyEvent) {
+            $res['verifyEvent'] = $this->verifyEvent;
+        }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
@@ -148,6 +181,15 @@ class NotifyBadgeCodeVerifyResultRequest extends Model
         }
         if (isset($map['verifyLocation'])) {
             $model->verifyLocation = $map['verifyLocation'];
+        }
+        if (isset($map['verifyNo'])) {
+            $model->verifyNo = $map['verifyNo'];
+        }
+        if (isset($map['verifyEvent'])) {
+            $model->verifyEvent = $map['verifyEvent'];
+        }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];
