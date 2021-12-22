@@ -827,6 +827,75 @@ export class RemoveMemberForAppRoleResponse extends $tea.Model {
   }
 }
 
+export class GetApaasAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetApaasAppResponseBody extends $tea.Model {
+  agentId?: number;
+  bizAppId?: string;
+  publishStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      bizAppId: 'bizAppId',
+      publishStatus: 'publishStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+      bizAppId: 'string',
+      publishStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetApaasAppResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetApaasAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetApaasAppResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInnerAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2455,6 +2524,28 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RemoveMemberForAppRoleResponse>(await this.doROARequest("RemoveMemberForAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members/batchRemove`, "json", req, runtime), new RemoveMemberForAppRoleResponse({}));
+  }
+
+  async getApaasApp(bizAppId: string): Promise<GetApaasAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetApaasAppHeaders({ });
+    return await this.getApaasAppWithOptions(bizAppId, headers, runtime);
+  }
+
+  async getApaasAppWithOptions(bizAppId: string, headers: GetApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetApaasAppResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = headers.xAcsDingtalkAccessToken;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetApaasAppResponse>(await this.doROARequest("GetApaasApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apaasApps/${bizAppId}`, "json", req, runtime), new GetApaasAppResponse({}));
   }
 
   async updateInnerApp(agentId: string, request: UpdateInnerAppRequest): Promise<UpdateInnerAppResponse> {

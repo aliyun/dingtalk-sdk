@@ -5,6 +5,7 @@ import * as attendance_1_0 from './attendance_1_0/client';
 import * as badge_1_0 from './badge_1_0/client';
 import * as bizfinance_1_0 from './bizfinance_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
+import * as carbon_1_0 from './carbon_1_0/client';
 import * as conference_1_0 from './conference_1_0/client';
 import * as connector_1_0 from './connector_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
@@ -61,6 +62,7 @@ export = {
   badge_1_0,
   bizfinance_1_0,
   calendar_1_0,
+  carbon_1_0,
   conference_1_0,
   connector_1_0,
   contact_1_0,

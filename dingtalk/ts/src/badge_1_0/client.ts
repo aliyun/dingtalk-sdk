@@ -63,6 +63,9 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
   codeType?: string;
   alipayCode?: string;
   userCorpRelationType?: string;
+  codeIdentity?: string;
+  codeId?: string;
+  outBizId?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
@@ -70,6 +73,9 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
       codeType: 'codeType',
       alipayCode: 'alipayCode',
       userCorpRelationType: 'userCorpRelationType',
+      codeIdentity: 'codeIdentity',
+      codeId: 'codeId',
+      outBizId: 'outBizId',
     };
   }
 
@@ -80,6 +86,9 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
       codeType: 'string',
       alipayCode: 'string',
       userCorpRelationType: 'string',
+      codeIdentity: 'string',
+      codeId: 'string',
+      outBizId: 'string',
     };
   }
 
@@ -830,6 +839,9 @@ export class NotifyBadgeCodeVerifyResultRequest extends $tea.Model {
   verifyTime?: string;
   verifyResult?: boolean;
   verifyLocation?: string;
+  verifyNo?: string;
+  verifyEvent?: string;
+  remark?: string;
   dingOrgId?: number;
   dingIsvOrgId?: number;
   static names(): { [key: string]: string } {
@@ -841,6 +853,9 @@ export class NotifyBadgeCodeVerifyResultRequest extends $tea.Model {
       verifyTime: 'verifyTime',
       verifyResult: 'verifyResult',
       verifyLocation: 'verifyLocation',
+      verifyNo: 'verifyNo',
+      verifyEvent: 'verifyEvent',
+      remark: 'remark',
       dingOrgId: 'dingOrgId',
       dingIsvOrgId: 'dingIsvOrgId',
     };
@@ -855,6 +870,9 @@ export class NotifyBadgeCodeVerifyResultRequest extends $tea.Model {
       verifyTime: 'string',
       verifyResult: 'boolean',
       verifyLocation: 'string',
+      verifyNo: 'string',
+      verifyEvent: 'string',
+      remark: 'string',
       dingOrgId: 'number',
       dingIsvOrgId: 'number',
     };
@@ -1606,6 +1624,18 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.verifyLocation)) {
       body["verifyLocation"] = request.verifyLocation;
+    }
+
+    if (!Util.isUnset(request.verifyNo)) {
+      body["verifyNo"] = request.verifyNo;
+    }
+
+    if (!Util.isUnset(request.verifyEvent)) {
+      body["verifyEvent"] = request.verifyEvent;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
     }
 
     if (!Util.isUnset(request.dingOrgId)) {
