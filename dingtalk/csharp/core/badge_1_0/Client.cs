@@ -772,6 +772,10 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             {
                 body["payCode"] = request.PayCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserCorpRelationType))
             {
                 body["userCorpRelationType"] = request.UserCorpRelationType;
@@ -780,9 +784,17 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             {
                 body["userIdentity"] = request.UserIdentity;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyEvent))
+            {
+                body["verifyEvent"] = request.VerifyEvent;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyLocation))
             {
                 body["verifyLocation"] = request.VerifyLocation;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyNo))
+            {
+                body["verifyNo"] = request.VerifyNo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyResult))
             {
@@ -829,6 +841,10 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             {
                 body["payCode"] = request.PayCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserCorpRelationType))
             {
                 body["userCorpRelationType"] = request.UserCorpRelationType;
@@ -837,9 +853,17 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             {
                 body["userIdentity"] = request.UserIdentity;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyEvent))
+            {
+                body["verifyEvent"] = request.VerifyEvent;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyLocation))
             {
                 body["verifyLocation"] = request.VerifyLocation;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyNo))
+            {
+                body["verifyNo"] = request.VerifyNo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerifyResult))
             {
