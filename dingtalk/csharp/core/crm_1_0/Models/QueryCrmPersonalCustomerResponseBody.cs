@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
+        /// <summary>
+        /// 当前分页条数
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
@@ -20,6 +23,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
+
+        /// <summary>
+        /// 总条数
+        /// </summary>
+        [NameInMap("totalCount")]
+        [Validation(Required=false)]
+        public int? TotalCount { get; set; }
 
         [NameInMap("values")]
         [Validation(Required=false)]

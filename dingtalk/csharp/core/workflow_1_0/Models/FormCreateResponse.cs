@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
-    public class ReportDeviceLogResponse : TeaModel {
+    public class FormCreateResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public ReportDeviceLogResponseBody Body { get; set; }
+        public FormCreateResponseBody Body { get; set; }
 
     }
 

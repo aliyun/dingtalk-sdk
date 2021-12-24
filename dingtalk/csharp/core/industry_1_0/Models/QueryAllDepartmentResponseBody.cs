@@ -125,6 +125,22 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                     [Validation(Required=false)]
                     public string Name { get; set; }
 
+                    /// <summary>
+                    /// 病区id列表
+                    /// </summary>
+                    [NameInMap("wardIdList")]
+                    [Validation(Required=false)]
+                    public List<QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList> WardIdList { get; set; }
+                    public class QueryAllDepartmentResponseBodyContentDeptAndExtDepartmentWardIdList : TeaModel {
+                        /// <summary>
+                        /// 病区id
+                        /// </summary>
+                        [NameInMap("id")]
+                        [Validation(Required=false)]
+                        public long? Id { get; set; }
+
+                    }
+
                 }
                 [NameInMap("extendInfos")]
                 [Validation(Required=false)]

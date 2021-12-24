@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class ProcessForecastHeaders : TeaModel {
+    public class CreateGroupSetHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

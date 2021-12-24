@@ -60,6 +60,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         };
 
         /// <summary>
+        /// 关系类型
+        /// </summary>
+        [NameInMap("relationType")]
+        [Validation(Required=false)]
+        public string RelationType { get; set; }
+
+        /// <summary>
         /// 跳过uk查重
         /// </summary>
         [NameInMap("skipDuplicateCheck")]

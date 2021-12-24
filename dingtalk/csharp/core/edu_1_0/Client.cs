@@ -2486,7 +2486,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeviceHeartbeatResponse>(DoROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "int32", req, runtime));
+            return TeaModel.ToObject<DeviceHeartbeatResponse>(DoROARequest("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "json", req, runtime));
         }
 
         public async Task<DeviceHeartbeatResponse> DeviceHeartbeatWithOptionsAsync(DeviceHeartbeatRequest request, DeviceHeartbeatHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2511,7 +2511,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeviceHeartbeatResponse>(await DoROARequestAsync("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "int32", req, runtime));
+            return TeaModel.ToObject<DeviceHeartbeatResponse>(await DoROARequestAsync("DeviceHeartbeat", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/heartbeats/report", "json", req, runtime));
         }
 
         public EndCourseResponse EndCourse(EndCourseRequest request)
@@ -4908,7 +4908,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ReportDeviceLogResponse>(DoROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/deviceLogs/report", "boolean", req, runtime));
+            return TeaModel.ToObject<ReportDeviceLogResponse>(DoROARequest("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/deviceLogs/report", "json", req, runtime));
         }
 
         public async Task<ReportDeviceLogResponse> ReportDeviceLogWithOptionsAsync(ReportDeviceLogRequest request, ReportDeviceLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -4941,7 +4941,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ReportDeviceLogResponse>(await DoROARequestAsync("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/deviceLogs/report", "boolean", req, runtime));
+            return TeaModel.ToObject<ReportDeviceLogResponse>(await DoROARequestAsync("ReportDeviceLog", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/deviceLogs/report", "json", req, runtime));
         }
 
         public SearchTeachersResponse SearchTeachers(SearchTeachersRequest request)

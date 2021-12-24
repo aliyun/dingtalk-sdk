@@ -693,6 +693,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["operatorId"] = request.OperatorId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeId))
+            {
+                body["parentNodeId"] = request.ParentNodeId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -726,6 +730,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeId))
+            {
+                body["parentNodeId"] = request.ParentNodeId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

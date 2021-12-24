@@ -31,22 +31,97 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
-            [NameInMap("workflowActors")]
+            [NameInMap("workflowActivityRules")]
             [Validation(Required=false)]
-            public List<ProcessForecastResponseBodyResultWorkflowActors> WorkflowActors { get; set; }
-            public class ProcessForecastResponseBodyResultWorkflowActors : TeaModel {
+            public List<ProcessForecastResponseBodyResultWorkflowActivityRules> WorkflowActivityRules { get; set; }
+            public class ProcessForecastResponseBodyResultWorkflowActivityRules : TeaModel {
                 public string ActivityId { get; set; }
+                public string PrevActivityId { get; set; }
                 public string ActivityName { get; set; }
                 public string ActivityType { get; set; }
                 public bool? IsTargetSelect { get; set; }
-                public List<ProcessForecastResponseBodyResultWorkflowActorsActivityActors> ActivityActors { get; set; }
-                public class ProcessForecastResponseBodyResultWorkflowActorsActivityActors : TeaModel {
-                    public string UserId { get; set; }
-                    public string Name { get; set; }
-                    public string Avatar { get; set; }
+                public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor WorkflowActor { get; set; }
+                public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor : TeaModel {
+                    /// <summary>
+                    /// 节点操作人 key
+                    /// </summary>
+                    [NameInMap("actorKey")]
+                    [Validation(Required=false)]
+                    public string ActorKey { get; set; }
+
+                    /// <summary>
+                    /// 节点操作人类型
+                    /// </summary>
+                    [NameInMap("actorType")]
+                    [Validation(Required=false)]
+                    public string ActorType { get; set; }
+
+                    /// <summary>
+                    /// 节点操作人选择范围类型
+                    /// </summary>
+                    [NameInMap("actorSelectionType")]
+                    [Validation(Required=false)]
+                    public string ActorSelectionType { get; set; }
+
+                    /// <summary>
+                    /// 节点操作人选择范围
+                    /// </summary>
+                    [NameInMap("actorSelectionRange")]
+                    [Validation(Required=false)]
+                    public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange ActorSelectionRange { get; set; }
+                    public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange : TeaModel {
+                        [NameInMap("approvals")]
+                        [Validation(Required=false)]
+                        public List<ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals> Approvals { get; set; }
+                        public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals : TeaModel {
+                            public string WorkNo { get; set; }
+                            public string UserName { get; set; }
+                        }
+                        [NameInMap("labels")]
+                        [Validation(Required=false)]
+                        public List<ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels> Labels { get; set; }
+                        public class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels : TeaModel {
+                            public string Labels { get; set; }
+                            public string LabelNames { get; set; }
+                        }
+                    };
+
+                    /// <summary>
+                    /// 是否允许多选，还是仅允许选一人
+                    /// </summary>
+                    [NameInMap("allowedMulti")]
+                    [Validation(Required=false)]
+                    public bool? AllowedMulti { get; set; }
+
+                    /// <summary>
+                    /// 节点审批类型
+                    /// </summary>
+                    [NameInMap("approvalType")]
+                    [Validation(Required=false)]
+                    public string ApprovalType { get; set; }
+
+                    /// <summary>
+                    /// 节点审批方式
+                    /// </summary>
+                    [NameInMap("approvalMethod")]
+                    [Validation(Required=false)]
+                    public string ApprovalMethod { get; set; }
+
+                    /// <summary>
+                    /// 节点激活类型
+                    /// </summary>
+                    [NameInMap("actorActivateType")]
+                    [Validation(Required=false)]
+                    public string ActorActivateType { get; set; }
+
+                    /// <summary>
+                    /// 该审批人节点在发起审批时是否必填
+                    /// </summary>
+                    [NameInMap("required")]
+                    [Validation(Required=false)]
+                    public bool? Required { get; set; }
+
                 }
-                public bool? IsTargetFormComponent { get; set; }
-                public string Node { get; set; }
             }
             [NameInMap("workflowForecastNodes")]
             [Validation(Required=false)]

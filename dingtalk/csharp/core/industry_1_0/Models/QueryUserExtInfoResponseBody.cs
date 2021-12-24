@@ -37,6 +37,41 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public string UserExtendDisplayName { get; set; }
 
+            /// <summary>
+            /// 组织id
+            /// </summary>
+            [NameInMap("orgId")]
+            [Validation(Required=false)]
+            public string OrgId { get; set; }
+
+            /// <summary>
+            /// 状态：0-有效，1-无效
+            /// </summary>
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
+
+            /// <summary>
+            /// 用户标识
+            /// </summary>
+            [NameInMap("userCode")]
+            [Validation(Required=false)]
+            public string UserCode { get; set; }
+
+            /// <summary>
+            /// 创建时间
+            /// </summary>
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public string GmtCreate { get; set; }
+
+            /// <summary>
+            /// 修改时间
+            /// </summary>
+            [NameInMap("gmtModified")]
+            [Validation(Required=false)]
+            public string GmtModified { get; set; }
+
         }
 
     }

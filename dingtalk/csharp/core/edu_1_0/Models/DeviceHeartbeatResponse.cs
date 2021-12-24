@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         [NameInMap("body")]
         [Validation(Required=true)]
-        public int? Body { get; set; }
+        public DeviceHeartbeatResponseBody Body { get; set; }
 
     }
 

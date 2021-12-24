@@ -30,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
+        /// <summary>
+        /// 父节点nodeId
+        /// </summary>
+        [NameInMap("parentNodeId")]
+        [Validation(Required=false)]
+        public string ParentNodeId { get; set; }
+
     }
 
 }

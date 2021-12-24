@@ -2784,6 +2784,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             {
                 query["openTeamId"] = request.OpenTeamId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopN))
+            {
+                query["topN"] = request.TopN;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2812,6 +2816,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
             {
                 query["openTeamId"] = request.OpenTeamId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopN))
+            {
+                query["topN"] = request.TopN;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

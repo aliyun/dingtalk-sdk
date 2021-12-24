@@ -23,6 +23,13 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
+        /// <summary>
+        /// 查询topN的数据
+        /// </summary>
+        [NameInMap("topN")]
+        [Validation(Required=false)]
+        public long? TopN { get; set; }
+
     }
 
 }
