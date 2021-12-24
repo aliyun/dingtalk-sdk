@@ -30,6 +30,14 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalDistrictInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalDistrictInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalDistrictInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalRoleUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalRoleUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalRoleUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobCodeDictionaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobCodeDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryHeaders;
@@ -59,6 +67,51 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param QueryHospitalDistrictInfoRequest $request
+     *
+     * @return QueryHospitalDistrictInfoResponse
+     */
+    public function queryHospitalDistrictInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHospitalDistrictInfoHeaders([]);
+
+        return $this->queryHospitalDistrictInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryHospitalDistrictInfoRequest $request
+     * @param QueryHospitalDistrictInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryHospitalDistrictInfoResponse
+     */
+    public function queryHospitalDistrictInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryHospitalDistrictInfoResponse::fromMap($this->doROARequest('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/districts', 'json', $req, $runtime));
     }
 
     /**
@@ -228,6 +281,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @return QueryHospitalRolesResponse
+     */
+    public function queryHospitalRoles()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHospitalRolesHeaders([]);
+
+        return $this->queryHospitalRolesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param QueryHospitalRolesHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryHospitalRolesResponse
+     */
+    public function queryHospitalRolesWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return QueryHospitalRolesResponse::fromMap($this->doROARequest('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/roles', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryAllGroupRequest $request
      *
      * @return QueryAllGroupResponse
@@ -362,6 +448,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryBizOptLogResponse::fromMap($this->doROARequest('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/bizOptLogs', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryHospitalRoleUserInfoRequest $request
+     *
+     * @return QueryHospitalRoleUserInfoResponse
+     */
+    public function queryHospitalRoleUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHospitalRoleUserInfoHeaders([]);
+
+        return $this->queryHospitalRoleUserInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryHospitalRoleUserInfoRequest $request
+     * @param QueryHospitalRoleUserInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryHospitalRoleUserInfoResponse
+     */
+    public function queryHospitalRoleUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryHospitalRoleUserInfoResponse::fromMap($this->doROARequest('QueryHospitalRoleUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/roles/userInfos', 'json', $req, $runtime));
     }
 
     /**

@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody\result\workflowActors;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody\result\workflowActivityRules;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody\result\workflowForecastNodes;
 use AlibabaCloud\Tea\Model;
 
@@ -46,9 +46,9 @@ class result extends Model
     public $isStaticWorkflow;
 
     /**
-     * @var workflowActors[]
+     * @var workflowActivityRules[]
      */
-    public $workflowActors;
+    public $workflowActivityRules;
 
     /**
      * @var workflowForecastNodes[]
@@ -60,7 +60,7 @@ class result extends Model
         'userId'                => 'userId',
         'processId'             => 'processId',
         'isStaticWorkflow'      => 'isStaticWorkflow',
-        'workflowActors'        => 'workflowActors',
+        'workflowActivityRules' => 'workflowActivityRules',
         'workflowForecastNodes' => 'workflowForecastNodes',
     ];
 
@@ -86,12 +86,12 @@ class result extends Model
         if (null !== $this->isStaticWorkflow) {
             $res['isStaticWorkflow'] = $this->isStaticWorkflow;
         }
-        if (null !== $this->workflowActors) {
-            $res['workflowActors'] = [];
-            if (null !== $this->workflowActors && \is_array($this->workflowActors)) {
+        if (null !== $this->workflowActivityRules) {
+            $res['workflowActivityRules'] = [];
+            if (null !== $this->workflowActivityRules && \is_array($this->workflowActivityRules)) {
                 $n = 0;
-                foreach ($this->workflowActors as $item) {
-                    $res['workflowActors'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->workflowActivityRules as $item) {
+                    $res['workflowActivityRules'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -131,12 +131,12 @@ class result extends Model
         if (isset($map['isStaticWorkflow'])) {
             $model->isStaticWorkflow = $map['isStaticWorkflow'];
         }
-        if (isset($map['workflowActors'])) {
-            if (!empty($map['workflowActors'])) {
-                $model->workflowActors = [];
-                $n                     = 0;
-                foreach ($map['workflowActors'] as $item) {
-                    $model->workflowActors[$n++] = null !== $item ? workflowActors::fromMap($item) : $item;
+        if (isset($map['workflowActivityRules'])) {
+            if (!empty($map['workflowActivityRules'])) {
+                $model->workflowActivityRules = [];
+                $n                            = 0;
+                foreach ($map['workflowActivityRules'] as $item) {
+                    $model->workflowActivityRules[$n++] = null !== $item ? workflowActivityRules::fromMap($item) : $item;
                 }
             }
         }

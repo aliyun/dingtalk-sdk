@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentResponseBody\content\deptAndExt;
 
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllDepartmentResponseBody\content\deptAndExt\department\wardIdList;
 use AlibabaCloud\Tea\Model;
 
 class department extends Model
@@ -91,6 +92,13 @@ class department extends Model
      * @var string
      */
     public $name;
+
+    /**
+     * @description 病区id列表
+     *
+     * @var wardIdList[]
+     */
+    public $wardIdList;
     protected $_name = [
         'id'             => 'id',
         'gmtCreateStr'   => 'gmtCreateStr',
@@ -104,6 +112,7 @@ class department extends Model
         'remark'         => 'remark',
         'deptName'       => 'deptName',
         'name'           => 'name',
+        'wardIdList'     => 'wardIdList',
     ];
 
     public function validate()
@@ -148,6 +157,15 @@ class department extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->wardIdList) {
+            $res['wardIdList'] = [];
+            if (null !== $this->wardIdList && \is_array($this->wardIdList)) {
+                $n = 0;
+                foreach ($this->wardIdList as $item) {
+                    $res['wardIdList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -196,6 +214,15 @@ class department extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['wardIdList'])) {
+            if (!empty($map['wardIdList'])) {
+                $model->wardIdList = [];
+                $n                 = 0;
+                foreach ($map['wardIdList'] as $item) {
+                    $model->wardIdList[$n++] = null !== $item ? wardIdList::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

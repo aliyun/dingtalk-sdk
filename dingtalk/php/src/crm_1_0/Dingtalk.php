@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessage
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateRelationMetaResponse;
@@ -37,9 +40,14 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectM
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmRolePermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsHeaders;
@@ -51,12 +59,18 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResult
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
@@ -75,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldResponse;
@@ -349,6 +366,99 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryCrmGroupChatsRequest $request
+     *
+     * @return QueryCrmGroupChatsResponse
+     */
+    public function queryCrmGroupChats($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCrmGroupChatsHeaders([]);
+
+        return $this->queryCrmGroupChatsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCrmGroupChatsRequest $request
+     * @param QueryCrmGroupChatsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryCrmGroupChatsResponse
+     */
+    public function queryCrmGroupChatsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->queryDsl)) {
+            @$query['queryDsl'] = $request->queryDsl;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryCrmGroupChatsResponse::fromMap($this->doROARequest('QueryCrmGroupChats', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/crmGroupChats', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetGroupSetRequest $request
+     *
+     * @return GetGroupSetResponse
+     */
+    public function getGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGroupSetHeaders([]);
+
+        return $this->getGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetGroupSetRequest $request
+     * @param GetGroupSetHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetGroupSetResponse
+     */
+    public function getGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$query['openGroupSetId'] = $request->openGroupSetId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetGroupSetResponse::fromMap($this->doROARequest('GetGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/groupSets', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateRelationMetaRequest $request
      *
      * @return CreateRelationMetaResponse
@@ -445,6 +555,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateRelationMetaFieldResponse::fromMap($this->doROARequest('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/relations/metas/fields', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListGroupSetRequest $request
+     *
+     * @return ListGroupSetResponse
+     */
+    public function listGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListGroupSetHeaders([]);
+
+        return $this->listGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListGroupSetRequest $request
+     * @param ListGroupSetHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ListGroupSetResponse
+     */
+    public function listGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->queryDsl)) {
+            @$query['queryDsl'] = $request->queryDsl;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$query['relationType'] = $request->relationType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return ListGroupSetResponse::fromMap($this->doROARequest('ListGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/groupSets/lists', 'json', $req, $runtime));
     }
 
     /**
@@ -550,6 +711,42 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetOfficialAccountOTOMessageResultResponse::fromMap($this->doROARequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $openConversationId
+     *
+     * @return GetCrmGroupChatResponse
+     */
+    public function getCrmGroupChat($openConversationId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCrmGroupChatHeaders([]);
+
+        return $this->getCrmGroupChatWithOptions($openConversationId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $openConversationId
+     * @param GetCrmGroupChatHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetCrmGroupChatResponse
+     */
+    public function getCrmGroupChatWithOptions($openConversationId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetCrmGroupChatResponse::fromMap($this->doROARequest('GetCrmGroupChat', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/crmGroupChats/' . $openConversationId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -868,6 +1065,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateGroupSetRequest $request
+     *
+     * @return CreateGroupSetResponse
+     */
+    public function createGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupSetHeaders([]);
+
+        return $this->createGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateGroupSetRequest $request
+     * @param CreateGroupSetHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateGroupSetResponse
+     */
+    public function createGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            @$body['ownerUserId'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->creatorUserId)) {
+            @$body['creatorUserId'] = $request->creatorUserId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->memberQuota)) {
+            @$body['memberQuota'] = $request->memberQuota;
+        }
+        if (!Utils::isUnset($request->managerUserIds)) {
+            @$body['managerUserIds'] = $request->managerUserIds;
+        }
+        if (!Utils::isUnset($request->notice)) {
+            @$body['notice'] = $request->notice;
+        }
+        if (!Utils::isUnset($request->noticeToped)) {
+            @$body['noticeToped'] = $request->noticeToped;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateGroupSetResponse::fromMap($this->doROARequest('CreateGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/groupSets', 'json', $req, $runtime));
+    }
+
+    /**
      * @param AddRelationMetaFieldRequest $request
      *
      * @return AddRelationMetaFieldResponse
@@ -1107,6 +1370,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->permission)) {
             @$body['permission'] = $request->permission;
         }
+        if (!Utils::isUnset($request->relationType)) {
+            @$body['relationType'] = $request->relationType;
+        }
         if (!Utils::isUnset($request->skipDuplicateCheck)) {
             @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
@@ -1267,6 +1533,69 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AbandonCustomerResponse::fromMap($this->doROARequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers/abandon', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateGroupSetRequest $request
+     *
+     * @return UpdateGroupSetResponse
+     */
+    public function updateGroupSet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupSetHeaders([]);
+
+        return $this->updateGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateGroupSetRequest $request
+     * @param UpdateGroupSetHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateGroupSetResponse
+     */
+    public function updateGroupSetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            @$body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->memberQuota)) {
+            @$body['memberQuota'] = $request->memberQuota;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            @$body['ownerUserId'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->managerUserIds)) {
+            @$body['managerUserIds'] = $request->managerUserIds;
+        }
+        if (!Utils::isUnset($request->notice)) {
+            @$body['notice'] = $request->notice;
+        }
+        if (!Utils::isUnset($request->noticeToped)) {
+            @$body['noticeToped'] = $request->noticeToped;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            @$body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateGroupSetResponse::fromMap($this->doROARequest('UpdateGroupSet', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/groupSets/set', 'boolean', $req, $runtime));
     }
 
     /**

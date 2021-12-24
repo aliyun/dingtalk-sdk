@@ -25,14 +25,24 @@ class QueryCrmPersonalCustomerResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description 当前分页条数
+     *
      * @var int
      */
     public $maxResults;
+
+    /**
+     * @description 总条数
+     *
+     * @var int
+     */
+    public $totalCount;
     protected $_name = [
         'values'     => 'values',
         'hasMore'    => 'hasMore',
         'nextToken'  => 'nextToken',
         'maxResults' => 'maxResults',
+        'totalCount' => 'totalCount',
     ];
 
     public function validate()
@@ -59,6 +69,9 @@ class QueryCrmPersonalCustomerResponseBody extends Model
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->totalCount) {
+            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -89,6 +102,9 @@ class QueryCrmPersonalCustomerResponseBody extends Model
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['totalCount'])) {
+            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

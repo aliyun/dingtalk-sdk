@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormCreateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponse;
@@ -307,6 +310,75 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryFormByBizTypeResponse::fromMap($this->doROARequest('QueryFormByBizType', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/forms/forminfos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param FormCreateRequest $request
+     *
+     * @return FormCreateResponse
+     */
+    public function formCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FormCreateHeaders([]);
+
+        return $this->formCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FormCreateRequest $request
+     * @param FormCreateHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return FormCreateResponse
+     */
+    public function formCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingCorpId)) {
+            @$body['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->dingOrgId)) {
+            @$body['dingOrgId'] = $request->dingOrgId;
+        }
+        if (!Utils::isUnset($request->dingIsvOrgId)) {
+            @$body['dingIsvOrgId'] = $request->dingIsvOrgId;
+        }
+        if (!Utils::isUnset($request->dingSuiteKey)) {
+            @$body['dingSuiteKey'] = $request->dingSuiteKey;
+        }
+        if (!Utils::isUnset($request->dingTokenGrantType)) {
+            @$body['dingTokenGrantType'] = $request->dingTokenGrantType;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            @$body['RequestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            @$body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->formComponents)) {
+            @$body['formComponents'] = $request->formComponents;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = $headers->xAcsDingtalkAccessToken;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return FormCreateResponse::fromMap($this->doROARequest('FormCreate', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/forms', 'json', $req, $runtime));
     }
 
     /**

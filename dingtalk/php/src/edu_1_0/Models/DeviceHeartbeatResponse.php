@@ -14,7 +14,7 @@ class DeviceHeartbeatResponse extends Model
     public $headers;
 
     /**
-     * @var int
+     * @var DeviceHeartbeatResponseBody
      */
     public $body;
     protected $_name = [
@@ -35,7 +35,7 @@ class DeviceHeartbeatResponse extends Model
             $res['headers'] = $this->headers;
         }
         if (null !== $this->body) {
-            $res['body'] = $this->body;
+            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
         }
 
         return $res;
@@ -53,7 +53,7 @@ class DeviceHeartbeatResponse extends Model
             $model->headers = $map['headers'];
         }
         if (isset($map['body'])) {
-            $model->body = $map['body'];
+            $model->body = DeviceHeartbeatResponseBody::fromMap($map['body']);
         }
 
         return $model;

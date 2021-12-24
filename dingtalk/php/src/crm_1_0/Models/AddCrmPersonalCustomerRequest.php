@@ -45,6 +45,13 @@ class AddCrmPersonalCustomerRequest extends Model
     public $permission;
 
     /**
+     * @description 关系类型
+     *
+     * @var string
+     */
+    public $relationType;
+
+    /**
      * @description 跳过uk查重
      *
      * @var bool
@@ -63,6 +70,7 @@ class AddCrmPersonalCustomerRequest extends Model
         'data'               => 'data',
         'extendData'         => 'extendData',
         'permission'         => 'permission',
+        'relationType'       => 'relationType',
         'skipDuplicateCheck' => 'skipDuplicateCheck',
         'action'             => 'action',
     ];
@@ -88,6 +96,9 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (null !== $this->permission) {
             $res['permission'] = null !== $this->permission ? $this->permission->toMap() : null;
+        }
+        if (null !== $this->relationType) {
+            $res['relationType'] = $this->relationType;
         }
         if (null !== $this->skipDuplicateCheck) {
             $res['skipDuplicateCheck'] = $this->skipDuplicateCheck;
@@ -121,6 +132,9 @@ class AddCrmPersonalCustomerRequest extends Model
         }
         if (isset($map['permission'])) {
             $model->permission = permission::fromMap($map['permission']);
+        }
+        if (isset($map['relationType'])) {
+            $model->relationType = $map['relationType'];
         }
         if (isset($map['skipDuplicateCheck'])) {
             $model->skipDuplicateCheck = $map['skipDuplicateCheck'];

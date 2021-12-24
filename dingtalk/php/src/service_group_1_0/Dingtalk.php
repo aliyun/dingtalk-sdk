@@ -1982,6 +1982,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->openConversationId)) {
             @$query['openConversationId'] = $request->openConversationId;
         }
+        if (!Utils::isUnset($request->topN)) {
+            @$query['topN'] = $request->topN;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

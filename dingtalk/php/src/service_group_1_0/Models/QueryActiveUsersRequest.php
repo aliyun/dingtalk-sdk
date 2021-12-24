@@ -21,9 +21,17 @@ class QueryActiveUsersRequest extends Model
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @description 查询topN的数据
+     *
+     * @var int
+     */
+    public $topN;
     protected $_name = [
         'openTeamId'         => 'openTeamId',
         'openConversationId' => 'openConversationId',
+        'topN'               => 'topN',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class QueryActiveUsersRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->topN) {
+            $res['topN'] = $this->topN;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class QueryActiveUsersRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['topN'])) {
+            $model->topN = $map['topN'];
         }
 
         return $model;

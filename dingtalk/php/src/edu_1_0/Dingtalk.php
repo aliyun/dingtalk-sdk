@@ -1509,7 +1509,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return ReportDeviceLogResponse::fromMap($this->doROARequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/deviceLogs/report', 'boolean', $req, $runtime));
+        return ReportDeviceLogResponse::fromMap($this->doROARequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/deviceLogs/report', 'json', $req, $runtime));
     }
 
     /**
@@ -2105,7 +2105,7 @@ class Dingtalk extends OpenApiClient
             'query'   => OpenApiUtilClient::query($query),
         ]);
 
-        return DeviceHeartbeatResponse::fromMap($this->doROARequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/heartbeats/report', 'int32', $req, $runtime));
+        return DeviceHeartbeatResponse::fromMap($this->doROARequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/heartbeats/report', 'json', $req, $runtime));
     }
 
     /**

@@ -28,10 +28,18 @@ class CreateWorkspaceDocRequest extends Model
      * @var string
      */
     public $operatorId;
+
+    /**
+     * @description 父节点nodeId
+     *
+     * @var string
+     */
+    public $parentNodeId;
     protected $_name = [
-        'name'       => 'name',
-        'docType'    => 'docType',
-        'operatorId' => 'operatorId',
+        'name'         => 'name',
+        'docType'      => 'docType',
+        'operatorId'   => 'operatorId',
+        'parentNodeId' => 'parentNodeId',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class CreateWorkspaceDocRequest extends Model
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
+        }
+        if (null !== $this->parentNodeId) {
+            $res['parentNodeId'] = $this->parentNodeId;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class CreateWorkspaceDocRequest extends Model
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
+        }
+        if (isset($map['parentNodeId'])) {
+            $model->parentNodeId = $map['parentNodeId'];
         }
 
         return $model;
