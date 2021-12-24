@@ -3773,7 +3773,7 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         // 字段属性
         @NameInMap("props")
-        public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps> props;
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps props;
 
         // 子字段列表
         @NameInMap("children")
@@ -3792,11 +3792,11 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
             return this.componentName;
         }
 
-        public DescribeRelationMetaResponseBodyRelationMetaDTOListItems setProps(java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps> props) {
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItems setProps(DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps props) {
             this.props = props;
             return this;
         }
-        public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps> getProps() {
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps getProps() {
             return this.props;
         }
 
